@@ -13,6 +13,7 @@ import {
   MEDIA_ARTICLE_PAGE,
   MEDIA_ASSET_PAGE,
 } from '#app/routes/utils/pageTypes';
+import filterForBlockType from '#lib/utilities/blockHandlers';
 import { PageTypes } from '#app/models/types/global';
 import { EventTrackingContext } from '#app/contexts/EventTrackingContext';
 import { BumpType, MediaBlock, PlayerConfig } from './types';
@@ -25,6 +26,7 @@ import getCaptionBlock from './utils/getCaptionBlock';
 import styles from './index.styles';
 import { getBootstrapSrc } from '../Ad/Canonical';
 import Metadata from './Metadata';
+import AmpMediaLoader from './Amp';
 
 const PAGETYPES_IGNORE_PLACEHOLDER: PageTypes[] = [
   MEDIA_ARTICLE_PAGE,
@@ -147,7 +149,11 @@ const MediaContainer = ({ playerConfig, showAds }: MediaContainerProps) => {
     <div
       ref={playerElementRef}
       data-e2e="media-player"
-      css={styles.mediaContainer}
+      css={
+        playerConfig?.ui?.skin === 'audio'
+          ? styles.audioMediaContainer
+          : styles.standardMediaContainer
+      }
     />
   );
 };
@@ -158,7 +164,7 @@ type Props = {
   embedded?: boolean;
 };
 
-const MediaLoader = ({ blocks, embedded, className }: Props) => {
+const MediaLoader = ({ blocks, className, embedded }: Props) => {
   const { lang, translations } = useContext(ServiceContext);
   const { pageIdentifier } = useContext(EventTrackingContext);
   const { enabled: adsEnabled } = useToggle('ads');
@@ -173,17 +179,20 @@ const MediaLoader = ({ blocks, embedded, className }: Props) => {
     showAdsBasedOnLocation,
   } = useContext(RequestContext);
 
-  const showPlaceholder = !PAGETYPES_IGNORE_PLACEHOLDER.includes(pageType);
-
-  const [isPlaceholder, setIsPlaceholder] = useState(showPlaceholder);
+  const [showPlaceholder, setShowPlaceholder] = useState(
+    !PAGETYPES_IGNORE_PLACEHOLDER.includes(pageType),
+  );
 
   if (isLite) return null;
 
+  const { model: mediaOverrides } =
+    filterForBlockType(blocks, 'mediaOverrides') || {};
+
   const producer = getProducerFromServiceName(service);
   const config = buildConfig({
-    id,
+    id: id || '',
     blocks,
-    counterName: pageIdentifier,
+    counterName: mediaOverrides?.pageIdentifierOverride || pageIdentifier,
     statsDestination,
     producer,
     isAmp,
@@ -198,43 +207,82 @@ const MediaLoader = ({ blocks, embedded, className }: Props) => {
 
   if (!config) return null;
 
-  const { mediaType, playerConfig, placeholderConfig, showAds } = config;
-
   const {
-    mediaInfo,
-    placeholderSrc,
-    placeholderSrcset,
-    translatedNoJSMessage,
-  } = placeholderConfig;
+    mediaType,
+    playerConfig,
+    placeholderConfig,
+    showAds,
+    orientation = 'landscape',
+    ampIframeUrl,
+  } = config;
 
   const captionBlock = getCaptionBlock(blocks, pageType);
 
+  const {
+    placeholderSrc,
+    placeholderSrcset,
+    translatedNoJSMessage,
+    mediaInfo,
+  } = placeholderConfig ?? {};
+
+  const hasPlaceholder = Boolean(showPlaceholder && placeholderSrc);
+
+  const showPortraitTitle = orientation === 'portrait' && !embedded;
+
   return (
     <>
-      <Metadata
-        blocks={blocks}
-        embedURL={playerConfig?.externalEmbedUrl}
-        embedded={embedded}
-      />
+      {
+        // Prevents the av-embeds route itself rendering the Metadata component
+        !embedded && (
+          <Metadata blocks={blocks} embedURL={playerConfig?.externalEmbedUrl} />
+        )
+      }
+      {showPortraitTitle && (
+        <strong css={styles.titlePortrait}>Watch Moments</strong>
+      )}
       <figure
         data-e2e="media-loader__container"
-        css={styles.figure}
         className={className}
+        css={[
+          styles.figure(embedded),
+          playerConfig?.ui?.skin === 'classic' && [
+            orientation === 'portrait' && styles.portraitFigure(embedded),
+            orientation === 'landscape' && styles.landscapeFigure,
+          ],
+        ]}
       >
-        {showAds && <AdvertTagLoader />}
-        <BumpLoader />
-        {isPlaceholder ? (
-          <Placeholder
-            src={placeholderSrc}
-            srcSet={placeholderSrcset}
+        {isAmp ? (
+          <AmpMediaLoader
+            src={ampIframeUrl}
+            title={mediaInfo?.title}
+            placeholderSrc={placeholderSrc}
+            placeholderSrcset={placeholderSrcset}
             noJsMessage={translatedNoJSMessage}
-            mediaInfo={mediaInfo}
-            onClick={() => setIsPlaceholder(false)}
           />
         ) : (
-          <MediaContainer playerConfig={playerConfig} showAds={showAds} />
+          <>
+            {showAds && <AdvertTagLoader />}
+            <BumpLoader />
+            {hasPlaceholder ? (
+              <Placeholder
+                src={placeholderSrc}
+                srcSet={placeholderSrcset}
+                noJsMessage={translatedNoJSMessage}
+                mediaInfo={mediaInfo}
+                onClick={() => setShowPlaceholder(false)}
+              />
+            ) : (
+              <MediaContainer playerConfig={playerConfig} showAds={showAds} />
+            )}
+          </>
         )}
-        {captionBlock && <Caption block={captionBlock} type={mediaType} />}
+        {captionBlock && (
+          <Caption
+            block={captionBlock}
+            type={mediaType}
+            css={orientation === 'portrait' && styles.captionPortrait}
+          />
+        )}
       </figure>
     </>
   );
