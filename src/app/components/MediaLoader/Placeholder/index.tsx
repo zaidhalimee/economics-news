@@ -8,6 +8,7 @@ import PlayButton from './PlayButton';
 import Guidance from './Guidance';
 import { MediaInfo } from '../types';
 import MediaIndicator from '../../TranscriptExperiment/MediaIndicator';
+import SignPostNoJs from '#app/components/TranscriptExperiment/SignPostNoJs';
 
 interface Props {
   onClick: React.MouseEventHandler<HTMLDivElement>;
@@ -81,6 +82,7 @@ const MediaPlayerPlaceholder = ({
       {experimentStage !== Stages.STAGE_2 ? guideComponent : null}
       {experimentStage === Stages.STAGE_2 ? experimentPlayButton : playButton}
       {experimentStage === Stages.STAGE_2 ? experimentSignPost : null}
+      <SignPostNoJs noJsMessage={noJsMessage} />
       <Image alt="" src={src} srcSet={srcSet} />
     </div>
   );
