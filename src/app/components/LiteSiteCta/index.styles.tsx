@@ -61,6 +61,19 @@ export default {
         },
       },
     }),
+  linkText: ({ palette }: Theme) =>
+    css({
+      borderBottom: `${pixelsToRem(1)}rem solid ${palette.GREY_10}`,
+      textDecoration: 'none',
+      'a:visited &': {
+        color: palette.METAL,
+        borderBottom: `${pixelsToRem(1)}rem solid ${palette.METAL}`,
+      },
+      'a:focus &, a:hover &': {
+        borderBottom: `${pixelsToRem(2)}rem solid ${palette.POSTBOX}`,
+        color: palette.POSTBOX,
+      },
+    }),
   bottomLinkSpacing: ({ spacings }: Theme) =>
     css({
       padding: `${spacings.FULL}rem 0 ${spacings.DOUBLE}rem`,

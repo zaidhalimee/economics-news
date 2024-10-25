@@ -1,6 +1,5 @@
 /** @jsx jsx */
-/* @jsxFrag React.Fragment */
-import React, { PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 import { jsx } from '@emotion/react';
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import Text from '../Text';
@@ -12,14 +11,19 @@ const CallToActionLink = ({
   className,
   children,
   eventTrackingData,
-  size = 'pica',
-  fontVariant = 'sansBold',
   download = false,
+  ignoreStyling = false,
   ignoreLiteExtension = false,
-  linkText = '',
-  borderStyleOverride = false,
 }: PropsWithChildren<CallToActionLinkProps>) => {
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
+
+  const styledContent = (
+    <div css={styles.linkTextWrapper}>
+      <Text size="pica" fontVariant="sansBold" css={styles.linkText}>
+        {children}
+      </Text>
+    </div>
+  );
 
   return (
     <a
@@ -30,20 +34,7 @@ const CallToActionLink = ({
       download={download}
       {...(ignoreLiteExtension && { 'data-ignore-lite': true })}
     >
-      {borderStyleOverride ? (
-        <>
-          <Text size={size} fontVariant={fontVariant}>
-            {linkText}
-          </Text>
-          {children}
-        </>
-      ) : (
-        <div css={styles.linkTextWrapper}>
-          <Text size={size} fontVariant={fontVariant} css={styles.linkText}>
-            {children}
-          </Text>
-        </div>
-      )}
+      {ignoreStyling ? children : styledContent}
     </a>
   );
 };

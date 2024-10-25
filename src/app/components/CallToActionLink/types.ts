@@ -11,4 +11,5 @@ export type CallToActionLinkProps = {
   ignoreLiteExtension?: boolean;
   borderStyleOverride?: boolean;
   linkText?: string;
+  ignoreStyling?: boolean;
 };
