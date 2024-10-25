@@ -1,42 +1,51 @@
 import React, { PropsWithChildren } from 'react';
-import readme from './README.md';
 
 import { CallToActionLinkProps } from './types';
 import CallToActionLink from '.';
+import Text from '../Text';
 
 const Component = ({
   href,
   children,
-  linkText,
-  borderStyleOverride,
 }: PropsWithChildren<CallToActionLinkProps>) => (
-  <CallToActionLink
-    linkText={linkText}
-    href={href}
-    borderStyleOverride={borderStyleOverride}
-  >
-    {children}
-  </CallToActionLink>
+  <CallToActionLink href={href}>{children}</CallToActionLink>
 );
 
 export default {
   title: 'Components/Call To Action Link',
   Component,
-  parameters: {
-    docs: { readme },
+  args: {
+    fontVariant: 'sansBold',
+  },
+  argTypes: {
+    fontVariant: {
+      control: { type: 'select' },
+      options: [
+        'sansRegular',
+        'sansRegularItalic',
+        'sansBold',
+        'sansBoldItalic',
+        'sansLight',
+        'serifRegular',
+        'serifMedium',
+        'serifMediumItalic',
+        'serifBold',
+        'serifLight',
+      ],
+    },
   },
 };
 
-export const DefaultStyles = () => {
+export const Example = () => {
   return <Component href="www.bbc.com/afrique">Call To Action</Component>;
 };
 
-export const BottomBorderStyles = () => {
+export const CustomCTALink = ({ fontVariant }: { fontVariant: string }) => {
   return (
-    <Component
-      href="www.bbc.com/afrique"
-      borderStyleOverride
-      linkText="My Link Text"
-    />
+    <Component href="www.bbc.com/afrique">
+      <Text size="brevier" fontVariant={fontVariant}>
+        Custom Font Call To Action
+      </Text>
+    </Component>
   );
 };
