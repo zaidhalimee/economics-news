@@ -96,6 +96,7 @@ describe('cspHeader', () => {
         'https://sb.scorecardresearch.com',
         'https://i.ytimg.com',
         'https://*.amazon-adsystem.com',
+        'https://www.googleadservices.com',
         "data: 'self'",
       ].sort(),
       scriptSrcExpectation: [
@@ -171,6 +172,7 @@ describe('cspHeader', () => {
         'https://*.tiktokcdn.com',
         'https://*.xx.fbcdn.net',
         'https://*.amazon-adsystem.com',
+        'https://www.googleadservices.com',
         "data: 'self'",
       ].sort(),
       scriptSrcExpectation: [
@@ -202,6 +204,7 @@ describe('cspHeader', () => {
         'https://connect.facebook.net',
         'https://*.xx.fbcdn.net',
         'https://*.amazon-adsystem.com',
+        'https://*.teads.tv',
         ...advertisingServiceCountryDomains,
         "'self'",
         "'unsafe-inline'",
@@ -271,6 +274,7 @@ describe('cspHeader', () => {
         'https://*.facebook.com',
         'https://*.xx.fbcdn.net',
         'https://*.amazon-adsystem.com',
+        'https://www.googleadservices.com',
         "data: 'self'",
       ].sort(),
       scriptSrcExpectation: [
@@ -348,6 +352,7 @@ describe('cspHeader', () => {
         'https://*.tiktokcdn.com',
         'https://*.xx.fbcdn.net',
         'https://*.amazon-adsystem.com',
+        'https://www.googleadservices.com',
         "data: 'self'",
       ].sort(),
       scriptSrcExpectation: [
@@ -381,6 +386,7 @@ describe('cspHeader', () => {
         'https://*.xx.fbcdn.net',
         'https://*.webcontentassessor.com',
         'https://*.amazon-adsystem.com',
+        'https://*.teads.tv',
         ...advertisingServiceCountryDomains,
         "'self'",
         "'unsafe-inline'",
