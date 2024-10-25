@@ -60,7 +60,6 @@ const LiteSiteCta = () => {
             href={informationPageLink}
             css={[styles.bottomLinkSpacing, styles.link]}
             ignoreStyling
-            ignoreLiteExtension
           >
             <Text
               size="brevier"
