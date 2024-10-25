@@ -20,7 +20,7 @@ const advertisingDirectives = {
     'https://*.imrworldwide.com',
     'https://sb.scorecardresearch.com',
     'https://*.amazon-adsystem.com',
-    'https://www.googleadservices.com'
+    'https://www.googleadservices.com',
   ],
   scriptSrc: [
     'https://*.adsafeprotected.com',
