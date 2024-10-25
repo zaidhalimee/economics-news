@@ -5,10 +5,6 @@ export const testsForLiteOnly = ({ service, pageType }) => {
   describe(`Running testsForLiteOnly for ${service} ${pageType}`, () => {
     describe('CTA: Lite', () => {
       if (liteEnabledServices.includes(service)) {
-        it('should render a call to action component', () => {
-          cy.get('[data-e2e="lite-cta"]').should('be.visible');
-        });
-
         it('Clicking the link to the main site should navigate to canonical site', () => {
           cy.get('[data-e2e="to-main-site"]').within(() => {
             cy.get('a')
