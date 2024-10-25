@@ -85,8 +85,8 @@ const MetadataContainer = ({
   const pathsForUkLink = [
     '/sport/formula1',
     '/sport/cricket/articles',
-    '/sport/rugby_union/articles',
-    '/sport/rugby_league/articles',
+    '/sport/rugby-union/articles',
+    '/sport/rugby-league/articles',
   ];
 
   const isUKLink = pathsForUkLink.some(
