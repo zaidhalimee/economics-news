@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-
+import readme from './README.md';
 import { CallToActionLinkProps } from './types';
 import CallToActionLink from '.';
 import Text from '../Text';
@@ -14,6 +14,9 @@ const Component = ({
 export default {
   title: 'Components/Call To Action Link',
   Component,
+  parameters: {
+    docs: { readme },
+  },
   args: {
     fontVariant: 'sansBold',
   },
