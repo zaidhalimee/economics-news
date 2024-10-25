@@ -5,10 +5,10 @@ export type CallToActionLinkProps = {
   href?: string;
   className?: string;
   eventTrackingData?: EventTrackingMetadata;
-  download?: boolean;
   size?: GelFontSize;
   fontVariant?: FontVariant;
+  download?: boolean;
   ignoreLiteExtension?: boolean;
-  centerAlign?: boolean;
-  text?: string;
+  borderStyleOverride?: boolean;
+  linkText?: string;
 };

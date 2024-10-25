@@ -41,12 +41,12 @@ const LiteSiteCta = () => {
         <Paragraph data-e2e="to-main-site">
           <CallToActionLink
             href={canonicalLink}
-            text={toMainSite}
+            linkText={toMainSite}
             ignoreLiteExtension
             size="brevier"
             fontVariant="sansBold"
             className="touchTarget"
-            centerAlign={false}
+            borderStyleOverride
             css={[styles.topLinkSpacing, styles.link]}
           >
             {isRtl ? (
@@ -59,11 +59,11 @@ const LiteSiteCta = () => {
         <Paragraph data-e2e="information-page">
           <CallToActionLink
             href={informationPageLink}
-            text={informationPage}
+            linkText={informationPage}
             size="brevier"
             fontVariant="sansRegular"
             className="touchTarget"
-            centerAlign={false}
+            borderStyleOverride
             css={[styles.bottomLinkSpacing, styles.link]}
           />
         </Paragraph>
