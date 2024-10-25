@@ -27,12 +27,12 @@ exports[`Lite Site Articles Lite Site Cta should match snapshot 1`] = `
       data-e2e="to-main-site"
     >
       <a
-        class="bbc-12216v1"
+        class="touchTarget bbc-2ezaih"
         data-ignore-lite="true"
         href="http://localhost:7080/gahuza/articles/cey23zx8wx8o"
       >
         <span
-          class="bbc-x7bqmd"
+          class="bbc-sokel8"
         >
           Njana ku rubuga nyamukuru canke aho gusoma gusa
         </span>
@@ -55,11 +55,11 @@ exports[`Lite Site Articles Lite Site Cta should match snapshot 1`] = `
       data-e2e="information-page"
     >
       <a
-        class="bbc-1hvke8g"
+        class="touchTarget bbc-1c7rt7i"
         href="https://www.bbc.com/gahuza/articles/cn7y7pvem0vo.lite"
       >
         <span
-          class="bbc-1qfjcgd"
+          class="bbc-inosqz"
         >
           Ibindi vyerekeye ingene urwo rubuga rugutwara uburyo (ama mega) buke
         </span>
