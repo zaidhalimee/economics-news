@@ -56,8 +56,7 @@ exports[`Lite Site Articles Lite Site Cta should match snapshot 1`] = `
     >
       <a
         class="bbc-1c7rt7i"
-        data-ignore-lite="true"
-        href="https://www.bbc.com/gahuza/articles/cn7y7pvem0vo"
+        href="https://www.bbc.com/gahuza/articles/cn7y7pvem0vo.lite"
       >
         <span
           class="bbc-1qfjcgd"
