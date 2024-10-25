@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import { PropsWithChildren } from 'react';
+/* @jsxFrag React.Fragment */
+import React, { PropsWithChildren } from 'react';
 import { jsx } from '@emotion/react';
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import Text from '../Text';
@@ -12,6 +13,11 @@ const CallToActionLink = ({
   children,
   eventTrackingData,
   download = false,
+  ignoreLiteExtension = false,
+  text = '',
+  size = 'pica',
+  fontVariant = 'sansBold',
+  centerAlign = true,
 }: PropsWithChildren<CallToActionLinkProps>) => {
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
 
@@ -22,12 +28,22 @@ const CallToActionLink = ({
       css={styles.linkBackground}
       onClick={clickTrackerHandler}
       download={download}
+      {...(ignoreLiteExtension && { 'data-ignore-lite': true })}
     >
-      <div css={styles.linkTextWrapper}>
-        <Text size="pica" fontVariant="sansBold" css={styles.linkText}>
+      {centerAlign ? (
+        <div css={styles.linkTextWrapper}>
+          <Text size={size} fontVariant={fontVariant} css={styles.linkText}>
+            {children}
+          </Text>
+        </div>
+      ) : (
+        <>
+          <Text size={size} fontVariant={fontVariant}>
+            {text}
+          </Text>
           {children}
-        </Text>
-      </div>
+        </>
+      )}
     </a>
   );
 };

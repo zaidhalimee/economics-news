@@ -8,46 +8,7 @@ import { ServiceContext } from '../../contexts/ServiceContext';
 import { RequestContext } from '../../contexts/RequestContext';
 import styles from './index.styles';
 import { defaultTranslations } from './liteSiteConfig';
-
-type CtaLinkProps = {
-  isRtl: boolean;
-  href: string;
-  text: string;
-  fontVariant?: string;
-  showChevron?: boolean;
-  ignoreLiteExtension?: boolean;
-  className?: string;
-};
-
-const CtaLink = ({
-  isRtl,
-  href,
-  text,
-  fontVariant = 'sansRegular',
-  showChevron = false,
-  ignoreLiteExtension = false,
-  className,
-}: CtaLinkProps) => {
-  const chevron = isRtl ? (
-    <LeftChevron css={styles.chevron} />
-  ) : (
-    <RightChevron css={styles.chevron} />
-  );
-
-  return (
-    <a
-      href={href}
-      className={className}
-      css={styles.link}
-      {...(ignoreLiteExtension && { 'data-ignore-lite': true })}
-    >
-      <Text size="brevier" fontVariant={fontVariant} css={styles.linkText}>
-        {text}
-      </Text>
-      {showChevron && chevron}
-    </a>
-  );
-};
+import CallToActionLink from '../CallToActionLink';
 
 const LiteSiteCta = () => {
   const { dir, translations } = useContext(ServiceContext);
@@ -78,22 +39,32 @@ const LiteSiteCta = () => {
           {onboardingMessage}
         </Paragraph>
         <Paragraph data-e2e="to-main-site">
-          <CtaLink
-            fontVariant="sansBold"
-            isRtl={isRtl}
+          <CallToActionLink
             href={canonicalLink}
             text={toMainSite}
-            css={styles.topLinkSpacing}
             ignoreLiteExtension
-            showChevron
-          />
+            size="brevier"
+            fontVariant="sansBold"
+            className="touchTarget"
+            centerAlign={false}
+            css={[styles.topLinkSpacing, styles.link]}
+          >
+            {isRtl ? (
+              <LeftChevron css={styles.chevron} />
+            ) : (
+              <RightChevron css={styles.chevron} />
+            )}
+          </CallToActionLink>
         </Paragraph>
         <Paragraph data-e2e="information-page">
-          <CtaLink
-            isRtl={isRtl}
+          <CallToActionLink
             href={informationPageLink}
             text={informationPage}
-            css={styles.bottomLinkSpacing}
+            size="brevier"
+            fontVariant="sansRegular"
+            className="touchTarget"
+            centerAlign={false}
+            css={[styles.bottomLinkSpacing, styles.link]}
           />
         </Paragraph>
       </div>
