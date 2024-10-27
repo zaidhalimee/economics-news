@@ -45,7 +45,7 @@ export const buildATIPageTrackPath = ({
   categoryName,
   campaigns,
   nationsProducer,
-  ampExperimentVariant,
+  ampExperimentName,
 }: ATIPageTrackingProps) => {
   const href = getHref(platform);
   const referrer = getReferrer(platform, origin, previousPath);
@@ -215,12 +215,12 @@ export const buildATIPageTrackPath = ({
       value: getATIMarketingString(href, campaignType),
       wrap: false,
     },
-    ...(ampExperimentVariant
+    ...(ampExperimentName
       ? [
           {
             key: 'ati',
-            description: 'test',
-            value: `PUB-[]-[]-[topStoriesExperiment:VARIANT(${ampExperimentVariant})]-[]-[]-[]-[]-[]`,
+            description: 'AMP experiment variant name',
+            value: `PUB-[]-[]-[topStoriesExperiment:VARIANT(${ampExperimentName})]-[]-[]-[]-[]-[]`,
             wrap: false,
           },
         ]

@@ -25,11 +25,10 @@ export const buildPageATIParams = ({
     producerId,
     timePublished,
     timeUpdated,
-    ampExperimentVariant,
   } = atiData;
 
+  const ampExperimentName = atiData?.ampExperimentName;
   return {
-    ampExperimentVariant,
     appName: atiAnalyticsAppName,
     campaigns,
     categoryName,
@@ -51,6 +50,7 @@ export const buildPageATIParams = ({
     statsDestination,
     timePublished,
     timeUpdated,
+    ...(ampExperimentName && { ampExperimentName }),
   };
 };
 

@@ -64,6 +64,7 @@ import styles from './ArticlePage.styles';
 import { ComponentToRenderProps, TimeStampProps } from './types';
 import AmpExperiment from '../../components/AmpExperiment';
 import {
+  experimentName,
   experimentTopStoriesConfig,
   getExperimentAnalyticsConfig,
   getExperimentTopStories,
@@ -135,11 +136,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     mostRead: mostReadInitialData,
   } = pageData;
 
-  const atiData = {
-    ...atiAnalytics,
-    ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
-  };
-
   const topStoriesContent = pageData?.secondaryColumn?.topStories;
   const { shouldEnableExperimentTopStories, transformedBlocks } =
     getExperimentTopStories({
@@ -149,6 +145,14 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       service,
       id,
     });
+
+  const atiData = {
+    ...atiAnalytics,
+    ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
+    ...(shouldEnableExperimentTopStories && {
+      ampExperimentName: `${experimentName}`,
+    }),
+  };
 
   const componentsToRender = {
     visuallyHiddenHeadline,
@@ -239,9 +243,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           })}
         />
       )}
-      <ATIAnalytics
-        atiData={{ ...atiData, ampExperimentVariant: 'topStoriesExperiment' }}
-      />
+      <ATIAnalytics atiData={atiData} />
       <ChartbeatAnalytics
         sectionName={pageData?.relatedContent?.section?.name}
         title={headline}

@@ -7,7 +7,7 @@ import { Services, Environments } from '#app/models/types/global';
 import TopStoriesSection from '../PagePromoSections/TopStoriesSection';
 import styles from './index.styles';
 
-const experimentName = 'topStoriesExperiment';
+export const experimentName = 'topStoriesExperiment';
 export const experimentTopStoriesConfig = {
   [experimentName]: {
     variants: {
