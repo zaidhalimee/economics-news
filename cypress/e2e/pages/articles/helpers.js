@@ -50,3 +50,16 @@ export const getVideoEmbedUrl = (body, language, isAmp = false) => {
 
   return isAmp ? `${embedUrl}/amp` : embedUrl;
 };
+
+export const isTransliteratedService = service => {
+  const transliteratedServices = [
+    'serbianCyr',
+    'serbianLat',
+    'zhongwenSimp',
+    'zhongwenTrad',
+    'uzbekCyr',
+    'uzbekLat',
+  ];
+
+  return transliteratedServices.includes(service);
+};

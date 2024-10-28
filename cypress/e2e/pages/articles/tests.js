@@ -1,6 +1,7 @@
 import config from '../../../support/config/services';
 import appConfig from '../../../../src/server/utilities/serviceConfigs';
 import { crossPlatform as mostReadAssertions } from '../mostReadPage/mostReadAssertions';
+import { isTransliteratedService } from './helpers';
 
 // TODO: Remove after https://github.com/bbc/simorgh/issues/2959
 const serviceHasFigure = service =>
@@ -113,21 +114,12 @@ export const testsThatFollowSmokeTestConfig = ({
       });
     });
 
-    // TODO: Remove once transliterated services support MostRead component
-    const transliteratedServices = [
-      'serbianCyr',
-      'serbianLat',
-      'zhongwenSimp',
-      'zhongwenTrad',
-      'uzbekCyr',
-      'uzbekLat',
-    ];
-
     /**
      * Most Read Component
      */
 
-    if (!transliteratedServices.includes(service) && pageType !== 'articles') {
+    // TODO: Remove once transliterated services support MostRead component
+    if (!isTransliteratedService(service) && pageType !== 'articles') {
       mostReadAssertions({ service, variant });
     }
   });

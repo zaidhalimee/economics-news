@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import { ampOnly as mostReadAssertions } from '../mostReadPage/mostReadAssertions';
+import { isTransliteratedService } from './helpers';
 
 // TODO: Remove after https://github.com/bbc/simorgh/issues/2959
 const serviceHasFigure = service =>
@@ -58,21 +59,13 @@ export const testsThatFollowSmokeTestConfigForAMPOnly = ({
       });
     });
 
-    // TODO: Remove once transliterated services support MostRead component
-    const transliteratedServices = [
-      'serbianCyr',
-      'serbianLat',
-      'zhongwenSimp',
-      'zhongwenTrad',
-      'uzbekCyr',
-      'uzbekLat',
-    ];
-
     /* Most Read Component
      * These cypress tests are needed as unit tests cannot be run on the jsdom.
      * web workers (which run on amp pages) do not run on the virtual dom.
      */
-    if (!transliteratedServices.includes(service) && pageType !== 'articles') {
+
+    // TODO: Remove once transliterated services support MostRead component
+    if (!isTransliteratedService(service) && pageType !== 'articles') {
       mostReadAssertions({ service, variant });
     }
   });
