@@ -61,6 +61,7 @@ const MetadataContainer = ({
     canonicalNonUkLink,
     ampNonUkLink,
     pathname,
+    isUK,
   } = useContext(RequestContext);
 
   const {
@@ -81,17 +82,30 @@ const MetadataContainer = ({
   } = useTheme();
   const appleTouchIcon = getAppleTouchUrl(service);
   const isEnglishService = ENGLISH_SERVICES.includes(service);
+  const pathsForUkLink = [
+    '/sport/formula1',
+    '/sport/cricket/articles',
+    '/sport/rugby-union/articles',
+    '/sport/rugby-league/articles',
+  ];
+
+  const isUKLink = pathsForUkLink.some(
+    path => pathname && pathname.startsWith(path),
+  );
+
+  const showAlternateUKAmp = !isUKLink && isAmp;
+
   const alternateLinksEnglishSites = [
     {
-      href: isAmp ? ampNonUkLink : canonicalNonUkLink,
+      href: showAlternateUKAmp ? ampNonUkLink : canonicalNonUkLink,
       hrefLang: 'x-default',
     },
     {
-      href: isAmp ? ampNonUkLink : canonicalNonUkLink,
+      href: showAlternateUKAmp ? ampNonUkLink : canonicalNonUkLink,
       hrefLang: 'en',
     },
     {
-      href: isAmp ? ampUkLink : canonicalUkLink,
+      href: showAlternateUKAmp ? ampUkLink : canonicalUkLink,
       hrefLang: 'en-gb',
     },
   ];
@@ -101,6 +115,9 @@ const MetadataContainer = ({
       hrefLang: isoLang,
     },
   ];
+
+  const canonicalToUse =
+    isUK && isUKLink ? canonicalUkLink : canonicalNonUkLink;
 
   const htmlAttributes = {
     dir,
@@ -134,7 +151,7 @@ const MetadataContainer = ({
         content="width=device-width, initial-scale=1, minimum-scale=1"
       />
       <title>{pageTitle}</title>
-      <link rel="canonical" href={canonicalNonUkLink} />
+      <link rel="canonical" href={canonicalToUse} />
       {isEnglishService && alternateLinksEnglishSites.map(renderAlternateLinks)}
       {isoLang &&
         !isEnglishService &&
