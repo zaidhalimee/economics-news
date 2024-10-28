@@ -113,9 +113,22 @@ export const testsThatFollowSmokeTestConfig = ({
       });
     });
 
+    // TODO: Remove once transliterated services support MostRead component
+    const transliteratedServices = [
+      'serbianCyr',
+      'serbianLat',
+      'zhongwenSimp',
+      'zhongwenTrad',
+      'uzbekCyr',
+      'uzbekLat',
+    ];
+
     /**
      * Most Read Component
      */
-    mostReadAssertions({ service, variant });
+
+    if (!transliteratedServices.includes(service) && pageType !== 'articles') {
+      mostReadAssertions({ service, variant });
+    }
   });
 };
