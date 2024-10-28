@@ -28,6 +28,8 @@ type AmpExperimentProps = {
   analyticsConfig?: AmpAnalyticsConfig;
 };
 
+type AmpScriptProps = AmpExperimentConfig | AmpAnalyticsConfig;
+
 const AmpHead = () => (
   <Helmet>
     <script
@@ -38,7 +40,7 @@ const AmpHead = () => (
   </Helmet>
 );
 
-const AmpScript = ({ config }: { config: Record<string, unknown> }) => {
+const AmpScript = ({ config }: { config: AmpScriptProps }) => {
   return (
     <script
       type="application/json"

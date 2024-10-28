@@ -25,9 +25,9 @@ export const buildPageATIParams = ({
     producerId,
     timePublished,
     timeUpdated,
+    ampExperimentName,
   } = atiData;
 
-  const ampExperimentName = atiData?.ampExperimentName;
   return {
     appName: atiAnalyticsAppName,
     campaigns,
