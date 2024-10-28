@@ -53,9 +53,10 @@ describe('AMP top stories experiment', () => {
       ${'all props defined but blocks length is invalid'} | ${true}  | ${'c6v11qzyv8po'} | ${'news'}    | ${7}
     `(
       'returns shouldEnableExperimentTopStories as false because $testDescription.',
-      ({ isAmp, id, service }) => {
+      ({ isAmp, id, service, blocksLength }) => {
+        const blocks = Array(blocksLength).fill(mockTextBlock, 0);
         const { shouldEnableExperimentTopStories } = getExperimentTopStories({
-          blocks: blocksEvenLength,
+          blocks,
           topStoriesContent: topStoriesList,
           isAmp,
           id,
