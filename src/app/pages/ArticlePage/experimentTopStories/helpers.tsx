@@ -34,6 +34,7 @@ const enableExperimentTopStories = ({
   }
 
   const newsAsset = 'cz7xywn940ro';
+  const newsCPSAsset = 'news/world-europe-60506682';
   const newsTestAsset = 'c6v11qzyv8po';
   const newsTestBreakingNewsAsset = 'cgx1znpjjx7o';
   const newsShortAsset = 'cd4117egk3go';
@@ -43,6 +44,7 @@ const enableExperimentTopStories = ({
 
   const experimentAssets = [
     newsAsset,
+    newsCPSAsset,
     newsTestAsset,
     newsTestBreakingNewsAsset,
     newsShortAsset,
