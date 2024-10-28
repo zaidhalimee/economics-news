@@ -2,9 +2,6 @@ import { css, Theme } from '@emotion/react';
 import pixelsToRem from '#app/utilities/pixelsToRem';
 import BANNER_CONFIG from './config';
 
-// This is for canonical only and should be removed once VJ remove the 8px margin around the iframe body content
-const MARGIN_TOP_BOTTOM_BUFFER = 16;
-
 export default {
   electionBannerWrapper: ({ spacings }: Theme) =>
     css({
@@ -15,13 +12,13 @@ export default {
     css({
       border: 'none',
       width: '100%',
-      height: `${pixelsToRem(BANNER_CONFIG.heights.mobile + MARGIN_TOP_BOTTOM_BUFFER)}rem`,
+      height: `${pixelsToRem(BANNER_CONFIG.heights.mobile)}rem`,
 
-      [mq.GROUP_2_MIN_WIDTH]: {
-        height: `${pixelsToRem(BANNER_CONFIG.heights.tablet + MARGIN_TOP_BOTTOM_BUFFER)}rem`,
+      [mq.GROUP_3_MIN_WIDTH]: {
+        height: `${pixelsToRem(BANNER_CONFIG.heights.tablet)}rem`,
       },
       [mq.GROUP_4_MIN_WIDTH]: {
-        height: `${pixelsToRem(BANNER_CONFIG.heights.desktop + MARGIN_TOP_BOTTOM_BUFFER)}rem`,
+        height: `${pixelsToRem(BANNER_CONFIG.heights.desktop)}rem`,
       },
     }),
 
@@ -40,7 +37,7 @@ export default {
         width: '100%',
         height: `${pixelsToRem(BANNER_CONFIG.heights.mobile)}rem`,
 
-        [mq.GROUP_2_MIN_WIDTH]: {
+        [mq.GROUP_3_MIN_WIDTH]: {
           height: `${pixelsToRem(BANNER_CONFIG.heights.tablet)}rem`,
         },
         [mq.GROUP_4_MIN_WIDTH]: {
