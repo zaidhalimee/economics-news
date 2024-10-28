@@ -35,22 +35,26 @@ const enableExperimentTopStories = ({
 
   const newsAsset = 'cz7xywn940ro';
   const newsCPSAsset = 'news/world-europe-60506682';
-  const newsTestAsset = 'c6v11qzyv8po';
-  const newsTestBreakingNewsAsset = 'cgx1znpjjx7o';
   const newsShortAsset = 'cd4117egk3go';
   const newsOneColumnAsset = 'c99vz4kz5vzo';
+  const newsTestAsset = 'c6v11qzyv8po';
+  const newsTestBreakingNewsAsset = 'cgx1znpjjx7o';
   const sportAsset = 'cpgw0xjmpd3o';
   const sportOneColumnAsset = 'c4ngy9xjpzro';
+  const cymrufywAsset = 'ckg080e0d1eo';
+
+  console.log(id);
 
   const experimentAssets = [
     newsAsset,
     newsCPSAsset,
-    newsTestAsset,
-    newsTestBreakingNewsAsset,
     newsShortAsset,
     newsOneColumnAsset,
+    newsTestAsset,
+    newsTestBreakingNewsAsset,
     sportAsset,
     sportOneColumnAsset,
+    cymrufywAsset,
   ];
   const experimentServices = ['news', 'sport'];
 
@@ -154,11 +158,13 @@ const buildTopStoriesEventUrl = ({
   env,
   service,
   atiAnalyticsProducerId,
+  position,
 }: {
   type: 'view' | 'click';
   env: Environments;
   service: Services;
   atiAnalyticsProducerId: string;
+  position?: 'articleBody' | 'secondaryColumn';
 }) => {
   return buildATIEventTrackUrl({
     campaignID: 'article',
@@ -169,6 +175,7 @@ const buildTopStoriesEventUrl = ({
     statsDestination: `${getStatsDestinationKey({ env, service })}`,
     variant: `${experimentName}:VARIANT(${experimentName})`,
     type,
+    detailedPlacement: position,
   });
 };
 
@@ -183,11 +190,19 @@ export const getExperimentAnalyticsConfig = ({
 }) => {
   return {
     requests: {
-      topStoriesView: buildTopStoriesEventUrl({
+      topStoriesArticleBodyView: buildTopStoriesEventUrl({
         type: 'view',
         env,
         service,
         atiAnalyticsProducerId,
+        position: 'articleBody',
+      }),
+      topStoriesSecondaryColumnView: buildTopStoriesEventUrl({
+        type: 'view',
+        env,
+        service,
+        atiAnalyticsProducerId,
+        position: 'secondaryColumn',
       }),
       topStoriesClick: buildTopStoriesEventUrl({
         type: 'click',
@@ -199,7 +214,7 @@ export const getExperimentAnalyticsConfig = ({
     triggers: {
       articleBodyView: {
         on: 'visible',
-        request: 'topStoriesView',
+        request: 'topStoriesArticleBodyView',
         visibilitySpec: {
           selector: `div[data-experiment-position='articleBody'] > section[aria-labelledby='top-stories-heading']`,
           visiblePercentageMin: 20,
@@ -209,7 +224,7 @@ export const getExperimentAnalyticsConfig = ({
       },
       secondaryColumnView: {
         on: 'visible',
-        request: 'topStoriesView',
+        request: 'topStoriesSecondaryColumnView',
         visibilitySpec: {
           selector: `div[data-experiment-position='secondaryColumn'] > section[aria-labelledby='top-stories-heading']`,
           visiblePercentageMin: 20,

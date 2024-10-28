@@ -145,13 +145,14 @@ describe('AMP top stories experiment', () => {
         expect(analyticsConfig).toMatchInlineSnapshot(`
         {
           "requests": {
+            "topStoriesArticleBodyView": "http://foobar.com?idclient=123-456-789&s=$IF($EQUALS($MATCH(\${ampGeo}, gbOrUnknown, 0), gbOrUnknown), ${destinationId}, ${gnlId})&s2=${producerId}&p=SOURCE_URL&r=\${screenWidth}x\${screenHeight}x\${screenColorDepth}&re=\${availableScreenWidth}x\${availableScreenHeight}&hl=\${timestamp}&lng=\${browserLanguage}&ati=PUB-[article]-[top-stories-section]-[topStoriesExperiment:VARIANT(topStoriesExperiment)]-[]-[SOURCE_URL]-[articleBody]-[]-[]&type=AT",
             "topStoriesClick": "http://foobar.com?idclient=123-456-789&s=$IF($EQUALS($MATCH(\${ampGeo}, gbOrUnknown, 0), gbOrUnknown), ${destinationId}, ${gnlId})&s2=${producerId}&p=SOURCE_URL&r=\${screenWidth}x\${screenHeight}x\${screenColorDepth}&re=\${availableScreenWidth}x\${availableScreenHeight}&hl=\${timestamp}&lng=\${browserLanguage}&atc=PUB-[article]-[top-stories-promo]-[topStoriesExperiment:VARIANT(topStoriesExperiment)]-[]-[SOURCE_URL]-[]-[]-[]&type=AT",
-            "topStoriesView": "http://foobar.com?idclient=123-456-789&s=$IF($EQUALS($MATCH(\${ampGeo}, gbOrUnknown, 0), gbOrUnknown), ${destinationId}, ${gnlId})&s2=${producerId}&p=SOURCE_URL&r=\${screenWidth}x\${screenHeight}x\${screenColorDepth}&re=\${availableScreenWidth}x\${availableScreenHeight}&hl=\${timestamp}&lng=\${browserLanguage}&ati=PUB-[article]-[top-stories-section]-[topStoriesExperiment:VARIANT(topStoriesExperiment)]-[]-[SOURCE_URL]-[]-[]-[]&type=AT",
+            "topStoriesSecondaryColumnView": "http://foobar.com?idclient=123-456-789&s=$IF($EQUALS($MATCH(\${ampGeo}, gbOrUnknown, 0), gbOrUnknown), ${destinationId}, ${gnlId})&s2=${producerId}&p=SOURCE_URL&r=\${screenWidth}x\${screenHeight}x\${screenColorDepth}&re=\${availableScreenWidth}x\${availableScreenHeight}&hl=\${timestamp}&lng=\${browserLanguage}&ati=PUB-[article]-[top-stories-section]-[topStoriesExperiment:VARIANT(topStoriesExperiment)]-[]-[SOURCE_URL]-[secondaryColumn]-[]-[]&type=AT",
           },
           "triggers": {
             "articleBodyView": {
               "on": "visible",
-              "request": "topStoriesView",
+              "request": "topStoriesArticleBodyView",
               "visibilitySpec": {
                 "continuousTimeMin": 200,
                 "selector": "div[data-experiment-position='articleBody'] > section[aria-labelledby='top-stories-heading']",
@@ -161,7 +162,7 @@ describe('AMP top stories experiment', () => {
             },
             "secondaryColumnView": {
               "on": "visible",
-              "request": "topStoriesView",
+              "request": "topStoriesSecondaryColumnView",
               "visibilitySpec": {
                 "continuousTimeMin": 200,
                 "selector": "div[data-experiment-position='secondaryColumn'] > section[aria-labelledby='top-stories-heading']",
