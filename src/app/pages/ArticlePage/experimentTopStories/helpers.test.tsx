@@ -154,7 +154,7 @@ describe('AMP top stories experiment', () => {
               "request": "topStoriesView",
               "visibilitySpec": {
                 "continuousTimeMin": 200,
-                "selector": "div[data-experiment='position:articleBody'] > section[aria-labelledby='top-stories-heading']",
+                "selector": "div[data-experiment-position='articleBody'] > section[aria-labelledby='top-stories-heading']",
                 "totalTimeMin": 500,
                 "visiblePercentageMin": 20,
               },
@@ -164,7 +164,7 @@ describe('AMP top stories experiment', () => {
               "request": "topStoriesView",
               "visibilitySpec": {
                 "continuousTimeMin": 200,
-                "selector": "div[data-experiment='position:secondaryColumn'] > section[aria-labelledby='top-stories-heading']",
+                "selector": "div[data-experiment-position='secondaryColumn'] > section[aria-labelledby='top-stories-heading']",
                 "totalTimeMin": 500,
                 "visiblePercentageMin": 20,
               },

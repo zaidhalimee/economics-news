@@ -24,7 +24,7 @@ const SecondaryColumn = ({ pageData }: { pageData: Article }) => {
         <div
           css={styles.topStoriesSection}
           data-testid="top-stories"
-          data-experiment="position:secondaryColumn"
+          data-experiment-position="secondaryColumn"
         >
           <TopStoriesSection content={topStoriesContent} />
         </div>

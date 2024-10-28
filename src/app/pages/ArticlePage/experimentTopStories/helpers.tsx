@@ -127,7 +127,7 @@ export const ExperimentTopStories = ({
     <div
       css={styles.experimentTopStoriesSection}
       data-testid="experiment-top-stories"
-      data-experiment="position:articleBody"
+      data-experiment-position="articleBody"
     >
       <TopStoriesSection content={topStoriesContent} />
     </div>
@@ -201,7 +201,7 @@ export const getExperimentAnalyticsConfig = ({
         on: 'visible',
         request: 'topStoriesView',
         visibilitySpec: {
-          selector: `div[data-experiment='position:articleBody'] > section[aria-labelledby='top-stories-heading']`,
+          selector: `div[data-experiment-position='articleBody'] > section[aria-labelledby='top-stories-heading']`,
           visiblePercentageMin: 20,
           totalTimeMin: 500,
           continuousTimeMin: 200,
@@ -211,7 +211,7 @@ export const getExperimentAnalyticsConfig = ({
         on: 'visible',
         request: 'topStoriesView',
         visibilitySpec: {
-          selector: `div[data-experiment='position:secondaryColumn'] > section[aria-labelledby='top-stories-heading']`,
+          selector: `div[data-experiment-position='secondaryColumn'] > section[aria-labelledby='top-stories-heading']`,
           visiblePercentageMin: 20,
           totalTimeMin: 500,
           continuousTimeMin: 200,
