@@ -226,6 +226,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     showRelatedTopics && topics.length > 0 && !isTransliterated,
   );
 
+  const showMostRead = Boolean(!isApp && !isPGL && !isTransliterated);
+
   return (
     <div css={styles.pageWrapper}>
       {shouldEnableExperimentTopStories && (
@@ -295,7 +297,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
         </div>
         {!isApp && !isPGL && <SecondaryColumn pageData={pageData} />}
       </div>
-      {!isApp && !isPGL && (
+      {showMostRead && (
         <MostRead
           css={styles.mostReadSection}
           data={mostReadInitialData}
