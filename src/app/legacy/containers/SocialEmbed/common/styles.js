@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { GEL_SPACING_TRPL } from '#psammead/gel-foundations/src/spacings';
+import { GEL_SPACING } from '#psammead/gel-foundations/src/spacings';
 
 /**
  * MAX_WIDTH        Ensures all embeds assume the same width. (Tweets max-out
@@ -25,7 +25,7 @@ const getWrapperHeightStyles = oEmbed => {
 };
 
 const Wrapper = styled.div`
-  margin-bottom: ${GEL_SPACING_TRPL};
+  margin: ${GEL_SPACING} 0;
   max-width: ${MAX_WIDTH};
   ${({ oEmbed }) => getWrapperHeightStyles(oEmbed)}
 
