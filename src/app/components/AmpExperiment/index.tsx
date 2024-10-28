@@ -19,8 +19,21 @@ type AmpExperimentConfig = {
 };
 
 type AmpAnalyticsConfig = {
-  requests: Record<string, unknown>;
-  triggers: Record<string, unknown>;
+  requests: Record<string, string>;
+  triggers: Record<
+    string,
+    {
+      on: string;
+      request: string;
+      selector?: string;
+      visibilitySpec?: {
+        selector?: string;
+        visiblePercentageMin?: number;
+        totalTimeMin?: number;
+        continuousTimeMin?: number;
+      };
+    }
+  >;
 };
 
 type AmpExperimentProps = {
