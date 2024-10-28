@@ -33,10 +33,23 @@ const enableExperimentTopStories = ({
     return false;
   }
 
-  const newsTestAsset = 'c6v11qzyv8po';
   const newsAsset = 'cz7xywn940ro';
+  const newsTestAsset = 'c6v11qzyv8po';
+  const newsTestBreakingNewsAsset = 'cgx1znpjjx7o';
+  const newsShortAsset = 'cd4117egk3go';
+  const newsOneColumnAsset = 'c99vz4kz5vzo';
   const sportAsset = 'cpgw0xjmpd3o';
-  const experimentAssets = [newsAsset, newsTestAsset, sportAsset];
+  const sportOneColumnAsset = 'c4ngy9xjpzro';
+
+  const experimentAssets = [
+    newsAsset,
+    newsTestAsset,
+    newsTestBreakingNewsAsset,
+    newsShortAsset,
+    newsOneColumnAsset,
+    sportAsset,
+    sportOneColumnAsset,
+  ];
   const experimentServices = ['news', 'sport'];
 
   return (

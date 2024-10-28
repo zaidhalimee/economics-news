@@ -60,9 +60,5 @@ export const buildPageATIUrl = ({
   serviceContext,
 }: ATIDataWithContexts) =>
   buildATIPageTrackPath(
-    buildPageATIParams({
-      atiData,
-      requestContext,
-      serviceContext,
-    }),
+    buildPageATIParams({ atiData, requestContext, serviceContext }),
   );
