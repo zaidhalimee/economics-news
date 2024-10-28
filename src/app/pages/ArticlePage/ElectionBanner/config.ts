@@ -5,9 +5,9 @@ const { SIMORGH_INCLUDES_BASE_URL, SIMORGH_INCLUDES_BASE_AMP_URL } =
 
 export default {
   heights: {
-    desktop: 434,
-    tablet: 450,
-    mobile: 480,
+    desktop: 465,
+    tablet: 480,
+    mobile: 500,
   },
   iframeSrc: `${SIMORGH_INCLUDES_BASE_URL}/include/vjafwest/1365-2024-us-presidential-election-banner/develop/{service}/app`,
   iframeSrcAmp: `${SIMORGH_INCLUDES_BASE_AMP_URL}/include/vjafwest/1365-2024-us-presidential-election-banner/develop/{service}/app/amp`,
