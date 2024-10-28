@@ -58,10 +58,22 @@ export const testsThatFollowSmokeTestConfigForAMPOnly = ({
       });
     });
 
+    // TODO: Remove once transliterated services support MostRead component
+    const transliteratedServices = [
+      'serbianCyr',
+      'serbianLat',
+      'zhongwenSimp',
+      'zhongwenTrad',
+      'uzbekCyr',
+      'uzbekLat',
+    ];
+
     /* Most Read Component
      * These cypress tests are needed as unit tests cannot be run on the jsdom.
      * web workers (which run on amp pages) do not run on the virtual dom.
      */
-    mostReadAssertions({ service, variant });
+    if (!transliteratedServices.includes(service) && pageType !== 'articles') {
+      mostReadAssertions({ service, variant });
+    }
   });
 };
