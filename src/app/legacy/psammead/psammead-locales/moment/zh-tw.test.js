@@ -5,7 +5,7 @@ moment.locale('zh-tw');
 
 // This assert overrides the gunit assertion done in the moment codebase.
 // Format and styling of this file has been keep consistent with the official moment tests.
-// An example of these tests can be seen at https://github.com/moment/moment/blob/develop/src/test/locale/zh-cn.js
+// An example of these tests can be seen at https://github.com/moment/moment/blob/develop/src/test/locale/zh-tw.js
 const assert = {
   equal: (val1, val2, scenario) =>
     it(scenario, () => expect(val1).toEqual(val2)),
