@@ -2,6 +2,9 @@ const moment = require('moment');
 require('moment/locale/zh-cn');
 
 moment.updateLocale('zh-cn', {
+  longDateFormat: {
+    LLL: 'YYYY年M月D日Ah時mm分',
+  },
   relativeTime: {
     // these keys have been overridden with our translations
     // some other keys have been left as set upstream
