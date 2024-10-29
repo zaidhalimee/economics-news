@@ -43,8 +43,6 @@ const enableExperimentTopStories = ({
   const sportOneColumnAsset = 'c4ngy9xjpzro';
   const cymrufywAsset = 'ckg080e0d1eo';
 
-  console.log(id);
-
   const experimentAssets = [
     newsAsset,
     newsCPSAsset,
@@ -179,6 +177,86 @@ const buildTopStoriesEventUrl = ({
   });
 };
 
+const requestKeysMap = {
+  articleBody: {
+    view: 'topStoriesArticleBodyView',
+    click: 'topStoriesArticleBodyClick',
+  },
+  secondaryColumn: {
+    view: 'topStoriesSecondaryColumnView',
+    click: 'topStoriesSecondaryColumnClick',
+  },
+};
+
+const eventTriggerKeysMap = {
+  articleBody: {
+    view: 'articleBodyView',
+    click: 'articleBodyPromoClick',
+  },
+  secondaryColumn: {
+    view: 'secondaryColumnView',
+    click: 'secondaryColumnPromoClick',
+  },
+};
+
+const buildRequestUrls = ({
+  position,
+  env,
+  service,
+  atiAnalyticsProducerId,
+}: {
+  position: 'articleBody' | 'secondaryColumn';
+  env: Environments;
+  service: Services;
+  atiAnalyticsProducerId: string;
+}) => {
+  const requestKeys = requestKeysMap[position];
+
+  return {
+    [requestKeys.view]: buildTopStoriesEventUrl({
+      type: 'view',
+      env,
+      service,
+      atiAnalyticsProducerId,
+      position,
+    }),
+    [requestKeys.click]: buildTopStoriesEventUrl({
+      type: 'click',
+      env,
+      service,
+      atiAnalyticsProducerId,
+      position,
+    }),
+  };
+};
+
+const buildEventTriggers = ({
+  position,
+}: {
+  position: 'articleBody' | 'secondaryColumn';
+}) => {
+  const eventTriggerKeys = eventTriggerKeysMap[position];
+  const requestKeys = requestKeysMap[position];
+
+  return {
+    [eventTriggerKeys.view]: {
+      on: 'visible',
+      request: requestKeys.view,
+      visibilitySpec: {
+        selector: `div[data-experiment-position='${position}'] > section[aria-labelledby='top-stories-heading']`,
+        visiblePercentageMin: 20,
+        totalTimeMin: 500,
+        continuousTimeMin: 200,
+      },
+    },
+    [eventTriggerKeys.click]: {
+      on: 'click',
+      request: requestKeys.click,
+      selector: `a[aria-labelledby*='top-stories-promo']`,
+    },
+  };
+};
+
 export const getExperimentAnalyticsConfig = ({
   env,
   service,
@@ -190,53 +268,22 @@ export const getExperimentAnalyticsConfig = ({
 }) => {
   return {
     requests: {
-      topStoriesArticleBodyView: buildTopStoriesEventUrl({
-        type: 'view',
-        env,
-        service,
-        atiAnalyticsProducerId,
+      ...buildRequestUrls({
         position: 'articleBody',
-      }),
-      topStoriesSecondaryColumnView: buildTopStoriesEventUrl({
-        type: 'view',
         env,
         service,
         atiAnalyticsProducerId,
-        position: 'secondaryColumn',
       }),
-      topStoriesClick: buildTopStoriesEventUrl({
-        type: 'click',
+      ...buildRequestUrls({
+        position: 'secondaryColumn',
         env,
         service,
         atiAnalyticsProducerId,
       }),
     },
     triggers: {
-      articleBodyView: {
-        on: 'visible',
-        request: 'topStoriesArticleBodyView',
-        visibilitySpec: {
-          selector: `div[data-experiment-position='articleBody'] > section[aria-labelledby='top-stories-heading']`,
-          visiblePercentageMin: 20,
-          totalTimeMin: 500,
-          continuousTimeMin: 200,
-        },
-      },
-      secondaryColumnView: {
-        on: 'visible',
-        request: 'topStoriesSecondaryColumnView',
-        visibilitySpec: {
-          selector: `div[data-experiment-position='secondaryColumn'] > section[aria-labelledby='top-stories-heading']`,
-          visiblePercentageMin: 20,
-          totalTimeMin: 500,
-          continuousTimeMin: 200,
-        },
-      },
-      topStoriesPromoClick: {
-        on: 'click',
-        request: 'topStoriesClick',
-        selector: `a[aria-labelledby*='top-stories-promo']`,
-      },
+      ...buildEventTriggers({ position: 'articleBody' }),
+      ...buildEventTriggers({ position: 'secondaryColumn' }),
     },
   };
 };

@@ -145,11 +145,17 @@ describe('AMP top stories experiment', () => {
         expect(analyticsConfig).toMatchInlineSnapshot(`
         {
           "requests": {
+            "topStoriesArticleBodyClick": "http://foobar.com?idclient=123-456-789&s=$IF($EQUALS($MATCH(\${ampGeo}, gbOrUnknown, 0), gbOrUnknown), ${destinationId}, ${gnlId})&s2=${producerId}&p=SOURCE_URL&r=\${screenWidth}x\${screenHeight}x\${screenColorDepth}&re=\${availableScreenWidth}x\${availableScreenHeight}&hl=\${timestamp}&lng=\${browserLanguage}&atc=PUB-[article]-[top-stories-promo]-[topStoriesExperiment:VARIANT(topStoriesExperiment)]-[]-[SOURCE_URL]-[articleBody]-[]-[]&type=AT",
             "topStoriesArticleBodyView": "http://foobar.com?idclient=123-456-789&s=$IF($EQUALS($MATCH(\${ampGeo}, gbOrUnknown, 0), gbOrUnknown), ${destinationId}, ${gnlId})&s2=${producerId}&p=SOURCE_URL&r=\${screenWidth}x\${screenHeight}x\${screenColorDepth}&re=\${availableScreenWidth}x\${availableScreenHeight}&hl=\${timestamp}&lng=\${browserLanguage}&ati=PUB-[article]-[top-stories-section]-[topStoriesExperiment:VARIANT(topStoriesExperiment)]-[]-[SOURCE_URL]-[articleBody]-[]-[]&type=AT",
-            "topStoriesClick": "http://foobar.com?idclient=123-456-789&s=$IF($EQUALS($MATCH(\${ampGeo}, gbOrUnknown, 0), gbOrUnknown), ${destinationId}, ${gnlId})&s2=${producerId}&p=SOURCE_URL&r=\${screenWidth}x\${screenHeight}x\${screenColorDepth}&re=\${availableScreenWidth}x\${availableScreenHeight}&hl=\${timestamp}&lng=\${browserLanguage}&atc=PUB-[article]-[top-stories-promo]-[topStoriesExperiment:VARIANT(topStoriesExperiment)]-[]-[SOURCE_URL]-[]-[]-[]&type=AT",
+            "topStoriesSecondaryColumnClick": "http://foobar.com?idclient=123-456-789&s=$IF($EQUALS($MATCH(\${ampGeo}, gbOrUnknown, 0), gbOrUnknown), ${destinationId}, ${gnlId})&s2=${producerId}&p=SOURCE_URL&r=\${screenWidth}x\${screenHeight}x\${screenColorDepth}&re=\${availableScreenWidth}x\${availableScreenHeight}&hl=\${timestamp}&lng=\${browserLanguage}&atc=PUB-[article]-[top-stories-promo]-[topStoriesExperiment:VARIANT(topStoriesExperiment)]-[]-[SOURCE_URL]-[secondaryColumn]-[]-[]&type=AT",
             "topStoriesSecondaryColumnView": "http://foobar.com?idclient=123-456-789&s=$IF($EQUALS($MATCH(\${ampGeo}, gbOrUnknown, 0), gbOrUnknown), ${destinationId}, ${gnlId})&s2=${producerId}&p=SOURCE_URL&r=\${screenWidth}x\${screenHeight}x\${screenColorDepth}&re=\${availableScreenWidth}x\${availableScreenHeight}&hl=\${timestamp}&lng=\${browserLanguage}&ati=PUB-[article]-[top-stories-section]-[topStoriesExperiment:VARIANT(topStoriesExperiment)]-[]-[SOURCE_URL]-[secondaryColumn]-[]-[]&type=AT",
           },
           "triggers": {
+            "articleBodyPromoClick": {
+              "on": "click",
+              "request": "topStoriesArticleBodyClick",
+              "selector": "a[aria-labelledby*='top-stories-promo']",
+            },
             "articleBodyView": {
               "on": "visible",
               "request": "topStoriesArticleBodyView",
@@ -160,6 +166,11 @@ describe('AMP top stories experiment', () => {
                 "visiblePercentageMin": 20,
               },
             },
+            "secondaryColumnPromoClick": {
+              "on": "click",
+              "request": "topStoriesSecondaryColumnClick",
+              "selector": "a[aria-labelledby*='top-stories-promo']",
+            },
             "secondaryColumnView": {
               "on": "visible",
               "request": "topStoriesSecondaryColumnView",
@@ -169,11 +180,6 @@ describe('AMP top stories experiment', () => {
                 "totalTimeMin": 500,
                 "visiblePercentageMin": 20,
               },
-            },
-            "topStoriesPromoClick": {
-              "on": "click",
-              "request": "topStoriesClick",
-              "selector": "a[aria-labelledby*='top-stories-promo']",
             },
           },
         }
