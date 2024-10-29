@@ -9,6 +9,7 @@ const advertisingDirectives = {
     'https://cdn.privacy-mgmt.com',
     'https://*.google.com',
     'https://*.amazon-adsystem.com',
+    'https://*.teads.tv',
   ],
   imgSrc: [
     'https://*.adsafeprotected.com',
@@ -21,6 +22,7 @@ const advertisingDirectives = {
     'https://sb.scorecardresearch.com',
     'https://*.amazon-adsystem.com',
     'https://www.googleadservices.com',
+    'https://*.teads.tv',
   ],
   scriptSrc: [
     'https://*.adsafeprotected.com',
