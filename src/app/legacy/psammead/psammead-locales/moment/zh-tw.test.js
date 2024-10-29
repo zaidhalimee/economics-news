@@ -1,7 +1,7 @@
 import moment from 'moment';
-import './zh-cn';
+import './zh-tw';
 
-moment.locale('zh-cn');
+moment.locale('zh-tw');
 
 // This asset overrides the gunit assertion done in the moment codebase.
 // Format and styling of this file has been keep consistent with the official moment tests.
@@ -11,7 +11,7 @@ const assert = {
     it(scenario, () => expect(val1).toEqual(val2)),
 };
 
-describe('zh-cn', () => {
+describe('zh-tw', () => {
   describe('parse', () => {
     const tests =
       '一月 1月_二月 2月_三月 3月_四月 4月_五月 5月_六月 6月_七月 7月_八月 8月_九月 9月_十月 10月_十一月 11月_十二月 12月'.split(
@@ -58,7 +58,7 @@ describe('zh-cn', () => {
     ['LTS', '15:25:50'],
     ['L', '2010/02/14'],
     ['LL', '2010年2月14日'],
-    ['LLL', '2010年2月14日下午3点25分'],
+    ['LLL', '2010年2月14日下午3時25分'],
     ['LLLL', '2010年2月14日星期日下午3点25分'],
     ['l', '2010/2/14'],
     ['ll', '2010年2月14日'],
