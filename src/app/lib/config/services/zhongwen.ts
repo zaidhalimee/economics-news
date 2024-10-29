@@ -1,6 +1,6 @@
 import noAscendersOrDescenders from '../../../components/ThemeProvider/fontScripts/noAscOrDesc';
 import '#psammead/moment-timezone-include/tz/GMT';
-import 'moment/locale/zh-cn';
+import '#psammead/psammead-locales/moment/zh-cn';
 import withContext from '../../../contexts/utils/withContext';
 import { ZhongwenConfig } from '../../../models/types/serviceConfig';
 import { Direction, Services } from '../../../models/types/global';
