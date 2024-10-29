@@ -3,7 +3,7 @@ import './zh-tw';
 
 moment.locale('zh-tw');
 
-// This asset overrides the gunit assertion done in the moment codebase.
+// This assert overrides the gunit assertion done in the moment codebase.
 // Format and styling of this file has been keep consistent with the official moment tests.
 // An example of these tests can be seen at https://github.com/moment/moment/blob/develop/src/test/locale/zh-cn.js
 const assert = {
