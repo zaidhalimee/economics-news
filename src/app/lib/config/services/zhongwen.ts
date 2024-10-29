@@ -1,6 +1,7 @@
 import noAscendersOrDescenders from '../../../components/ThemeProvider/fontScripts/noAscOrDesc';
 import '#psammead/moment-timezone-include/tz/GMT';
-import '#psammead/psammead-locales/moment/zh-cn';
+import 'moment/locale/zh-cn';
+import '#psammead/psammead-locales/moment/zh-tw';
 import withContext from '../../../contexts/utils/withContext';
 import { ZhongwenConfig } from '../../../models/types/serviceConfig';
 import { Direction, Services } from '../../../models/types/global';
@@ -18,7 +19,6 @@ const baseServiceConfig = {
   defaultImage: 'https://news.files.bbci.co.uk/ws/img/logos/og/zhongwen.png',
   defaultImageAltText: 'BBC News 中文',
   dir: 'ltr' as Direction,
-  datetimeLocale: `zh-cn`,
   service: 'zhongwen' as Services,
   serviceName: 'News 中文',
   languageName: 'Chinese',
@@ -63,6 +63,7 @@ export const service: ZhongwenConfig = {
     locale: `zh-hans`,
     // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405
     isoLang: 'zh-Hans',
+    datetimeLocale: 'zh-cn',
     defaultCaptionOffscreenText: '说明文字，',
     audioCaptionOffscreenText: '音频加注文字，',
     videoCaptionOffscreenText: '视频加注文字，',
@@ -361,6 +362,7 @@ export const service: ZhongwenConfig = {
     locale: `zh-hant`,
     // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405
     isoLang: 'zh-Hant',
+    datetimeLocale: 'zh-tw',
     externalLinkText: ', 外部',
     frontPageTitle: '主頁',
     defaultCaptionOffscreenText: '說明文字，',
