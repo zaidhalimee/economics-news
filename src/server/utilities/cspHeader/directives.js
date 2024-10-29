@@ -20,6 +20,7 @@ const advertisingDirectives = {
     'https://*.imrworldwide.com',
     'https://sb.scorecardresearch.com',
     'https://*.amazon-adsystem.com',
+    'https://www.googleadservices.com',
   ],
   scriptSrc: [
     'https://*.adsafeprotected.com',
@@ -37,6 +38,7 @@ const advertisingDirectives = {
     'https://*.permutive.com',
     'https://*.webcontentassessor.com',
     'https://*.amazon-adsystem.com',
+    'https://*.teads.tv',
     ...advertisingServiceCountryDomains,
   ],
   defaultSrc: [...bbcDomains, 'https://*.googlesyndication.com'],
