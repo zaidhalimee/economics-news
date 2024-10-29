@@ -218,10 +218,18 @@ export const buildATIPageTrackPath = ({
     ...(ampExperimentName
       ? [
           {
-            key: 'ati',
-            description: 'AMP experiment variant name',
-            value: `PUB-[]-[]-[topStoriesExperiment:VARIANT(${ampExperimentName})]-[]-[]-[]-[]-[]`,
+            key: 'mv_experiment_id',
+            description: 'AMP experiment name',
+            value: `${ampExperimentName}`,
             wrap: false,
+            disableEncoding: true,
+          },
+          {
+            key: 'mv_creation',
+            description: 'AMP experiment variant name',
+            value: `VARIANT(${ampExperimentName})`,
+            wrap: false,
+            disableEncoding: true,
           },
         ]
       : []),
@@ -263,7 +271,7 @@ export const buildATIEventTrackUrl = ({
   advertiserID,
   url,
   detailedPlacement,
-  variant,
+  experimentVariant,
 }: ATIEventTrackingProps) => {
   // on AMP, variable substitutions are used in the value and they cannot be
   // encoded: https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md
@@ -335,7 +343,7 @@ export const buildATIEventTrackUrl = ({
         advertiserID,
         url,
         detailedPlacement,
-        variant,
+        experimentVariant,
       }),
       wrap: false,
       disableEncoding: true,

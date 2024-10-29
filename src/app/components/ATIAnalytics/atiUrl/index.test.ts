@@ -244,7 +244,7 @@ describe('buildATIEventTrackUrl', () => {
       format: 'format',
       url: 'url',
       detailedPlacement: 'detailedPlacement',
-      variant: 'variant_1',
+      experimentVariant: 'variant_1',
     });
 
     expect(splitUrl(atiEventTrackUrl)).toEqual([
