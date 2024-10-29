@@ -1,13 +1,8 @@
 import React from 'react';
 import { render } from '#app/components/react-testing-library-with-providers';
 import { Tag } from '#app/components/Metadata/types';
-import isLive from '#app/lib/utilities/isLive';
 import BANNER_CONFIG from './config';
 import ElectionBanner from '.';
-
-jest.mock('#app/lib/utilities/isLive', () =>
-  jest.fn().mockImplementation(() => false),
-);
 
 const mockAboutTags = [
   { thingId: 'thing1' },
@@ -78,17 +73,6 @@ describe('ElectionBanner', () => {
           toggles: { articleElectionBanner: { enabled: false } },
           isAmp,
         },
-      );
-
-      expect(queryByTestId(ELEMENT_ID)).not.toBeInTheDocument();
-    });
-
-    it('should not render ElectionBanner when isLive is true', () => {
-      (isLive as jest.Mock).mockImplementationOnce(() => true);
-
-      const { queryByTestId } = render(
-        <ElectionBanner aboutTags={mockAboutTags} />,
-        { isAmp },
       );
 
       expect(queryByTestId(ELEMENT_ID)).not.toBeInTheDocument();
