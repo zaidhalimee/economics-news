@@ -51,6 +51,7 @@ export default function ElectionBanner({ aboutTags }: { aboutTags: Tag[] }) {
         scrolling="no"
         css={styles.electionBannerIframe}
         height={BANNER_CONFIG.heights.mobile}
+        width="100%"
       />
     </div>
   );
