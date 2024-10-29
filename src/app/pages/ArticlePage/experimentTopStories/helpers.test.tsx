@@ -154,7 +154,7 @@ describe('AMP top stories experiment', () => {
             "articleBodyPromoClick": {
               "on": "click",
               "request": "topStoriesArticleBodyClick",
-              "selector": "a[aria-labelledby*='top-stories-promo']",
+              "selector": "div[data-experiment-position='articleBody'] a[aria-labelledby*='top-stories-promo']",
             },
             "articleBodyView": {
               "on": "visible",
@@ -169,7 +169,7 @@ describe('AMP top stories experiment', () => {
             "secondaryColumnPromoClick": {
               "on": "click",
               "request": "topStoriesSecondaryColumnClick",
-              "selector": "a[aria-labelledby*='top-stories-promo']",
+              "selector": "div[data-experiment-position='secondaryColumn'] a[aria-labelledby*='top-stories-promo']",
             },
             "secondaryColumnView": {
               "on": "visible",

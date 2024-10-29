@@ -252,7 +252,7 @@ const buildEventTriggers = ({
     [eventTriggerKeys.click]: {
       on: 'click',
       request: requestKeys.click,
-      selector: `a[aria-labelledby*='top-stories-promo']`,
+      selector: `div[data-experiment-position='${position}'] a[aria-labelledby*='top-stories-promo']`,
     },
   };
 };
