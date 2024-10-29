@@ -74,6 +74,7 @@ describe('cspHeader', () => {
         'https://cdn.privacy-mgmt.com',
         'https://*.googleadservices.com',
         'https://*.amazon-adsystem.com',
+        'https://*.teads.tv',
         "'self'",
       ].sort(),
       imgSrcExpectation: [
@@ -97,6 +98,7 @@ describe('cspHeader', () => {
         'https://i.ytimg.com',
         'https://*.amazon-adsystem.com',
         'https://www.googleadservices.com',
+        'https://*.teads.tv',
         "data: 'self'",
       ].sort(),
       scriptSrcExpectation: [
@@ -151,6 +153,7 @@ describe('cspHeader', () => {
         'https://public.flourish.studio',
         'https://*.googleadservices.com',
         'https://*.amazon-adsystem.com',
+        'https://*.teads.tv',
         "'self'",
       ].sort(),
       imgSrcExpectation: [
@@ -173,6 +176,7 @@ describe('cspHeader', () => {
         'https://*.xx.fbcdn.net',
         'https://*.amazon-adsystem.com',
         'https://www.googleadservices.com',
+        'https://*.teads.tv',
         "data: 'self'",
       ].sort(),
       scriptSrcExpectation: [
@@ -250,6 +254,7 @@ describe('cspHeader', () => {
         'https://cdn.privacy-mgmt.com',
         'https://*.googleadservices.com',
         'https://*.amazon-adsystem.com',
+        'https://*.teads.tv',
         "'self'",
       ].sort(),
       imgSrcExpectation: [
@@ -275,6 +280,7 @@ describe('cspHeader', () => {
         'https://*.xx.fbcdn.net',
         'https://*.amazon-adsystem.com',
         'https://www.googleadservices.com',
+        'https://*.teads.tv',
         "data: 'self'",
       ].sort(),
       scriptSrcExpectation: [
@@ -329,6 +335,7 @@ describe('cspHeader', () => {
         'https://public.flourish.studio',
         'https://*.googleadservices.com',
         'https://*.amazon-adsystem.com',
+        'https://*.teads.tv',
         "'self'",
       ].sort(),
       imgSrcExpectation: [
@@ -353,6 +360,7 @@ describe('cspHeader', () => {
         'https://*.xx.fbcdn.net',
         'https://*.amazon-adsystem.com',
         'https://www.googleadservices.com',
+        'https://*.teads.tv',
         "data: 'self'",
       ].sort(),
       scriptSrcExpectation: [
