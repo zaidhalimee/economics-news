@@ -77,5 +77,19 @@ describe('ElectionBanner', () => {
 
       expect(queryByTestId(ELEMENT_ID)).not.toBeInTheDocument();
     });
+
+    it('should not render ElectionBanner when toggle is null', () => {
+      const { queryByTestId } = render(
+        <ElectionBanner aboutTags={mockAboutTags} />,
+        {
+          toggles: {
+            someOtherToggle: { enabled: true },
+          },
+          isAmp,
+        },
+      );
+
+      expect(queryByTestId(ELEMENT_ID)).not.toBeInTheDocument();
+    });
   });
 });
