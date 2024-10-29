@@ -50,7 +50,7 @@ export default function ElectionBanner({ aboutTags }: { aboutTags: Tag[] }) {
         src={iframeSrc.replace('{service}', service)}
         scrolling="no"
         css={styles.electionBannerIframe}
-        height={BANNER_CONFIG.heights.mobile}
+        height={BANNER_CONFIG.heights.desktop}
         width="100%"
       />
     </div>
