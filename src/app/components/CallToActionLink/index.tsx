@@ -12,8 +12,18 @@ const CallToActionLink = ({
   children,
   eventTrackingData,
   download = false,
+  ignoreStyling = false,
+  ignoreLiteExtension = false,
 }: PropsWithChildren<CallToActionLinkProps>) => {
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
+
+  const styledContent = (
+    <div css={styles.linkTextWrapper}>
+      <Text size="pica" fontVariant="sansBold" css={styles.linkText}>
+        {children}
+      </Text>
+    </div>
+  );
 
   return (
     <a
@@ -22,12 +32,9 @@ const CallToActionLink = ({
       css={styles.linkBackground}
       onClick={clickTrackerHandler}
       download={download}
+      {...(ignoreLiteExtension && { 'data-ignore-lite': true })}
     >
-      <div css={styles.linkTextWrapper}>
-        <Text size="pica" fontVariant="sansBold" css={styles.linkText}>
-          {children}
-        </Text>
-      </div>
+      {ignoreStyling ? children : styledContent}
     </a>
   );
 };

@@ -39,18 +39,27 @@ export default {
         color: palette.POSTBOX,
       },
     }),
-  link: () =>
+  link: ({ palette }: Theme) =>
     css({
       display: 'inline-block',
       textDecoration: 'none',
-    }),
-  bottomLinkSpacing: ({ spacings }: Theme) =>
-    css({
-      padding: `${spacings.FULL}rem 0 ${spacings.DOUBLE}rem`,
-    }),
-  topLinkSpacing: ({ spacings }: Theme) =>
-    css({
-      padding: `${spacings.DOUBLE}rem 0 ${spacings.FULL}rem`,
+      span: {
+        borderBottom: `${pixelsToRem(1)}rem solid ${palette.GREY_10}`,
+        textDecoration: 'none',
+      },
+      '&:visited': {
+        span: {
+          color: palette.METAL,
+          borderBottom: `${pixelsToRem(1)}rem solid ${palette.METAL}`,
+        },
+      },
+      '&:hover, &:focus': {
+        textDecoration: 'none',
+        span: {
+          color: palette.POSTBOX,
+          borderBottom: `${pixelsToRem(2)}rem solid ${palette.POSTBOX}`,
+        },
+      },
     }),
   linkText: ({ palette }: Theme) =>
     css({
@@ -64,5 +73,13 @@ export default {
         borderBottom: `${pixelsToRem(2)}rem solid ${palette.POSTBOX}`,
         color: palette.POSTBOX,
       },
+    }),
+  bottomLinkSpacing: ({ spacings }: Theme) =>
+    css({
+      padding: `${spacings.FULL}rem 0 ${spacings.DOUBLE}rem`,
+    }),
+  topLinkSpacing: ({ spacings }: Theme) =>
+    css({
+      padding: `${spacings.DOUBLE}rem 0 ${spacings.FULL}rem`,
     }),
 };

@@ -27,7 +27,7 @@ exports[`Lite Site Articles Lite Site Cta should match snapshot 1`] = `
       data-e2e="to-main-site"
     >
       <a
-        class="bbc-12216v1"
+        class="bbc-2ezaih"
         data-ignore-lite="true"
         href="http://localhost:7080/gahuza/articles/cey23zx8wx8o"
       >
@@ -55,7 +55,7 @@ exports[`Lite Site Articles Lite Site Cta should match snapshot 1`] = `
       data-e2e="information-page"
     >
       <a
-        class="bbc-1hvke8g"
+        class="bbc-1c7rt7i"
         href="https://www.bbc.com/gahuza/articles/cn7y7pvem0vo.lite"
       >
         <span
