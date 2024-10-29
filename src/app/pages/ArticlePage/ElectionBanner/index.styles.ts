@@ -6,10 +6,6 @@ export default {
   electionBannerWrapper: ({ spacings }: Theme) =>
     css({
       marginBottom: `${spacings.FULL}rem`,
-
-      [`@media (max-width:${pixelsToRem(320)}rem)`]: {
-        display: 'none',
-      },
     }),
 
   electionBannerIframe: ({ mq }: Theme) =>
@@ -30,10 +26,6 @@ export default {
     css({
       overflow: 'hidden',
       marginBottom: `${spacings.FULL}rem`,
-
-      [`@media (max-width:${pixelsToRem(320)}rem)`]: {
-        display: 'none',
-      },
 
       '> div': { padding: '0' },
       '& amp-img': {
