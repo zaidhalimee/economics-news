@@ -10,9 +10,17 @@ type Props = {
 const EmbedHtml = ({ embeddableContent }: PropsWithChildren<Props>) => {
   if (!embeddableContent) return null;
 
+  // TODO: Remove this logic after the US Elections
+  const isUSElectionBanner = embeddableContent.includes(
+    '2024-us-presidential-election-banner',
+  );
+
   return (
     <div
-      css={styles.embedDiv}
+      css={[
+        styles.embedDiv,
+        isUSElectionBanner && styles.electionBannerOverrides,
+      ]}
       suppressHydrationWarning
       // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: embeddableContent }}
