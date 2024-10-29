@@ -30,8 +30,8 @@ const SvgWrapper = styled.div`
   max-width: ${SVG_WRAPPER_MAX_WIDTH_ABOVE_1280PX};
   margin: 0 auto;
 
-  @media (max-width: ${({ longBrandWithVariant }) =>
-      longBrandWithVariant
+  @media (max-width: ${({ isLongBrand }) =>
+      isLongBrand
         ? GEL_GROUP_1_SCREEN_WIDTH_MAX
         : GEL_GROUP_0_SCREEN_WIDTH_MAX}) {
     display: block;
@@ -109,7 +109,7 @@ const BrandSvg = styled.svg`
   box-sizing: content-box;
   color: ${props => props.theme.palette.BRAND_LOGO};
   fill: currentColor;
-  height: ${props => (props.isLongBrand ? `${16 / 16}rem` : `${20 / 16}rem`)};
+  height: ${20 / 16}rem;
 
   @media (min-width: ${GEL_GROUP_2_SCREEN_WIDTH_MIN}) {
     height: ${24 / 16}rem;
@@ -187,7 +187,7 @@ const Brand = forwardRef((props, ref) => {
     borderTop = false,
     borderBottom = false,
     scriptLink = null,
-    longBrandWithVariant = false,
+    isLongBrand = false,
     skipLink = null,
     linkId = null,
     ...rest
@@ -201,7 +201,7 @@ const Brand = forwardRef((props, ref) => {
       scriptLink={scriptLink}
       {...rest}
     >
-      <SvgWrapper ref={ref} longBrandWithVariant={longBrandWithVariant}>
+      <SvgWrapper ref={ref} isLongBrand={isLongBrand}>
         {url ? (
           <StyledLink
             href={url}
