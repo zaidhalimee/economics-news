@@ -3,7 +3,7 @@
 exports[`Lite Site Articles Lite Site Cta should match snapshot 1`] = `
 <section
   aria-labelledby="LiteSiteCta"
-  class="bbc-19vk4f1"
+  class="bbc-1x0h7k"
   data-e2e="lite-cta"
   role="region"
 >
@@ -15,10 +15,10 @@ exports[`Lite Site Articles Lite Site Cta should match snapshot 1`] = `
     Ahagusaba uburyo (ama mega) buke
   </strong>
   <div
-    class="bbc-1pk70g2"
+    class="bbc-zudp5j"
   >
     <p
-      class="bbc-2phg37"
+      class="bbc-11k1lfi"
     >
       Uriko ubona ku rubuga aherekana amakuru mu nyandiko gusa, hakoresha uburyo buke. Ja ku rubuga nyamukuru ubone amakuru mu nyandiko iherekejwe n'amasanamu.
     </p>
@@ -27,7 +27,7 @@ exports[`Lite Site Articles Lite Site Cta should match snapshot 1`] = `
       data-e2e="to-main-site"
     >
       <a
-        class="bbc-12216v1"
+        class="bbc-16f79jf"
         data-ignore-lite="true"
         href="http://localhost:7080/gahuza/articles/cey23zx8wx8o"
       >
@@ -38,7 +38,7 @@ exports[`Lite Site Articles Lite Site Cta should match snapshot 1`] = `
         </span>
         <svg
           aria-hidden="true"
-          class="bbc-p6gd0c"
+          class="bbc-2wok52"
           focusable="false"
           height="12"
           viewBox="0 0 32 32"
@@ -55,7 +55,7 @@ exports[`Lite Site Articles Lite Site Cta should match snapshot 1`] = `
       data-e2e="information-page"
     >
       <a
-        class="bbc-1hvke8g"
+        class="bbc-gcewl8"
         href="https://www.bbc.com/gahuza/articles/cn7y7pvem0vo.lite"
       >
         <span
