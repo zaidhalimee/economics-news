@@ -66,6 +66,25 @@ const enableExperimentTopStories = ({
   );
 };
 
+const insertBlockAtPosition = (
+  blocks: OptimoBlock[],
+  blockToInsert: OptimoBlock,
+  position: 'Quarter' | 'Halfway' | 'ThreeQuarters',
+) => {
+  const insertionPercentages = {
+    Quarter: 0.25,
+    Halfway: 0.5,
+    ThreeQuarters: 0.75,
+  };
+  const percentage = insertionPercentages[position];
+
+  const calculatedIndex = Math.floor((blocks.length - 1) * percentage); // -1 accounts for 'wsoj' block which is never rendered on PS articles
+  const insertIndex = Math.max(calculatedIndex, 3); // Ensure insertIndex is at least 3
+  const blocksClone = [...blocks];
+  blocksClone.splice(insertIndex, 0, blockToInsert);
+  return blocksClone;
+};
+
 const insertExperimentTopStories = ({
   blocks,
   topStoriesContent,
@@ -73,16 +92,26 @@ const insertExperimentTopStories = ({
   blocks: OptimoBlock[];
   topStoriesContent: TopStoryItem[];
 }) => {
-  const insertIndex = Math.floor((blocks.length - 1) * 0.5); // halfway index of blocks array, -1 accounts for 'wsoj' block which is never rendered on PS articles
-  const experimentTopStoriesBlock = {
-    type: 'experimentTopStories',
-    model: topStoriesContent,
-    id: `experimentTopStories-${insertIndex}`,
-  };
+  const insertionPositions: ['Quarter', 'Halfway', 'ThreeQuarters'] = [
+    'Quarter',
+    'Halfway',
+    'ThreeQuarters',
+  ];
+  return insertionPositions.reduce((currentBlocks, position) => {
+    const experimentTopStoriesBlock = {
+      type: `experimentTopStories${position}`,
+      model: topStoriesContent,
+      id: `experimentTopStories${position}`,
+    };
 
-  const blocksClone = [...blocks];
-  blocksClone.splice(insertIndex, 0, experimentTopStoriesBlock);
-  return blocksClone;
+    const transformedBlocks = insertBlockAtPosition(
+      currentBlocks,
+      experimentTopStoriesBlock,
+      position,
+    );
+
+    return transformedBlocks;
+  }, blocks);
 };
 
 export const getExperimentTopStories = ({
@@ -124,13 +153,15 @@ export const getExperimentTopStories = ({
 
 export const ExperimentTopStories = ({
   topStoriesContent,
+  variant,
 }: {
   topStoriesContent: TopStoryItem[];
+  variant: 'Quarter' | 'Halfway' | 'ThreeQuarters';
 }) => {
   return (
     <div
-      css={styles.experimentTopStoriesSection}
-      data-testid="experiment-top-stories"
+      css={styles[`experimentTopStoriesSection${variant}`]}
+      data-testid={`experiment-top-stories-${variant}`}
       data-experiment-position="articleBody"
     >
       <TopStoriesSection content={topStoriesContent} />
