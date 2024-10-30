@@ -22,46 +22,56 @@ describe('ElectionBanner', () => {
     expect(queryByTestId(ELEMENT_ID)).not.toBeInTheDocument();
   });
 
-  it('should use the production URL for the iframe when SIMORGH_APP_ENV is "live"', () => {
-    process.env.SIMORGH_APP_ENV = 'live';
-
-    const { getByTestId } = render(
-      <ElectionBanner aboutTags={mockAboutTags} />,
-      {
-        toggles: { electionBanner: { enabled: true } },
-        isAmp: false,
-      },
-    );
-
-    const iframe = getByTestId(ELEMENT_ID).querySelector('iframe');
-    const iframeSrc = iframe?.getAttribute('src');
-
-    const configSrc = BANNER_CONFIG.iframeSrc.replace('{service}', 'news');
-
-    expect(iframeSrc).toEqual(configSrc);
-  });
-
-  it('should use the test URL for the iframe when SIMORGH_APP_ENV is "test"', () => {
-    process.env.SIMORGH_APP_ENV = 'test';
-
-    const { getByTestId } = render(
-      <ElectionBanner aboutTags={mockAboutTags} />,
-      {
-        toggles: { electionBanner: { enabled: true } },
-        isAmp: false,
-      },
-    );
-
-    const iframe = getByTestId(ELEMENT_ID).querySelector('iframe');
-    const iframeSrc = iframe?.getAttribute('src');
-
-    const configSrc = BANNER_CONFIG.iframeDevSrc.replace('{service}', 'news');
-
-    expect(iframeSrc).toEqual(configSrc);
-  });
-
   describe.each(['canonical', 'amp'])('%s', platform => {
     const isAmp = platform === 'amp';
+
+    it.each(['live', 'test'])(
+      'should use the correct URL for the iframe when SIMORGH_APP_ENV is "%s"',
+      appEnv => {
+        if (appEnv === 'live') {
+          process.env.SIMORGH_INCLUDES_BASE_URL =
+            'https://www.bbc.com/ws/includes';
+          process.env.SIMORGH_INCLUDES_BASE_AMP_URL =
+            'https://news.files.bbci.co.uk';
+        }
+
+        if (appEnv === 'test') {
+          process.env.SIMORGH_INCLUDES_BASE_URL =
+            'https://www.test.bbc.com/ws/includes';
+          process.env.SIMORGH_INCLUDES_BASE_AMP_URL =
+            'https://news.test.files.bbci.co.uk';
+        }
+
+        process.env.SIMORGH_APP_ENV = appEnv;
+
+        const { getByTestId } = render(
+          <ElectionBanner aboutTags={mockAboutTags} />,
+          {
+            toggles: { electionBanner: { enabled: true } },
+            isAmp,
+          },
+        );
+
+        const wrappingEl = getByTestId(ELEMENT_ID);
+
+        const iframe = isAmp
+          ? wrappingEl.querySelector('amp-iframe')
+          : wrappingEl.querySelector('iframe');
+        const iframeSrc = iframe?.getAttribute('src');
+
+        const configSrc = BANNER_CONFIG[
+          appEnv === 'live' ? 'iframeSrc' : 'iframeDevSrc'
+        ].replace('{service}', 'news');
+
+        const domain = isAmp
+          ? process.env.SIMORGH_INCLUDES_BASE_AMP_URL
+          : process.env.SIMORGH_INCLUDES_BASE_URL;
+
+        expect(iframeSrc).toEqual(
+          `${domain}/${configSrc}${isAmp ? '/amp' : ''}`,
+        );
+      },
+    );
 
     it('should render ElectionBanner when aboutTags contain the correct thingLabel', () => {
       const { getByTestId } = render(
