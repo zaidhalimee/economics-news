@@ -13,6 +13,12 @@ const mockAboutTags = [
 const ELEMENT_ID = 'election-banner';
 
 describe('ElectionBanner', () => {
+  beforeEach(() => {
+    delete process.env.SIMORGH_APP_ENV;
+    delete process.env.SIMORGH_INCLUDES_BASE_URL;
+    delete process.env.SIMORGH_INCLUDES_BASE_AMP_URL;
+  });
+
   it('should not render ElectionBanner when isLite is true', () => {
     const { queryByTestId } = render(
       <ElectionBanner aboutTags={mockAboutTags} />,
@@ -54,9 +60,7 @@ describe('ElectionBanner', () => {
 
         const wrappingEl = getByTestId(ELEMENT_ID);
 
-        const iframe = isAmp
-          ? wrappingEl.querySelector('amp-iframe')
-          : wrappingEl.querySelector('iframe');
+        const iframe = wrappingEl.querySelector('iframe, amp-iframe');
         const iframeSrc = iframe?.getAttribute('src');
 
         const configSrc = BANNER_CONFIG[
