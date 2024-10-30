@@ -171,7 +171,7 @@ const buildTopStoriesEventUrl = ({
     platform: 'amp',
     producerId: atiAnalyticsProducerId,
     statsDestination: `${getStatsDestinationKey({ env, service })}`,
-    variant: `${experimentName}:VARIANT(${experimentName})`,
+    experimentVariant: `${experimentName}:VARIANT(${experimentName})`,
     type,
     detailedPlacement: position,
   });
