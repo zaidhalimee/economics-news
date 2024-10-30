@@ -39,7 +39,8 @@ const enableExperimentTopStories = ({
   const newsOneColumnAsset = 'c99vz4kz5vzo';
   const newsTestAsset = 'c6v11qzyv8po';
   const newsTestBreakingNewsAsset = 'cgx1znpjjx7o';
-  const sportAsset = 'cpgw0xjmpd3o';
+  const sportAsset = 'c2vwq901e93o';
+  const sportShortAsset = 'cpgw0xjmpd3o';
   const sportOneColumnAsset = 'c4ngy9xjpzro';
   const cymrufywAsset = 'ckg080e0d1eo';
 
@@ -51,6 +52,7 @@ const enableExperimentTopStories = ({
     newsTestAsset,
     newsTestBreakingNewsAsset,
     sportAsset,
+    sportShortAsset,
     sportOneColumnAsset,
     cymrufywAsset,
   ];
