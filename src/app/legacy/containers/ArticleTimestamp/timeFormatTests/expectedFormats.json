@@ -509,12 +509,12 @@
       "exact date and time with timezone": "2019年7月12日下午12点55分"
     },
     "trad": {
-      "one minute ago": "1 分钟前",
-      "five minutes ago": "5 分钟前",
-      "one hour ago": "1 小时前",
-      "five hours ago": "5 小时前",
+      "one minute ago": "1 分鐘前",
+      "five minutes ago": "5 分鐘前",
+      "one hour ago": "1 小時前",
+      "five hours ago": "5 小時前",
       "exact date": "2018年10月10日",
-      "exact date and time with timezone": "2019年7月12日下午12点55分"
+      "exact date and time with timezone": "2019年7月12日下午12時55分"
     }
   }
 }
