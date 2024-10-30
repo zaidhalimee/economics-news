@@ -23,7 +23,6 @@ export default function ElectionBanner({ aboutTags }: { aboutTags: Tag[] }) {
 
   const iframeSrcToUse =
     getEnvConfig()?.SIMORGH_APP_ENV === 'live' ? iframeSrc : iframeDevSrc;
-  console.log('iframeSrcToUse', iframeSrcToUse);
 
   const validAboutTag = aboutTags?.find(tag => thingIds.includes(tag.thingId));
 
