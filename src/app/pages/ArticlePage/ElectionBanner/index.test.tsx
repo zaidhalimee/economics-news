@@ -29,7 +29,7 @@ describe('ElectionBanner', () => {
       const { getByTestId } = render(
         <ElectionBanner aboutTags={mockAboutTags} />,
         {
-          toggles: { articleElectionBanner: { enabled: true } },
+          toggles: { electionBanner: { enabled: true } },
           isAmp,
         },
       );
@@ -70,7 +70,7 @@ describe('ElectionBanner', () => {
       const { queryByTestId } = render(
         <ElectionBanner aboutTags={mockAboutTags} />,
         {
-          toggles: { articleElectionBanner: { enabled: false } },
+          toggles: { electionBanner: { enabled: false } },
           isAmp,
         },
       );
