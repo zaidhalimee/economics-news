@@ -18,7 +18,7 @@ export default function ElectionBanner({ aboutTags }: { aboutTags: Tag[] }) {
 
   if (isLite) return null;
 
-  const { iframeSrc, iframeSrcAmp, thingIds } = BANNER_CONFIG;
+  const { heights, iframeSrc, iframeSrcAmp, thingIds } = BANNER_CONFIG;
 
   const validAboutTag = aboutTags?.find(tag => thingIds.includes(tag.thingId));
 
@@ -50,7 +50,7 @@ export default function ElectionBanner({ aboutTags }: { aboutTags: Tag[] }) {
         src={iframeSrc.replace('{service}', service)}
         scrolling="no"
         css={styles.electionBannerIframe}
-        height={BANNER_CONFIG.heights.desktop}
+        height={heights.desktop}
         width="100%"
       />
     </div>
