@@ -13,10 +13,10 @@ const mockAboutTags = [
 const ELEMENT_ID = 'election-banner';
 
 describe('ElectionBanner', () => {
-  beforeEach(() => {
-    delete process.env.SIMORGH_APP_ENV;
-    delete process.env.SIMORGH_INCLUDES_BASE_URL;
-    delete process.env.SIMORGH_INCLUDES_BASE_AMP_URL;
+  const originalEnv = process.env;
+
+  afterEach(() => {
+    process.env = originalEnv;
   });
 
   it('should not render ElectionBanner when isLite is true', () => {
