@@ -36,7 +36,9 @@ describe('ElectionBanner', () => {
     const iframe = getByTestId(ELEMENT_ID).querySelector('iframe');
     const iframeSrc = iframe?.getAttribute('src');
 
-    expect(iframeSrc).not.toContain('/develop/');
+    const configSrc = BANNER_CONFIG.iframeSrc.replace('{service}', 'news');
+
+    expect(iframeSrc).toEqual(configSrc);
   });
 
   it('should use the test URL for the iframe when SIMORGH_APP_ENV is "test"', () => {
@@ -53,7 +55,9 @@ describe('ElectionBanner', () => {
     const iframe = getByTestId(ELEMENT_ID).querySelector('iframe');
     const iframeSrc = iframe?.getAttribute('src');
 
-    expect(iframeSrc).toContain('/develop/');
+    const configSrc = BANNER_CONFIG.iframeDevSrc.replace('{service}', 'news');
+
+    expect(iframeSrc).toEqual(configSrc);
   });
 
   describe.each(['canonical', 'amp'])('%s', platform => {
