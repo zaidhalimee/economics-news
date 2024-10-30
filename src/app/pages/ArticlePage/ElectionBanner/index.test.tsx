@@ -22,7 +22,9 @@ describe('ElectionBanner', () => {
     expect(queryByTestId(ELEMENT_ID)).not.toBeInTheDocument();
   });
 
-  it('should user the production URL for the iframe when SIMORGH_APP_ENV is "live"', () => {
+  it('should use the production URL for the iframe when SIMORGH_APP_ENV is "live"', () => {
+    process.env.SIMORGH_APP_ENV = 'live';
+
     const { getByTestId } = render(
       <ElectionBanner aboutTags={mockAboutTags} />,
       {
@@ -37,7 +39,9 @@ describe('ElectionBanner', () => {
     expect(iframeSrc).not.toContain('/develop/');
   });
 
-  it('should user the test URL for the iframe when SIMORGH_APP_ENV is "test"', () => {
+  it('should use the test URL for the iframe when SIMORGH_APP_ENV is "test"', () => {
+    process.env.SIMORGH_APP_ENV = 'test';
+
     const { getByTestId } = render(
       <ElectionBanner aboutTags={mockAboutTags} />,
       {
@@ -65,15 +69,6 @@ describe('ElectionBanner', () => {
       );
 
       expect(getByTestId(ELEMENT_ID)).toBeInTheDocument();
-
-      const iframe = getByTestId(ELEMENT_ID).querySelector(
-        isAmp ? 'amp-iframe' : 'iframe',
-      );
-
-      expect(iframe).toHaveAttribute(
-        'src',
-        `${BANNER_CONFIG.iframeSrc.replace('{service}', 'news')}${isAmp ? '/amp' : ''}`,
-      );
     });
 
     it('should not render ElectionBanner when aboutTags do not contain the correct thingLabel', () => {

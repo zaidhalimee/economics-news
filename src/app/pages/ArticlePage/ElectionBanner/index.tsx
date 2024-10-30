@@ -7,6 +7,7 @@ import AmpIframe from '#app/components/AmpIframe';
 import useToggle from '#app/hooks/useToggle';
 import { Tag } from '#app/components/Metadata/types';
 import { ServiceContext } from '#app/contexts/ServiceContext';
+import { getEnvConfig } from '#app/lib/utilities/getEnvConfig';
 import styles from './index.styles';
 import BANNER_CONFIG from './config';
 
@@ -18,7 +19,11 @@ export default function ElectionBanner({ aboutTags }: { aboutTags: Tag[] }) {
 
   if (isLite) return null;
 
-  const { heights, iframeSrc, thingIds } = BANNER_CONFIG;
+  const { heights, iframeSrc, iframeDevSrc, thingIds } = BANNER_CONFIG;
+
+  const iframeSrcToUse =
+    getEnvConfig()?.SIMORGH_APP_ENV === 'live' ? iframeSrc : iframeDevSrc;
+  console.log('iframeSrcToUse', iframeSrcToUse);
 
   const validAboutTag = aboutTags?.find(tag => thingIds.includes(tag.thingId));
 
@@ -33,7 +38,7 @@ export default function ElectionBanner({ aboutTags }: { aboutTags: Tag[] }) {
           ampMetadata={{
             imageWidth: 1,
             imageHeight: 1,
-            src: `${iframeSrc.replace('{service}', service)}/amp`,
+            src: `${iframeSrcToUse.replace('{service}', service)}/amp`,
             image:
               'https://news.files.bbci.co.uk/include/vjassets/img/app-launcher.png',
             title: validAboutTag.thingLabel,
@@ -47,7 +52,7 @@ export default function ElectionBanner({ aboutTags }: { aboutTags: Tag[] }) {
     <div data-testid="election-banner" css={styles.electionBannerWrapper}>
       <iframe
         title={validAboutTag.thingLabel}
-        src={iframeSrc.replace('{service}', service)}
+        src={iframeSrcToUse.replace('{service}', service)}
         scrolling="no"
         css={styles.electionBannerIframe}
         height={heights.desktop}
