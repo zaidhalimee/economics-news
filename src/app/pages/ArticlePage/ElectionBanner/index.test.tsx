@@ -25,7 +25,10 @@ describe('ElectionBanner', () => {
   it('should user the production URL for the iframe when SIMORGH_APP_ENV is "live"', () => {
     const { getByTestId } = render(
       <ElectionBanner aboutTags={mockAboutTags} />,
-      { toggles: { electionBanner: { enabled: true } }, isAmp: false },
+      {
+        toggles: { electionBanner: { enabled: true } },
+        isAmp: false,
+      },
     );
 
     const iframe = getByTestId(ELEMENT_ID).querySelector('iframe');
@@ -37,7 +40,10 @@ describe('ElectionBanner', () => {
   it('should user the test URL for the iframe when SIMORGH_APP_ENV is "test"', () => {
     const { getByTestId } = render(
       <ElectionBanner aboutTags={mockAboutTags} />,
-      { toggles: { electionBanner: { enabled: true } }, isAmp: false },
+      {
+        toggles: { electionBanner: { enabled: true } },
+        isAmp: false,
+      },
     );
 
     const iframe = getByTestId(ELEMENT_ID).querySelector('iframe');
@@ -66,10 +72,7 @@ describe('ElectionBanner', () => {
 
       expect(iframe).toHaveAttribute(
         'src',
-        BANNER_CONFIG[isAmp ? 'iframeSrcAmp' : 'iframeSrc'].replace(
-          '{service}',
-          'news',
-        ),
+        `${BANNER_CONFIG.iframeSrc.replace('{service}', 'news')}${isAmp ? '/amp' : ''}`,
       );
     });
 
