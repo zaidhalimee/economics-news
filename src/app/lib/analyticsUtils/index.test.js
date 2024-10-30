@@ -459,7 +459,7 @@ describe('getEventInfo', () => {
     format: 'format',
     detailedPlacement: 'detailed-placement',
     advertiserID: 'mundo',
-    variant: 'a/b-test',
+    experimentVariant: 'a/b-test',
   };
 
   it('should return url section', () => {
