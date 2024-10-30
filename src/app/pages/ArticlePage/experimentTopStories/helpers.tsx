@@ -165,15 +165,16 @@ const buildTopStoriesEventUrl = ({
   position?: 'articleBody' | 'secondaryColumn';
 }) => {
   return buildATIEventTrackUrl({
+    ampExperimentName: `${experimentName}`,
     campaignID: 'article',
     componentName: `${type === 'view' ? 'top-stories-section' : 'top-stories-promo'}`,
+    detailedPlacement: position,
     pageIdentifier: 'SOURCE_URL',
     platform: 'amp',
     producerId: atiAnalyticsProducerId,
     statsDestination: `${getStatsDestinationKey({ env, service })}`,
-    experimentVariant: `${experimentName}:VARIANT(${experimentName})`,
+    experimentVariant: `VARIANT(${experimentName})`,
     type,
-    detailedPlacement: position,
   });
 };
 

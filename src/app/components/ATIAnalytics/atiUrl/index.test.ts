@@ -101,7 +101,7 @@ describe('getThingAttributes', () => {
   timePublished: 'timePublished',
   timeUpdated: 'timeUpdated',
   ampExperimentName: 'someExperiment',
-}} | ${'https://www.bbc.com/news'} | ${['s2=producerId', 'p=pageIdentifier', 'x1=[contentId]', 'x3=[appName]', 'x4=[language]', 'x7=[contentType]', 'x11=[timePublished]', 'x12=[timeUpdated]', 'x13=[ldpThingLabels]', 'x14=[ldpThingIds]', 'xto=SEC------', 'mv_experiment_id=someExperiment', 'mv_creation=VARIANT(someExperiment)']}
+}} | ${'https://www.bbc.com/news'} | ${['s2=producerId', 'p=pageIdentifier', 'x1=[contentId]', 'x3=[appName]', 'x4=[language]', 'x7=[contentType]', 'x11=[timePublished]', 'x12=[timeUpdated]', 'x13=[ldpThingLabels]', 'x14=[ldpThingIds]', 'xto=SEC------', 'mv_test=Google Discover', 'mv_experiment_id=someExperiment', 'mv_creation=VARIANT(someExperiment)']}
   `(
     'should take in optional props and add them as correct query params',
     ({ props, currentUrl, expectedValues }) => {
@@ -272,6 +272,41 @@ describe('buildATIEventTrackUrl', () => {
       'hl=getCurrentTime',
       'lng=getDeviceLanguage',
       'atc=PUB-[campaignID]-[component]-[variant_1]-[format]-[pageIdentifier]-[detailedPlacement]-[]-[url]',
+      'type=AT',
+    ]);
+  });
+
+  it('should return the correct url with mvt properties if ampExperimentName is present', () => {
+    process.env.SIMORGH_ATI_BASE_URL = 'http://foobar.com?';
+
+    const atiEventTrackUrl = buildATIEventTrackUrl({
+      pageIdentifier: 'pageIdentifier',
+      service: 'news',
+      platform: 'canonical',
+      statsDestination: 'statsDestination',
+      componentName: 'component',
+      type: 'type',
+      campaignID: 'campaignID',
+      format: 'format',
+      url: 'url',
+      detailedPlacement: 'detailedPlacement',
+      experimentVariant: 'variant_1',
+      ampExperimentName: 'someExperiment',
+    });
+
+    expect(splitUrl(atiEventTrackUrl)).toEqual([
+      'http://foobar.com',
+      'idclient=getAtUserId',
+      's=getDestination',
+      'p=pageIdentifier',
+      'r=getScreenInfo',
+      're=getBrowserViewPort',
+      'hl=getCurrentTime',
+      'lng=getDeviceLanguage',
+      'atc=PUB-[campaignID]-[component]-[variant_1]-[format]-[pageIdentifier]-[detailedPlacement]-[]-[url]',
+      'mv_test=Google Discover',
+      'mv_experiment_id=someExperiment',
+      'mv_creation=variant_1',
       'type=AT',
     ]);
   });

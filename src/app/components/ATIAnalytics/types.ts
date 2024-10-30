@@ -111,6 +111,7 @@ export interface ATIEventTrackingProps {
   url?: string;
   detailedPlacement?: string;
   experimentVariant?: string;
+  ampExperimentName?: string;
 }
 
 export interface ATIPageTrackingProps {
