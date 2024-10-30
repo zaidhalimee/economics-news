@@ -34,6 +34,7 @@ export default function ElectionBanner({ aboutTags }: { aboutTags: Tag[] }) {
   } = getEnvConfig();
 
   const iframeSrcToUse = SIMORGH_APP_ENV === 'live' ? iframeSrc : iframeDevSrc;
+  const iframeSrcWithService = iframeSrcToUse.replace('{service}', service);
 
   if (isAmp) {
     return (
@@ -42,7 +43,7 @@ export default function ElectionBanner({ aboutTags }: { aboutTags: Tag[] }) {
           ampMetadata={{
             imageWidth: 1,
             imageHeight: 1,
-            src: `${SIMORGH_INCLUDES_BASE_AMP_URL}/${iframeSrcToUse.replace('{service}', service)}/amp`,
+            src: `${SIMORGH_INCLUDES_BASE_AMP_URL}/${iframeSrcWithService}/amp`,
             image:
               'https://news.files.bbci.co.uk/include/vjassets/img/app-launcher.png',
             title: validAboutTag.thingLabel,
@@ -56,7 +57,7 @@ export default function ElectionBanner({ aboutTags }: { aboutTags: Tag[] }) {
     <div data-testid="election-banner" css={styles.electionBannerWrapper}>
       <iframe
         title={validAboutTag.thingLabel}
-        src={`${SIMORGH_INCLUDES_BASE_URL}/${iframeSrcToUse.replace('{service}', service)}`}
+        src={`${SIMORGH_INCLUDES_BASE_URL}/${iframeSrcWithService}`}
         scrolling="no"
         css={styles.electionBannerIframe}
         height={heights.desktop}
