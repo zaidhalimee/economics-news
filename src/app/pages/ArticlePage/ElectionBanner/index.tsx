@@ -14,7 +14,7 @@ export default function ElectionBanner({ aboutTags }: { aboutTags: Tag[] }) {
   const { service } = useContext(ServiceContext);
   const { isAmp, isLite } = useContext(RequestContext);
   const { enabled: electionBannerEnabled }: { enabled: boolean | null } =
-    useToggle('articleElectionBanner');
+    useToggle('electionBanner');
 
   if (isLite) return null;
 

@@ -10,7 +10,7 @@ type Props = {
 
 const EmbedHtml = ({ embeddableContent }: PropsWithChildren<Props>) => {
   const { enabled: electionBannerEnabled }: { enabled: boolean | null } =
-    useToggle('articleElectionBanner');
+    useToggle('electionBanner');
 
   if (!embeddableContent) return null;
 

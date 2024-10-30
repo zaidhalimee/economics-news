@@ -133,7 +133,7 @@ describe('EmbedHtml', () => {
       const { container } = render(
         <EmbedHtml embeddableContent={electionHtml} />,
         {
-          toggles: { articleElectionBanner: { enabled: true } },
+          toggles: { electionBanner: { enabled: true } },
         },
       );
 
@@ -144,7 +144,7 @@ describe('EmbedHtml', () => {
       const { container } = render(
         <EmbedHtml embeddableContent={electionHtml} />,
         {
-          toggles: { articleElectionBanner: { enabled: false } },
+          toggles: { electionBanner: { enabled: false } },
         },
       );
 
