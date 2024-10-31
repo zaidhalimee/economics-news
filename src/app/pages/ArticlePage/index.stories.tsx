@@ -60,14 +60,14 @@ type Props = {
   };
   service?: Services;
   podcastEnabled?: boolean;
-  articleElectionBanner?: boolean;
+  electionBanner?: boolean;
 };
 
 const ComponentWithContext = ({
   data: { data },
   service = 'news',
   podcastEnabled = false,
-  articleElectionBanner = false,
+  electionBanner = false,
 }: Props) => {
   return (
     <ToggleContextProvider
@@ -76,7 +76,7 @@ const ComponentWithContext = ({
         mostRead: { enabled: true },
         frostedPromo: { enabled: true, value: 1 },
         podcastPromo: { enabled: podcastEnabled },
-        articleElectionBanner: { enabled: articleElectionBanner },
+        electionBanner: { enabled: electionBanner },
       }}
     >
       {/* Service set to news to enable most read. Article data is in english */}
@@ -109,7 +109,7 @@ const ComponentWithServiceContext = ({
   data: { data },
   service = 'news',
   podcastEnabled = false,
-  articleElectionBanner = false,
+  electionBanner = false,
 }: Props) => {
   return (
     <ToggleContextProvider
@@ -118,7 +118,7 @@ const ComponentWithServiceContext = ({
         mostRead: { enabled: true },
         frostedPromo: { enabled: true, value: 1 },
         podcastPromo: { enabled: podcastEnabled },
-        articleElectionBanner: { enabled: articleElectionBanner },
+        electionBanner: { enabled: electionBanner },
       }}
     >
       {/* Service set to news to enable most read. Article data is in english */}
@@ -202,7 +202,7 @@ export const ArticleWithElectionBanner = {
     <ComponentWithServiceContext
       data={articleDataWithElectionTag}
       service="mundo"
-      articleElectionBanner
+      electionBanner
     />
   ),
   parameters: {
