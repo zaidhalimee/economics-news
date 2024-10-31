@@ -26,38 +26,6 @@ Array.from({ length: 12 }, (_, index) => index).forEach((month) => {
 });
 timeFunctions.push(emptyRow);
 
-timeFunctions.push(() => ' Months (Abbreviated) ');
-timeFunctions.push(emptyRow);
-
-Array.from({ length: 12 }, (_, index) => index).forEach((month) => {
-  timeFunctions.push((locale) =>
-    moment('20200101').locale(locale).add(month, 'months').format('MMM')
-  );
-});
-timeFunctions.push(emptyRow);
-
-// Add Days of Week
-timeFunctions.push(() => ' Days of the Week ');
-timeFunctions.push(emptyRow);
-
-Array.from({ length: 7 }, (_, index) => index).forEach((day) => {
-  timeFunctions.push((locale) =>
-    moment('20200106').locale(locale).add(day, 'days').format('dddd')
-  );
-});
-timeFunctions.push(emptyRow);
-
-// Add Numerals
-timeFunctions.push(() => ' Numerals ');
-timeFunctions.push(emptyRow);
-
-Array.from({ length: 31 }, (_, index) => index).forEach((day) => {
-  timeFunctions.push((locale) =>
-    moment('20200101').locale(locale).add(day, 'days').format('Do')
-  );
-});
-timeFunctions.push(emptyRow);
-
 timeFunctions.push(() => ' Common Timestamp Formats ');
 timeFunctions.push(emptyRow);
 
@@ -146,6 +114,38 @@ timeFunctions.push(
     (locale) => moment(fixedTimestamp).locale(locale).format('llll'),
   ]
 );
+
+timeFunctions.push(() => ' Months (Abbreviated) ');
+timeFunctions.push(emptyRow);
+
+Array.from({ length: 12 }, (_, index) => index).forEach((month) => {
+  timeFunctions.push((locale) =>
+    moment('20200101').locale(locale).add(month, 'months').format('MMM')
+  );
+});
+timeFunctions.push(emptyRow);
+
+// Add Days of Week
+timeFunctions.push(() => ' Days of the Week ');
+timeFunctions.push(emptyRow);
+
+Array.from({ length: 7 }, (_, index) => index).forEach((day) => {
+  timeFunctions.push((locale) =>
+    moment('20200106').locale(locale).add(day, 'days').format('dddd')
+  );
+});
+timeFunctions.push(emptyRow);
+
+// Add Numerals
+timeFunctions.push(() => ' Numerals ');
+timeFunctions.push(emptyRow);
+
+Array.from({ length: 31 }, (_, index) => index).forEach((day) => {
+  timeFunctions.push((locale) =>
+    moment('20200101').locale(locale).add(day, 'days').format('Do')
+  );
+});
+timeFunctions.push(emptyRow);
 
 const Table = styled.table`
   margin: ${GEL_SPACING_DBL};
