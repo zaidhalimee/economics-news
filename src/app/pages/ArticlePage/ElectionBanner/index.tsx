@@ -25,14 +25,21 @@ export default function ElectionBanner({ aboutTags, taggings }: Props) {
 
   if (isLite) return null;
 
-  const { heights, iframeSrc, iframeDevSrc, thingId, editorialSensitivityId } =
-    BANNER_CONFIG;
+  const {
+    heights,
+    iframeSrc,
+    iframeDevSrc,
+    editorialSensitivityId,
+    usElectionThingId,
+  } = BANNER_CONFIG;
 
-  const isEditoriallySensitive = taggings?.find(tag =>
-    tag.value.includes(editorialSensitivityId),
+  const isEditoriallySensitive = taggings?.find(({ value }) =>
+    value.includes(editorialSensitivityId),
   );
 
-  const validAboutTag = aboutTags?.find(tag => tag.thingId === thingId);
+  const validAboutTag = aboutTags?.find(
+    ({ thingId }) => thingId === usElectionThingId,
+  );
 
   const showBanner =
     !isEditoriallySensitive && validAboutTag && electionBannerEnabled;

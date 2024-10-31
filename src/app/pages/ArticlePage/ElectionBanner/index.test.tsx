@@ -8,7 +8,7 @@ import ElectionBanner from '.';
 const mockAboutTags = [
   { thingId: 'thing1' },
   { thingId: 'thing2' },
-  { thingId: BANNER_CONFIG.thingId },
+  { thingId: BANNER_CONFIG.usElectionThingId },
 ] as Tag[];
 
 const mockTaggings: MetadataTaggings = [
