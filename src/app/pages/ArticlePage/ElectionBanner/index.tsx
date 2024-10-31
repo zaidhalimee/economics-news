@@ -12,9 +12,15 @@ import BANNER_CONFIG from './config';
 
 export default function ElectionBanner({ aboutTags }: { aboutTags: Tag[] }) {
   const { service } = useContext(ServiceContext);
-  const { isAmp, isLite } = useContext(RequestContext);
-  const { enabled: electionBannerEnabled }: { enabled: boolean | null } =
-    useToggle('electionBanner');
+  const { isAmp, isLite, id } = useContext(RequestContext);
+  const {
+    enabled: electionBannerEnabled,
+    value: excludedPageIds,
+  }: { enabled: boolean | null; value?: string } = useToggle('electionBanner');
+
+  console.log({ excludedPageIds });
+
+  const articlesWithoutElectionBanner = excludedPageIds?.split(',');
 
   if (isLite) return null;
 
@@ -22,7 +28,10 @@ export default function ElectionBanner({ aboutTags }: { aboutTags: Tag[] }) {
 
   const validAboutTag = aboutTags?.find(tag => thingIds.includes(tag.thingId));
 
-  const showBanner = validAboutTag && electionBannerEnabled;
+  const showBanner =
+    validAboutTag &&
+    electionBannerEnabled &&
+    !articlesWithoutElectionBanner?.includes(id as string);
 
   if (!showBanner) return null;
 
