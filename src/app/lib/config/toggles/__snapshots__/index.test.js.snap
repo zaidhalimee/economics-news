@@ -55,9 +55,6 @@ exports[`Toggles Config when application environment is local should contain cor
   "ads": {
     "enabled": false,
   },
-  "articleElectionBanner": {
-    "enabled": true,
-  },
   "chartbeatAnalytics": {
     "enabled": true,
   },
@@ -65,6 +62,9 @@ exports[`Toggles Config when application environment is local should contain cor
     "enabled": true,
   },
   "cpsRecommendations": {
+    "enabled": true,
+  },
+  "electionBanner": {
     "enabled": true,
   },
   "enableFetchingToggles": {
