@@ -1518,11 +1518,11 @@ module.exports = () => ({
             enabled: false,
           },
           local: {
-            paths: ['/gahuza/articles/cey23zx8wx8o'],
-            enabled: false,
+            paths: ['/gahuza/articles/c5y51yxeg53o'],
+            enabled: true,
           },
         },
-        smoke: false,
+        smoke: true,
       },
       errorPage404: {
         environments: {
@@ -5492,11 +5492,11 @@ module.exports = () => ({
           },
           test: {
             paths: ['/serbian/cyr'],
-            enabled: true,
+            enabled: false,
           },
           local: {
             paths: ['/serbian/cyr'],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: true,
@@ -5662,11 +5662,11 @@ module.exports = () => ({
           },
           test: {
             paths: ['/serbian/lat'],
-            enabled: true,
+            enabled: false,
           },
           local: {
             paths: ['/serbian/lat'],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: true,
@@ -8857,7 +8857,7 @@ module.exports = () => ({
           },
           local: {
             paths: ['/zhongwen/simp'],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: true,
@@ -9064,7 +9064,7 @@ module.exports = () => ({
           },
           local: {
             paths: ['/zhongwen/trad'],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: true,

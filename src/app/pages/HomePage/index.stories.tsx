@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import Url from 'url-parse';
 import { HOME_PAGE } from '#app/routes/utils/pageTypes';
-import fetch from 'node-fetch';
 import { Curation } from '#app/models/types/curationData';
 import { Services } from '#app/models/types/global';
 import { StoryArgs, StoryProps } from '../../models/types/storybook';
@@ -43,7 +42,7 @@ const Component = ({ service, variant }: StoryProps) => {
   useEffect(() => {
     const loadPageData = async () => {
       const response = await fetch(
-        new Url(`data/${service}/homePage/index.json`),
+        new Url(`data/${service}/homePage/index.json`).toString(),
       );
       const { data } = await response.json();
 

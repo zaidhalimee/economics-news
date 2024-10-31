@@ -57,6 +57,8 @@ interface MetadataWithContextProps extends MetadataProps {
   pageType: PageTypes;
   id?: string | null;
   pathname: string;
+  isUK?: boolean;
+  isLite?: boolean;
 }
 
 const MetadataWithContext = ({
@@ -79,6 +81,8 @@ const MetadataWithContext = ({
   mentionsTags,
   hasAppleItunesAppBanner,
   hasAmpPage,
+  isUK = false,
+  isLite = false,
 }: MetadataWithContextProps) => (
   <ServiceContextProvider service={service} pageLang={lang}>
     <RequestContextProvider
@@ -90,6 +94,8 @@ const MetadataWithContext = ({
       pathname={pathname}
       service={service}
       statusCode={200}
+      isUK={isUK}
+      isLite={isLite}
     >
       <MetadataContainer
         title={title}
@@ -112,6 +118,8 @@ const MetadataWithContext = ({
 
 interface CanonicalNewsInternationalOriginProps {
   hasAmpPage?: boolean;
+  isLite?: boolean;
+  service?: Services;
 }
 
 const CanonicalNewsInternationalOrigin = (
@@ -166,6 +174,18 @@ it('should render the document title', async () => {
   });
 });
 
+it('should render the lite page title', async () => {
+  render(<CanonicalNewsInternationalOrigin service="gahuza" isLite />);
+
+  await waitFor(() => {
+    const actual = document.querySelector('head > title')?.innerHTML;
+
+    expect(actual).toEqual(
+      'Article Headline for SEO - Ahagusaba uburyo (ama mega) buke: BBC News Gahuza',
+    );
+  });
+});
+
 it('should render the canonical link', async () => {
   render(<CanonicalNewsInternationalOrigin />);
 
@@ -205,6 +225,94 @@ it('should render the alternate links for article page', async () => {
     }));
 
     expect(actual).toEqual(expected);
+  });
+});
+
+it(`should render the canonical link's top level domain as .co.uk for UK article pages`, async () => {
+  render(
+    <MetadataWithContext
+      service="sport"
+      bbcOrigin={dotCoDotUKOrigin}
+      platform="canonical"
+      id="c0000000001o"
+      pageType={ARTICLE_PAGE}
+      pathname="/sport/cricket/articles/c0000000001o"
+      isUK
+      {...newsArticleMetadataProps}
+    />,
+  );
+
+  await waitFor(() => {
+    const actual = document
+      .querySelector('head > link[rel="canonical"]')
+      ?.getAttribute('href');
+
+    expect(actual).toEqual(
+      'https://www.bbc.co.uk/sport/cricket/articles/c0000000001o',
+    );
+  });
+});
+
+it(`should render canonical alternative links for UK article AMP pages`, async () => {
+  render(
+    <MetadataWithContext
+      service="sport"
+      platform="amp"
+      bbcOrigin={dotCoDotUKOrigin}
+      id="c0000000001o"
+      pageType={ARTICLE_PAGE}
+      pathname="/sport/cricket/articles/c0000000001o"
+      isUK
+      {...newsArticleMetadataProps}
+    />,
+  );
+
+  const expected = [
+    {
+      href: `https://www.bbc.com/sport/cricket/articles/c0000000001o`,
+      hreflang: 'x-default',
+    },
+    {
+      href: `https://www.bbc.com/sport/cricket/articles/c0000000001o`,
+      hreflang: 'en',
+    },
+    {
+      href: `https://www.bbc.co.uk/sport/cricket/articles/c0000000001o`,
+      hreflang: 'en-gb',
+    },
+  ];
+
+  await waitFor(() => {
+    const actual = Array.from(
+      document.querySelectorAll('head > link[rel="alternate"]'),
+    ).map(tag => ({
+      href: tag.getAttribute('href'),
+      hreflang: tag.getAttribute('hreflang'),
+    }));
+
+    expect(actual).toEqual(expected);
+  });
+});
+
+it(`should render the canonical link's top level domain as .com for WS article pages`, async () => {
+  render(
+    <MetadataWithContext
+      service="mundo"
+      bbcOrigin={dotCoDotUKOrigin}
+      platform="canonical"
+      id="c0000000001o"
+      pageType={ARTICLE_PAGE}
+      pathname="/mundo/c0000000001o"
+      {...newsArticleMetadataProps}
+    />,
+  );
+
+  await waitFor(() => {
+    const actual = document
+      .querySelector('head > link[rel="canonical"]')
+      ?.getAttribute('href');
+
+    expect(actual).toEqual('https://www.bbc.com/mundo/c0000000001o');
   });
 });
 
