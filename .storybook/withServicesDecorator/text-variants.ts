@@ -453,9 +453,9 @@ const TEXT_VARIANTS: Record<string, TextVariant> = {
   uzbekLat: {
     service: 'uzbek',
     variant: 'lat',
-    text: 'Dariga Nazarbaeva patrem Praesidis Kazakhstan comitatus est in ultima visitatione Britanniam',
+    text: "Darig'a Nazarboeva Qo'zog'iston prezidentining hayotiga oxiri safarda otasiga hamrohlik",
     longText:
-      'Uzbekistan: activista qui domum rediit post XII annos emigrationis mortuus est - Talib Yaqubov unus fuit primi et eminentissimi iurium humanorum defensores in Uzbekistan iuris sui. Uzbekistania in Karimov relinquere coactus est, et in exilio civitate privatus est.',
+      "O'zbekiston: 12 yil muhojiratdan keyin Vatanga qaytgan faol vafot etdi - Tolib Yoqubov O'zbekistondagi birinchi va eng tanish inson huquqlari himoyachilaridan biri edi. U Karimov davrida O'zbekistonni qo'llab-quvvatlash uchun zarur, muhojiratda ekan, harakatlanishdan foydalanishdi.",
     script: 'latin',
     locale: 'uz',
     timezone: 'GMT',
