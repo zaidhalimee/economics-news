@@ -471,10 +471,10 @@
       "exact date and time with timezone": "12 июл 2019, 12:55 GMT"
     },
     "lat": {
-      "one minute ago": "Bir necha bir daqiqa oldin",
-      "five minutes ago": "Bir necha 5 daqiqa oldin",
-      "one hour ago": "Bir necha bir soat oldin",
-      "five hours ago": "Bir necha 5 soat oldin",
+      "one minute ago": "1 daqiqa avval",
+      "five minutes ago": "5 daqiqalar avval",
+      "one hour ago": "1 soat avval",
+      "five hours ago": "5 soatlar avval",
       "exact date": "10 Oktabr 2018",
       "exact date and time with timezone": "12 Iyul 2019, 12:55 GMT"
     }
