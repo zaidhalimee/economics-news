@@ -8,10 +8,16 @@ import useToggle from '#app/hooks/useToggle';
 import { Tag } from '#app/components/Metadata/types';
 import { ServiceContext } from '#app/contexts/ServiceContext';
 import { getEnvConfig } from '#app/lib/utilities/getEnvConfig';
+import { MetadataTaggings } from '#app/models/types/metadata';
 import styles from './index.styles';
 import BANNER_CONFIG from './config';
 
-export default function ElectionBanner({ aboutTags }: { aboutTags: Tag[] }) {
+type Props = {
+  aboutTags: Tag[];
+  taggings: MetadataTaggings;
+};
+
+export default function ElectionBanner({ aboutTags, taggings }: Props) {
   const { service } = useContext(ServiceContext);
   const { isAmp, isLite } = useContext(RequestContext);
   const { enabled: electionBannerEnabled }: { enabled: boolean | null } =
@@ -19,11 +25,17 @@ export default function ElectionBanner({ aboutTags }: { aboutTags: Tag[] }) {
 
   if (isLite) return null;
 
-  const { heights, iframeSrc, iframeDevSrc, thingIds } = BANNER_CONFIG;
+  const { heights, iframeSrc, iframeDevSrc, thingId, editorialSensitivityId } =
+    BANNER_CONFIG;
 
-  const validAboutTag = aboutTags?.find(tag => thingIds.includes(tag.thingId));
+  const isEditoriallySensitive = taggings?.find(tag =>
+    tag.value.includes(editorialSensitivityId),
+  );
 
-  const showBanner = validAboutTag && electionBannerEnabled;
+  const validAboutTag = aboutTags?.find(tag => tag.thingId === thingId);
+
+  const showBanner =
+    !isEditoriallySensitive && validAboutTag && electionBannerEnabled;
 
   if (!showBanner) return null;
 
