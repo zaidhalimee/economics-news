@@ -439,6 +439,28 @@ const TEXT_VARIANTS: Record<string, TextVariant> = {
     timezone: 'GMT',
     articlePath: '/uzbek/articles/cxj3rjxm6r0o',
   },
+  uzbekCyr: {
+    service: 'uzbek',
+    variant: 'cyr',
+    text: 'Дариға Назарбоева Қозоғистон президентининг Британияга охирги сафарида отасига ҳамроҳлик',
+    longText:
+      'Ўзбекистон: 12 йиллик муҳожиратдан кейин Ватанга қайтган фаол вафот этди - Толиб Ёқубов мустақил Ўзбекистондаги илк ва энг таниқли инсон ҳуқуқлари ҳимоячиларидан бири эди. У Каримов даврида Ўзбекистонни тарк этишга мажбур бўлган, муҳожиратда экан, фуқароликдан маҳрум этилганди.',
+    script: 'cyrillic',
+    locale: 'uz',
+    timezone: 'GMT',
+    articlePath: '/uzbek/articles/cxj3rjxm6r0o/cyr',
+  },
+  uzbekLat: {
+    service: 'uzbek',
+    variant: 'lat',
+    text: 'Dariga Nazarbaeva patrem Praesidis Kazakhstan comitatus est in ultima visitatione Britanniam',
+    longText:
+      'Uzbekistan: activista qui domum rediit post XII annos emigrationis mortuus est - Talib Yaqubov unus fuit primi et eminentissimi iurium humanorum defensores in Uzbekistan iuris sui. Uzbekistania in Karimov relinquere coactus est, et in exilio civitate privatus est.',
+    script: 'latin',
+    locale: 'uz',
+    timezone: 'GMT',
+    articlePath: '/uzbek/articles/cxj3rjxm6r0o/lat',
+  },
   vietnamese: {
     text: 'Ông Nazarbayev bất ngờ tuyên bố từ chức hôm 19/3/2019',
     longText:

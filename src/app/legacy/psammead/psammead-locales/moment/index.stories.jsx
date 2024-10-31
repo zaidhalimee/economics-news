@@ -7,7 +7,7 @@ import {
   GEL_SPACING_DBL,
 } from '#psammead/gel-foundations/src/spacings';
 import { GEL_FF_REITH_SANS } from '#psammead/gel-foundations/src/typography';
-import { ServiceContext} from '#app/contexts/ServiceContext';
+import { ServiceContext } from '#app/contexts/ServiceContext';
 
 import notes from '../README.md';
 import './am';
@@ -52,9 +52,19 @@ const timeFunctions = [];
 timeFunctions.push(() => ' Months ');
 timeFunctions.push(emptyRow);
 
-Array.from({ length: 12 }, (_, index) => index).forEach(month => {
+Array.from({ length: 12 }, (_, index) => index).forEach((month) => {
   timeFunctions.push((locale) =>
     moment('20200101').locale(locale).add(month, 'months').format('MMMM')
+  );
+});
+timeFunctions.push(emptyRow);
+
+timeFunctions.push(() => ' Months (Abbreviated) ');
+timeFunctions.push(emptyRow);
+
+Array.from({ length: 12 }, (_, index) => index).forEach((month) => {
+  timeFunctions.push((locale) =>
+    moment('20200101').locale(locale).add(month, 'months').format('MMM')
   );
 });
 timeFunctions.push(emptyRow);
@@ -66,6 +76,17 @@ timeFunctions.push(emptyRow);
 Array.from({ length: 7 }, (_, index) => index).forEach((day) => {
   timeFunctions.push((locale) =>
     moment('20200106').locale(locale).add(day, 'days').format('dddd')
+  );
+});
+timeFunctions.push(emptyRow);
+
+// Add Numerals
+timeFunctions.push(() => ' Numerals ');
+timeFunctions.push(emptyRow);
+
+Array.from({ length: 31 }, (_, index) => index).forEach((day) => {
+  timeFunctions.push((locale) =>
+    moment('20200101').locale(locale).add(day, 'days').format('Do')
   );
 });
 timeFunctions.push(emptyRow);
@@ -92,10 +113,15 @@ timeFunctions.push(
         .startOf('day')
         .add(6, 'hours')
         .from(fixedTimestamp),
+    (locale) =>
+      moment(fixedTimestamp).subtract({ d: 26 }).locale(locale).format('LL'),
+    (locale) =>
+      moment(fixedTimestamp).subtract({ d: 26 }).locale(locale).format('LLL'),
     (locale) => moment(fixedTimestamp).locale(locale).format('LL'),
     (locale) => moment(fixedTimestamp).locale(locale).format('LLL'),
     emptyRow,
     () => ' Other Timestamp Formats ',
+    emptyRow,
     (locale) =>
       moment(fixedTimestamp).locale(locale).format('MMMM Do YYYY, h:mm:ss a'),
     (locale) =>
@@ -174,8 +200,7 @@ const Paragraph = styled.p`
 const issueHref = (localeName) =>
   `https://github.com/bbc/simorgh/issues/new?labels=bug&title=Moment+translation+correction+for+${localeName}`;
 
-const Component = ({service, variant, dir, locale }) => {
- 
+const Component = ({ service, variant, dir, locale }) => {
   return (
     <>
       <Table>
@@ -199,7 +224,8 @@ const Component = ({service, variant, dir, locale }) => {
         <a href={issueHref(service)}>github issue</a> so we can fix it!
       </Paragraph>
     </>
-  );};
+  );
+};
 
 export default {
   title: 'Translations/Timestamps',
@@ -223,4 +249,4 @@ export const Example = (_, { service, variant }) => {
       locale={datetimeLocale}
     />
   );
-}
+};

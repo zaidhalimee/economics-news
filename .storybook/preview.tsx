@@ -482,6 +482,14 @@ const preview: Preview = {
             title: 'uzbek',
           },
           {
+            value: { service: 'uzbek', variant: 'cyr' },
+            title: 'uzbek-cyr',
+          },
+          {
+            value: { service: 'uzbek', variant: 'lat' },
+            title: 'uzbek-lat',
+          },
+          {
             value: { service: 'vietnamese', variant: 'default' },
             title: 'vietnamese',
           },
