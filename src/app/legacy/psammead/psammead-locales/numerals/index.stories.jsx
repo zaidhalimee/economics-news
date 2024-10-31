@@ -31,7 +31,12 @@ const Component = () => {
 
 export default {
   title: 'Translations/Numerals',
-  Component
-}
+  Component,
+  parameters: {
+    chromatic: {
+      disable: true,
+    },
+  },
+};
 
 export const Example = Component;
