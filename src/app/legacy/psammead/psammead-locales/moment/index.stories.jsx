@@ -115,6 +115,7 @@ timeFunctions.push(
   ]
 );
 
+timeFunctions.push(emptyRow);
 timeFunctions.push(() => ' Months (Abbreviated) ');
 timeFunctions.push(emptyRow);
 
@@ -132,6 +133,16 @@ timeFunctions.push(emptyRow);
 Array.from({ length: 7 }, (_, index) => index).forEach((day) => {
   timeFunctions.push((locale) =>
     moment('20200106').locale(locale).add(day, 'days').format('dddd')
+  );
+});
+timeFunctions.push(emptyRow);
+
+timeFunctions.push(() => ' Days of the Week (Abbreviated)');
+timeFunctions.push(emptyRow);
+
+Array.from({ length: 7 }, (_, index) => index).forEach((day) => {
+  timeFunctions.push((locale) =>
+    moment('20200106').locale(locale).add(day, 'days').format('ddd')
   );
 });
 timeFunctions.push(emptyRow);
