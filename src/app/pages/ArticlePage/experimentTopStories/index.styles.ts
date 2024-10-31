@@ -12,11 +12,11 @@ export default {
         },
       },
     }),
-  experimentTopStoriesSectionHalfway: ({ spacings, mq }: Theme) =>
+  experimentTopStoriesSectionHalf: ({ spacings, mq }: Theme) =>
     css({
       display: 'none',
       marginBottom: `${spacings.TRIPLE}rem`,
-      '[amp-x-topStoriesExperiment="show_at_halfway"] &': {
+      '[amp-x-topStoriesExperiment="show_at_half"] &': {
         display: 'block',
         [mq.GROUP_4_MIN_WIDTH]: {
           display: 'none',

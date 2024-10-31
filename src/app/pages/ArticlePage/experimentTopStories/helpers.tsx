@@ -11,8 +11,10 @@ export const experimentName = 'topStoriesExperiment';
 export const experimentTopStoriesConfig = {
   [experimentName]: {
     variants: {
-      control: 50,
-      show_at_halfway: 50,
+      control: 25,
+      show_at_quarter: 25,
+      show_at_half: 25,
+      show_at_three_quarters: 25,
     },
   },
 };
@@ -69,11 +71,11 @@ const enableExperimentTopStories = ({
 const insertBlockAtPosition = (
   blocks: OptimoBlock[],
   blockToInsert: OptimoBlock,
-  position: 'Quarter' | 'Halfway' | 'ThreeQuarters',
+  position: 'Quarter' | 'Half' | 'ThreeQuarters',
 ) => {
   const insertionPercentages = {
     Quarter: 0.25,
-    Halfway: 0.5,
+    Half: 0.5,
     ThreeQuarters: 0.75,
   };
   const percentage = insertionPercentages[position];
@@ -92,9 +94,9 @@ const insertExperimentTopStories = ({
   blocks: OptimoBlock[];
   topStoriesContent: TopStoryItem[];
 }) => {
-  const insertionPositions: ['Quarter', 'Halfway', 'ThreeQuarters'] = [
+  const insertionPositions: ['Quarter', 'Half', 'ThreeQuarters'] = [
     'Quarter',
-    'Halfway',
+    'Half',
     'ThreeQuarters',
   ];
   return insertionPositions.reduce((currentBlocks, position) => {
@@ -156,13 +158,13 @@ export const ExperimentTopStories = ({
   variant,
 }: {
   topStoriesContent: TopStoryItem[];
-  variant: 'Quarter' | 'Halfway' | 'ThreeQuarters';
+  variant: 'Quarter' | 'Half' | 'ThreeQuarters';
 }) => {
   return (
     <div
       css={styles[`experimentTopStoriesSection${variant}`]}
       data-testid={`experiment-top-stories-${variant}`}
-      data-experiment-position="articleBody"
+      data-experiment-position={`articleBody${variant}`}
     >
       <TopStoriesSection content={topStoriesContent} />
     </div>
@@ -222,17 +224,6 @@ const requestKeysMap = {
   },
 };
 
-const eventTriggerKeysMap = {
-  articleBody: {
-    view: 'articleBodyView',
-    click: 'articleBodyPromoClick',
-  },
-  secondaryColumn: {
-    view: 'secondaryColumnView',
-    click: 'secondaryColumnPromoClick',
-  },
-};
-
 const buildRequestUrls = ({
   position,
   env,
@@ -264,20 +255,59 @@ const buildRequestUrls = ({
   };
 };
 
+const getQuerySelectors = ({
+  variant,
+}: {
+  variant?: 'Quarter' | 'Half' | 'ThreeQuarters';
+}) => {
+  if (!variant) {
+    return {
+      view: `div[data-experiment-position='secondaryColumn'] > section[aria-labelledby='top-stories-heading']`,
+      click: `div[data-experiment-position='secondaryColumn'] a[aria-labelledby*='top-stories-promo']`,
+    };
+  }
+
+  return {
+    view: `div[data-experiment-position='articleBody${variant}'] > section[aria-labelledby='top-stories-heading']`,
+    click: `div[data-experiment-position='articleBody${variant}'] a[aria-labelledby*='top-stories-promo']`,
+  };
+};
+
+const getEventTriggerKeys = ({
+  variant,
+}: {
+  variant?: 'Quarter' | 'Half' | 'ThreeQuarters';
+}) => {
+  if (!variant) {
+    return {
+      view: `secondaryColumnView`,
+      click: `secondaryColumnPromoClick`,
+    };
+  }
+
+  return {
+    view: `articleBody${variant}View`,
+    click: `articleBody${variant}PromoClick`,
+  };
+};
+
 const buildEventTriggers = ({
   position,
+  variant,
 }: {
   position: 'articleBody' | 'secondaryColumn';
+  variant?: 'Quarter' | 'Half' | 'ThreeQuarters';
 }) => {
-  const eventTriggerKeys = eventTriggerKeysMap[position];
   const requestKeys = requestKeysMap[position];
+  const eventTriggerKeys = getEventTriggerKeys({ variant });
+  const querySelectors = getQuerySelectors({ variant });
 
   return {
     [eventTriggerKeys.view]: {
       on: 'visible',
       request: requestKeys.view,
       visibilitySpec: {
-        selector: `div[data-experiment-position='${position}'] > section[aria-labelledby='top-stories-heading']`,
+        selector: querySelectors.view,
         visiblePercentageMin: 20,
         totalTimeMin: 500,
         continuousTimeMin: 200,
@@ -286,7 +316,7 @@ const buildEventTriggers = ({
     [eventTriggerKeys.click]: {
       on: 'click',
       request: requestKeys.click,
-      selector: `div[data-experiment-position='${position}'] a[aria-labelledby*='top-stories-promo']`,
+      selector: querySelectors.click,
     },
   };
 };
@@ -316,8 +346,13 @@ export const getExperimentAnalyticsConfig = ({
       }),
     },
     triggers: {
-      ...buildEventTriggers({ position: 'articleBody' }),
       ...buildEventTriggers({ position: 'secondaryColumn' }),
+      ...buildEventTriggers({ position: 'articleBody', variant: 'Quarter' }),
+      ...buildEventTriggers({ position: 'articleBody', variant: 'Half' }),
+      ...buildEventTriggers({
+        position: 'articleBody',
+        variant: 'ThreeQuarters',
+      }),
     },
   };
 };

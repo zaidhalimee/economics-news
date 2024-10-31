@@ -206,11 +206,11 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           variant="Quarter"
         />
       ) : null,
-    experimentTopStoriesHalfway: () =>
+    experimentTopStoriesHalf: () =>
       topStoriesContent ? (
         <ExperimentTopStories
           topStoriesContent={topStoriesContent}
-          variant="Halfway"
+          variant="Half"
         />
       ) : null,
     experimentTopStoriesThreeQuarters: () =>
