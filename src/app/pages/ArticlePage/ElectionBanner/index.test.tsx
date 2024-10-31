@@ -13,6 +13,12 @@ const mockAboutTags = [
 const ELEMENT_ID = 'election-banner';
 
 describe('ElectionBanner', () => {
+  const originalEnv = process.env;
+
+  afterEach(() => {
+    process.env = originalEnv;
+  });
+
   it('should not render ElectionBanner when isLite is true', () => {
     const { queryByTestId } = render(
       <ElectionBanner aboutTags={mockAboutTags} />,
@@ -25,28 +31,62 @@ describe('ElectionBanner', () => {
   describe.each(['canonical', 'amp'])('%s', platform => {
     const isAmp = platform === 'amp';
 
+    it.each(['live', 'test'])(
+      'should use the correct URL for the iframe when SIMORGH_APP_ENV is "%s"',
+      appEnv => {
+        if (appEnv === 'live') {
+          process.env.SIMORGH_INCLUDES_BASE_URL =
+            'https://www.bbc.com/ws/includes';
+          process.env.SIMORGH_INCLUDES_BASE_AMP_URL =
+            'https://news.files.bbci.co.uk';
+        }
+
+        if (appEnv === 'test') {
+          process.env.SIMORGH_INCLUDES_BASE_URL =
+            'https://www.test.bbc.com/ws/includes';
+          process.env.SIMORGH_INCLUDES_BASE_AMP_URL =
+            'https://news.test.files.bbci.co.uk';
+        }
+
+        process.env.SIMORGH_APP_ENV = appEnv;
+
+        const { getByTestId } = render(
+          <ElectionBanner aboutTags={mockAboutTags} />,
+          {
+            toggles: { electionBanner: { enabled: true } },
+            isAmp,
+          },
+        );
+
+        const wrappingEl = getByTestId(ELEMENT_ID);
+
+        const iframe = wrappingEl.querySelector('iframe, amp-iframe');
+        const iframeSrc = iframe?.getAttribute('src');
+
+        const configSrc = BANNER_CONFIG[
+          appEnv === 'live' ? 'iframeSrc' : 'iframeDevSrc'
+        ].replace('{service}', 'news');
+
+        const domain = isAmp
+          ? process.env.SIMORGH_INCLUDES_BASE_AMP_URL
+          : process.env.SIMORGH_INCLUDES_BASE_URL;
+
+        expect(iframeSrc).toEqual(
+          `${domain}/${configSrc}${isAmp ? '/amp' : ''}`,
+        );
+      },
+    );
+
     it('should render ElectionBanner when aboutTags contain the correct thingLabel', () => {
       const { getByTestId } = render(
         <ElectionBanner aboutTags={mockAboutTags} />,
         {
-          toggles: { articleElectionBanner: { enabled: true } },
+          toggles: { electionBanner: { enabled: true } },
           isAmp,
         },
       );
 
       expect(getByTestId(ELEMENT_ID)).toBeInTheDocument();
-
-      const iframe = getByTestId(ELEMENT_ID).querySelector(
-        isAmp ? 'amp-iframe' : 'iframe',
-      );
-
-      expect(iframe).toHaveAttribute(
-        'src',
-        BANNER_CONFIG[isAmp ? 'iframeSrcAmp' : 'iframeSrc'].replace(
-          '{service}',
-          'news',
-        ),
-      );
     });
 
     it('should not render ElectionBanner when aboutTags do not contain the correct thingLabel', () => {
@@ -70,7 +110,7 @@ describe('ElectionBanner', () => {
       const { queryByTestId } = render(
         <ElectionBanner aboutTags={mockAboutTags} />,
         {
-          toggles: { articleElectionBanner: { enabled: false } },
+          toggles: { electionBanner: { enabled: false } },
           isAmp,
         },
       );
