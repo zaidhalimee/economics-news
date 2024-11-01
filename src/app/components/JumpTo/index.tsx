@@ -44,7 +44,7 @@ const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
   });
 
   // can we simplify the extraction process?
-  const headings: JumpToHeading[] = jumpToData?.model?.blocks
+  const subheadlines: JumpToHeading[] = jumpToData?.model?.blocks
     .map(block => {
       const paragraphBlock = block.model.blocks.find(
         b => b.type === 'paragraph',
@@ -75,7 +75,7 @@ const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
       </Heading>
       <nav aria-labelledby={headingId}>
         <ul>
-          {headings.map((heading, index) => (
+          {subheadlines.map((heading, index) => (
             <li key={heading.id}>
               <a
                 href={`#${heading.id}`}

@@ -6,16 +6,16 @@ import metadata from './metadata.json';
 import readme from './README.md';
 
 interface Props {
-  headings?: { id: string; title: string }[];
+  subheadlines?: { id: string; title: string }[];
 }
 
 // can we simplify...?
-const Component = ({ headings = [] }: Props) => {
+const Component = ({ subheadlines = [] }: Props) => {
   const jumpToData = {
     model: {
-      blocks: headings.map(heading => ({
-        id: heading.id,
-        type: 'heading',
+      blocks: subheadlines.map(subheadline => ({
+        id: subheadline.id,
+        type: 'subheadline',
         model: {
           blocks: [
             {
@@ -25,7 +25,7 @@ const Component = ({ headings = [] }: Props) => {
                   {
                     type: 'fragment',
                     model: {
-                      text: heading.title,
+                      text: subheadline.title,
                     },
                   },
                 ],
@@ -52,12 +52,21 @@ export default {
 // WIP - should pull titles from fixture
 export const Example = (_: StoryArgs, globalArgs: Props) => {
   const {
-    headings = [
-      { id: 'heading-1', title: 'This is an article heading title - 1' },
-      { id: 'heading-2', title: 'This is an article heading title - 2' },
-      { id: 'heading-3', title: 'This is an article heading title - 3' },
+    subheadlines = [
+      {
+        id: 'subheadline-1',
+        title: 'This is an article subheadline title - 1',
+      },
+      {
+        id: 'subheadline-2',
+        title: 'This is an article subheadline title - 2',
+      },
+      {
+        id: 'subheadline-3',
+        title: 'This is an article subheadline title - 3',
+      },
     ],
   } = globalArgs;
 
-  return <Component headings={headings} />;
+  return <Component subheadlines={subheadlines} />;
 };
