@@ -5,7 +5,7 @@ import { ServiceContext } from '#contexts/ServiceContext';
 import useViewTracker from '#app/hooks/useViewTracker';
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
-import Heading from '#app/components/Heading';
+import Text from '#app/components/Text';
 
 interface JumpToHeading {
   id: string;
@@ -59,8 +59,7 @@ const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
 
   const headingId = 'jump-to-heading';
 
-  // check if this is semantically acceptable - a nav here for the list of titles seems a good idea but would we just use a span?
-  // use the Text component with the as prop to set it to whatever html we want - div? span?
+  // We use the Text component with the as prop to set it to a strong (for now) because the screenreader UX states the heading should not be announced
   // try inline link in place of anchor tag - might be more useful for styling
   // add in classNames
   return (
@@ -70,9 +69,9 @@ const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
       aria-labelledby={headingId}
       data-testid="jump-to"
     >
-      <Heading level={2} tabIndex={-1} id={headingId}>
+      <Text as="strong" tabIndex={-1} id={headingId}>
         {jumpToText}
-      </Heading>
+      </Text>
       <nav aria-labelledby={headingId}>
         <ul>
           {subheadlines.map((heading, index) => (
