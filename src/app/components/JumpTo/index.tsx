@@ -24,7 +24,6 @@ interface JumpToProps {
 
 const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
   const { translations } = useContext(ServiceContext);
-  // modify to suit updated config file for Hindi w/ JumpTo block added - fallback is English
   const { jumpTo = 'Jump to' } = translations?.articlePage || {};
 
   const viewRef = useViewTracker(eventTrackingData);
