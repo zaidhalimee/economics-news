@@ -9,12 +9,22 @@ import { Tag } from '#app/components/Metadata/types';
 import { ServiceContext } from '#app/contexts/ServiceContext';
 import { getEnvConfig } from '#app/lib/utilities/getEnvConfig';
 import { MetadataTaggings } from '#app/models/types/metadata';
+import { Services } from '#app/models/types/global';
 import styles from './index.styles';
 import BANNER_CONFIG from './config';
 
 type Props = {
   aboutTags: Tag[];
   taggings: MetadataTaggings;
+};
+
+const handleUrlServiceTransform = (url: string, service: Services) => {
+  switch (service) {
+    case 'turkce':
+      return url.replace('{service}', 'turkish');
+    default:
+      return url.replace('{service}', service);
+  }
 };
 
 export default function ElectionBanner({ aboutTags, taggings }: Props) {
@@ -53,7 +63,10 @@ export default function ElectionBanner({ aboutTags, taggings }: Props) {
   } = getEnvConfig();
 
   const iframeSrcToUse = SIMORGH_APP_ENV === 'live' ? iframeSrc : iframeDevSrc;
-  const iframeSrcWithService = iframeSrcToUse.replace('{service}', service);
+  const iframeSrcWithService = handleUrlServiceTransform(
+    iframeSrcToUse,
+    service,
+  );
 
   if (isAmp) {
     return (
