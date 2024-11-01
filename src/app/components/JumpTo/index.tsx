@@ -43,6 +43,7 @@ const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
     identifier: 'JumpTo',
   });
 
+  // can we simplify the extraction process?
   const headings: JumpToHeading[] = jumpToData?.model?.blocks
     .map(block => {
       const paragraphBlock = block.model.blocks.find(
@@ -58,6 +59,7 @@ const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
 
   const headingId = 'jump-to-heading';
 
+  // check if this is semantically acceptable - a nav here for the list of titles seems a good idea
   return (
     <section
       ref={viewRef}
