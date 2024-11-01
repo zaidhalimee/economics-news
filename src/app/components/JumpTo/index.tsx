@@ -36,7 +36,7 @@ interface JumpToProps {
 const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
   const { translations } = useContext(ServiceContext);
   // modify to suit updated config file for hindi w/ jumpto block added - fallback is english
-  const { jumpToText = 'Jump to' } = translations?.articlePage || {};
+  const { jumpTo = 'Jump to' } = translations?.articlePage || {};
 
   const viewRef = useViewTracker(eventTrackingData);
   const clickTrackerHandler = useClickTrackerHandler({
@@ -62,7 +62,6 @@ const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
 
   // We use the Text component with the as prop to set it to a strong (for now) because the screenreader UX states the heading should not be announced
   // try inline link in place of anchor tag - might be more useful for styling - could change back to anchor if needed
-  // add in classNames
   return (
     <section
       ref={viewRef}
@@ -71,7 +70,7 @@ const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
       data-testid="jump-to"
     >
       <Text as="strong" tabIndex={-1} id={headingId}>
-        {jumpToText}
+        {jumpTo}
       </Text>
       <nav aria-labelledby={headingId}>
         <ul>
