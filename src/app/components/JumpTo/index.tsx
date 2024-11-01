@@ -16,18 +16,7 @@ interface JumpToHeading {
 interface JumpToProps {
   jumpToData: {
     model: {
-      blocks: Array<{
-        id: string;
-        type: string;
-        model: {
-          blocks: Array<{
-            type: string;
-            model: {
-              text?: string;
-            };
-          }>;
-        };
-      }>;
+      jumpToHeadings: Array<{ heading: string }>;
     };
   };
   eventTrackingData?: EventTrackingMetadata;
@@ -35,7 +24,7 @@ interface JumpToProps {
 
 const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
   const { translations } = useContext(ServiceContext);
-  // modify to suit updated config file for hindi w/ jumpto block added - fallback is english
+  // modify to suit updated config file for Hindi w/ JumpTo block added - fallback is English
   const { jumpTo = 'Jump to' } = translations?.articlePage || {};
 
   const viewRef = useViewTracker(eventTrackingData);
@@ -44,24 +33,17 @@ const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
     identifier: 'JumpTo',
   });
 
-  // can we simplify the extraction process?
-  const subheadlines: JumpToHeading[] = jumpToData?.model?.blocks
-    .map(block => {
-      const paragraphBlock = block.model.blocks.find(
-        b => b.type === 'paragraph',
-      );
-      const fragmentBlock = paragraphBlock?.model?.blocks?.find(
-        b => b.type === 'fragment',
-      );
-      const title = fragmentBlock?.model?.text || '';
-      return title ? { id: block.id, title } : null;
-    })
-    .filter(Boolean) as JumpToHeading[];
+  const subheadlines: JumpToHeading[] = jumpToData?.model?.jumpToHeadings.map(
+    (item, index) => ({
+      id: `jump-to-${index}`,
+      title: item.heading,
+    }),
+  );
 
   const headingId = 'jump-to-heading';
 
-  // We use the Text component with the as prop to set it to a strong (for now) because the screenreader UX states the heading should not be announced
-  // try inline link in place of anchor tag - might be more useful for styling - could change back to anchor if needed
+  // we use the Text component with the as prop set to strong (for now) because the screenreader UX states the heading should not be announced
+  // using inline link instead of anchor to bring benefits to styling but can revert to anchor if needed
   return (
     <section
       ref={viewRef}
@@ -79,7 +61,6 @@ const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
               <InlineLink
                 to={`#${heading.id}`}
                 onClick={clickTrackerHandler}
-                tabIndex={-1}
                 data-testid={`jump-to-link-${index}`}
                 text={heading.title}
               />
