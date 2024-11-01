@@ -5,7 +5,8 @@ import { ServiceContext } from '#contexts/ServiceContext';
 import useViewTracker from '#app/hooks/useViewTracker';
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
-import Heading from '#app/components/Heading';
+import Text from '#app/components/Text';
+import InlineLink from '#app/components/InlineLink';
 
 interface JumpToHeading {
   id: string;
@@ -35,7 +36,7 @@ interface JumpToProps {
 const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
   const { translations } = useContext(ServiceContext);
   // modify to suit updated config file for hindi w/ jumpto block added - fallback is english
-  const { jumpToText = 'Jump to' } = translations?.articlePage || {};
+  const { jumpTo = 'Jump to' } = translations?.articlePage || {};
 
   const viewRef = useViewTracker(eventTrackingData);
   const clickTrackerHandler = useClickTrackerHandler({
@@ -44,7 +45,7 @@ const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
   });
 
   // can we simplify the extraction process?
-  const headings: JumpToHeading[] = jumpToData?.model?.blocks
+  const subheadlines: JumpToHeading[] = jumpToData?.model?.blocks
     .map(block => {
       const paragraphBlock = block.model.blocks.find(
         b => b.type === 'paragraph',
@@ -59,7 +60,8 @@ const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
 
   const headingId = 'jump-to-heading';
 
-  // check if this is semantically acceptable - a nav here for the list of titles seems a good idea
+  // We use the Text component with the as prop to set it to a strong (for now) because the screenreader UX states the heading should not be announced
+  // try inline link in place of anchor tag - might be more useful for styling - could change back to anchor if needed
   return (
     <section
       ref={viewRef}
@@ -67,21 +69,20 @@ const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
       aria-labelledby={headingId}
       data-testid="jump-to"
     >
-      <Heading level={2} tabIndex={-1} id={headingId}>
-        {jumpToText}
-      </Heading>
+      <Text as="strong" tabIndex={-1} id={headingId}>
+        {jumpTo}
+      </Text>
       <nav aria-labelledby={headingId}>
         <ul>
-          {headings.map((heading, index) => (
+          {subheadlines.map((heading, index) => (
             <li key={heading.id}>
-              <a
-                href={`#${heading.id}`}
+              <InlineLink
+                to={`#${heading.id}`}
                 onClick={clickTrackerHandler}
                 tabIndex={-1}
                 data-testid={`jump-to-link-${index}`}
-              >
-                {heading.title}
-              </a>
+                text={heading.title}
+              />
             </li>
           ))}
         </ul>
