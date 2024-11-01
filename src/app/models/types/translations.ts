@@ -31,6 +31,9 @@ export interface Translations {
     audioPlayer: string;
     videoPlayer: string;
   };
+  articlePage?: {
+    jumpTo: string;
+  };
   liveExperiencePage: {
     liveLabel: string;
     liveCoverage: string;
