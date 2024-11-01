@@ -59,7 +59,10 @@ const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
 
   const headingId = 'jump-to-heading';
 
-  // check if this is semantically acceptable - a nav here for the list of titles seems a good idea
+  // check if this is semantically acceptable - a nav here for the list of titles seems a good idea but would we just use a span?
+  // use the Text component with the as prop to set it to whatever html we want - div? span?
+  // try inline link in place of anchor tag - might be more useful for styling
+  // add in classNames
   return (
     <section
       ref={viewRef}
