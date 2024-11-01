@@ -6,6 +6,7 @@ import useViewTracker from '#app/hooks/useViewTracker';
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
 import Text from '#app/components/Text';
+import InlineLink from '#app/components/InlineLink';
 
 interface JumpToHeading {
   id: string;
@@ -60,7 +61,7 @@ const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
   const headingId = 'jump-to-heading';
 
   // We use the Text component with the as prop to set it to a strong (for now) because the screenreader UX states the heading should not be announced
-  // try inline link in place of anchor tag - might be more useful for styling
+  // try inline link in place of anchor tag - might be more useful for styling - could change back to anchor if needed
   // add in classNames
   return (
     <section
@@ -76,14 +77,13 @@ const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
         <ul>
           {subheadlines.map((heading, index) => (
             <li key={heading.id}>
-              <a
-                href={`#${heading.id}`}
+              <InlineLink
+                to={`#${heading.id}`}
                 onClick={clickTrackerHandler}
                 tabIndex={-1}
                 data-testid={`jump-to-link-${index}`}
-              >
-                {heading.title}
-              </a>
+                text={heading.title}
+              />
             </li>
           ))}
         </ul>
