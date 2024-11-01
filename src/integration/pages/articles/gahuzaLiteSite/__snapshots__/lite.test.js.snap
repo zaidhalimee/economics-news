@@ -3,7 +3,7 @@
 exports[`Lite Site Articles Lite Site Cta should match snapshot 1`] = `
 <section
   aria-labelledby="LiteSiteCta"
-  class="bbc-1x0h7k"
+  class="bbc-16e8czs"
   data-e2e="lite-cta"
   role="region"
 >

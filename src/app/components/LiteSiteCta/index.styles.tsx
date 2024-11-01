@@ -4,11 +4,11 @@ import pixelsToRem from '../../utilities/pixelsToRem';
 export default {
   outerContainer: ({ palette, mq, spacings }: Theme) =>
     css({
-      margin: `0 ${spacings.FULL}rem`,
+      padding: `0 ${spacings.FULL}rem`,
       backgroundColor: `${palette.WHITE}`,
       borderBottom: `${pixelsToRem(1)}rem solid ${palette.GREY_3}`,
       [mq.GROUP_2_MIN_WIDTH]: {
-        margin: `0 ${spacings.DOUBLE}rem`,
+        padding: `0 ${spacings.DOUBLE}rem`,
       },
     }),
   container: ({ spacings, mq }: Theme) =>
