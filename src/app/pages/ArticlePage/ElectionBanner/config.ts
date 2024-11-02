@@ -1,8 +1,8 @@
 export default {
   heights: {
-    desktop: 465,
-    tablet: 480,
-    mobile: 540,
+    desktop: 330,
+    tablet: 330,
+    mobile: 360,
   },
   iframeSrc:
     'include/vjafwest/1365-2024-us-presidential-election-banner/{service}/app',
