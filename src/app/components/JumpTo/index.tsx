@@ -7,6 +7,7 @@ import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
 import Text from '#app/components/Text';
 import InlineLink from '#app/components/InlineLink';
+import idSanitiser from '../../lib/utilities/idSanitiser';
 
 interface JumpToHeading {
   id: string;
@@ -33,13 +34,15 @@ const JumpTo = ({ jumpToHeadings, eventTrackingData }: JumpToProps) => {
   });
 
   // accessing heading directly here via transformation but this transformation can be removed
+  // using idSanitiser to clean up each heading for now but we will remove this transformation
   const subheadlines: JumpToHeading[] =
-    jumpToHeadings?.model?.jumpToHeadings.map((item, index) => ({
-      id: `jump-to-${index}`,
+    jumpToHeadings?.model?.jumpToHeadings.map(item => ({
+      id: idSanitiser(item.heading),
       heading: item.heading,
     }));
 
   const headingId = 'jump-to-heading';
+
   // we use the Text component with the as prop set to strong (for now) because the screenreader UX states the heading should not be announced
   // using inline link instead of anchor to bring benefits to styling but can revert to anchor if needed
   return (
