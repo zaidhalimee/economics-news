@@ -29,7 +29,7 @@ const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
   const viewRef = useViewTracker(eventTrackingData);
   const clickTrackerHandler = useClickTrackerHandler({
     ...eventTrackingData,
-    identifier: 'JumpTo',
+    componentName: 'jumpto',
   });
 
   const subheadlines: JumpToHeading[] = jumpToData?.model?.jumpToHeadings.map(
