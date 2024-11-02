@@ -6,16 +6,23 @@ export default {
   electionBannerWrapper: ({ spacings }: Theme) =>
     css({
       marginBottom: `${spacings.FULL}rem`,
+
+      [`@media (max-width:${pixelsToRem(320)}rem)`]: {
+        display: 'none',
+      },
     }),
 
   electionBannerIframe: ({ mq }: Theme) =>
     css({
       border: 'none',
       width: '100%',
-      height: `${pixelsToRem(360)}rem`,
+      height: `${pixelsToRem(BANNER_CONFIG.heights.mobile)}rem`,
 
+      [mq.GROUP_2_MIN_WIDTH]: {
+        height: `${pixelsToRem(BANNER_CONFIG.heights.tablet)}rem`,
+      },
       [mq.GROUP_4_MIN_WIDTH]: {
-        height: `${pixelsToRem(BANNER_CONFIG.iframeHeight)}rem`,
+        height: `${pixelsToRem(BANNER_CONFIG.heights.desktop)}rem`,
       },
     }),
 
@@ -24,14 +31,25 @@ export default {
       overflow: 'hidden',
       marginBottom: `${spacings.FULL}rem`,
 
+      [`@media (max-width:${pixelsToRem(320)}rem)`]: {
+        display: 'none',
+      },
+
       '> div': { padding: '0' },
+      '& amp-img': {
+        maxWidth: 640,
+        margin: '0 auto',
+      },
       '& amp-iframe': {
         border: 'none',
         width: '100%',
-        height: `${pixelsToRem(360)}rem`,
+        height: `${pixelsToRem(BANNER_CONFIG.heights.mobile)}rem`,
 
+        [mq.GROUP_2_MIN_WIDTH]: {
+          height: `${pixelsToRem(BANNER_CONFIG.heights.tablet)}rem`,
+        },
         [mq.GROUP_4_MIN_WIDTH]: {
-          height: `${pixelsToRem(BANNER_CONFIG.iframeHeight)}rem`,
+          height: `${pixelsToRem(BANNER_CONFIG.heights.desktop)}rem`,
         },
       },
     }),
