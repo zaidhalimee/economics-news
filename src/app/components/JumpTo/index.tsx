@@ -10,11 +10,11 @@ import InlineLink from '#app/components/InlineLink';
 
 interface JumpToHeading {
   id: string;
-  title: string;
+  heading: string;
 }
 
 interface JumpToProps {
-  jumpToData: {
+  jumpToHeadings: {
     model: {
       jumpToHeadings: Array<{ heading: string }>;
     };
@@ -22,7 +22,7 @@ interface JumpToProps {
   eventTrackingData?: EventTrackingMetadata;
 }
 
-const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
+const JumpTo = ({ jumpToHeadings, eventTrackingData }: JumpToProps) => {
   const { translations } = useContext(ServiceContext);
   const { jumpTo = 'Jump to' } = translations?.articlePage || {};
 
@@ -32,15 +32,14 @@ const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
     componentName: 'jumpto',
   });
 
-  const subheadlines: JumpToHeading[] = jumpToData?.model?.jumpToHeadings.map(
-    (item, index) => ({
+  // accessing heading directly here via transformation but this transformation can be removed
+  const subheadlines: JumpToHeading[] =
+    jumpToHeadings?.model?.jumpToHeadings.map((item, index) => ({
       id: `jump-to-${index}`,
-      title: item.heading,
-    }),
-  );
+      heading: item.heading,
+    }));
 
   const headingId = 'jump-to-heading';
-
   // we use the Text component with the as prop set to strong (for now) because the screenreader UX states the heading should not be announced
   // using inline link instead of anchor to bring benefits to styling but can revert to anchor if needed
   return (
@@ -55,13 +54,13 @@ const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
       </Text>
       <nav aria-labelledby={headingId}>
         <ul>
-          {subheadlines.map((heading, index) => (
-            <li key={heading.id}>
+          {subheadlines.map(({ id, heading }, index) => (
+            <li key={id}>
               <InlineLink
-                to={`#${heading.id}`}
+                to={`#${id}`}
                 onClick={clickTrackerHandler}
                 data-testid={`jump-to-link-${index}`}
-                text={heading.title}
+                text={heading}
               />
             </li>
           ))}
