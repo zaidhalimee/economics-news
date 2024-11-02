@@ -9,11 +9,6 @@ import Text from '#app/components/Text';
 import InlineLink from '#app/components/InlineLink';
 import idSanitiser from '../../lib/utilities/idSanitiser';
 
-interface JumpToHeading {
-  id: string;
-  heading: string;
-}
-
 interface JumpToProps {
   jumpToHeadings: {
     model: {
@@ -33,18 +28,10 @@ const JumpTo = ({ jumpToHeadings, eventTrackingData }: JumpToProps) => {
     componentName: 'jumpto',
   });
 
-  // accessing heading directly here via transformation but this transformation can be removed
-  // using idSanitiser to clean up each heading for now but we will remove this transformation
-  const subheadlines: JumpToHeading[] =
-    jumpToHeadings?.model?.jumpToHeadings.map(item => ({
-      id: idSanitiser(item.heading),
-      heading: item.heading,
-    }));
-
   const headingId = 'jump-to-heading';
 
   // we use the Text component with the as prop set to strong (for now) because the screenreader UX states the heading should not be announced
-  // using inline link instead of anchor to bring benefits to styling but can revert to anchor if needed
+  // wsing inline link instead of anchor to bring benefits to styling, but can revert to anchor if needed
   return (
     <section
       ref={viewRef}
@@ -57,16 +44,19 @@ const JumpTo = ({ jumpToHeadings, eventTrackingData }: JumpToProps) => {
       </Text>
       <nav aria-labelledby={headingId}>
         <ul>
-          {subheadlines.map(({ id, heading }, index) => (
-            <li key={id}>
-              <InlineLink
-                to={`#${id}`}
-                onClick={clickTrackerHandler}
-                data-testid={`jump-to-link-${index}`}
-                text={heading}
-              />
-            </li>
-          ))}
+          {jumpToHeadings.model.jumpToHeadings.map(({ heading }) => {
+            const sanitisedId = idSanitiser(heading);
+            return (
+              <li key={sanitisedId}>
+                <InlineLink
+                  to={`#${sanitisedId}`}
+                  onClick={clickTrackerHandler}
+                  data-testid={`jump-to-link-${sanitisedId}`}
+                  text={heading}
+                />
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </section>

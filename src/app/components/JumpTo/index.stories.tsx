@@ -6,14 +6,14 @@ import metadata from './metadata.json';
 import readme from './README.md';
 
 interface Props {
-  subheadlines?: { title: string }[];
+  subheadlines?: { heading: string }[];
 }
 
 const Component = ({ subheadlines = [] }: Props) => {
   const jumpToHeadings = {
     model: {
       jumpToHeadings: subheadlines.map(subheadline => ({
-        heading: subheadline.title,
+        heading: subheadline.heading,
       })),
     },
   };
@@ -35,16 +35,16 @@ export const Example = (_: StoryArgs, globalArgs: Props) => {
   const {
     subheadlines = [
       {
-        title: 'This is a subheading - 1',
+        heading: 'This is a subheading - 1',
       },
       {
-        title: 'This is a subheading - 2',
+        heading: 'This is a subheading - 2',
       },
       {
-        title: 'This is a subheading - 3',
+        heading: 'This is a subheading - 3',
       },
       {
-        title: 'This is a subheading - 4',
+        heading: 'This is a subheading - 4',
       },
     ],
   } = globalArgs;
