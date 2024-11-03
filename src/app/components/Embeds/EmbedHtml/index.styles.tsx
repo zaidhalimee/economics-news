@@ -21,10 +21,6 @@ const styles = {
   // TODO: Remove this styling after the US Elections
   electionBannerOverrides: ({ mq }: Theme) =>
     css({
-      [`@media (max-width:${pixelsToRem(320)}rem)`]: {
-        display: 'none',
-      },
-
       [mq.GROUP_2_MIN_WIDTH]: {
         paddingLeft: 0,
         paddingRight: 0,
