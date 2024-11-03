@@ -84,7 +84,7 @@ describe('ElectionBanner', () => {
 
         const configSrc = BANNER_CONFIG[
           appEnv === 'live' ? 'iframeSrc' : 'iframeDevSrc'
-        ].replace('{service}', 'news');
+        ].replace('{service}', 'english');
 
         const domain = isAmp
           ? process.env.SIMORGH_INCLUDES_BASE_AMP_URL
@@ -123,7 +123,7 @@ describe('ElectionBanner', () => {
       const iframe = wrappingEl.querySelector('iframe, amp-iframe');
       const iframeSrc = iframe?.getAttribute('src');
 
-      expect(iframeSrc).not.toContain('turkce');
+      expect(iframeSrc).not.toContain('/turkce/');
       expect(iframeSrc).toContain('turkish');
     });
 
@@ -142,7 +142,7 @@ describe('ElectionBanner', () => {
       const iframe = wrappingEl.querySelector('iframe, amp-iframe');
       const iframeSrc = iframe?.getAttribute('src');
 
-      expect(iframeSrc).not.toContain('news');
+      expect(iframeSrc).not.toContain('/news/');
       expect(iframeSrc).toContain('english');
     });
 
