@@ -21,10 +21,10 @@ function script(this: Element) {
 }
 
 type Props = {
-  type: MediaType | 'image';
+  type?: MediaType | 'image';
 };
 
-const getButtonText = (type: MediaType | 'image') => {
+const getButtonText = (type?: MediaType | 'image') => {
   switch (type) {
     case 'audio':
       return 'Load Audio';

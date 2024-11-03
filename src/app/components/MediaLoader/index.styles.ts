@@ -15,7 +15,13 @@ const commonMarginSpacing = ({ mq, spacings }: Theme) =>
   });
 
 export default {
-  liteIframe: () => css({ width: '100%', height: '100%', border: 'none' }),
+  liteIframe: ({ palette }: Theme) =>
+    css({
+      width: '100%',
+      height: '100%',
+      border: 'none',
+      backgroundColor: palette.BLACK,
+    }),
   figure:
     (isEmbedded = false) =>
     ({ spacings }: Theme) =>
