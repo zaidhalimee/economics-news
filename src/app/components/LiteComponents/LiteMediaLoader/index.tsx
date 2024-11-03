@@ -20,10 +20,6 @@ function script(this: Element) {
   this.remove();
 }
 
-type Props = {
-  type?: MediaType | 'image';
-};
-
 const getButtonText = (type?: MediaType | 'image') => {
   switch (type) {
     case 'audio':
@@ -37,6 +33,9 @@ const getButtonText = (type?: MediaType | 'image') => {
   }
 };
 
+type Props = {
+  type?: MediaType | 'image';
+};
 const LiteMediaLoader = ({ type, children }: PropsWithChildren<Props>) => {
   return (
     <>
