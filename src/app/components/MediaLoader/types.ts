@@ -41,7 +41,7 @@ export type PlayerConfig = {
 };
 
 export type PlayerUiConfig = {
-  skin?: 'audio' | 'classic';
+  skin?: Skin;
   colour?: string;
   foreColour?: string;
   baseColour?: string;
@@ -80,6 +80,8 @@ export type ConfigBuilderProps = {
   embedded?: boolean;
   lang: string;
 };
+
+export type Skin = 'audio' | 'classic';
 
 export type Orientations = 'landscape' | 'portrait';
 

@@ -27,6 +27,7 @@ import styles from './index.styles';
 import { getBootstrapSrc } from '../Ad/Canonical';
 import Metadata from './Metadata';
 import AmpMediaLoader from './Amp';
+import LiteLoader from './LiteLoader';
 
 const PAGETYPES_IGNORE_PLACEHOLDER: PageTypes[] = [
   MEDIA_ARTICLE_PAGE,
@@ -183,8 +184,6 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
     !PAGETYPES_IGNORE_PLACEHOLDER.includes(pageType),
   );
 
-  if (isLite) return null;
-
   const { model: mediaOverrides } =
     filterForBlockType(blocks, 'mediaOverrides') || {};
 
@@ -229,6 +228,24 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
 
   const showPortraitTitle = orientation === 'portrait' && !embedded;
 
+  // if (isLite)
+  //   return (
+  //     <>
+  //       <Metadata blocks={blocks} embedURL={playerConfig?.externalEmbedUrl} />
+  //       <LiteLoader
+  //         skin={playerConfig?.ui?.skin}
+  //         src={ampIframeUrl}
+  //         title={mediaInfo?.title}
+  //         embedded={embedded}
+  //         orientation={orientation}
+  //         mediaType={mediaType}
+  //         captionBlock={captionBlock}
+  //       />
+  //     </>
+  //   );
+
+  // const isCanonical = !isAmp && !isLite;
+
   return (
     <>
       {
@@ -251,31 +268,43 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
           ],
         ]}
       >
-        {isAmp ? (
-          <AmpMediaLoader
-            src={ampIframeUrl}
-            title={mediaInfo?.title}
-            placeholderSrc={placeholderSrc}
-            placeholderSrcset={placeholderSrcset}
-            noJsMessage={translatedNoJSMessage}
-          />
-        ) : (
-          <>
-            {showAds && <AdvertTagLoader />}
-            <BumpLoader />
-            {hasPlaceholder ? (
-              <Placeholder
-                src={placeholderSrc}
-                srcSet={placeholderSrcset}
-                noJsMessage={translatedNoJSMessage}
-                mediaInfo={mediaInfo}
-                onClick={() => setShowPlaceholder(false)}
-              />
-            ) : (
-              <MediaContainer playerConfig={playerConfig} showAds={showAds} />
-            )}
-          </>
-        )}
+        {(() => {
+          switch (true) {
+            case isAmp:
+              return (
+                <AmpMediaLoader
+                  src={ampIframeUrl}
+                  title={mediaInfo?.title}
+                  placeholderSrc={placeholderSrc}
+                  placeholderSrcset={placeholderSrcset}
+                  noJsMessage={translatedNoJSMessage}
+                />
+              );
+            case isLite:
+              return <LiteLoader src={ampIframeUrl} title={mediaInfo?.title} />;
+            default:
+              return (
+                <>
+                  {showAds && <AdvertTagLoader />}
+                  <BumpLoader />
+                  {hasPlaceholder ? (
+                    <Placeholder
+                      src={placeholderSrc}
+                      srcSet={placeholderSrcset}
+                      noJsMessage={translatedNoJSMessage}
+                      mediaInfo={mediaInfo}
+                      onClick={() => setShowPlaceholder(false)}
+                    />
+                  ) : (
+                    <MediaContainer
+                      playerConfig={playerConfig}
+                      showAds={showAds}
+                    />
+                  )}
+                </>
+              );
+          }
+        })()}
         {captionBlock && (
           <Caption
             block={captionBlock}
