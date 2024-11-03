@@ -8,6 +8,7 @@ export default {
       backgroundColor: palette.WHITE,
       zIndex: 1,
       width: '100%',
+      height: '100%',
       border: 'none',
       cursor: 'pointer',
       aspectRatio: '16 / 9',
