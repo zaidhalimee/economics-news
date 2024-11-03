@@ -6,7 +6,6 @@ export default {
     css({
       position: 'relative',
       backgroundColor: palette.WHITE,
-      zIndex: 1,
       width: '100%',
       height: '100%',
       border: 'none',
@@ -29,5 +28,12 @@ export default {
       padding: '1rem',
       color: palette.BLACK,
       border: `2px solid ${palette.BLACK}`,
+    }),
+  liteInfoText: () =>
+    css({
+      position: 'absolute',
+      bottom: '1rem',
+      left: '50%',
+      transform: 'translateX(-50%)',
     }),
 };

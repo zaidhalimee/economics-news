@@ -44,6 +44,14 @@ const LiteMediaLoader = ({ type, children }: PropsWithChildren<Props>) => {
         <Text css={styles.liteButtonText} fontVariant="sansBold">
           {getButtonText(type)}
         </Text>
+        <Text
+          as="div"
+          css={styles.liteInfoText}
+          fontVariant="sansRegularItalic"
+          size="brevier"
+        >
+          Data usage may be high when loading media
+        </Text>
       </LiteButton>
       <template>{children}</template>
     </>
