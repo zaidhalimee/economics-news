@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet';
 import styles from './index.styles';
 import { RequestContext } from '../../contexts/RequestContext';
 import { FRONT_PAGE, HOME_PAGE } from '../../routes/utils/pageTypes';
-import LiteImageLoader from './LiteImageLoader';
+import LiteMediaLoader from '../LiteComponents/LiteMediaLoader';
 
 type Props = {
   alt: string;
@@ -87,7 +87,7 @@ const Image = ({
     fallbackSrcSet &&
     (pageType === FRONT_PAGE || pageType === HOME_PAGE);
 
-  const ComponentWrapper = isLite ? LiteImageLoader : Fragment;
+  const ComponentWrapper = isLite ? LiteMediaLoader : Fragment;
   const CanonicalImageWrapper = hasFallback ? 'picture' : Fragment;
   const ampImgLayout = hasDimensions ? 'responsive' : 'fill';
 

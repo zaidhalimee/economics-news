@@ -27,7 +27,7 @@ import styles from './index.styles';
 import { getBootstrapSrc } from '../Ad/Canonical';
 import Metadata from './Metadata';
 import AmpMediaLoader from './Amp';
-import LiteLoader from './LiteLoader';
+import LiteMediaLoader from '../LiteComponents/LiteMediaLoader';
 
 const PAGETYPES_IGNORE_PLACEHOLDER: PageTypes[] = [
   MEDIA_ARTICLE_PAGE,
@@ -281,7 +281,15 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
                 />
               );
             case isLite:
-              return <LiteLoader src={ampIframeUrl} title={mediaInfo?.title} />;
+              return (
+                <LiteMediaLoader type={mediaType}>
+                  <iframe
+                    css={styles.liteIframe}
+                    title={mediaInfo?.title}
+                    src={ampIframeUrl}
+                  />
+                </LiteMediaLoader>
+              );
             default:
               return (
                 <>

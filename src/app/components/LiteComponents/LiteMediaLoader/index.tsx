@@ -4,7 +4,8 @@
 import { jsx } from '@emotion/react';
 import Text from '#app/components/Text';
 import React, { PropsWithChildren } from 'react';
-import styles from './index.styles';
+import { MediaType } from '#app/models/types/media';
+import styles from '../../Image/index.styles';
 import LiteButton from '../LiteButton';
 
 function script(this: Element) {
@@ -19,12 +20,29 @@ function script(this: Element) {
   this.remove();
 }
 
-const LiteImageLoader = ({ children }: PropsWithChildren) => {
+type Props = {
+  type: MediaType | 'image';
+};
+
+const getButtonText = (type: MediaType | 'image') => {
+  switch (type) {
+    case 'audio':
+      return 'Load Audio';
+    case 'video':
+      return 'Load Video';
+    case 'image':
+      return 'Load Image';
+    default:
+      return 'Load Media';
+  }
+};
+
+const LiteMediaLoader = ({ type, children }: PropsWithChildren<Props>) => {
   return (
     <>
       <LiteButton css={styles.liteImageOverlayButton} script={script}>
         <Text css={styles.liteImageButtonText} fontVariant="sansBold">
-          Load Image
+          {getButtonText(type)}
         </Text>
       </LiteButton>
       <template>{children}</template>
@@ -32,4 +50,4 @@ const LiteImageLoader = ({ children }: PropsWithChildren) => {
   );
 };
 
-export default LiteImageLoader;
+export default LiteMediaLoader;
