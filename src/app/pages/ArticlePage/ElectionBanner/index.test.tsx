@@ -127,6 +127,25 @@ describe('ElectionBanner', () => {
       expect(iframeSrc).toContain('turkish');
     });
 
+    it('should render the correct VJ URL for News service', () => {
+      const { getByTestId } = render(
+        <ElectionBanner aboutTags={mockAboutTags} taggings={mockTaggings} />,
+        {
+          toggles: { electionBanner: { enabled: true } },
+          isAmp,
+          service: 'news',
+        },
+      );
+
+      const wrappingEl = getByTestId(ELEMENT_ID);
+
+      const iframe = wrappingEl.querySelector('iframe, amp-iframe');
+      const iframeSrc = iframe?.getAttribute('src');
+
+      expect(iframeSrc).not.toContain('news');
+      expect(iframeSrc).toContain('english');
+    });
+
     it('should not render ElectionBanner when taggings contain the editorialSensitivityId', () => {
       const { queryByTestId } = render(
         <ElectionBanner

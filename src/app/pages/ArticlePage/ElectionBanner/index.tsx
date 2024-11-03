@@ -22,6 +22,8 @@ const handleUrlServiceTransform = (url: string, service: Services) => {
   switch (service) {
     case 'turkce':
       return url.replace('{service}', 'turkish');
+    case 'news':
+      return url.replace('{service}', 'english');
     default:
       return url.replace('{service}', service);
   }
