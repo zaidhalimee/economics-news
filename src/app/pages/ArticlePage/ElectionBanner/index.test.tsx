@@ -151,6 +151,7 @@ describe('ElectionBanner', () => {
         <ElectionBanner
           aboutTags={mockAboutTags}
           taggings={[
+            ...mockTaggings,
             {
               predicate:
                 'http://www.bbc.co.uk/ontologies/bbc/editorialSensitivity',
