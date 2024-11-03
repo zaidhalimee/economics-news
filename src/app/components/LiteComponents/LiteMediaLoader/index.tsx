@@ -5,8 +5,8 @@ import { jsx } from '@emotion/react';
 import Text from '#app/components/Text';
 import React, { PropsWithChildren } from 'react';
 import { MediaType } from '#app/models/types/media';
-import styles from '../../Image/index.styles';
 import LiteButton from '../LiteButton';
+import styles from './index.styles';
 
 function script(this: Element) {
   const parentEl = this.parentElement;
@@ -40,8 +40,8 @@ const getButtonText = (type: MediaType | 'image') => {
 const LiteMediaLoader = ({ type, children }: PropsWithChildren<Props>) => {
   return (
     <>
-      <LiteButton css={styles.liteImageOverlayButton} script={script}>
-        <Text css={styles.liteImageButtonText} fontVariant="sansBold">
+      <LiteButton css={styles.liteMediaButtonOverlay} script={script}>
+        <Text css={styles.liteButtonText} fontVariant="sansBold">
           {getButtonText(type)}
         </Text>
       </LiteButton>
