@@ -228,24 +228,6 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
 
   const showPortraitTitle = orientation === 'portrait' && !embedded;
 
-  // if (isLite)
-  //   return (
-  //     <>
-  //       <Metadata blocks={blocks} embedURL={playerConfig?.externalEmbedUrl} />
-  //       <LiteLoader
-  //         skin={playerConfig?.ui?.skin}
-  //         src={ampIframeUrl}
-  //         title={mediaInfo?.title}
-  //         embedded={embedded}
-  //         orientation={orientation}
-  //         mediaType={mediaType}
-  //         captionBlock={captionBlock}
-  //       />
-  //     </>
-  //   );
-
-  // const isCanonical = !isAmp && !isLite;
-
   return (
     <>
       {
