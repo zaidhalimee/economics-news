@@ -10,11 +10,7 @@ import InlineLink from '#app/components/InlineLink';
 import idSanitiser from '../../lib/utilities/idSanitiser';
 
 interface JumpToProps {
-  jumpToHeadings: {
-    model: {
-      jumpToHeadings: Array<{ heading: string }>;
-    };
-  };
+  jumpToHeadings: Array<{ heading: string }>;
   eventTrackingData?: EventTrackingMetadata;
 }
 
@@ -31,7 +27,7 @@ const JumpTo = ({ jumpToHeadings, eventTrackingData }: JumpToProps) => {
   const headingId = 'jump-to-heading';
 
   // we use the Text component with the as prop set to strong (for now) because the screenreader UX states the heading should not be announced
-  // wsing inline link instead of anchor to bring benefits to styling, but can revert to anchor if needed
+  // using InlineLink instead of anchor to bring benefits to styling, but can revert to anchor if needed
   return (
     <section
       ref={viewRef}
@@ -44,7 +40,7 @@ const JumpTo = ({ jumpToHeadings, eventTrackingData }: JumpToProps) => {
       </Text>
       <nav aria-labelledby={headingId}>
         <ul>
-          {jumpToHeadings.model.jumpToHeadings.map(({ heading }) => {
+          {jumpToHeadings.map(({ heading }) => {
             const sanitisedId = idSanitiser(heading);
             return (
               <li key={sanitisedId}>

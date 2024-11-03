@@ -10,15 +10,7 @@ interface Props {
 }
 
 const Component = ({ subheadlines = [] }: Props) => {
-  const jumpToHeadings = {
-    model: {
-      jumpToHeadings: subheadlines.map(subheadline => ({
-        heading: subheadline.heading,
-      })),
-    },
-  };
-
-  return <JumpTo jumpToHeadings={jumpToHeadings} />;
+  return <JumpTo jumpToHeadings={subheadlines} />;
 };
 
 export default {
