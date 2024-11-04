@@ -39,12 +39,13 @@ export default {
         display: 'none',
       },
     }),
-  liteButtonText: ({ palette }: Theme) =>
+  liteButtonText: ({ palette, spacings }: Theme) =>
     css({
       display: 'inline-flex',
       alignItems: 'center',
-      padding: '1rem',
       color: palette.BLACK,
+      marginTop: `${spacings.DOUBLE}rem`,
+      padding: '1rem',
       border: `${pixelsToRem(1)}rem solid ${palette.GREY_5}`,
     }),
   iconWrapper: ({ spacings, mq }: Theme) =>
@@ -65,11 +66,8 @@ export default {
         },
       },
     }),
-  liteInfoText: () =>
+  liteInfoText: ({ spacings }: Theme) =>
     css({
-      position: 'absolute',
-      bottom: '1rem',
-      left: '50%',
-      transform: 'translateX(-50%)',
+      marginTop: `${spacings.DOUBLE}rem`,
     }),
 };
