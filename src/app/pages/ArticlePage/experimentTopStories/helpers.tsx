@@ -82,8 +82,10 @@ const insertBlockAtPosition = (
   };
   const percentage = insertionPercentages[position];
 
-  const calculatedIndex = Math.floor((blocks.length - 1) * percentage); // -1 accounts for 'wsoj' block which is never rendered on PS articles
-  const insertIndex = Math.max(calculatedIndex, 3); // Ensure insertIndex is at least 3
+  const renderedBlocksLength = blocks.length - 1;
+  const calculatedIndex = Math.floor(renderedBlocksLength * percentage);
+  const insertIndex = Math.max(calculatedIndex, 3);
+
   const blocksClone = [...blocks];
   blocksClone.splice(insertIndex, 0, blockToInsert);
   return blocksClone;
