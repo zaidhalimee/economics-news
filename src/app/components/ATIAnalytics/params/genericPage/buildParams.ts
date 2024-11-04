@@ -50,7 +50,7 @@ export const buildPageATIParams = ({
     statsDestination,
     timePublished,
     timeUpdated,
-    experimentVariant,
+    ...(experimentVariant && { experimentVariant }),
   };
 };
 
