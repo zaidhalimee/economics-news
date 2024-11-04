@@ -180,6 +180,8 @@ export const service: ZhongwenConfig = {
         postedAt: '张贴于',
         summary: '概要',
         shareButtonText: '分享',
+        postDateTimeFormat: 'YYYY年M月DD日',
+        postDateFormat: 'YYYY年M月D日',
       },
       downloads: {
         instructions: 'You can download and view today’s news.',
@@ -481,6 +483,8 @@ export const service: ZhongwenConfig = {
         postedAt: '張貼在',
         summary: '概要',
         shareButtonText: '分享',
+        postDateTimeFormat: 'YYYY年M月DD日',
+        postDateFormat: 'YYYY年M月D日',
       },
       downloads: {
         instructions: 'You can download and view today’s news.',

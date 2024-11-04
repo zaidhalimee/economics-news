@@ -61,7 +61,11 @@ const PostHeaderBanner = ({
     service,
     script,
     translations: {
-      liveExperiencePage: { breaking = 'Breaking' },
+      liveExperiencePage: {
+        breaking = 'Breaking',
+        postDateTimeFormat,
+        postDateFormat,
+      },
     },
   } = useContext(ServiceContext);
   const isRelative = isTenHoursAgo(new Date(curated).getTime());
@@ -70,8 +74,8 @@ const PostHeaderBanner = ({
       <TimeStampContainer
         css={styles.timeStamp}
         timestamp={curated}
-        dateTimeFormat="DD MMMM YYYY"
-        format="D MMMM YYYY"
+        dateTimeFormat={postDateTimeFormat || 'DD MMMM YYYY'}
+        format={postDateFormat || 'D MMMM YYYY'}
         locale={locale}
         timezone={timezone}
         service={service}
