@@ -32,20 +32,23 @@ export default {
         display: 'none',
       },
     }),
-  liteButtonText: ({ isDarkUi, palette }: Theme) =>
+  liteButtonText: ({ palette }: Theme) =>
     css({
       display: 'inline-flex',
+      alignItems: 'center',
       padding: '1rem',
       color: palette.BLACK,
-      border: `${pixelsToRem(1)}rem solid ${
-        isDarkUi ? palette.GREY_2 : palette.GREY_5
-      }`,
+      border: `${pixelsToRem(1)}rem solid ${palette.GREY_5}`,
     }),
   iconWrapper: ({ spacings, mq }: Theme) =>
     css({
       marginInlineEnd: `${spacings.FULL}rem`,
 
+      height: `${spacings.TRIPLE}rem`,
+      width: `${spacings.TRIPLE}rem`,
+
       '> svg': {
+        color: 'currentColor',
         fill: 'currentColor',
         height: `${spacings.DOUBLE}rem`,
         width: `${spacings.DOUBLE}rem`,
