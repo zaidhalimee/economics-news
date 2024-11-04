@@ -6,14 +6,10 @@ import metadata from './metadata.json';
 import readme from './README.md';
 
 interface Props {
-  subheadlines?: { heading: string }[];
+  jumpToHeadings?: { heading: string }[];
 }
 
-const Component = ({ subheadlines = [] }: Props) => {
-  const jumpToHeadings = subheadlines.map(subheadline => ({
-    heading: subheadline.heading,
-  }));
-
+const Component = ({ jumpToHeadings = [] }: Props) => {
   return <JumpTo jumpToHeadings={jumpToHeadings} />;
 };
 
@@ -27,23 +23,21 @@ export default {
 };
 
 // wip sample story - should use a fixture here instead probably for the titles
-export const Example = (_: StoryArgs, globalArgs: Props) => {
-  const {
-    subheadlines = [
-      {
-        heading: 'This is a subheading - 1',
-      },
-      {
-        heading: 'This is a subheading - 2',
-      },
-      {
-        heading: 'This is a subheading - 3',
-      },
-      {
-        heading: 'This is a subheading - 4',
-      },
-    ],
-  } = globalArgs;
+export const Example = (_: StoryArgs) => {
+  const jumpToHeadings = [
+    {
+      heading: 'This is a subheading - 1',
+    },
+    {
+      heading: 'This is a subheading - 2',
+    },
+    {
+      heading: 'This is a subheading - 3',
+    },
+    {
+      heading: 'This is a subheading - 4',
+    },
+  ];
 
-  return <Component subheadlines={subheadlines} />;
+  return <Component jumpToHeadings={jumpToHeadings} />;
 };
