@@ -25,10 +25,10 @@ export interface Translations {
     informationPage: string;
     informationPageLink: string;
     dataSaving: string;
-    loadImage: string;
-    loadVideo: string;
-    loadAudio: string;
-    loadMedia: string;
+    loadImage?: string;
+    loadVideo?: string;
+    loadAudio?: string;
+    loadMedia?: string;
   };
   mediaAssetPage: {
     mediaPlayer: string;
