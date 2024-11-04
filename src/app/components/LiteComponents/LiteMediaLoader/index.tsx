@@ -67,9 +67,7 @@ const LiteMediaLoader = ({
       <LiteButton
         css={[
           styles.liteMediaButtonOverlay,
-          shouldSetAspectRatio && {
-            aspectRatio: `${width}/${height}`,
-          },
+          shouldSetAspectRatio && { aspectRatio: `${width}/${height}` },
         ]}
         script={script}
       >
