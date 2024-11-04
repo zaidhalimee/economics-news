@@ -45,7 +45,7 @@ export default {
       display: 'inline-flex',
       alignItems: 'center',
       color: palette.BLACK,
-      marginTop: `${spacings.QUADRUPLE}rem`,
+      margin: `${spacings.DOUBLE}rem 0`,
       padding: `${spacings.DOUBLE}rem`,
       border: `${pixelsToRem(1)}rem solid ${palette.GREY_5}`,
     }),
@@ -67,9 +67,5 @@ export default {
           color: 'canvasText',
         },
       },
-    }),
-  liteInfoText: ({ spacings }: Theme) =>
-    css({
-      marginTop: `${spacings.DOUBLE}rem`,
     }),
 };
