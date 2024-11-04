@@ -41,6 +41,8 @@ export interface Translations {
     postedAt: string;
     summary: string;
     shareButtonText: string;
+    postDateTimeFormat?: string;
+    postDateFormat?: string;
   };
   downloads?: {
     instructions?: string;
