@@ -77,12 +77,7 @@ const LiteMediaLoader = ({
           </div>
           <div>{getButtonText({ type, liteSiteTranslations })}</div>
         </Text>
-        <Text
-          as="div"
-          css={styles.liteInfoText}
-          fontVariant="sansRegularItalic"
-          size="brevier"
-        >
+        <Text as="div" css={styles.liteInfoText} size="brevier">
           Data usage may be high when loading media
         </Text>
       </LiteButton>
