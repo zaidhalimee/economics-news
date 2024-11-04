@@ -10,6 +10,7 @@ export default {
       backgroundColor: palette.WHITE,
       width: '100%',
       height: '100%',
+      minHeight: 150,
       border: 'none',
       cursor: 'pointer',
       padding: 0,
