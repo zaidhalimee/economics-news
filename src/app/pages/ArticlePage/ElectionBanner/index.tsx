@@ -22,6 +22,8 @@ const handleUrlServiceTransform = (url: string, service: Services) => {
   switch (service) {
     case 'turkce':
       return url.replace('{service}', 'turkish');
+    case 'news':
+      return url.replace('{service}', 'english');
     default:
       return url.replace('{service}', service);
   }
@@ -43,7 +45,7 @@ export default function ElectionBanner({ aboutTags, taggings }: Props) {
     usElectionThingId,
   } = BANNER_CONFIG;
 
-  const isEditoriallySensitive = taggings?.find(({ value }) =>
+  const isEditoriallySensitive = taggings?.some(({ value }) =>
     value.includes(editorialSensitivityId),
   );
 
