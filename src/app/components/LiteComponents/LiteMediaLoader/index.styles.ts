@@ -54,7 +54,8 @@ export default {
   iconWrapper: ({ spacings, mq }: Theme) =>
     css({
       marginInlineEnd: `${spacings.FULL}rem`,
-
+      display: 'flex',
+      alignItems: 'center',
       height: `${spacings.TRIPLE}rem`,
       width: `${spacings.TRIPLE}rem`,
 
