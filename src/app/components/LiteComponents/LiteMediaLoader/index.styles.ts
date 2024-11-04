@@ -1,5 +1,6 @@
 import { css, Theme } from '@emotion/react';
 import NO_JS_CLASSNAME from '#app/lib/noJs.const';
+import pixelsToRem from '#app/utilities/pixelsToRem';
 
 export default {
   liteMediaButtonOverlay: ({ palette }: Theme) =>
@@ -14,8 +15,16 @@ export default {
 
       '&:hover, &:focus-visible': {
         span: {
-          backgroundColor: palette.BLACK,
+          backgroundColor: palette.POSTBOX,
           color: palette.WHITE,
+          textDecoration: 'underline',
+          border: `${pixelsToRem(1)}rem solid ${palette.POSTBOX}`,
+        },
+
+        div: {
+          svg: {
+            fill: palette.WHITE,
+          },
         },
       },
 
@@ -23,11 +32,27 @@ export default {
         display: 'none',
       },
     }),
-  liteButtonText: ({ palette }: Theme) =>
+  liteButtonText: ({ isDarkUi, palette }: Theme) =>
     css({
+      display: 'inline-flex',
       padding: '1rem',
       color: palette.BLACK,
-      border: `2px solid ${palette.BLACK}`,
+      border: `${pixelsToRem(1)}rem solid ${
+        isDarkUi ? palette.GREY_2 : palette.GREY_5
+      }`,
+    }),
+  iconWrapper: ({ spacings, mq }: Theme) =>
+    css({
+      marginInlineEnd: `${spacings.FULL}rem`,
+
+      '> svg': {
+        fill: 'currentColor',
+        height: `${spacings.DOUBLE}rem`,
+        width: `${spacings.DOUBLE}rem`,
+        [mq.FORCED_COLOURS]: {
+          color: 'canvasText',
+        },
+      },
     }),
   liteInfoText: () =>
     css({
