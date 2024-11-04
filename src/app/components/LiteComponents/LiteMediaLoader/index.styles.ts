@@ -45,7 +45,7 @@ export default {
       alignItems: 'center',
       color: palette.BLACK,
       marginTop: `${spacings.QUADRUPLE}rem`,
-      padding: '1rem',
+      padding: `${spacings.DOUBLE}rem`,
       border: `${pixelsToRem(1)}rem solid ${palette.GREY_5}`,
     }),
   iconWrapper: ({ spacings, mq }: Theme) =>
@@ -61,6 +61,7 @@ export default {
         fill: 'currentColor',
         height: `${spacings.DOUBLE}rem`,
         width: `${spacings.DOUBLE}rem`,
+
         [mq.FORCED_COLOURS]: {
           color: 'canvasText',
         },
