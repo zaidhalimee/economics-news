@@ -3,9 +3,11 @@
 
 import { jsx } from '@emotion/react';
 import Text from '#app/components/Text';
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, useContext } from 'react';
 import { MediaType } from '#app/models/types/media';
 import { mediaIcons } from '#psammead/psammead-assets/src/svgs';
+import { ServiceContext } from '#app/contexts/ServiceContext';
+import { Translations } from '#app/models/types/translations';
 import LiteButton from '../LiteButton';
 import styles from './index.styles';
 
@@ -21,16 +23,21 @@ function script(this: Element) {
   this.remove();
 }
 
-const getButtonText = (type?: MediaType) => {
+type ButtonTextProps = {
+  type?: MediaType;
+  liteSiteTranslations: Translations['liteSite'];
+};
+
+const getButtonText = ({ type, liteSiteTranslations }: ButtonTextProps) => {
   switch (type) {
     case 'audio':
-      return 'Load Audio';
+      return liteSiteTranslations?.loadAudio || 'Load Audio';
     case 'video':
-      return 'Load Video';
+      return liteSiteTranslations?.loadVideo || 'Load Video';
     case 'image':
-      return 'Load Image';
+      return liteSiteTranslations?.loadImage || 'Load Image';
     default:
-      return 'Load Media';
+      return liteSiteTranslations?.loadMedia || 'Load Media';
   }
 };
 
@@ -46,6 +53,10 @@ const LiteMediaLoader = ({
   height,
   children,
 }: PropsWithChildren<Props>) => {
+  const {
+    translations: { liteSite: liteSiteTranslations },
+  } = useContext(ServiceContext);
+
   return (
     <>
       <LiteButton
@@ -62,7 +73,7 @@ const LiteMediaLoader = ({
           <div css={styles.iconWrapper}>
             {mediaIcons?.[type as keyof typeof mediaIcons]}
           </div>
-          <div>{getButtonText(type)}</div>
+          <div>{getButtonText({ type, liteSiteTranslations })}</div>
         </Text>
         <Text
           as="div"
