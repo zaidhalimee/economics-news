@@ -1,6 +1,7 @@
 import { css, Theme } from '@emotion/react';
 import NO_JS_CLASSNAME from '#app/lib/noJs.const';
 import pixelsToRem from '#app/utilities/pixelsToRem';
+import { focusIndicatorThickness } from '#app/components/ThemeProvider/focusIndicator';
 
 export default {
   liteMediaButtonOverlay: ({ palette }: Theme) =>
@@ -25,6 +26,17 @@ export default {
           svg: {
             fill: palette.WHITE,
           },
+        },
+      },
+
+      '&:focus-visible': {
+        outline: 'none !important', // TODO: Find a better way to do this
+        boxShadow: 'none !important', // TODO: Find a better way to do this
+
+        span: {
+          outline: `${focusIndicatorThickness} solid ${palette.BLACK}`,
+          boxShadow: `0 0 0 ${focusIndicatorThickness} ${palette.WHITE}`,
+          outlineOffset: `${focusIndicatorThickness}`,
         },
       },
 
