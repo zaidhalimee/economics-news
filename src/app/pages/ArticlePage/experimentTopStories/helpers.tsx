@@ -19,7 +19,7 @@ export const experimentTopStoriesConfig = {
   },
 };
 
-type VariantsNames = 'Quarter' | 'Half' | 'ThreeQuarters';
+type VariantNames = 'Quarter' | 'Half' | 'ThreeQuarters';
 type Positions = 'articleBody' | 'secondaryColumn';
 type TrackingEventType = 'view' | 'click';
 
@@ -72,19 +72,17 @@ const enableExperimentTopStories = ({
   );
 };
 
-const insertionPositions = ['Quarter', 'Half', 'ThreeQuarters'] as const;
-
 const insertBlockAtPosition = (
   blocks: OptimoBlock[],
   blockToInsert: OptimoBlock,
-  position: (typeof insertionPositions)[number],
+  variantName: VariantNames,
 ) => {
   const insertionPercentages = {
     Quarter: 0.25,
     Half: 0.5,
     ThreeQuarters: 0.75,
   };
-  const percentage = insertionPercentages[position];
+  const percentage = insertionPercentages[variantName];
 
   const renderedBlocksLength = blocks.length - 1;
   const calculatedIndex = Math.floor(renderedBlocksLength * percentage);
@@ -102,17 +100,18 @@ const insertExperimentTopStories = ({
   blocks: OptimoBlock[];
   topStoriesContent: TopStoryItem[];
 }) => {
-  return insertionPositions.reduce((currentBlocks, position) => {
+  const insertionPositions = ['Quarter', 'Half', 'ThreeQuarters'] as const;
+  return insertionPositions.reduce((currentBlocks, variantName) => {
     const experimentTopStoriesBlock = {
-      type: `experimentTopStories${position}`,
+      type: `experimentTopStories${variantName}`,
       model: topStoriesContent,
-      id: `experimentTopStories${position}`,
+      id: `experimentTopStories${variantName}`,
     };
 
     const transformedBlocks = insertBlockAtPosition(
       currentBlocks,
       experimentTopStoriesBlock,
-      position,
+      variantName,
     );
 
     return transformedBlocks;
@@ -161,7 +160,7 @@ export const ExperimentTopStories = ({
   variantName,
 }: {
   topStoriesContent: TopStoryItem[];
-  variantName: VariantsNames;
+  variantName: VariantNames;
 }) => {
   const variantKeys = {
     Quarter: 'show_at_quarter',
@@ -264,11 +263,7 @@ const buildRequestUrls = ({
   };
 };
 
-const getQuerySelectors = ({
-  variantName,
-}: {
-  variantName?: VariantsNames;
-}) => {
+const getQuerySelectors = ({ variantName }: { variantName?: VariantNames }) => {
   if (!variantName) {
     return {
       view: `div[data-experiment-position='secondaryColumn'] > section[aria-labelledby='top-stories-heading']`,
@@ -285,7 +280,7 @@ const getQuerySelectors = ({
 const getEventTriggerKeys = ({
   variantName,
 }: {
-  variantName?: VariantsNames;
+  variantName?: VariantNames;
 }) => {
   if (!variantName) {
     return {
@@ -305,7 +300,7 @@ const buildEventTriggers = ({
   variantName,
 }: {
   position: Positions;
-  variantName?: VariantsNames;
+  variantName?: VariantNames;
 }) => {
   const requestKeys = requestKeysMap[position];
   const eventTriggerKeys = getEventTriggerKeys({ variantName });
