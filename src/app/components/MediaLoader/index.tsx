@@ -212,7 +212,7 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
     placeholderConfig,
     showAds,
     orientation = 'landscape',
-    ampIframeUrl,
+    iframeUrl,
   } = config;
 
   const captionBlock = getCaptionBlock(blocks, pageType);
@@ -255,7 +255,7 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
             case isAmp:
               return (
                 <AmpMediaLoader
-                  src={ampIframeUrl}
+                  src={iframeUrl}
                   title={mediaInfo?.title}
                   placeholderSrc={placeholderSrc}
                   placeholderSrcset={placeholderSrcset}
@@ -268,7 +268,7 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
                   <iframe
                     css={styles.liteIframe}
                     title={mediaInfo?.title}
-                    src={ampIframeUrl}
+                    src={iframeUrl}
                   />
                 </LiteMediaLoader>
               );

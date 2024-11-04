@@ -187,7 +187,7 @@ describe('buildSettings', () => {
             'This video cannot play in your browser. Please enable JavaScript or try a different browser.',
         } satisfies PlaceholderConfig,
         showAds: false,
-        ampIframeUrl:
+        iframeUrl:
           'https://web-cdn.api.bbci.co.uk/ws/av-embeds/cps/serbian/lat/srbija-68707945/p01k6msp/sr-latn/amp',
       } satisfies ConfigBuilderReturnProps);
     });
@@ -253,7 +253,7 @@ describe('buildSettings', () => {
             'This video cannot play in your browser. Please enable JavaScript or try a different browser.',
         },
         showAds: false,
-        ampIframeUrl:
+        iframeUrl:
           'https://web-cdn.api.bbci.co.uk/ws/av-embeds/cps/serbian/lat/srbija-68707945/p01k6msp/sr-latn/amp',
       } satisfies ConfigBuilderReturnProps);
     });
@@ -450,7 +450,7 @@ describe('buildSettings', () => {
             'This video cannot play in your browser. Please enable JavaScript or try a different browser.',
         } satisfies PlaceholderConfig,
         showAds: false,
-        ampIframeUrl:
+        iframeUrl:
           'https://web-cdn.api.bbci.co.uk/ws/av-embeds/cps/serbian/lat/srbija-68707945/p01k6msp/sr-latn/amp',
       } satisfies ConfigBuilderReturnProps);
     });

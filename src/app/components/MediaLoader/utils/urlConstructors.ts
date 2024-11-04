@@ -13,7 +13,7 @@ type FuncProps = {
   lang?: string;
 };
 
-export const getAmpIframeUrl = ({ id, versionID, lang }: FuncProps) => {
+export const getIframeUrl = ({ id, versionID, lang }: FuncProps) => {
   if (!id) return null;
 
   const { platform, service, variant, assetId } = parseAvRoute(id);

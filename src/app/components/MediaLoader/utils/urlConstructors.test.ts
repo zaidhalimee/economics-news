@@ -1,4 +1,4 @@
-import { getAmpIframeUrl, getExternalEmbedUrl } from './urlConstructors';
+import { getIframeUrl, getExternalEmbedUrl } from './urlConstructors';
 
 /* 
   Note: 
@@ -156,9 +156,7 @@ describe('urlConstructors', () => {
         cases.forEach(
           ({ description: caseDescription, id, versionID, lang, expected }) => {
             it(caseDescription, () => {
-              expect(getAmpIframeUrl({ id, versionID, lang })).toEqual(
-                expected,
-              );
+              expect(getIframeUrl({ id, versionID, lang })).toEqual(expected);
             });
           },
         );

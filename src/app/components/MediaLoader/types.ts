@@ -97,7 +97,7 @@ export type ConfigBuilderReturnProps = {
   playerConfig: PlayerConfig;
   placeholderConfig?: PlaceholderConfig;
   showAds: boolean;
-  ampIframeUrl?: string;
+  iframeUrl?: string;
   orientation?: Orientations;
 };
 

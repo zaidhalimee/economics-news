@@ -15,7 +15,7 @@ import {
 import getCaptionBlock from '../utils/getCaptionBlock';
 import buildPlaceholderConfig from '../utils/buildPlaceholderConfig';
 import shouldDisplayAds from '../utils/shouldDisplayAds';
-import { getAmpIframeUrl, getExternalEmbedUrl } from '../utils/urlConstructors';
+import { getIframeUrl, getExternalEmbedUrl } from '../utils/urlConstructors';
 
 const DEFAULT_WIDTH = 512;
 
@@ -120,7 +120,7 @@ export default ({
     placeholderImageLocator: locator,
   });
 
-  const ampIframeUrl = getAmpIframeUrl({ id, versionID, lang });
+  const iframeUrl = getIframeUrl({ id, versionID, lang });
 
   const externalEmbedUrl = getExternalEmbedUrl({ id, versionID, lang });
 
@@ -150,6 +150,6 @@ export default ({
     placeholderConfig,
     showAds,
     orientation,
-    ...(ampIframeUrl && { ampIframeUrl }),
+    ...(iframeUrl && { iframeUrl }),
   };
 };
