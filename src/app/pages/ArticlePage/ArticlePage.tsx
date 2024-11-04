@@ -90,7 +90,9 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     palette: { GREY_2, WHITE },
   } = useTheme();
 
-  const experimentEnabled = useOptimizelyMvtVariation('visible_engagement_2');
+  const experimentEnabled = useOptimizelyMvtVariation(
+    'newswb_01_ap_banner_election',
+  );
 
   const allowAdvertising = pageData?.metadata?.allowAdvertising ?? false;
   const adcampaign = pageData?.metadata?.adCampaignKeyword;

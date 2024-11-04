@@ -34,7 +34,7 @@ export default function ElectionBanner({ aboutTags, taggings }: Props) {
   const { enabled: electionBannerEnabled }: { enabled: boolean | null } =
     useToggle('electionBanner');
 
-  const variation = useOptimizelyMvtVariation('visible_engagement_2');
+  const variation = useOptimizelyMvtVariation('newswb_01_ap_banner_election');
 
   if (isLite) return null;
 
