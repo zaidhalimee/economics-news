@@ -89,7 +89,7 @@ const ImageWithCaption = ({
 
   // Height number is arbitrary, editorial sometimes use very narrow images as dividers
   // so we don't want to show the load image button for those
-  if (isLite && height < 100) return null;
+  if (isLite && height < 150) return null;
 
   return (
     <figure className={className} css={styles.figure}>
