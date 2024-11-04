@@ -13,6 +13,7 @@ export default {
       border: 'none',
       cursor: 'pointer',
       padding: 0,
+      borderRadius: 0,
 
       '&:hover, &:focus-visible': {
         span: {
