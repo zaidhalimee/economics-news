@@ -13,6 +13,7 @@ export interface JumpToProps {
   jumpToHeadings?: Array<{ heading: string }>;
   eventTrackingData?: EventTrackingMetadata;
 }
+
 const JumpTo = ({ jumpToHeadings, eventTrackingData }: JumpToProps) => {
   const { translations } = useContext(ServiceContext);
   const { jumpTo = 'Jump to' } = translations?.articlePage || {};
@@ -23,18 +24,16 @@ const JumpTo = ({ jumpToHeadings, eventTrackingData }: JumpToProps) => {
     componentName: 'jumpto',
   });
 
-  const heading = 'jump-to-heading';
+  const headingId = 'jump-to-heading';
 
-  // we use the Text component with the as prop set to strong (for now) because the screenreader UX states the heading should not be announced
-  // using InlineLink instead of anchor to bring benefits to styling, but can revert to anchor if needed
   return (
     <nav
       ref={viewRef}
       role="navigation"
-      aria-labelledby={heading}
+      aria-labelledby={headingId}
       data-testid="jump-to"
     >
-      <Text as="strong" tabIndex={-1} id={heading}>
+      <Text as="strong" tabIndex={-1} id={headingId}>
         {jumpTo}
       </Text>
       <ol>
