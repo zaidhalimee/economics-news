@@ -44,7 +44,7 @@ export default {
       display: 'inline-flex',
       alignItems: 'center',
       color: palette.BLACK,
-      marginTop: `${spacings.DOUBLE}rem`,
+      marginTop: `${spacings.QUADRUPLE}rem`,
       padding: '1rem',
       border: `${pixelsToRem(1)}rem solid ${palette.GREY_5}`,
     }),
