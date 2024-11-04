@@ -68,10 +68,12 @@ const enableExperimentTopStories = ({
   );
 };
 
+const insertionPositions = ['Quarter', 'Half', 'ThreeQuarters'] as const;
+
 const insertBlockAtPosition = (
   blocks: OptimoBlock[],
   blockToInsert: OptimoBlock,
-  position: 'Quarter' | 'Half' | 'ThreeQuarters',
+  position: (typeof insertionPositions)[number],
 ) => {
   const insertionPercentages = {
     Quarter: 0.25,
@@ -94,11 +96,6 @@ const insertExperimentTopStories = ({
   blocks: OptimoBlock[];
   topStoriesContent: TopStoryItem[];
 }) => {
-  const insertionPositions: ['Quarter', 'Half', 'ThreeQuarters'] = [
-    'Quarter',
-    'Half',
-    'ThreeQuarters',
-  ];
   return insertionPositions.reduce((currentBlocks, position) => {
     const experimentTopStoriesBlock = {
       type: `experimentTopStories${position}`,
