@@ -90,7 +90,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     palette: { GREY_2, WHITE },
   } = useTheme();
 
-  const experimentEnabled = useOptimizelyMvtVariation(
+  const experimentVariant = useOptimizelyMvtVariation(
     'newswb_01_ap_banner_election',
   );
 
@@ -144,6 +144,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const atiData = {
     ...atiAnalytics,
     ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
+    ...(experimentVariant && { experimentVariant }),
   };
 
   const topStoriesContent = pageData?.secondaryColumn?.topStories;
@@ -312,7 +313,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           mobileDivider={showTopics}
         />
       )}
-      {experimentEnabled && (
+      {experimentVariant && (
         <>
           <OptimizelyArticleCompleteTracking />
           <OptimizelyPageViewTracking />
