@@ -39,7 +39,7 @@ const JumpTo = ({ jumpToHeadings, eventTrackingData }: JumpToProps) => {
         {jumpTo}
       </Text>
       <nav aria-labelledby={headingId}>
-        <ul>
+        <ol>
           {jumpToHeadings.map(({ heading }) => {
             const sanitisedId = idSanitiser(heading);
             return (
@@ -53,7 +53,7 @@ const JumpTo = ({ jumpToHeadings, eventTrackingData }: JumpToProps) => {
               </li>
             );
           })}
-        </ul>
+        </ol>
       </nav>
     </section>
   );
