@@ -60,14 +60,14 @@ const LiteMediaLoader = ({
     translations: { liteSite: liteSiteTranslations },
   } = useContext(ServiceContext);
 
-  const shouldSetAspectRatio = type === 'image' && width && height;
+  const hasFixedAspectRatio = type === 'image' && width && height;
 
   return (
     <>
       <LiteButton
         css={[
           styles.liteMediaButtonOverlay,
-          shouldSetAspectRatio && { aspectRatio: `${width}/${height}` },
+          hasFixedAspectRatio && { aspectRatio: `${width}/${height}` },
         ]}
         script={script}
       >
