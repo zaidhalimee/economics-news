@@ -12,8 +12,11 @@ import AmpIframeEmbed from '../AmpIframeEmbed';
 import { OEmbedProps } from '../types';
 
 const OEmbedLoader = ({ oembed }: OEmbedProps) => {
-  const { isAmp, canonicalLink } = useContext(RequestContext);
+  const { isAmp, isLite, canonicalLink } = useContext(RequestContext);
   const { translations } = useContext(ServiceContext);
+
+  if (isLite) return null;
+
   const { html, provider_name, oEmbedType, parameters, url } = oembed;
   const isVDJEmbed = oEmbedType === 'vdj-embed';
 

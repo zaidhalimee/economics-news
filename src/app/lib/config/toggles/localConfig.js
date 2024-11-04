@@ -3,7 +3,7 @@ export default {
   ads: {
     enabled: false,
   },
-  articleElectionBanner: {
+  electionBanner: {
     enabled: true,
   },
   chartbeatAnalytics: {
