@@ -23,38 +23,36 @@ const JumpTo = ({ jumpToHeadings, eventTrackingData }: JumpToProps) => {
     componentName: 'jumpto',
   });
 
-  const headingId = 'jump-to-heading';
+  const heading = 'jump-to-heading';
 
   // we use the Text component with the as prop set to strong (for now) because the screenreader UX states the heading should not be announced
   // using InlineLink instead of anchor to bring benefits to styling, but can revert to anchor if needed
   return (
-    <section
+    <nav
       ref={viewRef}
-      role="region"
-      aria-labelledby={headingId}
+      role="navigation"
+      aria-labelledby={heading}
       data-testid="jump-to"
     >
-      <Text as="strong" tabIndex={-1} id={headingId}>
+      <Text as="strong" tabIndex={-1} id={heading}>
         {jumpTo}
       </Text>
-      <nav aria-labelledby={headingId}>
-        <ol>
-          {jumpToHeadings?.map(({ heading }) => {
-            const sanitisedId = idSanitiser(heading);
-            return (
-              <li key={sanitisedId}>
-                <InlineLink
-                  to={`#${sanitisedId}`}
-                  onClick={clickTrackerHandler}
-                  data-testid={`jump-to-link-${sanitisedId}`}
-                  text={heading}
-                />
-              </li>
-            );
-          })}
-        </ol>
-      </nav>
-    </section>
+      <ol>
+        {jumpToHeadings?.map(({ heading }) => {
+          const sanitisedId = idSanitiser(heading);
+          return (
+            <li key={sanitisedId}>
+              <InlineLink
+                to={`#${sanitisedId}`}
+                onClick={clickTrackerHandler}
+                data-testid={`jump-to-link-${sanitisedId}`}
+                text={heading}
+              />
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
   );
 };
 
