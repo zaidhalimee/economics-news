@@ -29,15 +29,18 @@ type ButtonTextProps = {
 };
 
 const getButtonText = ({ type, liteSiteTranslations }: ButtonTextProps) => {
+  const { loadAudio, loadVideo, loadImage, loadMedia } =
+    liteSiteTranslations ?? {};
+
   switch (type) {
     case 'audio':
-      return liteSiteTranslations?.loadAudio || 'Load Audio';
+      return loadAudio || 'Load Audio';
     case 'video':
-      return liteSiteTranslations?.loadVideo || 'Load Video';
+      return loadVideo || 'Load Video';
     case 'image':
-      return liteSiteTranslations?.loadImage || 'Load Image';
+      return loadImage || 'Load Image';
     default:
-      return liteSiteTranslations?.loadMedia || 'Load Media';
+      return loadMedia || 'Load Media';
   }
 };
 
