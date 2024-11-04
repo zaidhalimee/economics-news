@@ -12,7 +12,6 @@ export default {
       height: '100%',
       border: 'none',
       cursor: 'pointer',
-      aspectRatio: '16 / 9',
 
       '&:hover, &:focus-visible': {
         span: {

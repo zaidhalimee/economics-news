@@ -36,12 +36,28 @@ const getButtonText = (type?: MediaType) => {
 
 type Props = {
   type?: MediaType;
+  width?: number;
+  height?: number;
 };
 
-const LiteMediaLoader = ({ type, children }: PropsWithChildren<Props>) => {
+const LiteMediaLoader = ({
+  type,
+  width,
+  height,
+  children,
+}: PropsWithChildren<Props>) => {
   return (
     <>
-      <LiteButton css={styles.liteMediaButtonOverlay} script={script}>
+      <LiteButton
+        css={[
+          styles.liteMediaButtonOverlay,
+          width &&
+            height && {
+              aspectRatio: `${width}/${height}`,
+            },
+        ]}
+        script={script}
+      >
         <Text css={styles.liteButtonText} fontVariant="sansBold">
           <div css={styles.iconWrapper}>
             {mediaIcons?.[type as keyof typeof mediaIcons]}
