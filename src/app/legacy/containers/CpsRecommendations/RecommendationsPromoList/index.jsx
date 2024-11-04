@@ -25,7 +25,7 @@ const RecommendationsPromoListItem = forwardRef(
   // 004_brasil_recommendations_experiment
   ({ item, index, service, optimizely }, forwardedRef) => {
     const eventTrackingData =
-      service === 'portuguese' || service === 'mundo'
+      service === 'portuguese'
         ? getEventTrackingDataWithOptimizely({
             item,
             index,
@@ -69,7 +69,7 @@ const RecommendationsPromoList = ({ promoItems }) => {
   const { service } = useContext(ServiceContext);
   const { optimizely } = useContext(OptimizelyContext);
   const eventTrackingData =
-    service === 'portuguese' || service === 'mundo'
+    service === 'portuguese'
       ? getEventTrackingDataWithOptimizely({ optimizely })
       : getEventTrackingData();
 
