@@ -17,22 +17,16 @@ export default {
 
       '&:hover, &:focus-visible': {
         span: {
-          backgroundColor: palette.POSTBOX,
           color: palette.WHITE,
+          backgroundColor: palette.POSTBOX,
           textDecoration: 'underline',
           border: `${pixelsToRem(1)}rem solid ${palette.POSTBOX}`,
         },
-
-        div: {
-          svg: {
-            fill: palette.WHITE,
-          },
-        },
       },
 
-      '&:focus-visible': {
-        outline: 'none !important', // TODO: Find a better way to do this
-        boxShadow: 'none !important', // TODO: Find a better way to do this
+      "&[type='button']:focus-visible": {
+        outline: 'none',
+        boxShadow: 'none',
 
         span: {
           outline: `${focusIndicatorThickness} solid ${palette.BLACK}`,
