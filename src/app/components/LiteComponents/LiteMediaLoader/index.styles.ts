@@ -12,6 +12,7 @@ export default {
       height: '100%',
       border: 'none',
       cursor: 'pointer',
+      padding: 0,
 
       '&:hover, &:focus-visible': {
         span: {
