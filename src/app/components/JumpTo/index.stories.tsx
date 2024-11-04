@@ -1,15 +1,11 @@
 import React from 'react';
 
-import JumpTo from '.';
+import JumpTo, { JumpToProps } from '.';
 import { StoryArgs } from '../../models/types/storybook';
 import metadata from './metadata.json';
 import readme from './README.md';
 
-interface Props {
-  jumpToHeadings?: { heading: string }[];
-}
-
-const Component = ({ jumpToHeadings = [] }: Props) => {
+const Component = ({ jumpToHeadings = [] }: JumpToProps) => {
   return <JumpTo jumpToHeadings={jumpToHeadings} />;
 };
 

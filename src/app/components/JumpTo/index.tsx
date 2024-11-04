@@ -9,11 +9,10 @@ import Text from '#app/components/Text';
 import InlineLink from '#app/components/InlineLink';
 import idSanitiser from '../../lib/utilities/idSanitiser';
 
-interface JumpToProps {
-  jumpToHeadings: Array<{ heading: string }>;
+export interface JumpToProps {
+  jumpToHeadings?: Array<{ heading: string }>;
   eventTrackingData?: EventTrackingMetadata;
 }
-
 const JumpTo = ({ jumpToHeadings, eventTrackingData }: JumpToProps) => {
   const { translations } = useContext(ServiceContext);
   const { jumpTo = 'Jump to' } = translations?.articlePage || {};
@@ -40,7 +39,7 @@ const JumpTo = ({ jumpToHeadings, eventTrackingData }: JumpToProps) => {
       </Text>
       <nav aria-labelledby={headingId}>
         <ol>
-          {jumpToHeadings.map(({ heading }) => {
+          {jumpToHeadings?.map(({ heading }) => {
             const sanitisedId = idSanitiser(heading);
             return (
               <li key={sanitisedId}>
