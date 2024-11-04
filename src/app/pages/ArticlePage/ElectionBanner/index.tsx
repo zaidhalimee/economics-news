@@ -58,6 +58,7 @@ export default function ElectionBanner({ aboutTags, taggings }: Props) {
     !isEditoriallySensitive && validAboutTag && electionBannerEnabled;
 
   if (!showBanner) return null;
+  if (variation === 'off') return null;
 
   const {
     SIMORGH_APP_ENV,
@@ -87,8 +88,6 @@ export default function ElectionBanner({ aboutTags, taggings }: Props) {
       </div>
     );
   }
-
-  if (variation === 'off') return null;
 
   return (
     <div data-testid="election-banner" css={styles.electionBannerWrapper}>
