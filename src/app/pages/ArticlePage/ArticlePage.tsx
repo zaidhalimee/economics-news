@@ -203,21 +203,21 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       topStoriesContent ? (
         <ExperimentTopStories
           topStoriesContent={topStoriesContent}
-          variant="Quarter"
+          variantName="Quarter"
         />
       ) : null,
     experimentTopStoriesHalf: () =>
       topStoriesContent ? (
         <ExperimentTopStories
           topStoriesContent={topStoriesContent}
-          variant="Half"
+          variantName="Half"
         />
       ) : null,
     experimentTopStoriesThreeQuarters: () =>
       topStoriesContent ? (
         <ExperimentTopStories
           topStoriesContent={topStoriesContent}
-          variant="ThreeQuarters"
+          variantName="ThreeQuarters"
         />
       ) : null,
   };

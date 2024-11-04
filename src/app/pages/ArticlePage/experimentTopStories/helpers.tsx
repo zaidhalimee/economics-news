@@ -19,6 +19,10 @@ export const experimentTopStoriesConfig = {
   },
 };
 
+type VariantsNames = 'Quarter' | 'Half' | 'ThreeQuarters';
+type Positions = 'articleBody' | 'secondaryColumn';
+type TrackingEventType = 'view' | 'click';
+
 const ARTICLE_LENGTH_THRESHOLD = 10;
 const enableExperimentTopStories = ({
   isAmp,
@@ -154,16 +158,22 @@ export const getExperimentTopStories = ({
 
 export const ExperimentTopStories = ({
   topStoriesContent,
-  variant,
+  variantName,
 }: {
   topStoriesContent: TopStoryItem[];
-  variant: 'Quarter' | 'Half' | 'ThreeQuarters';
+  variantName: VariantsNames;
 }) => {
+  const variantKeys = {
+    Quarter: 'show_at_quarter',
+    Half: 'show_at_half',
+    ThreeQuarters: 'show_at_three_quarters',
+  };
+
   return (
     <div
-      css={styles[`experimentTopStoriesSection${variant}`]}
-      data-testid={`experiment-top-stories-${variant}`}
-      data-experiment-position={`articleBody${variant}`}
+      css={styles.experimentTopStoriesSection(variantKeys[variantName])}
+      data-testid={`experiment-top-stories-${variantName}`}
+      data-experiment-position={`articleBody${variantName}`}
     >
       <TopStoriesSection content={topStoriesContent} />
     </div>
@@ -192,11 +202,11 @@ const buildTopStoriesEventUrl = ({
   atiAnalyticsProducerId,
   position,
 }: {
-  type: 'view' | 'click';
+  type: TrackingEventType;
   env: Environments;
   service: Services;
   atiAnalyticsProducerId: string;
-  position?: 'articleBody' | 'secondaryColumn';
+  position?: Positions;
 }) => {
   return buildATIEventTrackUrl({
     ampExperimentName: `${experimentName}`,
@@ -229,7 +239,7 @@ const buildRequestUrls = ({
   service,
   atiAnalyticsProducerId,
 }: {
-  position: 'articleBody' | 'secondaryColumn';
+  position: Positions;
   env: Environments;
   service: Services;
   atiAnalyticsProducerId: string;
@@ -255,11 +265,11 @@ const buildRequestUrls = ({
 };
 
 const getQuerySelectors = ({
-  variant,
+  variantName,
 }: {
-  variant?: 'Quarter' | 'Half' | 'ThreeQuarters';
+  variantName?: VariantsNames;
 }) => {
-  if (!variant) {
+  if (!variantName) {
     return {
       view: `div[data-experiment-position='secondaryColumn'] > section[aria-labelledby='top-stories-heading']`,
       click: `div[data-experiment-position='secondaryColumn'] a[aria-labelledby*='top-stories-promo']`,
@@ -267,17 +277,17 @@ const getQuerySelectors = ({
   }
 
   return {
-    view: `div[data-experiment-position='articleBody${variant}'] > section[aria-labelledby='top-stories-heading']`,
-    click: `div[data-experiment-position='articleBody${variant}'] a[aria-labelledby*='top-stories-promo']`,
+    view: `div[data-experiment-position='articleBody${variantName}'] > section[aria-labelledby='top-stories-heading']`,
+    click: `div[data-experiment-position='articleBody${variantName}'] a[aria-labelledby*='top-stories-promo']`,
   };
 };
 
 const getEventTriggerKeys = ({
-  variant,
+  variantName,
 }: {
-  variant?: 'Quarter' | 'Half' | 'ThreeQuarters';
+  variantName?: VariantsNames;
 }) => {
-  if (!variant) {
+  if (!variantName) {
     return {
       view: `secondaryColumnView`,
       click: `secondaryColumnPromoClick`,
@@ -285,21 +295,21 @@ const getEventTriggerKeys = ({
   }
 
   return {
-    view: `articleBody${variant}View`,
-    click: `articleBody${variant}PromoClick`,
+    view: `articleBody${variantName}View`,
+    click: `articleBody${variantName}PromoClick`,
   };
 };
 
 const buildEventTriggers = ({
   position,
-  variant,
+  variantName,
 }: {
-  position: 'articleBody' | 'secondaryColumn';
-  variant?: 'Quarter' | 'Half' | 'ThreeQuarters';
+  position: Positions;
+  variantName?: VariantsNames;
 }) => {
   const requestKeys = requestKeysMap[position];
-  const eventTriggerKeys = getEventTriggerKeys({ variant });
-  const querySelectors = getQuerySelectors({ variant });
+  const eventTriggerKeys = getEventTriggerKeys({ variantName });
+  const querySelectors = getQuerySelectors({ variantName });
 
   return {
     [eventTriggerKeys.view]: {
@@ -346,11 +356,14 @@ export const getExperimentAnalyticsConfig = ({
     },
     triggers: {
       ...buildEventTriggers({ position: 'secondaryColumn' }),
-      ...buildEventTriggers({ position: 'articleBody', variant: 'Quarter' }),
-      ...buildEventTriggers({ position: 'articleBody', variant: 'Half' }),
       ...buildEventTriggers({
         position: 'articleBody',
-        variant: 'ThreeQuarters',
+        variantName: 'Quarter',
+      }),
+      ...buildEventTriggers({ position: 'articleBody', variantName: 'Half' }),
+      ...buildEventTriggers({
+        position: 'articleBody',
+        variantName: 'ThreeQuarters',
       }),
     },
   };
