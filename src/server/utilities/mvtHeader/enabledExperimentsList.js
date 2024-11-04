@@ -9,8 +9,8 @@ Add enabled experiments objects inside this array in this format:
 */
 const enabledExperimentList = [
   {
-    name: 'test_2',
-    services: ['pidgin'],
+    name: 'visible_engagement_2',
+    services: ['mundo', 'portuguese'],
     pageTypes: ['article'],
   },
 ];

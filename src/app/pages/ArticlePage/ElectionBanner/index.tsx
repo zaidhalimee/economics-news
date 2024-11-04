@@ -7,6 +7,7 @@ import AmpIframe from '#app/components/AmpIframe';
 import useToggle from '#app/hooks/useToggle';
 import { Tag } from '#app/components/Metadata/types';
 import { ServiceContext } from '#app/contexts/ServiceContext';
+import useOptimizelyMvtVariation from '#app/hooks/useOptimizelyMvtVariation';
 import styles from './index.styles';
 import BANNER_CONFIG from './config';
 
@@ -16,13 +17,15 @@ export default function ElectionBanner({ aboutTags }: { aboutTags: Tag[] }) {
   const { enabled: electionBannerEnabled }: { enabled: boolean | null } =
     useToggle('articleElectionBanner');
 
+  const variation = useOptimizelyMvtVariation('visible_engagement_2');
+
   if (isLite) return null;
 
   const { iframeSrc, iframeSrcAmp, thingIds } = BANNER_CONFIG;
 
   const validAboutTag = aboutTags?.find(tag => thingIds.includes(tag.thingId));
 
-  const showBanner = validAboutTag && electionBannerEnabled;
+  const showBanner = true;
 
   if (!showBanner) return null;
 
@@ -42,6 +45,8 @@ export default function ElectionBanner({ aboutTags }: { aboutTags: Tag[] }) {
       </div>
     );
   }
+
+  if (variation === 'off') return null;
 
   return (
     <div data-testid="election-banner" css={styles.electionBannerWrapper}>
