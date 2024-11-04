@@ -218,8 +218,14 @@ export const buildATIPageTrackPath = ({
     ...(experimentVariant
       ? [
           {
-            key: 'experiment_variant',
-            description: 'Article page banner test',
+            key: 'mv_test',
+            description: 'Article page banner experiment',
+            value: `Election Banner Experiment`,
+            wrap: false,
+          },
+          {
+            key: 'mv_creation',
+            description: 'Article page banner variant',
             value: `${experimentVariant}`,
             wrap: false,
           },
