@@ -9,38 +9,43 @@ import {
   AresMediaMetadataBlock,
   ConfigBuilderProps,
   ConfigBuilderReturnProps,
+  Orientations,
   PlaylistItem,
 } from '../types';
 import getCaptionBlock from '../utils/getCaptionBlock';
 import buildPlaceholderConfig from '../utils/buildPlaceholderConfig';
 import shouldDisplayAds from '../utils/shouldDisplayAds';
+import { getAmpIframeUrl, getExternalEmbedUrl } from '../utils/urlConstructors';
 
 const DEFAULT_WIDTH = 512;
 
+const ORIENTATION_MAPPING: Record<string, Orientations> = {
+  Portrait: 'portrait',
+  Original: 'landscape',
+};
+
 export default ({
+  id,
   pageType,
   blocks,
   basePlayerConfig,
   translations,
   adsEnabled = false,
   showAdsBasedOnLocation = false,
+  embedded,
+  lang,
 }: ConfigBuilderProps): ConfigBuilderReturnProps => {
-  const aresMediaBlock: AresMediaBlock = filterForBlockType(
-    blocks,
-    'aresMedia',
-  );
+  const { model: aresMedia }: AresMediaBlock =
+    filterForBlockType(blocks, 'aresMedia') ?? {};
 
   const { model: aresMediaMetadata }: AresMediaMetadataBlock =
-    filterForBlockType(aresMediaBlock?.model?.blocks, 'aresMediaMetadata') ??
-    {};
+    filterForBlockType(aresMedia?.blocks, 'aresMediaMetadata') ?? {};
 
-  const aresMediaImageBlock: OptimoImageBlock = filterForBlockType(
-    aresMediaBlock?.model?.blocks,
-    'image',
-  );
+  const { model: aresMediaImage }: OptimoImageBlock =
+    filterForBlockType(aresMedia?.blocks, 'image') ?? {};
 
   const { model: rawImage }: OptimoRawImageBlock =
-    filterForBlockType(aresMediaImageBlock?.model?.blocks, 'rawImage') ?? {};
+    filterForBlockType(aresMediaImage?.blocks, 'rawImage') ?? {};
 
   const { originCode = '', locator = '' } = rawImage ?? {};
 
@@ -54,7 +59,13 @@ export default ({
 
   const versionID = versionsBlock?.versionId ?? '';
 
+  const orientation =
+    ORIENTATION_MAPPING[versionsBlock?.types?.[0]] ??
+    ORIENTATION_MAPPING.Original;
+
   const format = aresMediaMetadata?.format;
+
+  const actualFormat = format === 'audio_video' ? 'video' : format;
 
   const rawDuration = versionsBlock?.duration ?? 0;
 
@@ -77,18 +88,29 @@ export default ({
 
   const embeddingAllowed = aresMediaMetadata?.embedding ?? false;
 
-  const holdingImageURL = buildIChefURL({
-    originCode,
-    locator,
-    resolution: DEFAULT_WIDTH,
-  });
+  const subType = aresMediaMetadata?.subType;
 
-  const items = [{ versionID, kind, duration: rawDuration }];
-  if (showAds) items.unshift({ kind: 'advert' } as PlaylistItem);
+  const videoId = aresMediaMetadata?.id;
+
+  const holdingImageURL = rawImage
+    ? buildIChefURL({
+        originCode,
+        locator,
+        resolution: DEFAULT_WIDTH,
+      })
+    : aresMediaMetadata?.imageUrl;
+
+  const isLive = aresMediaMetadata?.live ?? false;
+
+  const items: PlaylistItem[] = [
+    { versionID, kind, duration: rawDuration, ...(isLive && { live: true }) },
+  ];
+
+  if (showAds) items.unshift({ kind: 'advert' });
 
   const placeholderConfig = buildPlaceholderConfig({
     title,
-    type: format || 'video',
+    type: actualFormat || 'video',
     duration: rawDuration,
     durationISO8601: versionsBlock?.durationISO8601,
     guidanceMessage,
@@ -98,10 +120,16 @@ export default ({
     placeholderImageLocator: locator,
   });
 
+  const ampIframeUrl = getAmpIframeUrl({ id, versionID, lang });
+
+  const externalEmbedUrl = getExternalEmbedUrl({ id, versionID, lang });
+
   return {
-    mediaType: format || 'video',
+    mediaType: actualFormat || 'video',
     playerConfig: {
       ...basePlayerConfig,
+      ...(embedded && { insideIframe: true, embeddedOffsite: true }),
+      ...(externalEmbedUrl && { externalEmbedUrl }),
       autoplay: pageType !== 'mediaArticle',
       playlistObject: {
         title,
@@ -110,14 +138,18 @@ export default ({
         items,
         ...(guidanceMessage && { guidance: guidanceMessage }),
         ...(embeddingAllowed && { embedRights: 'allowed' }),
+        ...(isLive && { simulcast: true }),
       },
       ...(pageType === 'mediaArticle' && { preload: 'high' }),
       statsObject: {
         ...basePlayerConfig.statsObject,
-        clipPID: versionID,
+        ...(subType === 'clip' && { clipPID: videoId }),
+        ...(subType === 'episode' && { episodePID: videoId }),
       },
     },
     placeholderConfig,
     showAds,
+    orientation,
+    ...(ampIframeUrl && { ampIframeUrl }),
   };
 };

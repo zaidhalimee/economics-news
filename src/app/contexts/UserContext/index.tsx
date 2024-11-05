@@ -5,12 +5,12 @@ import React, {
   SetStateAction,
   useMemo,
 } from 'react';
-import { Services, Variants } from '#app/models/types/global';
-import {
-  getCookiePolicy,
-  personalisationEnabled,
-  setPreferredVariantCookie,
-} from './cookies';
+import { v4 as uuid } from 'uuid';
+import Cookie from 'js-cookie';
+import onClient from '#app/lib/utilities/onClient';
+import isOperaProxy from '#app/lib/utilities/isOperaProxy';
+import setCookie from '#app/lib/utilities/setCookie';
+import { getCookiePolicy, personalisationEnabled } from './cookies';
 import Chartbeat from './Chartbeat';
 
 export type UserContextProps = {
@@ -18,16 +18,29 @@ export type UserContextProps = {
   sendCanonicalChartbeatBeacon: Dispatch<SetStateAction<null>>;
   updateCookiePolicy: Dispatch<SetStateAction<null>>;
   personalisationEnabled: boolean;
-  setPreferredVariantCookie: (service: Services, variant: Variants) => void;
 };
 
 export const UserContext = React.createContext<UserContextProps>(
   {} as UserContextProps,
 );
 
+const cknsMvtCookie = () => {
+  const cookieName = 'ckns_mvt';
+  const cookieValue = Cookie.get(cookieName);
+
+  if (!cookieValue) {
+    const cookieUuid = uuid();
+    setCookie({ name: cookieName, value: cookieUuid });
+  }
+};
+
 export const UserContextProvider = ({ children }: PropsWithChildren) => {
   const [cookiePolicy, setCookiePolicy] = useState(getCookiePolicy());
   const [chartbeatConfig, sendCanonicalChartbeatBeacon] = useState(null);
+
+  if (onClient() && !isOperaProxy()) {
+    cknsMvtCookie();
+  }
 
   const value = useMemo(
     () => ({
@@ -35,7 +48,6 @@ export const UserContextProvider = ({ children }: PropsWithChildren) => {
       sendCanonicalChartbeatBeacon,
       updateCookiePolicy: () => setCookiePolicy(getCookiePolicy()),
       personalisationEnabled: personalisationEnabled(cookiePolicy),
-      setPreferredVariantCookie,
     }),
     [cookiePolicy],
   );

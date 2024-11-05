@@ -328,8 +328,8 @@ export const service: DefaultServiceConfig = {
         url: '/bengali',
       },
       {
-        title: 'কোটা আন্দোলন',
-        url: '/bengali/topics/cz47p4p81qdt',
+        title: 'যুক্তরাষ্ট্র নির্বাচন ২০২৪',
+        url: '/bengali/topics/cjlgjr0d2d2t',
       },
       {
         title: 'রাজনীতি',

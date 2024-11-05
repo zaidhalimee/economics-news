@@ -1,10 +1,11 @@
 import React, { useContext, useRef, useState } from 'react';
 import SkipLink from '#psammead/psammead-brand/src/SkipLink';
 import { RequestContext } from '#contexts/RequestContext';
-import useToggle from '#hooks/useToggle';
 import useOperaMiniDetection from '#hooks/useOperaMiniDetection';
-import { ARTICLE_PAGE } from '#app/routes/utils/pageTypes';
 import ScriptLink from '#app/components/Header/ScriptLink';
+import { ARTICLE_PAGE, HOME_PAGE } from '#app/routes/utils/pageTypes';
+import LiteSiteCta from '#app/components/LiteSiteCta';
+import { liteEnabledServices } from '#app/components/LiteSiteCta/liteSiteConfig';
 import { ServiceContext } from '../../../contexts/ServiceContext';
 import ConsentBanner from '../ConsentBanner';
 import NavigationContainer from '../Navigation';
@@ -46,16 +47,10 @@ const HeaderContainer = ({
   scriptSwitchId = '',
   renderScriptSwitch = true,
 }) => {
-  const { pageType, isAmp, isApp } = useContext(RequestContext);
+  const { isAmp, isApp, pageType, isLite } = useContext(RequestContext);
   const { service, script, translations, dir, scriptLink, lang, serviceLang } =
     useContext(ServiceContext);
   const { skipLinkText } = translations;
-
-  // The article page toggles the nav bar based on environment
-  const showNavOnArticles = useToggle('navOnArticles').enabled;
-
-  // All other page types show the nav bar at all times
-  const showNav = showNavOnArticles || pageType !== ARTICLE_PAGE;
 
   const isOperaMini = useOperaMiniDetection();
 
@@ -79,12 +74,14 @@ const HeaderContainer = ({
   let shouldRenderScriptSwitch = false;
 
   if (scriptLink && renderScriptSwitch) {
-    if (service === 'uzbek' && pageType !== ARTICLE_PAGE) {
+    if (service === 'uzbek' && ![ARTICLE_PAGE, HOME_PAGE].includes(pageType)) {
       shouldRenderScriptSwitch = false;
     } else {
       shouldRenderScriptSwitch = true;
     }
   }
+
+  const renderLiteSiteCTA = isLite && liteEnabledServices.includes(service);
 
   if (isApp) return null;
 
@@ -111,7 +108,8 @@ const HeaderContainer = ({
           }
         />
       )}
-      {showNav && <NavigationContainer />}
+      {renderLiteSiteCTA && <LiteSiteCta />}
+      <NavigationContainer />
     </header>
   );
 };

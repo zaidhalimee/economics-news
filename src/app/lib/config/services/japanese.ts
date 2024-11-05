@@ -307,12 +307,16 @@ export const service: DefaultServiceConfig = {
         url: '/japanese',
       },
       {
-        title: 'ガザ',
-        url: '/japanese/topics/cw5wn2e9rpnt',
+        title: '中東危機',
+        url: '/japanese/topics/cn7y603vz3lt',
       },
       {
         title: 'ウクライナ侵攻',
         url: '/japanese/topics/c50vpymk750t',
+      },
+      {
+        title: '米大統領選',
+        url: '/japanese/topics/c5qx4zgm86et',
       },
       {
         title: '気候変動',

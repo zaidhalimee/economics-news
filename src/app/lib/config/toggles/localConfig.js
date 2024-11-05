@@ -3,6 +3,9 @@ export default {
   ads: {
     enabled: false,
   },
+  electionBanner: {
+    enabled: true,
+  },
   chartbeatAnalytics: {
     enabled: true,
   },
@@ -24,9 +27,6 @@ export default {
     enabled: true,
   },
   mostRead: {
-    enabled: true,
-  },
-  navOnArticles: {
     enabled: true,
   },
   nielsenAnalytics: {

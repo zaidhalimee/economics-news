@@ -2,19 +2,19 @@
 import { useState, useEffect } from 'react';
 import { useDecision } from '@optimizely/react-sdk';
 
-const isClientSide = true;
+const isClientSide = false;
 
 // ALTHOUGH THIS FUNCTION BREAKS REACT RULES BY USING CONDITIONAL HOOKS,
 // WE CAN SAFELY DO SO SINCE isClientSide IS A CONSTANT AND THEREFORE GUARANTEES THAT
 // EACH HOOK WILL BE CALLED IN THE EXACT SAME ORDER UPON INITAL RENDER.
 const useOptimizelyVariation = (
-  experimentId,
+  flagId,
   overrideAttributes = {},
   useClientSide = isClientSide,
 ) => {
   if (useClientSide) {
     const [decision, isClientReady, didTimeout] = useDecision(
-      experimentId,
+      flagId,
       {
         autoUpdate: true,
       },
@@ -28,6 +28,9 @@ const useOptimizelyVariation = (
         setVariation(decision.variationKey);
       }
     }, [isClientReady, decision.variationKey, didTimeout]);
+
+    // Optimizely sets 'off' as the default variation if a flag is not enabled.
+    if (variation === 'off') return null;
 
     return variation;
   }

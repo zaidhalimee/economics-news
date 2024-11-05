@@ -1,12 +1,13 @@
+import pipe from 'ramda/src/pipe';
 import nodeLogger from '../../../lib/logger.node';
 import { Services, Toggles, Variants } from '../../../models/types/global';
 import getOnwardsPageData from '../utils/getOnwardsData';
-import addDisclaimer from '../utils/addDisclaimer';
+import addAnalyticsCounterName from '../utils/addAnalyticsCounterName';
+import augmentWithDisclaimer from '../utils/augmentWithDisclaimer';
 import { advertisingAllowed, isSfv } from '../utils/paramChecks';
-import { FetchError } from '../../../models/types/fetch';
+import { FetchError, GetAgent } from '../../../models/types/fetch';
 import handleError from '../../utils/handleError';
 import fetchDataFromBFF from '../../utils/fetchDataFromBFF';
-import getAgent from '../../../../server/utilities/getAgent';
 import { BFF_FETCH_ERROR } from '../../../lib/logger.const';
 import certsRequired from '../../utils/certsRequired';
 
@@ -15,11 +16,18 @@ const logger = nodeLogger(__filename);
 type Props = {
   service: Services;
   path: string;
-  pageType: 'article' | 'cpsAsset';
+  pageType: 'article';
   variant?: Variants;
   toggles?: Toggles;
   isAmp?: boolean;
+  getAgent: GetAgent;
 };
+
+const transformPageData = (toggles?: Toggles) =>
+  pipe(
+    addAnalyticsCounterName,
+    augmentWithDisclaimer({ toggles, positionFromTimestamp: 0 }),
+  );
 
 export default async ({
   service,
@@ -28,6 +36,7 @@ export default async ({
   variant,
   toggles,
   isAmp,
+  getAgent,
 }: Props) => {
   try {
     const { status, json } = await fetchDataFromBFF({
@@ -36,6 +45,7 @@ export default async ({
       service,
       variant,
       isAmp,
+      getAgent,
     });
 
     const agent = certsRequired(pathname) ? await getAgent() : null;
@@ -72,10 +82,12 @@ export default async ({
 
     const { topStories, features, latestMedia, mostRead } = secondaryData;
 
+    const transformedArticleData = transformPageData(toggles)(article);
+
     const response = {
       status,
       pageData: {
-        ...(await addDisclaimer(article, toggles, isArticleSfv)),
+        ...transformedArticleData,
         secondaryColumn: {
           topStories,
           features,

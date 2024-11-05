@@ -102,7 +102,7 @@ const getId = ({ pageType, service, variant, env }: GetIdProps) => {
           return getTipoId(path);
         }
         if (isCpsIdCheck(path)) {
-          return `/${service}/live/${getCpsId(path)}`;
+          return `/${service}${variant ? `/${variant}` : ''}/live/${getCpsId(path)}`;
         }
         return null;
       };
@@ -148,6 +148,7 @@ export interface UrlConstructParams {
   page?: string;
   isAmp?: boolean;
   mediaId?: string | null;
+  lang?: string | null;
 }
 
 const constructPageFetchUrl = ({
@@ -158,6 +159,7 @@ const constructPageFetchUrl = ({
   page,
   isAmp,
   mediaId,
+  lang,
 }: UrlConstructParams) => {
   const env = getEnvironment(pathname);
   const isLocal = !env || env === 'local';
@@ -186,6 +188,9 @@ const constructPageFetchUrl = ({
     ...(mediaId && {
       mediaId,
     }),
+    ...(lang && {
+      lang,
+    }),
     ...(env && { serviceEnv: env }),
   };
 
@@ -210,9 +215,11 @@ const constructPageFetchUrl = ({
       case CPS_ASSET:
         fetchUrl = Url(`/${id}`);
         break;
-      case HOME_PAGE:
-        fetchUrl = Url(`/${service}/${id}`);
+      case HOME_PAGE: {
+        const variantPath = variant ? `/${variant}` : '';
+        fetchUrl = Url(`/${service}${variantPath}/${id}`);
         break;
+      }
       case MOST_READ_PAGE:
         fetchUrl = Url(getMostReadEndpoint({ service, variant }).split('.')[0]);
         break;
@@ -247,7 +254,7 @@ const constructPageFetchUrl = ({
           // handle /ws/av-embeds route
         } else {
           fetchUrl = Url(
-            `${host}${port}/api/local/${parsedRoute.service}/av-embeds/${parsedRoute.variant ? `${parsedRoute?.variant}/` : ''}${parsedRoute.assetId}${parsedRoute.mediaId ? `/${parsedRoute.mediaDelimiter}/${parsedRoute.mediaId}` : ''}`,
+            `${host}${port}/api/local/${parsedRoute.service}/av-embeds/${parsedRoute.variant ? `${parsedRoute?.variant}/` : ''}${parsedRoute.assetId}${parsedRoute.mediaId ? `/${parsedRoute.mediaDelimiter}/${parsedRoute.mediaId}` : ''} ${parsedRoute.lang ? `/${parsedRoute.lang}` : ''}`,
           );
         }
 
