@@ -1,11 +1,18 @@
+import NO_JS_CLASSNAME from '#app/lib/noJs.const';
 import { css, Theme } from '@emotion/react';
 
 const styles = {
-  figure: (theme: Theme) =>
+  figure: ({ isLite, spacings }: Theme) =>
     css({
       margin: 0,
-      paddingBottom: `${theme.spacings.TRIPLE}rem`,
+      paddingBottom: `${spacings.TRIPLE}rem`,
       width: '100%',
+
+      ...(isLite && {
+        [`.${NO_JS_CLASSNAME} &`]: {
+          display: 'none',
+        },
+      }),
     }),
 };
 
