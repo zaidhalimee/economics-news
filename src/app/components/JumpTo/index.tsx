@@ -24,19 +24,19 @@ const JumpTo = ({ jumpToHeadings, eventTrackingData }: JumpToProps) => {
     componentName: 'jumpto',
   });
 
-  const headingId = 'jump-to-heading';
+  const titleId = 'jump-to-heading';
 
   return (
     <nav
       ref={viewRef}
       role="navigation"
-      aria-labelledby={headingId}
+      aria-labelledby={titleId}
       data-testid="jump-to"
     >
-      <Text as="strong" id={headingId}>
+      <Text as="strong" id={titleId}>
         {jumpTo}
       </Text>
-      <ol>
+      <ol role="list">
         {jumpToHeadings?.map(({ heading }) => {
           const sanitisedId = idSanitiser(heading);
           return (
