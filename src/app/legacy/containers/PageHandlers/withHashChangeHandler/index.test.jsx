@@ -6,23 +6,21 @@ import withHashChangeHandler from '.';
 const Fixture = withHashChangeHandler(() => (
   <>
     <a href="#section-1">Go to section 1</a>
-    <section id="section-1">Section 1</section>
+    <h2 id="section-1">Section 1</h2>
   </>
 ));
 
 const CyrillicFixture = withHashChangeHandler(() => (
   <>
     <a href="#Мирнија-сам-неко-брине-о-њој-док-је-у-школи">Go to section 1</a>
-    <section id="Мирнија-сам-неко-брине-о-њој-док-је-у-школи">
-      Section 1
-    </section>
+    <h2 id="Мирнија-сам-неко-брине-о-њој-док-је-у-школи">Section 1</h2>
   </>
 ));
 
 const HindiFixture = withHashChangeHandler(() => (
   <>
     <a href="#आंखों-के-सामने-छा-गया-था-अंधेरा">Go to section 1</a>
-    <section id="आंखों-के-सामने-छा-गया-था-अंधेरा">Section 1</section>
+    <h2 id="आंखों-के-सामने-छा-गया-था-अंधेरा">Section 1</h2>
   </>
 ));
 
