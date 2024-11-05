@@ -312,6 +312,10 @@ const defaultCyrillicConfig = {
         text: "'Bi-bi-si bilan bog’laning'",
       },
       {
+        href: 'https://www.bbc.com/ws/languages',
+        text: 'Other Languages',
+      },
+      {
         id: 'COOKIE_SETTINGS',
         href: '#',
         text: 'Do not share or sell my info',
@@ -641,6 +645,10 @@ export const service: UzbekConfig = {
         {
           href: 'https://www.bbc.co.uk/uzbek/send/u50853929',
           text: "'Bi-bi-si bilan bog’laning'",
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',
