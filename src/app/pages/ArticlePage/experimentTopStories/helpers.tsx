@@ -264,8 +264,10 @@ const buildRequestUrls = ({
 };
 
 const getQuerySelectors = ({ variantName }: { variantName?: VariantNames }) => {
-  const experimentPosition = variantName ? `articleBody${variantName}` : 'secondaryColumn';
-  
+  const experimentPosition = variantName
+    ? `articleBody${variantName}`
+    : 'secondaryColumn';
+
   return {
     view: `div[data-experiment-position='${experimentPosition}'] > section[aria-labelledby='top-stories-heading']`,
     click: `div[data-experiment-position='${experimentPosition}'] a[aria-labelledby*='top-stories-promo']`,
