@@ -84,7 +84,7 @@ describe('ElectionBanner', () => {
 
         const configSrc = BANNER_CONFIG[
           appEnv === 'live' ? 'iframeSrc' : 'iframeDevSrc'
-        ].replace('{service}', 'news');
+        ].replace('{service}', 'english');
 
         const domain = isAmp
           ? process.env.SIMORGH_INCLUDES_BASE_AMP_URL
@@ -108,11 +108,50 @@ describe('ElectionBanner', () => {
       expect(getByTestId(ELEMENT_ID)).toBeInTheDocument();
     });
 
+    it('should render the correct VJ URL for Turkce service', () => {
+      const { getByTestId } = render(
+        <ElectionBanner aboutTags={mockAboutTags} taggings={mockTaggings} />,
+        {
+          toggles: { electionBanner: { enabled: true } },
+          isAmp,
+          service: 'turkce',
+        },
+      );
+
+      const wrappingEl = getByTestId(ELEMENT_ID);
+
+      const iframe = wrappingEl.querySelector('iframe, amp-iframe');
+      const iframeSrc = iframe?.getAttribute('src');
+
+      expect(iframeSrc).not.toContain('/turkce/');
+      expect(iframeSrc).toContain('turkish');
+    });
+
+    it('should render the correct VJ URL for News service', () => {
+      const { getByTestId } = render(
+        <ElectionBanner aboutTags={mockAboutTags} taggings={mockTaggings} />,
+        {
+          toggles: { electionBanner: { enabled: true } },
+          isAmp,
+          service: 'news',
+        },
+      );
+
+      const wrappingEl = getByTestId(ELEMENT_ID);
+
+      const iframe = wrappingEl.querySelector('iframe, amp-iframe');
+      const iframeSrc = iframe?.getAttribute('src');
+
+      expect(iframeSrc).not.toContain('/news/');
+      expect(iframeSrc).toContain('english');
+    });
+
     it('should not render ElectionBanner when taggings contain the editorialSensitivityId', () => {
       const { queryByTestId } = render(
         <ElectionBanner
           aboutTags={mockAboutTags}
           taggings={[
+            ...mockTaggings,
             {
               predicate:
                 'http://www.bbc.co.uk/ontologies/bbc/editorialSensitivity',

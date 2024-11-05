@@ -439,6 +439,28 @@ const TEXT_VARIANTS: Record<string, TextVariant> = {
     timezone: 'GMT',
     articlePath: '/uzbek/articles/cxj3rjxm6r0o',
   },
+  uzbekCyr: {
+    service: 'uzbek',
+    variant: 'cyr',
+    text: 'Дариға Назарбоева Қозоғистон президентининг Британияга охирги сафарида отасига ҳамроҳлик',
+    longText:
+      'Ўзбекистон: 12 йиллик муҳожиратдан кейин Ватанга қайтган фаол вафот этди - Толиб Ёқубов мустақил Ўзбекистондаги илк ва энг таниқли инсон ҳуқуқлари ҳимоячиларидан бири эди. У Каримов даврида Ўзбекистонни тарк этишга мажбур бўлган, муҳожиратда экан, фуқароликдан маҳрум этилганди.',
+    script: 'cyrillic',
+    locale: 'uz',
+    timezone: 'GMT',
+    articlePath: '/uzbek/articles/cxj3rjxm6r0o/cyr',
+  },
+  uzbekLat: {
+    service: 'uzbek',
+    variant: 'lat',
+    text: "Darig'a Nazarboeva Qo'zog'iston prezidentining hayotiga oxiri safarda otasiga hamrohlik",
+    longText:
+      "O'zbekiston: 12 yil muhojiratdan keyin Vatanga qaytgan faol vafot etdi - Tolib Yoqubov O'zbekistondagi birinchi va eng tanish inson huquqlari himoyachilaridan biri edi. U Karimov davrida O'zbekistonni qo'llab-quvvatlash uchun zarur, muhojiratda ekan, harakatlanishdan foydalanishdi.",
+    script: 'latin',
+    locale: 'uz',
+    timezone: 'GMT',
+    articlePath: '/uzbek/articles/cxj3rjxm6r0o/lat',
+  },
   vietnamese: {
     text: 'Ông Nazarbayev bất ngờ tuyên bố từ chức hôm 19/3/2019',
     longText:
