@@ -61,6 +61,18 @@ const SeriesStackIcon = styled(MediaIcon)`
   height: ${GEL_SPACING_DBL};
 `;
 
+const PhotoIcon = (
+  <PhotoMediaIcon
+    viewBox="0 0 32 26"
+    width="16px"
+    height="13px"
+    {...defaultAttrs}
+  >
+    <path d="M9,2V0H4V2H0V26H32V2ZM6.5,10A2.5,2.5,0,1,1,9,7.52,2.5,2.5,0,0,1,6.5,10ZM20,23a9,9,0,1,1,9-9A9,9,0,0,1,20,23Z" />
+    <circle cx="20" cy="14.02" r="5.5" />
+  </PhotoMediaIcon>
+);
+
 const mediaIcons = {
   video: (
     <VideoMediaIcon
@@ -87,28 +99,8 @@ const mediaIcons = {
       <path d="M10.596.199l-.525.562c1.35 1.35 2.175 3.225 2.175 5.25s-.825 3.9-2.175 5.25l.525.525c1.5-1.462 2.4-3.525 2.4-5.775s-.9-4.312-2.4-5.812zM6.996 1.511l-2.25 2.25H.996v4.5h3.75l2.25 2.25z" />
     </AudioMediaIcon>
   ),
-  image: (
-    <PhotoMediaIcon
-      viewBox="0 0 32 26"
-      width="16px"
-      height="13px"
-      {...defaultAttrs}
-    >
-      <path d="M9,2V0H4V2H0V26H32V2ZM6.5,10A2.5,2.5,0,1,1,9,7.52,2.5,2.5,0,0,1,6.5,10ZM20,23a9,9,0,1,1,9-9A9,9,0,0,1,20,23Z" />
-      <circle cx="20" cy="14.02" r="5.5" />
-    </PhotoMediaIcon>
-  ),
-  photogallery: (
-    <PhotoMediaIcon
-      viewBox="0 0 32 26"
-      width="16px"
-      height="13px"
-      {...defaultAttrs}
-    >
-      <path d="M9,2V0H4V2H0V26H32V2ZM6.5,10A2.5,2.5,0,1,1,9,7.52,2.5,2.5,0,0,1,6.5,10ZM20,23a9,9,0,1,1,9-9A9,9,0,0,1,20,23Z" />
-      <circle cx="20" cy="14.02" r="5.5" />
-    </PhotoMediaIcon>
-  ),
+  image: PhotoIcon,
+  photogallery: PhotoIcon,
   guidance: (
     <GuidanceIcon viewBox="0 0 32 32" width="32" height="32" {...defaultAttrs}>
       <path d="M32,16A16,16,0,1,1,16,0,16,16,0,0,1,32,16Zm-8.6-.8H16.6v3.1h2.9c-.2,1.5-1.6,2.4-3.7,2.4s-3.7-2.4-3.7-4.7,1-4.7,3.7-4.7,3,.8,3.2,2.2h4.2c-.4-4-3.9-5.8-7.2-5.8-4.8,0-8,3.7-8,8.3s3.1,8.3,8,8.3a5.4,5.4,0,0,0,4.5-2.1l.2,1.7h2.7Z" />

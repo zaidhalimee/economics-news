@@ -164,6 +164,7 @@ exports[`Document Component should render APP version correctly 1`] = `
 
 exports[`Document Component should render LITE version correctly 1`] = `
 <html
+  class="no-js"
   lang="test"
 >
   <head>
@@ -189,6 +190,11 @@ exports[`Document Component should render LITE version correctly 1`] = `
     <style>
       .css-7prgni-StyledLink{display:inline-block;}
     </style>
+    <script
+      type="text/javascript"
+    >
+      document.documentElement.classList.remove("no-js");
+    </script>
   </head>
   <body>
     <div>
