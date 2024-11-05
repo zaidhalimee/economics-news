@@ -21,16 +21,16 @@ export default {
 export const Example = () => {
   const jumpToHeadings = [
     {
-      heading: 'This is a subheading - 1',
+      heading: 'This is a subheading - a',
     },
     {
-      heading: 'This is a subheading - 2',
+      heading: 'This is a subheading - b',
     },
     {
-      heading: 'This is a subheading - 3',
+      heading: 'This is a subheading - c',
     },
     {
-      heading: 'This is a subheading - 4',
+      heading: 'This is a subheading - d',
     },
   ];
 
