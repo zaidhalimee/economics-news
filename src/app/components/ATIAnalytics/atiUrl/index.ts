@@ -45,6 +45,7 @@ export const buildATIPageTrackPath = ({
   categoryName,
   campaigns,
   nationsProducer,
+  experimentVariant,
 }: ATIPageTrackingProps) => {
   const href = getHref(platform);
   const referrer = getReferrer(platform, origin, previousPath);
@@ -214,6 +215,22 @@ export const buildATIPageTrackPath = ({
       value: getATIMarketingString(href, campaignType),
       wrap: false,
     },
+    ...(experimentVariant
+      ? [
+          {
+            key: 'mv_test',
+            description: 'Article page banner experiment',
+            value: `Election Banner Experiment`,
+            wrap: false,
+          },
+          {
+            key: 'mv_creation',
+            description: 'Article page banner variant',
+            value: `${experimentVariant}`,
+            wrap: false,
+          },
+        ]
+      : []),
     ...getRSSMarketingString(href, campaignType),
     ...(onOnionTld()
       ? [

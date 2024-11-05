@@ -14,7 +14,7 @@ export default {
       width: '100%',
       height: `${pixelsToRem(BANNER_CONFIG.heights.mobile)}rem`,
 
-      [mq.GROUP_2_MIN_WIDTH]: {
+      [mq.GROUP_3_MIN_WIDTH]: {
         height: `${pixelsToRem(BANNER_CONFIG.heights.tablet)}rem`,
       },
       [mq.GROUP_4_MIN_WIDTH]: {
@@ -37,7 +37,7 @@ export default {
         width: '100%',
         height: `${pixelsToRem(BANNER_CONFIG.heights.mobile)}rem`,
 
-        [mq.GROUP_2_MIN_WIDTH]: {
+        [mq.GROUP_3_MIN_WIDTH]: {
           height: `${pixelsToRem(BANNER_CONFIG.heights.tablet)}rem`,
         },
         [mq.GROUP_4_MIN_WIDTH]: {

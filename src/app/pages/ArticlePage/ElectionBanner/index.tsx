@@ -6,27 +6,73 @@ import { RequestContext } from '#app/contexts/RequestContext';
 import AmpIframe from '#app/components/AmpIframe';
 import useToggle from '#app/hooks/useToggle';
 import { Tag } from '#app/components/Metadata/types';
-import isLive from '#app/lib/utilities/isLive';
 import { ServiceContext } from '#app/contexts/ServiceContext';
+import useOptimizelyMvtVariation from '#app/hooks/useOptimizelyMvtVariation';
+import { getEnvConfig } from '#app/lib/utilities/getEnvConfig';
+import { MetadataTaggings } from '#app/models/types/metadata';
+import { Services } from '#app/models/types/global';
 import styles from './index.styles';
 import BANNER_CONFIG from './config';
 
-export default function ElectionBanner({ aboutTags }: { aboutTags: Tag[] }) {
+type Props = {
+  aboutTags: Tag[];
+  taggings: MetadataTaggings;
+};
+
+const handleUrlServiceTransform = (url: string, service: Services) => {
+  switch (service) {
+    case 'turkce':
+      return url.replace('{service}', 'turkish');
+    case 'news':
+      return url.replace('{service}', 'english');
+    default:
+      return url.replace('{service}', service);
+  }
+};
+
+export default function ElectionBanner({ aboutTags, taggings }: Props) {
   const { service } = useContext(ServiceContext);
   const { isAmp, isLite } = useContext(RequestContext);
   const { enabled: electionBannerEnabled }: { enabled: boolean | null } =
-    useToggle('articleElectionBanner');
+    useToggle('electionBanner');
 
-  if (isLive()) return null; // TODO: Remove once going Live
+  const variation = useOptimizelyMvtVariation('newswb_01_ap_banner_election');
+
   if (isLite) return null;
 
-  const { iframeSrc, iframeSrcAmp, thingIds } = BANNER_CONFIG;
+  const {
+    heights,
+    iframeSrc,
+    iframeDevSrc,
+    editorialSensitivityId,
+    usElectionThingId,
+  } = BANNER_CONFIG;
 
-  const validAboutTag = aboutTags?.find(tag => thingIds.includes(tag.thingId));
+  const isEditoriallySensitive = taggings?.some(({ value }) =>
+    value.includes(editorialSensitivityId),
+  );
 
-  const showBanner = validAboutTag && electionBannerEnabled;
+  const validAboutTag = aboutTags?.find(
+    ({ thingId }) => thingId === usElectionThingId,
+  );
+
+  const showBanner =
+    !isEditoriallySensitive && validAboutTag && electionBannerEnabled;
 
   if (!showBanner) return null;
+  if (variation === 'off') return null;
+
+  const {
+    SIMORGH_APP_ENV,
+    SIMORGH_INCLUDES_BASE_URL,
+    SIMORGH_INCLUDES_BASE_AMP_URL,
+  } = getEnvConfig();
+
+  const iframeSrcToUse = SIMORGH_APP_ENV === 'live' ? iframeSrc : iframeDevSrc;
+  const iframeSrcWithService = handleUrlServiceTransform(
+    iframeSrcToUse,
+    service,
+  );
 
   if (isAmp) {
     return (
@@ -35,7 +81,7 @@ export default function ElectionBanner({ aboutTags }: { aboutTags: Tag[] }) {
           ampMetadata={{
             imageWidth: 1,
             imageHeight: 1,
-            src: iframeSrcAmp.replace('{service}', service),
+            src: `${SIMORGH_INCLUDES_BASE_AMP_URL}/${iframeSrcWithService}/amp`,
             image:
               'https://news.files.bbci.co.uk/include/vjassets/img/app-launcher.png',
             title: validAboutTag.thingLabel,
@@ -49,10 +95,11 @@ export default function ElectionBanner({ aboutTags }: { aboutTags: Tag[] }) {
     <div data-testid="election-banner" css={styles.electionBannerWrapper}>
       <iframe
         title={validAboutTag.thingLabel}
-        src={iframeSrc.replace('{service}', service)}
+        src={`${SIMORGH_INCLUDES_BASE_URL}/${iframeSrcWithService}`}
         scrolling="no"
         css={styles.electionBannerIframe}
-        height={BANNER_CONFIG.heights.mobile}
+        height={heights.desktop}
+        width="100%"
       />
     </div>
   );
