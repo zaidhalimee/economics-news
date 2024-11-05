@@ -33,7 +33,7 @@ const JumpTo = ({ jumpToHeadings, eventTrackingData }: JumpToProps) => {
       aria-labelledby={headingId}
       data-testid="jump-to"
     >
-      <Text as="strong" tabIndex={-1} id={headingId}>
+      <Text as="strong" id={headingId}>
         {jumpTo}
       </Text>
       <ol>
