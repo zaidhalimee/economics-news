@@ -264,16 +264,11 @@ const buildRequestUrls = ({
 };
 
 const getQuerySelectors = ({ variantName }: { variantName?: VariantNames }) => {
-  if (!variantName) {
-    return {
-      view: `div[data-experiment-position='secondaryColumn'] > section[aria-labelledby='top-stories-heading']`,
-      click: `div[data-experiment-position='secondaryColumn'] a[aria-labelledby*='top-stories-promo']`,
-    };
-  }
-
+  const experimentPosition = variantName ? `articleBody${variantName}` : 'secondaryColumn';
+  
   return {
-    view: `div[data-experiment-position='articleBody${variantName}'] > section[aria-labelledby='top-stories-heading']`,
-    click: `div[data-experiment-position='articleBody${variantName}'] a[aria-labelledby*='top-stories-promo']`,
+    view: `div[data-experiment-position='${experimentPosition}'] > section[aria-labelledby='top-stories-heading']`,
+    click: `div[data-experiment-position='${experimentPosition}'] a[aria-labelledby*='top-stories-promo']`,
   };
 };
 
