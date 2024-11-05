@@ -13,14 +13,16 @@ import styles from './index.styles';
 
 function script(this: Element) {
   const parentEl = this.parentElement;
-  const templateEl = parentEl?.querySelector('template');
+
+  if (!parentEl) return;
+
+  const templateEl = parentEl.querySelector('template');
 
   if (!templateEl) return;
 
-  parentEl?.prepend(templateEl.content.cloneNode(true));
-
-  templateEl.remove();
-  this.remove();
+  parentEl.insertAdjacentHTML('afterbegin', templateEl.innerHTML);
+  parentEl.removeChild(templateEl);
+  parentEl.removeChild(this);
 }
 
 type ButtonTextProps = {
