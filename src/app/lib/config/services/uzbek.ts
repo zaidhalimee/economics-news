@@ -2,6 +2,7 @@ import latinWithDiacritics from '../../../components/ThemeProvider/fontScripts/l
 import cyrillic from '../../../components/ThemeProvider/fontScripts/cyrillic';
 import '#psammead/moment-timezone-include/tz/GMT';
 import '#psammead/psammead-locales/moment/uz';
+import '#psammead/psammead-locales/moment/uz-latn';
 import withContext from '../../../contexts/utils/withContext';
 import { UzbekConfig } from '../../../models/types/serviceConfig';
 import { Direction, Services } from '../../../models/types/global';
@@ -370,7 +371,7 @@ export const service: UzbekConfig = {
     articleTimestampPrefix: 'Yangilandi',
     articleTimestampSuffix: '',
     brandName: "BBC News O'zbek",
-    datetimeLocale: `uz`,
+    datetimeLocale: `uz-latn`,
     externalLinkText: ', tashqi',
     frontPageTitle: 'Bosh sahifa',
     lang: `uz-Cyrl`,

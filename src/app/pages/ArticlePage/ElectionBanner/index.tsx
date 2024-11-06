@@ -7,8 +7,10 @@ import AmpIframe from '#app/components/AmpIframe';
 import useToggle from '#app/hooks/useToggle';
 import { Tag } from '#app/components/Metadata/types';
 import { ServiceContext } from '#app/contexts/ServiceContext';
+import useOptimizelyMvtVariation from '#app/hooks/useOptimizelyMvtVariation';
 import { getEnvConfig } from '#app/lib/utilities/getEnvConfig';
 import { MetadataTaggings } from '#app/models/types/metadata';
+import { Services } from '#app/models/types/global';
 import styles from './index.styles';
 import BANNER_CONFIG from './config';
 
@@ -17,11 +19,24 @@ type Props = {
   taggings: MetadataTaggings;
 };
 
+const handleUrlServiceTransform = (url: string, service: Services) => {
+  switch (service) {
+    case 'turkce':
+      return url.replace('{service}', 'turkish');
+    case 'news':
+      return url.replace('{service}', 'english');
+    default:
+      return url.replace('{service}', service);
+  }
+};
+
 export default function ElectionBanner({ aboutTags, taggings }: Props) {
   const { service } = useContext(ServiceContext);
   const { isAmp, isLite } = useContext(RequestContext);
   const { enabled: electionBannerEnabled }: { enabled: boolean | null } =
     useToggle('electionBanner');
+
+  const variation = useOptimizelyMvtVariation('newswb_01_ap_banner_election');
 
   if (isLite) return null;
 
@@ -33,7 +48,7 @@ export default function ElectionBanner({ aboutTags, taggings }: Props) {
     usElectionThingId,
   } = BANNER_CONFIG;
 
-  const isEditoriallySensitive = taggings?.find(({ value }) =>
+  const isEditoriallySensitive = taggings?.some(({ value }) =>
     value.includes(editorialSensitivityId),
   );
 
@@ -45,6 +60,7 @@ export default function ElectionBanner({ aboutTags, taggings }: Props) {
     !isEditoriallySensitive && validAboutTag && electionBannerEnabled;
 
   if (!showBanner) return null;
+  if (variation === 'off') return null;
 
   const {
     SIMORGH_APP_ENV,
@@ -53,7 +69,10 @@ export default function ElectionBanner({ aboutTags, taggings }: Props) {
   } = getEnvConfig();
 
   const iframeSrcToUse = SIMORGH_APP_ENV === 'live' ? iframeSrc : iframeDevSrc;
-  const iframeSrcWithService = iframeSrcToUse.replace('{service}', service);
+  const iframeSrcWithService = handleUrlServiceTransform(
+    iframeSrcToUse,
+    service,
+  );
 
   if (isAmp) {
     return (
