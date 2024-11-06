@@ -29,4 +29,13 @@ describe('JumpTo Component', () => {
     const headings = screen.getAllByRole('listitem');
     expect(headings.length).toBe(jumpToHeadings.length);
   });
+  test('renders each item with a link to the subheading on the same page', () => {
+    render(<JumpTo {...defaultProps} />);
+    const listItems = screen.getAllByRole('listitem');
+    listItems.forEach((item, index) => {
+      const link = item.querySelector('a');
+      const expectedHref = `#${jumpToHeadings[index].heading.replace(/\s+/g, '-').replace(/'/g, '')}`;
+      expect(link).toHaveAttribute('href', expectedHref);
+    });
+  });
 });
