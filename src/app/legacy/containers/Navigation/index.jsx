@@ -22,11 +22,14 @@ const renderListItems = (
   clickTrackerHandler,
   viewRef,
 ) =>
-  navigation.map((item, index) => {
-    const { title, url } = item;
+  navigation.reduce((listAcc, item, index) => {
+    const { isLite } = useContext(RequestContext);
+    const { title, url, hideOnLiteSite } = item;
     const active = index === activeIndex;
 
-    return (
+    if (hideOnLiteSite && isLite) return listAcc;
+
+    const listItem = (
       <Li
         key={title}
         url={url}
@@ -41,7 +44,9 @@ const renderListItems = (
         {title}
       </Li>
     );
-  });
+
+    return [...listAcc, listItem];
+  }, []);
 
 const NavigationContainer = () => {
   const { isAmp } = useContext(RequestContext);
