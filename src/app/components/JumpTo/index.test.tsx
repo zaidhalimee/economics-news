@@ -18,7 +18,7 @@ describe('JumpTo Component', () => {
     },
   };
 
-  test('renders the jump-to title', () => {
+  test('renders the Jump To title', () => {
     render(<JumpTo {...defaultProps} />);
     const title = screen.getByText('Jump to');
     expect(title).toBeInTheDocument();
