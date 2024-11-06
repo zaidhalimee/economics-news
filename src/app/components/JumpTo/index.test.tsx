@@ -18,18 +18,18 @@ describe('JumpTo Component', () => {
     },
   };
 
-  test('renders the Jump To title', () => {
+  it('renders the Jump To title', () => {
     render(<JumpTo {...defaultProps} />);
     const title = screen.getByText('Jump to');
     expect(title).toBeInTheDocument();
   });
 
-  test('renders the correct number of headings', () => {
+  it('renders the correct number of headings', () => {
     render(<JumpTo {...defaultProps} />);
     const headings = screen.getAllByRole('listitem');
     expect(headings.length).toBe(jumpToHeadings.length);
   });
-  test('renders each item with a link to the subheading on the same page', () => {
+  it('renders each item with a link to the subheading on the same page', () => {
     render(<JumpTo {...defaultProps} />);
     const listItems = screen.getAllByRole('listitem');
     listItems.forEach((item, index) => {
