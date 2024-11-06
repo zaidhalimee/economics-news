@@ -3,6 +3,9 @@ export default {
   ads: {
     enabled: false,
   },
+  electionBanner: {
+    enabled: true,
+  },
   chartbeatAnalytics: {
     enabled: true,
   },
