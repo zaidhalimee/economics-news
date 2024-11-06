@@ -1,5 +1,5 @@
 import React from 'react';
-import pidginArticleFixtureWithJumpToBlock from '../../../../data/pidgin/articles/cn03je8kwpko.json';
+import pidginArticleFixtureWithJumpToBlock from './fixtureData';
 import JumpTo, { JumpToProps } from '.';
 import metadata from './metadata.json';
 import readme from './README.md';
