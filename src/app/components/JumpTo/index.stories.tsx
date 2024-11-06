@@ -1,24 +1,11 @@
 import React from 'react';
 
-import JumpTo from '.';
-import { StoryArgs } from '../../models/types/storybook';
+import JumpTo, { JumpToProps } from '.';
 import metadata from './metadata.json';
 import readme from './README.md';
 
-interface Props {
-  subheadlines?: { title: string }[];
-}
-
-const Component = ({ subheadlines = [] }: Props) => {
-  const jumpToData = {
-    model: {
-      jumpToHeadings: subheadlines.map(subheadline => ({
-        heading: subheadline.title,
-      })),
-    },
-  };
-
-  return <JumpTo jumpToData={jumpToData} />;
+const Component = ({ jumpToHeadings = [] }: JumpToProps) => {
+  return <JumpTo jumpToHeadings={jumpToHeadings} />;
 };
 
 export default {
@@ -31,23 +18,21 @@ export default {
 };
 
 // wip sample story - should use a fixture here instead probably for the titles
-export const Example = (_: StoryArgs, globalArgs: Props) => {
-  const {
-    subheadlines = [
-      {
-        title: 'This is a subheading - 1',
-      },
-      {
-        title: 'This is a subheading - 2',
-      },
-      {
-        title: 'This is a subheading - 3',
-      },
-      {
-        title: 'This is a subheading - 4',
-      },
-    ],
-  } = globalArgs;
+export const Example = () => {
+  const jumpToHeadings = [
+    {
+      heading: 'This is a subheading - a',
+    },
+    {
+      heading: 'This is a subheading - b',
+    },
+    {
+      heading: 'This is a subheading - c',
+    },
+    {
+      heading: 'This is a subheading - d',
+    },
+  ];
 
-  return <Component subheadlines={subheadlines} />;
+  return <Component jumpToHeadings={jumpToHeadings} />;
 };

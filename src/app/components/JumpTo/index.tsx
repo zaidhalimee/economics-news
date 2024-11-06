@@ -7,67 +7,51 @@ import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
 import Text from '#app/components/Text';
 import InlineLink from '#app/components/InlineLink';
+import idSanitiser from '../../lib/utilities/idSanitiser';
 
-interface JumpToHeading {
-  id: string;
-  title: string;
-}
-
-interface JumpToProps {
-  jumpToData: {
-    model: {
-      jumpToHeadings: Array<{ heading: string }>;
-    };
-  };
+export interface JumpToProps {
+  jumpToHeadings?: Array<{ heading: string }>;
   eventTrackingData?: EventTrackingMetadata;
 }
 
-const JumpTo = ({ jumpToData, eventTrackingData }: JumpToProps) => {
+const JumpTo = ({ jumpToHeadings, eventTrackingData }: JumpToProps) => {
   const { translations } = useContext(ServiceContext);
   const { jumpTo = 'Jump to' } = translations?.articlePage || {};
 
   const viewRef = useViewTracker(eventTrackingData);
   const clickTrackerHandler = useClickTrackerHandler({
     ...eventTrackingData,
-    identifier: 'JumpTo',
+    componentName: 'jumpto',
   });
 
-  const subheadlines: JumpToHeading[] = jumpToData?.model?.jumpToHeadings.map(
-    (item, index) => ({
-      id: `jump-to-${index}`,
-      title: item.heading,
-    }),
-  );
+  const titleId = 'jump-to-heading';
 
-  const headingId = 'jump-to-heading';
-
-  // we use the Text component with the as prop set to strong (for now) because the screenreader UX states the heading should not be announced
-  // using inline link instead of anchor to bring benefits to styling but can revert to anchor if needed
   return (
-    <section
+    <nav
       ref={viewRef}
-      role="region"
-      aria-labelledby={headingId}
+      role="navigation"
+      aria-labelledby={titleId}
       data-testid="jump-to"
     >
-      <Text as="strong" tabIndex={-1} id={headingId}>
+      <Text as="strong" id={titleId}>
         {jumpTo}
       </Text>
-      <nav aria-labelledby={headingId}>
-        <ul>
-          {subheadlines.map((heading, index) => (
-            <li key={heading.id}>
+      <ol role="list">
+        {jumpToHeadings?.map(({ heading }) => {
+          const sanitisedId = idSanitiser(heading);
+          return (
+            <li key={sanitisedId}>
               <InlineLink
-                to={`#${heading.id}`}
+                to={`#${sanitisedId}`}
                 onClick={clickTrackerHandler}
-                data-testid={`jump-to-link-${index}`}
-                text={heading.title}
+                data-testid={`jump-to-link-${sanitisedId}`}
+                text={heading}
               />
             </li>
-          ))}
-        </ul>
-      </nav>
-    </section>
+          );
+        })}
+      </ol>
+    </nav>
   );
 };
 
