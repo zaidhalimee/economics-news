@@ -8,24 +8,28 @@ import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
 import Text from '#app/components/Text';
 import InlineLink from '#app/components/InlineLink';
+import isLive from '#app/lib/utilities/isLive';
 import idSanitiser from '../../lib/utilities/idSanitiser';
 import styles from './index.styles';
 
 export interface JumpToProps {
   jumpToHeadings?: Array<{ heading: string }>;
-  eventTrackingData?: EventTrackingMetadata;
 }
 
-const JumpTo = ({ jumpToHeadings, eventTrackingData }: JumpToProps) => {
+const eventTrackingData: EventTrackingMetadata = {
+  componentName: 'jumpto',
+};
+
+const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
   const { translations } = useContext(ServiceContext);
   const { hash } = useLocation();
   const { jumpTo = 'Jump to' } = translations?.articlePage || {};
 
   const viewRef = useViewTracker(eventTrackingData);
-  const clickTrackerHandler = useClickTrackerHandler({
-    ...eventTrackingData,
-    componentName: 'jumpto',
-  });
+  const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
+
+  // TODO: Remove for release
+  if (isLive()) return null;
 
   const titleId = 'jump-to-heading';
 
