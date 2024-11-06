@@ -8,6 +8,7 @@ import { EventTrackingMetadata } from '#app/models/types/eventTracking';
 import Text from '#app/components/Text';
 import InlineLink from '#app/components/InlineLink';
 import idSanitiser from '../../lib/utilities/idSanitiser';
+import styles from './index.styles';
 
 export interface JumpToProps {
   jumpToHeadings?: Array<{ heading: string }>;
@@ -32,20 +33,28 @@ const JumpTo = ({ jumpToHeadings, eventTrackingData }: JumpToProps) => {
       role="navigation"
       aria-labelledby={titleId}
       data-testid="jump-to"
+      css={styles.wrapper}
     >
-      <Text as="strong" id={titleId}>
+      <Text
+        as="strong"
+        id={titleId}
+        size="doublePica"
+        fontVariant="sansBold"
+        css={styles.title}
+      >
         {jumpTo}
       </Text>
-      <ol role="list">
+      <ol role="list" css={styles.list}>
         {jumpToHeadings?.map(({ heading }) => {
           const sanitisedId = idSanitiser(heading);
           return (
-            <li key={sanitisedId}>
+            <li key={sanitisedId} css={styles.listItem}>
               <InlineLink
                 to={`#${sanitisedId}`}
                 onClick={clickTrackerHandler}
                 data-testid={`jump-to-link-${sanitisedId}`}
                 text={heading}
+                css={styles.link}
               />
             </li>
           );

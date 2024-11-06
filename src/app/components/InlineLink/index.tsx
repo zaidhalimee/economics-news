@@ -27,7 +27,7 @@ const bbcDomains = [
 ];
 
 const InlineLink: FC<Props> = ({
-  className = 'focusIndicatorReducedWidth',
+  className,
   fontVariant,
   size,
   text,
