@@ -367,6 +367,7 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Amajwi n’amashusho',
         url: '/gahuza/topics/crldzm936jmt',
+        hideOnLiteSite: true,
       },
     ],
   },
