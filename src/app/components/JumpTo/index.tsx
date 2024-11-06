@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { useContext } from 'react';
+import useLocation from '#app/hooks/useLocation';
 import { jsx } from '@emotion/react';
 import { ServiceContext } from '#contexts/ServiceContext';
 import useViewTracker from '#app/hooks/useViewTracker';
@@ -17,6 +18,7 @@ export interface JumpToProps {
 
 const JumpTo = ({ jumpToHeadings, eventTrackingData }: JumpToProps) => {
   const { translations } = useContext(ServiceContext);
+  const { hash } = useLocation();
   const { jumpTo = 'Jump to' } = translations?.articlePage || {};
 
   const viewRef = useViewTracker(eventTrackingData);
@@ -47,14 +49,18 @@ const JumpTo = ({ jumpToHeadings, eventTrackingData }: JumpToProps) => {
       <ol role="list" css={styles.list}>
         {jumpToHeadings?.map(({ heading }) => {
           const sanitisedId = idSanitiser(heading);
+          const isActiveId = decodeURIComponent(hash) === `#${sanitisedId}`;
           return (
-            <li key={sanitisedId} css={styles.listItem}>
+            <li
+              key={sanitisedId}
+              css={[styles.listItem, isActiveId && styles.listItemActive]}
+            >
               <InlineLink
                 to={`#${sanitisedId}`}
                 onClick={clickTrackerHandler}
                 data-testid={`jump-to-link-${sanitisedId}`}
                 text={heading}
-                css={styles.link}
+                css={[styles.link, isActiveId && styles.linkActive]}
                 size="pica"
                 fontVariant="sansBold"
               />
