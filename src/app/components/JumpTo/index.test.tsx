@@ -29,6 +29,7 @@ describe('JumpTo Component', () => {
     const headings = screen.getAllByRole('listitem');
     expect(headings.length).toBe(jumpToHeadings.length);
   });
+
   it('renders each item with a link to the subheading on the same page', () => {
     render(<JumpTo {...defaultProps} />);
     const listItems = screen.getAllByRole('listitem');
