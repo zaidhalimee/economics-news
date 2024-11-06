@@ -45,19 +45,48 @@ export default {
   listItem: ({ spacings, mq }: Theme) =>
     css({
       marginBottom: `${spacings.DOUBLE}rem`,
-      padding: `${pixelsToRem(6)}rem 0`,
+      paddingTop: `${pixelsToRem(6)}rem`,
+      paddingBottom: `${pixelsToRem(6)}rem`,
+      paddingInlineStart: `${spacings.FULL}rem`,
+      position: 'relative',
 
       '&:last-child': {
         marginBottom: 0,
+      },
+
+      [mq.GROUP_1_MIN_WIDTH]: {
+        paddingInlineStart: `${spacings.DOUBLE}rem`,
       },
 
       [mq.GROUP_4_MIN_WIDTH]: {
         marginBottom: `${pixelsToRem(12)}rem`,
       },
     }),
+  listItemActive: ({ palette, spacings }: Theme) =>
+    css({
+      '&::before': {
+        position: 'absolute',
+        content: '""',
+        top: 0,
+        insetInlineStart: 0,
+        width: `${spacings.HALF}rem`,
+        height: '100%',
+        backgroundColor: palette.POSTBOX,
+      },
+    }),
   link: ({ palette }: Theme) =>
     css({
       color: palette.GREY_10,
       borderBottomColor: palette.GREY_10,
+    }),
+  linkActive: ({ palette }: Theme) =>
+    css({
+      color: palette.POSTBOX,
+      borderBottomColor: palette.POSTBOX,
+
+      '&:visited': {
+        color: palette.POSTBOX,
+        borderBottomColor: palette.POSTBOX,
+      },
     }),
 };
