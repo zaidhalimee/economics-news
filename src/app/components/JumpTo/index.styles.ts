@@ -28,9 +28,8 @@ export default {
         marginBottom: `${pixelsToRem(12)}rem`,
       },
     }),
-  link: ({ fontSizes, fontVariants }: Theme) =>
+  link: ({ palette }: Theme) =>
     css({
-      ...fontSizes.pica,
-      ...fontVariants.sansBold,
+      color: palette.GREY_10,
     }),
 };

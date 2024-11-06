@@ -55,6 +55,8 @@ const JumpTo = ({ jumpToHeadings, eventTrackingData }: JumpToProps) => {
                 data-testid={`jump-to-link-${sanitisedId}`}
                 text={heading}
                 css={styles.link}
+                size="pica"
+                fontVariant="sansBold"
               />
             </li>
           );
