@@ -1,4 +1,5 @@
 import React from 'react';
+import idSanitiser from '#app/lib/utilities/idSanitiser';
 import {
   render,
   screen,
@@ -39,9 +40,8 @@ describe('JumpTo Component', () => {
       const listItems = screen.getAllByRole('listitem');
       listItems.forEach((item, index) => {
         const link = item.querySelector('a');
-        const expectedHref = `#${jumpToHeadings[index].heading
-          .replace(/\s+/g, '-')
-          .replace(/'/g, '')}`;
+        const sanitisedHeading = idSanitiser(jumpToHeadings[index].heading);
+        const expectedHref = `#${sanitisedHeading}`;
         expect(link).toHaveAttribute('href', expectedHref);
       });
     });
@@ -77,7 +77,7 @@ describe('JumpTo Component', () => {
         render(<JumpTo jumpToHeadings={jumpToHeadings} />);
 
         jumpToHeadings.forEach(({ heading }) => {
-          const sanitisedId = heading.replace(/\s+/g, '-').replace(/'/g, '');
+          const sanitisedId = idSanitiser(heading);
           const link = screen.getByTestId(`jump-to-link-${sanitisedId}`);
 
           fireEvent.click(link);
