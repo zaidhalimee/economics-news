@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /** @jsx jsx */
 import { useContext, useState, useEffect } from 'react';
 import { jsx } from '@emotion/react';
@@ -6,7 +7,6 @@ import useViewTracker from '#app/hooks/useViewTracker';
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
 import Text from '#app/components/Text';
-import InlineLink from '#app/components/InlineLink';
 import isLive from '#app/lib/utilities/isLive';
 import idSanitiser from '../../lib/utilities/idSanitiser';
 import styles from './index.styles';
@@ -20,6 +20,9 @@ const eventTrackingData: EventTrackingMetadata = {
 };
 
 const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
+  // TODO: Remove for release
+  if (isLive()) return null;
+
   const { translations } = useContext(ServiceContext);
   const [hash, setHash] = useState('');
   const { jumpTo = 'Jump to' } = translations?.articlePage || {};
@@ -38,9 +41,6 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
     clickTrackerHandler(e);
     setHash(subheadingId);
   };
-
-  // TODO: Remove for release
-  if (isLive()) return null;
 
   const titleId = 'jump-to-heading';
 
@@ -64,21 +64,24 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
       <ol role="list" css={styles.list}>
         {jumpToHeadings?.map(({ heading }) => {
           const sanitisedId = idSanitiser(heading);
-          const isActiveId = decodeURIComponent(hash) === `#${sanitisedId}`;
+          const idWithHash = `#${sanitisedId}`;
+
+          const isActiveId = decodeURIComponent(hash) === idWithHash;
           return (
-            <li
-              key={sanitisedId}
-              css={[styles.listItem, isActiveId && styles.listItemActive]}
-            >
-              <InlineLink
-                to={`#${sanitisedId}`}
-                onClick={e => linkClickHandler(e, `#${sanitisedId}`)}
-                data-testid={`jump-to-link-${sanitisedId}`}
-                text={heading}
-                css={[styles.link, isActiveId && styles.linkActive]}
-                size="pica"
-                fontVariant="sansBold"
-              />
+            <li key={idWithHash} css={styles.listItem}>
+              <a
+                href={idWithHash}
+                onClick={e => linkClickHandler(e, idWithHash)}
+                css={styles.link}
+                aria-labelledby={`jump-to-heading-${sanitisedId}`}
+              >
+                <span
+                  id={`jump-to-heading-${sanitisedId}`}
+                  css={[styles.linkText, isActiveId && styles.linkTextActive]}
+                >
+                  {heading}
+                </span>
+              </a>
             </li>
           );
         })}

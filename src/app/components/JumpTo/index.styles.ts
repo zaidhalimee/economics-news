@@ -39,31 +39,53 @@ export default {
       margin: `${spacings.DOUBLE}rem 0 0 0`,
 
       [mq.GROUP_4_MIN_WIDTH]: {
-        marginTop: `${pixelsToRem(12)}rem`,
+        margin: `${pixelsToRem(12)}rem 0 0 0`,
       },
     }),
   listItem: ({ spacings, mq }: Theme) =>
     css({
-      marginBottom: `${spacings.DOUBLE}rem`,
-      paddingTop: `${pixelsToRem(6)}rem`,
-      paddingBottom: `${pixelsToRem(6)}rem`,
-      paddingInlineStart: `${spacings.FULL}rem`,
+      marginBottom: `${spacings.FULL}rem`,
       position: 'relative',
 
       '&:last-child': {
         marginBottom: 0,
       },
 
-      [mq.GROUP_1_MIN_WIDTH]: {
-        paddingInlineStart: `${spacings.DOUBLE}rem`,
-      },
-
       [mq.GROUP_4_MIN_WIDTH]: {
         marginBottom: `${pixelsToRem(12)}rem`,
       },
     }),
-  listItemActive: ({ palette, spacings }: Theme) =>
+  link: ({ fontSizes, fontVariants, palette, spacings }: Theme) =>
     css({
+      ...fontSizes.pica,
+      ...fontVariants.sansBold,
+      padding: `${spacings.HALF}rem 0`,
+      color: palette.GREY_10,
+      display: 'inline-block',
+
+      '&:visited': {
+        color: palette.GREY_6,
+      },
+      '&:focus, &:hover': {
+        color: palette.POSTBOX,
+
+        span: {
+          textDecorationThickness: `${pixelsToRem(2)}rem`,
+        },
+      },
+    }),
+  linkText: ({ spacings }: Theme) =>
+    css({
+      padding: `${spacings.FULL}rem ${spacings.DOUBLE}rem`,
+      display: 'inline-block',
+      position: 'relative',
+      textDecoration: 'underline',
+      textUnderlineOffset: `${spacings.HALF}rem`,
+    }),
+  linkTextActive: ({ spacings, palette }: Theme) =>
+    css({
+      color: palette.POSTBOX,
+
       '&::before': {
         position: 'absolute',
         content: '""',
@@ -72,21 +94,6 @@ export default {
         width: `${spacings.HALF}rem`,
         height: '100%',
         backgroundColor: palette.POSTBOX,
-      },
-    }),
-  link: ({ palette }: Theme) =>
-    css({
-      color: palette.GREY_10,
-      borderBottomColor: palette.GREY_10,
-    }),
-  linkActive: ({ palette }: Theme) =>
-    css({
-      color: palette.POSTBOX,
-      borderBottomColor: palette.POSTBOX,
-
-      '&:visited': {
-        color: palette.POSTBOX,
-        borderBottomColor: palette.POSTBOX,
       },
     }),
 };
