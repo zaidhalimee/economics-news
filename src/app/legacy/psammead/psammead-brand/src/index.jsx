@@ -10,6 +10,7 @@ import {
 import {
   GEL_SPACING_HLF,
   GEL_SPACING,
+  GEL_SPACING_DBL,
 } from '#psammead/gel-foundations/src/spacings';
 import { focusIndicatorThickness } from '../../../../components/ThemeProvider/focusIndicator';
 import VisuallyHiddenText from '../../../../components/VisuallyHiddenText';
@@ -29,8 +30,8 @@ const SvgWrapper = styled.div`
   max-width: ${SVG_WRAPPER_MAX_WIDTH_ABOVE_1280PX};
   margin: 0 auto;
 
-  @media (max-width: ${({ longBrandWithVariant }) =>
-      longBrandWithVariant
+  @media (max-width: ${({ isLongBrand }) =>
+      isLongBrand
         ? GEL_GROUP_1_SCREEN_WIDTH_MAX
         : GEL_GROUP_0_SCREEN_WIDTH_MAX}) {
     display: block;
@@ -46,6 +47,11 @@ const Banner = styled.div`
   @media (min-width: ${GEL_GROUP_1_SCREEN_WIDTH_MIN}) {
     height: ${60 / 16}rem;
     padding: 0 ${GEL_SPACING};
+  }
+
+  @media (min-width: ${GEL_GROUP_2_SCREEN_WIDTH_MIN}) {
+    height: ${60 / 16}rem;
+    padding: 0 ${GEL_SPACING_DBL};
   }
 
   @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MIN}) {
@@ -136,7 +142,13 @@ const LocalisedBrandName = ({
   );
 };
 
-const StyledBrand = ({ linkId, product, serviceLocalisedName = null, svg }) => (
+const StyledBrand = ({
+  linkId,
+  product,
+  serviceLocalisedName = null,
+  svg,
+  isLongBrand,
+}) => (
   <>
     {svg && (
       <>
@@ -152,6 +164,7 @@ const StyledBrand = ({ linkId, product, serviceLocalisedName = null, svg }) => (
           focusable="false"
           aria-hidden="true"
           height="32"
+          isLongBrand={isLongBrand}
         >
           {svg.group}
         </BrandSvg>
@@ -174,7 +187,7 @@ const Brand = forwardRef((props, ref) => {
     borderTop = false,
     borderBottom = false,
     scriptLink = null,
-    longBrandWithVariant = false,
+    isLongBrand = false,
     skipLink = null,
     linkId = null,
     ...rest
@@ -188,7 +201,7 @@ const Brand = forwardRef((props, ref) => {
       scriptLink={scriptLink}
       {...rest}
     >
-      <SvgWrapper ref={ref} longBrandWithVariant={longBrandWithVariant}>
+      <SvgWrapper ref={ref} isLongBrand={isLongBrand}>
         {url ? (
           <StyledLink
             href={url}
