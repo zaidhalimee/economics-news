@@ -6,8 +6,7 @@ export default {
     css({
       backgroundColor: palette.WHITE,
       padding: `${spacings.FULL}rem`,
-      marginLeft: `${spacings.FULL}rem`,
-      marginRight: `${spacings.FULL}rem`,
+      marginInline: `${spacings.FULL}rem`,
       marginBottom: `${spacings.DOUBLE}rem`,
 
       [mq.GROUP_1_MIN_WIDTH]: {
@@ -15,8 +14,7 @@ export default {
       },
 
       [mq.GROUP_2_MIN_WIDTH]: {
-        marginLeft: `${spacings.DOUBLE}rem`,
-        marginRight: `${spacings.DOUBLE}rem`,
+        marginInline: `${spacings.DOUBLE}rem`,
       },
 
       [mq.GROUP_3_MIN_WIDTH]: {
@@ -24,8 +22,7 @@ export default {
       },
 
       [mq.GROUP_4_MIN_WIDTH]: {
-        marginLeft: 0,
-        marginRight: 0,
+        marginInline: 0,
       },
     }),
   title: ({ palette }: Theme) =>
