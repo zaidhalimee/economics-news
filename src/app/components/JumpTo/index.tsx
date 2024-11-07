@@ -9,7 +9,7 @@ import InlineLink from '#app/components/InlineLink';
 import idSanitiser from '../../lib/utilities/idSanitiser';
 
 export interface JumpToProps {
-  jumpToHeadings: Array<{ heading: string }>;
+  jumpToHeadings?: Array<{ heading: string }>;
 }
 
 const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
@@ -34,7 +34,7 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
         {jumpTo}
       </Text>
       <ol role="list">
-        {jumpToHeadings.map(({ heading }) => {
+        {jumpToHeadings?.map(({ heading }) => {
           const sanitisedId = idSanitiser(heading);
           return (
             <li key={sanitisedId}>
