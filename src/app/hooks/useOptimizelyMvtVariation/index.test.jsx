@@ -1,6 +1,7 @@
 import React from 'react';
 import { renderHook } from '#app/components/react-testing-library-with-providers';
 import { RequestContextProvider } from '#contexts/RequestContext';
+import { ToggleContextProvider } from '#contexts/ToggleContext';
 import useOptimizelyMvtVariation from '.';
 import * as activateExperiment from './activateExperiment';
 
@@ -22,7 +23,11 @@ describe('useOptimizelyMvtVariation custom hook', () => {
       pathname: 'bar',
     };
     const wrapper = ({ children }) => (
-      <RequestContextProvider {...props}>{children}</RequestContextProvider>
+      <RequestContextProvider {...props}>
+        <ToggleContextProvider toggles={{ electionBanner: { enabled: true } }}>
+          {children}
+        </ToggleContextProvider>
+      </RequestContextProvider>
     );
     return renderHook(() => useOptimizelyMvtVariation(flagId), {
       wrapper,
