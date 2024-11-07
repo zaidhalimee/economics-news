@@ -21,9 +21,9 @@ const renderListItems = (
   activeIndex,
   clickTrackerHandler,
   viewRef,
+  isLite,
 ) =>
   navigation.reduce((listAcc, item, index) => {
-    const { isLite } = useContext(RequestContext);
     const { title, url, hideOnLiteSite } = item;
     const active = index === activeIndex;
 
@@ -49,7 +49,7 @@ const renderListItems = (
   }, []);
 
 const NavigationContainer = () => {
-  const { isAmp } = useContext(RequestContext);
+  const { isAmp, isLite } = useContext(RequestContext);
 
   const { script, translations, navigation, service, dir } =
     useContext(ServiceContext);
@@ -97,6 +97,7 @@ const NavigationContainer = () => {
         activeIndex,
         scrollableNavClickTrackerHandler,
         scrollableNavViewRef,
+        isLite,
       )}
     </NavigationUl>
   );
