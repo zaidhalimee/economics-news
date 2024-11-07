@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { useContext } from 'react';
-import useLocation from '#app/hooks/useLocation';
+import { useContext, useState, useEffect } from 'react';
 import { jsx } from '@emotion/react';
 import { ServiceContext } from '#contexts/ServiceContext';
 import useViewTracker from '#app/hooks/useViewTracker';
@@ -22,11 +21,23 @@ const eventTrackingData: EventTrackingMetadata = {
 
 const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
   const { translations } = useContext(ServiceContext);
-  const { hash } = useLocation();
+  const [hash, setHash] = useState('');
   const { jumpTo = 'Jump to' } = translations?.articlePage || {};
 
   const viewRef = useViewTracker(eventTrackingData);
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
+
+  useEffect(() => {
+    setHash(window.location.hash);
+  }, []);
+
+  const linkClickHandler = (
+    e: React.MouseEvent<HTMLElement, MouseEvent>,
+    subheadingId: string,
+  ) => {
+    clickTrackerHandler(e);
+    setHash(subheadingId);
+  };
 
   // TODO: Remove for release
   if (isLive()) return null;
@@ -61,7 +72,7 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
             >
               <InlineLink
                 to={`#${sanitisedId}`}
-                onClick={clickTrackerHandler}
+                onClick={e => linkClickHandler(e, `#${sanitisedId}`)}
                 data-testid={`jump-to-link-${sanitisedId}`}
                 text={heading}
                 css={[styles.link, isActiveId && styles.linkActive]}
