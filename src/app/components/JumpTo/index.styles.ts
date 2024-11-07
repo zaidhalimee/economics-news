@@ -42,7 +42,6 @@ export default {
   listItem: ({ spacings, mq }: Theme) =>
     css({
       marginBottom: `${spacings.FULL}rem`,
-      position: 'relative',
 
       '&:last-child': {
         marginBottom: 0,
