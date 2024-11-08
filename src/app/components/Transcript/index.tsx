@@ -7,6 +7,7 @@ import TranscriptTimestamp from './TranscriptTimestamp';
 import VisuallyHiddenText from '../VisuallyHiddenText';
 import { RightArrow as ArrowSvg } from '../icons';
 import { TranscriptBlock, TranscriptItem } from './types';
+import ATIAnalyticsTranscript from '../ATIAnalytics/myAnalytics';
 
 // TO DO - move this to BFF
 const removeHoursMilliseconds = (timestamp: string) => timestamp.slice(3, -4);
@@ -37,6 +38,21 @@ const Transcript = ({
 
   const formattedTitle = title ? `, ${title}` : '';
 
+  const myATIData = {
+    categoryName: null,
+    contentId: 'urn:bbc:optimo:asset:ce42wzqr2mko',
+    contentType: 'article',
+    language: 'es',
+    ldpThingIds: null,
+    ldpThingLabels: null,
+    nationsProducer: null,
+    pageIdentifier: 'mundo.articles.ce42wzqr2mko.page',
+    pageTitle:
+      'Este artículo de prueba ha sido creado para que podamos ejecutar pruebas',
+    timePublished: '2019-10-04T10:58:46.977Z',
+    timeUpdated: '2019-10-04T10:58:46.977Z',
+  };
+
   return (
     <details css={styles.details}>
       <summary css={styles.summary}>
@@ -49,6 +65,10 @@ const Transcript = ({
           {title && <VisuallyHiddenText>{formattedTitle}</VisuallyHiddenText>}
         </span>
       </summary>
+      {/* dont think this works */}
+      <span css={styles.isThisTerrible} id="isThisTerrible">
+        <ATIAnalyticsTranscript />
+      </span>
       <ul css={styles.ul} role="list">
         {/*  eslint-disable-next-line @typescript-eslint/no-unused-vars */}
         {transcriptItems.map((item, _index) => (

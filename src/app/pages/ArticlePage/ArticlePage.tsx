@@ -236,6 +236,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     showRelatedTopics && topics.length > 0 && !isTransliterated,
   );
 
+  console.log('atiData', atiData);
+
   return (
     <div css={styles.pageWrapper}>
       {shouldEnableExperimentTopStories && (
