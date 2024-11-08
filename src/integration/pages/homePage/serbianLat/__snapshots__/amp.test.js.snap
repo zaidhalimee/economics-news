@@ -178,6 +178,13 @@ exports[`AMP Home Page Footer Anchors should match text and url 7`] = `
 
 exports[`AMP Home Page Footer Anchors should match text and url 8`] = `
 {
+  "text": "Other Languages",
+  "url": "https://www.bbc.com/ws/languages",
+}
+`;
+
+exports[`AMP Home Page Footer Anchors should match text and url 9`] = `
+{
   "text": "Pročitajte naša pravila o linkovanju drugih sajtova.",
   "url": "https://www.bbc.co.uk/editorialguidelines/guidance/feeds-and-links",
 }

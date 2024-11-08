@@ -48,16 +48,16 @@ export const service: DefaultServiceConfig = {
     showAdPlaceholder: true,
     showRelatedTopics: true,
     podcastPromo: {
-      title: 'Que História!',
-      brandTitle: 'Que História!',
-      brandDescription: 'A 3ª temporada com histórias reais incríveis',
+      title: 'A Raposa',
+      brandTitle: 'A Raposa',
+      brandDescription: 'O novo podcast investigativo da BBC News Brasil',
       image: {
-        src: 'https://ichef.bbc.co.uk/images/ic/$recipe/p0jfptnr.png',
-        alt: 'Logo: Que História!',
+        src: 'https://ichef.bbc.co.uk/images/ic/$recipe/p0jsx1gc.jpg',
+        alt: 'Logo: A Raposa',
       },
       linkLabel: {
         text: 'Episódios',
-        href: 'https://www.bbc.com/portuguese/podcasts/p07r3r3t',
+        href: 'https://www.bbc.com/portuguese/podcasts/p0cyhvny',
       },
       skipLink: {
         text: 'Pule %title% e continue lendo',
@@ -396,6 +396,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/portuguese/send/u50853599',
           text: 'Contate a BBC',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',
