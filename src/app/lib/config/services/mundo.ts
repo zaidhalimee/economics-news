@@ -388,6 +388,10 @@ export const service: DefaultServiceConfig = {
           text: 'Escribe a BBC Mundo',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -410,6 +414,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Internacional',
         url: '/mundo/topics/c2lej05epw5t',
+      },
+      {
+        title: 'Elecciones EE.UU. 2024',
+        url: '/mundo/topics/c1v8en6r2qgt',
       },
       {
         title: 'Hay Festival',

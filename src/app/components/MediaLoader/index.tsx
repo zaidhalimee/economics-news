@@ -16,8 +16,7 @@ import {
 import filterForBlockType from '#lib/utilities/blockHandlers';
 import { PageTypes } from '#app/models/types/global';
 import { EventTrackingContext } from '#app/contexts/EventTrackingContext';
-import { MediaType } from '#app/models/types/media';
-import { BumpType, MediaBlock, PlayerConfig, Orientations } from './types';
+import { BumpType, MediaBlock, PlayerConfig } from './types';
 import Caption from '../Caption';
 import nodeLogger from '../../lib/logger.node';
 import buildConfig from './utils/buildSettings';
@@ -29,6 +28,7 @@ import { getBootstrapSrc } from '../Ad/Canonical';
 import Metadata from './Metadata';
 import getTranscriptBlock from './utils/getTranscriptBlock';
 import Transcript from '../Transcript';
+import AmpMediaLoader from './Amp';
 
 const PAGETYPES_IGNORE_PLACEHOLDER: PageTypes[] = [
   MEDIA_ARTICLE_PAGE,
@@ -98,16 +98,9 @@ const AdvertTagLoader = () => {
 type MediaContainerProps = {
   playerConfig: PlayerConfig;
   showAds: boolean;
-  mediaType?: MediaType;
-  orientation?: Orientations;
 };
 
-const MediaContainer = ({
-  playerConfig,
-  showAds,
-  mediaType,
-  orientation,
-}: MediaContainerProps) => {
+const MediaContainer = ({ playerConfig, showAds }: MediaContainerProps) => {
   const playerElementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -154,19 +147,16 @@ const MediaContainer = ({
     }
   }, [playerConfig, showAds]);
 
-  const playerStyling = (() => {
-    if (orientation === 'portrait') {
-      return styles.mediaContainerPortrait;
-    }
-    if (mediaType === 'liveRadio') {
-      return styles.liveRadioMediaContainer;
-    }
-
-    return styles.mediaContainerLandscape;
-  })();
-
   return (
-    <div ref={playerElementRef} data-e2e="media-player" css={playerStyling} />
+    <div
+      ref={playerElementRef}
+      data-e2e="media-player"
+      css={
+        playerConfig?.ui?.skin === 'audio'
+          ? styles.audioMediaContainer
+          : styles.standardMediaContainer
+      }
+    />
   );
 };
 
@@ -191,11 +181,8 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
     showAdsBasedOnLocation,
   } = useContext(RequestContext);
 
-  const PAGETYPE_SUPPORTS_PLACEHOLDER =
-    !PAGETYPES_IGNORE_PLACEHOLDER.includes(pageType);
-
-  const [isPlaceholder, setIsPlaceholder] = useState(
-    PAGETYPE_SUPPORTS_PLACEHOLDER,
+  const [showPlaceholder, setShowPlaceholder] = useState(
+    !PAGETYPES_IGNORE_PLACEHOLDER.includes(pageType),
   );
 
   if (isLite) return null;
@@ -205,7 +192,7 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
 
   const producer = getProducerFromServiceName(service);
   const config = buildConfig({
-    id,
+    id: id || '',
     blocks,
     counterName: mediaOverrides?.pageIdentifierOverride || pageIdentifier,
     statsDestination,
@@ -222,13 +209,29 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
 
   if (!config) return null;
 
-  const { mediaType, playerConfig, placeholderConfig, showAds, orientation } =
-    config;
+  const {
+    mediaType,
+    playerConfig,
+    placeholderConfig,
+    showAds,
+    orientation = 'landscape',
+    ampIframeUrl,
+  } = config;
 
   const captionBlock = getCaptionBlock(blocks, pageType);
 
   const transcriptBlock = getTranscriptBlock(blocks);
-  const showPlaceholder = isPlaceholder && placeholderConfig;
+
+  const {
+    placeholderSrc,
+    placeholderSrcset,
+    translatedNoJSMessage,
+    mediaInfo,
+  } = placeholderConfig ?? {};
+
+  const hasPlaceholder = Boolean(showPlaceholder && placeholderSrc);
+
+  const showPortraitTitle = orientation === 'portrait' && !embedded;
 
   return (
     <>
@@ -238,40 +241,50 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
           <Metadata blocks={blocks} embedURL={playerConfig?.externalEmbedUrl} />
         )
       }
-      {orientation === 'portrait' && (
+      {showPortraitTitle && (
         <strong css={styles.titlePortrait}>Watch Moments</strong>
       )}
       <figure
         data-e2e="media-loader__container"
-        css={styles.figure}
         className={className}
+        css={[
+          styles.figure(embedded),
+          playerConfig?.ui?.skin === 'classic' && [
+            orientation === 'portrait' && styles.portraitFigure(embedded),
+            orientation === 'landscape' && styles.landscapeFigure,
+          ],
+        ]}
       >
-        {showAds && <AdvertTagLoader />}
-        <BumpLoader />
-        {showPlaceholder ? (
-          <Placeholder
-            src={placeholderConfig?.placeholderSrc}
-            srcSet={placeholderConfig?.placeholderSrcset}
-            noJsMessage={placeholderConfig?.translatedNoJSMessage}
-            mediaInfo={placeholderConfig?.mediaInfo}
-            orientation={orientation}
-            onClick={() => setIsPlaceholder(false)}
+        {isAmp ? (
+          <AmpMediaLoader
+            src={ampIframeUrl}
+            title={mediaInfo?.title}
+            placeholderSrc={placeholderSrc}
+            placeholderSrcset={placeholderSrcset}
+            noJsMessage={translatedNoJSMessage}
           />
         ) : (
-          <MediaContainer
-            playerConfig={playerConfig}
-            showAds={showAds}
-            mediaType={mediaType}
-            orientation={orientation}
-          />
+          <>
+            {showAds && <AdvertTagLoader />}
+            <BumpLoader />
+            {hasPlaceholder ? (
+              <Placeholder
+                src={placeholderSrc}
+                srcSet={placeholderSrcset}
+                noJsMessage={translatedNoJSMessage}
+                mediaInfo={mediaInfo}
+                onClick={() => setShowPlaceholder(false)}
+              />
+            ) : (
+              <MediaContainer playerConfig={playerConfig} showAds={showAds} />
+            )}
+          </>
         )}
         {captionBlock && (
           <Caption
             block={captionBlock}
             type={mediaType}
-            css={
-              orientation === 'portrait' ? styles.captionPortrait : undefined
-            }
+            css={orientation === 'portrait' && styles.captionPortrait}
           />
         )}
         {transcriptBlock && (

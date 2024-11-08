@@ -55,6 +55,13 @@ exports[`Canonical Story Page Footer Anchors should match text and url 7`] = `
 
 exports[`Canonical Story Page Footer Anchors should match text and url 8`] = `
 {
+  "text": "Other Languages",
+  "url": "https://www.bbc.com/ws/languages",
+}
+`;
+
+exports[`Canonical Story Page Footer Anchors should match text and url 9`] = `
+{
   "text": "Башка интернет сайттардын мазмуну боюнча биздин позиция.",
   "url": "https://www.bbc.com/editorialguidelines/guidance/feeds-and-links",
 }

@@ -53,6 +53,13 @@ exports[`Canonical Live Footer Anchors should match text and url 7`] = `
 
 exports[`Canonical Live Footer Anchors should match text and url 8`] = `
 {
+  "text": "Other Languages",
+  "url": "https://www.bbc.com/ws/languages",
+}
+`;
+
+exports[`Canonical Live Footer Anchors should match text and url 9`] = `
+{
   "text": "Pročitajte naša pravila o linkovanju drugih sajtova.",
   "url": "https://www.bbc.co.uk/editorialguidelines/guidance/feeds-and-links",
 }
@@ -73,8 +80,8 @@ exports[`Canonical Live Header Navigation link should match text and url 1`] = `
 
 exports[`Canonical Live Header Navigation link should match text and url 2`] = `
 {
-  "text": "Ukrajina",
-  "url": "/serbian/lat/topics/c5wzvzzz5vrt",
+  "text": "Američki izbori",
+  "url": "/serbian/lat/topics/c1v8enng1npt",
 }
 `;
 
