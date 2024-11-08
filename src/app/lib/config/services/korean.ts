@@ -310,6 +310,10 @@ export const service: DefaultServiceConfig = {
           text: '고객센터',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -323,6 +327,10 @@ export const service: DefaultServiceConfig = {
       {
         title: '뉴스',
         url: '/korean',
+      },
+      {
+        title: '2024 미국 대선',
+        url: '/korean/topics/cxdyjwpx5v0t',
       },
       {
         title: '비디오',

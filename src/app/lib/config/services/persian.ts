@@ -421,6 +421,10 @@ export const service: DefaultServiceConfig = {
           text: 'تماس با بی بی سی',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -438,6 +442,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'بحران خاورمیانه',
         url: '/persian/topics/cj31ldvmg1et',
+      },
+      {
+        title: 'انتخابات آمریکا',
+        url: '/persian/topics/cj1gj22k6z6t',
       },
       {
         title: 'پخش زنده',

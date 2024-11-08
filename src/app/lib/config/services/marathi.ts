@@ -321,6 +321,10 @@ export const service: DefaultServiceConfig = {
           text: 'बीबीसीशी संपर्क साधाा',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -340,6 +344,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'महाराष्ट्र',
         url: '/marathi/topics/c5qvpxvv7y3t',
+      },
+      {
+        title: 'विधानसभा निवडणूक',
+        url: '/marathi/topics/c625x8zjyj7t',
       },
       {
         title: 'भारत',

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import {
   render,
   act,
@@ -30,8 +31,30 @@ describe('Canonical ATI Analytics', () => {
     expect(mockSendBeacon).toHaveBeenCalledWith(expectedUrl);
   });
 
+  it('should render lite Helmet script when isLite is true', () => {
+    jest.spyOn(isOperaProxy, 'default').mockImplementation(() => false);
+
+    const expectedUrl = `${atiBaseUrl}${mockPageviewParams}`;
+
+    act(() => {
+      render(<CanonicalATIAnalytics pageviewParams={mockPageviewParams} />, {
+        isLite: true,
+      });
+    });
+
+    const helmet = Helmet.peek();
+
+    expect(helmet.scriptTags).toHaveLength(1);
+    expect(helmet.scriptTags[0].innerHTML).toEqual(`
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "${expectedUrl}", true);
+    xhr.withCredentials = true;
+    xhr.send();
+`);
+  });
+
   it('should not send beacon when browser is Opera Mini', () => {
-    jest.spyOn(isOperaProxy, 'default').mockImplementationOnce(() => true);
+    jest.spyOn(isOperaProxy, 'default').mockImplementation(() => true);
 
     act(() => {
       render(<CanonicalATIAnalytics pageviewParams={mockPageviewParams} />);

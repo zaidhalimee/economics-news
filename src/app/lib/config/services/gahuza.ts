@@ -73,6 +73,14 @@ export const service: DefaultServiceConfig = {
       relatedContent: 'Ibindi bisa n’ibi',
       relatedTopics: 'Ibindi bisa n’ibi',
       navMenuText: 'Imice',
+      liteSite: {
+        onboardingMessage: `Uriko ubona ku rubuga aherekana amakuru mu nyandiko gusa, hakoresha uburyo buke. Ja ku rubuga nyamukuru ubone amakuru mu nyandiko iherekejwe n'amasanamu.`,
+        toMainSite: 'Njana ku rubuga nyamukuru canke aho gusoma gusa',
+        informationPage:
+          'Ibindi vyerekeye ingene urwo rubuga rugutwara uburyo (ama mega) buke',
+        informationPageLink: 'https://www.bbc.com/gahuza/articles/cn7y7pvem0vo',
+        dataSaving: 'Ahagusaba uburyo (ama mega) buke',
+      },
       mediaAssetPage: {
         mediaPlayer: 'Ibikinwa',
         audioPlayer: 'Kina amajwi',
@@ -324,6 +332,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/gahuza/send/u50853291',
           text: 'Vugana na BBC',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',
