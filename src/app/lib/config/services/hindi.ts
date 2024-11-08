@@ -88,7 +88,7 @@ export const service: DefaultServiceConfig = {
         videoPlayer: 'वीडियो प्लेयर',
       },
       articlePage: {
-        jumpTo: 'Jump to', // replace with Hindi translation later
+        jumpTo: 'इस पर जाएं',
       },
       liveExperiencePage: {
         liveLabel: 'लाइव',
@@ -414,6 +414,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/hindi/send/u50853357',
           text: 'बीबीसी से संपर्क',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',
