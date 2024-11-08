@@ -169,7 +169,7 @@ describe('MediaLoader', () => {
       const details = (container as unknown as HTMLElement).querySelector(
         'summary',
       );
-      expect(details?.textContent).toContain('Read transcripts');
+      expect(details?.textContent).toContain('Read transcript');
     });
   });
 

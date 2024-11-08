@@ -195,7 +195,7 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
         <span
           class="emotion-2"
         >
-          Read transcripts
+          Read transcript
         </span>
         <span
           class="emotion-3"
@@ -215,11 +215,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             00:00
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -239,11 +239,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             00:01
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -263,11 +263,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             00:04
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -287,11 +287,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             00:14
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -311,11 +311,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             00:18
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -335,11 +335,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             00:21
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -359,11 +359,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             00:24
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -383,11 +383,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             00:28
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -407,11 +407,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             00:29
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -431,11 +431,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             00:31
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -455,11 +455,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             00:32
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -479,11 +479,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             00:35
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -503,11 +503,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             00:39
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -527,11 +527,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             00:43
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -551,11 +551,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             00:49
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -575,11 +575,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             00:55
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -599,11 +599,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             01:01
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -623,11 +623,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             01:06
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -647,11 +647,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             01:12
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -671,11 +671,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             01:21
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -695,11 +695,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             01:21
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -719,11 +719,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             01:25
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -743,11 +743,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             01:31
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -767,11 +767,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             01:33
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -791,11 +791,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             01:35
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -815,11 +815,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             01:37
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -839,11 +839,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             01:40
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -863,11 +863,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             01:42
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -887,11 +887,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             01:47
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -911,11 +911,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             01:50
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -935,11 +935,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             01:53
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -959,11 +959,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             01:57
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -983,11 +983,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             01:58
-          </time>
+          </span>
           <span
             class="emotion-3"
           >
@@ -1007,11 +1007,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
           class="emotion-6"
           role="text"
         >
-          <time
+          <span
             class="emotion-7"
           >
             02:00
-          </time>
+          </span>
           <span
             class="emotion-3"
           >

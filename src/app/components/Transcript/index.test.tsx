@@ -30,7 +30,7 @@ describe('Transcript Component', () => {
       <Transcript transcript={transcriptFixture} title="My Title" />,
     );
     const summaryWithTitle = container.querySelector('summary');
-    expect(summaryWithTitle).toHaveTextContent('Read transcripts, My Title');
+    expect(summaryWithTitle).toHaveTextContent('Read transcript, My Title');
   });
 
   it('should render an unordered list element with role list', () => {
