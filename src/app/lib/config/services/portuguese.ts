@@ -50,7 +50,8 @@ export const service: DefaultServiceConfig = {
     podcastPromo: {
       title: 'Novo podcast investigativo: A Raposa',
       brandTitle: 'Novo podcast investigativo: A Raposa',
-      brandDescription: 'Uma tonelada de cocaína, três brasileiros inocentes e a busca por um suspeito inglês',
+      brandDescription: 
+        'Uma tonelada de cocaína, três brasileiros inocentes e a busca por um suspeito inglês',
       image: {
         src: 'https://ichef.bbc.co.uk/images/ic/$recipe/p0k38tc4.jpg',
         alt: 'Logo: A Raposa',
