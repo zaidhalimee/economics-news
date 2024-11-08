@@ -33,7 +33,7 @@ const styles = {
     }),
   fanIcon: ({ spacings }: Theme) =>
     css({
-      margin: `0 ${spacings.FULL}rem 0 0`,
+      marginInlineEnd: `${spacings.FULL}rem`,
     }),
   plusIcon: () =>
     css({

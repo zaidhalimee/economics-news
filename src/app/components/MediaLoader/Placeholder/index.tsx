@@ -2,13 +2,13 @@
 import { jsx } from '@emotion/react';
 import { Stages } from '#app/hooks/useExperimentHook';
 import SignPost from '#app/components/TranscriptExperiment/SignPost';
+import SignPostNoJs from '#app/components/TranscriptExperiment/SignPostNoJs';
 import Image from '../../Image';
 import styles from './index.styles';
 import PlayButton from './PlayButton';
 import Guidance from './Guidance';
 import { MediaInfo } from '../types';
 import MediaIndicator from '../../TranscriptExperiment/MediaIndicator';
-import SignPostNoJs from '#app/components/TranscriptExperiment/SignPostNoJs';
 
 interface Props {
   onClick: React.MouseEventHandler<HTMLDivElement>;
@@ -79,7 +79,7 @@ const MediaPlayerPlaceholder = ({
       css={styles.placeholder}
       data-e2e="media-loader__placeholder"
     >
-      {experimentStage !== Stages.STAGE_2 ? guideComponent : null}
+      {experimentStage === Stages.STAGE_3 ? guideComponent : null}
       {experimentStage === Stages.STAGE_2 ? experimentPlayButton : playButton}
       {experimentStage === Stages.STAGE_2 ? experimentSignPost : null}
       <SignPostNoJs noJsMessage={noJsMessage} />
