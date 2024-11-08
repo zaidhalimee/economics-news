@@ -5,9 +5,9 @@ import { jsx } from '@emotion/react';
 import { ServiceContext } from '#contexts/ServiceContext';
 import useViewTracker from '#app/hooks/useViewTracker';
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
-import { EventTrackingMetadata } from '#app/models/types/eventTracking';
 import Text from '#app/components/Text';
 import isLive from '#app/lib/utilities/isLive';
+import { EventTrackingMetadata } from '#app/models/types/eventTracking';
 import idSanitiser from '../../lib/utilities/idSanitiser';
 import styles from './index.styles';
 
@@ -74,6 +74,7 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
                 onClick={e => linkClickHandler(e, idWithHash)}
                 css={styles.link}
                 aria-labelledby={`jump-to-heading-${sanitisedId}`}
+                data-testid={`jump-to-link-${sanitisedId}`}
               >
                 <span
                   id={`jump-to-heading-${sanitisedId}`}
