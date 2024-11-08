@@ -185,7 +185,11 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
     !PAGETYPES_IGNORE_PLACEHOLDER.includes(pageType),
   );
 
-  if (isLite) return null;
+  // TODO - refactor to improve experience on .lite
+  const transcriptBlock = getTranscriptBlock(blocks);
+  const hasTranscript = !!transcriptBlock;
+
+  if (isLite && !hasTranscript) return null;
 
   const { model: mediaOverrides } =
     filterForBlockType(blocks, 'mediaOverrides') || {};
@@ -220,8 +224,6 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
 
   const captionBlock = getCaptionBlock(blocks, pageType);
 
-  const transcriptBlock = getTranscriptBlock(blocks);
-
   const {
     placeholderSrc,
     placeholderSrcset,
@@ -235,66 +237,82 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
 
   return (
     <>
-      {
-        // Prevents the av-embeds route itself rendering the Metadata component
-        !embedded && (
-          <Metadata blocks={blocks} embedURL={playerConfig?.externalEmbedUrl} />
-        )
-      }
-      {showPortraitTitle && (
-        <strong css={styles.titlePortrait}>Watch Moments</strong>
-      )}
-      <figure
-        data-e2e="media-loader__container"
-        className={className}
-        css={[
-          styles.figure(embedded),
-          playerConfig?.ui?.skin === 'classic' && [
-            orientation === 'portrait' && styles.portraitFigure(embedded),
-            orientation === 'landscape' && styles.landscapeFigure,
-          ],
-        ]}
-      >
-        {isAmp ? (
-          <AmpMediaLoader
-            src={ampIframeUrl}
-            title={mediaInfo?.title}
-            placeholderSrc={placeholderSrc}
-            placeholderSrcset={placeholderSrcset}
-            noJsMessage={translatedNoJSMessage}
-          />
-        ) : (
-          <>
-            {showAds && <AdvertTagLoader />}
-            <BumpLoader />
-            {hasPlaceholder ? (
-              <Placeholder
-                src={placeholderSrc}
-                srcSet={placeholderSrcset}
+      {isLite && hasTranscript ? (
+        <Transcript
+          transcript={transcriptBlock}
+          title={placeholderConfig?.mediaInfo?.title}
+          hideDisclaimer
+        />
+      ) : (
+        <>
+          {
+            // Prevents the av-embeds route itself rendering the Metadata component
+            !embedded && (
+              <Metadata
+                blocks={blocks}
+                embedURL={playerConfig?.externalEmbedUrl}
+              />
+            )
+          }
+          {showPortraitTitle && (
+            <strong css={styles.titlePortrait}>Watch Moments</strong>
+          )}
+          <figure
+            data-e2e="media-loader__container"
+            className={className}
+            css={[
+              styles.figure(embedded),
+              playerConfig?.ui?.skin === 'classic' && [
+                orientation === 'portrait' && styles.portraitFigure(embedded),
+                orientation === 'landscape' && styles.landscapeFigure,
+              ],
+            ]}
+          >
+            {isAmp ? (
+              <AmpMediaLoader
+                src={ampIframeUrl}
+                title={mediaInfo?.title}
+                placeholderSrc={placeholderSrc}
+                placeholderSrcset={placeholderSrcset}
                 noJsMessage={translatedNoJSMessage}
-                mediaInfo={mediaInfo}
-                onClick={() => setShowPlaceholder(false)}
               />
             ) : (
-              <MediaContainer playerConfig={playerConfig} showAds={showAds} />
+              <>
+                {showAds && <AdvertTagLoader />}
+                <BumpLoader />
+                {hasPlaceholder ? (
+                  <Placeholder
+                    src={placeholderSrc}
+                    srcSet={placeholderSrcset}
+                    noJsMessage={translatedNoJSMessage}
+                    mediaInfo={mediaInfo}
+                    onClick={() => setShowPlaceholder(false)}
+                  />
+                ) : (
+                  <MediaContainer
+                    playerConfig={playerConfig}
+                    showAds={showAds}
+                  />
+                )}
+              </>
             )}
-          </>
-        )}
-        {captionBlock && (
-          <Caption
-            block={captionBlock}
-            type={mediaType}
-            css={orientation === 'portrait' && styles.captionPortrait}
-          />
-        )}
-        {transcriptBlock && (
-          <Transcript
-            transcript={transcriptBlock}
-            title={placeholderConfig?.mediaInfo?.title}
-            hideDisclaimer
-          />
-        )}
-      </figure>
+            {captionBlock && (
+              <Caption
+                block={captionBlock}
+                type={mediaType}
+                css={orientation === 'portrait' && styles.captionPortrait}
+              />
+            )}
+            {transcriptBlock && (
+              <Transcript
+                transcript={transcriptBlock}
+                title={placeholderConfig?.mediaInfo?.title}
+                hideDisclaimer
+              />
+            )}
+          </figure>
+        </>
+      )}
     </>
   );
 };
