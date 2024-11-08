@@ -88,7 +88,7 @@ export const service: DefaultServiceConfig = {
         videoPlayer: 'वीडियो प्लेयर',
       },
       articlePage: {
-        jumpTo: 'Jump to', // replace with Hindi translation later
+        jumpTo: 'इस पर जाएं',
       },
       liveExperiencePage: {
         liveLabel: 'लाइव',
