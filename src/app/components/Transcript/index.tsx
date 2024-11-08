@@ -42,8 +42,9 @@ const Transcript = ({
       <summary css={styles.summary}>
         <ArrowSvg />
         <span role="text">
+          {/* TO DO - add translations */}
           <Text size="pica" fontVariant="sansBold" css={styles.summaryTitle}>
-            Read transcripts
+            Read transcript
           </Text>
           {title && <VisuallyHiddenText>{formattedTitle}</VisuallyHiddenText>}
         </span>
