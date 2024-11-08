@@ -6,7 +6,6 @@ This component is typically used in articles with multiple headings, enhancing c
 
 ## Props
 
-| Name              | type                  | Description                                     |
-| ----------------- | --------------------- | ----------------------------------------------- |
-| jumpToData        | object                | Contains article headings with titles and IDs   |
-| eventTrackingData | eventTrackingMetadata | Contains click and view tracking data for Piano |
+| Name       | type   | Description                                   |
+| ---------- | ------ | --------------------------------------------- |
+| jumpToData | object | Contains article headings with titles and IDs |
