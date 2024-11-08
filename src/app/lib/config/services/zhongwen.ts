@@ -100,6 +100,10 @@ export const service: ZhongwenConfig = {
           text: '联络BBC',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -401,6 +405,10 @@ export const service: ZhongwenConfig = {
         {
           href: 'https://www.bbc.com/zhongwen/trad/institutional-38664417',
           text: '聯絡BBC',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',
