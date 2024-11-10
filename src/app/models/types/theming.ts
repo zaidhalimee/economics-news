@@ -83,14 +83,21 @@ interface MediaQueries {
   FORCED_COLOURS: string;
 }
 
-export interface Spacings {
-  HALF: 4;
-  FULL: 8;
-  DOUBLE: 16;
-  TRIPLE: 24;
-  QUADRUPLE: 32;
-  QUINTUPLE: 40;
-  SEXTUPLE: 48;
+interface Spacings {
+  /** 0.25rem (4px) */
+  HALF: number;
+  /** 0.5rem (8px) */
+  FULL: number;
+  /** 1rem (16px) */
+  DOUBLE: number;
+  /** 1.5rem (24px) */
+  TRIPLE: number;
+  /** 2rem (32px) */
+  QUADRUPLE: number;
+  /** 2.5rem (40px) */
+  QUINTUPLE: number;
+  /** 3rem (48px) */
+  SEXTUPLE: number;
 }
 
 export type TypographyScript = {
