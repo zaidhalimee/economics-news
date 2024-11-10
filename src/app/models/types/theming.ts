@@ -85,7 +85,7 @@ interface MediaQueries {
   GROUP_3_MAX_WIDTH: string;
   /** &gt;=600px  */
   GROUP_3_MIN_WIDTH: string;
-  /** &gt;=500px and &lt;=1007px  */
+  /** &gt;=600px and &lt;=1007px  */
   GROUP_3_ONLY: string;
   /** &lt;=1279px  */
   GROUP_4_MAX_WIDTH: string;
