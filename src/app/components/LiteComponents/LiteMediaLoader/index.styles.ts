@@ -4,10 +4,10 @@ import pixelsToRem from '#app/utilities/pixelsToRem';
 import { focusIndicatorThickness } from '#app/components/ThemeProvider/focusIndicator';
 
 export default {
-  liteMediaButtonOverlay: ({ palette }: Theme) =>
+  liteMediaButtonOverlay: ({ isDarkUi, palette }: Theme) =>
     css({
       position: 'relative',
-      backgroundColor: palette.WHITE,
+      backgroundColor: isDarkUi ? palette.GREY_6 : palette.WHITE,
       width: '100%',
       height: '100%',
       minHeight: 150,
@@ -18,7 +18,7 @@ export default {
 
       '&:hover, &:focus-visible': {
         span: {
-          color: palette.WHITE,
+          color: palette.GREY_2,
           backgroundColor: palette.POSTBOX,
           textDecoration: 'underline',
           border: `${pixelsToRem(1)}rem solid ${palette.POSTBOX}`,
@@ -40,14 +40,18 @@ export default {
         display: 'none',
       },
     }),
-  liteButtonText: ({ palette, spacings }: Theme) =>
+  liteButtonText: ({ isDarkUi, palette, spacings }: Theme) =>
     css({
       display: 'inline-flex',
       alignItems: 'center',
-      color: palette.BLACK,
+      color: isDarkUi ? palette.GREY_2 : palette.GREY_10,
       margin: `${spacings.DOUBLE}rem 0`,
       padding: `${spacings.DOUBLE}rem`,
-      border: `${pixelsToRem(1)}rem solid ${palette.GREY_5}`,
+      border: `${pixelsToRem(1)}rem solid ${isDarkUi ? palette.GREY_2 : palette.GREY_5}`,
+    }),
+  liteButtonInfoText: ({ isDarkUi, palette }: Theme) =>
+    css({
+      color: isDarkUi ? palette.GREY_2 : palette.GREY_10,
     }),
   iconWrapper: ({ spacings, mq }: Theme) =>
     css({

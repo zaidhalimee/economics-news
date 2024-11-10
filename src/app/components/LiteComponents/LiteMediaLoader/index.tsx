@@ -79,7 +79,7 @@ const LiteMediaLoader = ({
           </div>
           <div>{getButtonText({ type, liteSiteTranslations })}</div>
         </Text>
-        <Text as="div" size="brevier">
+        <Text as="div" size="brevier" css={styles.liteButtonInfoText}>
           {liteSiteTranslations?.loadMediaMessage ||
             'Loading this content will use more data'}
         </Text>
