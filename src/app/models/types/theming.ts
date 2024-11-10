@@ -65,21 +65,37 @@ interface Palette extends BrandPalette {
 }
 
 interface MediaQueries {
+  /** &lt;=239px  */
   GROUP_0_MAX_WIDTH: string;
+  /** &lt;=399px  */
   GROUP_1_MAX_WIDTH: string;
+  /** &gt;=240px  */
   GROUP_1_MIN_WIDTH: string;
+  /** &gt;=240px and &lt;=399px  */
   GROUP_1_ONLY: string;
+  /** &lt;=599px  */
   GROUP_2_MAX_WIDTH: string;
+  /** &gt;=400px  */
   GROUP_2_MIN_WIDTH: string;
+  /** &gt;=400px and &lt;=599px  */
   GROUP_2_ONLY: string;
+  /** &gt;=240px and &lt;=599px  */
   GROUP_1_AND_GROUP_2: string;
+  /** &lt;=1007px  */
   GROUP_3_MAX_WIDTH: string;
+  /** &gt;=600px  */
   GROUP_3_MIN_WIDTH: string;
+  /** &gt;=500px and &lt;=1007px  */
   GROUP_3_ONLY: string;
+  /** &lt;=1279px  */
   GROUP_4_MAX_WIDTH: string;
+  /** &gt;=1008px  */
   GROUP_4_MIN_WIDTH: string;
+  /** &gt;=1008px and &lt;=1279px  */
   GROUP_4_ONLY: string;
+  /** &gt;=1280px  */
   GROUP_5_MIN_WIDTH: string;
+  /** @media screen and (forced-colors: active) */
   FORCED_COLOURS: string;
 }
 
