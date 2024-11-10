@@ -65,35 +65,35 @@ interface Palette extends BrandPalette {
 }
 
 interface MediaQueries {
-  /** &lt;=239px  */
+  /** 239px and below  */
   GROUP_0_MAX_WIDTH: string;
-  /** &lt;=399px  */
+  /** 399px and below  */
   GROUP_1_MAX_WIDTH: string;
-  /** &gt;=240px  */
+  /** 240px and above  */
   GROUP_1_MIN_WIDTH: string;
-  /** &gt;=240px and &lt;=399px  */
+  /** between 240px and 399px  */
   GROUP_1_ONLY: string;
-  /** &lt;=599px  */
+  /** 599px and below  */
   GROUP_2_MAX_WIDTH: string;
-  /** &gt;=400px  */
+  /** 400px and above  */
   GROUP_2_MIN_WIDTH: string;
-  /** &gt;=400px and &lt;=599px  */
+  /** between 400px and 599px  */
   GROUP_2_ONLY: string;
-  /** &gt;=240px and &lt;=599px  */
+  /** between 240px and 599px  */
   GROUP_1_AND_GROUP_2: string;
-  /** &lt;=1007px  */
+  /** 1007px and below  */
   GROUP_3_MAX_WIDTH: string;
-  /** &gt;=600px  */
+  /** 600px and above  */
   GROUP_3_MIN_WIDTH: string;
-  /** &gt;=600px and &lt;=1007px  */
+  /** between 600px and 1007px  */
   GROUP_3_ONLY: string;
-  /** &lt;=1279px  */
+  /** 1279px and below  */
   GROUP_4_MAX_WIDTH: string;
-  /** &gt;=1008px  */
+  /** 1008px and above  */
   GROUP_4_MIN_WIDTH: string;
-  /** &gt;=1008px and &lt;=1279px  */
+  /** between 1008px and 1279px  */
   GROUP_4_ONLY: string;
-  /** &gt;=1280px  */
+  /** 1280px and abovex  */
   GROUP_5_MIN_WIDTH: string;
   /** @media screen and (forced-colors: active) */
   FORCED_COLOURS: string;
@@ -492,10 +492,15 @@ declare module '@emotion/react' {
       minion: FontSize;
     };
     fontMq: {
+      /** 319px and below */
       GROUP_A_MAX_WIDTH: string;
+      /** 599px and below */
       GROUP_B_MAX_WIDTH: string;
+      /** 320px and above */
       GROUP_B_MIN_WIDTH: string;
+      /** between 320px and 599px */
       GROUP_B_ONLY: string;
+      /** 600px and above */
       GROUP_D_MIN_WIDTH: string;
     };
     fontVariants: {
