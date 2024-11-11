@@ -26,15 +26,10 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
   const { translations, mostRead } = useContext(ServiceContext);
   const [hash, setHash] = useState('');
   const { jumpTo = 'Jump to' } = translations?.articlePage || {};
-  const relatedContent = translations?.relatedContent || 'Related Content';
+  const relatedContent = translations?.relatedContent || 'Related content'; // in English translations this has a lower case c!
   const mostReadHeader = mostRead?.header || 'Most Read';
   const viewRef = useViewTracker(eventTrackingData);
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
-  console.log('related content translation', relatedContent);
-  console.log(
-    'related content translation from translations',
-    translations?.relatedContent,
-  );
   useEffect(() => {
     setHash(window.location.hash);
   }, []);
@@ -72,9 +67,7 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
             heading === relatedContent
               ? 'related-content-heading'
               : idSanitiser(heading);
-          console.log('sanitisedId', sanitisedId);
           const idWithHash = `#${sanitisedId}`;
-          console.log('idWithHash', idWithHash);
           const isActiveId = decodeURIComponent(hash) === idWithHash;
           return (
             <li key={idWithHash} css={styles.listItem}>
@@ -101,6 +94,7 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
             onClick={e => linkClickHandler(e, '#Most-Read')}
             css={styles.link}
             aria-labelledby="jump-to-most-read-heading"
+            data-testid={`jump-to-link-most-read-heading`}
           >
             <span
               id="jump-to-most-read-heading"
