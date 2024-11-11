@@ -90,7 +90,6 @@ export default {
         width: `${spacings.HALF}rem`,
         height: '100%',
         border: `${pixelsToRem(2)}rem solid ${palette.POSTBOX}`,
-        // backgroundColor: palette.POSTBOX,
       },
     }),
 };
