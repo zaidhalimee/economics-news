@@ -51,6 +51,16 @@ describe('JumpTo Component', () => {
       const mostReadLink = screen.getByTestId(`jump-to-link-most-read-heading`);
       expect(mostReadLink).toHaveAttribute('href', '#Most-Read');
     });
+
+    it('does not render the Related Content link when it is not included in the jumpToHeadings array', () => {
+      // Remove the Related Content link from the jumpToHeadings array for the case where it isn't on a page
+      const filteredJumpToHeadings = jumpToHeadings.slice(0, -1);
+      render(<JumpTo jumpToHeadings={filteredJumpToHeadings} />);
+      const relatedContentLink = screen.queryByTestId(
+        'jump-to-link-related-content-heading',
+      );
+      expect(relatedContentLink).not.toBeInTheDocument();
+    });
   });
 
   describe('Event Tracking', () => {
