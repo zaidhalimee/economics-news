@@ -23,10 +23,11 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
   // TODO: Remove for release
   if (isLive()) return null;
 
-  const { translations } = useContext(ServiceContext);
+  const { translations, mostRead } = useContext(ServiceContext);
   const [hash, setHash] = useState('');
   const { jumpTo = 'Jump to' } = translations?.articlePage || {};
   const relatedContent = translations?.relatedContent || 'Related Content';
+  const mostReadHeader = mostRead?.header || 'Most Read';
   const viewRef = useViewTracker(eventTrackingData);
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
   console.log('related content translation', relatedContent);
@@ -109,7 +110,7 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
                   styles.linkTextActive,
               ]}
             >
-              Most Read
+              {mostReadHeader}
             </span>
           </a>
         </li>
