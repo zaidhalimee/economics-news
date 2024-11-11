@@ -1,4 +1,3 @@
-import pixelsToRem from '#app/utilities/pixelsToRem';
 import { css, Theme } from '@emotion/react';
 
 const styles = {
@@ -21,11 +20,14 @@ const styles = {
   // TODO: Remove this styling after the US Elections
   electionBannerOverrides: ({ mq }: Theme) =>
     css({
-      [`@media (max-width:${pixelsToRem(320)}rem)`]: {
-        display: 'none',
-      },
+      paddingLeft: 0,
+      paddingRight: 0,
 
       [mq.GROUP_2_MIN_WIDTH]: {
+        paddingLeft: 0,
+        paddingRight: 0,
+      },
+      [mq.GROUP_4_MIN_WIDTH]: {
         paddingLeft: 0,
         paddingRight: 0,
       },

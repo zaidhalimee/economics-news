@@ -31,6 +31,9 @@ export interface Translations {
     audioPlayer: string;
     videoPlayer: string;
   };
+  articlePage?: {
+    jumpTo: string;
+  };
   liveExperiencePage: {
     liveLabel: string;
     liveCoverage: string;
@@ -38,6 +41,8 @@ export interface Translations {
     postedAt: string;
     summary: string;
     shareButtonText: string;
+    postDateTimeFormat?: string;
+    postDateFormat?: string;
   };
   downloads?: {
     instructions?: string;
