@@ -26,28 +26,15 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
   const { translations } = useContext(ServiceContext);
   const [hash, setHash] = useState('');
   const { jumpTo = 'Jump to' } = translations?.articlePage || {};
-
+  const { relatedContent = 'Related Content' } =
+    translations?.relatedContent || {};
   const viewRef = useViewTracker(eventTrackingData);
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
 
   useEffect(() => {
     setHash(window.location.hash);
   }, []);
-  // state initialisation. useState(false) initialises a state varirable
-  // and isRelatedContentPresent is set to the default value of false
-  // isRelatedContentPresent is the state variable that holds the current state
-  // indicating whether the related content is present or not
-  // setIsRelatedContentPresent is the function used to update the state variable isRelatedContentPresent
-  const [isRelatedContentPresent, setIsRelatedContentPresent] = useState(false);
-  // This hook runs after the component renders
-  useEffect(() => {
-    // this line tries to find the related content element with the id
-    const relatedContentHeading = document.getElementById(
-      'related-content-heading',
-    );
-    // this double negation turns the result into a boolean, where if it is found the boolean is true, and if it is null because it is not found, then it is false
-    setIsRelatedContentPresent(!!relatedContentHeading);
-  }, []); // the empty array as the second argument to useEffect means that this effect only runs once (after the initial render)
+
   const linkClickHandler = (
     e: React.MouseEvent<HTMLElement, MouseEvent>,
     subheadingId: string,
@@ -78,7 +65,10 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
       <ol role="list" css={styles.list}>
         {jumpToHeadings?.map(({ heading }) => {
           const sanitisedId = idSanitiser(heading);
-          const idWithHash = `#${sanitisedId}`;
+          const idWithHash =
+            sanitisedId === 'Related-Content'
+              ? '#related-content-heading'
+              : `#${sanitisedId}`;
 
           const isActiveId = decodeURIComponent(hash) === idWithHash;
           return (
@@ -100,28 +90,6 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
             </li>
           );
         })}
-
-        {isRelatedContentPresent && (
-          <li key="#related-content-heading" css={styles.listItem}>
-            <a
-              href="#related-content-heading"
-              onClick={e => linkClickHandler(e, '#related-content-heading')}
-              css={styles.link}
-              aria-labelledby="jump-to-related-content-heading"
-            >
-              <span
-                id="jump-to-related-content-heading"
-                css={[
-                  styles.linkText,
-                  decodeURIComponent(hash) === '#related-content-heading' &&
-                    styles.linkTextActive,
-                ]}
-              >
-                Related Content
-              </span>
-            </a>
-          </li>
-        )}
         <li key="#Most-Read" css={styles.listItem}>
           <a
             href="#Most-Read"
