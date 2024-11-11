@@ -3542,17 +3542,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@esbuild/win32-arm64@npm:0.23.1":
-  version: 0.23.1
-  resolution: "@esbuild/win32-arm64@npm:0.23.1"
-  checksum: 10/e47f07674eb139c759da87894964dc5331226dd0a58f11e57456b8ead39e35ad5893e3959b40d52d97c937a94c1b93df52ee985dc228686e0b5decacdfb99f78
-  conditions: os=win32 & cpu=arm64
-  languageName: node
-  linkType: hard
-
 "@esbuild/win32-arm64@npm:0.24.0":
   version: 0.24.0
   resolution: "@esbuild/win32-arm64@npm:0.24.0"
+  checksum: 10/c3d7aef352c0e74e3eb03d5831c0e87be75ad97b2eef7d8ad0883a44077cddd8f4aec7e0009f32eb1072b3bedcdb95876cb526b3c8ad7eedb3586cbce1ccbc29
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
@@ -15808,7 +15801,7 @@ __metadata:
     "@esbuild/darwin-x64": "npm:0.23.1"
     "@esbuild/linux-arm64": "npm:0.23.1"
     "@esbuild/linux-x64": "npm:0.23.1"
-    "@esbuild/win32-arm64": "npm:0.23.1"
+    "@esbuild/win32-arm64": "npm:0.24.0"
     "@esbuild/win32-x64": "npm:0.23.1"
     "@loadable/babel-plugin": "npm:5.16.1"
     "@loadable/component": "npm:5.16.4"
