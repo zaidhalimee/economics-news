@@ -78,7 +78,7 @@ export default {
       textDecoration: 'underline',
       textUnderlineOffset: `${spacings.HALF}rem`,
     }),
-  linkTextActive: ({ spacings, palette }: Theme) =>
+  linkTextActive: ({ palette }: Theme) =>
     css({
       color: palette.POSTBOX,
 
@@ -87,7 +87,6 @@ export default {
         content: '""',
         top: 0,
         insetInlineStart: 0,
-        width: `${spacings.HALF}rem`,
         height: '100%',
         border: `${pixelsToRem(2)}rem solid ${palette.POSTBOX}`,
       },
