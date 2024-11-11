@@ -1,16 +1,19 @@
 import pixelsToRem from '#app/utilities/pixelsToRem';
 import { css, Theme } from '@emotion/react';
 
+const TRANSPARENT_BORDER_SPACING = 0.1875;
+
 export default {
   wrapper: ({ palette, spacings, mq }: Theme) =>
     css({
       backgroundColor: palette.WHITE,
-      padding: `${spacings.FULL}rem`,
+      padding: `${spacings.FULL - TRANSPARENT_BORDER_SPACING}rem`,
       marginInline: `${spacings.FULL}rem`,
       marginBottom: `${spacings.DOUBLE}rem`,
+      border: `${TRANSPARENT_BORDER_SPACING}rem solid transparent`,
 
       [mq.GROUP_1_MIN_WIDTH]: {
-        padding: `${spacings.DOUBLE}rem`,
+        padding: `${spacings.DOUBLE - TRANSPARENT_BORDER_SPACING}rem`,
       },
 
       [mq.GROUP_2_MIN_WIDTH]: {
