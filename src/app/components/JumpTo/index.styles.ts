@@ -89,7 +89,8 @@ export default {
         insetInlineStart: 0,
         width: `${spacings.HALF}rem`,
         height: '100%',
-        backgroundColor: palette.POSTBOX,
+        border: `${pixelsToRem(2)}rem solid ${palette.POSTBOX}`,
+        // backgroundColor: palette.POSTBOX,
       },
     }),
 };
