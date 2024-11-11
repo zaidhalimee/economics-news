@@ -153,7 +153,7 @@
     "@esbuild/linux-arm64": "0.23.1",
     "@esbuild/linux-x64": "0.23.1",
     "@esbuild/win32-arm64": "0.23.1",
-    "@esbuild/win32-x64": "0.23.1",
+    "@esbuild/win32-x64": "0.24.0",
     "@loadable/babel-plugin": "5.16.1",
     "@loadable/webpack-plugin": "5.15.2",
     "@next/swc-darwin-arm64": "14.2.14",
