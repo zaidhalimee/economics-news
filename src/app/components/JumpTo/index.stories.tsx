@@ -23,5 +23,21 @@ export const Example = () => {
       block => block.type === 'jumpTo',
     )?.model.jumpToHeadings;
 
+  const relatedContentBlock =
+    pidginArticleFixtureWithJumpToBlock.data.article.content.model.blocks.find(
+      block => block.type === 'relatedContent',
+    );
+  // This needs to be changed if we add an option for translations in storybook
+  if (
+    relatedContentBlock &&
+    !jumpToHeadings?.some(
+      jumpToHeading => jumpToHeading.heading === 'Related content',
+    )
+  ) {
+    jumpToHeadings?.push({
+      heading: 'Related content',
+    });
+  }
+
   return <Component jumpToHeadings={jumpToHeadings} />;
 };
