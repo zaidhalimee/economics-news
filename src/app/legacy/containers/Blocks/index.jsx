@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
 import styled from '@emotion/styled';
 import path from 'ramda/src/path';
 import pathEq from 'ramda/src/pathEq';
+import { ServiceContext } from '#contexts/ServiceContext';
 
 const Clearer = styled.div`
   clear: both;
@@ -18,17 +19,20 @@ const Blocks = ({ blocks, componentsToRender }) => {
     if (!componentsToRender || !type) {
       return null;
     }
-    if (
-      type === 'jumpTo' &&
-      hasRelatedContent &&
-      !model.jumpToHeadings.some(
-        jumpToHeading => jumpToHeading.heading === 'Related Content',
-      )
-    ) {
-      model.jumpToHeadings.push({
-        heading: 'Related Content',
-      });
+    if (type === 'jumpTo' && hasRelatedContent) {
+      const { translations } = useContext(ServiceContext);
+      const relatedContent = translations?.relatedContent || 'Related Content';
+      if (
+        !model.jumpToHeadings.some(
+          jumpToHeading => jumpToHeading.heading === relatedContent,
+        )
+      ) {
+        model.jumpToHeadings.push({
+          heading: relatedContent,
+        });
+      }
     }
+    console.log('jump', model.jumpToHeadings);
     const Block = componentsToRender[type];
 
     if (!Block) {
