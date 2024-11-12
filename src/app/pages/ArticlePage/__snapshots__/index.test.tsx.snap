@@ -448,6 +448,7 @@ exports[`Article Page should render a jumpTo component if jumpToHeadings are pre
   <div
     class="emotion-0"
   >
+    <noscript />
     <div>
       chartbeat
     </div>
