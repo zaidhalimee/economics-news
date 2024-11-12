@@ -11,11 +11,17 @@ export const experimentName = 'topStoriesExperiment';
 export const experimentTopStoriesConfig = {
   [experimentName]: {
     variants: {
-      control: 50,
-      show_at_halfway: 50,
+      control: 25,
+      show_at_quarter: 25,
+      show_at_half: 25,
+      show_at_three_quarters: 25,
     },
   },
 };
+
+type VariantNames = 'Quarter' | 'Half' | 'ThreeQuarters';
+type Positions = 'articleBody' | 'secondaryColumn';
+type TrackingEventType = 'view' | 'click';
 
 const ARTICLE_LENGTH_THRESHOLD = 10;
 const enableExperimentTopStories = ({
@@ -66,6 +72,27 @@ const enableExperimentTopStories = ({
   );
 };
 
+const insertBlockAtPosition = (
+  blocks: OptimoBlock[],
+  blockToInsert: OptimoBlock,
+  variantName: VariantNames,
+) => {
+  const insertionPercentages = {
+    Quarter: 0.25,
+    Half: 0.5,
+    ThreeQuarters: 0.75,
+  };
+  const percentage = insertionPercentages[variantName];
+
+  const renderedBlocksLength = blocks.length - 1;
+  const calculatedIndex = Math.floor(renderedBlocksLength * percentage);
+  const insertIndex = Math.max(calculatedIndex, 3);
+
+  const blocksClone = [...blocks];
+  blocksClone.splice(insertIndex, 0, blockToInsert);
+  return blocksClone;
+};
+
 const insertExperimentTopStories = ({
   blocks,
   topStoriesContent,
@@ -73,16 +100,22 @@ const insertExperimentTopStories = ({
   blocks: OptimoBlock[];
   topStoriesContent: TopStoryItem[];
 }) => {
-  const insertIndex = Math.floor((blocks.length - 1) * 0.5); // halfway index of blocks array, -1 accounts for 'wsoj' block which is never rendered on PS articles
-  const experimentTopStoriesBlock = {
-    type: 'experimentTopStories',
-    model: topStoriesContent,
-    id: `experimentTopStories-${insertIndex}`,
-  };
+  const insertionPositions = ['Quarter', 'Half', 'ThreeQuarters'] as const;
+  return insertionPositions.reduce((currentBlocks, variantName) => {
+    const experimentTopStoriesBlock = {
+      type: `experimentTopStories${variantName}`,
+      model: topStoriesContent,
+      id: `experimentTopStories${variantName}`,
+    };
 
-  const blocksClone = [...blocks];
-  blocksClone.splice(insertIndex, 0, experimentTopStoriesBlock);
-  return blocksClone;
+    const transformedBlocks = insertBlockAtPosition(
+      currentBlocks,
+      experimentTopStoriesBlock,
+      variantName,
+    );
+
+    return transformedBlocks;
+  }, blocks);
 };
 
 export const getExperimentTopStories = ({
@@ -124,14 +157,22 @@ export const getExperimentTopStories = ({
 
 export const ExperimentTopStories = ({
   topStoriesContent,
+  variantName,
 }: {
   topStoriesContent: TopStoryItem[];
+  variantName: VariantNames;
 }) => {
+  const variantKeys = {
+    Quarter: 'show_at_quarter',
+    Half: 'show_at_half',
+    ThreeQuarters: 'show_at_three_quarters',
+  };
+
   return (
     <div
-      css={styles.experimentTopStoriesSection}
-      data-testid="experiment-top-stories"
-      data-experiment-position="articleBody"
+      css={styles.experimentTopStoriesSection(variantKeys[variantName])}
+      data-testid={`experiment-top-stories-${variantName}`}
+      data-experiment-position={`articleBody${variantName}`}
     >
       <TopStoriesSection content={topStoriesContent} />
     </div>
@@ -160,11 +201,11 @@ const buildTopStoriesEventUrl = ({
   atiAnalyticsProducerId,
   position,
 }: {
-  type: 'view' | 'click';
+  type: TrackingEventType;
   env: Environments;
   service: Services;
   atiAnalyticsProducerId: string;
-  position?: 'articleBody' | 'secondaryColumn';
+  position?: Positions;
 }) => {
   return buildATIEventTrackUrl({
     ampExperimentName: `${experimentName}`,
@@ -191,24 +232,13 @@ const requestKeysMap = {
   },
 };
 
-const eventTriggerKeysMap = {
-  articleBody: {
-    view: 'articleBodyView',
-    click: 'articleBodyPromoClick',
-  },
-  secondaryColumn: {
-    view: 'secondaryColumnView',
-    click: 'secondaryColumnPromoClick',
-  },
-};
-
 const buildRequestUrls = ({
   position,
   env,
   service,
   atiAnalyticsProducerId,
 }: {
-  position: 'articleBody' | 'secondaryColumn';
+  position: Positions;
   env: Environments;
   service: Services;
   atiAnalyticsProducerId: string;
@@ -233,20 +263,52 @@ const buildRequestUrls = ({
   };
 };
 
+const getQuerySelectors = ({ variantName }: { variantName?: VariantNames }) => {
+  const experimentPosition = variantName
+    ? `articleBody${variantName}`
+    : 'secondaryColumn';
+
+  return {
+    view: `div[data-experiment-position='${experimentPosition}'] > section[aria-labelledby='top-stories-heading']`,
+    click: `div[data-experiment-position='${experimentPosition}'] a[aria-labelledby*='top-stories-promo']`,
+  };
+};
+
+const getEventTriggerKeys = ({
+  variantName,
+}: {
+  variantName?: VariantNames;
+}) => {
+  if (!variantName) {
+    return {
+      view: `secondaryColumnView`,
+      click: `secondaryColumnPromoClick`,
+    };
+  }
+
+  return {
+    view: `articleBody${variantName}View`,
+    click: `articleBody${variantName}PromoClick`,
+  };
+};
+
 const buildEventTriggers = ({
   position,
+  variantName,
 }: {
-  position: 'articleBody' | 'secondaryColumn';
+  position: Positions;
+  variantName?: VariantNames;
 }) => {
-  const eventTriggerKeys = eventTriggerKeysMap[position];
   const requestKeys = requestKeysMap[position];
+  const eventTriggerKeys = getEventTriggerKeys({ variantName });
+  const querySelectors = getQuerySelectors({ variantName });
 
   return {
     [eventTriggerKeys.view]: {
       on: 'visible',
       request: requestKeys.view,
       visibilitySpec: {
-        selector: `div[data-experiment-position='${position}'] > section[aria-labelledby='top-stories-heading']`,
+        selector: querySelectors.view,
         visiblePercentageMin: 20,
         totalTimeMin: 500,
         continuousTimeMin: 200,
@@ -255,7 +317,7 @@ const buildEventTriggers = ({
     [eventTriggerKeys.click]: {
       on: 'click',
       request: requestKeys.click,
-      selector: `div[data-experiment-position='${position}'] a[aria-labelledby*='top-stories-promo']`,
+      selector: querySelectors.click,
     },
   };
 };
@@ -285,8 +347,16 @@ export const getExperimentAnalyticsConfig = ({
       }),
     },
     triggers: {
-      ...buildEventTriggers({ position: 'articleBody' }),
       ...buildEventTriggers({ position: 'secondaryColumn' }),
+      ...buildEventTriggers({
+        position: 'articleBody',
+        variantName: 'Quarter',
+      }),
+      ...buildEventTriggers({ position: 'articleBody', variantName: 'Half' }),
+      ...buildEventTriggers({
+        position: 'articleBody',
+        variantName: 'ThreeQuarters',
+      }),
     },
   };
 };

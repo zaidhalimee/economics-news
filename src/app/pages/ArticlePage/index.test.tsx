@@ -927,7 +927,15 @@ describe('Article Page', () => {
           id,
         });
 
-        expect(queryByTestId('experiment-top-stories')).toBeInTheDocument();
+        expect(
+          queryByTestId('experiment-top-stories-Quarter'),
+        ).toBeInTheDocument();
+        expect(
+          queryByTestId('experiment-top-stories-Half'),
+        ).toBeInTheDocument();
+        expect(
+          queryByTestId('experiment-top-stories-ThreeQuarters'),
+        ).toBeInTheDocument();
       },
     );
 
@@ -946,7 +954,15 @@ describe('Article Page', () => {
           isShortArticle,
         });
 
-        expect(queryByTestId('experiment-top-stories')).not.toBeInTheDocument();
+        expect(
+          queryByTestId('experiment-top-stories-Quarter'),
+        ).not.toBeInTheDocument();
+        expect(
+          queryByTestId('experiment-top-stories-Half'),
+        ).not.toBeInTheDocument();
+        expect(
+          queryByTestId('experiment-top-stories-ThreeQuarters'),
+        ).not.toBeInTheDocument();
       },
     );
 

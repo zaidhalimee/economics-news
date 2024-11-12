@@ -16,11 +16,13 @@ describe('AMP top stories experiment', () => {
       blocks: [],
     },
   };
-  const expectedExperimentTopStoriesBlock = (index: number) => {
+  const expectedExperimentTopStoriesBlock = (
+    variant: 'Quarter' | 'Half' | 'ThreeQuarters',
+  ) => {
     return {
-      type: 'experimentTopStories',
+      type: `experimentTopStories${variant}`,
       model: topStoriesList,
-      id: `experimentTopStories-${index}`,
+      id: `experimentTopStories${variant}`,
     };
   };
 
@@ -71,10 +73,12 @@ describe('AMP top stories experiment', () => {
       mockTextBlock,
       mockTextBlock,
       mockTextBlock,
+      expectedExperimentTopStoriesBlock('Quarter'),
       mockTextBlock,
-      expectedExperimentTopStoriesBlock(4),
+      expectedExperimentTopStoriesBlock('Half'),
       mockTextBlock,
       mockTextBlock,
+      expectedExperimentTopStoriesBlock('ThreeQuarters'),
       mockTextBlock,
       mockTextBlock,
       mockTextBlock,
@@ -84,11 +88,13 @@ describe('AMP top stories experiment', () => {
       mockTextBlock,
       mockTextBlock,
       mockTextBlock,
+      expectedExperimentTopStoriesBlock('Quarter'),
+      mockTextBlock,
+      expectedExperimentTopStoriesBlock('Half'),
       mockTextBlock,
       mockTextBlock,
-      expectedExperimentTopStoriesBlock(5),
       mockTextBlock,
-      mockTextBlock,
+      expectedExperimentTopStoriesBlock('ThreeQuarters'),
       mockTextBlock,
       mockTextBlock,
       mockTextBlock,
@@ -116,74 +122,24 @@ describe('AMP top stories experiment', () => {
 
   describe('getExperimentAnalyticsConfig()', () => {
     process.env.SIMORGH_ATI_BASE_URL = 'http://foobar.com?';
-
-    const PS_NEWS_DESTINATION_ID = 598285;
-    const PS_NEWS_TEST_DESTINATION_ID = 598286;
-    const PS_NEWS_GNL_DESTINATION_ID = 598287;
-    const PS_NEWS_GNL_TEST_DESINTATION_ID = 598288;
-    const PS_SPORT_DESTINATION_ID = 598310;
-    const PS_SPORT_TEST_DESTINATION_ID = 598311;
-    const PS_SPORT_GNL_DESTINATION_ID = 598308;
-    const PS_SPORT_GNL_TEST_DESTINATION_ID = 598309;
     const NEWS_PRODUCER_ID = 64;
     const SPORT_PRODUCER_ID = 85;
 
     it.each`
-      service    | env       | destinationId                   | gnlId                               | producerId
-      ${'news'}  | ${'live'} | ${PS_NEWS_DESTINATION_ID}       | ${PS_NEWS_GNL_DESTINATION_ID}       | ${NEWS_PRODUCER_ID}
-      ${'news'}  | ${'test'} | ${PS_NEWS_TEST_DESTINATION_ID}  | ${PS_NEWS_GNL_TEST_DESINTATION_ID}  | ${NEWS_PRODUCER_ID}
-      ${'sport'} | ${'live'} | ${PS_SPORT_DESTINATION_ID}      | ${PS_SPORT_GNL_DESTINATION_ID}      | ${SPORT_PRODUCER_ID}
-      ${'sport'} | ${'test'} | ${PS_SPORT_TEST_DESTINATION_ID} | ${PS_SPORT_GNL_TEST_DESTINATION_ID} | ${SPORT_PRODUCER_ID}
+      service    | env       | producerId
+      ${'news'}  | ${'live'} | ${NEWS_PRODUCER_ID}
+      ${'news'}  | ${'test'} | ${NEWS_PRODUCER_ID}
+      ${'sport'} | ${'live'} | ${SPORT_PRODUCER_ID}
+      ${'sport'} | ${'test'} | ${SPORT_PRODUCER_ID}
     `(
       'should create the analytics config with the correct parameters for $service on $env.',
-      ({ env, service, destinationId, gnlId, producerId }) => {
+      ({ env, service, producerId }) => {
         const analyticsConfig = getExperimentAnalyticsConfig({
           env,
           service,
           atiAnalyticsProducerId: producerId,
         });
-        expect(analyticsConfig).toMatchInlineSnapshot(`
-        {
-          "requests": {
-            "topStoriesArticleBodyClick": "http://foobar.com?idclient=123-456-789&s=$IF($EQUALS($MATCH(\${ampGeo}, gbOrUnknown, 0), gbOrUnknown), ${destinationId}, ${gnlId})&s2=${producerId}&p=SOURCE_URL&r=\${screenWidth}x\${screenHeight}x\${screenColorDepth}&re=\${availableScreenWidth}x\${availableScreenHeight}&hl=\${timestamp}&lng=\${browserLanguage}&atc=PUB-[article]-[top-stories-promo]-[VARIANT(topStoriesExperiment)]-[]-[SOURCE_URL]-[articleBody]-[]-[]&mv_test=Google Discover&mv_experiment_id=topStoriesExperiment&mv_creation=VARIANT(topStoriesExperiment)&type=AT",
-            "topStoriesArticleBodyView": "http://foobar.com?idclient=123-456-789&s=$IF($EQUALS($MATCH(\${ampGeo}, gbOrUnknown, 0), gbOrUnknown), ${destinationId}, ${gnlId})&s2=${producerId}&p=SOURCE_URL&r=\${screenWidth}x\${screenHeight}x\${screenColorDepth}&re=\${availableScreenWidth}x\${availableScreenHeight}&hl=\${timestamp}&lng=\${browserLanguage}&ati=PUB-[article]-[top-stories-section]-[VARIANT(topStoriesExperiment)]-[]-[SOURCE_URL]-[articleBody]-[]-[]&mv_test=Google Discover&mv_experiment_id=topStoriesExperiment&mv_creation=VARIANT(topStoriesExperiment)&type=AT",
-            "topStoriesSecondaryColumnClick": "http://foobar.com?idclient=123-456-789&s=$IF($EQUALS($MATCH(\${ampGeo}, gbOrUnknown, 0), gbOrUnknown), ${destinationId}, ${gnlId})&s2=${producerId}&p=SOURCE_URL&r=\${screenWidth}x\${screenHeight}x\${screenColorDepth}&re=\${availableScreenWidth}x\${availableScreenHeight}&hl=\${timestamp}&lng=\${browserLanguage}&atc=PUB-[article]-[top-stories-promo]-[VARIANT(topStoriesExperiment)]-[]-[SOURCE_URL]-[secondaryColumn]-[]-[]&mv_test=Google Discover&mv_experiment_id=topStoriesExperiment&mv_creation=VARIANT(topStoriesExperiment)&type=AT",
-            "topStoriesSecondaryColumnView": "http://foobar.com?idclient=123-456-789&s=$IF($EQUALS($MATCH(\${ampGeo}, gbOrUnknown, 0), gbOrUnknown), ${destinationId}, ${gnlId})&s2=${producerId}&p=SOURCE_URL&r=\${screenWidth}x\${screenHeight}x\${screenColorDepth}&re=\${availableScreenWidth}x\${availableScreenHeight}&hl=\${timestamp}&lng=\${browserLanguage}&ati=PUB-[article]-[top-stories-section]-[VARIANT(topStoriesExperiment)]-[]-[SOURCE_URL]-[secondaryColumn]-[]-[]&mv_test=Google Discover&mv_experiment_id=topStoriesExperiment&mv_creation=VARIANT(topStoriesExperiment)&type=AT",
-          },
-          "triggers": {
-            "articleBodyPromoClick": {
-              "on": "click",
-              "request": "topStoriesArticleBodyClick",
-              "selector": "div[data-experiment-position='articleBody'] a[aria-labelledby*='top-stories-promo']",
-            },
-            "articleBodyView": {
-              "on": "visible",
-              "request": "topStoriesArticleBodyView",
-              "visibilitySpec": {
-                "continuousTimeMin": 200,
-                "selector": "div[data-experiment-position='articleBody'] > section[aria-labelledby='top-stories-heading']",
-                "totalTimeMin": 500,
-                "visiblePercentageMin": 20,
-              },
-            },
-            "secondaryColumnPromoClick": {
-              "on": "click",
-              "request": "topStoriesSecondaryColumnClick",
-              "selector": "div[data-experiment-position='secondaryColumn'] a[aria-labelledby*='top-stories-promo']",
-            },
-            "secondaryColumnView": {
-              "on": "visible",
-              "request": "topStoriesSecondaryColumnView",
-              "visibilitySpec": {
-                "continuousTimeMin": 200,
-                "selector": "div[data-experiment-position='secondaryColumn'] > section[aria-labelledby='top-stories-heading']",
-                "totalTimeMin": 500,
-                "visiblePercentageMin": 20,
-              },
-            },
-          },
-        }
-        `);
+        expect(analyticsConfig).toMatchSnapshot();
       },
     );
   });

@@ -207,9 +207,26 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       <Disclaimer {...props} increasePaddingOnDesktop={false} />
     ),
     podcastPromo: () => (podcastPromoEnabled ? <InlinePodcastPromo /> : null),
-    experimentTopStories: () =>
+    experimentTopStoriesQuarter: () =>
       topStoriesContent ? (
-        <ExperimentTopStories topStoriesContent={topStoriesContent} />
+        <ExperimentTopStories
+          topStoriesContent={topStoriesContent}
+          variantName="Quarter"
+        />
+      ) : null,
+    experimentTopStoriesHalf: () =>
+      topStoriesContent ? (
+        <ExperimentTopStories
+          topStoriesContent={topStoriesContent}
+          variantName="Half"
+        />
+      ) : null,
+    experimentTopStoriesThreeQuarters: () =>
+      topStoriesContent ? (
+        <ExperimentTopStories
+          topStoriesContent={topStoriesContent}
+          variantName="ThreeQuarters"
+        />
       ) : null,
   };
 
