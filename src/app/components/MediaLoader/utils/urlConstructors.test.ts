@@ -124,7 +124,7 @@ const externalEmbedUrlTestCases = [
           'https://www.test.bbc.com/ws/av-embeds/articles/c805k05kr73o/p0cfmdwn/es',
       },
       {
-        description: 'Optimo (no versionPID)',
+        description: 'Optimo (no parentPID)',
         id: 'mundo/articles/c805k05kr73o',
         lang: 'es',
         expected:
@@ -139,7 +139,7 @@ const externalEmbedUrlTestCases = [
           'https://www.test.bbc.com/ws/av-embeds/articles/cd1rmn075d1o/p0jd37n8/ig',
       },
       {
-        description: 'Optimo Syndicated route (no versionPID)',
+        description: 'Optimo Syndicated route (no parentPID)',
         id: 'ws/av-embeds/articles/cd1rmn075d1o/p0jd37n8/ig',
         lang: 'ig',
         expected:
