@@ -57,7 +57,8 @@ export default ({
 
   const versionsBlock = aresMediaMetadata?.[versionParameter]?.[0];
 
-  const versionID = versionsBlock?.versionId ?? '';
+  // Referred to as 'vPID' or 'version PID'
+  const versionPID = versionsBlock?.versionId ?? '';
 
   const orientation =
     ORIENTATION_MAPPING[versionsBlock?.types?.[0]] ??
@@ -90,7 +91,8 @@ export default ({
 
   const subType = aresMediaMetadata?.subType;
 
-  const videoId = aresMediaMetadata?.id;
+  // Referred to as 'clip PID', 'episode PID' or 'parent PID'
+  const parentPID = aresMediaMetadata?.id;
 
   const holdingImageURL = rawImage
     ? buildIChefURL({
@@ -103,7 +105,12 @@ export default ({
   const isLive = aresMediaMetadata?.live ?? false;
 
   const items: PlaylistItem[] = [
-    { versionID, kind, duration: rawDuration, ...(isLive && { live: true }) },
+    {
+      versionID: versionPID,
+      kind,
+      duration: rawDuration,
+      ...(isLive && { live: true }),
+    },
   ];
 
   if (showAds) items.unshift({ kind: 'advert' });
@@ -120,9 +127,14 @@ export default ({
     placeholderImageLocator: locator,
   });
 
-  const ampIframeUrl = getAmpIframeUrl({ id, versionID, lang });
+  const ampIframeUrl = getAmpIframeUrl({ id, parentPID, versionPID, lang });
 
-  const externalEmbedUrl = getExternalEmbedUrl({ id, versionID, lang });
+  const externalEmbedUrl = getExternalEmbedUrl({
+    id,
+    parentPID,
+    versionPID,
+    lang,
+  });
 
   return {
     mediaType: actualFormat || 'video',
@@ -143,8 +155,8 @@ export default ({
       ...(pageType === 'mediaArticle' && { preload: 'high' }),
       statsObject: {
         ...basePlayerConfig.statsObject,
-        ...(subType === 'clip' && { clipPID: videoId }),
-        ...(subType === 'episode' && { episodePID: videoId }),
+        ...(subType === 'clip' && { clipPID: parentPID }),
+        ...(subType === 'episode' && { episodePID: parentPID }),
       },
     },
     placeholderConfig,
