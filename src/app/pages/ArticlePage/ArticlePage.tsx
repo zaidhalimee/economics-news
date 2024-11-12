@@ -42,6 +42,7 @@ import { Article, OptimoBylineBlock } from '#app/models/types/optimo';
 import ScrollablePromo from '#components/ScrollablePromo';
 import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
 import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
+import JumpTo from '#app/components/JumpTo';
 import ElectionBanner from './ElectionBanner';
 
 import ImageWithCaption from '../../components/ImageWithCaption';
@@ -204,6 +205,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       topStoriesContent ? (
         <ExperimentTopStories topStoriesContent={topStoriesContent} />
       ) : null,
+    jumpTo: JumpTo,
   };
 
   const visuallyHiddenBlock = {

@@ -3,7 +3,10 @@ import { fireEvent } from '@testing-library/dom';
 import { RequestContextProvider } from '#contexts/RequestContext';
 import { ARTICLE_PAGE } from '#app/routes/utils/pageTypes';
 import { render } from '../../../components/react-testing-library-with-providers';
-import { ServiceContextProvider } from '../../../contexts/ServiceContext';
+import {
+  ServiceContextProvider,
+  ServiceContext,
+} from '../../../contexts/ServiceContext';
 import { service as newsConfig } from '../../../lib/config/services/news';
 import Navigation from './index';
 import * as viewTracking from '../../../hooks/useViewTracker';
@@ -115,6 +118,89 @@ describe('Navigation Container', () => {
       const href = link.getAttribute('href');
       expect(href).toEqual(navItem.url);
     });
+  });
+  it('should not render listItem in scrollable list when hideOnLiteSite is true and isLite is true', () => {
+    const { navigation, ...rest } = newsConfig.default;
+    const mockNavigation = [
+      { title: 'Home', url: '/home', hideOnLiteSite: true },
+      { title: 'News', url: '/news' },
+      { title: 'Sport', url: '/sport' },
+    ];
+
+    const navigationComponent = (
+      <ServiceContext.Provider value={{ navigation: mockNavigation, ...rest }}>
+        <Navigation />
+      </ServiceContext.Provider>
+    );
+
+    const { queryByText } = render(navigationComponent, {
+      bbcOrigin: 'https://www.test.bbc.co.uk',
+      id: 'c0000000000o',
+      isAmp: false,
+      pageType: ARTICLE_PAGE,
+      service: 'news',
+      statusCode: 200,
+      pathname: '/news',
+      isLite: true,
+    });
+
+    expect(queryByText(mockNavigation[0].title)).not.toBeVisible();
+  });
+
+  it('should render listItem in scrollable list when hideOnLiteSite is true and isLite is false', () => {
+    const { navigation, ...rest } = newsConfig.default;
+    const mockNavigation = [
+      { title: 'Home', url: '/home', hideOnLiteSite: true },
+      { title: 'News', url: '/news' },
+      { title: 'Sport', url: '/sport' },
+    ];
+
+    const navigationComponent = (
+      <ServiceContext.Provider value={{ navigation: mockNavigation, ...rest }}>
+        <Navigation />
+      </ServiceContext.Provider>
+    );
+
+    const { queryAllByText } = render(navigationComponent, {
+      bbcOrigin: 'https://www.test.bbc.co.uk',
+      id: 'c0000000000o',
+      isAmp: false,
+      pageType: ARTICLE_PAGE,
+      service: 'news',
+      statusCode: 200,
+      pathname: '/news',
+      isLite: false,
+    });
+
+    expect(queryAllByText(mockNavigation[0].title)[0]).toBeVisible();
+  });
+
+  it('should render listItem in scrollable list when hideOnLiteSite is false/not set', () => {
+    const { navigation, ...rest } = newsConfig.default;
+    const mockNavigation = [
+      { title: 'Home', url: '/home' },
+      { title: 'News', url: '/news' },
+      { title: 'Sport', url: '/sport' },
+    ];
+
+    const navigationComponent = (
+      <ServiceContext.Provider value={{ navigation: mockNavigation, ...rest }}>
+        <Navigation />
+      </ServiceContext.Provider>
+    );
+
+    const { queryAllByText } = render(navigationComponent, {
+      bbcOrigin: 'https://www.test.bbc.co.uk',
+      id: 'c0000000000o',
+      isAmp: false,
+      pageType: ARTICLE_PAGE,
+      service: 'news',
+      statusCode: 200,
+      pathname: '/news',
+      isLite: false,
+    });
+
+    expect(queryAllByText(mockNavigation[0].title)[0]).toBeVisible();
   });
 
   describe('View and click tracking', () => {
