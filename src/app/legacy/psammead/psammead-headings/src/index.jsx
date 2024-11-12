@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import {
+  GEL_SPACING_DBL,
   GEL_SPACING_TRPL,
   GEL_SPACING_QUAD,
   GEL_SPACING_QUIN,
@@ -38,6 +39,7 @@ export const SubHeading = styled.h2`
 
   padding: ${SUBHEADING_PADDING} 0;
   margin: calc(${GEL_SPACING_TRPL} - ${SUBHEADING_PADDING}) 0;
+  scroll-margin-top: ${GEL_SPACING_DBL};
 
   ${MEDIA_QUERY_TYPOGRAPHY.LAPTOP_AND_LARGER} {
     padding-top ${SUBHEADING_PADDING};
