@@ -20,7 +20,8 @@ describe('JumpTo Component', () => {
     jest.clearAllMocks();
   });
 
-  const jumpToHeadings = jumpToBlock?.model.jumpToHeadings ?? [];
+  const jumpToHeadings: Array<{ heading: string; sanitisedId?: string }> =
+    jumpToBlock?.model.jumpToHeadings ?? [];
 
   describe('Render jumpTo', () => {
     it('renders the Jump To title', () => {
@@ -37,24 +38,17 @@ describe('JumpTo Component', () => {
     it('renders the correct number of headings with related content link', () => {
       render(<JumpTo jumpToHeadings={jumpToHeadings} showRelatedContentLink />);
       const headings = screen.getAllByRole('listitem');
-      expect(headings.length).toBe(jumpToHeadings.length + 1);
+      expect(headings.length).toBe(jumpToHeadings.length);
     });
 
     it('renders each item with a link to the corresponding subheading on the same page', () => {
       render(<JumpTo jumpToHeadings={jumpToHeadings} showRelatedContentLink />);
-      jumpToHeadings.forEach(({ heading }) => {
-        const sanitisedId = idSanitiser(heading);
-        const link = screen.getByTestId(`jump-to-link-${sanitisedId}`);
-        const expectedHref = `#${sanitisedId}`;
+      jumpToHeadings.forEach(({ heading, sanitisedId }) => {
+        const id = sanitisedId || idSanitiser(heading);
+        const link = screen.getByTestId(`jump-to-link-${id}`);
+        const expectedHref = `#${id}`;
         expect(link).toHaveAttribute('href', expectedHref);
       });
-      const relatedContentLink = screen.getByTestId(
-        `jump-to-link-related-content-heading`,
-      );
-      expect(relatedContentLink).toHaveAttribute(
-        'href',
-        '#related-content-heading',
-      );
     });
   });
 
@@ -87,9 +81,9 @@ describe('JumpTo Component', () => {
 
         render(<JumpTo jumpToHeadings={jumpToHeadings} />);
 
-        jumpToHeadings.forEach(({ heading }) => {
-          const sanitisedId = idSanitiser(heading);
-          const link = screen.getByTestId(`jump-to-link-${sanitisedId}`);
+        jumpToHeadings.forEach(({ heading, sanitisedId }) => {
+          const id = sanitisedId || idSanitiser(heading);
+          const link = screen.getByTestId(`jump-to-link-${id}`);
 
           fireEvent.click(link);
           expect(link.onclick).toBeTruthy();

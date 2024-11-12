@@ -12,7 +12,7 @@ import idSanitiser from '../../lib/utilities/idSanitiser';
 import styles from './index.styles';
 
 export interface JumpToProps {
-  jumpToHeadings?: Array<{ heading: string }>;
+  jumpToHeadings?: Array<{ heading: string; sanitisedId?: string }>;
   showRelatedContentLink?: boolean;
 }
 
@@ -43,7 +43,15 @@ const JumpTo = ({ jumpToHeadings, showRelatedContentLink }: JumpToProps) => {
   };
 
   const titleId = 'jump-to-heading';
-
+  if (
+    showRelatedContentLink &&
+    !jumpToHeadings?.some(({ heading }) => heading === relatedContent)
+  ) {
+    jumpToHeadings?.push({
+      heading: relatedContent,
+      sanitisedId: 'related-content-heading',
+    });
+  }
   return (
     <nav
       ref={viewRef}
@@ -62,8 +70,8 @@ const JumpTo = ({ jumpToHeadings, showRelatedContentLink }: JumpToProps) => {
         {jumpTo}
       </Text>
       <ol role="list" css={styles.list}>
-        {jumpToHeadings?.map(({ heading }) => {
-          const sanitisedId = idSanitiser(heading);
+        {jumpToHeadings?.map(({ heading, sanitisedId }) => {
+          sanitisedId = sanitisedId || idSanitiser(heading);
           const idWithHash = `#${sanitisedId}`;
           const isActiveId = decodeURIComponent(hash) === idWithHash;
           return (
@@ -83,26 +91,6 @@ const JumpTo = ({ jumpToHeadings, showRelatedContentLink }: JumpToProps) => {
             </li>
           );
         })}
-        {showRelatedContentLink && (
-          <li key="#related-content-heading" css={styles.listItem}>
-            <a
-              href="#related-content-heading"
-              onClick={e => linkClickHandler(e, '#related-content-heading')}
-              css={styles.link}
-              data-testid="jump-to-link-related-content-heading"
-            >
-              <span
-                css={[
-                  styles.linkText,
-                  decodeURIComponent(hash) === '#related-content-heading' &&
-                    styles.linkTextActive,
-                ]}
-              >
-                {relatedContent}
-              </span>
-            </a>
-          </li>
-        )}
       </ol>
     </nav>
   );
