@@ -4,8 +4,16 @@ import JumpTo, { JumpToProps } from '.';
 import metadata from './metadata.json';
 import readme from './README.md';
 
-const Component = ({ jumpToHeadings = [] }: JumpToProps) => {
-  return <JumpTo jumpToHeadings={jumpToHeadings} />;
+const Component = ({
+  jumpToHeadings = [],
+  showRelatedContentLink = false,
+}: JumpToProps) => {
+  return (
+    <JumpTo
+      jumpToHeadings={jumpToHeadings}
+      showRelatedContentLink={showRelatedContentLink}
+    />
+  );
 };
 
 export default {
@@ -23,21 +31,14 @@ export const Example = () => {
       block => block.type === 'jumpTo',
     )?.model.jumpToHeadings;
 
-  const relatedContentBlock =
-    pidginArticleFixtureWithJumpToBlock.data.article.content.model.blocks.find(
+  const showRelatedContentLink =
+    !!pidginArticleFixtureWithJumpToBlock.data.article.content.model.blocks.find(
       block => block.type === 'relatedContent',
     );
-  // This needs to be changed if we add an option for translations in storybook
-  if (
-    relatedContentBlock &&
-    !jumpToHeadings?.some(
-      jumpToHeading => jumpToHeading.heading === 'Related content',
-    )
-  ) {
-    jumpToHeadings?.push({
-      heading: 'Related content',
-    });
-  }
-
-  return <Component jumpToHeadings={jumpToHeadings} />;
+  return (
+    <Component
+      jumpToHeadings={jumpToHeadings}
+      showRelatedContentLink={showRelatedContentLink}
+    />
+  );
 };
