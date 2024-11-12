@@ -109,7 +109,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const topics = pageData?.metadata?.topics ?? [];
   const blocks = pageData?.content?.model?.blocks ?? [];
   const startsWithHeading = blocks?.[0]?.type === 'headline' || false;
-  console.log('blocks', blocks);
   const bylineBlock = blocks.find(
     block => block.type === 'byline',
   ) as OptimoBylineBlock;
