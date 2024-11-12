@@ -71,8 +71,8 @@ const JumpTo = ({ jumpToHeadings, showRelatedContentLink }: JumpToProps) => {
       </Text>
       <ol role="list" css={styles.list}>
         {jumpToHeadings?.map(({ heading, sanitisedId }) => {
-          sanitisedId = sanitisedId || idSanitiser(heading);
-          const idWithHash = `#${sanitisedId}`;
+          const id = sanitisedId || idSanitiser(heading);
+          const idWithHash = `#${id}`;
           const isActiveId = decodeURIComponent(hash) === idWithHash;
           return (
             <li key={idWithHash} css={styles.listItem}>
@@ -80,7 +80,7 @@ const JumpTo = ({ jumpToHeadings, showRelatedContentLink }: JumpToProps) => {
                 href={idWithHash}
                 onClick={e => linkClickHandler(e, idWithHash)}
                 css={styles.link}
-                data-testid={`jump-to-link-${sanitisedId}`}
+                data-testid={`jump-to-link-${id}`}
               >
                 <span
                   css={[styles.linkText, isActiveId && styles.linkTextActive]}
