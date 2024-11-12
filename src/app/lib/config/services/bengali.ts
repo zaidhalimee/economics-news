@@ -332,10 +332,6 @@ export const service: DefaultServiceConfig = {
         url: '/bengali',
       },
       {
-        title: 'যুক্তরাষ্ট্র নির্বাচন ২০২৪',
-        url: '/bengali/topics/cjlgjr0d2d2t',
-      },
-      {
         title: 'রাজনীতি',
         url: '/bengali/topics/cqywj91rkg6t',
       },
