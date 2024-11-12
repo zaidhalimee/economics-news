@@ -845,14 +845,12 @@ exports[`Article Page Article Page with jumpTo component should render a jumpTo 
                 class="emotion-15"
               >
                 <a
-                  aria-labelledby="jump-to-heading-Harris-separates-from-Biden"
                   class="emotion-16"
                   data-testid="jump-to-link-Harris-separates-from-Biden"
                   href="#Harris-separates-from-Biden"
                 >
                   <span
                     class="emotion-17"
-                    id="jump-to-heading-Harris-separates-from-Biden"
                   >
                     Harris separates from Biden
                   </span>
@@ -862,14 +860,12 @@ exports[`Article Page Article Page with jumpTo component should render a jumpTo 
                 class="emotion-15"
               >
                 <a
-                  aria-labelledby="jump-to-heading-Prison-gender-surgery-debate"
                   class="emotion-16"
                   data-testid="jump-to-link-Prison-gender-surgery-debate"
                   href="#Prison-gender-surgery-debate"
                 >
                   <span
                     class="emotion-17"
-                    id="jump-to-heading-Prison-gender-surgery-debate"
                   >
                     Prison gender surgery debate
                   </span>
@@ -879,14 +875,12 @@ exports[`Article Page Article Page with jumpTo component should render a jumpTo 
                 class="emotion-15"
               >
                 <a
-                  aria-labelledby="jump-to-heading-Apology-challenge"
                   class="emotion-16"
                   data-testid="jump-to-link-Apology-challenge"
                   href="#Apology-challenge"
                 >
                   <span
                     class="emotion-17"
-                    id="jump-to-heading-Apology-challenge"
                   >
                     Apology challenge
                   </span>
@@ -896,14 +890,12 @@ exports[`Article Page Article Page with jumpTo component should render a jumpTo 
                 class="emotion-15"
               >
                 <a
-                  aria-labelledby="jump-to-heading-Bidens-mental-state-questioned"
                   class="emotion-16"
                   data-testid="jump-to-link-Bidens-mental-state-questioned"
                   href="#Bidens-mental-state-questioned"
                 >
                   <span
                     class="emotion-17"
-                    id="jump-to-heading-Bidens-mental-state-questioned"
                   >
                     Biden's mental state questioned
                   </span>
@@ -1550,14 +1542,12 @@ exports[`Article Page Article Page with jumpTo component should render a jumpTo 
                 class="emotion-15"
               >
                 <a
-                  aria-labelledby="jump-to-heading-Harris-separates-from-Biden"
                   class="emotion-16"
                   data-testid="jump-to-link-Harris-separates-from-Biden"
                   href="#Harris-separates-from-Biden"
                 >
                   <span
                     class="emotion-17"
-                    id="jump-to-heading-Harris-separates-from-Biden"
                   >
                     Harris separates from Biden
                   </span>
@@ -1567,14 +1557,12 @@ exports[`Article Page Article Page with jumpTo component should render a jumpTo 
                 class="emotion-15"
               >
                 <a
-                  aria-labelledby="jump-to-heading-Prison-gender-surgery-debate"
                   class="emotion-16"
                   data-testid="jump-to-link-Prison-gender-surgery-debate"
                   href="#Prison-gender-surgery-debate"
                 >
                   <span
                     class="emotion-17"
-                    id="jump-to-heading-Prison-gender-surgery-debate"
                   >
                     Prison gender surgery debate
                   </span>
@@ -1584,14 +1572,12 @@ exports[`Article Page Article Page with jumpTo component should render a jumpTo 
                 class="emotion-15"
               >
                 <a
-                  aria-labelledby="jump-to-heading-Apology-challenge"
                   class="emotion-16"
                   data-testid="jump-to-link-Apology-challenge"
                   href="#Apology-challenge"
                 >
                   <span
                     class="emotion-17"
-                    id="jump-to-heading-Apology-challenge"
                   >
                     Apology challenge
                   </span>
@@ -1601,14 +1587,12 @@ exports[`Article Page Article Page with jumpTo component should render a jumpTo 
                 class="emotion-15"
               >
                 <a
-                  aria-labelledby="jump-to-heading-Bidens-mental-state-questioned"
                   class="emotion-16"
                   data-testid="jump-to-link-Bidens-mental-state-questioned"
                   href="#Bidens-mental-state-questioned"
                 >
                   <span
                     class="emotion-17"
-                    id="jump-to-heading-Bidens-mental-state-questioned"
                   >
                     Biden's mental state questioned
                   </span>

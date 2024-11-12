@@ -355,7 +355,7 @@ describe('Article Page', () => {
     expect(container).toMatchSnapshot();
   });
   describe('Article Page with jumpTo component', () => {
-    const generatePageData = ({
+    const addJumpToAndRelatedContentToPageData = ({
       includeJumpTo,
       includeRelatedContent,
     }: {
@@ -418,7 +418,7 @@ describe('Article Page', () => {
         expectedJumpTo,
         expectedRelatedContent,
       }) => {
-        const pageData = generatePageData({
+        const pageData = addJumpToAndRelatedContentToPageData({
           includeJumpTo,
           includeRelatedContent,
         });
