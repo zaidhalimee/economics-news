@@ -83,7 +83,6 @@ const {
   isTrustProjectParticipant,
   showRelatedTopics,
   brandName,
-  translations,
 } = useContext(ServiceContext);
 
 const { enabled: preloadLeadImageToggle } = useToggle('preloadLeadImage');
