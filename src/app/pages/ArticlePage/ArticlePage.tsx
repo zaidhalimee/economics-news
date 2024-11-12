@@ -77,139 +77,139 @@ import {
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const { isApp, pageType, service, isAmp, id } = useContext(RequestContext);
-const {
-  articleAuthor,
-  isTrustProjectParticipant,
-  showRelatedTopics,
-  brandName,
-} = useContext(ServiceContext);
+  const {
+    articleAuthor,
+    isTrustProjectParticipant,
+    showRelatedTopics,
+    brandName,
+  } = useContext(ServiceContext);
 
-const { enabled: preloadLeadImageToggle } = useToggle('preloadLeadImage');
+  const { enabled: preloadLeadImageToggle } = useToggle('preloadLeadImage');
 
-const {
-  palette: { GREY_2, WHITE },
-} = useTheme();
+  const {
+    palette: { GREY_2, WHITE },
+  } = useTheme();
 
-const experimentVariant = useOptimizelyMvtVariation(
-  'newswb_01_ap_banner_election',
-);
+  const experimentVariant = useOptimizelyMvtVariation(
+    'newswb_01_ap_banner_election',
+  );
 
-const allowAdvertising = pageData?.metadata?.allowAdvertising ?? false;
-const adcampaign = pageData?.metadata?.adCampaignKeyword;
-const isTransliterated =
-  ['serbian', 'zhongwen', 'uzbek'].includes(service) &&
-  pageType === ARTICLE_PAGE;
+  const allowAdvertising = pageData?.metadata?.allowAdvertising ?? false;
+  const adcampaign = pageData?.metadata?.adCampaignKeyword;
+  const isTransliterated =
+    ['serbian', 'zhongwen', 'uzbek'].includes(service) &&
+    pageType === ARTICLE_PAGE;
 
-const { enabled: podcastPromoEnabled } = useToggle('podcastPromo');
-const headline = getHeadline(pageData) ?? '';
-const description = getSummary(pageData) || getHeadline(pageData);
-const firstPublished = getFirstPublished(pageData);
-const lastPublished = getLastPublished(pageData);
-const aboutTags = getAboutTags(pageData);
-const topics = pageData?.metadata?.topics ?? [];
-const blocks = pageData?.content?.model?.blocks ?? [];
-const startsWithHeading = blocks?.[0]?.type === 'headline' || false;
-console.log('blocks', blocks);
-const bylineBlock = blocks.find(
-  block => block.type === 'byline',
-) as OptimoBylineBlock;
+  const { enabled: podcastPromoEnabled } = useToggle('podcastPromo');
+  const headline = getHeadline(pageData) ?? '';
+  const description = getSummary(pageData) || getHeadline(pageData);
+  const firstPublished = getFirstPublished(pageData);
+  const lastPublished = getLastPublished(pageData);
+  const aboutTags = getAboutTags(pageData);
+  const topics = pageData?.metadata?.topics ?? [];
+  const blocks = pageData?.content?.model?.blocks ?? [];
+  const startsWithHeading = blocks?.[0]?.type === 'headline' || false;
+  console.log('blocks', blocks);
+  const bylineBlock = blocks.find(
+    block => block.type === 'byline',
+  ) as OptimoBylineBlock;
 
-const bylineContribBlocks = bylineBlock?.model?.blocks || [];
+  const bylineContribBlocks = bylineBlock?.model?.blocks || [];
 
-const bylineLinkedData = bylineExtractor(bylineContribBlocks);
+  const bylineLinkedData = bylineExtractor(bylineContribBlocks);
 
-const hasByline = !!bylineLinkedData;
+  const hasByline = !!bylineLinkedData;
 
-const articleAuthorTwitterHandle = hasByline
-  ? getAuthorTwitterHandle(blocks)
-  : null;
+  const articleAuthorTwitterHandle = hasByline
+    ? getAuthorTwitterHandle(blocks)
+    : null;
 
-const taggings = pageData?.metadata?.passport?.taggings ?? [];
-const formats = pageData?.metadata?.passport?.predicates?.formats ?? [];
+  const taggings = pageData?.metadata?.passport?.taggings ?? [];
+  const formats = pageData?.metadata?.passport?.predicates?.formats ?? [];
 
-const recommendationsData = pageData?.recommendations ?? [];
+  const recommendationsData = pageData?.recommendations ?? [];
 
-const isPGL = pageData?.metadata?.type === PHOTO_GALLERY_PAGE;
-const isSTY = pageData?.metadata?.type === STORY_PAGE;
-const isCPS = isPGL || isSTY;
-const isTC2Asset = pageData?.metadata?.analyticsLabels?.contentId
-  ?.split(':')
-  ?.includes('topcat');
+  const isPGL = pageData?.metadata?.type === PHOTO_GALLERY_PAGE;
+  const isSTY = pageData?.metadata?.type === STORY_PAGE;
+  const isCPS = isPGL || isSTY;
+  const isTC2Asset = pageData?.metadata?.analyticsLabels?.contentId
+    ?.split(':')
+    ?.includes('topcat');
 
-const {
-  metadata: { atiAnalytics },
-  mostRead: mostReadInitialData,
-} = pageData;
+  const {
+    metadata: { atiAnalytics },
+    mostRead: mostReadInitialData,
+  } = pageData;
 
-const atiData = {
-  ...atiAnalytics,
-  ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
-  ...(experimentVariant && { experimentVariant }),
-};
+  const atiData = {
+    ...atiAnalytics,
+    ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
+    ...(experimentVariant && { experimentVariant }),
+  };
 
-const topStoriesContent = pageData?.secondaryColumn?.topStories;
-const { shouldEnableExperimentTopStories, transformedBlocks } =
-  getExperimentTopStories({
-    blocks,
-    topStoriesContent,
-    isAmp,
-    service,
-    id,
-  });
-const showRelatedContent = blocks.some(
-  block => block.type === 'relatedContent',
-);
-const componentsToRender = {
-  visuallyHiddenHeadline,
-  headline: headings,
-  subheadline: headings,
-  audio: MediaLoader,
-  video: MediaLoader,
-  text,
-  image: (props: ComponentToRenderProps) => (
-    <ImageWithCaption
-      {...props}
-      sizes="(min-width: 1008px) 760px, 100vw"
-      shouldPreload={preloadLeadImageToggle}
-    />
-  ),
-  timestamp: (props: ComponentToRenderProps & TimeStampProps) =>
-    hasByline ? (
-      <Byline blocks={bylineContribBlocks}>
-        <Timestamp
-          firstPublished={new Date(firstPublished).getTime()}
-          lastPublished={new Date(lastPublished).getTime()}
-          popOut={false}
-        />
-      </Byline>
-    ) : (
-      <Timestamp {...props} popOut={false} />
+  const topStoriesContent = pageData?.secondaryColumn?.topStories;
+  const { shouldEnableExperimentTopStories, transformedBlocks } =
+    getExperimentTopStories({
+      blocks,
+      topStoriesContent,
+      isAmp,
+      service,
+      id,
+    });
+  const showRelatedContent = blocks.some(
+    block => block.type === 'relatedContent',
+  );
+  const componentsToRender = {
+    visuallyHiddenHeadline,
+    headline: headings,
+    subheadline: headings,
+    audio: MediaLoader,
+    video: MediaLoader,
+    text,
+    image: (props: ComponentToRenderProps) => (
+      <ImageWithCaption
+        {...props}
+        sizes="(min-width: 1008px) 760px, 100vw"
+        shouldPreload={preloadLeadImageToggle}
+      />
     ),
-  social: SocialEmbedContainer,
-  embed: UnsupportedEmbed,
-  embedHtml: EmbedHtml,
-  oEmbed: OEmbedLoader,
-  embedImages: EmbedImages,
-  embedUploader: Uploader,
-  group: gist,
-  links: (props: ComponentToRenderProps) => <ScrollablePromo {...props} />,
-  mpu: (props: ComponentToRenderProps) =>
-    allowAdvertising ? <AdContainer {...props} slotType="mpu" /> : null,
-  wsoj: (props: ComponentToRenderProps) => (
-    <CpsRecommendations {...props} items={recommendationsData} />
-  ),
-  disclaimer: (props: ComponentToRenderProps) => (
-    <Disclaimer {...props} increasePaddingOnDesktop={false} />
-  ),
-  podcastPromo: () => (podcastPromoEnabled ? <InlinePodcastPromo /> : null),
-  experimentTopStories: () =>
-    topStoriesContent ? (
-      <ExperimentTopStories topStoriesContent={topStoriesContent} />
-    ) : null,
-  jumpTo: (props: ComponentToRenderProps) => (
-    <JumpTo {...props} showRelatedContentLink={showRelatedContent} />
-  ),
-};
+    timestamp: (props: ComponentToRenderProps & TimeStampProps) =>
+      hasByline ? (
+        <Byline blocks={bylineContribBlocks}>
+          <Timestamp
+            firstPublished={new Date(firstPublished).getTime()}
+            lastPublished={new Date(lastPublished).getTime()}
+            popOut={false}
+          />
+        </Byline>
+      ) : (
+        <Timestamp {...props} popOut={false} />
+      ),
+    social: SocialEmbedContainer,
+    embed: UnsupportedEmbed,
+    embedHtml: EmbedHtml,
+    oEmbed: OEmbedLoader,
+    embedImages: EmbedImages,
+    embedUploader: Uploader,
+    group: gist,
+    links: (props: ComponentToRenderProps) => <ScrollablePromo {...props} />,
+    mpu: (props: ComponentToRenderProps) =>
+      allowAdvertising ? <AdContainer {...props} slotType="mpu" /> : null,
+    wsoj: (props: ComponentToRenderProps) => (
+      <CpsRecommendations {...props} items={recommendationsData} />
+    ),
+    disclaimer: (props: ComponentToRenderProps) => (
+      <Disclaimer {...props} increasePaddingOnDesktop={false} />
+    ),
+    podcastPromo: () => (podcastPromoEnabled ? <InlinePodcastPromo /> : null),
+    experimentTopStories: () =>
+      topStoriesContent ? (
+        <ExperimentTopStories topStoriesContent={topStoriesContent} />
+      ) : null,
+    jumpTo: (props: ComponentToRenderProps) => (
+      <JumpTo {...props} showRelatedContentLink={showRelatedContent} />
+    ),
+  };
 
   const visuallyHiddenBlock = {
     id: null,
