@@ -429,12 +429,10 @@ describe('Article Page', () => {
           </Context>,
           { service: 'pidgin' },
         );
-        console.log('container', container.outerHTML);
         await waitFor(() => {
           const jumpToSection = container.querySelector(
             '[data-testid="jump-to"]',
           );
-          console.log('jumpToSection', jumpToSection?.outerHTML);
           if (expectedJumpTo) {
             expect(jumpToSection).not.toBeNull();
             if (expectedRelatedContent) {
