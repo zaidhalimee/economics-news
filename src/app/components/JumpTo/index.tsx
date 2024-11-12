@@ -89,11 +89,9 @@ const JumpTo = ({ jumpToHeadings, showRelatedContentLink }: JumpToProps) => {
               href="#related-content-heading"
               onClick={e => linkClickHandler(e, '#related-content-heading')}
               css={styles.link}
-              aria-labelledby="jump-to-related-content-heading"
               data-testid="jump-to-link-related-content-heading"
             >
               <span
-                id="jump-to-related-content-heading"
                 css={[
                   styles.linkText,
                   decodeURIComponent(hash) === '#related-content-heading' &&

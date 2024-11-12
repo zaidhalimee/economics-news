@@ -1602,14 +1602,12 @@ exports[`Article Page Article Page with jumpTo component should render a jumpTo 
                 class="emotion-15"
               >
                 <a
-                  aria-labelledby="jump-to-related-content-heading"
                   class="emotion-16"
                   data-testid="jump-to-link-related-content-heading"
                   href="#related-content-heading"
                 >
                   <span
                     class="emotion-17"
-                    id="jump-to-related-content-heading"
                   >
                     Another thing we de for inside dis tori
                   </span>
