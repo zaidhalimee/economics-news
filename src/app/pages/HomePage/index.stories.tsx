@@ -4,6 +4,7 @@ import Url from 'url-parse';
 import { HOME_PAGE } from '#app/routes/utils/pageTypes';
 import { Curation } from '#app/models/types/curationData';
 import { Services } from '#app/models/types/global';
+import { MemoryRouter } from 'react-router-dom';
 import { StoryArgs, StoryProps } from '../../models/types/storybook';
 import HomePage from '.';
 
@@ -42,7 +43,9 @@ const Component = ({ service, variant }: StoryProps) => {
   useEffect(() => {
     const loadPageData = async () => {
       const response = await fetch(
-        new Url(`data/${service}/homePage/index.json`).toString(),
+        new Url(
+          `data/${service}/homePage/${variant === 'default' ? 'index' : variant}.json`,
+        ).toString(),
       );
       const { data } = await response.json();
 
@@ -52,22 +55,24 @@ const Component = ({ service, variant }: StoryProps) => {
     };
 
     loadPageData();
-  }, [service]);
+  }, [service, variant]);
 
   if (Object.keys(pageData).length === 0) {
     return <>Unable to render Homepage for {service}</>;
   }
 
   return (
-    <HomePage
-      service={service}
-      variant={variant}
-      pageType={HOME_PAGE}
-      status={200}
-      isAmp={false}
-      pathname={`/${service}`}
-      pageData={pageData}
-    />
+    <MemoryRouter>
+      <HomePage
+        service={service}
+        variant={variant}
+        pageType={HOME_PAGE}
+        status={200}
+        isAmp={false}
+        pathname={`/${service}`}
+        pageData={pageData}
+      />
+    </MemoryRouter>
   );
 };
 
