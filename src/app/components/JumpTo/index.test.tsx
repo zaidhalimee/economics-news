@@ -22,8 +22,6 @@ describe('JumpTo Component', () => {
 
   const jumpToHeadings = jumpToBlock?.model.jumpToHeadings ?? [];
 
-  jumpToHeadings.push({ heading: 'Related Content' });
-
   describe('Render jumpTo', () => {
     it('renders the Jump To title', () => {
       render(<JumpTo jumpToHeadings={jumpToHeadings} />);
@@ -31,33 +29,32 @@ describe('JumpTo Component', () => {
       expect(title).toBeInTheDocument();
     });
 
-    it('renders the correct number of headings', () => {
+    it('renders the correct number of headings without related content link', () => {
       render(<JumpTo jumpToHeadings={jumpToHeadings} />);
       const headings = screen.getAllByRole('listitem');
       expect(headings.length).toBe(jumpToHeadings.length);
     });
+    it('renders the correct number of headings with related content link', () => {
+      render(<JumpTo jumpToHeadings={jumpToHeadings} showRelatedContentLink />);
+      const headings = screen.getAllByRole('listitem');
+      expect(headings.length).toBe(jumpToHeadings.length + 1);
+    });
 
     it('renders each item with a link to the corresponding subheading on the same page', () => {
-      render(<JumpTo jumpToHeadings={jumpToHeadings} />);
+      render(<JumpTo jumpToHeadings={jumpToHeadings} showRelatedContentLink />);
       jumpToHeadings.forEach(({ heading }) => {
-        const sanitisedId =
-          heading === 'Related content'
-            ? 'related-content-heading'
-            : idSanitiser(heading);
+        const sanitisedId = idSanitiser(heading);
         const link = screen.getByTestId(`jump-to-link-${sanitisedId}`);
         const expectedHref = `#${sanitisedId}`;
         expect(link).toHaveAttribute('href', expectedHref);
       });
-    });
-
-    it('does not render the Related content link when it is not included in the jumpToHeadings array', () => {
-      // Remove the Related Content link from the jumpToHeadings array for the case where it isn't on a page
-      const filteredJumpToHeadings = jumpToHeadings.slice(0, -1);
-      render(<JumpTo jumpToHeadings={filteredJumpToHeadings} />);
-      const relatedContentLink = screen.queryByTestId(
-        'jump-to-link-related-content-heading',
+      const relatedContentLink = screen.getByTestId(
+        `jump-to-link-related-content-heading`,
       );
-      expect(relatedContentLink).not.toBeInTheDocument();
+      expect(relatedContentLink).toHaveAttribute(
+        'href',
+        '#related-content-heading',
+      );
     });
   });
 
