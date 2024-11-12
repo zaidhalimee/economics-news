@@ -27,6 +27,9 @@ updates:
       emotion:
         patterns:
           - '@emotion/*'
+      esbuild:
+        patterns:
+          - '@esbuild/*'
       next:
         patterns:
           - '@next/*'
