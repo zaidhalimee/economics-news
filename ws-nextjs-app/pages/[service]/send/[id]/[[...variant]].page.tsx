@@ -8,14 +8,16 @@ import UGCPageLayout from './UGCPageLayout';
 import extractHeaders from '../../../../../src/server/utilities/extractHeaders';
 
 export const getServerSideProps: GetServerSideProps = async context => {
+  const url = context.req.url || context.resolvedUrl;
+
   context.res.setHeader(
     'Cache-Control',
     'public, stale-if-error=300, stale-while-revalidate=120, max-age=30',
   );
 
   const { headers: reqHeaders } = context.req;
-  const isLite = isLitePath(context.resolvedUrl);
-  const isApp = isAppPath(context.resolvedUrl);
+  const isLite = isLitePath(url);
+  const isApp = isAppPath(url);
 
   const {
     id,
@@ -29,7 +31,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     service,
     variant,
     rendererEnv,
-    resolvedUrl: context.resolvedUrl,
+    resolvedUrl: url,
     pageType: UGC_PAGE,
   });
 
@@ -53,7 +55,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
           }
         : null,
       pageType: UGC_PAGE,
-      pathname: context.resolvedUrl,
+      pathname: url,
       service,
       status: status ?? 500,
       toggles,

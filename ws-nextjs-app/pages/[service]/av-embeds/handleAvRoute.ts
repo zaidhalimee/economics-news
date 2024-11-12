@@ -19,9 +19,10 @@ const logger = nodeLogger(__filename);
 
 export default async (context: GetServerSidePropsContext) => {
   const {
-    resolvedUrl,
     req: { headers: reqHeaders },
   } = context;
+
+  const url = context.req.url || context.resolvedUrl;
 
   let pageStatus;
   let pageJson;
@@ -29,7 +30,7 @@ export default async (context: GetServerSidePropsContext) => {
   // Remove x-frame-options header to allow embedding
   context.res.removeHeader('x-frame-options');
 
-  const parsedRoute = parseAvRoute(resolvedUrl);
+  const parsedRoute = parseAvRoute(url);
 
   context.res.setHeader(
     'Cache-Control',
@@ -38,13 +39,13 @@ export default async (context: GetServerSidePropsContext) => {
 
   const avEmbedsUrl = constructPageFetchUrl({
     pageType: AV_EMBEDS,
-    pathname: resolvedUrl,
+    pathname: url,
     mediaId: parsedRoute.mediaId,
     lang: parsedRoute.lang,
   });
 
-  const env = getEnvironment(resolvedUrl);
-  const agent = certsRequired(resolvedUrl) ? await getAgent() : null;
+  const env = getEnvironment(url);
+  const agent = certsRequired(url) ? await getAgent() : null;
 
   const path = avEmbedsUrl.toString();
 
@@ -66,7 +67,7 @@ export default async (context: GetServerSidePropsContext) => {
       metricName: NON_200_RESPONSE,
       statusCode: status,
       pageType: AV_EMBEDS,
-      requestUrl: resolvedUrl,
+      requestUrl: url,
     });
 
     logger.error(BFF_FETCH_ERROR, {
@@ -124,7 +125,7 @@ export default async (context: GetServerSidePropsContext) => {
 
   return {
     props: {
-      id: resolvedUrl,
+      id: url,
       isNextJs: true,
       isAvEmbeds: true,
       pageData: avEmbed
@@ -143,7 +144,7 @@ export default async (context: GetServerSidePropsContext) => {
           }
         : null,
       pageType: AV_EMBEDS,
-      pathname: resolvedUrl,
+      pathname: url,
       service,
       status: pageStatus,
       variant,

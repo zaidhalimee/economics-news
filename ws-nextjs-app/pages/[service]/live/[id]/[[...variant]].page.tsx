@@ -24,13 +24,9 @@ export const getServerSideProps: GetServerSideProps = async context => {
     'public, stale-if-error=300, stale-while-revalidate=120, max-age=30',
   );
 
-  logResponseTime(
-    {
-      path: context.resolvedUrl,
-    },
-    context.res,
-    () => null,
-  );
+  const url = context.req.url || context.resolvedUrl;
+
+  logResponseTime({ path: url }, context.res, () => null);
 
   const {
     id,
@@ -42,8 +38,8 @@ export const getServerSideProps: GetServerSideProps = async context => {
 
   const { headers: reqHeaders } = context.req;
 
-  const isApp = isAppPath(context.resolvedUrl);
-  const isLite = isLitePath(context.resolvedUrl);
+  const isApp = isAppPath(url);
+  const isLite = isLitePath(url);
 
   if (!isValidPageNumber(page)) {
     context.res.statusCode = 404;
@@ -52,7 +48,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
       metricName: NON_200_RESPONSE,
       statusCode: context.res.statusCode,
       pageType: LIVE_PAGE,
-      requestUrl: context.resolvedUrl,
+      requestUrl: url,
     });
 
     return {
@@ -75,17 +71,18 @@ export const getServerSideProps: GetServerSideProps = async context => {
     service,
     variant,
     rendererEnv,
-    resolvedUrl: context.resolvedUrl,
+    resolvedUrl: url,
     pageType: LIVE_PAGE,
   });
 
   let routingInfoLogger = logger.debug;
+
   if (data.status !== OK) {
     routingInfoLogger = logger.error;
   }
 
   routingInfoLogger(ROUTING_INFORMATION, {
-    url: context.resolvedUrl,
+    url,
     status: data.status,
     pageType: LIVE_PAGE,
   });
@@ -111,7 +108,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
           }
         : null,
       pageType: LIVE_PAGE,
-      pathname: context.resolvedUrl,
+      pathname: url,
       service,
       status: data.status,
       timeOnServer: Date.now(), // TODO: check if needed?

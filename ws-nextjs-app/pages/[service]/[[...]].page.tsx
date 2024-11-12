@@ -24,18 +24,19 @@ export default function Page({ pageType, ...rest }: PageProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async context => {
+  const url = context.req.url || context.resolvedUrl;
+
   const {
-    resolvedUrl,
     query: { service, variant },
     req: { headers: reqHeaders },
   } = context;
 
   // Route to AV Embeds
-  if (resolvedUrl?.includes('av-embeds')) {
+  if (url?.includes('av-embeds')) {
     return handleAvRoute(context);
   }
 
-  const isLite = isLitePath(resolvedUrl);
+  const isLite = isLitePath(url);
 
   logResponseTime(
     {
