@@ -354,46 +354,103 @@ describe('Article Page', () => {
 
     expect(container).toMatchSnapshot();
   });
+  describe('Article Page with jumpTo component', () => {
+    const generatePageData = ({
+      includeJumpTo,
+      includeRelatedContent,
+    }: {
+      includeJumpTo: boolean;
+      includeRelatedContent: boolean;
+    }) => {
+      let blocks = [...articleDataPidgin.content.model.blocks];
 
-  it('should render a jumpTo component if jumpToHeadings are present', async () => {
-    const { container } = render(
-      <Context service="pidgin">
-        <ArticlePage
-          pageData={{
-            ...articleDataPidgin,
-            content: {
-              ...articleDataPidgin.content,
-              model: {
-                ...articleDataPidgin.content.model,
-                blocks: [
-                  {
-                    id: 'jumpTo',
-                    type: 'jumpTo',
-                    model: {
-                      jumpToHeadings: [
-                        { heading: 'Harris separates from Biden' },
-                        { heading: 'Prison gender surgery debate' },
-                        { heading: 'Apology challenge' },
-                        { heading: "Biden's mental state questioned" },
-                      ],
-                    },
-                  },
-                  ...articleDataPidgin.content.model.blocks,
-                ],
-              },
+      if (includeJumpTo) {
+        blocks = [
+          ...blocks,
+          {
+            id: 'jumpTo',
+            type: 'jumpTo',
+            model: {
+              jumpToHeadings: [
+                { heading: 'Harris separates from Biden' },
+                { heading: 'Prison gender surgery debate' },
+                { heading: 'Apology challenge' },
+                { heading: "Biden's mental state questioned" },
+              ],
             },
-          }}
-        />
-      </Context>,
-      { service: 'pidgin' },
+          },
+        ];
+      }
+
+      if (includeRelatedContent) {
+        blocks = [
+          ...blocks,
+          {
+            id: '37b8a761',
+            type: 'relatedContent',
+            model: {},
+          },
+        ];
+      }
+
+      return {
+        ...articleDataPidgin,
+        content: {
+          ...articleDataPidgin.content,
+          model: {
+            ...articleDataPidgin.content.model,
+            blocks,
+          },
+        },
+      };
+    };
+
+    it.each`
+      description                                                                                       | includeJumpTo | includeRelatedContent | expectedJumpTo | expectedRelatedContent
+      ${'should render a jumpTo component if jumpToHeadings are present'}                               | ${true}       | ${false}              | ${true}        | ${false}
+      ${'should not render a jumpTo component if jumpToHeadings are not present'}                       | ${false}      | ${false}              | ${false}       | ${false}
+      ${'should render a jumpTo component with relatedContent link if relatedContent block is present'} | ${true}       | ${true}               | ${true}        | ${true}
+    `(
+      '$description',
+      async ({
+        includeJumpTo,
+        includeRelatedContent,
+        expectedJumpTo,
+        expectedRelatedContent,
+      }) => {
+        const pageData = generatePageData({
+          includeJumpTo,
+          includeRelatedContent,
+        });
+
+        const { container } = render(
+          <Context service="pidgin">
+            <ArticlePage pageData={pageData} />
+          </Context>,
+          { service: 'pidgin' },
+        );
+        console.log('container', container.outerHTML);
+        await waitFor(() => {
+          const jumpToSection = container.querySelector(
+            '[data-testid="jump-to"]',
+          );
+          console.log('jumpToSection', jumpToSection?.outerHTML);
+          if (expectedJumpTo) {
+            expect(jumpToSection).not.toBeNull();
+            if (expectedRelatedContent) {
+              const relatedContentLink = jumpToSection?.querySelector(
+                '[data-testid="jump-to-link-related-content-heading"]',
+              );
+              expect(relatedContentLink).not.toBeNull();
+            }
+          } else {
+            expect(jumpToSection).toBeNull();
+          }
+        });
+
+        expect(container).toMatchSnapshot();
+      },
     );
-
-    await waitFor(() => {
-      const jumpToSection = container.querySelector('[data-testid="jump-to"]');
-      expect(jumpToSection).not.toBeNull();
-    });
-
-    expect(container).toMatchSnapshot();
   });
 
   it('should render a news article with headline in the middle correctly', async () => {
