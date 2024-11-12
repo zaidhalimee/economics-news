@@ -1,7 +1,6 @@
 import React, { Fragment, useContext } from 'react';
 import styled from '@emotion/styled';
 import path from 'ramda/src/path';
-import pathEq from 'ramda/src/pathEq';
 import { ServiceContext } from '#contexts/ServiceContext';
 
 const Clearer = styled.div`
@@ -32,7 +31,6 @@ const Blocks = ({ blocks, componentsToRender }) => {
         });
       }
     }
-    console.log('jump', model.jumpToHeadings);
     const Block = componentsToRender[type];
 
     if (!Block) {

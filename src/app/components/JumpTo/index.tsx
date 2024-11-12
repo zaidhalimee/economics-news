@@ -23,11 +23,10 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
   // TODO: Remove for release
   if (isLive()) return null;
 
-  const { translations, mostRead } = useContext(ServiceContext);
+  const { translations } = useContext(ServiceContext);
   const [hash, setHash] = useState('');
   const { jumpTo = 'Jump to' } = translations?.articlePage || {};
   const relatedContent = translations?.relatedContent || 'Related content'; // in English translations this has a lower case c!
-  const mostReadHeader = mostRead?.header || 'Most Read';
   const viewRef = useViewTracker(eventTrackingData);
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
   useEffect(() => {
@@ -75,9 +74,11 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
                 href={idWithHash}
                 onClick={e => linkClickHandler(e, idWithHash)}
                 css={styles.link}
+                aria-labelledby={`jump-to-heading-${sanitisedId}`}
                 data-testid={`jump-to-link-${sanitisedId}`}
               >
                 <span
+                  id={`jump-to-heading-${sanitisedId}`}
                   css={[styles.linkText, isActiveId && styles.linkTextActive]}
                 >
                   {heading}
