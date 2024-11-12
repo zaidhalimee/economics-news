@@ -635,8 +635,7 @@ exports[`MediaArticlePage should render a news article correctly 1`] = `
   font-weight: 700;
   font-style: normal;
   color: #141414;
-  margin: 0;
-  padding: 1.5rem 0;
+  margin: 1.5rem 0;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -655,8 +654,14 @@ exports[`MediaArticlePage should render a news article correctly 1`] = `
 
 @media (min-width: 37.5rem) {
   .emotion-31 {
-    padding-top: 2rem;
+    margin-top: 2rem;
   }
+}
+
+.emotion-31:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-35 {
