@@ -44,7 +44,7 @@ const Component = ({ service, variant }: StoryProps) => {
     const loadPageData = async () => {
       const response = await fetch(
         new Url(
-          `data/${service}/homePage/${variant || 'index'}.json`,
+          `data/${service}/homePage/${variant === 'default' ? 'index' : variant}.json`,
         ).toString(),
       );
       const { data } = await response.json();
