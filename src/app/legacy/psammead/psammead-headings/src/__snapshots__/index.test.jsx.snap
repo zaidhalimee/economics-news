@@ -134,7 +134,9 @@ exports[`SubHeading component should render correctly 1`] = `
   font-weight: 700;
   font-style: normal;
   color: #141414;
-  margin: 1.5rem 0;
+  padding: 0.5rem 0;
+  margin: calc(1.5rem - 0.5rem) 0;
+  scroll-margin-top: 1rem;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -153,7 +155,7 @@ exports[`SubHeading component should render correctly 1`] = `
 
 @media (min-width: 37.5rem) {
   .emotion-0 {
-    margin-top: 2rem;
+    margin-top: calc(2rem - 0.5rem);
   }
 }
 
@@ -181,7 +183,9 @@ exports[`SubHeading component should render correctly on page types that support
   font-weight: 700;
   font-style: normal;
   color: #F6F6F6;
-  margin: 1.5rem 0;
+  padding: 0.5rem 0;
+  margin: calc(1.5rem - 0.5rem) 0;
+  scroll-margin-top: 1rem;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -200,7 +204,7 @@ exports[`SubHeading component should render correctly on page types that support
 
 @media (min-width: 37.5rem) {
   .emotion-0 {
-    margin-top: 2rem;
+    margin-top: calc(2rem - 0.5rem);
   }
 }
 
@@ -228,7 +232,9 @@ exports[`SubHeading component should render correctly with an ID 1`] = `
   font-weight: 700;
   font-style: normal;
   color: #141414;
-  margin: 1.5rem 0;
+  padding: 0.5rem 0;
+  margin: calc(1.5rem - 0.5rem) 0;
+  scroll-margin-top: 1rem;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -247,7 +253,7 @@ exports[`SubHeading component should render correctly with an ID 1`] = `
 
 @media (min-width: 37.5rem) {
   .emotion-0 {
-    margin-top: 2rem;
+    margin-top: calc(2rem - 0.5rem);
   }
 }
 
@@ -276,7 +282,9 @@ exports[`SubHeading component should render correctly with arabic script typogra
   font-weight: 700;
   font-style: normal;
   color: #141414;
-  margin: 1.5rem 0;
+  padding: 0.5rem 0;
+  margin: calc(1.5rem - 0.5rem) 0;
+  scroll-margin-top: 1rem;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -295,7 +303,7 @@ exports[`SubHeading component should render correctly with arabic script typogra
 
 @media (min-width: 37.5rem) {
   .emotion-0 {
-    margin-top: 2rem;
+    margin-top: calc(2rem - 0.5rem);
   }
 }
 

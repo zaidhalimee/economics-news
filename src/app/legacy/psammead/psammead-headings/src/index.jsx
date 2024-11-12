@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import {
+  GEL_SPACING_DBL,
   GEL_SPACING_TRPL,
   GEL_SPACING_QUAD,
   GEL_SPACING_QUIN,
@@ -28,14 +29,21 @@ export const Headline = styled.h1`
   }
 `;
 
+const SUBHEADING_PADDING = '0.5rem';
+
 export const SubHeading = styled.h2`
   ${({ script }) => script && getTrafalgar(script)};
   ${({ service }) => getSansBold(service)}
   color: ${({ theme }) =>
     theme.isDarkUi ? theme.palette.GREY_2 : theme.palette.GREY_10};
-  margin: ${GEL_SPACING_TRPL} 0;
+
+  padding: ${SUBHEADING_PADDING} 0;
+  margin: calc(${GEL_SPACING_TRPL} - ${SUBHEADING_PADDING}) 0;
+  scroll-margin-top: ${GEL_SPACING_DBL};
+
   ${MEDIA_QUERY_TYPOGRAPHY.LAPTOP_AND_LARGER} {
-    margin-top: ${GEL_SPACING_QUAD};
+    padding-top ${SUBHEADING_PADDING};
+    margin-top: calc(${GEL_SPACING_QUAD} - ${SUBHEADING_PADDING});
   }
 
   :focus-visible {
