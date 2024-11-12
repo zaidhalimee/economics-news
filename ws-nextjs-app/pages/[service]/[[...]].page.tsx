@@ -5,13 +5,12 @@ import isLitePath from '#app/routes/utils/isLitePath';
 import extractHeaders from '#server/utilities/extractHeaders';
 // AV Embeds
 import { AV_EMBEDS } from '#app/routes/utils/pageTypes';
+import { PageTypes } from '#app/models/types/global';
 import AvEmbedsPageLayout from './av-embeds/AvEmbedsPageLayout';
 import handleAvRoute from './av-embeds/handleAvRoute';
 import { AvEmbedsPageProps } from './av-embeds/types';
 
-type PageProps = {
-  pageType?: typeof AV_EMBEDS | null;
-} & AvEmbedsPageProps;
+type PageProps = { pageType?: PageTypes } & AvEmbedsPageProps;
 
 export default function Page({ pageType, ...rest }: PageProps) {
   switch (pageType) {
