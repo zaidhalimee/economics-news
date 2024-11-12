@@ -11,6 +11,12 @@ export default {
         borderBottom: `solid ${pixelsToRem(1)}rem transparent`,
       },
     }),
+  heading: () =>
+    css({
+      '&:focus': {
+        outline: 'none',
+      },
+    }),
   backgroundContainer: () =>
     css({
       position: 'absolute',
