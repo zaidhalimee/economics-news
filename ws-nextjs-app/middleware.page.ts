@@ -1,12 +1,19 @@
 /* eslint-disable import/prefer-default-export */
-import { NextResponse } from 'next/server';
-import { NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 import cspHeaderResponse from './utilities/cspHeaderResponse';
 
 const LOCALHOST_DOMAINS = ['localhost', '127.0.0.1'];
 
 export function middleware(request: NextRequest) {
+  const url = request.nextUrl;
+
+  // Remove '.lite' from the end of the pathname to allow for the correct page to be rendered
+  if (url.pathname.endsWith('.lite')) {
+    url.pathname = url.pathname.replace('.lite', '');
+    return NextResponse.rewrite(url);
+  }
+
   const hostname = request.headers.get('host') ?? request.nextUrl.hostname;
 
   // Service worker is registered at the root (e.g. /pidgin) so will work as is on Test/Live

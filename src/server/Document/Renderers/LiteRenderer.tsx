@@ -11,6 +11,7 @@ export default function LitePageRenderer({
   helmetMetaTags,
   helmetLinkTags,
   helmetScriptTags,
+  helmetStyleTags,
   htmlAttrs,
   title,
   styles,
@@ -23,6 +24,7 @@ export default function LitePageRenderer({
         {helmetMetaTags}
         {helmetLinkTags}
         {helmetScriptTags}
+        {helmetStyleTags}
         <style dangerouslySetInnerHTML={{ __html: styles }} />
       </head>
       <body>{bodyContent}</body>

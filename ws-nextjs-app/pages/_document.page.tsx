@@ -137,6 +137,7 @@ export default class AppDocument extends Document<DocProps> {
     const helmetMetaTags = helmet.meta.toComponent();
     const helmetLinkTags = helmet.link.toComponent();
     const helmetScriptTags = helmet.script.toComponent();
+    const helmetStyleTags = helmet.style.toComponent();
 
     switch (true) {
       case isLite:
@@ -146,6 +147,7 @@ export default class AppDocument extends Document<DocProps> {
             helmetLinkTags={helmetLinkTags}
             helmetMetaTags={helmetMetaTags}
             helmetScriptTags={helmetScriptTags}
+            helmetStyleTags={helmetStyleTags}
             htmlAttrs={htmlAttrs}
             styles={css}
             title={title}
@@ -169,6 +171,7 @@ export default class AppDocument extends Document<DocProps> {
               {helmetMetaTags}
               {helmetLinkTags}
               {helmetScriptTags}
+              {helmetStyleTags}
               <style
                 data-emotion={ids.join(' ')}
                 dangerouslySetInnerHTML={{ __html: css }}
