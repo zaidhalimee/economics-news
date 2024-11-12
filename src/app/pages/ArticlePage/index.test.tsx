@@ -355,6 +355,47 @@ describe('Article Page', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('should render a jumpTo component if jumpToHeadings are present', async () => {
+    const { container } = render(
+      <Context service="pidgin">
+        <ArticlePage
+          pageData={{
+            ...articleDataPidgin,
+            content: {
+              ...articleDataPidgin.content,
+              model: {
+                ...articleDataPidgin.content.model,
+                blocks: [
+                  {
+                    id: 'jumpTo',
+                    type: 'jumpTo',
+                    model: {
+                      jumpToHeadings: [
+                        { heading: 'Harris separates from Biden' },
+                        { heading: 'Prison gender surgery debate' },
+                        { heading: 'Apology challenge' },
+                        { heading: "Biden's mental state questioned" },
+                      ],
+                    },
+                  },
+                  ...articleDataPidgin.content.model.blocks,
+                ],
+              },
+            },
+          }}
+        />
+      </Context>,
+      { service: 'pidgin' },
+    );
+
+    await waitFor(() => {
+      const jumpToSection = container.querySelector('[data-testid="jump-to"]');
+      expect(jumpToSection).not.toBeNull();
+    });
+
+    expect(container).toMatchSnapshot();
+  });
+
   it('should render a news article with headline in the middle correctly', async () => {
     const headline = blockContainingText('headline', 'Article Headline', 1);
 
