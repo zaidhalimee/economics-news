@@ -88,26 +88,6 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
             </li>
           );
         })}
-        <li key="#Most-Read" css={styles.listItem}>
-          <a
-            href="#Most-Read"
-            onClick={e => linkClickHandler(e, '#Most-Read')}
-            css={styles.link}
-            aria-labelledby="jump-to-most-read-heading"
-            data-testid={`jump-to-link-most-read-heading`}
-          >
-            <span
-              id="jump-to-most-read-heading"
-              css={[
-                styles.linkText,
-                decodeURIComponent(hash) === '#Most-Read' &&
-                  styles.linkTextActive,
-              ]}
-            >
-              {mostReadHeader}
-            </span>
-          </a>
-        </li>
       </ol>
     </nav>
   );

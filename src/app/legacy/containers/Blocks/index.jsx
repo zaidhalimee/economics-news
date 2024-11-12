@@ -44,7 +44,6 @@ const Blocks = ({ blocks, componentsToRender }) => {
       : Fragment;
 
     const { type: typeOfPreviousBlock } = blocks[index - 1] || {};
-    console.log('model = ', model);
     return (
       <Wrapper key={id}>
         <Block

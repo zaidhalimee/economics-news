@@ -34,7 +34,7 @@ describe('JumpTo Component', () => {
     it('renders the correct number of headings', () => {
       render(<JumpTo jumpToHeadings={jumpToHeadings} />);
       const headings = screen.getAllByRole('listitem');
-      expect(headings.length).toBe(jumpToHeadings.length + 1); // I have added +1 for Most Read, take this away if we decide not to include Most Read
+      expect(headings.length).toBe(jumpToHeadings.length);
     });
 
     it('renders each item with a link to the corresponding subheading on the same page', () => {
@@ -48,11 +48,9 @@ describe('JumpTo Component', () => {
         const expectedHref = `#${sanitisedId}`;
         expect(link).toHaveAttribute('href', expectedHref);
       });
-      const mostReadLink = screen.getByTestId(`jump-to-link-most-read-heading`);
-      expect(mostReadLink).toHaveAttribute('href', '#Most-Read');
     });
 
-    it('does not render the Related Content link when it is not included in the jumpToHeadings array', () => {
+    it('does not render the Related content link when it is not included in the jumpToHeadings array', () => {
       // Remove the Related Content link from the jumpToHeadings array for the case where it isn't on a page
       const filteredJumpToHeadings = jumpToHeadings.slice(0, -1);
       render(<JumpTo jumpToHeadings={filteredJumpToHeadings} />);
