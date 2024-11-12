@@ -1,14 +1,13 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment } from 'react';
 import styled from '@emotion/styled';
 import path from 'ramda/src/path';
-import { ServiceContext } from '#contexts/ServiceContext';
 
 const Clearer = styled.div`
   clear: both;
 `;
 
-const Blocks = ({ blocks, componentsToRender }) => {
-  return blocks.map((block, index) => {
+const Blocks = ({ blocks, componentsToRender }) =>
+  blocks.map((block, index) => {
     const { type, model, id, position, blockGroupType, blockGroupIndex } =
       block;
 
@@ -39,6 +38,5 @@ const Blocks = ({ blocks, componentsToRender }) => {
       </Wrapper>
     );
   });
-};
 
 export default Blocks;

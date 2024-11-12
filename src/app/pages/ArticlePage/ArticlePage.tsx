@@ -77,7 +77,6 @@ import {
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const { isApp, pageType, service, isAmp, id } = useContext(RequestContext);
-console.log('pageData', pageData);
 const {
   articleAuthor,
   isTrustProjectParticipant,
