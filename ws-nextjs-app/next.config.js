@@ -27,6 +27,14 @@ module.exports = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: '/:path*.lite',
+        destination: '/:path*',
+      },
+    ];
+  },
   reactStrictMode: true,
   distDir: 'build',
   output: 'standalone',
