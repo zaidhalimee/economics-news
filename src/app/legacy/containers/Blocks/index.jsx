@@ -8,28 +8,12 @@ const Clearer = styled.div`
 `;
 
 const Blocks = ({ blocks, componentsToRender }) => {
-  const hasRelatedContent = blocks.some(
-    block => block.type === 'relatedContent',
-  );
   return blocks.map((block, index) => {
     const { type, model, id, position, blockGroupType, blockGroupIndex } =
       block;
 
     if (!componentsToRender || !type) {
       return null;
-    }
-    if (type === 'jumpTo' && hasRelatedContent) {
-      const { translations } = useContext(ServiceContext);
-      const relatedContent = translations?.relatedContent || 'Related Content';
-      if (
-        !model.jumpToHeadings.some(
-          jumpToHeading => jumpToHeading.heading === relatedContent,
-        )
-      ) {
-        model.jumpToHeadings.push({
-          heading: relatedContent,
-        });
-      }
     }
     const Block = componentsToRender[type];
 

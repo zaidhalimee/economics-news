@@ -13,13 +13,14 @@ import styles from './index.styles';
 
 export interface JumpToProps {
   jumpToHeadings?: Array<{ heading: string }>;
+  showRelatedContentLink?: boolean;
 }
 
 const eventTrackingData: EventTrackingMetadata = {
   componentName: 'jumpto',
 };
 
-const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
+const JumpTo = ({ jumpToHeadings, showRelatedContentLink }: JumpToProps) => {
   // TODO: Remove for release
   if (isLive()) return null;
 
@@ -62,10 +63,7 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
       </Text>
       <ol role="list" css={styles.list}>
         {jumpToHeadings?.map(({ heading }) => {
-          const sanitisedId =
-            heading === relatedContent
-              ? 'related-content-heading'
-              : idSanitiser(heading);
+          const sanitisedId = idSanitiser(heading);
           const idWithHash = `#${sanitisedId}`;
           const isActiveId = decodeURIComponent(hash) === idWithHash;
           return (
@@ -87,6 +85,28 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
             </li>
           );
         })}
+        {showRelatedContentLink && (
+          <li key="#related-content-heading" css={styles.listItem}>
+            <a
+              href="#related-content-heading"
+              onClick={e => linkClickHandler(e, '#related-content-heading')}
+              css={styles.link}
+              aria-labelledby="jump-to-related-content-heading"
+              data-testid={`jump-to-link-related-content-heading`}
+            >
+              <span
+                id="jump-to-related-content-heading"
+                css={[
+                  styles.linkText,
+                  decodeURIComponent(hash) === '#related-content-heading' &&
+                    styles.linkTextActive,
+                ]}
+              >
+                {relatedContent}
+              </span>
+            </a>
+          </li>
+        )}
       </ol>
     </nav>
   );
