@@ -3391,32 +3391,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@esbuild/darwin-arm64@npm:0.23.1":
-  version: 0.23.1
-  resolution: "@esbuild/darwin-arm64@npm:0.23.1"
-  checksum: 10/d723be200063290bf9d79a1a33a7504e99722ee9c0238fffc160f72732dbd1b820cb1bffac161af27b847244baa672c19f90f15cdb2615b2bfee6088fbab25e5
-  conditions: os=darwin & cpu=arm64
-  languageName: node
-  linkType: hard
-
 "@esbuild/darwin-arm64@npm:0.24.0":
   version: 0.24.0
   resolution: "@esbuild/darwin-arm64@npm:0.24.0"
+  checksum: 10/0c110c85434224edd1f5693ec89e5ffe3125abace3777b6917cfac284b44a4abc1daeb08e23aa4f65dd59b3e4e0682c7664cb5e6ebe209e5999ebe6ff18427af
   conditions: os=darwin & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@esbuild/darwin-x64@npm:0.23.1":
-  version: 0.23.1
-  resolution: "@esbuild/darwin-x64@npm:0.23.1"
-  checksum: 10/9c5e6b1e99674776aecd8e95d362f98ed0fd1ed78e5bc8ae55b75bedb6f03c448ade1ac68fedba9926c629c8fee80279e10772aa136a049ec827aeb8e6673342
-  conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
 "@esbuild/darwin-x64@npm:0.24.0":
   version: 0.24.0
   resolution: "@esbuild/darwin-x64@npm:0.24.0"
+  checksum: 10/05ddd4320735e685f332f1e0fa3ffb69f0ca90db69f536cb48787891acf5bb5afd98b019757df31d940cd9252219f7ec272985098ed41527ab87419d4285957f
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
@@ -3435,17 +3421,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@esbuild/linux-arm64@npm:0.23.1":
-  version: 0.23.1
-  resolution: "@esbuild/linux-arm64@npm:0.23.1"
-  checksum: 10/cd30245ff7e97acbfba795e6f8bd4302b20c1f8ccda426288620ba0ffc47c8b1cea662dd00571ecd0e4d70c82b552d60f75aa9a8f4e7d1be394e8c476a1bf351
-  conditions: os=linux & cpu=arm64
-  languageName: node
-  linkType: hard
-
 "@esbuild/linux-arm64@npm:0.24.0":
   version: 0.24.0
   resolution: "@esbuild/linux-arm64@npm:0.24.0"
+  checksum: 10/297634c8c9006dfcbfdaa149854ec1d159809be46108a4ccde59ede7273811c90d2dadf1695bf44c31b99fd4a06fbd1609857732e197be1316f3f1b70ebbd021
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
@@ -3499,17 +3478,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@esbuild/linux-x64@npm:0.23.1":
-  version: 0.23.1
-  resolution: "@esbuild/linux-x64@npm:0.23.1"
-  checksum: 10/e87baa58e95a8ec947d2bb42c52dba3c34c93a23596eea30bc6e95a6e506c5b52e090a5d111802cf902366c65f0406403cfe802f689f0c53bd3c14a50a8f56bb
-  conditions: os=linux & cpu=x64
-  languageName: node
-  linkType: hard
-
 "@esbuild/linux-x64@npm:0.24.0":
   version: 0.24.0
   resolution: "@esbuild/linux-x64@npm:0.24.0"
+  checksum: 10/f5059e76379e264796293175ac7f6c09e3ccd6bee7dce57fecedcb2ace95270eeb44a73cf57f9ce83c7624f1984b817c9235f1b4e196f87e87d1d211c3fb8eae
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
@@ -3542,17 +3514,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@esbuild/win32-arm64@npm:0.23.1":
-  version: 0.23.1
-  resolution: "@esbuild/win32-arm64@npm:0.23.1"
-  checksum: 10/e47f07674eb139c759da87894964dc5331226dd0a58f11e57456b8ead39e35ad5893e3959b40d52d97c937a94c1b93df52ee985dc228686e0b5decacdfb99f78
-  conditions: os=win32 & cpu=arm64
-  languageName: node
-  linkType: hard
-
 "@esbuild/win32-arm64@npm:0.24.0":
   version: 0.24.0
   resolution: "@esbuild/win32-arm64@npm:0.24.0"
+  checksum: 10/c3d7aef352c0e74e3eb03d5831c0e87be75ad97b2eef7d8ad0883a44077cddd8f4aec7e0009f32eb1072b3bedcdb95876cb526b3c8ad7eedb3586cbce1ccbc29
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
@@ -3564,17 +3529,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@esbuild/win32-x64@npm:0.23.1":
-  version: 0.23.1
-  resolution: "@esbuild/win32-x64@npm:0.23.1"
-  checksum: 10/4197a336f2f36f444e2f12a98b4888a045b26ad59dd64aa503ba9ae39677d201b162d98f571c4e27a187e8e78bb386cd9f576c59151bd6939db12609b32c83d7
-  conditions: os=win32 & cpu=x64
-  languageName: node
-  linkType: hard
-
 "@esbuild/win32-x64@npm:0.24.0":
   version: 0.24.0
   resolution: "@esbuild/win32-x64@npm:0.24.0"
+  checksum: 10/14b0662e72cb4c7f1c04acb1a530f078a519acf21609b5699a79cda6dba706271c4dfcecd85a2789abc2199e9d7734418155c26cf6f21d89a4eba7318c00053e
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -5041,7 +4999,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint-scope@npm:^3.7.3":
+"@types/eslint-scope@npm:^3.7.3, @types/eslint-scope@npm:^3.7.7":
   version: 3.7.7
   resolution: "@types/eslint-scope@npm:3.7.7"
   dependencies:
@@ -5065,6 +5023,13 @@ __metadata:
   version: 1.0.5
   resolution: "@types/estree@npm:1.0.5"
   checksum: 10/7de6d928dd4010b0e20c6919e1a6c27b61f8d4567befa89252055fad503d587ecb9a1e3eab1b1901f923964d7019796db810b7fd6430acb26c32866d126fd408
+  languageName: node
+  linkType: hard
+
+"@types/estree@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "@types/estree@npm:1.0.6"
+  checksum: 10/9d35d475095199c23e05b431bcdd1f6fec7380612aed068b14b2a08aa70494de8a9026765a5a91b1073f636fb0368f6d8973f518a31391d519e20c59388ed88d
   languageName: node
   linkType: hard
 
@@ -5992,15 +5957,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn-import-attributes@npm:^1.9.5":
-  version: 1.9.5
-  resolution: "acorn-import-attributes@npm:1.9.5"
-  peerDependencies:
-    acorn: ^8
-  checksum: 10/8bfbfbb6e2467b9b47abb4d095df717ab64fce2525da65eabee073e85e7975fb3a176b6c8bba17c99a7d8ede283a10a590272304eb54a93c4aa1af9790d47a8b
-  languageName: node
-  linkType: hard
-
 "acorn-jsx@npm:^5.3.1":
   version: 5.3.2
   resolution: "acorn-jsx@npm:5.3.2"
@@ -6032,6 +5988,15 @@ __metadata:
   bin:
     acorn: bin/acorn
   checksum: 10/b688e7e3c64d9bfb17b596e1b35e4da9d50553713b3b3630cf5690f2b023a84eac90c56851e6912b483fe60e8b4ea28b254c07e92f17ef83d72d78745a8352dd
+  languageName: node
+  linkType: hard
+
+"acorn@npm:^8.14.0":
+  version: 8.14.0
+  resolution: "acorn@npm:8.14.0"
+  bin:
+    acorn: bin/acorn
+  checksum: 10/6df29c35556782ca9e632db461a7f97947772c6c1d5438a81f0c873a3da3a792487e83e404d1c6c25f70513e91aa18745f6eafb1fcc3a43ecd1920b21dd173d2
   languageName: node
   linkType: hard
 
@@ -15841,12 +15806,12 @@ __metadata:
     "@emotion/react": "npm:11.11.4"
     "@emotion/server": "npm:11.11.0"
     "@emotion/styled": "npm:11.11.5"
-    "@esbuild/darwin-arm64": "npm:0.23.1"
-    "@esbuild/darwin-x64": "npm:0.23.1"
-    "@esbuild/linux-arm64": "npm:0.23.1"
-    "@esbuild/linux-x64": "npm:0.23.1"
-    "@esbuild/win32-arm64": "npm:0.23.1"
-    "@esbuild/win32-x64": "npm:0.23.1"
+    "@esbuild/darwin-arm64": "npm:0.24.0"
+    "@esbuild/darwin-x64": "npm:0.24.0"
+    "@esbuild/linux-arm64": "npm:0.24.0"
+    "@esbuild/linux-x64": "npm:0.24.0"
+    "@esbuild/win32-arm64": "npm:0.24.0"
+    "@esbuild/win32-x64": "npm:0.24.0"
     "@loadable/babel-plugin": "npm:5.16.1"
     "@loadable/component": "npm:5.16.4"
     "@loadable/server": "npm:5.16.5"
@@ -15973,7 +15938,7 @@ __metadata:
     url-parse: "npm:1.5.10"
     uuid: "npm:8.3.2"
     wait-on: "npm:8.0.1"
-    webpack: "npm:5.95.0"
+    webpack: "npm:5.96.1"
     webpack-bundle-analyzer: "npm:4.10.2"
     webpack-cli: "npm:5.1.4"
     webpack-dev-server: "npm:5.1.0"
@@ -17881,17 +17846,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:5.95.0":
-  version: 5.95.0
-  resolution: "webpack@npm:5.95.0"
+"webpack@npm:5.96.1":
+  version: 5.96.1
+  resolution: "webpack@npm:5.96.1"
   dependencies:
-    "@types/estree": "npm:^1.0.5"
+    "@types/eslint-scope": "npm:^3.7.7"
+    "@types/estree": "npm:^1.0.6"
     "@webassemblyjs/ast": "npm:^1.12.1"
     "@webassemblyjs/wasm-edit": "npm:^1.12.1"
     "@webassemblyjs/wasm-parser": "npm:^1.12.1"
-    acorn: "npm:^8.7.1"
-    acorn-import-attributes: "npm:^1.9.5"
-    browserslist: "npm:^4.21.10"
+    acorn: "npm:^8.14.0"
+    browserslist: "npm:^4.24.0"
     chrome-trace-event: "npm:^1.0.2"
     enhanced-resolve: "npm:^5.17.1"
     es-module-lexer: "npm:^1.2.1"
@@ -17913,7 +17878,7 @@ __metadata:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 10/0377ad3a550b041f26237c96fb55754625b0ce6bae83c1c2447e3262ad056b0b0ad770dcbb92b59f188e9a2bd56155ce910add17dcf023cfbe78bdec774380c1
+  checksum: 10/d3419ffd198252e1d0301bd0c072cee93172f3e47937c745aa8202691d2f5d529d4ba4a1965d1450ad89a1bcd3c1f70ae09e57232b0d01dd38d69c1060e964d5
   languageName: node
   linkType: hard
 
