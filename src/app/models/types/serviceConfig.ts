@@ -97,6 +97,7 @@ export type ServiceConfig = {
   navigation?: {
     title: string;
     url: string;
+    hideOnLiteSite?: boolean;
   }[];
   scriptLink?: {
     text: string;

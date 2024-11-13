@@ -55,8 +55,8 @@ exports[`Canonical Live Radio Footer Anchors should match text and url 7`] = `
 
 exports[`Canonical Live Radio Footer Anchors should match text and url 8`] = `
 {
-  "text": "Other Languages",
-  "url": "https://www.bbc.com/ws/languages",
+  "text": "Bona amakuru mu zindi ndimi",
+  "url": "https://www.bbc.com/ws/languages?xtor=CS1-13-[wsgahuza~N~A39~MBC]-[Owned]&utm_source=mktg",
 }
 `;
 

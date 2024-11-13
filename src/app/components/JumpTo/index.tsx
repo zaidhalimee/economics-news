@@ -73,11 +73,9 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
                 href={idWithHash}
                 onClick={e => linkClickHandler(e, idWithHash)}
                 css={styles.link}
-                aria-labelledby={`jump-to-heading-${sanitisedId}`}
                 data-testid={`jump-to-link-${sanitisedId}`}
               >
                 <span
-                  id={`jump-to-heading-${sanitisedId}`}
                   css={[styles.linkText, isActiveId && styles.linkTextActive]}
                 >
                   {heading}

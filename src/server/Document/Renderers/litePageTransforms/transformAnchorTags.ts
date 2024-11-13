@@ -3,6 +3,8 @@ import services from '#lib/config/services/loadableConfig';
 
 const SERVICES = Object.keys(services) as Services[];
 
+const RESTRICTED_ON_SOFT_LAUNCH = ['/ws/languages'];
+
 const VALID_DOMAINS = [
   '/',
   'localhost',
@@ -22,6 +24,9 @@ const addLiteExtension = (href?: string) => {
   const extension = url.pathname?.split('.')?.pop() || '';
 
   const isValidDomain = VALID_DOMAINS.includes(url.hostname);
+  const isRestrictedOnSoftLaunch = RESTRICTED_ON_SOFT_LAUNCH.includes(
+    url.pathname,
+  );
   const isWsService = SERVICES.includes(
     url.pathname?.split('/')?.[1] as Services,
   );
@@ -30,7 +35,10 @@ const addLiteExtension = (href?: string) => {
     RESERVED_ROUTE_EXTENSIONS.includes(extension);
 
   const shouldAddLiteExtension =
-    isValidDomain && isWsService && !hasReservedRouteExtension;
+    isValidDomain &&
+    isWsService &&
+    !hasReservedRouteExtension &&
+    !isRestrictedOnSoftLaunch;
 
   if (shouldAddLiteExtension) {
     url.pathname += '.lite';
