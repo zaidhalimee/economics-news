@@ -419,6 +419,10 @@ export const service: DefaultServiceConfig = {
         url: '/arabic',
       },
       {
+        title: 'شاهد البث المباشر',
+        url: '/arabic/media-49522519',
+      },
+      {
         title: 'أخبار',
         url: '/arabic/topics/cv2xyrnr8dnt',
       },
