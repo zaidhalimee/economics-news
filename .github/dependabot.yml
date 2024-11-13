@@ -27,9 +27,6 @@ updates:
       emotion:
         patterns:
           - '@emotion/*'
-      esbuild:
-        patterns:
-          - '@esbuild/*'
       next:
         patterns:
           - '@next/*'
@@ -39,6 +36,7 @@ updates:
         patterns:
           - '@storybook/*'
           - 'storybook'
+          - '@esbuild/*'
       bbc-minor-patch:
         patterns:
           - '@bbc/*'
