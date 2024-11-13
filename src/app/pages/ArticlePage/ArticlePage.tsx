@@ -1,9 +1,7 @@
 /** @jsx jsx */
-/** @jsxFrag React.Fragment */
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 import useToggle from '#hooks/useToggle';
-import useOptimizelyMvtVariation from '#hooks/useOptimizelyMvtVariation';
 import { singleTextBlock } from '#app/models/blocks';
 import ArticleMetadata from '#containers/ArticleMetadata';
 import { RequestContext } from '#contexts/RequestContext';
@@ -91,10 +89,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     palette: { GREY_2, WHITE },
   } = useTheme();
 
-  const experimentVariant = useOptimizelyMvtVariation(
-    'newswb_01_ap_banner_election',
-  );
-
   const allowAdvertising = pageData?.metadata?.allowAdvertising ?? false;
   const adcampaign = pageData?.metadata?.adCampaignKeyword;
   const isTransliterated =
@@ -145,7 +139,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const atiData = {
     ...atiAnalytics,
     ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
-    ...(experimentVariant && { experimentVariant }),
   };
 
   const topStoriesContent = pageData?.secondaryColumn?.topStories;
@@ -314,12 +307,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           headingBackgroundColour={GREY_2}
           mobileDivider={showTopics}
         />
-      )}
-      {experimentVariant && (
-        <>
-          <OptimizelyArticleCompleteTracking />
-          <OptimizelyPageViewTracking />
-        </>
       )}
     </div>
   );
