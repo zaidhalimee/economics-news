@@ -8,8 +8,8 @@ import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import Text from '#app/components/Text';
 import isLive from '#app/lib/utilities/isLive';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
-import idSanitiser from '../../lib/utilities/idSanitiser';
 import { OptimizelyContext } from '@optimizely/react-sdk';
+import idSanitiser from '../../lib/utilities/idSanitiser';
 import styles from './index.styles';
 
 export interface JumpToProps {
