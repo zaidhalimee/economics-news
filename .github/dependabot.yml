@@ -34,6 +34,7 @@ updates:
         patterns:
           - '@storybook/*'
           - 'storybook'
+          - '@esbuild/*'
       bbc:
         patterns:
           - '@bbc/*'

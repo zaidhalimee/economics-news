@@ -91,6 +91,10 @@ export const service: SerbianConfig = {
           text: 'Kontaktirajte BBC',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -482,6 +486,10 @@ export const service: SerbianConfig = {
         {
           href: 'https://www.bbc.co.uk/serbian/send/u50853665',
           text: 'Контактирајте ББЦ',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',
