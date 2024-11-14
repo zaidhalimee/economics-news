@@ -92,10 +92,7 @@ server
       crossOriginOpenerPolicy: false,
       crossOriginResourcePolicy: false,
       originAgentCluster: false,
-      strictTransportSecurity: {
-        maxAge: 15552000,
-        includeSubDomains: true,
-      },
+      strictTransportSecurity: { maxAge: 15552000 },
     }),
   )
   .use(logResponseTime)
