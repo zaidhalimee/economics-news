@@ -49,7 +49,7 @@ export default {
         gridColumn: '4 / 10',
       },
     }),
-  wideSection: ({ palette, mq, fontSizes, fontVariants }: Theme) =>
+  wideSection: ({ mq, fontSizes, fontVariants }: Theme) =>
     css({
       ...fontSizes.brevier,
       ...fontVariants.sansRegular,
