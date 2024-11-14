@@ -14,7 +14,6 @@ import styles from './wrappedStyles';
 import {
   ROUTING_INFORMATION,
   SERVER_SIDE_RENDER_REQUEST_RECEIVED,
-  BFF_FETCH_ERROR,
 } from '#app/lib/logger.const';
 import { Services, Variants } from '#models/types/global';
 import { FetchError } from '#models/types/fetch';
