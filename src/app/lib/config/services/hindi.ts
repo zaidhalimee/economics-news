@@ -88,7 +88,7 @@ export const service: DefaultServiceConfig = {
         videoPlayer: 'वीडियो प्लेयर',
       },
       articlePage: {
-        jumpTo: 'Jump to', // replace with Hindi translation later
+        jumpTo: 'इस पर जाएं',
       },
       liveExperiencePage: {
         liveLabel: 'लाइव',
@@ -440,10 +440,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'भारत',
         url: '/hindi/topics/ckdxnkz7607t',
-      },
-      {
-        title: 'अमेरिकी चुनाव 2024',
-        url: '/hindi/topics/cp9r94x30m5t',
       },
       {
         title: 'विदेश',
