@@ -2,10 +2,9 @@
 import React, { useEffect, useState } from 'react';
 import Url from 'url-parse';
 import { HOME_PAGE } from '#app/routes/utils/pageTypes';
-import fetch from 'node-fetch';
 import { Curation } from '#app/models/types/curationData';
 import { Services } from '#app/models/types/global';
-import withServicesDecorator from '#storybook/withServicesDecorator';
+import { MemoryRouter } from 'react-router-dom';
 import { StoryArgs, StoryProps } from '../../models/types/storybook';
 import HomePage from '.';
 
@@ -44,7 +43,9 @@ const Component = ({ service, variant }: StoryProps) => {
   useEffect(() => {
     const loadPageData = async () => {
       const response = await fetch(
-        new Url(`data/${service}/homePage/index.json`),
+        new Url(
+          `data/${service}/homePage/${variant === 'default' ? 'index' : variant}.json`,
+        ).toString(),
       );
       const { data } = await response.json();
 
@@ -54,31 +55,43 @@ const Component = ({ service, variant }: StoryProps) => {
     };
 
     loadPageData();
-  }, [service]);
+  }, [service, variant]);
 
   if (Object.keys(pageData).length === 0) {
     return <>Unable to render Homepage for {service}</>;
   }
 
   return (
-    <HomePage
-      service={service}
-      variant={variant}
-      pageType={HOME_PAGE}
-      status={200}
-      isAmp={false}
-      pathname={`/${service}`}
-      pageData={pageData}
-    />
+    <MemoryRouter>
+      <HomePage
+        service={service}
+        variant={variant}
+        pageType={HOME_PAGE}
+        status={200}
+        isAmp={false}
+        pathname={`/${service}`}
+        pageData={pageData}
+      />
+    </MemoryRouter>
   );
 };
 
 export default {
   Component,
   title: 'Pages/Home Page',
-  decorators: [withServicesDecorator({ defaultService: 'kyrgyz' })],
 };
 
-export const Example = (_: StoryArgs, { service, variant }: StoryProps) => (
-  <Component service={service} variant={variant} />
-);
+export const Example = {
+  render: (_: StoryArgs, { service, variant }: StoryProps) => (
+    <Component service={service} variant={variant} />
+  ),
+  parameters: { chromatic: { disableSnapshot: true } },
+};
+
+// This story is for chromatic testing purposes only
+export const Test = {
+  render: (_: StoryArgs, { variant }: StoryProps) => (
+    <Component service="kyrgyz" variant={variant} />
+  ),
+  tags: ['!dev'],
+};

@@ -48,16 +48,16 @@ export const service: DefaultServiceConfig = {
     showRelatedTopics: true,
     podcastPromo: {
       title: 'پادکست',
-      brandTitle: 'صفحه ۲',
+      brandTitle: 'اسطوره تختی',
       brandDescription:
-        'در این برنامه با صاحب‌نظران درباره مسائل سیاسی و اجتماعی روز گفت‌ و‌ گو می‌کنیم.',
+        'در مجموعه چهار قسمتی «اسطوره تختی» از زندگی شخصی، ورزشی و اجتماعی غلامرضا تختی می‌شنویم.',
       image: {
-        src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p069d2yl.jpg',
-        alt: 'صفحه ۲',
+        src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p0jkc7rj.jpg',
+        alt: 'اسطوره تختی',
       },
       linkLabel: {
         text: 'پادکست',
-        href: 'https://www.bbc.com/persian/podcasts/p05gyy09',
+        href: 'https://www.bbc.com/persian/podcasts/p0703hz7',
       },
       skipLink: {
         text: 'از %title% رد شوید و به خواندن ادامه دهید',
@@ -421,6 +421,10 @@ export const service: DefaultServiceConfig = {
           text: 'تماس با بی بی سی',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -436,8 +440,12 @@ export const service: DefaultServiceConfig = {
         url: '/persian',
       },
       {
-        title: 'جنگ اسرائیل-غزه',
-        url: '/persian/topics/clm0z4jgj3xt',
+        title: 'بحران خاورمیانه',
+        url: '/persian/topics/cj31ldvmg1et',
+      },
+      {
+        title: 'انتخابات آمریکا',
+        url: '/persian/topics/cj1gj22k6z6t',
       },
       {
         title: 'پخش زنده',

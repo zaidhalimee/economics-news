@@ -399,6 +399,10 @@ export const service: DefaultServiceConfig = {
           text: 'اتصل بـ بي بي سي',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -413,6 +417,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'رئيسية',
         url: '/arabic',
+      },
+      {
+        title: 'شاهد البث المباشر',
+        url: '/arabic/media-49522519',
       },
       {
         title: 'أخبار',
@@ -436,7 +444,7 @@ export const service: DefaultServiceConfig = {
       },
       {
         title: 'تحقيقات',
-        url: '/arabic/tv-and-radio-42414864',
+        url: '/arabic/topics/c51nnzdeg9zt',
       },
       {
         title: 'بودكاست',

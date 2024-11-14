@@ -189,6 +189,13 @@ exports[`AMP Media Article Page Footer Anchors should match text and url 7`] = `
 
 exports[`AMP Media Article Page Footer Anchors should match text and url 8`] = `
 {
+  "text": "Other Languages",
+  "url": "https://www.bbc.com/ws/languages",
+}
+`;
+
+exports[`AMP Media Article Page Footer Anchors should match text and url 9`] = `
+{
   "text": "De way wey we de take go external link.",
   "url": "https://www.bbc.com/editorialguidelines/guidance/feeds-and-links",
 }
@@ -481,7 +488,7 @@ exports[`AMP Media Article Page SEO Linked data should match text 2`] = `
   "@type": "VideoObject",
   "description": "INEC boss interview",
   "duration": "PT6M17S",
-  "embedURL": "https://polling.test.bbc.co.uk/ws/av-embeds/articles/cw0x29n2pvqo/p0dxnwbk/pcm/amp",
+  "embedURL": "https://www.test.bbc.com/ws/av-embeds/articles/cw0x29n2pvqo/p0dxnwbk/pcm",
   "name": "INEC",
   "thumbnailUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p0dxnxnv.jpg",
   "uploadDate": "2023-01-20T09:07:40.000Z",

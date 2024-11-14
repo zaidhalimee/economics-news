@@ -1,6 +1,7 @@
 import noAscendersOrDescenders from '../../../components/ThemeProvider/fontScripts/noAscOrDesc';
 import '#psammead/moment-timezone-include/tz/GMT';
 import 'moment/locale/zh-cn';
+import '#psammead/psammead-locales/moment/zh-tw';
 import withContext from '../../../contexts/utils/withContext';
 import { ZhongwenConfig } from '../../../models/types/serviceConfig';
 import { Direction, Services } from '../../../models/types/global';
@@ -18,7 +19,6 @@ const baseServiceConfig = {
   defaultImage: 'https://news.files.bbci.co.uk/ws/img/logos/og/zhongwen.png',
   defaultImageAltText: 'BBC News 中文',
   dir: 'ltr' as Direction,
-  datetimeLocale: `zh-cn`,
   service: 'zhongwen' as Services,
   serviceName: 'News 中文',
   languageName: 'Chinese',
@@ -63,6 +63,7 @@ export const service: ZhongwenConfig = {
     locale: `zh-hans`,
     // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405
     isoLang: 'zh-Hans',
+    datetimeLocale: 'zh-cn',
     defaultCaptionOffscreenText: '说明文字，',
     audioCaptionOffscreenText: '音频加注文字，',
     videoCaptionOffscreenText: '视频加注文字，',
@@ -97,6 +98,10 @@ export const service: ZhongwenConfig = {
         {
           href: 'https://www.bbc.co.uk/zhongwen/send/u50778626',
           text: '联络BBC',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',
@@ -179,6 +184,8 @@ export const service: ZhongwenConfig = {
         postedAt: '张贴于',
         summary: '概要',
         shareButtonText: '分享',
+        postDateTimeFormat: 'YYYY年M月DD日',
+        postDateFormat: 'YYYY年M月D日',
       },
       downloads: {
         instructions: 'You can download and view today’s news.',
@@ -361,6 +368,7 @@ export const service: ZhongwenConfig = {
     locale: `zh-hant`,
     // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405
     isoLang: 'zh-Hant',
+    datetimeLocale: 'zh-tw',
     externalLinkText: ', 外部',
     frontPageTitle: '主頁',
     defaultCaptionOffscreenText: '說明文字，',
@@ -397,6 +405,10 @@ export const service: ZhongwenConfig = {
         {
           href: 'https://www.bbc.com/zhongwen/trad/institutional-38664417',
           text: '聯絡BBC',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',
@@ -479,6 +491,8 @@ export const service: ZhongwenConfig = {
         postedAt: '張貼在',
         summary: '概要',
         shareButtonText: '分享',
+        postDateTimeFormat: 'YYYY年M月DD日',
+        postDateFormat: 'YYYY年M月D日',
       },
       downloads: {
         instructions: 'You can download and view today’s news.',

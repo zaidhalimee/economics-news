@@ -7,6 +7,7 @@ import {
   UkrainianService,
   UzbekService,
   Direction,
+  Variants,
 } from './global';
 import { Translations } from './translations';
 
@@ -96,10 +97,11 @@ export type ServiceConfig = {
   navigation?: {
     title: string;
     url: string;
+    hideOnLiteSite?: boolean;
   }[];
   scriptLink?: {
     text: string;
-    variant: string;
+    variant: Variants;
   };
   timezone: string;
   liveRadioOverrides?: {

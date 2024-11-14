@@ -312,6 +312,10 @@ export const service: DefaultServiceConfig = {
           text: 'বিবিসির সাথে যোগাযোগ করুন',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -326,10 +330,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'মূলপাতা',
         url: '/bengali',
-      },
-      {
-        title: 'কোটা আন্দোলন',
-        url: '/bengali/topics/cz47p4p81qdt',
       },
       {
         title: 'রাজনীতি',
