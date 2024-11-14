@@ -128,6 +128,7 @@ exports[`SectionLabel With bar When hideSectionHeader is true should add styling
     <h2
       class="emotion-2 emotion-3"
       id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <span
         class="emotion-4 emotion-5"
@@ -464,6 +465,7 @@ exports[`SectionLabel With bar With linking title should render correctly 1`] = 
     <h2
       class="emotion-2 emotion-3"
       id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <a
         class="focusIndicatorDisplayBlock emotion-4 emotion-5"
@@ -672,6 +674,7 @@ exports[`SectionLabel With bar With linking title should render correctly with a
     <h2
       class="emotion-2 emotion-3"
       id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <a
         class="focusIndicatorDisplayBlock emotion-4 emotion-5"
@@ -880,6 +883,7 @@ exports[`SectionLabel With bar With linking title should render correctly with e
     <h2
       class="emotion-2 emotion-3"
       id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <a
         class="focusIndicatorDisplayBlock emotion-4 emotion-5"
@@ -1088,6 +1092,7 @@ exports[`SectionLabel With bar With linking title should render correctly with e
     <h2
       class="emotion-2 emotion-3"
       id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <a
         class="focusIndicatorDisplayBlock emotion-4 emotion-5"
@@ -1249,6 +1254,7 @@ exports[`SectionLabel With bar With plain title should render correctly with ara
     <h2
       class="emotion-2 emotion-3"
       id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <span
         class="emotion-4 emotion-5"
@@ -1391,6 +1397,7 @@ exports[`SectionLabel With bar With plain title should render correctly with exp
     <h2
       class="emotion-2 emotion-3"
       id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <span
         class="emotion-4 emotion-5"
@@ -1533,6 +1540,7 @@ exports[`SectionLabel With bar With plain title should render correctly with exp
     <h2
       class="emotion-2 emotion-3"
       id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <span
         class="emotion-4 emotion-5"
@@ -1675,6 +1683,7 @@ exports[`SectionLabel With bar With plain title should render correctly with mob
     <h2
       class="emotion-2 emotion-3"
       id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <span
         class="emotion-4 emotion-5"
@@ -1870,6 +1879,7 @@ exports[`SectionLabel With bar Without bar With linking title should render corr
     <h2
       class="emotion-2 emotion-3"
       id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <a
         class="focusIndicatorDisplayBlock emotion-4 emotion-5"
@@ -2078,6 +2088,7 @@ exports[`SectionLabel With bar Without bar With linking title should render corr
     <h2
       class="emotion-2 emotion-3"
       id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <a
         class="focusIndicatorDisplayBlock emotion-4 emotion-5"
@@ -2286,6 +2297,7 @@ exports[`SectionLabel With bar Without bar With linking title should render corr
     <h2
       class="emotion-2 emotion-3"
       id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <a
         class="focusIndicatorDisplayBlock emotion-4 emotion-5"
@@ -2441,6 +2453,7 @@ exports[`SectionLabel With bar Without bar With plain title should render correc
     <h2
       class="emotion-2 emotion-3"
       id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <span
         class="emotion-4 emotion-5"
@@ -2583,6 +2596,7 @@ exports[`SectionLabel With bar Without bar With plain title should render correc
     <h2
       class="emotion-2 emotion-3"
       id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <span
         class="emotion-4 emotion-5"
@@ -2725,6 +2739,7 @@ exports[`SectionLabel With bar Without bar With plain title should render correc
     <h2
       class="emotion-2 emotion-3"
       id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <span
         class="emotion-4 emotion-5"

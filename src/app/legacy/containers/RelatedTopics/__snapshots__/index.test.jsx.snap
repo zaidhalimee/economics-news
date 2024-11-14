@@ -207,6 +207,7 @@ exports[`Expected use should render correctly with a single tag 1`] = `
       <h2
         class="emotion-5 emotion-6"
         id="section-label-heading-related-topics"
+        tabindex="-1"
       >
         <span
           class="emotion-7 emotion-8"
@@ -450,6 +451,7 @@ exports[`Expected use should render correctly with multiple tags 1`] = `
       <h2
         class="emotion-5 emotion-6"
         id="section-label-heading-related-topics"
+        tabindex="-1"
       >
         <span
           class="emotion-7 emotion-8"

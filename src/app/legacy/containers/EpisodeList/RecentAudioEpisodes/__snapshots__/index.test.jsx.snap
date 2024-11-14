@@ -368,6 +368,7 @@ exports[`RecentAudioEpisodes should render audio episodes correctly 1`] = `
       <h2
         class="emotion-5 emotion-6"
         id="section-label-heading-recent-episodes"
+        tabindex="-1"
       >
         <span
           class="emotion-7 emotion-8"

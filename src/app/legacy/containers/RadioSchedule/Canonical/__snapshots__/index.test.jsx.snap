@@ -889,6 +889,7 @@ exports[`Canonical RadioSchedule With initial data renders correctly for a servi
       <h2
         class="emotion-5 emotion-6"
         id="section-label-heading-Radio-Schedule"
+        tabindex="-1"
       >
         <span
           class="emotion-7 emotion-8"
@@ -2338,6 +2339,7 @@ exports[`Canonical RadioSchedule Without initial data renders correctly for a se
       <h2
         class="emotion-5 emotion-6"
         id="section-label-heading-Radio-Schedule"
+        tabindex="-1"
       >
         <span
           class="emotion-7 emotion-8"

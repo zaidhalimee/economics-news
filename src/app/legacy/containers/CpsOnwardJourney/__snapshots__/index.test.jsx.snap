@@ -1201,6 +1201,7 @@ exports[`CpsOnwardJourney renders section label with with alternative background
         <h2
           class="emotion-9 emotion-10"
           id="section-label-heading-heading-label"
+          tabindex="-1"
         >
           <span
             class="emotion-11 emotion-12"
@@ -1582,6 +1583,7 @@ exports[`CpsOnwardJourney renders section label with without bar under section l
         <h2
           class="emotion-9 emotion-10"
           id="section-label-heading-heading-label"
+          tabindex="-1"
         >
           <span
             class="emotion-11 emotion-12"
@@ -2030,6 +2032,7 @@ exports[`CpsOnwardJourney renders skip link with multiple promos 1`] = `
           <h2
             class="emotion-13 emotion-14"
             id="section-label-heading-heading-label"
+            tabindex="-1"
           >
             <span
               class="emotion-15 emotion-16"
@@ -2502,6 +2505,7 @@ exports[`CpsOnwardJourney renders skip link with single promo 1`] = `
           <h2
             class="emotion-13 emotion-14"
             id="section-label-heading-heading-label"
+            tabindex="-1"
           >
             <span
               class="emotion-15 emotion-16"

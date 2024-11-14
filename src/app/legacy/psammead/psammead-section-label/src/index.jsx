@@ -70,7 +70,10 @@ const SectionLabel = ({
     <Heading
       as={overrideHeadingAs}
       {...(labelId &&
-        !overrideHeadingAs && { id: `section-label-heading-${labelId}` })}
+        !overrideHeadingAs && {
+          id: `section-label-heading-${labelId}`,
+          tabIndex: -1,
+        })}
     >
       {linkText && href ? (
         <LinkTitle

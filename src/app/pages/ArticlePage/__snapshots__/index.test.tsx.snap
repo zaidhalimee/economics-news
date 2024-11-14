@@ -878,6 +878,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
         <h2
           class="emotion-15 emotion-16"
           id="section-label-heading-Most-Read"
+          tabindex="-1"
         >
           <span
             class="emotion-17 emotion-18"
@@ -2313,6 +2314,7 @@ exports[`Article Page should render a news article correctly 1`] = `
         <h2
           class="emotion-19 emotion-20"
           id="section-label-heading-Most-Read"
+          tabindex="-1"
         >
           <span
             class="emotion-21 emotion-22"
@@ -4448,6 +4450,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
         <h2
           class="emotion-15 emotion-16"
           id="section-label-heading-Most-Read"
+          tabindex="-1"
         >
           <span
             class="emotion-17 emotion-18"

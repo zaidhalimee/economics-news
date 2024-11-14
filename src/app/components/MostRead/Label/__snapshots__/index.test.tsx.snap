@@ -127,6 +127,7 @@ exports[`MostReadSectionLabel assertion should render most-read section label wi
     <h2
       class="emotion-2 emotion-3"
       id="section-label-heading-Most-Read"
+      tabindex="-1"
     >
       <span
         class="emotion-4 emotion-5"
