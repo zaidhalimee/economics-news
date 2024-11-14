@@ -17,12 +17,6 @@ import {
 } from '#app/lib/logger.const';
 import { Services, Variants } from '#models/types/global';
 
-import getEnvironment from '#app/routes/utils/getEnvironment';
-import fetchPageData from '#app/routes/utils/fetchPageData';
-import certsRequired from '#app/routes/utils/certsRequired';
-import { OK } from '#app/lib/statusCodes.const';
-import getAgent from '../../../utilities/undiciAgent';
-
 import extractHeaders from '../../../src/server/utilities/extractHeaders';
 
 interface PageDataParams extends ParsedUrlQuery {
