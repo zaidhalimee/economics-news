@@ -82,7 +82,6 @@ export const getServerSideProps: GetServerSideProps = async context => {
       pageType: STATIC_PAGE,
       pathname: context.resolvedUrl,
       service,
-      showAdsBasedOnLocation: reqHeaders['bbc-adverts'] === 'true' || false,
       status: 200,
       timeOnServer: Date.now(), // TODO: check if needed?
       ...extractHeaders(reqHeaders),
