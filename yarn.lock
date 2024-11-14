@@ -10597,10 +10597,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"helmet@npm:7.1.0":
-  version: 7.1.0
-  resolution: "helmet@npm:7.1.0"
-  checksum: 10/aa13b0907d9d31b65e4ec73093b58d7e94e83c06818cc06869f5eb95d205574a14f01ed71cadfac4a68b736a1a6d7ef2290f3f6ef77ac664c7e75b8f9eddf88c
+"helmet@npm:8.0.0":
+  version: 8.0.0
+  resolution: "helmet@npm:8.0.0"
+  checksum: 10/cf30579d1dbd095e301458265fb6b3446d1ee0598c99b5e946afda8a72c035a6a7ebf2176168d5ca2541e6e522a88fb58d06f0eeec4ab378646960de9aea6584
   languageName: node
   linkType: hard
 
@@ -15891,7 +15891,7 @@ __metadata:
     express: "npm:4.21.1"
     express-static-gzip: "npm:2.1.8"
     glob: "npm:11.0.0"
-    helmet: "npm:7.1.0"
+    helmet: "npm:8.0.0"
     helmet-csp: "npm:4.0.0"
     husky: "npm:9.1.4"
     inspectpack: "npm:4.7.1"
@@ -15934,7 +15934,7 @@ __metadata:
     ts-jest: "npm:29.2.5"
     ts-loader: "npm:9.5.1"
     typescript: "npm:5.4.5"
-    undici: "npm:6.20.1"
+    undici: "npm:6.21.0"
     url-parse: "npm:1.5.10"
     uuid: "npm:8.3.2"
     wait-on: "npm:8.0.1"
@@ -17206,10 +17206,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:6.20.1":
-  version: 6.20.1
-  resolution: "undici@npm:6.20.1"
-  checksum: 10/68604b53754a95ec89d52efc08fe3e70e333997300c9a5b69f2b6496f1f0f568b2e35adec6442985a7b1d2f7a5648ef5062d1736e4d68082d473cb82177674bc
+"undici@npm:6.21.0":
+  version: 6.21.0
+  resolution: "undici@npm:6.21.0"
+  checksum: 10/c8ff80dcadfcf613e7fe697c37519fca070fcf1cfccc69ffb6a7080a22e225eb79d232e9f70e32b099b3e67ac4216e8fd615e188cfb792e09df9233471ec17e0
   languageName: node
   linkType: hard
 

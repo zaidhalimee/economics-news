@@ -1,9 +1,7 @@
 /** @jsx jsx */
-/** @jsxFrag React.Fragment */
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 import useToggle from '#hooks/useToggle';
-import useOptimizelyMvtVariation from '#hooks/useOptimizelyMvtVariation';
 import { singleTextBlock } from '#app/models/blocks';
 import ArticleMetadata from '#containers/ArticleMetadata';
 import { RequestContext } from '#contexts/RequestContext';
@@ -40,8 +38,6 @@ import CpsRecommendations from '#containers/CpsRecommendations';
 import InlinePodcastPromo from '#containers/PodcastPromo/Inline';
 import { Article, OptimoBylineBlock } from '#app/models/types/optimo';
 import ScrollablePromo from '#components/ScrollablePromo';
-import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
-import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
 import JumpTo from '#app/components/JumpTo';
 import ElectionBanner from './ElectionBanner';
 
@@ -90,10 +86,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const {
     palette: { GREY_2, WHITE },
   } = useTheme();
-
-  const experimentVariant = useOptimizelyMvtVariation(
-    'newswb_01_ap_banner_election',
-  );
 
   const allowAdvertising = pageData?.metadata?.allowAdvertising ?? false;
   const adcampaign = pageData?.metadata?.adCampaignKeyword;
@@ -145,7 +137,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const atiData = {
     ...atiAnalytics,
     ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
-    ...(experimentVariant && { experimentVariant }),
   };
 
   const topStoriesContent = pageData?.secondaryColumn?.topStories;
@@ -314,12 +305,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           headingBackgroundColour={GREY_2}
           mobileDivider={showTopics}
         />
-      )}
-      {experimentVariant && (
-        <>
-          <OptimizelyArticleCompleteTracking />
-          <OptimizelyPageViewTracking />
-        </>
       )}
     </div>
   );
