@@ -70,7 +70,6 @@ export const getServerSideProps: GetServerSideProps = async context => {
   context.res.statusCode = 200;
   return {
     props: {
-      bbcOrigin: reqHeaders['bbc-origin'] || null,
       error: null,
       isAmp: false,
       isNextJs: true,
