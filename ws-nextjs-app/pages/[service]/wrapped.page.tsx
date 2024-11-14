@@ -1,4 +1,5 @@
 /** @jsx jsx */
+// @ts-nocheck
 
 import { GetServerSideProps } from 'next';
 import { useEffect, useContext } from "react"

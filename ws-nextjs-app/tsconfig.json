@@ -5,12 +5,7 @@
     // We don't really need this enabled as we don't need explicit type definitions generated for our files as they aren't used anywhere else
     // https://github.com/microsoft/TypeScript/issues/47663
     "declaration": false,
-    "jsx": "preserve",
-    "lib": [
-      "DOM",
-      "ES2020",
-      "ESNext"
-    ]
+    "jsx": "preserve"
   },
   "include": [
     "next-env.d.ts",
