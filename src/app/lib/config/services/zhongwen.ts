@@ -100,6 +100,10 @@ export const service: ZhongwenConfig = {
           text: '联络BBC',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -180,6 +184,8 @@ export const service: ZhongwenConfig = {
         postedAt: '张贴于',
         summary: '概要',
         shareButtonText: '分享',
+        postDateTimeFormat: 'YYYY年M月DD日',
+        postDateFormat: 'YYYY年M月D日',
       },
       downloads: {
         instructions: 'You can download and view today’s news.',
@@ -401,6 +407,10 @@ export const service: ZhongwenConfig = {
           text: '聯絡BBC',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -481,6 +491,8 @@ export const service: ZhongwenConfig = {
         postedAt: '張貼在',
         summary: '概要',
         shareButtonText: '分享',
+        postDateTimeFormat: 'YYYY年M月DD日',
+        postDateFormat: 'YYYY年M月D日',
       },
       downloads: {
         instructions: 'You can download and view today’s news.',

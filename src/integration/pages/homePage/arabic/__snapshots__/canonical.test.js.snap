@@ -69,12 +69,19 @@ exports[`Canonical Home Page Footer Anchors should match text and url 7`] = `
 
 exports[`Canonical Home Page Footer Anchors should match text and url 8`] = `
 {
+  "text": "Other Languages",
+  "url": "https://www.bbc.com/ws/languages",
+}
+`;
+
+exports[`Canonical Home Page Footer Anchors should match text and url 9`] = `
+{
   "text": "Do not share or sell my info",
   "url": "#",
 }
 `;
 
-exports[`Canonical Home Page Footer Anchors should match text and url 9`] = `
+exports[`Canonical Home Page Footer Anchors should match text and url 10`] = `
 {
   "text": "سياستنا بخصوص الروابط الخارجية.",
   "url": "https://www.bbc.co.uk/editorialguidelines/guidance/feeds-and-links",
@@ -96,54 +103,61 @@ exports[`Canonical Home Page Header Navigation link should match text and url 1`
 
 exports[`Canonical Home Page Header Navigation link should match text and url 2`] = `
 {
+  "text": "شاهد البث المباشر",
+  "url": "/arabic/media-49522519",
+}
+`;
+
+exports[`Canonical Home Page Header Navigation link should match text and url 3`] = `
+{
   "text": "أخبار",
   "url": "/arabic/topics/cv2xyrnr8dnt",
 }
 `;
 
-exports[`Canonical Home Page Header Navigation link should match text and url 3`] = `
+exports[`Canonical Home Page Header Navigation link should match text and url 4`] = `
 {
   "text": "اقتصاد",
   "url": "/arabic/topics/cqywj97d487t",
 }
 `;
 
-exports[`Canonical Home Page Header Navigation link should match text and url 4`] = `
+exports[`Canonical Home Page Header Navigation link should match text and url 5`] = `
 {
   "text": "صحة وعلوم",
   "url": "/arabic/topics/clmj3d7282gt",
 }
 `;
 
-exports[`Canonical Home Page Header Navigation link should match text and url 5`] = `
+exports[`Canonical Home Page Header Navigation link should match text and url 6`] = `
 {
   "text": "رياضة",
   "url": "/arabic/topics/cyx5kw7g1j2t",
 }
 `;
 
-exports[`Canonical Home Page Header Navigation link should match text and url 6`] = `
+exports[`Canonical Home Page Header Navigation link should match text and url 7`] = `
 {
   "text": "فيديو",
   "url": "/arabic/topics/cz9mm6r1q5et",
 }
 `;
 
-exports[`Canonical Home Page Header Navigation link should match text and url 7`] = `
+exports[`Canonical Home Page Header Navigation link should match text and url 8`] = `
 {
   "text": "تحقيقات",
   "url": "/arabic/topics/c51nnzdeg9zt",
 }
 `;
 
-exports[`Canonical Home Page Header Navigation link should match text and url 8`] = `
+exports[`Canonical Home Page Header Navigation link should match text and url 9`] = `
 {
   "text": "بودكاست",
   "url": "/arabic/topics/cljddp5lw0dt",
 }
 `;
 
-exports[`Canonical Home Page Header Navigation link should match text and url 9`] = `
+exports[`Canonical Home Page Header Navigation link should match text and url 10`] = `
 {
   "text": "برامجنا",
   "url": "/arabic/topics/crgyknwdlwnt",

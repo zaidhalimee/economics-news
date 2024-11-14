@@ -59,6 +59,8 @@ const directives = {
       'https://www.facebook.com', // Social Embeds, <amp-facebook />
       'https://*.ampproject.net', // Social Embeds
       'https://www.riddle.com', // STY Includes
+      'https://*.mapcreator.io', // Election includes
+      'https://*.thomsonreuters.com', // Election includes
       ...advertisingDirectives.frameSrc,
       "'self'",
     ],
@@ -77,6 +79,8 @@ const directives = {
       'https://flo.uri.sh', // STY includes
       'https://www.riddle.com', // STY Includes
       'https://public.flourish.studio', // Flourish embeds
+      'https://*.mapcreator.io', // Election includes
+      'https://*.thomsonreuters.com', // Election includes
       ...advertisingDirectives.frameSrc,
       "'self'",
     ],
@@ -89,6 +93,8 @@ const directives = {
       'https://www.facebook.com', // Social Embeds, <amp-facebook />
       'https://*.ampproject.net', // Social Embeds
       'https://www.riddle.com', // STY Includes
+      'https://*.mapcreator.io', // Election includes
+      'https://*.thomsonreuters.com', // Election includes
       ...advertisingDirectives.frameSrc,
       "'self'",
     ],
@@ -107,6 +113,8 @@ const directives = {
       'https://flo.uri.sh', // STY includes
       'https://www.riddle.com', // STY Includes
       'https://public.flourish.studio', // Flourish embeds
+      'https://*.mapcreator.io', // Election includes
+      'https://*.thomsonreuters.com', // Election includes
       ...advertisingDirectives.frameSrc,
       "'self'",
     ],
@@ -177,6 +185,8 @@ const directives = {
       'https://cdn.ampproject.org',
       'https://*.chartbeat.com',
       'https://*.twitter.com', // Social Embeds, <amp-twitter />
+      'https://*.mapcreator.io', // Election includes
+      'https://*.thomsonreuters.com', // Election includes
       "'self'",
       "'unsafe-inline'",
     ],
@@ -194,6 +204,8 @@ const directives = {
       'https://*.twimg.com', // Social Embeds
       'https://public.flourish.studio', // STY includes
       'https://www.riddle.com',
+      'https://*.mapcreator.io', // Election includes
+      'https://*.thomsonreuters.com', // Election includes
       ...advertisingDirectives.scriptSrc,
       "'self'",
       "'unsafe-inline'",
@@ -203,6 +215,8 @@ const directives = {
       'https://cdn.ampproject.org',
       'https://*.chartbeat.com',
       'https://*.twitter.com', // Social Embeds, <amp-twitter />
+      'https://*.mapcreator.io', // Election includes
+      'https://*.thomsonreuters.com', // Election includes
       "'self'",
       "'unsafe-inline'",
     ],
@@ -222,6 +236,8 @@ const directives = {
       'https://*.twimg.com', // Social Embeds
       'https://public.flourish.studio', // STY includes
       'https://www.riddle.com',
+      'https://*.mapcreator.io', // Election includes
+      'https://*.thomsonreuters.com', // Election includes
       ...advertisingDirectives.scriptSrc,
       "'self'",
       "'unsafe-inline'",

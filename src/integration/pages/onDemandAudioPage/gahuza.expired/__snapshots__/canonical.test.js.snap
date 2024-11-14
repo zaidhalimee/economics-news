@@ -67,6 +67,13 @@ exports[`Canonical On Demand Audio Page Footer Anchors should match text and url
 
 exports[`Canonical On Demand Audio Page Footer Anchors should match text and url 8`] = `
 {
+  "text": "Bona amakuru mu zindi ndimi",
+  "url": "https://www.bbc.com/ws/languages?xtor=CS1-13-[wsgahuza~N~A39~MBC]-[Owned]&utm_source=mktg",
+}
+`;
+
+exports[`Canonical On Demand Audio Page Footer Anchors should match text and url 9`] = `
+{
   "text": "Soma ibijanye n'aho duhagaze ku mihora ijana ahandi",
   "url": "https://www.bbc.co.uk/editorialguidelines/guidance/feeds-and-links",
 }

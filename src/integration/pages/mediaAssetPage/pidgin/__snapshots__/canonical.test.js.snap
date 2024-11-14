@@ -55,6 +55,13 @@ exports[`Canonical Media Asset Page Footer Anchors should match text and url 7`]
 
 exports[`Canonical Media Asset Page Footer Anchors should match text and url 8`] = `
 {
+  "text": "Other Languages",
+  "url": "https://www.bbc.com/ws/languages",
+}
+`;
+
+exports[`Canonical Media Asset Page Footer Anchors should match text and url 9`] = `
+{
   "text": "De way wey we de take go external link.",
   "url": "https://www.bbc.com/editorialguidelines/guidance/feeds-and-links",
 }
