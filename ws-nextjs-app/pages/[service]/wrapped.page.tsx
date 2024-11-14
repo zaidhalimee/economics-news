@@ -9,7 +9,7 @@ import { ServiceContext } from '#contexts/ServiceContext';
 import { STATIC_PAGE } from '#app/routes/utils/pageTypes';
 import nodeLogger from '#lib/logger.node';
 import logResponseTime from '#server/utilities/logResponseTime';
-import isLocal from '../../lib/utilities/isLocal';
+import isLocal from '#lib/utilities/isLocal';
 
 import styles from './wrappedStyles';
 import {
