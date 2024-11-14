@@ -108,7 +108,7 @@
     "dotenv": "16.4.5",
     "express": "4.21.1",
     "express-static-gzip": "2.1.8",
-    "helmet": "7.1.0",
+    "helmet": "8.0.0",
     "helmet-csp": "4.0.0",
     "intersection-observer": "0.12.2",
     "jalaali-js": "1.2.7",
@@ -126,7 +126,7 @@
     "react-lazyload": "3.2.1",
     "react-router-config": "5.1.1",
     "react-router-dom": "5.3.4",
-    "undici": "6.20.1",
+    "undici": "6.21.0",
     "url-parse": "1.5.10",
     "uuid": "8.3.2",
     "winston": "patch:winston@3.8.2#./patches/winston-file-descriptor.patch"
