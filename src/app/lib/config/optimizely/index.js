@@ -1,5 +1,5 @@
 export default {
-  flagId: 'jump_to',
+  flagId: 'scrollable_promo',
   viewClickAttributeId: 'wsoj',
   variationMappings: {
     on: 'on',
