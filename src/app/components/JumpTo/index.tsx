@@ -49,7 +49,7 @@ const JumpTo = ({ jumpToHeadings, showRelatedContentLink }: JumpToProps) => {
   ) {
     jumpToHeadings?.push({
       heading: relatedContent,
-      sanitisedId: 'related-content-heading',
+      sanitisedId: 'section-label-heading-related-content-heading',
     });
   }
   return (
