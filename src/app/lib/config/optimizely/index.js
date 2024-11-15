@@ -1,5 +1,5 @@
 export default {
-  flagId: 'jump_tp',
+  flagId: 'jump_to',
   viewClickAttributeId: 'wsoj',
   variationMappings: {
     on: 'on',
