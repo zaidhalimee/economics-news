@@ -18,7 +18,21 @@ class IntegrationTestEnvironment extends JsdomEnvironment {
     } = context.docblockPragmas;
     const pageType = getPageTypeFromTestPath(context.testPath);
 
-    const platformForPath = platform === 'canonical' ? '' : `.${platform}`;
+    let platformForPath = '';
+
+    switch (platform) {
+      case 'canonical':
+        platformForPath = '';
+        break;
+      case 'amp':
+        platformForPath = '.amp';
+        break;
+      case 'lite':
+        platformForPath = '.lite';
+        break;
+      default:
+        platformForPath = '';
+    }
 
     this.pageType = camelCaseToText(pageType);
     this.service = service;
