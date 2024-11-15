@@ -16,6 +16,10 @@ const constructDataFilePath = ({
   id,
   optionalParams,
 }: RequestPathParts) => {
+  console.log('service:', service);
+  console.log('pageType:', pageType);
+  console.log('id:', id);
+  console.log('optionalParams:', optionalParams);
   return optionalParams && optionalParams.length > 0
     ? path.join(
         process.cwd(),

@@ -47,6 +47,7 @@ export default async (context: GetServerSidePropsContext) => {
   );
 
   const { data, toggles } = await getPageData({
+    // TODO: Fix this
     id: context.resolvedUrl.replace('renderer_env=live', ''),
     service,
     variant: variant || undefined,
@@ -85,7 +86,6 @@ export default async (context: GetServerSidePropsContext) => {
       logger.error('Recommendations JSON malformed', error);
     }
   }
-
   const { topStories, features, latestMedia, mostRead } = secondaryData;
 
   const transformedArticleData = transformPageData(toggles)(article);
@@ -114,9 +114,9 @@ export default async (context: GetServerSidePropsContext) => {
       pageData: {
         ...transformedArticleData,
         secondaryColumn: {
-          topStories,
-          features,
-          latestMedia,
+          topStories: topStories || null,
+          features: features || null,
+          latestMedia: latestMedia || null,
         },
         mostRead,
         ...(wsojData && wsojData),

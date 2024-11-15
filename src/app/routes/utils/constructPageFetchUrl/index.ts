@@ -202,13 +202,24 @@ const constructPageFetchUrl = ({
   if (isLocal) {
     switch (pageType) {
       case ARTICLE_PAGE: {
-        const isOptimoId = isOptimoIdCheck(`/articles/${id}`);
+        const host = `http://${process.env.HOSTNAME || 'localhost'}`;
+        const port = process.env.PORT ? `:${process.env.PORT}` : '';
 
-        fetchUrl = Url(
-          isOptimoId
-            ? `/${service}/articles/${id}${variant ? `/${variant}` : ''}`
-            : `/${id}`,
-        );
+        if (isOptimoIdCheck(pathname)) {
+          // pathname is the ID of the Live page without /service/live/, and supports both Tipo & CPS IDs
+          fetchUrl = Url(
+            `${host}${port}/api/local/${service}/articles/${id}${variant ? `/${variant}` : ''}`,
+          );
+        }
+
+        if (isCpsIdCheck(pathname)) {
+          console.log('path:', pathname);
+          console.log('id:', id);
+          // pathname is the ID of the Live page without /service/live/, and supports both Tipo & CPS IDs
+          fetchUrl = Url(
+            `${host}${port}/api/local/${service}/cpsAssets/${variant ? `/${variant}` : ''}/${id}`,
+          );
+        }
 
         break;
       }
