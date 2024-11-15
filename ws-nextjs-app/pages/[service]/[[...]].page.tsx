@@ -21,8 +21,8 @@ import {
 import { PageTypes } from '#app/models/types/global';
 import handleAvRoute from './av-embeds/handleAvRoute';
 import { AvEmbedsPageProps } from './av-embeds/types';
-import handleArticleRoute from './article/handleArticleRoute';
-import { ArticlePageProps } from './article/types';
+import handleArticleRoute from './articles/handleArticleRoute';
+import { ArticlePageProps } from './articles/types';
 
 // Dynamic imports of page layouts
 const AvEmbedsPageLayout = dynamic(
