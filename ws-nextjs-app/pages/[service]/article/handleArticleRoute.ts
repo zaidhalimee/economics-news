@@ -9,9 +9,23 @@ import isAppPath from '#app/routes/utils/isAppPath';
 import isLitePath from '#app/routes/utils/isLitePath';
 import isAmpPath from '#app/routes/utils/isAmpPath';
 import PageDataParams from '#app/models/types/pageDataParams';
+import certsRequired from '#app/routes/utils/certsRequired';
+import getAgent from '#server/utilities/getAgent';
+import handleError from '#app/routes/utils/handleError';
+import getOnwardsPageData from '#app/routes/article/utils/getOnwardsData';
+import pipe from 'ramda/src/pipe';
+import { Toggles } from '#app/models/types/global';
+import addAnalyticsCounterName from '#app/routes/article/utils/addAnalyticsCounterName';
+import augmentWithDisclaimer from '#app/routes/article/utils/augmentWithDisclaimer';
 import getPageData from '../../../utilities/pageRequests/getPageData';
 
 const logger = nodeLogger(__filename);
+
+const transformPageData = (toggles?: Toggles) =>
+  pipe(
+    addAnalyticsCounterName,
+    augmentWithDisclaimer({ toggles, positionFromTimestamp: 0 }),
+  );
 
 export default async (context: GetServerSidePropsContext) => {
   const {
@@ -41,6 +55,41 @@ export default async (context: GetServerSidePropsContext) => {
     pageType: ARTICLE_PAGE,
   });
 
+  const agent = certsRequired(context.resolvedUrl) ? await getAgent() : null;
+
+  if (!data?.pageData?.article) {
+    throw handleError('Article data is malformed', 500);
+  }
+
+  const { article, secondaryData } = data?.pageData;
+
+  const isAdvertising = article?.metadata?.allowAdvertising ?? false;
+  const isArticleSfv = article?.metadata?.consumableAsSFV ?? false;
+
+  let wsojData = [];
+  const lastPublished = article?.metadata?.lastPublished;
+  const shouldGetOnwardsPageData = lastPublished
+    ? new Date(lastPublished).getFullYear() > new Date().getFullYear() - 2
+    : false;
+  if (shouldGetOnwardsPageData) {
+    try {
+      wsojData = await getOnwardsPageData({
+        pathname: context.resolvedUrl,
+        service,
+        variant: variant || undefined,
+        isAdvertising,
+        isArticleSfv,
+        agent,
+      });
+    } catch (error) {
+      logger.error('Recommendations JSON malformed', error);
+    }
+  }
+
+  const { topStories, features, latestMedia, mostRead } = secondaryData;
+
+  const transformedArticleData = transformPageData(toggles)(article);
+
   context.res.statusCode = data.status;
 
   let routingInfoLogger = logger.debug;
@@ -62,7 +111,16 @@ export default async (context: GetServerSidePropsContext) => {
       isApp,
       isLite,
       isNextJs: true,
-      pageData: data.pageData.article,
+      pageData: {
+        ...transformedArticleData,
+        secondaryColumn: {
+          topStories,
+          features,
+          latestMedia,
+        },
+        mostRead,
+        ...(wsojData && wsojData),
+      },
       pageType: ARTICLE_PAGE,
       pathname: resolvedUrl,
       service,
