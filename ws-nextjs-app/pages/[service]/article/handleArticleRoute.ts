@@ -34,7 +34,7 @@ const transformPageData = (toggles?: Toggles) =>
   );
 
 const getPageTypeToRender = (metadata: ArticleMetadata) => {
-  let pageType: PageTypes = ARTICLE_PAGE;
+  let pageType: PageTypes = metadata?.type;
 
   if (metadata?.type === 'article' && metadata?.consumableAsSFV) {
     pageType = MEDIA_ARTICLE_PAGE;

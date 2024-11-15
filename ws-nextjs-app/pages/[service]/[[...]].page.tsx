@@ -8,6 +8,10 @@ import {
   AV_EMBEDS,
   ARTICLE_PAGE,
   MEDIA_ARTICLE_PAGE,
+  STORY_PAGE,
+  CORRESPONDENT_STORY_PAGE,
+  MEDIA_ASSET_PAGE,
+  PHOTO_GALLERY_PAGE,
 } from '#app/routes/utils/pageTypes';
 import {
   isOptimoIdCheck,
@@ -31,8 +35,12 @@ export default function Page({ pageType, ...rest }: PageProps) {
   switch (pageType) {
     case AV_EMBEDS:
       return <AvEmbedsPageLayout {...rest} />;
+    case STORY_PAGE:
+    case CORRESPONDENT_STORY_PAGE:
     case ARTICLE_PAGE:
+    case PHOTO_GALLERY_PAGE:
       return <ArticlePage {...rest} />;
+    case MEDIA_ASSET_PAGE:
     case MEDIA_ARTICLE_PAGE:
       return <MediaArticlePage {...rest} />;
     default:
