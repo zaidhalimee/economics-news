@@ -100,6 +100,8 @@ export const RequestContextProvider = ({
         return 'app';
       case isAmp:
         return 'amp';
+      case isLite:
+        return 'lite';
       default:
         return 'canonical';
     }
