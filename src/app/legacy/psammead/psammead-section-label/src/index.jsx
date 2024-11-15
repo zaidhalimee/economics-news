@@ -5,6 +5,7 @@ import {
   GEL_GROUP_4_SCREEN_WIDTH_MIN,
 } from '#psammead/gel-foundations/src/breakpoints';
 import {
+  GEL_SPACING_DBL,
   GEL_SPACING_TRPL,
   GEL_SPACING_QUAD,
 } from '#psammead/gel-foundations/src/spacings';
@@ -43,6 +44,7 @@ export const Heading = styled.h2`
   /* reset default margins */
   margin: 0;
   padding: 0;
+  scroll-margin-top: ${GEL_SPACING_DBL};
 
   :focus-visible {
     outline: ${({ theme: { palette } }) =>
