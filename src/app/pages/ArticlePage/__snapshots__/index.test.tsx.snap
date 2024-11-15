@@ -364,6 +364,12 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   padding: 0;
 }
 
+.emotion-15:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
+}
+
 .emotion-17 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -871,6 +877,8 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
       >
         <h2
           class="emotion-15 emotion-16"
+          id="section-label-heading-Most-Read"
+          tabindex="-1"
         >
           <span
             class="emotion-17 emotion-18"
@@ -1526,6 +1534,12 @@ exports[`Article Page should render a news article correctly 1`] = `
 .emotion-19 {
   margin: 0;
   padding: 0;
+}
+
+.emotion-19:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-21 {
@@ -2299,6 +2313,8 @@ exports[`Article Page should render a news article correctly 1`] = `
       >
         <h2
           class="emotion-19 emotion-20"
+          id="section-label-heading-Most-Read"
+          tabindex="-1"
         >
           <span
             class="emotion-21 emotion-22"
@@ -3700,6 +3716,12 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   padding: 0;
 }
 
+.emotion-15:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
+}
+
 .emotion-17 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4427,6 +4449,8 @@ exports[`Article Page should render a rtl article (persian) with most read corre
       >
         <h2
           class="emotion-15 emotion-16"
+          id="section-label-heading-Most-Read"
+          tabindex="-1"
         >
           <span
             class="emotion-17 emotion-18"
