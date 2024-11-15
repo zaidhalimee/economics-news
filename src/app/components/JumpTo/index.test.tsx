@@ -49,7 +49,7 @@ describe('JumpTo Component', () => {
 
   describe('Event Tracking', () => {
     const jumpToTrackerData = {
-      componentName: 'jumpto',
+      componentName: 'scrollable_promo',
       optimizely: null,
     };
     describe('View tracking', () => {
