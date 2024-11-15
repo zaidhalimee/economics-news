@@ -1,6 +1,10 @@
 import { GetServerSidePropsContext } from 'next';
 import extractHeaders from '#server/utilities/extractHeaders';
-import { ARTICLE_PAGE } from '#app/routes/utils/pageTypes';
+import {
+  ARTICLE_PAGE,
+  MEDIA_ARTICLE_PAGE,
+  FEATURE_INDEX_PAGE,
+} from '#app/routes/utils/pageTypes';
 import parseAvRoute from '#app/routes/utils/parseAvRoute';
 import nodeLogger from '#lib/logger.node';
 import { OK } from '#app/lib/statusCodes.const';
@@ -14,10 +18,11 @@ import getAgent from '#server/utilities/getAgent';
 import handleError from '#app/routes/utils/handleError';
 import getOnwardsPageData from '#app/routes/article/utils/getOnwardsData';
 import pipe from 'ramda/src/pipe';
-import { Toggles } from '#app/models/types/global';
+import { PageTypes, Toggles } from '#app/models/types/global';
 import addAnalyticsCounterName from '#app/routes/article/utils/addAnalyticsCounterName';
 import augmentWithDisclaimer from '#app/routes/article/utils/augmentWithDisclaimer';
 import shouldRender from '#app/legacy/containers/PageHandlers/withData/shouldRender';
+import { ArticleMetadata } from '#app/models/types/optimo';
 import getPageData from '../../../utilities/pageRequests/getPageData';
 
 const logger = nodeLogger(__filename);
@@ -27,6 +32,20 @@ const transformPageData = (toggles?: Toggles) =>
     addAnalyticsCounterName,
     augmentWithDisclaimer({ toggles, positionFromTimestamp: 0 }),
   );
+
+const getPageTypeToRender = (metadata: ArticleMetadata) => {
+  let pageType: PageTypes = ARTICLE_PAGE;
+
+  if (metadata?.type === 'article' && metadata?.consumableAsSFV) {
+    pageType = MEDIA_ARTICLE_PAGE;
+  }
+
+  if (metadata?.type === 'FIX') {
+    pageType = FEATURE_INDEX_PAGE;
+  }
+
+  return pageType;
+};
 
 export default async (context: GetServerSidePropsContext) => {
   const {
@@ -130,6 +149,8 @@ export default async (context: GetServerSidePropsContext) => {
     pageType: ARTICLE_PAGE,
   });
 
+  const pageTypeToRender = getPageTypeToRender(article.metadata);
+
   return {
     props: {
       id: urlWithoutQuery,
@@ -147,7 +168,7 @@ export default async (context: GetServerSidePropsContext) => {
         mostRead,
         ...(wsojData && wsojData),
       },
-      pageType: ARTICLE_PAGE,
+      pageType: pageTypeToRender,
       pathname: urlWithoutQuery,
       service,
       status: data.status,

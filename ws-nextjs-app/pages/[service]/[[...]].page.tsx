@@ -4,13 +4,18 @@ import logResponseTime from '#server/utilities/logResponseTime';
 import isLitePath from '#app/routes/utils/isLitePath';
 import extractHeaders from '#server/utilities/extractHeaders';
 // AV Embeds
-import { AV_EMBEDS, ARTICLE_PAGE } from '#app/routes/utils/pageTypes';
+import {
+  AV_EMBEDS,
+  ARTICLE_PAGE,
+  MEDIA_ARTICLE_PAGE,
+} from '#app/routes/utils/pageTypes';
 import {
   isOptimoIdCheck,
   isCpsIdCheck,
 } from '#app/routes/utils/constructPageFetchUrl';
 import { PageTypes } from '#app/models/types/global';
 import ArticlePage from '#app/pages/ArticlePage/ArticlePage';
+import MediaArticlePage from '#app/pages/MediaArticlePage/MediaArticlePage';
 import AvEmbedsPageLayout from './av-embeds/AvEmbedsPageLayout';
 import handleAvRoute from './av-embeds/handleAvRoute';
 import { AvEmbedsPageProps } from './av-embeds/types';
@@ -28,6 +33,8 @@ export default function Page({ pageType, ...rest }: PageProps) {
       return <AvEmbedsPageLayout {...rest} />;
     case ARTICLE_PAGE:
       return <ArticlePage {...rest} />;
+    case MEDIA_ARTICLE_PAGE:
+      return <MediaArticlePage {...rest} />;
     default:
       // Return nothing, 404 is handled in _app.tsx
       return null;
