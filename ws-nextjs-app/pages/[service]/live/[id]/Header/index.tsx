@@ -52,7 +52,13 @@ const Header = ({
               : styles.textContainerWithoutImage
           }
         >
-          <Heading size="trafalgar" level={1} id="content" tabIndex={-1}>
+          <Heading
+            size="trafalgar"
+            level={1}
+            id="content"
+            tabIndex={-1}
+            css={styles.heading}
+          >
             {showLiveLabel ? (
               <LiveLabelHeader isHeaderImage={isHeaderImage}>
                 {Title}

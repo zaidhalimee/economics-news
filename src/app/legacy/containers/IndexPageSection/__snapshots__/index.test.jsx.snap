@@ -44,6 +44,13 @@ HTMLCollection [
 .emotion-4 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
+}
+
+.emotion-4:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-6 {
@@ -922,6 +929,8 @@ HTMLCollection [
     >
       <h2
         class="emotion-4 emotion-5"
+        id="section-label-heading-Top-Stories"
+        tabindex="-1"
       >
         <span
           class="emotion-6 emotion-7"
@@ -1334,6 +1343,13 @@ exports[`IndexPageSection Container snapshots should render correctly for canoni
 .emotion-4 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
+}
+
+.emotion-4:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-6 {
@@ -2213,6 +2229,8 @@ exports[`IndexPageSection Container snapshots should render correctly for canoni
     >
       <h2
         class="emotion-4 emotion-5"
+        id="section-label-heading-Top-Stories"
+        tabindex="-1"
       >
         <span
           class="emotion-6 emotion-7"
@@ -2618,6 +2636,13 @@ exports[`IndexPageSection Container snapshots should render correctly with a lin
 .emotion-4 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
+}
+
+.emotion-4:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-6 {
@@ -3468,6 +3493,8 @@ exports[`IndexPageSection Container snapshots should render correctly with a lin
     >
       <h2
         class="emotion-4 emotion-5"
+        id="section-label-heading-Top-Stories"
+        tabindex="-1"
       >
         <span
           class="emotion-6 emotion-7"
@@ -3673,6 +3700,13 @@ exports[`IndexPageSection Container snapshots should render with only one item 1
 .emotion-4 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
+}
+
+.emotion-4:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-6 {
@@ -4037,6 +4071,8 @@ exports[`IndexPageSection Container snapshots should render with only one item 1
     >
       <h2
         class="emotion-4 emotion-5"
+        id="section-label-heading-Top-Stories"
+        tabindex="-1"
       >
         <span
           class="emotion-6 emotion-7"
@@ -4159,6 +4195,13 @@ exports[`IndexPageSection Container snapshots should render without a bar 1`] = 
 .emotion-4 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
+}
+
+.emotion-4:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-6 {
@@ -5026,6 +5069,8 @@ exports[`IndexPageSection Container snapshots should render without a bar 1`] = 
     >
       <h2
         class="emotion-4 emotion-5"
+        id="section-label-heading-Top-Stories"
+        tabindex="-1"
       >
         <span
           class="emotion-6 emotion-7"
