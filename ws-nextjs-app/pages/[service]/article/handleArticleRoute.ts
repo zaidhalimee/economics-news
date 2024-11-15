@@ -17,6 +17,7 @@ import pipe from 'ramda/src/pipe';
 import { Toggles } from '#app/models/types/global';
 import addAnalyticsCounterName from '#app/routes/article/utils/addAnalyticsCounterName';
 import augmentWithDisclaimer from '#app/routes/article/utils/augmentWithDisclaimer';
+import shouldRender from '#app/legacy/containers/PageHandlers/withData/shouldRender';
 import getPageData from '../../../utilities/pageRequests/getPageData';
 
 const logger = nodeLogger(__filename);
@@ -33,20 +34,20 @@ export default async (context: GetServerSidePropsContext) => {
     req: { headers: reqHeaders },
   } = context;
 
-  const urlWithoutQuery = resolvedUrl.split('?')?.[0];
-
   const { service, renderer_env: rendererEnv } =
     context.query as PageDataParams;
-
-  const isAmp = isAmpPath(urlWithoutQuery);
-  const isApp = isAppPath(urlWithoutQuery);
-  const isLite = isLitePath(urlWithoutQuery);
-  const { variant } = parseAvRoute(resolvedUrl);
 
   context.res.setHeader(
     'Cache-Control',
     'public, stale-if-error=90, stale-while-revalidate=30, max-age=30',
   );
+
+  const urlWithoutQuery = resolvedUrl.split('?')?.[0];
+
+  const isAmp = isAmpPath(urlWithoutQuery);
+  const isApp = isAppPath(urlWithoutQuery);
+  const isLite = isLitePath(urlWithoutQuery);
+  const { variant } = parseAvRoute(resolvedUrl);
 
   const { data, toggles } = await getPageData({
     id: urlWithoutQuery,
@@ -61,7 +62,17 @@ export default async (context: GetServerSidePropsContext) => {
 
   let routingInfoLogger = logger.debug;
 
-  if (data.status !== OK) {
+  const { hasRequestSucceeded, status: shouldRenderStatus } = shouldRender(
+    {
+      pageData: data.pageData,
+      status: data.status,
+    },
+    service,
+    urlWithoutQuery,
+    ARTICLE_PAGE,
+  );
+
+  if (!hasRequestSucceeded && shouldRenderStatus !== OK) {
     routingInfoLogger = logger.error;
 
     return {
@@ -71,9 +82,9 @@ export default async (context: GetServerSidePropsContext) => {
         isLite,
         isNextJs: true,
         service,
-        status: data.status,
+        status: shouldRenderStatus,
         timeOnServer: Date.now(),
-        variant: variant?.[0] || null,
+        variant: variant || null,
         ...extractHeaders(reqHeaders),
       },
     };
@@ -121,7 +132,7 @@ export default async (context: GetServerSidePropsContext) => {
 
   return {
     props: {
-      id: resolvedUrl,
+      id: urlWithoutQuery,
       isAmp,
       isApp,
       isLite,
@@ -137,7 +148,7 @@ export default async (context: GetServerSidePropsContext) => {
         ...(wsojData && wsojData),
       },
       pageType: ARTICLE_PAGE,
-      pathname: resolvedUrl,
+      pathname: urlWithoutQuery,
       service,
       status: data.status,
       toggles,
