@@ -21,6 +21,7 @@ import {
   getProcessEnvAppVariables,
 } from '#lib/utilities/getEnvConfig';
 
+import AmpRenderer from '#server/Document/Renderers/AmpRenderer';
 import LiteRenderer from '#server/Document/Renderers/LiteRenderer';
 import litePageTransforms from '#server/Document/Renderers/litePageTransforms';
 import sendCustomMetric from '#server/utilities/customMetrics';
@@ -34,6 +35,7 @@ import {
 import { OK, INTERNAL_SERVER_ERROR } from '#app/lib/statusCodes.const';
 import NO_JS_CLASSNAME from '#app/lib/noJs.const';
 
+import isAmpPath from '#app/routes/utils/isAmpPath';
 import removeSensitiveHeaders from '../utilities/removeSensitiveHeaders';
 import derivePageType from '../utilities/derivePageType';
 
@@ -80,6 +82,7 @@ type DocProps = {
   helmet: HelmetData;
   htmlAttrs: HTMLAttributes<HTMLHtmlElement>;
   ids: string[];
+  isAmp: boolean;
   isApp: boolean;
   isLite: boolean;
   title: ReactElement;
@@ -88,6 +91,7 @@ type DocProps = {
 export default class AppDocument extends Document<DocProps> {
   static async getInitialProps(ctx: DocumentContext) {
     const url = ctx.asPath || '';
+    const isAmp = isAmpPath(url);
     const isApp = isAppPath(url);
     const isLite = isLitePath(url);
 
@@ -123,13 +127,14 @@ export default class AppDocument extends Document<DocProps> {
       css,
       helmet: Helmet.renderStatic(),
       ids,
+      isAmp,
       isApp,
       isLite,
     };
   }
 
   render() {
-    const { clientSideEnvVariables, css, helmet, ids, isApp, isLite } =
+    const { clientSideEnvVariables, css, helmet, ids, isAmp, isApp, isLite } =
       this.props;
 
     const htmlAttrs = helmet.htmlAttributes.toComponent();
@@ -139,6 +144,19 @@ export default class AppDocument extends Document<DocProps> {
     const helmetScriptTags = helmet.script.toComponent();
 
     switch (true) {
+      case isAmp:
+        return (
+          <AmpRenderer
+            bodyContent={<Main />}
+            helmetLinkTags={helmetLinkTags}
+            helmetMetaTags={helmetMetaTags}
+            helmetScriptTags={helmetScriptTags}
+            htmlAttrs={htmlAttrs}
+            ids={ids}
+            styles={css}
+            title={title}
+          />
+        );
       case isLite:
         return (
           <LiteRenderer
