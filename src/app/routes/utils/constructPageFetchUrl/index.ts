@@ -204,20 +204,17 @@ const constructPageFetchUrl = ({
       case ARTICLE_PAGE: {
         const host = `http://${process.env.HOSTNAME || 'localhost'}`;
         const port = process.env.PORT ? `:${process.env.PORT}` : '';
+        const { assetId } = parseAvRoute(pathname);
 
         if (isOptimoIdCheck(pathname)) {
-          // pathname is the ID of the Live page without /service/live/, and supports both Tipo & CPS IDs
           fetchUrl = Url(
-            `${host}${port}/api/local/${service}/articles/${id}${variant ? `/${variant}` : ''}`,
+            `${host}${port}/api/local/${service}/articles/${assetId}${variant ? `/${variant}` : ''}`,
           );
         }
 
         if (isCpsIdCheck(pathname)) {
-          console.log('path:', pathname);
-          console.log('id:', id);
-          // pathname is the ID of the Live page without /service/live/, and supports both Tipo & CPS IDs
           fetchUrl = Url(
-            `${host}${port}/api/local/${service}/cpsAssets/${variant ? `/${variant}` : ''}/${id}`,
+            `${host}${port}/api/local/${service}/cpsAssets/${variant ? `${variant}/` : ''}${assetId}`,
           );
         }
 
