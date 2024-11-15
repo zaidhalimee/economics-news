@@ -130,6 +130,11 @@ describe('getAppType', () => {
       summary: 'should return mobile-app for app',
     },
     {
+      platform: 'lite',
+      expected: 'lite',
+      summary: 'should return lite for lite',
+    },
+    {
       platform: 'canonical',
       expected: 'responsive',
       summary: 'should return responsive for amp',
