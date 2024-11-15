@@ -1,13 +1,17 @@
 import React from 'react';
 import { GetServerSideProps } from 'next';
+import dynamic from 'next/dynamic';
 import logResponseTime from '#server/utilities/logResponseTime';
 import isLitePath from '#app/routes/utils/isLitePath';
 import extractHeaders from '#server/utilities/extractHeaders';
 // AV Embeds
 import { AV_EMBEDS } from '#app/routes/utils/pageTypes';
-import AvEmbedsPageLayout from './av-embeds/AvEmbedsPageLayout';
 import handleAvRoute from './av-embeds/handleAvRoute';
 import { AvEmbedsPageProps } from './av-embeds/types';
+
+const AvEmbedsPageLayout = dynamic(
+  () => import('./av-embeds/AvEmbedsPageLayout'),
+);
 
 type PageProps = {
   pageType?: typeof AV_EMBEDS | null;
