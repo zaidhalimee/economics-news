@@ -40,13 +40,16 @@ type PageProps = {
 
 export default function Page({ pageType, ...rest }: PageProps) {
   switch (pageType) {
+    // AV Embeds
     case AV_EMBEDS:
       return <AvEmbedsPageLayout {...rest} />;
+    // Article Pages (Optimo + CPS)
     case STORY_PAGE:
     case CORRESPONDENT_STORY_PAGE:
-    case ARTICLE_PAGE:
     case PHOTO_GALLERY_PAGE:
+    case ARTICLE_PAGE:
       return <ArticlePage {...rest} />;
+    // Media Article Pages (Optimo + CPS)
     case MEDIA_ASSET_PAGE:
     case MEDIA_ARTICLE_PAGE:
       return <MediaArticlePage {...rest} />;
