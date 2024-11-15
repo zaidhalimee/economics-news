@@ -239,8 +239,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     showRelatedTopics && topics.length > 0 && !isTransliterated,
   );
 
-  useOptimizelyScrollDepth();
-
   return (
     <div css={styles.pageWrapper}>
       {shouldEnableExperimentTopStories && (
