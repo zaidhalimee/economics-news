@@ -203,11 +203,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
         <ExperimentTopStories topStoriesContent={topStoriesContent} />
       ) : null,
     jumpTo: (props: ComponentToRenderProps & JumpToProps) =>
-      jumpToVariation === 'on_off' ? (
-        <JumpTo {...props} />
-      ) : (
-        <JumpTo {...props} />
-      ),
+      jumpToVariation === 'on' ? <JumpTo {...props} /> : <JumpTo {...props} />,
   };
 
   const visuallyHiddenBlock = {
