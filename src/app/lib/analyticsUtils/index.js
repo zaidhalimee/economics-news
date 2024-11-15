@@ -78,6 +78,8 @@ export const getAppType = platform => {
       return 'amp';
     case 'app':
       return 'mobile-app';
+    case 'lite':
+      return 'lite';
     case 'canonical':
       return 'responsive';
     default:
