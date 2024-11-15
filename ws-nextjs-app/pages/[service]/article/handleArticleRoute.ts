@@ -91,6 +91,7 @@ export default async (context: GetServerSidePropsContext) => {
     ARTICLE_PAGE,
   );
 
+  // If request has fails or should not be rendered, return non-200 status
   if (!hasRequestSucceeded && shouldRenderStatus !== OK) {
     routingInfoLogger = logger.error;
 
