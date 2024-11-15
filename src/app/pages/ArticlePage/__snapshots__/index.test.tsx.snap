@@ -362,6 +362,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 .emotion-15 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
 }
 
 .emotion-15:focus-visible {
@@ -1534,6 +1535,7 @@ exports[`Article Page should render a news article correctly 1`] = `
 .emotion-19 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
 }
 
 .emotion-19:focus-visible {
@@ -3714,6 +3716,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 .emotion-15 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
 }
 
 .emotion-15:focus-visible {
