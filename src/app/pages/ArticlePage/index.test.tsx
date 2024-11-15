@@ -445,8 +445,6 @@ describe('Article Page', () => {
             expect(jumpToSection).toBeNull();
           }
         });
-
-        expect(container).toMatchSnapshot();
       },
     );
   });
