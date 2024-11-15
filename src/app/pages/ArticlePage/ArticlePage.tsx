@@ -143,7 +143,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   };
 
   const jumpToVariation = useOptimizelyVariation(
-    'scrollable_promo',
+    'jump_to',
   ) as unknown as string;
 
   const topStoriesContent = pageData?.secondaryColumn?.topStories;
@@ -204,7 +204,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
         <ExperimentTopStories topStoriesContent={topStoriesContent} />
       ) : null,
     jumpTo: (props: ComponentToRenderProps & JumpToProps) =>
-      jumpToVariation === 'variation_1_aa' ? (
+      jumpToVariation === 'on_off' ? (
         <JumpTo {...props} />
       ) : (
         <JumpTo {...props} />
