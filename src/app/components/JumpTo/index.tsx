@@ -9,7 +9,6 @@ import Text from '#app/components/Text';
 import isLive from '#app/lib/utilities/isLive';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
 import { OptimizelyContext } from '@optimizely/react-sdk';
-import useOptimizelyScrollDepth from '#app/hooks/useOptimizelyScrollDepth';
 import idSanitiser from '../../lib/utilities/idSanitiser';
 import styles from './index.styles';
 
@@ -47,8 +46,6 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
   };
 
   const titleId = 'jump-to-heading';
-
-  useOptimizelyScrollDepth();
 
   return (
     <nav
