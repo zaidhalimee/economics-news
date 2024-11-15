@@ -32,6 +32,12 @@ exports[`SectionLabel With bar When hideSectionHeader is true should add styling
   padding: 0;
 }
 
+.emotion-2:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
+}
+
 .emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -121,6 +127,8 @@ exports[`SectionLabel With bar When hideSectionHeader is true should add styling
   >
     <h2
       class="emotion-2 emotion-3"
+      id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <span
         class="emotion-4 emotion-5"
@@ -165,6 +173,12 @@ exports[`SectionLabel With bar With heading overriden should render a span eleme
 .emotion-2 {
   margin: 0;
   padding: 0;
+}
+
+.emotion-2:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-4 {
@@ -302,6 +316,12 @@ exports[`SectionLabel With bar With linking title should render correctly 1`] = 
   padding: 0;
 }
 
+.emotion-2:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
+}
+
 .emotion-4 {
   color: #222222;
   -webkit-text-decoration: none;
@@ -444,6 +464,8 @@ exports[`SectionLabel With bar With linking title should render correctly 1`] = 
   >
     <h2
       class="emotion-2 emotion-3"
+      id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <a
         class="focusIndicatorDisplayBlock emotion-4 emotion-5"
@@ -501,6 +523,12 @@ exports[`SectionLabel With bar With linking title should render correctly with a
 .emotion-2 {
   margin: 0;
   padding: 0;
+}
+
+.emotion-2:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-4 {
@@ -645,6 +673,8 @@ exports[`SectionLabel With bar With linking title should render correctly with a
   >
     <h2
       class="emotion-2 emotion-3"
+      id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <a
         class="focusIndicatorDisplayBlock emotion-4 emotion-5"
@@ -704,6 +734,12 @@ exports[`SectionLabel With bar With linking title should render correctly with e
   padding: 0;
 }
 
+.emotion-2:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
+}
+
 .emotion-4 {
   color: #222222;
   -webkit-text-decoration: none;
@@ -846,6 +882,8 @@ exports[`SectionLabel With bar With linking title should render correctly with e
   >
     <h2
       class="emotion-2 emotion-3"
+      id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <a
         class="focusIndicatorDisplayBlock emotion-4 emotion-5"
@@ -905,6 +943,12 @@ exports[`SectionLabel With bar With linking title should render correctly with e
   padding: 0;
 }
 
+.emotion-2:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
+}
+
 .emotion-4 {
   color: #222222;
   -webkit-text-decoration: none;
@@ -1047,6 +1091,8 @@ exports[`SectionLabel With bar With linking title should render correctly with e
   >
     <h2
       class="emotion-2 emotion-3"
+      id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <a
         class="focusIndicatorDisplayBlock emotion-4 emotion-5"
@@ -1112,6 +1158,12 @@ exports[`SectionLabel With bar With plain title should render correctly with ara
   padding: 0;
 }
 
+.emotion-2:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
+}
+
 .emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1201,6 +1253,8 @@ exports[`SectionLabel With bar With plain title should render correctly with ara
   >
     <h2
       class="emotion-2 emotion-3"
+      id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <span
         class="emotion-4 emotion-5"
@@ -1247,6 +1301,12 @@ exports[`SectionLabel With bar With plain title should render correctly with exp
   padding: 0;
 }
 
+.emotion-2:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
+}
+
 .emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1336,6 +1396,8 @@ exports[`SectionLabel With bar With plain title should render correctly with exp
   >
     <h2
       class="emotion-2 emotion-3"
+      id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <span
         class="emotion-4 emotion-5"
@@ -1382,6 +1444,12 @@ exports[`SectionLabel With bar With plain title should render correctly with exp
   padding: 0;
 }
 
+.emotion-2:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
+}
+
 .emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1471,6 +1539,8 @@ exports[`SectionLabel With bar With plain title should render correctly with exp
   >
     <h2
       class="emotion-2 emotion-3"
+      id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <span
         class="emotion-4 emotion-5"
@@ -1517,6 +1587,12 @@ exports[`SectionLabel With bar With plain title should render correctly with mob
   padding: 0;
 }
 
+.emotion-2:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
+}
+
 .emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1606,6 +1682,8 @@ exports[`SectionLabel With bar With plain title should render correctly with mob
   >
     <h2
       class="emotion-2 emotion-3"
+      id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <span
         class="emotion-4 emotion-5"
@@ -1650,6 +1728,12 @@ exports[`SectionLabel With bar Without bar With linking title should render corr
 .emotion-2 {
   margin: 0;
   padding: 0;
+}
+
+.emotion-2:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-4 {
@@ -1794,6 +1878,8 @@ exports[`SectionLabel With bar Without bar With linking title should render corr
   >
     <h2
       class="emotion-2 emotion-3"
+      id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <a
         class="focusIndicatorDisplayBlock emotion-4 emotion-5"
@@ -1851,6 +1937,12 @@ exports[`SectionLabel With bar Without bar With linking title should render corr
 .emotion-2 {
   margin: 0;
   padding: 0;
+}
+
+.emotion-2:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-4 {
@@ -1995,6 +2087,8 @@ exports[`SectionLabel With bar Without bar With linking title should render corr
   >
     <h2
       class="emotion-2 emotion-3"
+      id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <a
         class="focusIndicatorDisplayBlock emotion-4 emotion-5"
@@ -2052,6 +2146,12 @@ exports[`SectionLabel With bar Without bar With linking title should render corr
 .emotion-2 {
   margin: 0;
   padding: 0;
+}
+
+.emotion-2:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-4 {
@@ -2196,6 +2296,8 @@ exports[`SectionLabel With bar Without bar With linking title should render corr
   >
     <h2
       class="emotion-2 emotion-3"
+      id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <a
         class="focusIndicatorDisplayBlock emotion-4 emotion-5"
@@ -2253,6 +2355,12 @@ exports[`SectionLabel With bar Without bar With plain title should render correc
 .emotion-2 {
   margin: 0;
   padding: 0;
+}
+
+.emotion-2:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-4 {
@@ -2344,6 +2452,8 @@ exports[`SectionLabel With bar Without bar With plain title should render correc
   >
     <h2
       class="emotion-2 emotion-3"
+      id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <span
         class="emotion-4 emotion-5"
@@ -2388,6 +2498,12 @@ exports[`SectionLabel With bar Without bar With plain title should render correc
 .emotion-2 {
   margin: 0;
   padding: 0;
+}
+
+.emotion-2:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-4 {
@@ -2479,6 +2595,8 @@ exports[`SectionLabel With bar Without bar With plain title should render correc
   >
     <h2
       class="emotion-2 emotion-3"
+      id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <span
         class="emotion-4 emotion-5"
@@ -2523,6 +2641,12 @@ exports[`SectionLabel With bar Without bar With plain title should render correc
 .emotion-2 {
   margin: 0;
   padding: 0;
+}
+
+.emotion-2:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-4 {
@@ -2614,6 +2738,8 @@ exports[`SectionLabel With bar Without bar With plain title should render correc
   >
     <h2
       class="emotion-2 emotion-3"
+      id="section-label-heading-test-section-label"
+      tabindex="-1"
     >
       <span
         class="emotion-4 emotion-5"
