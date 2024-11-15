@@ -33,12 +33,14 @@ export default async (context: GetServerSidePropsContext) => {
     req: { headers: reqHeaders },
   } = context;
 
+  const urlWithoutQuery = resolvedUrl.split('?')?.[0];
+
   const { service, renderer_env: rendererEnv } =
     context.query as PageDataParams;
 
-  const isAmp = isAmpPath(context.resolvedUrl);
-  const isApp = isAppPath(context.resolvedUrl);
-  const isLite = isLitePath(context.resolvedUrl);
+  const isAmp = isAmpPath(urlWithoutQuery);
+  const isApp = isAppPath(urlWithoutQuery);
+  const isLite = isLitePath(urlWithoutQuery);
   const { variant } = parseAvRoute(resolvedUrl);
 
   context.res.setHeader(
@@ -47,16 +49,37 @@ export default async (context: GetServerSidePropsContext) => {
   );
 
   const { data, toggles } = await getPageData({
-    // TODO: Fix this
-    id: context.resolvedUrl.replace('renderer_env=live', ''),
+    id: urlWithoutQuery,
     service,
     variant: variant || undefined,
     rendererEnv,
-    resolvedUrl: context.resolvedUrl,
+    resolvedUrl: urlWithoutQuery,
     pageType: ARTICLE_PAGE,
   });
 
-  const agent = certsRequired(context.resolvedUrl) ? await getAgent() : null;
+  context.res.statusCode = data.status;
+
+  let routingInfoLogger = logger.debug;
+
+  if (data.status !== OK) {
+    routingInfoLogger = logger.error;
+
+    return {
+      props: {
+        isApp,
+        isAmp,
+        isLite,
+        isNextJs: true,
+        service,
+        status: data.status,
+        timeOnServer: Date.now(),
+        variant: variant?.[0] || null,
+        ...extractHeaders(reqHeaders),
+      },
+    };
+  }
+
+  const agent = certsRequired(urlWithoutQuery) ? await getAgent() : null;
 
   if (!data?.pageData?.article) {
     throw handleError('Article data is malformed', 500);
@@ -75,7 +98,7 @@ export default async (context: GetServerSidePropsContext) => {
   if (shouldGetOnwardsPageData) {
     try {
       wsojData = await getOnwardsPageData({
-        pathname: context.resolvedUrl,
+        pathname: urlWithoutQuery,
         service,
         variant: variant || undefined,
         isAdvertising,
@@ -90,16 +113,8 @@ export default async (context: GetServerSidePropsContext) => {
 
   const transformedArticleData = transformPageData(toggles)(article);
 
-  context.res.statusCode = data.status;
-
-  let routingInfoLogger = logger.debug;
-
-  if (data.status !== OK) {
-    routingInfoLogger = logger.error;
-  }
-
   routingInfoLogger(ROUTING_INFORMATION, {
-    url: context.resolvedUrl,
+    url: urlWithoutQuery,
     status: data.status,
     pageType: ARTICLE_PAGE,
   });
