@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /** @jsx jsx */
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { jsx } from '@emotion/react';
 import { ServiceContext } from '#contexts/ServiceContext';
 import useViewTracker from '#app/hooks/useViewTracker';
@@ -33,9 +33,9 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
   const viewRef = useViewTracker(eventTrackingData);
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
 
-  // useEffect(() => {
-  //   setHash(window.location.hash);
-  // }, []);
+  useEffect(() => {
+    setHash(window.location.hash);
+  }, []);
 
   const linkClickHandler = (
     e: React.MouseEvent<HTMLElement, MouseEvent>,
