@@ -7,7 +7,10 @@ import useViewTracker from '#app/hooks/useViewTracker';
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import Text from '#app/components/Text';
 import isLive from '#app/lib/utilities/isLive';
-import { EventTrackingMetadata } from '#app/models/types/eventTracking';
+import {
+  EventTrackingMetadata,
+  viewTrackerRef,
+} from '#app/models/types/eventTracking';
 import idSanitiser from '../../lib/utilities/idSanitiser';
 import styles from './index.styles';
 
@@ -27,7 +30,7 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
   const [hash, setHash] = useState('');
   const { jumpTo = 'Jump to' } = translations?.articlePage || {};
 
-  const viewRef = useViewTracker(eventTrackingData);
+  const viewRef = useViewTracker(eventTrackingData) as viewTrackerRef;
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
 
   useEffect(() => {

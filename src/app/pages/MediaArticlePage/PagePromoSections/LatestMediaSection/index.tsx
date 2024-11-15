@@ -11,13 +11,16 @@ import generatePromoId from '../../../../lib/utilities/generatePromoId';
 import LatestMediaItem from './LatestMediaItem';
 import styles from './index.styles';
 import { LatestMedia } from './types';
-import { EventTrackingBlock } from '../../../../models/types/eventTracking';
+import {
+  EventTrackingBlock,
+  viewTrackerRef,
+} from '../../../../models/types/eventTracking';
 
 const renderLatestMediaList = (
   item: LatestMedia,
   index: number,
   eventTrackingData: EventTrackingBlock,
-  viewRef: () => Promise<void>,
+  viewRef: viewTrackerRef,
 ) => {
   const ariaLabelledBy = generatePromoId({
     sectionType: 'latest-media',
@@ -51,7 +54,7 @@ const LatestMediaSection = ({ content }: { content: LatestMedia[] | null }) => {
 
   const eventTrackingDataSend = eventTrackingData?.block;
 
-  const viewRef = useViewTracker(eventTrackingDataSend);
+  const viewRef = useViewTracker(eventTrackingDataSend) as viewTrackerRef;
   const LABEL_ID = 'latest-media-heading';
 
   if (!content || content?.length === 0) return null;

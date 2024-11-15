@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { shouldRenderLastUpdated } from '#lib/utilities/filterPopularStaleData/isDataStale';
 import { ServiceContext } from '#app/contexts/ServiceContext';
+import { viewTrackerRef } from '#app/models/types/eventTracking';
 import useViewTracker from '../../../hooks/useViewTracker';
 import { MostReadLink, MostReadItemWrapper } from './Item';
 import MostReadList from './List';
@@ -34,7 +35,7 @@ const MostRead = ({
     timezone,
     mostRead: { lastUpdated, numberOfItems = 5 },
   } = useContext(ServiceContext);
-  const viewRef = useViewTracker(eventTrackingData);
+  const viewRef = useViewTracker(eventTrackingData) as viewTrackerRef;
 
   const locale = serviceDatetimeLocale || datetimeLocale;
 
