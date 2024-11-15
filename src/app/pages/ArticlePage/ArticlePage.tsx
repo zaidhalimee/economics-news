@@ -42,6 +42,7 @@ import JumpTo, { JumpToProps } from '#app/components/JumpTo';
 import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
 import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
 import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
+import useOptimizelyScrollDepth from '#app/hooks/useOptimizelyScrollDepth';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
@@ -237,6 +238,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const showTopics = Boolean(
     showRelatedTopics && topics.length > 0 && !isTransliterated,
   );
+
+  useOptimizelyScrollDepth();
 
   return (
     <div css={styles.pageWrapper}>
