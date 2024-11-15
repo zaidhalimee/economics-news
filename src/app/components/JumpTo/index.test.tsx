@@ -10,6 +10,8 @@ import pidginArticleFixtureWithJumpToBlock from './fixtureData';
 import * as viewTracking from '../../hooks/useViewTracker';
 import * as clickTracking from '../../hooks/useClickTrackerHandler';
 
+jest.mock('#app/hooks/useOptimizelyScrollDepth');
+
 describe('JumpTo Component', () => {
   const jumpToBlock =
     pidginArticleFixtureWithJumpToBlock.data.article.content.model.blocks.find(
