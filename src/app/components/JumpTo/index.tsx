@@ -12,7 +12,7 @@ import idSanitiser from '../../lib/utilities/idSanitiser';
 import styles from './index.styles';
 
 export interface JumpToProps {
-  jumpToHeadings: Array<{ heading: string; id: string }>;
+  jumpToHeadings: Array<{ heading: string; id?: string }>;
   showRelatedContentLink?: boolean;
 }
 

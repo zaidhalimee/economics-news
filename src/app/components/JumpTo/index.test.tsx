@@ -38,7 +38,7 @@ describe('JumpTo Component', () => {
     it('renders the correct number of headings with related content link', () => {
       render(<JumpTo jumpToHeadings={jumpToHeadings} showRelatedContentLink />);
       const headings = screen.getAllByRole('listitem');
-      expect(headings.length).toBe(jumpToHeadings.length);
+      expect(headings.length).toBe(jumpToHeadings.length + 1); // related content heading is added into the array inside the component
     });
 
     it('renders each item with a link to the corresponding subheading on the same page', () => {
