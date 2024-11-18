@@ -26,6 +26,7 @@ import {
   UGC_PAGE,
   AV_EMBEDS,
   DOWNLOADS_PAGE,
+  TV_PAGE,
 } from '../../routes/utils/pageTypes';
 import { PageTypes, Platforms } from '../../models/types/global';
 import { buildATIEventTrackingParams } from '../../components/ATIAnalytics/params';
@@ -72,6 +73,7 @@ const getCampaignID = (pageType: CampaignPageTypes) => {
     [UGC_PAGE]: '',
     [AV_EMBEDS]: 'av-embeds',
     [DOWNLOADS_PAGE]: 'downloads',
+    [TV_PAGE]: 'player-episode-tv',
   }[pageType];
 
   if (!campaignID) {

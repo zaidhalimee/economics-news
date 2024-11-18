@@ -18,6 +18,7 @@ import {
   UGC_PAGE,
   AV_EMBEDS,
   DOWNLOADS_PAGE,
+  TV_PAGE,
 } from '../../../routes/utils/pageTypes';
 import {
   buildTvRadioATIParams,
@@ -51,6 +52,7 @@ const MIGRATED_PAGE_TYPES: PageTypes[] = [
   LIVE_PAGE,
   STATIC_PAGE,
   DOWNLOADS_PAGE,
+  TV_PAGE,
 ];
 
 const noOp = () => {
@@ -77,6 +79,7 @@ const pageTypeUrlBuilders = {
   [UGC_PAGE]: noOp,
   [AV_EMBEDS]: noOp,
   [DOWNLOADS_PAGE]: noOp,
+  [TV_PAGE]: noOp,
 };
 
 const pageTypeParamBuilders = {
@@ -99,6 +102,7 @@ const pageTypeParamBuilders = {
   [UGC_PAGE]: noOp,
   [AV_EMBEDS]: noOp,
   [DOWNLOADS_PAGE]: noOp,
+  [TV_PAGE]: noOp,
 };
 
 type BuilderFunction = {
