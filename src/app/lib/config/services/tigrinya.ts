@@ -317,12 +317,12 @@ export const service: DefaultServiceConfig = {
         url: '/tigrinya/topics/c5qvp11n2vzt',
       },
       {
-        title: 'ቅልውላው ማእከላይ ምብራቕ',
+        title: 'ማእከላይ ምብራቕ',
         url: '/tigrinya/topics/c5qvp1qz3q6t',
       },
       {
-        title: 'ምርጫ ኣመሪካ',
-        url: '/tigrinya/topics/cxdyjg4kpxpt',
+        title: 'ሳይንስን ጥዕናን',
+        url: '/tigrinya/topics/cx2yler1d05t',
       },
       {
         title: 'ቪድዮ',

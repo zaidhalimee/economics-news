@@ -84,5 +84,16 @@ describe('litePageTransforms', () => {
 
       expect(modifiedHtml).toEqual(originalHtml);
     });
+
+    it('should not append .lite suffix when href is restricted on soft launch', () => {
+      const originalHtml = `
+        <a href="https://www.bbc.com/ws/languages">Other Languages</a>
+        <a href="https://www.bbc.com/ws/languages?xtor=CS1-13-[wsgahuza~N~A39~MBC]-[Owned]&utm_source=mktg">Other Languages</a>
+      `;
+
+      const modifiedHtml = litePageTransforms(originalHtml);
+
+      expect(modifiedHtml).toEqual(originalHtml);
+    });
   });
 });
