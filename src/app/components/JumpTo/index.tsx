@@ -12,7 +12,7 @@ import idSanitiser from '../../lib/utilities/idSanitiser';
 import styles from './index.styles';
 
 export interface JumpToProps {
-  jumpToHeadings?: Array<{ heading: string; sanitisedId?: string }>;
+  jumpToHeadings: Array<{ heading: string; id: string }>;
   showRelatedContentLink?: boolean;
 }
 
@@ -41,17 +41,24 @@ const JumpTo = ({ jumpToHeadings, showRelatedContentLink }: JumpToProps) => {
     clickTrackerHandler(e);
     setHash(subheadingId);
   };
-
+  const headingsToRender = [
+    // Add article subheadings into a copy of the array to stop mutation of the original array
+    ...jumpToHeadings.map(({ heading }) => ({
+      heading,
+      id: idSanitiser(heading),
+    })),
+    // Related content link also added to the headings list when that OJ is present on the page
+    ...(showRelatedContentLink
+      ? [
+          {
+            heading: relatedContent,
+            id: 'section-label-heading-related-content-heading',
+          },
+        ]
+      : []),
+  ];
   const titleId = 'jump-to-heading';
-  if (
-    showRelatedContentLink &&
-    !jumpToHeadings?.some(({ heading }) => heading === relatedContent)
-  ) {
-    jumpToHeadings?.push({
-      heading: relatedContent,
-      sanitisedId: 'section-label-heading-related-content-heading',
-    });
-  }
+
   return (
     <nav
       ref={viewRef}
@@ -70,8 +77,7 @@ const JumpTo = ({ jumpToHeadings, showRelatedContentLink }: JumpToProps) => {
         {jumpTo}
       </Text>
       <ol role="list" css={styles.list}>
-        {jumpToHeadings?.map(({ heading, sanitisedId }) => {
-          const id = sanitisedId || idSanitiser(heading);
+        {headingsToRender?.map(({ heading, id }) => {
           const idWithHash = `#${id}`;
           const isActiveId = decodeURIComponent(hash) === idWithHash;
           return (
