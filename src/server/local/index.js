@@ -240,6 +240,25 @@ export default server => {
       );
       sendDataFile(res, localComscorePath, next);
     })
+    .get('/static/js/reverb/reverb-:version.js', ({ params }, res, next) => {
+      const { version } = params;
+      const localReverbPath = path.join(
+        process.cwd(),
+        `/public/static/js/reverb/reverb-${version}.js`,
+      );
+      sendDataFile(res, localReverbPath, next);
+    })
+    .get(
+      '/static/js/reverb/smarttag-:version.min.js',
+      ({ params }, res, next) => {
+        const { version } = params;
+        const localSmartTagPath = path.join(
+          process.cwd(),
+          `/public/static/js/reverb/smarttag-${version}.min.js`,
+        );
+        sendDataFile(res, localSmartTagPath, next);
+      },
+    )
     .get('/ckns_policy/*', (req, res) => {
       // Route to allow the cookie banner to make the cookie oven request
       // without throwing an error due to not being on a bbc domain.
