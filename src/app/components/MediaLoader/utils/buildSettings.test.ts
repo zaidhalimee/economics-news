@@ -1,6 +1,6 @@
 import { PageTypes, Services } from '#app/models/types/global';
 import { MEDIA_PAGE } from '#app/routes/utils/pageTypes';
-import hindiTvProgramme from '#data/hindi/bbc_hindi_tv/tv_programmes/w13xttlw.json';
+import { data as hindiTvProgramme } from '#data/hindi/bbc_hindi_tv/tv_programmes/w13xttlw.json';
 import hausaLiveRadio from '#data/hausa/bbc_hausa_radio/liveradio.json';
 import afriqueRadio from '#data/afrique/bbc_afrique_radio/w172xqydyfv659p.json';
 import { service as hausaServiceConfig } from '#app/lib/config/services/hausa';
@@ -678,17 +678,6 @@ describe('buildSettings', () => {
       translations: hindiServiceConfig.default.translations,
     } as BuildConfigProps;
 
-    const hindiTvMediaBlocks = hindiTvProgramme.content.blocks.map(
-      tvMediaBlock => {
-        return {
-          type: 'tv',
-          model: {
-            ...tvMediaBlock,
-          },
-        };
-      },
-    );
-
     it('Should process an On Demand TV block into a valid playlist item.', () => {
       const hindiTvMediaOverrides = {
         model: {
@@ -701,7 +690,10 @@ describe('buildSettings', () => {
 
       const result = buildSettings({
         ...hindiTvBaseSettings,
-        blocks: [...hindiTvMediaBlocks, hindiTvMediaOverrides] as MediaBlock[],
+        blocks: [
+          ...hindiTvProgramme.mediaBlocks,
+          hindiTvMediaOverrides,
+        ] as MediaBlock[],
         pageType: MEDIA_PAGE,
       });
 
@@ -716,7 +708,7 @@ describe('buildSettings', () => {
           statsObject: {
             destination: 'WS_NEWS_LANGUAGES',
             producer: 'HINDI',
-            episodePID: 'w172zm89sk8n4lc',
+            episodePID: 'w172zm8fshrhc7r',
           },
           ui: {
             skin: 'classic',
@@ -733,10 +725,10 @@ describe('buildSettings', () => {
           playlistObject: {
             title: 'दुनिया',
             holdingImageURL:
-              'https://ichef.bbci.co.uk/images/ic/$recipe/p0jlxsx8.jpg',
+              'https://ichef.bbci.co.uk/images/ic/$recipe/p0k4wgbv.jpg',
             items: [
               {
-                versionID: 'w1mskyp9nwh0dvl',
+                versionID: 'w1mskypfntyvmhz',
                 kind: 'programme',
                 duration: 1192,
               },
@@ -748,7 +740,8 @@ describe('buildSettings', () => {
         mediaType: 'video',
         placeholderConfig: {
           mediaInfo: {
-            title: 'दुनिया',
+            title:
+              'लेबनान में एक और संघर्ष की कोशिश, दूसरी ओर इसराइल की भारी बमबारी',
             datetime: 'PT19M52S',
             duration: '19:52',
             durationSpoken: 'अवधि 19,52',
@@ -756,9 +749,9 @@ describe('buildSettings', () => {
             guidanceMessage: undefined,
           },
           placeholderSrc:
-            'https://ichef.bbci.co.uk/images/ic/$recipe/p0jlxsx8.jpg',
+            'https://ichef.bbci.co.uk/images/ic/$recipe/p0k4wgbv.jpg',
           placeholderSrcset:
-            'https://ichef.bbci.co.uk/images/ic/240xn/p0jlxsx8.jpg.webp 240w, https://ichef.bbci.co.uk/images/ic/320xn/p0jlxsx8.jpg.webp 320w, https://ichef.bbci.co.uk/images/ic/480xn/p0jlxsx8.jpg.webp 480w, https://ichef.bbci.co.uk/images/ic/624xn/p0jlxsx8.jpg.webp 624w, https://ichef.bbci.co.uk/images/ic/800xn/p0jlxsx8.jpg.webp 800w',
+            'https://ichef.bbci.co.uk/images/ic/240xn/p0k4wgbv.jpg.webp 240w, https://ichef.bbci.co.uk/images/ic/320xn/p0k4wgbv.jpg.webp 320w, https://ichef.bbci.co.uk/images/ic/480xn/p0k4wgbv.jpg.webp 480w, https://ichef.bbci.co.uk/images/ic/624xn/p0k4wgbv.jpg.webp 624w, https://ichef.bbci.co.uk/images/ic/800xn/p0k4wgbv.jpg.webp 800w',
           translatedNoJSMessage: 'प्लेबैक आपके उपकरण पर नहीं हो पा रहा',
         },
         showAds: false,
@@ -777,7 +770,10 @@ describe('buildSettings', () => {
 
       const result = buildSettings({
         ...hindiTvBaseSettings,
-        blocks: [...hindiTvMediaBlocks, hindiTvMediaOverrides] as MediaBlock[],
+        blocks: [
+          ...hindiTvProgramme.mediaBlocks,
+          hindiTvMediaOverrides,
+        ] as MediaBlock[],
         pageType: MEDIA_PAGE,
       });
 
@@ -798,7 +794,10 @@ describe('buildSettings', () => {
 
       const result = buildSettings({
         ...hindiTvBaseSettings,
-        blocks: [...hindiTvMediaBlocks, hindiTvMediaOverrides] as MediaBlock[],
+        blocks: [
+          ...hindiTvProgramme.mediaBlocks,
+          hindiTvMediaOverrides,
+        ] as MediaBlock[],
         pageType: MEDIA_PAGE,
       });
 
