@@ -756,7 +756,7 @@ exports[`OnDemand TV Brand Page  Dark Mode Design - should match snapshot 1`] = 
           id="content"
           tabindex="-1"
         >
-           د بي بي سي خبرونه , ۱۷ سپتمبر ۲۰۲۴
+           د بي بي سي خبرونه , ۱۸ نومبر ۲۰۲۴
         </h1>
         <figure
           class="emotion-7"
@@ -862,12 +862,13 @@ exports[`OnDemand TV Brand Page  Dark Mode Design - should match snapshot 1`] = 
           class="emotion-29 emotion-30"
         >
           نړۍ دا وخت، د نړۍ او سیمې وروستۍ پرمختیاوې یادوي
+
         </p>
         <time
           class="emotion-31 emotion-32"
-          datetime="۲۰۲۴-۰۹-۱۷"
+          datetime="۲۰۲۴-۱۱-۱۸"
         >
-          ۱۷ سپتمبر ۲۰۲۴
+          ۱۸ نومبر ۲۰۲۴
         </time>
       </div>
     </main>
