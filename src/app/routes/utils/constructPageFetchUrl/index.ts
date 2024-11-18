@@ -23,6 +23,7 @@ import {
   LIVE_PAGE,
   MOST_READ_PAGE,
   TOPIC_PAGE,
+  TV_PAGE,
   UGC_PAGE,
 } from '../pageTypes';
 import parseAvRoute from '../parseAvRoute';
@@ -133,6 +134,9 @@ const getId = ({ pageType, service, variant, env }: GetIdProps) => {
         return id;
       };
       break;
+    case TV_PAGE:
+      getIdFunction = (path: string) => path;
+      break;
     default:
       getIdFunction = () => null;
       break;
@@ -213,6 +217,7 @@ const constructPageFetchUrl = ({
         break;
       }
       case CPS_ASSET:
+      case TV_PAGE:
         fetchUrl = Url(`/${id}`);
         break;
       case HOME_PAGE: {
