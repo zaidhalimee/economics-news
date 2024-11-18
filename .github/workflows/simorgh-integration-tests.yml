@@ -1,8 +1,5 @@
 name: Simorgh CI - Integration Tests
 on:
-  create:
-    branches:
-      - '**'
   pull_request:
     branches:
       - '**'

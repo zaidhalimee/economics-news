@@ -305,6 +305,10 @@ export const service: DefaultServiceConfig = {
           text: "BBC'ye ulaş",
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -327,6 +331,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Orta Doğu',
         url: '/turkce/topics/cg726y2qxg1t',
+      },
+      {
+        title: 'ABD Seçimleri',
+        url: '/turkce/topics/c3gyjy0vy91t',
       },
       {
         title: 'Rusya-Ukrayna Savaşı',

@@ -48,6 +48,13 @@ exports[`Canonical Sinhala Live Radio Page Footer Anchors should match text and 
 
 exports[`Canonical Sinhala Live Radio Page Footer Anchors should match text and url 7`] = `
 {
+  "text": "Other Languages",
+  "url": "https://www.bbc.com/ws/languages",
+}
+`;
+
+exports[`Canonical Sinhala Live Radio Page Footer Anchors should match text and url 8`] = `
+{
   "text": "බාහිර යොමු කෙරෙහි අපගේ ප්‍රවේශය ගැන කියවන්න.",
   "url": "https://www.bbc.co.uk/editorialguidelines/guidance/feeds-and-links",
 }
@@ -68,8 +75,8 @@ exports[`Canonical Sinhala Live Radio Page Header Navigation link should match t
 
 exports[`Canonical Sinhala Live Radio Page Header Navigation link should match text and url 2`] = `
 {
-  "text": "ජනාධිපතිවරණය 2024",
-  "url": "/sinhala/topics/cg3e84v9ky0t",
+  "text": "මහ මැතිවරණය 2024",
+  "url": "/sinhala/topics/c5y3ve4z2lkt",
 }
 `;
 

@@ -178,6 +178,13 @@ exports[`AMP Home Page Footer Anchors should match text and url 7`] = `
 
 exports[`AMP Home Page Footer Anchors should match text and url 8`] = `
 {
+  "text": "Other Languages",
+  "url": "https://www.bbc.com/ws/languages",
+}
+`;
+
+exports[`AMP Home Page Footer Anchors should match text and url 9`] = `
+{
   "text": "बाहरी साइटों का लिंक देने की हमारी नीति के बारे में पढ़ें.",
   "url": "https://www.bbc.co.uk/editorialguidelines/guidance/feeds-and-links",
 }
@@ -264,6 +271,16 @@ exports[`AMP Home Page Header Navigation link should match text and url 9`] = `
 exports[`AMP Home Page Main heading should match text 1`] = `"BBC News, हिंदी - होम पेज"`;
 
 exports[`AMP Home Page Page content First item in the first curation is the correct headline 1`] = `"पाक: मोदी की 'तारीफ़' पर गद्दारी का मुकदमा! 23"`;
+
+exports[`AMP Home Page Page content First item in the first curation is the correct image 1`] = `
+<amp-img
+  alt="पढ़ें"
+  class="bbc-image"
+  fallback=""
+  layout="fill"
+  src="https://ichef.test.bbci.co.uk/ace/standard/240/cpsdevpb/15392/test/_63503968_160822002233_rio_olympic_closing_624x351_afp.jpg"
+/>
+`;
 
 exports[`AMP Home Page SEO Apple Touch Icon should match attributes 1`] = `
 {

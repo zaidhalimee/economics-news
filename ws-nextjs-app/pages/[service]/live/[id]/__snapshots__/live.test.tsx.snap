@@ -87,6 +87,10 @@ exports[`Live Page creates snapshot of the live page 1`] = `
   }
 }
 
+.emotion-5:focus {
+  outline: none;
+}
+
 .emotion-6 {
   display: block;
   color: #FEFEFE;

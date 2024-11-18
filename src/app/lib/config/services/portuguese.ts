@@ -48,16 +48,17 @@ export const service: DefaultServiceConfig = {
     showAdPlaceholder: true,
     showRelatedTopics: true,
     podcastPromo: {
-      title: 'Que História!',
-      brandTitle: 'Que História!',
-      brandDescription: 'A 3ª temporada com histórias reais incríveis',
+      title: 'Novo podcast investigativo: A Raposa',
+      brandTitle: 'Novo podcast investigativo: A Raposa',
+      brandDescription:
+        'Uma tonelada de cocaína, três brasileiros inocentes e a busca por um suspeito inglês',
       image: {
-        src: 'https://ichef.bbc.co.uk/images/ic/$recipe/p0jfptnr.png',
-        alt: 'Logo: Que História!',
+        src: 'https://ichef.bbc.co.uk/images/ic/$recipe/p0k38tc4.jpg',
+        alt: 'Logo: A Raposa',
       },
       linkLabel: {
         text: 'Episódios',
-        href: 'https://www.bbc.com/portuguese/podcasts/p07r3r3t',
+        href: 'https://www.bbc.com/portuguese/podcasts/p0cyhvny',
       },
       skipLink: {
         text: 'Pule %title% e continue lendo',
@@ -398,6 +399,10 @@ export const service: DefaultServiceConfig = {
           text: 'Contate a BBC',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -416,14 +421,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Brasil',
         url: '/portuguese/topics/cz74k717pw5t',
-      },
-      {
-        title: 'Eleições municipais',
-        url: '/portuguese/topics/cy6z19wz1zet',
-      },
-      {
-        title: 'Eleições EUA',
-        url: '/portuguese/topics/c30gn378n6kt',
       },
       {
         title: 'Internacional',

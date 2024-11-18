@@ -78,6 +78,8 @@ export const getAppType = platform => {
       return 'amp';
     case 'app':
       return 'mobile-app';
+    case 'lite':
+      return 'lite';
     case 'canonical':
       return 'responsive';
     default:
@@ -269,7 +271,7 @@ export const getEventInfo = ({
   pageIdentifier = '',
   componentName = '',
   campaignID = '',
-  variant = '', // not a service variant - used for A/B testing
+  experimentVariant = '',
   format = '',
   detailedPlacement = '',
   advertiserID = '',
@@ -278,7 +280,7 @@ export const getEventInfo = ({
   const generalPlacement = pageIdentifier;
   const creation = componentName;
 
-  return `PUB-[${campaignID}]-[${creation}]-[${variant}]-[${format}]-[${generalPlacement}]-[${detailedPlacement}]-[${advertiserID}]-[${url}]`;
+  return `PUB-[${campaignID}]-[${creation}]-[${experimentVariant}]-[${format}]-[${generalPlacement}]-[${detailedPlacement}]-[${advertiserID}]-[${url}]`;
 };
 
 export const getThingAttributes = (attribute, articleData) => {
