@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import { useContext } from 'react';
+/* @jsxFrag React.Fragment */
+import React, { useContext } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 import useToggle from '#hooks/useToggle';
 import { singleTextBlock } from '#app/models/blocks';
@@ -143,6 +144,10 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const jumpToVariation = useOptimizelyVariation(
     'jump_to',
   ) as unknown as string;
+
+  const hasJumpToBlockForExperiment = blocks.some(
+    block => block.type === 'jumpTo',
+  );
 
   const topStoriesContent = pageData?.secondaryColumn?.topStories;
   const { shouldEnableExperimentTopStories, transformedBlocks } =
@@ -344,8 +349,12 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           mobileDivider={showTopics}
         />
       )}
-      <OptimizelyArticleCompleteTracking />
-      <OptimizelyPageViewTracking />
+      {hasJumpToBlockForExperiment && (
+        <>
+          <OptimizelyArticleCompleteTracking />
+          <OptimizelyPageViewTracking />
+        </>
+      )}
     </div>
   );
 };
