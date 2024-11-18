@@ -30,11 +30,7 @@ export interface ATIData {
   producerName?: string | null;
   timePublished?: string | null;
   timeUpdated?: string | null;
-<<<<<<< HEAD
   ampExperimentName?: string;
-  experimentVariant?: string | null;
-=======
->>>>>>> 2a7f86456d43a82d68a3deacba608795ccd0264d
 }
 
 export interface PageData {
