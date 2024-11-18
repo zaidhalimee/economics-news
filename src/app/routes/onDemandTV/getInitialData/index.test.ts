@@ -1,13 +1,16 @@
-import onDemandTvJson from '#data/pashto/bbc_pashto_tv/tv_programmes/w13xttn4';
+import onDemandTvJson from '#data/pashto/bbc_pashto_tv/tv_programmes/w13xttn4.json';
+import { FetchMock } from 'jest-fetch-mock';
 import { MEDIA_PAGE } from '#app/routes/utils/pageTypes';
-import * as fetchPageData from '../../utils/fetchPageData';
 import getInitialData from '.';
 
-fetch.mockResponse(JSON.stringify(onDemandTvJson));
 const { env } = process;
-const spy = jest.spyOn(fetchPageData, 'default');
+const fetchMock = fetch as FetchMock;
 
 describe('Get initial data for on demand tv', () => {
+  beforeEach(() => {
+    fetchMock.mockResponse(JSON.stringify(onDemandTvJson));
+  });
+
   afterEach(() => {
     process.env = { ...env };
     jest.clearAllMocks();
@@ -16,6 +19,7 @@ describe('Get initial data for on demand tv', () => {
   it('should return essential data for a page to render', async () => {
     const { pageData } = await getInitialData({
       path: 'mock-on-demand-tv-path',
+      service: 'pashto',
       pageType: MEDIA_PAGE,
       toggles: {
         recentVideoEpisodes: { enabled: false, value: 4 },
@@ -41,6 +45,7 @@ describe('Get initial data for on demand tv', () => {
       path: 'mock-on-demand-tv-path',
       pageType: MEDIA_PAGE,
       toggles: {
+        // @ts-expect-error allow toggle value to be null for testing purposes
         recentVideoEpisodes: null,
       },
     });
@@ -63,6 +68,7 @@ describe('Get initial data for on demand tv', () => {
   it('should return recent episode data when recentEpisode toggle is enabled', async () => {
     const { pageData } = await getInitialData({
       path: 'mock-on-demand-tv-path',
+      service: 'pashto',
       pageType: MEDIA_PAGE,
       toggles: {
         recentVideoEpisodes: { enabled: true, value: 3 },
