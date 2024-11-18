@@ -218,7 +218,7 @@ const constructPageFetchUrl = ({
       }
       case CPS_ASSET:
       case TV_PAGE:
-        fetchUrl = Url(`/${id}`);
+        fetchUrl = Url(`${id}`);
         break;
       case HOME_PAGE: {
         const variantPath = variant ? `/${variant}` : '';
