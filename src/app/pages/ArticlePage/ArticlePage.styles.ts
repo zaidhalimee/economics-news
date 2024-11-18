@@ -98,7 +98,7 @@ export default {
         marginBottom: `${spacings.FULL}rem`,
         padding: `${spacings.DOUBLE}rem`,
       },
-      '[amp-x-topStoriesExperiment="show_at_halfway"] &': {
+      '[amp-x-topStoriesExperiment*="show"] &': {
         display: 'none',
         [mq.GROUP_4_MIN_WIDTH]: {
           display: 'block',
