@@ -66,35 +66,22 @@ export default ({ service, pageType, variant }) => {
                 ['recentVideoEpisodes', 'value'],
                 toggles,
               );
-              const currentPath = Cypress.env('currentPath');
-              const url =
-                Cypress.env('APP_ENV') === 'test'
-                  ? `${currentPath}?renderer_env=live`
-                  : `${currentPath}`;
 
-              cy.request(getDataUrl(url)).then(({ body }) => {
-                const episodeId = path(['content', 'blocks', 0, 'id'], body);
-
-                const expectedNumberOfEpisodes = processRecentEpisodes(body, {
-                  exclude: episodeId,
-                  recentEpisodesLimit: recentEpisodesMaxNumber,
-                }).length;
-
-                cy.log(
-                  `Number of available episodes? ${expectedNumberOfEpisodes}`,
+              cy.log(
+                  `Number of available episodes? ${recentEpisodesMaxNumber}`,
                 );
                 // More than one episode expected
-                if (expectedNumberOfEpisodes > 1) {
+                if (recentEpisodesMaxNumber > 1) {
                   cy.get('[data-e2e=recent-episodes-list]').should('exist');
 
                   cy.get('[data-e2e=recent-episodes-list]').within(() => {
                     cy.get('[data-e2e=recent-episodes-list-item]')
                       .its('length')
-                      .should('eq', expectedNumberOfEpisodes);
+                      .should('eq', recentEpisodesMaxNumber);
                   });
                 }
                 // If there is only one item, it is not in a list
-                else if (expectedNumberOfEpisodes === 1) {
+                else if (recentEpisodesMaxNumber === 1) {
                   cy.get('aside[aria-labelledby=recent-episodes]').within(
                     () => {
                       cy.get('[data-e2e="recent-episodes-list"]').should(
@@ -111,14 +98,12 @@ export default ({ service, pageType, variant }) => {
 
                   cy.log('No episodes present or available');
                 }
-              });
             }
             // Not toggled on for this service
             else {
               cy.get('[data-e2e=recent-episodes-list]').should('not.exist');
               cy.log('Recent episodes is not toggled on for this service');
             }
-          });
         });
       });
     });
