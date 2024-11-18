@@ -2,7 +2,7 @@
 
 exports[`Canonical On Demand T V Page A11y I can see the skip to content link 1`] = `"Tsallaka zuwa abubuwan da ke ciki"`;
 
-exports[`Canonical On Demand T V Page Analytics ATI 1`] = `"<img height="1px" width="1px" alt="" style="position:absolute" src="https://logws1363.ati-host.net?s=598343&amp;s2=51&amp;x1=[urn%3Abbc%3Apips%3Aw172xcg0kg6vph8]&amp;x2=[responsive]&amp;x3=[news-hausa]&amp;x4=[ha]&amp;x8=[simorgh-nojs]"/>"`;
+exports[`Canonical On Demand T V Page Analytics ATI 1`] = `"<img height="1px" width="1px" alt="" style="position:absolute" src="https://logws1363.ati-host.net?s=598343&amp;s2=51&amp;x1=[urn%3Abbc%3Apips%3Aw172yjj7rfhxp1p]&amp;x2=[responsive]&amp;x3=[news-hausa]&amp;x4=[ha]&amp;x8=[simorgh-nojs]"/>"`;
 
 exports[`Canonical On Demand T V Page Footer Anchors should match text and url 1`] = `
 {
@@ -457,7 +457,7 @@ exports[`Canonical On Demand T V Page SEO Apple Touch Icon should match attribut
 }
 `;
 
-exports[`Canonical On Demand T V Page SEO Canonical link 1`] = `"http://localhost:7080/hausa/bbc_hausa_tv/tv/w172xcg0kg6vph8"`;
+exports[`Canonical On Demand T V Page SEO Canonical link 1`] = `"http://localhost:7080/hausa/bbc_hausa_tv/tv/w172yjj7rfhxp1p"`;
 
 exports[`Canonical On Demand T V Page SEO Dir attribute 1`] = `"ltr"`;
 
@@ -485,7 +485,7 @@ exports[`Canonical On Demand T V Page SEO Linked data should match text 1`] = `
         "name": "Hausa",
       },
       "mainEntityOfPage": {
-        "@id": "http://localhost:7080/hausa/bbc_hausa_tv/tv/w172xcg0kg6vph8",
+        "@id": "http://localhost:7080/hausa/bbc_hausa_tv/tv/w172yjj7rfhxp1p",
         "@type": "WebPage",
         "name": "Labaran Talabijin - Labaran Talabijin - BBC News Hausa",
       },
@@ -501,7 +501,7 @@ exports[`Canonical On Demand T V Page SEO Linked data should match text 1`] = `
         "publishingPrinciples": "https://www.bbc.com/hausa/game-da-mu-49283501",
       },
       "thumbnailUrl": "https://news.files.bbci.co.uk/ws/img/logos/og/hausa.png",
-      "url": "http://localhost:7080/hausa/bbc_hausa_tv/tv/w172xcg0kg6vph8",
+      "url": "http://localhost:7080/hausa/bbc_hausa_tv/tv/w172yjj7rfhxp1p",
     },
   ],
 }
@@ -521,7 +521,7 @@ exports[`Canonical On Demand T V Page SEO OG title 1`] = `"Labaran Talabijin - L
 
 exports[`Canonical On Demand T V Page SEO OG type 1`] = `"website"`;
 
-exports[`Canonical On Demand T V Page SEO OG url 1`] = `"http://localhost:7080/hausa/bbc_hausa_tv/tv/w172xcg0kg6vph8"`;
+exports[`Canonical On Demand T V Page SEO OG url 1`] = `"http://localhost:7080/hausa/bbc_hausa_tv/tv/w172yjj7rfhxp1p"`;
 
 exports[`Canonical On Demand T V Page SEO Page title 1`] = `"Labaran Talabijin - Labaran Talabijin - BBC News Hausa - BBC News Hausa"`;
 
