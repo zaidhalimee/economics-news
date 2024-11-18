@@ -437,7 +437,7 @@ describe('Article Page', () => {
             expect(jumpToSection).not.toBeNull();
             if (expectedRelatedContent) {
               const relatedContentLink = jumpToSection?.querySelector(
-                '[data-testid="jump-to-link-related-content-heading"]',
+                '[data-testid="jump-to-link-section-label-heading-related-content-heading"]',
               );
               expect(relatedContentLink).not.toBeNull();
             }
