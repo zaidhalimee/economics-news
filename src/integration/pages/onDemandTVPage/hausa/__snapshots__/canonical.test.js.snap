@@ -128,9 +128,9 @@ exports[`Canonical On Demand T V Page I can see the episode summary 1`] = `"Sash
 
 exports[`Canonical On Demand T V Page I can see the episode title 1`] = `"Labaran Talabijin"`;
 
-exports[`Canonical On Demand T V Page Main heading should match text 1`] = `"Labaran Talabijin, 23 Nuwamba 2020"`;
+exports[`Canonical On Demand T V Page Main heading should match text 1`] = `"Labaran Talabijin, 17 Maris 2023"`;
 
-exports[`Canonical On Demand T V Page Media Loader a11y assistive technology can read the media player title 1`] = `"Play video, "", Tsawon lokaci 10,00"`;
+exports[`Canonical On Demand T V Page Media Loader a11y assistive technology can read the media player title 1`] = `"Play video, "Labaran Talabijin", Tsawon lokaci 10,00"`;
 
 exports[`Canonical On Demand T V Page Media Loader renders a figure caption 1`] = `
 <div
@@ -154,7 +154,7 @@ exports[`Canonical On Demand T V Page Media Loader renders a figure caption 1`] 
     <span
       class="bbc-m04vo2"
     >
-      Play video, "", Tsawon lokaci 10,00
+      Play video, "Labaran Talabijin", Tsawon lokaci 10,00
     </span>
     <div
       aria-hidden="true"
@@ -228,7 +228,7 @@ exports[`Canonical On Demand T V Page Media Loader renders a placeholder 1`] = `
     <span
       class="bbc-m04vo2"
     >
-      Play video, "", Tsawon lokaci 10,00
+      Play video, "Labaran Talabijin", Tsawon lokaci 10,00
     </span>
     <div
       aria-hidden="true"
@@ -306,7 +306,7 @@ exports[`Canonical On Demand T V Page Media Loader renders a valid container 1`]
       <span
         class="bbc-m04vo2"
       >
-        Play video, "", Tsawon lokaci 10,00
+        Play video, "Labaran Talabijin", Tsawon lokaci 10,00
       </span>
       <div
         aria-hidden="true"
@@ -368,22 +368,22 @@ exports[`Canonical On Demand T V Page Recent Episodes List items should match te
 
 exports[`Canonical On Demand T V Page Recent Episodes List items should match text and url 2`] = `
 {
-  "text": "10:00Bidiyo, Labaran Talabijin, Labaran Talabijin, Tsawon lokaci 10,00 17 Maris 2023",
-  "url": "/hausa/bbc_hausa_tv/tv/w172yjj7rfhxp1p",
-}
-`;
-
-exports[`Canonical On Demand T V Page Recent Episodes List items should match text and url 3`] = `
-{
   "text": "10:00Bidiyo, Labaran Talabijin, Labaran Talabijin, Tsawon lokaci 10,00 16 Maris 2023",
   "url": "/hausa/bbc_hausa_tv/tv/w172yjj7rfhts4l",
 }
 `;
 
-exports[`Canonical On Demand T V Page Recent Episodes List items should match text and url 4`] = `
+exports[`Canonical On Demand T V Page Recent Episodes List items should match text and url 3`] = `
 {
   "text": "10:00Bidiyo, Labaran Talabijin, Labaran Talabijin, Tsawon lokaci 10,00 15 Maris 2023",
   "url": "/hausa/bbc_hausa_tv/tv/w172yjj7rfhqw7h",
+}
+`;
+
+exports[`Canonical On Demand T V Page Recent Episodes List items should match text and url 4`] = `
+{
+  "text": "10:00Bidiyo, Labaran Talabijin, Labaran Talabijin, Tsawon lokaci 10,00 14 Maris 2023",
+  "url": "/hausa/bbc_hausa_tv/tv/w172yjj7rfhmzbd",
 }
 `;
 
@@ -463,7 +463,7 @@ exports[`Canonical On Demand T V Page SEO Dir attribute 1`] = `"ltr"`;
 
 exports[`Canonical On Demand T V Page SEO FB app ID 1`] = `"1609039196070050"`;
 
-exports[`Canonical On Demand T V Page SEO Heading level 1 1`] = `"Labaran Talabijin, 23 Nuwamba 2020"`;
+exports[`Canonical On Demand T V Page SEO Heading level 1 1`] = `"Labaran Talabijin, 17 Maris 2023"`;
 
 exports[`Canonical On Demand T V Page SEO Lang attribute 1`] = `"ha"`;
 
@@ -503,6 +503,14 @@ exports[`Canonical On Demand T V Page SEO Linked data should match text 1`] = `
       "thumbnailUrl": "https://news.files.bbci.co.uk/ws/img/logos/og/hausa.png",
       "url": "http://localhost:7080/hausa/bbc_hausa_tv/tv/w172yjj7rfhxp1p",
     },
+    {
+      "@type": "VideoObject",
+      "description": "Sashen Hausa na BBC ya fara gabatar da shirin talabijin a ranakun Litinin zuwa Juma'a na kowane mako.",
+      "duration": "PT10M",
+      "name": "Labaran Talabijin",
+      "thumbnailUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p08b216l.png",
+      "uploadDate": "2023-03-17T00:00:00.000Z",
+    },
   ],
 }
 `;
@@ -541,4 +549,4 @@ exports[`Canonical On Demand T V Page SEO Twitter site 1`] = `"@bbchausa"`;
 
 exports[`Canonical On Demand T V Page SEO Twitter title 1`] = `"Labaran Talabijin - Labaran Talabijin - BBC News Hausa - BBC News Hausa"`;
 
-exports[`Canonical On Demand T V Page a11y Assistive technology reads the brand and episode title as the headline 1`] = `"Labaran Talabijin, 23 Nuwamba 2020"`;
+exports[`Canonical On Demand T V Page a11y Assistive technology reads the brand and episode title as the headline 1`] = `"Labaran Talabijin, 17 Maris 2023"`;
