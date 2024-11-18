@@ -67,11 +67,12 @@ describe('OnDemand TV Brand Page ', () => {
 
     const { pageData } = await getInitialData({
       path: 'some-ondemand-tv-path',
+      service: 'pashto',
       pageType,
       toggles,
     });
+
     await renderPage({
-      // @ts-expect-error partial data required for testing purposes
       pageData,
       service: 'pashto',
     });
@@ -82,7 +83,7 @@ describe('OnDemand TV Brand Page ', () => {
 
     expect(visuallyHiddenHeadline).toBeInTheDocument();
     expect(visuallyHiddenHeadline?.innerHTML).toEqual(
-      ' د بي بي سي خبرونه , ۱۷ سپتمبر ۲۰۲۴',
+      ' د بي بي سي خبرونه , ۱۸ نومبر ۲۰۲۴',
     );
   });
 
@@ -91,12 +92,12 @@ describe('OnDemand TV Brand Page ', () => {
 
     const { pageData } = await getInitialData({
       path: 'some-ondemand-tv-path',
+      service: 'pashto',
       pageType,
       toggles,
     });
     // @ts-expect-error react testing library returns the required query
     const { getByTestId } = await renderPage({
-      // @ts-expect-error partial data required for testing purposes
       pageData,
       service: 'pashto',
     });
@@ -112,12 +113,12 @@ describe('OnDemand TV Brand Page ', () => {
 
     const { pageData } = await getInitialData({
       path: 'some-ondemand-tv-path',
+      service: 'pashto',
       pageType,
       toggles,
     });
     // @ts-expect-error react testing library returns the required query
     const { container } = await renderPage({
-      // @ts-expect-error partial data required for testing purposes
       pageData,
       service: 'pashto',
     });
@@ -133,12 +134,12 @@ describe('OnDemand TV Brand Page ', () => {
 
     const { pageData } = await getInitialData({
       path: 'some-ondemand-tv-path',
+      service: 'pashto',
       pageType,
       toggles,
     });
     // @ts-expect-error react testing library returns the required query
     const { container } = await renderPage({
-      // @ts-expect-error partial data required for testing purposes
       pageData,
       service: 'pashto',
     });
@@ -151,12 +152,12 @@ describe('OnDemand TV Brand Page ', () => {
 
     const { pageData } = await getInitialData({
       path: 'some-ondemand-tv-path',
+      service: 'pashto',
       pageType,
       toggles,
     });
     // @ts-expect-error react testing library returns the required query
     const { container } = await renderPage({
-      // @ts-expect-error partial data required for testing purposes
       pageData,
       service: 'pashto',
     });
@@ -169,17 +170,17 @@ describe('OnDemand TV Brand Page ', () => {
 
     const { pageData } = await getInitialData({
       path: 'some-ondemand-tv-path',
+      service: 'pashto',
       pageType,
       toggles,
     });
     // @ts-expect-error react testing library returns the required query
     const { getByText } = await renderPage({
-      // @ts-expect-error partial data required for testing purposes
       pageData,
       service: 'pashto',
     });
 
-    expect(getByText('۱۷ سپتمبر ۲۰۲۴')).toBeInTheDocument();
+    expect(getByText('۱۸ نومبر ۲۰۲۴')).toBeInTheDocument();
   });
 
   it('should show the summary for OnDemand TV Pages', async () => {
@@ -187,12 +188,12 @@ describe('OnDemand TV Brand Page ', () => {
 
     const { pageData } = await getInitialData({
       path: 'some-ondemand-tv-path',
+      service: 'pashto',
       pageType,
       toggles,
     });
     // @ts-expect-error react testing library returns the required query
     const { getByText } = await renderPage({
-      // @ts-expect-error partial data required for testing purposes
       pageData,
       service: 'pashto',
     });
@@ -207,12 +208,12 @@ describe('OnDemand TV Brand Page ', () => {
     fetchMock.mockResponse(JSON.stringify(pashtoPageData));
     const { pageData } = await getInitialData({
       path: 'some-ondemand-tv-path',
+      service: 'pashto',
       pageType,
       toggles,
     });
     // @ts-expect-error react testing library returns the required query
     const { container } = await renderPage({
-      // @ts-expect-error partial data required for testing purposes
       pageData,
       service: 'pashto',
     });
@@ -231,6 +232,7 @@ describe('OnDemand TV Brand Page ', () => {
     fetchMock.mockResponse(JSON.stringify(pashtoPageData));
     const { pageData } = await getInitialData({
       path: 'some-ondemand-tv-path',
+      service: 'pashto',
       pageType,
       toggles,
     });
@@ -244,7 +246,6 @@ describe('OnDemand TV Brand Page ', () => {
     };
 
     await renderPage({
-      // @ts-expect-error partial data required for testing purposes
       pageData,
       service: 'pashto',
     });
@@ -257,20 +258,20 @@ describe('OnDemand TV Brand Page ', () => {
   });
 
   it('should show the expired content message if episode is expired', async () => {
-    const pageDataWithExpiredEpisode = assocPath(
-      ['content', 'blocks', 0, 'availability'],
-      'notAvailable',
-      pashtoPageData,
-    );
+    const pageDataWithExpiredEpisode = {
+      ...pashtoPageData,
+      episodeAvailability: 'notAvailable',
+    };
+
     fetchMock.mockResponse(JSON.stringify(pageDataWithExpiredEpisode));
     const { pageData } = await getInitialData({
       path: 'some-ondemand-tv-path',
+      service: 'pashto',
       pageType,
       toggles,
     });
     // @ts-expect-error react testing library returns the required queries
     const { container, getByText } = await renderPage({
-      // @ts-expect-error partial data required for testing purposes
       pageData,
       service: 'pashto',
     });
@@ -289,12 +290,12 @@ describe('OnDemand TV Brand Page ', () => {
     fetchMock.mockResponse(JSON.stringify(pageDataWithFutureEpisode));
     const { pageData } = await getInitialData({
       path: 'some-ondemand-tv-path',
+      service: 'pashto',
       pageType,
       toggles,
     });
     // @ts-expect-error react testing library returns the required queries
     const { container, getByText } = await renderPage({
-      // @ts-expect-error partial data required for testing purposes
       pageData,
       service: 'pashto',
     });
@@ -315,12 +316,12 @@ describe('OnDemand TV Brand Page ', () => {
     fetchMock.mockResponse(JSON.stringify(pageDataWithFutureEpisode));
     const { pageData } = await getInitialData({
       path: 'some-ondemand-tv-path',
+      service: 'pashto',
       pageType,
       toggles,
     });
     // @ts-expect-error react testing library returns the required queries
     const { container, getByText } = await renderPage({
-      // @ts-expect-error partial data required for testing purposes
       pageData,
       service: 'pashto',
     });
