@@ -11,7 +11,7 @@ import FooterTimestamp from '#containers/OnDemandFooterTimestamp';
 import { PageTypes } from '#app/models/types/global';
 import { ContentType } from '#app/components/ChartbeatAnalytics/types';
 import MediaLoader from '#app/components/MediaLoader';
-import { OnDemandTVBlock, MediaOverrides } from '#app/models/types/media';
+import { OnDemandTVBlock } from '#app/models/types/media';
 import ATIAnalytics from '../../components/ATIAnalytics';
 import ChartbeatAnalytics from '../../components/ChartbeatAnalytics';
 import LinkedData from '../../components/LinkedData';
@@ -74,7 +74,6 @@ const OnDemandTvPage = ({
     brandTitle,
     releaseDateTimeStamp,
     masterBrand,
-    episodeId,
     promoBrandTitle,
     thumbnailImageUrl,
     durationISO8601,
@@ -84,8 +83,7 @@ const OnDemandTvPage = ({
     contentType,
   } = pageData;
 
-  const { timezone, datetimeLocale, service, brandName } =
-    useContext(ServiceContext);
+  const { timezone, datetimeLocale, brandName } = useContext(ServiceContext);
 
   const formattedTimestamp = formatUnixTimestamp({
     timestamp: releaseDateTimeStamp,
@@ -99,17 +97,6 @@ const OnDemandTvPage = ({
   const metadataTitle = episodeTitle
     ? `${brandTitle} - ${episodeTitle} - ${brandName}`
     : headline;
-
-  const mediaOverrides: MediaOverrides = {
-    model: {
-      language,
-      pageIdentifierOverride: `${service}.bbc_${service}_tv.tv.${episodeId}.page`,
-      pageTitleOverride: promoBrandTitle,
-    },
-    type: 'mediaOverrides',
-  };
-
-  const mediaBlocksWithOverrides = [...pageData?.mediaBlocks, mediaOverrides];
 
   return (
     <div css={styles.wrapper}>
@@ -166,7 +153,7 @@ const OnDemandTvPage = ({
           </VisuallyHiddenText>
           {mediaIsAvailable ? (
             <MediaLoader
-              blocks={mediaBlocksWithOverrides}
+              blocks={pageData?.mediaBlocks}
               css={styles.mediaPlayer}
             />
           ) : (
