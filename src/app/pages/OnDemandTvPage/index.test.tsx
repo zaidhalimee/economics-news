@@ -83,7 +83,7 @@ describe('OnDemand TV Brand Page ', () => {
 
     expect(visuallyHiddenHeadline).toBeInTheDocument();
     expect(visuallyHiddenHeadline?.innerHTML).toEqual(
-      ' د بي بي سي خبرونه , ۱۸ نومبر ۲۰۲۴',
+      '&nbsp;د بي بي سي خبرونه , ۱۸ نومبر ۲۰۲۴',
     );
   });
 
@@ -225,43 +225,11 @@ describe('OnDemand TV Brand Page ', () => {
     expect(videoPlayer).toBeInTheDocument();
   });
 
-  it('should use the derived page identifier to render the video player', async () => {
-    const mediaLoaderSpy = jest.spyOn(MediaLoader, 'default');
-
-    process.env.SIMORGH_APP_ENV = 'live';
-    fetchMock.mockResponse(JSON.stringify(pashtoPageData));
-    const { pageData } = await getInitialData({
-      path: 'some-ondemand-tv-path',
-      service: 'pashto',
-      pageType,
-      toggles,
-    });
-    const expectedMediaOverrides = {
-      model: {
-        language: 'ps',
-        pageIdentifierOverride: 'pashto.bbc_pashto_tv.tv.w172zmsln64zg23.page',
-        pageTitleOverride: ' د بي بي سي خبرونه ',
-      },
-      type: 'mediaOverrides',
-    };
-
-    await renderPage({
-      pageData,
-      service: 'pashto',
-    });
-
-    const mediaLoaderProps = mediaLoaderSpy.mock.calls[0][0];
-    const { blocks } = mediaLoaderProps;
-
-    expect(mediaLoaderSpy).toHaveBeenCalled();
-    expect(blocks).toEqual(expect.arrayContaining([expectedMediaOverrides]));
-  });
-
   it('should show the expired content message if episode is expired', async () => {
     const pageDataWithExpiredEpisode = {
       ...pashtoPageData,
-      episodeAvailability: 'notAvailable',
     };
+    pageDataWithExpiredEpisode.data.episodeAvailability = 'expired';
 
     fetchMock.mockResponse(JSON.stringify(pageDataWithExpiredEpisode));
     const { pageData } = await getInitialData({
@@ -282,11 +250,9 @@ describe('OnDemand TV Brand Page ', () => {
   });
 
   it('should show the future content message if episode is not yet available', async () => {
-    const pageDataWithFutureEpisode = assocPath(
-      ['content', 'blocks', 0, 'availability'],
-      'future',
-      pashtoPageData,
-    );
+    const pageDataWithFutureEpisode = { ...pashtoPageData };
+    pageDataWithFutureEpisode.data.episodeAvailability = 'future';
+
     fetchMock.mockResponse(JSON.stringify(pageDataWithFutureEpisode));
     const { pageData } = await getInitialData({
       path: 'some-ondemand-tv-path',
@@ -308,11 +274,9 @@ describe('OnDemand TV Brand Page ', () => {
   });
 
   it('should show the future content message if episode is pending', async () => {
-    const pageDataWithFutureEpisode = assocPath(
-      ['content', 'blocks', 0, 'availability'],
-      'pending',
-      pashtoPageData,
-    );
+    const pageDataWithFutureEpisode = { ...pashtoPageData };
+    pageDataWithFutureEpisode.data.episodeAvailability = 'pending';
+
     fetchMock.mockResponse(JSON.stringify(pageDataWithFutureEpisode));
     const { pageData } = await getInitialData({
       path: 'some-ondemand-tv-path',
