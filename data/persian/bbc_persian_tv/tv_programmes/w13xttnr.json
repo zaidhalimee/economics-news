@@ -5,7 +5,8 @@
       "atiAnalytics": {
         "pageIdentifier": "persian.bbc_persian_tv.tv_programmes.w13xttnr.page",
         "contentType": "player-episode",
-        "pageTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی - BBC News فارسی"
+        "pageTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی - BBC News فارسی",
+        "contentId": "urn:bbc:pips:w172z7t6cyj651g"
       }
     },
     "language": "fa",
@@ -232,7 +233,7 @@
                 "nonUk": true,
                 "world": false
               },
-              "availableFrom": 1681619400000,
+              "availableFrom": "2023-04-16T04:30:00.000Z",
               "availabilityStatus": "available"
             }
           ],

@@ -5,7 +5,8 @@
       "atiAnalytics": {
         "pageIdentifier": "hindi.bbc_hindi_tv.tv_programmes.w13xttlw.page",
         "contentType": "player-episode",
-        "pageTitle": "दुनिया - BBC News हिंदी"
+        "pageTitle": "दुनिया - BBC News हिंदी",
+        "contentId": "urn:bbc:pips:w172zm8g4s1zt49"
       }
     },
     "language": "hi",
@@ -14,15 +15,24 @@
     "headline": "दुनिया",
     "shortSynopsis": "ताज़ा अंतरराष्ट्रीय, क्षेत्रीय ख़बरों और विश्लेषण के लिए देखिए बीबीसी दुनिया",
     "mediumSynopsis": "ताज़ा अंतरराष्ट्रीय, क्षेत्रीय ख़बरों और विश्लेषण के लिए देखिए बीबीसी दुनिया",
-    "releaseDateTimeStamp": "2024-11-18T00:00:00.000Z",
+    "releaseDateTimeStamp": "2024-11-19T00:00:00.000Z",
     "durationISO8601": "PT19M52S",
-    "thumbnailImageUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p0k5d4fm.png",
+    "thumbnailImageUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p0k5lpyn.jpg",
     "promoBrandTitle": "दुनिया",
     "masterBrand": "bbc_hindi_tv",
-    "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p0k5d4fm.png",
+    "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p0k5lpyn.jpg",
     "episodeAvailability": "available",
-    "episodeTitle": "अमेरिका ने यूक्रेन को दी रूस में अमेरिकी मिसाइलों से हमलों की इजाज़त, क्या होगा असर ?",
+    "episodeTitle": "रूस बोला- यूक्रेन ने किया अमेरिकी मिसाइलों से हमला, ज़ेलेंस्की बोले- हम झुकेंगे नहीं",
     "recentEpisodes": [
+      {
+        "id": "w172zm8g4s1wx76",
+        "brandTitle": "दुनिया",
+        "episodeTitle": "अमेरिका ने यूक्रेन को दी रूस में अमेरिकी मिसाइलों से हमलों की इजाज़त, क्या होगा असर ?",
+        "duration": "PT19M52S",
+        "timestamp": "2024-11-18T00:00:00.000Z",
+        "image": "//ichef.bbci.co.uk/images/ic/768x432/p0k5d4fm.png",
+        "altText": "दुनिया"
+      },
       {
         "id": "w172zm8fshrhc7r",
         "brandTitle": "दुनिया",
@@ -193,22 +203,13 @@
         "timestamp": "2024-10-23T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p0jzpx7v.jpg",
         "altText": "दुनिया"
-      },
-      {
-        "id": "w172zm8dppswbg2",
-        "brandTitle": "दुनिया",
-        "episodeTitle": "ग़ज़ा में जारी जंग को दूरबीन से देखने यहां आते हैं इसराइली",
-        "duration": "PT19M52S",
-        "timestamp": "2024-10-22T00:00:00.000Z",
-        "image": "//ichef.bbci.co.uk/images/ic/768x432/p0jzfzv1.jpg",
-        "altText": "दुनिया"
       }
     ],
     "mediaBlocks": [
       {
         "type": "tv",
         "model": {
-          "id": "w172zm8g4s1wx76",
+          "id": "w172zm8g4s1zt49",
           "subType": "episode",
           "format": "Video",
           "title": "दुनिया",
@@ -216,12 +217,12 @@
             "short": "ताज़ा अंतरराष्ट्रीय, क्षेत्रीय ख़बरों और विश्लेषण के लिए देखिए बीबीसी दुनिया",
             "medium": "ताज़ा अंतरराष्ट्रीय, क्षेत्रीय ख़बरों और विश्लेषण के लिए देखिए बीबीसी दुनिया"
           },
-          "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p0k5d4fm.png",
+          "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p0k5lpyn.jpg",
           "embedding": false,
           "advertising": false,
           "versions": [
             {
-              "versionId": "w1mskypg13885hf",
+              "versionId": "w1mskypg138c2dj",
               "types": ["Original"],
               "duration": 1192,
               "durationISO8601": "PT19M52S",
@@ -231,13 +232,13 @@
                 "nonUk": true,
                 "world": false
               },
-              "availableFrom": 1731943798000,
+              "availableFrom": "2024-11-19T15:29:58.000Z",
               "availabilityStatus": "available"
             }
           ],
           "availability": "available",
           "smpKind": "programme",
-          "episodeTitle": "अमेरिका ने यूक्रेन को दी रूस में अमेरिकी मिसाइलों से हमलों की इजाज़त, क्या होगा असर ?",
+          "episodeTitle": "रूस बोला- यूक्रेन ने किया अमेरिकी मिसाइलों से हमला, ज़ेलेंस्की बोले- हम झुकेंगे नहीं",
           "type": "media",
           "language": "hi"
         }
@@ -245,7 +246,7 @@
       {
         "type": "mediaOverrides",
         "model": {
-          "pageIdentifierOverride": "hindi.bbc_hindi_tv.tv.w172zm8g4s1wx76.page"
+          "pageIdentifierOverride": "hindi.bbc_hindi_tv.tv.w172zm8g4s1zt49.page"
         }
       }
     ]

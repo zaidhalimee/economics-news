@@ -5,7 +5,8 @@
       "atiAnalytics": {
         "pageIdentifier": "uzbek.bbc_uzbek_tv.tv_programmes.w13xttqv.page",
         "contentType": "player-episode",
-        "pageTitle": "بی بی سی نیوز  - BBC News O'zbek"
+        "pageTitle": "بی بی سی نیوز  - BBC News O'zbek",
+        "contentId": "urn:bbc:pips:w3ct6c63"
       }
     },
     "language": "uz",
@@ -14,15 +15,24 @@
     "headline": "بی بی سی نیوز ",
     "shortSynopsis": "بی بی سی نیوز",
     "mediumSynopsis": "بی بی سی نیوز",
-    "releaseDateTimeStamp": "2024-11-18T00:00:00.000Z",
+    "releaseDateTimeStamp": "2024-11-19T00:00:00.000Z",
     "durationISO8601": "PT15M",
     "thumbnailImageUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p06hkfxs.jpg",
     "promoBrandTitle": "بی بی سی نیوز ",
     "masterBrand": "bbc_uzbek_tv",
     "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p06hkfxs.jpg",
     "episodeAvailability": "available",
-    "episodeTitle": "Tvuzb24 BBC News (Mon) 47",
+    "episodeTitle": "Tvuzb24 BBC News (Tue) 47",
     "recentEpisodes": [
+      {
+        "id": "w3ct6c2r",
+        "brandTitle": "بی بی سی نیوز ",
+        "episodeTitle": "Tvuzb24 BBC News (Mon) 47",
+        "duration": "PT15M",
+        "timestamp": "2024-11-18T00:00:00.000Z",
+        "image": "//ichef.bbci.co.uk/images/ic/768x432/p06hkfxs.jpg",
+        "altText": "بی بی سی نیوز "
+      },
       {
         "id": "w3ct6c11",
         "brandTitle": "بی بی سی نیوز ",
@@ -193,22 +203,13 @@
         "timestamp": "2024-10-18T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p06hkfxs.jpg",
         "altText": "بی بی سی نیوز "
-      },
-      {
-        "id": "w3ct6c48",
-        "brandTitle": "بی بی سی نیوز ",
-        "episodeTitle": "Tvuzb24 BBC News (Thu) 42",
-        "duration": "PT15M",
-        "timestamp": "2024-10-17T00:00:00.000Z",
-        "image": "//ichef.bbci.co.uk/images/ic/768x432/p06hkfxs.jpg",
-        "altText": "بی بی سی نیوز "
       }
     ],
     "mediaBlocks": [
       {
         "type": "tv",
         "model": {
-          "id": "w3ct6c2r",
+          "id": "w3ct6c63",
           "subType": "episode",
           "format": "Video",
           "title": "بی بی سی نیوز ",
@@ -221,7 +222,7 @@
           "advertising": false,
           "versions": [
             {
-              "versionId": "w4hr2f0y",
+              "versionId": "w4hr2f49",
               "types": ["Original"],
               "duration": 900,
               "durationISO8601": "PT15M",
@@ -231,14 +232,14 @@
                 "nonUk": true,
                 "world": false
               },
-              "availableUntil": 1737936000000,
-              "availableFrom": 1731934790000,
+              "availableUntil": "2025-01-27T00:00:00.000Z",
+              "availableFrom": "2024-11-19T12:59:50.000Z",
               "availabilityStatus": "available"
             }
           ],
           "availability": "available",
           "smpKind": "programme",
-          "episodeTitle": "Tvuzb24 BBC News (Mon) 47",
+          "episodeTitle": "Tvuzb24 BBC News (Tue) 47",
           "type": "media",
           "language": "uz"
         }
@@ -246,7 +247,7 @@
       {
         "type": "mediaOverrides",
         "model": {
-          "pageIdentifierOverride": "uzbek.bbc_uzbek_tv.tv.w3ct6c2r.page"
+          "pageIdentifierOverride": "uzbek.bbc_uzbek_tv.tv.w3ct6c63.page"
         }
       }
     ]

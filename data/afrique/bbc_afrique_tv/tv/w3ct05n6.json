@@ -5,7 +5,8 @@
       "atiAnalytics": {
         "pageIdentifier": "afrique.bbc_afrique_tv.tv.w3ct05n6.page",
         "contentType": "player-episode",
-        "pageTitle": "BBC Info - BBC News Afrique"
+        "pageTitle": "BBC Info - BBC News Afrique",
+        "contentId": "urn:bbc:pips:w3ct05n6"
       }
     },
     "language": "fr",

@@ -5,7 +5,8 @@
       "atiAnalytics": {
         "pageIdentifier": "ukrainian.bbc_ukrainian_tv.tv.w172xct4hclz27g.page",
         "contentType": "player-episode",
-        "pageTitle": "Випуск новин - BBC News Україна"
+        "pageTitle": "Випуск новин - BBC News Україна",
+        "contentId": "urn:bbc:pips:w172xct4hclz27g"
       }
     },
     "language": "uk",
@@ -22,182 +23,182 @@
     "episodeTitle": "Випуск новин",
     "recentEpisodes": [
       {
-        "id": "w172zmr6dc635q8",
+        "id": "w172zmr8kz2s63f",
         "brandTitle": "Випуск новин",
         "episodeTitle": "Випуск новин",
         "duration": "PT15M5S",
-        "timestamp": "2024-10-07T00:00:00.000Z",
+        "timestamp": "2024-11-18T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p060dm3n.jpg",
         "altText": "Випуск новин"
       },
       {
-        "id": "w172zmr612wpmqt",
+        "id": "w172zmr86pscn3z",
         "brandTitle": "Випуск новин",
         "episodeTitle": "Випуск новин",
         "duration": "PT15M5S",
-        "timestamp": "2024-10-04T00:00:00.000Z",
+        "timestamp": "2024-11-15T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p060dm3n.jpg",
         "altText": "Випуск новин"
       },
       {
-        "id": "w172zmr612wlqtq",
+        "id": "w172zmr86ps8r6w",
         "brandTitle": "Випуск новин",
         "episodeTitle": "Випуск новин",
         "duration": "PT15M5S",
-        "timestamp": "2024-10-03T00:00:00.000Z",
+        "timestamp": "2024-11-14T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p060dm3n.jpg",
         "altText": "Випуск новин"
       },
       {
-        "id": "w172zmr612whtxm",
+        "id": "w172zmr86ps5v9s",
         "brandTitle": "Випуск новин",
         "episodeTitle": "Випуск новин",
         "duration": "PT15M5S",
-        "timestamp": "2024-10-02T00:00:00.000Z",
+        "timestamp": "2024-11-13T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p060dm3n.jpg",
         "altText": "Випуск новин"
       },
       {
-        "id": "w172zmr612wdy0j",
+        "id": "w172zmr86ps2ydp",
         "brandTitle": "Випуск новин",
         "episodeTitle": "Випуск новин",
         "duration": "PT15M5S",
-        "timestamp": "2024-10-01T00:00:00.000Z",
+        "timestamp": "2024-11-12T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p060dm3n.jpg",
         "altText": "Випуск новин"
       },
       {
-        "id": "w172zmr612wb13f",
+        "id": "w172zmr86ps01hl",
         "brandTitle": "Випуск новин",
         "episodeTitle": "Випуск новин",
         "duration": "PT15M5S",
-        "timestamp": "2024-09-30T00:00:00.000Z",
+        "timestamp": "2024-11-11T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p060dm3n.jpg",
         "altText": "Випуск новин"
       },
       {
-        "id": "w172zmr5ntkxh3z",
+        "id": "w172zmr7vfglhj4",
         "brandTitle": "Випуск новин",
         "episodeTitle": "Випуск новин",
         "duration": "PT15M5S",
-        "timestamp": "2024-09-27T00:00:00.000Z",
+        "timestamp": "2024-11-08T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p060dm3n.jpg",
         "altText": "Випуск новин"
       },
       {
-        "id": "w172zmr5ntktl6w",
+        "id": "w172zmr7vfghlm1",
         "brandTitle": "Випуск новин",
         "episodeTitle": "Випуск новин",
         "duration": "PT15M5S",
-        "timestamp": "2024-09-26T00:00:00.000Z",
+        "timestamp": "2024-11-07T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p060dm3n.jpg",
         "altText": "Випуск новин"
       },
       {
-        "id": "w172zmr5ntkqp9s",
+        "id": "w172zmr7vfgdppy",
         "brandTitle": "Випуск новин",
         "episodeTitle": "Випуск новин",
         "duration": "PT15M5S",
-        "timestamp": "2024-09-25T00:00:00.000Z",
+        "timestamp": "2024-11-06T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p060dm3n.jpg",
         "altText": "Випуск новин"
       },
       {
-        "id": "w172zmr5ntkmsdp",
+        "id": "w172zmr7vfg9ssv",
         "brandTitle": "Випуск новин",
         "episodeTitle": "Випуск новин",
         "duration": "PT15M5S",
-        "timestamp": "2024-09-24T00:00:00.000Z",
+        "timestamp": "2024-11-05T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p060dm3n.jpg",
         "altText": "Випуск новин"
       },
       {
-        "id": "w172zmr5ntkjwhl",
+        "id": "w172zmr7vfg6wwr",
         "brandTitle": "Випуск новин",
         "episodeTitle": "Випуск новин",
         "duration": "PT15M5S",
-        "timestamp": "2024-09-23T00:00:00.000Z",
+        "timestamp": "2024-11-04T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p060dm3n.jpg",
         "altText": "Випуск новин"
       },
       {
-        "id": "w172zmr59k84bj4",
+        "id": "w172zmr7h54tbx9",
         "brandTitle": "Випуск новин",
         "episodeTitle": "Випуск новин",
         "duration": "PT15M5S",
-        "timestamp": "2024-09-20T00:00:00.000Z",
+        "timestamp": "2024-11-01T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p060dm3n.jpg",
         "altText": "Випуск новин"
       },
       {
-        "id": "w172zmr59k81fm1",
+        "id": "w172zmr7h54qg06",
         "brandTitle": "Випуск новин",
         "episodeTitle": "Випуск новин",
         "duration": "PT15M5S",
-        "timestamp": "2024-09-19T00:00:00.000Z",
+        "timestamp": "2024-10-31T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p060dm3n.jpg",
         "altText": "Випуск новин"
       },
       {
-        "id": "w172zmr59k7yjpy",
+        "id": "w172zmr7h54mk33",
         "brandTitle": "Випуск новин",
         "episodeTitle": "Випуск новин",
         "duration": "PT15M5S",
-        "timestamp": "2024-09-18T00:00:00.000Z",
+        "timestamp": "2024-10-30T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p060dm3n.jpg",
         "altText": "Випуск новин"
       },
       {
-        "id": "w172zmr59k7vmsv",
+        "id": "w172zmr7h54jn60",
         "brandTitle": "Випуск новин",
         "episodeTitle": "Випуск новин",
         "duration": "PT15M5S",
-        "timestamp": "2024-09-17T00:00:00.000Z",
+        "timestamp": "2024-10-29T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p060dm3n.jpg",
         "altText": "Випуск новин"
       },
       {
-        "id": "w172zmr59k7rqwr",
+        "id": "w172zmr7h54fr8x",
         "brandTitle": "Випуск новин",
         "episodeTitle": "Випуск новин",
         "duration": "PT15M5S",
-        "timestamp": "2024-09-16T00:00:00.000Z",
+        "timestamp": "2024-10-28T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p060dm3n.jpg",
         "altText": "Випуск новин"
       },
       {
-        "id": "w172zmr4y8yc5x9",
+        "id": "w172zmr73wv12kb",
         "brandTitle": "Випуск новин",
         "episodeTitle": "Випуск новин",
         "duration": "PT15M5S",
-        "timestamp": "2024-09-13T00:00:00.000Z",
+        "timestamp": "2024-10-25T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p060dm3n.jpg",
         "altText": "Випуск новин"
       },
       {
-        "id": "w172zmr4y8y8906",
+        "id": "w172zmr73wty5n7",
         "brandTitle": "Випуск новин",
         "episodeTitle": "Випуск новин",
         "duration": "PT15M5S",
-        "timestamp": "2024-09-12T00:00:00.000Z",
+        "timestamp": "2024-10-24T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p060dm3n.jpg",
         "altText": "Випуск новин"
       },
       {
-        "id": "w172zmr4y8y5d33",
+        "id": "w172zmr73wtv8r4",
         "brandTitle": "Випуск новин",
         "episodeTitle": "Випуск новин",
         "duration": "PT15M5S",
-        "timestamp": "2024-09-11T00:00:00.000Z",
+        "timestamp": "2024-10-23T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p060dm3n.jpg",
         "altText": "Випуск новин"
       },
       {
-        "id": "w172zmr4y8y2h60",
+        "id": "w172zmr73wtrcv1",
         "brandTitle": "Випуск новин",
         "episodeTitle": "Випуск новин",
         "duration": "PT15M5S",
-        "timestamp": "2024-09-10T00:00:00.000Z",
+        "timestamp": "2024-10-22T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p060dm3n.jpg",
         "altText": "Випуск новин"
       }

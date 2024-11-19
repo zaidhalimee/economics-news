@@ -5,7 +5,8 @@
       "atiAnalytics": {
         "pageIdentifier": "tamil.bbc_tamil_tv.tv_programmes.w13xttmy.page",
         "contentType": "player-episode",
-        "pageTitle": "தொலைக்காட்சி செய்திகள் - BBC News தமிழ்"
+        "pageTitle": "தொலைக்காட்சி செய்திகள் - BBC News தமிழ்",
+        "contentId": "urn:bbc:pips:w172zmf0x3vd261"
       }
     },
     "language": "ta",
@@ -14,7 +15,7 @@
     "headline": "தொலைக்காட்சி செய்திகள்",
     "shortSynopsis": "பிபிசி தமிழ் தொலைக்காட்சியின் பத்து நிமிட சர்வதேச செய்தியறிக்கை வாரத்தில் ஐந்து நாட்கள்",
     "mediumSynopsis": "பிபிசி தமிழ் தொலைக்காட்சியின் பத்து நிமிட சர்வதேச செய்தியறிக்கை வாரத்தில் ஐந்து நாட்கள்",
-    "releaseDateTimeStamp": "2024-11-18T00:00:00.000Z",
+    "releaseDateTimeStamp": "2024-11-19T00:00:00.000Z",
     "durationISO8601": "PT10M",
     "thumbnailImageUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p08b8nx5.png",
     "promoBrandTitle": "தொலைக்காட்சி செய்திகள்",
@@ -23,6 +24,15 @@
     "episodeAvailability": "available",
     "episodeTitle": "தொலைக்காட்சி செய்திகள்",
     "recentEpisodes": [
+      {
+        "id": "w172zmf0x3v958y",
+        "brandTitle": "தொலைக்காட்சி செய்திகள்",
+        "episodeTitle": "தொலைக்காட்சி செய்திகள்",
+        "duration": "PT10M",
+        "timestamp": "2024-11-18T00:00:00.000Z",
+        "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
+        "altText": "தொலைக்காட்சி செய்திகள்"
+      },
       {
         "id": "w172zmf0jvjwm9h",
         "brandTitle": "தொலைக்காட்சி செய்திகள்",
@@ -193,22 +203,13 @@
         "timestamp": "2024-10-22T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
         "altText": "தொலைக்காட்சி செய்திகள்"
-      },
-      {
-        "id": "w172zmdzg1l5kvl",
-        "brandTitle": "தொலைக்காட்சி செய்திகள்",
-        "episodeTitle": "தொலைக்காட்சி செய்திகள்",
-        "duration": "PT10M",
-        "timestamp": "2024-10-21T00:00:00.000Z",
-        "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
-        "altText": "தொலைக்காட்சி செய்திகள்"
       }
     ],
     "mediaBlocks": [
       {
         "type": "tv",
         "model": {
-          "id": "w172zmf0x3v958y",
+          "id": "w172zmf0x3vd261",
           "subType": "episode",
           "format": "Video",
           "title": "தொலைக்காட்சி செய்திகள்",
@@ -222,7 +223,7 @@
           "advertising": false,
           "versions": [
             {
-              "versionId": "w1mskyv0sg1nfk5",
+              "versionId": "w1mskyv0sg1rbg8",
               "types": ["Original"],
               "duration": 600,
               "durationISO8601": "PT10M",
@@ -232,7 +233,7 @@
                 "nonUk": true,
                 "world": false
               },
-              "availableFrom": 1731939360000,
+              "availableFrom": "2024-11-19T14:16:00.000Z",
               "availabilityStatus": "available"
             }
           ],
@@ -246,7 +247,7 @@
       {
         "type": "mediaOverrides",
         "model": {
-          "pageIdentifierOverride": "tamil.bbc_tamil_tv.tv.w172zmf0x3v958y.page"
+          "pageIdentifierOverride": "tamil.bbc_tamil_tv.tv.w172zmf0x3vd261.page"
         }
       }
     ]

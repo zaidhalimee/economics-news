@@ -5,7 +5,8 @@
       "atiAnalytics": {
         "pageIdentifier": "afrique.bbc_afrique_tv.tv_programmes.w13xttmz.page",
         "contentType": "player-episode",
-        "pageTitle": "BBC Info - BBC News Afrique"
+        "pageTitle": "BBC Info - BBC News Afrique",
+        "contentId": "urn:bbc:pips:w172yrnhsjqw4c9"
       }
     },
     "language": "fr",
@@ -231,7 +232,7 @@
                 "nonUk": true,
                 "world": false
               },
-              "availableFrom": 1679081400000,
+              "availableFrom": "2023-03-17T19:30:00.000Z",
               "availabilityStatus": "available"
             }
           ],

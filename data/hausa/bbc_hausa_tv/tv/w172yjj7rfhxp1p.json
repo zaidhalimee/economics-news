@@ -5,7 +5,8 @@
       "atiAnalytics": {
         "pageIdentifier": "hausa.bbc_hausa_tv.tv.w172yjj7rfhxp1p.page",
         "contentType": "player-episode",
-        "pageTitle": "Labaran Talabijin - BBC News Hausa"
+        "pageTitle": "Labaran Talabijin - BBC News Hausa",
+        "contentId": "urn:bbc:pips:w172yjj7rfhxp1p"
       }
     },
     "language": "ha",

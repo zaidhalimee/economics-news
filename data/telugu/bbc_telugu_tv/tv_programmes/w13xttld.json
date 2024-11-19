@@ -5,7 +5,8 @@
       "atiAnalytics": {
         "pageIdentifier": "telugu.bbc_telugu_tv.tv_programmes.w13xttld.page",
         "contentType": "player-episode",
-        "pageTitle": "ప్రపంచం - BBC News తెలుగు"
+        "pageTitle": "ప్రపంచం - BBC News తెలుగు",
+        "contentId": "urn:bbc:pips:w172zmfmt14tx88"
       }
     },
     "language": "te",
@@ -231,7 +232,7 @@
                 "nonUk": true,
                 "world": false
               },
-              "availableFrom": 1732019400000,
+              "availableFrom": "2024-11-19T12:30:00.000Z",
               "availabilityStatus": "available"
             }
           ],
