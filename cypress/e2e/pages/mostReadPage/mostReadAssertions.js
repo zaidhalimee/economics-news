@@ -18,33 +18,48 @@ export const crossPlatform = ({ service, variant }) => {
 
     if (hasMostRead) {
       describe('Most Read Component', () => {
+        beforeEach(() => {
+          cy.getToggles(serviceID);
+        });
         it(`should render ${numberOfItems} items`, () => {
-          cy.get('[data-e2e="most-read"]').scrollIntoView();
-          cy.get('[data-e2e="most-read"] li').should(
-            'have.length',
-            numberOfItems,
-          );
+          cy.fixture(`toggles/${serviceID}.json`).then(toggles => {
+            if (toggles.mostRead?.enabled) {
+              cy.get('[data-e2e="most-read"]').scrollIntoView();
+              cy.get('[data-e2e="most-read"] li').should(
+                'have.length',
+                numberOfItems,
+              );
+            }
+          });
         });
 
         it(`should show correct numerals`, () => {
-          const expectedMostReadRank = serviceNumerals(serviceID);
-          cy.get('[data-e2e="most-read"]').scrollIntoView();
-          cy.get('[data-e2e="most-read"]')
-            .find('li span')
-            .each(($el, index) => {
-              expect($el.text()).equal(expectedMostReadRank[index + 1]);
-            });
+          cy.fixture(`toggles/${serviceID}.json`).then(toggles => {
+            if (toggles.mostRead?.enabled) {
+              const expectedMostReadRank = serviceNumerals(serviceID);
+              cy.get('[data-e2e="most-read"]').scrollIntoView();
+              cy.get('[data-e2e="most-read"]')
+                .find('li span')
+                .each(($el, index) => {
+                  expect($el.text()).equal(expectedMostReadRank[index + 1]);
+                });
+            }
+          });
         });
 
         it(`should have links with href and title`, () => {
-          cy.get('[data-e2e="most-read"]').scrollIntoView();
-          cy.get('[data-e2e="most-read"]').within(() => {
-            cy.get('a').each($el => {
-              cy.wrap($el)
-                .should('not.be.empty') // ensures that the link has text
-                .should('have.attr', 'href')
-                .should('not.be.empty'); // ensures that the href is not empty
-            });
+          cy.fixture(`toggles/${serviceID}.json`).then(toggles => {
+            if (toggles.mostRead?.enabled) {
+              cy.get('[data-e2e="most-read"]').scrollIntoView();
+              cy.get('[data-e2e="most-read"]').within(() => {
+                cy.get('a').each($el => {
+                  cy.wrap($el)
+                    .should('not.be.empty') // ensures that the link has text
+                    .should('have.attr', 'href')
+                    .should('not.be.empty'); // ensures that the href is not empty
+                });
+              });
+            }
           });
         });
       });
@@ -61,6 +76,9 @@ export const ampOnly = ({ service, variant }) => {
     } = appConfig[serviceID][variant];
     if (hasMostRead) {
       describe('Most Read Component', () => {
+        beforeEach(() => {
+          cy.getToggles(serviceID);
+        });
         it('should not render when data fetch fails', () => {
           const mostReadPath = getMostReadEndpoint({
             service: serviceID,
@@ -75,8 +93,12 @@ export const ampOnly = ({ service, variant }) => {
             { statusCode: 404 },
           );
           cy.reload();
-          cy.get('[data-e2e="most-read"]').scrollIntoView();
-          cy.get('[data-e2e="most-read"] li').should('not.exist');
+          cy.fixture(`toggles/${serviceID}.json`).then(toggles => {
+            if (toggles.mostRead?.enabled) {
+              cy.get('[data-e2e="most-read"]').scrollIntoView();
+              cy.get('[data-e2e="most-read"] li').should('not.exist');
+            }
+          });
         });
       });
     }
