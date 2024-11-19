@@ -55,6 +55,8 @@ describe('JumpTo Component', () => {
   describe('Event Tracking', () => {
     const jumpToTrackerData = {
       componentName: 'jumpto',
+      optimizely: null,
+      optimizelyEventName: 'jumpto',
     };
     describe('View tracking', () => {
       const viewTrackerSpy = jest.spyOn(viewTracking, 'default');

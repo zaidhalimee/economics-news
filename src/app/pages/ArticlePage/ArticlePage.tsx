@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import { useContext } from 'react';
+/* @jsxFrag React.Fragment */
+import React, { useContext } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 import useToggle from '#hooks/useToggle';
 import { singleTextBlock } from '#app/models/blocks';
@@ -38,9 +39,11 @@ import CpsRecommendations from '#containers/CpsRecommendations';
 import InlinePodcastPromo from '#containers/PodcastPromo/Inline';
 import { Article, OptimoBylineBlock } from '#app/models/types/optimo';
 import ScrollablePromo from '#components/ScrollablePromo';
-import JumpTo from '#app/components/JumpTo';
+import JumpTo, { JumpToProps } from '#app/components/JumpTo';
+import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
+import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
+import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
 import ElectionBanner from './ElectionBanner';
-
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
 import EmbedImages from '../../components/Embeds/EmbedImages';
@@ -137,6 +140,18 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     mostRead: mostReadInitialData,
   } = pageData;
 
+  const jumpToVariation = useOptimizelyVariation(
+    'jump_to',
+  ) as unknown as string;
+
+  const hasJumpToBlockForExperiment = blocks.some(
+    block => block.type === 'jumpTo',
+  );
+
+  const enableOptimizelyEventTracking = Boolean(
+    jumpToVariation && hasJumpToBlockForExperiment,
+  );
+
   const topStoriesContent = pageData?.secondaryColumn?.topStories;
   const { shouldEnableExperimentTopStories, transformedBlocks } =
     getExperimentTopStories({
@@ -223,9 +238,9 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           variantName="ThreeQuarters"
         />
       ) : null,
-    jumpTo: (props: ComponentToRenderProps) => (
-      <JumpTo {...props} showRelatedContentLink={showRelatedContent} />
-    ),
+
+    jumpTo: (props: ComponentToRenderProps & JumpToProps) =>
+      jumpToVariation === 'on' ? <JumpTo {...props}  showRelatedContentLink={showRelatedContent}/> : null,
   };
 
   const visuallyHiddenBlock = {
@@ -328,7 +343,10 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
               tagBackgroundColour={WHITE}
             />
           )}
-          <RelatedContentSection content={blocks} />
+          <RelatedContentSection
+            content={blocks}
+            sendOptimizelyEvents={enableOptimizelyEventTracking}
+          />
         </div>
         {!isApp && !isPGL && <SecondaryColumn pageData={pageData} />}
       </div>
@@ -341,6 +359,12 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           headingBackgroundColour={GREY_2}
           mobileDivider={showTopics}
         />
+      )}
+      {enableOptimizelyEventTracking && (
+        <>
+          <OptimizelyArticleCompleteTracking />
+          <OptimizelyPageViewTracking />
+        </>
       )}
     </div>
   );
