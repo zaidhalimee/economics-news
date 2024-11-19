@@ -6,6 +6,7 @@ import { RequestContextProvider } from '#contexts/RequestContext';
 import { ToggleContextProvider } from '#contexts/ToggleContext';
 import {
   articleDataNews,
+  articleDataNewsLongLength,
   articleDataNewsWithEmbeds,
   articleDataPersian,
   articleDataPidgin,
@@ -878,21 +879,27 @@ describe('Article Page', () => {
   });
 
   describe('when rendering an AMP page', () => {
-    const pageDataWithSecondaryColumn = {
-      ...articleDataNews,
-      secondaryColumn: {
-        topStories: topStoriesList,
-        features: [],
-      },
-    };
-
     const renderAmpPage = ({
       service,
       id,
+      isShortArticle,
     }: {
       service: Services;
       id: string | null;
+      isShortArticle?: boolean;
     }) => {
+      const pageData = isShortArticle
+        ? articleDataNews
+        : articleDataNewsLongLength;
+
+      const pageDataWithSecondaryColumn = {
+        ...pageData,
+        secondaryColumn: {
+          topStories: topStoriesList,
+          features: [],
+        },
+      };
+
       return render(
         <Context isAmp service={service} id={id}>
           <ArticlePage pageData={pageDataWithSecondaryColumn} />
@@ -913,32 +920,79 @@ describe('Article Page', () => {
       ${'news'}  | ${validNewsAsset}
       ${'sport'} | ${validSportAsset}
     `(
-      'should render page with experiment-top-stories blocks only on specific $service assets',
+      'should render page with experiment-top-stories blocks only on specific $service assets that are long enough',
       ({ service, id }) => {
         const { queryByTestId } = renderAmpPage({
           service,
           id,
         });
 
-        expect(queryByTestId('experiment-top-stories')).toBeInTheDocument();
+        expect(
+          queryByTestId('experiment-top-stories-Quarter'),
+        ).toBeInTheDocument();
+        expect(
+          queryByTestId('experiment-top-stories-Half'),
+        ).toBeInTheDocument();
+        expect(
+          queryByTestId('experiment-top-stories-ThreeQuarters'),
+        ).toBeInTheDocument();
       },
     );
 
     it.each`
-      service     | id                | testDescription
-      ${'news'}   | ${'c1231qzyv8po'} | ${'news assets not specified'}
-      ${'sport'}  | ${'c1231qzyv8po'} | ${'sport assets not specified'}
-      ${'pidgin'} | ${'c6v11qzyv8po'} | ${`services which are not 'news' or 'sport'`}
+      service     | id                | isShortArticle | testDescription
+      ${'news'}   | ${'c1231qzyv8po'} | ${false}       | ${'news assets not specified'}
+      ${'sport'}  | ${'c1231qzyv8po'} | ${false}       | ${'sport assets not specified'}
+      ${'pidgin'} | ${'c6v11qzyv8po'} | ${false}       | ${`services which are not 'news' or 'sport'`}
+      ${'news'}   | ${'c6v11qzyv8po'} | ${true}        | ${'valid asset is too short'}
     `(
       'should render page without experiment-top-stories blocks on $testDescription',
-      ({ service, id }) => {
+      ({ service, id, isShortArticle }) => {
         const { queryByTestId } = renderAmpPage({
           service,
           id,
+          isShortArticle,
         });
 
-        expect(queryByTestId('experiment-top-stories')).not.toBeInTheDocument();
+        expect(
+          queryByTestId('experiment-top-stories-Quarter'),
+        ).not.toBeInTheDocument();
+        expect(
+          queryByTestId('experiment-top-stories-Half'),
+        ).not.toBeInTheDocument();
+        expect(
+          queryByTestId('experiment-top-stories-ThreeQuarters'),
+        ).not.toBeInTheDocument();
       },
     );
+
+    it('should add ampExperimentName to atiAnalytics on valid services and assets', async () => {
+      (ATIAnalytics as jest.Mock).mockImplementation(() => <div />);
+      const service = 'news';
+      const id = validNewsAsset;
+
+      renderAmpPage({ service, id });
+
+      expect(ATIAnalytics).toHaveBeenLastCalledWith(
+        {
+          atiData: {
+            categoryName: 'Royal+Wedding+2018~Duchess+of+Sussex',
+            contentType: 'article',
+            contentId: 'urn:bbc:optimo:c0000000001o',
+            language: 'en-gb',
+            ldpThingIds:
+              '2351f2b2-ce36-4f44-996d-c3c4f7f90eaa~803eaeb9-c0c3-4f1b-9a66-90efac3df2dc',
+            ldpThingLabels: 'Royal+Wedding+2018~Duchess+of+Sussex',
+            nationsProducer: null,
+            pageIdentifier: 'news.articles.c0000000001o.page',
+            pageTitle: 'Article Headline for SEO',
+            timePublished: '2018-01-01T12:01:00.000Z',
+            timeUpdated: '2018-01-01T14:00:00.000Z',
+            ampExperimentName: 'topStoriesExperiment',
+          },
+        },
+        {},
+      );
+    });
   });
 });
