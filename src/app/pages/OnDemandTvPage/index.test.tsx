@@ -1,6 +1,5 @@
 import { FetchMock } from 'jest-fetch-mock';
 import React from 'react';
-import assocPath from 'ramda/src/assocPath';
 import pashtoPageData from '#data/pashto/bbc_pashto_tv/tv_programmes/w13xttn4.json';
 import * as analyticsUtils from '#lib/analyticsUtils';
 import getInitialData from '#app/routes/onDemandTV/getInitialData';
@@ -11,7 +10,6 @@ import {
   act,
   render,
 } from '../../components/react-testing-library-with-providers';
-import * as MediaLoader from '../../components/MediaLoader';
 import _OnDemandTvPage, { OnDemandTVProps } from './OnDemandTvPage';
 
 const pageType = MEDIA_PAGE;
