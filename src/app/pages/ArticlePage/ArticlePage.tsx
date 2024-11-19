@@ -240,7 +240,9 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       ) : null,
 
     jumpTo: (props: ComponentToRenderProps & JumpToProps) =>
-      jumpToVariation === 'on' ? <JumpTo {...props}  showRelatedContentLink={showRelatedContent}/> : null,
+      jumpToVariation === 'on' ? (
+        <JumpTo {...props} showRelatedContentLink={showRelatedContent} />
+      ) : null,
   };
 
   const visuallyHiddenBlock = {
