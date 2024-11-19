@@ -371,6 +371,47 @@ describe('Click tracking', () => {
     );
   });
 
+  it('should use "eventName" property if provided in optimizely object', async () => {
+    const mockOptimizelyTrack = jest.fn();
+    const mockUserId = 'test';
+    const mockAttributes = { foo: 'bar' };
+
+    const mockOptimizely = {
+      optimizely: {
+        track: mockOptimizelyTrack,
+        user: { attributes: mockAttributes, id: mockUserId },
+      },
+      optimizelyEventName: 'myEvent',
+    };
+    const {
+      metadata: { atiAnalytics },
+    } = pidginData;
+
+    const { getByTestId } = render(
+      <TestComponent hookProps={{ ...defaultProps, ...mockOptimizely }} />,
+      {
+        atiData: atiAnalytics,
+        pageData: pidginData,
+        pageType: STORY_PAGE,
+        pathname: '/pidgin',
+        service: 'pidgin',
+        toggles: defaultToggles,
+      },
+    );
+
+    fireEvent.click(getByTestId('test-component'));
+
+    expect(mockOptimizelyTrack).toHaveBeenCalledTimes(1);
+    expect(mockOptimizelyTrack).toHaveBeenCalledWith(
+      'component_clicks',
+      mockUserId,
+      {
+        clicked_myEvent: true,
+        foo: 'bar',
+      },
+    );
+  });
+
   it('should fire event to Optimizely if optimizely object exists', async () => {
     const mockOptimizelyTrack = jest.fn();
     const mockUserId = 'test';
