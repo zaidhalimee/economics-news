@@ -19,6 +19,7 @@ const useClickTrackerHandler = (props = {}) => {
   const advertiserID = path(['advertiserID'], props);
   const format = path(['format'], props);
   const optimizely = path(['optimizely'], props);
+  const optimizelyEventName = props?.optimizelyEventName;
   const detailedPlacement = props?.detailedPlacement;
 
   const { trackingIsEnabled } = useTrackingToggle(componentName);
@@ -59,9 +60,12 @@ const useClickTrackerHandler = (props = {}) => {
           event.preventDefault();
 
           if (optimizely) {
+            const eventName =
+              optimizelyEventName || OPTIMIZELY_CONFIG.viewClickAttributeId;
+
             const overrideAttributes = {
               ...optimizely.user.attributes,
-              [`clicked_${OPTIMIZELY_CONFIG.viewClickAttributeId}`]: true,
+              [`clicked_${eventName}`]: true,
             };
 
             optimizely.track(
@@ -112,6 +116,7 @@ const useClickTrackerHandler = (props = {}) => {
       advertiserID,
       format,
       optimizely,
+      optimizelyEventName,
       detailedPlacement,
     ],
   );
