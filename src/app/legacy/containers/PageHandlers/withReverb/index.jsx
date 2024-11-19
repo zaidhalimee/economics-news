@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 const SCRIPT_SRC_REVERB =
   'http://localhost:7080/static/js/reverb/reverb-3.9.2.js';
 const SCRIPT_SRC_SMART_TAG =
-  'http://localhost:7080/static/js/reverb/reverb-3.9.2.js';
+  'http://localhost:7080/static/js/reverb/smarttag-5.29.4.min.js';
 
 const buildScript = () => (
   <Helmet>
