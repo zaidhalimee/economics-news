@@ -25,6 +25,17 @@ export default {
   },
 };
 
+export const ExampleWithRelatedContentLink = () => {
+  const jumpToBlock =
+    pidginArticleFixtureWithJumpToBlock.data.article.content.model.blocks.find(
+      block => block.type === 'jumpTo',
+    );
+
+  const jumpToHeadings = jumpToBlock?.model.jumpToHeadings ?? [];
+
+  return <Component jumpToHeadings={jumpToHeadings} showRelatedContentLink />;
+};
+
 export const Example = () => {
   const jumpToBlock =
     pidginArticleFixtureWithJumpToBlock.data.article.content.model.blocks.find(
@@ -33,14 +44,7 @@ export const Example = () => {
 
   const jumpToHeadings = jumpToBlock?.model.jumpToHeadings ?? [];
 
-  const showRelatedContentLink =
-    !!pidginArticleFixtureWithJumpToBlock.data.article.content.model.blocks.find(
-      block => block.type === 'relatedContent',
-    );
   return (
-    <Component
-      jumpToHeadings={jumpToHeadings}
-      showRelatedContentLink={showRelatedContentLink}
-    />
+    <Component jumpToHeadings={jumpToHeadings} showRelatedContentLink={false} />
   );
 };
