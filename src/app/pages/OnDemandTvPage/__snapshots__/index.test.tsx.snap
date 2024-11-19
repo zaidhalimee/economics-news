@@ -756,7 +756,7 @@ exports[`OnDemand TV Brand Page  Dark Mode Design - should match snapshot 1`] = 
           id="content"
           tabindex="-1"
         >
-           د بي بي سي خبرونه , ۱۸ نومبر ۲۰۲۴
+           د بي بي سي خبرونه , ۱۸ نومبر ۲۰۲۴
         </h1>
         <figure
           class="emotion-7"
@@ -781,7 +781,7 @@ exports[`OnDemand TV Brand Page  Dark Mode Design - should match snapshot 1`] = 
               <span
                 class="emotion-6"
               >
-                Play video, " د بي بي سي خبرونه ", موده 28,00
+                Play video, " د بي بي سي خبرونه ", موده 28,00
               </span>
               <div
                 aria-hidden="true"
@@ -839,7 +839,7 @@ exports[`OnDemand TV Brand Page  Dark Mode Design - should match snapshot 1`] = 
             class="emotion-22 emotion-23"
             data-testid="brand-title"
           >
-             د بي بي سي خبرونه 
+             د بي بي سي خبرونه 
           </span>
           <span
             class="emotion-6"
@@ -850,7 +850,7 @@ exports[`OnDemand TV Brand Page  Dark Mode Design - should match snapshot 1`] = 
             class="emotion-25 emotion-26"
             data-testid="sub-heading"
           >
-             د بي بي سي خبرونه 
+             د بي بي سي خبرونه 
           </span>
         </strong>
       </div>
