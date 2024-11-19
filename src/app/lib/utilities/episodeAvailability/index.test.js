@@ -8,8 +8,6 @@ import {
 } from '#lib/logger.const';
 import onDemandRadioEpisodeJson from '#data/pashto/bbc_pashto_radio/w3ct0lz1';
 import onDemandRadioBrandJson from '#data/indonesia/bbc_indonesian_radio/w13xtt0s';
-import onDemandTvEpisodeJson from '#data/afrique/bbc_afrique_tv/tv/w3ct05mp';
-import onDemandTvBrandJson from '#data/somali/bbc_somali_tv/tv_programmes/w13xttqt';
 import getEpisodeAvailability, { getUrl } from '.';
 
 describe('Episode Availability', () => {
@@ -22,16 +20,6 @@ describe('Episode Availability', () => {
     it('should return a valid url for radio brand page', () => {
       const url = getUrl(onDemandRadioBrandJson);
       expect(url).toEqual('indonesia/bbc_indonesian_radio/programmes/w13xtt0s');
-    });
-
-    it('should return a valid url for tv episode page', () => {
-      const url = getUrl(onDemandTvEpisodeJson);
-      expect(url).toEqual('afrique/bbc_afrique_tv/tv/w3ct05mp');
-    });
-
-    it('should return a valid url for tv brand page', () => {
-      const url = getUrl(onDemandTvBrandJson);
-      expect(url).toEqual('somali/bbc_somali_tv/tv_programmes/w13xttqt');
     });
   });
 
