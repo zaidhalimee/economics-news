@@ -26,10 +26,12 @@ export default {
 };
 
 export const Example = () => {
-  const jumpToHeadings =
+  const jumpToBlock =
     pidginArticleFixtureWithJumpToBlock.data.article.content.model.blocks.find(
       block => block.type === 'jumpTo',
-    )?.model.jumpToHeadings;
+    );
+
+  const jumpToHeadings = jumpToBlock?.model.jumpToHeadings ?? [];
 
   const showRelatedContentLink =
     !!pidginArticleFixtureWithJumpToBlock.data.article.content.model.blocks.find(
