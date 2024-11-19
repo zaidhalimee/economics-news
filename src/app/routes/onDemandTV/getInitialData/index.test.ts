@@ -27,7 +27,7 @@ describe('Get initial data for on demand tv', () => {
     });
 
     expect(pageData.language).toEqual('ps');
-    expect(pageData.releaseDateTimeStamp).toEqual('2024-11-18T00:00:00.000Z');
+    expect(pageData.releaseDateTimeStamp).toEqual('2024-11-19T00:00:00.000Z');
     expect(pageData.brandTitle).toEqual(' د بي بي سي خبرونه ');
     expect(pageData.headline).toEqual(' د بي بي سي خبرونه ');
     expect(pageData.shortSynopsis).toEqual(
@@ -64,6 +64,6 @@ describe('Get initial data for on demand tv', () => {
     });
 
     expect(pageData.recentEpisodes).toHaveLength(3);
-    expect(pageData.recentEpisodes[0].id).toEqual('w172zmspkbphbn3');
+    expect(pageData.recentEpisodes[0].id).toEqual('w172zmspxlzwwmk');
   });
 });
