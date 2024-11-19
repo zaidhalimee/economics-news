@@ -72,6 +72,7 @@ const AllTheProviders: FC<Props> = ({
           isLite={isLite}
           isNextJs={isNextJs}
           service={service}
+          variant={variant}
           pathname={pathname}
           derivedPageType={derivedPageType}
           showAdsBasedOnLocation={showAdsBasedOnLocation}
