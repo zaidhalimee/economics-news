@@ -53,6 +53,7 @@ const MIGRATED_PAGE_TYPES: PageTypes[] = [
   STATIC_PAGE,
   DOWNLOADS_PAGE,
   TV_PAGE,
+  MEDIA_PAGE,
 ];
 
 const noOp = () => {

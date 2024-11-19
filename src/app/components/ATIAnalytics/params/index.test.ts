@@ -470,10 +470,10 @@ describe('ATIAnalytics params', () => {
         );
       });
 
-      it('should not invoke buildPageATIUrl for an unsupported page types', () => {
+      it('should not invoke buildPageATIUrl for an unsupported page type with no atiData', () => {
         buildATIUrl({
           requestContext: { ...requestContext, pageType: MEDIA_PAGE },
-          atiData: homePageAnalyticsData,
+          atiData: undefined,
           serviceContext,
         });
 
@@ -743,10 +743,10 @@ describe('ATIAnalytics params', () => {
         );
       });
 
-      it('should not invoke buildPageATIParams for an unsupported page types', () => {
+      it('should not invoke buildPageATIParams for an unsupported page type with no atiData', () => {
         buildATIEventTrackingParams({
           requestContext: { ...requestContext, pageType: MEDIA_PAGE },
-          atiData: homePageAnalyticsData,
+          atiData: undefined,
           serviceContext,
         });
 
