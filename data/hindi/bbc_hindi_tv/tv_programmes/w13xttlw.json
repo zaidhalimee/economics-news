@@ -14,16 +14,24 @@
     "headline": "दुनिया",
     "shortSynopsis": "ताज़ा अंतरराष्ट्रीय, क्षेत्रीय ख़बरों और विश्लेषण के लिए देखिए बीबीसी दुनिया",
     "mediumSynopsis": "ताज़ा अंतरराष्ट्रीय, क्षेत्रीय ख़बरों और विश्लेषण के लिए देखिए बीबीसी दुनिया",
-    "releaseDateTimeStamp": "2024-11-15T00:00:00.000Z",
+    "releaseDateTimeStamp": "2024-11-18T00:00:00.000Z",
     "durationISO8601": "PT19M52S",
-    "thumbnailImageUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p0k4wgbv.jpg",
+    "thumbnailImageUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p0k5d4fm.png",
     "promoBrandTitle": "दुनिया",
     "masterBrand": "bbc_hindi_tv",
-    "episodeId": "w172zm8fshrhc7r",
-    "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p0k4wgbv.jpg",
+    "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p0k5d4fm.png",
     "episodeAvailability": "available",
-    "episodeTitle": "लेबनान में एक और संघर्ष की कोशिश, दूसरी ओर इसराइल की भारी बमबारी",
+    "episodeTitle": "अमेरिका ने यूक्रेन को दी रूस में अमेरिकी मिसाइलों से हमलों की इजाज़त, क्या होगा असर ?",
     "recentEpisodes": [
+      {
+        "id": "w172zm8fshrhc7r",
+        "brandTitle": "दुनिया",
+        "episodeTitle": "लेबनान में एक और संघर्ष की कोशिश, दूसरी ओर इसराइल की भारी बमबारी",
+        "duration": "PT19M52S",
+        "timestamp": "2024-11-15T00:00:00.000Z",
+        "image": "//ichef.bbci.co.uk/images/ic/768x432/p0k4wgbv.jpg",
+        "altText": "दुनिया"
+      },
       {
         "id": "w172zm8fshrdgbn",
         "brandTitle": "दुनिया",
@@ -194,35 +202,26 @@
         "timestamp": "2024-10-22T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p0jzfzv1.jpg",
         "altText": "दुनिया"
-      },
-      {
-        "id": "w172zm8dppssfjz",
-        "brandTitle": "दुनिया",
-        "episodeTitle": "लेबनान के बेरूत में इसराइल का बड़ा हमला, क्या अमेरिका करवा पाएगा संघर्ष विराम?",
-        "duration": "PT19M52S",
-        "timestamp": "2024-10-21T00:00:00.000Z",
-        "image": "//ichef.bbci.co.uk/images/ic/768x432/p0jz7f31.jpg",
-        "altText": "दुनिया"
       }
     ],
     "mediaBlocks": [
       {
         "type": "tv",
         "model": {
-          "id": "w172zm8fshrhc7r",
+          "id": "w172zm8g4s1wx76",
           "subType": "episode",
           "format": "Video",
-          "title": "15/11/2024 GMT",
+          "title": "दुनिया",
           "synopses": {
             "short": "ताज़ा अंतरराष्ट्रीय, क्षेत्रीय ख़बरों और विश्लेषण के लिए देखिए बीबीसी दुनिया",
             "medium": "ताज़ा अंतरराष्ट्रीय, क्षेत्रीय ख़बरों और विश्लेषण के लिए देखिए बीबीसी दुनिया"
           },
-          "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p0k4wgbv.jpg",
+          "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p0k5d4fm.png",
           "embedding": false,
           "advertising": false,
           "versions": [
             {
-              "versionId": "w1mskypfntyvmhz",
+              "versionId": "w1mskypg13885hf",
               "types": ["Original"],
               "duration": 1192,
               "durationISO8601": "PT19M52S",
@@ -232,14 +231,21 @@
                 "nonUk": true,
                 "world": false
               },
-              "availableFrom": 1731684598000,
+              "availableFrom": 1731943798000,
               "availabilityStatus": "available"
             }
           ],
           "availability": "available",
           "smpKind": "programme",
-          "episodeTitle": "लेबनान में एक और संघर्ष की कोशिश, दूसरी ओर इसराइल की भारी बमबारी",
-          "type": "media"
+          "episodeTitle": "अमेरिका ने यूक्रेन को दी रूस में अमेरिकी मिसाइलों से हमलों की इजाज़त, क्या होगा असर ?",
+          "type": "media",
+          "language": "hi"
+        }
+      },
+      {
+        "type": "mediaOverrides",
+        "model": {
+          "pageIdentifierOverride": "hindi.bbc_hindi_tv.tv.w172zm8g4s1wx76.page"
         }
       }
     ]

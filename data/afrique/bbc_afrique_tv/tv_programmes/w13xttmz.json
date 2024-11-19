@@ -19,7 +19,6 @@
     "thumbnailImageUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p08b22y1.png",
     "promoBrandTitle": "BBC Info",
     "masterBrand": "bbc_afrique_tv",
-    "episodeId": "w172yrnhsjqw4c9",
     "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p08b22y1.png",
     "episodeAvailability": "available",
     "episodeTitle": "BBC Info",
@@ -212,7 +211,7 @@
           "id": "w172yrnhsjqw4c9",
           "subType": "episode",
           "format": "Video",
-          "title": "17/03/2023 GMT",
+          "title": "BBC Info",
           "synopses": {
             "short": "Le journal télévisé international de BBC Afrique.",
             "medium": "Le journal télévisé international de BBC Afrique."
@@ -239,7 +238,14 @@
           "availability": "available",
           "smpKind": "programme",
           "episodeTitle": "BBC Info",
-          "type": "media"
+          "type": "media",
+          "language": "fr"
+        }
+      },
+      {
+        "type": "mediaOverrides",
+        "model": {
+          "pageIdentifierOverride": "afrique.bbc_afrique_tv.tv.w172yrnhsjqw4c9.page"
         }
       }
     ]

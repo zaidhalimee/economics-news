@@ -18,7 +18,6 @@
     "thumbnailImageUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p08b22y1.png",
     "promoBrandTitle": "BBC Info",
     "masterBrand": "bbc_afrique_tv",
-    "episodeId": "w3ct05mp",
     "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p08b22y1.png",
     "episodeTitle": "BBC Info",
     "recentEpisodes": [
@@ -210,7 +209,7 @@
           "id": "w3ct05mp",
           "subType": "episode",
           "format": "Video",
-          "title": "29/06/2020 GMT",
+          "title": "BBC Info",
           "synopses": {
             "short": "Le journal télévisé international de BBC Afrique.",
             "medium": "Le journal télévisé international de BBC Afrique."
@@ -222,7 +221,14 @@
           "availability": "notAvailable",
           "smpKind": "programme",
           "episodeTitle": "BBC Info",
-          "type": "media"
+          "type": "media",
+          "language": "fr"
+        }
+      },
+      {
+        "type": "mediaOverrides",
+        "model": {
+          "pageIdentifierOverride": "afrique.bbc_afrique_tv.tv.w3ct05mp.page"
         }
       }
     ]

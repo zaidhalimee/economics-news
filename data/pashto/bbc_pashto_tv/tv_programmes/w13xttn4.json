@@ -5,204 +5,203 @@
       "atiAnalytics": {
         "pageIdentifier": "pashto.bbc_pashto_tv.tv_programmes.w13xttn4.page",
         "contentType": "player-episode",
-        "pageTitle": " د بي بي سي خبرونه  - BBC News پښتو"
+        "pageTitle": " د بي بي سي خبرونه  - BBC News پښتو"
       }
     },
     "language": "ps",
     "id": "urn:bbc:ares:ws_media:brand:bbc_pashto_tv/w13xttn4",
-    "brandTitle": " د بي بي سي خبرونه ",
-    "headline": " د بي بي سي خبرونه ",
+    "brandTitle": " د بي بي سي خبرونه ",
+    "headline": " د بي بي سي خبرونه ",
     "shortSynopsis": "نړۍ دا وخت، د نړۍ او سیمې وروستۍ پرمختیاوې یادوي\n",
     "mediumSynopsis": "نړۍ دا وخت، د نړۍ او سیمې وروستۍ پرمختیاوې یادوي\n",
     "releaseDateTimeStamp": "2024-11-18T00:00:00.000Z",
     "durationISO8601": "PT28M",
     "thumbnailImageUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p08b23c8.png",
-    "promoBrandTitle": " د بي بي سي خبرونه ",
+    "promoBrandTitle": " د بي بي سي خبرونه ",
     "masterBrand": "bbc_pashto_tv",
-    "episodeId": "w172zmspxlzwwmk",
     "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p08b23c8.png",
     "episodeAvailability": "available",
-    "episodeTitle": " د بي بي سي خبرونه ",
+    "episodeTitle": " د بي بي سي خبرونه ",
     "recentEpisodes": [
       {
         "id": "w172zmspkbphbn3",
-        "brandTitle": " د بي بي سي خبرونه ",
-        "episodeTitle": " د بي بي سي خبرونه ",
+        "brandTitle": " د بي بي سي خبرونه ",
+        "episodeTitle": " د بي بي سي خبرونه ",
         "duration": "PT28M",
         "timestamp": "2024-11-15T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b23c8.png",
-        "altText": " د بي بي سي خبرونه "
+        "altText": " د بي بي سي خبرونه "
       },
       {
         "id": "w172zmspkbpdfr0",
-        "brandTitle": " د بي بي سي خبرونه ",
-        "episodeTitle": " د بي بي سي خبرونه ",
+        "brandTitle": " د بي بي سي خبرونه ",
+        "episodeTitle": " د بي بي سي خبرونه ",
         "duration": "PT28M",
         "timestamp": "2024-11-14T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b23c8.png",
-        "altText": " د بي بي سي خبرونه "
+        "altText": " د بي بي سي خبرونه "
       },
       {
         "id": "w172zmspkbp9jtx",
-        "brandTitle": " د بي بي سي خبرونه ",
-        "episodeTitle": " د بي بي سي خبرونه ",
+        "brandTitle": " د بي بي سي خبرونه ",
+        "episodeTitle": " د بي بي سي خبرونه ",
         "duration": "PT28M",
         "timestamp": "2024-11-13T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b23c8.png",
-        "altText": " د بي بي سي خبرونه "
+        "altText": " د بي بي سي خبرونه "
       },
       {
         "id": "w172zmspkbp6mxt",
-        "brandTitle": " د بي بي سي خبرونه ",
-        "episodeTitle": " د بي بي سي خبرونه ",
+        "brandTitle": " د بي بي سي خبرونه ",
+        "episodeTitle": " د بي بي سي خبرونه ",
         "duration": "PT28M",
         "timestamp": "2024-11-12T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b23c8.png",
-        "altText": " د بي بي سي خبرونه "
+        "altText": " د بي بي سي خبرونه "
       },
       {
         "id": "w172zmspkbp3r0q",
-        "brandTitle": " د بي بي سي خبرونه ",
-        "episodeTitle": " د بي بي سي خبرونه ",
+        "brandTitle": " د بي بي سي خبرونه ",
+        "episodeTitle": " د بي بي سي خبرونه ",
         "duration": "PT28M",
         "timestamp": "2024-11-11T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b23c8.png",
-        "altText": " د بي بي سي خبرونه "
+        "altText": " د بي بي سي خبرونه "
       },
       {
         "id": "w172zmsp62cwzvg",
-        "brandTitle": " د بي بي سي خبرونه ",
-        "episodeTitle": " د بي بي سي خبرونه ",
+        "brandTitle": " د بي بي سي خبرونه ",
+        "episodeTitle": " د بي بي سي خبرونه ",
         "duration": "PT28M",
         "timestamp": "2024-11-10T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b23c8.png",
-        "altText": " د بي بي سي خبرونه "
+        "altText": " د بي بي سي خبرونه "
       },
       {
         "id": "w172zmsp62ct2yc",
-        "brandTitle": " د بي بي سي خبرونه ",
-        "episodeTitle": " د بي بي سي خبرونه ",
+        "brandTitle": " د بي بي سي خبرونه ",
+        "episodeTitle": " د بي بي سي خبرونه ",
         "duration": "PT28M",
         "timestamp": "2024-11-09T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b23c8.png",
-        "altText": " د بي بي سي خبرونه "
+        "altText": " د بي بي سي خبرونه "
       },
       {
         "id": "w172zmsp62cq618",
-        "brandTitle": " د بي بي سي خبرونه ",
-        "episodeTitle": " د بي بي سي خبرونه ",
+        "brandTitle": " د بي بي سي خبرونه ",
+        "episodeTitle": " د بي بي سي خبرونه ",
         "duration": "PT28M",
         "timestamp": "2024-11-08T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b23c8.png",
-        "altText": " د بي بي سي خبرونه "
+        "altText": " د بي بي سي خبرونه "
       },
       {
         "id": "w172zmsp62cm945",
-        "brandTitle": " د بي بي سي خبرونه ",
-        "episodeTitle": " د بي بي سي خبرونه ",
+        "brandTitle": " د بي بي سي خبرونه ",
+        "episodeTitle": " د بي بي سي خبرونه ",
         "duration": "PT28M",
         "timestamp": "2024-11-07T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b23c8.png",
-        "altText": " د بي بي سي خبرونه "
+        "altText": " د بي بي سي خبرونه "
       },
       {
         "id": "w172zmsp62cjd72",
-        "brandTitle": " د بي بي سي خبرونه ",
-        "episodeTitle": " د بي بي سي خبرونه ",
+        "brandTitle": " د بي بي سي خبرونه ",
+        "episodeTitle": " د بي بي سي خبرونه ",
         "duration": "PT28M",
         "timestamp": "2024-11-06T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b23c8.png",
-        "altText": " د بي بي سي خبرونه "
+        "altText": " د بي بي سي خبرونه "
       },
       {
         "id": "w172zmsp62cfh9z",
-        "brandTitle": " د بي بي سي خبرونه ",
-        "episodeTitle": " د بي بي سي خبرونه ",
+        "brandTitle": " د بي بي سي خبرونه ",
+        "episodeTitle": " د بي بي سي خبرونه ",
         "duration": "PT28M",
         "timestamp": "2024-11-05T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b23c8.png",
-        "altText": " د بي بي سي خبرونه "
+        "altText": " د بي بي سي خبرونه "
       },
       {
         "id": "w172zmsp62cbldw",
-        "brandTitle": " د بي بي سي خبرونه ",
-        "episodeTitle": " د بي بي سي خبرونه ",
+        "brandTitle": " د بي بي سي خبرونه ",
+        "episodeTitle": " د بي بي سي خبرونه ",
         "duration": "PT28M",
         "timestamp": "2024-11-04T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b23c8.png",
-        "altText": " د بي بي سي خبرونه "
+        "altText": " د بي بي سي خبرونه "
       },
       {
         "id": "w172zmsntt23v7m",
-        "brandTitle": " د بي بي سي خبرونه ",
-        "episodeTitle": " د بي بي سي خبرونه ",
+        "brandTitle": " د بي بي سي خبرونه ",
+        "episodeTitle": " د بي بي سي خبرونه ",
         "duration": "PT28M",
         "timestamp": "2024-11-03T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b23c8.png",
-        "altText": " د بي بي سي خبرونه "
+        "altText": " د بي بي سي خبرونه "
       },
       {
         "id": "w172zmsntt20ybj",
-        "brandTitle": " د بي بي سي خبرونه ",
-        "episodeTitle": " د بي بي سي خبرونه ",
+        "brandTitle": " د بي بي سي خبرونه ",
+        "episodeTitle": " د بي بي سي خبرونه ",
         "duration": "PT28M",
         "timestamp": "2024-11-02T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b23c8.png",
-        "altText": " د بي بي سي خبرونه "
+        "altText": " د بي بي سي خبرونه "
       },
       {
         "id": "w172zmsntt1y1ff",
-        "brandTitle": " د بي بي سي خبرونه ",
-        "episodeTitle": " د بي بي سي خبرونه ",
+        "brandTitle": " د بي بي سي خبرونه ",
+        "episodeTitle": " د بي بي سي خبرونه ",
         "duration": "PT28M",
         "timestamp": "2024-11-01T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b23c8.png",
-        "altText": " د بي بي سي خبرونه "
+        "altText": " د بي بي سي خبرونه "
       },
       {
         "id": "w172zmsntt1v4jb",
-        "brandTitle": " د بي بي سي خبرونه ",
-        "episodeTitle": " د بي بي سي خبرونه ",
+        "brandTitle": " د بي بي سي خبرونه ",
+        "episodeTitle": " د بي بي سي خبرونه ",
         "duration": "PT28M",
         "timestamp": "2024-10-31T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b23c8.png",
-        "altText": " د بي بي سي خبرونه "
+        "altText": " د بي بي سي خبرونه "
       },
       {
         "id": "w172zmsntt1r7m7",
-        "brandTitle": " د بي بي سي خبرونه ",
-        "episodeTitle": " د بي بي سي خبرونه ",
+        "brandTitle": " د بي بي سي خبرونه ",
+        "episodeTitle": " د بي بي سي خبرونه ",
         "duration": "PT28M",
         "timestamp": "2024-10-30T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b23c8.png",
-        "altText": " د بي بي سي خبرونه "
+        "altText": " د بي بي سي خبرونه "
       },
       {
         "id": "w172zmsntt1nbq4",
-        "brandTitle": " د بي بي سي خبرونه ",
-        "episodeTitle": " د بي بي سي خبرونه ",
+        "brandTitle": " د بي بي سي خبرونه ",
+        "episodeTitle": " د بي بي سي خبرونه ",
         "duration": "PT28M",
         "timestamp": "2024-10-29T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b23c8.png",
-        "altText": " د بي بي سي خبرونه "
+        "altText": " د بي بي سي خبرونه "
       },
       {
         "id": "w172zmsntt1kft1",
-        "brandTitle": " د بي بي سي خبرونه ",
-        "episodeTitle": " د بي بي سي خبرونه ",
+        "brandTitle": " د بي بي سي خبرونه ",
+        "episodeTitle": " د بي بي سي خبرونه ",
         "duration": "PT28M",
         "timestamp": "2024-10-28T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b23c8.png",
-        "altText": " د بي بي سي خبرونه "
+        "altText": " د بي بي سي خبرونه "
       },
       {
         "id": "w172zmsngjrbpms",
-        "brandTitle": " د بي بي سي خبرونه ",
-        "episodeTitle": " د بي بي سي خبرونه ",
+        "brandTitle": " د بي بي سي خبرونه ",
+        "episodeTitle": " د بي بي سي خبرونه ",
         "duration": "PT28M",
         "timestamp": "2024-10-27T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b23c8.png",
-        "altText": " د بي بي سي خبرونه "
+        "altText": " د بي بي سي خبرونه "
       }
     ],
     "mediaBlocks": [
@@ -212,7 +211,7 @@
           "id": "w172zmspxlzwwmk",
           "subType": "episode",
           "format": "Video",
-          "title": "18/11/2024 GMT",
+          "title": " د بي بي سي خبرونه ",
           "synopses": {
             "short": "نړۍ دا وخت، د نړۍ او سیمې وروستۍ پرمختیاوې یادوي\n",
             "medium": "نړۍ دا وخت، د نړۍ او سیمې وروستۍ پرمختیاوې یادوي\n",
@@ -239,8 +238,15 @@
           ],
           "availability": "available",
           "smpKind": "programme",
-          "episodeTitle": " د بي بي سي خبرونه ",
-          "type": "media"
+          "episodeTitle": " د بي بي سي خبرونه ",
+          "type": "media",
+          "language": "ps"
+        }
+      },
+      {
+        "type": "mediaOverrides",
+        "model": {
+          "pageIdentifierOverride": "pashto.bbc_pashto_tv.tv.w172zmspxlzwwmk.page"
         }
       }
     ]
