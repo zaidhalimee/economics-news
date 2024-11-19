@@ -74,7 +74,6 @@ import {
 } from './experimentTopStories/helpers';
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
-
   const { isApp, pageType, service, isAmp, id, env } =
     useContext(RequestContext);
 
@@ -147,11 +146,11 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       service,
       id,
     });
-  
+
   const showRelatedContent = blocks.some(
     block => block.type === 'relatedContent',
   );
-    
+
   const atiData = {
     ...atiAnalytics,
     ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
