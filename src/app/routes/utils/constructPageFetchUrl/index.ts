@@ -32,6 +32,7 @@ const removeLeadingSlash = (path: string) => path?.replace(/^\/+/g, '');
 const removeAmp = (path: string) => path.split('.')[0];
 const getArticleId = (path: string) => path.match(/(c[a-zA-Z0-9]{10,}o)/)?.[1];
 const getCpsId = (path: string) => removeLeadingSlash(path);
+const getTVAudioId = (path: string) => removeLeadingSlash(path);
 const getFrontPageId = (path: string) =>
   `${removeLeadingSlash(path)}/front_page`;
 const getTipoId = (path: string) => path.match(/(c[a-zA-Z0-9]{10,}t)/)?.[1];
@@ -135,7 +136,7 @@ const getId = ({ pageType, service, variant, env }: GetIdProps) => {
       };
       break;
     case TV_PAGE:
-      getIdFunction = (path: string) => path;
+      getIdFunction = (path: string) => getTVAudioId(path);
       break;
     default:
       getIdFunction = () => null;
@@ -218,7 +219,7 @@ const constructPageFetchUrl = ({
       }
       case CPS_ASSET:
       case TV_PAGE:
-        fetchUrl = Url(`${id}`);
+        fetchUrl = Url(`/${id}`);
         break;
       case HOME_PAGE: {
         const variantPath = variant ? `/${variant}` : '';
