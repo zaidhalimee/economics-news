@@ -29,6 +29,7 @@ exports[`MostReadSectionLabel assertion should render most-read section label wi
 .emotion-2 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
 }
 
 .emotion-2:focus-visible {

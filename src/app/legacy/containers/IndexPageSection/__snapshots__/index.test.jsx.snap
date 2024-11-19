@@ -44,6 +44,7 @@ HTMLCollection [
 .emotion-4 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
 }
 
 .emotion-4:focus-visible {
@@ -1342,6 +1343,7 @@ exports[`IndexPageSection Container snapshots should render correctly for canoni
 .emotion-4 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
 }
 
 .emotion-4:focus-visible {
@@ -2634,6 +2636,7 @@ exports[`IndexPageSection Container snapshots should render correctly with a lin
 .emotion-4 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
 }
 
 .emotion-4:focus-visible {
@@ -3697,6 +3700,7 @@ exports[`IndexPageSection Container snapshots should render with only one item 1
 .emotion-4 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
 }
 
 .emotion-4:focus-visible {
@@ -4191,6 +4195,7 @@ exports[`IndexPageSection Container snapshots should render without a bar 1`] = 
 .emotion-4 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
 }
 
 .emotion-4:focus-visible {

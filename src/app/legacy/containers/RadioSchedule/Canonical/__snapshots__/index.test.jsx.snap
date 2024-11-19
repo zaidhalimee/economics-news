@@ -71,6 +71,7 @@ exports[`Canonical RadioSchedule With initial data renders correctly for a servi
 .emotion-5 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
 }
 
 .emotion-5:focus-visible {
@@ -1521,6 +1522,7 @@ exports[`Canonical RadioSchedule Without initial data renders correctly for a se
 .emotion-5 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
 }
 
 .emotion-5:focus-visible {
