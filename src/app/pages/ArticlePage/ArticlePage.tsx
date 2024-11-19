@@ -335,7 +335,10 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
               tagBackgroundColour={WHITE}
             />
           )}
-          <RelatedContentSection content={blocks} />
+          <RelatedContentSection
+            content={blocks}
+            sendOptimizelyEvents={hasJumpToBlockForExperiment}
+          />
         </div>
         {!isApp && !isPGL && <SecondaryColumn pageData={pageData} />}
       </div>

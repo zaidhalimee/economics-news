@@ -6,6 +6,7 @@ export type EventTrackingMetadata = {
   campaignID?: string;
   advertiserID?: number | string;
   optimizely?: ReactSDKClient | null;
+  optimizelyEventName?: string;
 };
 
 export type EventTrackingBlock = {
