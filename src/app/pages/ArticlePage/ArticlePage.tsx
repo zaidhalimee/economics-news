@@ -149,6 +149,10 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     block => block.type === 'jumpTo',
   );
 
+  const enableOptimizelyEventTracking = Boolean(
+    jumpToVariation && hasJumpToBlockForExperiment,
+  );
+
   const topStoriesContent = pageData?.secondaryColumn?.topStories;
   const { shouldEnableExperimentTopStories, transformedBlocks } =
     getExperimentTopStories({
@@ -337,7 +341,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           )}
           <RelatedContentSection
             content={blocks}
-            sendOptimizelyEvents={hasJumpToBlockForExperiment}
+            sendOptimizelyEvents={enableOptimizelyEventTracking}
           />
         </div>
         {!isApp && !isPGL && <SecondaryColumn pageData={pageData} />}
@@ -352,7 +356,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           mobileDivider={showTopics}
         />
       )}
-      {hasJumpToBlockForExperiment && (
+      {enableOptimizelyEventTracking && (
         <>
           <OptimizelyArticleCompleteTracking />
           <OptimizelyPageViewTracking />
