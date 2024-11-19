@@ -40,13 +40,26 @@ describe('Get initial data for on demand tv', () => {
     );
   });
 
-  it('should return essential data for a page to render when the recent episode toggle is null', async () => {
+  it('should return no recent episode data when the recent episode toggle is null', async () => {
     const { pageData } = await getInitialData({
       path: 'mock-on-demand-tv-path',
       pageType: MEDIA_PAGE,
       toggles: {
         // @ts-expect-error allow toggle value to be null for testing purposes
         recentVideoEpisodes: null,
+      },
+    });
+
+    expect(pageData.recentEpisodes).toHaveLength(0);
+  });
+
+  it('should return no recent episode data when recentEpisode toggle is disabled and value is greater than zero', async () => {
+    const { pageData } = await getInitialData({
+      path: 'mock-on-demand-tv-path',
+      service: 'pashto',
+      pageType: MEDIA_PAGE,
+      toggles: {
+        recentVideoEpisodes: { enabled: false, value: 3 },
       },
     });
 
