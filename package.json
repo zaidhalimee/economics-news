@@ -102,7 +102,7 @@
     "@loadable/component": "5.16.4",
     "@loadable/server": "5.16.5",
     "@optimizely/react-sdk": "3.2.2",
-    "aws-embedded-metrics": "4.1.1",
+    "aws-embedded-metrics": "4.2.0",
     "compression": "1.7.4",
     "core-js": "3.39.0",
     "dotenv": "16.4.5",
