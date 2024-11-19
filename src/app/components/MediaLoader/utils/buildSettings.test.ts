@@ -679,21 +679,9 @@ describe('buildSettings', () => {
     } as BuildConfigProps;
 
     it('Should process an On Demand TV block into a valid playlist item.', () => {
-      const hindiTvMediaOverrides = {
-        model: {
-          language: 'hi',
-          pageIdentifierOverride: 'hindi.bbc_hindi_tv.tv.w172zm8920nck2z.page',
-          pageTitleOverride: 'दुनिया',
-        },
-        type: 'mediaOverrides',
-      };
-
       const result = buildSettings({
         ...hindiTvBaseSettings,
-        blocks: [
-          ...hindiTvProgramme.mediaBlocks,
-          hindiTvMediaOverrides,
-        ] as MediaBlock[],
+        blocks: hindiTvProgramme.mediaBlocks as MediaBlock[],
         pageType: MEDIA_PAGE,
       });
 
@@ -708,7 +696,7 @@ describe('buildSettings', () => {
           statsObject: {
             destination: 'WS_NEWS_LANGUAGES',
             producer: 'HINDI',
-            episodePID: 'w172zm8fshrhc7r',
+            episodePID: 'w172zm8g4s1wx76',
           },
           ui: {
             skin: 'classic',
@@ -725,10 +713,10 @@ describe('buildSettings', () => {
           playlistObject: {
             title: 'दुनिया',
             holdingImageURL:
-              'https://ichef.bbci.co.uk/images/ic/$recipe/p0k4wgbv.jpg',
+              'https://ichef.bbci.co.uk/images/ic/$recipe/p0k5d4fm.png',
             items: [
               {
-                versionID: 'w1mskypfntyvmhz',
+                versionID: 'w1mskypg13885hf',
                 kind: 'programme',
                 duration: 1192,
               },
@@ -741,7 +729,7 @@ describe('buildSettings', () => {
         placeholderConfig: {
           mediaInfo: {
             title:
-              'लेबनान में एक और संघर्ष की कोशिश, दूसरी ओर इसराइल की भारी बमबारी',
+              'अमेरिका ने यूक्रेन को दी रूस में अमेरिकी मिसाइलों से हमलों की इजाज़त, क्या होगा असर ?',
             datetime: 'PT19M52S',
             duration: '19:52',
             durationSpoken: 'अवधि 19,52',
@@ -749,61 +737,13 @@ describe('buildSettings', () => {
             guidanceMessage: undefined,
           },
           placeholderSrc:
-            'https://ichef.bbci.co.uk/images/ic/$recipe/p0k4wgbv.jpg',
+            'https://ichef.bbci.co.uk/images/ic/$recipe/p0k5d4fm.png',
           placeholderSrcset:
-            'https://ichef.bbci.co.uk/images/ic/240xn/p0k4wgbv.jpg.webp 240w, https://ichef.bbci.co.uk/images/ic/320xn/p0k4wgbv.jpg.webp 320w, https://ichef.bbci.co.uk/images/ic/480xn/p0k4wgbv.jpg.webp 480w, https://ichef.bbci.co.uk/images/ic/624xn/p0k4wgbv.jpg.webp 624w, https://ichef.bbci.co.uk/images/ic/800xn/p0k4wgbv.jpg.webp 800w',
+            'https://ichef.bbci.co.uk/images/ic/240xn/p0k5d4fm.png.webp 240w, https://ichef.bbci.co.uk/images/ic/320xn/p0k5d4fm.png.webp 320w, https://ichef.bbci.co.uk/images/ic/480xn/p0k5d4fm.png.webp 480w, https://ichef.bbci.co.uk/images/ic/624xn/p0k5d4fm.png.webp 624w, https://ichef.bbci.co.uk/images/ic/800xn/p0k5d4fm.png.webp 800w',
           translatedNoJSMessage: 'प्लेबैक आपके उपकरण पर नहीं हो पा रहा',
         },
         showAds: false,
       });
-    });
-
-    it('Should use the language override to build the On Demand TV SMP configuration', () => {
-      const hindiTvMediaOverrides = {
-        model: {
-          language: 'languageOverride',
-          pageIdentifierOverride: 'hindi.bbc_hindi_tv.tv.w172zm8920nck2z.page',
-          pageTitleOverride: 'दुनिया',
-        },
-        type: 'mediaOverrides',
-      };
-
-      const result = buildSettings({
-        ...hindiTvBaseSettings,
-        blocks: [
-          ...hindiTvProgramme.mediaBlocks,
-          hindiTvMediaOverrides,
-        ] as MediaBlock[],
-        pageType: MEDIA_PAGE,
-      });
-
-      expect(result?.playerConfig?.ui?.locale).toEqual({
-        lang: 'languageOverride',
-      });
-    });
-
-    it('Should use the page title override to build the On Demand TV SMP configuration', () => {
-      const hindiTvMediaOverrides = {
-        model: {
-          language: 'hi',
-          pageIdentifierOverride: 'hindi.bbc_hindi_tv.tv.w172zm8920nck2z.page',
-          pageTitleOverride: 'pageTitleOverride',
-        },
-        type: 'mediaOverrides',
-      };
-
-      const result = buildSettings({
-        ...hindiTvBaseSettings,
-        blocks: [
-          ...hindiTvProgramme.mediaBlocks,
-          hindiTvMediaOverrides,
-        ] as MediaBlock[],
-        pageType: MEDIA_PAGE,
-      });
-
-      expect(result?.playerConfig?.playlistObject?.title).toEqual(
-        'pageTitleOverride',
-      );
     });
   });
 
