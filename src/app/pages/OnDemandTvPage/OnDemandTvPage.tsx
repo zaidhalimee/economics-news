@@ -12,6 +12,7 @@ import { PageTypes } from '#app/models/types/global';
 import { ContentType } from '#app/components/ChartbeatAnalytics/types';
 import MediaLoader from '#app/components/MediaLoader';
 import { OnDemandTVBlock } from '#app/models/types/media';
+import { ATIData } from '#app/components/ATIAnalytics/types';
 import ATIAnalytics from '../../components/ATIAnalytics';
 import ChartbeatAnalytics from '../../components/ChartbeatAnalytics';
 import LinkedData from '../../components/LinkedData';
@@ -41,6 +42,7 @@ export interface OnDemandTVProps {
     mediaBlocks: OnDemandTVBlock[];
     metadata: {
       type: PageTypes;
+      atiAnalytics: ATIData;
     };
     language: string;
     headline: string;
@@ -81,6 +83,7 @@ const OnDemandTvPage = ({
     episodeTitle,
     mediumSynopsis,
     contentType,
+    metadata: { atiAnalytics },
   } = pageData;
 
   const { timezone, datetimeLocale, brandName } = useContext(ServiceContext);
@@ -105,7 +108,7 @@ const OnDemandTvPage = ({
         title={headline}
         contentType={contentType}
       />
-      <ATIAnalytics data={pageData} />
+      <ATIAnalytics atiData={atiAnalytics} />
       <ComscoreAnalytics />
       <MetadataContainer
         title={metadataTitle}
