@@ -75,5 +75,20 @@ describe(`BrandContainer`, () => {
 
       expect(brandLink.getAttribute('href')).toEqual('/serbian/lat');
     });
+
+    it('should render correctly with link provided for Uzbek service', () => {
+      const { container } = render(
+        BrandContainerWithContext(mockSkipLink, mockScriptLink, 'brandLink'),
+        {
+          service: 'uzbek',
+          variant: 'cyr',
+        },
+      );
+
+      const brandLink = container.querySelector('a');
+
+      // Uzbek is not yet publishing variant homepages
+      expect(brandLink.getAttribute('href')).toEqual('/uzbek');
+    });
   });
 });

@@ -25,6 +25,9 @@ const BrandContainer = ({
   const { product, serviceLocalizedName, service } = useContext(ServiceContext);
   const { variant } = useContext(RequestContext);
 
+  // TODO: Remove the check for 'uzbek' when the service has variant homepages
+  const appendVariant = service !== 'uzbek' && variant ? `/${variant}` : '';
+
   const { brandSVG } = useTheme();
   const svgMaxHeight = 24;
   const svgMinHeight = 16;
@@ -40,7 +43,7 @@ const BrandContainer = ({
       minWidth={minWidth}
       maxWidth={maxWidth}
       svg={brandSVG}
-      url={`/${service}${variant ? `/${variant}` : ''}`}
+      url={`/${service}${appendVariant ? `/${variant}` : ''}`}
       skipLink={skipLink}
       scriptLink={scriptLink}
       isLongBrand={longBrands.includes(service)}
