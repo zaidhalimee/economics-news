@@ -371,7 +371,7 @@ describe('Click tracking', () => {
     );
   });
 
-  it('should use "eventName" property if provided in optimizely object', async () => {
+  it('should use "optimizelyMetricNameOverride" property if provided in eventTrackingData object', async () => {
     const mockOptimizelyTrack = jest.fn();
     const mockUserId = 'test';
     const mockAttributes = { foo: 'bar' };
@@ -381,7 +381,7 @@ describe('Click tracking', () => {
         track: mockOptimizelyTrack,
         user: { attributes: mockAttributes, id: mockUserId },
       },
-      optimizelyEventName: 'myEvent',
+      optimizelyMetricNameOverride: 'myEvent',
     };
     const {
       metadata: { atiAnalytics },
@@ -403,10 +403,10 @@ describe('Click tracking', () => {
 
     expect(mockOptimizelyTrack).toHaveBeenCalledTimes(1);
     expect(mockOptimizelyTrack).toHaveBeenCalledWith(
-      'component_clicks',
+      'myEvent_clicks',
       mockUserId,
       {
-        clicked_myEvent: true,
+        clicked_wsoj: true,
         foo: 'bar',
       },
     );
