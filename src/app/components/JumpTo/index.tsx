@@ -23,7 +23,6 @@ const JumpTo = ({ jumpToHeadings, showRelatedContentLink }: JumpToProps) => {
   const eventTrackingData: EventTrackingMetadata = {
     componentName: 'jumpto',
     optimizely,
-    optimizelyEventName: 'jumpto',
   };
 
   // TODO: Remove for release
