@@ -16,6 +16,12 @@ const Component = ({
   );
 };
 
+const jumpToBlock =
+  pidginArticleFixtureWithJumpToBlock.data.article.content.model.blocks.find(
+    block => block.type === 'jumpTo',
+  );
+
+const jumpToHeadings = jumpToBlock?.model.jumpToHeadings ?? [];
 export default {
   title: 'Components/JumpTo',
   Component,
@@ -26,24 +32,10 @@ export default {
 };
 
 export const ExampleWithRelatedContentLink = () => {
-  const jumpToBlock =
-    pidginArticleFixtureWithJumpToBlock.data.article.content.model.blocks.find(
-      block => block.type === 'jumpTo',
-    );
-
-  const jumpToHeadings = jumpToBlock?.model.jumpToHeadings ?? [];
-
   return <Component jumpToHeadings={jumpToHeadings} showRelatedContentLink />;
 };
 
 export const Example = () => {
-  const jumpToBlock =
-    pidginArticleFixtureWithJumpToBlock.data.article.content.model.blocks.find(
-      block => block.type === 'jumpTo',
-    );
-
-  const jumpToHeadings = jumpToBlock?.model.jumpToHeadings ?? [];
-
   return (
     <Component jumpToHeadings={jumpToHeadings} showRelatedContentLink={false} />
   );
