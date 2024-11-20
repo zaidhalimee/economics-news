@@ -36,7 +36,5 @@ export const ExampleWithRelatedContentLink = () => {
 };
 
 export const Example = () => {
-  return (
-    <Component jumpToHeadings={jumpToHeadings} showRelatedContentLink={false} />
-  );
+  return <Component jumpToHeadings={jumpToHeadings} />;
 };
