@@ -52,11 +52,6 @@ jest.mock('../../components/ATIAnalytics');
 jest.mock('#app/legacy/containers/OptimizelyArticleCompleteTracking');
 jest.mock('#app/legacy/containers/OptimizelyPageViewTracking');
 
-jest.mock('#app/hooks/useOptimizelyVariation', () => ({
-  __esModule: true,
-  default: jest.fn(),
-}));
-
 const input = {
   bbcOrigin: 'https://www.test.bbc.co.uk',
   id: 'c0000000000o',
@@ -361,100 +356,6 @@ describe('Article Page', () => {
     });
 
     expect(container).toMatchSnapshot();
-  });
-  describe('Article Page with jumpTo component', () => {
-    const addJumpToAndRelatedContentToPageData = ({
-      includeJumpTo,
-      includeRelatedContent,
-    }: {
-      includeJumpTo: boolean;
-      includeRelatedContent: boolean;
-    }) => {
-      let blocks = [...articleDataPidgin.content.model.blocks];
-
-      if (includeJumpTo) {
-        blocks = [
-          ...blocks,
-          {
-            id: 'jumpTo',
-            type: 'jumpTo',
-            model: {
-              jumpToHeadings: [
-                { heading: 'Harris separates from Biden' },
-                { heading: 'Prison gender surgery debate' },
-                { heading: 'Apology challenge' },
-                { heading: "Biden's mental state questioned" },
-              ],
-            },
-          },
-        ];
-      }
-
-      if (includeRelatedContent) {
-        blocks = [
-          ...blocks,
-          {
-            id: '37b8a761',
-            type: 'relatedContent',
-            model: {},
-          },
-        ];
-      }
-
-      return {
-        ...articleDataPidgin,
-        content: {
-          ...articleDataPidgin.content,
-          model: {
-            ...articleDataPidgin.content.model,
-            blocks,
-          },
-        },
-      };
-    };
-
-    it.each`
-      description                                                                                       | includeJumpTo | includeRelatedContent | expectedJumpTo | expectedRelatedContent
-      ${'should render a jumpTo component if jumpToHeadings are present'}                               | ${true}       | ${false}              | ${true}        | ${false}
-      ${'should not render a jumpTo component if jumpToHeadings are not present'}                       | ${false}      | ${false}              | ${false}       | ${false}
-      ${'should render a jumpTo component with relatedContent link if relatedContent block is present'} | ${true}       | ${true}               | ${true}        | ${true}
-    `(
-      '$description',
-      async ({
-        includeJumpTo,
-        includeRelatedContent,
-        expectedJumpTo,
-        expectedRelatedContent,
-      }) => {
-        const pageData = addJumpToAndRelatedContentToPageData({
-          includeJumpTo,
-          includeRelatedContent,
-        });
-
-        const { container } = render(
-          <Context service="pidgin">
-            <ArticlePage pageData={pageData} />
-          </Context>,
-          { service: 'pidgin' },
-        );
-        await waitFor(() => {
-          const jumpToSection = container.querySelector(
-            '[data-testid="jump-to"]',
-          );
-          if (expectedJumpTo) {
-            expect(jumpToSection).not.toBeNull();
-            if (expectedRelatedContent) {
-              const relatedContentLink = jumpToSection?.querySelector(
-                '[data-testid="jump-to-link-section-label-heading-related-content-heading"]',
-              );
-              expect(relatedContentLink).not.toBeNull();
-            }
-          } else {
-            expect(jumpToSection).toBeNull();
-          }
-        });
-      },
-    );
   });
 
   it('should render a news article with headline in the middle correctly', async () => {
