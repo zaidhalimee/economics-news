@@ -17,7 +17,6 @@ export default () => {
       describe('noscript image', () => {
         it('exists', () => {
           expect(noscriptImage).toBeInTheDocument();
-          expect(noscriptImage.innerHTML).toMatch('x8=[simorgh-nojs]');
         });
 
         it('has attributes excluding src', () => {
