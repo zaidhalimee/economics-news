@@ -22,6 +22,7 @@ const jumpToBlock =
   );
 
 const jumpToHeadings = jumpToBlock?.model.jumpToHeadings ?? [];
+
 export default {
   title: 'Components/JumpTo',
   Component,
