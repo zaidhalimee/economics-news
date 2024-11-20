@@ -229,6 +229,27 @@ describe('implementation of buildPageATIParams and buildPageATIUrl', () => {
 
       expect(parsedATIURLParams).toEqual(expectedATIURLParams);
     });
+
+    it('should return ampExperimentName only if it is present in atiData', () => {
+      const result = buildPageATIParams({
+        atiData: {
+          ...articlePageAtiData,
+          ampExperimentName: 'topStoriesExperiment',
+        },
+        requestContext: {
+          ...requestContext,
+          isUK: false,
+          origin: 'example.com',
+          pageType: 'article',
+          previousPath: 'previousPath',
+        },
+        serviceContext: { ...serviceContext, service: 'burmese', lang: 'my' },
+      });
+      expect(result).toEqual({
+        ...validPageURLParams,
+        ampExperimentName: 'topStoriesExperiment',
+      });
+    });
   });
 
   describe('Media Article Page', () => {
