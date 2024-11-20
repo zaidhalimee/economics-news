@@ -1,6 +1,6 @@
-import { LIBRARY_VERSION } from '../../../../lib/analyticsUtils';
-import { buildATIPageTrackPath } from '../../atiUrl';
-import { ATIDataWithContexts } from '../../types';
+import { LIBRARY_VERSION } from '../../../lib/analyticsUtils';
+import { buildATIPageTrackPath } from '../atiUrl';
+import { ATIDataWithContexts } from '../types';
 
 export const buildPageATIParams = ({
   atiData,
