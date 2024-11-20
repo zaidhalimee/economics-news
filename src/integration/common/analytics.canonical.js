@@ -20,15 +20,8 @@ export default () => {
           expect(noscriptImage.innerHTML).toMatch('x8=[simorgh-nojs]');
         });
 
-        it('has attributes', () => {
-          const attributes = [];
-          for (const attribute of img.getAttributeNames()) {
-            attributes.push({
-              [attribute]: img.getAttribute(attribute),
-            });
-          }
-
-          expect(attributes).toMatchSnapshot();
+        it('has attributes excluding src', () => {
+          expect(img).toMatchSnapshot();
         });
 
         it('has src with host', () => {

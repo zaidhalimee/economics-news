@@ -16,21 +16,13 @@ exports[`Canonical Home Page Ads should have the following properties 2`] = `
 />
 `;
 
-exports[`Canonical Home Page Analytics ATI noscript image has attributes 1`] = `
-[
-  {
-    "height": "1px",
-  },
-  {
-    "width": "1px",
-  },
-  {
-    "alt": "",
-  },
-  {
-    "style": "position:absolute",
-  },
-]
+exports[`Canonical Home Page Analytics ATI noscript image has attributes excluding src 1`] = `
+<img
+  alt=""
+  height="1px"
+  style="position:absolute"
+  width="1px"
+/>
 `;
 
 exports[`Canonical Home Page Analytics ATI noscript image has src with host 1`] = `"https://logws1363.ati-host.net/"`;

@@ -2,21 +2,13 @@
 
 exports[`Canonical Articles A11y I can see the skip to content link 1`] = `"مشاهده محتوا"`;
 
-exports[`Canonical Articles Analytics ATI noscript image has attributes 1`] = `
-[
-  {
-    "height": "1px",
-  },
-  {
-    "width": "1px",
-  },
-  {
-    "alt": "",
-  },
-  {
-    "style": "position:absolute",
-  },
-]
+exports[`Canonical Articles Analytics ATI noscript image has attributes excluding src 1`] = `
+<img
+  alt=""
+  height="1px"
+  style="position:absolute"
+  width="1px"
+/>
 `;
 
 exports[`Canonical Articles Analytics ATI noscript image has src with host 1`] = `"https://logws1363.ati-host.net/"`;
