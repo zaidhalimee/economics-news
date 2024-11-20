@@ -35,6 +35,32 @@ export default function CanonicalRenderer({
   return (
     <html lang="en-GB" className={NO_JS_CLASSNAME} {...htmlAttrs}>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.__reverb = {};
+            window.__reverb.__reverbLoadedPromise = new Promise((resolve, reject) => {
+              window.__reverb.__resolveReverbLoaded = resolve;
+              window.__reverb.__rejectReverbLoaded = reject;
+            });
+
+            window.__reverb.__reverbTimeout = setTimeout(() => {
+              window.__reverb.__rejectReverbLoaded();
+            }, 5000);
+
+                        
+            window.__reverb.__reverbLoadedPromise.then((reverb) => {
+              return reverb.initialise().then(() => {
+                console.log('Reverb initialised successfully');
+                console.log(reverb);
+              });
+            }, () => {
+              console.log('Failed to load reverb. No event sent');
+            });`,
+          }}
+        />
+        <script src="https://mybbc-analytics.files.bbci.co.uk/reverb-client-js/reverb-3.9.2.js" />
+
         {isApp && <meta name="robots" content="noindex" />}
         {title}
         {helmetMetaTags}
