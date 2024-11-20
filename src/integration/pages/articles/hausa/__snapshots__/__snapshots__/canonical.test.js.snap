@@ -2,7 +2,44 @@
 
 exports[`Canonical Articles A11y I can see the skip to content link 1`] = `"Tsallaka zuwa abubuwan da ke ciki"`;
 
-exports[`Canonical Articles Analytics ATI 1`] = `"<img height="1px" width="1px" alt="" style="position:absolute" src="https://logws1363.ati-host.net?s=598343&amp;s2=51&amp;x2=[responsive]&amp;x3=[news-hausa]&amp;x4=[ha]&amp;x8=[simorgh-nojs]"/>"`;
+exports[`Canonical Articles Analytics ATI noscript image has attributes 1`] = `
+[
+  {
+    "height": 0,
+  },
+  {
+    "width": 0,
+  },
+  {
+    "alt": "",
+  },
+]
+`;
+
+exports[`Canonical Articles Analytics ATI noscript image has src with host 1`] = `"https://logws1363.ati-host.net/"`;
+
+exports[`Canonical Articles Analytics ATI noscript image has src with search params 1`] = `
+[
+  {
+    "s": "598343",
+  },
+  {
+    "s2": "51",
+  },
+  {
+    "x2": "[responsive]",
+  },
+  {
+    "x3": "[news-hausa]",
+  },
+  {
+    "x4": "[ha]",
+  },
+  {
+    "x8": "[simorgh-nojs]",
+  },
+]
+`;
 
 exports[`Canonical Articles Footer Anchors should match text and url 1`] = `
 {
