@@ -35,33 +35,28 @@ describe('AMP top stories experiment', () => {
         blocks: blocksEvenLength,
         topStoriesContent: topStoriesList,
         isAmp: true,
-        id: 'c6v11qzyv8po',
         service: 'news',
       });
       expect(shouldEnableExperimentTopStories).toBe(true);
     });
 
     it.each`
-      testDescription                                     | isAmp    | id                | service      | blocksLength
-      ${'all props are undefined'}                        | ${false} | ${undefined}      | ${undefined} | ${undefined}
-      ${'only isAmp is true'}                             | ${true}  | ${undefined}      | ${undefined} | ${undefined}
-      ${'only id is undefined'}                           | ${true}  | ${undefined}      | ${'news'}    | ${11}
-      ${'only id is defined and valid'}                   | ${false} | ${'c6v11qzyv8po'} | ${undefined} | ${undefined}
-      ${'all props defined but id is invalid'}            | ${true}  | ${'c1231qzyv8po'} | ${'news'}    | ${11}
-      ${'only service is undefined'}                      | ${true}  | ${'c6v11qzyv8po'} | ${undefined} | ${11}
-      ${'only service is defined and valid'}              | ${false} | ${undefined}      | ${'news'}    | ${undefined}
-      ${'all props defined but service is invalid'}       | ${true}  | ${'c6v11qzyv8po'} | ${'igbo'}    | ${11}
-      ${'only blocks length is defined and valid'}        | ${false} | ${undefined}      | ${undefined} | ${11}
-      ${'all props defined but blocks length is invalid'} | ${true}  | ${'c6v11qzyv8po'} | ${'news'}    | ${7}
+      testDescription                                     | isAmp    | service      | blocksLength
+      ${'all props are undefined'}                        | ${false} | ${undefined} | ${undefined}
+      ${'only isAmp is true'}                             | ${true}  | ${undefined} | ${undefined}
+      ${'only service is undefined'}                      | ${true}  | ${undefined} | ${11}
+      ${'only service is defined and valid'}              | ${false} | ${'news'}    | ${undefined}
+      ${'all props defined but service is invalid'}       | ${true}  | ${'igbo'}    | ${11}
+      ${'only blocks length is defined and valid'}        | ${false} | ${undefined} | ${11}
+      ${'all props defined but blocks length is invalid'} | ${true}  | ${'news'}    | ${7}
     `(
       'returns shouldEnableExperimentTopStories as false because $testDescription.',
-      ({ isAmp, id, service, blocksLength }) => {
+      ({ isAmp, service, blocksLength }) => {
         const blocks = Array(blocksLength).fill(mockTextBlock, 0);
         const { shouldEnableExperimentTopStories } = getExperimentTopStories({
           blocks,
           topStoriesContent: topStoriesList,
           isAmp,
-          id,
           service,
         });
 
@@ -112,7 +107,6 @@ describe('AMP top stories experiment', () => {
           blocks: inputBlocks,
           topStoriesContent: topStoriesList,
           isAmp: true,
-          id: 'c6v11qzyv8po',
           service: 'news',
         });
         expect(transformedBlocks).toEqual(expectedOutput);
