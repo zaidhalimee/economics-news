@@ -4,9 +4,24 @@ import JumpTo, { JumpToProps } from '.';
 import metadata from './metadata.json';
 import readme from './README.md';
 
-const Component = ({ jumpToHeadings = [] }: JumpToProps) => {
-  return <JumpTo jumpToHeadings={jumpToHeadings} />;
+const Component = ({
+  jumpToHeadings = [],
+  showRelatedContentLink = false,
+}: JumpToProps) => {
+  return (
+    <JumpTo
+      jumpToHeadings={jumpToHeadings}
+      showRelatedContentLink={showRelatedContentLink}
+    />
+  );
 };
+
+const jumpToBlock =
+  pidginArticleFixtureWithJumpToBlock.data.article.content.model.blocks.find(
+    block => block.type === 'jumpTo',
+  );
+
+const jumpToHeadings = jumpToBlock?.model.jumpToHeadings ?? [];
 
 export default {
   title: 'Components/JumpTo',
@@ -17,11 +32,10 @@ export default {
   },
 };
 
-export const Example = () => {
-  const jumpToHeadings =
-    pidginArticleFixtureWithJumpToBlock.data.article.content.model.blocks.find(
-      block => block.type === 'jumpTo',
-    )?.model.jumpToHeadings;
+export const ExampleWithRelatedContentLink = () => {
+  return <Component jumpToHeadings={jumpToHeadings} showRelatedContentLink />;
+};
 
+export const Example = () => {
   return <Component jumpToHeadings={jumpToHeadings} />;
 };
