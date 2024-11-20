@@ -8,6 +8,7 @@ import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import Text from '#app/components/Text';
 import isLive from '#app/lib/utilities/isLive';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
+import { OptimizelyContext } from '@optimizely/react-sdk';
 import idSanitiser from '../../lib/utilities/idSanitiser';
 import styles from './index.styles';
 
@@ -15,11 +16,14 @@ export interface JumpToProps {
   jumpToHeadings?: Array<{ heading: string }>;
 }
 
-const eventTrackingData: EventTrackingMetadata = {
-  componentName: 'jumpto',
-};
-
 const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
+  const { optimizely } = useContext(OptimizelyContext);
+
+  const eventTrackingData: EventTrackingMetadata = {
+    componentName: 'jumpto',
+    optimizely,
+  };
+
   // TODO: Remove for release
   if (isLive()) return null;
 
