@@ -11,7 +11,7 @@ export default () => {
     const src = img.getAttribute('src');
     const srcUrl = new URL(src);
 
-    ['src', 'style'].forEach(attribute => img.removeAttribute(attribute));
+    img.removeAttribute('src');
 
     describe('ATI', () => {
       describe('noscript image', () => {
@@ -24,7 +24,7 @@ export default () => {
           const attributes = [];
           for (const attribute of img.getAttributeNames()) {
             attributes.push({
-              [attribute]: img[attribute],
+              [attribute]: img.getAttribute(attribute),
             });
           }
 

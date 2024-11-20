@@ -5,13 +5,16 @@ exports[`Canonical Korean Live Radio Page A11y I can see the skip to content lin
 exports[`Canonical Korean Live Radio Page Analytics ATI noscript image has attributes 1`] = `
 [
   {
-    "height": 0,
+    "height": "1px",
   },
   {
-    "width": 0,
+    "width": "1px",
   },
   {
     "alt": "",
+  },
+  {
+    "style": "position:absolute",
   },
 ]
 `;

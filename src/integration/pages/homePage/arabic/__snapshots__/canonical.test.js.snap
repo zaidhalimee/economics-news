@@ -19,13 +19,16 @@ exports[`Canonical Home Page Ads should have the following properties 2`] = `
 exports[`Canonical Home Page Analytics ATI noscript image has attributes 1`] = `
 [
   {
-    "height": 0,
+    "height": "1px",
   },
   {
-    "width": 0,
+    "width": "1px",
   },
   {
     "alt": "",
+  },
+  {
+    "style": "position:absolute",
   },
 ]
 `;
