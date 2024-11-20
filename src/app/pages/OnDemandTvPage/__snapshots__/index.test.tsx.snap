@@ -756,7 +756,7 @@ exports[`OnDemand TV Brand Page  Dark Mode Design - should match snapshot 1`] = 
           id="content"
           tabindex="-1"
         >
-           د بي بي سي خبرونه , ۱۹ نومبر ۲۰۲۴
+           د بي بي سي خبرونه , ۱۹ نومبر ۲۰۲۴
         </h1>
         <figure
           class="emotion-7"
@@ -781,7 +781,7 @@ exports[`OnDemand TV Brand Page  Dark Mode Design - should match snapshot 1`] = 
               <span
                 class="emotion-6"
               >
-                Play video, " د بي بي سي خبرونه ", موده 28,00
+                Play video, " د بي بي سي خبرونه ", موده 28,00
               </span>
               <div
                 aria-hidden="true"
@@ -839,7 +839,7 @@ exports[`OnDemand TV Brand Page  Dark Mode Design - should match snapshot 1`] = 
             class="emotion-22 emotion-23"
             data-testid="brand-title"
           >
-             د بي بي سي خبرونه 
+             د بي بي سي خبرونه 
           </span>
           <span
             class="emotion-6"
@@ -850,7 +850,7 @@ exports[`OnDemand TV Brand Page  Dark Mode Design - should match snapshot 1`] = 
             class="emotion-25 emotion-26"
             data-testid="sub-heading"
           >
-             د بي بي سي خبرونه 
+             د بي بي سي خبرونه 
           </span>
         </strong>
       </div>
@@ -1438,7 +1438,7 @@ exports[`OnDemand TV Brand Page  should show the expired content message if epis
           id="content"
           tabindex="-1"
         >
-           د بي بي سي خبرونه , ۱۹ نومبر ۲۰۲۴
+           د بي بي سي خبرونه , ۱۹ نومبر ۲۰۲۴
         </h1>
         <div
           class="emotion-7 emotion-8"
@@ -1463,7 +1463,7 @@ exports[`OnDemand TV Brand Page  should show the expired content message if epis
             class="emotion-14 emotion-15"
             data-testid="brand-title"
           >
-             د بي بي سي خبرونه 
+             د بي بي سي خبرونه 
           </span>
           <span
             class="emotion-6"
@@ -1474,7 +1474,7 @@ exports[`OnDemand TV Brand Page  should show the expired content message if epis
             class="emotion-17 emotion-18"
             data-testid="sub-heading"
           >
-             د بي بي سي خبرونه 
+             د بي بي سي خبرونه 
           </span>
         </strong>
       </div>
@@ -2062,7 +2062,7 @@ exports[`OnDemand TV Brand Page  should show the future content message if episo
           id="content"
           tabindex="-1"
         >
-           د بي بي سي خبرونه , ۱۹ نومبر ۲۰۲۴
+           د بي بي سي خبرونه , ۱۹ نومبر ۲۰۲۴
         </h1>
         <div
           class="emotion-7 emotion-8"
@@ -2087,7 +2087,7 @@ exports[`OnDemand TV Brand Page  should show the future content message if episo
             class="emotion-14 emotion-15"
             data-testid="brand-title"
           >
-             د بي بي سي خبرونه 
+             د بي بي سي خبرونه 
           </span>
           <span
             class="emotion-6"
@@ -2098,7 +2098,7 @@ exports[`OnDemand TV Brand Page  should show the future content message if episo
             class="emotion-17 emotion-18"
             data-testid="sub-heading"
           >
-             د بي بي سي خبرونه 
+             د بي بي سي خبرونه 
           </span>
         </strong>
       </div>
@@ -2686,7 +2686,7 @@ exports[`OnDemand TV Brand Page  should show the future content message if episo
           id="content"
           tabindex="-1"
         >
-           د بي بي سي خبرونه , ۱۹ نومبر ۲۰۲۴
+           د بي بي سي خبرونه , ۱۹ نومبر ۲۰۲۴
         </h1>
         <div
           class="emotion-7 emotion-8"
@@ -2711,7 +2711,7 @@ exports[`OnDemand TV Brand Page  should show the future content message if episo
             class="emotion-14 emotion-15"
             data-testid="brand-title"
           >
-             د بي بي سي خبرونه 
+             د بي بي سي خبرونه 
           </span>
           <span
             class="emotion-6"
@@ -2722,7 +2722,7 @@ exports[`OnDemand TV Brand Page  should show the future content message if episo
             class="emotion-17 emotion-18"
             data-testid="sub-heading"
           >
-             د بي بي سي خبرونه 
+             د بي بي سي خبرونه 
           </span>
         </strong>
       </div>

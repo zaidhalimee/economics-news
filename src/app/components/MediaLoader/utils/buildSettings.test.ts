@@ -696,7 +696,7 @@ describe('buildSettings', () => {
           statsObject: {
             destination: 'WS_NEWS_LANGUAGES',
             producer: 'HINDI',
-            episodePID: 'w172zm8g4s1wx76',
+            episodePID: 'w172zm8g4s1zt49',
           },
           ui: {
             skin: 'classic',
@@ -713,10 +713,10 @@ describe('buildSettings', () => {
           playlistObject: {
             title: 'दुनिया',
             holdingImageURL:
-              'https://ichef.bbci.co.uk/images/ic/$recipe/p0k5d4fm.png',
+              'https://ichef.bbci.co.uk/images/ic/$recipe/p0k5lpyn.jpg',
             items: [
               {
-                versionID: 'w1mskypg13885hf',
+                versionID: 'w1mskypg138c2dj',
                 kind: 'programme',
                 duration: 1192,
               },
@@ -729,7 +729,7 @@ describe('buildSettings', () => {
         placeholderConfig: {
           mediaInfo: {
             title:
-              'अमेरिका ने यूक्रेन को दी रूस में अमेरिकी मिसाइलों से हमलों की इजाज़त, क्या होगा असर ?',
+              'रूस बोला- यूक्रेन ने किया अमेरिकी मिसाइलों से हमला, ज़ेलेंस्की बोले- हम झुकेंगे नहीं',
             datetime: 'PT19M52S',
             duration: '19:52',
             durationSpoken: 'अवधि 19,52',
@@ -737,9 +737,9 @@ describe('buildSettings', () => {
             guidanceMessage: undefined,
           },
           placeholderSrc:
-            'https://ichef.bbci.co.uk/images/ic/$recipe/p0k5d4fm.png',
+            'https://ichef.bbci.co.uk/images/ic/$recipe/p0k5lpyn.jpg',
           placeholderSrcset:
-            'https://ichef.bbci.co.uk/images/ic/240xn/p0k5d4fm.png.webp 240w, https://ichef.bbci.co.uk/images/ic/320xn/p0k5d4fm.png.webp 320w, https://ichef.bbci.co.uk/images/ic/480xn/p0k5d4fm.png.webp 480w, https://ichef.bbci.co.uk/images/ic/624xn/p0k5d4fm.png.webp 624w, https://ichef.bbci.co.uk/images/ic/800xn/p0k5d4fm.png.webp 800w',
+            'https://ichef.bbci.co.uk/images/ic/240xn/p0k5lpyn.jpg.webp 240w, https://ichef.bbci.co.uk/images/ic/320xn/p0k5lpyn.jpg.webp 320w, https://ichef.bbci.co.uk/images/ic/480xn/p0k5lpyn.jpg.webp 480w, https://ichef.bbci.co.uk/images/ic/624xn/p0k5lpyn.jpg.webp 624w, https://ichef.bbci.co.uk/images/ic/800xn/p0k5lpyn.jpg.webp 800w',
           translatedNoJSMessage: 'प्लेबैक आपके उपकरण पर नहीं हो पा रहा',
         },
         showAds: false,

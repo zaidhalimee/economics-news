@@ -81,7 +81,7 @@ describe('OnDemand TV Brand Page ', () => {
 
     expect(visuallyHiddenHeadline).toBeInTheDocument();
     expect(visuallyHiddenHeadline?.innerHTML).toEqual(
-      ' د بي بي سي خبرونه , ۱۹ نومبر ۲۰۲۴',
+      '&nbsp;د بي بي سي خبرونه , ۱۹ نومبر ۲۰۲۴',
     );
   });
 
