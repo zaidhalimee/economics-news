@@ -94,7 +94,7 @@
   },
   "homepage": "https://github.com/bbc/simorgh#readme",
   "dependencies": {
-    "@bbc/web-vitals": "1.2.0",
+    "@bbc/web-vitals": "2.3.1",
     "@emotion/cache": "11.11.0",
     "@emotion/react": "11.11.4",
     "@emotion/server": "11.11.0",
@@ -102,7 +102,7 @@
     "@loadable/component": "5.16.4",
     "@loadable/server": "5.16.5",
     "@optimizely/react-sdk": "3.2.2",
-    "aws-embedded-metrics": "4.1.1",
+    "aws-embedded-metrics": "4.2.0",
     "compression": "1.7.4",
     "core-js": "3.39.0",
     "dotenv": "16.4.5",
