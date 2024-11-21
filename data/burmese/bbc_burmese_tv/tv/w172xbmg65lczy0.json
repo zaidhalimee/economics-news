@@ -10,24 +10,38 @@
       }
     },
     "language": "my",
-    "id": "urn:bbc:ares:ws_media:page:bbc_burmese_tv/w172xbmg65lczy0",
     "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
+    "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
     "headline": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
     "shortSynopsis": "မြန်မာတီဗီ အစီအစဉ်မှာ နောက်ဆုံးရ ထိပ်တန်းရောက် ကမ္ဘာ့သတင်း နဲ့ အားကစား သတင်းတွေကို ကြည့်ရှုနိုင်ပါတယ်။",
     "mediumSynopsis": "မြန်မာတီဗီ အစီအစဉ်မှာ နောက်ဆုံးရ ထိပ်တန်းရောက် ကမ္ဘာ့သတင်း နဲ့ အားကစား သတင်းတွေကို ကြည့်ရှုနိုင်ပါတယ်။",
-    "releaseDateTimeStamp": "2020-11-24T00:00:00.000Z",
-    "thumbnailImageUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p088hgd7.png",
-    "promoBrandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
+    "id": "urn:bbc:ares:ws_media:page:bbc_burmese_tv/w172xbmg65lczy0",
+    "brandId": "w13xttn3",
+    "episodeId": "w172xbmg65lczy0",
     "masterBrand": "bbc_burmese_tv",
+    "releaseDateTimeStamp": "2020-11-24T00:00:00.000Z",
     "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p088hgd7.png",
-    "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
+    "imageAltText": null,
+    "promoBrandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
+    "durationISO8601": null,
+    "thumbnailImageUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p088hgd7.png",
+    "episodeAvailability": "expired",
     "recentEpisodes": [
+      {
+        "id": "w172zm2xyrfjmg7",
+        "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
+        "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
+        "timestamp": "2024-11-19T00:00:00.000Z",
+        "duration": "PT15M",
+        "image": "//ichef.bbci.co.uk/images/ic/768x432/p088hgd7.png",
+        "altText": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်"
+      },
       {
         "id": "w172zm2xyrffqk4",
         "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
         "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
-        "duration": "PT15M",
         "timestamp": "2024-11-18T00:00:00.000Z",
+        "duration": "PT15M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p088hgd7.png",
         "altText": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်"
       },
@@ -35,8 +49,8 @@
         "id": "w172zm2xlh415kp",
         "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
         "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
-        "duration": "PT15M",
         "timestamp": "2024-11-15T00:00:00.000Z",
+        "duration": "PT15M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p088hgd7.png",
         "altText": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်"
       },
@@ -44,8 +58,8 @@
         "id": "w172zm2xlh3y8nl",
         "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
         "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
-        "duration": "PT15M",
         "timestamp": "2024-11-14T00:00:00.000Z",
+        "duration": "PT15M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p088hgd7.png",
         "altText": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်"
       },
@@ -53,8 +67,8 @@
         "id": "w172zm2xlh3vcrh",
         "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
         "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
-        "duration": "PT15M",
         "timestamp": "2024-11-13T00:00:00.000Z",
+        "duration": "PT15M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p088hgd7.png",
         "altText": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်"
       },
@@ -62,8 +76,8 @@
         "id": "w172zm2xlh3rgvd",
         "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
         "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
-        "duration": "PT15M",
         "timestamp": "2024-11-12T00:00:00.000Z",
+        "duration": "PT15M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p088hgd7.png",
         "altText": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်"
       },
@@ -71,8 +85,8 @@
         "id": "w172zm2xlh3nky9",
         "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
         "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
-        "duration": "PT15M",
         "timestamp": "2024-11-11T00:00:00.000Z",
+        "duration": "PT15M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p088hgd7.png",
         "altText": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်"
       },
@@ -80,8 +94,8 @@
         "id": "w172zm2x76t80yv",
         "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
         "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
-        "duration": "PT15M",
         "timestamp": "2024-11-08T00:00:00.000Z",
+        "duration": "PT15M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p088hgd7.png",
         "altText": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်"
       },
@@ -89,8 +103,8 @@
         "id": "w172zm2x76t541r",
         "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
         "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
-        "duration": "PT15M",
         "timestamp": "2024-11-07T00:00:00.000Z",
+        "duration": "PT15M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p088hgd7.png",
         "altText": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်"
       },
@@ -98,8 +112,8 @@
         "id": "w172zm2x76t274n",
         "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
         "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
-        "duration": "PT15M",
         "timestamp": "2024-11-06T00:00:00.000Z",
+        "duration": "PT15M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p088hgd7.png",
         "altText": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်"
       },
@@ -107,8 +121,8 @@
         "id": "w172zm2x76szb7k",
         "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
         "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
-        "duration": "PT15M",
         "timestamp": "2024-11-05T00:00:00.000Z",
+        "duration": "PT15M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p088hgd7.png",
         "altText": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်"
       },
@@ -116,8 +130,8 @@
         "id": "w172zm2x76swfbg",
         "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
         "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
-        "duration": "PT15M",
         "timestamp": "2024-11-04T00:00:00.000Z",
+        "duration": "PT15M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p088hgd7.png",
         "altText": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်"
       },
@@ -125,8 +139,8 @@
         "id": "w172zm2wvyhgwc0",
         "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
         "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
-        "duration": "PT15M",
         "timestamp": "2024-11-01T00:00:00.000Z",
+        "duration": "PT15M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p088hgd7.png",
         "altText": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်"
       },
@@ -134,8 +148,8 @@
         "id": "w172zm2wvyhczfx",
         "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
         "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
-        "duration": "PT15M",
         "timestamp": "2024-10-31T00:00:00.000Z",
+        "duration": "PT15M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p088hgd7.png",
         "altText": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်"
       },
@@ -143,8 +157,8 @@
         "id": "w172zm2wvyh92jt",
         "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
         "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
-        "duration": "PT15M",
         "timestamp": "2024-10-30T00:00:00.000Z",
+        "duration": "PT15M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p088hgd7.png",
         "altText": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်"
       },
@@ -152,8 +166,8 @@
         "id": "w172zm2wvyh65mq",
         "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
         "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
-        "duration": "PT15M",
         "timestamp": "2024-10-29T00:00:00.000Z",
+        "duration": "PT15M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p088hgd7.png",
         "altText": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်"
       },
@@ -161,8 +175,8 @@
         "id": "w172zm2wvyh38qm",
         "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
         "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
-        "duration": "PT15M",
         "timestamp": "2024-10-28T00:00:00.000Z",
+        "duration": "PT15M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p088hgd7.png",
         "altText": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်"
       },
@@ -170,8 +184,8 @@
         "id": "w172zm2whp5pqr5",
         "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
         "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
-        "duration": "PT15M",
         "timestamp": "2024-10-25T00:00:00.000Z",
+        "duration": "PT15M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p088hgd7.png",
         "altText": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်"
       },
@@ -179,8 +193,8 @@
         "id": "w172zm2whp5ltv2",
         "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
         "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
-        "duration": "PT15M",
         "timestamp": "2024-10-24T00:00:00.000Z",
+        "duration": "PT15M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p088hgd7.png",
         "altText": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်"
       },
@@ -188,17 +202,8 @@
         "id": "w172zm2whp5hxxz",
         "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
         "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
-        "duration": "PT15M",
         "timestamp": "2024-10-23T00:00:00.000Z",
-        "image": "//ichef.bbci.co.uk/images/ic/768x432/p088hgd7.png",
-        "altText": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်"
-      },
-      {
-        "id": "w172zm2whp5f10w",
-        "brandTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
-        "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
         "duration": "PT15M",
-        "timestamp": "2024-10-22T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p088hgd7.png",
         "altText": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်"
       }
@@ -222,13 +227,13 @@
           "availability": "notAvailable",
           "smpKind": "programme",
           "episodeTitle": "ဘီဘီစီ မြန်မာတီဗီ အစီအစဉ်",
-          "type": "media",
-          "language": "my"
+          "type": "media"
         }
       },
       {
         "type": "mediaOverrides",
         "model": {
+          "language": "my",
           "pageIdentifierOverride": "burmese.bbc_burmese_tv.tv.w172xbmg65lczy0.page"
         }
       }

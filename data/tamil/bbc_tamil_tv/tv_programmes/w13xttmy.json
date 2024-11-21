@@ -6,30 +6,51 @@
         "pageIdentifier": "tamil.bbc_tamil_tv.tv_programmes.w13xttmy.page",
         "contentType": "player-episode",
         "pageTitle": "தொலைக்காட்சி செய்திகள் - BBC News தமிழ்",
-        "contentId": "urn:bbc:pips:w172zmf0x3vd261"
+        "contentId": "urn:bbc:pips:w13xttmy"
       }
     },
     "language": "ta",
-    "id": "urn:bbc:ares:ws_media:brand:bbc_tamil_tv/w13xttmy",
     "brandTitle": "தொலைக்காட்சி செய்திகள்",
+    "episodeTitle": "தொலைக்காட்சி செய்திகள்",
     "headline": "தொலைக்காட்சி செய்திகள்",
     "shortSynopsis": "பிபிசி தமிழ் தொலைக்காட்சியின் பத்து நிமிட சர்வதேச செய்தியறிக்கை வாரத்தில் ஐந்து நாட்கள்",
     "mediumSynopsis": "பிபிசி தமிழ் தொலைக்காட்சியின் பத்து நிமிட சர்வதேச செய்தியறிக்கை வாரத்தில் ஐந்து நாட்கள்",
-    "releaseDateTimeStamp": "2024-11-19T00:00:00.000Z",
+    "id": "urn:bbc:ares:ws_media:brand:bbc_tamil_tv/w13xttmy",
+    "brandId": "w13xttmy",
+    "episodeId": "w172zmf0x3vkw07",
+    "masterBrand": "bbc_tamil_tv",
+    "releaseDateTimeStamp": "2024-11-21T00:00:00.000Z",
+    "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p08b8nx5.png",
+    "imageAltText": null,
+    "promoBrandTitle": "தொலைக்காட்சி செய்திகள்",
     "durationISO8601": "PT10M",
     "thumbnailImageUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p08b8nx5.png",
-    "promoBrandTitle": "தொலைக்காட்சி செய்திகள்",
-    "masterBrand": "bbc_tamil_tv",
-    "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p08b8nx5.png",
     "episodeAvailability": "available",
-    "episodeTitle": "தொலைக்காட்சி செய்திகள்",
     "recentEpisodes": [
+      {
+        "id": "w172zmf0x3vgz34",
+        "brandTitle": "தொலைக்காட்சி செய்திகள்",
+        "episodeTitle": "தொலைக்காட்சி செய்திகள்",
+        "timestamp": "2024-11-20T00:00:00.000Z",
+        "duration": "PT10M",
+        "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
+        "altText": "தொலைக்காட்சி செய்திகள்"
+      },
+      {
+        "id": "w172zmf0x3vd261",
+        "brandTitle": "தொலைக்காட்சி செய்திகள்",
+        "episodeTitle": "தொலைக்காட்சி செய்திகள்",
+        "timestamp": "2024-11-19T00:00:00.000Z",
+        "duration": "PT10M",
+        "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
+        "altText": "தொலைக்காட்சி செய்திகள்"
+      },
       {
         "id": "w172zmf0x3v958y",
         "brandTitle": "தொலைக்காட்சி செய்திகள்",
         "episodeTitle": "தொலைக்காட்சி செய்திகள்",
-        "duration": "PT10M",
         "timestamp": "2024-11-18T00:00:00.000Z",
+        "duration": "PT10M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
         "altText": "தொலைக்காட்சி செய்திகள்"
       },
@@ -37,8 +58,8 @@
         "id": "w172zmf0jvjwm9h",
         "brandTitle": "தொலைக்காட்சி செய்திகள்",
         "episodeTitle": "தொலைக்காட்சி செய்திகள்",
-        "duration": "PT10M",
         "timestamp": "2024-11-15T00:00:00.000Z",
+        "duration": "PT10M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
         "altText": "தொலைக்காட்சி செய்திகள்"
       },
@@ -46,8 +67,8 @@
         "id": "w172zmf0jvjsqdd",
         "brandTitle": "தொலைக்காட்சி செய்திகள்",
         "episodeTitle": "தொலைக்காட்சி செய்திகள்",
-        "duration": "PT10M",
         "timestamp": "2024-11-14T00:00:00.000Z",
+        "duration": "PT10M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
         "altText": "தொலைக்காட்சி செய்திகள்"
       },
@@ -55,8 +76,8 @@
         "id": "w172zmf0jvjpth9",
         "brandTitle": "தொலைக்காட்சி செய்திகள்",
         "episodeTitle": "தொலைக்காட்சி செய்திகள்",
-        "duration": "PT10M",
         "timestamp": "2024-11-13T00:00:00.000Z",
+        "duration": "PT10M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
         "altText": "தொலைக்காட்சி செய்திகள்"
       },
@@ -64,8 +85,8 @@
         "id": "w172zmf0jvjlxl6",
         "brandTitle": "தொலைக்காட்சி செய்திகள்",
         "episodeTitle": "தொலைக்காட்சி செய்திகள்",
-        "duration": "PT10M",
         "timestamp": "2024-11-12T00:00:00.000Z",
+        "duration": "PT10M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
         "altText": "தொலைக்காட்சி செய்திகள்"
       },
@@ -73,8 +94,8 @@
         "id": "w172zmf0jvjj0p3",
         "brandTitle": "தொலைக்காட்சி செய்திகள்",
         "episodeTitle": "தொலைக்காட்சி செய்திகள்",
-        "duration": "PT10M",
         "timestamp": "2024-11-11T00:00:00.000Z",
+        "duration": "PT10M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
         "altText": "தொலைக்காட்சி செய்திகள்"
       },
@@ -82,8 +103,8 @@
         "id": "w172zmf05l73gpn",
         "brandTitle": "தொலைக்காட்சி செய்திகள்",
         "episodeTitle": "தொலைக்காட்சி செய்திகள்",
-        "duration": "PT10M",
         "timestamp": "2024-11-08T00:00:00.000Z",
+        "duration": "PT10M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
         "altText": "தொலைக்காட்சி செய்திகள்"
       },
@@ -91,8 +112,8 @@
         "id": "w172zmf05l70ksk",
         "brandTitle": "தொலைக்காட்சி செய்திகள்",
         "episodeTitle": "தொலைக்காட்சி செய்திகள்",
-        "duration": "PT10M",
         "timestamp": "2024-11-07T00:00:00.000Z",
+        "duration": "PT10M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
         "altText": "தொலைக்காட்சி செய்திகள்"
       },
@@ -100,8 +121,8 @@
         "id": "w172zmf05l6xnwg",
         "brandTitle": "தொலைக்காட்சி செய்திகள்",
         "episodeTitle": "தொலைக்காட்சி செய்திகள்",
-        "duration": "PT10M",
         "timestamp": "2024-11-06T00:00:00.000Z",
+        "duration": "PT10M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
         "altText": "தொலைக்காட்சி செய்திகள்"
       },
@@ -109,8 +130,8 @@
         "id": "w172zmf05l6trzc",
         "brandTitle": "தொலைக்காட்சி செய்திகள்",
         "episodeTitle": "தொலைக்காட்சி செய்திகள்",
-        "duration": "PT10M",
         "timestamp": "2024-11-05T00:00:00.000Z",
+        "duration": "PT10M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
         "altText": "தொலைக்காட்சி செய்திகள்"
       },
@@ -118,8 +139,8 @@
         "id": "w172zmf05l6qw28",
         "brandTitle": "தொலைக்காட்சி செய்திகள்",
         "episodeTitle": "தொலைக்காட்சி செய்திகள்",
-        "duration": "PT10M",
         "timestamp": "2024-11-04T00:00:00.000Z",
+        "duration": "PT10M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
         "altText": "தொலைக்காட்சி செய்திகள்"
       },
@@ -127,8 +148,8 @@
         "id": "w172zmdzt9xbb2t",
         "brandTitle": "தொலைக்காட்சி செய்திகள்",
         "episodeTitle": "தொலைக்காட்சி செய்திகள்",
-        "duration": "PT10M",
         "timestamp": "2024-11-01T00:00:00.000Z",
+        "duration": "PT10M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
         "altText": "தொலைக்காட்சி செய்திகள்"
       },
@@ -136,8 +157,8 @@
         "id": "w172zmdzt9x7f5q",
         "brandTitle": "தொலைக்காட்சி செய்திகள்",
         "episodeTitle": "தொலைக்காட்சி செய்திகள்",
-        "duration": "PT10M",
         "timestamp": "2024-10-31T00:00:00.000Z",
+        "duration": "PT10M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
         "altText": "தொலைக்காட்சி செய்திகள்"
       },
@@ -145,8 +166,8 @@
         "id": "w172zmdzt9x4j8m",
         "brandTitle": "தொலைக்காட்சி செய்திகள்",
         "episodeTitle": "தொலைக்காட்சி செய்திகள்",
-        "duration": "PT10M",
         "timestamp": "2024-10-30T00:00:00.000Z",
+        "duration": "PT10M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
         "altText": "தொலைக்காட்சி செய்திகள்"
       },
@@ -154,8 +175,8 @@
         "id": "w172zmdzt9x1mcj",
         "brandTitle": "தொலைக்காட்சி செய்திகள்",
         "episodeTitle": "தொலைக்காட்சி செய்திகள்",
-        "duration": "PT10M",
         "timestamp": "2024-10-29T00:00:00.000Z",
+        "duration": "PT10M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
         "altText": "தொலைக்காட்சி செய்திகள்"
       },
@@ -163,8 +184,8 @@
         "id": "w172zmdzt9wyqgf",
         "brandTitle": "தொலைக்காட்சி செய்திகள்",
         "episodeTitle": "தொலைக்காட்சி செய்திகள்",
-        "duration": "PT10M",
         "timestamp": "2024-10-28T00:00:00.000Z",
+        "duration": "PT10M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
         "altText": "தொலைக்காட்சி செய்திகள்"
       },
@@ -172,8 +193,8 @@
         "id": "w172zmdzg1lk5gz",
         "brandTitle": "தொலைக்காட்சி செய்திகள்",
         "episodeTitle": "தொலைக்காட்சி செய்திகள்",
-        "duration": "PT10M",
         "timestamp": "2024-10-25T00:00:00.000Z",
+        "duration": "PT10M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
         "altText": "தொலைக்காட்சி செய்திகள்"
       },
@@ -181,26 +202,8 @@
         "id": "w172zmdzg1lg8kw",
         "brandTitle": "தொலைக்காட்சி செய்திகள்",
         "episodeTitle": "தொலைக்காட்சி செய்திகள்",
-        "duration": "PT10M",
         "timestamp": "2024-10-24T00:00:00.000Z",
-        "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
-        "altText": "தொலைக்காட்சி செய்திகள்"
-      },
-      {
-        "id": "w172zmdzg1lccns",
-        "brandTitle": "தொலைக்காட்சி செய்திகள்",
-        "episodeTitle": "தொலைக்காட்சி செய்திகள்",
         "duration": "PT10M",
-        "timestamp": "2024-10-23T00:00:00.000Z",
-        "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
-        "altText": "தொலைக்காட்சி செய்திகள்"
-      },
-      {
-        "id": "w172zmdzg1l8grp",
-        "brandTitle": "தொலைக்காட்சி செய்திகள்",
-        "episodeTitle": "தொலைக்காட்சி செய்திகள்",
-        "duration": "PT10M",
-        "timestamp": "2024-10-22T00:00:00.000Z",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8nx5.png",
         "altText": "தொலைக்காட்சி செய்திகள்"
       }
@@ -209,7 +212,7 @@
       {
         "type": "tv",
         "model": {
-          "id": "w172zmf0x3vd261",
+          "id": "w172zmf0x3vkw07",
           "subType": "episode",
           "format": "Video",
           "title": "தொலைக்காட்சி செய்திகள்",
@@ -223,7 +226,7 @@
           "advertising": false,
           "versions": [
             {
-              "versionId": "w1mskyv0sg1rbg8",
+              "versionId": "w1mskyv0sg1y48g",
               "types": ["Original"],
               "duration": 600,
               "durationISO8601": "PT10M",
@@ -233,21 +236,22 @@
                 "nonUk": true,
                 "world": false
               },
-              "availableFrom": "2024-11-19T14:16:00.000Z",
-              "availabilityStatus": "available"
+              "availableFrom": "2024-11-21T14:16:00.000Z",
+              "availabilityStatus": "available",
+              "availableUntil": null
             }
           ],
           "availability": "available",
           "smpKind": "programme",
           "episodeTitle": "தொலைக்காட்சி செய்திகள்",
-          "type": "media",
-          "language": "ta"
+          "type": "media"
         }
       },
       {
         "type": "mediaOverrides",
         "model": {
-          "pageIdentifierOverride": "tamil.bbc_tamil_tv.tv.w172zmf0x3vd261.page"
+          "language": "ta",
+          "pageIdentifierOverride": "tamil.bbc_tamil_tv.tv.w172zmf0x3vkw07.page"
         }
       }
     ]

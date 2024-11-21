@@ -6,30 +6,33 @@
         "pageIdentifier": "gujarati.bbc_gujarati_tv.tv_programmes.w13xttqr.page",
         "contentType": "player-episode",
         "pageTitle": "સમાચાર - BBC News ગુજરાતી",
-        "contentId": "urn:bbc:pips:w172yjd4jsfw5ww"
+        "contentId": "urn:bbc:pips:w13xttqr"
       }
     },
     "language": "gu",
-    "id": "urn:bbc:ares:ws_media:brand:bbc_gujarati_tv/w13xttqr",
     "brandTitle": "સમાચાર",
+    "episodeTitle": "સમાચાર",
     "headline": "સમાચાર",
     "shortSynopsis": "આંતરરાષ્ટ્રીય, પ્રાદેશિક ખબર અને વિશ્લેષણ માટે જુઓ બીબીસી ગુજરાતી સમાચાર.",
     "mediumSynopsis": "આંતરરાષ્ટ્રીય, પ્રાદેશિક ખબર અને વિશ્લેષણ માટે જુઓ બીબીસી ગુજરાતી સમાચાર.",
+    "id": "urn:bbc:ares:ws_media:brand:bbc_gujarati_tv/w13xttqr",
+    "brandId": "w13xttqr",
+    "episodeId": "w172yjd4jsfw5ww",
+    "masterBrand": "bbc_gujarati_tv",
     "releaseDateTimeStamp": "2023-02-28T00:00:00.000Z",
+    "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p08b8mjb.png",
+    "imageAltText": null,
+    "promoBrandTitle": "સમાચાર",
     "durationISO8601": "PT23M",
     "thumbnailImageUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p08b8mjb.png",
-    "promoBrandTitle": "સમાચાર",
-    "masterBrand": "bbc_gujarati_tv",
-    "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p08b8mjb.png",
     "episodeAvailability": "available",
-    "episodeTitle": "સમાચાર",
     "recentEpisodes": [
       {
         "id": "w172yjd4jsfs8zs",
         "brandTitle": "સમાચાર",
         "episodeTitle": "સમાચાર",
-        "duration": "PT23M",
         "timestamp": "2023-02-27T00:00:00.000Z",
+        "duration": "PT23M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8mjb.png",
         "altText": "સમાચાર"
       },
@@ -37,8 +40,8 @@
         "id": "w172yjd45j4cr0b",
         "brandTitle": "સમાચાર",
         "episodeTitle": "સમાચાર",
-        "duration": "PT23M",
         "timestamp": "2023-02-24T00:00:00.000Z",
+        "duration": "PT23M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8mjb.png",
         "altText": "સમાચાર"
       },
@@ -46,8 +49,8 @@
         "id": "w172yjd45j48v37",
         "brandTitle": "સમાચાર",
         "episodeTitle": "સમાચાર",
-        "duration": "PT23M",
         "timestamp": "2023-02-23T00:00:00.000Z",
+        "duration": "PT23M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8mjb.png",
         "altText": "સમાચાર"
       },
@@ -55,8 +58,8 @@
         "id": "w172yjd45j45y64",
         "brandTitle": "સમાચાર",
         "episodeTitle": "સમાચાર",
-        "duration": "PT23M",
         "timestamp": "2023-02-22T00:00:00.000Z",
+        "duration": "PT23M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8mjb.png",
         "altText": "સમાચાર"
       },
@@ -64,8 +67,8 @@
         "id": "w172yjd45j43191",
         "brandTitle": "સમાચાર",
         "episodeTitle": "સમાચાર",
-        "duration": "PT23M",
         "timestamp": "2023-02-21T00:00:00.000Z",
+        "duration": "PT23M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8mjb.png",
         "altText": "સમાચાર"
       },
@@ -73,8 +76,8 @@
         "id": "w172yjd45j404cy",
         "brandTitle": "સમાચાર",
         "episodeTitle": "સમાચાર",
-        "duration": "PT23M",
         "timestamp": "2023-02-20T00:00:00.000Z",
+        "duration": "PT23M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8mjb.png",
         "altText": "સમાચાર"
       },
@@ -82,8 +85,8 @@
         "id": "w172yjd3t7tlldh",
         "brandTitle": "સમાચાર",
         "episodeTitle": "સમાચાર",
-        "duration": "PT23M",
         "timestamp": "2023-02-17T00:00:00.000Z",
+        "duration": "PT23M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8mjb.png",
         "altText": "સમાચાર"
       },
@@ -91,8 +94,8 @@
         "id": "w172yjd3t7thphd",
         "brandTitle": "સમાચાર",
         "episodeTitle": "સમાચાર",
-        "duration": "PT23M",
         "timestamp": "2023-02-16T00:00:00.000Z",
+        "duration": "PT23M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8mjb.png",
         "altText": "સમાચાર"
       },
@@ -100,8 +103,8 @@
         "id": "w172yjd3t7tdsl9",
         "brandTitle": "સમાચાર",
         "episodeTitle": "સમાચાર",
-        "duration": "PT23M",
         "timestamp": "2023-02-15T00:00:00.000Z",
+        "duration": "PT23M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8mjb.png",
         "altText": "સમાચાર"
       },
@@ -109,8 +112,8 @@
         "id": "w172yjd3t7t9wp6",
         "brandTitle": "સમાચાર",
         "episodeTitle": "સમાચાર",
-        "duration": "PT23M",
         "timestamp": "2023-02-14T00:00:00.000Z",
+        "duration": "PT23M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8mjb.png",
         "altText": "સમાચાર"
       },
@@ -118,8 +121,8 @@
         "id": "w172yjd3t7t6zs3",
         "brandTitle": "સમાચાર",
         "episodeTitle": "સમાચાર",
-        "duration": "PT23M",
         "timestamp": "2023-02-13T00:00:00.000Z",
+        "duration": "PT23M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8mjb.png",
         "altText": "સમાચાર"
       },
@@ -127,8 +130,8 @@
         "id": "w172yjd3fzhtfsn",
         "brandTitle": "સમાચાર",
         "episodeTitle": "સમાચાર",
-        "duration": "PT23M",
         "timestamp": "2023-02-10T00:00:00.000Z",
+        "duration": "PT23M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8mjb.png",
         "altText": "સમાચાર"
       },
@@ -136,8 +139,8 @@
         "id": "w172yjd3fzhqjwk",
         "brandTitle": "સમાચાર",
         "episodeTitle": "સમાચાર",
-        "duration": "PT23M",
         "timestamp": "2023-02-09T00:00:00.000Z",
+        "duration": "PT23M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8mjb.png",
         "altText": "સમાચાર"
       },
@@ -145,8 +148,8 @@
         "id": "w172yjd3fzhmmzg",
         "brandTitle": "સમાચાર",
         "episodeTitle": "સમાચાર",
-        "duration": "PT23M",
         "timestamp": "2023-02-08T00:00:00.000Z",
+        "duration": "PT23M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8mjb.png",
         "altText": "સમાચાર"
       },
@@ -154,8 +157,8 @@
         "id": "w172yjd3fzhjr2c",
         "brandTitle": "સમાચાર",
         "episodeTitle": "સમાચાર",
-        "duration": "PT23M",
         "timestamp": "2023-02-07T00:00:00.000Z",
+        "duration": "PT23M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8mjb.png",
         "altText": "સમાચાર"
       },
@@ -163,8 +166,8 @@
         "id": "w172yjd3fzhfv58",
         "brandTitle": "સમાચાર",
         "episodeTitle": "સમાચાર",
-        "duration": "PT23M",
         "timestamp": "2023-02-06T00:00:00.000Z",
+        "duration": "PT23M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8mjb.png",
         "altText": "સમાચાર"
       },
@@ -172,8 +175,8 @@
         "id": "w172yjd32q6195t",
         "brandTitle": "સમાચાર",
         "episodeTitle": "સમાચાર",
-        "duration": "PT23M",
         "timestamp": "2023-02-03T00:00:00.000Z",
+        "duration": "PT23M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8mjb.png",
         "altText": "સમાચાર"
       },
@@ -181,8 +184,8 @@
         "id": "w172yjd32q5yd8q",
         "brandTitle": "સમાચાર",
         "episodeTitle": "સમાચાર",
-        "duration": "PT23M",
         "timestamp": "2023-02-02T00:00:00.000Z",
+        "duration": "PT23M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8mjb.png",
         "altText": "સમાચાર"
       },
@@ -190,8 +193,8 @@
         "id": "w172yjd32q5vhcm",
         "brandTitle": "સમાચાર",
         "episodeTitle": "સમાચાર",
-        "duration": "PT23M",
         "timestamp": "2023-02-01T00:00:00.000Z",
+        "duration": "PT23M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8mjb.png",
         "altText": "સમાચાર"
       },
@@ -199,8 +202,8 @@
         "id": "w172yjd32q5rlgj",
         "brandTitle": "સમાચાર",
         "episodeTitle": "સમાચાર",
-        "duration": "PT23M",
         "timestamp": "2023-01-31T00:00:00.000Z",
+        "duration": "PT23M",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b8mjb.png",
         "altText": "સમાચાર"
       }
@@ -233,19 +236,20 @@
                 "world": false
               },
               "availableFrom": "2023-02-28T14:53:00.000Z",
-              "availabilityStatus": "available"
+              "availabilityStatus": "available",
+              "availableUntil": null
             }
           ],
           "availability": "available",
           "smpKind": "programme",
           "episodeTitle": "સમાચાર",
-          "type": "media",
-          "language": "gu"
+          "type": "media"
         }
       },
       {
         "type": "mediaOverrides",
         "model": {
+          "language": "gu",
           "pageIdentifierOverride": "gujarati.bbc_gujarati_tv.tv.w172yjd4jsfw5ww.page"
         }
       }

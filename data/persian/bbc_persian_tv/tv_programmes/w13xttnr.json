@@ -6,30 +6,33 @@
         "pageIdentifier": "persian.bbc_persian_tv.tv_programmes.w13xttnr.page",
         "contentType": "player-episode",
         "pageTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی - BBC News فارسی",
-        "contentId": "urn:bbc:pips:w172z7t6cyj651g"
+        "contentId": "urn:bbc:pips:w13xttnr"
       }
     },
     "language": "fa",
-    "id": "urn:bbc:ares:ws_media:brand:bbc_persian_tv/w13xttnr",
     "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
+    "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
     "headline": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
     "shortSynopsis": "مجله خبری رادیو بی‌بی‌سی فارسی، شامل تازه‌ترین خبرها، گزارش، گفتگو، تحلیل و تفسیر درباره رویدادهای ایران و جهان.",
     "mediumSynopsis": "مجله خبری رادیو بی‌بی‌سی فارسی، شامل تازه‌ترین خبرها، گزارش، گفتگو، تحلیل و تفسیر درباره رویدادهای ایران و جهان.",
+    "id": "urn:bbc:ares:ws_media:brand:bbc_persian_tv/w13xttnr",
+    "brandId": "w13xttnr",
+    "episodeId": "w172z7t6cyj651g",
+    "masterBrand": "bbc_persian_tv",
     "releaseDateTimeStamp": "2023-04-16T00:00:00.000Z",
+    "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p05wwxds.jpg",
+    "imageAltText": null,
+    "promoBrandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
     "durationISO8601": "PT1H",
     "thumbnailImageUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p05wwxds.jpg",
-    "promoBrandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-    "masterBrand": "bbc_persian_tv",
-    "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p05wwxds.jpg",
     "episodeAvailability": "available",
-    "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
     "recentEpisodes": [
       {
         "id": "w172z7t6cyj384c",
         "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
         "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-        "duration": "PT1H",
         "timestamp": "2023-04-15T00:00:00.000Z",
+        "duration": "PT1H",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p05wwxds.jpg",
         "altText": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی"
       },
@@ -37,8 +40,8 @@
         "id": "w172z7t6cyj0c78",
         "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
         "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-        "duration": "PT1H",
         "timestamp": "2023-04-14T00:00:00.000Z",
+        "duration": "PT1H",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p05wwxds.jpg",
         "altText": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی"
       },
@@ -46,8 +49,8 @@
         "id": "w172z7t6cyhxgb5",
         "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
         "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-        "duration": "PT1H",
         "timestamp": "2023-04-13T00:00:00.000Z",
+        "duration": "PT1H",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p05wwxds.jpg",
         "altText": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی"
       },
@@ -55,8 +58,8 @@
         "id": "w172z7t6cyhtkf2",
         "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
         "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-        "duration": "PT1H",
         "timestamp": "2023-04-12T00:00:00.000Z",
+        "duration": "PT1H",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p05wwxds.jpg",
         "altText": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی"
       },
@@ -64,8 +67,8 @@
         "id": "w172z7t6cyhqnhz",
         "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
         "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-        "duration": "PT1H",
         "timestamp": "2023-04-11T00:00:00.000Z",
+        "duration": "PT1H",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p05wwxds.jpg",
         "altText": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی"
       },
@@ -73,8 +76,8 @@
         "id": "w172z7t6cyhmrlw",
         "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
         "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-        "duration": "PT1H",
         "timestamp": "2023-04-10T00:00:00.000Z",
+        "duration": "PT1H",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p05wwxds.jpg",
         "altText": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی"
       },
@@ -82,8 +85,8 @@
         "id": "w172z7t60p6f0fm",
         "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
         "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-        "duration": "PT1H",
         "timestamp": "2023-04-09T00:00:00.000Z",
+        "duration": "PT1H",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p05wwxds.jpg",
         "altText": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی"
       },
@@ -91,8 +94,8 @@
         "id": "w172z7t60p6b3jj",
         "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
         "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-        "duration": "PT1H",
         "timestamp": "2023-04-08T00:00:00.000Z",
+        "duration": "PT1H",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p05wwxds.jpg",
         "altText": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی"
       },
@@ -100,8 +103,8 @@
         "id": "w172z7t60p676mf",
         "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
         "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-        "duration": "PT1H",
         "timestamp": "2023-04-07T00:00:00.000Z",
+        "duration": "PT1H",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p05wwxds.jpg",
         "altText": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی"
       },
@@ -109,8 +112,8 @@
         "id": "w172z7t60p649qb",
         "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
         "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-        "duration": "PT1H",
         "timestamp": "2023-04-06T00:00:00.000Z",
+        "duration": "PT1H",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p05wwxds.jpg",
         "altText": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی"
       },
@@ -118,8 +121,8 @@
         "id": "w172z7t60p61dt7",
         "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
         "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-        "duration": "PT1H",
         "timestamp": "2023-04-05T00:00:00.000Z",
+        "duration": "PT1H",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p05wwxds.jpg",
         "altText": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی"
       },
@@ -127,8 +130,8 @@
         "id": "w172z7t60p5yhx4",
         "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
         "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-        "duration": "PT1H",
         "timestamp": "2023-04-04T00:00:00.000Z",
+        "duration": "PT1H",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p05wwxds.jpg",
         "altText": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی"
       },
@@ -136,8 +139,8 @@
         "id": "w172z7t60p5vm01",
         "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
         "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-        "duration": "PT1H",
         "timestamp": "2023-04-03T00:00:00.000Z",
+        "duration": "PT1H",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p05wwxds.jpg",
         "altText": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی"
       },
@@ -145,8 +148,8 @@
         "id": "w172z7t5ndwmvts",
         "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
         "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-        "duration": "PT1H",
         "timestamp": "2023-04-02T00:00:00.000Z",
+        "duration": "PT1H",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p05wwxds.jpg",
         "altText": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی"
       },
@@ -154,8 +157,8 @@
         "id": "w172z7t5ndwjyxp",
         "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
         "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-        "duration": "PT1H",
         "timestamp": "2023-04-01T00:00:00.000Z",
+        "duration": "PT1H",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p05wwxds.jpg",
         "altText": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی"
       },
@@ -163,8 +166,8 @@
         "id": "w172z7t5ndwg20l",
         "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
         "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-        "duration": "PT1H",
         "timestamp": "2023-03-31T00:00:00.000Z",
+        "duration": "PT1H",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p05wwxds.jpg",
         "altText": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی"
       },
@@ -172,8 +175,8 @@
         "id": "w172z7t5ndwc53h",
         "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
         "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-        "duration": "PT1H",
         "timestamp": "2023-03-30T00:00:00.000Z",
+        "duration": "PT1H",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p05wwxds.jpg",
         "altText": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی"
       },
@@ -181,8 +184,8 @@
         "id": "w172z7t5ndw886d",
         "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
         "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-        "duration": "PT1H",
         "timestamp": "2023-03-29T00:00:00.000Z",
+        "duration": "PT1H",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p05wwxds.jpg",
         "altText": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی"
       },
@@ -190,8 +193,8 @@
         "id": "w172z7t5ndw5c99",
         "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
         "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-        "duration": "PT1H",
         "timestamp": "2023-03-28T00:00:00.000Z",
+        "duration": "PT1H",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p05wwxds.jpg",
         "altText": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی"
       },
@@ -199,8 +202,8 @@
         "id": "w172z7t5ndw2gd6",
         "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
         "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-        "duration": "PT1H",
         "timestamp": "2023-03-27T00:00:00.000Z",
+        "duration": "PT1H",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p05wwxds.jpg",
         "altText": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی"
       }
@@ -234,19 +237,20 @@
                 "world": false
               },
               "availableFrom": "2023-04-16T04:30:00.000Z",
-              "availabilityStatus": "available"
+              "availabilityStatus": "available",
+              "availableUntil": null
             }
           ],
           "availability": "available",
           "smpKind": "programme",
           "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-          "type": "media",
-          "language": "fa"
+          "type": "media"
         }
       },
       {
         "type": "mediaOverrides",
         "model": {
+          "language": "fa",
           "pageIdentifierOverride": "persian.bbc_persian_tv.tv.w172z7t6cyj651g.page"
         }
       }
