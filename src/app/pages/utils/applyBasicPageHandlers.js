@@ -4,7 +4,7 @@ import withPageWrapper from '#containers/PageHandlers/withPageWrapper';
 import withError from '#containers/PageHandlers/withError';
 import withData from '#containers/PageHandlers/withData';
 import withHashChangeHandler from '#containers/PageHandlers/withHashChangeHandler';
-import withReverb from '#containers/PageHandlers/withReverb';
+// import withReverb from '#containers/PageHandlers/withReverb';
 
 export default (
   component,
@@ -17,5 +17,5 @@ export default (
     handlerBeforeContexts,
     withContexts,
     withHashChangeHandler,
-    withReverb,
+    // withReverb,
   )(component);
