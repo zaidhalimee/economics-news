@@ -55,7 +55,7 @@ jest.mock('../../components/ChartbeatAnalytics', () => {
 
 const { env } = process;
 
-describe('OnDemand TV Brand Page ', () => {
+describe('OnDemand TV Page ', () => {
   beforeEach(() => {
     process.env = { ...env };
   });
@@ -249,31 +249,7 @@ describe('OnDemand TV Brand Page ', () => {
 
   it('should show the future content message if episode is not yet available', async () => {
     const pageDataWithFutureEpisode = { ...pashtoPageData };
-    pageDataWithFutureEpisode.data.episodeAvailability = 'future';
-
-    fetchMock.mockResponse(JSON.stringify(pageDataWithFutureEpisode));
-    const { pageData } = await getInitialData({
-      path: 'some-ondemand-tv-path',
-      service: 'pashto',
-      pageType,
-      toggles,
-    });
-    // @ts-expect-error react testing library returns the required queries
-    const { container, getByText } = await renderPage({
-      pageData,
-      service: 'pashto',
-    });
-    const notYetAvailableEl = getByText(
-      'دغه پروګرام د خپرولو لپاره چمتو نه دی.',
-    );
-
-    expect(notYetAvailableEl).toBeInTheDocument();
-    expect(container).toMatchSnapshot();
-  });
-
-  it('should show the future content message if episode is pending', async () => {
-    const pageDataWithFutureEpisode = { ...pashtoPageData };
-    pageDataWithFutureEpisode.data.episodeAvailability = 'pending';
+    pageDataWithFutureEpisode.data.episodeAvailability = 'not-yet-available';
 
     fetchMock.mockResponse(JSON.stringify(pageDataWithFutureEpisode));
     const { pageData } = await getInitialData({
