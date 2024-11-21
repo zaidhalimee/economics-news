@@ -27,16 +27,16 @@ describe('Get initial data for on demand tv', () => {
     });
 
     expect(pageData.language).toEqual('ps');
-    expect(pageData.releaseDateTimeStamp).toEqual('2024-11-19T00:00:00.000Z');
-    expect(pageData.brandTitle).toEqual(' د بي بي سي خبرونه ');
-    expect(pageData.headline).toEqual(' د بي بي سي خبرونه ');
+    expect(pageData.releaseDateTimeStamp).toEqual('2024-11-21T00:00:00.000Z');
+    expect(pageData.brandTitle).toEqual(' د بي بي سي خبرونه ');
+    expect(pageData.headline).toEqual(' د بي بي سي خبرونه ');
     expect(pageData.shortSynopsis).toEqual(
       'نړۍ دا وخت، د نړۍ او سیمې وروستۍ پرمختیاوې یادوي\n',
     );
-    expect(pageData.promoBrandTitle).toEqual(' د بي بي سي خبرونه ');
+    expect(pageData.promoBrandTitle).toEqual(' د بي بي سي خبرونه ');
     expect(pageData.durationISO8601).toEqual('PT28M');
     expect(pageData.thumbnailImageUrl).toEqual(
-      'https://ichef.bbci.co.uk/images/ic/1024x576/p08b23c8.png',
+      'https://ichef.bbci.co.uk/images/ic/1024x576/p0k5s1yz.png',
     );
   });
 
@@ -77,6 +77,6 @@ describe('Get initial data for on demand tv', () => {
     });
 
     expect(pageData.recentEpisodes).toHaveLength(3);
-    expect(pageData.recentEpisodes[0].id).toEqual('w172zmspxlzwwmk');
+    expect(pageData.recentEpisodes[0].id).toEqual('w172zmspxm02pfr');
   });
 });
