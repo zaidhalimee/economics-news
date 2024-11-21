@@ -56,10 +56,21 @@ const PodcastIcon = styled(MediaIcon)`
   }
 `;
 
+const MapIcon = styled(MediaIcon)`
+  width: 1rem;
+  height: 1rem;
+`;
+
 const SeriesStackIcon = styled(MediaIcon)`
   width: ${GEL_SPACING_DBL};
   height: ${GEL_SPACING_DBL};
 `;
+
+const EmbedIcon = (
+  <MapIcon width="12" height="12" viewBox="0 0 32 32" {...defaultAttrs}>
+    <path d="m20 3.9-8 4-8-4.6v20.3l8 4.6 8-4 8 4.6V8.2zm-7 5.7 6-3v15.8l-6 3zM6 6.7l5 2.9v15.7l-5-2.9zm20 18.6-5-2.9V6.7l5 2.7z" />
+  </MapIcon>
+);
 
 const PhotoIcon = (
   <PhotoMediaIcon
@@ -101,6 +112,7 @@ const mediaIcons = {
   ),
   image: PhotoIcon,
   photogallery: PhotoIcon,
+  embed: EmbedIcon,
   guidance: (
     <GuidanceIcon viewBox="0 0 32 32" width="32" height="32" {...defaultAttrs}>
       <path d="M32,16A16,16,0,1,1,16,0,16,16,0,0,1,32,16Zm-8.6-.8H16.6v3.1h2.9c-.2,1.5-1.6,2.4-3.7,2.4s-3.7-2.4-3.7-4.7,1-4.7,3.7-4.7,3,.8,3.2,2.2h4.2c-.4-4-3.9-5.8-7.2-5.8-4.8,0-8,3.7-8,8.3s3.1,8.3,8,8.3a5.4,5.4,0,0,0,4.5-2.1l.2,1.7h2.7Z" />

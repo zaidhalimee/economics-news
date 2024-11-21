@@ -29,6 +29,7 @@ export interface Translations {
     loadVideo?: string;
     loadAudio?: string;
     loadMedia?: string;
+    loadEmbed?: string;
     loadMediaMessage?: string;
   };
   mediaAssetPage: {

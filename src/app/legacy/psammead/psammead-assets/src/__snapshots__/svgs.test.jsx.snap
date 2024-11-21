@@ -705,6 +705,17 @@ exports[`mediaIcons SVG should render correctly 1`] = `
       d="M10.596.199l-.525.562c1.35 1.35 2.175 3.225 2.175 5.25s-.825 3.9-2.175 5.25l.525.525c1.5-1.462 2.4-3.525 2.4-5.775s-.9-4.312-2.4-5.812zM6.996 1.511l-2.25 2.25H.996v4.5h3.75l2.25 2.25z"
     />
   </AudioMediaIcon>,
+  "embed": <MapIcon
+    aria-hidden="true"
+    focusable="false"
+    height="12"
+    viewBox="0 0 32 32"
+    width="12"
+  >
+    <path
+      d="m20 3.9-8 4-8-4.6v20.3l8 4.6 8-4 8 4.6V8.2zm-7 5.7 6-3v15.8l-6 3zM6 6.7l5 2.9v15.7l-5-2.9zm20 18.6-5-2.9V6.7l5 2.7z"
+    />
+  </MapIcon>,
   "guidance": <GuidanceIcon
     aria-hidden="true"
     focusable="false"

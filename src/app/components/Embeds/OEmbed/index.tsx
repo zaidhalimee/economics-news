@@ -1,8 +1,9 @@
 /* eslint-disable camelcase */
 /** @jsx jsx */
-import { jsx } from '@emotion/react';
+import { jsx, Theme } from '@emotion/react';
 import { useContext } from 'react';
 import pathOr from 'ramda/src/pathOr';
+import LiteMediaLoader from '#app/components/LiteComponents/LiteMediaLoader';
 import { RequestContext } from '../../../contexts/RequestContext';
 import { ServiceContext } from '../../../contexts/ServiceContext';
 import EmbedHtml from '../EmbedHtml';
@@ -14,8 +15,6 @@ import { OEmbedProps } from '../types';
 const OEmbedLoader = ({ oembed }: OEmbedProps) => {
   const { isAmp, isLite, canonicalLink } = useContext(RequestContext);
   const { translations } = useContext(ServiceContext);
-
-  if (isLite) return null;
 
   const { html, provider_name, oEmbedType, parameters, url } = oembed;
   const isVDJEmbed = oEmbedType === 'vdj-embed';
@@ -49,6 +48,24 @@ const OEmbedLoader = ({ oembed }: OEmbedProps) => {
 
   if (html == null) {
     return null;
+  }
+
+  if (isLite) {
+    return (
+      <div
+        css={({ spacings }: Theme) => ({
+          marginBottom: `${spacings.TRIPLE}rem`,
+        })}
+      >
+        <LiteMediaLoader type="embed">
+          {provider_name === 'Flourish' ? (
+            <FlourishEmbed {...oembed} />
+          ) : (
+            <EmbedHtml embeddableContent={html} />
+          )}
+        </LiteMediaLoader>
+      </div>
+    );
   }
 
   if (provider_name === 'Flourish') {

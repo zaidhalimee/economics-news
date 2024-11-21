@@ -4,12 +4,13 @@
 import { jsx } from '@emotion/react';
 import Text from '#app/components/Text';
 import React, { PropsWithChildren, useContext } from 'react';
-import { MediaType } from '#app/models/types/media';
 import { mediaIcons } from '#psammead/psammead-assets/src/svgs';
 import { ServiceContext } from '#app/contexts/ServiceContext';
 import { Translations } from '#app/models/types/translations';
 import LiteButton from '../LiteButton';
 import styles from './index.styles';
+
+type MediaTypes = 'audio' | 'video' | 'image' | 'embed';
 
 function script(this: Element) {
   const parentEl = this.parentElement;
@@ -20,18 +21,19 @@ function script(this: Element) {
 
   if (!templateEl) return;
 
-  parentEl.insertAdjacentHTML('afterbegin', templateEl.innerHTML);
+  parentEl.prepend(templateEl.content.cloneNode(true));
+
   parentEl.removeChild(templateEl);
   parentEl.removeChild(this);
 }
 
 type ButtonTextProps = {
-  type?: MediaType;
+  type?: MediaTypes;
   liteSiteTranslations: Translations['liteSite'];
 };
 
 const getButtonText = ({ type, liteSiteTranslations }: ButtonTextProps) => {
-  const { loadAudio, loadVideo, loadImage, loadMedia } =
+  const { loadAudio, loadVideo, loadImage, loadMedia, loadEmbed } =
     liteSiteTranslations ?? {};
 
   switch (type) {
@@ -41,13 +43,15 @@ const getButtonText = ({ type, liteSiteTranslations }: ButtonTextProps) => {
       return loadVideo || 'Load Video';
     case 'image':
       return loadImage || 'Load Image';
+    case 'embed':
+      return loadEmbed || 'Load Embed';
     default:
       return loadMedia || 'Load Media';
   }
 };
 
 type Props = {
-  type?: MediaType;
+  type?: MediaTypes;
   width?: number;
   height?: number;
 };
