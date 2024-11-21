@@ -11,7 +11,7 @@ export default {
       width: '100%',
       height: '100%',
       minHeight: 300,
-      border: 'none',
+      border: '0.1875rem solid transparent',
       cursor: 'pointer',
       padding: 0,
       borderRadius: 0,
