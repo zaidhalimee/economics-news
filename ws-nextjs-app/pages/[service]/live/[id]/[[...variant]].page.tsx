@@ -1,4 +1,6 @@
 import { GetServerSideProps } from 'next';
+import dynamic from 'next/dynamic';
+
 import { LIVE_PAGE } from '#app/routes/utils/pageTypes';
 import nodeLogger from '#lib/logger.node';
 import logResponseTime from '#server/utilities/logResponseTime';
@@ -11,10 +13,11 @@ import { NON_200_RESPONSE } from '#server/utilities/customMetrics/metrics.const'
 import isLitePath from '#app/routes/utils/isLitePath';
 import PageDataParams from '#app/models/types/pageDataParams';
 
-import LivePageLayout from './LivePageLayout';
 import extractHeaders from '../../../../../src/server/utilities/extractHeaders';
 import isValidPageNumber from '../../../../utilities/pageQueryValidator';
 import getPageData from '../../../../utilities/pageRequests/getPageData';
+
+const LivePageLayout = dynamic(() => import('./LivePageLayout'));
 
 const logger = nodeLogger(__filename);
 
