@@ -14,20 +14,20 @@ export default () => {
     img.removeAttribute('src');
 
     describe('ATI', () => {
-      describe('noscript image', () => {
+      describe('tracking pixel', () => {
         it('exists', () => {
           expect(noscriptImage).toBeInTheDocument();
         });
 
-        it('has attributes excluding src', () => {
+        it('excluding src', () => {
           expect(img).toMatchSnapshot();
         });
 
-        it('has src with host', () => {
+        it('hostname', () => {
           expect(`${srcUrl.origin}${srcUrl.pathname}`).toMatchSnapshot();
         });
 
-        it('has src with search params', () => {
+        it('search params', () => {
           const searchParams = [];
           for (const [key, value] of srcUrl.searchParams.entries()) {
             searchParams.push({ [key]: value });

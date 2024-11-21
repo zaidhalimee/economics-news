@@ -2,7 +2,7 @@
 
 exports[`Canonical Photo Gallery Page A11y I can see the skip to content link 1`] = `"Ir al contenido"`;
 
-exports[`Canonical Photo Gallery Page Analytics ATI noscript image has attributes excluding src 1`] = `
+exports[`Canonical Photo Gallery Page Analytics ATI tracking pixel excluding src 1`] = `
 <img
   alt=""
   height="1px"
@@ -11,9 +11,9 @@ exports[`Canonical Photo Gallery Page Analytics ATI noscript image has attribute
 />
 `;
 
-exports[`Canonical Photo Gallery Page Analytics ATI noscript image has src with host 1`] = `"https://logws1363.ati-host.net/"`;
+exports[`Canonical Photo Gallery Page Analytics ATI tracking pixel hostname 1`] = `"https://logws1363.ati-host.net/"`;
 
-exports[`Canonical Photo Gallery Page Analytics ATI noscript image has src with search params 1`] = `
+exports[`Canonical Photo Gallery Page Analytics ATI tracking pixel search params 1`] = `
 [
   {
     "s": "598343",
