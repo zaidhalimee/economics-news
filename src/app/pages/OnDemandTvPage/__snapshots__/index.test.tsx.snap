@@ -756,7 +756,7 @@ exports[`OnDemand TV Page  Dark Mode Design - should match snapshot 1`] = `
           id="content"
           tabindex="-1"
         >
-           د بي بي سي خبرونه , ۱۹ نومبر ۲۰۲۴
+           د بي بي سي خبرونه , ۲۱ نومبر ۲۰۲۴
         </h1>
         <figure
           class="emotion-7"
@@ -781,7 +781,7 @@ exports[`OnDemand TV Page  Dark Mode Design - should match snapshot 1`] = `
               <span
                 class="emotion-6"
               >
-                Play video, " د بي بي سي خبرونه ", موده 28,00
+                Play video, " د بي بي سي خبرونه ", موده 28,00
               </span>
               <div
                 aria-hidden="true"
@@ -825,8 +825,8 @@ exports[`OnDemand TV Page  Dark Mode Design - should match snapshot 1`] = `
               <img
                 alt=""
                 class="emotion-18"
-                src="https://ichef.bbci.co.uk/images/ic/$recipe/p08b23c8.png"
-                srcset="https://ichef.bbci.co.uk/images/ic/240xn/p08b23c8.png.webp 240w, https://ichef.bbci.co.uk/images/ic/320xn/p08b23c8.png.webp 320w, https://ichef.bbci.co.uk/images/ic/480xn/p08b23c8.png.webp 480w, https://ichef.bbci.co.uk/images/ic/624xn/p08b23c8.png.webp 624w, https://ichef.bbci.co.uk/images/ic/800xn/p08b23c8.png.webp 800w"
+                src="https://ichef.bbci.co.uk/images/ic/$recipe/p0k5s1yz.png"
+                srcset="https://ichef.bbci.co.uk/images/ic/240xn/p0k5s1yz.png.webp 240w, https://ichef.bbci.co.uk/images/ic/320xn/p0k5s1yz.png.webp 320w, https://ichef.bbci.co.uk/images/ic/480xn/p0k5s1yz.png.webp 480w, https://ichef.bbci.co.uk/images/ic/624xn/p0k5s1yz.png.webp 624w, https://ichef.bbci.co.uk/images/ic/800xn/p0k5s1yz.png.webp 800w"
               />
             </div>
           </div>
@@ -839,7 +839,7 @@ exports[`OnDemand TV Page  Dark Mode Design - should match snapshot 1`] = `
             class="emotion-22 emotion-23"
             data-testid="brand-title"
           >
-             د بي بي سي خبرونه 
+             د بي بي سي خبرونه 
           </span>
           <span
             class="emotion-6"
@@ -850,7 +850,7 @@ exports[`OnDemand TV Page  Dark Mode Design - should match snapshot 1`] = `
             class="emotion-25 emotion-26"
             data-testid="sub-heading"
           >
-             د بي بي سي خبرونه 
+             د بي بي سي خبرونه 
           </span>
         </strong>
       </div>
@@ -866,9 +866,9 @@ exports[`OnDemand TV Page  Dark Mode Design - should match snapshot 1`] = `
         </p>
         <time
           class="emotion-31 emotion-32"
-          datetime="۲۰۲۴-۱۱-۱۹"
+          datetime="۲۰۲۴-۱۱-۲۱"
         >
-          ۱۹ نومبر ۲۰۲۴
+          ۲۱ نومبر ۲۰۲۴
         </time>
       </div>
     </main>
@@ -1438,7 +1438,7 @@ exports[`OnDemand TV Page  should show the expired content message if episode is
           id="content"
           tabindex="-1"
         >
-           د بي بي سي خبرونه , ۱۹ نومبر ۲۰۲۴
+           د بي بي سي خبرونه , ۲۱ نومبر ۲۰۲۴
         </h1>
         <div
           class="emotion-7 emotion-8"
@@ -1463,7 +1463,7 @@ exports[`OnDemand TV Page  should show the expired content message if episode is
             class="emotion-14 emotion-15"
             data-testid="brand-title"
           >
-             د بي بي سي خبرونه 
+             د بي بي سي خبرونه 
           </span>
           <span
             class="emotion-6"
@@ -1474,7 +1474,7 @@ exports[`OnDemand TV Page  should show the expired content message if episode is
             class="emotion-17 emotion-18"
             data-testid="sub-heading"
           >
-             د بي بي سي خبرونه 
+             د بي بي سي خبرونه 
           </span>
         </strong>
       </div>
@@ -1490,9 +1490,9 @@ exports[`OnDemand TV Page  should show the expired content message if episode is
         </p>
         <time
           class="emotion-23 emotion-24"
-          datetime="۲۰۲۴-۱۱-۱۹"
+          datetime="۲۰۲۴-۱۱-۲۱"
         >
-          ۱۹ نومبر ۲۰۲۴
+          ۲۱ نومبر ۲۰۲۴
         </time>
       </div>
     </main>
@@ -2062,7 +2062,7 @@ exports[`OnDemand TV Page  should show the future content message if episode is 
           id="content"
           tabindex="-1"
         >
-           د بي بي سي خبرونه , ۱۹ نومبر ۲۰۲۴
+           د بي بي سي خبرونه , ۲۱ نومبر ۲۰۲۴
         </h1>
         <div
           class="emotion-7 emotion-8"
@@ -2087,7 +2087,7 @@ exports[`OnDemand TV Page  should show the future content message if episode is 
             class="emotion-14 emotion-15"
             data-testid="brand-title"
           >
-             د بي بي سي خبرونه 
+             د بي بي سي خبرونه 
           </span>
           <span
             class="emotion-6"
@@ -2098,7 +2098,7 @@ exports[`OnDemand TV Page  should show the future content message if episode is 
             class="emotion-17 emotion-18"
             data-testid="sub-heading"
           >
-             د بي بي سي خبرونه 
+             د بي بي سي خبرونه 
           </span>
         </strong>
       </div>
@@ -2114,9 +2114,9 @@ exports[`OnDemand TV Page  should show the future content message if episode is 
         </p>
         <time
           class="emotion-23 emotion-24"
-          datetime="۲۰۲۴-۱۱-۱۹"
+          datetime="۲۰۲۴-۱۱-۲۱"
         >
-          ۱۹ نومبر ۲۰۲۴
+          ۲۱ نومبر ۲۰۲۴
         </time>
       </div>
     </main>

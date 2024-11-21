@@ -81,7 +81,7 @@ describe('OnDemand TV Page ', () => {
 
     expect(visuallyHiddenHeadline).toBeInTheDocument();
     expect(visuallyHiddenHeadline?.innerHTML).toEqual(
-      '&nbsp;د بي بي سي خبرونه , ۱۹ نومبر ۲۰۲۴',
+      ' د بي بي سي خبرونه , ۲۱ نومبر ۲۰۲۴',
     );
   });
 
@@ -178,7 +178,7 @@ describe('OnDemand TV Page ', () => {
       service: 'pashto',
     });
 
-    expect(getByText('۱۹ نومبر ۲۰۲۴')).toBeInTheDocument();
+    expect(getByText('۲۱ نومبر ۲۰۲۴')).toBeInTheDocument();
   });
 
   it('should show the summary for OnDemand TV Pages', async () => {
