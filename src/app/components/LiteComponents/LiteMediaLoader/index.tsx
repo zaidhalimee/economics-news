@@ -1,9 +1,8 @@
 /** @jsx jsx */
-/** @jsxFrag React.Fragment */
 
 import { jsx } from '@emotion/react';
 import Text from '#app/components/Text';
-import React, { PropsWithChildren, useContext } from 'react';
+import { PropsWithChildren, useContext } from 'react';
 import { mediaIcons } from '#psammead/psammead-assets/src/svgs';
 import { ServiceContext } from '#app/contexts/ServiceContext';
 import { Translations } from '#app/models/types/translations';
@@ -21,10 +20,12 @@ function script(this: Element) {
 
   if (!templateEl) return;
 
-  parentEl.prepend(templateEl.content.cloneNode(true));
+  // Browser compatibility may be questionable with 'replaceWith'
+  parentEl.replaceWith(templateEl.content.cloneNode(true));
 
-  parentEl.removeChild(templateEl);
-  parentEl.removeChild(this);
+  // parentEl.prepend(templateEl.content.cloneNode(true));
+  // parentEl.removeChild(templateEl);
+  // parentEl.removeChild(this);
 }
 
 type ButtonTextProps = {
@@ -69,7 +70,7 @@ const LiteMediaLoader = ({
   const hasFixedAspectRatio = type === 'image' && width && height;
 
   return (
-    <>
+    <div>
       <LiteButton
         css={[
           styles.liteMediaButtonOverlay,
@@ -89,7 +90,7 @@ const LiteMediaLoader = ({
         </Text>
       </LiteButton>
       <template>{children}</template>
-    </>
+    </div>
   );
 };
 
