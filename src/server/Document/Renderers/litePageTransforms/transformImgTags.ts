@@ -2,8 +2,6 @@ const LITE_ACE_WS_IMG_SIZE = '320';
 const LITE_IMAGES_IC_IMG_SIZE = '96xn';
 
 const setImgSize = (src: string) => {
-  if (!src) return '';
-
   let modifiedSrc = src;
 
   // example: https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/2826/live/58ed4db0-df87-11ee-ad97-47305ea5b78b.jpg.webp
@@ -34,9 +32,9 @@ export default (html: string) => {
     imgTags.forEach(tag => {
       const src = tag?.match(/src="([^"]*)"/)?.[1] || '';
 
-      const modifiedSrc = setImgSize(src);
+      if (!src || !src.includes('bbci.co.uk')) return;
 
-      if (!modifiedSrc) return;
+      const modifiedSrc = setImgSize(src);
 
       modifiedHtml = modifiedHtml.replace(
         tag,
