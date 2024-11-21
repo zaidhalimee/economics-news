@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 /** @jsx jsx */
 import { useContext, useState, useEffect } from 'react';
 import { jsx } from '@emotion/react';
@@ -6,7 +5,6 @@ import { ServiceContext } from '#contexts/ServiceContext';
 import useViewTracker from '#app/hooks/useViewTracker';
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import Text from '#app/components/Text';
-import isLive from '#app/lib/utilities/isLive';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
 import { OptimizelyContext } from '@optimizely/react-sdk';
 import idSanitiser from '../../lib/utilities/idSanitiser';
@@ -24,9 +22,6 @@ const JumpTo = ({ jumpToHeadings, showRelatedContentLink }: JumpToProps) => {
     componentName: 'jumpto',
     optimizely,
   };
-
-  // TODO: Remove for release
-  if (isLive()) return null;
 
   const { translations } = useContext(ServiceContext);
   const [hash, setHash] = useState('');
