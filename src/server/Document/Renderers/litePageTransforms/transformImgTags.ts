@@ -9,7 +9,7 @@ const setImgSize = (src: string) => {
   // example: https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/2826/live/58ed4db0-df87-11ee-ad97-47305ea5b78b.jpg.webp
   const isAceWs = src.includes('ace/ws');
 
-  // example: https://ichef.test.bbci.co.uk/images/ic/480xn/p01vzypf.jpg.webp
+  // example: https://ichef.bbci.co.uk/images/ic/480xn/p01vzypf.jpg.webp
   const isImageIc = src.includes('images/ic');
 
   const imgSize = src.split('/')?.[5];
