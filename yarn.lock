@@ -7987,12 +7987,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"aws-embedded-metrics@npm:4.1.1":
-  version: 4.1.1
-  resolution: "aws-embedded-metrics@npm:4.1.1"
+"aws-embedded-metrics@npm:4.2.0":
+  version: 4.2.0
+  resolution: "aws-embedded-metrics@npm:4.2.0"
   dependencies:
     "@datastructures-js/heap": "npm:^4.0.2"
-  checksum: 10/28abae38268f5a70359597186c7c6cd4ad11575eecc8680e1066fefa5649a46e1d61ca0078fd8dddf70dcc94ab520eb39575b8bd8a67a13b7273d992f8a76081
+  checksum: 10/c99892378258dec88938bdcde8f4e5b8e16df5babebe1a2e451a880079b053385eb3a4bfdfcf8e84a044ab4825486af410905249043f71da0e287cf926981de7
   languageName: node
   linkType: hard
 
@@ -18853,7 +18853,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:5.62.0"
     "@typescript-eslint/parser": "npm:5.62.0"
     amphtml-validator: "npm:1.0.38"
-    aws-embedded-metrics: "npm:4.1.1"
+    aws-embedded-metrics: "npm:4.2.0"
     babel-jest: "npm:29.7.0"
     babel-loader: "npm:9.2.1"
     babel-plugin-dynamic-import-node: "npm:2.3.3"
