@@ -119,33 +119,26 @@ exports[`Canonical Sinhala Live Radio Page Header Navigation link should match t
 
 exports[`Canonical Sinhala Live Radio Page Header Navigation link should match text and url 2`] = `
 {
-  "text": "මහ මැතිවරණය 2024",
-  "url": "/sinhala/topics/c5y3ve4z2lkt",
-}
-`;
-
-exports[`Canonical Sinhala Live Radio Page Header Navigation link should match text and url 3`] = `
-{
   "text": "ශ්‍රී ලංකා",
   "url": "/sinhala/topics/cg7267dz901t",
 }
 `;
 
-exports[`Canonical Sinhala Live Radio Page Header Navigation link should match text and url 4`] = `
+exports[`Canonical Sinhala Live Radio Page Header Navigation link should match text and url 3`] = `
 {
   "text": "ලෝකය",
   "url": "/sinhala/topics/c83plvepnq1t",
 }
 `;
 
-exports[`Canonical Sinhala Live Radio Page Header Navigation link should match text and url 5`] = `
+exports[`Canonical Sinhala Live Radio Page Header Navigation link should match text and url 4`] = `
 {
   "text": "වීඩියෝ",
   "url": "/sinhala/topics/crldzm9n2lnt",
 }
 `;
 
-exports[`Canonical Sinhala Live Radio Page Header Navigation link should match text and url 6`] = `
+exports[`Canonical Sinhala Live Radio Page Header Navigation link should match text and url 5`] = `
 {
   "text": "කලා",
   "url": "/sinhala/topics/c7zp5zxk8jxt",
