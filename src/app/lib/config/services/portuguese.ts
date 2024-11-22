@@ -48,11 +48,12 @@ export const service: DefaultServiceConfig = {
     showAdPlaceholder: true,
     showRelatedTopics: true,
     podcastPromo: {
-      title: 'A Raposa',
-      brandTitle: 'A Raposa',
-      brandDescription: 'O novo podcast investigativo da BBC News Brasil',
+      title: 'Novo podcast investigativo: A Raposa',
+      brandTitle: 'Novo podcast investigativo: A Raposa',
+      brandDescription:
+        'Uma tonelada de cocaína, três brasileiros inocentes e a busca por um suspeito inglês',
       image: {
-        src: 'https://ichef.bbc.co.uk/images/ic/$recipe/p0jsx1gc.jpg',
+        src: 'https://ichef.bbc.co.uk/images/ic/$recipe/p0k38tc4.jpg',
         alt: 'Logo: A Raposa',
       },
       linkLabel: {
@@ -420,10 +421,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Brasil',
         url: '/portuguese/topics/cz74k717pw5t',
-      },
-      {
-        title: 'Eleições EUA',
-        url: '/portuguese/topics/c30gn378n6kt',
       },
       {
         title: 'Internacional',

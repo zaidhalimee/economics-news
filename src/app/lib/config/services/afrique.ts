@@ -338,6 +338,10 @@ export const service: DefaultServiceConfig = {
         url: '/afrique',
       },
       {
+        title: 'Ecoutez en direct',
+        url: '/afrique/bbc_afrique_radio/liveradio',
+      },
+      {
         title: 'Afrique',
         url: '/afrique/topics/cvqxn2k7kv7t',
       },
@@ -368,10 +372,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Nos émissions',
         url: '/afrique/topics/c88nzggm8gxt',
-      },
-      {
-        title: 'Ecoutez en direct',
-        url: '/afrique/bbc_afrique_radio/liveradio',
       },
     ],
   },

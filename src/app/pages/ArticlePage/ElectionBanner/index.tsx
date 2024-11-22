@@ -7,7 +7,6 @@ import AmpIframe from '#app/components/AmpIframe';
 import useToggle from '#app/hooks/useToggle';
 import { Tag } from '#app/components/Metadata/types';
 import { ServiceContext } from '#app/contexts/ServiceContext';
-import useOptimizelyMvtVariation from '#app/hooks/useOptimizelyMvtVariation';
 import { getEnvConfig } from '#app/lib/utilities/getEnvConfig';
 import { MetadataTaggings } from '#app/models/types/metadata';
 import { Services } from '#app/models/types/global';
@@ -36,8 +35,6 @@ export default function ElectionBanner({ aboutTags, taggings }: Props) {
   const { enabled: electionBannerEnabled }: { enabled: boolean | null } =
     useToggle('electionBanner');
 
-  const variation = useOptimizelyMvtVariation('newswb_01_ap_banner_election');
-
   if (isLite) return null;
 
   const {
@@ -60,7 +57,6 @@ export default function ElectionBanner({ aboutTags, taggings }: Props) {
     !isEditoriallySensitive && validAboutTag && electionBannerEnabled;
 
   if (!showBanner) return null;
-  if (variation === 'off') return null;
 
   const {
     SIMORGH_APP_ENV,
