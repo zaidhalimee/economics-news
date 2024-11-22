@@ -282,9 +282,6 @@ const MediaLoader = ({
                 placeholderSrc={placeholderSrc}
                 placeholderSrcset={placeholderSrcset}
                 noJsMessage={translatedNoJSMessage}
-                mediaInfo={mediaInfo}
-                onClick={() => setShowPlaceholder(false)}
-                experimentStage={experimentStage}
               />
             ) : (
               <>
@@ -297,6 +294,7 @@ const MediaLoader = ({
                     noJsMessage={translatedNoJSMessage}
                     mediaInfo={mediaInfo}
                     onClick={() => setShowPlaceholder(false)}
+                    experimentStage={experimentStage}
                   />
                 ) : (
                   <MediaContainer
