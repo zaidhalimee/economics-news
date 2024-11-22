@@ -37,7 +37,7 @@ export default {
   Component,
   argTypes: {
     experimentStage: {
-      options: [Stages.DEFAULT, Stages.STAGE_1, Stages.STAGE_2, Stages.STAGE_3],
+      options: [Stages.STAGE_2, Stages.STAGE_3],
       control: { type: 'radio' },
     },
   },
