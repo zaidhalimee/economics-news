@@ -75,7 +75,11 @@ module.exports = {
     'no-only-tests/no-only-tests': 'error',
     'import/no-unused-modules': [
       1,
-      { unusedExports: true, missingExports: true },
+      {
+        unusedExports: true,
+        missingExports: true,
+        src: ['src/**/*.js', 'src/**/*.jsx', 'src/**/*.ts', 'src/**/*.tsx'],
+      },
     ],
   },
   settings: {
