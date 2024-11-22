@@ -9,7 +9,7 @@ export type ConsentBannerProviders = Extract<
   'youtube' | 'tiktok' | 'twitter' | 'facebook' | 'instagram'
 >;
 
-export const CONSENT_BANNER_PROVIDERS: ConsentBannerProviders[] = [
+const CONSENT_BANNER_PROVIDERS: ConsentBannerProviders[] = [
   'youtube',
   'tiktok',
   'facebook',
