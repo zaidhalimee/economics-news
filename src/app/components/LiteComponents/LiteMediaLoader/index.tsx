@@ -80,9 +80,7 @@ const LiteMediaLoader = ({
         script={script}
       >
         <Text css={styles.liteButtonText} fontVariant="sansBold">
-          <div css={styles.iconWrapper}>
-            {mediaIcons?.[type as keyof typeof mediaIcons]}
-          </div>
+          {type && <div css={styles.iconWrapper}>{mediaIcons?.[type]}</div>}
           <div>{getButtonText({ type, liteSiteTranslations })}</div>
         </Text>
         <Text as="div" size="brevier" css={styles.liteButtonInfoText}>
