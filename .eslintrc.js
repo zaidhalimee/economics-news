@@ -73,6 +73,10 @@ module.exports = {
     'import/extensions': [1, { json: 'ignorePackages' }],
     'jsx-a11y/no-redundant-roles': 'off',
     'no-only-tests/no-only-tests': 'error',
+    'import/no-unused-modules': [
+      1,
+      { unusedExports: true, missingExports: true },
+    ],
   },
   settings: {
     'import/resolver': {
