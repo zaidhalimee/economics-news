@@ -87,7 +87,7 @@ const ArticlePage = ({
   experimentStage = Stages.STAGE_3,
 }: {
   pageData: Article;
-  experimentStage: Stages;
+  experimentStage?: Stages;
 }) => {
   const { isApp, pageType, service, isAmp, id, env } =
     useContext(RequestContext);
