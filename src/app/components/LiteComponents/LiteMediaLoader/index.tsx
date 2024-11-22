@@ -80,20 +80,27 @@ const LiteMediaLoader = ({
           <script>
             {`
             (async () => {
-              const srcToUse = '${src}';
-              const response = await fetch(srcToUse, { method: 'HEAD' });
+              var srcToUse = '${src.replace('/640/', '/320/')}';
 
-              if (response.ok) {
-                const contentLength = response.headers.get('Content-Length');
-                if (contentLength) {
-                  const fileSizeInBytes = parseInt(contentLength, 10);
-                  const fileSizeInKB = Math.round(fileSizeInBytes / 1024 /2.5);
-                  console.log({ src: srcToUse, fileSizeInKB });
+              var xhr = new XMLHttpRequest();
+              xhr.open('HEAD', srcToUse, true);
+              
+              xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4) {
+                  if (xhr.readyState == 4 && xhr.status == 200) {
+                    var size = xhr.getResponseHeader('Content-Length');
 
-                  const srcEl = document.querySelector('[data-size-id="${dataId}"]');
-                  srcEl.textContent = "Approximately: " + fileSizeInKB + "KB";
+                    var fileSizeInBytes = parseInt(size, 10);
+                    var fileSizeInKB = Math.round(fileSizeInBytes / 1024);
+                    console.log({ src: srcToUse, fileSizeInKB });
+
+                    var srcEl = document.querySelector('[data-size-id="${dataId}"]');
+                    srcEl.textContent = "Approximately: " + fileSizeInKB + "KB";
+                  }
                 }
-              }
+              };
+
+              xhr.send(null);
             })();
           `}
           </script>
