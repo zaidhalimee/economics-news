@@ -96,10 +96,32 @@ describe('AMP top stories experiment', () => {
       mockTextBlock,
     ];
 
+    const expected14 = [
+      mockTextBlock,
+      mockTextBlock,
+      mockTextBlock,
+      expectedExperimentTopStoriesBlock('Quarter'),
+      mockTextBlock,
+      mockTextBlock,
+      mockTextBlock,
+      expectedExperimentTopStoriesBlock('Half'),
+      mockTextBlock,
+      mockTextBlock,
+      mockTextBlock,
+      expectedExperimentTopStoriesBlock('ThreeQuarters'),
+      mockTextBlock,
+      mockTextBlock,
+      mockTextBlock,
+      mockTextBlock,
+      mockTextBlock,
+    ];
+
+    const testBlocks = Array(14).fill(mockTextBlock);
     it.each`
-      testType  | inputBlocks         | expectedOutput
-      ${'even'} | ${blocksEvenLength} | ${expectedBlocksEvenLength}
-      ${'odd'}  | ${blocksOddLength}  | ${expectedBlocksOddLength}
+      testType    | inputBlocks         | expectedOutput
+      ${'even'}   | ${blocksEvenLength} | ${expectedBlocksEvenLength}
+      ${'odd'}    | ${blocksOddLength}  | ${expectedBlocksOddLength}
+      ${'sadasd'} | ${testBlocks}       | ${expected14}
     `(
       'should insert experimentTopStories block into blocks array in the correct position when blocks.length is $testType.',
       ({ inputBlocks, expectedOutput }) => {

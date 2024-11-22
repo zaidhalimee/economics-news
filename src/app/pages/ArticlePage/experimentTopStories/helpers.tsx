@@ -23,7 +23,7 @@ type VariantNames = 'Quarter' | 'Half' | 'ThreeQuarters';
 type Positions = 'articleBody' | 'secondaryColumn';
 type TrackingEventType = 'view' | 'click';
 
-const ARTICLE_LENGTH_THRESHOLD = 10;
+const ARTICLE_LENGTH_THRESHOLD = 14;
 const enableExperimentTopStories = ({
   isAmp,
   service,
@@ -113,6 +113,22 @@ export const getExperimentTopStories = ({
     blocks,
     topStoriesContent,
   });
+
+  console.log('original blocks array');
+  console.log(
+    blocks.map((block, index) => {
+      const { type } = block;
+      return { index, type };
+    }),
+  );
+  console.log('----------------------');
+  console.log('transformed blocks array');
+  console.log(
+    transformedBlocks.map((block, index) => {
+      const { type } = block;
+      return { index, type };
+    }),
+  );
 
   return {
     transformedBlocks,
