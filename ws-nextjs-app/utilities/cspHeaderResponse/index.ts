@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { cspDirectives } from '#server/utilities/cspHeader/directives';
+import cspDirectives from '#server/utilities/cspHeader/directives';
 import fallbackServiceParam from '#app/routes/utils/fetchPageData/utils/getRouteProps/fallbackServiceParam';
 import isAmpPath from '#app/routes/utils/isAmpPath';
 import isLiveEnv from '#lib/utilities/isLive';
