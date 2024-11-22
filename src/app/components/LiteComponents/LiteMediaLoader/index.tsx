@@ -23,6 +23,7 @@ function script(this: Element) {
   // Browser compatibility may be questionable with 'replaceWith'
   parentEl.replaceWith(templateEl.content.cloneNode(true));
 
+  // This does the same as the above
   // parentEl.prepend(templateEl.content.cloneNode(true));
   // parentEl.removeChild(templateEl);
   // parentEl.removeChild(this);
