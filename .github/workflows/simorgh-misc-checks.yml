@@ -39,6 +39,9 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: ./scripts/installNodeModules.sh
 
+      - name: Linting
+        run: yarn build && yarn test:lint
+
       - name: Chromatic UI Tests
         uses: chromaui/action@latest
         if: github.ref != 'refs/heads/latest' && github.event.pull_request.head.repo.full_name == 'bbc/simorgh' # Only run when not on latest or not a fork.
@@ -88,9 +91,6 @@ jobs:
 
       - name: Duplicate Dependency Checker
         run: yarn test:dependencies
-
-      - name: Linting
-        run: yarn build && yarn test:lint
 
       - name: NPM Audit
         run: yarn npm audit --all --severity low --no-deprecations
