@@ -26,4 +26,5 @@ export type OEmbedData = Partial<{
 
 export type OEmbedProps = {
   oembed: OEmbedData;
+  embeddableContent?: string;
 };

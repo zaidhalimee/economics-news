@@ -12,11 +12,11 @@ import FlourishEmbed from '../FlourishEmbed';
 import AmpIframeEmbed from '../AmpIframeEmbed';
 import { OEmbedProps } from '../types';
 
-const OEmbedLoader = ({ oembed }: OEmbedProps) => {
+const OEmbedLoader = ({ oembed, embeddableContent }: OEmbedProps) => {
   const { isAmp, isLite, canonicalLink } = useContext(RequestContext);
   const { translations } = useContext(ServiceContext);
 
-  const { html, provider_name, oEmbedType, parameters, url } = oembed;
+  const { html, provider_name, oEmbedType, parameters, url } = oembed || {};
   const isVDJEmbed = oEmbedType === 'vdj-embed';
 
   if (isAmp) {
@@ -46,7 +46,7 @@ const OEmbedLoader = ({ oembed }: OEmbedProps) => {
     );
   }
 
-  if (html == null) {
+  if (html == null && embeddableContent == null) {
     return null;
   }
 
@@ -61,7 +61,7 @@ const OEmbedLoader = ({ oembed }: OEmbedProps) => {
           {provider_name === 'Flourish' ? (
             <FlourishEmbed {...oembed} />
           ) : (
-            <EmbedHtml embeddableContent={html} />
+            <EmbedHtml embeddableContent={html || embeddableContent} />
           )}
         </LiteMediaLoader>
       </div>
@@ -72,7 +72,7 @@ const OEmbedLoader = ({ oembed }: OEmbedProps) => {
     return <FlourishEmbed {...oembed} />;
   }
 
-  return <EmbedHtml embeddableContent={html} />;
+  return <EmbedHtml embeddableContent={html || embeddableContent} />;
 };
 
 export default OEmbedLoader;

@@ -47,7 +47,6 @@ import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
 import EmbedImages from '../../components/Embeds/EmbedImages';
-import EmbedHtml from '../../components/Embeds/EmbedHtml';
 import MostRead from '../../components/MostRead';
 import ATIAnalytics from '../../components/ATIAnalytics';
 import ChartbeatAnalytics from '../../components/ChartbeatAnalytics';
@@ -202,7 +201,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       ),
     social: SocialEmbedContainer,
     embed: UnsupportedEmbed,
-    embedHtml: EmbedHtml,
+    embedHtml: OEmbedLoader,
     oEmbed: OEmbedLoader,
     embedImages: EmbedImages,
     embedUploader: Uploader,

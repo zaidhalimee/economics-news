@@ -12,7 +12,7 @@ type Props = {
 };
 
 const EmbedImages = ({ blocks: embedImages }: PropsWithChildren<Props>) => {
-  const { isAmp, env } = useContext(RequestContext);
+  const { isAmp, isLite, env } = useContext(RequestContext);
   const ampImage = embedImages?.[1]?.model?.blocks;
   const canonicalImage = embedImages?.[2]?.model?.blocks;
   const image = isAmp ? ampImage : canonicalImage;
@@ -35,7 +35,14 @@ const EmbedImages = ({ blocks: embedImages }: PropsWithChildren<Props>) => {
 
   return (
     <div css={styles.embedDiv} data-e2e="embed-image">
-      <Image src={src} alt={alt} width={width} height={height} isAmp={isAmp} />
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        isAmp={isAmp}
+        showImageLoadButton={isLite}
+      />
     </div>
   );
 };
