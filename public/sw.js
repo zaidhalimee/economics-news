@@ -17,8 +17,8 @@ const fetchEventHandler = async event => {
     )
   ) {
     const req = event.request.clone();
-    // Skip .lite requests
 
+    // Skip .lite requests
     // Lite handles images differently to the main site
     if (req.referrer.includes('.lite')) return;
 
