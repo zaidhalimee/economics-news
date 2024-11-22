@@ -6,7 +6,7 @@ const getQueryString = query => {
   return params.join('&');
 };
 
-const addOverrideQuery = (path, env = 'live') => {
+export const addOverrideQuery = (path, env = 'live') => {
   const url = new Url(path, true);
   const { query } = url;
   const searchString = getQueryString({ ...query, renderer_env: `${env}` });
