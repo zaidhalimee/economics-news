@@ -871,6 +871,7 @@ exports[`MediaArticlePage should render a news article correctly 1`] = `
                     00:54
                   </time>
                 </button>
+                <noscript />
                 <div
                   class="emotion-16"
                   style="padding-bottom: 0px; overflow: hidden;"

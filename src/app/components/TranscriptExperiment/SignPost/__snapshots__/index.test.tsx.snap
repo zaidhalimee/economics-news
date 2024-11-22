@@ -29,7 +29,8 @@ exports[`Sign Post should render a 'Help reduce your power consumption' message 
 
 .emotion-1 {
   fill: #FFFFFF;
-  margin: 0 0.5rem 0 0;
+  -webkit-margin-end: 0.5rem;
+  margin-inline-end: 0.5rem;
 }
 
 @media screen and (forced-colors: active) {

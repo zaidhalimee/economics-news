@@ -829,6 +829,7 @@ exports[`OnDemand TV Brand Page  Dark Mode Design - should match snapshot 1`] = 
                 28:00
               </time>
             </button>
+            <noscript />
             <div
               class="emotion-17"
               style="padding-bottom: 0px; overflow: hidden;"
