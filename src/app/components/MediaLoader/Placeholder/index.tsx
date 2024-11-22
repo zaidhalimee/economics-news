@@ -25,7 +25,7 @@ const MediaPlayerPlaceholder = ({
   srcSet,
   mediaInfo,
   noJsMessage = '',
-  experimentStage = Stages.DEFAULT,
+  experimentStage = Stages.STAGE_3,
 }: Props) => {
   const {
     title,
