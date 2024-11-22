@@ -1,8 +1,9 @@
 /** @jsx jsx */
 
+import { Helmet } from 'react-helmet';
+import { useId, PropsWithChildren, useContext } from 'react';
 import { jsx } from '@emotion/react';
 import Text from '#app/components/Text';
-import { PropsWithChildren, useContext } from 'react';
 import { mediaIcons } from '#psammead/psammead-assets/src/svgs';
 import { ServiceContext } from '#app/contexts/ServiceContext';
 import { Translations } from '#app/models/types/translations';
@@ -23,7 +24,6 @@ function script(this: Element) {
   // Browser compatibility may be questionable with 'replaceWith'
   parentEl.replaceWith(templateEl.content.cloneNode(true));
 
-  // This does the same as the above
   // parentEl.prepend(templateEl.content.cloneNode(true));
   // parentEl.removeChild(templateEl);
   // parentEl.removeChild(this);
@@ -56,14 +56,17 @@ type Props = {
   type?: MediaTypes;
   width?: number;
   height?: number;
+  src?: string;
 };
 
 const LiteMediaLoader = ({
   type,
   width,
   height,
+  src,
   children,
 }: PropsWithChildren<Props>) => {
+  const dataId = useId();
   const {
     translations: { liteSite: liteSiteTranslations },
   } = useContext(ServiceContext);
@@ -71,7 +74,31 @@ const LiteMediaLoader = ({
   const hasFixedAspectRatio = type === 'image' && width && height;
 
   return (
-    <div>
+    <div css={styles.wrapper}>
+      {src && (
+        <Helmet>
+          <script>
+            {`
+            (async () => {
+              const srcToUse = '${src}';
+              const response = await fetch(srcToUse, { method: 'HEAD' });
+
+              if (response.ok) {
+                const contentLength = response.headers.get('Content-Length');
+                if (contentLength) {
+                  const fileSizeInBytes = parseInt(contentLength, 10);
+                  const fileSizeInKB = Math.round(fileSizeInBytes / 1024 /2.5);
+                  console.log({ src: srcToUse, fileSizeInKB });
+
+                  const srcEl = document.querySelector('[data-size-id="${dataId}"]');
+                  srcEl.textContent = "Approximately: " + fileSizeInKB + "KB";
+                }
+              }
+            })();
+          `}
+          </script>
+        </Helmet>
+      )}
       <LiteButton
         css={[
           styles.liteMediaButtonOverlay,
@@ -79,13 +106,26 @@ const LiteMediaLoader = ({
         ]}
         script={script}
       >
-        <Text css={styles.liteButtonText} fontVariant="sansBold">
-          {type && <div css={styles.iconWrapper}>{mediaIcons?.[type]}</div>}
+        <Text
+          className="liteButtonText"
+          css={styles.liteButtonText}
+          fontVariant="sansBold"
+        >
+          <div css={styles.iconWrapper}>
+            {mediaIcons?.[type as keyof typeof mediaIcons]}
+          </div>
           <div>{getButtonText({ type, liteSiteTranslations })}</div>
         </Text>
         <Text as="div" size="brevier" css={styles.liteButtonInfoText}>
           {liteSiteTranslations?.loadMediaMessage ||
             'Loading this content will use more data'}
+        </Text>
+        <Text as="div">
+          <Text
+            data-size-id={dataId}
+            size="brevier"
+            fontVariant="sansRegularItalic"
+          />
         </Text>
       </LiteButton>
       <template>{children}</template>

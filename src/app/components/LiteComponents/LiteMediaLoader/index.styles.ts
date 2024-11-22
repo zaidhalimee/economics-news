@@ -4,6 +4,7 @@ import pixelsToRem from '#app/utilities/pixelsToRem';
 import { focusIndicatorThickness } from '#app/components/ThemeProvider/focusIndicator';
 
 export default {
+  wrapper: () => css({ height: '100%' }),
   liteMediaButtonOverlay: ({ isDarkUi, palette }: Theme) =>
     css({
       position: 'relative',
@@ -17,7 +18,7 @@ export default {
       borderRadius: 0,
 
       '&:hover, &:focus-visible': {
-        span: {
+        '.liteButtonText': {
           color: palette.GREY_2,
           backgroundColor: palette.POSTBOX,
           textDecoration: 'underline',
@@ -29,7 +30,7 @@ export default {
         outline: 'none',
         boxShadow: 'none',
 
-        span: {
+        '.liteButtonText': {
           outline: `${focusIndicatorThickness} solid ${palette.BLACK}`,
           boxShadow: `0 0 0 ${focusIndicatorThickness} ${palette.WHITE}`,
           outlineOffset: `${focusIndicatorThickness}`,
