@@ -7,6 +7,7 @@ import Text from '#app/components/Text';
 import { mediaIcons } from '#psammead/psammead-assets/src/svgs';
 import { ServiceContext } from '#app/contexts/ServiceContext';
 import { Translations } from '#app/models/types/translations';
+import { setImgSize } from '#server/Document/Renderers/litePageTransforms/transformImgTags';
 import LiteButton from '../LiteButton';
 import styles from './index.styles';
 
@@ -72,15 +73,16 @@ const LiteMediaLoader = ({
   } = useContext(ServiceContext);
 
   const hasFixedAspectRatio = type === 'image' && width && height;
+  const calculateFileSize = type === 'image' && src;
 
   return (
     <div css={styles.wrapper}>
-      {src && (
+      {calculateFileSize && (
         <Helmet>
           <script>
             {`
             (async function() {
-              var srcToUse = '${src.replace('/640/', '/320/')}';
+              var srcToUse = '${setImgSize(src)}';
 
               var xhr = new XMLHttpRequest();
               xhr.open('HEAD', srcToUse, true);
@@ -92,7 +94,6 @@ const LiteMediaLoader = ({
 
                     var fileSizeInBytes = parseInt(size, 10);
                     var fileSizeInKB = Math.round(fileSizeInBytes / 1024);
-                    console.log({ src: srcToUse, fileSizeInKB });
 
                     var srcEl = document.querySelector('[data-size-id="${dataId}"]');
                     srcEl.textContent = "Approximately: " + fileSizeInKB + "KB";
@@ -127,13 +128,15 @@ const LiteMediaLoader = ({
           {liteSiteTranslations?.loadMediaMessage ||
             'Loading this content will use more data'}
         </Text>
-        <Text as="div">
-          <Text
-            data-size-id={dataId}
-            size="brevier"
-            fontVariant="sansRegularItalic"
-          />
-        </Text>
+        {calculateFileSize && (
+          <Text as="div">
+            <Text
+              data-size-id={dataId}
+              size="brevier"
+              fontVariant="sansRegularItalic"
+            />
+          </Text>
+        )}
       </LiteButton>
       <template>{children}</template>
     </div>

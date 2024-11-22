@@ -1,7 +1,7 @@
 const LITE_ACE_WS_IMG_SIZE = '320';
 const LITE_IMAGES_IC_IMG_SIZE = '96xn';
 
-const setImgSize = (src: string) => {
+export const setImgSize = (src: string) => {
   let modifiedSrc = src;
 
   // example: https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/2826/live/58ed4db0-df87-11ee-ad97-47305ea5b78b.jpg.webp

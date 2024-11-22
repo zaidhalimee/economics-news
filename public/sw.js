@@ -17,10 +17,10 @@ const fetchEventHandler = async event => {
     )
   ) {
     const req = event.request.clone();
-
     // Skip .lite requests
+
     // Lite handles images differently to the main site
-    if (req.url.referrer('.lite')) return;
+    if (req.referrer.includes('.lite')) return;
 
     // Inspect the accept header for WebP support
 
