@@ -1,6 +1,5 @@
 /** @jsx jsx */
 
-import { Helmet } from 'react-helmet';
 import { jsx } from '@emotion/react';
 import Text from '#app/components/Text';
 import { PropsWithChildren, useContext } from 'react';
@@ -11,20 +10,6 @@ import LiteButton from '../LiteButton';
 import styles from './index.styles';
 
 type MediaTypes = 'audio' | 'video' | 'image' | 'embed';
-
-const getFileSize = async (src: string) => {
-  const response = await fetch(src, { method: 'HEAD' });
-
-  if (response.ok) {
-    const contentLength = response.headers.get('Content-Length');
-    if (contentLength) {
-      const fileSizeInBytes = parseInt(contentLength, 10);
-      const fileSizeInKB = (fileSizeInBytes / 1024).toFixed(2);
-
-      return { src, fileSizeInKB };
-    }
-  }
-};
 
 function script(this: Element) {
   const parentEl = this.parentElement;
@@ -76,7 +61,6 @@ const LiteMediaLoader = ({
   type,
   width,
   height,
-  src,
   children,
 }: PropsWithChildren<Props>) => {
   const {
@@ -87,26 +71,6 @@ const LiteMediaLoader = ({
 
   return (
     <div>
-      <Helmet>
-        <script>
-          {`
-            async function getSize(){
-              const response = await fetch('${src}', { method: 'HEAD' });
-
-              if (response.ok) {
-                const contentLength = response.headers.get('Content-Length');
-                if (contentLength) {
-                  const fileSizeInBytes = parseInt(contentLength, 10);
-                  const fileSizeInKB = (fileSizeInBytes / 1024).toFixed(2);
-                  console.log({ src: '${src}', fileSizeInKB });
-                  return { src: '${src}', fileSizeInKB };
-                }
-              }
-            }
-            getSize();
-          `}
-        </script>
-      </Helmet>
       <LiteButton
         css={[
           styles.liteMediaButtonOverlay,
