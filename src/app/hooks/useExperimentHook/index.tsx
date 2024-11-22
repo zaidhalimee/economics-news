@@ -17,6 +17,7 @@ type ExperimentCriteria = Partial<{
   isOperaMini: boolean;
   dataSaver: boolean;
   lowPower: boolean;
+  noJs: boolean;
 }>;
 
 export type Navigator = {
@@ -31,7 +32,12 @@ const determineStage = ({
   isOperaMini,
   dataSaver,
   lowPower,
+  noJs,
 }: ExperimentCriteria) => {
+  if (noJs) {
+    return Stages.STAGE_1;
+  }
+
   if (service !== 'mundo' && !lowPower && !dataSaver && !isOperaMini) {
     return Stages.STAGE_3;
   }
@@ -46,6 +52,7 @@ const determineStage = ({
 const useExperimentHook = () => {
   const [lowPower, setLowPower] = useState(false);
   const [dataSaver, setSaveDataMode] = useState(false);
+  const [noJs, setNoJs] = useState(true);
   const isOperaMini = useOperaMiniDetection();
   const { service } = useContext(ServiceContext);
 
@@ -62,6 +69,7 @@ const useExperimentHook = () => {
       setSaveDataMode(saveDataMode);
     };
     initialiseDeviceStates();
+    setNoJs(false);
   }, []);
 
   const stage = determineStage({
@@ -69,6 +77,7 @@ const useExperimentHook = () => {
     service,
     dataSaver,
     lowPower,
+    noJs,
   });
 
   return stage;

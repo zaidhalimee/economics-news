@@ -1,7 +1,7 @@
 import pixelsToRem from '#app/utilities/pixelsToRem';
 import { css, Theme } from '@emotion/react';
 
-const WIDTH = 200;
+const WIDTH = 250;
 
 const styles = {
   container: ({ palette, spacings, mq }: Theme) =>
