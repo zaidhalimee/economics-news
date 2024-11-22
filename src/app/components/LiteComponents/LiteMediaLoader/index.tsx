@@ -79,7 +79,7 @@ const LiteMediaLoader = ({
         <Helmet>
           <script>
             {`
-            (async () => {
+            (async function() {
               var srcToUse = '${src.replace('/640/', '/320/')}';
 
               var xhr = new XMLHttpRequest();
