@@ -65,22 +65,6 @@ exports[`Canonical Live Media Loader renders a figure caption 1`] = `
   class="css-182h924"
   data-e2e="media-loader__placeholder"
 >
-  <div
-    class="css-czokpf"
-    data-e2e="media-player__guidance"
-  >
-    <strong
-      aria-hidden="true"
-      class="guidance-message css-e3010g"
-    >
-      Contains strong language and some upsetting scenes.
-    </strong>
-    <noscript
-      class="css-lllaou"
-    >
-      &lt;strong&gt;Dem no support media player for your device&lt;/strong&gt;
-    </noscript>
-  </div>
   <button
     class="focusIndicatorRemove css-4vlf9b"
     type="button"
@@ -125,6 +109,9 @@ exports[`Canonical Live Media Loader renders a figure caption 1`] = `
       00:34
     </time>
   </button>
+  <noscript>
+    &lt;div class="css-fym37b"&gt;&lt;p class="css-cqzsv2"&gt;Dem no support media player for your device&lt;/p&gt;&lt;/div&gt;
+  </noscript>
   <div
     class="css-lgx6cw"
     style="padding-bottom:0;overflow:hidden"
@@ -145,22 +132,6 @@ exports[`Canonical Live Media Loader renders a placeholder 1`] = `
   class="css-182h924"
   data-e2e="media-loader__placeholder"
 >
-  <div
-    class="css-czokpf"
-    data-e2e="media-player__guidance"
-  >
-    <strong
-      aria-hidden="true"
-      class="guidance-message css-e3010g"
-    >
-      Contains strong language and some upsetting scenes.
-    </strong>
-    <noscript
-      class="css-lllaou"
-    >
-      &lt;strong&gt;Dem no support media player for your device&lt;/strong&gt;
-    </noscript>
-  </div>
   <button
     class="focusIndicatorRemove css-4vlf9b"
     type="button"
@@ -205,6 +176,9 @@ exports[`Canonical Live Media Loader renders a placeholder 1`] = `
       00:34
     </time>
   </button>
+  <noscript>
+    &lt;div class="css-fym37b"&gt;&lt;p class="css-cqzsv2"&gt;Dem no support media player for your device&lt;/p&gt;&lt;/div&gt;
+  </noscript>
   <div
     class="css-lgx6cw"
     style="padding-bottom:0;overflow:hidden"
@@ -229,22 +203,6 @@ exports[`Canonical Live Media Loader renders a valid container 1`] = `
     class="css-182h924"
     data-e2e="media-loader__placeholder"
   >
-    <div
-      class="css-czokpf"
-      data-e2e="media-player__guidance"
-    >
-      <strong
-        aria-hidden="true"
-        class="guidance-message css-e3010g"
-      >
-        Contains strong language and some upsetting scenes.
-      </strong>
-      <noscript
-        class="css-lllaou"
-      >
-        &lt;strong&gt;Dem no support media player for your device&lt;/strong&gt;
-      </noscript>
-    </div>
     <button
       class="focusIndicatorRemove css-4vlf9b"
       type="button"
@@ -289,6 +247,9 @@ exports[`Canonical Live Media Loader renders a valid container 1`] = `
         00:34
       </time>
     </button>
+    <noscript>
+      &lt;div class="css-fym37b"&gt;&lt;p class="css-cqzsv2"&gt;Dem no support media player for your device&lt;/p&gt;&lt;/div&gt;
+    </noscript>
     <div
       class="css-lgx6cw"
       style="padding-bottom:0;overflow:hidden"
