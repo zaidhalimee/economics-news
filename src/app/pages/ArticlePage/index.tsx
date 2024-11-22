@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactHTML } from 'react';
+import React from 'react';
 import withOptimizelyProvider from '#app/legacy/containers/PageHandlers/withOptimizelyProvider';
 import { Article } from '#app/models/types/optimo';
 import useExperimentHook, { Stages } from '#app/hooks/useExperimentHook';
