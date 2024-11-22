@@ -14,7 +14,6 @@ import {
   topicDataPath,
   recommendationsDataRegex,
   secondaryColumnDataRegexPath,
-  africaEyeTVDataPath,
   liveRadioDataPath,
   podcastEpisodeDataPath,
   podcastBrandDataPath,
@@ -210,15 +209,6 @@ export default server => {
         variant,
       });
 
-      sendDataFile(res, dataFilePath, next);
-    })
-    .get(africaEyeTVDataPath, async ({ params }, res, next) => {
-      const { episodeId } = params;
-
-      const dataFilePath = constructDataFilePath({
-        pageType: 'africa_eye',
-        episodeId,
-      });
       sendDataFile(res, dataFilePath, next);
     })
     .get(legacyAssetPageDataPath, async ({ params }, res, next) => {
