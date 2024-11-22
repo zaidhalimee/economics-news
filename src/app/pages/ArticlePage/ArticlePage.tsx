@@ -84,7 +84,7 @@ import {
 const ArticlePage = ({
   pageData,
   // Temporary - For rendering storybook asset. To replace with hook use.
-  experimentStage = Stages.STAGE_3,
+  experimentStage,
 }: {
   pageData: Article;
   experimentStage: Stages;
