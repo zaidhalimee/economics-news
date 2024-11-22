@@ -23,7 +23,7 @@ type VariantNames = 'Quarter' | 'Half' | 'ThreeQuarters';
 type Positions = 'articleBody' | 'secondaryColumn';
 type TrackingEventType = 'view' | 'click';
 
-const ARTICLE_LENGTH_THRESHOLD = 10;
+const ARTICLE_LENGTH_THRESHOLD = 14;
 const enableExperimentTopStories = ({
   isAmp,
   service,

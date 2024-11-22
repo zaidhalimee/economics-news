@@ -26,8 +26,8 @@ describe('AMP top stories experiment', () => {
     };
   };
 
-  const blocksEvenLength = Array(10).fill(mockTextBlock);
-  const blocksOddLength = Array(11).fill(mockTextBlock);
+  const blocksEvenLength = Array(14).fill(mockTextBlock);
+  const blocksOddLength = Array(15).fill(mockTextBlock);
 
   describe('getExperimentTopStories()', () => {
     it('returns shouldEnableExperimentTopStories as true if props match conditions.', () => {
@@ -44,10 +44,10 @@ describe('AMP top stories experiment', () => {
       testDescription                                     | isAmp    | service      | blocksLength
       ${'all props are undefined'}                        | ${false} | ${undefined} | ${undefined}
       ${'only isAmp is true'}                             | ${true}  | ${undefined} | ${undefined}
-      ${'only service is undefined'}                      | ${true}  | ${undefined} | ${11}
+      ${'only service is undefined'}                      | ${true}  | ${undefined} | ${14}
       ${'only service is defined and valid'}              | ${false} | ${'news'}    | ${undefined}
-      ${'all props defined but service is invalid'}       | ${true}  | ${'igbo'}    | ${11}
-      ${'only blocks length is defined and valid'}        | ${false} | ${undefined} | ${11}
+      ${'all props defined but service is invalid'}       | ${true}  | ${'igbo'}    | ${14}
+      ${'only blocks length is defined and valid'}        | ${false} | ${undefined} | ${14}
       ${'all props defined but blocks length is invalid'} | ${true}  | ${'news'}    | ${7}
     `(
       'returns shouldEnableExperimentTopStories as false because $testDescription.',
@@ -70,7 +70,10 @@ describe('AMP top stories experiment', () => {
       mockTextBlock,
       expectedExperimentTopStoriesBlock('Quarter'),
       mockTextBlock,
+      mockTextBlock,
+      mockTextBlock,
       expectedExperimentTopStoriesBlock('Half'),
+      mockTextBlock,
       mockTextBlock,
       mockTextBlock,
       expectedExperimentTopStoriesBlock('ThreeQuarters'),
@@ -78,18 +81,24 @@ describe('AMP top stories experiment', () => {
       mockTextBlock,
       mockTextBlock,
       mockTextBlock,
+      mockTextBlock,
     ];
+
     const expectedBlocksOddLength = [
       mockTextBlock,
       mockTextBlock,
       mockTextBlock,
       expectedExperimentTopStoriesBlock('Quarter'),
       mockTextBlock,
+      mockTextBlock,
+      mockTextBlock,
       expectedExperimentTopStoriesBlock('Half'),
       mockTextBlock,
       mockTextBlock,
       mockTextBlock,
+      mockTextBlock,
       expectedExperimentTopStoriesBlock('ThreeQuarters'),
+      mockTextBlock,
       mockTextBlock,
       mockTextBlock,
       mockTextBlock,
