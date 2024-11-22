@@ -12,7 +12,7 @@ import {
   LIVE_PAGE,
 } from '../../../routes/utils/pageTypes';
 import { buildATIUrl, buildATIEventTrackingParams } from '.';
-import * as buildPageATIFunctionImports from './genericPage/buildParams';
+import * as buildPageATIFunctionImports from './buildParams';
 import { RequestContextProps } from '../../../contexts/RequestContext';
 import { ServiceConfig } from '../../../models/types/serviceConfig';
 import { ATIData, PageData } from '../types';

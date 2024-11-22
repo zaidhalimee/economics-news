@@ -394,6 +394,10 @@ export const service: DefaultServiceConfig = {
           text: 'بی بی سی سے رابطہ کریں',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -408,10 +412,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'صفحۂ اول',
         url: '/urdu',
-      },
-      {
-        title: 'امریکی صدارتی انتخاب 2024',
-        url: '/urdu/topics/c0w3wed04e3t',
       },
       {
         title: 'پاکستان',

@@ -303,6 +303,13 @@ exports[`Radio Page Main should match snapshot for Canonical 1`] = `
 .emotion-14 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
+}
+
+.emotion-14:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-16 {
@@ -1106,6 +1113,8 @@ exports[`Radio Page Main should match snapshot for Canonical 1`] = `
     >
       <h2
         class="emotion-14 emotion-15"
+        id="section-label-heading-Radio-Schedule"
+        tabindex="-1"
       >
         <span
           class="emotion-16 emotion-17"

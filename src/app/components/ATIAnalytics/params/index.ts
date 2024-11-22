@@ -23,11 +23,11 @@ import {
   buildTvRadioATIParams,
   buildTvRadioATIUrl,
 } from './tvRadioPage/buildParams';
-import { buildPageATIUrl, buildPageATIParams } from './genericPage/buildParams';
+import { buildPageATIUrl, buildPageATIParams } from './buildParams';
 import {
   buildIndexPageATIParams,
   buildIndexPageATIUrl,
-} from './indexPage/buildParams';
+} from './frontPage/buildParams';
 import { RequestContextProps } from '../../../contexts/RequestContext';
 import { ServiceConfig } from '../../../models/types/serviceConfig';
 import {
