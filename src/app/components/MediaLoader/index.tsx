@@ -16,6 +16,7 @@ import {
 import filterForBlockType from '#lib/utilities/blockHandlers';
 import { PageTypes } from '#app/models/types/global';
 import { EventTrackingContext } from '#app/contexts/EventTrackingContext';
+import { Stages } from '#app/hooks/useExperimentHook';
 import { BumpType, MediaBlock, PlayerConfig } from './types';
 import Caption from '../Caption';
 import nodeLogger from '../../lib/logger.node';
@@ -164,9 +165,15 @@ type Props = {
   blocks: MediaBlock[];
   className?: string;
   embedded?: boolean;
+  experimentStage?: Stages;
 };
 
-const MediaLoader = ({ blocks, className, embedded }: Props) => {
+const MediaLoader = ({
+  blocks,
+  className,
+  embedded,
+  experimentStage,
+}: Props) => {
   const { lang, translations } = useContext(ServiceContext);
   const { pageIdentifier } = useContext(EventTrackingContext);
   const { enabled: adsEnabled } = useToggle('ads');
@@ -275,6 +282,9 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
                 placeholderSrc={placeholderSrc}
                 placeholderSrcset={placeholderSrcset}
                 noJsMessage={translatedNoJSMessage}
+                mediaInfo={mediaInfo}
+                onClick={() => setShowPlaceholder(false)}
+                experimentStage={experimentStage}
               />
             ) : (
               <>
