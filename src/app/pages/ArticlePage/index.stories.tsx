@@ -23,6 +23,7 @@ import { service as newsConfig } from '#app/lib/config/services/news';
 import latin from '#app/components/ThemeProvider/fontScripts/latin';
 import { Services } from '#app/models/types/global';
 import { StoryArgs, StoryProps } from '#app/models/types/storybook';
+import { Stages } from '#app/hooks/useExperimentHook';
 import ArticlePageComponent from './ArticlePage';
 
 const PageWithOptimizely = withOptimizelyProvider(ArticlePageComponent);
@@ -63,6 +64,7 @@ type Props = {
   service?: Services;
   podcastEnabled?: boolean;
   electionBanner?: boolean;
+  experimentStage?: Stages;
 };
 
 const ComponentWithContext = ({
@@ -112,6 +114,7 @@ const ComponentWithServiceContext = ({
   service = 'news',
   podcastEnabled = false,
   electionBanner = false,
+  experimentStage,
 }: Props) => {
   return (
     <ToggleContextProvider
@@ -135,6 +138,7 @@ const ComponentWithServiceContext = ({
               secondaryColumn: data.secondaryData,
               mostRead: data.secondaryData.mostRead,
             }}
+            experimentStage={experimentStage}
           />
         </ThemeProvider>
       </ServiceContext.Provider>
@@ -146,6 +150,12 @@ export default {
   Component: ComponentWithContext,
   title: 'Pages/Article Page',
   parameters: { layout: 'fullscreen' },
+  argTypes: {
+    experimentStage: {
+      options: [Stages.STAGE_2, Stages.STAGE_3],
+      control: { type: 'radio' },
+    },
+  },
 };
 
 export const ArticlePage = (_: StoryArgs, { service }: StoryProps) => (
@@ -199,8 +209,11 @@ export const ArticlePageWithPodcastNews = () => (
   />
 );
 
-export const ArticlePageWithTranscript = () => (
-  <ComponentWithServiceContext data={articleDataWithTranscript} />
+export const ArticlePageWithTranscript = ({ experimentStage }: Props) => (
+  <ComponentWithServiceContext
+    data={articleDataWithTranscript}
+    experimentStage={experimentStage}
+  />
 );
 
 export const ArticlePageWithElectionBanner = {

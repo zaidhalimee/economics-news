@@ -43,6 +43,7 @@ import JumpTo, { JumpToProps } from '#app/components/JumpTo';
 import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
 import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
 import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
+import { Stages } from '#app/hooks/useExperimentHook';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
@@ -66,7 +67,11 @@ import RelatedContentSection from '../../components/RelatedContentSection';
 import Disclaimer from '../../components/Disclaimer';
 import SecondaryColumn from './SecondaryColumn';
 import styles from './ArticlePage.styles';
-import { ComponentToRenderProps, TimeStampProps } from './types';
+import {
+  ComponentToRenderProps,
+  MediaComponentToRenderProps,
+  TimeStampProps,
+} from './types';
 import AmpExperiment from '../../components/AmpExperiment';
 import {
   experimentName,
@@ -76,7 +81,14 @@ import {
   ExperimentTopStories,
 } from './experimentTopStories/helpers';
 
-const ArticlePage = ({ pageData }: { pageData: Article }) => {
+const ArticlePage = ({
+  pageData,
+  // Temporary - For rendering storybook asset. To replace with hook use.
+  experimentStage = Stages.STAGE_3,
+}: {
+  pageData: Article;
+  experimentStage: Stages;
+}) => {
   const { isApp, pageType, service, isAmp, id, env } =
     useContext(RequestContext);
 
@@ -179,7 +191,10 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     headline: headings,
     subheadline: headings,
     audio: MediaLoader,
-    video: MediaLoader,
+    // Temporary - For rendering storybook asset. To replace with hook use.
+    video: (props: MediaComponentToRenderProps) => (
+      <MediaLoader {...props} experimentStage={experimentStage} />
+    ),
     text,
     image: (props: ComponentToRenderProps) => (
       <ImageWithCaption
