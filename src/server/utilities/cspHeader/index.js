@@ -1,7 +1,7 @@
 import csp from 'helmet-csp';
 import getRouteProps from '#app/routes/utils/fetchPageData/utils/getRouteProps';
 import isLiveEnv from '#lib/utilities/isLive';
-import { cspDirectives } from './directives';
+import cspDirectives from './directives';
 
 const injectCspHeader = (req, res, next) => {
   const { isAmp, service } = getRouteProps(req.url);

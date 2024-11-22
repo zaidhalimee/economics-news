@@ -245,12 +245,6 @@ export const getPublishedDatetime = (attribute, data) => {
     : null;
 };
 
-export const getContentId = pathOr(null, [
-  'metadata',
-  'analyticsLabels',
-  'contentId',
-]);
-
 export const getAtiUrl = (data = []) => {
   const cleanedValues = data
     .filter(({ value }) => value)
@@ -281,24 +275,6 @@ export const getEventInfo = ({
   const creation = componentName;
 
   return `PUB-[${campaignID}]-[${creation}]-[${experimentVariant}]-[${format}]-[${generalPlacement}]-[${detailedPlacement}]-[${advertiserID}]-[${url}]`;
-};
-
-export const getThingAttributes = (attribute, articleData) => {
-  const things = pathOr(null, ['metadata', 'tags', 'about'], articleData);
-
-  if (things) {
-    const attributes = [];
-
-    things.forEach(thing => {
-      if (thing[attribute]) {
-        attributes.push(thing[attribute].trim().replace(/\s/g, '%20'));
-      }
-    });
-
-    return attributes.join('~') || null;
-  }
-
-  return null;
 };
 
 export const getCampaignType = () => {
@@ -394,7 +370,7 @@ const buildRSSMarketingString = href => {
 export const getRSSMarketingString = (href, campaignType) =>
   campaignType === 'RSS' ? buildRSSMarketingString(href) : [];
 
-export const getAffiliateMarketingString = href =>
+const getAffiliateMarketingString = href =>
   buildMarketingString([
     {
       description: 'affiliate campaign prefix',
@@ -433,7 +409,7 @@ export const getAffiliateMarketingString = href =>
     },
   ]);
 
-export const getSLMarketingString = href =>
+const getSLMarketingString = href =>
   buildMarketingString([
     {
       description: 'sponsored links campaign prefix',
@@ -476,7 +452,7 @@ export const getSLMarketingString = href =>
     },
   ]);
 
-export const getEmailMarketingString = href =>
+const getEmailMarketingString = href =>
   buildMarketingString([
     {
       description:
@@ -519,7 +495,7 @@ export const getEmailMarketingString = href =>
     },
   ]);
 
-export const getDisplayMarketingString = href =>
+const getDisplayMarketingString = href =>
   buildMarketingString([
     {
       description: 'display campaign prefix',

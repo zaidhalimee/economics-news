@@ -6,7 +6,7 @@ import FeaturesAnalysis from '#containers/CpsFeaturesAnalysis';
 import { Article } from '#app/models/types/optimo';
 import TopStoriesSection from './PagePromoSections/TopStoriesSection';
 
-import styles from './ArticlePage.styles';
+import styles from './index.styles';
 
 const SecondaryColumn = ({ pageData }: { pageData: Article }) => {
   const topStoriesContent = pageData?.secondaryColumn?.topStories;

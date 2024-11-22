@@ -283,56 +283,56 @@ const directives = {
   },
 };
 
-export const generateChildSrc = ({ isAmp }) => (isAmp ? ['blob:'] : ["'self'"]);
+const generateChildSrc = ({ isAmp }) => (isAmp ? ['blob:'] : ["'self'"]);
 
-export const generateConnectSrc = () => {
+const generateConnectSrc = () => {
   return ["'self' https:"];
 };
 
-export const generateDefaultSrc = () => {
+const generateDefaultSrc = () => {
   return [...advertisingDirectives.defaultSrc, "'self'"].sort();
 };
 
-export const generateFontSrc = ({ isAmp, isLive }) => {
+const generateFontSrc = ({ isAmp, isLive }) => {
   if (!isLive && isAmp) return directives.fontSrc.ampNonLive.sort();
   if (!isLive && !isAmp) return directives.fontSrc.canonicalNonLive.sort();
   if (isLive && isAmp) return directives.fontSrc.ampLive.sort();
   return directives.fontSrc.canonicalLive.sort();
 };
 
-export const generateFrameSrc = ({ isAmp, isLive }) => {
+const generateFrameSrc = ({ isAmp, isLive }) => {
   if (!isLive && isAmp) return directives.frameSrc.ampNonLive.sort();
   if (!isLive && !isAmp) return directives.frameSrc.canonicalNonLive.sort();
   if (isLive && isAmp) return directives.frameSrc.ampLive.sort();
   return directives.frameSrc.canonicalLive.sort();
 };
 
-export const generateImgSrc = ({ isAmp, isLive }) => {
+const generateImgSrc = ({ isAmp, isLive }) => {
   if (!isLive && isAmp) return directives.imgSrc.ampNonLive.sort();
   if (!isLive && !isAmp) return directives.imgSrc.canonicalNonLive.sort();
   if (isLive && isAmp) return directives.imgSrc.ampLive.sort();
   return directives.imgSrc.canonicalLive.sort();
 };
 
-export const generateMediaSrc = () => {
+const generateMediaSrc = () => {
   return ["'self' blob: https:"];
 };
 
-export const generateScriptSrc = ({ isAmp, isLive }) => {
+const generateScriptSrc = ({ isAmp, isLive }) => {
   if (!isLive && isAmp) return directives.scriptSrc.ampNonLive.sort();
   if (!isLive && !isAmp) return directives.scriptSrc.canonicalNonLive.sort();
   if (isLive && isAmp) return directives.scriptSrc.ampLive.sort();
   return directives.scriptSrc.canonicalLive.sort();
 };
 
-export const generateStyleSrc = ({ isAmp, isLive }) => {
+const generateStyleSrc = ({ isAmp, isLive }) => {
   if (!isLive && isAmp) return directives.styleSrc.ampNonLive.sort();
   if (!isLive && !isAmp) return directives.styleSrc.canonicalNonLive.sort();
   if (isLive && isAmp) return directives.styleSrc.ampLive.sort();
   return directives.styleSrc.canonicalLive.sort();
 };
 
-export const generateWorkerSrc = ({ isAmp }) =>
+const generateWorkerSrc = ({ isAmp }) =>
   isAmp
     ? ['blob:', '*.bbc.co.uk', '*.bbc.com']
     : ['blob:', "'self'", '*.bbc.co.uk', '*.bbc.com'];
@@ -342,7 +342,7 @@ export const generateWorkerSrc = ({ isAmp }) =>
  * `yarn build && yarn start` & visit a localhost URL.
  * View the developer console for errors.
  */
-export const cspDirectives = ({ isAmp, isLive, service }) => ({
+export default ({ isAmp, isLive, service }) => ({
   directives: {
     'default-src': generateDefaultSrc(),
     'child-src': generateChildSrc({ isAmp }),
