@@ -10,7 +10,7 @@ export default {
       backgroundColor: isDarkUi ? palette.GREY_6 : palette.WHITE,
       width: '100%',
       height: '100%',
-      minHeight: 300,
+      minHeight: 250,
       border: '0.1875rem solid transparent',
       cursor: 'pointer',
       padding: 0,
