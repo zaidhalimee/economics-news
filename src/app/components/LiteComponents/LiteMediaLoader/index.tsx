@@ -58,6 +58,7 @@ type Props = {
   width?: number;
   height?: number;
   src?: string;
+  showFileSize?: boolean;
 };
 
 const LiteMediaLoader = ({
@@ -65,6 +66,7 @@ const LiteMediaLoader = ({
   width,
   height,
   src,
+  showFileSize = false,
   children,
 }: PropsWithChildren<Props>) => {
   const dataId = useId();
@@ -73,11 +75,11 @@ const LiteMediaLoader = ({
   } = useContext(ServiceContext);
 
   const hasFixedAspectRatio = type === 'image' && width && height;
-  const calculateFileSize = type === 'image' && src;
+  const shouldShowFileSize = showFileSize && type === 'image' && src;
 
   return (
     <div css={styles.wrapper}>
-      {calculateFileSize && (
+      {shouldShowFileSize && (
         <Helmet>
           <script>
             {`
@@ -128,7 +130,7 @@ const LiteMediaLoader = ({
           {liteSiteTranslations?.loadMediaMessage ||
             'Loading this content will use more data'}
         </Text>
-        {calculateFileSize && (
+        {shouldShowFileSize && (
           <Text as="div">
             <Text
               data-size-id={dataId}
