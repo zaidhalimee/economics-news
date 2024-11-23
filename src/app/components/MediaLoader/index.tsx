@@ -269,6 +269,7 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
                     css={styles.liteIframe}
                     title={mediaInfo?.title}
                     src={iframeUrl}
+                    scrolling="no"
                   />
                 </LiteMediaLoader>
               );

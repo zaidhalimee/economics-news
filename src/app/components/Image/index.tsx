@@ -33,7 +33,7 @@ type Props = {
   width?: number;
   fetchpriority?: 'high';
   hasCaption?: boolean;
-  showImageLoadButton?: boolean;
+  showLiteLoadButton?: boolean;
 };
 
 const roundNumber = (num: number) => Math.round(num * 100) / 100;
@@ -63,12 +63,12 @@ const Image = ({
   children,
   fetchpriority,
   hasCaption,
-  showImageLoadButton = false,
+  showLiteLoadButton = false,
 }: PropsWithChildren<Props>) => {
   const { pageType, isLite } = useContext(RequestContext);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  if (isLite && !showImageLoadButton) return null;
+  if (isLite && !showLiteLoadButton) return null;
 
   const showPlaceholder = placeholder && !isLoaded;
   const hasDimensions = width && height;
@@ -113,9 +113,7 @@ const Image = ({
   const imgSizes = getImgSizes();
 
   return (
-    <ComponentWrapper
-      {...(isLite && { type: 'image', width, height, src, showFileSize: true })}
-    >
+    <ComponentWrapper {...(isLite && { type: 'image', width, height, src })}>
       {preload && !isLite && (
         <Helmet>
           <link

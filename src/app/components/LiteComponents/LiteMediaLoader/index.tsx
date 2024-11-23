@@ -8,10 +8,11 @@ import { mediaIcons } from '#psammead/psammead-assets/src/svgs';
 import { ServiceContext } from '#app/contexts/ServiceContext';
 import { Translations } from '#app/models/types/translations';
 import { setImgSize } from '#server/Document/Renderers/litePageTransforms/transformImgTags';
+import { MediaType } from '#app/models/types/media';
 import LiteButton from '../LiteButton';
 import styles from './index.styles';
 
-type MediaTypes = 'audio' | 'video' | 'image' | 'embed';
+type MediaTypes = MediaType | 'embed';
 
 function script(this: Element) {
   const parentEl = this.parentElement;

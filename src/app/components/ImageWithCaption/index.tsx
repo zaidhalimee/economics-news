@@ -109,7 +109,7 @@ const ImageWithCaption = ({
         isAmp={isAmp}
         placeholder
         hasCaption
-        showImageLoadButton={isLite}
+        showLiteLoadButton={isLite}
       >
         {renderCopyright(copyright || '')}
       </Image>

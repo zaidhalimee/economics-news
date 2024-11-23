@@ -41,7 +41,7 @@ const EmbedImages = ({ blocks: embedImages }: PropsWithChildren<Props>) => {
         width={width}
         height={height}
         isAmp={isAmp}
-        showImageLoadButton={isLite}
+        showLiteLoadButton={isLite}
       />
     </div>
   );
