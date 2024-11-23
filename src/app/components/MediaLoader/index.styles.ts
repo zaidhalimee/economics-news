@@ -16,13 +16,13 @@ const commonMarginSpacing = ({ mq, spacings }: Theme) =>
   });
 
 export default {
-  liteIframe: ({ spacings, palette }: Theme) =>
+  liteIframe: ({ palette }: Theme) =>
     css({
       width: '100%',
       height: '100%',
       border: 'none',
       overflow: 'hidden',
-      marginBottom: `-${spacings.HALF}rem`,
+      marginBottom: '-0.275rem', // Magic number to prevent a gap between the iframe and the caption
       backgroundColor: palette.BLACK,
     }),
   figure:
