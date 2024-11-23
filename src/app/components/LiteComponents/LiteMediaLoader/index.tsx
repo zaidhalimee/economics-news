@@ -12,7 +12,7 @@ import { MediaType } from '#app/models/types/media';
 import LiteButton from '../LiteButton';
 import styles from './index.styles';
 
-type MediaTypes = MediaType | 'embed';
+type MediaTypes = MediaType | 'image' | 'embed';
 
 function script(this: Element) {
   const parentEl = this.parentElement;
