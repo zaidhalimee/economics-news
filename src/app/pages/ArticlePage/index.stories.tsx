@@ -15,6 +15,7 @@ import articleDataWithSingleRelatedContent from '#data/afrique/articles/cz216x22
 import articleDataWithPodcastPromo from '#data/russian/articles/c61q94n3rm3o.json';
 import articleNewsWithPodcastPromo from '#data/news/articles/crkxdvxzwxk2.json';
 import articleDataWithElectionTag from '#data/mundo/articles/c206j730722o.json';
+import articleDataWithJumpTo from '#data/news/articles/c6v11qzyv8po.json';
 import withPageWrapper from '#containers/PageHandlers/withPageWrapper';
 import withOptimizelyProvider from '#containers/PageHandlers/withOptimizelyProvider';
 import { service as newsConfig } from '#app/lib/config/services/news';
@@ -60,14 +61,14 @@ type Props = {
   };
   service?: Services;
   podcastEnabled?: boolean;
-  articleElectionBanner?: boolean;
+  electionBanner?: boolean;
 };
 
 const ComponentWithContext = ({
   data: { data },
   service = 'news',
   podcastEnabled = false,
-  articleElectionBanner = false,
+  electionBanner = false,
 }: Props) => {
   return (
     <ToggleContextProvider
@@ -76,7 +77,7 @@ const ComponentWithContext = ({
         mostRead: { enabled: true },
         frostedPromo: { enabled: true, value: 1 },
         podcastPromo: { enabled: podcastEnabled },
-        articleElectionBanner: { enabled: articleElectionBanner },
+        electionBanner: { enabled: electionBanner },
       }}
     >
       {/* Service set to news to enable most read. Article data is in english */}
@@ -109,7 +110,7 @@ const ComponentWithServiceContext = ({
   data: { data },
   service = 'news',
   podcastEnabled = false,
-  articleElectionBanner = false,
+  electionBanner = false,
 }: Props) => {
   return (
     <ToggleContextProvider
@@ -118,7 +119,7 @@ const ComponentWithServiceContext = ({
         mostRead: { enabled: true },
         frostedPromo: { enabled: true, value: 1 },
         podcastPromo: { enabled: podcastEnabled },
-        articleElectionBanner: { enabled: articleElectionBanner },
+        electionBanner: { enabled: electionBanner },
       }}
     >
       {/* Service set to news to enable most read. Article data is in english */}
@@ -197,15 +198,19 @@ export const ArticlePageWithPodcastNews = () => (
   />
 );
 
-export const ArticleWithElectionBanner = {
+export const ArticlePageWithElectionBanner = {
   render: () => (
     <ComponentWithServiceContext
       data={articleDataWithElectionTag}
       service="mundo"
-      articleElectionBanner
+      electionBanner
     />
   ),
   parameters: {
     chromatic: { disableSnapshot: true },
   },
 };
+
+export const ArticlePageWithJumpTo = () => (
+  <ComponentWithContext data={articleDataWithJumpTo} service="news" />
+);

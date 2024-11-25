@@ -1,14 +1,8 @@
 name: Simorgh CI - Licences, Dependencies, Lint, Chromatic UI, NPM Audit
 on:
-  create:
-    branches:
-      - '**'
   pull_request:
     branches:
       - '**'
-  push:
-    branches:
-      - latest
 
 permissions:
   statuses: write
@@ -96,7 +90,7 @@ jobs:
         run: yarn test:dependencies
 
       - name: Linting
-        run: yarn test:lint
+        run: yarn build && yarn test:lint
 
       - name: NPM Audit
         run: yarn npm audit --all --severity low --no-deprecations

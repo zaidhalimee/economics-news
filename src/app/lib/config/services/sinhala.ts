@@ -299,6 +299,10 @@ export const service: DefaultServiceConfig = {
           text: 'බීබීසී ය අමතන්න',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -312,10 +316,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'මුල් පිටුව',
         url: '/sinhala',
-      },
-      {
-        title: 'මහ මැතිවරණය 2024',
-        url: '/sinhala/topics/c5y3ve4z2lkt',
       },
       {
         title: 'ශ්‍රී ලංකා',
