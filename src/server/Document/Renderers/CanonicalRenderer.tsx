@@ -76,47 +76,6 @@ export default function CanonicalRenderer({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              window.bbcpage = {};
-              window.bbcpage = Object.assign(window.bbcpage, {
-                getName() {
-                  return Promise.resolve("${reverbObject.reverbParams.params.page.name}");
-                },
-                getLanguage() {
-                  return Promise.resolve("${reverbObject.reverbParams.params.page.additionalProperties.content_language}");
-                },
-                getDestination() {
-                  return Promise.resolve("${reverbObject.reverbParams.params.page.destination}");
-                },
-                getProducer() {
-                  return Promise.resolve("${reverbObject.reverbParams.params.page.producer}");
-                },
-                getSection() {
-                  return Promise.resolve("");
-                },
-                getContentId() {
-                  return Promise.resolve("${reverbObject.reverbParams.params.page.contentId}");
-                },
-                getContentType() {
-                  return Promise.resolve("${reverbObject.reverbParams.params.page.contentType}");
-                },
-                getEdition() {
-                  return Promise.resolve("");
-                },
-                getReferrer() {
-                  return Promise.resolve("");
-                },
-                //this addintional property is what gives the correct domain to send the data to echochamber
-                // without it the data is sent to the test url for ati which is not what we want 
-                getAdditionalProperties() {
-                  return Promise.resolve(${JSON.stringify(reverbObject.reverbParams.params.page.additionalProperties)});
-                },
-                additionalProperties: {     
-                  "testDomain": "local.ati-host.net",
-                  "trace": "",
-                  "customVars": ""
-                }
-            });
-
             window.__reverb = {};
             window.__reverb.__reverbLoadedPromise = new Promise((resolve, reject) => {
               window.__reverb.__resolveReverbLoaded = resolve;
@@ -125,19 +84,7 @@ export default function CanonicalRenderer({
 
             window.__reverb.__reverbTimeout = setTimeout(() => {
               window.__reverb.__rejectReverbLoaded();
-            }, 5000);
-
-                        
-            window.__reverb.__reverbLoadedPromise.then((reverb) => {
-              return reverb.initialise().then(() => {
-                reverb.viewEvent();
-
-                console.log('Reverb initialised successfully');
-                console.log(reverb);
-              });
-            }, () => {
-              console.log('Failed to load reverb. No event sent');
-            });`,
+            }, 5000);`,
           }}
         />
         <script src="https://mybbc-analytics.files.bbci.co.uk/reverb-client-js/reverb-3.9.2.js" />

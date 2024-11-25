@@ -229,7 +229,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       {shouldEnableExperimentTopStories && (
         <AmpExperiment experimentConfig={experimentTopStoriesConfig} />
       )}
-      <ATIAnalytics atiData={atiData} />
+      <ATIAnalytics atiData={atiData} useReverb />
       <ChartbeatAnalytics
         sectionName={pageData?.relatedContent?.section?.name}
         title={headline}
