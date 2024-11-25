@@ -13,13 +13,12 @@ const RadioSchedule = ({
   lang = null,
   className = '',
 }) => {
-  const { enabled } = useToggle('radioSchedule');
+  const { enabled } = useToggle('onDemandRadioSchedule');
   const { isAmp, env } = useContext(RequestContext);
   const { service, radioSchedule } = useContext(ServiceContext);
   const location = useLocation();
   const hasRadioSchedule = pathOr(null, ['hasRadioSchedule'], radioSchedule);
   const radioScheduleEnabled = !isAmp && enabled && hasRadioSchedule;
-
   if (!radioScheduleEnabled) {
     return null;
   }

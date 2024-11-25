@@ -109,7 +109,7 @@ describe('Curation', () => {
         {
           toggles: {
             mostRead: { enabled: true },
-            radioSchedule: { enabled: true },
+            onDemandRadioSchedule: { enabled: true },
           },
           service: 'afrique',
         },

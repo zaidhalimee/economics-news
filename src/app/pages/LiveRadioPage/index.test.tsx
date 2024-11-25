@@ -22,7 +22,9 @@ type Props = {
 
 const Page = ({ pageData, service, lang }: Props) => (
   <BrowserRouter>
-    <ToggleContextProvider>
+    <ToggleContextProvider
+      toggles={{ onDemandRadioSchedule: { enabled: true } }}
+    >
       <ServiceContextProvider service={service} pageLang={lang}>
         <RequestContextProvider
           bbcOrigin="https://www.test.bbc.com"

@@ -7,7 +7,7 @@ import { ServiceContextProvider } from '../../../../contexts/ServiceContext';
 import RadioScheduleContainer from '..';
 
 const getToggleState = enabled => ({
-  radioSchedule: { enabled },
+  onDemandRadioSchedule: { enabled },
 });
 
 const RadioSchedulesWithContext = ({
@@ -23,6 +23,7 @@ const RadioSchedulesWithContext = ({
     }),
     [radioScheduleToggle],
   );
+
   return (
     <ToggleContext.Provider value={toggleContextValue}>
       <RequestContextProvider

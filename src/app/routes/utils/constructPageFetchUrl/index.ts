@@ -22,6 +22,7 @@ import {
   HOME_PAGE,
   LIVE_PAGE,
   MOST_READ_PAGE,
+  AUDIO_PAGE,
   TOPIC_PAGE,
   UGC_PAGE,
 } from '../pageTypes';
@@ -131,6 +132,11 @@ const getId = ({ pageType, service, variant, env }: GetIdProps) => {
         const id = `${withServiceAndVariant}/${parsedRoute.assetId}`;
 
         return id;
+      };
+      break;
+    case AUDIO_PAGE:
+      getIdFunction = (path: string) => {
+        return path;
       };
       break;
     default:
@@ -257,7 +263,6 @@ const constructPageFetchUrl = ({
             `${host}${port}/api/local/${parsedRoute.service}/av-embeds/${parsedRoute.variant ? `${parsedRoute?.variant}/` : ''}${parsedRoute.assetId}${parsedRoute.mediaId ? `/${parsedRoute.mediaDelimiter}/${parsedRoute.mediaId}` : ''} ${parsedRoute.lang ? `/${parsedRoute.lang}` : ''}`,
           );
         }
-
         break;
       }
       default:

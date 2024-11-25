@@ -26,7 +26,6 @@ const LiveRadioPage = ({ pageData }: { pageData: LiveRadioPageData }) => {
   const { script, service } = useContext(ServiceContext);
 
   const hasRadioScheduleData = Boolean(radioScheduleData);
-
   return (
     <>
       <ATIAnalytics data={pageData} />
