@@ -11,10 +11,10 @@ export const experimentName = 'topStoriesExperiment';
 export const experimentTopStoriesConfig = {
   [experimentName]: {
     variants: {
-      control: 0.25,
-      show_at_quarter: 0.25,
-      show_at_half: 0.25,
-      show_at_three_quarters: 0.25,
+      control: 5,
+      show_at_quarter: 5,
+      show_at_half: 5,
+      show_at_three_quarters: 5,
     },
   },
 };
