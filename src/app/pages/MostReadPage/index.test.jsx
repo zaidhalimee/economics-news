@@ -12,7 +12,12 @@ import MostReadPage from './MostReadPage';
 
 fetch.mockResponse(JSON.stringify(pidginMostReadData));
 
-analyticsUtils.getAtUserId = jest.fn();
+jest.mock('#lib/analyticsUtils', () => {
+  return {
+    ...jest.requireActual('#lib/analyticsUtils'),
+    getAtUserId: jest.fn(),
+  };
+});
 
 jest.mock('../../components/ChartbeatAnalytics', () => {
   const ChartbeatAnalytics = () => <div>chartbeat</div>;
