@@ -1,5 +1,5 @@
 import { Theme, css } from '@emotion/react';
-import pixelsToRem from '../../../../src/app/utilities/pixelsToRem';
+import pixelsToRem from "simorgh/src/app/utilities/pixelsToRem/pixelsToRem";
 
 export default {
   grid: ({ mq, gridWidths, spacings }: Theme) =>
@@ -23,7 +23,7 @@ export default {
         gridColumn: '1 / span 12',
       },
     }),
-  orderedList : ({ mq }: Theme) => 
+  orderedList: ({ mq }: Theme) =>
     css({
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fill, minmax(100%, 1fr))',
@@ -33,13 +33,13 @@ export default {
         gridTemplateColumns: 'repeat(auto-fill, minmax(50%, 1fr))',
       },
     }),
-  cta: () => 
+  cta: () =>
     css({
-        div: {
-            display: 'block',
-        },
+      div: {
+        display: 'block',
+      },
     }),
-  listItem : ({ fontSizes, palette }: Theme) => 
+  listItem: ({ fontSizes, palette }: Theme) =>
     css({
       borderBottom: '1px solid #000',
       paddingBottom: '15px',
@@ -60,7 +60,7 @@ export default {
           textDecoration: 'underline',
           color: palette.POSTBOX,
         },
-      }
+      },
     }),
   mainContent: ({ spacings }: Theme) =>
     css({
