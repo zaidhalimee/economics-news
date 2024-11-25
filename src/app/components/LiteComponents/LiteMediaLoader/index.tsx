@@ -67,7 +67,7 @@ const LiteMediaLoader = ({
   width,
   height,
   src,
-  showFileSize = false,
+  showFileSize = true,
   children,
 }: PropsWithChildren<Props>) => {
   const dataId = useId();
@@ -125,11 +125,13 @@ const LiteMediaLoader = ({
           <div css={styles.iconWrapper}>
             {mediaIcons?.[type as keyof typeof mediaIcons]}
           </div>
-          <div>{getButtonText({ type, liteSiteTranslations })}</div>
+          <span>{getButtonText({ type, liteSiteTranslations })}</span>
         </Text>
-        <Text as="div" size="brevier" css={styles.liteButtonInfoText}>
-          {liteSiteTranslations?.loadMediaMessage ||
-            'Loading this content will use more data'}
+        <Text as="div">
+          <Text size="brevier" css={styles.liteButtonInfoText}>
+            {liteSiteTranslations?.loadMediaMessage ||
+              'Loading this content will use more data'}
+          </Text>
         </Text>
         {shouldShowFileSize && (
           <Text as="div">
@@ -137,6 +139,7 @@ const LiteMediaLoader = ({
               data-size-id={dataId}
               size="brevier"
               fontVariant="sansRegularItalic"
+              css={styles.liteButtonInfoText}
             />
           </Text>
         )}
