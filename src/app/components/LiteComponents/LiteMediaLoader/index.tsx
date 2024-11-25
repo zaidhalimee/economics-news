@@ -96,8 +96,8 @@ const LiteMediaLoader = ({
                     var size = xhr.getResponseHeader('Content-Length');
 
                     var fileSizeInBytes = parseInt(size, 10);
-                    var fileSizeInKB = Math.round(fileSizeInBytes / 1024);
-
+                    var encodedBufferInBytes = 1000; 
+                    var fileSizeInKB = Math.round((fileSizeInBytes  + encodedBufferInBytes) / 1024);
                     var srcEl = document.querySelector('[data-size-id="${dataId}"]');
                     srcEl.textContent = "Approximately: " + fileSizeInKB + "KB";
                   }
