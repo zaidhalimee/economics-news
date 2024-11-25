@@ -402,3 +402,43 @@ export const buildReverbAnalyticsModel = ({
 
   return reverbVariables;
 };
+
+export const buildReverbPageSectionEventModel = ({
+  pageIdentifier,
+  producerName,
+  statsDestination,
+  componentName,
+  campaignID,
+  format,
+  type,
+  advertiserID,
+  url,
+}: ATIEventTrackingProps) => {
+  const eventPublisher = type === 'view' ? 'ati' : 'atc';
+
+  return {
+    params: {
+      page: {
+        destination: statsDestination,
+        name: pageIdentifier,
+        producer: producerName,
+        additionalProperties: {
+          [eventPublisher]: getEventInfo({
+            campaignID,
+            componentName,
+            format,
+            pageIdentifier,
+            advertiserID,
+            url,
+          }),
+          type: 'AT',
+        },
+      },
+      user: {
+        hashedId: getAtUserId(),
+        isSignedIn: false,
+      },
+    },
+    eventName: type === 'view' ? 'sectionView' : 'sectionClick',
+  };
+};

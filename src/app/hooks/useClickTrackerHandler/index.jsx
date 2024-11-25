@@ -21,11 +21,18 @@ const useClickTrackerHandler = (props = {}) => {
   const optimizely = path(['optimizely'], props);
   const detailedPlacement = props?.detailedPlacement;
 
+  const useReverb = pathOr(false, ['useReverb'], props);
+
   const { trackingIsEnabled } = useTrackingToggle(componentName);
   const [clicked, setClicked] = useState(false);
   const eventTrackingContext = useContext(EventTrackingContext);
-  const { pageIdentifier, platform, producerId, statsDestination } =
-    eventTrackingContext;
+  const {
+    pageIdentifier,
+    platform,
+    producerId,
+    producerName,
+    statsDestination,
+  } = eventTrackingContext;
   const campaignID = pathOr(
     path(['campaignID'], eventTrackingContext),
     ['campaignID'],
@@ -49,6 +56,7 @@ const useClickTrackerHandler = (props = {}) => {
           pageIdentifier,
           platform,
           producerId,
+          producerName,
           service,
           statsDestination,
         ].every(Boolean);
@@ -80,11 +88,13 @@ const useClickTrackerHandler = (props = {}) => {
               pageIdentifier,
               platform,
               producerId,
+              producerName,
               service,
               advertiserID,
               statsDestination,
               url,
               detailedPlacement,
+              useReverb,
             });
           } finally {
             if (nextPageUrl && !preventNavigation) {
@@ -106,6 +116,7 @@ const useClickTrackerHandler = (props = {}) => {
       platform,
       preventNavigation,
       producerId,
+      producerName,
       service,
       statsDestination,
       url,
@@ -113,6 +124,7 @@ const useClickTrackerHandler = (props = {}) => {
       format,
       optimizely,
       detailedPlacement,
+      useReverb,
     ],
   );
 };

@@ -58,9 +58,6 @@ const reverbPageViews = async () => {
     reverb => {
       return reverb.initialise().then(() => {
         reverb.viewEvent();
-
-        console.log('Reverb initialised successfully');
-        console.log(reverb);
       });
     },
     () => {
@@ -69,23 +66,33 @@ const reverbPageViews = async () => {
   );
 };
 
-// const reverbLinkClick = async () => {
-  // const config = {};
+const reverbLinkClick = async () => {
+  // eslint-disable-next-line no-underscore-dangle
+  window.__reverb.__reverbLoadedPromise.then(
+    reverb => {
+      return reverb.initialise().then(() => {
+        const config = {};
 
-  // await Reverb.userActionEvent(
-  //   'click',
-  //   'Top Stories Link',
-  //   config,
-  //   {},
-  //   {},
-  //   true,
-  // );
-// };
+        reverb.userActionEvent(
+          'click',
+          'Top Stories Link',
+          config,
+          {},
+          {},
+          true,
+        );
+      });
+    },
+    () => {
+      console.log('Failed to load reverb. No event sent');
+    },
+  );
+};
 
 const reverbHandlers = {
   pageView: reverbPageViews,
   sectionView: reverbPageViews,
-  // sectionClick: reverbLinkClick,
+  sectionClick: reverbLinkClick,
 };
 
 const sendBeacon = async (url, reverbBeaconConfig) => {
