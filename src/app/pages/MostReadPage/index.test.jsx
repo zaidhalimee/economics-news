@@ -3,7 +3,6 @@ import { act } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { RequestContextProvider } from '#contexts/RequestContext';
 import { data as pidginMostReadData } from '#data/pidgin/mostRead/index.json';
-import * as analyticsUtils from '#lib/analyticsUtils';
 import { ToggleContextProvider } from '#contexts/ToggleContext';
 import { MOST_READ_PAGE } from '#app/routes/utils/pageTypes';
 import { render } from '../../components/react-testing-library-with-providers';
