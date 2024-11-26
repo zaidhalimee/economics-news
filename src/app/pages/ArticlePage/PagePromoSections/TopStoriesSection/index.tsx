@@ -58,8 +58,12 @@ const TopStoriesSection = ({ content = [] }: { content: TopStoryItem[] }) => {
     block: {
       componentName: 'top-stories',
     },
+    useReverb: true,
   };
-  const eventTrackingDataSend = eventTrackingData?.block;
+  const eventTrackingDataSend = {
+    ...eventTrackingData?.block,
+    useReverb: true,
+  };
   const viewRef = useViewTracker(eventTrackingDataSend);
 
   const {
