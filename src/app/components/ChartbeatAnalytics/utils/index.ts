@@ -58,8 +58,8 @@ export const getType = (pageType: PageTypes | 'index', shorthand = false) => {
       return 'article-sfv';
     case MEDIA_ASSET_PAGE:
       return 'article-media-asset';
-    case AUDIO_PAGE:
     case MEDIA_PAGE:
+    case AUDIO_PAGE:
       return 'Radio';
     case TV_PAGE:
       return 'TV';
@@ -147,9 +147,9 @@ export const buildSections = ({
           ? buildSectionItem(service, appendCategory(categoryName))
           : []),
       ].join(', ');
-    case TV_PAGE:
     case MEDIA_PAGE:
     case AUDIO_PAGE:
+    case TV_PAGE:
       return [
         capitalize(service),
         ...(mediaPageType ? buildSectionItem(service, mediaPageType) : []),
