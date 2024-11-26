@@ -407,7 +407,7 @@ export const service: UzbekConfig = {
       home: 'Bosh sahifa',
       currentPage: 'Joriy sahifa',
       skipLinkText: 'Sahifaga o‘tish',
-      relatedContent: 'Bu mavzuda batafsilroq',
+      relatedContent: 'Mavzuga aloqador',
       relatedTopics: 'Aloqador mavzular',
       navMenuText: 'Bo‘limlar',
       mediaAssetPage: {
