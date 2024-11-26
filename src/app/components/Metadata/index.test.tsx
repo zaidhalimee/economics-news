@@ -1009,6 +1009,25 @@ describe('Snapshot', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('should match for WS Media liveradio', () => {
+    render(
+      <MetadataWithContext
+        service="korean"
+        bbcOrigin={dotComOrigin}
+        platform="canonical"
+        id={null}
+        pageType={MEDIA_PAGE}
+        pathname="/korean/bbc_korean_radio/liveradio"
+        title={liveRadioPageData.promo.name}
+        lang={liveRadioPageData.metadata.language}
+        description={liveRadioPageData.promo.summary}
+        openGraphType="website"
+      />,
+    );
+    const container = Helmet.peek();
+    expect(container).toMatchSnapshot();
+  });
+
   it('should match for WS TV', () => {
     const mediaOverrides = filterForBlockType(
       hindiTVBrand.mediaBlocks,
@@ -1028,25 +1047,6 @@ describe('Snapshot', () => {
         description={hindiTVBrand.shortSynopsis}
         openGraphType="website"
         hasAmpPage={false}
-      />,
-    );
-    const container = Helmet.peek();
-    expect(container).toMatchSnapshot();
-  });
-
-  it('should match for WS Media liveradio', () => {
-    render(
-      <MetadataWithContext
-        service="korean"
-        bbcOrigin={dotComOrigin}
-        platform="canonical"
-        id={null}
-        pageType={MEDIA_PAGE}
-        pathname="/korean/bbc_korean_radio/liveradio"
-        title={liveRadioPageData.promo.name}
-        lang={liveRadioPageData.metadata.language}
-        description={liveRadioPageData.promo.summary}
-        openGraphType="website"
       />,
     );
     const container = Helmet.peek();
