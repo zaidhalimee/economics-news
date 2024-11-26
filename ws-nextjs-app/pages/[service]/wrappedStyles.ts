@@ -71,8 +71,8 @@ export default {
       marginBottom: `${spacings.DOUBLE}rem`,
       listStyleType: 'none',
       svg: {
-        width: `${spacings.SINGLE}rem`,
-        height: `${spacings.SINGLE}rem`,
+        width: `${spacings.FULL}rem`,
+        height: `${spacings.FULL}rem`,
       },
     }),
   wideSection: ({ mq, fontSizes, fontVariants }: Theme) =>
