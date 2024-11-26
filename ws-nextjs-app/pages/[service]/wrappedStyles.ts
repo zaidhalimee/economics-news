@@ -49,18 +49,44 @@ export default {
         gridColumn: '4 / 10',
       },
     }),
+  h1: ({ spacings }: Theme) =>
+    css({
+      marginBottom: `${spacings.SEXTUPLE}rem`,
+      svg: {
+        width: `${spacings.TRIPLE}rem`,
+        height: `${spacings.TRIPLE}rem`,
+      },
+    }),
+  h2: ({ spacings }: Theme) =>
+    css({
+      marginBottom: `${spacings.TRIPLE}rem`,
+      svg: {
+        width: `${spacings.DOUBLE}rem`,
+        height: `${spacings.DOUBLE}rem`,
+      },
+    }),
+  ul: ({ spacings }: Theme) =>
+    css({
+      marginTop: `-${spacings.DOUBLE}rem`,
+      marginBottom: `${spacings.DOUBLE}rem`,
+      listStyleType: 'none',
+      svg: {
+        width: `${spacings.SINGLE}rem`,
+        height: `${spacings.SINGLE}rem`,
+      },
+    }),
   wideSection: ({ mq, fontSizes, fontVariants }: Theme) =>
     css({
-      ...fontSizes.brevier,
+      ...fontSizes.pica,
       ...fontVariants.sansRegular,
-      
+
       gridColumn: '2 / 12',
 
       [mq.GROUP_4_MIN_WIDTH]: {
-      gridColumn: '2 / 12',
+        gridColumn: '2 / 12',
       },
       [mq.GROUP_5_MIN_WIDTH]: {
-      gridColumn: '2 / 12',
+        gridColumn: '2 / 12',
       },
     }),
 };
