@@ -1,6 +1,6 @@
 /**
  * @service pashto
- * @pathname /pashto/bbc_pashto_radio/w3ct26m6
+ * @pathname /pashto/bbc_pashto_radio/p0340v0j
  */
 
 import runCanonicalTests from '../canonicalTests';

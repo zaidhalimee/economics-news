@@ -9,8 +9,7 @@ import defaultToggles from '#lib/config/toggles';
 
 // mock data
 import featureIndexPageJson from '#data/afrique/cpsAssets/48465371.json';
-import gahuzaPodcastPage from '#data/gahuza/bbc_gahuza_radio/podcast-programme-p07yh8hb.json';
-import gahuzaOnDemandAudio from '#data/gahuza/bbc_gahuza_radio/audio-programmes-p02pcb5c.json';
+import gahuzaPodcastPage from '#data/gahuza/bbc_gahuza_radio/p07yh8hb.json';
 import legacyMediaAssetPage from '#data/azeri/legacyAssets/multimedia/2012/09/120919_georgia_prison_video.json';
 import liveRadioPageJson from '#data/korean/bbc_korean_radio/liveradio.json';
 import homePageJson from '#data/kyrgyz/homePage/index.json';
@@ -20,6 +19,7 @@ import sportArticlePageJson from '#data/sport/judo/articles/cj80n66ddnko.json';
 import mediaAssetPageJson from '#data/yoruba/cpsAssets/media-23256797.json';
 
 import { ERROR_PAGE, FRONT_PAGE } from '#app/routes/utils/pageTypes';
+import gahuzaOnDemandAudio from '#data/gahuza/bbc_gahuza_radio/p02pcb5c.json';
 import routes from '.';
 import {
   act,

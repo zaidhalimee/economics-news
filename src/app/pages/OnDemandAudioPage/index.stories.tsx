@@ -3,8 +3,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { AUDIO_PAGE } from '#app/routes/utils/pageTypes';
 import { StoryArgs, StoryProps } from '#app/models/types/storybook';
 import { Services } from '#app/models/types/global';
-import gahuzaAudioResponse from '#data/gahuza/bbc_gahuza_radio/audio-programmes-p02pcb5c.json';
-import koreanAudioResponse from '#data/korean/bbc_korean_radio/audio-programme-w3ct1vk5.json';
+import koreanAudioResponse from '#data/korean/bbc_korean_radio/w3ct1vk5.json';
+import gahuzaAudioResponse from '#data/gahuza/bbc_gahuza_radio/p02pcb5c.json';
 import { OnDemandAudioPage } from '..';
 
 const gahuza = gahuzaAudioResponse.data;

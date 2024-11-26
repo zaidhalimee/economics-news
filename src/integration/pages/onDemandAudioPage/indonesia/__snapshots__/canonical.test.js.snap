@@ -22,10 +22,10 @@ exports[`Canonical On Demand Audio Page Analytics ATI tracking pixel search para
     "s2": "54",
   },
   {
-    "p": "indonesia.bbc_indonesian_radio.w172xh267fpn19l.page",
+    "p": "indonesia.bbc_indonesian_radio.w172ywztppc5xsy.page",
   },
   {
-    "x1": "[urn:bbc:pips:w172xh267fpn19l]",
+    "x1": "[urn:bbc:pips:w172ywztppc5xsy]",
   },
   {
     "x2": "[responsive]",
@@ -161,7 +161,7 @@ exports[`Canonical On Demand Audio Page Header Navigation link should match text
 
 exports[`Canonical On Demand Audio Page I can see the brand title 1`] = `"Dunia Pagi Ini"`;
 
-exports[`Canonical On Demand Audio Page I can see the episode summary 1`] = `"Berita terbaru dari seluruh dunia dan ulasan peristiwa dari Indonesia. Juga berita olahraga terbaru dan berbeda setiap harinya."`;
+exports[`Canonical On Demand Audio Page I can see the episode summary 1`] = `"Berita terbaru dari seluruh dunia dan ulasan peristiwa dari Indonesia."`;
 
 exports[`Canonical On Demand Audio Page I can see the episode title 1`] = `"Dunia Pagi Ini"`;
 
@@ -179,6 +179,34 @@ exports[`Canonical On Demand Audio Page Media Loader renders a valid container 1
     data-e2e="media-player"
   />
 </figure>
+`;
+
+exports[`Canonical On Demand Audio Page Recent Episodes List items should match text and url 1`] = `
+{
+  "text": "Audio, Dunia Pagi Ini, Dunia Pagi Ini,  Durasi 15,30  Durasi 15:3022 Januari 2023",
+  "url": "/indonesia/bbc_indonesian_radio/w172ywztppckjfb",
+}
+`;
+
+exports[`Canonical On Demand Audio Page Recent Episodes List items should match text and url 2`] = `
+{
+  "text": "Audio, Dunia Pagi Ini, Dunia Pagi Ini,  Durasi 15,30  Durasi 15:3022 Januari 2023",
+  "url": "/indonesia/bbc_indonesian_radio/w172ywztppckdp6",
+}
+`;
+
+exports[`Canonical On Demand Audio Page Recent Episodes List items should match text and url 3`] = `
+{
+  "text": "Audio, Dunia Pagi Ini, Dunia Pagi Ini,  Durasi 15,30  Durasi 15:3019 Januari 2023",
+  "url": "/indonesia/bbc_indonesian_radio/w172ywztppc8tq1",
+}
+`;
+
+exports[`Canonical On Demand Audio Page Recent Episodes List items should match text and url 4`] = `
+{
+  "text": "Audio, Dunia Pagi Ini, Dunia Pagi Ini,  Durasi 15,30  Durasi 15:3019 Januari 2023",
+  "url": "/indonesia/bbc_indonesian_radio/w172ywztppc8pyx",
+}
 `;
 
 exports[`Canonical On Demand Audio Page SEO Apple Touch Icon should match attributes 1`] = `
@@ -251,7 +279,7 @@ exports[`Canonical On Demand Audio Page SEO Apple Touch Icon should match attrib
 }
 `;
 
-exports[`Canonical On Demand Audio Page SEO Canonical link 1`] = `"http://localhost:7080/indonesia/bbc_indonesian_radio/w172xh267fpn19l"`;
+exports[`Canonical On Demand Audio Page SEO Canonical link 1`] = `"http://localhost:7080/indonesia/bbc_indonesian_radio/w172ywztppc5xsy"`;
 
 exports[`Canonical On Demand Audio Page SEO Dir attribute 1`] = `"ltr"`;
 
@@ -259,7 +287,7 @@ exports[`Canonical On Demand Audio Page SEO FB app ID 1`] = `"1609039196070050"`
 
 exports[`Canonical On Demand Audio Page SEO Heading level 1 1`] = `"Dunia Pagi Ini, Dunia Pagi Ini"`;
 
-exports[`Canonical On Demand Audio Page SEO Lang attribute 1`] = `"ps"`;
+exports[`Canonical On Demand Audio Page SEO Lang attribute 1`] = `"id"`;
 
 exports[`Canonical On Demand Audio Page SEO Linked data should match text 1`] = `
 {
@@ -279,7 +307,7 @@ exports[`Canonical On Demand Audio Page SEO Linked data should match text 1`] = 
         "name": "Indonesian",
       },
       "mainEntityOfPage": {
-        "@id": "http://localhost:7080/indonesia/bbc_indonesian_radio/w172xh267fpn19l",
+        "@id": "http://localhost:7080/indonesia/bbc_indonesian_radio/w172ywztppc5xsy",
         "@type": "WebPage",
         "name": "Dunia Pagi Ini - Dunia Pagi Ini - Indonesia",
       },
@@ -295,13 +323,21 @@ exports[`Canonical On Demand Audio Page SEO Linked data should match text 1`] = 
         "publishingPrinciples": "https://www.bbc.com/indonesia/institutional-49283175",
       },
       "thumbnailUrl": "https://news.files.bbci.co.uk/ws/img/logos/og/indonesia.png",
-      "url": "http://localhost:7080/indonesia/bbc_indonesian_radio/w172xh267fpn19l",
+      "url": "http://localhost:7080/indonesia/bbc_indonesian_radio/w172ywztppc5xsy",
+    },
+    {
+      "@type": "AudioObject",
+      "description": "Berita terbaru dari seluruh dunia dan ulasan peristiwa dari Indonesia.",
+      "duration": "PT15M30S",
+      "name": "Dunia Pagi Ini",
+      "thumbnailUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p08b4828.png",
+      "uploadDate": "2023-01-18T00:00:00.000Z",
     },
   ],
 }
 `;
 
-exports[`Canonical On Demand Audio Page SEO OG description 1`] = `"Berita terbaru dari seluruh dunia dan ulasan peristiwa dari Indonesia. Juga berita olahraga terbaru dan berbeda setiap harinya."`;
+exports[`Canonical On Demand Audio Page SEO OG description 1`] = `"Berita terbaru dari seluruh dunia dan ulasan peristiwa dari Indonesia."`;
 
 exports[`Canonical On Demand Audio Page SEO OG image 1`] = `"https://ichef.bbci.co.uk/images/ic/400x400/p08b4828.png"`;
 
@@ -315,7 +351,7 @@ exports[`Canonical On Demand Audio Page SEO OG title 1`] = `"Dunia Pagi Ini - Du
 
 exports[`Canonical On Demand Audio Page SEO OG type 1`] = `"website"`;
 
-exports[`Canonical On Demand Audio Page SEO OG url 1`] = `"http://localhost:7080/indonesia/bbc_indonesian_radio/w172xh267fpn19l"`;
+exports[`Canonical On Demand Audio Page SEO OG url 1`] = `"http://localhost:7080/indonesia/bbc_indonesian_radio/w172ywztppc5xsy"`;
 
 exports[`Canonical On Demand Audio Page SEO Page title 1`] = `"Dunia Pagi Ini - Dunia Pagi Ini - Indonesia - BBC News Indonesia"`;
 
@@ -325,7 +361,7 @@ exports[`Canonical On Demand Audio Page SEO Twitter card 1`] = `"summary_large_i
 
 exports[`Canonical On Demand Audio Page SEO Twitter creator 1`] = `"@bbcindonesia"`;
 
-exports[`Canonical On Demand Audio Page SEO Twitter description 1`] = `"Berita terbaru dari seluruh dunia dan ulasan peristiwa dari Indonesia. Juga berita olahraga terbaru dan berbeda setiap harinya."`;
+exports[`Canonical On Demand Audio Page SEO Twitter description 1`] = `"Berita terbaru dari seluruh dunia dan ulasan peristiwa dari Indonesia."`;
 
 exports[`Canonical On Demand Audio Page SEO Twitter image alt 1`] = `"BBC News Indonesia"`;
 

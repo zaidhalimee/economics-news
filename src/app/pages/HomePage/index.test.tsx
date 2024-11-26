@@ -37,7 +37,7 @@ describe('Home Page', () => {
       service: 'afrique',
       toggles: {
         mostRead: { enabled: true },
-        onDemandRadioSchedule: { enabled: true },
+        frontPageRadioSchedule: { enabled: true },
       },
     });
     const curationsWithSummaries = afriqueHomePageDataFixture.curations.filter(

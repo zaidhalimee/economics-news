@@ -205,7 +205,7 @@ const constructPageFetchUrl = ({
     queryParameters,
   );
 
-  if (true) {
+  if (isLocal) {
     switch (pageType) {
       case ARTICLE_PAGE: {
         const isOptimoId = isOptimoIdCheck(`/articles/${id}`);
