@@ -1,5 +1,5 @@
 import { PageTypes, Services } from '#app/models/types/global';
-import { MEDIA_PAGE } from '#app/routes/utils/pageTypes';
+import { MEDIA_PAGE, TV_PAGE } from '#app/routes/utils/pageTypes';
 import { data as hindiTvProgramme } from '#data/hindi/bbc_hindi_tv/tv_programmes/w13xttlw.json';
 import hausaLiveRadio from '#data/hausa/bbc_hausa_radio/liveradio.json';
 import afriqueRadio from '#data/afrique/bbc_afrique_radio/w172xqydyfv659p.json';
@@ -682,7 +682,7 @@ describe('buildSettings', () => {
       const result = buildSettings({
         ...hindiTvBaseSettings,
         blocks: hindiTvProgramme.mediaBlocks as MediaBlock[],
-        pageType: MEDIA_PAGE,
+        pageType: TV_PAGE,
       });
 
       expect(result).toStrictEqual({
