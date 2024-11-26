@@ -31,44 +31,7 @@ export default function CanonicalRenderer({
 }: Props) {
   const serialisedData = serialiseForScript(data);
   const appEnvVariables = serialiseForScript(getProcessEnvAppVariables());
-
-  const reverbObject = {
-    "pageviewParams": "s=598343&idclient=4d6e05b4-3c62-47f4-81b8-12b4a8431cf2&s2=69&p=persian.articles.c9921k54wydo.page&r=1414x1140x24x24&re=1414x1140&hl=17x38x37&lng=en-GB&x1=[urn%3Abbc%3Aoptimo%3Aasset%3Ac9921k54wydo]&x2=[responsive]&x3=[news-persian]&x4=[fa]&x5=[http%253A%252F%252Flocalhost.bbc.com%253A7080%252Fpersian%252Farticles%252Fc9921k54wydo%253Frenderer_env%253Dlive]&x7=[article]&x8=[simorgh]&x9=[%D8%B1%D8%B6%DB%8C%2520%D9%85%D9%88%D8%B3%D9%88%DB%8C%2520%DA%A9%D9%87%2520%D8%A8%D9%88%D8%AF%D8%9F]&x11=[2023-...",
-    "reverbParams": {
-      "params": {
-        "page": {
-          "contentId": "urn:bbc:optimo:asset:c9921k54wydo",
-          "contentType": "article",
-          "destination": "WS_NEWS_LANGUAGES_TEST",
-          "name": "persian.articles.c9921k54wydo.page",
-          "producer": "PERSIAN",
-          "additionalProperties": {
-            "app_name": "news-persian",
-            "app_type": "responsive",
-            "content_language": "fa",
-            "product_platform": null,
-            "referrer_url": null,
-            "x5": "http%253A%252F%252Flocalhost.bbc.com%253A7080%252Fpersian%252Farticles%252Fc9921k54wydo%253Frenderer_env%253Dlive",
-            "x8": "simorgh",
-            "x9": "رضی%20موسوی%20که%20بود؟",
-            "x10": null,
-            "x11": "2023-12-26T17:18:13.294Z",
-            "x12": "2023-12-26T17:18:13.294Z",
-            "x13": "Syria~Syrian+civil+war~Iran~Bashar+al-Assad",
-            "x14": "28b0a95e-89d3-4fdf-bad0-8565eb549233~45d1e6e1-6001-4449-801d-ba85eed04025~511accd7-6ee6-4dfb-8e2b-b236be8cb14c~a682c620-92ca-4aa2-88fd-97c98c42a666",
-            "x16": "",
-            "x17": "Syria~Syrian+civil+war~Iran~Bashar+al-Assad",
-            "x18": false
-          }
-        },
-        "user": {
-          "hashedId": "83201dc0-3ddd-42d3-8b81-a85a8374c6e7",
-          "isSignedIn": true
-        }
-      },
-      "eventName": "pageView"
-    }
-  };
+  
 
   return (
     <html lang="en-GB" className={NO_JS_CLASSNAME} {...htmlAttrs}>
