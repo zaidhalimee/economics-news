@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import WithTimeMachine from '#testHelpers/withTimeMachine';
-import { MEDIA_PAGE } from '#app/routes/utils/pageTypes';
+import { TV_PAGE } from '#app/routes/utils/pageTypes';
 import { StoryArgs, StoryProps } from '#app/models/types/storybook';
 import { Services } from '#app/models/types/global';
 import { OnDemandTvPage } from '..';
@@ -40,7 +40,7 @@ const Component = ({ service }: StoryProps) => {
         service={service}
         loading={false}
         error=""
-        pageType={MEDIA_PAGE}
+        pageType={TV_PAGE}
       />
     </BrowserRouter>
   );

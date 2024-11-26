@@ -4,7 +4,7 @@ import pashtoPageData from '#data/pashto/bbc_pashto_tv/tv_programmes/w13xttn4.js
 import * as analyticsUtils from '#lib/analyticsUtils';
 import getInitialData from '#app/routes/onDemandTV/getInitialData';
 import withMediaError from '#lib/utilities/episodeAvailability/withMediaError';
-import { MEDIA_PAGE } from '#app/routes/utils/pageTypes';
+import { TV_PAGE } from '#app/routes/utils/pageTypes';
 import { Services } from '#app/models/types/global';
 import {
   act,
@@ -12,7 +12,7 @@ import {
 } from '../../components/react-testing-library-with-providers';
 import _OnDemandTvPage, { OnDemandTVProps } from './OnDemandTvPage';
 
-const pageType = MEDIA_PAGE;
+const pageType = TV_PAGE;
 
 const OnDemandTvPage = withMediaError(_OnDemandTvPage);
 
