@@ -21,14 +21,21 @@ const useViewTracker = (props = {}) => {
   const optimizely = path(['optimizely'], props);
   const detailedPlacement = props?.detailedPlacement;
 
+  const useReverb = pathOr(false, ['useReverb'], props);
+
   const observer = useRef();
   const timer = useRef(null);
   const [isInView, setIsInView] = useState();
   const [eventSent, setEventSent] = useState(false);
   const { trackingIsEnabled } = useTrackingToggle(componentName);
   const eventTrackingContext = useContext(EventTrackingContext);
-  const { pageIdentifier, platform, producerId, statsDestination } =
-    eventTrackingContext;
+  const {
+    pageIdentifier,
+    platform,
+    producerId,
+    producerName,
+    statsDestination,
+  } = eventTrackingContext;
   const campaignID = pathOr(
     path(['campaignID'], eventTrackingContext),
     ['campaignID'],
@@ -62,6 +69,7 @@ const useViewTracker = (props = {}) => {
           pageIdentifier,
           platform,
           producerId,
+          producerName,
           service,
           statsDestination,
         ].every(Boolean);
@@ -93,12 +101,14 @@ const useViewTracker = (props = {}) => {
             pageIdentifier,
             platform,
             producerId,
+            producerName,
             service,
             statsDestination,
             type: EVENT_TYPE,
             advertiserID,
             url,
             detailedPlacement,
+            useReverb,
           });
           setEventSent(true);
           observer.current.disconnect();
@@ -122,6 +132,7 @@ const useViewTracker = (props = {}) => {
     pageIdentifier,
     platform,
     producerId,
+    producerName,
     service,
     statsDestination,
     trackingIsEnabled,
@@ -130,6 +141,7 @@ const useViewTracker = (props = {}) => {
     url,
     optimizely,
     detailedPlacement,
+    useReverb,
   ]);
 
   return async element => {
