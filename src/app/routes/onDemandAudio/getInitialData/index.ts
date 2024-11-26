@@ -38,7 +38,6 @@ export default async ({
   pageType,
   service,
   toggles,
-  isAmp,
   getAgent,
   variant,
 }: InitialDataProps) => {
@@ -51,7 +50,6 @@ export default async ({
       pathname: radioPodcastDataPath,
       pageType,
       service,
-      isAmp,
       getAgent,
     });
 

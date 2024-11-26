@@ -7,6 +7,5 @@ export type InitialDataProps = {
   pageType: PageTypes;
   variant?: Variants;
   toggles?: Toggles;
-  isAmp?: boolean;
   getAgent?: GetAgent;
 };
