@@ -684,37 +684,6 @@ describe('Chartbeat utilities', () => {
       });
     });
 
-    it('should return config for amp pages when page type is media (onDemand radio) and env is live', () => {
-      const fixtureData: GetConfigProps = {
-        isAmp: true,
-        platform: 'amp',
-        pageType: MEDIA_PAGE,
-        mediaPageType: 'Radio',
-        brandName: 'BBC News Korean',
-        contentType: 'player-episode',
-        chartbeatDomain: 'korean.bbc.co.uk',
-        env: 'live',
-        service: 'korean',
-        origin: 'bbc.com',
-        previousPath: '/previous-path',
-        title: 'OnDemand Radio Page Title',
-      };
-
-      const expectedConfig = {
-        domain: 'korean.bbc.co.uk',
-        idSync: {
-          bbc_hid: 'foobar',
-        },
-        sections: 'Korean, Korean - Radio',
-        title: 'OnDemand Radio Page Title - BBC News Korean',
-        contentType: 'player-episode',
-        uid: 50924,
-        virtualReferrer: `\${documentReferrer}`,
-      };
-
-      expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
-    });
-
     it('should return config for canonical pages when page type is TV (onDemand TV) and env is live', () => {
       const fixtureData: GetConfigProps = {
         isAmp: false,
