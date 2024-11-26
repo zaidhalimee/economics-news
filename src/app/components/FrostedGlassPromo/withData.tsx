@@ -133,7 +133,10 @@ const optimoPromoFormatter = (props: PromoProps): FormattedPromo => {
       altText,
       copyright: imageMetadata?.copyrightHolder,
     }),
-    eventTrackingData: props?.eventTrackingData?.block,
+    eventTrackingData: {
+      ...props?.eventTrackingData?.block,
+      useReverb: props?.eventTrackingData?.useReverb,
+    },
   };
 };
 
@@ -142,7 +145,10 @@ const cpsPromoFormatter = (props: PromoProps): FormattedPromo => ({
   footer: <TimestampFooterWithAmp {...props} />,
   url: props?.item?.locators?.assetUri,
   image: buildImageProperties(props?.item?.indexImage),
-  eventTrackingData: props?.eventTrackingData?.block,
+  eventTrackingData: {
+    ...props?.eventTrackingData?.block,
+    useReverb: props?.eventTrackingData?.useReverb,
+  },
 });
 
 const linkPromoFormatter = (props: PromoProps): FormattedPromo => ({

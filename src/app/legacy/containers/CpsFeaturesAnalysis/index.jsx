@@ -22,6 +22,7 @@ const eventTrackingData = {
   block: {
     componentName: 'features',
   },
+  useReverb: true,
 };
 
 const StoryPromoUlFeatures = styled(StoryPromoUl)`
@@ -63,7 +64,10 @@ const StoryPromoLiFeatures = styled(StoryPromoLi)`
 const PromoListComponent = ({ promoItems, dir = 'ltr' }) => {
   const { serviceDatetimeLocale } = useContext(ServiceContext);
 
-  const viewRef = useViewTracker(eventTrackingData.block);
+  const viewRef = useViewTracker({
+    ...eventTrackingData.block,
+    useReverb: true,
+  });
 
   return (
     <StoryPromoUlFeatures>
@@ -94,7 +98,10 @@ const PromoListComponent = ({ promoItems, dir = 'ltr' }) => {
 const PromoComponent = ({ promo, dir = 'ltr' }) => {
   const { serviceDatetimeLocale } = useContext(ServiceContext);
 
-  const viewRef = useViewTracker(eventTrackingData);
+  const viewRef = useViewTracker({
+    ...eventTrackingData.block,
+    useReverb: true,
+  });
 
   return (
     <div ref={viewRef}>
