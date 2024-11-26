@@ -9,6 +9,7 @@ import {
 } from '../../../components/react-testing-library-with-providers';
 import { service as pidginServiceConfig } from '../../../lib/config/services/pidgin';
 import HeaderContainer from './index';
+import { AUDIO_PAGE } from '../../../routes/utils/pageTypes';
 
 const {
   INDEX_PAGE,
@@ -87,6 +88,16 @@ describe(`Header`, () => {
       const { container } = HeaderContainerWithContext({
         renderOptions: {
           pageType: TV_PAGE,
+        },
+      });
+
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('should render correctly for WS on demand audio page', () => {
+      const { container } = HeaderContainerWithContext({
+        renderOptions: {
+          pageType: AUDIO_PAGE,
         },
       });
 
