@@ -72,7 +72,7 @@ const defaultCyrillicConfig = {
     home: 'Бош саҳифа',
     currentPage: 'Жорий саҳифа',
     skipLinkText: 'Саҳифага ўтиш',
-    relatedContent: 'Бу мавзуда батафсилроқ',
+    relatedContent: 'Мавзуга алоқадор',
     relatedTopics: 'Алоқадор мавзулар',
     navMenuText: 'Бўлимлар',
     mediaAssetPage: {
