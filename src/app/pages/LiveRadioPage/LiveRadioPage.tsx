@@ -98,7 +98,10 @@ const LiveRadioPage = ({ pageData }: { pageData: LiveRadioPageData }) => {
         </Grid>
       </GelPageGrid>
       {hasRadioScheduleData && (
-        <RadioScheduleContainer initialData={radioScheduleData} />
+        <RadioScheduleContainer
+          initialData={radioScheduleData}
+          toggleName="liveRadioSchedule"
+        />
       )}
     </>
   );

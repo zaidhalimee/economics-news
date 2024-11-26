@@ -28,6 +28,7 @@ describe('RadioScheduleData', () => {
         service="gahuza"
         initialData={initialData}
         radioScheduleToggle
+        toggleName="onDemandRadioSchedule"
       />,
     );
     await waitFor(() => {

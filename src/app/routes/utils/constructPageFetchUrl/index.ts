@@ -204,7 +204,6 @@ const constructPageFetchUrl = ({
     'query',
     queryParameters,
   );
-  console.log('CHECK', pathname, isLocal);
 
   if (true) {
     switch (pageType) {
@@ -267,7 +266,7 @@ const constructPageFetchUrl = ({
         break;
       }
       case AUDIO_PAGE: {
-        fetchUrl = Url(`${pathname}`);
+        fetchUrl = Url(pathname);
         break;
       }
       default:

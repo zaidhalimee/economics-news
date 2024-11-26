@@ -79,7 +79,7 @@ const pageTypeUrlBuilders = {
   [UGC_PAGE]: noOp,
   [AV_EMBEDS]: noOp,
   [DOWNLOADS_PAGE]: noOp,
-  [AUDIO_PAGE]: buildTvRadioATIParams,
+  [AUDIO_PAGE]: noOp,
 };
 
 const pageTypeParamBuilders = {
@@ -102,7 +102,7 @@ const pageTypeParamBuilders = {
   [UGC_PAGE]: noOp,
   [AV_EMBEDS]: noOp,
   [DOWNLOADS_PAGE]: noOp,
-  [AUDIO_PAGE]: buildTvRadioATIParams,
+  [AUDIO_PAGE]: noOp,
 };
 
 type BuilderFunction = {

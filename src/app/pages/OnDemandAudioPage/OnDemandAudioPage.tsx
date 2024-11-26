@@ -247,7 +247,10 @@ const OnDemandAudioPage = ({
         </PageGrid>
       )}
       {radioScheduleData && (
-        <RadioScheduleContainer initialData={radioScheduleData} />
+        <RadioScheduleContainer
+          initialData={radioScheduleData}
+          toggleName="onDemandRadioSchedule"
+        />
       )}
     </>
   );
