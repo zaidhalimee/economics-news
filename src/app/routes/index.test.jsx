@@ -9,8 +9,8 @@ import defaultToggles from '#lib/config/toggles';
 
 // mock data
 import featureIndexPageJson from '#data/afrique/cpsAssets/48465371.json';
-import gahuzaPodcastPage from '#data/gahuza/bbc_gahuza_radio/podcast.json';
-import gahuzaOnDemandAudio from '#data/gahuza/bbc_gahuza_radio/audio.json';
+import gahuzaPodcastPage from '#data/gahuza/bbc_gahuza_radio/podcast-programme-p07yh8hb.json';
+import gahuzaOnDemandAudio from '#data/gahuza/bbc_gahuza_radio/audio-programmes-p02pcb5c.json';
 import legacyMediaAssetPage from '#data/azeri/legacyAssets/multimedia/2012/09/120919_georgia_prison_video.json';
 import liveRadioPageJson from '#data/korean/bbc_korean_radio/liveradio.json';
 import homePageJson from '#data/kyrgyz/homePage/index.json';

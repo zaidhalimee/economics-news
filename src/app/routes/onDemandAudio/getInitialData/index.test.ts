@@ -1,5 +1,5 @@
-import gahuzaOnDemandAudio from '#data/gahuza/bbc_gahuza_radio/audio.json';
-import podcastJson from '#data/gahuza/bbc_gahuza_radio/podcast.json';
+import gahuzaOnDemandAudio from '#data/gahuza/bbc_gahuza_radio/audio-programmes-p02pcb5c.json';
+import podcastJson from '#data/gahuza/bbc_gahuza_radio/podcast-programme-p07yh8hb.json';
 import { AUDIO_PAGE } from '#app/routes/utils/pageTypes';
 import { FetchMock } from 'jest-fetch-mock';
 import * as fetchBFF from '#app/routes/utils/fetchDataFromBFF';

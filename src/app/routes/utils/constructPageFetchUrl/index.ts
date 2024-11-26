@@ -204,8 +204,9 @@ const constructPageFetchUrl = ({
     'query',
     queryParameters,
   );
+  console.log('CHECK', pathname, isLocal);
 
-  if (isLocal) {
+  if (true) {
     switch (pageType) {
       case ARTICLE_PAGE: {
         const isOptimoId = isOptimoIdCheck(`/articles/${id}`);
@@ -263,6 +264,10 @@ const constructPageFetchUrl = ({
             `${host}${port}/api/local/${parsedRoute.service}/av-embeds/${parsedRoute.variant ? `${parsedRoute?.variant}/` : ''}${parsedRoute.assetId}${parsedRoute.mediaId ? `/${parsedRoute.mediaDelimiter}/${parsedRoute.mediaId}` : ''} ${parsedRoute.lang ? `/${parsedRoute.lang}` : ''}`,
           );
         }
+        break;
+      }
+      case AUDIO_PAGE: {
+        fetchUrl = Url(`${pathname}`);
         break;
       }
       default:

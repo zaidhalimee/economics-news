@@ -1,6 +1,6 @@
 /**
  * @service gahuza
- * @pathname /gahuza/bbc_gahuza_radio/w172x7rkcj6v0vz
+ * @pathname /gahuza/bbc_gahuza_radio/w3ct1v5v
  */
 
 import runExpiredEpisodeTests from '../expiredEpisodeTests';

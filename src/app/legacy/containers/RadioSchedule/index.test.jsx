@@ -1,5 +1,5 @@
 import React from 'react';
-import gahuzaAudio from '#data/gahuza/bbc_gahuza_radio/podcast.json';
+import podcastProgramme from '#data/gahuza/bbc_gahuza_radio/podcast-programme-p07yh8hb.json';
 import {
   render,
   waitFor,
@@ -12,7 +12,7 @@ describe('RadioScheduleData', () => {
   });
 
   it('does not render when radio schedule toggle is disabled', async () => {
-    const initialData = gahuzaAudio.data.radioScheduleData;
+    const initialData = podcastProgramme.data.radioScheduleData;
     const { container } = render(
       <RadioSchedulesWithContext service="gahuza" initialData={initialData} />,
     );
@@ -22,7 +22,7 @@ describe('RadioScheduleData', () => {
   });
 
   it('does render when radio schedule toggle is enabled', async () => {
-    const initialData = gahuzaAudio.data.radioScheduleData;
+    const initialData = podcastProgramme.data.radioScheduleData;
     const { container } = render(
       <RadioSchedulesWithContext
         service="gahuza"
@@ -36,7 +36,7 @@ describe('RadioScheduleData', () => {
   });
 
   it('does not render on AMP pages', async () => {
-    const initialData = gahuzaAudio.data.radioScheduleData;
+    const initialData = podcastProgramme.data.radioScheduleData;
 
     const { container } = render(
       <RadioSchedulesWithContext

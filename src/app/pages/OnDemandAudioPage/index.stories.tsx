@@ -3,9 +3,12 @@ import { BrowserRouter } from 'react-router-dom';
 import { AUDIO_PAGE } from '#app/routes/utils/pageTypes';
 import { StoryArgs, StoryProps } from '#app/models/types/storybook';
 import { Services } from '#app/models/types/global';
-import gahuza from '#data/gahuza/bbc_gahuza_radio/audio.json';
-import korean from '#data/korean/bbc_korean_radio/audio.json';
+import gahuzaAudioResponse from '#data/gahuza/bbc_gahuza_radio/audio-programmes-p02pcb5c.json';
+import koreanAudioResponse from '#data/korean/bbc_korean_radio/audio-programme-w3ct1vk5.json';
 import { OnDemandAudioPage } from '..';
+
+const gahuza = gahuzaAudioResponse.data;
+const korean = koreanAudioResponse.data;
 
 const onDemandRadioFixtures = {
   gahuza,
