@@ -5,6 +5,7 @@ import {
 } from '#app/components/react-testing-library-with-providers';
 import { Helmet } from 'react-helmet';
 import useLocation from '#app/hooks/useLocation';
+import { TV_PAGE } from '#app/routes/utils/pageTypes';
 import MediaPlayer from '.';
 import {
   aresMediaBlocks,
@@ -236,7 +237,7 @@ describe('MediaLoader', () => {
               pageIdentifier: 'hindi.bbc_hindi_tv.tv_programmes.w13xttlw.page',
               contentType: 'player-episode',
             },
-            pageType: 'media',
+            pageType: TV_PAGE,
             pathname: '/hindi/bbc_hindi_tv/tv_programmes/w13xttlw',
             toggles: { eventTracking: { enabled: true } },
           },
