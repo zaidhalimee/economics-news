@@ -72,7 +72,7 @@ const defaultCyrillicConfig = {
     home: 'Бош саҳифа',
     currentPage: 'Жорий саҳифа',
     skipLinkText: 'Саҳифага ўтиш',
-    relatedContent: 'Бу мавзуда батафсилроқ',
+    relatedContent: 'Мавзуга алоқадор',
     relatedTopics: 'Алоқадор мавзулар',
     navMenuText: 'Бўлимлар',
     mediaAssetPage: {
@@ -407,7 +407,7 @@ export const service: UzbekConfig = {
       home: 'Bosh sahifa',
       currentPage: 'Joriy sahifa',
       skipLinkText: 'Sahifaga o‘tish',
-      relatedContent: 'Bu mavzuda batafsilroq',
+      relatedContent: 'Mavzuga aloqador',
       relatedTopics: 'Aloqador mavzular',
       navMenuText: 'Bo‘limlar',
       mediaAssetPage: {

@@ -303,6 +303,7 @@ exports[`Radio Page Main should match snapshot for Canonical 1`] = `
 .emotion-14 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
 }
 
 .emotion-14:focus-visible {

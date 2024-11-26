@@ -1,4 +1,5 @@
 import { GetServerSideProps } from 'next';
+import dynamic from 'next/dynamic';
 import { DOWNLOADS_PAGE } from '#app/routes/utils/pageTypes';
 import logResponseTime from '#server/utilities/logResponseTime';
 
@@ -6,8 +7,9 @@ import PageDataParams from '#app/models/types/pageDataParams';
 import getToggles from '#app/lib/utilities/getToggles/withCache';
 import dataFetch from './dataFetch';
 
-import downloadsPageLayout from './downloadsPageLayout';
 import extractHeaders from '../../../../src/server/utilities/extractHeaders';
+
+const downloadsPageLayout = dynamic(() => import('./downloadsPageLayout'));
 
 const pageTitle = '다운로드 - BBC News 코리아';
 

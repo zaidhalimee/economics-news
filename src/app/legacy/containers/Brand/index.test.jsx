@@ -61,5 +61,34 @@ describe(`BrandContainer`, () => {
         container.querySelector('a[href="/news"]'),
       );
     });
+
+    it('should render correctly with link provided for variant service', () => {
+      const { container } = render(
+        BrandContainerWithContext(mockSkipLink, mockScriptLink, 'brandLink'),
+        {
+          service: 'serbian',
+          variant: 'lat',
+        },
+      );
+
+      const brandLink = container.querySelector('a');
+
+      expect(brandLink.getAttribute('href')).toEqual('/serbian/lat');
+    });
+
+    it('should render correctly with link provided for Uzbek service', () => {
+      const { container } = render(
+        BrandContainerWithContext(mockSkipLink, mockScriptLink, 'brandLink'),
+        {
+          service: 'uzbek',
+          variant: 'cyr',
+        },
+      );
+
+      const brandLink = container.querySelector('a');
+
+      // Uzbek is not yet publishing variant homepages
+      expect(brandLink.getAttribute('href')).toEqual('/uzbek');
+    });
   });
 });

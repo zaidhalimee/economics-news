@@ -151,4 +151,16 @@ describe('EmbedHtml', () => {
       expect(container).toBeEmptyDOMElement();
     });
   });
+  describe('Lite', () => {
+    it('Should return null if isLite is true', () => {
+      const { container } = render(
+        <EmbedHtml embeddableContent={electionHtml} />,
+        {
+          isLite: true,
+        },
+      );
+
+      expect(container).toBeEmptyDOMElement();
+    });
+  });
 });
