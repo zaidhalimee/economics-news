@@ -7,6 +7,7 @@ import {
   STORY_PAGE,
   MEDIA_ASSET_PAGE,
   PHOTO_GALLERY_PAGE,
+  TV_PAGE,
 } from '#app/routes/utils/pageTypes';
 import {
   articleDataNews,
@@ -17,9 +18,11 @@ import { RequestContextProvider } from '#contexts/RequestContext';
 import { data as serbianFrontPageData } from '#data/serbian/frontpage/lat.json';
 import { data as urduFrontPageData } from '#data/urdu/frontpage/index.json';
 import liveRadioPageData from '#data/korean/bbc_korean_radio/liveradio.json';
+import { data as hindiTVBrand } from '#data/hindi/bbc_hindi_tv/tv_programmes/w13xttlw.json';
 import { getSummary } from '#lib/utilities/parseAssetData/index';
 import { Services, PageTypes } from '#app/models/types/global';
 import { Article } from '#app/models/types/optimo';
+import filterForBlockType from '#app/lib/utilities/blockHandlers';
 import { render, waitFor } from '../react-testing-library-with-providers';
 import services from '../../../server/utilities/serviceConfigs';
 import { getAuthorTwitterHandle } from '../Byline/utilities';
@@ -1000,6 +1003,31 @@ describe('Snapshot', () => {
         lang={urduFrontPageData.article.metadata.language}
         description={urduFrontPageData.article.metadata.summary}
         openGraphType="website"
+      />,
+    );
+    const container = Helmet.peek();
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should match for WS TV', () => {
+    const mediaOverrides = filterForBlockType(
+      hindiTVBrand.mediaBlocks,
+      'mediaOverrides',
+    );
+
+    render(
+      <MetadataWithContext
+        service="hindi"
+        bbcOrigin={dotComOrigin}
+        platform="canonical"
+        id={null}
+        pageType={TV_PAGE}
+        pathname="/hindi/bbc_hindi_tv/tv_programmes/w13xttlw"
+        title={hindiTVBrand.metadata.atiAnalytics.pageTitle}
+        lang={mediaOverrides.language}
+        description={hindiTVBrand.shortSynopsis}
+        openGraphType="website"
+        hasAmpPage={false}
       />,
     );
     const container = Helmet.peek();
