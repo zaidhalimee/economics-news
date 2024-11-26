@@ -18,6 +18,7 @@ import {
   UGC_PAGE,
   AV_EMBEDS,
   DOWNLOADS_PAGE,
+  AUDIO_PAGE,
   TV_PAGE,
 } from '../../../routes/utils/pageTypes';
 import {
@@ -52,8 +53,8 @@ const MIGRATED_PAGE_TYPES: PageTypes[] = [
   LIVE_PAGE,
   STATIC_PAGE,
   DOWNLOADS_PAGE,
+  AUDIO_PAGE,
   TV_PAGE,
-  MEDIA_PAGE,
 ];
 
 const noOp = () => {
@@ -80,6 +81,7 @@ const pageTypeUrlBuilders = {
   [UGC_PAGE]: noOp,
   [AV_EMBEDS]: noOp,
   [DOWNLOADS_PAGE]: noOp,
+  [AUDIO_PAGE]: noOp,
   [TV_PAGE]: noOp,
 };
 
@@ -103,6 +105,7 @@ const pageTypeParamBuilders = {
   [UGC_PAGE]: noOp,
   [AV_EMBEDS]: noOp,
   [DOWNLOADS_PAGE]: noOp,
+  [AUDIO_PAGE]: noOp,
   [TV_PAGE]: noOp,
 };
 

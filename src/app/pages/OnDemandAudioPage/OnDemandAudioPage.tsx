@@ -6,7 +6,6 @@ import Grid, { GelPageGrid } from '#components/Grid';
 import StyledRadioHeadingContainer from '#containers/OnDemandHeading/StyledRadioHeadingContainer';
 import OnDemandParagraphContainer from '#containers/OnDemandParagraph';
 import EpisodeImage from '#containers/OnDemandImage';
-import getMasterbrand from '#lib/utilities/getMasterbrand';
 import RadioScheduleContainer from '#containers/RadioSchedule';
 import RecentAudioEpisodes from '#containers/EpisodeList/RecentAudioEpisodes';
 import FooterTimestamp from '#containers/OnDemandFooterTimestamp';
@@ -15,7 +14,11 @@ import MediaLoader from '#app/components/MediaLoader';
 import { PageTypes } from '#app/models/types/global';
 import { RadioScheduleData } from '#app/models/types/radioSchedule';
 import { ContentType } from '#app/components/ChartbeatAnalytics/types';
-import { OnDemandAudioBlock, MediaOverrides } from '#app/models/types/media';
+import {
+  EpisodeAvailability,
+  OnDemandAudioBlock,
+} from '#app/models/types/media';
+import { ATIData } from '#app/components/ATIAnalytics/types';
 import styles from './index.styles';
 import ATIAnalytics from '../../components/ATIAnalytics';
 import ChartbeatAnalytics from '../../components/ChartbeatAnalytics';
@@ -62,7 +65,9 @@ export interface OnDemandAudioProps {
     mediaBlocks: OnDemandAudioBlock[];
     metadata: {
       type: PageTypes;
+      atiAnalytics?: ATIData;
     };
+    episodeAvailability: EpisodeAvailability;
     isPodcast: boolean;
     language: string;
     brandTitle: string;
@@ -102,7 +107,6 @@ const OnDemandAudioPage = ({
     summary,
     shortSynopsis,
     masterBrand,
-    episodeId,
     releaseDateTimeStamp,
     imageUrl,
     imageAltText,
@@ -118,8 +122,7 @@ const OnDemandAudioPage = ({
 
   const pageType = path(['metadata', 'type'], pageData);
 
-  const { dir, liveRadioOverrides, service, serviceName } =
-    useContext(ServiceContext);
+  const { dir, serviceName } = useContext(ServiceContext);
   const oppDir = dir === 'rtl' ? 'ltr' : 'rtl';
 
   const hasRecentEpisodes = recentEpisodes && Boolean(recentEpisodes.length);
@@ -135,26 +138,9 @@ const OnDemandAudioPage = ({
       }
     : {};
 
-  const serviceMasterBrand = getMasterbrand(masterBrand, liveRadioOverrides);
-
-  const pageIdentifierOverride = isPodcast
-    ? `${service}.${serviceMasterBrand}.podcasts.${episodeId}.page`
-    : `${service}.${serviceMasterBrand}.${episodeId}.page`;
-
-  const mediaOverrides: MediaOverrides = {
-    model: {
-      language,
-      pageIdentifierOverride,
-      pageTitleOverride: promoBrandTitle,
-    },
-    type: 'mediaOverrides',
-  };
-
-  const mediaBlocksWithOverrides = [...pageData?.mediaBlocks, mediaOverrides];
-
   return (
     <>
-      <ATIAnalytics data={pageData} />
+      <ATIAnalytics atiData={pageData?.metadata.atiAnalytics} />
       <ChartbeatAnalytics
         mediaPageType={isPodcast ? 'Podcasts' : 'Radio'}
         title={headline}
@@ -205,7 +191,7 @@ const OnDemandAudioPage = ({
                 episodeTitle={episodeTitle}
                 releaseDateTimeStamp={releaseDateTimeStamp}
               />
-              <OnDemandParagraphContainer text={summary} />
+              <OnDemandParagraphContainer testid="summary" text={summary} />
               {episodeTitle && (
                 <FooterTimestamp releaseDateTimeStamp={releaseDateTimeStamp} />
               )}
@@ -222,7 +208,7 @@ const OnDemandAudioPage = ({
             </Grid>
           </GelPageGrid>
           {mediaIsAvailable ? (
-            <MediaLoader blocks={mediaBlocksWithOverrides} />
+            <MediaLoader blocks={pageData?.mediaBlocks} />
           ) : (
             //  @ts-expect-error allow rendering of MediaError component when media is not available
             <MediaError skin="audio" />
@@ -264,7 +250,10 @@ const OnDemandAudioPage = ({
         </PageGrid>
       )}
       {radioScheduleData && (
-        <RadioScheduleContainer initialData={radioScheduleData} />
+        <RadioScheduleContainer
+          initialData={radioScheduleData}
+          toggleName="onDemandRadioSchedule"
+        />
       )}
     </>
   );

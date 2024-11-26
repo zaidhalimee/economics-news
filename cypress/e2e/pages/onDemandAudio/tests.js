@@ -7,7 +7,6 @@ import {
 } from '../../../support/helpers/onDemandRadioTv';
 import envConfig from '../../../support/config/envs';
 import getDataUrl from '../../../support/helpers/getDataUrl';
-import processRecentEpisodes from '../../../../src/app/routes/utils/processRecentEpisodes';
 import {
   isScheduleDataComplete,
   getIsProgramValid,
@@ -57,10 +56,10 @@ export default ({ service, pageType, variant }) => {
             );
             // There cannot be more episodes shown than the max allowed
             if (recentEpisodesEnabled) {
-              const recentEpisodesMaxNumber = path(
-                [toggleName, 'value'],
-                toggles,
-              );
+              const recentEpisodesLimit = path([toggleName, 'value'], toggles);
+
+              const recentEpisodesMaxNumber = Number(recentEpisodesLimit);
+
               const currentPath = Cypress.env('currentPath');
               const url =
                 Cypress.env('APP_ENV') === 'test'
@@ -68,17 +67,12 @@ export default ({ service, pageType, variant }) => {
                   : `${currentPath}`;
 
               cy.request(getDataUrl(url)).then(({ body }) => {
-                const episodeId = path(['content', 'blocks', 0, 'id'], body);
+                const processedEpisodesData = body.data.recentEpisodes;
 
-                const processedEpisodesData = processRecentEpisodes(body, {
-                  exclude: episodeId,
-                  recentEpisodesLimit: recentEpisodesMaxNumber,
-                });
-
-                const expectedNumberOfEpisodes = processedEpisodesData.length;
+                const totalNumberOfEpisodes = processedEpisodesData.length;
 
                 cy.log(
-                  `Number of available episodes? ${expectedNumberOfEpisodes}`,
+                  `Number of available episodes? ${totalNumberOfEpisodes}`,
                 );
 
                 cy.window().then(win => {
@@ -129,7 +123,7 @@ export default ({ service, pageType, variant }) => {
                   }
 
                   // More than one episode expected
-                  if (expectedNumberOfEpisodes > 1) {
+                  if (totalNumberOfEpisodes > 1) {
                     cy.get('[data-e2e=recent-episodes-list]').should('exist');
 
                     cy.get('[data-e2e=recent-episodes-list]').within(() => {
@@ -137,14 +131,14 @@ export default ({ service, pageType, variant }) => {
                         .its('length')
                         .should(length => {
                           expect(length).to.be.closeTo(
-                            expectedNumberOfEpisodes,
+                            recentEpisodesMaxNumber,
                             1,
                           );
                         });
                     });
                   }
                   // If there is only one item, it is not in a list
-                  else if (expectedNumberOfEpisodes === 1) {
+                  else if (totalNumberOfEpisodes === 1) {
                     cy.get('aside[aria-labelledby=recent-episodes]').within(
                       () => {
                         cy.get('[data-e2e="recent-episodes-list"]').should(
@@ -189,7 +183,7 @@ export default ({ service, pageType, variant }) => {
               );
 
               if (scheduleIsEnabled) {
-                const masterBrand = jsonData.metadata.createdBy;
+                const { masterBrand } = jsonData.data;
 
                 const schedulePath =
                   `/${service}/${masterBrand}/schedule.json${overrideRendererOnTest()}`.replace(

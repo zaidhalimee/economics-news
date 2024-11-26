@@ -22,6 +22,7 @@ import {
   HOME_PAGE,
   LIVE_PAGE,
   MOST_READ_PAGE,
+  AUDIO_PAGE,
   TOPIC_PAGE,
   TV_PAGE,
   UGC_PAGE,
@@ -135,6 +136,7 @@ const getId = ({ pageType, service, variant, env }: GetIdProps) => {
         return id;
       };
       break;
+    case AUDIO_PAGE:
     case TV_PAGE:
       getIdFunction = (path: string) => getTVAudioId(path);
       break;
@@ -218,6 +220,7 @@ const constructPageFetchUrl = ({
         break;
       }
       case CPS_ASSET:
+      case AUDIO_PAGE:
       case TV_PAGE:
         fetchUrl = Url(`/${id}`);
         break;
@@ -263,7 +266,6 @@ const constructPageFetchUrl = ({
             `${host}${port}/api/local/${parsedRoute.service}/av-embeds/${parsedRoute.variant ? `${parsedRoute?.variant}/` : ''}${parsedRoute.assetId}${parsedRoute.mediaId ? `/${parsedRoute.mediaDelimiter}/${parsedRoute.mediaId}` : ''} ${parsedRoute.lang ? `/${parsedRoute.lang}` : ''}`,
           );
         }
-
         break;
       }
       default:
