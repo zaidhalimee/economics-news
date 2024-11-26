@@ -1230,8 +1230,7 @@ describe('Metadata', () => {
 
         expect(
           document.querySelector('head > meta[name=apple-itunes-app]'),
-        ).not.toBeInTheDocument
-();
+        ).not.toBeInTheDocument();
       },
     );
   });
