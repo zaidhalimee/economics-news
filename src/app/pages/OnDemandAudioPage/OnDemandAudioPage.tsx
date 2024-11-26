@@ -14,7 +14,10 @@ import MediaLoader from '#app/components/MediaLoader';
 import { PageTypes } from '#app/models/types/global';
 import { RadioScheduleData } from '#app/models/types/radioSchedule';
 import { ContentType } from '#app/components/ChartbeatAnalytics/types';
-import { OnDemandAudioBlock } from '#app/models/types/media';
+import {
+  EpisodeAvailability,
+  OnDemandAudioBlock,
+} from '#app/models/types/media';
 import { ATIData } from '#app/components/ATIAnalytics/types';
 import styles from './index.styles';
 import ATIAnalytics from '../../components/ATIAnalytics';
@@ -64,7 +67,7 @@ export interface OnDemandAudioProps {
       type: PageTypes;
       atiAnalytics?: ATIData;
     };
-    episodeAvailability: 'available' | 'not-yet-available' | 'expired';
+    episodeAvailability: EpisodeAvailability;
     isPodcast: boolean;
     language: string;
     brandTitle: string;
