@@ -199,7 +199,7 @@ describe('Expected use', () => {
     expect(global.fetch).not.toHaveBeenCalled();
   });
 
-  it('should use "eventName" property if provided in optimizely object', async () => {
+  it('should use "optimizelyMetricNameOverride" property if provided in eventTrackingData object', async () => {
     const mockOptimizelyTrack = jest.fn();
     const mockUserId = 'test';
     const mockAttributes = { foo: 'bar' };
@@ -209,7 +209,7 @@ describe('Expected use', () => {
         track: mockOptimizelyTrack,
         user: { attributes: mockAttributes, id: mockUserId },
       },
-      optimizelyEventName: 'myEvent',
+      optimizelyMetricNameOverride: 'myEvent',
     };
 
     const {
@@ -246,11 +246,11 @@ describe('Expected use', () => {
     expect(options).toEqual({ threshold: [0.5] });
     expect(mockOptimizelyTrack).toHaveBeenCalledTimes(1);
     expect(mockOptimizelyTrack).toHaveBeenCalledWith(
-      'component_views',
+      'myEvent_views',
       mockUserId,
       {
         foo: 'bar',
-        viewed_myEvent: true,
+        viewed_wsoj: true,
       },
     );
   });

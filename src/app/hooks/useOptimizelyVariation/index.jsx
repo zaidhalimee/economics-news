@@ -29,9 +29,6 @@ const useOptimizelyVariation = (
       }
     }, [isClientReady, decision.variationKey, didTimeout]);
 
-    // Optimizely sets 'off' as the default variation if a flag is not enabled.
-    if (variation === 'off') return null;
-
     return variation;
   }
 

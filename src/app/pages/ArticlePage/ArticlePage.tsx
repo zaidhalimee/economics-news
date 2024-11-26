@@ -77,8 +77,7 @@ import {
 } from './experimentTopStories/helpers';
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
-  const { isApp, pageType, service, isAmp, id, env } =
-    useContext(RequestContext);
+  const { isApp, pageType, service, isAmp, env } = useContext(RequestContext);
 
   const {
     articleAuthor,
@@ -109,7 +108,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const topics = pageData?.metadata?.topics ?? [];
   const blocks = pageData?.content?.model?.blocks ?? [];
   const startsWithHeading = blocks?.[0]?.type === 'headline' || false;
-
   const bylineBlock = blocks.find(
     block => block.type === 'byline',
   ) as OptimoBylineBlock;
@@ -160,8 +158,11 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       topStoriesContent,
       isAmp,
       service,
-      id,
     });
+
+  const showRelatedContent = blocks.some(
+    block => block.type === 'relatedContent',
+  );
 
   const atiData = {
     ...atiAnalytics,
@@ -235,8 +236,11 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           variantName="ThreeQuarters"
         />
       ) : null,
+
     jumpTo: (props: ComponentToRenderProps & JumpToProps) =>
-      jumpToVariation === 'on' ? <JumpTo {...props} /> : null,
+      jumpToVariation === 'on' ? (
+        <JumpTo {...props} showRelatedContentLink={showRelatedContent} />
+      ) : null,
   };
 
   const visuallyHiddenBlock = {
