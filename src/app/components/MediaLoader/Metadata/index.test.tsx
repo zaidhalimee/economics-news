@@ -4,7 +4,7 @@ import {
   act,
   render,
 } from '#app/components/react-testing-library-with-providers';
-import { ARTICLE_PAGE, MEDIA_PAGE } from '#app/routes/utils/pageTypes';
+import { ARTICLE_PAGE, HOME_PAGE } from '#app/routes/utils/pageTypes';
 import Metadata from '.';
 import { aresMediaBlocks } from '../fixture';
 import { MediaBlock } from '../types';
@@ -64,7 +64,7 @@ describe('Media Loader - Metadata', () => {
 
     await act(async () => {
       ({ container } = render(<Metadata blocks={[]} />, {
-        pageType: MEDIA_PAGE,
+        pageType: HOME_PAGE,
       }));
     });
 
