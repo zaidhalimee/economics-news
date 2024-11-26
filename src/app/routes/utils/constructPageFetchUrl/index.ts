@@ -21,6 +21,7 @@ import {
   CPS_ASSET,
   HOME_PAGE,
   LIVE_PAGE,
+  LIVE_RADIO_PAGE,
   MOST_READ_PAGE,
   TOPIC_PAGE,
   UGC_PAGE,
@@ -96,6 +97,14 @@ const getId = ({ pageType, service, variant, env }: GetIdProps) => {
     case MOST_READ_PAGE:
       getIdFunction = () => pageType;
       break;
+    case LIVE_RADIO_PAGE:
+      getIdFunction = (path: string) => {
+        const parts = path?.split('/');
+        const masterBrand = parts?.[2];
+
+        return masterBrand;
+      };
+      break;
     case LIVE_PAGE:
       getIdFunction = (path: string) => {
         if (isTipoIdCheck(path)) {
@@ -147,6 +156,7 @@ export interface UrlConstructParams {
   variant?: Variants;
   page?: string;
   isAmp?: boolean;
+  disableRadioSchedule?: boolean;
   mediaId?: string | null;
   lang?: string | null;
 }
@@ -158,6 +168,7 @@ const constructPageFetchUrl = ({
   variant,
   page,
   isAmp,
+  disableRadioSchedule,
   mediaId,
   lang,
 }: UrlConstructParams) => {
@@ -184,12 +195,18 @@ const constructPageFetchUrl = ({
     ...(isAmp && {
       isAmp,
     }),
+    ...(disableRadioSchedule && {
+      disableRadioSchedule,
+    }),
     // MediaId can be supplied by av-embeds routes to determine which media asset to return
     ...(mediaId && {
       mediaId,
     }),
     ...(lang && {
       lang,
+    }),
+    ...(isAmp && {
+      isAmp,
     }),
     ...(env && { serviceEnv: env }),
   };
