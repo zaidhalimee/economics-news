@@ -100,9 +100,9 @@ const getId = ({ pageType, service, variant, env }: GetIdProps) => {
     case LIVE_RADIO_PAGE:
       getIdFunction = (path: string) => {
         const parts = path?.split('/');
-        const masterBrand = parts?.[2];
+        const liveRadioName = parts?.[2];
 
-        return masterBrand;
+        return liveRadioName;
       };
       break;
     case LIVE_PAGE:
