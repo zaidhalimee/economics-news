@@ -2565,10 +2565,6 @@ exports[`Metadata Snapshot should match for WS On Demand Audio 1`] = `
       "rel": "alternate",
     },
     {
-      "href": "https://www.bbc.com/gahuza/bbc_gahuza_radio/p02pcb5c.amp",
-      "rel": "amphtml",
-    },
-    {
       "href": "http://localhost:7080/gahuza/images/icons/icon-192x192.png",
       "rel": "apple-touch-icon",
     },

@@ -1074,6 +1074,7 @@ describe('Metadata', () => {
           lang={gahuzaAudioPage.language}
           description={gahuzaAudioPage.summary}
           openGraphType="website"
+          hasAmpPage={false}
         />,
       );
       const container = Helmet.peek();
@@ -1229,7 +1230,8 @@ describe('Metadata', () => {
 
         expect(
           document.querySelector('head > meta[name=apple-itunes-app]'),
-        ).not.toBeInTheDocument();
+        ).not.toBeInTheDocument
+();
       },
     );
   });
