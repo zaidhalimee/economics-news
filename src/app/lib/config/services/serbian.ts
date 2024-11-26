@@ -115,10 +115,6 @@ export const service: SerbianConfig = {
         url: '/serbian/lat',
       },
       {
-        title: 'Američki izbori',
-        url: '/serbian/lat/topics/c1v8enng1npt',
-      },
-      {
         title: 'Srbija',
         url: '/serbian/lat/topics/cr50vdy9q6wt',
       },
