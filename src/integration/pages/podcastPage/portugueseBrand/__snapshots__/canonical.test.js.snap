@@ -25,7 +25,7 @@ exports[`Canonical Podcast Page Analytics ATI tracking pixel search params 1`] =
     "p": "portuguese.bbc_brasil.podcasts.programmes.p07r3r3t.page",
   },
   {
-    "x1": "[urn:bbc:pips:p0jdsr74]",
+    "x1": "[urn:bbc:pips:p07r3r3t]",
   },
   {
     "x2": "[responsive]",
@@ -34,7 +34,7 @@ exports[`Canonical Podcast Page Analytics ATI tracking pixel search params 1`] =
     "x3": "[news-portuguese]",
   },
   {
-    "x4": "[pt-BR]",
+    "x4": "[pt-br]",
   },
   {
     "x7": "[player-episode]",

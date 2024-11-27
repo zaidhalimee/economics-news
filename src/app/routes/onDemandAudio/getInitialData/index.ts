@@ -3,7 +3,6 @@ import pathOr from 'ramda/src/pathOr';
 import { RADIO_MISSING_FIELD, PODCAST_MISSING_FIELD } from '#lib/logger.const';
 import { InitialDataProps } from '#app/models/types/initialData';
 import fetchDataFromBFF from '#app/routes/utils/fetchDataFromBFF';
-import overrideRendererOnTest from '../../utils/overrideRendererOnTest';
 import getErrorStatusCode from '../../utils/fetchPageData/utils/getErrorStatusCode';
 import { getPodcastExternalLinks } from '../tempData/podcastExternalLinks';
 
@@ -44,10 +43,8 @@ export default async ({
   try {
     const { isPodcast, getRecentEpisodesToggle } = getConfig(pathname);
 
-    const radioPodcastDataPath = overrideRendererOnTest(pathname);
-
     const { json, status } = await fetchDataFromBFF({
-      pathname: radioPodcastDataPath,
+      pathname,
       pageType,
       service,
       getAgent,

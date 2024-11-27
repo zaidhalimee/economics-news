@@ -1,13 +1,13 @@
 {
   "data": {
-    "isPodcast": true,
     "metadata": {
       "type": "Podcast",
       "atiAnalytics": {
         "pageIdentifier": "portuguese.bbc_brasil.podcasts.programmes.p07r3r3t.page",
         "contentType": "player-episode",
         "pageTitle": "Que História! - BBC News Brasil",
-        "contentId": "urn:bbc:pips:p0jdsr74"
+        "language": "pt-br",
+        "contentId": "urn:bbc:pips:p07r3r3t"
       }
     },
     "language": "pt-br",
@@ -15,21 +15,18 @@
     "episodeTitle": "A mulher que teve três pais: 'Meu mundo caiu quando soube verdade sobre pai biológico'",
     "headline": "Que História!",
     "shortSynopsis": "Ela descobriu que foras concebida com sêmen de doador e, depois, que não foi bem assim.",
+    "mediumSynopsis": "Aos 16 anos, Eve Wiley descobriu que fora concebida com sêmen de doador anônimo. Mas anos depois, após doença de seu filho, fez descoberta chocante sobre sua identidade genética.",
     "id": "urn:bbc:ares:ws_media:brand:bbc_brasil/p07r3r3t",
     "brandId": "p07r3r3t",
-    "summary": "Aos 16 anos, Eve Wiley descobriu que fora concebida com sêmen de doador anônimo. Mas anos depois, após doença de seu filho, fez descoberta chocante sobre sua identidade genética.",
-    "contentType": "player-episode",
     "episodeId": "p0jdsr74",
     "masterBrand": "bbc_brasil",
-    "releaseDateTimeStamp": 1727222400000,
-    "pageTitle": "Que História! - BBC News Brasil",
+    "releaseDateTimeStamp": "2024-09-25T00:00:00.000Z",
     "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p0k13gnp.png",
     "imageAltText": "",
     "promoBrandTitle": "Que História!",
     "durationISO8601": "PT20M40S",
     "thumbnailImageUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p0k13gnp.png",
     "episodeAvailability": "available",
-    "radioScheduleData": [],
     "recentEpisodes": [
       {
         "id": "p0jdspsp",
@@ -212,7 +209,6 @@
         "altText": "Que História!"
       }
     ],
-    "externalLinkVersionId": "p0jdsnyw",
     "mediaBlocks": [
       {
         "type": "audio",
@@ -220,7 +216,7 @@
           "id": "p0jdsr74",
           "subType": "episode",
           "format": "Audio",
-          "title": "",
+          "title": "Que História!",
           "synopses": {
             "short": "Ela descobriu que foras concebida com sêmen de doador e, depois, que não foi bem assim.",
             "medium": "Aos 16 anos, Eve Wiley descobriu que fora concebida com sêmen de doador anônimo. Mas anos depois, após doença de seu filho, fez descoberta chocante sobre sua identidade genética."
@@ -250,7 +246,105 @@
           "episodeTitle": "A mulher que teve três pais: 'Meu mundo caiu quando soube verdade sobre pai biológico'",
           "type": "media"
         }
+      },
+      {
+        "type": "mediaOverrides",
+        "model": {
+          "language": "pt-br",
+          "pageIdentifierOverride": "portuguese.bbc_brasil.podcasts.p0jdsr74.page"
+        }
       }
-    ]
+    ],
+    "isPodcast": true,
+    "summary": "Aos 16 anos, Eve Wiley descobriu que fora concebida com sêmen de doador anônimo. Mas anos depois, após doença de seu filho, fez descoberta chocante sobre sua identidade genética.",
+    "radioScheduleData": null,
+    "externalLinkVersionId": "p0jdsnyw"
+  },
+  "contentType": "application/json; charset=utf-8",
+  "debug": {
+    "context": {
+      "runtimeContext": {
+        "moduleEnvironment": "local",
+        "apiPort": 3210,
+        "manifestFound": false,
+        "moduleVersion": "1.0.0",
+        "moduleName": "stub-fabl-module",
+        "personalisedRequest": "false",
+        "environment": "local",
+        "runtimeVersion": "5.0.0",
+        "nodeJSVersion": "v18.17.1"
+      },
+      "systemContext": {
+        "debug": "1",
+        "sandboxEnabled": true,
+        "call-stack": "simorgh-bff"
+      }
+    },
+    "serviceRequests": [
+      {
+        "response": {
+          "headers": {
+            "date": "Wed, 27 Nov 2024 14:27:03 GMT",
+            "content-type": "application/json;charset=utf-8",
+            "transfer-encoding": "chunked",
+            "connection": "keep-alive",
+            "x-shared-cache": "MISS",
+            "personalised": "false",
+            "vary": "accept-encoding, ctx-service-env",
+            "etag": "\"d2de8c4b1eef14b0a638703a3f9cdb6836d13756\"",
+            "last-modified": "Wed, 27 Nov 2024 13:54:03 GMT",
+            "cache-control": "no-transform,max-age=60",
+            "x-ares-tracking-id": "e2bf079a-1b36-44a8-85b2-01bdbdab9d4c",
+            "expires": "Wed, 27 Nov 2024 14:28:03 GMT",
+            "content-encoding": "gzip",
+            "x-local-cache": "MISS"
+          },
+          "responseCode": 200,
+          "responseTime": 238
+        },
+        "request": {
+          "service": "ares",
+          "path": "ws-media/radio/portuguese/bbc_brasil/programmes/p07r3r3t",
+          "timeout": 4000,
+          "url": "https://service-gateway.fabl.api.bbci.co.uk/service/ares/path/ws-media%2Fradio%2Fportuguese%2Fbbc_brasil%2Fprogrammes%2Fp07r3r3t"
+        }
+      },
+      {
+        "response": {
+          "headers": {
+            "date": "Wed, 27 Nov 2024 14:27:03 GMT",
+            "content-type": "application/json;charset=utf-8",
+            "transfer-encoding": "chunked",
+            "connection": "keep-alive",
+            "x-shared-cache": "MISS",
+            "personalised": "false",
+            "vary": "accept-encoding, ctx-service-env",
+            "etag": "\"c92421e61e117de7649fc843e8c76042ef603bf3\"",
+            "last-modified": "Wed, 27 Nov 2024 14:27:03 GMT",
+            "cache-control": "no-transform,max-age=60",
+            "x-ares-tracking-id": "f0ab69f2-a70b-45e2-b68c-5159d22fcdde",
+            "expires": "Wed, 27 Nov 2024 14:28:03 GMT",
+            "content-encoding": "gzip",
+            "x-local-cache": "MISS"
+          },
+          "responseCode": 200,
+          "responseTime": 58
+        },
+        "request": {
+          "service": "ares",
+          "path": "/ws-media/schedule/bbc_brasil",
+          "timeout": 2000,
+          "url": "https://service-gateway.fabl.api.bbci.co.uk/service/ares/path/%2Fws-media%2Fschedule%2Fbbc_brasil"
+        }
+      }
+    ],
+    "privateContext": {},
+    "params": {
+      "service": "portuguese",
+      "id": "/portuguese/podcasts/p07r3r3t",
+      "pageType": "audio"
+    },
+    "sandboxViolations": [],
+    "nonFatalErrors": [{}]
   }
 }
