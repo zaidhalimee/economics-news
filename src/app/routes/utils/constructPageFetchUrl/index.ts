@@ -102,6 +102,8 @@ const getId = ({ pageType, service, variant, env }: GetIdProps) => {
         const parts = path?.split('/');
         const liveRadioName = parts?.[2];
 
+        if (!liveRadioName) return null;
+
         return liveRadioName;
       };
       break;
