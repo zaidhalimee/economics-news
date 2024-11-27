@@ -52,7 +52,7 @@ describe('Get initial data for on demand tv', () => {
       },
     });
 
-    expect(pageData.recentEpisodes).toHaveLength(0);
+    expect(pageData.recentEpisodes).toBeNull();
   });
 
   it('should return no recent episode data when recentEpisode toggle is disabled and value is greater than zero', async () => {
@@ -65,7 +65,7 @@ describe('Get initial data for on demand tv', () => {
       },
     });
 
-    expect(pageData.recentEpisodes).toHaveLength(0);
+    expect(pageData.recentEpisodes).toBeNull();
   });
 
   it('should return recent episode data when recentEpisode toggle is enabled', async () => {

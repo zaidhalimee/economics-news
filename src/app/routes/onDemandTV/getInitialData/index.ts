@@ -37,11 +37,16 @@ export default async ({
           toggles?.recentVideoEpisodes?.value || 4
         : 0;
 
+    const recentEpisodes =
+      maxRecentEpisodes > 0
+        ? data.recentEpisodes.slice(0, maxRecentEpisodes)
+        : null;
+
     return {
       status,
       pageData: {
         ...data,
-        recentEpisodes: data.recentEpisodes.slice(0, maxRecentEpisodes),
+        recentEpisodes,
       },
     };
   } catch (error: unknown) {
