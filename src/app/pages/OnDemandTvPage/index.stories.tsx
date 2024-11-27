@@ -4,9 +4,9 @@ import WithTimeMachine from '#testHelpers/withTimeMachine';
 import { TV_PAGE } from '#app/routes/utils/pageTypes';
 import { StoryArgs, StoryProps } from '#app/models/types/storybook';
 import { Services } from '#app/models/types/global';
+import { data as afrique } from '#data/afrique/bbc_afrique_tv/tv_programmes/w13xttmz.json';
+import { data as pashto } from '#data/pashto/bbc_pashto_tv/tv_programmes/w13xttn4.json';
 import { OnDemandTvPage } from '..';
-import afrique from './fixtureData/afrique.json';
-import pashto from './fixtureData/pashto.json';
 import { OnDemandTVProps } from './OnDemandTvPage';
 
 const onDemandTvFixtures: {
