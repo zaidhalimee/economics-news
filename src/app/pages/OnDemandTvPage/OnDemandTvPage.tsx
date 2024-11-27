@@ -82,7 +82,6 @@ const OnDemandTvPage = ({
     recentEpisodes,
     episodeTitle,
     mediumSynopsis,
-    contentType,
     metadata: { atiAnalytics },
   } = pageData;
 
@@ -106,7 +105,7 @@ const OnDemandTvPage = ({
       <ChartbeatAnalytics
         mediaPageType="TV"
         title={headline}
-        contentType={contentType}
+        contentType={atiAnalytics.contentType as ContentType}
       />
       <ATIAnalytics atiData={atiAnalytics} />
       <ComscoreAnalytics />
