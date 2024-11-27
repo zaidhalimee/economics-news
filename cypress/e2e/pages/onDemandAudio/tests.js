@@ -6,7 +6,6 @@ import {
   overrideRendererOnTest,
 } from '../../../support/helpers/onDemandRadioTv';
 import envConfig from '../../../support/config/envs';
-import getDataUrl from '../../../support/helpers/getDataUrl';
 import {
   isScheduleDataComplete,
   getIsProgramValid,
@@ -60,14 +59,8 @@ export default ({ service, pageType, variant }) => {
 
               const recentEpisodesMaxNumber = Number(recentEpisodesLimit);
 
-              const currentPath = Cypress.env('currentPath');
-              const url =
-                Cypress.env('APP_ENV') === 'test'
-                  ? `${currentPath}?renderer_env=live`
-                  : `${currentPath}`;
-
-              cy.request(getDataUrl(url)).then(({ body }) => {
-                const processedEpisodesData = body.data.recentEpisodes;
+              cy.getPageDataFromWindow().then(({ pageData }) => {
+                const processedEpisodesData = pageData.recentEpisodes;
 
                 const totalNumberOfEpisodes = processedEpisodesData.length;
 
@@ -168,11 +161,7 @@ export default ({ service, pageType, variant }) => {
       });
       describe('Radio Schedule', () => {
         it('should be displayed if there is enough schedule data', function test() {
-          const currentPath = `${Cypress.env(
-            'currentPath',
-          )}.json${overrideRendererOnTest()}`;
-
-          cy.request(currentPath).then(({ body: jsonData }) => {
+          cy.getPageDataFromWindow().then(({ pageData }) => {
             cy.fixture(`toggles/${service}.json`).then(toggles => {
               const scheduleIsEnabled = path(
                 ['onDemandRadioSchedule', 'enabled'],
@@ -183,34 +172,14 @@ export default ({ service, pageType, variant }) => {
               );
 
               if (scheduleIsEnabled) {
-                const { masterBrand } = jsonData.data;
-
-                const schedulePath =
-                  `/${service}/${masterBrand}/schedule.json${overrideRendererOnTest()}`.replace(
-                    'bbc_afaanoromoo_radio',
-                    'bbc_oromo_radio',
-                  );
-
-                cy.request(schedulePath).then(({ body: scheduleJson }) => {
-                  const { schedules } = scheduleJson;
-                  const isProgramValid = getIsProgramValid(() => {});
-                  const validSchedules = schedules.filter(isProgramValid);
-
-                  const isRadioScheduleDataComplete = isScheduleDataComplete({
-                    schedules: validSchedules,
-                  });
-
-                  cy.log(
-                    `Radio Schedule is displayed? ${isRadioScheduleDataComplete}`,
-                  );
-                  if (scheduleIsEnabled && isRadioScheduleDataComplete) {
-                    cy.log('Schedule has enough data');
-                    cy.get('[data-e2e=radio-schedule]').should('exist');
-                    // cy.get('[data-e2e=live]').should('exist');
-                  } else {
-                    cy.get('[data-e2e=radio-schedule]').should('not.exist');
-                  }
-                });
+                const { radioScheduleData } = pageData;
+                if (scheduleIsEnabled && radioScheduleData) {
+                  cy.log('Schedule has enough data');
+                  cy.get('[data-e2e=radio-schedule]').should('exist');
+                  // cy.get('[data-e2e=live]').should('exist');
+                } else {
+                  cy.get('[data-e2e=radio-schedule]').should('not.exist');
+                }
               } else {
                 cy.get('[data-e2e=radio-schedule]').should('not.exist');
               }

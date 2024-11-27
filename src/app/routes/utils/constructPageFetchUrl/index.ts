@@ -168,7 +168,7 @@ const constructPageFetchUrl = ({
   lang,
 }: UrlConstructParams) => {
   const env = getEnvironment(pathname);
-  const isLocal = !env || env === 'local';
+  const isLocal = true;
   const id = getId({ pageType, service, env, variant })(pathname);
   const capitalisedPageType =
     pageType.charAt(0).toUpperCase() + pageType.slice(1);

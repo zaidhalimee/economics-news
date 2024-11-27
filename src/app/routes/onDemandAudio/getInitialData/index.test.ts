@@ -204,53 +204,11 @@ describe('Get initial data for on demand radio', () => {
       path: 'mock-podcast-path',
       pageType: AUDIO_PAGE,
       toggles: {
-        recentPodcastEpisodes: { enabled: true, value: 8 },
+        recentPodcastEpisodes: { enabled: true, value: 4 },
       },
     });
 
-    expect(podcastPageData?.recentEpisodes.length).toEqual(6);
+    expect(podcastPageData?.recentEpisodes.length).toEqual(4);
     expect(podcastPageData?.recentEpisodes[0].id).toEqual('p0k396c8');
-  });
-
-  it('should override renderer on test', async () => {
-    process.env.SIMORGH_APP_ENV = 'test';
-    const spy = jest
-      .spyOn(fetchBFF, 'default')
-      .mockResolvedValueOnce({ json: gahuzaOnDemandAudio, status: 200 });
-
-    await getInitialData({
-      path: 'mock-live-radio-path',
-      pageType: AUDIO_PAGE,
-      service: 'gahuza',
-    });
-
-    expect(spy).toHaveBeenCalledWith({
-      getAgent: undefined,
-      isAmp: undefined,
-      pageType: 'audio',
-      pathname: 'mock-live-radio-path?renderer_env=live',
-      service: 'gahuza',
-    });
-  });
-
-  it('should not override renderer on live', async () => {
-    process.env.SIMORGH_APP_ENV = 'live';
-    const spy = jest
-      .spyOn(fetchBFF, 'default')
-      .mockResolvedValueOnce({ json: gahuzaOnDemandAudio, status: 200 });
-
-    await getInitialData({
-      path: 'mock-live-radio-path',
-      pageType: AUDIO_PAGE,
-      service: 'gahuza',
-    });
-
-    expect(spy).toHaveBeenCalledWith({
-      getAgent: undefined,
-      isAmp: undefined,
-      pageType: 'audio',
-      pathname: 'mock-live-radio-path',
-      service: 'gahuza',
-    });
   });
 });

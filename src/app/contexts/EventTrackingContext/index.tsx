@@ -73,7 +73,7 @@ const getCampaignID = (pageType: CampaignPageTypes) => {
     [UGC_PAGE]: '',
     [AV_EMBEDS]: 'av-embeds',
     [DOWNLOADS_PAGE]: 'downloads',
-    [AUDIO_PAGE]: 'audio',
+    [AUDIO_PAGE]: 'player-episode',
   }[pageType];
 
   if (!campaignID) {
