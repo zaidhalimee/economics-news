@@ -1,15 +1,8 @@
 /* eslint-disable cypress/no-unnecessary-waiting */
 /* eslint-disable consistent-return */
 import path from 'ramda/src/path';
-import {
-  getEpisodeAvailability,
-  overrideRendererOnTest,
-} from '../../../support/helpers/onDemandRadioTv';
+import { getEpisodeAvailability } from '../../../support/helpers/onDemandRadioTv';
 import envConfig from '../../../support/config/envs';
-import {
-  isScheduleDataComplete,
-  getIsProgramValid,
-} from '../../../../src/app/legacy/containers/RadioSchedule/utilities/evaluateScheduleData';
 
 export default ({ service, pageType, variant }) => {
   describe(`Tests for ${service} ${pageType}`, () => {
