@@ -1,67 +1,84 @@
 {
-  "metadata": {
-    "id": "urn:bbc:ares:ws_media:live:bbc_somali_radio",
-    "locators": {
-      "pipsUrn": "urn:bbc:pips:bbc_somali_radio"
-    },
-    "type": "WS-LIVE",
-    "createdBy": "somali",
+  "data": {
+    "heading": "Raadiyaha BBC Soomaali",
+    "bodySummary": "Wararka iyo xaaladda taagan ee dunida oo dhan, faallo, muusig, madadaallo iyo cayaaro.",
     "language": "so",
-    "lastUpdated": 0,
-    "firstPublished": 0,
-    "lastPublished": 0,
-    "options": {},
-    "analyticsLabels": {
-      "pageTitle": "Raadiyaha BBC Soomaali - BBC News Somali",
-      "pageIdentifier": "somali.bbc_somali_radio.liveradio.page",
-      "producerId": "83",
-      "contentType": "player-live",
-      "producer": "SOMALI"
+    "id": "urn:bbc:ares:ws_media:live:bbc_somali_radio",
+    "name": "Raadiyaha BBC Soomaali",
+    "summary": "Wararka iyo xaaladda taagan ee dunida oo dhan, faallo, muusig, madadaallo iyo cayaaro.",
+    "pageTitle": "Raadiyaha BBC Soomaali - BBC News Somali",
+    "contentType": "player-live",
+    "pageIdentifier": "somali.bbc_somali_radio.liveradio.page",
+    "masterBrand": "bbc_somali_radio",
+    "radioScheduleData": [
+      {
+        "id": "p0jznlbb",
+        "state": "next",
+        "startTime": "2024-11-27T13:59:30.000Z",
+        "link": "/somali/bbc_somali_radio/w172zyh9xk7mgjv",
+        "brandTitle": "Dunida Iyo Maanta",
+        "summary": "Barnaamij aan ku eegno wararkii ugu dambeeyay ee caalamka iyo Soomaalida.",
+        "duration": "PT1H"
+      },
+      {
+        "id": "p0jzk210",
+        "state": "onDemand",
+        "startTime": "2024-11-27T04:00:00.000Z",
+        "link": "/somali/bbc_somali_radio/w172zyhqmxjxxb5",
+        "brandTitle": "Idaacadda Subaxnimo",
+        "summary": "Barnaamijka aroornimo ee soo bandhiga wararka gogoldhaca u ah maalinta iyo cayaaraha.",
+        "duration": "PT29M"
+      },
+      {
+        "id": "p0jzf5jq",
+        "state": "onDemand",
+        "startTime": "2024-11-26T13:59:30.000Z",
+        "link": "/somali/bbc_somali_radio/w172zyh9xk7jkmr",
+        "brandTitle": "Dunida Iyo Maanta",
+        "summary": "Barnaamij aan ku eegno wararkii ugu dambeeyay ee caalamka iyo Soomaalida.",
+        "duration": "PT1H"
+      },
+      {
+        "id": "p0jzbcyj",
+        "state": "onDemand",
+        "startTime": "2024-11-26T04:00:00.000Z",
+        "link": "/somali/bbc_somali_radio/w172zyhqmxjv0f2",
+        "brandTitle": "Idaacadda Subaxnimo",
+        "summary": "Barnaamijka aroornimo ee soo bandhiga wararka gogoldhaca u ah maalinta iyo cayaaraha.",
+        "duration": "PT29M"
+      }
+    ],
+    "metadata": {
+      "type": "Live Radio"
     },
-    "tags": {},
-    "version": "1.1.2",
-    "blockTypes": ["heading", "version", "paragraph"]
-  },
-  "content": {
-    "blocks": [
+    "mediaBlock": [
       {
-        "text": "Raadiyaha BBC Soomaali",
-        "markupType": "plain_text",
-        "type": "heading"
-      },
-      {
-        "text": "Wararka iyo xaaladda taagan ee dunida oo dhan, faallo, muusig, madadaallo iyo cayaaro.",
-        "type": "paragraph"
-      },
-      {
-        "id": "liveradio",
-        "subType": "primary",
-        "format": "audio",
-        "externalId": "bbc_somali_radio",
-        "duration": "PT0S",
-        "caption": "",
-        "embedding": false,
-        "available": true,
-        "live": true,
-        "type": "version"
+        "type": "liveRadio",
+        "model": [
+          {
+            "text": "Raadiyaha BBC Soomaali",
+            "markupType": "plain_text",
+            "type": "heading"
+          },
+          {
+            "text": "Wararka iyo xaaladda taagan ee dunida oo dhan, faallo, muusig, madadaallo iyo cayaaro.",
+            "type": "paragraph"
+          },
+          {
+            "id": "liveradio",
+            "subType": "primary",
+            "format": "audio",
+            "externalId": "bbc_somali_radio",
+            "duration": "PT0S",
+            "caption": "",
+            "embedding": false,
+            "available": true,
+            "live": true,
+            "type": "version"
+          }
+        ]
       }
     ]
   },
-  "promo": {
-    "name": "Raadiyaha BBC Soomaali",
-    "summary": "Wararka iyo xaaladda taagan ee dunida oo dhan, faallo, muusig, madadaallo iyo cayaaro.",
-    "uri": "/somali/bbc_somali_radio/liveradio",
-    "contentType": "WS-LIVE",
-    "id": "urn:bbc:ares::ws_live:bbc_somali_radio",
-    "type": "link"
-  },
-  "relatedContent": {
-    "site": {
-      "subType": "simple",
-      "name": "somali",
-      "uri": "/somali",
-      "type": "simple"
-    },
-    "groups": []
-  }
+  "contentType": "application/json; charset=utf-8"
 }

@@ -1,67 +1,84 @@
 {
-  "metadata": {
-    "id": "urn:bbc:ares:ws_media:live:bbc_amharic_radio",
-    "locators": {
-      "pipsUrn": "urn:bbc:pips:bbc_amharic_radio"
-    },
-    "type": "WS-LIVE",
-    "createdBy": "amharic",
+  "data": {
+    "heading": "ያድምጡ",
+    "bodySummary": "ዝግጅቶቻችንን’",
     "language": "am",
-    "lastUpdated": 0,
-    "firstPublished": 0,
-    "lastPublished": 0,
-    "options": {},
-    "analyticsLabels": {
-      "pageTitle": "ያድምጡ - BBC News አማርኛ",
-      "pageIdentifier": "amharic.bbc_amharic_radio.liveradio.page",
-      "producerId": "4",
-      "contentType": "player-live",
-      "producer": "AMHARIC"
+    "id": "urn:bbc:ares:ws_media:live:bbc_amharic_radio",
+    "name": "ያድምጡ",
+    "summary": "ዝግጅቶቻችንን’",
+    "pageTitle": "ያድምጡ - BBC News አማርኛ",
+    "contentType": "player-live",
+    "pageIdentifier": "amharic.bbc_amharic_radio.liveradio.page",
+    "masterBrand": "bbc_amharic_radio",
+    "radioScheduleData": [
+      {
+        "id": "p0jzqr32",
+        "state": "next",
+        "startTime": "2024-11-27T17:29:47.000Z",
+        "link": "/amharic/bbc_amharic_radio/w3ct74lc",
+        "brandTitle": "ቢቢሲ አማርኛ ዜና",
+        "summary": "የ15 ደቂቃ ዜናና ወቅታዊ ጉዳዮችን የሚዳስስ ፕሮግራም",
+        "duration": "PT14M43S"
+      },
+      {
+        "id": "p0jzgnjq",
+        "state": "onDemand",
+        "startTime": "2024-11-26T17:44:30.000Z",
+        "link": "/amharic/bbc_amharic_radio/w3ct74bg",
+        "brandTitle": "ቢቢሲ አማርኛ የእንግሊዝኛ ቋንቋ ትምህርት ክፍለ-ግዜ",
+        "summary": "የ5 ደቂቃ የጀማሪ፣ የመለስተኛና የከፍተኛ ደረጃ የእግሊዝኛ ቋንቋ ትምህርት ክፍለ-ግዜ",
+        "duration": "PT5M"
+      },
+      {
+        "id": "p0jzgnjn",
+        "state": "onDemand",
+        "startTime": "2024-11-26T17:29:47.000Z",
+        "link": "/amharic/bbc_amharic_radio/w3ct74gz",
+        "brandTitle": "ቢቢሲ አማርኛ ዜና",
+        "summary": "የ15 ደቂቃ ዜናና ወቅታዊ ጉዳዮችን የሚዳስስ ፕሮግራም",
+        "duration": "PT14M43S"
+      },
+      {
+        "id": "p0jz81nw",
+        "state": "onDemand",
+        "startTime": "2024-11-25T17:44:30.000Z",
+        "link": "/amharic/bbc_amharic_radio/w3ct749b",
+        "brandTitle": "ቢቢሲ አማርኛ የእንግሊዝኛ ቋንቋ ትምህርት ክፍለ-ግዜ",
+        "summary": "የ5 ደቂቃ የጀማሪ፣ የመለስተኛና የከፍተኛ ደረጃ የእግሊዝኛ ቋንቋ ትምህርት ክፍለ-ግዜ",
+        "duration": "PT5M"
+      }
+    ],
+    "metadata": {
+      "type": "Live Radio"
     },
-    "tags": {},
-    "version": "1.1.2",
-    "blockTypes": ["heading", "version", "paragraph"]
-  },
-  "content": {
-    "blocks": [
+    "mediaBlock": [
       {
-        "text": "ያድምጡ",
-        "markupType": "plain_text",
-        "type": "heading"
-      },
-      {
-        "text": "ዝግጅቶቻችንን’",
-        "type": "paragraph"
-      },
-      {
-        "id": "liveradio",
-        "subType": "primary",
-        "format": "audio",
-        "externalId": "bbc_amharic_radio",
-        "duration": "PT0S",
-        "caption": "",
-        "embedding": false,
-        "available": true,
-        "live": true,
-        "type": "version"
+        "type": "liveRadio",
+        "model": [
+          {
+            "text": "ያድምጡ",
+            "markupType": "plain_text",
+            "type": "heading"
+          },
+          {
+            "text": "ዝግጅቶቻችንን’",
+            "type": "paragraph"
+          },
+          {
+            "id": "liveradio",
+            "subType": "primary",
+            "format": "audio",
+            "externalId": "bbc_amharic_radio",
+            "duration": "PT0S",
+            "caption": "",
+            "embedding": false,
+            "available": true,
+            "live": true,
+            "type": "version"
+          }
+        ]
       }
     ]
   },
-  "promo": {
-    "name": "ያድምጡ",
-    "summary": "ዝግጅቶቻችንን’",
-    "uri": "/amharic/bbc_amharic_radio/liveradio",
-    "contentType": "WS-LIVE",
-    "id": "urn:bbc:ares::ws_live:bbc_amharic_radio",
-    "type": "link"
-  },
-  "relatedContent": {
-    "site": {
-      "subType": "simple",
-      "name": "amharic",
-      "uri": "/amharic",
-      "type": "simple"
-    },
-    "groups": []
-  }
+  "contentType": "application/json; charset=utf-8"
 }
