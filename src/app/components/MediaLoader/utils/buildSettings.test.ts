@@ -1,5 +1,5 @@
 import { PageTypes, Services } from '#app/models/types/global';
-import { MEDIA_PAGE } from '#app/routes/utils/pageTypes';
+import { LIVE_RADIO_PAGE, MEDIA_PAGE } from '#app/routes/utils/pageTypes';
 import hindiTvProgramme from '#data/hindi/bbc_hindi_tv/tv_programmes/w13xttlw.json';
 import hausaLiveRadio from '#data/hausa/bbc_hausa_radio/liveradio.json';
 import afriqueRadio from '#data/afrique/bbc_afrique_radio/w172xqydyfv659p.json';
@@ -917,14 +917,14 @@ describe('buildSettings', () => {
       const hausaLiveRadioBlocks = [
         {
           type: 'liveRadio',
-          model: hausaLiveRadio?.content?.blocks,
+          model: hausaLiveRadio?.data?.mediaBlock?.[0]?.model,
         },
       ];
 
       const result = buildSettings({
         ...hausaLiveRadioBaseSettings,
         blocks: hausaLiveRadioBlocks as MediaBlock[],
-        pageType: MEDIA_PAGE,
+        pageType: LIVE_RADIO_PAGE,
       });
 
       expect(result).toStrictEqual({
