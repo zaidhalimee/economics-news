@@ -230,8 +230,7 @@ describe('MediaLoader', () => {
           <MediaPlayer blocks={onDemandTvBlocks as MediaBlock[]} embedded />,
           {
             service: 'hindi',
-            pageData: {
-              id: 'urn:bbc:ares:ws_media:brand:bbc_hindi_tv/w13xttlw',
+            atiData: {
               language: 'hi',
               pageTitle: 'दुनिया - BBC News हिंदी',
               pageIdentifier: 'hindi.bbc_hindi_tv.tv_programmes.w13xttlw.page',
