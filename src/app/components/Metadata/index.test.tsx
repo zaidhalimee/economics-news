@@ -1019,6 +1019,7 @@ describe('Snapshot', () => {
         lang={liveRadioPageData.data.language}
         description={liveRadioPageData.data.summary}
         openGraphType="website"
+        hasAmpPage={false}
       />,
     );
     const container = Helmet.peek();
