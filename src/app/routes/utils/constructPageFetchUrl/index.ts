@@ -205,9 +205,6 @@ const constructPageFetchUrl = ({
     ...(lang && {
       lang,
     }),
-    ...(isAmp && {
-      isAmp,
-    }),
     ...(env && { serviceEnv: env }),
   };
 
