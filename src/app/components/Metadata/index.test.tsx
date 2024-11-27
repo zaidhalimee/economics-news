@@ -1015,9 +1015,9 @@ describe('Snapshot', () => {
         id={null}
         pageType={MEDIA_PAGE}
         pathname="/korean/bbc_korean_radio/liveradio"
-        title={liveRadioPageData.promo.name}
-        lang={liveRadioPageData.metadata.language}
-        description={liveRadioPageData.promo.summary}
+        title={liveRadioPageData.data.name}
+        lang={liveRadioPageData.data.language}
+        description={liveRadioPageData.data.summary}
         openGraphType="website"
       />,
     );
