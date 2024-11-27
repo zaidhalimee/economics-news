@@ -3,10 +3,10 @@ import { Helmet } from 'react-helmet';
 import {
   ARTICLE_PAGE,
   FRONT_PAGE,
-  MEDIA_PAGE,
   STORY_PAGE,
   MEDIA_ASSET_PAGE,
   PHOTO_GALLERY_PAGE,
+  LIVE_RADIO_PAGE,
 } from '#app/routes/utils/pageTypes';
 import {
   articleDataNews,
@@ -1013,7 +1013,7 @@ describe('Snapshot', () => {
         bbcOrigin={dotComOrigin}
         platform="canonical"
         id={null}
-        pageType={MEDIA_PAGE}
+        pageType={LIVE_RADIO_PAGE}
         pathname="/korean/bbc_korean_radio/liveradio"
         title={liveRadioPageData.data.name}
         lang={liveRadioPageData.data.language}
