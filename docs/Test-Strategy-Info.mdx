@@ -17,10 +17,10 @@ This document aims to provide high-level guidance on approaching test automation
 - How should we automate? (Patterns, Anti-Patterns and Practices)
 - Who should automate? (Responsibilities)
 
-While this document focuses primarily on e2e test strategy, it touches on other levels of testing to give a holistic understanding and context for the decisions we make when it comes to testing. It documents some of our existing approaches, while suggesting gradual improvements for the future. It’s a living collaborative document that we should refer to and update continuously. 
+While this document focuses primarily on E2E test strategy, it touches on other levels of testing to give a holistic understanding and context for the decisions we make when it comes to testing. It documents some of our existing approaches, while suggesting gradual improvements for the future. It’s a living collaborative document that we should refer to and update continuously. 
 
 
-> You can also check this [related document](https://onebbc-my.sharepoint.com/:w:/g/personal/meriem_mechri01_bbc_co_uk/EftDa1m66I5FuNGzD2gDEdYBSoBe-g9LDAvJf91_K6JuLw?email=Simon.Frampton%40bbc.co.uk&e=jkNFze&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1722460818407&web=1) that describes our current e2e stack.
+> You can also check this [related document](https://onebbc-my.sharepoint.com/:w:/g/personal/meriem_mechri01_bbc_co_uk/EftDa1m66I5FuNGzD2gDEdYBSoBe-g9LDAvJf91_K6JuLw?email=Simon.Frampton%40bbc.co.uk&e=jkNFze&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1722460818407&web=1) that describes our current E2E stack.
 
 
 ## Why should we automate?
@@ -37,7 +37,9 @@ There are many reasons why we write automated tests. Some of the most common are
 [source: https://madeintandem.com/blog/five-factor-testing/]
 
 
-> 🔊 discussion point with team: any other reasons? what are for you the most important reasons?
+> 🔊 Discussion point with team:
+> - Any other reasons? 
+> - What are for you the most important reasons?
     
 
 It is important to think about why  we write tests because it influences what types of testing we should prioritise. For example, unit tests might be good for improving the system design as the units become more independent and easier to test, but having only unit tests doesn’t necessarily verify the code is working correctly (beyond the single unit) as it won’t necessarily reveal problems that occur in the integration of components. On the other hand, E2E tests can provide better verification of the software, but they’re expensive and would not necessarily improve software design, nor document the code behaviour at unit or component level.
