@@ -48,30 +48,31 @@ It is important to think about why  we write tests because it influences what ty
 Broadly speaking, we follow the test pyramid. We have a large set of unit tests, a smaller subset of integration tests, and an even smaller subset of UI tests. We should continue to follow this pattern.
 
 ![Image](https://blog.getmason.io/content/images/2020/11/Testing-pyramid--6--1.jpg)
+Image [Source](https://blog.getmason.io/content/images/2020/11/Testing-pyramid--6--1.jpg)
 To avoid confusion, we will clarify what the test levels mean in our context.
 
 ### Unit tests
 We use jest to write unit tests
 They normally exercise a single component (UI components, hooks, helper methods)
-Some examples of our unit tests can be found here.
+Some examples of our unit tests can be found [here](https://github.com/bbc/simorgh/tree/bfbed54d2b1fe880e8f171023054c16d1c274ca2/src/app/components/Heading).
 Some patterns:
 
-- We use data-driven tests sometimes like here to define inputs to tests
-- We use snapshot tests to easily test some cases like here
+- We use data-driven tests sometimes like [here](https://github.com/bbc/simorgh/blob/bfbed54d2b1fe880e8f171023054c16d1c274ca2/src/app/hooks/useImageColour/index.test.js#L10) to define inputs to tests
+- We use snapshot tests to easily test some cases like [here](https://github.com/bbc/simorgh/blob/4f385d94bee96af48eff2eca49c24cf382a3a494/src/app/components/FrostedGlassPromo/index.test.tsx#L76)
     
 
 ### Component tests
 We conduct visual regression testing using Chromatic, which alongside our unit tests, comprise our component tests layer.
 
-Integration tests
+### Integration tests
 These test the integration between the different components to ensure a page is rendered properly. 
 They typically check that what’s rendered matches SIMORGH_DATA in a flexible generic way, i.e. check that a page renders “most read” topics but not the exact topics rendered, and that each topic has an image and header but not the content of either.
-Examples can be found in  src/integration.
-Check here for more details about our integration tests.
+Examples can be found in  [src/integration](https://github.com/bbc/simorgh/tree/bfbed54d2b1fe880e8f171023054c16d1c274ca2/src/integration).
+Check [here](https://github.com/bbc/simorgh/tree/latest/src/integration) for more details about our integration tests.
 
 ### UI (E2E) tests
 These tests run the actual UI in a browser, and can check that everything renders correctly. For example, an integration test might check that “most read” topics are rendered with the correct HTML tags, but that does not necessarily mean they appear correctly (some CSS value might hide them). With the UI tests, we check that everything shows as expected in the UI.
-Examples and instructions can be found in cypress.
+Examples and instructions can be found in [cypress](https://github.com/bbc/simorgh/tree/latest/cypress).
 
 
 
@@ -103,7 +104,7 @@ We should have smoke tests for validating that core functionality is not broken,
 The rule of thumb is that we should avoid writing an end to end test if there is an alternative to validating the functionality. The alternative can be a combination of layers, for example, an integration test combined with an API test (which doesn’t exist right now) can be enough to reach the same confidence as an e2e test with less cost.
 
 ### Puma approach
-Adopting the PUMA approach can provide a framework to decide if a proposed test genuinely meets the definition of an E2E. According to PUMA, an e2e test should:
+Adopting the [PUMA](https://confluence.dev.bbc.co.uk/display/podtest/PUMA) approach can provide a framework to decide if a proposed test genuinely meets the definition of an E2E. According to PUMA, an e2e test should:
 P - Prove core functionality, 
 U - be Understood by all,
 M - Mandatory
@@ -119,7 +120,7 @@ In this section, we will document some of the patterns we use and the best pract
 A good place to start is the Cypress best practices page: https://docs.cypress.io/guides/references/best-practices
 
 Custom commands for common functionalities
-We have many custom commands that make common tasks easier, these are located under cypress/e2e/commands. It’s good to have a look at these to have an overview of what’s possible, and consider abstracting common functionality as a cypress command when it makes sense.
+We have many custom commands that make common tasks easier, these are located under [cypress/e2e/commands](https://github.com/bbc/simorgh/blob/latest/cypress/support/commands/application.js). It’s good to have a look at these to have an overview of what’s possible, and consider abstracting common functionality as a [cypress command](https://docs.cypress.io/api/cypress-api/custom-commands) when it makes sense.
 
 #### Do not ignore “flaky” tests
 
@@ -162,6 +163,6 @@ Responsibilities
 
 
 ##### References
-- Five Factor Testing
-- Practical test pyramid
+- [Five Factor Testing](https://madeintandem.com/blog/five-factor-testing/)
+- [Practical test pyramid](https://martinfowler.com/articles/practical-test-pyramid.html)
 - https://confluence.dev.bbc.co.uk/display/podtest/PUMA
