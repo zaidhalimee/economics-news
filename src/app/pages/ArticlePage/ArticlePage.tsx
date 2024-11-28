@@ -67,14 +67,6 @@ import Disclaimer from '../../components/Disclaimer';
 import SecondaryColumn from './SecondaryColumn';
 import styles from './ArticlePage.styles';
 import { ComponentToRenderProps, TimeStampProps } from './types';
-import AmpExperiment from '../../components/AmpExperiment';
-import {
-  experimentName,
-  experimentTopStoriesConfig,
-  getExperimentAnalyticsConfig,
-  getExperimentTopStories,
-  ExperimentTopStories,
-} from './experimentTopStories/helpers';
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const { isApp, pageType, service, isAmp, env } = useContext(RequestContext);
@@ -151,15 +143,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     jumpToVariation && hasJumpToBlockForExperiment,
   );
 
-  const topStoriesContent = pageData?.secondaryColumn?.topStories;
-  const { shouldEnableExperimentTopStories, transformedBlocks } =
-    getExperimentTopStories({
-      blocks,
-      topStoriesContent,
-      isAmp,
-      service,
-    });
-
   const showRelatedContent = blocks.some(
     block => block.type === 'relatedContent',
   );
@@ -167,9 +150,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const atiData = {
     ...atiAnalytics,
     ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
-    ...(shouldEnableExperimentTopStories && {
-      ampExperimentName: `${experimentName}`,
-    }),
   };
 
   const componentsToRender = {
@@ -215,28 +195,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       <Disclaimer {...props} increasePaddingOnDesktop={false} />
     ),
     podcastPromo: () => (podcastPromoEnabled ? <InlinePodcastPromo /> : null),
-    experimentTopStoriesQuarter: () =>
-      topStoriesContent ? (
-        <ExperimentTopStories
-          topStoriesContent={topStoriesContent}
-          variantName="Quarter"
-        />
-      ) : null,
-    experimentTopStoriesHalf: () =>
-      topStoriesContent ? (
-        <ExperimentTopStories
-          topStoriesContent={topStoriesContent}
-          variantName="Half"
-        />
-      ) : null,
-    experimentTopStoriesThreeQuarters: () =>
-      topStoriesContent ? (
-        <ExperimentTopStories
-          topStoriesContent={topStoriesContent}
-          variantName="ThreeQuarters"
-        />
-      ) : null,
-
     jumpTo: (props: ComponentToRenderProps & JumpToProps) =>
       jumpToVariation === 'on' ? (
         <JumpTo {...props} showRelatedContentLink={showRelatedContent} />
@@ -250,8 +208,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   };
 
   const articleBlocks = startsWithHeading
-    ? transformedBlocks
-    : [visuallyHiddenBlock, ...transformedBlocks];
+    ? blocks
+    : [visuallyHiddenBlock, ...blocks];
 
   const promoImageBlocks =
     pageData?.promo?.images?.defaultPromoImage?.blocks ?? [];
@@ -273,16 +231,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   return (
     <div css={styles.pageWrapper}>
-      {shouldEnableExperimentTopStories && (
-        <AmpExperiment
-          experimentConfig={experimentTopStoriesConfig}
-          analyticsConfig={getExperimentAnalyticsConfig({
-            env,
-            service,
-            atiAnalyticsProducerId,
-          })}
-        />
-      )}
       <ATIAnalytics atiData={atiData} />
       <ChartbeatAnalytics
         sectionName={pageData?.relatedContent?.section?.name}

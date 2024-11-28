@@ -93,18 +93,11 @@ export default {
   topStoriesSection: ({ spacings, mq }: Theme) =>
     css({
       marginBottom: `${spacings.TRIPLE}rem`,
+
       [mq.GROUP_4_MIN_WIDTH]: {
         display: 'block',
         marginBottom: `${spacings.FULL}rem`,
         padding: `${spacings.DOUBLE}rem`,
-      },
-      '[amp-x-topStoriesExperiment*="show"] &': {
-        display: 'none',
-        [mq.GROUP_4_MIN_WIDTH]: {
-          display: 'block',
-          marginBottom: `${spacings.FULL}rem`,
-          padding: `${spacings.DOUBLE}rem`,
-        },
       },
     }),
 };
