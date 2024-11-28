@@ -541,6 +541,7 @@ describe('frontPage -> homePage migration', () => {
     'turkce',
     'ukrainian',
     'urdu',
+    'uzbek',
     'vietnamese',
     'yoruba',
   ];
