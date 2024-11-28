@@ -5485,21 +5485,8 @@ module.exports = () => ({
         smoke: true,
       },
       frontPage: {
-        environments: {
-          live: {
-            paths: ['/serbian/cyr'],
-            enabled: true,
-          },
-          test: {
-            paths: ['/serbian/cyr'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/serbian/cyr'],
-            enabled: false,
-          },
-        },
-        smoke: true,
+        environments: undefined,
+        smoke: false,
       },
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
@@ -5655,20 +5642,7 @@ module.exports = () => ({
         smoke: true,
       },
       frontPage: {
-        environments: {
-          live: {
-            paths: ['/serbian/lat'],
-            enabled: true,
-          },
-          test: {
-            paths: ['/serbian/lat'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/serbian/lat'],
-            enabled: false,
-          },
-        },
+        environments: undefined,
         smoke: true,
       },
       liveRadio: { environments: undefined, smoke: false },
