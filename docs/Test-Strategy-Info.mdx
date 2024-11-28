@@ -54,13 +54,11 @@ Image [Source](https://blog.getmason.io/content/images/2020/11/Testing-pyramid--
 To avoid confusion, we will clarify what the test levels mean in our context.
 
 ### Unit tests
-We use jest to write unit tests
-They normally exercise a single component (UI components, hooks, helper methods)
-Some examples of our unit tests can be found [here](https://github.com/bbc/simorgh/tree/bfbed54d2b1fe880e8f171023054c16d1c274ca2/src/app/components/Heading).
+We use jest to write unit tests. They normally exercise a single component (UI components, hooks, helper methods). Here is an [example unit test](https://github.com/bbc/simorgh/tree/bfbed54d2b1fe880e8f171023054c16d1c274ca2/src/app/components/Heading).
 Some patterns:
 
-- We use data-driven tests sometimes like [here](https://github.com/bbc/simorgh/blob/bfbed54d2b1fe880e8f171023054c16d1c274ca2/src/app/hooks/useImageColour/index.test.js#L10) to define inputs to tests
-- We use snapshot tests to easily test some cases like [here](https://github.com/bbc/simorgh/blob/4f385d94bee96af48eff2eca49c24cf382a3a494/src/app/components/FrostedGlassPromo/index.test.tsx#L76)
+- We use [data-driven tests](https://github.com/bbc/simorgh/blob/bfbed54d2b1fe880e8f171023054c16d1c274ca2/src/app/hooks/useImageColour/index.test.js#L10) to define inputs to tests
+- We use [snapshot tests](https://github.com/bbc/simorgh/blob/4f385d94bee96af48eff2eca49c24cf382a3a494/src/app/components/FrostedGlassPromo/index.test.tsx#L76) to easily test certain scenarios such as (TODO what does this test show us?)
     
 
 ### Component tests
@@ -68,33 +66,30 @@ We conduct visual regression testing using Chromatic, which alongside our unit t
 
 ### Integration tests
 These test the integration between the different components to ensure a page is rendered properly. 
-They typically check that what’s rendered matches SIMORGH_DATA in a flexible generic way, i.e. check that a page renders “most read” topics but not the exact topics rendered, and that each topic has an image and header but not the content of either.
-Examples can be found in  [src/integration](https://github.com/bbc/simorgh/tree/bfbed54d2b1fe880e8f171023054c16d1c274ca2/src/integration).
-Check [here](https://github.com/bbc/simorgh/tree/latest/src/integration) for more details about our integration tests.
+They typically check that what’s rendered matches local fixture data in a flexible generic way, i.e. check that a page renders “most read” articles but not the exact items rendered, and that each topic has an image and header but not the content of either.
+Examples can be found in [src/integration](https://github.com/bbc/simorgh/tree/bfbed54d2b1fe880e8f171023054c16d1c274ca2/src/integration).
+Check [here](https://github.com/bbc/simorgh/blob/cbf7c2b3d08a33775c51eeb94de750d0993a988b/src/integration/README.mdx#integration) for more details about our integration tests.
 
-### UI (E2E) tests
-These tests run the actual UI in a browser, and can check that everything renders correctly. For example, an integration test might check that “most read” topics are rendered with the correct HTML tags, but that does not necessarily mean they appear correctly (some CSS value might hide them). With the UI tests, we check that everything shows as expected in the UI.
+### E2E tests
+These tests run against the application and can check that everything renders correctly. For example, an integration test might check that “most read” articles are rendered with the correct HTML tags, but that does not necessarily mean they appear correctly (some CSS value might hide them). With the E2E tests, we check that everything shows as expected in the UI.
 Examples and instructions can be found in [cypress](https://github.com/bbc/simorgh/tree/latest/cypress).
 
-
-
-> 🔊 discussion point with team: should we break UI / e2e tests as @Simon F comment mentions - I agree with the comment, but I am not sure this reflects what we do in our team right now?
 
 
 #### What levels to prioritise?
 
 Unit tests responsibility and scope are relatively easy to define: we already have a high level of code coverage and developers should aim to maintain that. 
 
-For integration and e2e tests, the general rule of thumb should be to only add an e2e test when an integration test is not enough to ensure coverage. Integration tests are less expensive and more stable and they should be prioritised.
+For integration and E2E tests, the general rule of thumb should be to only add an E2E test when an integration test is not enough to ensure coverage. Integration tests are less expensive and more stable and they should be prioritised.
 
 
-> ℹ️ Think about the maintenance cost of adding a new e2e test. Always favour an integration test if possible instead of an end to end test.
+> [!NOTE]
+ Think about the maintenance cost of adding a new E2E test. Always favour an integration test if possible instead of an end to end test.
 
-For new features, we should decide as part of the planning or shaping of work/tickets whether an e2e test is necessary for the feature.
+For new features, we should decide as part of the planning or shaping of work/tickets whether an E2E test is necessary for the feature.
 
 ### What should we automate?
-
-The decision to write an e2e test should be taken during planning as a team, but these are general guidelines to what should go into e2e tests
+The decision to write an E2E test should be taken during planning as a team, but these are general guidelines to what should go into E2E tests
 
 #### Critical paths 
 The critical path is the set of components and workflows that is required for the application to serve its core function. For example, an article page displaying the content and title for the given service is critical in our context, but links to related topics or top stories, can be considered non-critical. These should be tested as well, but they’re better candidates for a less expensive layer of testing like integration tests.
@@ -106,23 +101,26 @@ We should have smoke tests for validating that core functionality is not broken,
 The rule of thumb is that we should avoid writing an end to end test if there is an alternative to validating the functionality. The alternative can be a combination of layers, for example, an integration test combined with an API test (which doesn’t exist right now) can be enough to reach the same confidence as an e2e test with less cost.
 
 ### Puma approach
-Adopting the [PUMA](https://confluence.dev.bbc.co.uk/display/podtest/PUMA) approach can provide a framework to decide if a proposed test genuinely meets the definition of an E2E. According to PUMA, an e2e test should:
-P - Prove core functionality, 
-U - be Understood by all,
+Adopting the [PUMA](https://confluence.dev.bbc.co.uk/display/podtest/PUMA) approach can provide a framework to decide if a proposed test genuinely meets the definition of an E2E. According to PUMA, an E2E test should:
+P - Prove core functionality
+
+U - be Understood by all
+
 M - Mandatory
+
 A - Automated
 
 
 ### How should we automate?
-Patterns, anti-patterns and practices for e2e tests
+Patterns, anti-patterns and practices for E2E tests
 
-In this section, we will document some of the patterns we use and the best practices to write better e2e tests.
+In this section, we will document some of the patterns we use and the best practices to write better E2E tests.
 
-#### Cypress best practices
+##### Cypress best practices
 A good place to start is the Cypress best practices page: https://docs.cypress.io/guides/references/best-practices
 
 Custom commands for common functionalities
-We have many custom commands that make common tasks easier, these are located under [cypress/e2e/commands](https://github.com/bbc/simorgh/blob/latest/cypress/support/commands/application.js). It’s good to have a look at these to have an overview of what’s possible, and consider abstracting common functionality as a [cypress command](https://docs.cypress.io/api/cypress-api/custom-commands) when it makes sense.
+We have many custom commands that make common tasks easier, these are located within [cypress/e2e/commands](https://github.com/bbc/simorgh/blob/latest/cypress/support/commands/application.js). It’s good to have a look at these to have an overview of what’s possible, and consider abstracting common functionality as a [cypress command](https://docs.cypress.io/api/cypress-api/custom-commands) when it makes sense.
 
 #### Do not ignore “flaky” tests
 
@@ -141,15 +139,15 @@ We have many custom commands that make common tasks easier, these are located un
 > 
 > However, a test that flickers between the two states indicates something is not right and should not be ignored! I believe describing these as flaky makes it easy to ignore potential problems either in the functionality of the system under test or the test itself.
 > 
-> quote from  @Simon F 
+> quote from  @sframpton
 
 
 
 > 🔊 Discussion with team: What are other good practices? any anti-patterns?
 
 
-Who should automate?
-Responsibilities
+#### Who should automate?
+#### Responsibilities
 |             | Unit tests         | Integration        | E2E                |
 | ----------- | ------------------ | ------------------ | ------------------ |
 | Responsible | Developers         | Developers and QA* | QA and Developers* |
