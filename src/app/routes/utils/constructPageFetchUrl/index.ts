@@ -276,6 +276,9 @@ const constructPageFetchUrl = ({
 
         break;
       }
+      case LIVE_RADIO_PAGE:
+        fetchUrl = Url(`${pathname}`);
+        break;
       default:
         return fetchUrl;
     }
