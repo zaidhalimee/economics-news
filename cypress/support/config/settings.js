@@ -8820,21 +8820,8 @@ module.exports = () => ({
         smoke: true,
       },
       frontPage: {
-        environments: {
-          live: {
-            paths: ['/zhongwen/simp'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/zhongwen/simp'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/zhongwen/simp'],
-            enabled: false,
-          },
-        },
-        smoke: true,
+        environments: undefined,
+        smoke: false,
       },
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: {
@@ -9027,21 +9014,8 @@ module.exports = () => ({
         smoke: true,
       },
       frontPage: {
-        environments: {
-          live: {
-            paths: ['/zhongwen/trad'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/zhongwen/trad'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/zhongwen/trad'],
-            enabled: false,
-          },
-        },
-        smoke: true,
+        environments: undefined,
+        smoke: false,
       },
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: {
