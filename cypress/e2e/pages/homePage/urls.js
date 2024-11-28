@@ -21,6 +21,18 @@ const urls = [
     local: '/serbian/cyr',
     test: '/serbian/cyr',
   },
+  {
+    service: 'uzbek',
+    local: '/uzbek/lat',
+    test: '/uzbek/lat',
+    live: '/uzbek/lat',
+  },
+  {
+    service: 'uzbek',
+    local: '/uzbek/cyr',
+    test: '/uzbek/cyr',
+    live: '/uzbek/cyr',
+  },
 ];
 
 export default () => {
