@@ -62,33 +62,29 @@ describe(`BrandContainer`, () => {
       );
     });
 
-    it('should render correctly with link provided for variant service', () => {
-      const { container } = render(
-        BrandContainerWithContext(mockSkipLink, mockScriptLink, 'brandLink'),
-        {
-          service: 'serbian',
-          variant: 'lat',
-        },
-      );
+    it.each`
+      service       | variant   | expectedHref
+      ${'serbian'}  | ${'lat'}  | ${'/serbian/lat'}
+      ${'serbian'}  | ${'cyr'}  | ${'/serbian/cyr'}
+      ${'zhongwen'} | ${'trad'} | ${'/zhongwen/trad'}
+      ${'zhongwen'} | ${'simp'} | ${'/zhongwen/simp'}
+      ${'uzbek'}    | ${'lat'}  | ${'/uzbek/lat'}
+      ${'uzbek'}    | ${'cyr'}  | ${'/uzbek/cyr'}
+    `(
+      'should render correctly with link provided for $service $variant',
+      ({ service, variant, expectedHref }) => {
+        const { container } = render(
+          BrandContainerWithContext(mockSkipLink, mockScriptLink, 'brandLink'),
+          {
+            service,
+            variant,
+          },
+        );
 
-      const brandLink = container.querySelector('a');
+        const brandLink = container.querySelector('a');
 
-      expect(brandLink.getAttribute('href')).toEqual('/serbian/lat');
-    });
-
-    it('should render correctly with link provided for Uzbek service', () => {
-      const { container } = render(
-        BrandContainerWithContext(mockSkipLink, mockScriptLink, 'brandLink'),
-        {
-          service: 'uzbek',
-          variant: 'cyr',
-        },
-      );
-
-      const brandLink = container.querySelector('a');
-
-      // Uzbek is not yet publishing variant homepages
-      expect(brandLink.getAttribute('href')).toEqual('/uzbek');
-    });
+        expect(brandLink.getAttribute('href')).toEqual(expectedHref);
+      },
+    );
   });
 });
