@@ -42,10 +42,10 @@ There are many reasons why we write automated tests. Some of the most common are
 > - What are for you the most important reasons?
     
 
-It is important to think about why  we write tests because it influences what types of testing we should prioritise. For example, unit tests might be good for improving the system design as the units become more independent and easier to test, but having only unit tests doesn’t necessarily verify the code is working correctly (beyond the single unit) as it won’t necessarily reveal problems that occur in the integration of components. On the other hand, E2E tests can provide better verification of the software, but they’re expensive and would not necessarily improve software design, nor document the code behaviour at unit or component level.
+It is important to think about why we write tests because it influences what types of testing we should prioritise. For example, unit tests might be good for improving the system design as the units become more independent and easier to test, but having only unit tests doesn’t necessarily verify the code is working correctly (beyond the single unit) as it won’t necessarily reveal problems that occur in the integration of components. On the other hand, E2E tests can provide better verification of the software, but they’re expensive and would not necessarily improve software design, nor document the code behaviour at unit or component level.
 
 ## Where should we automate?
-## Defining the test levels
+### Defining the test levels
 
 Broadly speaking, we follow the test pyramid. We have a large set of unit tests, a smaller subset of integration tests, and an even smaller subset of UI tests. We should continue to follow this pattern.
 
