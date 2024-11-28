@@ -6,7 +6,6 @@ import { RequestContextProvider } from '#contexts/RequestContext';
 import { ToggleContextProvider } from '#contexts/ToggleContext';
 import {
   articleDataNews,
-  articleDataNewsLongLength,
   articleDataNewsWithEmbeds,
   articleDataPersian,
   articleDataPidgin,
@@ -40,7 +39,6 @@ import { ServiceContextProvider } from '../../contexts/ServiceContext';
 import ArticlePage from './ArticlePage';
 import ThemeProvider from '../../components/ThemeProvider';
 import ATIAnalytics from '../../components/ATIAnalytics';
-import { topStoriesList } from './PagePromoSections/TopStoriesSection/fixture/index';
 
 jest.mock('../../components/ThemeProvider');
 
