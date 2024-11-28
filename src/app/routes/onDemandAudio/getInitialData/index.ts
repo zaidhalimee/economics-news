@@ -1,11 +1,17 @@
 import path from 'ramda/src/path';
 import pathOr from 'ramda/src/pathOr';
-import { RADIO_MISSING_FIELD, PODCAST_MISSING_FIELD } from '#lib/logger.const';
+import {
+  RADIO_MISSING_FIELD,
+  PODCAST_MISSING_FIELD,
+  BFF_FETCH_ERROR,
+} from '#lib/logger.const';
 import { InitialDataProps } from '#app/models/types/initialData';
 import fetchDataFromBFF from '#app/routes/utils/fetchDataFromBFF';
 import getErrorStatusCode from '../../utils/fetchPageData/utils/getErrorStatusCode';
 import { getPodcastExternalLinks } from '../tempData/podcastExternalLinks';
+import nodeLogger from '../../../lib/logger.node';
 
+const logger = nodeLogger(__filename);
 const getScheduleToggle = path(['onDemandRadioSchedule', 'enabled']);
 
 const getConfig = (pathname: string) => {
@@ -83,6 +89,12 @@ export default async ({
     status = getErrorStatusCode(),
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   }: any | { message: string; status: number }) {
+    logger.error(BFF_FETCH_ERROR, {
+      service,
+      status,
+      pathname,
+      message,
+    });
     return { error: message, status };
   }
 };
