@@ -226,7 +226,7 @@ export const buildATIPageTrackPath = ({
           },
           {
             key: 'mv_experiment_id',
-            description: 'AMP experiment name',
+            description: 'AMP experiment name in code',
             value: `${ampExperimentName}`,
             wrap: false,
             disableEncoding: true,
@@ -375,7 +375,7 @@ export const buildATIEventTrackUrl = ({
           {
             key: 'mv_creation',
             description: 'AMP experiment variant name',
-            value: `${experimentVariant}`,
+            value: `VARIANT(${ampExperimentName})`,
             wrap: false,
             disableEncoding: true,
           },
