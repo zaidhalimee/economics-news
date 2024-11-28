@@ -69,14 +69,13 @@ import styles from './ArticlePage.styles';
 import { ComponentToRenderProps, TimeStampProps } from './types';
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
-  const { isApp, pageType, service, isAmp, env } = useContext(RequestContext);
+  const { isApp, pageType, service } = useContext(RequestContext);
 
   const {
     articleAuthor,
     isTrustProjectParticipant,
     showRelatedTopics,
     brandName,
-    atiAnalyticsProducerId,
   } = useContext(ServiceContext);
 
   const { enabled: preloadLeadImageToggle } = useToggle('preloadLeadImage');
