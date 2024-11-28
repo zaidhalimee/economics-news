@@ -139,7 +139,7 @@ describe(`Header`, () => {
 
     describe('when service is uzbek', () => {
       describe.each(['cyr', 'lat'])('and variant is %s', variant => {
-        const supportedUzbekPageTypes = [ARTICLE_PAGE, HOME_PAGE];
+        const supportedUzbekPageTypes = [ARTICLE_PAGE, HOME_PAGE, TOPIC_PAGE];
         const unsupportedUzbekPageTypes = Object.values(PAGE_TYPES).filter(
           pageType => !supportedUzbekPageTypes.includes(pageType),
         );
