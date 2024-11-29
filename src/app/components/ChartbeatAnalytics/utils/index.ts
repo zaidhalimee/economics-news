@@ -57,6 +57,7 @@ export const getType = (pageType: PageTypes | 'index', shorthand = false) => {
       return 'article-sfv';
     case MEDIA_ASSET_PAGE:
       return 'article-media-asset';
+    case LIVE_RADIO_PAGE:
     case MEDIA_PAGE:
       return 'Radio';
     case MOST_READ_PAGE:
@@ -71,8 +72,6 @@ export const getType = (pageType: PageTypes | 'index', shorthand = false) => {
       return 'Topics';
     case LIVE_PAGE:
       return shorthand ? 'LIV' : 'Live';
-    case LIVE_RADIO_PAGE:
-      return LIVE_RADIO_PAGE;
     default:
       return pageType;
   }
@@ -145,6 +144,7 @@ export const buildSections = ({
           ? buildSectionItem(service, appendCategory(categoryName))
           : []),
       ].join(', ');
+    case LIVE_RADIO_PAGE:
     case MEDIA_PAGE:
       return [
         capitalize(service),
@@ -182,6 +182,7 @@ export const getTitle = ({ pageType, title, brandName }: GetTitleProps) => {
     case MOST_READ_PAGE:
     case TOPIC_PAGE:
     case LIVE_PAGE:
+    case LIVE_RADIO_PAGE:
     case MEDIA_PAGE:
     case 'index':
       return `${title} - ${brandName}`;
