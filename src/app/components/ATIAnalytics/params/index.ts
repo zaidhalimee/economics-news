@@ -78,7 +78,7 @@ const pageTypeUrlBuilders = {
   [UGC_PAGE]: noOp,
   [AV_EMBEDS]: noOp,
   [DOWNLOADS_PAGE]: noOp,
-  [LIVE_RADIO_PAGE]: buildTvRadioATIParams,
+  [LIVE_RADIO_PAGE]: buildTvRadioATIUrl,
 };
 
 const pageTypeParamBuilders = {
@@ -136,6 +136,7 @@ export const buildATIUrl = ({
   atiData,
 }: ATIConfigurationDetailsProviders) => {
   const { pageType } = requestContext;
+
   if (atiData && isMigrated(pageType)) {
     return buildPageATIUrl({ atiData, requestContext, serviceContext });
   }
