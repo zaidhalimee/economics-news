@@ -7,44 +7,7 @@
     "name": "Radio BBC Gahuza",
     "summary": "Amakuru y’amahanga, ubusesenguzi, amakuru y’akarere k’ibiyaga bigari, ikinamico, ubuzima, imibereho y’abagore. Kuri FM no kuri internet.",
     "masterBrand": "bbc_gahuza_radio",
-    "radioScheduleData": [
-      {
-        "id": "p0k0bdd3",
-        "state": "next",
-        "startTime": "2024-11-30T05:00:00.000Z",
-        "link": "/gahuza/bbc_gahuza_radio/w3ct79bn",
-        "brandTitle": "Imvo n'Imvano",
-        "summary": "Ikiganiro gicukumbuye ku bibazo bitandukanye.",
-        "duration": "PT59M"
-      },
-      {
-        "id": "p0k01by7",
-        "state": "onDemand",
-        "startTime": "2024-11-29T16:29:30.000Z",
-        "link": "/gahuza/bbc_gahuza_radio/w172zyj4c8vhw4n",
-        "brandTitle": "Amakuru ya Gahuzamiryango",
-        "summary": "Amakuru yo hirya no hino yibanda cyane cyane ku karere k'ibiyaga bigari muri Afrika, n'amakuru mpuzamakungu.",
-        "duration": "PT30M"
-      },
-      {
-        "id": "p0jzzggs",
-        "state": "onDemand",
-        "startTime": "2024-11-28T16:29:30.000Z",
-        "link": "/gahuza/bbc_gahuza_radio/w17300mcpzgxt1z",
-        "brandTitle": "Amakuru ya Gahuzamiryango",
-        "summary": "Amakuru yo hirya no hino yibanda cyane cyane ku karere k'ibiyaga bigari muri Afrika, n'amakuru mpuzamakungu.",
-        "duration": "PT15M"
-      },
-      {
-        "id": "p0jzq75g",
-        "state": "onDemand",
-        "startTime": "2024-11-27T16:29:30.000Z",
-        "link": "/gahuza/bbc_gahuza_radio/w172zyj4c8vb2bg",
-        "brandTitle": "Amakuru ya Gahuzamiryango",
-        "summary": "Amakuru yo hirya no hino yibanda cyane cyane ku karere k'ibiyaga bigari muri Afrika, n'amakuru mpuzamakungu.",
-        "duration": "PT30M"
-      }
-    ],
+    "radioScheduleData": null,
     "metadata": {
       "type": "Live Radio",
       "atiAnalytics": {
