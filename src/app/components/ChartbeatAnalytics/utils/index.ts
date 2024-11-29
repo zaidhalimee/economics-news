@@ -16,6 +16,7 @@ import {
   TOPIC_PAGE,
   LIVE_PAGE,
   MEDIA_ARTICLE_PAGE,
+  LIVE_RADIO_PAGE,
 } from '../../../routes/utils/pageTypes';
 import {
   Environments,
@@ -70,6 +71,8 @@ export const getType = (pageType: PageTypes | 'index', shorthand = false) => {
       return 'Topics';
     case LIVE_PAGE:
       return shorthand ? 'LIV' : 'Live';
+    case LIVE_RADIO_PAGE:
+      return LIVE_RADIO_PAGE;
     default:
       return pageType;
   }
