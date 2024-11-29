@@ -74,8 +74,6 @@ const homePageServices = [
   'yoruba',
 ];
 
-// test commit
-
 export const getFrontPageRegex = services => {
   let frontPages = services;
   if (isLive()) {
