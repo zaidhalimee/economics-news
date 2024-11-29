@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { RequestContextProvider } from '#contexts/RequestContext';
 import * as analyticsUtils from '#lib/analyticsUtils';
 import { ToggleContextProvider } from '#contexts/ToggleContext';
-import { MEDIA_PAGE } from '#app/routes/utils/pageTypes';
+import { LIVE_RADIO_PAGE } from '#app/routes/utils/pageTypes';
 import { Services } from '#app/models/types/global';
 import { LiveRadioBlock } from '#app/models/types/media';
 import { render } from '../../components/react-testing-library-with-providers';
@@ -26,7 +26,7 @@ const Page = ({ pageData, service, lang }: Props) => (
       <ServiceContextProvider service={service} pageLang={lang}>
         <RequestContextProvider
           bbcOrigin="https://www.test.bbc.com"
-          pageType={MEDIA_PAGE}
+          pageType={LIVE_RADIO_PAGE}
           pathname="/pathname"
           service={service}
           statusCode={200}

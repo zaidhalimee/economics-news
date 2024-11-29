@@ -1,5 +1,5 @@
 import React from 'react';
-import { MEDIA_PAGE } from '#app/routes/utils/pageTypes';
+import { LIVE_RADIO_PAGE } from '#app/routes/utils/pageTypes';
 import { Services } from '#app/models/types/global';
 import { StoryArgs, StoryProps } from '#app/models/types/storybook';
 import { LiveRadioPage } from '..';
@@ -80,7 +80,7 @@ const Component = (_: StoryArgs, { service }: StoryProps) => {
       service={serviceToUse}
       loading={false}
       error=""
-      pageType={MEDIA_PAGE}
+      pageType={LIVE_RADIO_PAGE}
     />
   );
 };
