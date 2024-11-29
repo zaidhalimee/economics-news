@@ -1,10 +1,6 @@
 import path from 'ramda/src/path';
 import pathOr from 'ramda/src/pathOr';
-import {
-  RADIO_MISSING_FIELD,
-  PODCAST_MISSING_FIELD,
-  BFF_FETCH_ERROR,
-} from '#lib/logger.const';
+import { BFF_FETCH_ERROR } from '#lib/logger.const';
 import { InitialDataProps } from '#app/models/types/initialData';
 import fetchDataFromBFF from '#app/routes/utils/fetchDataFromBFF';
 import getErrorStatusCode from '../../utils/fetchPageData/utils/getErrorStatusCode';
