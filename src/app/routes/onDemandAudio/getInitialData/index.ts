@@ -1,10 +1,6 @@
 import path from 'ramda/src/path';
 import pathOr from 'ramda/src/pathOr';
-import {
-  RADIO_MISSING_FIELD,
-  PODCAST_MISSING_FIELD,
-  BFF_FETCH_ERROR,
-} from '#lib/logger.const';
+import { BFF_FETCH_ERROR } from '#lib/logger.const';
 import { InitialDataProps } from '#app/models/types/initialData';
 import fetchDataFromBFF from '#app/routes/utils/fetchDataFromBFF';
 import getErrorStatusCode from '../../utils/fetchPageData/utils/getErrorStatusCode';
@@ -15,13 +11,7 @@ const logger = nodeLogger(__filename);
 const getScheduleToggle = path(['onDemandRadioSchedule', 'enabled']);
 
 const getConfig = (pathname: string) => {
-  const detailPageType = pathname.includes('podcast')
-    ? 'Podcast'
-    : 'On Demand Radio';
-  const isPodcast = detailPageType === 'Podcast';
-  const missingFieldCode = isPodcast
-    ? PODCAST_MISSING_FIELD
-    : RADIO_MISSING_FIELD;
+  const isPodcast = pathname.includes('podcast');
   const DEFAULT_TOGGLE_VALUE = { enabled: false, value: isPodcast ? 8 : 4 };
   const recentEpisodesKey = isPodcast
     ? 'recentPodcastEpisodes'
@@ -32,8 +22,6 @@ const getConfig = (pathname: string) => {
 
   return {
     isPodcast,
-    missingFieldCode,
-    detailPageType,
     getRecentEpisodesToggle,
   };
 };
