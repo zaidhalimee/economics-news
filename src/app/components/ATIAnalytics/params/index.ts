@@ -52,6 +52,7 @@ const MIGRATED_PAGE_TYPES: PageTypes[] = [
   LIVE_PAGE,
   STATIC_PAGE,
   DOWNLOADS_PAGE,
+  LIVE_RADIO_PAGE,
 ];
 
 const noOp = () => {
@@ -78,7 +79,7 @@ const pageTypeUrlBuilders = {
   [UGC_PAGE]: noOp,
   [AV_EMBEDS]: noOp,
   [DOWNLOADS_PAGE]: noOp,
-  [LIVE_RADIO_PAGE]: buildTvRadioATIUrl,
+  [LIVE_RADIO_PAGE]: noOp,
 };
 
 const pageTypeParamBuilders = {
@@ -101,7 +102,7 @@ const pageTypeParamBuilders = {
   [UGC_PAGE]: noOp,
   [AV_EMBEDS]: noOp,
   [DOWNLOADS_PAGE]: noOp,
-  [LIVE_RADIO_PAGE]: buildTvRadioATIParams,
+  [LIVE_RADIO_PAGE]: noOp,
 };
 
 type BuilderFunction = {

@@ -6,50 +6,53 @@
     "id": "urn:bbc:ares:ws_media:live:bbc_arabic_radio",
     "name": "مباشر: إذاعة بي بي سي عربي",
     "summary": "خدمة إخبارية على مدار الساعة و برامج حوارية وتفاعلية تناقش قضايا المنطقة والعالم وباقة من البرامج المنوعة من إذاعة بي بي سي",
-    "pageTitle": "مباشر: إذاعة بي بي سي عربي - BBC News Arabic",
-    "contentType": "player-live",
-    "pageIdentifier": "arabic.bbc_arabic_radio.liveradio.page",
     "masterBrand": "bbc_arabic_radio",
     "radioScheduleData": [
       {
-        "id": "p0jzp568",
+        "id": "p0k0bdf6",
         "state": "next",
-        "startTime": "2024-11-27T14:59:30.000Z",
-        "link": "/arabic/bbc_arabic_radio/w17300stqdbjnyp",
+        "startTime": "2024-11-30T05:59:30.000Z",
+        "link": "/arabic/bbc_arabic_radio/w17300sf011fmr5",
         "brandTitle": "غزة اليوم ",
         "summary": "البرنامج يقدم خدمة اخبارية  ومعلومات   تهدف الى توعية  الجمهور في غزة  بما يحدث على الأرض ",
         "duration": "PT30M"
       },
       {
-        "id": "p0jzk212",
+        "id": "p0k01c0p",
         "state": "onDemand",
-        "startTime": "2024-11-27T05:59:30.000Z",
-        "link": "/arabic/bbc_arabic_radio/w17300sf0114y0w",
+        "startTime": "2024-11-29T14:59:30.000Z",
+        "link": "/arabic/bbc_arabic_radio/w17300stqdbqgrw",
         "brandTitle": "غزة اليوم ",
         "summary": "البرنامج يقدم خدمة اخبارية  ومعلومات   تهدف الى توعية  الجمهور في غزة  بما يحدث على الأرض ",
         "duration": "PT30M"
       },
       {
-        "id": "p0jzfdqh",
+        "id": "p0k01c0m",
         "state": "onDemand",
-        "startTime": "2024-11-26T14:59:30.000Z",
-        "link": "/arabic/bbc_arabic_radio/w17300stqdbfs1l",
+        "startTime": "2024-11-29T05:59:30.000Z",
+        "link": "/arabic/bbc_arabic_radio/w17300sf011bqv2",
         "brandTitle": "غزة اليوم ",
         "summary": "البرنامج يقدم خدمة اخبارية  ومعلومات   تهدف الى توعية  الجمهور في غزة  بما يحدث على الأرض ",
         "duration": "PT30M"
       },
       {
-        "id": "p0jzbcyn",
+        "id": "p0jzy6j5",
         "state": "onDemand",
-        "startTime": "2024-11-26T05:59:30.000Z",
-        "link": "/arabic/bbc_arabic_radio/w17300sf011213s",
+        "startTime": "2024-11-28T14:59:30.000Z",
+        "link": "/arabic/bbc_arabic_radio/w17300stqdbmkvs",
         "brandTitle": "غزة اليوم ",
         "summary": "البرنامج يقدم خدمة اخبارية  ومعلومات   تهدف الى توعية  الجمهور في غزة  بما يحدث على الأرض ",
         "duration": "PT30M"
       }
     ],
     "metadata": {
-      "type": "Live Radio"
+      "type": "Live Radio",
+      "atiAnalytics": {
+        "contentId": "urn:bbc:ares:ws_media:live:bbc_arabic_radio",
+        "contentType": "player-live",
+        "pageIdentifier": "arabic.bbc_arabic_radio.liveradio.page",
+        "pageTitle": "مباشر: إذاعة بي بي سي عربي - BBC News Arabic"
+      }
     },
     "mediaBlock": [
       {

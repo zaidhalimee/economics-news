@@ -6,13 +6,16 @@
     "id": "urn:bbc:ares:ws_media:live:bbc_kyrgyz_radio",
     "name": "Би-Би-Си Кыргыз кызматынын радиосу",
     "summary": "Эл аралык жана жергиликтүү жаңылыктар, аналитика, кызыктуу материалдар кыргыз тилинде",
-    "pageTitle": "Би-Би-Си Кыргыз кызматынын радиосу - BBC News Кыргыз КызMATы",
-    "contentType": "player-live",
-    "pageIdentifier": "kyrgyz.bbc_kyrgyz_radio.liveradio.page",
     "masterBrand": "bbc_kyrgyz_radio",
     "radioScheduleData": null,
     "metadata": {
-      "type": "Live Radio"
+      "type": "Live Radio",
+      "atiAnalytics": {
+        "contentId": "urn:bbc:ares:ws_media:live:bbc_kyrgyz_radio",
+        "contentType": "player-live",
+        "pageIdentifier": "kyrgyz.bbc_kyrgyz_radio.liveradio.page",
+        "pageTitle": "Би-Би-Си Кыргыз кызматынын радиосу - BBC News Кыргыз КызMATы"
+      }
     },
     "mediaBlock": [
       {

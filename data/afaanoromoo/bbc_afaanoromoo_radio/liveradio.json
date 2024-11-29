@@ -6,13 +6,16 @@
     "id": "urn:bbc:ares:ws_media:live:bbc_afaanoromoo_radio",
     "name": "Dhaggeeffadhaa",
     "summary": "Sagantaawwan keenya",
-    "pageTitle": "Dhaggeeffadhaa - BBC News Afaan Oromoo",
-    "contentType": "player-live",
-    "pageIdentifier": "afaanoromoo.bbc_afaanoromoo_radio.liveradio.page",
     "masterBrand": "bbc_oromo_radio",
     "radioScheduleData": null,
     "metadata": {
-      "type": "Live Radio"
+      "type": "Live Radio",
+      "atiAnalytics": {
+        "contentId": "urn:bbc:ares:ws_media:live:bbc_afaanoromoo_radio",
+        "contentType": "player-live",
+        "pageIdentifier": "afaanoromoo.bbc_afaanoromoo_radio.liveradio.page",
+        "pageTitle": "Dhaggeeffadhaa - BBC News Afaan Oromoo"
+      }
     },
     "mediaBlock": [
       {

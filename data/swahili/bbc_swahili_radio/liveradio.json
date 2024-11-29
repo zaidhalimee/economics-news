@@ -6,50 +6,16 @@
     "id": "urn:bbc:ares:ws_media:live:bbc_swahili_radio",
     "name": "BBC Swahili Radio",
     "summary": "Habari za kimataifa, michezo na uchambuzi kutoka kwa idhaa ya dunia.",
-    "pageTitle": "BBC Swahili Radio - BBC News Swahili",
-    "contentType": "player-live",
-    "pageIdentifier": "swahili.bbc_swahili_radio.liveradio.page",
     "masterBrand": "bbc_swahili_radio",
-    "radioScheduleData": [
-      {
-        "id": "p0jzpxmb",
-        "state": "next",
-        "startTime": "2024-11-27T15:29:30.000Z",
-        "link": "/swahili/bbc_swahili_radio/w172zygh3kbthgl",
-        "brandTitle": "Dira Ya Dunia",
-        "summary": "Kipindi cha habari, makala na mahojiano cha kila siku kuanzia saa kumi na mbili unusu jioni Afrika Mashariki",
-        "duration": "PT1H"
-      },
-      {
-        "id": "p0jzk26y",
-        "state": "onDemand",
-        "startTime": "2024-11-27T03:59:30.000Z",
-        "link": "/swahili/bbc_swahili_radio/w172zyg2d61fg5g",
-        "brandTitle": "Amka Na BBC",
-        "summary": "Kipindi cha habari, mahojiano na makala kila siku saa kumi na mbili na saa moja asubuhi Afrika Mashariki",
-        "duration": "PT29M30S"
-      },
-      {
-        "id": "p0jzj0lj",
-        "state": "onDemand",
-        "startTime": "2024-11-27T02:59:30.000Z",
-        "link": "/swahili/bbc_swahili_radio/w172zyg2d61fbfb",
-        "brandTitle": "Amka Na BBC",
-        "summary": "Kipindi cha habari, mahojiano na makala kila siku saa kumi na mbili na saa moja asubuhi Afrika Mashariki",
-        "duration": "PT29M30S"
-      },
-      {
-        "id": "p0jzfxtb",
-        "state": "onDemand",
-        "startTime": "2024-11-26T15:29:30.000Z",
-        "link": "/swahili/bbc_swahili_radio/w172zygh3kbqlkh",
-        "brandTitle": "Dira Ya Dunia",
-        "summary": "Kipindi cha habari, makala na mahojiano cha kila siku kuanzia saa kumi na mbili unusu jioni Afrika Mashariki",
-        "duration": "PT1H"
-      }
-    ],
+    "radioScheduleData": null,
     "metadata": {
-      "type": "Live Radio"
+      "type": "Live Radio",
+      "atiAnalytics": {
+        "contentId": "urn:bbc:ares:ws_media:live:bbc_swahili_radio",
+        "contentType": "player-live",
+        "pageIdentifier": "swahili.bbc_swahili_radio.liveradio.page",
+        "pageTitle": "BBC Swahili Radio - BBC News Swahili"
+      }
     },
     "mediaBlock": [
       {

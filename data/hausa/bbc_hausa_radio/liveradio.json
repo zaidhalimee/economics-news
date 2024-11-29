@@ -6,50 +6,53 @@
     "id": "urn:bbc:ares:ws_media:live:bbc_hausa_radio",
     "name": "BBC Hausa Rediyo",
     "summary": "Labaran duniya da sharhi da kuma bayanai kan al'amuran yau da kullum daga sashin Hausa na BBC.",
-    "pageTitle": "BBC Hausa Rediyo - BBC News Hausa",
-    "contentType": "player-live",
-    "pageIdentifier": "hausa.bbc_hausa_radio.liveradio.page",
     "masterBrand": "bbc_hausa_radio",
     "radioScheduleData": [
       {
-        "id": "p0jznlc9",
+        "id": "p0k01c1g",
         "state": "next",
-        "startTime": "2024-11-27T13:59:30.000Z",
-        "link": "/hausa/bbc_hausa_radio/w3ct772n",
+        "startTime": "2024-11-29T19:29:30.000Z",
+        "link": "/hausa/bbc_hausa_radio/w3ct76x0",
+        "brandTitle": "Ra’ayi Riga",
+        "summary": "Shiri ne a duk ranar Juma'a da ke baiwa masu sauraro damar bayyana ra'ayoyinsu.",
+        "duration": "PT1H"
+      },
+      {
+        "id": "p0k01c1d",
+        "state": "onDemand",
+        "startTime": "2024-11-29T13:59:30.000Z",
+        "link": "/hausa/bbc_hausa_radio/w3ct76y4",
         "brandTitle": "Shirin Rana",
         "summary": "Shiri ne na minti 30 wanda ya kunshi labaru da rahotanni daga sassa daban-daban na duniya.",
         "duration": "PT30M"
       },
       {
-        "id": "p0jzk21x",
+        "id": "p0k01c1b",
         "state": "onDemand",
-        "startTime": "2024-11-27T06:30:00.000Z",
-        "link": "/hausa/bbc_hausa_radio/w172zxmn0vn85jx",
+        "startTime": "2024-11-29T06:30:00.000Z",
+        "link": "/hausa/bbc_hausa_radio/w172zxmn0vnfzc3",
         "brandTitle": "Shirin Hantsi",
         "summary": "Shiri ne na minti 30 wanda ya kunshi labaru da rahotanni daga sassa daban na duniya.",
         "duration": "PT29M30S"
       },
       {
-        "id": "p0jzk21v",
+        "id": "p0k01c18",
         "state": "onDemand",
-        "startTime": "2024-11-27T05:29:30.000Z",
-        "link": "/hausa/bbc_hausa_radio/w3ct77bk",
+        "startTime": "2024-11-29T05:29:30.000Z",
+        "link": "/hausa/bbc_hausa_radio/w3ct773s",
         "brandTitle": "Shirin Safe",
-        "summary": "Shiri ne na minti 30 wanda ya kunshi labaru da rahotanni daga sassa daban na duniya.",
-        "duration": "PT30M"
-      },
-      {
-        "id": "p0jzgzkh",
-        "state": "onDemand",
-        "startTime": "2024-11-26T19:29:30.000Z",
-        "link": "/hausa/bbc_hausa_radio/w3ct77j6",
-        "brandTitle": "Shirin Yamma",
         "summary": "Shiri ne na minti 30 wanda ya kunshi labaru da rahotanni daga sassa daban na duniya.",
         "duration": "PT30M"
       }
     ],
     "metadata": {
-      "type": "Live Radio"
+      "type": "Live Radio",
+      "atiAnalytics": {
+        "contentId": "urn:bbc:ares:ws_media:live:bbc_hausa_radio",
+        "contentType": "player-live",
+        "pageIdentifier": "hausa.bbc_hausa_radio.liveradio.page",
+        "pageTitle": "BBC Hausa Rediyo - BBC News Hausa"
+      }
     },
     "mediaBlock": [
       {

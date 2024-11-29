@@ -6,13 +6,16 @@
     "id": "urn:bbc:ares:ws_media:live:bbc_uzbek_radio",
     "name": "BBC Uzbek Radio Dasturi",
     "summary": "O’zbekiston, mintaqa va dunyo yangiliklari O’zbek tilida",
-    "pageTitle": "BBC Uzbek Radio - BBC News O'zbek",
-    "contentType": "player-live",
-    "pageIdentifier": "uzbek.bbc_uzbek_radio.liveradio.page",
     "masterBrand": "bbc_uzbek_radio",
     "radioScheduleData": null,
     "metadata": {
-      "type": "Live Radio"
+      "type": "Live Radio",
+      "atiAnalytics": {
+        "contentId": "urn:bbc:ares:ws_media:live:bbc_uzbek_radio",
+        "contentType": "player-live",
+        "pageIdentifier": "uzbek.bbc_uzbek_radio.liveradio.page",
+        "pageTitle": "BBC Uzbek Radio - BBC News O'zbek"
+      }
     },
     "mediaBlock": [
       {

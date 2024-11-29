@@ -6,50 +6,16 @@
     "id": "urn:bbc:ares:ws_media:live:bbc_amharic_radio",
     "name": "ያድምጡ",
     "summary": "ዝግጅቶቻችንን’",
-    "pageTitle": "ያድምጡ - BBC News አማርኛ",
-    "contentType": "player-live",
-    "pageIdentifier": "amharic.bbc_amharic_radio.liveradio.page",
     "masterBrand": "bbc_amharic_radio",
-    "radioScheduleData": [
-      {
-        "id": "p0jzqr32",
-        "state": "next",
-        "startTime": "2024-11-27T17:29:47.000Z",
-        "link": "/amharic/bbc_amharic_radio/w3ct74lc",
-        "brandTitle": "ቢቢሲ አማርኛ ዜና",
-        "summary": "የ15 ደቂቃ ዜናና ወቅታዊ ጉዳዮችን የሚዳስስ ፕሮግራም",
-        "duration": "PT14M43S"
-      },
-      {
-        "id": "p0jzgnjq",
-        "state": "onDemand",
-        "startTime": "2024-11-26T17:44:30.000Z",
-        "link": "/amharic/bbc_amharic_radio/w3ct74bg",
-        "brandTitle": "ቢቢሲ አማርኛ የእንግሊዝኛ ቋንቋ ትምህርት ክፍለ-ግዜ",
-        "summary": "የ5 ደቂቃ የጀማሪ፣ የመለስተኛና የከፍተኛ ደረጃ የእግሊዝኛ ቋንቋ ትምህርት ክፍለ-ግዜ",
-        "duration": "PT5M"
-      },
-      {
-        "id": "p0jzgnjn",
-        "state": "onDemand",
-        "startTime": "2024-11-26T17:29:47.000Z",
-        "link": "/amharic/bbc_amharic_radio/w3ct74gz",
-        "brandTitle": "ቢቢሲ አማርኛ ዜና",
-        "summary": "የ15 ደቂቃ ዜናና ወቅታዊ ጉዳዮችን የሚዳስስ ፕሮግራም",
-        "duration": "PT14M43S"
-      },
-      {
-        "id": "p0jz81nw",
-        "state": "onDemand",
-        "startTime": "2024-11-25T17:44:30.000Z",
-        "link": "/amharic/bbc_amharic_radio/w3ct749b",
-        "brandTitle": "ቢቢሲ አማርኛ የእንግሊዝኛ ቋንቋ ትምህርት ክፍለ-ግዜ",
-        "summary": "የ5 ደቂቃ የጀማሪ፣ የመለስተኛና የከፍተኛ ደረጃ የእግሊዝኛ ቋንቋ ትምህርት ክፍለ-ግዜ",
-        "duration": "PT5M"
-      }
-    ],
+    "radioScheduleData": null,
     "metadata": {
-      "type": "Live Radio"
+      "type": "Live Radio",
+      "atiAnalytics": {
+        "contentId": "urn:bbc:ares:ws_media:live:bbc_amharic_radio",
+        "contentType": "player-live",
+        "pageIdentifier": "amharic.bbc_amharic_radio.liveradio.page",
+        "pageTitle": "ያድምጡ - BBC News አማርኛ"
+      }
     },
     "mediaBlock": [
       {

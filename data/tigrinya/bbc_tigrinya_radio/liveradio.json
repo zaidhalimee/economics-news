@@ -6,13 +6,53 @@
     "id": "urn:bbc:ares:ws_media:live:bbc_tigrinya_radio",
     "name": "ስምዑ",
     "summary": "መደባትና",
-    "pageTitle": "ስምዑ - BBC News ትግርኛ",
-    "contentType": "player-live",
-    "pageIdentifier": "tigrinya.bbc_tigrinya_radio.liveradio.page",
     "masterBrand": "bbc_tigrinya_radio",
-    "radioScheduleData": null,
+    "radioScheduleData": [
+      {
+        "id": "p0k01c0r",
+        "state": "next",
+        "startTime": "2024-11-29T18:09:47.000Z",
+        "link": "/tigrinya/bbc_tigrinya_radio/w3ct7557",
+        "brandTitle": "ቢቢሲ ትግርኛ ዜና / ዜና፡ ካብ ቢቢሲ ትግርኛ",
+        "summary": "ናይ 15 ደቒቕ ዜናን እዋናዊ ዛዕባታትን ዝሽፍን ፕሮግራም",
+        "duration": "PT14M43S"
+      },
+      {
+        "id": "p0k00j1g",
+        "state": "onDemand",
+        "startTime": "2024-11-28T18:09:47.000Z",
+        "link": "/tigrinya/bbc_tigrinya_radio/w3ct757h",
+        "brandTitle": "ቢቢሲ ትግርኛ ዜና / ዜና፡ ካብ ቢቢሲ ትግርኛ",
+        "summary": "ናይ 15 ደቒቕ ዜናን እዋናዊ ዛዕባታትን ዝሽፍን ፕሮግራም",
+        "duration": "PT14M43S"
+      },
+      {
+        "id": "p0jzr5tw",
+        "state": "onDemand",
+        "startTime": "2024-11-27T18:09:47.000Z",
+        "link": "/tigrinya/bbc_tigrinya_radio/w3ct759r",
+        "brandTitle": "ቢቢሲ ትግርኛ ዜና / ዜና፡ ካብ ቢቢሲ ትግርኛ",
+        "summary": "ናይ 15 ደቒቕ ዜናን እዋናዊ ዛዕባታትን ዝሽፍን ፕሮግራም",
+        "duration": "PT14M43S"
+      },
+      {
+        "id": "p0jzgthd",
+        "state": "onDemand",
+        "startTime": "2024-11-26T18:09:47.000Z",
+        "link": "/tigrinya/bbc_tigrinya_radio/w3ct758m",
+        "brandTitle": "ቢቢሲ ትግርኛ ዜና / ዜና፡ ካብ ቢቢሲ ትግርኛ",
+        "summary": "ናይ 15 ደቒቕ ዜናን እዋናዊ ዛዕባታትን ዝሽፍን ፕሮግራም",
+        "duration": "PT14M43S"
+      }
+    ],
     "metadata": {
-      "type": "Live Radio"
+      "type": "Live Radio",
+      "atiAnalytics": {
+        "contentId": "urn:bbc:ares:ws_media:live:bbc_tigrinya_radio",
+        "contentType": "player-live",
+        "pageIdentifier": "tigrinya.bbc_tigrinya_radio.liveradio.page",
+        "pageTitle": "ስምዑ - BBC News ትግርኛ"
+      }
     },
     "mediaBlock": [
       {

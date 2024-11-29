@@ -6,13 +6,16 @@
     "id": "urn:bbc:ares:ws_media:live:bbc_urdu_radio",
     "name": "بی بی سی اردو ریڈیو",
     "summary": "اردو زبان کے معتبر ترین خبررساں اداروں میں ایک، بی بی سی اردو کی جانب سے مصدقہ خبریں اور جامع تجزیے",
-    "pageTitle": "بی بی سی اردو ریڈیو - BBC News اردو",
-    "contentType": "player-live",
-    "pageIdentifier": "urdu.bbc_urdu_radio.liveradio.page",
     "masterBrand": "bbc_urdu_radio",
     "radioScheduleData": null,
     "metadata": {
-      "type": "Live Radio"
+      "type": "Live Radio",
+      "atiAnalytics": {
+        "contentId": "urn:bbc:ares:ws_media:live:bbc_urdu_radio",
+        "contentType": "player-live",
+        "pageIdentifier": "urdu.bbc_urdu_radio.liveradio.page",
+        "pageTitle": "بی بی سی اردو ریڈیو - BBC News اردو"
+      }
     },
     "mediaBlock": [
       {
