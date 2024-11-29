@@ -8409,7 +8409,7 @@ module.exports = () => ({
         smoke: false,
       },
     },
-  }, // bla bla
+  },
   uzbekCyr: {
     name: 'uzbek',
     font: undefined,
