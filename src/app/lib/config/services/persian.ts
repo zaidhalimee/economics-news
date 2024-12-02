@@ -261,7 +261,7 @@ export const service: DefaultServiceConfig = {
         },
         listen: 'بشنوید',
         watch: 'ببینید',
-        watchMoments: 'لحظات للمشاهدة',
+        watchMoments: 'persain test',
         listenLive: 'بشنوید - زنده',
         listenNext: 'به بعدی گوش کنید',
         liveLabel: 'زنده',
