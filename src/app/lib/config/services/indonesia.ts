@@ -243,6 +243,7 @@ export const service: DefaultServiceConfig = {
         video: 'Video',
         listen: 'Dengar',
         watch: 'Tonton',
+        watchMoments: 'test for indonesia',
         listenLive: 'Mendengarkan langsung',
         listenNext: 'Dengar yang berikut',
         liveLabel: 'LANGSUNG',
