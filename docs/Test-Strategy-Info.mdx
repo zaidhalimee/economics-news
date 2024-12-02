@@ -99,8 +99,9 @@ We should have smoke tests for validating that core functionality is not broken,
 #### As little as possible
 The rule of thumb is that we should avoid writing an end to end test if there is an alternative to validating the functionality. The alternative can be a combination of layers, for example, an integration test combined with an API test (which doesn’t exist right now) can be enough to reach the same confidence as an e2e test with less cost.
 
-### Puma approach
+### PUMA approach
 Adopting the [PUMA](https://confluence.dev.bbc.co.uk/display/podtest/PUMA) approach can provide a framework to decide if a proposed test genuinely meets the definition of an E2E. According to PUMA, an E2E test should:
+
 P - Prove core functionality
 
 U - be Understood by all
@@ -142,7 +143,9 @@ We have many custom commands that make common tasks easier, these are located wi
 
 
 
-> 🔊 Discussion with team: What are other good practices? any anti-patterns?
+> 🔊 Discussion with team: 
+> What are other good practices?
+> Any anti-patterns?
 
 
 #### Who should automate?
