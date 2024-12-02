@@ -239,7 +239,9 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
       }
       {showPortraitTitle && (
         <strong css={styles.titlePortrait}>
-          {translations.media.watchMoments}
+          {translations.media.watchMoments
+            ? translations.media.watchMoments
+            : 'test fallback'}
         </strong>
       )}
       <figure
