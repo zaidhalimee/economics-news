@@ -229,8 +229,6 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
 
   const showPortraitTitle = orientation === 'portrait' && !embedded;
 
-  const test = 'test title';
-
   return (
     <>
       {
@@ -239,7 +237,7 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
           <Metadata blocks={blocks} embedURL={playerConfig?.externalEmbedUrl} />
         )
       }
-      {showPortraitTitle && <strong css={styles.titlePortrait}>{test}</strong>}
+      {showPortraitTitle && <strong css={styles.titlePortrait}>{translations.home}</strong>}
       <figure
         data-e2e="media-loader__container"
         className={className}
