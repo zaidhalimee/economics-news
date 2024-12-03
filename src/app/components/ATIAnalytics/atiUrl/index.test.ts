@@ -306,7 +306,7 @@ describe('buildATIEventTrackUrl', () => {
       'atc=PUB-[campaignID]-[component]-[variant_1]-[format]-[pageIdentifier]-[detailedPlacement]-[]-[url]',
       'mv_test=Google Discover',
       'mv_experiment_id=someExperiment',
-      'mv_creation=variant_1',
+      'mv_creation=VARIANT(someExperiment)',
       'type=AT',
     ]);
   });
