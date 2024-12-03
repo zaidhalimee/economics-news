@@ -936,7 +936,6 @@ describe('buildSettings', () => {
           language: 'fr',
           pageIdentifierOverride:
             'afrique.bbc_afrique_radio.w172zn0kxd65h3g.page',
-          pageTitleOverride: "Bulletin D'informations",
         },
         type: 'mediaOverrides',
       };
@@ -983,7 +982,7 @@ describe('buildSettings', () => {
             fallbackBackgroundColour: '#ffffff',
           },
           playlistObject: {
-            title: "Bulletin D'informations",
+            title: '26/11/2024 GMT',
             holdingImageURL:
               'https://ichef.bbci.co.uk/images/ic/$recipe/p0gsjjjl.png',
             items: [

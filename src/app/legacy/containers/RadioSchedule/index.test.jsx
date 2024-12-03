@@ -12,9 +12,12 @@ describe('RadioScheduleData', () => {
   });
 
   it('does not render when radio schedule toggle is disabled', async () => {
-    const initialData = podcastProgramme.data.radioScheduleData;
+    const { radioScheduleData } = podcastProgramme.data;
     const { container } = render(
-      <RadioSchedulesWithContext service="gahuza" initialData={initialData} />,
+      <RadioSchedulesWithContext
+        service="gahuza"
+        initialData={radioScheduleData}
+      />,
     );
     await waitFor(() => {
       expect(container).toBeEmptyDOMElement();
@@ -22,11 +25,11 @@ describe('RadioScheduleData', () => {
   });
 
   it('does render when radio schedule toggle is enabled', async () => {
-    const initialData = podcastProgramme.data.radioScheduleData;
+    const { radioScheduleData } = podcastProgramme.data;
     const { container } = render(
       <RadioSchedulesWithContext
         service="gahuza"
-        initialData={initialData}
+        initialData={radioScheduleData}
         radioScheduleToggle
         toggleName="onDemandRadioSchedule"
       />,
@@ -37,12 +40,12 @@ describe('RadioScheduleData', () => {
   });
 
   it('does not render on AMP pages', async () => {
-    const initialData = podcastProgramme.data.radioScheduleData;
+    const { radioScheduleData } = podcastProgramme.data;
 
     const { container } = render(
       <RadioSchedulesWithContext
         service="gahuza"
-        initialData={initialData}
+        initialData={radioScheduleData}
         radioScheduleToggle
         isAmp
       />,
