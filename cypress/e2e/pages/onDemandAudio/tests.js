@@ -1,17 +1,8 @@
 /* eslint-disable cypress/no-unnecessary-waiting */
 /* eslint-disable consistent-return */
 import path from 'ramda/src/path';
-import {
-  getEpisodeAvailability,
-  overrideRendererOnTest,
-} from '../../../support/helpers/onDemandRadioTv';
+import { getEpisodeAvailability } from '../../../support/helpers/onDemandRadioTv';
 import envConfig from '../../../support/config/envs';
-import getDataUrl from '../../../support/helpers/getDataUrl';
-import processRecentEpisodes from '../../../../src/app/routes/utils/processRecentEpisodes';
-import {
-  isScheduleDataComplete,
-  getIsProgramValid,
-} from '../../../../src/app/legacy/containers/RadioSchedule/utilities/evaluateScheduleData';
 
 export default ({ service, pageType, variant }) => {
   describe(`Tests for ${service} ${pageType}`, () => {
@@ -57,28 +48,17 @@ export default ({ service, pageType, variant }) => {
             );
             // There cannot be more episodes shown than the max allowed
             if (recentEpisodesEnabled) {
-              const recentEpisodesMaxNumber = path(
-                [toggleName, 'value'],
-                toggles,
-              );
-              const currentPath = Cypress.env('currentPath');
-              const url =
-                Cypress.env('APP_ENV') === 'test'
-                  ? `${currentPath}?renderer_env=live`
-                  : `${currentPath}`;
+              const recentEpisodesLimit = path([toggleName, 'value'], toggles);
 
-              cy.request(getDataUrl(url)).then(({ body }) => {
-                const episodeId = path(['content', 'blocks', 0, 'id'], body);
+              const recentEpisodesMaxNumber = Number(recentEpisodesLimit);
 
-                const processedEpisodesData = processRecentEpisodes(body, {
-                  exclude: episodeId,
-                  recentEpisodesLimit: recentEpisodesMaxNumber,
-                });
+              cy.getPageDataFromWindow().then(({ pageData }) => {
+                const processedEpisodesData = pageData.recentEpisodes;
 
-                const expectedNumberOfEpisodes = processedEpisodesData.length;
+                const totalNumberOfEpisodes = processedEpisodesData.length;
 
                 cy.log(
-                  `Number of available episodes? ${expectedNumberOfEpisodes}`,
+                  `Number of available episodes? ${totalNumberOfEpisodes}`,
                 );
 
                 cy.window().then(win => {
@@ -129,7 +109,7 @@ export default ({ service, pageType, variant }) => {
                   }
 
                   // More than one episode expected
-                  if (expectedNumberOfEpisodes > 1) {
+                  if (totalNumberOfEpisodes > 1) {
                     cy.get('[data-e2e=recent-episodes-list]').should('exist');
 
                     cy.get('[data-e2e=recent-episodes-list]').within(() => {
@@ -137,14 +117,14 @@ export default ({ service, pageType, variant }) => {
                         .its('length')
                         .should(length => {
                           expect(length).to.be.closeTo(
-                            expectedNumberOfEpisodes,
+                            recentEpisodesMaxNumber,
                             1,
                           );
                         });
                     });
                   }
                   // If there is only one item, it is not in a list
-                  else if (expectedNumberOfEpisodes === 1) {
+                  else if (totalNumberOfEpisodes === 1) {
                     cy.get('aside[aria-labelledby=recent-episodes]').within(
                       () => {
                         cy.get('[data-e2e="recent-episodes-list"]').should(
@@ -174,11 +154,7 @@ export default ({ service, pageType, variant }) => {
       });
       describe('Radio Schedule', () => {
         it('should be displayed if there is enough schedule data', function test() {
-          const currentPath = `${Cypress.env(
-            'currentPath',
-          )}.json${overrideRendererOnTest()}`;
-
-          cy.request(currentPath).then(({ body: jsonData }) => {
+          cy.getPageDataFromWindow().then(({ pageData }) => {
             cy.fixture(`toggles/${service}.json`).then(toggles => {
               const scheduleIsEnabled = path(
                 ['onDemandRadioSchedule', 'enabled'],
@@ -189,34 +165,14 @@ export default ({ service, pageType, variant }) => {
               );
 
               if (scheduleIsEnabled) {
-                const masterBrand = jsonData.metadata.createdBy;
-
-                const schedulePath =
-                  `/${service}/${masterBrand}/schedule.json${overrideRendererOnTest()}`.replace(
-                    'bbc_afaanoromoo_radio',
-                    'bbc_oromo_radio',
-                  );
-
-                cy.request(schedulePath).then(({ body: scheduleJson }) => {
-                  const { schedules } = scheduleJson;
-                  const isProgramValid = getIsProgramValid(() => {});
-                  const validSchedules = schedules.filter(isProgramValid);
-
-                  const isRadioScheduleDataComplete = isScheduleDataComplete({
-                    schedules: validSchedules,
-                  });
-
-                  cy.log(
-                    `Radio Schedule is displayed? ${isRadioScheduleDataComplete}`,
-                  );
-                  if (scheduleIsEnabled && isRadioScheduleDataComplete) {
-                    cy.log('Schedule has enough data');
-                    cy.get('[data-e2e=radio-schedule]').should('exist');
-                    // cy.get('[data-e2e=live]').should('exist');
-                  } else {
-                    cy.get('[data-e2e=radio-schedule]').should('not.exist');
-                  }
-                });
+                const { radioScheduleData } = pageData;
+                if (scheduleIsEnabled && radioScheduleData) {
+                  cy.log('Schedule has enough data');
+                  cy.get('[data-e2e=radio-schedule]').should('exist');
+                  // cy.get('[data-e2e=live]').should('exist');
+                } else {
+                  cy.get('[data-e2e=radio-schedule]').should('not.exist');
+                }
               } else {
                 cy.get('[data-e2e=radio-schedule]').should('not.exist');
               }

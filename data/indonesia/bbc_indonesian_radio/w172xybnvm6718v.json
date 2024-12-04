@@ -4,10 +4,10 @@
     "metadata": {
       "type": "On Demand Radio",
       "atiAnalytics": {
-        "pageIdentifier": "indonesia.bbc_indonesian_radio.w172x6r5000f38s.page",
+        "pageIdentifier": "indonesia.bbc_indonesian_radio.w172xybnvm6718v.page",
         "contentType": "player-episode",
         "pageTitle": "Dunia Pagi Ini - BBC News Indonesia",
-        "contentId": "urn:bbc:pips:w172x6r5000f38s"
+        "contentId": "urn:bbc:pips:w172xybnvm6718v"
       }
     },
     "language": "id",
@@ -15,13 +15,13 @@
     "episodeTitle": "Dunia Pagi Ini",
     "headline": "Dunia Pagi Ini",
     "shortSynopsis": "Berita terbaru dari seluruh dunia dan ulasan peristiwa dari Indonesia. Juga berita olahraga terbaru dan berbeda setiap harinya.",
-    "id": "urn:bbc:ares:ws_media:page:bbc_indonesian_radio/w172x6r5000f38s",
+    "id": "urn:bbc:ares:ws_media:page:bbc_indonesian_radio/w172xybnvm6718v",
     "brandId": "w13xtt0s",
     "summary": "Berita terbaru dari seluruh dunia dan ulasan peristiwa dari Indonesia. Juga berita olahraga terbaru dan berbeda setiap harinya.",
     "contentType": "player-episode",
-    "episodeId": "w172x6r5000f38s",
+    "episodeId": "w172xybnvm6718v",
     "masterBrand": "bbc_indonesian_radio",
-    "releaseDateTimeStamp": 1583366400000,
+    "releaseDateTimeStamp": 1623196800000,
     "pageTitle": "Dunia Pagi Ini - BBC News Indonesia",
     "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p08b4828.png",
     "imageAltText": null,
@@ -217,10 +217,10 @@
       {
         "type": "audio",
         "model": {
-          "id": "w172x6r5000f38s",
+          "id": "w172xybnvm6718v",
           "subType": "episode",
           "format": "Audio",
-          "title": "05/03/2020 GMT",
+          "title": "09/06/2021 GMT",
           "synopses": {
             "short": "Berita terbaru dari seluruh dunia dan ulasan peristiwa dari Indonesia. Juga berita olahraga terbaru dan berbeda setiap harinya.",
             "medium": "Berita terbaru dari seluruh dunia dan ulasan peristiwa dari Indonesia. Juga berita olahraga terbaru dan berbeda setiap harinya."
@@ -236,5 +236,6 @@
         }
       }
     ]
-  }
+  },
+  "contentType": "application/json; charset=utf-8"
 }
