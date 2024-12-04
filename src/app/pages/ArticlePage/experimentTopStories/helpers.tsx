@@ -8,13 +8,14 @@ import TopStoriesSection from '../PagePromoSections/TopStoriesSection';
 import styles from './index.styles';
 
 export const experimentName = 'topStoriesExperiment';
+// Traffic allocation set at 40%
 export const experimentTopStoriesConfig = {
   [experimentName]: {
     variants: {
-      control: 5,
-      show_at_quarter: 5,
-      show_at_half: 5,
-      show_at_three_quarters: 5,
+      control: 10,
+      show_at_quarter: 10,
+      show_at_half: 10,
+      show_at_three_quarters: 10,
     },
   },
 };
