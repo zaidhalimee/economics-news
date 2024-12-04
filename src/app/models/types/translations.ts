@@ -162,7 +162,7 @@ export interface Translations {
     bbc_yoruba_radio?: OnDemandRadioTvTranslations;
     listen: string;
     watch: string;
-    watchMoments: string;
+    watchMoments?: string;
     listenLive?: string;
     listenNext?: string;
     liveLabel?: string;
