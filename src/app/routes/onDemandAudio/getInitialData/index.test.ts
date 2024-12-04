@@ -10,6 +10,12 @@ const { env } = process;
 
 const fetchMock = fetch as FetchMock;
 
+jest.mock('#app/lib/utilities/isLive', () =>
+  jest.fn().mockImplementation(() => false),
+);
+
+const fetchBFFSpy = jest.spyOn(fetchBFF, 'default');
+
 describe('Get initial data for on demand radio', () => {
   afterEach(() => {
     process.env = { ...env };
@@ -18,14 +24,15 @@ describe('Get initial data for on demand radio', () => {
   });
 
   it('should return essential data for an on demand page to render', async () => {
-    jest
-      .spyOn(fetchBFF, 'default')
-      .mockResolvedValueOnce({ json: gahuzaOnDemandAudio, status: 200 });
+    fetchBFFSpy.mockResolvedValueOnce({
+      json: gahuzaOnDemandAudio,
+      status: 200,
+    });
 
-    // @ts-expect-error partial data required for testing purposes
     const { pageData } = await getInitialData({
       path: 'mock-on-demand-radio-path',
       pageType: AUDIO_PAGE,
+      service: 'gahuza',
       toggles: {
         recentAudioEpisodes: { enabled: false, value: 4 },
       },
@@ -49,9 +56,7 @@ describe('Get initial data for on demand radio', () => {
   });
 
   it('should return essential data for a podcast page to render', async () => {
-    jest
-      .spyOn(fetchBFF, 'default')
-      .mockResolvedValueOnce({ json: podcastJson, status: 200 });
+    fetchBFFSpy.mockResolvedValueOnce({ json: podcastJson, status: 200 });
 
     const { pageData } = await getInitialData({
       path: 'mock-podcast-path',
@@ -92,14 +97,12 @@ describe('Get initial data for on demand radio', () => {
   });
 
   it('should use short synopsis as page summary for podcast pages when medium synopsis is absent', async () => {
-    jest
-      .spyOn(fetchBFF, 'default')
-      .mockResolvedValueOnce({ json: podcastJson, status: 200 });
+    fetchBFFSpy.mockResolvedValueOnce({ json: podcastJson, status: 200 });
 
-    // @ts-expect-error partial data required for testing purposes
     const { pageData } = await getInitialData({
       path: 'mock-podcast-path',
       pageType: AUDIO_PAGE,
+      service: 'gahuza',
       toggles: {
         recentPodcastEpisodes: { enabled: false, value: 8 },
       },
@@ -109,9 +112,10 @@ describe('Get initial data for on demand radio', () => {
   });
 
   it('should return essential data for a page to render when the episode toggle is null', async () => {
-    jest
-      .spyOn(fetchBFF, 'default')
-      .mockResolvedValueOnce({ json: gahuzaOnDemandAudio, status: 200 });
+    fetchBFFSpy.mockResolvedValueOnce({
+      json: gahuzaOnDemandAudio,
+      status: 200,
+    });
 
     const { pageData } = await getInitialData({
       path: 'mock-on-demand-radio-path',
@@ -140,14 +144,15 @@ describe('Get initial data for on demand radio', () => {
   });
 
   it('should return the correct page identifier used for on demand radio analytics', async () => {
-    jest
-      .spyOn(fetchBFF, 'default')
-      .mockResolvedValueOnce({ json: gahuzaOnDemandAudio, status: 200 });
+    fetchBFFSpy.mockResolvedValueOnce({
+      json: gahuzaOnDemandAudio,
+      status: 200,
+    });
 
-    // @ts-expect-error partial data required for testing purposes
     const { pageData } = await getInitialData({
       path: 'mock-on-demand-radio-path',
       pageType: AUDIO_PAGE,
+      service: 'gahuza',
       toggles: {
         recentAudioEpisodes: { enabled: false, value: 4 },
       },
@@ -159,14 +164,12 @@ describe('Get initial data for on demand radio', () => {
   });
 
   it('should return the correct page identifier used for podcast analytics', async () => {
-    jest
-      .spyOn(fetchBFF, 'default')
-      .mockResolvedValueOnce({ json: podcastJson, status: 200 });
+    fetchBFFSpy.mockResolvedValueOnce({ json: podcastJson, status: 200 });
 
-    // @ts-expect-error partial data required for testing purposes
     const { pageData } = await getInitialData({
       path: 'mock-podcast-path',
       pageType: AUDIO_PAGE,
+      service: 'gahuza',
       toggles: {
         recentPodcastEpisodes: { enabled: false, value: 8 },
       },
@@ -178,14 +181,15 @@ describe('Get initial data for on demand radio', () => {
   });
 
   it('should return on demand recent episode data when recentEpisode toggle is enabled', async () => {
-    jest
-      .spyOn(fetchBFF, 'default')
-      .mockResolvedValueOnce({ json: gahuzaOnDemandAudio, status: 200 });
+    fetchBFFSpy.mockResolvedValueOnce({
+      json: gahuzaOnDemandAudio,
+      status: 200,
+    });
 
-    // @ts-expect-error partial data required for testing purposes
     const { pageData } = await getInitialData({
       path: 'mock-on-demand-radio-path',
       pageType: AUDIO_PAGE,
+      service: 'gahuza',
       toggles: {
         recentAudioEpisodes: { enabled: true, value: 4 },
       },
@@ -196,13 +200,11 @@ describe('Get initial data for on demand radio', () => {
   });
 
   it('should return podcast recent episode data when recentEpisode toggle is enabled', async () => {
-    jest
-      .spyOn(fetchBFF, 'default')
-      .mockResolvedValueOnce({ json: podcastJson, status: 200 });
-    // @ts-expect-error partial data required for testing purposes
+    fetchBFFSpy.mockResolvedValueOnce({ json: podcastJson, status: 200 });
     const { pageData: podcastPageData } = await getInitialData({
       path: 'mock-podcast-path',
       pageType: AUDIO_PAGE,
+      service: 'gahuza',
       toggles: {
         recentPodcastEpisodes: { enabled: true, value: 4 },
       },
@@ -210,5 +212,19 @@ describe('Get initial data for on demand radio', () => {
 
     expect(podcastPageData?.recentEpisodes.length).toEqual(4);
     expect(podcastPageData?.recentEpisodes[0].id).toEqual('p0k396c8');
+  });
+
+  it('should fetch live data on the test environment', async () => {
+    await getInitialData({
+      path: 'mock-podcast-path',
+      pageType: AUDIO_PAGE,
+      service: 'gahuza',
+    });
+
+    expect(fetchBFFSpy).toHaveBeenCalledWith(
+      expect.objectContaining({
+        pathname: 'mock-podcast-path?renderer_env=live',
+      }),
+    );
   });
 });
