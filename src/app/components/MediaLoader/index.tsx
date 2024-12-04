@@ -7,7 +7,6 @@ import { Helmet } from 'react-helmet';
 import { RequestContext } from '#contexts/RequestContext';
 import { MEDIA_PLAYER_STATUS } from '#app/lib/logger.const';
 import { ServiceContext } from '#app/contexts/ServiceContext';
-import ws from '#app/lib/config/services/ws';
 import useLocation from '#app/hooks/useLocation';
 import useToggle from '#app/hooks/useToggle';
 import {
