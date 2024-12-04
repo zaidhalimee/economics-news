@@ -9,9 +9,8 @@ import defaultToggles from '#lib/config/toggles';
 
 // mock data
 import featureIndexPageJson from '#data/afrique/cpsAssets/48465371.json';
-import podcastPageJson from '#data/arabic/podcasts/p02pc9qc.json';
+import gahuzaPodcastPage from '#data/gahuza/bbc_gahuza_radio/p07yh8hb.json';
 import legacyMediaAssetPage from '#data/azeri/legacyAssets/multimedia/2012/09/120919_georgia_prison_video.json';
-import onDemandRadioPageJson from '#data/indonesia/bbc_indonesian_radio/w172xh267fpn19l.json';
 import liveRadioPageJson from '#data/korean/bbc_korean_radio/liveradio.json';
 import homePageJson from '#data/kyrgyz/homePage/index.json';
 import onDemandTvPageJson from '#data/pashto/bbc_pashto_tv/tv_programmes/w13xttn4.json';
@@ -20,6 +19,7 @@ import sportArticlePageJson from '#data/sport/judo/articles/cj80n66ddnko.json';
 import mediaAssetPageJson from '#data/yoruba/cpsAssets/media-23256797.json';
 
 import { ERROR_PAGE, FRONT_PAGE } from '#app/routes/utils/pageTypes';
+import gahuzaOnDemandAudio from '#data/gahuza/bbc_gahuza_radio/p02pcb5c.json';
 import routes from '.';
 import {
   act,
@@ -125,8 +125,10 @@ describe('Routes', () => {
     });
 
     it('should route to and render the podcast page', async () => {
-      const pathname = '/arabic/podcasts/p02pc9qc';
-      fetch.mockResponseOnce(JSON.stringify(podcastPageJson));
+      const pathname = '/gahuza/podcasts/p07yh8hb';
+      jest
+        .spyOn(fetchDataFromBFF, 'default')
+        .mockResolvedValueOnce({ json: gahuzaPodcastPage, status: 200 });
 
       const { getInitialData, pageType } = getMatchingRoute(pathname);
       const { pageData } = await getInitialData({
@@ -140,10 +142,10 @@ describe('Routes', () => {
         pathname,
         pageData,
         pageType,
-        service: 'arabic',
+        service: 'gahuza',
       });
 
-      const EXPECTED_TEXT_RENDERED_IN_DOCUMENT = 'BBC Xtra';
+      const EXPECTED_TEXT_RENDERED_IN_DOCUMENT = 'Baza Muganga';
 
       expect(
         await screen.findByText(EXPECTED_TEXT_RENDERED_IN_DOCUMENT),
@@ -193,8 +195,10 @@ describe('Routes', () => {
     );
 
     it('should route to and render the onDemand Radio page', async () => {
-      const pathname = '/indonesia/bbc_indonesian_radio/w172xh267fpn19l';
-      fetch.mockResponseOnce(JSON.stringify(onDemandRadioPageJson));
+      const pathname = '/gahuza/bbc_gahuza_radio/programmes/p02pcb5c';
+      jest
+        .spyOn(fetchDataFromBFF, 'default')
+        .mockResolvedValueOnce({ json: gahuzaOnDemandAudio, status: 200 });
 
       const { getInitialData, pageType } = getMatchingRoute(pathname);
       const { pageData } = await getInitialData({
@@ -208,10 +212,11 @@ describe('Routes', () => {
         pathname,
         pageData,
         pageType,
-        service: 'indonesia',
+        service: 'gahuza',
       });
 
-      const EXPECTED_TEXT_RENDERED_IN_DOCUMENT = 'Dunia Pagi Ini';
+      const EXPECTED_TEXT_RENDERED_IN_DOCUMENT =
+        'Ibitekerezo ku kiganiro cyavugaga ku matora yo muri Amerika';
 
       expect(
         await screen.findByText(EXPECTED_TEXT_RENDERED_IN_DOCUMENT),
