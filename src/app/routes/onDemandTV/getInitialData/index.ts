@@ -5,6 +5,8 @@ import { BFF_FETCH_ERROR } from '#app/lib/logger.const';
 import nodeLogger from '#app/lib/logger.node';
 import { FetchError } from '#app/models/types/fetch';
 import { TV_PAGE } from '#app/routes/utils/pageTypes';
+import isTest from '#app/lib/utilities/isTest';
+import overrideRendererOnTest from '#app/routes/utils/overrideRendererOnTest';
 
 const logger = nodeLogger(__filename);
 
@@ -17,7 +19,7 @@ export default async ({
 }: InitialDataProps) => {
   try {
     const { status, json } = await fetchDataFromBFF({
-      pathname,
+      pathname: isTest() ? overrideRendererOnTest(pathname) : pathname,
       service,
       variant,
       pageType: TV_PAGE,
