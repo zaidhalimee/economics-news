@@ -7,6 +7,7 @@ import {
   STORY_PAGE,
   MEDIA_ASSET_PAGE,
   PHOTO_GALLERY_PAGE,
+  AUDIO_PAGE,
 } from '#app/routes/utils/pageTypes';
 import {
   articleDataNews,
@@ -15,6 +16,7 @@ import {
 } from '#pages/ArticlePage/fixtureData';
 import { RequestContextProvider } from '#contexts/RequestContext';
 import { data as serbianFrontPageData } from '#data/serbian/frontpage/lat.json';
+import { data as gahuzaAudioPage } from '#data/gahuza/bbc_gahuza_radio/p02pcb5c.json';
 import { data as urduFrontPageData } from '#data/urdu/frontpage/index.json';
 import liveRadioPageData from '#data/korean/bbc_korean_radio/liveradio.json';
 import { getSummary } from '#lib/utilities/parseAssetData/index';
@@ -1018,6 +1020,25 @@ describe('Snapshot', () => {
         title={liveRadioPageData.promo.name}
         lang={liveRadioPageData.metadata.language}
         description={liveRadioPageData.promo.summary}
+        openGraphType="website"
+      />,
+    );
+    const container = Helmet.peek();
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should match for WS On Demand Audio', () => {
+    render(
+      <MetadataWithContext
+        service="gahuza"
+        bbcOrigin={dotComOrigin}
+        platform="canonical"
+        id={null}
+        pageType={AUDIO_PAGE}
+        pathname="/gahuza/bbc_gahuza_radio/p02pcb5c"
+        title={gahuzaAudioPage.promoBrandTitle}
+        lang={gahuzaAudioPage.language}
+        description={gahuzaAudioPage.summary}
         openGraphType="website"
       />,
     );

@@ -1,15 +1,18 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { MEDIA_PAGE } from '#app/routes/utils/pageTypes';
+import { AUDIO_PAGE } from '#app/routes/utils/pageTypes';
 import { StoryArgs, StoryProps } from '#app/models/types/storybook';
 import { Services } from '#app/models/types/global';
+import koreanAudioResponse from '#data/korean/bbc_korean_radio/w3ct1vk5.json';
+import gahuzaAudioResponse from '#data/gahuza/bbc_gahuza_radio/p02pcb5c.json';
 import { OnDemandAudioPage } from '..';
-import indonesia from './fixtureData/indonesia.json';
-import pashto from './fixtureData/pashto.json';
+
+const gahuza = gahuzaAudioResponse.data;
+const korean = koreanAudioResponse.data;
 
 const onDemandRadioFixtures = {
-  indonesia,
-  pashto,
+  gahuza,
+  korean,
 };
 
 const matchFixtures = (service: Services) => ({
@@ -17,8 +20,8 @@ const matchFixtures = (service: Services) => ({
     mediaId: 'liveradio',
     // @ts-expect-error partial data for testing
     serviceId: {
-      indonesia: 'bbc_indonesian_radio',
-      pashto: 'bbc_pashto_radio',
+      gahuza: 'bbc_gahuza_radio',
+      korea: 'bbc_korean_radio',
     }[service],
   },
 });
@@ -29,12 +32,12 @@ const Component = ({ service }: StoryProps) => {
       <OnDemandAudioPage
         match={matchFixtures(service)}
         // @ts-expect-error partial data for storybook
-        pageData={onDemandRadioFixtures[service] || indonesia}
+        pageData={onDemandRadioFixtures[service] || gahuza}
         status={200}
         service={service}
         loading={false}
         error=""
-        pageType={MEDIA_PAGE}
+        pageType={AUDIO_PAGE}
       />
     </BrowserRouter>
   );
@@ -60,7 +63,7 @@ export const Example = {
 // This story is for chromatic testing purposes only
 export const Test = {
   render: (_: StoryArgs, { variant }: StoryProps) => (
-    <Component service="indonesia" variant={variant} />
+    <Component service="gahuza" variant={variant} />
   ),
   tags: ['!dev'],
 };

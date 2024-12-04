@@ -6,7 +6,7 @@ import {
   EPISODE_NOT_YET_AVAILABLE,
   UNRECOGNISED_EPISODE_AVAILABILITY,
 } from '#lib/logger.const';
-import onDemandRadioEpisodeJson from '#data/pashto/bbc_pashto_radio/w3ct0lz1';
+import aresOnDemandRadioEpisodeJson from '#data/pashto/bbc_pashto_radio/ares-w3ct0lz1';
 import onDemandRadioBrandJson from '#data/indonesia/bbc_indonesian_radio/w13xtt0s';
 import onDemandTvEpisodeJson from '#data/afrique/bbc_afrique_tv/tv/w3ct05mp';
 import onDemandTvBrandJson from '#data/somali/bbc_somali_tv/tv_programmes/w13xttqt';
@@ -15,7 +15,7 @@ import getEpisodeAvailability, { getUrl } from '.';
 describe('Episode Availability', () => {
   describe('getUrl', () => {
     it('should return a valid url for radio episode page', () => {
-      const url = getUrl(onDemandRadioEpisodeJson);
+      const url = getUrl(aresOnDemandRadioEpisodeJson);
       expect(url).toEqual('pashto/bbc_pashto_radio/w3ct0lz1');
     });
 
@@ -41,7 +41,7 @@ describe('Episode Availability', () => {
         assocPath(
           ['content', 'blocks', '0', 'availability'],
           availability,
-          onDemandRadioEpisodeJson,
+          aresOnDemandRadioEpisodeJson,
         ),
       getEpisodeAvailability,
     );
