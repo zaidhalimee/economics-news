@@ -2543,3 +2543,230 @@ exports[`Snapshot should match for WS Media liveradio 1`] = `
   "titleAttributes": {},
 }
 `;
+
+exports[`Snapshot should match for WS On Demand Audio 1`] = `
+{
+  "baseTag": [],
+  "bodyAttributes": {},
+  "defer": true,
+  "encode": true,
+  "htmlAttributes": {
+    "dir": "ltr",
+    "lang": "rw",
+  },
+  "linkTags": [
+    {
+      "href": "https://www.bbc.com/gahuza/bbc_gahuza_radio/p02pcb5c",
+      "rel": "canonical",
+    },
+    {
+      "href": "https://www.bbc.com/gahuza/bbc_gahuza_radio/p02pcb5c",
+      "hrefLang": "rw",
+      "rel": "alternate",
+    },
+    {
+      "href": "https://www.bbc.com/gahuza/bbc_gahuza_radio/p02pcb5c.amp",
+      "rel": "amphtml",
+    },
+    {
+      "href": "http://localhost:7080/gahuza/images/icons/icon-192x192.png",
+      "rel": "apple-touch-icon",
+    },
+    {
+      "href": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/gahuza/images/icons/icon-72x72.png",
+      "rel": "apple-touch-icon",
+      "sizes": "72x72",
+    },
+    {
+      "href": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/gahuza/images/icons/icon-96x96.png",
+      "rel": "apple-touch-icon",
+      "sizes": "96x96",
+    },
+    {
+      "href": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/gahuza/images/icons/icon-128x128.png",
+      "rel": "apple-touch-icon",
+      "sizes": "128x128",
+    },
+    {
+      "href": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/gahuza/images/icons/icon-144x144.png",
+      "rel": "apple-touch-icon",
+      "sizes": "144x144",
+    },
+    {
+      "href": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/gahuza/images/icons/icon-152x152.png",
+      "rel": "apple-touch-icon",
+      "sizes": "152x152",
+    },
+    {
+      "href": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/gahuza/images/icons/icon-180x180.png",
+      "rel": "apple-touch-icon",
+      "sizes": "180x180",
+    },
+    {
+      "href": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/gahuza/images/icons/icon-192x192.png",
+      "rel": "apple-touch-icon",
+      "sizes": "192x192",
+    },
+    {
+      "href": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/gahuza/images/icons/icon-384x384.png",
+      "rel": "apple-touch-icon",
+      "sizes": "384x384",
+    },
+    {
+      "href": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/gahuza/images/icons/icon-512x512.png",
+      "rel": "apple-touch-icon",
+      "sizes": "512x512",
+    },
+    {
+      "href": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/gahuza/images/icons/icon-72x72.png",
+      "rel": "icon",
+      "sizes": "72x72",
+      "type": "image/png",
+    },
+    {
+      "href": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/gahuza/images/icons/icon-96x96.png",
+      "rel": "icon",
+      "sizes": "96x96",
+      "type": "image/png",
+    },
+    {
+      "href": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/gahuza/images/icons/icon-192x192.png",
+      "rel": "icon",
+      "sizes": "192x192",
+      "type": "image/png",
+    },
+    {
+      "href": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/gahuza/images/icons/icon-512x512.png",
+      "rel": "apple-touch-startup-image",
+    },
+    {
+      "href": "/favicon.ico",
+      "rel": "shortcut icon",
+      "type": "image/x-icon",
+    },
+  ],
+  "metaTags": [
+    {
+      "content": "IE=edge",
+      "http-equiv": "X-UA-Compatible",
+    },
+    {
+      "charset": "utf-8",
+    },
+    {
+      "content": "noodp, noydir, max-image-preview:large",
+      "name": "robots",
+    },
+    {
+      "content": "#B80000",
+      "name": "theme-color",
+    },
+    {
+      "content": "width=device-width, initial-scale=1, minimum-scale=1",
+      "name": "viewport",
+    },
+    {
+      "content": "BBC News Gahuza",
+      "name": "apple-mobile-web-app-title",
+    },
+    {
+      "content": "BBC News Gahuza",
+      "name": "application-name",
+    },
+    {
+      "content": "Ibitekerezo ku kiganiro cyavugaga ku matora yo muri Amerika",
+      "name": "description",
+    },
+    {
+      "content": "1609039196070050",
+      "property": "fb:app_id",
+    },
+    {
+      "content": "mydfaj4vz8t5psneihy4nm6ff52fac",
+      "name": "facebook-domain-verification",
+    },
+    {
+      "content": "yes",
+      "name": "mobile-web-app-capable",
+    },
+    {
+      "content": "#B80000",
+      "name": "msapplication-TileColor",
+    },
+    {
+      "content": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/gahuza/images/icons/icon-144x144.png",
+      "name": "msapplication-TileImage",
+    },
+    {
+      "content": "Ibitekerezo ku kiganiro cyavugaga ku matora yo muri Amerika",
+      "property": "og:description",
+    },
+    {
+      "content": "https://news.files.bbci.co.uk/ws/img/logos/og/gahuza.png",
+      "property": "og:image",
+    },
+    {
+      "content": "BBC News Gahuza",
+      "property": "og:image:alt",
+    },
+    {
+      "content": "rw-RW",
+      "property": "og:locale",
+    },
+    {
+      "content": "BBC News Gahuza",
+      "property": "og:site_name",
+    },
+    {
+      "content": "Imvo  n'imvano - BBC News Gahuza",
+      "property": "og:title",
+    },
+    {
+      "content": "website",
+      "property": "og:type",
+    },
+    {
+      "content": "https://www.bbc.com/gahuza/bbc_gahuza_radio/p02pcb5c",
+      "property": "og:url",
+    },
+    {
+      "content": "summary_large_image",
+      "name": "twitter:card",
+    },
+    {
+      "content": "@bbcgahuza",
+      "name": "twitter:creator",
+    },
+    {
+      "content": "Ibitekerezo ku kiganiro cyavugaga ku matora yo muri Amerika",
+      "name": "twitter:description",
+    },
+    {
+      "content": "BBC News Gahuza",
+      "name": "twitter:image:alt",
+    },
+    {
+      "content": "https://news.files.bbci.co.uk/ws/img/logos/og/gahuza.png",
+      "name": "twitter:image:src",
+    },
+    {
+      "content": "@bbcgahuza",
+      "name": "twitter:site",
+    },
+    {
+      "content": "Imvo  n'imvano - BBC News Gahuza",
+      "name": "twitter:title",
+    },
+    {
+      "content": "https://www.bbcweb3hytmzhn5d532owbu6oqadra5z3ar726vq5kgwwn6aucdccrad.onion/gahuza/bbc_gahuza_radio/p02pcb5c",
+      "http-equiv": "onion-location",
+    },
+  ],
+  "noscriptTags": [],
+  "onChangeClientState": [Function],
+  "scriptTags": [],
+  "styleTags": [],
+  "title": "Imvo  n'imvano - BBC News Gahuza",
+  "titleAttributes": {},
+}
+`;

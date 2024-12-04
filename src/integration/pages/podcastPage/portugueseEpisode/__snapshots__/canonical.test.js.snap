@@ -34,7 +34,7 @@ exports[`Canonical Podcast Page Analytics ATI tracking pixel search params 1`] =
     "x3": "[news-portuguese]",
   },
   {
-    "x4": "[pt-br]",
+    "x4": "[pt-BR]",
   },
   {
     "x7": "[player-episode]",
@@ -186,7 +186,7 @@ exports[`Canonical Podcast Page I can see the episode summary 1`] = `"Pais de Ma
 
 exports[`Canonical Podcast Page I can see the episode title 1`] = `"'A vida secreta de meu filho que só conheci quando ele morreu'"`;
 
-exports[`Canonical Podcast Page I can see the hero image 1`] = `"https://ichef.bbci.co.uk/images/ic/256x256/p083x9j5.jpg.webp"`;
+exports[`Canonical Podcast Page I can see the hero image 1`] = `"https://ichef.bbci.co.uk/images/ic/256x256/p0k13ck5.png.webp"`;
 
 exports[`Canonical Podcast Page Main heading should match text 1`] = `"Que História!, 'A vida secreta de meu filho que só conheci quando ele morreu'"`;
 
@@ -204,57 +204,22 @@ exports[`Canonical Podcast Page Media Loader renders a valid container 1`] = `
 
 exports[`Canonical Podcast Page Recent Episodes List items should match text and url 1`] = `
 {
-  "text": "Áudio, Que História!, 'Uísque ao mar!': a curiosa história do 'verão da lata' escocês em plena 2ª Guerra,  Duration 09,08  Duration 09:085 março 2020",
-  "url": "/portuguese/podcasts/p07r3r3t/p083x87j",
+  "text": "Áudio, Que História!, Vem aí a 3ª temporada do 'Que História!': ouça o trailer,  Duration 00,43  Duration 00:4323 julho 2024",
+  "url": "/portuguese/podcasts/p07r3r3t/p0jd7041",
 }
 `;
 
 exports[`Canonical Podcast Page Recent Episodes List items should match text and url 2`] = `
 {
-  "text": "Áudio, Que História!, As famílias 'alugadas' no Japão,  Duration 12,05  Duration 12:0527 fevereiro 2020",
-  "url": "/portuguese/podcasts/p07r3r3t/p083wkq9",
+  "text": "Áudio, Que História!, Segunda temporada vem aí: ouça o trailer,  Duration 00,49  Duration 00:4931 março 2021",
+  "url": "/portuguese/podcasts/p07r3r3t/p09chbv1",
 }
 `;
 
 exports[`Canonical Podcast Page Recent Episodes List items should match text and url 3`] = `
 {
-  "text": "Áudio, Que História!, O naufrágio de navio militar na 2ª Guerra que inspirou filme 'Tubarão',  Duration 11,43  Duration 11:4320 fevereiro 2020",
-  "url": "/portuguese/podcasts/p07r3r3t/p0837nfw",
-}
-`;
-
-exports[`Canonical Podcast Page Recent Episodes List items should match text and url 4`] = `
-{
-  "text": "Áudio, Que História!, 'Graças a uma selfie, descobri que minha mãe me roubou quando era bebê',  Duration 17,13  Duration 17:1313 fevereiro 2020",
-  "url": "/portuguese/podcasts/p07r3r3t/p082wrwc",
-}
-`;
-
-exports[`Canonical Podcast Page Recent Episodes List items should match text and url 5`] = `
-{
-  "text": "Áudio, Que História!, Os Brasileiros da Blitz,  Duration 18,04  Duration 18:046 fevereiro 2020",
-  "url": "/portuguese/podcasts/p07r3r3t/p081mcd8",
-}
-`;
-
-exports[`Canonical Podcast Page Recent Episodes List items should match text and url 6`] = `
-{
-  "text": "Áudio, Que História!, A saga do avô em busca dos netos órfãos do Estado Islâmico,  Duration 13,35  Duration 13:3530 janeiro 2020",
-  "url": "/portuguese/podcasts/p07r3r3t/p081jh7q",
-}
-`;
-
-exports[`Canonical Podcast Page Recent Episodes List items should match text and url 7`] = `
-{
-  "text": "Áudio, Que História!, Krakatoa: a erupção que o mundo inteiro sentiu,  Duration 11,07  Duration 11:0723 janeiro 2020",
-  "url": "/portuguese/podcasts/p07r3r3t/p08129g5",
-}
-`;
-
-exports[`Canonical Podcast Page Recent Episodes List items should match text and url 8`] = `
-{
-  "text": "Áudio, Que História!, 'O post criado para arruinar minha vida',  Duration 13,52  Duration 13:5216 janeiro 2020",
-  "url": "/portuguese/podcasts/p07r3r3t/p080j23n",
+  "text": "Áudio, Que História!, Bem-vindo a Que História!,  Duration 00,39  Duration 00:3914 outubro 2019",
+  "url": "/portuguese/podcasts/p07r3r3t/p07r3s60",
 }
 `;
 
@@ -379,7 +344,7 @@ exports[`Canonical Podcast Page SEO Linked data should match text 1`] = `
       "description": "Quando jovem morreu de doença degenerativa, pais descobriram que ele teve vida paralela.",
       "duration": "PT16M22S",
       "name": "Que História!",
-      "thumbnailUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p083x9j5.jpg",
+      "thumbnailUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p0k13ck5.png",
       "uploadDate": "2020-03-13T00:00:00.000Z",
     },
   ],
@@ -388,7 +353,7 @@ exports[`Canonical Podcast Page SEO Linked data should match text 1`] = `
 
 exports[`Canonical Podcast Page SEO OG description 1`] = `"Quando jovem morreu de doença degenerativa, pais descobriram que ele teve vida paralela."`;
 
-exports[`Canonical Podcast Page SEO OG image 1`] = `"https://ichef.bbci.co.uk/images/ic/400x400/p083x9j5.jpg"`;
+exports[`Canonical Podcast Page SEO OG image 1`] = `"https://ichef.bbci.co.uk/images/ic/400x400/p0k13ck5.png"`;
 
 exports[`Canonical Podcast Page SEO OG image alt 1`] = `"BBC News Brasil"`;
 
@@ -414,7 +379,7 @@ exports[`Canonical Podcast Page SEO Twitter description 1`] = `"Quando jovem mor
 
 exports[`Canonical Podcast Page SEO Twitter image alt 1`] = `"BBC News Brasil"`;
 
-exports[`Canonical Podcast Page SEO Twitter image src 1`] = `"https://ichef.bbci.co.uk/images/ic/400x400/p083x9j5.jpg"`;
+exports[`Canonical Podcast Page SEO Twitter image src 1`] = `"https://ichef.bbci.co.uk/images/ic/400x400/p0k13ck5.png"`;
 
 exports[`Canonical Podcast Page SEO Twitter site 1`] = `"@bbcbrasil"`;
 
