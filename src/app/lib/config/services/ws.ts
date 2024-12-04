@@ -200,7 +200,6 @@ export const service: DefaultServiceConfig = {
         video: 'Video',
         listen: 'Listen',
         watch: 'Watch',
-        watchMoments: 'test',
         liveLabel: 'LIVE',
         nextLabel: 'NEXT',
         previousRadioShow: 'Previous radio show',
