@@ -3,6 +3,7 @@ import { AUDIO_PAGE } from '#app/routes/utils/pageTypes';
 import { FetchMock } from 'jest-fetch-mock';
 import * as fetchBFF from '#app/routes/utils/fetchDataFromBFF';
 import gahuzaOnDemandAudio from '#data/gahuza/bbc_gahuza_radio/p02pcb5c.json';
+import isTest from '#app/lib/utilities/isTest';
 import gahuzaExternalLinks from '../tempData/podcastExternalLinks/gahuza';
 import getInitialData from '.';
 
@@ -10,7 +11,7 @@ const { env } = process;
 
 const fetchMock = fetch as FetchMock;
 
-jest.mock('#app/lib/utilities/isLive', () =>
+jest.mock('#app/lib/utilities/isTest', () =>
   jest.fn().mockImplementation(() => false),
 );
 
@@ -214,17 +215,26 @@ describe('Get initial data for on demand radio', () => {
     expect(podcastPageData?.recentEpisodes[0].id).toEqual('p0k396c8');
   });
 
-  it('should fetch live data on the test environment', async () => {
-    await getInitialData({
-      path: 'mock-podcast-path',
-      pageType: AUDIO_PAGE,
-      service: 'gahuza',
-    });
+  it.each`
+    isTestEnvironment | expectedPathname
+    ${true}           | ${'mock-podcast-path?renderer_env=live'}
+    ${false}          | ${'mock-podcast-path'}
+  `(
+    'should fetch from $expectedPathname when test environment is $isTestEnvironment',
+    async ({ isTestEnvironment, expectedPathname }) => {
+      (isTest as jest.Mock).mockImplementationOnce(() => isTestEnvironment);
 
-    expect(fetchBFFSpy).toHaveBeenCalledWith(
-      expect.objectContaining({
-        pathname: 'mock-podcast-path?renderer_env=live',
-      }),
-    );
-  });
+      await getInitialData({
+        path: 'mock-podcast-path',
+        pageType: AUDIO_PAGE,
+        service: 'gahuza',
+      });
+
+      expect(fetchBFFSpy).toHaveBeenCalledWith(
+        expect.objectContaining({
+          pathname: expectedPathname,
+        }),
+      );
+    },
+  );
 });
