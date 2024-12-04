@@ -699,7 +699,7 @@ module.exports = () => ({
             enabled: true,
           },
         },
-        smoke: false,
+        smoke: true,
       },
       onDemandTV: { environments: undefined, smoke: false },
       topicPage: {
@@ -1588,7 +1588,7 @@ module.exports = () => ({
             enabled: true,
           },
         },
-        smoke: false,
+        smoke: true,
       },
       onDemandTV: { environments: undefined, smoke: false },
       topicPage: { environments: undefined, smoke: false },
