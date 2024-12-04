@@ -12,8 +12,9 @@ const RadioSchedule = ({
   radioScheduleEndpointOverride = null,
   lang = null,
   className = '',
+  toggleName,
 }) => {
-  const { enabled } = useToggle('radioSchedule');
+  const { enabled } = useToggle(toggleName);
   const { isAmp, env } = useContext(RequestContext);
   const { service, radioSchedule } = useContext(ServiceContext);
   const location = useLocation();

@@ -4,7 +4,11 @@ import {
   act,
   render,
 } from '#app/components/react-testing-library-with-providers';
-import { ARTICLE_PAGE, MEDIA_PAGE } from '#app/routes/utils/pageTypes';
+import {
+  ARTICLE_PAGE,
+  AUDIO_PAGE,
+  MEDIA_PAGE,
+} from '#app/routes/utils/pageTypes';
 import Metadata from '.';
 import { aresMediaBlocks } from '../fixture';
 import { MediaBlock } from '../types';
@@ -59,15 +63,18 @@ describe('Media Loader - Metadata', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should not render metadata component when pageType is not supported', async () => {
-    let container;
+  it.each([MEDIA_PAGE, AUDIO_PAGE])(
+    'should not render metadata component as the %s page type is not supported',
+    async pageType => {
+      let container;
 
-    await act(async () => {
-      ({ container } = render(<Metadata blocks={[]} />, {
-        pageType: MEDIA_PAGE,
-      }));
-    });
+      await act(async () => {
+        ({ container } = render(<Metadata blocks={[]} />, {
+          pageType,
+        }));
+      });
 
-    expect(container).toBeEmptyDOMElement();
-  });
+      expect(container).toBeEmptyDOMElement();
+    },
+  );
 });
