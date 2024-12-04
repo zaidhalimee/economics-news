@@ -1,8 +1,12 @@
 import { PageTypes, Services } from '#app/models/types/global';
-import { LIVE_RADIO_PAGE, MEDIA_PAGE } from '#app/routes/utils/pageTypes';
+import {
+  AUDIO_PAGE,
+  LIVE_RADIO_PAGE,
+  MEDIA_PAGE,
+} from '#app/routes/utils/pageTypes';
 import hindiTvProgramme from '#data/hindi/bbc_hindi_tv/tv_programmes/w13xttlw.json';
 import hausaLiveRadio from '#data/hausa/bbc_hausa_radio/liveradio.json';
-import afriqueRadio from '#data/afrique/bbc_afrique_radio/w172xqydyfv659p.json';
+import afriqueRadio from '#data/afrique/bbc_afrique_radio/p030s6dq.json';
 import { service as hausaServiceConfig } from '#app/lib/config/services/hausa';
 import { service as hindiServiceConfig } from '#app/lib/config/services/hindi';
 import { service as afriqueServiceConfig } from '#app/lib/config/services/afrique';
@@ -989,24 +993,14 @@ describe('buildSettings', () => {
       translations: afriqueServiceConfig.default.translations,
     } as BuildConfigProps;
 
-    const afriqueAudioMediaBlocks = afriqueRadio.content.blocks.map(
-      audioMediaBlock => {
-        return {
-          type: 'audio',
-          model: {
-            ...audioMediaBlock,
-          },
-        };
-      },
-    );
+    const afriqueAudioMediaBlocks = afriqueRadio.data.mediaBlocks;
 
-    it('Should process an On Demand Audio block into a valid playlist item.', () => {
+    it('Should process an on demand audio block into a valid playlist item.', () => {
       const afriqueAudioMediaOverrides = {
         model: {
           language: 'fr',
           pageIdentifierOverride:
             'afrique.bbc_afrique_radio.w172zn0kxd65h3g.page',
-          pageTitleOverride: "Bulletin D'informations",
         },
         type: 'mediaOverrides',
       };
@@ -1016,7 +1010,7 @@ describe('buildSettings', () => {
           ...afriqueAudioMediaBlocks,
           afriqueAudioMediaOverrides,
         ] as MediaBlock[],
-        pageType: MEDIA_PAGE,
+        pageType: AUDIO_PAGE,
       });
 
       expect(result).toStrictEqual({
@@ -1030,7 +1024,7 @@ describe('buildSettings', () => {
           statsObject: {
             destination: 'WS_NEWS_LANGUAGES',
             producer: 'AFRIQUE',
-            episodePID: 'w172zn0kxd65h3g',
+            episodePID: 'w172zzz2x3918yn',
           },
           ui: {
             controls: {
@@ -1053,12 +1047,12 @@ describe('buildSettings', () => {
             fallbackBackgroundColour: '#ffffff',
           },
           playlistObject: {
-            title: "Bulletin D'informations",
+            title: '26/11/2024 GMT',
             holdingImageURL:
               'https://ichef.bbci.co.uk/images/ic/$recipe/p0gsjjjl.png',
             items: [
               {
-                versionID: 'w1mskzfksqdjrcp',
+                versionID: 'w1mslblghzlxffm',
                 kind: 'radioProgramme',
                 duration: 300,
               },

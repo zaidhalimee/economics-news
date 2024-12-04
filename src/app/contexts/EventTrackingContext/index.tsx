@@ -27,6 +27,7 @@ import {
   AV_EMBEDS,
   DOWNLOADS_PAGE,
   LIVE_RADIO_PAGE,
+  AUDIO_PAGE,
 } from '../../routes/utils/pageTypes';
 import { PageTypes, Platforms } from '../../models/types/global';
 import { buildATIEventTrackingParams } from '../../components/ATIAnalytics/params';
@@ -74,6 +75,7 @@ const getCampaignID = (pageType: CampaignPageTypes) => {
     [AV_EMBEDS]: 'av-embeds',
     [DOWNLOADS_PAGE]: 'downloads',
     [LIVE_RADIO_PAGE]: 'player-live',
+    [AUDIO_PAGE]: 'player-episode',
   }[pageType];
 
   if (!campaignID) {

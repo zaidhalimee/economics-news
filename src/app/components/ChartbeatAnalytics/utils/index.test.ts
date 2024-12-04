@@ -13,6 +13,7 @@ import {
   MEDIA_ARTICLE_PAGE,
   LIVE_PAGE,
   LIVE_RADIO_PAGE,
+  AUDIO_PAGE,
 } from '../../../routes/utils/pageTypes';
 import {
   chartbeatUID,
@@ -84,6 +85,11 @@ describe('Chartbeat utilities', () => {
       },
       {
         pageType: MEDIA_PAGE,
+        expectedDefaultType: 'Radio',
+        expectedShortType: 'Radio',
+      },
+      {
+        pageType: AUDIO_PAGE,
         expectedDefaultType: 'Radio',
         expectedShortType: 'Radio',
       },
@@ -216,7 +222,7 @@ describe('Chartbeat utilities', () => {
       },
       {
         service: 'indonesia',
-        pageType: MEDIA_PAGE,
+        pageType: AUDIO_PAGE,
         description: 'should return expected section for onDemand radio',
         mediaPageType: 'Radio',
         expected: 'Indonesia, Indonesia - Radio',
@@ -292,6 +298,7 @@ describe('Chartbeat utilities', () => {
       ${TOPIC_PAGE}         | ${'Topic Page Title'}         | ${'BBC News Pidgin'} | ${'Topic Page Title - BBC News Pidgin'}
       ${LIVE_PAGE}          | ${'Live Page Title'}          | ${'BBC News Pidgin'} | ${'Live Page Title - BBC News Pidgin'}
       ${MEDIA_PAGE}         | ${'Media Page Title'}         | ${'BBC News Pidgin'} | ${'Media Page Title - BBC News Pidgin'}
+      ${AUDIO_PAGE}         | ${'Audio Page Title'}         | ${'BBC News Pidgin'} | ${'Audio Page Title - BBC News Pidgin'}
       ${'index'}            | ${'index Page Title'}         | ${'BBC News Pidgin'} | ${'index Page Title - BBC News Pidgin'}
     `(
       'should return correct title when pageType is $pageType and brandName is $brandName',
@@ -678,37 +685,6 @@ describe('Chartbeat utilities', () => {
       });
     });
 
-    it('should return config for amp pages when page type is media (onDemand radio) and env is live', () => {
-      const fixtureData: GetConfigProps = {
-        isAmp: true,
-        platform: 'amp',
-        pageType: MEDIA_PAGE,
-        mediaPageType: 'Radio',
-        brandName: 'BBC News Korean',
-        contentType: 'player-episode',
-        chartbeatDomain: 'korean.bbc.co.uk',
-        env: 'live',
-        service: 'korean',
-        origin: 'bbc.com',
-        previousPath: '/previous-path',
-        title: 'OnDemand Radio Page Title',
-      };
-
-      const expectedConfig = {
-        domain: 'korean.bbc.co.uk',
-        idSync: {
-          bbc_hid: 'foobar',
-        },
-        sections: 'Korean, Korean - Radio',
-        title: 'OnDemand Radio Page Title - BBC News Korean',
-        contentType: 'player-episode',
-        uid: 50924,
-        virtualReferrer: `\${documentReferrer}`,
-      };
-
-      expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
-    });
-
     it('should return config for amp pages when page type is media (onDemand TV) and env is live', () => {
       const fixtureData: GetConfigProps = {
         isAmp: true,
@@ -777,7 +753,7 @@ describe('Chartbeat utilities', () => {
       const fixtureData: GetConfigProps = {
         isAmp: false,
         platform: 'canonical',
-        pageType: MEDIA_PAGE,
+        pageType: AUDIO_PAGE,
         mediaPageType: 'Podcasts',
         brandName: 'BBC News Arabic',
         chartbeatDomain: 'arabic.bbc.co.uk',
@@ -796,6 +772,39 @@ describe('Chartbeat utilities', () => {
         },
         sections: 'Arabic, Arabic - Podcasts',
         title: 'Podcast Page Title - BBC News Arabic',
+        type: 'player-episode',
+        uid: 50924,
+        virtualReferrer: 'bbc.com/previous-path',
+        useCanonical: true,
+        path: '/',
+      };
+
+      expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
+    });
+
+    it('should return config for canonical pages when page type is for onDemandAudio and env is live', () => {
+      const fixtureData: GetConfigProps = {
+        isAmp: false,
+        platform: 'canonical',
+        pageType: AUDIO_PAGE,
+        mediaPageType: 'Radio',
+        brandName: 'BBC News Arabic',
+        chartbeatDomain: 'arabic.bbc.co.uk',
+        contentType: 'player-episode',
+        env: 'live',
+        service: 'arabic',
+        origin: 'bbc.com',
+        previousPath: '/previous-path',
+        title: 'Audio Page Title',
+      };
+
+      const expectedConfig = {
+        domain: 'arabic.bbc.co.uk',
+        idSync: {
+          bbc_hid: 'foobar',
+        },
+        sections: 'Arabic, Arabic - Radio',
+        title: 'Audio Page Title - BBC News Arabic',
         type: 'player-episode',
         uid: 50924,
         virtualReferrer: 'bbc.com/previous-path',

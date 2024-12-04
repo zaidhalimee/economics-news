@@ -4,31 +4,31 @@
     "metadata": {
       "type": "On Demand Radio",
       "atiAnalytics": {
-        "pageIdentifier": "indonesia.bbc_indonesian_radio.w172x6r5000f38s.page",
+        "pageIdentifier": "indonesia.bbc_indonesian_radio.w172ywztppc5xsy.page",
         "contentType": "player-episode",
         "pageTitle": "Dunia Pagi Ini - BBC News Indonesia",
-        "contentId": "urn:bbc:pips:w172x6r5000f38s"
+        "contentId": "urn:bbc:pips:w172ywztppc5xsy"
       }
     },
     "language": "id",
     "brandTitle": "Dunia Pagi Ini",
     "episodeTitle": "Dunia Pagi Ini",
     "headline": "Dunia Pagi Ini",
-    "shortSynopsis": "Berita terbaru dari seluruh dunia dan ulasan peristiwa dari Indonesia. Juga berita olahraga terbaru dan berbeda setiap harinya.",
-    "id": "urn:bbc:ares:ws_media:page:bbc_indonesian_radio/w172x6r5000f38s",
+    "shortSynopsis": "Berita terbaru dari seluruh dunia dan ulasan peristiwa dari Indonesia.",
+    "id": "urn:bbc:ares:ws_media:page:bbc_indonesian_radio/w172ywztppc5xsy",
     "brandId": "w13xtt0s",
-    "summary": "Berita terbaru dari seluruh dunia dan ulasan peristiwa dari Indonesia. Juga berita olahraga terbaru dan berbeda setiap harinya.",
+    "summary": "Berita terbaru dari seluruh dunia dan ulasan peristiwa dari Indonesia.",
     "contentType": "player-episode",
-    "episodeId": "w172x6r5000f38s",
+    "episodeId": "w172ywztppc5xsy",
     "masterBrand": "bbc_indonesian_radio",
-    "releaseDateTimeStamp": 1583366400000,
+    "releaseDateTimeStamp": 1674000000000,
     "pageTitle": "Dunia Pagi Ini - BBC News Indonesia",
     "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p08b4828.png",
     "imageAltText": null,
     "promoBrandTitle": "Dunia Pagi Ini",
-    "durationISO8601": null,
+    "durationISO8601": "PT15M30S",
     "thumbnailImageUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p08b4828.png",
-    "episodeAvailability": "expired",
+    "episodeAvailability": "available",
     "radioScheduleData": [],
     "recentEpisodes": [
       {
@@ -63,15 +63,6 @@
         "brandTitle": "Dunia Pagi Ini",
         "episodeTitle": "Dunia Pagi Ini",
         "timestamp": "2023-01-19T00:00:00.000Z",
-        "duration": "PT15M30S",
-        "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b4828.png",
-        "altText": "Dunia Pagi Ini"
-      },
-      {
-        "id": "w172ywztppc5xsy",
-        "brandTitle": "Dunia Pagi Ini",
-        "episodeTitle": "Dunia Pagi Ini",
-        "timestamp": "2023-01-18T00:00:00.000Z",
         "duration": "PT15M30S",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b4828.png",
         "altText": "Dunia Pagi Ini"
@@ -210,26 +201,51 @@
         "duration": "PT15M30S",
         "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b4828.png",
         "altText": "Dunia Pagi Ini"
+      },
+      {
+        "id": "w172ywzsz4r076n",
+        "brandTitle": "Dunia Pagi Ini",
+        "episodeTitle": "Dunia Pagi Ini",
+        "timestamp": "2023-01-08T00:00:00.000Z",
+        "duration": "PT15M30S",
+        "image": "//ichef.bbci.co.uk/images/ic/768x432/p08b4828.png",
+        "altText": "Dunia Pagi Ini"
       }
     ],
-    "externalLinkVersionId": null,
+    "externalLinkVersionId": "w1msk6hrsr7kv26",
     "mediaBlocks": [
       {
         "type": "audio",
         "model": {
-          "id": "w172x6r5000f38s",
+          "id": "w172ywztppc5xsy",
           "subType": "episode",
           "format": "Audio",
-          "title": "05/03/2020 GMT",
+          "title": "18/01/2023 GMT",
           "synopses": {
-            "short": "Berita terbaru dari seluruh dunia dan ulasan peristiwa dari Indonesia. Juga berita olahraga terbaru dan berbeda setiap harinya.",
-            "medium": "Berita terbaru dari seluruh dunia dan ulasan peristiwa dari Indonesia. Juga berita olahraga terbaru dan berbeda setiap harinya."
+            "short": "Berita terbaru dari seluruh dunia dan ulasan peristiwa dari Indonesia.",
+            "medium": "Berita terbaru dari seluruh dunia dan ulasan peristiwa dari Indonesia."
           },
           "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p08b4828.png",
           "embedding": false,
           "advertising": false,
-          "versions": [],
-          "availability": "notAvailable",
+          "versions": [
+            {
+              "versionId": "w1msk6hrsr7kv26",
+              "types": ["Original"],
+              "duration": 930,
+              "durationISO8601": "PT15M30S",
+              "warnings": {},
+              "availableTerritories": {
+                "uk": false,
+                "nonUk": false,
+                "world": true
+              },
+              "availableFrom": "2023-01-18T23:15:00.000Z",
+              "availabilityStatus": "available",
+              "availableUntil": null
+            }
+          ],
+          "availability": "available",
           "smpKind": "radioProgramme",
           "episodeTitle": "Dunia Pagi Ini",
           "type": "media"

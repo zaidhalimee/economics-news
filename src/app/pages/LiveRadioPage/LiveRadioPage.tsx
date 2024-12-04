@@ -26,7 +26,6 @@ const LiveRadioPage = ({ pageData }: { pageData: LiveRadioPageData }) => {
   const { script, service } = useContext(ServiceContext);
 
   const hasRadioScheduleData = Boolean(radioScheduleData);
-
   return (
     <>
       <ATIAnalytics atiData={pageData?.metadata.atiAnalytics} />
@@ -101,7 +100,10 @@ const LiveRadioPage = ({ pageData }: { pageData: LiveRadioPageData }) => {
         </Grid>
       </GelPageGrid>
       {hasRadioScheduleData && (
-        <RadioScheduleContainer initialData={radioScheduleData} />
+        <RadioScheduleContainer
+          initialData={radioScheduleData}
+          toggleName="liveRadioSchedule"
+        />
       )}
     </>
   );
