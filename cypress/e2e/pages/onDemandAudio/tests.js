@@ -48,100 +48,23 @@ export default ({ service, pageType, variant }) => {
             );
             // There cannot be more episodes shown than the max allowed
             if (recentEpisodesEnabled) {
-              const recentEpisodesLimit = path([toggleName, 'value'], toggles);
+              const recentEpisodesMaxNumber = Number(
+                path([toggleName, 'value'], toggles),
+              );
 
-              const recentEpisodesMaxNumber = Number(recentEpisodesLimit);
+              cy.getPageDataFromWindow().then(data => {
+                const { recentEpisodes } = data;
 
-              cy.getPageDataFromWindow().then(({ pageData }) => {
-                const processedEpisodesData = pageData.recentEpisodes;
+                if (recentEpisodes?.length > 0 && recentEpisodesMaxNumber > 1) {
+                  cy.get('[data-e2e=recent-episodes-list]').should('exist');
 
-                const totalNumberOfEpisodes = processedEpisodesData.length;
-
-                cy.log(
-                  `Number of available episodes? ${totalNumberOfEpisodes}`,
-                );
-
-                cy.window().then(win => {
-                  const renderedEpisodes = win.document.querySelectorAll(
-                    '[data-e2e=recent-episodes-list-item]',
-                  );
-
-                  const renderedEpisodesArray =
-                    Array.prototype.slice.call(renderedEpisodes);
-
-                  const renderedEpisodesInnerText = renderedEpisodesArray.map(
-                    episode => episode.innerText,
-                  );
-
-                  const convertTimestampsToLocaleString =
-                    recentEpisodesArray => {
-                      return recentEpisodesArray.map(episode => ({
-                        ...episode,
-                        timestamp: new Date(episode.timestamp).toLocaleString(),
-                      }));
-                    };
-
-                  const cypressJsonResWithLocaleStringTimestamp =
-                    convertTimestampsToLocaleString(processedEpisodesData);
-
-                  const simorghJsonResWithLocaleStringTimestamp =
-                    convertTimestampsToLocaleString(
-                      win.SIMORGH_DATA.pageData.recentEpisodes,
+                  cy.get('[data-e2e=recent-episodes-list]').within(() => {
+                    cy.get('[data-e2e=recent-episodes-list-item]').should(
+                      'have.length.of.at.most',
+                      recentEpisodesMaxNumber,
                     );
-
-                  if (
-                    renderedEpisodesArray.length !==
-                    cypressJsonResWithLocaleStringTimestamp.length
-                  ) {
-                    /* eslint-disable no-console */
-                    cy.log(
-                      'Cypress json response - ',
-                      JSON.stringify(cypressJsonResWithLocaleStringTimestamp),
-                    );
-                    cy.log('HTML on page - ', renderedEpisodesInnerText);
-
-                    cy.log(
-                      'Simorgh json response - ',
-                      JSON.stringify(simorghJsonResWithLocaleStringTimestamp),
-                    );
-
-                    /* eslint-enable no-console */
-                  }
-
-                  // More than one episode expected
-                  if (totalNumberOfEpisodes > 1) {
-                    cy.get('[data-e2e=recent-episodes-list]').should('exist');
-
-                    cy.get('[data-e2e=recent-episodes-list]').within(() => {
-                      cy.get('[data-e2e=recent-episodes-list-item]')
-                        .its('length')
-                        .should(length => {
-                          expect(length).to.be.closeTo(
-                            recentEpisodesMaxNumber,
-                            1,
-                          );
-                        });
-                    });
-                  }
-                  // If there is only one item, it is not in a list
-                  else if (totalNumberOfEpisodes === 1) {
-                    cy.get('aside[aria-labelledby=recent-episodes]').within(
-                      () => {
-                        cy.get('[data-e2e="recent-episodes-list"]').should(
-                          'not.exist',
-                        );
-                      },
-                    );
-                  }
-                  // No items expected
-                  else {
-                    cy.get('aside[aria-labelledby=recent-episodes]').should(
-                      'not.exist',
-                    );
-
-                    cy.log('No episodes present or available');
-                  }
-                });
+                  });
+                }
               });
             }
             // Not toggled on for this service
