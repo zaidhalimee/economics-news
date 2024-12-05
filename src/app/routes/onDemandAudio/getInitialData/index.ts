@@ -3,6 +3,8 @@ import pathOr from 'ramda/src/pathOr';
 import { BFF_FETCH_ERROR } from '#lib/logger.const';
 import { InitialDataProps } from '#app/models/types/initialData';
 import fetchDataFromBFF from '#app/routes/utils/fetchDataFromBFF';
+import overrideRendererOnTest from '#app/routes/utils/overrideRendererOnTest';
+import isTest from '#app/lib/utilities/isTest';
 import getErrorStatusCode from '../../utils/fetchPageData/utils/getErrorStatusCode';
 import { getPodcastExternalLinks } from '../tempData/podcastExternalLinks';
 import nodeLogger from '../../../lib/logger.node';
@@ -38,7 +40,7 @@ export default async ({
     const { isPodcast, getRecentEpisodesToggle } = getConfig(pathname);
 
     const { json, status } = await fetchDataFromBFF({
-      pathname,
+      pathname: isTest() ? overrideRendererOnTest(pathname) : pathname,
       pageType,
       service,
       getAgent,
