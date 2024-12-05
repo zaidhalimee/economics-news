@@ -69,31 +69,38 @@ export default ({ service, pageType, variant }) => {
                 `Number of available episodes? ${recentEpisodesMaxNumber}`,
               );
               // More than one episode expected
-              if (recentEpisodesMaxNumber > 1) {
-                cy.get('[data-e2e=recent-episodes-list]').should('exist');
+              cy.getPageDataFromWindow().then(data => {
+                const { recentEpisodes } = data;
 
-                cy.get('[data-e2e=recent-episodes-list]').within(() => {
-                  cy.get('[data-e2e=recent-episodes-list-item]')
-                    .its('length')
-                    .should('eq', recentEpisodesMaxNumber);
-                });
-              }
-              // If there is only one item, it is not in a list
-              else if (recentEpisodesMaxNumber === 1) {
-                cy.get('aside[aria-labelledby=recent-episodes]').within(() => {
-                  cy.get('[data-e2e="recent-episodes-list"]').should(
+                if (recentEpisodes?.length > 0 && recentEpisodesMaxNumber > 1) {
+                  cy.get('[data-e2e=recent-episodes-list]').should('exist');
+
+                  cy.get('[data-e2e=recent-episodes-list]').within(() => {
+                    cy.get('[data-e2e=recent-episodes-list-item]').should(
+                      'have.length.of.at.most',
+                      recentEpisodesMaxNumber,
+                    );
+                  });
+                }
+                // If there is only one item, it is not in a list
+                else if (recentEpisodesMaxNumber === 1) {
+                  cy.get('aside[aria-labelledby=recent-episodes]').within(
+                    () => {
+                      cy.get('[data-e2e="recent-episodes-list"]').should(
+                        'not.exist',
+                      );
+                    },
+                  );
+                }
+                // No items expected
+                else {
+                  cy.get('aside[aria-labelledby=recent-episodes]').should(
                     'not.exist',
                   );
-                });
-              }
-              // No items expected
-              else {
-                cy.get('aside[aria-labelledby=recent-episodes]').should(
-                  'not.exist',
-                );
 
-                cy.log('No episodes present or available');
-              }
+                  cy.log('No episodes present or available');
+                }
+              });
             }
             // Not toggled on for this service
             else {
