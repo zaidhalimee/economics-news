@@ -1,4 +1,4 @@
-import { Post } from '#app/pages/[service]/live/[id]/Post/types';
+import { Post } from 'simorgh-nextjs/pages/[service]/live/[id]/Post/types';
 import { samplePost, twitterSamplePost, videoSamplePost } from './fixtures';
 import getLiveBlogPostingSchema from '.';
 
