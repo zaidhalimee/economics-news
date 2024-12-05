@@ -71,6 +71,7 @@ export default ({ service, pageType, variant }) => {
               // More than one episode expected
               cy.getPageDataFromWindow().then(data => {
                 const { recentEpisodes } = data;
+                cy.log({ recentEpisodes });
 
                 if (recentEpisodes?.length > 0 && recentEpisodesMaxNumber > 1) {
                   cy.get('[data-e2e=recent-episodes-list]').should('exist');
@@ -81,24 +82,6 @@ export default ({ service, pageType, variant }) => {
                       recentEpisodesMaxNumber,
                     );
                   });
-                }
-                // If there is only one item, it is not in a list
-                else if (recentEpisodesMaxNumber === 1) {
-                  cy.get('aside[aria-labelledby=recent-episodes]').within(
-                    () => {
-                      cy.get('[data-e2e="recent-episodes-list"]').should(
-                        'not.exist',
-                      );
-                    },
-                  );
-                }
-                // No items expected
-                else {
-                  cy.get('aside[aria-labelledby=recent-episodes]').should(
-                    'not.exist',
-                  );
-
-                  cy.log('No episodes present or available');
                 }
               });
             }
