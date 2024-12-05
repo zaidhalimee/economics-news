@@ -100,8 +100,8 @@ describe('getThingAttributes', () => {
   producerId: 'producerId',
   timePublished: 'timePublished',
   timeUpdated: 'timeUpdated',
-  ampExperimentName: 'someExperiment',
-}} | ${'https://www.bbc.com/news'} | ${['s2=producerId', 'p=pageIdentifier', 'x1=[contentId]', 'x3=[appName]', 'x4=[language]', 'x7=[contentType]', 'x11=[timePublished]', 'x12=[timeUpdated]', 'x13=[ldpThingLabels]', 'x14=[ldpThingIds]', 'xto=SEC------', 'mv_test=Google Discover', 'mv_experiment_id=someExperiment', 'mv_creation=VARIANT(someExperiment)']}
+  ampExperimentName: 'someAmpExperiment',
+}} | ${'https://www.bbc.com/news'} | ${['s2=producerId', 'p=pageIdentifier', 'x1=[contentId]', 'x3=[appName]', 'x4=[language]', 'x7=[contentType]', 'x11=[timePublished]', 'x12=[timeUpdated]', 'x13=[ldpThingLabels]', 'x14=[ldpThingIds]', 'xto=SEC------', 'mv_test=someAmpExperiment', 'mv_creation=VARIANT(someAmpExperiment)']}
   `(
     'should take in optional props and add them as correct query params',
     ({ props, currentUrl, expectedValues }) => {
