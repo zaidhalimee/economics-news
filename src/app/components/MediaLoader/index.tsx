@@ -238,7 +238,9 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
         )
       }
       {showPortraitTitle && (
-        <strong css={styles.titlePortrait}>Watch Moments</strong>
+        <strong css={styles.titlePortrait}>
+          {translations.media.watchMoments || 'Watch Moments'}
+        </strong>
       )}
       <figure
         data-e2e="media-loader__container"
