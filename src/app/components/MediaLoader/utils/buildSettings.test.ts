@@ -918,16 +918,9 @@ describe('buildSettings', () => {
     } as BuildConfigProps;
 
     it('Should process a Live Radio block into a valid playlist item.', () => {
-      const hausaLiveRadioBlocks = [
-        {
-          type: 'liveRadio',
-          model: hausaLiveRadio?.data?.mediaBlock?.[0]?.model,
-        },
-      ];
-
       const result = buildSettings({
         ...hausaLiveRadioBaseSettings,
-        blocks: hausaLiveRadioBlocks as MediaBlock[],
+        blocks: hausaLiveRadio?.data?.mediaBlock as MediaBlock[],
         pageType: LIVE_RADIO_PAGE,
       });
 
