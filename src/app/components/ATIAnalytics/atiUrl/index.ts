@@ -219,14 +219,7 @@ export const buildATIPageTrackPath = ({
       ? [
           {
             key: 'mv_test',
-            description: 'AMP experiment project name',
-            value: `Google Discover`,
-            wrap: false,
-            disableEncoding: true,
-          },
-          {
-            key: 'mv_experiment_id',
-            description: 'AMP experiment name in code',
+            description: 'AMP experiment name',
             value: `${ampExperimentName}`,
             wrap: false,
             disableEncoding: true,
