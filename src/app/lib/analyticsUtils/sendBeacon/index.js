@@ -81,11 +81,12 @@ const callReverb = async eventName => {
     async reverb => {
       if (reverb.isReady()) {
         await reverbHandlers[eventName](reverb);
-      } else {
-        return reverb.initialise().then(async () => {
-          await reverbHandlers[eventName](reverb);
-        });
+        return;
       }
+
+      reverb.initialise().then(async () => {
+        await reverbHandlers[eventName](reverb);
+      });
     },
     () => {
       logger.error(ATI_LOGGING_ERROR, {
