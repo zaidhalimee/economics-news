@@ -52,40 +52,20 @@ const setReverbPageValues = async ({ pageVars, userVars }) => {
   };
 };
 
-const reverbPageViews = async () => {
-  // eslint-disable-next-line no-underscore-dangle
-  window.__reverb.__reverbLoadedPromise.then(
-    reverb => {
-      return reverb.initialise().then(() => {
-        reverb.viewEvent();
-      });
-    },
-    () => {
-      console.log('Failed to load reverb. No event sent');
-    },
-  );
+const reverbPageViews = async reverbInstance => {
+  reverbInstance.viewEvent();
 };
 
-const reverbLinkClick = async () => {
-  // eslint-disable-next-line no-underscore-dangle
-  window.__reverb.__reverbLoadedPromise.then(
-    reverb => {
-      return reverb.initialise().then(() => {
-        const config = {};
+const reverbLinkClick = async reverbInstance => {
+  const config = {};
 
-        reverb.userActionEvent(
-          'click',
-          'Top Stories Link',
-          config,
-          {},
-          {},
-          true,
-        );
-      });
-    },
-    () => {
-      console.log('Failed to load reverb. No event sent');
-    },
+  return reverbInstance.userActionEvent(
+    'click',
+    'Top Stories Link',
+    config,
+    {},
+    {},
+    true,
   );
 };
 
@@ -93,6 +73,26 @@ const reverbHandlers = {
   pageView: reverbPageViews,
   sectionView: reverbPageViews,
   sectionClick: reverbLinkClick,
+};
+
+const callReverb = async eventName => {
+  // eslint-disable-next-line no-underscore-dangle
+  window.__reverb.__reverbLoadedPromise.then(
+    async reverb => {
+      if (reverb.isReady()) {
+        await reverbHandlers[eventName](reverb);
+      } else {
+        return reverb.initialise().then(async () => {
+          await reverbHandlers[eventName](reverb);
+        });
+      }
+    },
+    () => {
+      logger.error(ATI_LOGGING_ERROR, {
+        error: 'Failed to load reverb. No event sent',
+      });
+    },
+  );
 };
 
 const sendBeacon = async (url, reverbBeaconConfig) => {
@@ -106,7 +106,7 @@ const sendBeacon = async (url, reverbBeaconConfig) => {
 
         await setReverbPageValues({ pageVars: page, userVars: user });
 
-        await reverbHandlers[eventName]();
+        await callReverb(eventName);
       } else {
         await fetch(url, { credentials: 'include' }).then(res => res.text());
       }
