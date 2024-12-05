@@ -212,40 +212,33 @@ exports[`AMP Home Page Header Navigation link should match text and url 1`] = `
 
 exports[`AMP Home Page Header Navigation link should match text and url 2`] = `
 {
-  "text": "Američki izbori",
-  "url": "/serbian/lat/topics/c1v8enng1npt",
-}
-`;
-
-exports[`AMP Home Page Header Navigation link should match text and url 3`] = `
-{
   "text": "Srbija",
   "url": "/serbian/lat/topics/cr50vdy9q6wt",
 }
 `;
 
-exports[`AMP Home Page Header Navigation link should match text and url 4`] = `
+exports[`AMP Home Page Header Navigation link should match text and url 3`] = `
 {
   "text": "Balkan",
   "url": "/serbian/lat/topics/c06g87137jgt",
 }
 `;
 
-exports[`AMP Home Page Header Navigation link should match text and url 5`] = `
+exports[`AMP Home Page Header Navigation link should match text and url 4`] = `
 {
   "text": "Svet",
   "url": "/serbian/lat/topics/c2lej05e1eqt",
 }
 `;
 
-exports[`AMP Home Page Header Navigation link should match text and url 6`] = `
+exports[`AMP Home Page Header Navigation link should match text and url 5`] = `
 {
   "text": "Video",
   "url": "/serbian/lat/topics/c44vyp5g049t",
 }
 `;
 
-exports[`AMP Home Page Header Navigation link should match text and url 7`] = `
+exports[`AMP Home Page Header Navigation link should match text and url 6`] = `
 {
   "text": "Najpopularnije",
   "url": "/serbian/lat/popular/read",

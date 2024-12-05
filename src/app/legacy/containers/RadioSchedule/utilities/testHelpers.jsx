@@ -6,23 +6,23 @@ import { FRONT_PAGE } from '#app/routes/utils/pageTypes';
 import { ServiceContextProvider } from '../../../../contexts/ServiceContext';
 import RadioScheduleContainer from '..';
 
-const getToggleState = enabled => ({
-  radioSchedule: { enabled },
-});
-
 const RadioSchedulesWithContext = ({
   service,
   radioScheduleToggle = false,
   isAmp = false,
   initialData,
+  toggleName,
 }) => {
   const toggleContextValue = useMemo(
     () => ({
-      toggleState: getToggleState(radioScheduleToggle),
+      toggleState: {
+        [toggleName]: { enabled: radioScheduleToggle },
+      },
       toggleDispatch: jest.fn(),
     }),
-    [radioScheduleToggle],
+    [radioScheduleToggle, toggleName],
   );
+
   return (
     <ToggleContext.Provider value={toggleContextValue}>
       <RequestContextProvider
@@ -34,7 +34,10 @@ const RadioSchedulesWithContext = ({
       >
         <ServiceContextProvider service={service}>
           <BrowserRouter>
-            <RadioScheduleContainer initialData={initialData} />
+            <RadioScheduleContainer
+              initialData={initialData}
+              toggleName={toggleName}
+            />
           </BrowserRouter>
         </ServiceContextProvider>
       </RequestContextProvider>

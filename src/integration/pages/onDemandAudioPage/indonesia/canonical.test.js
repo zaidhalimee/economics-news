@@ -1,6 +1,6 @@
 /**
  * @service indonesia
- * @pathname /indonesia/bbc_indonesian_radio/w172xh267fpn19l
+ * @pathname /indonesia/bbc_indonesian_radio/w172ywztppc5xsy
  */
 
 import runCanonicalTests from '../canonicalTests';
