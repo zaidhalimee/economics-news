@@ -4,7 +4,7 @@ exports[`Canonical Av-embeds Media Loader a11y assistive technology can read the
 
 exports[`Canonical Av-embeds Media Loader renders a figure caption 1`] = `
 <div
-  class="css-145siv3"
+  class="css-182h924"
   data-e2e="media-loader__placeholder"
 >
   <div
@@ -61,6 +61,9 @@ exports[`Canonical Av-embeds Media Loader renders a figure caption 1`] = `
       02:53
     </time>
   </button>
+  <noscript>
+    &lt;div class="css-fym37b"&gt;&lt;p class="css-9xqt0"&gt;Для просмотра этого контента вам надо включить JavaScript или использовать другой браузер&lt;/p&gt;&lt;/div&gt;
+  </noscript>
   <div
     class="css-lgx6cw"
     style="padding-bottom:0;overflow:hidden"
@@ -78,7 +81,7 @@ exports[`Canonical Av-embeds Media Loader renders a figure caption 1`] = `
 
 exports[`Canonical Av-embeds Media Loader renders a placeholder 1`] = `
 <div
-  class="css-145siv3"
+  class="css-182h924"
   data-e2e="media-loader__placeholder"
 >
   <div
@@ -135,6 +138,9 @@ exports[`Canonical Av-embeds Media Loader renders a placeholder 1`] = `
       02:53
     </time>
   </button>
+  <noscript>
+    &lt;div class="css-fym37b"&gt;&lt;p class="css-9xqt0"&gt;Для просмотра этого контента вам надо включить JavaScript или использовать другой браузер&lt;/p&gt;&lt;/div&gt;
+  </noscript>
   <div
     class="css-lgx6cw"
     style="padding-bottom:0;overflow:hidden"
@@ -156,7 +162,7 @@ exports[`Canonical Av-embeds Media Loader renders a valid container 1`] = `
   data-e2e="media-loader__container"
 >
   <div
-    class="css-145siv3"
+    class="css-182h924"
     data-e2e="media-loader__placeholder"
   >
     <div
@@ -213,6 +219,9 @@ exports[`Canonical Av-embeds Media Loader renders a valid container 1`] = `
         02:53
       </time>
     </button>
+    <noscript>
+      &lt;div class="css-fym37b"&gt;&lt;p class="css-9xqt0"&gt;Для просмотра этого контента вам надо включить JavaScript или использовать другой браузер&lt;/p&gt;&lt;/div&gt;
+    </noscript>
     <div
       class="css-lgx6cw"
       style="padding-bottom:0;overflow:hidden"
