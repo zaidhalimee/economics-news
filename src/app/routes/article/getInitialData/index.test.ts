@@ -1,11 +1,12 @@
 import { Agent } from 'undici';
-import * as getOnwardsPageData from '../utils/getOnwardsData';
-import * as fetchPageData from '../../utils/fetchPageData';
+import * as getOnwardsPageData from '#app/routes/article/utils/getOnwardsData';
+import * as fetchPageData from '#app/routes/utils/fetchPageData';
+import { BFF_FETCH_ERROR } from '#lib/logger.const';
+import pidginArticleWithLatestMedia from '#data/pidgin/articles/cw0x29n2pvqo.json';
+import { ARTICLE_PAGE } from '#app/routes/utils/pageTypes';
 import nodeLogger from '../../../../testHelpers/loggerMock';
-import { BFF_FETCH_ERROR } from '../../../lib/logger.const';
 import getInitialData from '.';
-import pidginArticleWithLatestMedia from '../../../../../data/pidgin/articles/cw0x29n2pvqo.json';
-import { ARTICLE_PAGE } from '../../utils/pageTypes';
+
 
 process.env.BFF_PATH = 'https://mock-bff-path';
 
