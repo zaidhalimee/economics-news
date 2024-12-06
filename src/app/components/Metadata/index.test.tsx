@@ -1029,6 +1029,7 @@ describe('Metadata', () => {
           lang={liveRadioPageData.language}
           description={liveRadioPageData.summary}
           openGraphType="website"
+          hasAmpPage={false}
         />,
       );
       const container = Helmet.peek();
