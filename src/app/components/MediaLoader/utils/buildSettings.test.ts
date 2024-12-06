@@ -1,6 +1,10 @@
 import { PageTypes, Services } from '#app/models/types/global';
 import { data as hindiTvProgramme } from '#data/hindi/bbc_hindi_tv/tv_programmes/w13xttlw.json';
-import { AUDIO_PAGE, MEDIA_PAGE, TV_PAGE } from '#app/routes/utils/pageTypes';
+import {
+  AUDIO_PAGE,
+  LIVE_RADIO_PAGE,
+  TV_PAGE,
+} from '#app/routes/utils/pageTypes';
 import hausaLiveRadio from '#data/hausa/bbc_hausa_radio/liveradio.json';
 import afriqueRadio from '#data/afrique/bbc_afrique_radio/p030s6dq.json';
 import { service as hausaServiceConfig } from '#app/lib/config/services/hausa';
@@ -853,17 +857,10 @@ describe('buildSettings', () => {
     } as BuildConfigProps;
 
     it('Should process a Live Radio block into a valid playlist item.', () => {
-      const hausaLiveRadioBlocks = [
-        {
-          type: 'liveRadio',
-          model: hausaLiveRadio?.content?.blocks,
-        },
-      ];
-
       const result = buildSettings({
         ...hausaLiveRadioBaseSettings,
-        blocks: hausaLiveRadioBlocks as MediaBlock[],
-        pageType: MEDIA_PAGE,
+        blocks: hausaLiveRadio?.data?.mediaBlock as MediaBlock[],
+        pageType: LIVE_RADIO_PAGE,
       });
 
       expect(result).toStrictEqual({
