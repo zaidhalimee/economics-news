@@ -240,6 +240,7 @@ export const service: DefaultServiceConfig = {
         },
         listen: 'استمع',
         watch: 'شاهد',
+        watchMoments: 'لحظات للمشاهدة',
         listenLive: 'استمع للبث المباشر',
         listenNext: 'واصل الاستماع',
         liveLabel: 'مباشر',

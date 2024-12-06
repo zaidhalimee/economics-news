@@ -1568,7 +1568,7 @@ module.exports = () => ({
               '/gahuza/podcasts/p07yh8hb', // Podcast Brand
               '/gahuza/podcasts/p07yh8hb/p09km4t4', // Podcast Episode
             ],
-            enabled: false,
+            enabled: true,
           },
           test: {
             paths: [
@@ -1577,7 +1577,7 @@ module.exports = () => ({
               '/gahuza/podcasts/p07yh8hb', // Podcast Brand
               '/gahuza/podcasts/p07yh8hb/p09km4t4', // Podcast Episode
             ],
-            enabled: false,
+            enabled: true,
           },
           local: {
             paths: [
@@ -1588,7 +1588,7 @@ module.exports = () => ({
             enabled: true,
           },
         },
-        smoke: false,
+        smoke: true,
       },
       onDemandTV: { environments: undefined, smoke: false },
       topicPage: { environments: undefined, smoke: false },
@@ -1998,7 +1998,7 @@ module.exports = () => ({
           },
           local: {
             paths: [
-              '/hausa/bbc_hausa_tv/tv/w172xcg0kg6vph8', // Episode
+              '/hausa/bbc_hausa_tv/tv/w172yjj7rfhxp1p', // Episode
             ],
             enabled: true,
           },
