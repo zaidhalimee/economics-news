@@ -26,6 +26,7 @@ import {
   UGC_PAGE,
   AV_EMBEDS,
   DOWNLOADS_PAGE,
+  LIVE_RADIO_PAGE,
   TV_PAGE,
   AUDIO_PAGE,
 } from '../../routes/utils/pageTypes';
@@ -74,6 +75,7 @@ const getCampaignID = (pageType: CampaignPageTypes) => {
     [UGC_PAGE]: '',
     [AV_EMBEDS]: 'av-embeds',
     [DOWNLOADS_PAGE]: 'downloads',
+    [LIVE_RADIO_PAGE]: 'player-live',
     [AUDIO_PAGE]: 'player-episode',
     [TV_PAGE]: 'player-episode',
   }[pageType];

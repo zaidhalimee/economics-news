@@ -3,10 +3,10 @@ import { Helmet } from 'react-helmet';
 import {
   ARTICLE_PAGE,
   FRONT_PAGE,
-  MEDIA_PAGE,
   STORY_PAGE,
   MEDIA_ASSET_PAGE,
   PHOTO_GALLERY_PAGE,
+  LIVE_RADIO_PAGE,
   AUDIO_PAGE,
   TV_PAGE,
 } from '#app/routes/utils/pageTypes';
@@ -19,7 +19,7 @@ import { RequestContextProvider } from '#contexts/RequestContext';
 import { data as serbianFrontPageData } from '#data/serbian/frontpage/lat.json';
 import { data as gahuzaAudioPage } from '#data/gahuza/bbc_gahuza_radio/p02pcb5c.json';
 import { data as urduFrontPageData } from '#data/urdu/frontpage/index.json';
-import liveRadioPageData from '#data/korean/bbc_korean_radio/liveradio.json';
+import { data as liveRadioPageData } from '#data/korean/bbc_korean_radio/liveradio.json';
 import { data as hindiTVBrand } from '#data/hindi/bbc_hindi_tv/tv_programmes/w13xttlw.json';
 import { getSummary } from '#lib/utilities/parseAssetData/index';
 import { Services, PageTypes } from '#app/models/types/global';
@@ -1023,12 +1023,13 @@ describe('Metadata', () => {
           bbcOrigin={dotComOrigin}
           platform="canonical"
           id={null}
-          pageType={MEDIA_PAGE}
+          pageType={LIVE_RADIO_PAGE}
           pathname="/korean/bbc_korean_radio/liveradio"
-          title={liveRadioPageData.promo.name}
-          lang={liveRadioPageData.metadata.language}
-          description={liveRadioPageData.promo.summary}
+          title={liveRadioPageData.name}
+          lang={liveRadioPageData.language}
+          description={liveRadioPageData.summary}
           openGraphType="website"
+          hasAmpPage={false}
         />,
       );
       const container = Helmet.peek();

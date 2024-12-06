@@ -2338,10 +2338,6 @@ exports[`Metadata Snapshot should match for WS Media liveradio 1`] = `
       "rel": "alternate",
     },
     {
-      "href": "https://www.bbc.com/korean/bbc_korean_radio/liveradio.amp",
-      "rel": "amphtml",
-    },
-    {
       "href": "http://localhost:7080/korean/images/icons/icon-192x192.png",
       "rel": "apple-touch-icon",
     },

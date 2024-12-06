@@ -12,6 +12,7 @@ import {
   TOPIC_PAGE,
   MEDIA_ARTICLE_PAGE,
   LIVE_PAGE,
+  LIVE_RADIO_PAGE,
   AUDIO_PAGE,
   TV_PAGE,
 } from '../../../routes/utils/pageTypes';
@@ -220,7 +221,7 @@ describe('Chartbeat utilities', () => {
       },
       {
         service: 'korean',
-        pageType: MEDIA_PAGE,
+        pageType: LIVE_RADIO_PAGE,
         description: 'should return expected section for live radio',
         mediaPageType: 'Radio',
         expected: 'Korean, Korean - Radio',
@@ -434,7 +435,7 @@ describe('Chartbeat utilities', () => {
         const fixtureData: GetConfigProps = {
           isAmp: true,
           platform: 'amp',
-          pageType: MEDIA_PAGE,
+          pageType: LIVE_RADIO_PAGE,
           mediaPageType: 'Radio',
           contentType: 'player-live',
           title: 'Live Radio Page Title',

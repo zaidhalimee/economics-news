@@ -16,6 +16,7 @@ import {
   TOPIC_PAGE,
   LIVE_PAGE,
   MEDIA_ARTICLE_PAGE,
+  LIVE_RADIO_PAGE,
   AUDIO_PAGE,
   TV_PAGE,
 } from '../../../routes/utils/pageTypes';
@@ -58,8 +59,9 @@ export const getType = (pageType: PageTypes | 'index', shorthand = false) => {
       return 'article-sfv';
     case MEDIA_ASSET_PAGE:
       return 'article-media-asset';
-    case MEDIA_PAGE:
+    case LIVE_RADIO_PAGE:
     case AUDIO_PAGE:
+    case MEDIA_PAGE:
       return 'Radio';
     case TV_PAGE:
       return 'TV';
@@ -147,6 +149,7 @@ export const buildSections = ({
           ? buildSectionItem(service, appendCategory(categoryName))
           : []),
       ].join(', ');
+    case LIVE_RADIO_PAGE:
     case MEDIA_PAGE:
     case AUDIO_PAGE:
     case TV_PAGE:
@@ -186,6 +189,7 @@ export const getTitle = ({ pageType, title, brandName }: GetTitleProps) => {
     case MOST_READ_PAGE:
     case TOPIC_PAGE:
     case LIVE_PAGE:
+    case LIVE_RADIO_PAGE:
     case MEDIA_PAGE:
     case AUDIO_PAGE:
     case TV_PAGE:
