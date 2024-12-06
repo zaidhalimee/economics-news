@@ -7,6 +7,8 @@
     "moveStaticAssets": "mkdir -p build/standalone/ws-nextjs-app/public/_next/static && cp -r build/static/. build/standalone/ws-nextjs-app/public/_next/static",
     "build:local": "yarn setupDevEnv && NODE_ENV=production && next build && yarn moveStaticAssets",
     "build:preview": "cp ../envConfig/preview1.env .env && NODE_ENV=production && next build",
+    "build:preview1": "cp ../envConfig/preview1.env .env && NODE_ENV=production && next build",
+    "build:preview2": "cp ../envConfig/preview2.env .env && NODE_ENV=production && next build",
     "build:test": "cp ../envConfig/test.env .env && NODE_ENV=production && next build",
     "build:live": "cp ../envConfig/live.env .env && NODE_ENV=production && next build",
     "build": "yarn build:local",
