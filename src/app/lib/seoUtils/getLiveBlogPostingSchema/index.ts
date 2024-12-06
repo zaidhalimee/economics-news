@@ -1,6 +1,6 @@
 import buildIChefURL from '#app/lib/utilities/ichefURL';
 import { OptimoBlock } from '#app/models/types/optimo';
-import { Post } from 'simorgh-nextjs/pages/[service]/live/[id]/Post/types';
+import { Post } from '../../../../../ws-nextjs-app/pages/[service]/live/[id]/Post/types';
 
 export default ({
   posts,
