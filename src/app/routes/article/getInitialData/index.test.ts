@@ -7,7 +7,6 @@ import { ARTICLE_PAGE } from '#app/routes/utils/pageTypes';
 import nodeLogger from '../../../../testHelpers/loggerMock';
 import getInitialData from '.';
 
-
 process.env.BFF_PATH = 'https://mock-bff-path';
 
 const agent = {
