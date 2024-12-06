@@ -6,6 +6,7 @@ import {
   LIVE_PAGE,
   LIVE_RADIO_PAGE,
   TOPIC_PAGE,
+  TV_PAGE,
   UGC_PAGE,
 } from '../pageTypes';
 
@@ -122,6 +123,12 @@ describe('constructPageFetchUrl', () => {
     ${TOPIC_PAGE}      | ${'persian'}    | ${null}    | ${'test'}   | ${'/persian/topics/c00000000000t'}                    | ${'https://mock-bff-path/?id=c00000000000t&service=persian&pageType=topic&serviceEnv=test'}
     ${TOPIC_PAGE}      | ${'persian'}    | ${null}    | ${'live'}   | ${'/persian/topics/c00000000000t'}                    | ${'https://mock-bff-path/?id=c00000000000t&service=persian&pageType=topic&serviceEnv=live'}
     ${UGC_PAGE}        | ${'mundo'}      | ${null}    | ${'local'}  | ${'/u50853489'}                                       | ${'http://localhost/api/local/mundo/send/u50853489'}
+    ${TV_PAGE}         | ${'hausa'}      | ${null}    | ${'local'}  | ${'/hausa/bbc_hausa_tv/tv/w172yjj7rfhxp1p'}           | ${'http://localhost/hausa/bbc_hausa_tv/tv/w172yjj7rfhxp1p'}
+    ${TV_PAGE}         | ${'hindi'}      | ${null}    | ${'local'}  | ${'/hindi/bbc_hindi_tv/tv_programmes/w13xttlw'}       | ${'http://localhost/hindi/bbc_hindi_tv/tv_programmes/w13xttlw'}
+    ${TV_PAGE}         | ${'hausa'}      | ${null}    | ${'test'}   | ${'/hausa/bbc_hausa_tv/tv/w172yjj7rfhxp1p'}           | ${'https://mock-bff-path/?id=hausa%2Fbbc_hausa_tv%2Ftv%2Fw172yjj7rfhxp1p&service=hausa&pageType=tv&serviceEnv=test'}
+    ${TV_PAGE}         | ${'hindi'}      | ${null}    | ${'test'}   | ${'/hindi/bbc_hindi_tv/tv_programmes/w13xttlw'}       | ${'https://mock-bff-path/?id=hindi%2Fbbc_hindi_tv%2Ftv_programmes%2Fw13xttlw&service=hindi&pageType=tv&serviceEnv=test'}
+    ${TV_PAGE}         | ${'hausa'}      | ${null}    | ${'live'}   | ${'/hausa/bbc_hausa_tv/tv/w172yjj7rfhxp1p'}           | ${'https://mock-bff-path/?id=hausa%2Fbbc_hausa_tv%2Ftv%2Fw172yjj7rfhxp1p&service=hausa&pageType=tv&serviceEnv=live'}
+    ${TV_PAGE}         | ${'hindi'}      | ${null}    | ${'live'}   | ${'/hindi/bbc_hindi_tv/tv_programmes/w13xttlw'}       | ${'https://mock-bff-path/?id=hindi%2Fbbc_hindi_tv%2Ftv_programmes%2Fw13xttlw&service=hindi&pageType=tv&serviceEnv=live'}
     ${LIVE_RADIO_PAGE} | ${'afrique'}    | ${null}    | ${'local'}  | ${'/afrique/bbc_afrique_radio/liveradio'}             | ${'http://localhost/afrique/bbc_afrique_radio/liveradio'}
     ${LIVE_RADIO_PAGE} | ${'afrique'}    | ${null}    | ${'test'}   | ${'/afrique/bbc_afrique_radio/liveradio'}             | ${'https://mock-bff-path/?id=bbc_afrique_radio&service=afrique&pageType=liveRadio&serviceEnv=test'}
     ${LIVE_RADIO_PAGE} | ${'afrique'}    | ${null}    | ${'live'}   | ${'/afrique/bbc_afrique_radio/liveradio'}             | ${'https://mock-bff-path/?id=bbc_afrique_radio&service=afrique&pageType=liveRadio&serviceEnv=live'}

@@ -25,6 +25,7 @@ import {
   MOST_READ_PAGE,
   AUDIO_PAGE,
   TOPIC_PAGE,
+  TV_PAGE,
   UGC_PAGE,
 } from '../pageTypes';
 import parseAvRoute from '../parseAvRoute';
@@ -33,6 +34,7 @@ const removeLeadingSlash = (path: string) => path?.replace(/^\/+/g, '');
 const removeAmp = (path: string) => path.split('.')[0];
 const getArticleId = (path: string) => path.match(/(c[a-zA-Z0-9]{10,}o)/)?.[1];
 const getCpsId = (path: string) => removeLeadingSlash(path);
+const getTVAudioId = (path: string) => removeLeadingSlash(path);
 const getFrontPageId = (path: string) =>
   `${removeLeadingSlash(path)}/front_page`;
 const getTipoId = (path: string) => path.match(/(c[a-zA-Z0-9]{10,}t)/)?.[1];
@@ -146,9 +148,8 @@ const getId = ({ pageType, service, variant, env }: GetIdProps) => {
       };
       break;
     case AUDIO_PAGE:
-      getIdFunction = (path: string) => {
-        return path;
-      };
+    case TV_PAGE:
+      getIdFunction = (path: string) => getTVAudioId(path);
       break;
     default:
       getIdFunction = () => null;
@@ -235,6 +236,8 @@ const constructPageFetchUrl = ({
         break;
       }
       case CPS_ASSET:
+      case AUDIO_PAGE:
+      case TV_PAGE:
         fetchUrl = Url(`/${id}`);
         break;
       case HOME_PAGE: {
@@ -279,10 +282,6 @@ const constructPageFetchUrl = ({
             `${host}${port}/api/local/${parsedRoute.service}/av-embeds/${parsedRoute.variant ? `${parsedRoute?.variant}/` : ''}${parsedRoute.assetId}${parsedRoute.mediaId ? `/${parsedRoute.mediaDelimiter}/${parsedRoute.mediaId}` : ''} ${parsedRoute.lang ? `/${parsedRoute.lang}` : ''}`,
           );
         }
-        break;
-      }
-      case AUDIO_PAGE: {
-        fetchUrl = Url(pathname);
         break;
       }
       case LIVE_RADIO_PAGE:

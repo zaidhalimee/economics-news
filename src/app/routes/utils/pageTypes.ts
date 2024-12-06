@@ -19,3 +19,4 @@ export const AV_EMBEDS = 'avEmbeds' as const;
 export const DOWNLOADS_PAGE = 'downloads' as const;
 export const LIVE_RADIO_PAGE = 'liveRadio' as const;
 export const AUDIO_PAGE = 'audio' as const;
+export const TV_PAGE = 'tv' as const;

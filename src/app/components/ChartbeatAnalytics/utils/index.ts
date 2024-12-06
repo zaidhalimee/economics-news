@@ -18,6 +18,7 @@ import {
   MEDIA_ARTICLE_PAGE,
   LIVE_RADIO_PAGE,
   AUDIO_PAGE,
+  TV_PAGE,
 } from '../../../routes/utils/pageTypes';
 import {
   Environments,
@@ -62,6 +63,8 @@ export const getType = (pageType: PageTypes | 'index', shorthand = false) => {
     case AUDIO_PAGE:
     case MEDIA_PAGE:
       return 'Radio';
+    case TV_PAGE:
+      return 'TV';
     case MOST_READ_PAGE:
       return 'Most Read';
     case STORY_PAGE:
@@ -149,6 +152,7 @@ export const buildSections = ({
     case LIVE_RADIO_PAGE:
     case MEDIA_PAGE:
     case AUDIO_PAGE:
+    case TV_PAGE:
       return [
         capitalize(service),
         ...(mediaPageType ? buildSectionItem(service, mediaPageType) : []),
@@ -188,6 +192,7 @@ export const getTitle = ({ pageType, title, brandName }: GetTitleProps) => {
     case LIVE_RADIO_PAGE:
     case MEDIA_PAGE:
     case AUDIO_PAGE:
+    case TV_PAGE:
     case 'index':
       return `${title} - ${brandName}`;
     case ARTICLE_PAGE:

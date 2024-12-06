@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import WithTimeMachine from '#testHelpers/withTimeMachine';
-import { MEDIA_PAGE } from '#app/routes/utils/pageTypes';
+import { TV_PAGE } from '#app/routes/utils/pageTypes';
 import { StoryArgs, StoryProps } from '#app/models/types/storybook';
 import { Services } from '#app/models/types/global';
+import { data as afrique } from '#data/afrique/bbc_afrique_tv/tv_programmes/w13xttmz.json';
+import { data as pashto } from '#data/pashto/bbc_pashto_tv/tv_programmes/w13xttn4.json';
 import { OnDemandTvPage } from '..';
-import afrique from './fixtureData/afrique.json';
-import pashto from './fixtureData/pashto.json';
 import { OnDemandTVProps } from './OnDemandTvPage';
 
 const onDemandTvFixtures: {
@@ -40,7 +40,7 @@ const Component = ({ service }: StoryProps) => {
         service={service}
         loading={false}
         error=""
-        pageType={MEDIA_PAGE}
+        pageType={TV_PAGE}
       />
     </BrowserRouter>
   );
