@@ -7,6 +7,7 @@ import {
 } from '../../../components/react-testing-library-with-providers';
 import { ServiceContextProvider } from '../../../contexts/ServiceContext';
 import OnDemandHeadingContainer from '.';
+import { TV_PAGE } from '../../../routes/utils/pageTypes';
 
 const releaseDateTimeStamp = 1587945600000;
 
@@ -31,8 +32,7 @@ describe('AudioPlayer blocks OnDemandHeading', () => {
 
   it('should render correctly - dark mode', () => {
     const { container } = render(<Component />, {
-      pageType: 'media',
-      derivedPageType: 'On Demand TV',
+      pageType: TV_PAGE,
       service: 'afrique',
     });
     expect(container).toMatchSnapshot();

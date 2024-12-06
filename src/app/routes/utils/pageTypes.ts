@@ -18,3 +18,4 @@ export const UGC_PAGE = 'ugcForm' as const;
 export const AV_EMBEDS = 'avEmbeds' as const;
 export const DOWNLOADS_PAGE = 'downloads' as const;
 export const AUDIO_PAGE = 'audio' as const;
+export const TV_PAGE = 'tv' as const;
