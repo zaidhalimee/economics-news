@@ -26,6 +26,7 @@ import {
   UGC_PAGE,
   AV_EMBEDS,
   DOWNLOADS_PAGE,
+  TV_PAGE,
   AUDIO_PAGE,
 } from '../../routes/utils/pageTypes';
 import { PageTypes, Platforms } from '../../models/types/global';
@@ -58,7 +59,7 @@ const getCampaignID = (pageType: CampaignPageTypes) => {
     [ARTICLE_PAGE]: 'article',
     [MEDIA_ARTICLE_PAGE]: 'article-sfv',
     [FRONT_PAGE]: 'index-home',
-    [MEDIA_PAGE]: 'player-episode-tv',
+    [MEDIA_PAGE]: 'player-episode',
     [MOST_READ_PAGE]: 'list-datadriven-read',
     [FEATURE_INDEX_PAGE]: 'index-section-fix',
     [MEDIA_ASSET_PAGE]: 'article-media-asset',
@@ -74,6 +75,7 @@ const getCampaignID = (pageType: CampaignPageTypes) => {
     [AV_EMBEDS]: 'av-embeds',
     [DOWNLOADS_PAGE]: 'downloads',
     [AUDIO_PAGE]: 'player-episode',
+    [TV_PAGE]: 'player-episode',
   }[pageType];
 
   if (!campaignID) {

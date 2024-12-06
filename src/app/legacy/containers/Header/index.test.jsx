@@ -19,6 +19,7 @@ const {
   MEDIA_ASSET_PAGE,
   TOPIC_PAGE,
   HOME_PAGE,
+  TV_PAGE,
 } = PAGE_TYPES;
 
 const defaultToggleState = {
@@ -77,6 +78,16 @@ describe(`Header`, () => {
       const { container } = HeaderContainerWithContext({
         renderOptions: {
           pageType: MEDIA_PAGE,
+        },
+      });
+
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('should render correctly for WS TV page', () => {
+      const { container } = HeaderContainerWithContext({
+        renderOptions: {
+          pageType: TV_PAGE,
         },
       });
 
