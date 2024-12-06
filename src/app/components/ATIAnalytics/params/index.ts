@@ -18,7 +18,9 @@ import {
   UGC_PAGE,
   AV_EMBEDS,
   DOWNLOADS_PAGE,
+  LIVE_RADIO_PAGE,
   AUDIO_PAGE,
+  TV_PAGE,
 } from '../../../routes/utils/pageTypes';
 import {
   buildTvRadioATIParams,
@@ -52,7 +54,9 @@ const MIGRATED_PAGE_TYPES: PageTypes[] = [
   LIVE_PAGE,
   STATIC_PAGE,
   DOWNLOADS_PAGE,
+  LIVE_RADIO_PAGE,
   AUDIO_PAGE,
+  TV_PAGE,
 ];
 
 const noOp = () => {
@@ -79,7 +83,9 @@ const pageTypeUrlBuilders = {
   [UGC_PAGE]: noOp,
   [AV_EMBEDS]: noOp,
   [DOWNLOADS_PAGE]: noOp,
+  [LIVE_RADIO_PAGE]: noOp,
   [AUDIO_PAGE]: noOp,
+  [TV_PAGE]: noOp,
 };
 
 const pageTypeParamBuilders = {
@@ -102,7 +108,9 @@ const pageTypeParamBuilders = {
   [UGC_PAGE]: noOp,
   [AV_EMBEDS]: noOp,
   [DOWNLOADS_PAGE]: noOp,
+  [LIVE_RADIO_PAGE]: noOp,
   [AUDIO_PAGE]: noOp,
+  [TV_PAGE]: noOp,
 };
 
 type BuilderFunction = {
@@ -137,6 +145,7 @@ export const buildATIUrl = ({
   atiData,
 }: ATIConfigurationDetailsProviders) => {
   const { pageType } = requestContext;
+
   if (atiData && isMigrated(pageType)) {
     return buildPageATIUrl({ atiData, requestContext, serviceContext });
   }

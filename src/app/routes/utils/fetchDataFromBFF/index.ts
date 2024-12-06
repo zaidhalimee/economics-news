@@ -16,6 +16,7 @@ interface FetchDataFromBffParams {
   service: Services;
   variant?: Variants;
   isAmp?: boolean;
+  disableRadioSchedule?: boolean;
   page?: string;
   getAgent?: GetAgent;
 }
@@ -26,6 +27,7 @@ export default async ({
   service,
   variant,
   isAmp,
+  disableRadioSchedule,
   page,
   getAgent,
 }: FetchDataFromBffParams) => {
@@ -40,6 +42,7 @@ export default async ({
     service,
     variant,
     isAmp,
+    disableRadioSchedule,
     page,
   });
 

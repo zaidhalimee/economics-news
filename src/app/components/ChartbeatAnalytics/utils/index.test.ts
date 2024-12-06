@@ -12,7 +12,9 @@ import {
   TOPIC_PAGE,
   MEDIA_ARTICLE_PAGE,
   LIVE_PAGE,
+  LIVE_RADIO_PAGE,
   AUDIO_PAGE,
+  TV_PAGE,
 } from '../../../routes/utils/pageTypes';
 import {
   chartbeatUID,
@@ -91,6 +93,11 @@ describe('Chartbeat utilities', () => {
         pageType: AUDIO_PAGE,
         expectedDefaultType: 'Radio',
         expectedShortType: 'Radio',
+      },
+      {
+        pageType: TV_PAGE,
+        expectedDefaultType: 'TV',
+        expectedShortType: 'TV',
       },
       {
         pageType: MOST_READ_PAGE,
@@ -214,7 +221,7 @@ describe('Chartbeat utilities', () => {
       },
       {
         service: 'korean',
-        pageType: MEDIA_PAGE,
+        pageType: LIVE_RADIO_PAGE,
         description: 'should return expected section for live radio',
         mediaPageType: 'Radio',
         expected: 'Korean, Korean - Radio',
@@ -228,7 +235,7 @@ describe('Chartbeat utilities', () => {
       },
       {
         service: 'pashto',
-        pageType: MEDIA_PAGE,
+        pageType: TV_PAGE,
         description: 'should return expected section for ondemand TV',
         mediaPageType: 'TV',
         expected: 'Pashto, Pashto - TV',
@@ -298,6 +305,7 @@ describe('Chartbeat utilities', () => {
       ${LIVE_PAGE}          | ${'Live Page Title'}          | ${'BBC News Pidgin'} | ${'Live Page Title - BBC News Pidgin'}
       ${MEDIA_PAGE}         | ${'Media Page Title'}         | ${'BBC News Pidgin'} | ${'Media Page Title - BBC News Pidgin'}
       ${AUDIO_PAGE}         | ${'Audio Page Title'}         | ${'BBC News Pidgin'} | ${'Audio Page Title - BBC News Pidgin'}
+      ${TV_PAGE}            | ${'TV Page Title'}            | ${'BBC News Pidgin'} | ${'TV Page Title - BBC News Pidgin'}
       ${'index'}            | ${'index Page Title'}         | ${'BBC News Pidgin'} | ${'index Page Title - BBC News Pidgin'}
     `(
       'should return correct title when pageType is $pageType and brandName is $brandName',
@@ -427,7 +435,7 @@ describe('Chartbeat utilities', () => {
         const fixtureData: GetConfigProps = {
           isAmp: true,
           platform: 'amp',
-          pageType: MEDIA_PAGE,
+          pageType: LIVE_RADIO_PAGE,
           mediaPageType: 'Radio',
           contentType: 'player-live',
           title: 'Live Radio Page Title',
@@ -684,44 +692,13 @@ describe('Chartbeat utilities', () => {
       });
     });
 
-    it('should return config for amp pages when page type is media (onDemand TV) and env is live', () => {
-      const fixtureData: GetConfigProps = {
-        isAmp: true,
-        platform: 'amp',
-        pageType: MEDIA_PAGE,
-        mediaPageType: 'TV',
-        brandName: 'BBC News Korean',
-        chartbeatDomain: 'pashto.bbc.co.uk',
-        contentType: 'player-episode',
-        env: 'live',
-        service: 'pashto',
-        origin: 'bbc.com',
-        previousPath: '/previous-path',
-        title: 'OnDemand TV Page Title',
-      };
-
-      const expectedConfig = {
-        domain: 'pashto.bbc.co.uk',
-        idSync: {
-          bbc_hid: 'foobar',
-        },
-        sections: 'Pashto, Pashto - TV',
-        title: 'OnDemand TV Page Title - BBC News Korean',
-        contentType: 'player-episode',
-        uid: 50924,
-        virtualReferrer: `\${documentReferrer}`,
-      };
-
-      expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
-    });
-
     it('should return config for canonical pages when page type is media (onDemand TV) and env is live', () => {
       const fixtureData: GetConfigProps = {
         isAmp: false,
         platform: 'canonical',
-        pageType: MEDIA_PAGE,
+        pageType: TV_PAGE,
         mediaPageType: 'TV',
-        brandName: 'BBC News Korean',
+        brandName: 'BBC News Pashto',
         chartbeatDomain: 'pashto.bbc.co.uk',
         contentType: 'player-episode',
         env: 'live',
@@ -737,7 +714,7 @@ describe('Chartbeat utilities', () => {
           bbc_hid: 'foobar',
         },
         sections: 'Pashto, Pashto - TV',
-        title: 'OnDemand TV Page Title - BBC News Korean',
+        title: 'OnDemand TV Page Title - BBC News Pashto',
         type: 'player-episode',
         uid: 50924,
         virtualReferrer: 'bbc.com/previous-path',
