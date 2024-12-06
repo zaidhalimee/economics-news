@@ -15,7 +15,7 @@ const {
   INDEX_PAGE,
   ARTICLE_PAGE,
   FRONT_PAGE,
-  MEDIA_PAGE,
+  LIVE_RADIO_PAGE,
   MEDIA_ASSET_PAGE,
   TOPIC_PAGE,
   HOME_PAGE,
@@ -77,7 +77,7 @@ describe(`Header`, () => {
     it('should render correctly for WS radio page', () => {
       const { container } = HeaderContainerWithContext({
         renderOptions: {
-          pageType: MEDIA_PAGE,
+          pageType: LIVE_RADIO_PAGE,
         },
       });
 
