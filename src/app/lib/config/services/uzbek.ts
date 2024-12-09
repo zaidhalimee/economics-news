@@ -146,7 +146,7 @@ const defaultCyrillicConfig = {
         },
         accept: 'Маъқул',
         reject: 'Нималар ўзгарди?',
-        rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+        rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
       },
       cookie: {
         amp: {

@@ -162,7 +162,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ओके',
           reject: 'जानें कि क्या बदला है',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

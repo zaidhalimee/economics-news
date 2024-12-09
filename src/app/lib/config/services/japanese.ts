@@ -129,7 +129,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: '変更点を見る',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

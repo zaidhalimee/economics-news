@@ -141,7 +141,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'சரி',
           reject: 'என்ன மாறியுள்ளது என்பதைப் பாருங்கள்.',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

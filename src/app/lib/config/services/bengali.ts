@@ -134,7 +134,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ঠিক আছে।',
           reject: 'কী পরিবর্তন হয়েছে দেখুন।',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

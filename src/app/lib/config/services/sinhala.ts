@@ -132,7 +132,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'හරි',
           reject: 'වෙනස් කර ඇත්තේ මොනවාදැයි දැනගන්න',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

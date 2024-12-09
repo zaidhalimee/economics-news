@@ -149,7 +149,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'Madalla',
           reject: 'Duba abin da ya sauya',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

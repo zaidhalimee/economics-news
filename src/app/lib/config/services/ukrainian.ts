@@ -145,7 +145,7 @@ const baseServiceConfig = {
         },
         accept: 'ОК',
         reject: 'Подивитися, що змінилося',
-        rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+        rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
       },
       cookie: {
         amp: {
