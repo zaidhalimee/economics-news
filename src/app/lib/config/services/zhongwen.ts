@@ -546,7 +546,7 @@ export const service: ZhongwenConfig = {
           },
           accept: '可以',
           reject: '了解更新內容',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
