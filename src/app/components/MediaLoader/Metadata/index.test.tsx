@@ -8,6 +8,7 @@ import {
   ARTICLE_PAGE,
   AUDIO_PAGE,
   MEDIA_PAGE,
+  TV_PAGE,
 } from '#app/routes/utils/pageTypes';
 import Metadata from '.';
 import { aresMediaBlocks } from '../fixture';
@@ -63,7 +64,7 @@ describe('Media Loader - Metadata', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it.each([MEDIA_PAGE, AUDIO_PAGE])(
+  it.each([MEDIA_PAGE, AUDIO_PAGE, TV_PAGE])(
     'should not render metadata component as the %s page type is not supported',
     async pageType => {
       let container;
