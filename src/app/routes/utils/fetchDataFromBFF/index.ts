@@ -1,6 +1,6 @@
 import constructPageFetchUrl from '#app/routes/utils/constructPageFetchUrl';
 import getEnvironment from '#app/routes/utils/getEnvironment';
-import { Services, Variants, PageTypes } from '../../../models/types/global';
+import { Services, Variants, PageTypes } from '#models/types/global';
 import fetchPageData from '../fetchPageData';
 import getErrorStatusCode from '../fetchPageData/utils/getErrorStatusCode';
 import { BFF_FETCH_ERROR } from '../../../lib/logger.const';
