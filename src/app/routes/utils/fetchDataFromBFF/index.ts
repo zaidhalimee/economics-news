@@ -3,8 +3,8 @@ import getEnvironment from '#app/routes/utils/getEnvironment';
 import { Services, Variants, PageTypes } from '#models/types/global';
 import fetchPageData from '#app/routes/utils/fetchPageData';
 import getErrorStatusCode from '#app/routes/utils/fetchPageData/utils/getErrorStatusCode';
-import { BFF_FETCH_ERROR } from '../../../lib/logger.const';
-import { FetchError, GetAgent } from '../../../models/types/fetch';
+import { BFF_FETCH_ERROR } from '#lib/logger.const';
+import { FetchError, GetAgent } from '#models/types/fetch';
 import nodeLogger from '../../../lib/logger.node';
 import certsRequired from '../certsRequired';
 
