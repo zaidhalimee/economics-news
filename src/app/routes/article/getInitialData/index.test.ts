@@ -4,8 +4,8 @@ import * as fetchPageData from '#app/routes/utils/fetchPageData';
 import { BFF_FETCH_ERROR } from '#lib/logger.const';
 import pidginArticleWithLatestMedia from '#data/pidgin/articles/cw0x29n2pvqo.json';
 import { ARTICLE_PAGE } from '#app/routes/utils/pageTypes';
-import getInitialData from '.';
 import nodeLogger from '../../../../testHelpers/loggerMock';
+import getInitialData from '.';
 
 process.env.BFF_PATH = 'https://mock-bff-path';
 
