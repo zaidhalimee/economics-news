@@ -1381,7 +1381,7 @@ exports[`Canonical Consent Banner Container should correctly render privacy bann
             <span>
               <a
                 data-terms-banner="reject"
-                href="https://www.bbc.co.uk/usingthebbc/privacy-policy/"
+                href="https://www.bbc.com/usingthebbc/privacy-policy/"
               >
                 إطلع على التغييرات
               </a>
