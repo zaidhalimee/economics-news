@@ -1,13 +1,13 @@
 import { Agent } from 'undici';
-import fetchDataFromBFF from '.';
 import {
   ARTICLE_PAGE,
   CPS_ASSET,
   HOME_PAGE,
   MOST_READ_PAGE,
   TOPIC_PAGE,
-} from '../pageTypes';
+} from '#app/routes/utils/pageTypes';
 import * as fetchPageData from '../fetchPageData';
+import fetchDataFromBFF from '.';
 
 jest.mock('../fetchPageData', () =>
   jest.fn().mockImplementation(() => {
