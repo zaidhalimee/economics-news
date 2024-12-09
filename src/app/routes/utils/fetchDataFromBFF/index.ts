@@ -6,7 +6,7 @@ import getErrorStatusCode from '#app/routes/utils/fetchPageData/utils/getErrorSt
 import { BFF_FETCH_ERROR } from '#lib/logger.const';
 import { FetchError, GetAgent } from '#models/types/fetch';
 import nodeLogger from '#lib/logger.node';
-import certsRequired from '../certsRequired';
+import certsRequired from '#app/routes/utils/certsRequired';
 
 const logger = nodeLogger(__filename);
 
