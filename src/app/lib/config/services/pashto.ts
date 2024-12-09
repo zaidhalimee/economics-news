@@ -138,7 +138,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'اوکې',
           reject: 'دلته وګورئ چې څه بدل شوي',
-          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

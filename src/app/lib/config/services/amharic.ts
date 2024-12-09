@@ -134,7 +134,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'እሺ',
           reject: 'ምን እንደተቀየረ ይመልከቱ',
-          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

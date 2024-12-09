@@ -131,7 +131,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'मान्य छ।',
           reject: 'परिमार्जित कुरा हेर्नुहोस्।',
-          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

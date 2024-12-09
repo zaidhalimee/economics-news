@@ -154,7 +154,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: 'Saiba o que foi alterado',
-          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

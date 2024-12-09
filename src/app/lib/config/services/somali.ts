@@ -132,7 +132,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'HAYE',
           reject: 'Ogow waxa isbedelay',
-          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

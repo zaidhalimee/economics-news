@@ -140,7 +140,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'TOLE',
           reject: 'Maaltu akka jijjirame bari',
-          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

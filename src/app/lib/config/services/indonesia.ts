@@ -160,7 +160,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OKE',
           reject: 'Coba lihat apa yang berubah',
-          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

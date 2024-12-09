@@ -138,7 +138,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: 'Tìm hiểu các thay đổi',
-          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

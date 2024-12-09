@@ -142,7 +142,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'Ok',
           reject: 'Descubre lo que ha cambiado',
-          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

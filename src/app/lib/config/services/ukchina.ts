@@ -189,7 +189,7 @@ export const service: ChineseConfig = {
           },
           accept: '可以',
           reject: '了解更新内容',
-          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -453,7 +453,7 @@ export const service: ChineseConfig = {
           },
           accept: '可以',
           reject: '了解更新內容',
-          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

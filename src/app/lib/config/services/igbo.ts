@@ -141,7 +141,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'Ọ dị mma',
           reject: 'Chọpụta ihe gbanwere',
-          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

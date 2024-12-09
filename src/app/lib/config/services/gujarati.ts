@@ -138,7 +138,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ઓકે',
           reject: 'જાણો, શું ફેરફારો થયા છે',
-          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
