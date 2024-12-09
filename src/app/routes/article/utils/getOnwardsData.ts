@@ -5,7 +5,7 @@ import isEmpty from 'ramda/src/isEmpty';
 import { DATA_FETCH_ERROR } from '#lib/logger.const';
 import getRecommendationsUrl from '#app/lib/utilities/getUrlHelpers/getRecommendationsUrl';
 import { SECONDARY_DATA_TIMEOUT } from '#app/lib/utilities/getFetchTimeouts';
-import fetchPageData from '../../utils/fetchPageData';
+import fetchPageData from '#app/routes/utils/fetchPageData';
 import nodeLogger from '../../../lib/logger.node';
 import hasArticleRecommendations from './hasArticleRecommendations';
 
