@@ -1,5 +1,5 @@
 import constructPageFetchUrl from '#app/routes/utils/constructPageFetchUrl';
-import getEnvironment from '../getEnvironment';
+import getEnvironment from '#app/routes/utils/getEnvironment';
 import { Services, Variants, PageTypes } from '../../../models/types/global';
 import fetchPageData from '../fetchPageData';
 import getErrorStatusCode from '../fetchPageData/utils/getErrorStatusCode';
