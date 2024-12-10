@@ -6,7 +6,7 @@ import {
   MOST_READ_PAGE,
   TOPIC_PAGE,
 } from '#app/routes/utils/pageTypes';
-import * as fetchPageData from '#app/routes/utils/fetchPageData';
+import * as fetchPageData from '../fetchPageData';
 import fetchDataFromBFF from '.';
 
 jest.mock('../fetchPageData', () =>
