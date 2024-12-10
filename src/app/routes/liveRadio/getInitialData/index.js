@@ -1,5 +1,5 @@
 import path from 'ramda/src/path';
-import getErrorStatusCode from '../../utils/fetchPageData/utils/getErrorStatusCode';
+import getErrorStatusCode from '#app/routes/utils/fetchPageData/utils/getErrorStatusCode';
 import { LIVE_RADIO_PAGE } from '../../utils/pageTypes';
 import fetchDataFromBFF from '../../utils/fetchDataFromBFF';
 import { BFF_FETCH_ERROR } from '../../../lib/logger.const';
