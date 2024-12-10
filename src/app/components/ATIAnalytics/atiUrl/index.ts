@@ -45,6 +45,7 @@ export const buildATIPageTrackPath = ({
   categoryName,
   campaigns,
   nationsProducer,
+  ampExperimentName,
 }: ATIPageTrackingProps) => {
   const href = getHref(platform);
   const referrer = getReferrer(platform, origin, previousPath);
@@ -214,6 +215,31 @@ export const buildATIPageTrackPath = ({
       value: getATIMarketingString(href, campaignType),
       wrap: false,
     },
+    ...(ampExperimentName
+      ? [
+          {
+            key: 'mv_test',
+            description: 'AMP experiment project name',
+            value: `Google Discover`,
+            wrap: false,
+            disableEncoding: true,
+          },
+          {
+            key: 'mv_experiment_id',
+            description: 'AMP experiment name',
+            value: `${ampExperimentName}`,
+            wrap: false,
+            disableEncoding: true,
+          },
+          {
+            key: 'mv_creation',
+            description: 'AMP experiment variant name',
+            value: `VARIANT(${ampExperimentName})`,
+            wrap: false,
+            disableEncoding: true,
+          },
+        ]
+      : []),
     ...getRSSMarketingString(href, campaignType),
     ...(onOnionTld()
       ? [
@@ -252,6 +278,8 @@ export const buildATIEventTrackUrl = ({
   advertiserID,
   url,
   detailedPlacement,
+  experimentVariant,
+  ampExperimentName,
 }: ATIEventTrackingProps) => {
   // on AMP, variable substitutions are used in the value and they cannot be
   // encoded: https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md
@@ -323,10 +351,36 @@ export const buildATIEventTrackUrl = ({
         advertiserID,
         url,
         detailedPlacement,
+        experimentVariant,
       }),
       wrap: false,
       disableEncoding: true,
     },
+    ...(ampExperimentName
+      ? [
+          {
+            key: 'mv_test',
+            description: 'AMP experiment project name',
+            value: `Google Discover`,
+            wrap: false,
+            disableEncoding: true,
+          },
+          {
+            key: 'mv_experiment_id',
+            description: 'AMP experiment name',
+            value: `${ampExperimentName}`,
+            wrap: false,
+            disableEncoding: true,
+          },
+          {
+            key: 'mv_creation',
+            description: 'AMP experiment variant name',
+            value: `${experimentVariant}`,
+            wrap: false,
+            disableEncoding: true,
+          },
+        ]
+      : []),
   ];
 
   return `${getEnvConfig().SIMORGH_ATI_BASE_URL}${getAtiUrl(

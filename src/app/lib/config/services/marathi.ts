@@ -47,7 +47,7 @@ export const service: DefaultServiceConfig = {
     podcastPromo: {
       title: 'पॉडकास्ट',
       brandTitle: 'तीन गोष्टी',
-      brandDescription: 'दिवसभरातल्या कोरोना आणि इतर घडामोडींचा आढावा',
+      brandDescription: 'दिवसभरातील घडामोडींचा आढावा',
       image: {
         src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p0940n6j.jpg',
         alt: 'तीन गोष्टी',
@@ -319,6 +319,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/marathi/send/u50853467',
           text: 'बीबीसीशी संपर्क साधाा',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',

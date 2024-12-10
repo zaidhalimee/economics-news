@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, Fragment } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { getEnvConfig } from '#app/lib/utilities/getEnvConfig';
 import { RequestContext } from '#app/contexts/RequestContext';
 import isOperaProxy from '#app/lib/utilities/isOperaProxy';
@@ -6,20 +6,16 @@ import { Helmet } from 'react-helmet';
 import sendBeacon from '../../../lib/analyticsUtils/sendBeacon';
 import { ATIAnalyticsProps } from '../types';
 import sendBeaconOperaMiniScript from './sendBeaconOperaMiniScript';
+import sendBeaconLite from './sendBeaconLite';
 
 const getNoJsATIPageViewUrl = (atiPageViewUrl: string) =>
   atiPageViewUrl.includes('x8=[simorgh]')
     ? atiPageViewUrl.replace('x8=[simorgh]', 'x8=[simorgh-nojs]')
     : `${atiPageViewUrl}&x8=[simorgh-nojs]`;
 
-const renderNoScriptTrackingPixel = (
-  atiPageViewUrl: string,
-  isLite: boolean,
-) => {
-  const ImgPixelWrapper = isLite ? Fragment : 'noscript';
-
+const renderNoScriptTrackingPixel = (atiPageViewUrl: string) => {
   return (
-    <ImgPixelWrapper>
+    <noscript>
       <img
         height="1px"
         width="1px"
@@ -30,12 +26,22 @@ const renderNoScriptTrackingPixel = (
         style={{ position: 'absolute' }}
         src={getNoJsATIPageViewUrl(atiPageViewUrl)}
       />
-    </ImgPixelWrapper>
+    </noscript>
   );
 };
 
 const addOperaMiniExtremeScript = (atiPageViewUrlString: string) => {
   const script = sendBeaconOperaMiniScript(atiPageViewUrlString);
+
+  return (
+    <Helmet>
+      <script type="text/javascript">{script}</script>
+    </Helmet>
+  );
+};
+
+const addLiteScript = (atiPageViewUrlString: string) => {
+  const script = sendBeaconLite(atiPageViewUrlString);
 
   return (
     <Helmet>
@@ -63,8 +69,9 @@ const CanonicalATIAnalytics = ({
 
   return (
     <>
-      {addOperaMiniExtremeScript(atiPageViewUrlString)}
-      {renderNoScriptTrackingPixel(atiPageViewUrl, isLite)}
+      {isLite && addLiteScript(atiPageViewUrlString)}
+      {!isLite && addOperaMiniExtremeScript(atiPageViewUrlString)}
+      {renderNoScriptTrackingPixel(atiPageViewUrl)}
     </>
   );
 };

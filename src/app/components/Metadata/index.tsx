@@ -12,6 +12,10 @@ import {
   renderAppleItunesApp,
 } from './utils';
 import { IconSizes, MetadataProps, Tag } from './types';
+import {
+  defaultTranslations,
+  liteEnabledServices,
+} from '../LiteSiteCta/liteSiteConfig';
 
 const ENGLISH_SERVICES = ['news', 'sport', 'ws'];
 const FACEBOOK_APP_ID = '1609039196070050';
@@ -62,6 +66,7 @@ const MetadataContainer = ({
     ampNonUkLink,
     pathname,
     isUK,
+    isLite,
   } = useContext(RequestContext);
 
   const {
@@ -76,23 +81,37 @@ const MetadataContainer = ({
     twitterSite,
     iTunesAppId,
     googleSiteVerification,
+    translations,
   } = useContext(ServiceContext);
   const {
     palette: { BRAND_BACKGROUND },
   } = useTheme();
   const appleTouchIcon = getAppleTouchUrl(service);
   const isEnglishService = ENGLISH_SERVICES.includes(service);
+  const pathsForUkLink = [
+    '/sport/formula1',
+    '/sport/cricket/articles',
+    '/sport/rugby-union/articles',
+    '/sport/rugby-league/articles',
+  ];
+
+  const isUKLink = pathsForUkLink.some(
+    path => pathname && pathname.startsWith(path),
+  );
+
+  const showAlternateUKAmp = !isUKLink && isAmp;
+
   const alternateLinksEnglishSites = [
     {
-      href: isAmp ? ampNonUkLink : canonicalNonUkLink,
+      href: showAlternateUKAmp ? ampNonUkLink : canonicalNonUkLink,
       hrefLang: 'x-default',
     },
     {
-      href: isAmp ? ampNonUkLink : canonicalNonUkLink,
+      href: showAlternateUKAmp ? ampNonUkLink : canonicalNonUkLink,
       hrefLang: 'en',
     },
     {
-      href: isAmp ? ampUkLink : canonicalUkLink,
+      href: showAlternateUKAmp ? ampUkLink : canonicalUkLink,
       hrefLang: 'en-gb',
     },
   ];
@@ -103,18 +122,8 @@ const MetadataContainer = ({
     },
   ];
 
-  const pathsForUkLink = [
-    '/sport/formula1',
-    '/sport/cricket/articles',
-    '/sport/rugby_union/articles',
-    '/sport/rugby_league/articles',
-  ];
-
-  const isSport = pathsForUkLink.some(
-    path => pathname && pathname.startsWith(path),
-  );
-
-  const canonicalToUse = isUK && isSport ? canonicalUkLink : canonicalNonUkLink;
+  const canonicalToUse =
+    isUK && isUKLink ? canonicalUkLink : canonicalNonUkLink;
 
   const htmlAttributes = {
     dir,
@@ -122,6 +131,11 @@ const MetadataContainer = ({
     ...(isAmp && { amp: '' }), // empty value as this makes Helmet render 'amp' as per https://www.ampproject.org/docs/fundamentals/spec#ampd
   };
 
+  const { liteSite = defaultTranslations } = translations;
+  const { dataSaving } = liteSite;
+
+  const showLiteTitle = isLite && liteEnabledServices.includes(service);
+  const litePageTitle = `${title} - ${dataSaving}: ${brandName}`;
   const pageTitle = `${title} - ${brandName}`;
   const socialTitle = `${socialHeadline || title} - ${brandName}`;
 
@@ -147,7 +161,7 @@ const MetadataContainer = ({
         name="viewport"
         content="width=device-width, initial-scale=1, minimum-scale=1"
       />
-      <title>{pageTitle}</title>
+      <title>{showLiteTitle ? litePageTitle : pageTitle}</title>
       <link rel="canonical" href={canonicalToUse} />
       {isEnglishService && alternateLinksEnglishSites.map(renderAlternateLinks)}
       {isoLang &&

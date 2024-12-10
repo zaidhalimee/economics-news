@@ -3,6 +3,8 @@ import services from '#lib/config/services/loadableConfig';
 
 const SERVICES = Object.keys(services) as Services[];
 
+const RESTRICTED_ON_SOFT_LAUNCH = ['/ws/languages'];
+
 const VALID_DOMAINS = [
   '/',
   'localhost',
@@ -14,26 +16,43 @@ const VALID_DOMAINS = [
 
 const RESERVED_ROUTE_EXTENSIONS = ['amp', 'app', 'lite'];
 
-const isValidHref = (href: string) => {
+const addLiteExtension = (href?: string) => {
+  if (!href) return null;
+
   const url = new URL(href, 'http://localhost');
 
-  const extension = url?.pathname?.split('.')?.pop() || '';
-  const startsWithHash = href?.startsWith('#');
+  const extension = url.pathname?.split('.')?.pop() || '';
+
+  const isValidDomain = VALID_DOMAINS.includes(url.hostname);
+  const isRestrictedOnSoftLaunch = RESTRICTED_ON_SOFT_LAUNCH.includes(
+    url.pathname,
+  );
+  const isWsService = SERVICES.includes(
+    url.pathname?.split('/')?.[1] as Services,
+  );
 
   const hasReservedRouteExtension =
     RESERVED_ROUTE_EXTENSIONS.includes(extension);
 
-  const isValidDomain = VALID_DOMAINS.includes(url.hostname);
-  const isWsService = SERVICES.includes(
-    url?.pathname?.split('/')?.[1] as Services,
-  );
-
-  return (
+  const shouldAddLiteExtension =
     isValidDomain &&
     isWsService &&
     !hasReservedRouteExtension &&
-    !startsWithHash
-  );
+    !isRestrictedOnSoftLaunch;
+
+  if (shouldAddLiteExtension) {
+    url.pathname += '.lite';
+
+    // Retain relative path if passed in 'href' starts with a forward slash
+    if (href.startsWith('/')) {
+      return `${url.pathname}${url.search}${url.hash}`;
+    }
+
+    // Else return the full URL
+    return url.toString();
+  }
+
+  return null;
 };
 
 export default (html: string) => {
@@ -43,11 +62,14 @@ export default (html: string) => {
     const anchorTags = modifiedHtml.match(/<a[^>]*>/g) || [];
 
     anchorTags.forEach(tag => {
+      const ignoreFlag = tag?.includes('data-ignore-lite="true"');
       const href = tag?.match(/href="([^"]*)"/)?.[1];
-      if (href && isValidHref(href)) {
+      const urlWithLite = addLiteExtension(href);
+
+      if (href && urlWithLite && !ignoreFlag) {
         modifiedHtml = modifiedHtml.replace(
           tag,
-          tag.replace(href, `${href}.lite`),
+          tag.replace(href, urlWithLite),
         );
       }
     });

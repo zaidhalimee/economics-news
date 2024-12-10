@@ -260,6 +260,51 @@ export const articleDataNews = articleDataBuilder(
   },
 ) as unknown as Article;
 
+export const articleDataNewsLongLength = articleDataBuilder(
+  'c0000000001o',
+  'News',
+  'en-gb',
+  'http://www.bbc.co.uk/ontologies/passport/home/News',
+  [
+    'Article Headline',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+  ],
+  'Article Headline for SEO',
+  'Article Headline for Promo',
+  'Article summary.',
+  presetThings,
+  false,
+  blocksWithHeadlineAndText,
+  {
+    categoryName: 'Royal+Wedding+2018~Duchess+of+Sussex',
+    contentId: 'urn:bbc:optimo:c0000000001o',
+    contentType: 'article',
+    language: 'en-gb',
+    ldpThingIds:
+      '2351f2b2-ce36-4f44-996d-c3c4f7f90eaa~803eaeb9-c0c3-4f1b-9a66-90efac3df2dc',
+    ldpThingLabels: 'Royal+Wedding+2018~Duchess+of+Sussex',
+    nationsProducer: null,
+    pageIdentifier: 'news.articles.c0000000001o.page',
+    pageTitle: 'Article Headline for SEO',
+    timePublished: '2018-01-01T12:01:00.000Z',
+    timeUpdated: '2018-01-01T14:00:00.000Z',
+  },
+) as unknown as Article;
+
 export const articleDataNewsWithEmbeds = articleDataBuilder(
   'c0000000001o',
   'News',

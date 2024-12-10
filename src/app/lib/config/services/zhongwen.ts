@@ -1,6 +1,7 @@
 import noAscendersOrDescenders from '../../../components/ThemeProvider/fontScripts/noAscOrDesc';
 import '#psammead/moment-timezone-include/tz/GMT';
 import 'moment/locale/zh-cn';
+import '#psammead/psammead-locales/moment/zh-tw';
 import withContext from '../../../contexts/utils/withContext';
 import { ZhongwenConfig } from '../../../models/types/serviceConfig';
 import { Direction, Services } from '../../../models/types/global';
@@ -18,7 +19,6 @@ const baseServiceConfig = {
   defaultImage: 'https://news.files.bbci.co.uk/ws/img/logos/og/zhongwen.png',
   defaultImageAltText: 'BBC News 中文',
   dir: 'ltr' as Direction,
-  datetimeLocale: `zh-cn`,
   service: 'zhongwen' as Services,
   serviceName: 'News 中文',
   languageName: 'Chinese',
@@ -63,6 +63,7 @@ export const service: ZhongwenConfig = {
     locale: `zh-hans`,
     // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405
     isoLang: 'zh-Hans',
+    datetimeLocale: 'zh-cn',
     defaultCaptionOffscreenText: '说明文字，',
     audioCaptionOffscreenText: '音频加注文字，',
     videoCaptionOffscreenText: '视频加注文字，',
@@ -99,6 +100,10 @@ export const service: ZhongwenConfig = {
           text: '联络BBC',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -123,28 +128,28 @@ export const service: ZhongwenConfig = {
         url: '/zhongwen/simp/topics/ck2l9z0em07t',
       },
       {
-        title: '两岸',
-        url: '/zhongwen/simp/topics/cxe2wdp384wt',
+        title: '中国',
+        url: '/zhongwen/simp/topics/cv85rd690y1t',
+      },
+      {
+        title: '香港',
+        url: '/zhongwen/simp/topics/c4vmr03pyn6t',
+      },
+      {
+        title: '台湾',
+        url: '/zhongwen/simp/topics/c50nzmy3vent',
       },
       {
         title: '英国',
         url: '/zhongwen/simp/topics/c1nq04exqmlt',
       },
       {
-        title: '科技',
-        url: '/zhongwen/simp/topics/c9mjeq29pxlt',
-      },
-      {
         title: '财经',
         url: '/zhongwen/simp/topics/cdlxq9k9nqkt',
       },
       {
-        title: '视频材料',
+        title: '视频',
         url: '/zhongwen/simp/topics/ck5rznle6edt',
-      },
-      {
-        title: 'BBC英伦网',
-        url: 'http://www.bbc.co.uk/ukchina/simp',
       },
     ],
     scriptLink: {
@@ -179,6 +184,8 @@ export const service: ZhongwenConfig = {
         postedAt: '张贴于',
         summary: '概要',
         shareButtonText: '分享',
+        postDateTimeFormat: 'YYYY年M月DD日',
+        postDateFormat: 'YYYY年M月D日',
       },
       downloads: {
         instructions: 'You can download and view today’s news.',
@@ -361,6 +368,7 @@ export const service: ZhongwenConfig = {
     locale: `zh-hant`,
     // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405
     isoLang: 'zh-Hant',
+    datetimeLocale: 'zh-tw',
     externalLinkText: ', 外部',
     frontPageTitle: '主頁',
     defaultCaptionOffscreenText: '說明文字，',
@@ -399,6 +407,10 @@ export const service: ZhongwenConfig = {
           text: '聯絡BBC',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -423,28 +435,28 @@ export const service: ZhongwenConfig = {
         url: '/zhongwen/trad/topics/c83plve5vmjt',
       },
       {
-        title: '兩岸',
-        url: '/zhongwen/trad/topics/c9wpm0e5zv9t',
+        title: '中國',
+        url: '/zhongwen/trad/topics/ckr7mn6r003t',
+      },
+      {
+        title: '香港',
+        url: '/zhongwen/trad/topics/cezw73jk755t',
+      },
+      {
+        title: '台灣',
+        url: '/zhongwen/trad/topics/cd6qem06z92t',
       },
       {
         title: '英國',
         url: '/zhongwen/trad/topics/c1ez1k4emn0t',
       },
       {
-        title: '科技',
-        url: '/zhongwen/trad/topics/c32p4kj2yzqt',
-      },
-      {
         title: '財經',
         url: '/zhongwen/trad/topics/cq8nqywy37yt',
       },
       {
-        title: '視頻材料',
+        title: '影片',
         url: '/zhongwen/trad/topics/cgvl47l38e1t',
-      },
-      {
-        title: 'BBC英倫網',
-        url: 'http://www.bbc.co.uk/ukchina/trad',
       },
     ],
     scriptLink: {
@@ -479,6 +491,8 @@ export const service: ZhongwenConfig = {
         postedAt: '張貼在',
         summary: '概要',
         shareButtonText: '分享',
+        postDateTimeFormat: 'YYYY年M月DD日',
+        postDateFormat: 'YYYY年M月D日',
       },
       downloads: {
         instructions: 'You can download and view today’s news.',

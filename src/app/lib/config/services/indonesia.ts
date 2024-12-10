@@ -243,6 +243,7 @@ export const service: DefaultServiceConfig = {
         video: 'Video',
         listen: 'Dengar',
         watch: 'Tonton',
+        watchMoments: 'Saksikan juga',
         listenLive: 'Mendengarkan langsung',
         listenNext: 'Dengar yang berikut',
         liveLabel: 'LANGSUNG',
@@ -335,6 +336,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/indonesia/send/u50853401',
           text: 'Hubungi BBC',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',

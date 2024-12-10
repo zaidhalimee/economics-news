@@ -48,16 +48,16 @@ export const service: DefaultServiceConfig = {
     googleSiteVerification: 'D-aEHUiyVaMoUJXjVRbDVkxS0dLTMUZLD3dLPTnWO4Q',
     podcastPromo: {
       title: 'يستحق الانتباه',
-      brandTitle: 'يستحق الانتباه',
+      brandTitle: 'حسابنا الرسمي على واتساب',
       brandDescription:
-        'شرح معمق لقصة بارزة من أخباراليوم، لمساعدتك على فهم أهم الأحداث حولك وأثرها على حياتك',
+        'تابعوا التغطية الشاملة من بي بي سي نيوز عربي على واتساب.',
       image: {
-        src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p0h6dt4s.jpg',
-        alt: 'يستحق الانتباه',
+        src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p0k7ksmj.png',
+        alt: 'حسابنا الرسمي على واتساب',
       },
       linkLabel: {
-        text: 'الحلقات',
-        href: 'https://www.bbc.com/arabic/podcasts/p0h6d6nm',
+        text: 'اضغط هنا',
+        href: 'https://www.whatsapp.com/channel/0029Val8KlE5a24BsTvuVd2e',
       },
       skipLink: {
         text: 'تخطى %title% وواصل القراءة',
@@ -240,6 +240,7 @@ export const service: DefaultServiceConfig = {
         },
         listen: 'استمع',
         watch: 'شاهد',
+        watchMoments: 'لحظات للمشاهدة',
         listenLive: 'استمع للبث المباشر',
         listenNext: 'واصل الاستماع',
         liveLabel: 'مباشر',
@@ -399,6 +400,10 @@ export const service: DefaultServiceConfig = {
           text: 'اتصل بـ بي بي سي',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -413,6 +418,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'رئيسية',
         url: '/arabic',
+      },
+      {
+        title: 'شاهد البث المباشر',
+        url: '/arabic/media-49522519',
       },
       {
         title: 'أخبار',
