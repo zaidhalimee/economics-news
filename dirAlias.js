@@ -8,6 +8,7 @@ const resolvePath = relativePath => path.resolve(appDirectory, relativePath);
 module.exports = {
   webpackDirAlias: {
     '#app': resolvePath('src/app'),
+    '#src': resolvePath('src'),
     '#contexts': resolvePath('src/app/contexts'),
     '#components': resolvePath('src/app/legacy/components'),
     '#containers': resolvePath('src/app/legacy/containers'),
@@ -23,6 +24,7 @@ module.exports = {
   },
   jestDirAlias: {
     '^#app(.*)$': '<rootDir>/src/app$1',
+    '^#src(.*)$': '<rootDir>/src',
     '^#contexts(.*)$': '<rootDir>/src/app/contexts$1',
     '^#components(.*)$': '<rootDir>/src/app/legacy/components$1',
     '^#containers(.*)$': '<rootDir>/src/app/legacy/containers$1',
@@ -39,6 +41,7 @@ module.exports = {
   eslintDirAlias: {
     map: [
       ['#app', './src/app'],
+      ['#src', './src'],
       ['#contexts', './src/app/contexts'],
       ['#components', './src/app/legacy/components'],
       ['#containers', './src/app/legacy/containers'],
