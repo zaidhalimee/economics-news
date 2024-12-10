@@ -24,7 +24,7 @@ module.exports = {
   },
   jestDirAlias: {
     '^#app(.*)$': '<rootDir>/src/app$1',
-    '^#src(.*)$': '<rootDir>/src',
+    '^#src(.*)$': '<rootDir>/src$1',
     '^#contexts(.*)$': '<rootDir>/src/app/contexts$1',
     '^#components(.*)$': '<rootDir>/src/app/legacy/components$1',
     '^#containers(.*)$': '<rootDir>/src/app/legacy/containers$1',
