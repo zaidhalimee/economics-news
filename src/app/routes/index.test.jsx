@@ -17,18 +17,17 @@ import onDemandTvPageJson from '#data/pashto/bbc_pashto_tv/tv_programmes/w13xttn
 import articlePageJson from '#data/persian/articles/c4vlle3q337o.json';
 import sportArticlePageJson from '#data/sport/judo/articles/cj80n66ddnko.json';
 import mediaAssetPageJson from '#data/yoruba/cpsAssets/media-23256797.json';
-import routes from '.';
 
 import { ERROR_PAGE, FRONT_PAGE } from '#app/routes/utils/pageTypes';
 import gahuzaOnDemandAudio from '#data/gahuza/bbc_gahuza_radio/p02pcb5c.json';
+import routes from '.';
 import {
   act,
   render,
   screen,
-} from '#app/components/react-testing-library-with-providers';
-import { suppressPropWarnings } from '#psammead/psammead-test-helpers/src';
+} from '../components/react-testing-library-with-providers';
+import { suppressPropWarnings } from '../legacy/psammead/psammead-test-helpers/src';
 import * as fetchDataFromBFF from './utils/fetchDataFromBFF';
-
 
 global.performance.getEntriesByName = jest.fn(() => []);
 
