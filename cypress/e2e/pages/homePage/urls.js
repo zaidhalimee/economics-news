@@ -15,11 +15,13 @@ const urls = [
     service: 'serbian',
     local: '/serbian/lat',
     test: '/serbian/lat',
+    live: '/serbian/lat',
   },
   {
     service: 'serbian',
     local: '/serbian/cyr',
     test: '/serbian/cyr',
+    live: '/serbian/cyr',
   },
 ];
 
