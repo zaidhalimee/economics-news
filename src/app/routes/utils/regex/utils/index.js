@@ -71,6 +71,7 @@ const homePageServices = [
   'turkce',
   'ukrainian',
   'urdu',
+  'uzbek',
   'vietnamese',
   'yoruba',
   'zhongwen',
