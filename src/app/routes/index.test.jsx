@@ -25,7 +25,7 @@ import {
   render,
   screen,
 } from '#app/components/react-testing-library-with-providers';
-import { suppressPropWarnings } from '../legacy/psammead/psammead-test-helpers/src';
+import { suppressPropWarnings } from '#psammead/psammead-test-helpers/src';
 import * as fetchDataFromBFF from './utils/fetchDataFromBFF';
 import routes from '.';
 
