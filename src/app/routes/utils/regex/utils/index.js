@@ -60,6 +60,7 @@ const homePageServices = [
   'portuguese',
   'punjabi',
   'russian',
+  'serbian',
   'sinhala',
   'somali',
   'swahili',
@@ -72,6 +73,7 @@ const homePageServices = [
   'urdu',
   'vietnamese',
   'yoruba',
+  'zhongwen',
 ];
 
 export const getFrontPageRegex = services => {
