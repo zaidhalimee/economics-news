@@ -31,7 +31,6 @@ export default function CanonicalRenderer({
 }: Props) {
   const serialisedData = serialiseForScript(data);
   const appEnvVariables = serialiseForScript(getProcessEnvAppVariables());
-  
 
   return (
     <html lang="en-GB" className={NO_JS_CLASSNAME} {...htmlAttrs}>
@@ -50,7 +49,10 @@ export default function CanonicalRenderer({
             }, 5000);`,
           }}
         />
-        <script src="https://mybbc-analytics.files.bbci.co.uk/reverb-client-js/reverb-3.9.2.js" />
+        <script
+          async
+          src="https://mybbc-analytics.files.bbci.co.uk/reverb-client-js/reverb-3.9.2.js"
+        />
 
         {isApp && <meta name="robots" content="noindex" />}
         {title}
