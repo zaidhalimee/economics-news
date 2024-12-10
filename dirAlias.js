@@ -9,7 +9,6 @@ module.exports = {
   webpackDirAlias: {
     '#app': resolvePath('src/app'),
     '#src': resolvePath('src'),
-    '#utils': resolvePath('src/app/routes/utils'),
     '#contexts': resolvePath('src/app/contexts'),
     '#components': resolvePath('src/app/legacy/components'),
     '#containers': resolvePath('src/app/legacy/containers'),
@@ -26,7 +25,6 @@ module.exports = {
   jestDirAlias: {
     '^#app(.*)$': '<rootDir>/src/app$1',
     '^#src(.*)$': '<rootDir>/src$1',
-    '^#utils(.*)$': '<rootDir>/src/app/routes/utils$1',
     '^#contexts(.*)$': '<rootDir>/src/app/contexts$1',
     '^#components(.*)$': '<rootDir>/src/app/legacy/components$1',
     '^#containers(.*)$': '<rootDir>/src/app/legacy/containers$1',
@@ -44,7 +42,6 @@ module.exports = {
     map: [
       ['#app', './src/app'],
       ['#src', './src'],
-      ['#utils', './src/app/routes/utils'],
       ['#contexts', './src/app/contexts'],
       ['#components', './src/app/legacy/components'],
       ['#containers', './src/app/legacy/containers'],
