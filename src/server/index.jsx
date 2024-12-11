@@ -34,6 +34,7 @@ import getAgent from './utilities/getAgent';
 import { getMvtExperiments, getMvtVaryHeaders } from './utilities/mvtHeader';
 import getAssetOrigins from './utilities/getAssetOrigins';
 import extractHeaders from './utilities/extractHeaders';
+import addSimorghToRequestChain from './utilities/addSimorghToRequestChain';
 
 const morgan = require('morgan');
 
@@ -235,6 +236,8 @@ server.get(
       });
 
       const { isUK, showCookieBannerBasedOnCountry } = extractHeaders(headers);
+
+      addSimorghToRequestChain(headers);
 
       data.toggles = toggles;
       data.path = urlPath;
