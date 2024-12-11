@@ -21,13 +21,14 @@ import mediaAssetPageJson from '#data/yoruba/cpsAssets/media-23256797.json';
 import { ERROR_PAGE, FRONT_PAGE } from '#app/routes/utils/pageTypes';
 import * as fetchDataFromBFF from '#app/routes/utils/fetchDataFromBFF';
 import gahuzaOnDemandAudio from '#data/gahuza/bbc_gahuza_radio/p02pcb5c.json';
+// eslint-disable-next-line import/order
+import routes from '.';
 import {
   act,
   render,
   screen,
 } from '#app/components/react-testing-library-with-providers';
 import { suppressPropWarnings } from '#psammead/psammead-test-helpers/src';
-import routes from '.';
 
 global.performance.getEntriesByName = jest.fn(() => []);
 
