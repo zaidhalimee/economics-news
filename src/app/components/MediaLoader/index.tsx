@@ -242,13 +242,14 @@ const MediaLoader = ({
 
   const showPortraitTitle = orientation === 'portrait' && !embedded;
 
+  const experimentEnabled = experimentStage === Stages.STAGE_2;
+
   return (
     <>
       {isLite && hasTranscript ? (
         <Transcript
           transcript={transcriptBlock}
           title={placeholderConfig?.mediaInfo?.title}
-          hideDisclaimer
         />
       ) : (
         <>
@@ -269,6 +270,7 @@ const MediaLoader = ({
             className={className}
             css={[
               styles.figure(embedded),
+              experimentEnabled && styles.experimentVideo,
               playerConfig?.ui?.skin === 'classic' && [
                 orientation === 'portrait' && styles.portraitFigure(embedded),
                 orientation === 'landscape' && styles.landscapeFigure,
@@ -308,14 +310,16 @@ const MediaLoader = ({
               <Caption
                 block={captionBlock}
                 type={mediaType}
-                css={orientation === 'portrait' && styles.captionPortrait}
+                css={
+                  (orientation === 'portrait' && styles.captionPortrait,
+                  experimentEnabled && styles.experimentCaption)
+                }
               />
             )}
             {transcriptBlock && (
               <Transcript
                 transcript={transcriptBlock}
                 title={placeholderConfig?.mediaInfo?.title}
-                hideDisclaimer
               />
             )}
           </figure>

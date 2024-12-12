@@ -6,12 +6,10 @@ const WIDTH = 250;
 const styles = {
   container: ({ palette, spacings, mq }: Theme) =>
     css({
-      textAlign: 'center',
+      textAlign: 'start',
       position: 'absolute',
       color: palette.WHITE,
-      padding: `${spacings.FULL}rem`,
-      display: 'flex',
-      flexWrap: 'nowrap',
+      padding: `${spacings.DOUBLE}rem`,
       background: `rgba(34, 34, 34, 0.75)`,
       height: '100%',
       width: '100%',
@@ -25,9 +23,8 @@ const styles = {
     }),
   message: ({ palette }: Theme) =>
     css({
-      alignItems: 'center',
-      display: 'flex',
       color: palette.WHITE,
+      margin: '0',
     }),
 };
 

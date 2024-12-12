@@ -24,16 +24,20 @@ const SignPost = () => {
       <SVGs.FanSvg css={[styles.icon, styles.fanIcon, styles.collapsable]} />
       <div>
         <div>
-          <Text css={styles.message} as="p">
+          <Text css={styles.message} as="p" size="bodyCopy">
             {message}
           </Text>
         </div>
         <div css={[styles.loadVideoContainer]}>
-          <span>
-            <SVGs.PlusSvg css={[styles.icon, styles.plusIcon]} />
-          </span>
           <button type="button" css={[styles.loadVideo]}>
-            <Text css={[styles.message, styles.underline]} as="span">
+            <span>
+              <SVGs.PlusSvg css={[styles.icon, styles.plusIcon]} />
+            </span>
+            <Text
+              css={[styles.message, styles.underline]}
+              as="span"
+              size="bodyCopy"
+            >
               {buttonLabel}
             </Text>
           </button>

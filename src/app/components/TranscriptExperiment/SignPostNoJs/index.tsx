@@ -11,7 +11,7 @@ const SignPostNoJs = ({ noJsMessage }: Props) => {
   return (
     <noscript>
       <div css={styles.container}>
-        <Text css={styles.message} as="p">
+        <Text css={styles.message} as="p" size="longPrimer">
           {noJsMessage}
         </Text>
       </div>

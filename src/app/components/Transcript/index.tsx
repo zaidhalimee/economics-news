@@ -13,7 +13,7 @@ const removeHoursMilliseconds = (timestamp: string) => timestamp.slice(3, -4);
 
 const TranscriptListItem = ({ id, start, content }: TranscriptItem) => (
   <li key={id} css={styles.listItem}>
-    <Text role="text" css={styles.transcriptText}>
+    <Text role="text" css={styles.transcriptText} size="bodyCopy">
       <TranscriptTimestamp timestamp={removeHoursMilliseconds(start)} />
       <VisuallyHiddenText> </VisuallyHiddenText>
       <span css={styles.itemText}>{content}</span>
@@ -24,11 +24,9 @@ const TranscriptListItem = ({ id, start, content }: TranscriptItem) => (
 const Transcript = ({
   transcript,
   title,
-  hideDisclaimer = true,
 }: {
   transcript: TranscriptBlock;
   title?: string;
-  hideDisclaimer?: boolean;
 }) => {
   const transcriptItems = transcript?.model?.blocks;
   if (!transcriptItems) {
@@ -60,11 +58,9 @@ const Transcript = ({
           />
         ))}
       </ul>
-      {!hideDisclaimer && (
-        <Text size="brevier" css={styles.disclaimer} as="small">
-          This transcript was auto generated.
-        </Text>
-      )}
+      <Text size="brevier" css={styles.disclaimer} as="small">
+        This transcript was reviewed by a journalist after AI generation.
+      </Text>
     </details>
   );
 };

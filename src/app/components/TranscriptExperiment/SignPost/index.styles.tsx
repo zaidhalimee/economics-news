@@ -1,3 +1,4 @@
+import { focusIndicatorThickness } from '#app/components/ThemeProvider/focusIndicator';
 import pixelsToRem from '#app/utilities/pixelsToRem';
 import { css, Theme } from '@emotion/react';
 
@@ -12,7 +13,7 @@ const styles = {
       padding: `${spacings.FULL}rem`,
       display: 'flex',
       flexWrap: 'nowrap',
-      background: `rgba(48, 128, 59, 0.9)`,
+      background: `rgba(14, 98, 0, 0.9)`,
       height: '100%',
       width: '100%',
       zIndex: '1',
@@ -20,6 +21,10 @@ const styles = {
         left: `calc(100% - ${pixelsToRem(WIDTH)}rem)`,
         width: `${pixelsToRem(WIDTH)}rem`,
         height: 'unset',
+        background: `rgba(14, 98, 0, 1)`,
+      },
+      [`@media (max-width: ${BUTTON_COLLAPSE_WIDTH}rem)`]: {
+        padding: `${spacings.DOUBLE}rem`,
       },
     }),
   icon: ({ mq, palette }: Theme) =>
@@ -42,7 +47,7 @@ const styles = {
   collapsable: () =>
     css({
       [`@media (max-width: ${BUTTON_COLLAPSE_WIDTH}rem)`]: {
-        width: 0,
+        display: 'none',
       },
     }),
   message: ({ palette }: Theme) =>
@@ -53,14 +58,23 @@ const styles = {
   underline: ({ palette }: Theme) =>
     css({
       borderBottom: `${pixelsToRem(1)}rem solid ${palette.WHITE}`,
+      '&:hover, &:focus': {
+        borderBottom: `${pixelsToRem(2)}rem solid ${palette.WHITE}`,
+      },
     }),
   loadVideoContainer: ({ spacings }: Theme) =>
     css({
       margin: `${spacings.DOUBLE}rem 0 ${spacings.HALF}rem 0`,
     }),
-  loadVideo: () =>
+  loadVideo: ({ palette }: Theme) =>
     css({
       all: 'unset',
+      // Izzy
+      '&:focus': {
+        outline: `${focusIndicatorThickness} solid ${palette.BLACK}`,
+        boxShadow: `0 0 0 ${focusIndicatorThickness} ${palette.WHITE}`,
+        outlineOffset: `${focusIndicatorThickness}`,
+      },
     }),
 };
 

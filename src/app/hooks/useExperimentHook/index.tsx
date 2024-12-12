@@ -59,7 +59,7 @@ const useExperimentHook = () => {
   useEffect(() => {
     const initialiseDeviceStates = async () => {
       const nav = navigator as unknown as Navigator;
-      const saveDataMode = nav.connection.saveData;
+      const saveDataMode = nav.connection?.saveData;
       if (nav.getBattery) {
         const manager = await nav.getBattery();
         const { level } = manager;

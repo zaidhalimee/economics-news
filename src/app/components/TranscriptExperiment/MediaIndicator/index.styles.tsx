@@ -5,19 +5,17 @@ import { css, Theme } from '@emotion/react';
 export const BUTTON_COLLAPSE_WIDTH = pixelsToRem(300);
 
 const styles = {
-  mediaIcon: ({ palette, fontVariants, fontSizes }: Theme) =>
+  mediaIcon: ({ palette, fontVariants, fontSizes, spacings }: Theme) =>
     css({
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: palette.GREY_2,
+      backgroundColor: palette.WHITE,
       border: 'none',
       color: palette.BLACK,
       cursor: 'pointer',
-      ...fontVariants.sansBold,
+      ...fontVariants.sansRegular,
       ...fontSizes.minion,
-      width: '5.5rem',
-      padding: '0',
+      padding: `${spacings.FULL}rem`,
       position: 'absolute',
       bottom: '0',
       left: '0',
@@ -25,25 +23,27 @@ const styles = {
       [`.${NO_JS_CLASSNAME} &`]: {
         display: 'none',
       },
+      [`@media (max-width: ${pixelsToRem(300)}rem)`]: {
+        display: 'none',
+      },
     }),
-  flexItem: () =>
+  item: ({ spacings }: Theme) =>
     css({
-      lineHeight: '2.5rem',
+      display: 'flex',
+      alignItems: 'center',
+      lineHeight: `${spacings.DOUBLE}rem`,
     }),
-  iconWrapper: ({ palette, spacings }: Theme) =>
+  iconWrapper: ({ palette }: Theme) =>
     css({
       '& > svg': {
         color: palette.BLACK,
         fill: 'currentcolor',
-        height: `${spacings.DOUBLE}rem`,
-        width: `${spacings.DOUBLE}rem`,
         margin: '0',
       },
     }),
   timeDuration: ({ spacings }: Theme) =>
     css({
-      margin: `0  ${spacings.HALF}rem`,
-      verticalAlign: 'middle',
+      margin: `0 0 0 ${spacings.FULL}rem`,
     }),
 };
 

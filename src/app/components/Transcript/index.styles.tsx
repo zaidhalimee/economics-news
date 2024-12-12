@@ -7,7 +7,6 @@ export default {
     css({
       backgroundColor: isDarkUi ? palette.GREY_7 : palette.WHITE,
       display: 'block',
-      marginTop: `${spacings.TRIPLE}rem`,
       border: `solid ${pixelsToRem(3)}rem transparent`,
       'summary svg': {
         color: isDarkUi ? palette.WHITE : palette.GREY_10,
@@ -28,7 +27,8 @@ export default {
       '&::-webkit-details-marker': {
         display: 'none',
       },
-      padding: `${spacings.DOUBLE}rem`,
+      padding: `${spacings.DOUBLE}rem ${spacings.HALF}rem`,
+
       '&:hover, &:focus': {
         cursor: 'pointer',
         span: {
@@ -47,14 +47,11 @@ export default {
       paddingInlineStart: `${spacings.HALF}rem`,
     }),
 
-  ul: ({ spacings, mq }: Theme) =>
+  ul: ({ spacings }: Theme) =>
     css({
-      padding: `0 ${spacings.DOUBLE}rem`,
+      padding: `0 ${spacings.FULL}rem`,
       listStyle: 'none',
       margin: '0',
-      [mq.GROUP_1_MIN_WIDTH]: {
-        padding: `0 ${spacings.TRIPLE}rem`,
-      },
     }),
 
   transcriptText: ({ palette, isDarkUi }: Theme) =>
@@ -89,14 +86,11 @@ export default {
       },
     }),
 
-  disclaimer: ({ palette, isDarkUi, spacings, mq }: Theme) =>
+  disclaimer: ({ palette, isDarkUi, spacings }: Theme) =>
     css({
       color: isDarkUi ? palette.GREY_3 : palette.GREY_6,
       display: 'block',
       paddingBottom: `${spacings.DOUBLE}rem`,
-      paddingInlineStart: `${spacings.DOUBLE}rem`,
-      [mq.GROUP_1_MIN_WIDTH]: {
-        paddingInlineStart: `${spacings.TRIPLE}rem`,
-      },
+      paddingInline: `${spacings.FULL}rem`,
     }),
 };
