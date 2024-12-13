@@ -42,7 +42,6 @@ export const getServerSideProps: GetServerSideProps = async context => {
     variant,
     renderer_env: rendererEnv,
     page = '1',
-    testest,
   } = context.query as PageDataParams;
 
   const { headers: reqHeaders } = context.req;
