@@ -89,8 +89,7 @@ const ArticlePage = ({
   pageData: Article;
   experimentStage?: Stages;
 }) => {
-  const { isApp, pageType, service, isAmp, id, env } =
-    useContext(RequestContext);
+  const { isApp, pageType, service, isAmp, env } = useContext(RequestContext);
 
   const {
     articleAuthor,
@@ -171,7 +170,6 @@ const ArticlePage = ({
       topStoriesContent,
       isAmp,
       service,
-      id,
     });
 
   const showRelatedContent = blocks.some(

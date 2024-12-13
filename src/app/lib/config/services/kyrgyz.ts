@@ -131,7 +131,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ЖАРАЙТ',
           reject: 'Кандай өзгөрүүлөр болгонун билип алыңыз.',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

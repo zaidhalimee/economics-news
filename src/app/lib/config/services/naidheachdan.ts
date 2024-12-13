@@ -129,7 +129,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'Gabh ris',
           reject: 'Faigh a-mach dè tha air atharrachadh',
-          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

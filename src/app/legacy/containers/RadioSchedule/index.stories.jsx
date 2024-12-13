@@ -37,6 +37,7 @@ const Component = (_, { service }) => (
         pathname={`/${service}`}
       >
         <RadioScheduleContainer
+          toggleName="frontPageRadioSchedule"
           radioScheduleEndpointOverride={getLocalRadioScheduleEndpoint({
             service,
             radioService: radioServices[service],
