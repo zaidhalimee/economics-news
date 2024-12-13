@@ -1,8 +1,8 @@
 import { Agent } from 'undici';
 import recommendationsJson from '#data/mundo/recommendations/index.json';
+import * as fetchPageData from '#app/routes/utils/fetchPageData';
 import hasArticleRecommendations from './hasArticleRecommendations';
 import getOnwardsPageData from './getOnwardsData';
-import * as fetchPageData from '../../utils/fetchPageData';
 
 jest.mock('./hasArticleRecommendations', () => jest.fn());
 
