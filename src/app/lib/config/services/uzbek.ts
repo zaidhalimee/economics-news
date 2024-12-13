@@ -146,7 +146,7 @@ const defaultCyrillicConfig = {
         },
         accept: 'Маъқул',
         reject: 'Нималар ўзгарди?',
-        rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+        rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
       },
       cookie: {
         amp: {
@@ -481,7 +481,7 @@ export const service: UzbekConfig = {
           },
           accept: 'Ma’qul',
           reject: 'Nimalar o‘zgardi?',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
