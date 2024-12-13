@@ -4,6 +4,7 @@ import Heading from '#app/components/Heading';
 import Text from '#app/components/Text';
 
 import MaskedImage from '#app/components/MaskedImage';
+import MediaLoader from '#app/components/MediaLoader';
 import LiveLabelHeader from './LiveLabelHeader';
 import styles from './styles';
 
@@ -14,6 +15,7 @@ const Header = ({
   imageUrl,
   imageUrlTemplate,
   imageWidth,
+  mediaCollections,
 }: {
   showLiveLabel: boolean;
   title: string;
@@ -21,6 +23,7 @@ const Header = ({
   imageUrl?: string;
   imageUrlTemplate?: string;
   imageWidth?: number;
+  mediaCollections: object[];
 }) => {
   const isHeaderImage = !!imageUrl && !!imageUrlTemplate && !!imageWidth;
 
@@ -66,6 +69,7 @@ const Header = ({
             ) : (
               Title
             )}
+            <MediaLoader blocks={mediaCollections} />
           </Heading>
           {description && (
             <Text

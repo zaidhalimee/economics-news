@@ -240,6 +240,8 @@ export type LegacyMediaBlock = {
   };
 };
 
+export type MediaCollection = object;
+
 export type MediaBlock =
   | AresMediaBlock
   | ClipMediaBlock
@@ -248,7 +250,8 @@ export type MediaBlock =
   | OnDemandTVBlock
   | OnDemandAudioBlock
   | CaptionBlock
-  | MediaOverrides;
+  | MediaOverrides
+  | MediaCollection;
 
 export type BuildConfigProps = {
   id: string;

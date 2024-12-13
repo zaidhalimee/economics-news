@@ -72,6 +72,7 @@ const LivePage = ({ pageData }: ComponentProps) => {
     metadata: { atiAnalytics = undefined } = {},
     headerImage,
     promoImage,
+    mediaCollections,
   } = pageData;
 
   const {
@@ -151,6 +152,7 @@ const LivePage = ({ pageData }: ComponentProps) => {
           imageUrl={imageUrl}
           imageUrlTemplate={imageUrlTemplate}
           imageWidth={imageWidth}
+          mediaCollections={mediaCollections}
         />
         <div css={styles.outerGrid}>
           <div css={styles.firstSection}>
