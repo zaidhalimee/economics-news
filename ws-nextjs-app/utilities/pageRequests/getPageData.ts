@@ -20,13 +20,17 @@ const getPageData = async ({
   pageType,
 }: PageDataParams) => {
   const pathname = `${id}${rendererEnv ? `?renderer_env=${rendererEnv}` : ''}`;
+  const url = new URL(pathname, 'https://bbc.com');
+  const rendererEnvVal = url.searchParams.get('renderer_env');
+  const parsedPathName = `${id}${rendererEnvVal ? `?renderer_env=${rendererEnvVal}` : ''}`;
+
   let message;
   let status;
   let json;
 
   try {
     ({ status, json } = await fetchDataFromBFF({
-      pathname,
+      pathname: parsedPathName,
       pageType,
       service,
       variant,
@@ -46,7 +50,7 @@ const getPageData = async ({
     logger.error(BFF_FETCH_ERROR, {
       service,
       status,
-      pathname,
+      pathname: parsedPathName,
       message,
     });
   }

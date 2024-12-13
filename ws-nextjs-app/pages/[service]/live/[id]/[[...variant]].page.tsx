@@ -22,6 +22,7 @@ const LivePageLayout = dynamic(() => import('./LivePageLayout'));
 const logger = nodeLogger(__filename);
 
 export const getServerSideProps: GetServerSideProps = async context => {
+  console.log(context);
   context.res.setHeader(
     'Cache-Control',
     'public, stale-if-error=300, stale-while-revalidate=120, max-age=30',
@@ -41,6 +42,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     variant,
     renderer_env: rendererEnv,
     page = '1',
+    testest,
   } = context.query as PageDataParams;
 
   const { headers: reqHeaders } = context.req;
