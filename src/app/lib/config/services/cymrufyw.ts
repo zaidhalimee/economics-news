@@ -128,7 +128,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'Iawn',
           reject: 'Beth sydd wedi newid',
-          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/your-data-matters/cy',
+          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/cy',
         },
         cookie: {
           amp: {

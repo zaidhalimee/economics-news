@@ -153,7 +153,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ကောင်းပါပြီ။',
           reject: 'ဘာတွေပြောင်းလဲသွားသလဲ ကြည့်ရန်',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
