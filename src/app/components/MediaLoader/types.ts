@@ -239,6 +239,23 @@ export type LegacyMediaBlock = {
   };
 };
 
+export type MediaCollection = {
+  type: 'liveMedia';
+  model: {
+    synopses: {
+      short: string;
+    };
+    version: {
+      vpid?: string;
+      serviceID?: string;
+      duration: string;
+    };
+    imageUrlTemplate: string;
+    title: string;
+    live: boolean;
+  };
+};
+
 export type MediaBlock =
   | AresMediaBlock
   | ClipMediaBlock
@@ -247,7 +264,8 @@ export type MediaBlock =
   | OnDemandTVBlock
   | OnDemandAudioBlock
   | CaptionBlock
-  | MediaOverrides;
+  | MediaOverrides
+  | MediaCollection;
 
 export type BuildConfigProps = {
   id: string;

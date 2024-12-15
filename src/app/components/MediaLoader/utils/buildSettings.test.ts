@@ -2,6 +2,7 @@ import { PageTypes, Services } from '#app/models/types/global';
 import { data as hindiTvProgramme } from '#data/hindi/bbc_hindi_tv/tv_programmes/w13xttlw.json';
 import {
   AUDIO_PAGE,
+  LIVE_PAGE,
   LIVE_RADIO_PAGE,
   TV_PAGE,
 } from '#app/routes/utils/pageTypes';
@@ -993,6 +994,136 @@ describe('buildSettings', () => {
           },
         },
         mediaType: 'audio',
+        showAds: false,
+      });
+    });
+  });
+
+  describe('liveMedia', () => {
+    const mundoMediaBaseSettings = {
+      counterName: 'mundo.bbc_mundo_radio.w172zn0kxd65h3g.page',
+      lang: 'es',
+      service: 'mundo' as Services,
+      statsDestination: 'WS_NEWS_LANGUAGES',
+      producer: 'MUNDO',
+      translations: afriqueServiceConfig.default.translations,
+    } as BuildConfigProps;
+
+    it('Should process an on demand audio block into a valid playlist item.', () => {
+      const mediaBlock = {
+        type: 'liveMedia',
+        model: {
+          urn: 'urn:bbc:pips:pid:p0gh4n63',
+          title: 'Non-Stop Cartoons!',
+          type: 'episode',
+          synopses: {
+            short: 'Toon in, kick back and relax to 100% cartoons!',
+            medium:
+              'Toon in, kick back and relax. From laugh out loud to mischief and mayhem. 100% cartoons all day long.',
+            long: 'Toon in, kick back and relax. From laugh out loud to mischief and mayhem. 100% cartoons all day long. Join your favourites Grizzy, Shaun, Taffy, Boy Girl Dog Cat Mouse Cheese, The Deep and those Monster Loving Maniacs.',
+          },
+          mediaType: 'audio_video',
+          imageUrlTemplate:
+            'https://ichef.bbci.co.uk/images/ic/$recipe/p0k31t4d.jpg',
+          masterbrand: {
+            id: 'cbbc',
+            name: 'CBBC',
+            networkName: 'CBBC',
+            type: 'tv',
+            imageUrlTemplate: 'ichef.bbci.co.uk/images/ic/$recipe/p0f8qps2.jpg',
+          },
+          version: {
+            vpid: 'p0gh4n67',
+            duration: 'PT24H',
+            availabilityType: 'webcast',
+            versionTypes: [
+              {
+                type: 'Original',
+                name: 'Original version',
+              },
+            ],
+            schedule: {
+              start: '2024-12-15T08:00:21Z',
+              accurateStart: '2024-12-15T08:00:21Z',
+              end: '2024-12-15T13:00:21Z',
+            },
+            serviceId: null,
+            authToken: null,
+            status: 'LIVE',
+            warnings: null,
+          },
+          leadMedia: true,
+          live: true,
+        },
+      };
+
+      const result = buildSettings({
+        ...mundoMediaBaseSettings,
+        blocks: [mediaBlock] as MediaBlock[],
+        pageType: LIVE_PAGE,
+      });
+
+      expect(result).toStrictEqual({
+        mediaType: 'video',
+        placeholderConfig: {
+          mediaInfo: {
+            datetime: 'PT24H',
+            duration: '24:00:00',
+            durationSpoken: 'Durée 24,00,00',
+            guidanceMessage: undefined,
+            title: 'Non-Stop Cartoons!',
+            type: 'video',
+          },
+          placeholderSrc:
+            'https://ichef.bbci.co.uk/images/ic/$recipe/p0k31t4d.jpg',
+          placeholderSrcset:
+            'https://ichef.bbci.co.uk/images/ic/240xn/p0k31t4d.jpg.webp 240w, https://ichef.bbci.co.uk/images/ic/320xn/p0k31t4d.jpg.webp 320w, https://ichef.bbci.co.uk/images/ic/480xn/p0k31t4d.jpg.webp 480w, https://ichef.bbci.co.uk/images/ic/624xn/p0k31t4d.jpg.webp 624w, https://ichef.bbci.co.uk/images/ic/800xn/p0k31t4d.jpg.webp 800w',
+          translatedNoJSMessage:
+            'Pour regarder ce contenu, veuillez activer JavaScript ou essayer un autre navigateur.',
+        },
+        playerConfig: {
+          appName: 'news-mundo',
+          appType: 'responsive',
+          autoplay: true,
+          counterName: 'mundo.bbc_mundo_radio.w172zn0kxd65h3g.page',
+          enableToucan: true,
+          playlistObject: {
+            holdingImageURL:
+              'https://ichef.bbci.co.uk/images/ic/$recipe/p0k31t4d.jpg',
+            items: [
+              {
+                duration: 86400,
+                kind: 'programme',
+                live: true,
+                versionID: 'p0gh4n67',
+              },
+            ],
+            summary: 'Toon in, kick back and relax to 100% cartoons!',
+            title: 'Non-Stop Cartoons!',
+          },
+          product: 'news',
+          statsObject: {
+            destination: 'WS_NEWS_LANGUAGES',
+            episodePID: undefined,
+            producer: 'MUNDO',
+          },
+          ui: {
+            controls: {
+              enabled: true,
+            },
+            fullscreen: {
+              enabled: true,
+            },
+            locale: {
+              lang: 'es',
+            },
+            skin: 'classic',
+            subtitles: {
+              defaultOn: true,
+              enabled: true,
+            },
+          },
+        },
         showAds: false,
       });
     });

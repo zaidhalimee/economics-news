@@ -1,0 +1,564 @@
+{
+  "data": {
+    "title": "Test live events page - media player options",
+    "description": "A live events page test to explore options for media player",
+    "language": "es",
+    "headerImage": {
+      "url": "https://ichef.bbci.co.uk/ace/standard/480/cpsdevpb/ed77/test/98a4c130-b304-11ef-acb8-cfaabd95075c.jpg",
+      "urlTemplate": "https://ichef.bbci.co.uk/ace/standard/{width}/cpsdevpb/ed77/test/98a4c130-b304-11ef-acb8-cfaabd95075c.jpg",
+      "height": 549,
+      "width": 976,
+      "altText": "test",
+      "copyright": "BBC"
+    },
+    "promoImage": {
+      "url": "https://ichef.bbci.co.uk/ace/standard/480/cpsdevpb/8edf/test/a9379d10-b304-11ef-acb8-cfaabd95075c.jpg",
+      "urlTemplate": "https://ichef.bbci.co.uk/ace/standard/{width}/cpsdevpb/8edf/test/a9379d10-b304-11ef-acb8-cfaabd95075c.jpg",
+      "height": 549,
+      "width": 976,
+      "altText": "test",
+      "copyright": "BBC"
+    },
+    "home": "mundo",
+    "section": null,
+    "commercialInfo": {
+      "adCategory": null,
+      "adSubCategory": null,
+      "hasAdvertising": true
+    },
+    "sportDataEvent": {
+      "id": null
+    },
+    "eavisEvent": {
+      "id": null
+    },
+    "article": {
+      "id": null
+    },
+    "mediaCollections": [
+      {
+        "type": "liveMedia",
+        "model": {
+          "urn": "urn:bbc:pips:pid:p0gh4n63",
+          "title": "Non-Stop Cartoons!",
+          "type": "episode",
+          "synopses": {
+            "short": "Toon in, kick back and relax to 100% cartoons!",
+            "medium": "Toon in, kick back and relax. From laugh out loud to mischief and mayhem. 100% cartoons all day long.",
+            "long": "Toon in, kick back and relax. From laugh out loud to mischief and mayhem. 100% cartoons all day long. Join your favourites Grizzy, Shaun, Taffy, Boy Girl Dog Cat Mouse Cheese, The Deep and those Monster Loving Maniacs."
+          },
+          "mediaType": "audio_video",
+          "imageUrlTemplate": "https://ichef.bbci.co.uk/images/ic/$recipe/p0k31t4d.jpg",
+          "masterbrand": {
+            "id": "cbbc",
+            "name": "CBBC",
+            "networkName": "CBBC",
+            "type": "tv",
+            "imageUrlTemplate": "ichef.bbci.co.uk/images/ic/$recipe/p0f8qps2.jpg"
+          },
+          "version": {
+            "vpid": "p0gh4n67",
+            "duration": "PT24H",
+            "availabilityType": "webcast",
+            "versionTypes": [
+              {
+                "type": "Original",
+                "name": "Original version"
+              }
+            ],
+            "schedule": {
+              "start": "2024-12-15T08:00:21Z",
+              "accurateStart": "2024-12-15T08:00:21Z",
+              "end": "2024-12-15T13:00:21Z"
+            },
+            "serviceId": null,
+            "authToken": null,
+            "status": "LIVE",
+            "warnings": null
+          },
+          "leadMedia": true,
+          "live": true
+        }
+      }
+    ],
+    "keyHighlight": {
+      "id": null
+    },
+    "electionBanner": {
+      "id": null
+    },
+    "supportingLinks": {
+      "id": null
+    },
+    "riddle": {
+      "id": null
+    },
+    "seo": {
+      "seoTitle": "Test live events page - media player options",
+      "seoDescription": "A live events page test to explore options for media player",
+      "datePublished": "2024-12-05T11:26:00.000Z",
+      "dateModified": "2024-12-05T12:23:32.000Z"
+    },
+    "endDateTime": "2025-12-06T11:25:00.000Z",
+    "startDateTime": "2024-12-05T11:26:00.000Z",
+    "firstPublishedDateTime": "2024-12-05T11:51:25.301Z",
+    "type": "live-coverage",
+    "dataSource": "TIPO",
+    "isLive": true,
+    "summaryPoints": {
+      "id": "urn:bbc:optimo:asset:c12x81qd94vo",
+      "content": {
+        "model": {
+          "blocks": [
+            {
+              "id": "a09dfbf3",
+              "type": "text",
+              "model": {
+                "blocks": [
+                  {
+                    "id": "156f77f4",
+                    "type": "unorderedList",
+                    "model": {
+                      "blocks": [
+                        {
+                          "id": "208a0c09",
+                          "type": "listItem",
+                          "model": {
+                            "blocks": [
+                              {
+                                "id": "e14c7e14",
+                                "type": "paragraph",
+                                "model": {
+                                  "text": "Brian Thompson, director ejecutivo de United Health Care (UHC), la mayor aseguradora de salud privada de Estados Unidos, fue asesinado este miércoles en Nueva York por un hombre enmascarado",
+                                  "blocks": [
+                                    {
+                                      "id": "b9344877",
+                                      "type": "fragment",
+                                      "model": {
+                                        "text": "Brian Thompson, director ejecutivo de United Health Care (UHC), la mayor aseguradora de salud privada de Estados Unidos, fue asesinado este miércoles en Nueva York por un hombre enmascarado",
+                                        "attributes": []
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "id": "d506cade",
+                          "type": "listItem",
+                          "model": {
+                            "blocks": [
+                              {
+                                "id": "d655c335",
+                                "type": "paragraph",
+                                "model": {
+                                  "text": "En lo que los investigadores describieron como un \"ataque descarado y selectivo\".",
+                                  "blocks": [
+                                    {
+                                      "id": "599047c2",
+                                      "type": "fragment",
+                                      "model": {
+                                        "text": "En lo que los investigadores describieron como un \"ataque descarado y selectivo\".",
+                                        "attributes": []
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "id": "95f804a7",
+                          "type": "listItem",
+                          "model": {
+                            "blocks": [
+                              {
+                                "id": "b1ac0d66",
+                                "type": "paragraph",
+                                "model": {
+                                  "text": "Agentes de policía de la ciudad de Nueva York están utilizando tecnología de reconocimiento facial y un teléfono celular desechado para identificar al hombre que mató a Thompson.",
+                                  "blocks": [
+                                    {
+                                      "id": "31f4226f",
+                                      "type": "fragment",
+                                      "model": {
+                                        "text": "Agentes de policía de la ciudad de Nueva York están utilizando tecnología de reconocimiento facial y un teléfono celular desechado para identificar al hombre que mató a Thompson.",
+                                        "attributes": []
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "liveTextStream": {
+      "id": "52C95343A578423ABFA312004999027F",
+      "contributors": null,
+      "content": {
+        "data": {
+          "results": [
+            {
+              "typeCode": null,
+              "header": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "15d0ad1b",
+                      "type": "headline",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "1784d1a7",
+                            "type": "text",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "80fc1362",
+                                  "type": "paragraph",
+                                  "model": {
+                                    "text": "Asesinan a tiros en Nueva York al director ejecutivo de la principal aseguradora privada de salud de EE.UU.",
+                                    "blocks": [
+                                      {
+                                        "id": "6f27830d",
+                                        "type": "fragment",
+                                        "model": {
+                                          "text": "Asesinan a tiros en Nueva York al director ejecutivo de la principal aseguradora privada de salud de EE.UU.",
+                                          "attributes": []
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "content": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "052abcff",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Brian Thompson, director ejecutivo de United Health Care (UHC), la mayor aseguradora de salud privada de Estados Unidos, fue asesinado este miércoles en Nueva York por un hombre enmascarado, en lo que los investigadores describieron como un \"ataque descarado y selectivo\".",
+                        "blocks": [
+                          {
+                            "id": "75c362b6",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Brian Thompson, director ejecutivo de United Health Care (UHC), la mayor aseguradora de salud privada de Estados Unidos, fue asesinado este miércoles en Nueva York por un hombre enmascarado, en lo que los investigadores describieron como un \"ataque descarado y selectivo\".",
+                              "attributes": ["bold"]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "1739243b",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Agentes de policía de la ciudad de Nueva York están utilizando tecnología de reconocimiento facial y un teléfono celular desechado para identificar al hombre que mató a Thompson.",
+                        "blocks": [
+                          {
+                            "id": "f8abe547",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Agentes de policía de la ciudad de Nueva York están utilizando tecnología de reconocimiento facial y un teléfono celular desechado para identificar al hombre que mató a Thompson.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "06d861ba",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "El ejecutivo, de 50 años de edad, fue atacado a disparos alrededor de las 06:45 hora local (11:45 GMT) en la entrada de un hotel en Manhattan, donde tenía previsto hablar en una conferencia de inversores más tarde ese mismo día.",
+                        "blocks": [
+                          {
+                            "id": "c02208f9",
+                            "type": "fragment",
+                            "model": {
+                              "text": "El ejecutivo, de 50 años de edad, fue atacado a disparos alrededor de las 06:45 hora local (11:45 GMT) en la entrada de un hotel en Manhattan, donde tenía previsto hablar en una conferencia de inversores más tarde ese mismo día.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "628393a2",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Vistiendo un suéter con capucha, el atacante llegó al lugar caminando unos cinco minutos antes que Thompson. Cuando el ejecutivo llegó, se le acercó y le disparó con una pistola. Después desatascó el arma e hizo un segundo disparo.",
+                        "blocks": [
+                          {
+                            "id": "7ab33a4c",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Vistiendo un suéter con capucha, el atacante llegó al lugar caminando unos cinco minutos antes que Thompson. Cuando el ejecutivo llegó, ",
+                              "attributes": []
+                            }
+                          },
+                          {
+                            "id": "54334400",
+                            "type": "fragment",
+                            "model": {
+                              "text": "se le acercó y le disparó con una pistola",
+                              "attributes": ["bold"]
+                            }
+                          },
+                          {
+                            "id": "f4b2f369",
+                            "type": "fragment",
+                            "model": {
+                              "text": ". Después desatascó el arma e hizo ",
+                              "attributes": []
+                            }
+                          },
+                          {
+                            "id": "38d99793",
+                            "type": "fragment",
+                            "model": {
+                              "text": "un segundo disparo",
+                              "attributes": ["bold"]
+                            }
+                          },
+                          {
+                            "id": "b44ea743",
+                            "type": "fragment",
+                            "model": {
+                              "text": ".",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "link": null,
+              "urn": "asset:4b5c66af-7b36-4e25-a49c-ce975df249f5",
+              "type": "POST",
+              "options": {
+                "isBreakingNews": false
+              },
+              "dates": {
+                "firstPublished": "2024-12-05T12:23:32.000Z",
+                "lastPublished": "2024-12-05T12:23:32.000Z",
+                "time": null,
+                "curated": "2024-12-05T12:23:33.050Z"
+              },
+              "titles": [
+                {
+                  "title": null,
+                  "source": "primary"
+                }
+              ],
+              "descriptions": [
+                {
+                  "text": null,
+                  "source": "summary"
+                }
+              ],
+              "images": [
+                {
+                  "originalUrl": null,
+                  "altText": null,
+                  "copyright": null,
+                  "urlTemplate": null,
+                  "url": null
+                }
+              ]
+            }
+          ],
+          "page": {
+            "index": 1,
+            "total": 1
+          }
+        }
+      }
+    },
+    "metadata": {
+      "atiAnalytics": {
+        "contentId": "urn:bbc:tipo:topic:c7dkx155e626t",
+        "contentType": "live-coverage",
+        "pageIdentifier": "live_coverage.c7dkx155e626t.page",
+        "pageTitle": "Test live events page - media player options",
+        "timePublished": "2024-12-05T11:26:00.000Z",
+        "timeUpdated": "2024-12-05T12:23:32.000Z"
+      }
+    }
+  },
+  "contentType": "application/json; charset=utf-8",
+  "debug": {
+    "context": {
+      "runtimeContext": {
+        "moduleEnvironment": "local",
+        "apiPort": 3210,
+        "manifestFound": false,
+        "moduleVersion": "1.0.0",
+        "moduleName": "stub-fabl-module",
+        "personalisedRequest": "false",
+        "environment": "local",
+        "runtimeVersion": "5.0.0",
+        "nodeJSVersion": "v18.17.1"
+      },
+      "systemContext": {
+        "debug": "1",
+        "sandboxEnabled": true,
+        "service-env": "test",
+        "call-stack": "simorgh-bff"
+      }
+    },
+    "moduleRequests": [
+      {
+        "response": {
+          "headers": {
+            "access-control-allow-origin": "*",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Sun, 15 Dec 2024 11:08:31 GMT",
+            "connection": "close",
+            "content-length": "4690"
+          },
+          "responseCode": 200,
+          "responseTime": 505
+        },
+        "request": {
+          "module": "live-experience",
+          "params": {
+            "id": "c7dkx155e626t"
+          },
+          "url": "http://localhost:3210/module/live-experience?id=c7dkx155e626t"
+        }
+      },
+      {
+        "response": {
+          "headers": {
+            "access-control-allow-origin": "*",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Sun, 15 Dec 2024 11:08:31 GMT",
+            "connection": "close",
+            "content-length": "5586"
+          },
+          "responseCode": 200,
+          "responseTime": 770
+        },
+        "request": {
+          "module": "stream",
+          "params": {
+            "about": "52C95343A578423ABFA312004999027F",
+            "liveTextStreamId": "52C95343A578423ABFA312004999027F",
+            "page": 1,
+            "pageSize": 20,
+            "type": "curated"
+          },
+          "url": "http://localhost:3210/module/stream?about=52C95343A578423ABFA312004999027F&liveTextStreamId=52C95343A578423ABFA312004999027F&page=1&pageSize=20&type=curated"
+        }
+      },
+      {
+        "response": {
+          "headers": {
+            "access-control-allow-origin": "*",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Sun, 15 Dec 2024 11:08:32 GMT",
+            "connection": "close",
+            "content-length": "5581"
+          },
+          "responseCode": 200,
+          "responseTime": 768
+        },
+        "request": {
+          "module": "stream",
+          "params": {
+            "about": "52C95343A578423ABFA312004999027F",
+            "liveTextStreamId": "52C95343A578423ABFA312004999027F",
+            "page": 1,
+            "pageSize": 20,
+            "type": "curated"
+          },
+          "url": "http://localhost:3210/module/stream?about=52C95343A578423ABFA312004999027F&liveTextStreamId=52C95343A578423ABFA312004999027F&page=1&pageSize=20&type=curated"
+        }
+      },
+      {
+        "response": {
+          "headers": {
+            "access-control-allow-origin": "*",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Sun, 15 Dec 2024 11:08:33 GMT",
+            "connection": "close",
+            "content-length": "4139"
+          },
+          "responseCode": 200,
+          "responseTime": 878
+        },
+        "request": {
+          "module": "live-media-collection",
+          "params": {
+            "urn": "urn:bbc:tipo:list:105b7867-4ce7-4682-9fdb-c9c97c8bafdb"
+          },
+          "url": "http://localhost:3210/module/live-media-collection?urn=urn%3Abbc%3Atipo%3Alist%3A105b7867-4ce7-4682-9fdb-c9c97c8bafdb"
+        }
+      }
+    ],
+    "serviceRequests": [
+      {
+        "response": {
+          "headers": {
+            "date": "Sun, 15 Dec 2024 11:08:31 GMT",
+            "content-type": "application/json;charset=utf-8",
+            "transfer-encoding": "chunked",
+            "connection": "keep-alive",
+            "personalised": "false",
+            "vary": "accept-encoding, ctx-service-env",
+            "etag": "\"f2ec2a11498bd35ec140c8333522092dc68407b9\"",
+            "last-modified": "Thu, 05 Dec 2024 12:26:31 GMT",
+            "cache-control": "no-transform,max-age=60",
+            "x-ares-tracking-id": "eccda0d9-21f2-4066-afe4-20bc15342f21",
+            "expires": "Sun, 15 Dec 2024 10:59:03 GMT",
+            "content-encoding": "gzip",
+            "x-shared-cache": "STALE",
+            "x-local-cache": "MISS"
+          },
+          "responseCode": 200,
+          "responseTime": 159
+        },
+        "request": {
+          "service": "ares",
+          "path": "/article/c12x81qd94vo",
+          "timeout": 4000,
+          "url": "https://service-gateway.fabl.api.bbci.co.uk/service/ares/path/%2Farticle%2Fc12x81qd94vo"
+        }
+      }
+    ],
+    "privateContext": {},
+    "params": {
+      "id": "c7dkx155e626t",
+      "service": "mundo",
+      "pageType": "live"
+    },
+    "sandboxViolations": [],
+    "nonFatalErrors": [{}]
+  }
+}
