@@ -2,11 +2,15 @@ import { css, keyframes, Theme } from '@emotion/react';
 import pixelsToRem from '../../utilities/pixelsToRem';
 
 const multicolour = keyframes({
-  '0%': { color: '#00FFFF', backgroundColor: '#FFFF00' },
-  '25%': { color: '#39FF14', backgroundColor: '#FF1493' },
-  '50%': { color: '#FFFF00', backgroundColor: '#00FFFF' },
-  '75%': { color: '#FF1493', backgroundColor: '#39FF14' },
-  '100%': { color: '#00FFFF', backgroundColor: '#FFFF00' },
+  '0%': { backgroundColor: '#00FFFF' },
+  '25%': { backgroundColor: '#39FF14' },
+  '50%': { backgroundColor: '#FFFF00' },
+  '75%': { backgroundColor: '#FF1493' },
+});
+
+const changes = keyframes({
+  '0%': { backgroundPosition: '0% 50%' },
+  '100%': { backgroundPosition: '800% 50%' },
 });
 
 const shrinkGrowSpin = keyframes({
@@ -28,16 +32,19 @@ const shrinkGrowSpin = keyframes({
 });
 
 export default {
-  outerContainer: ({ palette, mq, spacings }: Theme) =>
+  outerContainer: ({ mq, spacings }: Theme) =>
     css({
       margin: `${spacings.FULL}rem`,
-      backgroundColor: `${palette.WHITE}`,
+      background:
+        'linear-gradient(90deg, #00FFFF, #39FF14, #E0E722, #FF69B4, #FF0000, #E0E722, #00FFFF, #00FFFF)',
+
+      'background-size': '800% 800%',
       border: `${pixelsToRem(25)}rem solid red`,
       padding: `${pixelsToRem(25)}rem`,
       [mq.GROUP_2_MIN_WIDTH]: {
         margin: `${spacings.DOUBLE}rem`,
       },
-      animation: `${multicolour} 0.1s linear infinite`,
+      animation: `${changes} 2s linear infinite`,
     }),
   container: ({ spacings, mq }: Theme) =>
     css({

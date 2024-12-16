@@ -66,6 +66,7 @@ const EasyReadCTA = ({ easyVersionLink, fullVersionLink }: Props) => {
     toEasySite,
     easySite,
     standardSite,
+    aIDisclaimer,
   } = easyReadSite;
   const id = 'LiteSiteCta';
 
@@ -87,6 +88,11 @@ const EasyReadCTA = ({ easyVersionLink, fullVersionLink }: Props) => {
         <Paragraph size="brevier" css={styles.message}>
           {isEasyVersion ? easyOnboardingMessage : standardOnboardingMessage}
         </Paragraph>
+        {isEasyVersion && (
+          <Paragraph size="brevier" css={styles.message}>
+            {aIDisclaimer}
+          </Paragraph>
+        )}
         <Paragraph data-e2e="to-main-site">
           <CtaLink
             fontVariant="sansBold"
