@@ -23,7 +23,7 @@ const Header = ({
   imageUrl?: string;
   imageUrlTemplate?: string;
   imageWidth?: number;
-  mediaCollections?: MediaCollection[];
+  mediaCollections?: MediaCollection[] | null;
 }) => {
   const isHeaderImage = !!imageUrl && !!imageUrlTemplate && !!imageWidth;
 
