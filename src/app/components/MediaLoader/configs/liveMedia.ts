@@ -44,8 +44,8 @@ export default ({
         holdingImageURL,
         items: [
           {
-            // versionID: video?.vpid,
-            serviceID: 'bbc_arabic_tv',
+            versionID: video?.vpid,
+            // serviceID: 'bbc_arabic_tv',
             kind: 'programme',
             duration: rawDuration,
             live,
