@@ -65,6 +65,8 @@ export type OptimoBylineBlock = {
 };
 
 export type ArticleMetadata = {
+  easyVersionLink?: string;
+  fullVersionLink?: string;
   adCampaignKeyword: string;
   allowAdvertising: boolean;
   analyticsLabels?: {

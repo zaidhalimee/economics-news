@@ -26,6 +26,15 @@ export interface Translations {
     informationPageLink: string;
     dataSaving: string;
   };
+  easyReadSite?: {
+    easyOnboardingMessage: string;
+    standardOnboardingMessage: string;
+    toStandardSite: string;
+    toEasySite: string;
+    informationPageLink: string;
+    easySite: string;
+    standardSite: string;
+  };
   mediaAssetPage: {
     mediaPlayer: string;
     audioPlayer: string;

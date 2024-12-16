@@ -43,6 +43,8 @@ import JumpTo, { JumpToProps } from '#app/components/JumpTo';
 import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
 import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
 import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
+import InlineLink from '#app/components/InlineLink';
+import EasyReadCTA from '#app/components/EasyReadCTA';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
@@ -241,6 +243,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       jumpToVariation === 'on' ? (
         <JumpTo {...props} showRelatedContentLink={showRelatedContent} />
       ) : null,
+    easyStandardCta: EasyReadCTA,
   };
 
   const visuallyHiddenBlock = {
@@ -326,6 +329,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
         <AdContainer slotType="leaderboard" adcampaign={adcampaign} />
       )}
       <ElectionBanner aboutTags={aboutTags} taggings={taggings} />
+
       <div css={styles.grid}>
         <div css={!isPGL ? styles.primaryColumn : styles.pglColumn}>
           <main css={styles.mainContent} role="main">
