@@ -49,6 +49,13 @@ jest.mock('../../components/ChartbeatAnalytics', () => {
   return ChartbeatAnalytics;
 });
 jest.mock('../../components/ATIAnalytics');
+jest.mock('#app/legacy/containers/OptimizelyArticleCompleteTracking');
+jest.mock('#app/legacy/containers/OptimizelyPageViewTracking');
+
+jest.mock('#app/hooks/useOptimizelyVariation', () => ({
+  __esModule: true,
+  default: jest.fn(),
+}));
 
 const input = {
   bbcOrigin: 'https://www.test.bbc.co.uk',
@@ -920,7 +927,7 @@ describe('Article Page', () => {
       ${'news'}  | ${validNewsAsset}
       ${'sport'} | ${validSportAsset}
     `(
-      'should render page with experiment-top-stories blocks only on specific $service assets that are long enough',
+      'should render page with experiment-top-stories blocks on $service assets that are long enough',
       ({ service, id }) => {
         const { queryByTestId } = renderAmpPage({
           service,
@@ -940,11 +947,10 @@ describe('Article Page', () => {
     );
 
     it.each`
-      service     | id                | isShortArticle | testDescription
-      ${'news'}   | ${'c1231qzyv8po'} | ${false}       | ${'news assets not specified'}
-      ${'sport'}  | ${'c1231qzyv8po'} | ${false}       | ${'sport assets not specified'}
-      ${'pidgin'} | ${'c6v11qzyv8po'} | ${false}       | ${`services which are not 'news' or 'sport'`}
-      ${'news'}   | ${'c6v11qzyv8po'} | ${true}        | ${'valid asset is too short'}
+      service     | id                 | isShortArticle | testDescription
+      ${'pidgin'} | ${validNewsAsset}  | ${false}       | ${`services which are not 'news' or 'sport'`}
+      ${'news'}   | ${validNewsAsset}  | ${true}        | ${`'news' assets that are too short`}
+      ${'sport'}  | ${validSportAsset} | ${true}        | ${`'sport' assets that are too short`}
     `(
       'should render page without experiment-top-stories blocks on $testDescription',
       ({ service, id, isShortArticle }) => {
@@ -966,7 +972,7 @@ describe('Article Page', () => {
       },
     );
 
-    it('should add ampExperimentName to atiAnalytics on valid services and assets', async () => {
+    it('should add ampExperimentName to ATIAnalytics on valid services', async () => {
       (ATIAnalytics as jest.Mock).mockImplementation(() => <div />);
       const service = 'news';
       const id = validNewsAsset;

@@ -5,6 +5,7 @@ import {
 } from '#app/components/react-testing-library-with-providers';
 import { Helmet } from 'react-helmet';
 import useLocation from '#app/hooks/useLocation';
+import { TV_PAGE } from '#app/routes/utils/pageTypes';
 import MediaPlayer from '.';
 import {
   aresMediaBlocks,
@@ -229,14 +230,13 @@ describe('MediaLoader', () => {
           <MediaPlayer blocks={onDemandTvBlocks as MediaBlock[]} embedded />,
           {
             service: 'hindi',
-            pageData: {
-              id: 'urn:bbc:ares:ws_media:brand:bbc_hindi_tv/w13xttlw',
+            atiData: {
               language: 'hi',
               pageTitle: 'दुनिया - BBC News हिंदी',
               pageIdentifier: 'hindi.bbc_hindi_tv.tv_programmes.w13xttlw.page',
               contentType: 'player-episode',
             },
-            pageType: 'media',
+            pageType: TV_PAGE,
             pathname: '/hindi/bbc_hindi_tv/tv_programmes/w13xttlw',
             toggles: { eventTracking: { enabled: true } },
           },

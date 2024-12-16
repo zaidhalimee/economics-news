@@ -8,13 +8,14 @@ import TopStoriesSection from '../PagePromoSections/TopStoriesSection';
 import styles from './index.styles';
 
 export const experimentName = 'topStoriesExperiment';
+// Traffic allocation set at 40%
 export const experimentTopStoriesConfig = {
   [experimentName]: {
     variants: {
-      control: 25,
-      show_at_quarter: 25,
-      show_at_half: 25,
-      show_at_three_quarters: 25,
+      control: 10,
+      show_at_quarter: 10,
+      show_at_half: 10,
+      show_at_three_quarters: 10,
     },
   },
 };
@@ -23,53 +24,21 @@ type VariantNames = 'Quarter' | 'Half' | 'ThreeQuarters';
 type Positions = 'articleBody' | 'secondaryColumn';
 type TrackingEventType = 'view' | 'click';
 
-const ARTICLE_LENGTH_THRESHOLD = 10;
+const ARTICLE_LENGTH_THRESHOLD = 14;
 const enableExperimentTopStories = ({
   isAmp,
   service,
-  id,
   blocksLength,
 }: {
   isAmp: boolean;
   service: string;
-  id: string | null;
   blocksLength: number;
 }) => {
-  if (!isAmp || !service || !id || blocksLength < ARTICLE_LENGTH_THRESHOLD) {
+  if (!isAmp || !service || blocksLength < ARTICLE_LENGTH_THRESHOLD) {
     return false;
   }
-
-  const newsAsset = 'cz7xywn940ro';
-  const newsCPSAsset = 'news/world-europe-60506682';
-  const newsShortAsset = 'cd4117egk3go';
-  const newsOneColumnAsset = 'c99vz4kz5vzo';
-  const newsTestAsset = 'c6v11qzyv8po';
-  const newsTestBreakingNewsAsset = 'cgx1znpjjx7o';
-  const sportAsset = 'c2vwq901e93o';
-  const sportShortAsset = 'cpgw0xjmpd3o';
-  const sportOneColumnAsset = 'c4ngy9xjpzro';
-  const cymrufywAsset = 'ckg080e0d1eo';
-
-  const experimentAssets = [
-    newsAsset,
-    newsCPSAsset,
-    newsShortAsset,
-    newsOneColumnAsset,
-    newsTestAsset,
-    newsTestBreakingNewsAsset,
-    sportAsset,
-    sportShortAsset,
-    sportOneColumnAsset,
-    cymrufywAsset,
-  ];
   const experimentServices = ['news', 'sport'];
-
-  return (
-    isAmp &&
-    id &&
-    experimentServices.includes(service) &&
-    experimentAssets.includes(id)
-  );
+  return isAmp && experimentServices.includes(service);
 };
 
 const insertBlockAtPosition = (
@@ -123,18 +92,15 @@ export const getExperimentTopStories = ({
   topStoriesContent,
   isAmp,
   service,
-  id,
 }: {
   blocks: OptimoBlock[];
   topStoriesContent: TopStoryItem[] | undefined;
   isAmp: boolean;
   service: string;
-  id: string | null;
 }) => {
   const shouldEnableExperimentTopStories = enableExperimentTopStories({
     isAmp,
     service,
-    id,
     blocksLength: blocks.length,
   });
 

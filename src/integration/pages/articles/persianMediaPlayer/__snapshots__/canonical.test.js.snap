@@ -2,7 +2,54 @@
 
 exports[`Canonical Articles A11y I can see the skip to content link 1`] = `"مشاهده محتوا"`;
 
-exports[`Canonical Articles Analytics ATI 1`] = `"<img height="1px" width="1px" alt="" style="position:absolute" src="https://logws1363.ati-host.net?s=598343&amp;s2=69&amp;p=persian.articles.cej3lzd5e0go.page&amp;x1=[urn%3Abbc%3Aoptimo%3Aasset%3Acej3lzd5e0go]&amp;x2=[responsive]&amp;x3=[news-persian]&amp;x4=[fa]&amp;x8=[simorgh-nojs]&amp;x9=[%D8%A7%DB%8C%D9%86%2520%D8%AA%D8%B5%D9%88%DB%8C%D8%B1%2520%D8%A2%D8%B2%D9%85%D8%A7%DB%8C%D8%B4%DB%8C%2520%D8%8C%2520%DA%A9%D9%BE%DB%8C%2520%D8%B1%D8%A7%DB%8C%D8%AA%2520%D8%A8%DB%8C%2520%D8%A8%DB%8C%2520%D8%B3%DB%8C%2520%D8%8C%2520%D9%86%D9%82%D8%B4%D9%87%2520%D8%A7%DB%8C%2520%D8%A7%D8%B2%2520%D9%81%D8%B1%D8%A7%D9%86%D8%B3%D9%87%2520%D8%B1%D8%A7%2520%D9%86%D8%B4%D8%A7%D9%86%2520%D9%85%DB%8C%2520%D8%AF%D9%87%D8%AF.%2520%D8%AA%D8%B5%D9%88%DB%8C%D8%B1%2520%D8%AF%D8%B1%2520%D8%B3%D9%87%2520%D8%A8%D9%84%D9%88%DA%A9%2520%D8%A7%D9%88%D9%84%2520%D8%A7%D8%B3%D8%AA%2520%D9%88%2520%D8%A7%DB%8C%D9%86%2520%D8%B9%D9%86%D9%88%D8%A7%D9%86%2520%D8%B1%D8%A7%2520%D8%AF%D8%A7%D8%B1%D8%AF.]&amp;x11=[2019-10-04T10%3A36%3A45.464Z]&amp;x12=[2019-10-04T10%3A36%3A45.464Z]"/>"`;
+exports[`Canonical Articles Analytics ATI tracking pixel excluding src 1`] = `
+<img
+  alt=""
+  height="1px"
+  style="position:absolute"
+  width="1px"
+/>
+`;
+
+exports[`Canonical Articles Analytics ATI tracking pixel hostname 1`] = `"https://logws1363.ati-host.net/"`;
+
+exports[`Canonical Articles Analytics ATI tracking pixel search params 1`] = `
+[
+  {
+    "s": "598343",
+  },
+  {
+    "s2": "69",
+  },
+  {
+    "p": "persian.articles.cej3lzd5e0go.page",
+  },
+  {
+    "x1": "[urn:bbc:optimo:asset:cej3lzd5e0go]",
+  },
+  {
+    "x2": "[responsive]",
+  },
+  {
+    "x3": "[news-persian]",
+  },
+  {
+    "x4": "[fa]",
+  },
+  {
+    "x8": "[simorgh-nojs]",
+  },
+  {
+    "x9": "[این%20تصویر%20آزمایشی%20،%20کپی%20رایت%20بی%20بی%20سی%20،%20نقشه%20ای%20از%20فرانسه%20را%20نشان%20می%20دهد.%20تصویر%20در%20سه%20بلوک%20اول%20است%20و%20این%20عنوان%20را%20دارد.]",
+  },
+  {
+    "x11": "[2019-10-04T10:36:45.464Z]",
+  },
+  {
+    "x12": "[2019-10-04T10:36:45.464Z]",
+  },
+]
+`;
 
 exports[`Canonical Articles Footer Anchors should match text and url 1`] = `
 {
