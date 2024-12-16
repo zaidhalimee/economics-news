@@ -1,8 +1,12 @@
 import { PageTypes, Services } from '#app/models/types/global';
-import { MEDIA_PAGE } from '#app/routes/utils/pageTypes';
-import hindiTvProgramme from '#data/hindi/bbc_hindi_tv/tv_programmes/w13xttlw.json';
+import { data as hindiTvProgramme } from '#data/hindi/bbc_hindi_tv/tv_programmes/w13xttlw.json';
+import {
+  AUDIO_PAGE,
+  LIVE_RADIO_PAGE,
+  TV_PAGE,
+} from '#app/routes/utils/pageTypes';
 import hausaLiveRadio from '#data/hausa/bbc_hausa_radio/liveradio.json';
-import afriqueRadio from '#data/afrique/bbc_afrique_radio/w172xqydyfv659p.json';
+import afriqueRadio from '#data/afrique/bbc_afrique_radio/p030s6dq.json';
 import { service as hausaServiceConfig } from '#app/lib/config/services/hausa';
 import { service as hindiServiceConfig } from '#app/lib/config/services/hindi';
 import { service as afriqueServiceConfig } from '#app/lib/config/services/afrique';
@@ -678,31 +682,11 @@ describe('buildSettings', () => {
       translations: hindiServiceConfig.default.translations,
     } as BuildConfigProps;
 
-    const hindiTvMediaBlocks = hindiTvProgramme.content.blocks.map(
-      tvMediaBlock => {
-        return {
-          type: 'tv',
-          model: {
-            ...tvMediaBlock,
-          },
-        };
-      },
-    );
-
     it('Should process an On Demand TV block into a valid playlist item.', () => {
-      const hindiTvMediaOverrides = {
-        model: {
-          language: 'hi',
-          pageIdentifierOverride: 'hindi.bbc_hindi_tv.tv.w172zm8920nck2z.page',
-          pageTitleOverride: 'दुनिया',
-        },
-        type: 'mediaOverrides',
-      };
-
       const result = buildSettings({
         ...hindiTvBaseSettings,
-        blocks: [...hindiTvMediaBlocks, hindiTvMediaOverrides] as MediaBlock[],
-        pageType: MEDIA_PAGE,
+        blocks: hindiTvProgramme.mediaBlocks as MediaBlock[],
+        pageType: TV_PAGE,
       });
 
       expect(result).toStrictEqual({
@@ -716,7 +700,7 @@ describe('buildSettings', () => {
           statsObject: {
             destination: 'WS_NEWS_LANGUAGES',
             producer: 'HINDI',
-            episodePID: 'w172zm89sk8n4lc',
+            episodePID: 'w172zm8g4s25k2f',
           },
           ui: {
             skin: 'classic',
@@ -733,10 +717,10 @@ describe('buildSettings', () => {
           playlistObject: {
             title: 'दुनिया',
             holdingImageURL:
-              'https://ichef.bbci.co.uk/images/ic/$recipe/p0jlxsx8.jpg',
+              'https://ichef.bbci.co.uk/images/ic/$recipe/p0jss0kp.jpg',
             items: [
               {
-                versionID: 'w1mskyp9nwh0dvl',
+                versionID: 'w1mskypg138jtbn',
                 kind: 'programme',
                 duration: 1192,
               },
@@ -748,7 +732,8 @@ describe('buildSettings', () => {
         mediaType: 'video',
         placeholderConfig: {
           mediaInfo: {
-            title: 'दुनिया',
+            title:
+              'रूस ने यूक्रेन पर क्या पहली बार किया ताक़तवर इंटरकॉन्टिनेन्टल मिसाइल से हमला?',
             datetime: 'PT19M52S',
             duration: '19:52',
             durationSpoken: 'अवधि 19,52',
@@ -756,55 +741,13 @@ describe('buildSettings', () => {
             guidanceMessage: undefined,
           },
           placeholderSrc:
-            'https://ichef.bbci.co.uk/images/ic/$recipe/p0jlxsx8.jpg',
+            'https://ichef.bbci.co.uk/images/ic/$recipe/p0jss0kp.jpg',
           placeholderSrcset:
-            'https://ichef.bbci.co.uk/images/ic/240xn/p0jlxsx8.jpg.webp 240w, https://ichef.bbci.co.uk/images/ic/320xn/p0jlxsx8.jpg.webp 320w, https://ichef.bbci.co.uk/images/ic/480xn/p0jlxsx8.jpg.webp 480w, https://ichef.bbci.co.uk/images/ic/624xn/p0jlxsx8.jpg.webp 624w, https://ichef.bbci.co.uk/images/ic/800xn/p0jlxsx8.jpg.webp 800w',
+            'https://ichef.bbci.co.uk/images/ic/240xn/p0jss0kp.jpg.webp 240w, https://ichef.bbci.co.uk/images/ic/320xn/p0jss0kp.jpg.webp 320w, https://ichef.bbci.co.uk/images/ic/480xn/p0jss0kp.jpg.webp 480w, https://ichef.bbci.co.uk/images/ic/624xn/p0jss0kp.jpg.webp 624w, https://ichef.bbci.co.uk/images/ic/800xn/p0jss0kp.jpg.webp 800w',
           translatedNoJSMessage: 'प्लेबैक आपके उपकरण पर नहीं हो पा रहा',
         },
         showAds: false,
       });
-    });
-
-    it('Should use the language override to build the On Demand TV SMP configuration', () => {
-      const hindiTvMediaOverrides = {
-        model: {
-          language: 'languageOverride',
-          pageIdentifierOverride: 'hindi.bbc_hindi_tv.tv.w172zm8920nck2z.page',
-          pageTitleOverride: 'दुनिया',
-        },
-        type: 'mediaOverrides',
-      };
-
-      const result = buildSettings({
-        ...hindiTvBaseSettings,
-        blocks: [...hindiTvMediaBlocks, hindiTvMediaOverrides] as MediaBlock[],
-        pageType: MEDIA_PAGE,
-      });
-
-      expect(result?.playerConfig?.ui?.locale).toEqual({
-        lang: 'languageOverride',
-      });
-    });
-
-    it('Should use the page title override to build the On Demand TV SMP configuration', () => {
-      const hindiTvMediaOverrides = {
-        model: {
-          language: 'hi',
-          pageIdentifierOverride: 'hindi.bbc_hindi_tv.tv.w172zm8920nck2z.page',
-          pageTitleOverride: 'pageTitleOverride',
-        },
-        type: 'mediaOverrides',
-      };
-
-      const result = buildSettings({
-        ...hindiTvBaseSettings,
-        blocks: [...hindiTvMediaBlocks, hindiTvMediaOverrides] as MediaBlock[],
-        pageType: MEDIA_PAGE,
-      });
-
-      expect(result?.playerConfig?.playlistObject?.title).toEqual(
-        'pageTitleOverride',
-      );
     });
   });
 
@@ -914,17 +857,10 @@ describe('buildSettings', () => {
     } as BuildConfigProps;
 
     it('Should process a Live Radio block into a valid playlist item.', () => {
-      const hausaLiveRadioBlocks = [
-        {
-          type: 'liveRadio',
-          model: hausaLiveRadio?.content?.blocks,
-        },
-      ];
-
       const result = buildSettings({
         ...hausaLiveRadioBaseSettings,
-        blocks: hausaLiveRadioBlocks as MediaBlock[],
-        pageType: MEDIA_PAGE,
+        blocks: hausaLiveRadio?.data?.mediaBlock as MediaBlock[],
+        pageType: LIVE_RADIO_PAGE,
       });
 
       expect(result).toStrictEqual({
@@ -989,24 +925,14 @@ describe('buildSettings', () => {
       translations: afriqueServiceConfig.default.translations,
     } as BuildConfigProps;
 
-    const afriqueAudioMediaBlocks = afriqueRadio.content.blocks.map(
-      audioMediaBlock => {
-        return {
-          type: 'audio',
-          model: {
-            ...audioMediaBlock,
-          },
-        };
-      },
-    );
+    const afriqueAudioMediaBlocks = afriqueRadio.data.mediaBlocks;
 
-    it('Should process an On Demand Audio block into a valid playlist item.', () => {
+    it('Should process an on demand audio block into a valid playlist item.', () => {
       const afriqueAudioMediaOverrides = {
         model: {
           language: 'fr',
           pageIdentifierOverride:
             'afrique.bbc_afrique_radio.w172zn0kxd65h3g.page',
-          pageTitleOverride: "Bulletin D'informations",
         },
         type: 'mediaOverrides',
       };
@@ -1016,7 +942,7 @@ describe('buildSettings', () => {
           ...afriqueAudioMediaBlocks,
           afriqueAudioMediaOverrides,
         ] as MediaBlock[],
-        pageType: MEDIA_PAGE,
+        pageType: AUDIO_PAGE,
       });
 
       expect(result).toStrictEqual({
@@ -1030,7 +956,7 @@ describe('buildSettings', () => {
           statsObject: {
             destination: 'WS_NEWS_LANGUAGES',
             producer: 'AFRIQUE',
-            episodePID: 'w172zn0kxd65h3g',
+            episodePID: 'w172zzz2x3918yn',
           },
           ui: {
             controls: {
@@ -1053,12 +979,12 @@ describe('buildSettings', () => {
             fallbackBackgroundColour: '#ffffff',
           },
           playlistObject: {
-            title: "Bulletin D'informations",
+            title: '26/11/2024 GMT',
             holdingImageURL:
               'https://ichef.bbci.co.uk/images/ic/$recipe/p0gsjjjl.png',
             items: [
               {
-                versionID: 'w1mskzfksqdjrcp',
+                versionID: 'w1mslblghzlxffm',
                 kind: 'radioProgramme',
                 duration: 300,
               },
