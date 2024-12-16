@@ -11,6 +11,7 @@ import afriqueRadio from '#data/afrique/bbc_afrique_radio/p030s6dq.json';
 import { service as hausaServiceConfig } from '#app/lib/config/services/hausa';
 import { service as hindiServiceConfig } from '#app/lib/config/services/hindi';
 import { service as afriqueServiceConfig } from '#app/lib/config/services/afrique';
+import { service as mundoServiceConfig } from '#app/lib/config/services/mundo';
 import isLive from '#app/lib/utilities/isLive';
 import buildSettings from './buildSettings';
 import {
@@ -1001,15 +1002,15 @@ describe('buildSettings', () => {
 
   describe('liveMedia', () => {
     const mundoMediaBaseSettings = {
-      counterName: 'mundo.bbc_mundo_radio.w172zn0kxd65h3g.page',
+      counterName: 'live_coverage.c7dkx155e626t.page',
       lang: 'es',
       service: 'mundo' as Services,
       statsDestination: 'WS_NEWS_LANGUAGES',
       producer: 'MUNDO',
-      translations: afriqueServiceConfig.default.translations,
+      translations: mundoServiceConfig.default.translations,
     } as BuildConfigProps;
 
-    it('Should process an on demand audio block into a valid playlist item.', () => {
+    it('Should process a live media block into a valid playlist item.', () => {
       const mediaBlock = {
         type: 'liveMedia',
         model: {
@@ -1069,7 +1070,7 @@ describe('buildSettings', () => {
           mediaInfo: {
             datetime: 'PT24H',
             duration: '24:00:00',
-            durationSpoken: 'Durée 24,00,00',
+            durationSpoken: 'Duración 24,00,00',
             guidanceMessage: undefined,
             title: 'Non-Stop Cartoons!',
             type: 'video',
@@ -1079,13 +1080,13 @@ describe('buildSettings', () => {
           placeholderSrcset:
             'https://ichef.bbci.co.uk/images/ic/240xn/p0k31t4d.jpg.webp 240w, https://ichef.bbci.co.uk/images/ic/320xn/p0k31t4d.jpg.webp 320w, https://ichef.bbci.co.uk/images/ic/480xn/p0k31t4d.jpg.webp 480w, https://ichef.bbci.co.uk/images/ic/624xn/p0k31t4d.jpg.webp 624w, https://ichef.bbci.co.uk/images/ic/800xn/p0k31t4d.jpg.webp 800w',
           translatedNoJSMessage:
-            'Pour regarder ce contenu, veuillez activer JavaScript ou essayer un autre navigateur.',
+            'Para ver este contenido, favor activar JavaScript, o intentar con otro navegador',
         },
         playerConfig: {
           appName: 'news-mundo',
           appType: 'responsive',
           autoplay: true,
-          counterName: 'mundo.bbc_mundo_radio.w172zn0kxd65h3g.page',
+          counterName: 'live_coverage.c7dkx155e626t.page',
           enableToucan: true,
           playlistObject: {
             holdingImageURL:
