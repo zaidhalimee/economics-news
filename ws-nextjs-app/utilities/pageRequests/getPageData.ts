@@ -19,7 +19,11 @@ const getPageData = async ({
   resolvedUrl,
   pageType,
 }: PageDataParams) => {
-  const pathname = `${id}${rendererEnv ? `?renderer_env=${rendererEnv}` : ''}`;
+  const path = `${id}${rendererEnv ? `?renderer_env=${rendererEnv}` : ''}`;
+  const url = new URL(path, 'https://www.bbc.com');
+  const rendererEnvironment = url.searchParams.get('renderer_env');
+  const pathname = `${id}${rendererEnvironment ? `?renderer_env=${rendererEnvironment}` : ''}`;
+
   let message;
   let status;
   let json;
