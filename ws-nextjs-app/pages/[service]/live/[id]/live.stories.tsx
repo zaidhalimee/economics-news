@@ -34,4 +34,4 @@ export default {
 };
 
 export const Example = () => <Component pageData={mockPageData} />;
-export const LiveExample = () => <Component pageData={mockLiveData} />;
+export const WithLiveStream = () => <Component pageData={mockLiveData} />;
