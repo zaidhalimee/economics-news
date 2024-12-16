@@ -291,7 +291,7 @@ describe('buildATIEventTrackUrl', () => {
       url: 'url',
       detailedPlacement: 'detailedPlacement',
       experimentVariant: 'variant_1',
-      ampExperimentName: 'someExperiment',
+      ampExperimentName: 'someAmpExperiment',
     });
 
     expect(splitUrl(atiEventTrackUrl)).toEqual([
@@ -305,8 +305,8 @@ describe('buildATIEventTrackUrl', () => {
       'lng=getDeviceLanguage',
       'atc=PUB-[campaignID]-[component]-[variant_1]-[format]-[pageIdentifier]-[detailedPlacement]-[]-[url]',
       'mv_test=Google Discover',
-      'mv_experiment_id=someExperiment',
-      'mv_creation=VARIANT(someExperiment)',
+      'mv_experiment_id=someAmpExperiment',
+      'mv_creation=VARIANT(someAmpExperiment)',
       'type=AT',
     ]);
   });
