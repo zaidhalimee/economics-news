@@ -29,7 +29,7 @@ interface LivePromoImage {
   copyright?: string;
 }
 
-type ComponentProps = {
+export type ComponentProps = {
   pageData: {
     title: string;
     description?: string;
@@ -54,7 +54,7 @@ type ComponentProps = {
     startDateTime?: string;
     endDateTime?: string;
     metadata: { atiAnalytics: ATIData };
-    mediaCollections: MediaCollection[];
+    mediaCollections: MediaCollection[] | null;
   };
 };
 
