@@ -3,6 +3,8 @@
 import React, { useContext } from 'react';
 import { jsx } from '@emotion/react';
 import VisuallyHiddenText from '#app/components/VisuallyHiddenText';
+import MediaLoader from '#app/components/MediaLoader';
+import arabicLiveRadio from '#data/arabic/bbc_arabic_radio/liveradio.json';
 import ATIAnalytics from '../../components/ATIAnalytics';
 import {
   Curation,
@@ -43,6 +45,7 @@ const HomePage = ({ pageData }: HomePageProps) => {
     frontPageTitle,
     lang,
     brandName,
+    service,
   } = useContext(ServiceContext);
   const { topStoriesTitle, home } = translations;
   const {
@@ -52,6 +55,7 @@ const HomePage = ({ pageData }: HomePageProps) => {
     metadata: { atiAnalytics },
   } = pageData;
   const itemList = getItemList({ curations, name: brandName });
+
   return (
     <>
       <ChartbeatAnalytics title={title} />
@@ -70,6 +74,11 @@ const HomePage = ({ pageData }: HomePageProps) => {
       />
       <Ad slotType="leaderboard" />
       <main role="main" css={styles.main}>
+        {service === 'arabic' && (
+          <div css={styles.mediaPlayer}>
+            <MediaLoader blocks={arabicLiveRadio.data.mediaBlock} />
+          </div>
+        )}
         <ATIAnalytics atiData={atiAnalytics} />
         <VisuallyHiddenText id="content" tabIndex={-1} as="h1">
           {/* eslint-disable-next-line jsx-a11y/aria-role */}

@@ -31,6 +31,10 @@ const styles = {
         margin: `${spacings.QUINTUPLE}rem 0`,
       },
     }),
+  mediaPlayer: () =>
+    css({
+      display: 'none',
+    }),
 };
 
 export default styles;
