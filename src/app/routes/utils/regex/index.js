@@ -22,6 +22,7 @@ import {
   getSecondaryColumnDataRegex,
   getRecommendationsDataRegex,
   getAfricaEyeTVPageRegex,
+  getLiveTVRegex,
 } from './utils';
 
 const allServices = Object.keys(services);
@@ -46,6 +47,9 @@ export const homePageDataPath = `${homePagePath}.json`;
 
 export const cpsAssetPagePath = getCpsAssetRegex(allServices);
 export const cpsAssetPageDataPath = `${cpsAssetPagePath}.json`;
+
+export const liveTVPath = getLiveTVRegex(allServices);
+export const liveTVDataPath = `${liveTVPath}.json`;
 
 export const liveRadioPath = getLiveRadioRegex(allServices);
 export const liveRadioDataPath = `${liveRadioPath}.json`;

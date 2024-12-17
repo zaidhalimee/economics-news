@@ -40,6 +40,14 @@ export default ({
         masterBrand,
         'liveradio.json',
       );
+    case 'liveTV':
+      return path.join(
+        process.cwd(),
+        'data',
+        service,
+        masterBrand,
+        'livetv.json',
+      );
     default:
       dataPath = `${id}${variant}.json`;
   }

@@ -1,0 +1,79 @@
+{
+  "data": {
+    "metadata": {
+      "type": "On Demand TV",
+      "atiAnalytics": {
+        "pageIdentifier": "persian.bbc_persian_tv.tv_programmes.w13xttnr.page",
+        "contentType": "player-episode",
+        "pageTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی - BBC News فارسی",
+        "contentId": "urn:bbc:pips:w13xttnr"
+      }
+    },
+    "language": "fa",
+    "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
+    "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
+    "headline": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
+    "shortSynopsis": "مجله خبری رادیو بی‌بی‌سی فارسی، شامل تازه‌ترین خبرها، گزارش، گفتگو، تحلیل و تفسیر درباره رویدادهای ایران و جهان.",
+    "mediumSynopsis": "مجله خبری رادیو بی‌بی‌سی فارسی، شامل تازه‌ترین خبرها، گزارش، گفتگو، تحلیل و تفسیر درباره رویدادهای ایران و جهان.",
+    "id": "urn:bbc:ares:ws_media:brand:bbc_arabic_tv/w13xttnr",
+    "brandId": "bbc_arabic_tv",
+    "episodeId": "bbc_arabic_tv",
+    "masterBrand": "bbc_arabic_tv",
+    "releaseDateTimeStamp": "2023-04-16T00:00:00.000Z",
+    "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p05wwxds.jpg",
+    "imageAltText": null,
+    "promoBrandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
+    "durationISO8601": "PT1H",
+    "thumbnailImageUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p05wwxds.jpg",
+    "episodeAvailability": "available",
+    "recentEpisodes": [],
+    "mediaBlocks": [
+      {
+        "type": "tv",
+        "model": {
+          "id": "w172z7t6cyj651g",
+          "subType": "episode",
+          "format": "Video",
+          "title": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
+          "synopses": {
+            "short": "مجله خبری رادیو بی‌بی‌سی فارسی، شامل تازه‌ترین خبرها، گزارش، گفتگو، تحلیل و تفسیر درباره رویدادهای ایران و جهان.",
+            "medium": "مجله خبری رادیو بی‌بی‌سی فارسی، شامل تازه‌ترین خبرها، گزارش، گفتگو، تحلیل و تفسیر درباره رویدادهای ایران و جهان.",
+            "long": " چشم انداز بامدادی، مجله روزانه خبری بخش فارسی رادیو بی‌بی‌سی است. این برنامه شامل تازه‌ترین خبرهای روز ایران و جهان، به همراه گزارش، گفت وگو و تحلیل و تفسیر درباره رویدادهای ایران، منطقه و جهان است. این برنامه همزمان با پوشش خبرهای مهم سیاسی و اقتصادی ایران و جهان، در کنار مرور روزنامه‌‏های صبح ایران، به خبرها و موضوعات فرهنگی، هنری، اجتماعی و ورزشی نیز می‌پردازد."
+          },
+          "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p05wwxds.jpg",
+          "embedding": false,
+          "advertising": false,
+          "versions": [
+            {
+              "versionId": "bbc_arabic_tv",
+              "types": ["Original"],
+              "duration": 3600,
+              "durationISO8601": "PT0S",
+              "warnings": {},
+              "availableTerritories": {
+                "uk": true,
+                "nonUk": true,
+                "world": false
+              },
+              "availableFrom": "2023-04-16T04:30:00.000Z",
+              "availabilityStatus": "available",
+              "availableUntil": null
+            }
+          ],
+          "availability": "available",
+          "smpKind": "programme",
+          "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
+          "type": "media"
+        }
+      },
+      {
+        "type": "mediaOverrides",
+        "model": {
+          "language": "fa",
+          "pageIdentifierOverride": "persian.bbc_persian_tv.tv.w172z7t6cyj651g.page"
+        }
+      }
+    ]
+  },
+  "contentType": "application/json; charset=utf-8"
+}

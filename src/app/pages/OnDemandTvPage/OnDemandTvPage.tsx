@@ -85,7 +85,8 @@ const OnDemandTvPage = ({
     metadata: { atiAnalytics },
   } = pageData;
 
-  const { timezone, datetimeLocale, brandName } = useContext(ServiceContext);
+  const { timezone, datetimeLocale, brandName, service } =
+    useContext(ServiceContext);
 
   const formattedTimestamp = formatUnixTimestamp({
     timestamp: releaseDateTimeStamp,
@@ -100,6 +101,7 @@ const OnDemandTvPage = ({
     ? `${brandTitle} - ${episodeTitle} - ${brandName}`
     : headline;
 
+  // if (service === 'arabic')
   return (
     <div css={styles.wrapper}>
       <ChartbeatAnalytics

@@ -129,6 +129,11 @@ export const getLiveRadioRegex = services => {
   return `/:service(${serviceRegex})/:masterBrand(${radioMasterBrandRegex})/:mediaId(liveRadio):lite(${liteRegex})?`;
 };
 
+export const getLiveTVRegex = services => {
+  const serviceRegex = getServiceRegex(services);
+  return `/:service(${serviceRegex})/:masterBrand(${tvMasterBrandRegex})/:mediaId(livetv):lite(${liteRegex})?`;
+};
+
 export const getPodcastEpisodeRegex = services => {
   const serviceRegex = getServiceRegex(services);
   return `/:service(${serviceRegex}):variant(${variantRegex})?/podcasts/:brandId(${mediaIdRegex})/:mediaId(${mediaIdRegex}):lite(${liteRegex})?`;

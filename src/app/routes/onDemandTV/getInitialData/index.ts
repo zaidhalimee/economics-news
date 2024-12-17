@@ -7,6 +7,7 @@ import { FetchError } from '#app/models/types/fetch';
 import { TV_PAGE } from '#app/routes/utils/pageTypes';
 import isTest from '#app/lib/utilities/isTest';
 import overrideRendererOnTest from '#app/routes/utils/overrideRendererOnTest';
+import arabicLiveTV from '#data/arabic/bbc_arabic_tv/livetv.json';
 
 const logger = nodeLogger(__filename);
 
@@ -18,13 +19,22 @@ export default async ({
   toggles,
 }: InitialDataProps) => {
   try {
-    const { status, json } = await fetchDataFromBFF({
-      pathname: isTest() ? overrideRendererOnTest(pathname) : pathname,
-      service,
-      variant,
-      pageType: TV_PAGE,
-      getAgent,
-    });
+    let status;
+    let json;
+
+    console.log({ pathname });
+    if (pathname === 'arabic/bbc_arabic/livetv') {
+      status = 200;
+      json = arabicLiveTV;
+    } else {
+      ({ status, json } = await fetchDataFromBFF({
+        pathname: isTest() ? overrideRendererOnTest(pathname) : pathname,
+        service,
+        variant,
+        pageType: TV_PAGE,
+        getAgent,
+      }));
+    }
 
     if (!json?.data) {
       throw handleError('On Demand TV data is malformed', 500);

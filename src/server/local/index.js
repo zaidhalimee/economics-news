@@ -18,6 +18,7 @@ import {
   liveRadioDataPath,
   podcastEpisodeDataPath,
   podcastBrandDataPath,
+  liveTVDataPath,
 } from '#app/routes/utils/regex';
 import { LOCAL_SENDFILE_ERROR } from '#lib/logger.const';
 import nodeLogger from '#lib/logger.node';
@@ -106,6 +107,17 @@ export default server => {
 
       const dataFilePath = constructDataFilePath({
         pageType: 'liveRadio',
+        service,
+        masterBrand,
+      });
+
+      sendDataFile(res, dataFilePath, next);
+    })
+    .get(liveTVDataPath, async ({ params }, res, next) => {
+      const { service, masterBrand } = params;
+
+      const dataFilePath = constructDataFilePath({
+        pageType: 'liveTV',
         service,
         masterBrand,
       });
