@@ -2,7 +2,6 @@
   "data": {
     "article": {
       "metadata": {
-       
         "atiAnalytics": {
           "categoryName": "ADHD~News+presenters~Broadcasting~Learning+disability~Autism~Disability~Television~Journalism~Norway",
           "contentId": "urn:bbc:optimo:asset:crkdy3r685jo",
@@ -715,6 +714,13 @@
               "position": [1]
             },
             {
+              "id": "66204510",
+              "type": "easyStandardCta",
+              "model": {
+                "fullVersionLink": "http://localhost.bbc.com:7080/news/articles/cy0grkwd3zlo"
+              }
+            },
+            {
               "id": "84a700d7",
               "type": "image",
               "model": {
@@ -873,13 +879,6 @@
                 ]
               },
               "position": [4]
-            },
-            {
-              "id": "66204510",
-              "type": "easyStandardCta",
-              "model": {
-                "fullVersionLink": "http://localhost.bbc.com:7080/news/articles/cy0grkwd3zlo"
-              }
             },
             {
               "id": "37f2afbe",

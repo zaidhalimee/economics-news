@@ -11,6 +11,20 @@ export const Ellipsis = () => (
     <path d="M1.6 18.8h5.8v-5.6H1.6v5.6zm11.5 0h5.8v-5.6h-5.8v5.6zm11.5 0h5.8v-5.6h-5.8v5.6z" />
   </svg>
 );
+
+export const FormatIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 32 32"
+    focusable="false"
+    aria-hidden="true"
+    width="12"
+    height="12"
+    className={className}
+  >
+    <path d="M29.2 1H2.8v30h26.3V1zm-7.6 2.5h5v25H5.4v-25h5l1.7 2.6H20zM10.4 15.6h11.3v-2H10.4zm0 8.3h6v-2h-6zm0-4.1h11.3v-2H10.4z" />
+  </svg>
+);
+
 export const LeftChevron = ({ className }: { className?: string }) => (
   <svg
     viewBox="0 0 32 32"

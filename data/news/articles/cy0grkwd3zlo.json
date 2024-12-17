@@ -552,6 +552,13 @@
               "position": [1]
             },
             {
+              "id": "66204510",
+              "type": "easyStandardCta",
+              "model": {
+                "easyVersionLink": "http://localhost.bbc.com:7080/news/articles/crkdy3r685jo"
+              }
+            },
+            {
               "id": "6e73d58c",
               "type": "image",
               "model": {
@@ -785,13 +792,7 @@
               },
               "position": [4]
             },
-            {
-              "id": "66204510",
-              "type": "easyStandardCta",
-              "model": {
-                "easyVersionLink": "http://localhost.bbc.com:7080/news/articles/crkdy3r685jo"
-              }
-            },
+
             {
               "id": "83f34b40",
               "type": "text",
