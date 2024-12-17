@@ -293,11 +293,11 @@ export const service: DefaultServiceConfig = {
         optional: 'opcional',
 
         // File upload
-        fileUploadLiveRegionText: undefined,
+        fileUploadLiveRegionText: 'O que você está uploading:',
         fileUploadLiveRegionUpdateText: undefined,
         fileUploadListHeading: 'O que você está uploading:',
         fileUploadButton: 'Selecione um arquivo',
-        fileUploadRemoveButton: undefined,
+        fileUploadRemoveButton: 'Selecione um arquivo',
 
         // Submit button
         submitButton: 'Enviar',
@@ -320,7 +320,8 @@ export const service: DefaultServiceConfig = {
         validationWordLimit: 'Máximo de {{wordLimit}} palavras',
 
         // Messaging
-        retentionPeriodDays: undefined,
+        retentionPeriodDays:
+          'Nós guardaremos a sua mensagem por até {{days}} dias. Caso não usemos o conteúdo, ele será apagado junto a qualquer outra informação que você nos tenha enviado.',
         referenceNumber: 'Número de referência',
         submissionInfoSignedOutMessage:
           'Você deve anotar esses detalhes para sua referência.',
@@ -331,7 +332,7 @@ export const service: DefaultServiceConfig = {
         removalGuidelineText: undefined,
 
         // Form Screen
-        dataPolicyHeading: undefined,
+        dataPolicyHeading: 'Nossa política de dados',
 
         // Uploading Screen
         uploadingHeading: 'Uploading seus arquivos...',
@@ -340,8 +341,9 @@ export const service: DefaultServiceConfig = {
         // Success Screen
         successHeading: 'Mensagem enviada',
         successDescription: 'Obrigado por entrar em contato.',
-        privacyPolicyLinkHref: undefined,
-        privacyPolicyLinkText: undefined,
+        privacyPolicyLinkHref:
+          'https://www.bbc.com/portuguese/articles/cw0w9z6p491o',
+        privacyPolicyLinkText: 'Política de privacidade',
 
         // Error Screen
         errorHeading: 'Sua mensagem não foi enviada',
