@@ -70,8 +70,8 @@
           {
             "id": "liveradio",
             "subType": "primary",
-            "format": "video",
-            "externalId": "bbc_arabic_tv",
+            "format": "audio",
+            "externalId": "bbc_arabic_radio",
             "duration": "PT0S",
             "caption": "",
             "embedding": false,

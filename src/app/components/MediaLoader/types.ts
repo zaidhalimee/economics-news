@@ -38,7 +38,6 @@ export type PlayerConfig = {
     liveRewind?: boolean;
     simulcast?: boolean;
   };
-  intentNotRequired?: boolean;
 };
 
 export type PlayerUiConfig = {
