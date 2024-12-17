@@ -80,7 +80,7 @@ const Header = ({
             )}
           </Heading>
           {mediaCollections && (
-            <button type="button" onClick={handleClick}>
+            <button type="button" onClick={handleClick} css={styles.button}>
               {showMedia ? 'close' : 'watch live'}
             </button>
           )}

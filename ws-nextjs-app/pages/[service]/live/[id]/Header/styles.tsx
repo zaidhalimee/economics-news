@@ -25,6 +25,35 @@ export default {
     css({
       display: 'none',
     }),
+  button: ({ spacings, palette, isDarkUi, mq }: Theme) =>
+    css({
+      backgroundColor: isDarkUi ? palette.GREY_3 : palette.WHITE,
+      border: `${pixelsToRem(1)}rem solid ${
+        isDarkUi ? palette.GREY_10 : palette.PHILIPPINE_GREY
+      }`,
+      borderRadius: 0,
+      padding: `${spacings.FULL}rem`,
+      cursor: 'pointer',
+      color: palette.BLACK,
+
+      '&:hover, &:focus': {
+        backgroundColor: palette.POSTBOX,
+        color: palette.WHITE,
+        border: `${pixelsToRem(1)}rem solid ${palette.POSTBOX}`,
+        textDecoration: 'underline',
+      },
+
+      [mq.FORCED_COLOURS]: {
+        backgroundColor: 'canvas',
+        color: 'canvasText',
+        border: `${pixelsToRem(1)}rem solid canvasText`,
+        '&:hover, &:focus': {
+          backgroundColor: 'canvas',
+          color: 'canvasText',
+          border: `${pixelsToRem(1)}rem solid canvasText`,
+        },
+      },
+    }),
   backgroundContainer: () =>
     css({
       position: 'absolute',
