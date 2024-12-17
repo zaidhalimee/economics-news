@@ -5,6 +5,7 @@ import { jsx } from '@emotion/react';
 import VisuallyHiddenText from '#app/components/VisuallyHiddenText';
 import MediaLoader from '#app/components/MediaLoader';
 import arabicLiveRadio from '#data/arabic/bbc_arabic_radio/liveradio.json';
+import { MediaBlock } from '#app/components/MediaLoader/types';
 import ATIAnalytics from '../../components/ATIAnalytics';
 import {
   Curation,
@@ -56,6 +57,10 @@ const HomePage = ({ pageData }: HomePageProps) => {
   } = pageData;
   const itemList = getItemList({ curations, name: brandName });
 
+  if (service === 'arabic') {
+    arabicLiveRadio.data.mediaBlock[0].model[2].externalId = 'bbc_arabic_tv';
+  }
+
   return (
     <>
       <ChartbeatAnalytics title={title} />
@@ -76,7 +81,9 @@ const HomePage = ({ pageData }: HomePageProps) => {
       <main role="main" css={styles.main}>
         {service === 'arabic' && (
           <div css={styles.mediaPlayer}>
-            <MediaLoader blocks={arabicLiveRadio.data.mediaBlock} />
+            <MediaLoader
+              blocks={arabicLiveRadio.data.mediaBlock as MediaBlock[]}
+            />
           </div>
         )}
         <ATIAnalytics atiData={atiAnalytics} />
