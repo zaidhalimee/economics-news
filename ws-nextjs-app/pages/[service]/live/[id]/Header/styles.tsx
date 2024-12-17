@@ -17,6 +17,14 @@ export default {
         outline: 'none',
       },
     }),
+  showMediaPlayer: () =>
+    css({
+      display: 'unset',
+    }),
+  hideMediaPlayer: () =>
+    css({
+      display: 'none',
+    }),
   backgroundContainer: () =>
     css({
       position: 'absolute',

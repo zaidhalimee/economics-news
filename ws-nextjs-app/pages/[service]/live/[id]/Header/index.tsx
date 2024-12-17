@@ -4,7 +4,8 @@ import Heading from '#app/components/Heading';
 import Text from '#app/components/Text';
 import MaskedImage from '#app/components/MaskedImage';
 import MediaLoader from '#app/components/MediaLoader';
-import { MediaCollection } from '#app/components/MediaLoader/types';
+import { MediaBlock, MediaCollection } from '#app/components/MediaLoader/types';
+import React, { useState } from 'react';
 import LiveLabelHeader from './LiveLabelHeader';
 import styles from './styles';
 
@@ -34,6 +35,14 @@ const Header = ({
       {title}
     </span>
   );
+
+  const [showMedia, setShowMedia] = useState(false);
+
+  const handleClick = () => {
+    console.log('button clicked');
+    setShowMedia(!showMedia);
+    console.log(showMedia);
+  };
 
   return (
     <div css={styles.headerContainer}>
@@ -70,7 +79,17 @@ const Header = ({
               Title
             )}
           </Heading>
-          {mediaCollections && <MediaLoader blocks={mediaCollections} />}
+          {mediaCollections && (
+            <button type="button" onClick={handleClick}>
+              {showMedia ? 'close' : 'watch live'}
+            </button>
+          )}
+          {mediaCollections && (
+            <MediaLoader
+              blocks={mediaCollections as MediaBlock[]}
+              css={showMedia ? styles.showMediaPlayer : styles.hideMediaPlayer}
+            />
+          )}
           {description && (
             <Text
               as="p"
