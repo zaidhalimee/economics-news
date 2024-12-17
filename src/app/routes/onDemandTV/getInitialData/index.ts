@@ -22,8 +22,7 @@ export default async ({
     let status;
     let json;
 
-    console.log({ pathname });
-    if (pathname === 'arabic/bbc_arabic/livetv') {
+    if (pathname === '/arabic/bbc_arabic_tv/livetv') {
       status = 200;
       json = arabicLiveTV;
     } else {
