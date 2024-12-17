@@ -27,7 +27,7 @@ export default ({
   return {
     playerConfig: {
       ...basePlayerConfig,
-      autoplay: true,
+      autoplay: false,
       playlistObject: {
         title: headingBlock?.text ?? '',
         items: [
