@@ -29,8 +29,9 @@ export default {
     css({
       padding: `${spacings.DOUBLE}rem`,
       paddingLeft: 0,
+      paddingRight: 0,
     }),
-  headerButton: ({ spacings, palette }: Theme) =>
+  headerButton: ({ spacings, palette, mq }: Theme) =>
     css({
       backgroundColor: palette.POSTBOX,
       // padding: `${spacings.DOUBLE}rem`,
@@ -41,9 +42,14 @@ export default {
       paddingRight: 10,
       border: 0,
       outline: 0,
+      width: '40%',
 
       '&:hover': {
         backgroundColor: palette.WHITE,
+      },
+
+      [mq.GROUP_2_MAX_WIDTH]: {
+        width: '100%',
       },
     }),
   headerButtonIcon: ({ palette }: Theme) =>
@@ -57,7 +63,7 @@ export default {
     css({
       color: palette.WHITE,
       display: 'block',
-      padding: `${spacings.TRIPLE}rem`,
+      padding: `${spacings.DOUBLE}rem`,
       margin: 0,
       scale: '150%',
       fontWeight: '600',
@@ -147,11 +153,10 @@ export default {
         width: '75%',
       },
     }),
-  description: ({ palette, spacings }: Theme) =>
+  description: ({ palette }: Theme) =>
     css({
       color: palette.GREY_2,
       margin: 0,
-      // marginTop: `${spacings.DOUBLE}rem`,
     }),
   layoutWithLiveLabelNoImage: ({ mq }: Theme) =>
     css({
