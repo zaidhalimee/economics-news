@@ -3,10 +3,10 @@
     "metadata": {
       "type": "On Demand TV",
       "atiAnalytics": {
-        "pageIdentifier": "arabic.bbc_arabic_tv.livetv.page",
+        "pageIdentifier": "persian.bbc_persian_tv.tv_programmes.w13xttnr.page",
         "contentType": "player-episode",
         "pageTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی - BBC News فارسی",
-        "contentId": "urn:bbc:pips:sid:bbc_arabic_tv"
+        "contentId": "urn:bbc:pips:sid:bbc_persian_tv"
       }
     },
     "language": "fa",
@@ -15,10 +15,10 @@
     "headline": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
     "shortSynopsis": "مجله خبری رادیو بی‌بی‌سی فارسی، شامل تازه‌ترین خبرها، گزارش، گفتگو، تحلیل و تفسیر درباره رویدادهای ایران و جهان.",
     "mediumSynopsis": "مجله خبری رادیو بی‌بی‌سی فارسی، شامل تازه‌ترین خبرها، گزارش، گفتگو، تحلیل و تفسیر درباره رویدادهای ایران و جهان.",
-    "id": "urn:bbc:ares:ws_media:brand:bbc_arabic_tv",
-    "brandId": "bbc_arabic_tv",
-    "episodeId": "bbc_arabic_tv",
-    "masterBrand": "bbc_arabic_tv",
+    "id": "urn:bbc:ares:ws_media:brand:bbc_persian_tv",
+    "brandId": "bbc_persian_tv",
+    "episodeId": "bbc_persian_tv",
+    "masterBrand": "bbc_persian_tv",
     "releaseDateTimeStamp": "2023-04-16T00:00:00.000Z",
     "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p05wwxds.jpg",
     "imageAltText": null,
@@ -31,7 +31,7 @@
       {
         "type": "tv",
         "model": {
-          "id": "bbc_arabic_tv",
+          "id": "bbc_persian_tv",
           "subType": "episode",
           "format": "Video",
           "title": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
@@ -45,7 +45,7 @@
           "advertising": false,
           "versions": [
             {
-              "versionId": "bbc_arabic_tv",
+              "versionId": "bbc_persian_tv",
               "types": ["Original"],
               "duration": 3600,
               "durationISO8601": "PT0S",
@@ -69,8 +69,8 @@
       {
         "type": "mediaOverrides",
         "model": {
-          "language": "ar",
-          "pageIdentifierOverride": "arabic.bbc_arabic_tv.livetv.page"
+          "language": "fa",
+          "pageIdentifierOverride": "persian.bbc_persian_tv.tv.w172z7t6cyj651g.page"
         }
       }
     ]
