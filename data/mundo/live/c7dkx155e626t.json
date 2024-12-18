@@ -1,7 +1,7 @@
 {
   "data": {
-    "title": "Test live events page - media player options",
-    "description": "A live events page test to explore options for media player",
+    "title": "USA Elections Aftermath: Get the latest updates",
+    "description": "Live Streaming: The Inauguration of the 45th President of the United States",
     "language": "es",
     "headerImage": {
       "url": "https://ichef.bbci.co.uk/ace/standard/480/cpsdevpb/ed77/test/98a4c130-b304-11ef-acb8-cfaabd95075c.jpg",
@@ -67,9 +67,9 @@
               }
             ],
             "schedule": {
-              "start": "2024-12-15T08:00:21Z",
-              "accurateStart": "2024-12-15T08:00:21Z",
-              "end": "2024-12-15T13:00:21Z"
+              "start": "2024-12-18T15:00:21Z",
+              "accurateStart": "2024-12-18T15:00:21Z",
+              "end": "2024-12-18T20:00:21Z"
             },
             "serviceId": null,
             "authToken": null,
@@ -94,8 +94,8 @@
       "id": null
     },
     "seo": {
-      "seoTitle": "Test live events page - media player options",
-      "seoDescription": "A live events page test to explore options for media player",
+      "seoTitle": "USA Elections Aftermath: Get the latest updates",
+      "seoDescription": "Live Streaming: The Inauguration of the 45th President of the United States",
       "datePublished": "2024-12-05T11:26:00.000Z",
       "dateModified": "2024-12-05T12:23:32.000Z"
     },
@@ -111,28 +111,28 @@
         "model": {
           "blocks": [
             {
-              "id": "a09dfbf3",
+              "id": "982be8ac",
               "type": "text",
               "model": {
                 "blocks": [
                   {
-                    "id": "156f77f4",
+                    "id": "8596bac4",
                     "type": "unorderedList",
                     "model": {
                       "blocks": [
                         {
-                          "id": "208a0c09",
+                          "id": "9b4a62ca",
                           "type": "listItem",
                           "model": {
                             "blocks": [
                               {
-                                "id": "e14c7e14",
+                                "id": "ae7b1150",
                                 "type": "paragraph",
                                 "model": {
                                   "text": "Brian Thompson, director ejecutivo de United Health Care (UHC), la mayor aseguradora de salud privada de Estados Unidos, fue asesinado este miércoles en Nueva York por un hombre enmascarado",
                                   "blocks": [
                                     {
-                                      "id": "b9344877",
+                                      "id": "c5947833",
                                       "type": "fragment",
                                       "model": {
                                         "text": "Brian Thompson, director ejecutivo de United Health Care (UHC), la mayor aseguradora de salud privada de Estados Unidos, fue asesinado este miércoles en Nueva York por un hombre enmascarado",
@@ -146,18 +146,18 @@
                           }
                         },
                         {
-                          "id": "d506cade",
+                          "id": "e9cb4a5b",
                           "type": "listItem",
                           "model": {
                             "blocks": [
                               {
-                                "id": "d655c335",
+                                "id": "79250da1",
                                 "type": "paragraph",
                                 "model": {
                                   "text": "En lo que los investigadores describieron como un \"ataque descarado y selectivo\".",
                                   "blocks": [
                                     {
-                                      "id": "599047c2",
+                                      "id": "cde27120",
                                       "type": "fragment",
                                       "model": {
                                         "text": "En lo que los investigadores describieron como un \"ataque descarado y selectivo\".",
@@ -171,18 +171,18 @@
                           }
                         },
                         {
-                          "id": "95f804a7",
+                          "id": "b4be2cf4",
                           "type": "listItem",
                           "model": {
                             "blocks": [
                               {
-                                "id": "b1ac0d66",
+                                "id": "11342a4b",
                                 "type": "paragraph",
                                 "model": {
                                   "text": "Agentes de policía de la ciudad de Nueva York están utilizando tecnología de reconocimiento facial y un teléfono celular desechado para identificar al hombre que mató a Thompson.",
                                   "blocks": [
                                     {
-                                      "id": "31f4226f",
+                                      "id": "62fb4406",
                                       "type": "fragment",
                                       "model": {
                                         "text": "Agentes de policía de la ciudad de Nueva York están utilizando tecnología de reconocimiento facial y un teléfono celular desechado para identificar al hombre que mató a Thompson.",
@@ -217,23 +217,23 @@
                 "model": {
                   "blocks": [
                     {
-                      "id": "15d0ad1b",
+                      "id": "c2934708",
                       "type": "headline",
                       "model": {
                         "blocks": [
                           {
-                            "id": "1784d1a7",
+                            "id": "9b4e950e",
                             "type": "text",
                             "model": {
                               "blocks": [
                                 {
-                                  "id": "80fc1362",
+                                  "id": "b706438f",
                                   "type": "paragraph",
                                   "model": {
                                     "text": "Asesinan a tiros en Nueva York al director ejecutivo de la principal aseguradora privada de salud de EE.UU.",
                                     "blocks": [
                                       {
-                                        "id": "6f27830d",
+                                        "id": "c389157d",
                                         "type": "fragment",
                                         "model": {
                                           "text": "Asesinan a tiros en Nueva York al director ejecutivo de la principal aseguradora privada de salud de EE.UU.",
@@ -256,13 +256,13 @@
                 "model": {
                   "blocks": [
                     {
-                      "id": "052abcff",
+                      "id": "7eff4bad",
                       "type": "paragraph",
                       "model": {
                         "text": "Brian Thompson, director ejecutivo de United Health Care (UHC), la mayor aseguradora de salud privada de Estados Unidos, fue asesinado este miércoles en Nueva York por un hombre enmascarado, en lo que los investigadores describieron como un \"ataque descarado y selectivo\".",
                         "blocks": [
                           {
-                            "id": "75c362b6",
+                            "id": "1a200412",
                             "type": "fragment",
                             "model": {
                               "text": "Brian Thompson, director ejecutivo de United Health Care (UHC), la mayor aseguradora de salud privada de Estados Unidos, fue asesinado este miércoles en Nueva York por un hombre enmascarado, en lo que los investigadores describieron como un \"ataque descarado y selectivo\".",
@@ -273,13 +273,13 @@
                       }
                     },
                     {
-                      "id": "1739243b",
+                      "id": "a71ec7cb",
                       "type": "paragraph",
                       "model": {
                         "text": "Agentes de policía de la ciudad de Nueva York están utilizando tecnología de reconocimiento facial y un teléfono celular desechado para identificar al hombre que mató a Thompson.",
                         "blocks": [
                           {
-                            "id": "f8abe547",
+                            "id": "b7768413",
                             "type": "fragment",
                             "model": {
                               "text": "Agentes de policía de la ciudad de Nueva York están utilizando tecnología de reconocimiento facial y un teléfono celular desechado para identificar al hombre que mató a Thompson.",
@@ -290,13 +290,13 @@
                       }
                     },
                     {
-                      "id": "06d861ba",
+                      "id": "4c027bca",
                       "type": "paragraph",
                       "model": {
                         "text": "El ejecutivo, de 50 años de edad, fue atacado a disparos alrededor de las 06:45 hora local (11:45 GMT) en la entrada de un hotel en Manhattan, donde tenía previsto hablar en una conferencia de inversores más tarde ese mismo día.",
                         "blocks": [
                           {
-                            "id": "c02208f9",
+                            "id": "35186eb8",
                             "type": "fragment",
                             "model": {
                               "text": "El ejecutivo, de 50 años de edad, fue atacado a disparos alrededor de las 06:45 hora local (11:45 GMT) en la entrada de un hotel en Manhattan, donde tenía previsto hablar en una conferencia de inversores más tarde ese mismo día.",
@@ -307,13 +307,13 @@
                       }
                     },
                     {
-                      "id": "628393a2",
+                      "id": "b2f51c7d",
                       "type": "paragraph",
                       "model": {
                         "text": "Vistiendo un suéter con capucha, el atacante llegó al lugar caminando unos cinco minutos antes que Thompson. Cuando el ejecutivo llegó, se le acercó y le disparó con una pistola. Después desatascó el arma e hizo un segundo disparo.",
                         "blocks": [
                           {
-                            "id": "7ab33a4c",
+                            "id": "891df326",
                             "type": "fragment",
                             "model": {
                               "text": "Vistiendo un suéter con capucha, el atacante llegó al lugar caminando unos cinco minutos antes que Thompson. Cuando el ejecutivo llegó, ",
@@ -321,7 +321,7 @@
                             }
                           },
                           {
-                            "id": "54334400",
+                            "id": "2e3d7d9a",
                             "type": "fragment",
                             "model": {
                               "text": "se le acercó y le disparó con una pistola",
@@ -329,7 +329,7 @@
                             }
                           },
                           {
-                            "id": "f4b2f369",
+                            "id": "98c981f7",
                             "type": "fragment",
                             "model": {
                               "text": ". Después desatascó el arma e hizo ",
@@ -337,7 +337,7 @@
                             }
                           },
                           {
-                            "id": "38d99793",
+                            "id": "5d795bf0",
                             "type": "fragment",
                             "model": {
                               "text": "un segundo disparo",
@@ -345,7 +345,7 @@
                             }
                           },
                           {
-                            "id": "b44ea743",
+                            "id": "0d82c61b",
                             "type": "fragment",
                             "model": {
                               "text": ".",
@@ -405,10 +405,11 @@
         "contentId": "urn:bbc:tipo:topic:c7dkx155e626t",
         "contentType": "live-coverage",
         "pageIdentifier": "live_coverage.c7dkx155e626t.page",
-        "pageTitle": "Test live events page - media player options",
+        "pageTitle": "USA Elections Aftermath: Get the latest updates",
         "timePublished": "2024-12-05T11:26:00.000Z",
         "timeUpdated": "2024-12-05T12:23:32.000Z"
       }
     }
-  }
+  },
+  "contentType": "application/json; charset=utf-8"
 }
