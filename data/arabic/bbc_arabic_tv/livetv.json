@@ -5,26 +5,26 @@
       "atiAnalytics": {
         "pageIdentifier": "arabic.bbc_arabic_tv.livetv.page",
         "contentType": "player-episode",
-        "pageTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی - BBC News فارسی",
+        "pageTitle": "مباشر: تلفزيون بي بي سي عربي",
         "contentId": "urn:bbc:pips:sid:bbc_arabic_tv"
       }
     },
     "language": "fa",
-    "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-    "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-    "headline": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-    "shortSynopsis": "مجله خبری رادیو بی‌بی‌سی فارسی، شامل تازه‌ترین خبرها، گزارش، گفتگو، تحلیل و تفسیر درباره رویدادهای ایران و جهان.",
-    "mediumSynopsis": "مجله خبری رادیو بی‌بی‌سی فارسی، شامل تازه‌ترین خبرها، گزارش، گفتگو، تحلیل و تفسیر درباره رویدادهای ایران و جهان.",
+    "brandTitle": "مباشر: تلفزيون بي بي سي عربي",
+    "episodeTitle": "يقدم لكم تلفزيون بي بي سي العربي الأخبار والأخبار العاجلة والتحليلات والحوارات والبرامج الوثائقية، على مدى 24 ساعة كل يوم.",
+    "headline": "",
+    "shortSynopsis": "ويمكنكم التقاط القناة عبر الأطباق اللاقطة",
+    "mediumSynopsis": "ويمكنكم التقاط القناة عبر الأطباق اللاقطة",
     "id": "urn:bbc:ares:ws_media:brand:bbc_arabic_tv",
     "brandId": "bbc_arabic_tv",
     "episodeId": "bbc_arabic_tv",
     "masterBrand": "bbc_arabic_tv",
-    "releaseDateTimeStamp": "2023-04-16T00:00:00.000Z",
-    "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p05wwxds.jpg",
+    "releaseDateTimeStamp": null,
+    "imageUrl": "ichef.bbci.co.uk/ace/ws/raw/cpsprodpb/9EC3/production/_133634604_arabic_16_9_updated.png",
     "imageAltText": null,
-    "promoBrandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-    "durationISO8601": "PT1H",
-    "thumbnailImageUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p05wwxds.jpg",
+    "promoBrandTitle": "مباشر: تلفزيون بي بي سي عربي",
+    "durationISO8601": "PT0S",
+    "thumbnailImageUrl": "https://ichef.bbci.co.uk/ace/ws/raw/cpsprodpb/9EC3/production/_133634604_arabic_16_9_updated.png",
     "episodeAvailability": "available",
     "recentEpisodes": [],
     "mediaBlocks": [
@@ -34,20 +34,20 @@
           "id": "bbc_arabic_tv",
           "subType": "episode",
           "format": "Video",
-          "title": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
+          "title": "مباشر: تلفزيون بي بي سي عربي",
           "synopses": {
-            "short": "مجله خبری رادیو بی‌بی‌سی فارسی، شامل تازه‌ترین خبرها، گزارش، گفتگو، تحلیل و تفسیر درباره رویدادهای ایران و جهان.",
-            "medium": "مجله خبری رادیو بی‌بی‌سی فارسی، شامل تازه‌ترین خبرها، گزارش، گفتگو، تحلیل و تفسیر درباره رویدادهای ایران و جهان.",
-            "long": " چشم انداز بامدادی، مجله روزانه خبری بخش فارسی رادیو بی‌بی‌سی است. این برنامه شامل تازه‌ترین خبرهای روز ایران و جهان، به همراه گزارش، گفت وگو و تحلیل و تفسیر درباره رویدادهای ایران، منطقه و جهان است. این برنامه همزمان با پوشش خبرهای مهم سیاسی و اقتصادی ایران و جهان، در کنار مرور روزنامه‌‏های صبح ایران، به خبرها و موضوعات فرهنگی، هنری، اجتماعی و ورزشی نیز می‌پردازد."
+            "short": "ويمكنكم التقاط القناة عبر الأطباق اللاقطة.",
+            "medium": "ويمكنكم التقاط القناة عبر الأطباق اللاقطة.",
+            "long": ""
           },
-          "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p05wwxds.jpg",
+          "imageUrl": "ichef.bbci.co.uk/ace/ws/raw/cpsprodpb/9EC3/production/_133634604_arabic_16_9_updated.png",
           "embedding": false,
           "advertising": false,
           "versions": [
             {
               "versionId": "bbc_arabic_tv",
               "types": ["Original"],
-              "duration": 3600,
+              "duration": null,
               "durationISO8601": "PT0S",
               "warnings": {},
               "availableTerritories": {
@@ -62,7 +62,7 @@
           ],
           "availability": "available",
           "smpKind": "programme",
-          "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
+          "episodeTitle": "",
           "type": "media"
         }
       },
