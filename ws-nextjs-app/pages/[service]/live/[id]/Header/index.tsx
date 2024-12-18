@@ -5,8 +5,9 @@ import Text from '#app/components/Text';
 import MaskedImage from '#app/components/MaskedImage';
 import MediaLoader, { BumpLoader } from '#app/components/MediaLoader';
 import { MediaBlock, MediaCollection } from '#app/components/MediaLoader/types';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import mediaIcons from '#psammead/psammead-assets/src/svgs/mediaIcons';
+import { ServiceContext } from '#app/contexts/ServiceContext';
 import LiveLabelHeader from './LiveLabelHeader';
 import styles from './styles';
 
@@ -27,6 +28,7 @@ const Header = ({
   imageWidth?: number;
   mediaCollections?: MediaCollection[] | null;
 }) => {
+  const { translations } = useContext(ServiceContext);
   const isHeaderImage = !!imageUrl && !!imageUrlTemplate && !!imageWidth;
 
   const Title = (
@@ -105,12 +107,14 @@ const Header = ({
                       {mediaIcons.video}
                     </span>
                   )}
-                  {showMedia ? 'X' : 'Watch live'}
+                  {showMedia
+                    ? 'X'
+                    : `${translations.media.watch} ${translations.media.liveLabel?.toLowerCase()}`}
                 </Text>
               </button>
               {showMedia && (
                 <Text as="p" css={styles.mediaInfo}>
-                  {mediaCollections[0].model.synopses.short} - {' '}
+                  {mediaCollections[0].model.synopses.short} -{' '}
                   {mediaCollections[0].model.masterbrand.networkName}
                 </Text>
               )}
