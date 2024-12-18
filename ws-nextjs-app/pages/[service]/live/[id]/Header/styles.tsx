@@ -42,7 +42,7 @@ export default {
       border: 0,
       outline: 0,
 
-      '&:hover, &:focus': {
+      '&:hover': {
         backgroundColor: palette.WHITE,
       },
     }),
@@ -55,7 +55,7 @@ export default {
       scale: '150%',
       fontWeight: '600',
 
-      '&:hover, &:focus': {
+      '&:hover': {
         color: palette.BLACK,
       },
     }),
