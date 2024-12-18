@@ -25,33 +25,38 @@ export default {
     css({
       display: 'none',
     }),
-  button: ({ spacings, palette, isDarkUi, mq }: Theme) =>
+  headerButtonContainer: ({ spacings }: Theme) =>
     css({
-      backgroundColor: isDarkUi ? palette.GREY_3 : palette.WHITE,
-      border: `${pixelsToRem(1)}rem solid ${
-        isDarkUi ? palette.GREY_10 : palette.PHILIPPINE_GREY
-      }`,
-      borderRadius: 0,
-      padding: `${spacings.FULL}rem`,
-      cursor: 'pointer',
-      color: palette.BLACK,
+      padding: `${spacings.DOUBLE}rem`,
+      paddingLeft: 0,
+    }),
+  headerButton: ({ spacings, palette }: Theme) =>
+    css({
+      backgroundColor: palette.POSTBOX,
+      // padding: `${spacings.DOUBLE}rem`,
+      // margin: `${spacings.DOUBLE}rem`,
+      marginLeft: 0,
+      padding: 0,
+      paddingLeft: 10,
+      paddingRight: 10,
+      border: 0,
+      outline: 0,
 
       '&:hover, &:focus': {
-        backgroundColor: palette.POSTBOX,
-        color: palette.WHITE,
-        border: `${pixelsToRem(1)}rem solid ${palette.POSTBOX}`,
-        textDecoration: 'underline',
+        backgroundColor: palette.WHITE,
       },
+    }),
+  headerButtonText: ({ spacings, palette }: Theme) =>
+    css({
+      color: palette.WHITE,
+      display: 'block',
+      padding: `${spacings.TRIPLE}rem`,
+      margin: 0,
+      scale: '150%',
+      fontWeight: '600',
 
-      [mq.FORCED_COLOURS]: {
-        backgroundColor: 'canvas',
-        color: 'canvasText',
-        border: `${pixelsToRem(1)}rem solid canvasText`,
-        '&:hover, &:focus': {
-          backgroundColor: 'canvas',
-          color: 'canvasText',
-          border: `${pixelsToRem(1)}rem solid canvasText`,
-        },
+      '&:hover, &:focus': {
+        color: palette.BLACK,
       },
     }),
   backgroundContainer: () =>

@@ -80,9 +80,17 @@ const Header = ({
             )}
           </Heading>
           {mediaCollections && (
-            <button type="button" onClick={handleClick} css={styles.button}>
-              {showMedia ? 'close' : 'watch live'}
-            </button>
+            <div css={styles.headerButtonContainer}>
+              <button
+                type="button"
+                onClick={handleClick}
+                css={styles.headerButton}
+              >
+                <Text as="p" css={styles.headerButtonText}>
+                  {showMedia ? 'close' : 'watch live'}
+                </Text>
+              </button>
+            </div>
           )}
           {mediaCollections && (
             <MediaLoader
