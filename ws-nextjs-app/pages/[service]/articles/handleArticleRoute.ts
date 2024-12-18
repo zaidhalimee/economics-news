@@ -33,7 +33,7 @@ const transformPageData = (toggles?: Toggles) =>
     augmentWithDisclaimer({ toggles, positionFromTimestamp: 0 }),
   );
 
-const getPageTypeToRender = (metadata: ArticleMetadata) => {
+const getDerivedPageType = (metadata: ArticleMetadata) => {
   let pageType: PageTypes = metadata?.type;
 
   if (metadata?.type === 'article' && metadata?.consumableAsSFV) {
@@ -150,7 +150,7 @@ export default async (context: GetServerSidePropsContext) => {
     pageType: ARTICLE_PAGE,
   });
 
-  const pageTypeToRender = getPageTypeToRender(article.metadata);
+  const derivedPageType = getDerivedPageType(article.metadata);
 
   return {
     props: {
@@ -169,7 +169,7 @@ export default async (context: GetServerSidePropsContext) => {
         mostRead,
         ...(wsojData && wsojData),
       },
-      pageType: pageTypeToRender,
+      pageType: derivedPageType,
       pathname: urlWithoutQuery,
       service,
       status: data.status,
