@@ -2,7 +2,7 @@ import { css, Theme } from '@emotion/react';
 import pixelsToRem from '../../utilities/pixelsToRem';
 
 export default {
-  icon: ({ palette, mq }: Theme) =>
+  icon: ({ palette }: Theme) =>
     css({
       color: palette.GREY_10,
       fill: 'currentColor',
@@ -10,20 +10,18 @@ export default {
       width: `${pixelsToRem(14)}rem`,
       height: `${pixelsToRem(14)}rem`,
     }),
-  link: ({ spacings }: Theme) =>
+  linkContainer: ({ spacings }: Theme) =>
     css({
-      display: 'inline-block',
       textDecoration: 'none',
-      borderLeft: `${pixelsToRem(1)}rem solid #AEAEB5`,
-      padding: `0 0 0 ${spacings.FULL}rem`,
-      margin: `0 0 0 ${spacings.FULL}rem`,
-      '&:first-of-type': {
+      display: 'inline-block',
+      padding: `${spacings.FULL}rem 0 ${spacings.DOUBLE}rem 0`,
+      '&:first-of-type span': {
         borderLeft: 'none',
-        margin: '0',
       },
     }),
   linkText: () =>
     css({
+      display: 'inline-block',
       textDecoration: 'none',
       'a:visited &': {
         color: '#141414',
@@ -34,18 +32,34 @@ export default {
         color: '#141414',
       },
     }),
+  linkTextContainer: ({ spacings }: Theme) =>
+    css({
+      textDecoration: 'none',
+      display: 'inline-block',
+      borderLeft: `${pixelsToRem(1)}rem solid #AEAEB5`,
+      padding: `0 ${spacings.FULL}rem`,
+    }),
   selected: () =>
     css({
-      borderBottom: `${pixelsToRem(1)}rem solid #141414`,
+      borderBottom: `${pixelsToRem(2)}rem solid #141414`,
     }),
-  disclaimer: ({ spacings }: Theme) =>
+  notSelected: () =>
     css({
-      margin: ` ${spacings.FULL}rem 0 0 0`,
+      margin: `0 0 ${pixelsToRem(2)}rem 0`,
+      'a:visited &': {
+        margin: `0 0 ${pixelsToRem(1)}rem 0`,
+      },
+      'a:focus &, a:hover &': {
+        margin: `0`,
+      },
+    }),
+  disclaimer: () =>
+    css({
       color: '#545658',
       display: 'block',
     }),
-  bottomSpacing: ({ spacings }: Theme) =>
+  outerContainer: ({ spacings }: Theme) =>
     css({
-      margin: `0 0 ${spacings.QUADRUPLE}rem 0`,
+      padding: `0 0 ${spacings.TRIPLE}rem 0`,
     }),
 };

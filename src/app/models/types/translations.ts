@@ -27,14 +27,12 @@ export interface Translations {
     dataSaving: string;
   };
   easyReadSite?: {
-    aIDisclaimer: string;
-    easyOnboardingMessage: string;
-    standardOnboardingMessage: string;
     toStandardSite: string;
     toEasySite: string;
-    informationPageLink: string;
-    easySite: string;
-    standardSite: string;
+    format: string;
+    aIDisclaimer: string;
+    learnMore: string;
+    learnMoreLink: string;
   };
   mediaAssetPage: {
     mediaPlayer: string;

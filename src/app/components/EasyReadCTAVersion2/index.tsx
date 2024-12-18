@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { useContext } from 'react';
 import { jsx } from '@emotion/react';
+import { GridItemMedium } from '#app/legacy/components/Grid';
 import Text from '../Text';
 import { ServiceContext } from '../../contexts/ServiceContext';
 import styles from './index.styles';
@@ -21,12 +22,20 @@ const CtaLink = ({ href, text, className, selected = false }: CtaLinkProps) => {
     <a
       href={href}
       className={className}
-      css={styles.link}
+      css={styles.linkContainer}
       {...(selected && { 'aria-current': 'page' })}
     >
-      <Text size="brevier" css={[styles.linkText, selected && styles.selected]}>
-        {text}
-      </Text>
+      <span css={styles.linkTextContainer}>
+        <Text
+          size="brevier"
+          css={[
+            styles.linkText,
+            selected ? styles.selected : styles.notSelected,
+          ]}
+        >
+          {text}
+        </Text>
+      </span>
     </a>
   );
 };
@@ -56,21 +65,23 @@ const EasyReadCTA = ({ easyVersionLink, fullVersionLink }: Props) => {
   if (href == null) return null;
 
   return (
-    <div css={styles.bottomSpacing}>
-      <section role="region" data-e2e="easy-read-cta" aria-labelledby={id}>
-        <FormatIcon css={styles.icon} />
-        <Text as="strong" id={id} hidden>
-          {format}
-        </Text>
-        <CtaLink href={href} text={toStandardSite} />
-        <CtaLink href={href} text={toEasySite} selected />
-      </section>
-      {isEasyVersion && (
-        <Text as="small" size="brevier" css={styles.disclaimer}>
-          {aIDisclaimer} <InlineLink text={learnMore} to={learnMoreLink} />.
-        </Text>
-      )}
-    </div>
+    <GridItemMedium>
+      <div css={styles.outerContainer}>
+        <section role="region" data-e2e="easy-read-cta" aria-labelledby={id}>
+          <FormatIcon css={styles.icon} />
+          <Text as="strong" id={id} hidden>
+            {format}
+          </Text>
+          <CtaLink href={href} text={toStandardSite} />
+          <CtaLink href={href} text={toEasySite} selected />
+        </section>
+        {isEasyVersion && (
+          <Text as="small" size="brevier" css={styles.disclaimer}>
+            {aIDisclaimer} <InlineLink text={learnMore} to={learnMoreLink} />.
+          </Text>
+        )}
+      </div>
+    </GridItemMedium>
   );
 };
 
