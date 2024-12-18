@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useContext } from 'react';
 import useToggle from '#app/hooks/useToggle';
+import { RequestContext } from '../../../contexts/RequestContext';
 import styles from './index.styles';
 
 type Props = {
@@ -9,10 +10,13 @@ type Props = {
 };
 
 const EmbedHtml = ({ embeddableContent }: PropsWithChildren<Props>) => {
+  const { isLite } = useContext(RequestContext);
   const { enabled: electionBannerEnabled }: { enabled: boolean | null } =
     useToggle('electionBanner');
 
   if (!embeddableContent) return null;
+
+  if (isLite) return null;
 
   // TODO: Remove this logic after the US Elections
   const isUSElectionBanner = embeddableContent.includes(

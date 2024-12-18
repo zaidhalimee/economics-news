@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 /** @jsx jsx */
 import { useContext, useState, useEffect } from 'react';
 import { jsx } from '@emotion/react';
@@ -6,33 +5,34 @@ import { ServiceContext } from '#contexts/ServiceContext';
 import useViewTracker from '#app/hooks/useViewTracker';
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import Text from '#app/components/Text';
-import isLive from '#app/lib/utilities/isLive';
 import {
   EventTrackingMetadata,
   viewTrackerRef,
 } from '#app/models/types/eventTracking';
+import { OptimizelyContext } from '@optimizely/react-sdk';
 import idSanitiser from '../../lib/utilities/idSanitiser';
 import styles from './index.styles';
 
 export interface JumpToProps {
-  jumpToHeadings?: Array<{ heading: string }>;
+  jumpToHeadings: Array<{ heading: string; id?: string }>;
+  showRelatedContentLink?: boolean;
 }
 
-const eventTrackingData: EventTrackingMetadata = {
-  componentName: 'jumpto',
-};
+const JumpTo = ({ jumpToHeadings, showRelatedContentLink }: JumpToProps) => {
+  const { optimizely } = useContext(OptimizelyContext);
 
-const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
-  // TODO: Remove for release
-  if (isLive()) return null;
+  const eventTrackingData: EventTrackingMetadata = {
+    componentName: 'jumpto',
+    optimizely,
+  };
 
   const { translations } = useContext(ServiceContext);
   const [hash, setHash] = useState('');
   const { jumpTo = 'Jump to' } = translations?.articlePage || {};
 
   const viewRef = useViewTracker(eventTrackingData) as viewTrackerRef;
+  const relatedContent = translations?.relatedContent || 'Related content';
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
-
   useEffect(() => {
     setHash(window.location.hash);
   }, []);
@@ -44,7 +44,22 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
     clickTrackerHandler(e);
     setHash(subheadingId);
   };
-
+  const headingsToRender = [
+    // Add article subheadings into a copy of the array to stop mutation of the original array
+    ...jumpToHeadings.map(({ heading }) => ({
+      heading,
+      id: idSanitiser(heading),
+    })),
+    // Related content link also added to the headings list when that OJ is present on the page
+    ...(showRelatedContentLink
+      ? [
+          {
+            heading: relatedContent,
+            id: 'section-label-heading-related-content-heading',
+          },
+        ]
+      : []),
+  ];
   const titleId = 'jump-to-heading';
 
   return (
@@ -65,10 +80,8 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
         {jumpTo}
       </Text>
       <ol role="list" css={styles.list}>
-        {jumpToHeadings?.map(({ heading }) => {
-          const sanitisedId = idSanitiser(heading);
-          const idWithHash = `#${sanitisedId}`;
-
+        {headingsToRender?.map(({ heading, id }) => {
+          const idWithHash = `#${id}`;
           const isActiveId = decodeURIComponent(hash) === idWithHash;
           return (
             <li key={idWithHash} css={styles.listItem}>
@@ -76,7 +89,7 @@ const JumpTo = ({ jumpToHeadings }: JumpToProps) => {
                 href={idWithHash}
                 onClick={e => linkClickHandler(e, idWithHash)}
                 css={styles.link}
-                data-testid={`jump-to-link-${sanitisedId}`}
+                data-testid={`jump-to-link-${id}`}
               >
                 <span
                   css={[styles.linkText, isActiveId && styles.linkTextActive]}

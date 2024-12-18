@@ -12,7 +12,7 @@ import {
   LIVE_PAGE,
 } from '../../../routes/utils/pageTypes';
 import { buildATIUrl, buildATIEventTrackingParams } from '.';
-import * as buildPageATIFunctionImports from './genericPage/buildParams';
+import * as buildPageATIFunctionImports from './buildParams';
 import { RequestContextProps } from '../../../contexts/RequestContext';
 import { ServiceConfig } from '../../../models/types/serviceConfig';
 import { ATIData, PageData } from '../types';
@@ -470,10 +470,10 @@ describe('ATIAnalytics params', () => {
         );
       });
 
-      it('should not invoke buildPageATIUrl for an unsupported page types', () => {
+      it('should not invoke buildPageATIUrl for an unsupported page type with no atiData', () => {
         buildATIUrl({
           requestContext: { ...requestContext, pageType: MEDIA_PAGE },
-          atiData: homePageAnalyticsData,
+          atiData: undefined,
           serviceContext,
         });
 
@@ -743,10 +743,10 @@ describe('ATIAnalytics params', () => {
         );
       });
 
-      it('should not invoke buildPageATIParams for an unsupported page types', () => {
+      it('should not invoke buildPageATIParams for an unsupported page type with no atiData', () => {
         buildATIEventTrackingParams({
           requestContext: { ...requestContext, pageType: MEDIA_PAGE },
-          atiData: homePageAnalyticsData,
+          atiData: undefined,
           serviceContext,
         });
 
