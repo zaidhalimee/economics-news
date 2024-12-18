@@ -23,11 +23,9 @@ export default {
       paddingLeft: 0,
       paddingRight: 0,
     }),
-  headerButton: ({ palette, mq }: Theme) =>
+  mediaButton: ({ palette, mq }: Theme) =>
     css({
-      backgroundColor: palette.POSTBOX,
-      // padding: `${spacings.DOUBLE}rem`,
-      // margin: `${spacings.DOUBLE}rem`,
+      backgroundColor: palette.LIVE_LIGHT,
       marginLeft: 0,
       padding: 0,
       paddingLeft: 10,
@@ -35,21 +33,30 @@ export default {
       border: 0,
       outline: 0,
       width: '40%',
-
-      '&:hover': {
-        backgroundColor: palette.WHITE,
-      },
-
       [mq.GROUP_2_MAX_WIDTH]: {
         width: '100%',
       },
     }),
+  closeButton: ({ palette }: Theme) =>
+    css({
+      backgroundColor: palette.GREY_10,
+      border: 0,
+      outline: 0,
+      padding: 0,
+      margin: 0,
+    }),
   headerButtonIcon: ({ palette }: Theme) =>
     css({
       display: 'inline',
-      '&:hover': {
-        color: palette.BLACK,
+      svg: {
+        color: palette.WHITE,
       },
+    }),
+  mediaInfo: ({ palette }: Theme) =>
+    css({
+      color: palette.WHITE,
+      // scale: '150%',
+      fontWeight: '600',
     }),
   headerButtonText: ({ spacings, palette }: Theme) =>
     css({
@@ -59,10 +66,6 @@ export default {
       margin: 0,
       scale: '150%',
       fontWeight: '600',
-
-      '&:hover': {
-        color: palette.BLACK,
-      },
     }),
   backgroundContainer: () =>
     css({

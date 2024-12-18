@@ -5,7 +5,7 @@ import Text from '#app/components/Text';
 import MaskedImage from '#app/components/MaskedImage';
 import MediaLoader, { BumpLoader } from '#app/components/MediaLoader';
 import { MediaBlock, MediaCollection } from '#app/components/MediaLoader/types';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import mediaIcons from '#psammead/psammead-assets/src/svgs/mediaIcons';
 import LiveLabelHeader from './LiveLabelHeader';
 import styles from './styles';
@@ -40,9 +40,7 @@ const Header = ({
   const [showMedia, setShowMedia] = useState(false);
 
   const handleClick = () => {
-    console.log('button clicked');
     setShowMedia(!showMedia);
-    console.log(showMedia);
   };
 
   return (
@@ -81,23 +79,6 @@ const Header = ({
               Title
             )}
           </Heading>
-          {mediaCollections && (
-            <div css={styles.headerButtonContainer}>
-              <button
-                type="button"
-                onClick={handleClick}
-                css={styles.headerButton}
-              >
-                <Text as="p" css={styles.headerButtonText}>
-                  <span css={styles.headerButtonIcon}>{mediaIcons.video}</span>
-                  {showMedia ? 'close' : 'watch live'}
-                </Text>
-              </button>
-            </div>
-          )}
-          {mediaCollections && showMedia && (
-            <MediaLoader blocks={mediaCollections as MediaBlock[]} />
-          )}
           {description && (
             <Text
               as="p"
@@ -110,6 +91,33 @@ const Header = ({
             >
               {description}
             </Text>
+          )}
+          {mediaCollections && (
+            <div css={styles.headerButtonContainer}>
+              <button
+                type="button"
+                onClick={handleClick}
+                css={showMedia ? styles.closeButton : styles.mediaButton}
+              >
+                <Text as="p" css={styles.headerButtonText}>
+                  {!showMedia && (
+                    <span css={styles.headerButtonIcon}>
+                      {mediaIcons.video}
+                    </span>
+                  )}
+                  {showMedia ? 'X' : 'Watch live'}
+                </Text>
+              </button>
+              {showMedia && (
+                <Text as="p" css={styles.mediaInfo}>
+                  {mediaCollections[0].model.synopses.short} - {' '}
+                  {mediaCollections[0].model.masterbrand.networkName}
+                </Text>
+              )}
+            </div>
+          )}
+          {mediaCollections && showMedia && (
+            <MediaLoader blocks={mediaCollections as MediaBlock[]} />
           )}
         </div>
       </div>

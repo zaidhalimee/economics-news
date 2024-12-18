@@ -245,6 +245,13 @@ export type MediaCollection = {
     synopses: {
       short: string;
     };
+    masterbrand: {
+      id: string;
+      name: string;
+      networkName: string;
+      type: string;
+      imageUrlTemplate: string;
+    };
     version: {
       vpid?: string;
       serviceID?: string;
