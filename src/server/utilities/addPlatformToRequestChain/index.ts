@@ -2,7 +2,7 @@ export default ({
   headers,
   application,
 }: {
-  headers: { [x: string]: string };
+  headers: { [x: string]: string } | Headers;
   application: 'EXPRESS' | 'NEXTJS';
 }) => {
   const requestHeaders = new Headers(headers);
