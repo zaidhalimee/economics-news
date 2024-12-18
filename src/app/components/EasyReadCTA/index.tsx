@@ -1,110 +1,109 @@
 /** @jsx jsx */
 import { useContext } from 'react';
 import { jsx } from '@emotion/react';
-import Paragraph from '../Paragraph';
+import { GridItemMedium } from '#app/legacy/components/Grid';
+import { RequestContext } from '#app/contexts/RequestContext';
 import Text from '../Text';
-import { LeftChevron, RightChevron } from '../icons';
 import { ServiceContext } from '../../contexts/ServiceContext';
 import styles from './index.styles';
 import { defaultTranslations } from './config';
+import InlineLink from '../InlineLink';
+import { FormatIcon } from '../icons';
 
 type CtaLinkProps = {
-  isRtl: boolean;
   href: string;
   text: string;
-  fontVariant?: string;
-  showChevron?: boolean;
   ignoreLiteExtension?: boolean;
   className?: string;
+  selected?: boolean;
 };
 
-const CtaLink = ({
-  isRtl,
-  href,
-  text,
-  fontVariant = 'sansRegular',
-  showChevron = false,
-  ignoreLiteExtension = false,
-  className,
-}: CtaLinkProps) => {
-  const chevron = isRtl ? (
-    <LeftChevron css={styles.chevron} />
-  ) : (
-    <RightChevron css={styles.chevron} />
-  );
+export const createHrefRelativeToPage = (currentPath: string, id?: string) => {
+  const noExtenstionPath = currentPath.split('.')[0];
+  const slugs = noExtenstionPath.split('/');
+  const idToAppend = id ?? slugs[slugs.length - 1];
+  slugs.splice(-1, 1, idToAppend);
 
+  return slugs.join('/').replace(' ', '');
+};
+
+const CtaLink = ({ href, text, className, selected = false }: CtaLinkProps) => {
   return (
     <a
       href={href}
       className={className}
-      css={styles.link}
-      {...(ignoreLiteExtension && { 'data-ignore-lite': true })}
+      css={styles.linkContainer}
+      {...(selected && { 'aria-current': 'page' })}
     >
-      <Text size="brevier" fontVariant={fontVariant} css={styles.linkText}>
-        {text}
-      </Text>
-      {showChevron && chevron}
+      <span css={styles.linkTextContainer}>
+        <Text
+          size="brevier"
+          css={[
+            styles.linkText,
+            selected ? styles.selected : styles.notSelected,
+          ]}
+        >
+          {text}
+        </Text>
+      </span>
     </a>
   );
 };
 
 type Props = {
-  easyVersionLink?: string;
-  fullVersionLink?: string;
+  easyReadAssetId?: string;
+  originalAssetId?: string;
 };
 
-const EasyReadCTA = ({ easyVersionLink, fullVersionLink }: Props) => {
-  const isEasyVersion = fullVersionLink != null;
+const EasyReadCTA = ({ easyReadAssetId, originalAssetId }: Props) => {
+  const { pathname } = useContext(RequestContext);
+  const { translations } = useContext(ServiceContext);
 
-  const { dir, translations } = useContext(ServiceContext);
-  const isRtl = dir === 'rtl';
+  if (easyReadAssetId == null && originalAssetId == null) {
+    return null;
+  }
+
+  const easyHref = createHrefRelativeToPage(pathname, easyReadAssetId);
+  const originalHref = createHrefRelativeToPage(pathname, originalAssetId);
+
+  const isEasyActive = easyReadAssetId == null;
+
   const { easyReadSite = defaultTranslations } = translations;
   const {
-    easyOnboardingMessage,
-    standardOnboardingMessage,
     toStandardSite,
     toEasySite,
-    easySite,
-    standardSite,
+    format,
     aIDisclaimer,
+    learnMore,
+    learnMoreLink,
   } = easyReadSite;
-  const id = 'LiteSiteCta';
 
-  const href = isEasyVersion ? fullVersionLink : easyVersionLink;
-
-  if (href == null) return null;
+  const id = 'Format';
 
   return (
-    <section
-      role="region"
-      data-e2e="lite-cta"
-      aria-labelledby={id}
-      css={styles.outerContainer}
-    >
-      <Text as="strong" id={id} hidden>
-        {isEasyVersion ? easySite : standardSite}
-      </Text>
-      <div css={styles.container}>
-        <Paragraph size="brevier" css={styles.message}>
-          {isEasyVersion ? easyOnboardingMessage : standardOnboardingMessage}
-        </Paragraph>
-        {isEasyVersion && (
-          <Paragraph size="brevier" css={styles.message}>
-            {aIDisclaimer}
-          </Paragraph>
-        )}
-        <Paragraph data-e2e="to-main-site">
-          <CtaLink
-            fontVariant="sansBold"
-            isRtl={isRtl}
-            href={href}
-            text={isEasyVersion ? toStandardSite : toEasySite}
-            css={styles.topLinkSpacing}
-            showChevron
-          />
-        </Paragraph>
-      </div>
-    </section>
+    <GridItemMedium>
+      <section role="region" data-e2e="easy-read-cta" aria-labelledby={id}>
+        <FormatIcon css={styles.icon} />
+        <Text as="strong" id={id} hidden>
+          {format}
+        </Text>
+        <CtaLink
+          href={originalHref}
+          text={toStandardSite}
+          {...(!isEasyActive && { selected: true })}
+        />
+        <CtaLink
+          href={easyHref}
+          text={toEasySite}
+          {...(isEasyActive && { selected: true })}
+        />
+      </section>
+      {isEasyActive && (
+        <Text as="small" size="brevier" css={styles.disclaimer}>
+          {aIDisclaimer} <InlineLink text={learnMore} to={learnMoreLink} />.
+        </Text>
+      )}
+    </GridItemMedium>
   );
 };
 

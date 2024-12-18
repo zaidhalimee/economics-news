@@ -47,7 +47,7 @@ import JumpTo, { JumpToProps } from '#app/components/JumpTo';
 import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
 import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
 import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
-import EasyReadCTAVersion2 from '#app/components/EasyReadCTAVersion2';
+import EasyReadCTAVersion2 from '#app/components/EasyReadCTA';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
@@ -75,31 +75,6 @@ import { ComponentToRenderProps, TimeStampProps } from './types';
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const { isApp, pageType, service } = useContext(RequestContext);
-
-  // SHOULD MOVE TO REQUEST CONTEXT
-  const easyMetaBlock = pageData.content.model.blocks.find(
-    block => block.type === 'easyReadMeta',
-  );
-  const isEasyPage = easyMetaBlock != null;
-
-  // MOVE TO BFF
-  if (!isEasyPage) {
-    const easyReadStandardBlockIndex = pageData.content.model.blocks.findIndex(
-      block => block.type === 'easyRead',
-    );
-    if (easyReadStandardBlockIndex) {
-      const { blocks } = pageData.content.model;
-      const {
-        model: { blocks: standardMetaBlock },
-      } = blocks[easyReadStandardBlockIndex] as EasyReadMetaBlock;
-      const metaBlock = standardMetaBlock.find(
-        block => block.type === 'easyReadMeta',
-      );
-      if (metaBlock) {
-        blocks.splice(1, easyReadStandardBlockIndex, metaBlock);
-      }
-    }
-  }
 
   const {
     articleAuthor,
@@ -132,6 +107,44 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const bylineBlock = blocks.find(
     block => block.type === 'byline',
   ) as OptimoBylineBlock;
+
+  // HACKATHON CHANGES
+  // SHOULD MOVE TO REQUEST CONTEXT
+  let targetBlock = null;
+  let removeIndex = null;
+  const easyMetaBlockIndex = blocks.findIndex(
+    block => block.type === 'easyReadMeta',
+  );
+  const isEasyPage = easyMetaBlockIndex > -1;
+
+  if (isEasyPage) {
+    targetBlock = blocks[easyMetaBlockIndex];
+    removeIndex = easyMetaBlockIndex;
+  }
+
+  // MOVE TO BFF
+  if (!isEasyPage) {
+    const easyReadStandardBlockIndex = blocks.findIndex(
+      block => block.type === 'easyRead',
+    );
+    if (easyReadStandardBlockIndex) {
+      const { blocks: easyReadMetaBlocks } = pageData.content.model;
+      const {
+        model: { blocks: standardMetaBlock },
+      } = easyReadMetaBlocks[easyReadStandardBlockIndex] as EasyReadMetaBlock;
+      const metaBlock = standardMetaBlock.find(
+        block => block.type === 'easyReadMeta',
+      );
+      targetBlock = metaBlock;
+      removeIndex = easyReadStandardBlockIndex;
+    }
+  }
+
+  if (targetBlock && removeIndex) {
+    // INSERT AFTER HEADING
+    blocks.splice(1, 0, targetBlock);
+    blocks.splice(removeIndex, 1);
+  }
 
   const bylineContribBlocks = bylineBlock?.model?.blocks || [];
 

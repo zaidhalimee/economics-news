@@ -1,115 +1,92 @@
-import { css, keyframes, Theme } from '@emotion/react';
+import { css, Theme } from '@emotion/react';
 import pixelsToRem from '../../utilities/pixelsToRem';
 
-const multicolour = keyframes({
-  '0%': { backgroundColor: '#00FFFF' },
-  '25%': { backgroundColor: '#39FF14' },
-  '50%': { backgroundColor: '#FFFF00' },
-  '75%': { backgroundColor: '#FF1493' },
-});
+// const multicolour = keyframes({
+//   '0%': { backgroundColor: '#00FFFF' },
+//   '25%': { backgroundColor: '#39FF14' },
+//   '50%': { backgroundColor: '#FFFF00' },
+//   '75%': { backgroundColor: '#FF1493' },
+// });
 
-const changes = keyframes({
-  '0%': { backgroundPosition: '0% 50%' },
-  '100%': { backgroundPosition: '800% 50%' },
-});
+// const changes = keyframes({
+//   '0%': { backgroundPosition: '0% 50%' },
+//   '100%': { backgroundPosition: '800% 50%' },
+// });
 
-const shrinkGrowSpin = keyframes({
-  '0%': {
-    transform: 'scale(3) rotate(0deg)',
-  },
-  '25%': {
-    transform: 'scale(0.5) rotate(90deg)',
-  },
-  '50%': {
-    transform: 'scale(2) rotate(180deg)',
-  },
-  '75%': {
-    transform: 'scale(0.5) rotate(270deg)',
-  },
-  '100%': {
-    transform: 'scale(3) rotate(360deg)',
-  },
-});
+// const shrinkGrowSpin = keyframes({
+//   '0%': {
+//     transform: 'scale(3) rotate(0deg)',
+//   },
+//   '25%': {
+//     transform: 'scale(0.5) rotate(90deg)',
+//   },
+//   '50%': {
+//     transform: 'scale(2) rotate(180deg)',
+//   },
+//   '75%': {
+//     transform: 'scale(0.5) rotate(270deg)',
+//   },
+//   '100%': {
+//     transform: 'scale(3) rotate(360deg)',
+//   },
+// });
 
 export default {
-  outerContainer: ({ mq, spacings }: Theme) =>
+  icon: ({ palette }: Theme) =>
     css({
-      margin: `${spacings.FULL}rem`,
-      background:
-        'linear-gradient(90deg, #00FFFF, #39FF14, #E0E722, #FF69B4, #FF0000, #E0E722, #00FFFF, #00FFFF)',
-
-      'background-size': '800% 800%',
-      border: `${pixelsToRem(25)}rem solid red`,
-      padding: `${pixelsToRem(25)}rem`,
-      [mq.GROUP_2_MIN_WIDTH]: {
-        margin: `${spacings.DOUBLE}rem`,
-      },
-      animation: `${changes} 2s linear infinite`,
-    }),
-  container: ({ spacings, mq }: Theme) =>
-    css({
-      padding: `${spacings.DOUBLE}rem 0 0 0`,
-      maxWidth: '63.4rem',
-      position: 'relative',
-      [mq.GROUP_1_MIN_WIDTH]: {
-        padding: `${spacings.TRIPLE}rem 0 ${spacings.FULL}rem 0`,
-      },
-      [mq.GROUP_4_MIN_WIDTH]: {
-        margin: `0 auto`,
-      },
-    }),
-  message: ({ spacings, mq }: Theme) =>
-    css({
-      marginBottom: `${spacings.HALF}rem`,
-      [mq.GROUP_1_MIN_WIDTH]: {
-        marginBottom: `${spacings.FULL}rem`,
-      },
-    }),
-  chevron: ({ palette, spacings, mq }: Theme) =>
-    css({
-      animation: `${shrinkGrowSpin} 4s linear infinite`,
       color: palette.GREY_10,
       fill: 'currentColor',
-      marginInlineStart: `${spacings.FULL}rem`,
       verticalAlign: 'middle',
       width: `${pixelsToRem(14)}rem`,
       height: `${pixelsToRem(14)}rem`,
-      'a:visited &': {
-        color: palette.METAL,
-      },
-      'a:focus &, a:hover &': {
-        color: palette.POSTBOX,
-      },
-      [mq.FORCED_COLOURS]: {
-        fill: 'linkText',
-        'a:visited &': {
-          fill: 'visitedText',
-        },
-        'a:active &': {
-          fill: 'activeText',
-        },
+    }),
+  linkContainer: ({ spacings }: Theme) =>
+    css({
+      textDecoration: 'none',
+      display: 'inline-block',
+      padding: `${spacings.FULL}rem 0 ${spacings.DOUBLE}rem 0`,
+      '&:first-of-type span': {
+        borderLeft: 'none',
       },
     }),
-  link: () =>
+  linkText: () =>
     css({
       display: 'inline-block',
       textDecoration: 'none',
-    }),
-  topLinkSpacing: ({ spacings }: Theme) =>
-    css({
-      padding: `${spacings.FULL + spacings.HALF}rem 0 ${spacings.FULL + spacings.HALF}rem`,
-    }),
-  linkText: ({ palette }: Theme) =>
-    css({
-      borderBottom: `${pixelsToRem(1)}rem solid ${palette.GREY_10}`,
-      textDecoration: 'none',
       'a:visited &': {
-        color: palette.METAL,
-        borderBottom: `${pixelsToRem(1)}rem solid ${palette.METAL}`,
+        color: '#141414',
+        borderBottom: `${pixelsToRem(1)}rem solid #141414`,
       },
       'a:focus &, a:hover &': {
-        borderBottom: `${pixelsToRem(2)}rem solid ${palette.POSTBOX}`,
-        color: palette.POSTBOX,
+        borderBottom: `${pixelsToRem(2)}rem solid #141414`,
+        color: '#141414',
       },
+    }),
+  linkTextContainer: ({ spacings }: Theme) =>
+    css({
+      textDecoration: 'none',
+      display: 'inline-block',
+      borderLeft: `${pixelsToRem(1)}rem solid #AEAEB5`,
+      padding: `0 ${spacings.FULL}rem`,
+    }),
+  selected: () =>
+    css({
+      borderBottom: `${pixelsToRem(2)}rem solid #141414`,
+    }),
+  notSelected: () =>
+    css({
+      margin: `0 0 ${pixelsToRem(2)}rem 0`,
+      'a:visited &': {
+        margin: `0 0 ${pixelsToRem(1)}rem 0`,
+      },
+      'a:focus &, a:hover &': {
+        margin: `0`,
+      },
+    }),
+  disclaimer: ({ spacings }: Theme) =>
+    css({
+      padding: `0 0 ${spacings.TRIPLE}rem 0`,
+      color: '#545658',
+      display: 'block',
     }),
 };

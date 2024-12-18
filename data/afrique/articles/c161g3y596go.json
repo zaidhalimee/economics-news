@@ -1,0 +1,1093 @@
+{
+  "data": {
+    "article": {
+      "metadata": {
+        "atiAnalytics": {
+          "categoryName": null,
+          "contentId": "urn:bbc:optimo:asset:c161g3y596go",
+          "contentType": "article",
+          "language": "fr",
+          "ldpThingIds": null,
+          "ldpThingLabels": null,
+          "nationsProducer": null,
+          "pageIdentifier": "afrique.articles.c161g3y596go.page",
+          "pageTitle": "Qu'est-ce que la technique Feynman, la méthode d'étude créée par un prix Nobel pour tout apprendre",
+          "timePublished": "2024-12-18T16:56:09.394Z",
+          "timeUpdated": "2024-12-18T16:56:09.394Z"
+        },
+        "id": "urn:bbc:ares::article:c161g3y596go",
+        "locators": {
+          "optimoUrn": "urn:bbc:optimo:asset:c161g3y596go",
+          "canonicalUrl": "https://www.bbc.com/afrique/articles/c161g3y596go"
+        },
+        "type": "article",
+        "createdBy": "Afrique",
+        "language": "fr",
+        "firstPublished": 1734540969394,
+        "lastPublished": 1734540969394,
+        "options": { "includeComments": false },
+        "analyticsLabels": {
+          "contentId": "urn:bbc:optimo:asset:c161g3y596go",
+          "producer": "Afrique",
+          "page": "afrique.articles.c161g3y596go.page",
+          "irisKeyword": null
+        },
+        "passport": {
+          "language": "fr",
+          "home": "http://www.bbc.co.uk/ontologies/passport/home/Afrique",
+          "taggings": []
+        },
+        "blockTypes": [
+          "headline",
+          "text",
+          "paragraph",
+          "fragment",
+          "easyReadMeta"
+        ],
+        "includeComments": false,
+        "consumableAsSFV": false,
+        "allowAdvertising": true,
+        "consumableOnRedButton": false,
+        "consumableOnlyOnRedButton": false,
+        "breakingNews": { "isBreaking": false },
+        "useSensitiveOnwardJourneys": false,
+        "stats": { "readTime": 1, "wordCount": 407 },
+        "isTransliterated": false
+      },
+      "content": {
+        "model": {
+          "blocks": [
+            {
+              "id": "a1c95e6d",
+              "type": "headline",
+              "model": {
+                "blocks": [
+                  {
+                    "id": "bdbbbc8d",
+                    "type": "text",
+                    "model": {
+                      "blocks": [
+                        {
+                          "id": "1c289552",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "Qu'est-ce que la technique Feynman, la méthode d'étude créée par un prix Nobel pour tout apprendre",
+                            "blocks": [
+                              {
+                                "id": "b17a3020",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "Qu'est-ce que la technique Feynman, la méthode d'étude créée par un prix Nobel pour tout apprendre",
+                                  "attributes": []
+                                },
+                                "position": [1, 1, 1, 1]
+                              }
+                            ]
+                          },
+                          "position": [1, 1, 1]
+                        }
+                      ]
+                    },
+                    "position": [1, 1]
+                  }
+                ]
+              },
+              "position": [1]
+            },
+            {
+              "id": "35f0ed1c",
+              "type": "timestamp",
+              "model": {
+                "firstPublished": 1734540969394,
+                "lastPublished": 1734540969394
+              },
+              "position": [2]
+            },
+            {
+              "id": "1b42646d",
+              "type": "text",
+              "model": {
+                "blocks": [
+                  {
+                    "id": "dc1f46eb",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Technique Feynman : Une méthode facile pour apprendre",
+                      "blocks": [
+                        {
+                          "id": "13236bfd",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Technique Feynman : Une méthode facile pour apprendre",
+                            "attributes": []
+                          },
+                          "position": [3, 1, 1]
+                        }
+                      ]
+                    },
+                    "position": [3, 1]
+                  },
+                  {
+                    "id": "b28deeac",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Introduction",
+                      "blocks": [
+                        {
+                          "id": "f81d04c7",
+                          "type": "fragment",
+                          "model": { "text": "Introduction", "attributes": [] },
+                          "position": [3, 2, 1]
+                        }
+                      ]
+                    },
+                    "position": [3, 2]
+                  },
+                  {
+                    "id": "5ec1c7d8",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "La technique Feynman est une méthode d'étude créée par Richard Feynman. Richard Feynman était un scientifique américain qui a reçu un prix important pour son travail en physique (étude des règles du monde physique). Cette méthode aide à mieux comprendre des sujets difficiles.",
+                      "blocks": [
+                        {
+                          "id": "5082de3a",
+                          "type": "fragment",
+                          "model": {
+                            "text": "La technique Feynman est une méthode d'étude créée par Richard Feynman. Richard Feynman était un scientifique américain qui a reçu un prix important pour son travail en physique (étude des règles du monde physique). Cette méthode aide à mieux comprendre des sujets difficiles.",
+                            "attributes": []
+                          },
+                          "position": [3, 3, 1]
+                        }
+                      ]
+                    },
+                    "position": [3, 3]
+                  },
+                  {
+                    "id": "2a06ffc8",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Pourquoi utiliser cette méthode ?",
+                      "blocks": [
+                        {
+                          "id": "410a3ed9",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Pourquoi utiliser cette méthode ?",
+                            "attributes": []
+                          },
+                          "position": [3, 4, 1]
+                        }
+                      ]
+                    },
+                    "position": [3, 4]
+                  }
+                ]
+              },
+              "position": [3]
+            },
+            { "id": "1cfba264", "type": "mpu", "model": {}, "position": [4] },
+            {
+              "id": "b3015f7e",
+              "type": "text",
+              "model": {
+                "blocks": [
+                  {
+                    "id": "75aa4536",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Passer un examen peut être stressant. Beaucoup de personnes ont du mal à retenir des informations, même celles qui sont intelligentes. La méthode Feynman est simple. Elle aide à apprendre en expliquant les choses clairement.",
+                      "blocks": [
+                        {
+                          "id": "a3389f58",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Passer un examen peut être stressant. Beaucoup de personnes ont du mal à retenir des informations, même celles qui sont intelligentes. La méthode Feynman est simple. Elle aide à apprendre en expliquant les choses clairement.",
+                            "attributes": []
+                          },
+                          "position": [5, 1, 1]
+                        }
+                      ]
+                    },
+                    "position": [5, 1]
+                  }
+                ]
+              },
+              "position": [5]
+            },
+            {
+              "id": "8e37cce6",
+              "type": "wsoj",
+              "model": { "type": "recommendations" },
+              "position": [6]
+            },
+            {
+              "id": "3a4b20c9",
+              "type": "text",
+              "model": {
+                "blocks": [
+                  {
+                    "id": "ff5b315a",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Les étapes de la méthode Feynman",
+                      "blocks": [
+                        {
+                          "id": "0a3a808f",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Les étapes de la méthode Feynman",
+                            "attributes": []
+                          },
+                          "position": [7, 1, 1]
+                        }
+                      ]
+                    },
+                    "position": [7, 1]
+                  },
+                  {
+                    "id": "90badc95",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "1. Choisir un sujet",
+                      "blocks": [
+                        {
+                          "id": "9a1b2102",
+                          "type": "fragment",
+                          "model": {
+                            "text": "1. Choisir un sujet",
+                            "attributes": []
+                          },
+                          "position": [7, 2, 1]
+                        }
+                      ]
+                    },
+                    "position": [7, 2]
+                  }
+                ]
+              },
+              "position": [7]
+            },
+            {
+              "id": "84d2381b",
+              "type": "podcastPromo",
+              "model": { "type": "podcastPromo" },
+              "position": [8]
+            },
+            {
+              "id": "c3a9605d",
+              "type": "text",
+              "model": {
+                "blocks": [
+                  {
+                    "id": "8a3dbc8b",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Choisissez un sujet que vous voulez apprendre. Cela peut être une matière comme la chimie (science des substances) ou l'économie (étude de l'argent et des échanges). Écrivez le nom du sujet.",
+                      "blocks": [
+                        {
+                          "id": "85207306",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Choisissez un sujet que vous voulez apprendre. Cela peut être une matière comme la chimie (science des substances) ou l'économie (étude de l'argent et des échanges). Écrivez le nom du sujet.",
+                            "attributes": []
+                          },
+                          "position": [9, 1, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 1]
+                  },
+                  {
+                    "id": "5ce380ca",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "2. Expliquer le sujet",
+                      "blocks": [
+                        {
+                          "id": "257dcd51",
+                          "type": "fragment",
+                          "model": {
+                            "text": "2. Expliquer le sujet",
+                            "attributes": []
+                          },
+                          "position": [9, 2, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 2]
+                  },
+                  {
+                    "id": "8e658bab",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Écrivez tout ce que vous savez sur le sujet. Imaginez que vous expliquez à un enfant. Utilisez des mots simples. Ne vous laissez pas embrouiller par des mots difficiles.",
+                      "blocks": [
+                        {
+                          "id": "dd9ac25e",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Écrivez tout ce que vous savez sur le sujet. Imaginez que vous expliquez à un enfant. Utilisez des mots simples. Ne vous laissez pas embrouiller par des mots difficiles.",
+                            "attributes": []
+                          },
+                          "position": [9, 3, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 3]
+                  },
+                  {
+                    "id": "a0f62588",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "3. Identifier les lacunes",
+                      "blocks": [
+                        {
+                          "id": "9db27066",
+                          "type": "fragment",
+                          "model": {
+                            "text": "3. Identifier les lacunes",
+                            "attributes": []
+                          },
+                          "position": [9, 4, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 4]
+                  },
+                  {
+                    "id": "c5981f66",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Pendant que vous écrivez, vous pouvez voir que vous ne savez pas tout. C'est le moment d'apprendre ce que vous ne comprenez pas. Retournez à vos livres ou à vos notes. Essayez d'écrire encore une fois ce que vous avez compris.",
+                      "blocks": [
+                        {
+                          "id": "b7a43d1b",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Pendant que vous écrivez, vous pouvez voir que vous ne savez pas tout. C'est le moment d'apprendre ce que vous ne comprenez pas. Retournez à vos livres ou à vos notes. Essayez d'écrire encore une fois ce que vous avez compris.",
+                            "attributes": []
+                          },
+                          "position": [9, 5, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 5]
+                  },
+                  {
+                    "id": "14a4ae7b",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "4. Réviser et simplifier",
+                      "blocks": [
+                        {
+                          "id": "12f41518",
+                          "type": "fragment",
+                          "model": {
+                            "text": "4. Réviser et simplifier",
+                            "attributes": []
+                          },
+                          "position": [9, 6, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 6]
+                  },
+                  {
+                    "id": "09af5ffa",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Lisez ce que vous avez écrit. Assurez-vous d'utiliser des mots simples. Lisez à haute voix. Si vous trouvez que c'est encore compliqué, cela veut dire que vous ne comprenez pas bien. Essayez d'expliquer autrement.",
+                      "blocks": [
+                        {
+                          "id": "53a65e5c",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Lisez ce que vous avez écrit. Assurez-vous d'utiliser des mots simples. Lisez à haute voix. Si vous trouvez que c'est encore compliqué, cela veut dire que vous ne comprenez pas bien. Essayez d'expliquer autrement.",
+                            "attributes": []
+                          },
+                          "position": [9, 7, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 7]
+                  },
+                  {
+                    "id": "e3489dc9",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Exemple : Les élastiques",
+                      "blocks": [
+                        {
+                          "id": "fd52e6b4",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Exemple : Les élastiques",
+                            "attributes": []
+                          },
+                          "position": [9, 8, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 8]
+                  },
+                  {
+                    "id": "1f9ddbe3",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Richard Feynman a expliqué les élastiques très simplement. Il a dit que les élastiques sont faits de longues chaînes de petites particules (molécules). Quand on tire sur un élastique, il devient plus long. Les petites particules veulent revenir à leur taille normale, et cela crée de la chaleur (température qui monte). Vous pouvez sentir la chaleur en tirant sur un élastique entre vos lèvres.",
+                      "blocks": [
+                        {
+                          "id": "9d41ccf4",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Richard Feynman a expliqué les élastiques très simplement. Il a dit que les élastiques sont faits de longues chaînes de petites particules (molécules). Quand on tire sur un élastique, il devient plus long. Les petites particules veulent revenir à leur taille normale, et cela crée de la chaleur (température qui monte). Vous pouvez sentir la chaleur en tirant sur un élastique entre vos lèvres.",
+                            "attributes": []
+                          },
+                          "position": [9, 9, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 9]
+                  },
+                  {
+                    "id": "e697e2d1",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Avantages et inconvénients",
+                      "blocks": [
+                        {
+                          "id": "fe03c2ec",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Avantages et inconvénients",
+                            "attributes": []
+                          },
+                          "position": [9, 10, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 10]
+                  },
+                  {
+                    "id": "94dfd0aa",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "La méthode Feynman est utile pour comprendre des sujets compliqués. Elle aide à relier les idées à votre vie. Mais cette méthode demande du temps et des efforts. Elle n'est pas toujours adaptée aux sujets simples ou quand vous devez juste mémoriser des informations.",
+                      "blocks": [
+                        {
+                          "id": "27e6979e",
+                          "type": "fragment",
+                          "model": {
+                            "text": "La méthode Feynman est utile pour comprendre des sujets compliqués. Elle aide à relier les idées à votre vie. Mais cette méthode demande du temps et des efforts. Elle n'est pas toujours adaptée aux sujets simples ou quand vous devez juste mémoriser des informations.",
+                            "attributes": []
+                          },
+                          "position": [9, 11, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 11]
+                  },
+                  {
+                    "id": "b548151b",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Conclusion",
+                      "blocks": [
+                        {
+                          "id": "ee44cc69",
+                          "type": "fragment",
+                          "model": { "text": "Conclusion", "attributes": [] },
+                          "position": [9, 12, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 12]
+                  },
+                  {
+                    "id": "f8a33a19",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "La technique de Feynman peut vous aider à mieux préparer vos examens. Essayez-la la prochaine fois que vous devez apprendre quelque chose de nouveau ! (",
+                      "blocks": [
+                        {
+                          "id": "9ddc5e10",
+                          "type": "fragment",
+                          "model": {
+                            "text": "La technique de Feynman peut vous aider à mieux préparer vos examens. Essayez-la la prochaine fois que vous devez apprendre quelque chose de nouveau ! (",
+                            "attributes": []
+                          },
+                          "position": [9, 13, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 13]
+                  }
+                ]
+              },
+              "position": [9]
+            },
+            {
+              "id": "197257c5",
+              "type": "easyReadMeta",
+              "model": { "originalAssetId": "c023vz8qn6ro" },
+              "position": [10]
+            }
+          ]
+        }
+      },
+      "promo": {
+        "headlines": {
+          "seoHeadline": "Qu'est-ce que la technique Feynman, la méthode d'étude créée par un prix Nobel pour tout apprendre",
+          "promoHeadline": {
+            "blocks": [
+              {
+                "type": "text",
+                "model": {
+                  "blocks": [
+                    {
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Qu'est-ce que la technique Feynman, la méthode d'étude créée par un prix Nobel pour tout apprendre",
+                        "blocks": [
+                          {
+                            "type": "fragment",
+                            "model": {
+                              "text": "Qu'est-ce que la technique Feynman, la méthode d'étude créée par un prix Nobel pour tout apprendre",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "summary": {
+          "blocks": [
+            {
+              "type": "text",
+              "model": {
+                "blocks": [
+                  {
+                    "type": "paragraph",
+                    "model": {
+                      "text": "",
+                      "blocks": [
+                        {
+                          "type": "fragment",
+                          "model": { "text": "", "attributes": [] }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "serviceIdentifier": "Afrique",
+        "breakingNews": { "isBreaking": false },
+        "consumableAsSFV": false
+      }
+    },
+    "secondaryData": {
+      "topStories": [
+        {
+          "headlines": {
+            "headline": "Ethnicity pay gap revealed for academics"
+          },
+          "locators": {
+            "assetUri": "/news/23224388",
+            "cpsUrn": "urn:bbc:content:assetUri:news/23224388",
+            "curie": "http://www.bbc.co.uk/asset/cc11be5b-3e79-5a40-98c2-1317763d076a",
+            "assetId": "23224388"
+          },
+          "summary": "BBC Analysis shows a 26% ethnic pay gap at some of the UK's best known universities",
+          "timestamp": 1544185742000,
+          "language": "en-gb",
+          "passport": {
+            "category": {
+              "categoryId": "http://www.bbc.co.uk/ontologies/applicationlogic-news/News",
+              "categoryName": "News"
+            },
+            "taggings": []
+          },
+          "cpsType": "STY",
+          "indexImage": {
+            "id": "63696123",
+            "subType": "index",
+            "href": "http://b.files.bbci.co.uk/7DA9/test/_63696123_050408914-1.jpg",
+            "path": "/cpsdevpb/7DA9/test/_63696123_050408914-1.jpg",
+            "height": 549,
+            "width": 976,
+            "altText": "Three university graduates",
+            "caption": "The pay gap left Meenakshi Sarkar feeling depressed and devalued",
+            "copyrightHolder": "Press Association",
+            "originCode": "cpsdevpb",
+            "type": "image"
+          },
+          "options": { "isBreakingNews": false, "isFactCheck": false },
+          "prominence": "standard",
+          "section": {
+            "subType": "IDX",
+            "name": "Home",
+            "uri": "/news/front_page",
+            "type": "simple"
+          },
+          "site": {
+            "subType": "site",
+            "name": "BBC News",
+            "uri": "/news",
+            "type": "simple"
+          },
+          "id": "urn:bbc:ares::asset:news/23224388",
+          "type": "cps"
+        }
+      ],
+      "features": [
+        {
+          "headlines": { "headline": "Commémoration du massacre de Soweto 35" },
+          "locators": {
+            "assetUri": "/afrique/23053027",
+            "cpsUrn": "urn:bbc:content:assetUri:afrique/23053027",
+            "curie": "http://www.bbc.co.uk/asset/d4a17421-fa0c-d448-a3b6-230410ba601a",
+            "assetId": "23053027"
+          },
+          "summary": "Commémoration du massacre de Soweto",
+          "timestamp": 1466154789000,
+          "language": "fr",
+          "cpsType": "STY",
+          "indexImage": {
+            "id": "63490121",
+            "subType": "index",
+            "href": "http://b.files.bbci.co.uk/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 261,
+            "width": 464,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "originCode": "cpsdevpb",
+            "type": "image"
+          },
+          "imageThumbnail": {
+            "id": "63490119",
+            "subType": "index-thumbnail",
+            "href": "http://b.files.bbci.co.uk/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 180,
+            "width": 320,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "type": "image"
+          },
+          "options": { "isBreakingNews": false, "isFactCheck": false },
+          "section": {
+            "subType": "IDX",
+            "name": "Accueil",
+            "uri": "/afrique/front_page",
+            "type": "simple"
+          },
+          "id": "urn:bbc:ares::asset:afrique/23053027",
+          "type": "cps"
+        },
+        {
+          "headlines": { "headline": "Commémoration du massacre de Soweto 36" },
+          "locators": {
+            "assetUri": "/afrique/23053028",
+            "cpsUrn": "urn:bbc:content:assetUri:afrique/23053028",
+            "curie": "http://www.bbc.co.uk/asset/c140434e-ef3b-a347-b1fd-455fb263e139",
+            "assetId": "23053028"
+          },
+          "summary": "Commémoration du massacre de Soweto",
+          "timestamp": 1466154800000,
+          "language": "fr",
+          "cpsType": "STY",
+          "indexImage": {
+            "id": "63490121",
+            "subType": "index",
+            "href": "http://b.files.bbci.co.uk/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 261,
+            "width": 464,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "originCode": "cpsdevpb",
+            "type": "image"
+          },
+          "imageThumbnail": {
+            "id": "63490119",
+            "subType": "index-thumbnail",
+            "href": "http://b.files.bbci.co.uk/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 180,
+            "width": 320,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "type": "image"
+          },
+          "options": { "isBreakingNews": false, "isFactCheck": false },
+          "section": {
+            "subType": "IDX",
+            "name": "Accueil",
+            "uri": "/afrique/front_page",
+            "type": "simple"
+          },
+          "id": "urn:bbc:ares::asset:afrique/23053028",
+          "type": "cps"
+        },
+        {
+          "headlines": { "headline": "Commémoration du massacre de Soweto 19" },
+          "locators": {
+            "assetUri": "/afrique/23052941",
+            "cpsUrn": "urn:bbc:content:assetUri:afrique/23052941",
+            "curie": "http://www.bbc.co.uk/asset/32e4242e-43e4-d349-a0ac-cbaf76be2aae",
+            "assetId": "23052941"
+          },
+          "summary": "Commémoration du massacre de Soweto",
+          "timestamp": 1466092777000,
+          "language": "fr",
+          "cpsType": "STY",
+          "indexImage": {
+            "id": "63490121",
+            "subType": "index",
+            "href": "http://b.files.bbci.co.uk/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 261,
+            "width": 464,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "originCode": "cpsdevpb",
+            "type": "image"
+          },
+          "imageThumbnail": {
+            "id": "63490119",
+            "subType": "index-thumbnail",
+            "href": "http://b.files.bbci.co.uk/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 180,
+            "width": 320,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "type": "image"
+          },
+          "options": { "isBreakingNews": false, "isFactCheck": false },
+          "section": {
+            "subType": "IDX",
+            "name": "Accueil",
+            "uri": "/afrique/front_page",
+            "type": "simple"
+          },
+          "id": "urn:bbc:ares::asset:afrique/23052941",
+          "type": "cps"
+        },
+        {
+          "headlines": { "headline": "Commémoration du massacre de Soweto 20" },
+          "locators": {
+            "assetUri": "/afrique/23052943",
+            "cpsUrn": "urn:bbc:content:assetUri:afrique/23052943",
+            "curie": "http://www.bbc.co.uk/asset/8dfb243a-ab8d-374a-9dab-f478d9ce0bb4",
+            "assetId": "23052943"
+          },
+          "summary": "Commémoration du massacre de Soweto",
+          "timestamp": 1466092863000,
+          "language": "fr",
+          "cpsType": "STY",
+          "indexImage": {
+            "id": "63490121",
+            "subType": "index",
+            "href": "http://b.files.bbci.co.uk/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 261,
+            "width": 464,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "originCode": "cpsdevpb",
+            "type": "image"
+          },
+          "imageThumbnail": {
+            "id": "63490119",
+            "subType": "index-thumbnail",
+            "href": "http://b.files.bbci.co.uk/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 180,
+            "width": 320,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "type": "image"
+          },
+          "options": { "isBreakingNews": false, "isFactCheck": false },
+          "section": {
+            "subType": "IDX",
+            "name": "Accueil",
+            "uri": "/afrique/front_page",
+            "type": "simple"
+          },
+          "id": "urn:bbc:ares::asset:afrique/23052943",
+          "type": "cps"
+        },
+        {
+          "headlines": { "headline": "Commémoration du massacre de Soweto 21" },
+          "locators": {
+            "assetUri": "/afrique/23052944",
+            "cpsUrn": "urn:bbc:content:assetUri:afrique/23052944",
+            "curie": "http://www.bbc.co.uk/asset/d7e2c23f-e205-814b-945f-a0761b5cec96",
+            "assetId": "23052944"
+          },
+          "summary": "Commémoration du massacre de Soweto",
+          "timestamp": 1466092875000,
+          "language": "fr",
+          "cpsType": "STY",
+          "indexImage": {
+            "id": "63490121",
+            "subType": "index",
+            "href": "http://b.files.bbci.co.uk/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 261,
+            "width": 464,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "originCode": "cpsdevpb",
+            "type": "image"
+          },
+          "imageThumbnail": {
+            "id": "63490119",
+            "subType": "index-thumbnail",
+            "href": "http://b.files.bbci.co.uk/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 180,
+            "width": 320,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "type": "image"
+          },
+          "options": { "isBreakingNews": false, "isFactCheck": false },
+          "section": {
+            "subType": "IDX",
+            "name": "Accueil",
+            "uri": "/afrique/front_page",
+            "type": "simple"
+          },
+          "id": "urn:bbc:ares::asset:afrique/23052944",
+          "type": "cps"
+        },
+        {
+          "headlines": { "headline": "Commémoration du massacre de Soweto 25" },
+          "locators": {
+            "assetUri": "/afrique/23052995",
+            "cpsUrn": "urn:bbc:content:assetUri:afrique/23052995",
+            "curie": "http://www.bbc.co.uk/asset/b2eb81dc-f351-e346-85ce-ca4dfa1a77ad",
+            "assetId": "23052995"
+          },
+          "summary": "Commémoration du massacre de Soweto",
+          "timestamp": 1466154040000,
+          "language": "fr",
+          "cpsType": "STY",
+          "indexImage": {
+            "id": "63490121",
+            "subType": "index",
+            "href": "http://b.files.bbci.co.uk/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 261,
+            "width": 464,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "originCode": "cpsdevpb",
+            "type": "image"
+          },
+          "imageThumbnail": {
+            "id": "63490119",
+            "subType": "index-thumbnail",
+            "href": "http://b.files.bbci.co.uk/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 180,
+            "width": 320,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "type": "image"
+          },
+          "options": { "isBreakingNews": false, "isFactCheck": false },
+          "section": {
+            "subType": "IDX",
+            "name": "Accueil",
+            "uri": "/afrique/front_page",
+            "type": "simple"
+          },
+          "id": "urn:bbc:ares::asset:afrique/23052995",
+          "type": "cps"
+        },
+        {
+          "headlines": { "headline": "Commémoration du massacre de Soweto 26" },
+          "locators": {
+            "assetUri": "/afrique/23052996",
+            "cpsUrn": "urn:bbc:content:assetUri:afrique/23052996",
+            "curie": "http://www.bbc.co.uk/asset/1d7e9e57-3393-714e-850c-3b4b426b8998",
+            "assetId": "23052996"
+          },
+          "summary": "Commémoration du massacre de Soweto",
+          "timestamp": 1466154054000,
+          "language": "fr",
+          "cpsType": "STY",
+          "indexImage": {
+            "id": "63490121",
+            "subType": "index",
+            "href": "http://b.files.bbci.co.uk/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 261,
+            "width": 464,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "originCode": "cpsdevpb",
+            "type": "image"
+          },
+          "imageThumbnail": {
+            "id": "63490119",
+            "subType": "index-thumbnail",
+            "href": "http://b.files.bbci.co.uk/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 180,
+            "width": 320,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "type": "image"
+          },
+          "options": { "isBreakingNews": false, "isFactCheck": false },
+          "section": {
+            "subType": "IDX",
+            "name": "Accueil",
+            "uri": "/afrique/front_page",
+            "type": "simple"
+          },
+          "id": "urn:bbc:ares::asset:afrique/23052996",
+          "type": "cps"
+        },
+        {
+          "headlines": { "headline": "Commémoration du massacre de Soweto 27" },
+          "locators": {
+            "assetUri": "/afrique/23052997",
+            "cpsUrn": "urn:bbc:content:assetUri:afrique/23052997",
+            "curie": "http://www.bbc.co.uk/asset/8078e9b6-57bd-ee49-83c8-76ef49449be5",
+            "assetId": "23052997"
+          },
+          "summary": "Commémoration du massacre de Soweto",
+          "timestamp": 1466154067000,
+          "language": "fr",
+          "cpsType": "STY",
+          "indexImage": {
+            "id": "63490121",
+            "subType": "index",
+            "href": "http://b.files.bbci.co.uk/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 261,
+            "width": 464,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "originCode": "cpsdevpb",
+            "type": "image"
+          },
+          "imageThumbnail": {
+            "id": "63490119",
+            "subType": "index-thumbnail",
+            "href": "http://b.files.bbci.co.uk/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 180,
+            "width": 320,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "type": "image"
+          },
+          "options": { "isBreakingNews": false, "isFactCheck": false },
+          "section": {
+            "subType": "IDX",
+            "name": "Accueil",
+            "uri": "/afrique/front_page",
+            "type": "simple"
+          },
+          "id": "urn:bbc:ares::asset:afrique/23052997",
+          "type": "cps"
+        }
+      ],
+      "mostRead": {
+        "generated": "2024-12-18T17:02:56.208Z",
+        "lastRecordTimeStamp": "2021-05-04T11:53:00Z",
+        "firstRecordTimeStamp": "2021-05-04T10:53:00Z",
+        "items": [
+          {
+            "id": "c140434e-ef3b-a347-b1fd-455fb263e139",
+            "rank": 1,
+            "title": "Commémoration du massacre de Soweto 36",
+            "href": "/afrique/23053028",
+            "timestamp": "2016-06-17T09:13:20.000Z"
+          },
+          {
+            "id": "8dfb243a-ab8d-374a-9dab-f478d9ce0bb4",
+            "rank": 2,
+            "title": "Commémoration du massacre de Soweto 20",
+            "href": "/afrique/23052943",
+            "timestamp": "2016-06-16T16:01:03.000Z"
+          },
+          {
+            "id": "34ce798a-96c4-5444-b0c2-ba6487a88c92",
+            "rank": 3,
+            "title": "Commémoration du massacre de Soweto 28",
+            "href": "/afrique/23052999",
+            "timestamp": "2016-06-17T09:06:47.000Z"
+          },
+          {
+            "id": "44e8bed2-d2c8-9c41-acb5-071cad14cfb7",
+            "rank": 4,
+            "title": "Commémoration du massacre de Soweto 45",
+            "href": "/afrique/23053275",
+            "timestamp": "2016-06-17T10:48:08.000Z"
+          },
+          {
+            "id": "0dafcaff-9b96-7c41-a572-e7ab306ee0cd",
+            "rank": 5,
+            "title": "Un supercalculateur en Côte d'Ivoire",
+            "href": "/afrique/23207406",
+            "timestamp": "2018-07-09T11:19:01.000Z"
+          },
+          {
+            "id": "da6e6871-c335-294c-aed4-ec006199a746",
+            "rank": 6,
+            "title": "Af Sud : des candidats de l’ANC abattus",
+            "href": "/afrique/monde-23061718",
+            "timestamp": "2016-07-20T10:52:40.000Z"
+          },
+          {
+            "id": "1949bdae-38e4-0748-9969-ddec3444a52b",
+            "rank": 7,
+            "title": "Commémoration du massacre de Soweto 37",
+            "href": "/afrique/23053029",
+            "timestamp": "2016-06-17T09:14:31.000Z"
+          },
+          {
+            "id": "8078e9b6-57bd-ee49-83c8-76ef49449be5",
+            "rank": 8,
+            "title": "Commémoration du massacre de Soweto 27",
+            "href": "/afrique/23052997",
+            "timestamp": "2016-06-17T09:01:07.000Z"
+          },
+          {
+            "id": "1a078192-0370-de48-bd06-c336103aab12",
+            "rank": 9,
+            "title": "Thai cave rescue continues",
+            "href": "/afrique/23207350",
+            "timestamp": "2018-07-09T11:49:08.000Z"
+          },
+          {
+            "id": "439ba4f6-910e-8a4e-b2cb-11ec6aeea823",
+            "rank": 10,
+            "title": "Euro 2016 : la France première du groupe africa",
+            "href": "/afrique/region-23056013",
+            "timestamp": "2016-06-27T13:36:54.000Z"
+          }
+        ]
+      },
+      "latestMedia": null
+    }
+  },
+  "contentType": "application/json; charset=utf-8"
+}
