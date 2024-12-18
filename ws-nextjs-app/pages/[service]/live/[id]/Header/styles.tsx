@@ -17,6 +17,53 @@ export default {
         outline: 'none',
       },
     }),
+  headerButtonContainer: ({ spacings }: Theme) =>
+    css({
+      padding: `${spacings.DOUBLE}rem`,
+      paddingLeft: 0,
+      paddingRight: 0,
+    }),
+  headerButton: ({ palette, mq }: Theme) =>
+    css({
+      backgroundColor: palette.POSTBOX,
+      // padding: `${spacings.DOUBLE}rem`,
+      // margin: `${spacings.DOUBLE}rem`,
+      marginLeft: 0,
+      padding: 0,
+      paddingLeft: 10,
+      paddingRight: 10,
+      border: 0,
+      outline: 0,
+      width: '40%',
+
+      '&:hover': {
+        backgroundColor: palette.WHITE,
+      },
+
+      [mq.GROUP_2_MAX_WIDTH]: {
+        width: '100%',
+      },
+    }),
+  headerButtonIcon: ({ palette }: Theme) =>
+    css({
+      display: 'inline',
+      '&:hover': {
+        color: palette.BLACK,
+      },
+    }),
+  headerButtonText: ({ spacings, palette }: Theme) =>
+    css({
+      color: palette.WHITE,
+      display: 'block',
+      padding: `${spacings.DOUBLE}rem`,
+      margin: 0,
+      scale: '150%',
+      fontWeight: '600',
+
+      '&:hover': {
+        color: palette.BLACK,
+      },
+    }),
   backgroundContainer: () =>
     css({
       position: 'absolute',
@@ -98,11 +145,10 @@ export default {
         width: '75%',
       },
     }),
-  description: ({ palette, spacings }: Theme) =>
+  description: ({ palette }: Theme) =>
     css({
       color: palette.GREY_2,
       margin: 0,
-      marginTop: `${spacings.DOUBLE}rem`,
     }),
   layoutWithLiveLabelNoImage: ({ mq }: Theme) =>
     css({

@@ -3,8 +3,10 @@ import { jsx } from '@emotion/react';
 import Heading from '#app/components/Heading';
 import Text from '#app/components/Text';
 import MaskedImage from '#app/components/MaskedImage';
-import MediaLoader from '#app/components/MediaLoader';
-import { MediaCollection } from '#app/components/MediaLoader/types';
+import MediaLoader, { BumpLoader } from '#app/components/MediaLoader';
+import { MediaBlock, MediaCollection } from '#app/components/MediaLoader/types';
+import React, { useState } from 'react';
+import mediaIcons from '#psammead/psammead-assets/src/svgs/mediaIcons';
 import LiveLabelHeader from './LiveLabelHeader';
 import styles from './styles';
 
@@ -35,8 +37,17 @@ const Header = ({
     </span>
   );
 
+  const [showMedia, setShowMedia] = useState(false);
+
+  const handleClick = () => {
+    console.log('button clicked');
+    setShowMedia(!showMedia);
+    console.log(showMedia);
+  };
+
   return (
     <div css={styles.headerContainer}>
+      {mediaCollections && <BumpLoader />}
       <div css={styles.backgroundContainer}>
         <div css={styles.backgroundColor} />
       </div>
@@ -70,7 +81,23 @@ const Header = ({
               Title
             )}
           </Heading>
-          {mediaCollections && <MediaLoader blocks={mediaCollections} />}
+          {mediaCollections && (
+            <div css={styles.headerButtonContainer}>
+              <button
+                type="button"
+                onClick={handleClick}
+                css={styles.headerButton}
+              >
+                <Text as="p" css={styles.headerButtonText}>
+                  <span css={styles.headerButtonIcon}>{mediaIcons.video}</span>
+                  {showMedia ? 'close' : 'watch live'}
+                </Text>
+              </button>
+            </div>
+          )}
+          {mediaCollections && showMedia && (
+            <MediaLoader blocks={mediaCollections as MediaBlock[]} />
+          )}
           {description && (
             <Text
               as="p"
