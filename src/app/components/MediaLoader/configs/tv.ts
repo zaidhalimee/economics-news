@@ -9,7 +9,7 @@ export default ({
 }: ConfigBuilderProps): ConfigBuilderReturnProps => {
   const { model: tvMediaBlock } = filterForBlockType(blocks, 'tv');
   const video = tvMediaBlock?.versions?.[0] || {};
-  const holdingImageURL = `https://${tvMediaBlock.imageUrl}`;
+  const holdingImageURL = `https://${tvMediaBlock.imageUrl.replace('$recipe', '1024x576')}`;
 
   const placeholderConfig = buildPlaceholderConfig({
     title: tvMediaBlock.episodeTitle,

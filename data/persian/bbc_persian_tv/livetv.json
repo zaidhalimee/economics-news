@@ -20,11 +20,11 @@
     "episodeId": "bbc_persian_tv",
     "masterBrand": "bbc_persian_tv",
     "releaseDateTimeStamp": null,
-    "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p05wwxds.jpg",
+    "imageUrl": "ichef.bbc.co.uk/images/ic/$recipe/p08b21g3.png",
     "imageAltText": null,
     "promoBrandTitle": "تلویزیون فارسی بی‌بی‌سی: پخش زنده اینترنتی",
     "durationISO8601": "PT1H",
-    "thumbnailImageUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p05wwxds.jpg",
+    "thumbnailImageUrl": "https://ichef.bbc.co.uk/images/ic/$recipe/p08b21g3.png",
     "episodeAvailability": "available",
     "recentEpisodes": [],
     "mediaBlocks": [
@@ -39,7 +39,7 @@
             "short": "مجله خبری رادیو بی‌بی‌سی فارسی، شامل تازه‌ترین خبرها، گزارش، گفتگو، تحلیل و تفسیر درباره رویدادهای ایران و جهان.",
             "medium": "مجله خبری رادیو بی‌بی‌سی فارسی، شامل تازه‌ترین خبرها، گزارش، گفتگو، تحلیل و تفسیر درباره رویدادهای ایران و جهان."
           },
-          "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p05wwxds.jpg",
+          "imageUrl": "ichef.bbc.co.uk/images/ic/$recipe/p08b21g3.png",
           "embedding": false,
           "advertising": false,
           "versions": [

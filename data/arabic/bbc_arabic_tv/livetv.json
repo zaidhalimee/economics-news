@@ -1,7 +1,7 @@
 {
   "data": {
     "metadata": {
-      "type": "On Demand TV",
+      "type": "Live TV",
       "atiAnalytics": {
         "pageIdentifier": "arabic.bbc_arabic_tv.livetv.page",
         "contentType": "player-episode",
@@ -9,7 +9,7 @@
         "contentId": "urn:bbc:pips:sid:bbc_arabic_tv"
       }
     },
-    "language": "fa",
+    "language": "ar",
     "brandTitle": "مباشر: تلفزيون بي بي سي عربي",
     "episodeTitle": "يقدم لكم تلفزيون بي بي سي العربي الأخبار والأخبار العاجلة والتحليلات والحوارات والبرامج الوثائقية، على مدى 24 ساعة كل يوم.",
     "headline": "",
@@ -20,11 +20,11 @@
     "episodeId": "bbc_arabic_tv",
     "masterBrand": "bbc_arabic_tv",
     "releaseDateTimeStamp": null,
-    "imageUrl": "ichef.bbci.co.uk/ace/ws/raw/cpsprodpb/9EC3/production/_133634604_arabic_16_9_updated.png",
+    "imageUrl": "ichef.bbc.co.uk/images/ic/$recipe/p08b23t4.png",
     "imageAltText": null,
     "promoBrandTitle": "مباشر: تلفزيون بي بي سي عربي",
     "durationISO8601": "PT0S",
-    "thumbnailImageUrl": "https://ichef.bbci.co.uk/ace/ws/raw/cpsprodpb/9EC3/production/_133634604_arabic_16_9_updated.png",
+    "thumbnailImageUrl": "https://ichef.bbc.co.uk/images/ic/$recipe/p08b23t4.png",
     "episodeAvailability": "available",
     "recentEpisodes": [],
     "mediaBlocks": [
@@ -39,7 +39,7 @@
             "short": "ويمكنكم التقاط القناة عبر الأطباق اللاقطة.",
             "medium": "ويمكنكم التقاط القناة عبر الأطباق اللاقطة."
           },
-          "imageUrl": "ichef.bbci.co.uk/ace/ws/raw/cpsprodpb/9EC3/production/_133634604_arabic_16_9_updated.png",
+          "imageUrl": "ichef.bbc.co.uk/images/ic/$recipe/p08b23t4.png",
           "embedding": false,
           "advertising": false,
           "versions": [
