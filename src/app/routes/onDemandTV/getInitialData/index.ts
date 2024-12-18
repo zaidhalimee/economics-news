@@ -8,8 +8,18 @@ import { TV_PAGE } from '#app/routes/utils/pageTypes';
 import isTest from '#app/lib/utilities/isTest';
 import overrideRendererOnTest from '#app/routes/utils/overrideRendererOnTest';
 import arabicLiveTV from '#data/arabic/bbc_arabic_tv/livetv.json';
+import persianLiveTV from '#data/persian/bbc_persian_tv/livetv.json';
+import { Services } from '#app/models/types/global';
 
 const logger = nodeLogger(__filename);
+
+const liveTVMappings: Record<
+  Extract<Services, 'arabic' | 'persian'>,
+  object
+> = {
+  arabic: arabicLiveTV,
+  persian: persianLiveTV,
+};
 
 export default async ({
   service,
@@ -22,9 +32,11 @@ export default async ({
     let status;
     let json;
 
-    if (pathname === '/arabic/bbc_arabic_tv/livetv') {
+    // @ts-expect-error only arabic & persian TV supported
+    const liveTVData = liveTVMappings[service];
+    if (pathname.includes('/livetv') && liveTVData) {
       status = 200;
-      json = arabicLiveTV;
+      json = liveTVData;
     } else {
       ({ status, json } = await fetchDataFromBFF({
         pathname: isTest() ? overrideRendererOnTest(pathname) : pathname,
