@@ -6,6 +6,7 @@ import MaskedImage from '#app/components/MaskedImage';
 import MediaLoader from '#app/components/MediaLoader';
 import { MediaBlock, MediaCollection } from '#app/components/MediaLoader/types';
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import mediaIcons from '#psammead/psammead-assets/src/svgs/mediaIcons';
 import LiveLabelHeader from './LiveLabelHeader';
 import styles from './styles';
@@ -94,11 +95,8 @@ const Header = ({
               </button>
             </div>
           )}
-          {mediaCollections && (
-            <MediaLoader
-              blocks={mediaCollections as MediaBlock[]}
-              css={showMedia ? styles.showMediaPlayer : styles.hideMediaPlayer}
-            />
+          {mediaCollections && showMedia && (
+            <MediaLoader blocks={mediaCollections as MediaBlock[]} />
           )}
           {description && (
             <Text
