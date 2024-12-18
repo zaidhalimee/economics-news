@@ -270,7 +270,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       <NielsenAnalytics />
       <ArticleMetadata
         articleId={getArticleId(pageData)}
-        title={headline}
+        title={isEasyPage ? `Easy Read | ${headline}` : headline}
         author={articleAuthor}
         twitterHandle={articleAuthorTwitterHandle}
         firstPublished={firstPublished}
