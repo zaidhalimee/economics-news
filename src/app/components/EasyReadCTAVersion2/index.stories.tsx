@@ -2,11 +2,11 @@ import React from 'react';
 import EasyReadCTA from '.';
 
 export const Component = () => (
-  <EasyReadCTA easyVersionLink="https://www.test.bbc.com/news/articles/c0g992jmmkko" />
+  <EasyReadCTA easyReadAssetId="crkdy3r685jo" originalAssetId="cy0grkwd3zlo" />
 );
 
 export const EasyComponent = () => (
-  <EasyReadCTA fullVersionLink="https://www.test.bbc.com/news/articles/c0g992jmmkko" />
+  <EasyReadCTA originalAssetId="cy0grkwd3zlo" />
 );
 
 export default {

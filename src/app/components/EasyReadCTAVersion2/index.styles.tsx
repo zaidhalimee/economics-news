@@ -53,13 +53,10 @@ export default {
         margin: `0`,
       },
     }),
-  disclaimer: () =>
-    css({
-      color: '#545658',
-      display: 'block',
-    }),
-  outerContainer: ({ spacings }: Theme) =>
+  disclaimer: ({ spacings }: Theme) =>
     css({
       padding: `0 0 ${spacings.TRIPLE}rem 0`,
+      color: '#545658',
+      display: 'block',
     }),
 };

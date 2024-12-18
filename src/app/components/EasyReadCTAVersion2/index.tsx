@@ -2,6 +2,7 @@
 import { useContext } from 'react';
 import { jsx } from '@emotion/react';
 import { GridItemMedium } from '#app/legacy/components/Grid';
+import { RequestContext } from '#app/contexts/RequestContext';
 import Text from '../Text';
 import { ServiceContext } from '../../contexts/ServiceContext';
 import styles from './index.styles';
@@ -15,6 +16,15 @@ type CtaLinkProps = {
   ignoreLiteExtension?: boolean;
   className?: string;
   selected?: boolean;
+};
+
+export const createHrefRelativeToPage = (currentPath: string, id?: string) => {
+  const noExtenstionPath = currentPath.split('.')[0];
+  const slugs = noExtenstionPath.split('/');
+  const idToAppend = id ?? slugs[slugs.length - 1];
+  slugs.splice(-1, 1, idToAppend);
+
+  return slugs.join('/').replace(' ', '');
 };
 
 const CtaLink = ({ href, text, className, selected = false }: CtaLinkProps) => {
@@ -41,14 +51,22 @@ const CtaLink = ({ href, text, className, selected = false }: CtaLinkProps) => {
 };
 
 type Props = {
-  easyVersionLink?: string;
-  fullVersionLink?: string;
+  easyReadAssetId?: string;
+  originalAssetId?: string;
 };
 
-const EasyReadCTA = ({ easyVersionLink, fullVersionLink }: Props) => {
-  const isEasyVersion = fullVersionLink != null;
-
+const EasyReadCTA = ({ easyReadAssetId, originalAssetId }: Props) => {
+  const { pathname } = useContext(RequestContext);
   const { translations } = useContext(ServiceContext);
+
+  if (easyReadAssetId == null && originalAssetId == null) {
+    return null;
+  }
+
+  const easyHref = createHrefRelativeToPage(pathname, easyReadAssetId);
+  const originalHref = createHrefRelativeToPage(pathname, originalAssetId);
+
+  const isEasyActive = easyReadAssetId == null;
 
   const { easyReadSite = defaultTranslations } = translations;
   const {
@@ -61,26 +79,30 @@ const EasyReadCTA = ({ easyVersionLink, fullVersionLink }: Props) => {
   } = easyReadSite;
 
   const id = 'Format';
-  const href = isEasyVersion ? fullVersionLink : easyVersionLink;
-  if (href == null) return null;
 
   return (
     <GridItemMedium>
-      <div css={styles.outerContainer}>
-        <section role="region" data-e2e="easy-read-cta" aria-labelledby={id}>
-          <FormatIcon css={styles.icon} />
-          <Text as="strong" id={id} hidden>
-            {format}
-          </Text>
-          <CtaLink href={href} text={toStandardSite} />
-          <CtaLink href={href} text={toEasySite} selected />
-        </section>
-        {isEasyVersion && (
-          <Text as="small" size="brevier" css={styles.disclaimer}>
-            {aIDisclaimer} <InlineLink text={learnMore} to={learnMoreLink} />.
-          </Text>
-        )}
-      </div>
+      <section role="region" data-e2e="easy-read-cta" aria-labelledby={id}>
+        <FormatIcon css={styles.icon} />
+        <Text as="strong" id={id} hidden>
+          {format}
+        </Text>
+        <CtaLink
+          href={originalHref}
+          text={toStandardSite}
+          {...(!isEasyActive && { selected: true })}
+        />
+        <CtaLink
+          href={easyHref}
+          text={toEasySite}
+          {...(isEasyActive && { selected: true })}
+        />
+      </section>
+      {isEasyActive && (
+        <Text as="small" size="brevier" css={styles.disclaimer}>
+          {aIDisclaimer} <InlineLink text={learnMore} to={learnMoreLink} />.
+        </Text>
+      )}
     </GridItemMedium>
   );
 };

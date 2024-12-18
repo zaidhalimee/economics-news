@@ -715,9 +715,9 @@
             },
             {
               "id": "66204510",
-              "type": "easyStandardCta",
+              "type": "easyReadMeta",
               "model": {
-                "fullVersionLink": "http://localhost.bbc.com:7080/news/articles/cy0grkwd3zlo"
+                "originalAssetId": "cy0grkwd3zlo"
               }
             },
             {

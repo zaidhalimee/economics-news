@@ -552,10 +552,41 @@
               "position": [1]
             },
             {
-              "id": "66204510",
-              "type": "easyStandardCta",
+              "type": "easyRead",
               "model": {
-                "easyVersionLink": "http://localhost.bbc.com:7080/news/articles/crkdy3r685jo"
+                "hasBeenReviewed": true,
+                "suitableForAbridgement": false,
+                "blocks": [
+                  {
+                    "type": "text",
+                    "model": {
+                      "blocks": [
+                        {
+                          "type": "paragraph",
+                          "model": {
+                            "text": "Fancy wording",
+                            "blocks": [
+                              {
+                                "type": "fragment",
+                                "model": {
+                                  "text": "Fancy wording",
+                                  "attributes": []
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "easyReadMeta",
+                    "model": {
+                      "easyReadAssetId": "crkdy3r685jo",
+                      "originalAssetId": "cy0grkwd3zlo"
+                    }
+                  }
+                ]
               }
             },
             {

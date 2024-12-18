@@ -37,7 +37,11 @@ import RelatedTopics from '#containers/RelatedTopics';
 import NielsenAnalytics from '#containers/NielsenAnalytics';
 import CpsRecommendations from '#containers/CpsRecommendations';
 import InlinePodcastPromo from '#containers/PodcastPromo/Inline';
-import { Article, OptimoBylineBlock } from '#app/models/types/optimo';
+import {
+  Article,
+  EasyReadMetaBlock,
+  OptimoBylineBlock,
+} from '#app/models/types/optimo';
 import ScrollablePromo from '#components/ScrollablePromo';
 import JumpTo, { JumpToProps } from '#app/components/JumpTo';
 import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
@@ -79,6 +83,31 @@ import {
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const { isApp, pageType, service, isAmp, env } = useContext(RequestContext);
+
+  // SHOULD MOVE TO REQUEST CONTEXT
+  const easyMetaBlock = pageData.content.model.blocks.find(
+    block => block.type === 'easyReadMeta',
+  );
+  const isEasyPage = easyMetaBlock != null;
+
+  // MOVE TO BFF
+  if (!isEasyPage) {
+    const easyReadStandardBlockIndex = pageData.content.model.blocks.findIndex(
+      block => block.type === 'easyRead',
+    );
+    if (easyReadStandardBlockIndex) {
+      const { blocks } = pageData.content.model;
+      const {
+        model: { blocks: standardMetaBlock },
+      } = blocks[easyReadStandardBlockIndex] as EasyReadMetaBlock;
+      const metaBlock = standardMetaBlock.find(
+        block => block.type === 'easyReadMeta',
+      );
+      if (metaBlock) {
+        blocks.splice(1, easyReadStandardBlockIndex, metaBlock);
+      }
+    }
+  }
 
   const {
     articleAuthor,
@@ -242,7 +271,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       jumpToVariation === 'on' ? (
         <JumpTo {...props} showRelatedContentLink={showRelatedContent} />
       ) : null,
-    easyStandardCta: EasyReadCTAVersion2,
+    easyReadMeta: EasyReadCTAVersion2,
   };
 
   const visuallyHiddenBlock = {

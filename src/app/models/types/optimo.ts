@@ -41,6 +41,13 @@ export type OptimoAltTextBlock = {
   };
 };
 
+export type EasyReadMetaBlock = {
+  type: 'easyRead';
+  model: {
+    blocks: OptimoBlock[];
+  };
+};
+
 export type OptimoBylineContributorMetadataBlock = {
   type: 'name' | 'role' | 'link' | 'location' | 'images';
   model: {

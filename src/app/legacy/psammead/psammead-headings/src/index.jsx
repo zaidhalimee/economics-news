@@ -23,9 +23,11 @@ export const Headline = styled.h1`
     theme.isDarkUi ? theme.palette.GREY_2 : theme.palette.GREY_10};
   display: block; /* Explicitly set */
   margin: 0; /* Reset */
-  padding: ${GEL_SPACING_QUAD} 0;
+  padding: ${GEL_SPACING_QUAD} 0
+    ${slimPadding => (slimPadding ? GEL_SPACING_TRPL : GEL_SPACING_QUAD)} 0;
   ${MEDIA_QUERY_TYPOGRAPHY.LAPTOP_AND_LARGER} {
-    padding: ${GEL_SPACING_QUIN} 0;
+    padding: ${GEL_SPACING_QUIN} 0
+      ${slimPadding => (slimPadding ? GEL_SPACING_QUAD : GEL_SPACING_QUIN)} 0;
   }
 `;
 
