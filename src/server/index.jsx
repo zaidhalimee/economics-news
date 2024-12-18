@@ -34,7 +34,7 @@ import getAgent from './utilities/getAgent';
 import { getMvtExperiments, getMvtVaryHeaders } from './utilities/mvtHeader';
 import getAssetOrigins from './utilities/getAssetOrigins';
 import extractHeaders from './utilities/extractHeaders';
-import addSimorghToRequestChain from './utilities/addSimorghToRequestChain';
+import addPlatformToRequestChain from './utilities/addPlatformToRequestChain';
 
 const morgan = require('morgan');
 
@@ -161,6 +161,14 @@ const injectDefaultCacheHeader = (req, res, next) => {
   next();
 };
 
+const injectPlatformToRequestChain = (req, res, next) => {
+  res.set(
+    'req-svc-chain',
+    addPlatformToRequestChain({ headers: req.headers, application: 'EXPRESS' }),
+  );
+  next();
+};
+
 const injectResourceHintsHeader = (req, res, next) => {
   const thisService = req.originalUrl.split('/')[1];
 
@@ -193,6 +201,7 @@ server.get(
     injectDefaultCacheHeader,
     injectReferrerPolicyHeader,
     injectResourceHintsHeader,
+    injectPlatformToRequestChain,
   ],
   async ({ url, query, headers, path: urlPath }, res) => {
     let derivedPageType = 'Unknown';
@@ -236,8 +245,6 @@ server.get(
       });
 
       const { isUK, showCookieBannerBasedOnCountry } = extractHeaders(headers);
-
-      addSimorghToRequestChain(headers);
 
       data.toggles = toggles;
       data.path = urlPath;
