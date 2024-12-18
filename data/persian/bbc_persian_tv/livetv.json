@@ -1,28 +1,28 @@
 {
   "data": {
     "metadata": {
-      "type": "On Demand TV",
+      "type": "Live TV",
       "atiAnalytics": {
-        "pageIdentifier": "persian.bbc_persian_tv.tv_programmes.w13xttnr.page",
+        "pageIdentifier": "persian.bbc_persian_tv.livetv.page",
         "contentType": "player-episode",
-        "pageTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی - BBC News فارسی",
+        "pageTitle": "تلویزیون فارسی بی‌بی‌سی: پخش زنده اینترنتی",
         "contentId": "urn:bbc:pips:sid:bbc_persian_tv"
       }
     },
     "language": "fa",
-    "brandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
+    "brandTitle": "تلویزیون فارسی بی‌بی‌سی: پخش زنده اینترنتی",
     "episodeTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
     "headline": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
-    "shortSynopsis": "مجله خبری رادیو بی‌بی‌سی فارسی، شامل تازه‌ترین خبرها، گزارش، گفتگو، تحلیل و تفسیر درباره رویدادهای ایران و جهان.",
-    "mediumSynopsis": "مجله خبری رادیو بی‌بی‌سی فارسی، شامل تازه‌ترین خبرها، گزارش، گفتگو، تحلیل و تفسیر درباره رویدادهای ایران و جهان.",
+    "shortSynopsis": "",
+    "mediumSynopsis": "اگر برای تماشای ویدیو در این صفحه به مشکلی برخوردید، می‌توانید پخش زنده را از کانال یوتیوب ما دنبال کنید. برنامه‌های تلویزیون فارسی، هر روز به طور مستقیم و زنده از وبسایت فارسی بی‌بی‌سی هم پخش می شوند. با این حال، امکان تماشای بخشی از این برنامه‌ها به دلیل نداشتن حق پخش آن از طریق وبسایت، در پخش زنده از وبسایت وجود ندارد. پس از اتمام این برنامه‌ها، پخش زنده برنامه‌های تلویزیونی از طریق وبسایت ادامه پیدا خواهد کرد. آدرس پست الکترونیک بخش فارسی بی‌بی‌سی: persian@bbc.co.uk",
     "id": "urn:bbc:ares:ws_media:brand:bbc_persian_tv",
     "brandId": "bbc_persian_tv",
     "episodeId": "bbc_persian_tv",
     "masterBrand": "bbc_persian_tv",
-    "releaseDateTimeStamp": "2023-04-16T00:00:00.000Z",
+    "releaseDateTimeStamp": null,
     "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p05wwxds.jpg",
     "imageAltText": null,
-    "promoBrandTitle": "برنامه تصویری چشم انداز بامدادی رادیو بی‌بی‌سی",
+    "promoBrandTitle": "تلویزیون فارسی بی‌بی‌سی: پخش زنده اینترنتی",
     "durationISO8601": "PT1H",
     "thumbnailImageUrl": "https://ichef.bbci.co.uk/images/ic/1024x576/p05wwxds.jpg",
     "episodeAvailability": "available",
@@ -47,7 +47,7 @@
             {
               "versionId": "bbc_persian_tv",
               "types": ["Original"],
-              "duration": 3600,
+              "duration": null,
               "durationISO8601": "PT0S",
               "warnings": {},
               "availableTerritories": {

@@ -58,7 +58,6 @@ export interface OnDemandTVProps {
     recentEpisodes?: string[];
     episodeTitle: string;
     mediumSynopsis?: string;
-    contentType: ContentType;
   };
   mediaIsAvailable?: boolean;
   MediaError: React.Component;
