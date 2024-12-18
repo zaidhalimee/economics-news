@@ -19,7 +19,7 @@ export default {
     }),
   showMediaPlayer: () =>
     css({
-      display: 'unset',
+      display: 'unset, inline',
     }),
   hideMediaPlayer: () =>
     css({
