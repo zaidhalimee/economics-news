@@ -46,6 +46,13 @@ export default {
         backgroundColor: palette.WHITE,
       },
     }),
+  headerButtonIcon: ({ palette }: Theme) =>
+    css({
+      display: 'inline',
+      '&:hover': {
+        color: palette.BLACK,
+      },
+    }),
   headerButtonText: ({ spacings, palette }: Theme) =>
     css({
       color: palette.WHITE,

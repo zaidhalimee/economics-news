@@ -6,6 +6,7 @@ import MaskedImage from '#app/components/MaskedImage';
 import MediaLoader from '#app/components/MediaLoader';
 import { MediaBlock, MediaCollection } from '#app/components/MediaLoader/types';
 import React, { useState } from 'react';
+import mediaIcons from '#psammead/psammead-assets/src/svgs/mediaIcons';
 import LiveLabelHeader from './LiveLabelHeader';
 import styles from './styles';
 
@@ -87,6 +88,7 @@ const Header = ({
                 css={styles.headerButton}
               >
                 <Text as="p" css={styles.headerButtonText}>
+                  <span css={styles.headerButtonIcon}>{mediaIcons.video}</span>
                   {showMedia ? 'close' : 'watch live'}
                 </Text>
               </button>
