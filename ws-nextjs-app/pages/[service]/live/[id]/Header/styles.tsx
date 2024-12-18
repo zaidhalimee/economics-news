@@ -17,21 +17,13 @@ export default {
         outline: 'none',
       },
     }),
-  showMediaPlayer: () =>
-    css({
-      display: 'unset, inline',
-    }),
-  hideMediaPlayer: () =>
-    css({
-      display: 'none',
-    }),
   headerButtonContainer: ({ spacings }: Theme) =>
     css({
       padding: `${spacings.DOUBLE}rem`,
       paddingLeft: 0,
       paddingRight: 0,
     }),
-  headerButton: ({ spacings, palette, mq }: Theme) =>
+  headerButton: ({ palette, mq }: Theme) =>
     css({
       backgroundColor: palette.POSTBOX,
       // padding: `${spacings.DOUBLE}rem`,

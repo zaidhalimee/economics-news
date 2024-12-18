@@ -94,11 +94,8 @@ const Header = ({
               </button>
             </div>
           )}
-          {mediaCollections && (
-            <MediaLoader
-              blocks={mediaCollections as MediaBlock[]}
-              css={showMedia ? styles.showMediaPlayer : styles.hideMediaPlayer}
-            />
+          {mediaCollections && showMedia && (
+            <MediaLoader blocks={mediaCollections as MediaBlock[]} />
           )}
           {description && (
             <Text
