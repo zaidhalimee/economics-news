@@ -109,7 +109,7 @@ const Header = ({
                   )}
                   {showMedia
                     ? 'X'
-                    : `${translations.media.watch} ${translations.media.liveLabel?.toLowerCase()}`}
+                    : `${translations.media.watch} ${mediaCollections[0].model.live ? translations.media.liveLabel?.toLowerCase() : ''}`}
                 </Text>
               </button>
               {showMedia && (
