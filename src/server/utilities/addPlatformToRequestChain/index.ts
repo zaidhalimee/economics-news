@@ -7,20 +7,23 @@ export default ({
 }) => {
   const requestHeaders = new Headers(headers);
 
-  const requestServiceChain = requestHeaders.get('req-svc-chain');
+  let requestServiceChain = requestHeaders.get('req-svc-chain');
 
   const simorghPlatform = 'SIMORGH';
-  let platformApplication = `${simorghPlatform},${application}`;
+  const platformApplication = `${simorghPlatform},${application}`;
 
   if (requestServiceChain) {
-    platformApplication = `,${simorghPlatform},${application}`;
-    const finalService = requestServiceChain.split(',').pop();
-    if (finalService === simorghPlatform) {
-      platformApplication = `,${application}`;
+    if (requestServiceChain.endsWith(simorghPlatform)) {
+      requestServiceChain = requestServiceChain.replace(
+        simorghPlatform,
+        platformApplication,
+      );
+    } else {
+      requestServiceChain = `${requestServiceChain},${platformApplication}`;
     }
+  } else {
+    requestServiceChain = platformApplication;
   }
 
-  return requestServiceChain
-    ? `${requestServiceChain}${platformApplication}`
-    : platformApplication;
+  return requestServiceChain;
 };
