@@ -246,11 +246,7 @@ export type MediaCollection = {
       short: string;
     };
     masterbrand: {
-      id: string;
-      name: string;
       networkName: string;
-      type: string;
-      imageUrlTemplate: string;
     };
     version: {
       vpid?: string;
@@ -260,7 +256,6 @@ export type MediaCollection = {
     };
     imageUrlTemplate: string;
     title: string;
-    live: boolean;
   };
 };
 
