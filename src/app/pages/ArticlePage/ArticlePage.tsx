@@ -143,8 +143,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   if (targetBlock && removeIndex) {
     // INSERT AFTER HEADING
-    blocks.splice(1, 0, targetBlock);
     blocks.splice(removeIndex, 1);
+    blocks.splice(1, 0, targetBlock);
   }
 
   const bylineContribBlocks = bylineBlock?.model?.blocks || [];
