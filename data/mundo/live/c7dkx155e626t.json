@@ -39,6 +39,48 @@
       {
         "type": "liveMedia",
         "model": {
+          "urn": "urn:bbc:pips:pid:l0056wcq",
+          "title": "Guilty Verdicts In Pelicot Mass Rape Trial",
+          "type": "episode",
+          "synopses": {
+            "short": "51 men, including Gisèle Pelicot's husband, are being sentenced in the mass rape trial",
+            "medium": "",
+            "long": ""
+          },
+          "mediaType": "audio_video",
+          "imageUrlTemplate": "https://ichef.bbci.co.uk/images/ic/$recipe/p0kcybtn.jpg",
+          "masterbrand": {
+            "id": "bbc_news",
+            "name": "BBC News",
+            "networkName": "BBC News",
+            "type": "",
+            "imageUrlTemplate": "ichef.bbci.co.uk/images/ic/$recipe/p0bvs4dq.jpg"
+          },
+          "version": {
+            "vpid": "l0056wcr",
+            "duration": "PT11H1M52S",
+            "availabilityType": "webcast",
+            "versionTypes": [
+              {
+                "type": "Original",
+                "name": "Original version"
+              }
+            ],
+            "schedule": {
+              "start": "2024-12-19T05:56:34Z",
+              "accurateStart": "2024-12-19T05:58:08Z",
+              "end": "2024-12-19T17:00:00Z"
+            },
+            "serviceId": null,
+            "authToken": null,
+            "status": "LIVE",
+            "warnings": null
+          }
+        }
+      },
+      {
+        "type": "liveMedia",
+        "model": {
           "urn": "urn:bbc:pips:pid:p0gh4n63",
           "title": "Non-Stop Cartoons!",
           "type": "episode",
@@ -67,17 +109,16 @@
               }
             ],
             "schedule": {
-              "start": "2024-12-18T15:00:21Z",
-              "accurateStart": "2024-12-18T15:00:21Z",
-              "end": "2024-12-18T20:00:21Z"
+              "start": "2024-12-19T07:00:20Z",
+              "accurateStart": "2024-12-19T07:00:20Z",
+              "end": "2024-12-19T12:00:20Z"
             },
             "serviceId": null,
             "authToken": null,
             "status": "LIVE",
             "warnings": null
           },
-          "leadMedia": true,
-          "live": true
+          "leadMedia": true
         }
       }
     ],
