@@ -151,7 +151,7 @@ export default {
   description: ({ palette }: Theme) =>
     css({
       color: palette.GREY_2,
-      margin: 0,
+      margin: '1rem 0 0 0',
     }),
   layoutWithLiveLabelNoImage: ({ mq }: Theme) =>
     css({
