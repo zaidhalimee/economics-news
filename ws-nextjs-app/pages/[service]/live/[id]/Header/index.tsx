@@ -101,7 +101,12 @@ const Header = ({
                 onClick={handleClick}
                 css={showMedia ? styles.closeButton : styles.mediaButton}
               >
-                <Text as="p" css={styles.headerButtonText}>
+                <Text
+                  as="p"
+                  size="doublePica"
+                  fontVariant="sansBold"
+                  css={styles.headerButtonText}
+                >
                   {!showMedia && (
                     <span css={styles.headerButtonIcon}>
                       {mediaIcons.video}
@@ -113,7 +118,7 @@ const Header = ({
                 </Text>
               </button>
               {showMedia && (
-                <Text as="p" css={styles.mediaInfo}>
+                <Text as="p" fontVariant="sansBold" css={styles.mediaInfo}>
                   {mediaCollections[0].model.title}
                   {' - '}
                   {mediaCollections[0].model.masterbrand.networkName}

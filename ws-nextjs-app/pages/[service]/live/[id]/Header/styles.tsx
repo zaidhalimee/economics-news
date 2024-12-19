@@ -26,13 +26,8 @@ export default {
   mediaButton: ({ palette, mq }: Theme) =>
     css({
       backgroundColor: palette.LIVE_LIGHT,
-      marginLeft: 0,
-      padding: 0,
-      paddingLeft: 10,
-      paddingRight: 10,
       border: 0,
       outline: 0,
-      width: '40%',
       [mq.GROUP_2_MAX_WIDTH]: {
         width: '100%',
       },
@@ -55,17 +50,12 @@ export default {
   mediaInfo: ({ palette }: Theme) =>
     css({
       color: palette.WHITE,
-      // scale: '150%',
-      fontWeight: '600',
     }),
   headerButtonText: ({ spacings, palette }: Theme) =>
     css({
       color: palette.WHITE,
-      display: 'block',
-      padding: `${spacings.DOUBLE}rem`,
+      padding: `${spacings.FULL}rem`,
       margin: 0,
-      scale: '150%',
-      fontWeight: '600',
     }),
   backgroundContainer: () =>
     css({
@@ -148,10 +138,11 @@ export default {
         width: '75%',
       },
     }),
-  description: ({ palette }: Theme) =>
+  description: ({ palette, spacings }: Theme) =>
     css({
       color: palette.GREY_2,
-      margin: '1rem 0 0 0',
+      margin: 0,
+      marginTop: `${spacings.DOUBLE}rem`,
     }),
   layoutWithLiveLabelNoImage: ({ mq }: Theme) =>
     css({
