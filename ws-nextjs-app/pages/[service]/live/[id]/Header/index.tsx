@@ -114,7 +114,8 @@ const Header = ({
               </button>
               {showMedia && (
                 <Text as="p" css={styles.mediaInfo}>
-                  {mediaCollections[0].model.title} -{' '}
+                  {mediaCollections[0].model.title}
+                  {' - '}
                   {mediaCollections[0].model.masterbrand.networkName}
                 </Text>
               )}
