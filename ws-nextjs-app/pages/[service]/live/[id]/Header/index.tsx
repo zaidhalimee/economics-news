@@ -109,12 +109,12 @@ const Header = ({
                   )}
                   {showMedia
                     ? 'X'
-                    : `${translations.media.watch} ${mediaCollections[0].model.live ? translations.media.liveLabel?.toLowerCase() : ''}`}
+                    : `${translations.media.watch} ${mediaCollections[0].model.version.status === 'LIVE' ? translations.media.liveLabel : ''}`}
                 </Text>
               </button>
               {showMedia && (
                 <Text as="p" css={styles.mediaInfo}>
-                  {mediaCollections[0].model.synopses.short} -{' '}
+                  {mediaCollections[0].model.title} -{' '}
                   {mediaCollections[0].model.masterbrand.networkName}
                 </Text>
               )}
