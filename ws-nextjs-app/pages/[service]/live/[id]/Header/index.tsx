@@ -112,9 +112,11 @@ const Header = ({
                       {mediaIcons.video}
                     </span>
                   )}
-                  {showMedia
-                    ? 'x'
-                    : `${translations.media.watch} ${mediaCollections[0].model.version.status === 'LIVE' ? translations.media.liveLabel : ''}`}
+                  {showMedia ? (
+                    <span css={styles.closeButtonIcon}>{mediaIcons.close}</span>
+                  ) : (
+                    `${translations.media.watch} ${mediaCollections[0].model.version.status === 'LIVE' ? translations.media.liveLabel : ''}`
+                  )}
                 </Text>
               </button>
               {showMedia && (

@@ -48,6 +48,14 @@ export default {
         color: palette.WHITE,
       },
     }),
+  closeButtonIcon: ({ palette }: Theme) =>
+    css({
+      display: 'inline',
+      svg: {
+        color: palette.WHITE,
+        width: '1rem',
+      },
+    }),
   mediaInfo: ({ palette }: Theme) =>
     css({
       color: palette.WHITE,
