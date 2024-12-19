@@ -113,7 +113,7 @@ const Header = ({
                     </span>
                   )}
                   {showMedia
-                    ? 'X'
+                    ? 'x'
                     : `${translations.media.watch} ${mediaCollections[0].model.version.status === 'LIVE' ? translations.media.liveLabel : ''}`}
                 </Text>
               </button>

@@ -39,6 +39,7 @@ export default {
       outline: 0,
       padding: 0,
       margin: 0,
+      float: 'right',
     }),
   headerButtonIcon: ({ palette }: Theme) =>
     css({
