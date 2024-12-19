@@ -39,16 +39,16 @@
       {
         "type": "liveMedia",
         "model": {
-          "urn": "urn:bbc:pips:pid:l0056wcq",
-          "title": "Guilty Verdicts In Pelicot Mass Rape Trial",
+          "urn": "urn:bbc:pips:pid:l0056wdq",
+          "title": "Starmer Scrutinised By MPs",
           "type": "episode",
           "synopses": {
-            "short": "51 men, including Gisèle Pelicot's husband, are being sentenced in the mass rape trial",
+            "short": "Keir Starmer facing questions in his first appearance before the Liaison Committee",
             "medium": "",
             "long": ""
           },
           "mediaType": "audio_video",
-          "imageUrlTemplate": "https://ichef.bbci.co.uk/images/ic/$recipe/p0kcybtn.jpg",
+          "imageUrlTemplate": "https://ichef.bbci.co.uk/images/ic/$recipe/p0kd22h2.jpg",
           "masterbrand": {
             "id": "bbc_news",
             "name": "BBC News",
@@ -57,8 +57,8 @@
             "imageUrlTemplate": "ichef.bbci.co.uk/images/ic/$recipe/p0bvs4dq.jpg"
           },
           "version": {
-            "vpid": "l0056wcr",
-            "duration": "PT11H1M52S",
+            "vpid": "l0056wdr",
+            "duration": "PT23H56M13S",
             "availabilityType": "webcast",
             "versionTypes": [
               {
@@ -67,15 +67,16 @@
               }
             ],
             "schedule": {
-              "start": "2024-12-19T05:56:34Z",
-              "accurateStart": "2024-12-19T05:58:08Z",
-              "end": "2024-12-19T17:00:00Z"
+              "start": "2024-12-19T14:14:48Z",
+              "accurateStart": "2024-12-19T14:17:35Z",
+              "end": "2024-12-20T14:13:48Z"
             },
             "serviceId": null,
             "authToken": null,
             "status": "LIVE",
             "warnings": null
-          }
+          },
+          "leadMedia": true
         }
       },
       {
