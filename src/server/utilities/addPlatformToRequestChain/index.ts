@@ -9,7 +9,18 @@ export default ({
 
   const requestServiceChain = requestHeaders.get('req-svc-chain');
 
-  const platform = `SIMORGH,${application}`;
+  const simorghPlatform = 'SIMORGH';
+  let platformApplication = `${simorghPlatform},${application}`;
 
-  return requestServiceChain ? `${requestServiceChain},${platform}` : platform;
+  if (requestServiceChain) {
+    platformApplication = `,${simorghPlatform},${application}`;
+    const finalService = requestServiceChain.split(',').pop();
+    if (finalService === simorghPlatform) {
+      platformApplication = `,${application}`;
+    }
+  }
+
+  return requestServiceChain
+    ? `${requestServiceChain}${platformApplication}`
+    : platformApplication;
 };
