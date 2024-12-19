@@ -1054,7 +1054,6 @@ describe('buildSettings', () => {
             warnings: null,
           },
           leadMedia: true,
-          live: true,
         },
       };
 

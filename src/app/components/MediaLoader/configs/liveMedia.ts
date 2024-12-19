@@ -15,7 +15,6 @@ export default ({
     version: video,
     title,
     synopses: { short },
-    live,
   } = liveMediaBlock;
 
   const rawDuration = moment.duration(video?.duration).asSeconds();
@@ -47,7 +46,7 @@ export default ({
             versionID: video?.vpid,
             kind: 'programme',
             duration: rawDuration,
-            live,
+            live: video.status === 'LIVE',
           },
         ],
         summary: short,
