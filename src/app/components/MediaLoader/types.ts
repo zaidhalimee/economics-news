@@ -256,6 +256,7 @@ export type MediaCollection = {
       vpid?: string;
       serviceID?: string;
       duration: string;
+      status: string;
     };
     imageUrlTemplate: string;
     title: string;
