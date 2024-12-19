@@ -127,7 +127,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     const easyReadStandardBlockIndex = blocks.findIndex(
       block => block.type === 'easyRead',
     );
-    if (easyReadStandardBlockIndex) {
+
+    if (easyReadStandardBlockIndex > -1) {
       const { blocks: easyReadMetaBlocks } = pageData.content.model;
       const {
         model: { blocks: standardMetaBlock },
