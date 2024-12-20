@@ -182,7 +182,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     headline: headings,
     subheadline: headings,
     audio: MediaLoader,
-    // Temporary - For rendering storybook asset. To replace with hook use.
     video: MediaLoader,
     text,
     image: (props: ComponentToRenderProps) => (
