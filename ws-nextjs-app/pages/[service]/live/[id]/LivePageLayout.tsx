@@ -81,10 +81,6 @@ const LivePage = ({ pageData }: ComponentProps) => {
   // HACK: Remove once data available on preview environment
   let mediaCollections = initialMediaCollections;
   if (mediaCollections && !mediaCollections[0]?.model) {
-    mediaCollections = null;
-  }
-  // Adds media collection to all live pages
-  if (!mediaCollections) {
     // @ts-expect-error TODO remove this override
     mediaCollections = mundoLivePageWithMediaCollection.data.mediaCollections;
   }
