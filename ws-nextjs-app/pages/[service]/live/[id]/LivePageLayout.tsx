@@ -60,7 +60,7 @@ export type ComponentProps = {
 };
 
 const LivePage = ({ pageData }: ComponentProps) => {
-  const { lang, translations, defaultImage, brandName, service } =
+  const { lang, translations, defaultImage, brandName } =
     useContext(ServiceContext);
   const { canonicalNonUkLink } = useContext(RequestContext);
   const {
