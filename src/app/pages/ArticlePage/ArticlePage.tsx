@@ -81,14 +81,7 @@ import {
   ExperimentTopStories,
 } from './experimentTopStories/helpers';
 
-const ArticlePage = ({
-  pageData,
-  // Temporary - For rendering storybook asset. To replace with hook use.
-  experimentStage,
-}: {
-  pageData: Article;
-  experimentStage?: Stages;
-}) => {
+const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const { isApp, pageType, service, isAmp, env } = useContext(RequestContext);
 
   const {
@@ -190,9 +183,7 @@ const ArticlePage = ({
     subheadline: headings,
     audio: MediaLoader,
     // Temporary - For rendering storybook asset. To replace with hook use.
-    video: (props: MediaComponentToRenderProps) => (
-      <MediaLoader {...props} experimentStage={experimentStage} />
-    ),
+    video: MediaLoader,
     text,
     image: (props: ComponentToRenderProps) => (
       <ImageWithCaption

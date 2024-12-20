@@ -13,7 +13,7 @@ exports[`Sign Post should render a 'Help reduce your power consumption' message 
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  background: rgba(48, 128, 59, 0.9);
+  background: rgba(14, 98, 0, 0.9);
   height: 100%;
   width: 100%;
   z-index: 1;
@@ -24,6 +24,13 @@ exports[`Sign Post should render a 'Help reduce your power consumption' message 
     left: calc(100% - 15.625rem);
     width: 15.625rem;
     height: unset;
+    background: rgba(14, 98, 0, 1);
+  }
+}
+
+@media (max-width: 18.75rem) {
+  .emotion-0 {
+    padding: 1rem;
   }
 }
 
@@ -41,7 +48,7 @@ exports[`Sign Post should render a 'Help reduce your power consumption' message 
 
 @media (max-width: 18.75rem) {
   .emotion-1 {
-    width: 0;
+    display: none;
   }
 }
 
@@ -59,14 +66,14 @@ exports[`Sign Post should render a 'Help reduce your power consumption' message 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
   .emotion-2 {
     font-size: 1rem;
-    line-height: 1.25rem;
+    line-height: 1.375rem;
   }
 }
 
 @media (min-width: 37.5rem) {
   .emotion-2 {
     font-size: 1rem;
-    line-height: 1.25rem;
+    line-height: 1.375rem;
   }
 }
 
@@ -75,18 +82,24 @@ exports[`Sign Post should render a 'Help reduce your power consumption' message 
 }
 
 .emotion-4 {
+  all: unset;
+}
+
+.emotion-4:focus {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
+}
+
+.emotion-5 {
   fill: #FFFFFF;
   margin: 0 0.2rem 0 0;
 }
 
 @media screen and (forced-colors: active) {
-  .emotion-4 path {
+  .emotion-5 path {
     fill: currentColor;
   }
-}
-
-.emotion-5 {
-  all: unset;
 }
 
 .emotion-6 {
@@ -104,15 +117,20 @@ exports[`Sign Post should render a 'Help reduce your power consumption' message 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
   .emotion-6 {
     font-size: 1rem;
-    line-height: 1.25rem;
+    line-height: 1.375rem;
   }
 }
 
 @media (min-width: 37.5rem) {
   .emotion-6 {
     font-size: 1rem;
-    line-height: 1.25rem;
+    line-height: 1.375rem;
   }
+}
+
+.emotion-6:hover,
+.emotion-6:focus {
+  border-bottom: 0.125rem solid #FFFFFF;
 }
 
 <div>
@@ -143,25 +161,25 @@ exports[`Sign Post should render a 'Help reduce your power consumption' message 
       <div
         class="emotion-3"
       >
-        <span>
-          <svg
-            aria-hidden="true"
-            class="emotion-4"
-            focusable="false"
-            height="0.8rem"
-            viewBox="0 0 32 32"
-            width="0.8rem"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M29.6 13.4H18.7v-11h-5.4v11H2.4v5.3h10.9v11h5.4v-11h10.9z"
-            />
-          </svg>
-        </span>
         <button
-          class="emotion-5"
+          class="emotion-4"
           type="button"
         >
+          <span>
+            <svg
+              aria-hidden="true"
+              class="emotion-5"
+              focusable="false"
+              height="0.8rem"
+              viewBox="0 0 32 32"
+              width="0.8rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M29.6 13.4H18.7v-11h-5.4v11H2.4v5.3h10.9v11h5.4v-11h10.9z"
+              />
+            </svg>
+          </span>
           <span
             class="emotion-6"
           >

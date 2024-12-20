@@ -16,7 +16,7 @@ import {
 import filterForBlockType from '#lib/utilities/blockHandlers';
 import { PageTypes } from '#app/models/types/global';
 import { EventTrackingContext } from '#app/contexts/EventTrackingContext';
-import { Stages } from '#app/hooks/useExperimentHook';
+import useExperimentHook, { Stages } from '#app/hooks/useExperimentHook';
 import { BumpType, MediaBlock, PlayerConfig } from './types';
 import Caption from '../Caption';
 import nodeLogger from '../../lib/logger.node';
@@ -27,9 +27,9 @@ import getCaptionBlock from './utils/getCaptionBlock';
 import styles from './index.styles';
 import { getBootstrapSrc } from '../Ad/Canonical';
 import Metadata from './Metadata';
+import AmpMediaLoader from './Amp';
 import getTranscriptBlock from './utils/getTranscriptBlock';
 import Transcript from '../Transcript';
-import AmpMediaLoader from './Amp';
 
 const PAGETYPES_IGNORE_PLACEHOLDER: PageTypes[] = [
   MEDIA_ARTICLE_PAGE,
@@ -165,18 +165,16 @@ type Props = {
   blocks: MediaBlock[];
   className?: string;
   embedded?: boolean;
-  experimentStage?: Stages;
+  forceStage?: Stages;
 };
 
-const MediaLoader = ({
-  blocks,
-  className,
-  embedded,
-  experimentStage,
-}: Props) => {
+const MediaLoader = ({ blocks, className, embedded, forceStage }: Props) => {
   const { lang, translations } = useContext(ServiceContext);
   const { pageIdentifier } = useContext(EventTrackingContext);
   const { enabled: adsEnabled } = useToggle('ads');
+  const stage = useExperimentHook();
+
+  const experimentStage = forceStage ?? stage;
 
   const {
     id,
@@ -244,87 +242,79 @@ const MediaLoader = ({
 
   const experimentEnabled = experimentStage === Stages.STAGE_2;
 
-  return (
+  return isLite && hasTranscript ? (
+    <Transcript
+      transcript={transcriptBlock}
+      title={placeholderConfig?.mediaInfo?.title}
+    />
+  ) : (
     <>
-      {isLite && hasTranscript ? (
-        <Transcript
-          transcript={transcriptBlock}
-          title={placeholderConfig?.mediaInfo?.title}
-        />
-      ) : (
-        <>
-          {
-            // Prevents the av-embeds route itself rendering the Metadata component
-            !embedded && (
-              <Metadata
-                blocks={blocks}
-                embedURL={playerConfig?.externalEmbedUrl}
-              />
-            )
-          }
-          {showPortraitTitle && (
-            <strong css={styles.titlePortrait}>Watch Moments</strong>
-          )}
-          <figure
-            data-e2e="media-loader__container"
-            className={className}
-            css={[
-              styles.figure(embedded),
-              experimentEnabled && styles.experimentVideo,
-              playerConfig?.ui?.skin === 'classic' && [
-                orientation === 'portrait' && styles.portraitFigure(embedded),
-                orientation === 'landscape' && styles.landscapeFigure,
-              ],
-            ]}
-          >
-            {isAmp ? (
-              <AmpMediaLoader
-                src={ampIframeUrl}
-                title={mediaInfo?.title}
-                placeholderSrc={placeholderSrc}
-                placeholderSrcset={placeholderSrcset}
+      {
+        // Prevents the av-embeds route itself rendering the Metadata component
+        !embedded && (
+          <Metadata blocks={blocks} embedURL={playerConfig?.externalEmbedUrl} />
+        )
+      }
+      {showPortraitTitle && (
+        <strong css={styles.titlePortrait}>
+          {translations.media.watchMoments || 'Watch Moments'}
+        </strong>
+      )}
+      <figure
+        data-e2e="media-loader__container"
+        className={className}
+        css={[
+          styles.figure(embedded),
+          transcriptBlock && experimentEnabled && styles.experimentVideo,
+          playerConfig?.ui?.skin === 'classic' && [
+            orientation === 'portrait' && styles.portraitFigure(embedded),
+            orientation === 'landscape' && styles.landscapeFigure,
+          ],
+        ]}
+      >
+        {isAmp ? (
+          <AmpMediaLoader
+            src={ampIframeUrl}
+            title={mediaInfo?.title}
+            placeholderSrc={placeholderSrc}
+            placeholderSrcset={placeholderSrcset}
+            noJsMessage={translatedNoJSMessage}
+          />
+        ) : (
+          <>
+            {showAds && <AdvertTagLoader />}
+            <BumpLoader />
+            {hasPlaceholder ? (
+              <Placeholder
+                src={placeholderSrc}
+                srcSet={placeholderSrcset}
                 noJsMessage={translatedNoJSMessage}
+                mediaInfo={mediaInfo}
+                onClick={() => setShowPlaceholder(false)}
+                experimentStage={experimentStage}
               />
             ) : (
-              <>
-                {showAds && <AdvertTagLoader />}
-                <BumpLoader />
-                {hasPlaceholder ? (
-                  <Placeholder
-                    src={placeholderSrc}
-                    srcSet={placeholderSrcset}
-                    noJsMessage={translatedNoJSMessage}
-                    mediaInfo={mediaInfo}
-                    onClick={() => setShowPlaceholder(false)}
-                    experimentStage={experimentStage}
-                  />
-                ) : (
-                  <MediaContainer
-                    playerConfig={playerConfig}
-                    showAds={showAds}
-                  />
-                )}
-              </>
+              <MediaContainer playerConfig={playerConfig} showAds={showAds} />
             )}
-            {captionBlock && (
-              <Caption
-                block={captionBlock}
-                type={mediaType}
-                css={
-                  (orientation === 'portrait' && styles.captionPortrait,
-                  experimentEnabled && styles.experimentCaption)
-                }
-              />
-            )}
-            {transcriptBlock && (
-              <Transcript
-                transcript={transcriptBlock}
-                title={placeholderConfig?.mediaInfo?.title}
-              />
-            )}
-          </figure>
-        </>
-      )}
+          </>
+        )}
+        {captionBlock && (
+          <Caption
+            block={captionBlock}
+            type={mediaType}
+            css={[
+              orientation === 'portrait' && styles.captionPortrait,
+              experimentEnabled && styles.experimentCaption,
+            ]}
+          />
+        )}
+        {transcriptBlock && (
+          <Transcript
+            transcript={transcriptBlock}
+            title={placeholderConfig?.mediaInfo?.title}
+          />
+        )}
+      </figure>
     </>
   );
 };

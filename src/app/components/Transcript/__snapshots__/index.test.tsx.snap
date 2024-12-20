@@ -4,7 +4,6 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
 .emotion-0 {
   background-color: #FFFFFF;
   display: block;
-  margin-top: 1.5rem;
   border: solid 0.1875rem transparent;
 }
 
@@ -25,7 +24,7 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
 
 .emotion-1 {
   list-style: none;
-  padding: 1rem;
+  padding: 1rem 0.25rem;
 }
 
 .emotion-1::-webkit-details-marker {
@@ -86,15 +85,9 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
 }
 
 .emotion-4 {
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   list-style: none;
   margin: 0;
-}
-
-@media (min-width: 15rem) {
-  .emotion-4 {
-    padding: 0 1.5rem;
-  }
 }
 
 .emotion-5 {
@@ -120,14 +113,14 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
   .emotion-6 {
     font-size: 1rem;
-    line-height: 1.25rem;
+    line-height: 1.375rem;
   }
 }
 
 @media (min-width: 37.5rem) {
   .emotion-6 {
     font-size: 1rem;
-    line-height: 1.25rem;
+    line-height: 1.375rem;
   }
 }
 
@@ -166,6 +159,33 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
     -webkit-padding-start: 1rem;
     padding-inline-start: 1rem;
     width: calc(90% - 1rem);
+  }
+}
+
+.emotion-175 {
+  color: #141414;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-family: ReithSans,Helvetica,Arial,sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #545658;
+  display: block;
+  padding-bottom: 1rem;
+  padding-inline: 0.5rem;
+}
+
+@media (min-width: 20rem) and (max-width: 37.4375rem) {
+  .emotion-175 {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .emotion-175 {
+    font-size: 0.8125rem;
+    line-height: 1rem;
   }
 }
 
@@ -1025,6 +1045,11 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
         </span>
       </li>
     </ul>
+    <small
+      class="emotion-175"
+    >
+      This transcript was reviewed by a journalist after AI generation.
+    </small>
   </details>
 </div>
 `;
