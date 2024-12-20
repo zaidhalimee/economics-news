@@ -78,10 +78,14 @@ const LivePage = ({ pageData }: ComponentProps) => {
     mediaCollections: initialMediaCollections,
   } = pageData;
 
-  let mediaCollections = initialMediaCollections;
   // HACK: Remove once data available on preview environment
+  let mediaCollections = initialMediaCollections;
+  if (mediaCollections && !mediaCollections[0]?.model) {
+    mediaCollections = null;
+  }
+
   if (
-    (!mediaCollections || !mediaCollections[0].model) &&
+    !mediaCollections &&
     canonicalNonUkLink.includes('/mundo/live/c7dkx155e626t')
   ) {
     // @ts-expect-error TODO remove this override
