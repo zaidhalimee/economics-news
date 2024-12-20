@@ -12,6 +12,7 @@ import MetadataContainer from '#app/components/Metadata';
 import LinkedDataContainer from '#app/components/LinkedData';
 import getLiveBlogPostingSchema from '#app/lib/seoUtils/getLiveBlogPostingSchema';
 import { MediaCollection } from '#app/components/MediaLoader/types';
+import livePageWithMediaCollection from '#data/mundo/live/c7dkx155e626t.json';
 import Stream from './Stream';
 import Header from './Header';
 import KeyPoints from './KeyPoints';
@@ -74,8 +75,18 @@ const LivePage = ({ pageData }: ComponentProps) => {
     metadata: { atiAnalytics = undefined } = {},
     headerImage,
     promoImage,
-    mediaCollections,
+    mediaCollections: initialMediaCollections,
   } = pageData;
+
+  let mediaCollections = initialMediaCollections;
+  // HACK: Remove once data available on preview environment
+  if (
+    (!mediaCollections || !mediaCollections[0].model) &&
+    canonicalNonUkLink.includes('/mundo/live/c7dkx155e626t')
+  ) {
+    // @ts-expect-error TODO remove this override
+    mediaCollections = livePageWithMediaCollection.data.mediaCollections;
+  }
 
   const {
     url: imageUrl,
