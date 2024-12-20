@@ -28,7 +28,7 @@ const Component = ({ service, pageType, blocks, experimentStage }: Props) => (
     pathname=""
     service={service}
   >
-    <MediaLoaderComponent blocks={blocks} experimentStage={experimentStage} />
+    <MediaLoaderComponent blocks={blocks} forceStage={experimentStage} />
   </RequestContextProvider>
 );
 
