@@ -291,6 +291,21 @@ const withThemeProvider = ({
     isLite: false,
   };
 
+  const getHelmetVariants = () => {
+    return {
+      sansRegular: getSansRegular(helmetFontVariants),
+      sansRegularItalic: getSansRegularItalic(helmetFontVariants),
+      sansBold: getSansBold(helmetFontVariants),
+      sansBoldItalic: getSansBoldItalic(helmetFontVariants),
+      sansLight: getSansLight(helmetFontVariants),
+      serifRegular: getSerifRegular(helmetFontVariants),
+      serifMedium: getSerifMedium(helmetFontVariants),
+      serifMediumItalic: getSerifMediumItalic(helmetFontVariants),
+      serifBold: getSerifBold(helmetFontVariants),
+      serifLight: getSerifLight(helmetFontVariants),
+    };
+  };
+
   const ThemeProvider: React.FC<Props> = ({ children }) => {
     const { isAmp, isLite, pageType, saveData } = useContext(RequestContext);
 
@@ -298,7 +313,7 @@ const withThemeProvider = ({
       ...themeConfig,
       isDarkUi: isDarkUiPage(pageType),
       isLite,
-      fontVariants: saveData ? helmetFontVariants : fontVariants,
+      fontVariants: saveData ? getHelmetVariants() : fontVariants,
     };
 
     return (
