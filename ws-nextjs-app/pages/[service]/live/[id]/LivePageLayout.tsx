@@ -12,7 +12,9 @@ import MetadataContainer from '#app/components/Metadata';
 import LinkedDataContainer from '#app/components/LinkedData';
 import getLiveBlogPostingSchema from '#app/lib/seoUtils/getLiveBlogPostingSchema';
 import { MediaCollection } from '#app/components/MediaLoader/types';
-import livePageWithMediaCollection from '#data/mundo/live/c7dkx155e626t.json';
+import mundoLivePageWithMediaCollection from '#data/mundo/live/c7dkx155e626t.json';
+
+import arabic from '#app/lib/config/services/arabic';
 import Stream from './Stream';
 import Header from './Header';
 import KeyPoints from './KeyPoints';
@@ -60,7 +62,7 @@ export type ComponentProps = {
 };
 
 const LivePage = ({ pageData }: ComponentProps) => {
-  const { lang, translations, defaultImage, brandName } =
+  const { lang, translations, defaultImage, brandName, service } =
     useContext(ServiceContext);
   const { canonicalNonUkLink } = useContext(RequestContext);
   const {
@@ -83,13 +85,10 @@ const LivePage = ({ pageData }: ComponentProps) => {
   if (mediaCollections && !mediaCollections[0]?.model) {
     mediaCollections = null;
   }
-
-  if (
-    !mediaCollections &&
-    canonicalNonUkLink.includes('/mundo/live/c7dkx155e626t')
-  ) {
+  // Adds media collection to all live pages
+  if (!mediaCollections) {
     // @ts-expect-error TODO remove this override
-    mediaCollections = livePageWithMediaCollection.data.mediaCollections;
+    mediaCollections = mundoLivePageWithMediaCollection.data.mediaCollections;
   }
 
   const {
