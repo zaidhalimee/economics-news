@@ -19,6 +19,7 @@ const useViewTracker = (props = {}) => {
   const advertiserID = path(['advertiserID'], props);
   const url = path(['url'], props);
   const optimizely = path(['optimizely'], props);
+  const optimizelyMetricNameOverride = props?.optimizelyMetricNameOverride;
   const detailedPlacement = props?.detailedPlacement;
 
   const observer = useRef();
@@ -74,13 +75,17 @@ const useViewTracker = (props = {}) => {
 
         if (shouldSendEvent) {
           if (optimizely) {
+            const eventName = OPTIMIZELY_CONFIG.viewClickAttributeId;
+
             const overrideAttributes = {
               ...optimizely.user.attributes,
-              [`viewed_${OPTIMIZELY_CONFIG.viewClickAttributeId}`]: true,
+              [`viewed_${eventName}`]: true,
             };
 
             optimizely.track(
-              'component_views',
+              optimizelyMetricNameOverride
+                ? `${optimizelyMetricNameOverride}_views`
+                : 'component_views',
               optimizely.user.id,
               overrideAttributes,
             );
@@ -129,6 +134,7 @@ const useViewTracker = (props = {}) => {
     advertiserID,
     url,
     optimizely,
+    optimizelyMetricNameOverride,
     detailedPlacement,
   ]);
 

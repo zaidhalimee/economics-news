@@ -15,11 +15,25 @@ const urls = [
     service: 'serbian',
     local: '/serbian/lat',
     test: '/serbian/lat',
+    live: '/serbian/lat',
   },
   {
     service: 'serbian',
     local: '/serbian/cyr',
     test: '/serbian/cyr',
+    live: '/serbian/cyr',
+  },
+  {
+    service: 'uzbek',
+    local: '/uzbek/lat',
+    test: '/uzbek/lat',
+    live: '/uzbek/lat',
+  },
+  {
+    service: 'uzbek',
+    local: '/uzbek/cyr',
+    test: '/uzbek/cyr',
+    live: '/uzbek/cyr',
   },
 ];
 
