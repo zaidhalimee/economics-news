@@ -22,8 +22,6 @@ const useViewTracker = (props = {}) => {
   const optimizelyMetricNameOverride = props?.optimizelyMetricNameOverride;
   const detailedPlacement = props?.detailedPlacement;
 
-  const useReverb = pathOr(false, ['useReverb'], props);
-
   const observer = useRef();
   const timer = useRef(null);
   const [isInView, setIsInView] = useState();
@@ -42,7 +40,8 @@ const useViewTracker = (props = {}) => {
     ['campaignID'],
     props,
   );
-  const { service } = useContext(ServiceContext);
+
+  const { service, useReverb } = useContext(ServiceContext);
 
   const initObserver = async () => {
     if (typeof window.IntersectionObserver === 'undefined') {

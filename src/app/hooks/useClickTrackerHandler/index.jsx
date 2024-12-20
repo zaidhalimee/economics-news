@@ -22,8 +22,6 @@ const useClickTrackerHandler = (props = {}) => {
   const optimizelyMetricNameOverride = props?.optimizelyMetricNameOverride;
   const detailedPlacement = props?.detailedPlacement;
 
-  const useReverb = pathOr(false, ['useReverb'], props);
-
   const { trackingIsEnabled } = useTrackingToggle(componentName);
   const [clicked, setClicked] = useState(false);
   const eventTrackingContext = useContext(EventTrackingContext);
@@ -39,7 +37,7 @@ const useClickTrackerHandler = (props = {}) => {
     ['campaignID'],
     props,
   );
-  const { service } = useContext(ServiceContext);
+  const { service, useReverb } = useContext(ServiceContext);
 
   return useCallback(
     async event => {

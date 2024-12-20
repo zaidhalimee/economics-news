@@ -305,7 +305,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           size="default"
           headingBackgroundColour={GREY_2}
           mobileDivider={showTopics}
-          useReverb
         />
       )}
       {enableOptimizelyEventTracking && (

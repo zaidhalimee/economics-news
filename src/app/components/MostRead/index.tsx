@@ -35,7 +35,6 @@ interface MostReadProps {
   mobileDivider?: boolean;
   headingBackgroundColour?: string;
   className?: string;
-  useReverb?: boolean;
 }
 
 const MostRead = ({
@@ -45,7 +44,6 @@ const MostRead = ({
   mobileDivider = false,
   headingBackgroundColour = WHITE,
   className = '',
-  useReverb = false,
 }: MostReadProps) => {
   const { isAmp, pageType, variant } = useContext(RequestContext);
   const {
@@ -70,11 +68,6 @@ const MostRead = ({
     variant,
     isBff,
   });
-
-  const eventTrackingData = {
-    ...blockLevelEventTrackingData,
-    ...(useReverb ? { useReverb: true } : {}),
-  };
 
   // We render amp on ONLY STY, CSP and ARTICLE pages using amp-list.
   const AmpMostRead = () =>
@@ -103,7 +96,7 @@ const MostRead = ({
           data={data}
           columnLayout={columnLayout}
           size={size}
-          eventTrackingData={eventTrackingData}
+          eventTrackingData={blockLevelEventTrackingData}
         />
       </MostReadSection>
     ) : null;

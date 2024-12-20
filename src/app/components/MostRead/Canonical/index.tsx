@@ -16,7 +16,6 @@ interface MostReadProps {
   data: MostReadData;
   eventTrackingData?: {
     componentName: string;
-    useReverb?: boolean;
   };
 }
 
