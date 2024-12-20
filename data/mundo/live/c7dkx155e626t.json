@@ -39,49 +39,6 @@
       {
         "type": "liveMedia",
         "model": {
-          "urn": "urn:bbc:pips:pid:l0056wdq",
-          "title": "Starmer Scrutinised By MPs",
-          "type": "episode",
-          "synopses": {
-            "short": "Keir Starmer facing questions in his first appearance before the Liaison Committee",
-            "medium": "",
-            "long": ""
-          },
-          "mediaType": "audio_video",
-          "imageUrlTemplate": "https://ichef.bbci.co.uk/images/ic/$recipe/p0kd22h2.jpg",
-          "masterbrand": {
-            "id": "bbc_news",
-            "name": "BBC News",
-            "networkName": "BBC News",
-            "type": "",
-            "imageUrlTemplate": "ichef.bbci.co.uk/images/ic/$recipe/p0bvs4dq.jpg"
-          },
-          "version": {
-            "vpid": "l0056wdr",
-            "duration": "PT23H56M13S",
-            "availabilityType": "webcast",
-            "versionTypes": [
-              {
-                "type": "Original",
-                "name": "Original version"
-              }
-            ],
-            "schedule": {
-              "start": "2024-12-19T14:14:48Z",
-              "accurateStart": "2024-12-19T14:17:35Z",
-              "end": "2024-12-20T14:13:48Z"
-            },
-            "serviceId": null,
-            "authToken": null,
-            "status": "LIVE",
-            "warnings": null
-          },
-          "leadMedia": true
-        }
-      },
-      {
-        "type": "liveMedia",
-        "model": {
           "urn": "urn:bbc:pips:pid:p0gh4n63",
           "title": "Non-Stop Cartoons!",
           "type": "episode",
@@ -113,6 +70,49 @@
               "start": "2024-12-19T07:00:20Z",
               "accurateStart": "2024-12-19T07:00:20Z",
               "end": "2024-12-19T12:00:20Z"
+            },
+            "serviceId": null,
+            "authToken": null,
+            "status": "LIVE",
+            "warnings": null
+          },
+          "leadMedia": true
+        }
+      },
+      {
+        "type": "liveMedia",
+        "model": {
+          "urn": "urn:bbc:pips:pid:l0056wdq",
+          "title": "Starmer Scrutinised By MPs",
+          "type": "episode",
+          "synopses": {
+            "short": "Keir Starmer facing questions in his first appearance before the Liaison Committee",
+            "medium": "",
+            "long": ""
+          },
+          "mediaType": "audio_video",
+          "imageUrlTemplate": "https://ichef.bbci.co.uk/images/ic/$recipe/p0kd22h2.jpg",
+          "masterbrand": {
+            "id": "bbc_news",
+            "name": "BBC News",
+            "networkName": "BBC News",
+            "type": "",
+            "imageUrlTemplate": "ichef.bbci.co.uk/images/ic/$recipe/p0bvs4dq.jpg"
+          },
+          "version": {
+            "vpid": "l0056wdr",
+            "duration": "PT23H56M13S",
+            "availabilityType": "webcast",
+            "versionTypes": [
+              {
+                "type": "Original",
+                "name": "Original version"
+              }
+            ],
+            "schedule": {
+              "start": "2024-12-19T14:14:48Z",
+              "accurateStart": "2024-12-19T14:17:35Z",
+              "end": "2024-12-20T14:13:48Z"
             },
             "serviceId": null,
             "authToken": null,
