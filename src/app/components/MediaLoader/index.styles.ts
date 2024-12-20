@@ -25,18 +25,24 @@ export default {
         ...(!isEmbedded && { margin: `0 0 ${spacings.TRIPLE}rem 0` }),
       }),
   experimentVideo: ({ palette }: Theme) =>
-    css({ backgroundColor: palette.WHITE }),
+    css({
+      '&:has(details)': {
+        backgroundColor: palette.WHITE,
+      },
+    }),
   experimentCaption: ({ mq, spacings }: Theme) =>
     css({
-      margin: `${spacings.FULL}rem`,
-      width: 'auto',
-      [mq.GROUP_2_ONLY]: {
-        width: 'auto',
+      '&:has(+ details)': {
         margin: `${spacings.FULL}rem`,
-      },
-      [mq.GROUP_4_MIN_WIDTH]: {
         width: 'auto',
-        margin: `${spacings.FULL}rem`,
+        [mq.GROUP_2_ONLY]: {
+          width: 'auto',
+          margin: `${spacings.FULL}rem`,
+        },
+        [mq.GROUP_4_MIN_WIDTH]: {
+          width: 'auto',
+          margin: `${spacings.FULL}rem`,
+        },
       },
     }),
 

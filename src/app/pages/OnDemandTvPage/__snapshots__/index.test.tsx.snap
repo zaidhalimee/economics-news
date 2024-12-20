@@ -205,6 +205,10 @@ exports[`OnDemand TV Page  Dark Mode Design - should match snapshot 1`] = `
   aspect-ratio: 16/9;
 }
 
+.emotion-7:has(details) {
+  background-color: #FFFFFF;
+}
+
 @media (min-width: 63rem) {
   .emotion-7 {
     margin: 2.5rem 0px 0px;

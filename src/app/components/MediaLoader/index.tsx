@@ -240,8 +240,6 @@ const MediaLoader = ({ blocks, className, embedded, forceStage }: Props) => {
 
   const showPortraitTitle = orientation === 'portrait' && !embedded;
 
-  const experimentEnabled = experimentStage === Stages.STAGE_2;
-
   return isLite && hasTranscript ? (
     <Transcript
       transcript={transcriptBlock}
@@ -265,7 +263,7 @@ const MediaLoader = ({ blocks, className, embedded, forceStage }: Props) => {
         className={className}
         css={[
           styles.figure(embedded),
-          transcriptBlock && experimentEnabled && styles.experimentVideo,
+          styles.experimentVideo,
           playerConfig?.ui?.skin === 'classic' && [
             orientation === 'portrait' && styles.portraitFigure(embedded),
             orientation === 'landscape' && styles.landscapeFigure,
@@ -304,7 +302,7 @@ const MediaLoader = ({ blocks, className, embedded, forceStage }: Props) => {
             type={mediaType}
             css={[
               orientation === 'portrait' && styles.captionPortrait,
-              experimentEnabled && styles.experimentCaption,
+              styles.experimentCaption,
             ]}
           />
         )}
