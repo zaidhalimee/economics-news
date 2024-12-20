@@ -13,8 +13,6 @@ import LinkedDataContainer from '#app/components/LinkedData';
 import getLiveBlogPostingSchema from '#app/lib/seoUtils/getLiveBlogPostingSchema';
 import { MediaCollection } from '#app/components/MediaLoader/types';
 import mundoLivePageWithMediaCollection from '#data/mundo/live/c7dkx155e626t.json';
-
-import arabic from '#app/lib/config/services/arabic';
 import Stream from './Stream';
 import Header from './Header';
 import KeyPoints from './KeyPoints';
