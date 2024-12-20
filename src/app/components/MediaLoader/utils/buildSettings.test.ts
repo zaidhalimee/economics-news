@@ -1096,6 +1096,7 @@ describe('buildSettings', () => {
                 kind: 'programme',
                 live: true,
                 versionID: 'p0gh4n67',
+                simulcast: true,
               },
             ],
             summary: 'Toon in, kick back and relax to 100% cartoons!',

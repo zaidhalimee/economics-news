@@ -19,6 +19,8 @@ export default ({
 
   const rawDuration = moment.duration(video?.duration).asSeconds();
 
+  const live = video.status === 'LIVE';
+
   const placeholderConfig = buildPlaceholderConfig({
     title,
     duration: rawDuration,
@@ -46,7 +48,8 @@ export default ({
             versionID: video?.vpid,
             kind: 'programme',
             duration: rawDuration,
-            live: video.status === 'LIVE',
+            live,
+            ...(live && { simulcast: true }),
           },
         ],
         summary: short,
