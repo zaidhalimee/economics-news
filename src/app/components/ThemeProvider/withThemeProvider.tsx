@@ -293,16 +293,20 @@ const withThemeProvider = ({
 
   const getHelmetVariants = () => {
     return {
-      sansRegular: getSansRegular(helmetFontVariants),
-      sansRegularItalic: getSansRegularItalic(helmetFontVariants),
-      sansBold: getSansBold(helmetFontVariants),
-      sansBoldItalic: getSansBoldItalic(helmetFontVariants),
-      sansLight: getSansLight(helmetFontVariants),
-      serifRegular: getSerifRegular(helmetFontVariants),
-      serifMedium: getSerifMedium(helmetFontVariants),
-      serifMediumItalic: getSerifMediumItalic(helmetFontVariants),
-      serifBold: getSerifBold(helmetFontVariants),
-      serifLight: getSerifLight(helmetFontVariants),
+      sans: {
+        regular: getSansRegular(helmetFontVariants),
+        regularItalic: getSansRegularItalic(helmetFontVariants),
+        bold: getSansBold(helmetFontVariants),
+        boldItalic: getSansBoldItalic(helmetFontVariants),
+        light: getSansLight(helmetFontVariants),
+      },
+      serif: {
+        regular: getSerifRegular(helmetFontVariants),
+        medium: getSerifMedium(helmetFontVariants),
+        mediumItalic: getSerifMediumItalic(helmetFontVariants),
+        bold: getSerifBold(helmetFontVariants),
+        light: getSerifLight(helmetFontVariants),
+      }
     };
   };
 
