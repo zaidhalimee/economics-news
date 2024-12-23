@@ -16,4 +16,9 @@ export default {
       display: 'block',
       width: '100%',
     }),
+  mediaLoaderContainer: ({ palette, spacings, mq }: Theme) =>
+    css({
+      margin: `0 ${spacings.FULL}rem`,
+      backgroundColor: `${palette.POSTBOX}`,
+    }),
 };

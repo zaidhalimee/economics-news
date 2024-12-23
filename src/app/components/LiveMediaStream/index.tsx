@@ -34,7 +34,6 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
 
   return (
     <div css={styles.liveMediaStreamContainer}>
-      <span css={styles.title}>{title}</span>
       <span css={styles.mediaDescription}>{short}</span>
       {!showMedia && (
         <button type="button" onClick={handleClick}>
@@ -42,11 +41,16 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
         </button>
       )}
       {showMedia && (
-        <button type="button" onClick={handleClick}>
-          x
-        </button>
+        <div css={styles.mediaLoaderContainer}>
+          <span>
+            <Text>{title}</Text>
+            <button type="button" onClick={handleClick}>
+              x
+            </button>
+          </span>
+          <MediaLoader blocks={mediaCollection} />
+        </div>
       )}
-      {showMedia && <MediaLoader blocks={mediaCollection} />}
     </div>
   );
 };
