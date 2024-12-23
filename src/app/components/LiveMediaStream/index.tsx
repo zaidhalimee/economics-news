@@ -5,16 +5,24 @@ import Text from '#app/components/Text';
 import styles from './index.styles';
 import { MediaCollection } from '../MediaLoader/types';
 
-type Props = { mediaCollection: MediaCollection | null };
+type Props = { mediaCollection: MediaCollection[] | null };
 
 const LiveMediaStream = ({ mediaCollection }: Props) => {
   const testText = 'button is ';
 
   const [showMedia, setShowMedia] = useState(false);
 
-  if (mediaCollection == null) {
+  if (mediaCollection == null || mediaCollection.length === 0) {
     return null;
   }
+
+  const {
+    model: {
+      title,
+      masterbrand: { networkName },
+      synopses: { short },
+    },
+  } = mediaCollection[0];
 
   const handleClick = () => {
     setShowMedia(!showMedia);
@@ -26,6 +34,9 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
         {testText}
         {`${showMedia}`}
       </button>
+      <Text>
+        {title} {networkName} {short}
+      </Text>
     </div>
   );
 };
