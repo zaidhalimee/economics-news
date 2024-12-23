@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import { useState } from 'react';
+import styles from './index.styles';
 
 const LiveMediaStream = () => {
   const testText = 'button is ';
@@ -12,7 +13,7 @@ const LiveMediaStream = () => {
   };
 
   return (
-    <div>
+    <div css={styles.liveMediaStreamContainer}>
       <button type="button" onClick={handleClick}>
         {testText}
         {`${showMedia}`}
