@@ -34,8 +34,8 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
 
   return (
     <div css={styles.liveMediaStreamContainer}>
-      <span>{title}</span>
-      <span>{short}</span>
+      <span css={styles.title}>{title}</span>
+      <span css={styles.mediaDescription}>{short}</span>
       {!showMedia && (
         <button type="button" onClick={handleClick}>
           {testText}

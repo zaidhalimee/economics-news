@@ -6,4 +6,14 @@ export default {
       // backgroundColor: `${palette.BLACK}`,
       margin: `0 ${spacings.FULL}rem`,
     }),
+  title: () =>
+    css({
+      display: 'block',
+      width: '100%',
+    }),
+  mediaDescription: () =>
+    css({
+      display: 'block',
+      width: '100%',
+    }),
 };
