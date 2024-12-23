@@ -14,8 +14,3 @@ export type EventTrackingBlock = {
     componentName: EventTrackingMetadata['componentName'];
   };
 };
-
-export type ReverbEventTrackingMetadata = {
-  componentName?: string;
-  useReverb?: boolean;
-};
