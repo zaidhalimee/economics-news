@@ -2,8 +2,10 @@
 import { jsx } from '@emotion/react';
 import { useState } from 'react';
 import Text from '#app/components/Text';
+import { MediaCollection } from '#app/components/MediaLoader/types';
+import MediaLoader, { BumpLoader } from '#app/components/MediaLoader';
+import filterForBlockType from '#app/lib/utilities/blockHandlers';
 import styles from './index.styles';
-import { MediaCollection } from '../MediaLoader/types';
 
 type Props = { mediaCollection: MediaCollection[] | null };
 
@@ -16,13 +18,15 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
     return null;
   }
 
+  const mediaItem = filterForBlockType(mediaCollection, 'liveMedia');
+
   const {
     model: {
       title,
       masterbrand: { networkName },
       synopses: { short },
     },
-  } = mediaCollection[0];
+  } = mediaItem;
 
   const handleClick = () => {
     setShowMedia(!showMedia);
@@ -37,6 +41,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
       <Text>
         {title} {networkName} {short}
       </Text>
+      <MediaLoader blocks={mediaCollection} />
     </div>
   );
 };
