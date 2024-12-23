@@ -34,14 +34,14 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
 
   return (
     <div css={styles.liveMediaStreamContainer}>
+      <Text>
+        {title} {networkName} {short}
+      </Text>
       <button type="button" onClick={handleClick}>
         {testText}
         {`${showMedia}`}
       </button>
-      <Text>
-        {title} {networkName} {short}
-      </Text>
-      <MediaLoader blocks={mediaCollection} />
+      {showMedia && <MediaLoader blocks={mediaCollection} />}
     </div>
   );
 };
