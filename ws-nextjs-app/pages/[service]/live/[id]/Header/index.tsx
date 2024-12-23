@@ -7,6 +7,7 @@ import MediaLoader, { BumpLoader } from '#app/components/MediaLoader';
 import { MediaBlock, MediaCollection } from '#app/components/MediaLoader/types';
 import { useContext, useState } from 'react';
 import mediaIcons from '#psammead/psammead-assets/src/svgs/mediaIcons';
+import Helmet from 'react-helmet';
 import { ServiceContext } from '#app/contexts/ServiceContext';
 import LiveLabelHeader from './LiveLabelHeader';
 import styles from './styles';
@@ -47,7 +48,12 @@ const Header = ({
 
   return (
     <div css={styles.headerContainer}>
-      {mediaCollections && <BumpLoader />}
+      <Helmet>
+        <script
+          type="text/javascript"
+          src="https://static.bbci.co.uk/frameworks/requirejs/0.13.0/sharedmodules/require.js"
+        />
+      </Helmet>
       <div css={styles.backgroundContainer}>
         <div css={styles.backgroundColor} />
       </div>
