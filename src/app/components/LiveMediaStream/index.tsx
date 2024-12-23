@@ -10,7 +10,7 @@ import styles from './index.styles';
 type Props = { mediaCollection: MediaCollection[] | null };
 
 const LiveMediaStream = ({ mediaCollection }: Props) => {
-  const testText = 'button is ';
+  const testText = 'watch now';
 
   const [showMedia, setShowMedia] = useState(false);
 
@@ -34,13 +34,18 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
 
   return (
     <div css={styles.liveMediaStreamContainer}>
-      <Text>
-        {title} {networkName} {short}
-      </Text>
-      <button type="button" onClick={handleClick}>
-        {testText}
-        {`${showMedia}`}
-      </button>
+      <span>{title}</span>
+      <span>{short}</span>
+      {!showMedia && (
+        <button type="button" onClick={handleClick}>
+          {testText}
+        </button>
+      )}
+      {showMedia && (
+        <button type="button" onClick={handleClick}>
+          x
+        </button>
+      )}
       {showMedia && <MediaLoader blocks={mediaCollection} />}
     </div>
   );
