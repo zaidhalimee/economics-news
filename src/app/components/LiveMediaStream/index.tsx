@@ -1,22 +1,28 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Text from '#app/components/Text';
 import { MediaCollection } from '#app/components/MediaLoader/types';
 import MediaLoader, { BumpLoader } from '#app/components/MediaLoader';
 import filterForBlockType from '#app/lib/utilities/blockHandlers';
+import { ServiceContext } from '#app/contexts/ServiceContext';
 import styles from './index.styles';
+import { Close } from '../icons';
 
 type Props = { mediaCollection: MediaCollection[] | null };
+const DEFAULT_WATCH__NOW = 'Watch Now';
 
 const LiveMediaStream = ({ mediaCollection }: Props) => {
-  const testText = 'watch now';
-
   const [showMedia, setShowMedia] = useState(false);
+  const { translations } = useContext(ServiceContext);
 
   if (mediaCollection == null || mediaCollection.length === 0) {
     return null;
   }
+
+  const {
+    media: { watchNow = DEFAULT_WATCH__NOW },
+  } = translations;
 
   const mediaItem = filterForBlockType(mediaCollection, 'liveMedia');
 
@@ -34,22 +40,30 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
 
   return (
     <div css={styles.liveMediaStreamContainer}>
+      <BumpLoader />
       <span css={styles.mediaDescription}>{short}</span>
       {!showMedia && (
-        <button type="button" onClick={handleClick}>
-          {testText}
+        <button
+          type="button"
+          onClick={handleClick}
+          data-testid="watch-now-button"
+        >
+          {watchNow}
         </button>
       )}
       {showMedia && (
         <div css={styles.mediaLoaderContainer}>
           <span>
             <Text>{`${title} - ${networkName}`}</Text>
-            <button type="button" onClick={handleClick}>
-              x
+            <button
+              type="button"
+              onClick={handleClick}
+              data-testid="close-button"
+            >
+              <Close />
             </button>
           </span>
           <MediaLoader blocks={mediaCollection} />
-          <Text>{`Last updated X minutes ago | Refresh for updates`}</Text>
         </div>
       )}
     </div>
