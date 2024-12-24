@@ -43,7 +43,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
       {showMedia && (
         <div css={styles.mediaLoaderContainer}>
           <span>
-            <Text>{title}</Text>
+            <Text>{`${title} - ${networkName}`}</Text>
             <button type="button" onClick={handleClick}>
               x
             </button>
