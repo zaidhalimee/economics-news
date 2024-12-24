@@ -49,6 +49,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
             </button>
           </span>
           <MediaLoader blocks={mediaCollection} />
+          <Text>{`Last updated X minutes ago | Refresh for updates`}</Text>
         </div>
       )}
     </div>
