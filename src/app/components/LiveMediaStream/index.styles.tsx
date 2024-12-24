@@ -33,7 +33,5 @@ export default {
   mediaLoaderContainer: ({ palette, spacings, mq }: Theme) =>
     css({
       backgroundColor: `${palette.POSTBOX}`,
-      display: 'inline-block',
-      width: '100%',
     }),
 };
