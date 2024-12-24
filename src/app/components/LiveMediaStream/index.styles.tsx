@@ -16,6 +16,15 @@ export default {
     css({
       width: '100%',
     }),
+  // closeButton: () =>
+  //   css({
+
+  //   }),
+  liveMediaSpan: () =>
+    css({
+      display: 'flex',
+      justifyContent: 'space-between',
+    }),
   mediaDescription: () =>
     css({
       display: 'block',
@@ -24,5 +33,7 @@ export default {
   mediaLoaderContainer: ({ palette, spacings, mq }: Theme) =>
     css({
       backgroundColor: `${palette.POSTBOX}`,
+      display: 'inline-block',
+      width: '100%',
     }),
 };
