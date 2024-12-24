@@ -12,7 +12,7 @@ export default {
       display: 'block',
       width: '100%',
     }),
-  PlayButton: () =>
+  playButton: () =>
     css({
       width: '100%',
     }),
