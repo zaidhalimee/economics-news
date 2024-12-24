@@ -1,4 +1,5 @@
 import { css, Theme } from '@emotion/react';
+import PlayButton from '../MediaLoader/Placeholder/PlayButton';
 
 export default {
   liveMediaStreamContainer: ({ palette, spacings, mq }: Theme) =>
@@ -11,6 +12,10 @@ export default {
       display: 'block',
       width: '100%',
     }),
+  PlayButton: () =>
+    css({
+      width: '100%',
+    }),
   mediaDescription: () =>
     css({
       display: 'block',
@@ -18,7 +23,6 @@ export default {
     }),
   mediaLoaderContainer: ({ palette, spacings, mq }: Theme) =>
     css({
-      margin: `0 ${spacings.FULL}rem`,
       backgroundColor: `${palette.POSTBOX}`,
     }),
 };

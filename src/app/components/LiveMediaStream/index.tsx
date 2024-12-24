@@ -47,6 +47,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
           type="button"
           onClick={handleClick}
           data-testid="watch-now-button"
+          css={styles.playButton}
         >
           {watchNow}
         </button>
