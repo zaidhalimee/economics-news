@@ -12,9 +12,13 @@ export default {
       display: 'block',
       width: '100%',
     }),
-  playButton: () =>
+  playButton: ({ spacings, mq }: Theme) =>
     css({
-      width: '100%',
+      width: '40%',
+
+      [mq.GROUP_2_MAX_WIDTH]: {
+        width: '100%',
+      },
     }),
   // closeButton: () =>
   //   css({
@@ -25,8 +29,10 @@ export default {
       display: 'flex',
       justifyContent: 'space-between',
     }),
-  mediaDescription: () =>
+  mediaDescription: ({ spacings, mq }: Theme) =>
     css({
+      margin: `${spacings.FULL}rem`,
+      marginLeft: 0,
       display: 'block',
       width: '100%',
     }),
