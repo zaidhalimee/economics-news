@@ -121,7 +121,7 @@ const ScrollablePromo = ({
           {title}
         </LabelComponent>
       )}
-      {variant === 'A' && (
+      {variant !== 'none' && (
         <PromoList
           blocks={blocks}
           variant={variant}

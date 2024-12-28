@@ -233,12 +233,20 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     showRelatedTopics && topics.length > 0 && !isTransliterated,
   );
 
-  const variantValue = 'A'; // I don't know how changing this works in real experiments
+  const variantValue = 'B'; // I don't know how changing this works in real experiments
   // so just manually switch the hardcoded variant for now while getting this working
-  const variant = ['A', 'B'].includes(variantValue) ? variantValue : 'none';
-  const dataForOJExperiment =
-    variant === 'A' ? topStoriesContent : mostReadInitialData;
-  console.log('data before newProps', dataForOJExperiment);
+  const variant: 'A' | 'B' | 'none' = ['A', 'B'].includes(variantValue)
+    ? (variantValue as 'A' | 'B')
+    : 'none';
+  let dataForOJExperiment;
+  if (variant === 'A') {
+    dataForOJExperiment = topStoriesContent;
+  } else if (variant === 'B') {
+    dataForOJExperiment = mostReadInitialData.items;
+  } else {
+    dataForOJExperiment = [];
+  }
+  console.log('most read', dataForOJExperiment);
   const newProps = {
     blocks: dataForOJExperiment,
     variant,
@@ -288,7 +296,11 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       {allowAdvertising && (
         <AdContainer slotType="leaderboard" adcampaign={adcampaign} />
       )}
-      <ScrollablePromo {...newProps} />
+      {variant !== 'none' && (
+        <aside role="complementary">
+          <ScrollablePromo {...newProps} />
+        </aside>
+      )}
       <ElectionBanner aboutTags={aboutTags} taggings={taggings} />
       <div css={styles.grid}>
         <div css={!isPGL ? styles.primaryColumn : styles.pglColumn}>

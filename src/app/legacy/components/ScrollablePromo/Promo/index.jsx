@@ -115,6 +115,10 @@ const Promo = ({ block, variant, onClick }) => {
       block,
     );
     href = pathOr('', ['locators', 'canonicalUrl'], block);
+  } else if (variant === 'B') {
+    console.log('B block', block);
+    title = block.title;
+    href = block.href;
   } else {
     href = pathOr(
       '',
@@ -127,6 +131,7 @@ const Promo = ({ block, variant, onClick }) => {
       textBlock,
     );
   }
+  console.log('title', title, 'href', href);
   const timestamp = path(
     ['model', 'blocks', '0', 'model', 'timestamp'],
     aresLinkBlock,

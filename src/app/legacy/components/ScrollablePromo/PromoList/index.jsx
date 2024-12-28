@@ -83,7 +83,7 @@ const PromoList = ({ blocks, variant, viewTracker, onClick }) => {
   console.log('in promo list', blocks, variant);
   const { dir } = useContext(ServiceContext);
   const isOperaMini = useOperaMiniDetection();
-  const listBlocks = blocks.slice(0, 3);
+  const listBlocks = variant === 'B' ? blocks.slice(0, 5) : blocks.slice(0, 3);
 
   const ScrollPromo = isOperaMini ? OperaScrollPromo : StandardScrollPromo;
   const List = isOperaMini ? OperaStyledList : StyledList;
