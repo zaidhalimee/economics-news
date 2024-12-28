@@ -81,26 +81,52 @@ const TimeStamp = styled(PromoTimestamp)`
   color: ${({ theme }) => theme.isDarkUi && theme.palette.GREY_6};
 `;
 
-const Promo = ({ block, onClick }) => {
+const Promo = ({ block, variant, onClick }) => {
   const { script, service, serviceDatetimeLocale } = useContext(ServiceContext);
-  const textBlock = filterForBlockType(
-    pathOr({}, ['model', 'blocks'], block),
-    'text',
-  );
-  const aresLinkBlock = filterForBlockType(
-    pathOr({}, ['model', 'blocks'], block),
-    'aresLink',
-  );
-  const href = pathOr(
-    '',
-    ['model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'locator'],
-    textBlock,
-  );
-  const title = pathOr(
-    '',
-    ['model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'text'],
-    textBlock,
-  );
+  let title;
+  let href;
+  let textBlock;
+  let aresLinkBlock;
+  console.log('block in Promo:', block, 'variant', variant);
+  if (variant === 'none') {
+    textBlock = filterForBlockType(
+      pathOr({}, ['model', 'blocks'], block),
+      'text',
+    );
+    aresLinkBlock = filterForBlockType(
+      pathOr({}, ['model', 'blocks'], block),
+      'aresLink',
+    );
+  }
+  if (variant === 'A') {
+    title = pathOr(
+      '',
+      [
+        'headlines',
+        'promoHeadline',
+        'blocks',
+        '0',
+        'model',
+        'blocks',
+        '0',
+        'model',
+        'text',
+      ],
+      block,
+    );
+    href = pathOr('', ['locators', 'canonicalUrl'], block);
+  } else {
+    href = pathOr(
+      '',
+      ['model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'locator'],
+      textBlock,
+    );
+    title = pathOr(
+      '',
+      ['model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'text'],
+      textBlock,
+    );
+  }
   const timestamp = path(
     ['model', 'blocks', '0', 'model', 'timestamp'],
     aresLinkBlock,
@@ -109,7 +135,6 @@ const Promo = ({ block, onClick }) => {
   const isOperaMini = useOperaMiniDetection();
 
   const WrapperPromoBox = isOperaMini ? OperaPromoBox : PromoBox;
-
   return (
     <WrapperPromoBox>
       <StyledLink
@@ -120,7 +145,7 @@ const Promo = ({ block, onClick }) => {
       >
         {title}
       </StyledLink>
-      {timestamp && (
+      {timestamp && variant === 'none' && (
         <TimeStamp serviceDatetimeLocale={serviceDatetimeLocale}>
           {timestamp}
         </TimeStamp>

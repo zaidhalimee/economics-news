@@ -15,6 +15,7 @@ import Timestamp from '#containers/ArticleTimestamp';
 import ComscoreAnalytics from '#containers/ComscoreAnalytics';
 import SocialEmbedContainer from '#containers/SocialEmbed';
 import MediaLoader from '#app/components/MediaLoader';
+import pathOr from 'ramda/src/pathOr';
 import {
   ARTICLE_PAGE,
   PHOTO_GALLERY_PAGE,
@@ -117,7 +118,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const formats = pageData?.metadata?.passport?.predicates?.formats ?? [];
 
   const recommendationsData = pageData?.recommendations ?? [];
-
+  const topStoriesContent = pageData?.secondaryColumn?.topStories;
   const isPGL = pageData?.metadata?.type === PHOTO_GALLERY_PAGE;
   const isSTY = pageData?.metadata?.type === STORY_PAGE;
   const isCPS = isPGL || isSTY;
@@ -184,7 +185,11 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     embedImages: EmbedImages,
     embedUploader: Uploader,
     group: gist,
-    links: (props: ComponentToRenderProps) => <ScrollablePromo {...props} />,
+    links: (props: ComponentToRenderProps) => {
+      console.log('props', props);
+
+      return <ScrollablePromo {...props} />;
+    },
     mpu: (props: ComponentToRenderProps) =>
       allowAdvertising ? <AdContainer {...props} slotType="mpu" /> : null,
     wsoj: (props: ComponentToRenderProps) => (
@@ -227,6 +232,17 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const showTopics = Boolean(
     showRelatedTopics && topics.length > 0 && !isTransliterated,
   );
+
+  const variantValue = 'A'; // I don't know how changing this works in real experiments
+  // so just manually switch the hardcoded variant for now while getting this working
+  const variant = ['A', 'B'].includes(variantValue) ? variantValue : 'none';
+  const dataForOJExperiment =
+    variant === 'A' ? topStoriesContent : mostReadInitialData;
+  console.log('data before newProps', dataForOJExperiment);
+  const newProps = {
+    blocks: dataForOJExperiment,
+    variant,
+  };
 
   return (
     <div css={styles.pageWrapper}>
@@ -272,6 +288,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       {allowAdvertising && (
         <AdContainer slotType="leaderboard" adcampaign={adcampaign} />
       )}
+      <ScrollablePromo {...newProps} />
       <ElectionBanner aboutTags={aboutTags} taggings={taggings} />
       <div css={styles.grid}>
         <div css={!isPGL ? styles.primaryColumn : styles.pglColumn}>
