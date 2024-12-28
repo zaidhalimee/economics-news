@@ -296,7 +296,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
         <AdContainer slotType="leaderboard" adcampaign={adcampaign} />
       )}
       {!isPGL && !isTC2Asset && variant !== 'none' && (
-        <aside role="complementary">
+        <aside css={styles.aside} role="complementary">
           <ScrollablePromo {...newProps} />
         </aside>
       )}
