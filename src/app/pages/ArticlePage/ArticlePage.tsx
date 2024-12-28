@@ -15,7 +15,6 @@ import Timestamp from '#containers/ArticleTimestamp';
 import ComscoreAnalytics from '#containers/ComscoreAnalytics';
 import SocialEmbedContainer from '#containers/SocialEmbed';
 import MediaLoader from '#app/components/MediaLoader';
-import pathOr from 'ramda/src/pathOr';
 import {
   ARTICLE_PAGE,
   PHOTO_GALLERY_PAGE,
@@ -296,7 +295,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       {allowAdvertising && (
         <AdContainer slotType="leaderboard" adcampaign={adcampaign} />
       )}
-      {variant !== 'none' && (
+      {!isPGL && !isTC2Asset && variant !== 'none' && (
         <aside role="complementary">
           <ScrollablePromo {...newProps} />
         </aside>
