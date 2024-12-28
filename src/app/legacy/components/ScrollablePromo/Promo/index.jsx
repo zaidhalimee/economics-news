@@ -88,7 +88,7 @@ const Promo = ({ block, variant, onClick }) => {
   let textBlock;
   let aresLinkBlock;
   console.log('block in Promo:', block, 'variant', variant);
-  if (variant === 'none') {
+  if (variant !== 'A' && variant !== 'B') {
     textBlock = filterForBlockType(
       pathOr({}, ['model', 'blocks'], block),
       'text',
