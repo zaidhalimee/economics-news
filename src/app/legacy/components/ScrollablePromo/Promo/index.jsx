@@ -88,7 +88,6 @@ const Promo = ({ block, variant, onClick }) => {
   let textBlock;
   let aresLinkBlock;
   let timestamp;
-  console.log('block in Promo:', block, 'variant', variant);
   switch (variant) {
     case 'A':
       title = pathOr(

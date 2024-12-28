@@ -11,6 +11,8 @@ import {
   twoLinksWithNoImages,
   truncatedTextInSingleLink,
   arabicText,
+  MostReadBlocks,
+  TopStoriesBlocks,
 } from './helpers/fixtureData';
 
 const BackGround = styled.div`
@@ -18,10 +20,10 @@ const BackGround = styled.div`
   padding: 2rem;
 `;
 
-const ScrollablePromoComponent = ({ data, service }) => (
+const ScrollablePromoComponent = ({ data, variant, service }) => (
   <BackGround>
     <ServiceContextProvider service={service}>
-      <ScrollablePromo blocks={data} />
+      <ScrollablePromo blocks={data} variant={variant} />
     </ServiceContextProvider>
   </BackGround>
 );
@@ -64,4 +66,20 @@ export const ArabicText = () => (
 
 export const WithTimestamp = (_, { service }) => (
   <ScrollablePromoComponent data={oneLinkWithTimestamp} service={service} />
+);
+
+export const OJExperimentMostRead = (_, { service }) => (
+  <ScrollablePromoComponent
+    data={MostReadBlocks}
+    variant="B"
+    service={service}
+  />
+);
+
+export const OJExperimentTopStories = (_, { service }) => (
+  <ScrollablePromoComponent
+    data={TopStoriesBlocks}
+    variant="A"
+    service={service}
+  />
 );

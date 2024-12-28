@@ -107,7 +107,6 @@ const ScrollablePromo = ({
           ),
         }),
   };
-  console.log('title in scrollable promo', title, blocks, variant);
   return (
     <GridItemMediumNoMargin {...a11yAttributes}>
       {title && (
