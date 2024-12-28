@@ -87,55 +87,57 @@ const Promo = ({ block, variant, onClick }) => {
   let href;
   let textBlock;
   let aresLinkBlock;
+  let timestamp;
   console.log('block in Promo:', block, 'variant', variant);
-  if (variant !== 'A' && variant !== 'B') {
-    textBlock = filterForBlockType(
-      pathOr({}, ['model', 'blocks'], block),
-      'text',
-    );
-    aresLinkBlock = filterForBlockType(
-      pathOr({}, ['model', 'blocks'], block),
-      'aresLink',
-    );
-  }
-  if (variant === 'A') {
-    title = pathOr(
-      '',
-      [
-        'headlines',
-        'promoHeadline',
-        'blocks',
-        '0',
-        'model',
-        'blocks',
-        '0',
-        'model',
+  switch (variant) {
+    case 'A':
+      title = pathOr(
+        '',
+        [
+          'headlines',
+          'promoHeadline',
+          'blocks',
+          '0',
+          'model',
+          'blocks',
+          '0',
+          'model',
+          'text',
+        ],
+        block,
+      );
+      href = pathOr('', ['locators', 'canonicalUrl'], block);
+      break;
+    case 'B':
+      title = block.title;
+      href = block.href;
+      break;
+    default:
+      textBlock = filterForBlockType(
+        pathOr({}, ['model', 'blocks'], block),
         'text',
-      ],
-      block,
-    );
-    href = pathOr('', ['locators', 'canonicalUrl'], block);
-  } else if (variant === 'B') {
-    console.log('B block', block);
-    title = block.title;
-    href = block.href;
-  } else {
-    href = pathOr(
-      '',
-      ['model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'locator'],
-      textBlock,
-    );
-    title = pathOr(
-      '',
-      ['model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'text'],
-      textBlock,
-    );
+      );
+      aresLinkBlock = filterForBlockType(
+        pathOr({}, ['model', 'blocks'], block),
+        'aresLink',
+      );
+      timestamp = path(
+        ['model', 'blocks', '0', 'model', 'timestamp'],
+        aresLinkBlock,
+      );
+      href = pathOr(
+        '',
+        ['model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'locator'],
+        textBlock,
+      );
+      title = pathOr(
+        '',
+        ['model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'text'],
+        textBlock,
+      );
+      break;
   }
   console.log('title', title, 'href', href);
-  const timestamp = path(
-    ['model', 'blocks', '0', 'model', 'timestamp'],
-    aresLinkBlock,
-  );
 
   const isOperaMini = useOperaMiniDetection();
 
