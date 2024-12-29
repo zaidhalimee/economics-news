@@ -62,7 +62,8 @@ const ScrollablePromo = ({
   blockGroupIndex = null,
   variant = 'none',
 }) => {
-  const { script, service, dir, translations } = useContext(ServiceContext);
+  const { script, service, dir, translations, mostRead } =
+    useContext(ServiceContext);
   console.log('Blocks in scrollable promo:', blocks, blocks.type);
   const eventTrackingData = {
     componentName: `edoj${blockGroupIndex}`,
@@ -83,10 +84,10 @@ const ScrollablePromo = ({
       blocks,
     );
   if (variant === 'A') {
-    title = 'Top Stories';
+    title = translations.topStoriesTitle;
   }
   if (variant === 'B') {
-    title = 'Most Read';
+    title = mostRead.header;
   }
   const blocksWithoutTitle = blocks[0].type === 'title' ? tail(blocks) : blocks;
 
