@@ -1139,7 +1139,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
       role="complementary"
     >
       <section
-        aria-labelledby="Most-Read-scrollable"
+        aria-labelledby="Di-one-wey-oda-users-dey-read-well-well-scrollable"
         class="emotion-2 emotion-3"
         dir="ltr"
         role="region"
@@ -1148,9 +1148,9 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
           class="emotion-4 emotion-5"
           data-testid="eoj-recommendations-heading"
           dir="ltr"
-          id="Most-Read-scrollable"
+          id="Di-one-wey-oda-users-dey-read-well-well-scrollable"
         >
-          Most Read
+          Di one wey oda users dey read well well
         </strong>
         <ul
           class="emotion-6 emotion-7"
@@ -2937,7 +2937,7 @@ exports[`Article Page should render a news article correctly 1`] = `
       role="complementary"
     >
       <section
-        aria-labelledby="Most-Read-scrollable"
+        aria-labelledby="Most-read-scrollable"
         class="emotion-2 emotion-3"
         dir="ltr"
         role="region"
@@ -2946,9 +2946,9 @@ exports[`Article Page should render a news article correctly 1`] = `
           class="emotion-4 emotion-5"
           data-testid="eoj-recommendations-heading"
           dir="ltr"
-          id="Most-Read-scrollable"
+          id="Most-read-scrollable"
         >
-          Most Read
+          Most read
         </strong>
         <ul
           class="emotion-6 emotion-7"
@@ -5551,7 +5551,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
       role="complementary"
     >
       <section
-        aria-labelledby="Most-Read-scrollable"
+        aria-labelledby="پربیننده‌ترین‌ها-scrollable"
         class="emotion-2 emotion-3"
         dir="rtl"
         role="region"
@@ -5560,9 +5560,9 @@ exports[`Article Page should render a rtl article (persian) with most read corre
           class="emotion-4 emotion-5"
           data-testid="eoj-recommendations-heading"
           dir="rtl"
-          id="Most-Read-scrollable"
+          id="پربیننده‌ترین‌ها-scrollable"
         >
-          Most Read
+          پربیننده‌ترین‌ها
         </strong>
         <ul
           class="emotion-6 emotion-7"
