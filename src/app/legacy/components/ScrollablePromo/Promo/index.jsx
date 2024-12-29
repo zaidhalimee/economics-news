@@ -136,7 +136,7 @@ const Promo = ({ block, variant, onClick }) => {
       );
       break;
   }
-  console.log('title', title, 'href', href);
+  console.log('title', title, 'href', href, 'timestamp', timestamp);
 
   const isOperaMini = useOperaMiniDetection();
 
@@ -151,7 +151,7 @@ const Promo = ({ block, variant, onClick }) => {
       >
         {title}
       </StyledLink>
-      {timestamp && variant === 'none' && (
+      {timestamp && !variant && (
         <TimeStamp serviceDatetimeLocale={serviceDatetimeLocale}>
           {timestamp}
         </TimeStamp>
