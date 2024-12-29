@@ -6,6 +6,310 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 .emotion-1 {
+  display: none;
+}
+
+@media (max-width: 62.9375rem) {
+  .emotion-1 {
+    display: block;
+  }
+}
+
+@media (max-width: 14.9375rem) {
+  .emotion-2 {
+    margin-left: 0%;
+  }
+}
+
+@media (min-width: 15rem) and (max-width: 24.9375rem) {
+  .emotion-2 {
+    margin-left: 0%;
+  }
+}
+
+@media (min-width: 25rem) and (max-width: 37.4375rem) {
+  .emotion-2 {
+    margin-left: 0%;
+  }
+}
+
+@media (min-width: 37.5rem) and (max-width: 62.9375rem) {
+  .emotion-2 {
+    margin-left: 0%;
+  }
+}
+
+@media (min-width: 63rem) and (max-width: 79.9375rem) {
+  .emotion-2 {
+    margin-left: 20%;
+  }
+}
+
+@media (min-width: 80rem) {
+  .emotion-2 {
+    margin-left: 40%;
+  }
+}
+
+@supports (display: grid) {
+  .emotion-2 {
+    display: block;
+    width: initial;
+    margin: 0;
+  }
+
+  @media (max-width: 14.9375rem) {
+    .emotion-2 {
+      grid-template-columns: repeat(6, 1fr);
+      grid-column-end: span 6;
+      grid-column-start: 1;
+    }
+  }
+
+  @media (min-width: 15rem) and (max-width: 24.9375rem) {
+    .emotion-2 {
+      grid-template-columns: repeat(6, 1fr);
+      grid-column-end: span 6;
+      grid-column-start: 1;
+    }
+  }
+
+  @media (min-width: 25rem) and (max-width: 37.4375rem) {
+    .emotion-2 {
+      grid-template-columns: repeat(6, 1fr);
+      grid-column-end: span 6;
+      grid-column-start: 1;
+    }
+  }
+
+  @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
+    .emotion-2 {
+      grid-template-columns: repeat(5, 1fr);
+      grid-column-end: span 5;
+      grid-column-start: 1;
+    }
+  }
+
+  @media (min-width: 63rem) and (max-width: 79.9375rem) {
+    .emotion-2 {
+      grid-template-columns: repeat(5, 1fr);
+      grid-column-end: span 5;
+      grid-column-start: 2;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .emotion-2 {
+      grid-template-columns: repeat(10, 1fr);
+      grid-column-end: span 10;
+      grid-column-start: 5;
+    }
+  }
+}
+
+.emotion-4 {
+  display: block;
+  font-size: 1.125rem;
+  line-height: 1.375rem;
+  font-family: Helmet,Freesans,Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 1rem;
+  color: #3F3F42;
+}
+
+@media (min-width: 20rem) and (max-width: 37.4375rem) {
+  .emotion-4 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .emotion-4 {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 0rem) {
+  .emotion-4 {
+    margin-left: 0.5rem;
+  }
+}
+
+@media (min-width: 25rem) {
+  .emotion-4 {
+    margin-left: 1rem;
+  }
+}
+
+@media (min-width: 63rem) {
+  .emotion-4 {
+    margin-left: 0;
+  }
+}
+
+.emotion-6 {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.emotion-6::-webkit-scrollbar {
+  display: none;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+@media (min-width: 0rem) {
+  .emotion-8 {
+    margin-left: 0.5rem;
+  }
+
+  .emotion-8:first-child {
+    margin-left: 0.5rem;
+  }
+
+  .emotion-8:last-child {
+    margin-right: 0.5rem;
+  }
+}
+
+@media (min-width: 25rem) {
+  .emotion-8 {
+    margin-left: 1rem;
+  }
+
+  .emotion-8:first-child {
+    margin-left: 1rem;
+  }
+}
+
+@media (min-width: 63rem) {
+  .emotion-8 {
+    margin-left: 1rem;
+  }
+
+  .emotion-8:first-child {
+    margin-left: 0;
+  }
+}
+
+.emotion-10 {
+  position: relative;
+  background-color: #FFFFFF;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 0rem) {
+  .emotion-10 {
+    width: 14.8125rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .emotion-10 {
+    width: 11.125rem;
+  }
+}
+
+@media (min-width: 63rem) {
+  .emotion-10 {
+    width: 12.6875rem;
+  }
+}
+
+.emotion-12 {
+  position: static;
+  color: #222222;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  overflow-wrap: break-word;
+  display: inline-block;
+  font-size: 0.9375rem;
+  line-height: 1.25rem;
+  font-family: Helmet,Freesans,Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  width: 100%;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  color: #202224;
+}
+
+.emotion-12:before {
+  bottom: 0;
+  content: '';
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.emotion-12:hover,
+.emotion-12:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-12:visited {
+  color: #6E6E73;
+}
+
+@media (min-width: 20rem) and (max-width: 37.4375rem) {
+  .emotion-12 {
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .emotion-12 {
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+}
+
+.emotion-12:hover,
+.emotion-12:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-12:visited {
+  color: #545658;
+}
+
+.emotion-38 {
   max-width: 63rem;
   margin: 0 auto;
   display: grid;
@@ -13,77 +317,77 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 @media (min-width: 63rem) {
-  .emotion-1 {
+  .emotion-38 {
     padding: 0 1rem;
     -webkit-column-gap: 1rem;
     column-gap: 1rem;
   }
 }
 
-.emotion-2 {
+.emotion-39 {
   grid-column: 1/span 12;
   padding-bottom: 2rem;
 }
 
 @media (min-width: 63rem) {
-  .emotion-2 {
+  .emotion-39 {
     grid-column: 1/span 8;
   }
 }
 
-.emotion-3 {
+.emotion-40 {
   padding-bottom: 1.5rem;
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-4 {
+  .emotion-41 {
     padding: 0 0.5rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-4 {
+  .emotion-41 {
     padding: 0 0.5rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-4 {
+  .emotion-41 {
     padding: 0 1rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-  .emotion-4 {
+  .emotion-41 {
     padding: 0 1rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
-  .emotion-4 {
+  .emotion-41 {
     margin-left: 16.666666666666668%;
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-4 {
+  .emotion-41 {
     margin-left: 33.333333333333336%;
   }
 }
 
 @supports (display: grid) {
-  .emotion-4 {
+  .emotion-41 {
     display: block;
     width: initial;
     margin: 0;
   }
 
   @media (max-width: 14.9375rem) {
-    .emotion-4 {
+    .emotion-41 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 0.5rem;
@@ -92,7 +396,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   }
 
   @media (min-width: 15rem) and (max-width: 24.9375rem) {
-    .emotion-4 {
+    .emotion-41 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 0.5rem;
@@ -101,7 +405,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   }
 
   @media (min-width: 25rem) and (max-width: 37.4375rem) {
-    .emotion-4 {
+    .emotion-41 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 1rem;
@@ -110,7 +414,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   }
 
   @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-    .emotion-4 {
+    .emotion-41 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 1rem;
@@ -119,7 +423,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   }
 
   @media (min-width: 63rem) and (max-width: 79.9375rem) {
-    .emotion-4 {
+    .emotion-41 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       grid-column-start: 2;
@@ -127,7 +431,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   }
 
   @media (min-width: 80rem) {
-    .emotion-4 {
+    .emotion-41 {
       grid-template-columns: repeat(12, 1fr);
       grid-column-end: span 12;
       grid-column-start: 5;
@@ -135,7 +439,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   }
 }
 
-.emotion-6 {
+.emotion-43 {
   font-size: 1.75rem;
   line-height: 2rem;
   font-family: Helmet,Freesans,Helvetica,Arial,sans-serif;
@@ -149,78 +453,78 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-6 {
+  .emotion-43 {
     font-size: 2rem;
     line-height: 2.25rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-6 {
+  .emotion-43 {
     font-size: 2.75rem;
     line-height: 3rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-6 {
+  .emotion-43 {
     padding: 2.5rem 0;
   }
 }
 
-.emotion-6:focus {
+.emotion-43:focus {
   outline: none;
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-8 {
+  .emotion-45 {
     padding: 0 0.5rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-8 {
+  .emotion-45 {
     padding: 0 0.5rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-8 {
+  .emotion-45 {
     padding: 0 1rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-  .emotion-8 {
+  .emotion-45 {
     padding: 0 1rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
-  .emotion-8 {
+  .emotion-45 {
     margin-left: 20%;
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-8 {
+  .emotion-45 {
     margin-left: 40%;
   }
 }
 
 @supports (display: grid) {
-  .emotion-8 {
+  .emotion-45 {
     display: block;
     width: initial;
     margin: 0;
   }
 
   @media (max-width: 14.9375rem) {
-    .emotion-8 {
+    .emotion-45 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 0.5rem;
@@ -229,7 +533,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   }
 
   @media (min-width: 15rem) and (max-width: 24.9375rem) {
-    .emotion-8 {
+    .emotion-45 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 0.5rem;
@@ -238,7 +542,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   }
 
   @media (min-width: 25rem) and (max-width: 37.4375rem) {
-    .emotion-8 {
+    .emotion-45 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 1rem;
@@ -247,7 +551,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   }
 
   @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-    .emotion-8 {
+    .emotion-45 {
       grid-template-columns: repeat(5, 1fr);
       grid-column-end: span 5;
       padding: 0 1rem;
@@ -256,7 +560,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   }
 
   @media (min-width: 63rem) and (max-width: 79.9375rem) {
-    .emotion-8 {
+    .emotion-45 {
       grid-template-columns: repeat(5, 1fr);
       grid-column-end: span 5;
       grid-column-start: 2;
@@ -264,7 +568,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   }
 
   @media (min-width: 80rem) {
-    .emotion-8 {
+    .emotion-45 {
       grid-template-columns: repeat(10, 1fr);
       grid-column-end: span 10;
       grid-column-start: 5;
@@ -272,7 +576,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   }
 }
 
-.emotion-10 {
+.emotion-47 {
   font-size: 0.9375rem;
   line-height: 1.25rem;
   font-family: Helmet,Freesans,Helvetica,Arial,sans-serif;
@@ -284,27 +588,27 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-10 {
+  .emotion-47 {
     font-size: 1rem;
     line-height: 1.375rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-10 {
+  .emotion-47 {
     font-size: 1rem;
     line-height: 1.375rem;
   }
 }
 
 @media (min-width: 63rem) {
-  .emotion-10 {
+  .emotion-47 {
     padding-right: 2.5rem;
   }
 }
 
 @media (max-width: 24.9375rem) {
-  .emotion-12 {
+  .emotion-49 {
     margin: 0 0.5rem;
     padding-bottom: 1.5rem;
   }
@@ -312,7 +616,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 
 @media (min-width: 25rem) {
   @media (max-width: 62.9375rem) {
-    .emotion-12 {
+    .emotion-49 {
       margin: 0 1rem;
       padding-bottom: 2rem;
     }
@@ -320,21 +624,21 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
-  .emotion-12 {
+  .emotion-49 {
     margin: 0 1rem;
     padding-bottom: 2.5rem;
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-12 {
+  .emotion-49 {
     margin: 0 auto;
     padding: 0 1rem 1.5rem;
     max-width: 80rem;
   }
 }
 
-.emotion-13 {
+.emotion-50 {
   position: relative;
   z-index: 0;
   color: #141414;
@@ -342,36 +646,36 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-13 {
+  .emotion-50 {
     margin-top: 1.5rem;
   }
 }
 
 @media (min-width: 63rem) {
-  .emotion-13 {
+  .emotion-50 {
     margin-bottom: 1.5rem;
   }
 }
 
 @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-  .emotion-13 {
+  .emotion-50 {
     margin-bottom: 1rem;
   }
 }
 
-.emotion-15 {
+.emotion-52 {
   margin: 0;
   padding: 0;
   scroll-margin-top: 1rem;
 }
 
-.emotion-15:focus-visible {
+.emotion-52:focus-visible {
   outline: 0.1875rem solid #000000;
   box-shadow: 0 0 0 0.1875rem #FFFFFF;
   outline-offset: 0.1875rem;
 }
 
-.emotion-17 {
+.emotion-54 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -381,7 +685,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   flex-direction: column;
 }
 
-.emotion-19 {
+.emotion-56 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -401,7 +705,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-19 {
+  .emotion-56 {
     -webkit-align-items: stretch;
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
@@ -409,7 +713,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   }
 }
 
-.emotion-21 {
+.emotion-58 {
   font-size: 1.125rem;
   line-height: 1.375rem;
   font-family: Helmet,Freesans,Helvetica,Arial,sans-serif;
@@ -429,32 +733,32 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-21 {
+  .emotion-58 {
     font-size: 1.25rem;
     line-height: 1.5rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-21 {
+  .emotion-58 {
     font-size: 1.5rem;
     line-height: 1.75rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-21 {
+  .emotion-58 {
     margin: 0;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-21 {
+  .emotion-58 {
     padding-right: 1rem;
   }
 }
 
-.emotion-23 {
+.emotion-60 {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -463,7 +767,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 @supports (display: grid) {
-  .emotion-23 {
+  .emotion-60 {
     display: grid;
     position: initial;
     width: initial;
@@ -471,7 +775,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   }
 
   @media (max-width: 14.9375rem) {
-    .emotion-23 {
+    .emotion-60 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       grid-column-gap: 0.5rem;
@@ -479,7 +783,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   }
 
   @media (min-width: 15rem) and (max-width: 24.9375rem) {
-    .emotion-23 {
+    .emotion-60 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       grid-column-gap: 0.5rem;
@@ -487,7 +791,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   }
 
   @media (min-width: 25rem) and (max-width: 37.4375rem) {
-    .emotion-23 {
+    .emotion-60 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       grid-column-gap: 0.5rem;
@@ -495,7 +799,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   }
 
   @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-    .emotion-23 {
+    .emotion-60 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       grid-column-gap: 1rem;
@@ -503,7 +807,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   }
 
   @media (min-width: 63rem) and (max-width: 79.9375rem) {
-    .emotion-23 {
+    .emotion-60 {
       grid-template-columns: repeat(8, 1fr);
       grid-column-end: span 8;
       grid-column-gap: 1rem;
@@ -511,7 +815,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   }
 
   @media (min-width: 80rem) {
-    .emotion-23 {
+    .emotion-60 {
       grid-template-columns: repeat(20, 1fr);
       grid-column-end: span 20;
       grid-column-gap: 1rem;
@@ -520,24 +824,24 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 @media (min-width: 80rem) {
-  .emotion-23 {
+  .emotion-60 {
     grid-auto-flow: row;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-23 {
+  .emotion-60 {
     grid-template-rows: repeat(3, auto);
   }
 }
 
-.emotion-25 {
+.emotion-62 {
   position: relative;
   padding-bottom: 1.5rem;
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-25 {
+  .emotion-62 {
     width: calc(100%);
     display: inline-block;
     vertical-align: top;
@@ -545,7 +849,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-25 {
+  .emotion-62 {
     width: calc(100%);
     display: inline-block;
     vertical-align: top;
@@ -553,7 +857,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-25 {
+  .emotion-62 {
     width: calc(100%);
     display: inline-block;
     vertical-align: top;
@@ -561,7 +865,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-  .emotion-25 {
+  .emotion-62 {
     width: calc(50%);
     display: inline-block;
     vertical-align: top;
@@ -569,7 +873,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
-  .emotion-25 {
+  .emotion-62 {
     width: calc(50%);
     display: inline-block;
     vertical-align: top;
@@ -577,7 +881,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 @media (min-width: 80rem) {
-  .emotion-25 {
+  .emotion-62 {
     width: calc(20%);
     display: inline-block;
     vertical-align: top;
@@ -585,56 +889,56 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 @supports (display: grid) {
-  .emotion-25 {
+  .emotion-62 {
     display: block;
     width: initial;
     margin: 0;
   }
 
   @media (max-width: 14.9375rem) {
-    .emotion-25 {
+    .emotion-62 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
     }
   }
 
   @media (min-width: 15rem) and (max-width: 24.9375rem) {
-    .emotion-25 {
+    .emotion-62 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
     }
   }
 
   @media (min-width: 25rem) and (max-width: 37.4375rem) {
-    .emotion-25 {
+    .emotion-62 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
     }
   }
 
   @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-    .emotion-25 {
+    .emotion-62 {
       grid-template-columns: repeat(3, 1fr);
       grid-column-end: span 3;
     }
   }
 
   @media (min-width: 63rem) and (max-width: 79.9375rem) {
-    .emotion-25 {
+    .emotion-62 {
       grid-template-columns: repeat(4, 1fr);
       grid-column-end: span 4;
     }
   }
 
   @media (min-width: 80rem) {
-    .emotion-25 {
+    .emotion-62 {
       grid-template-columns: repeat(4, 1fr);
       grid-column-end: span 4;
     }
   }
 }
 
-.emotion-27 {
+.emotion-64 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -647,50 +951,50 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-28 {
+  .emotion-65 {
     min-width: 1.5rem;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-28 {
+  .emotion-65 {
     min-width: 1.5rem;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-28 {
+  .emotion-65 {
     min-width: 1.5rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-28 {
+  .emotion-65 {
     min-width: 2rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-28 {
+  .emotion-65 {
     min-width: 2rem;
   }
 }
 
 @supports (grid-template-columns: fit-content(200px)) {
   @media (min-width: 37.5rem) {
-    .emotion-28 {
+    .emotion-65 {
       min-width: 2rem;
     }
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-28 {
+  .emotion-65 {
     min-width: 2rem;
   }
 }
 
-.emotion-29 {
+.emotion-66 {
   font-family: Helmet,Freesans,Helvetica,Arial,sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -703,32 +1007,32 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-29 {
+  .emotion-66 {
     font-size: 2.5rem;
     line-height: 2.75rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-29 {
+  .emotion-66 {
     font-size: 3.5rem;
     line-height: 3.75rem;
   }
 }
 
-.emotion-30 {
+.emotion-67 {
   padding-top: 0.375rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
 @supports (grid-template-columns: fit-content(200px)) {
-  .emotion-30 {
+  .emotion-67 {
     padding-right: 0;
   }
 }
 
-.emotion-31 {
+.emotion-68 {
   font-size: 0.9375rem;
   line-height: 1.25rem;
   font-family: Helmet,Freesans,Helvetica,Arial,sans-serif;
@@ -742,26 +1046,26 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-31 {
+  .emotion-68 {
     font-size: 1rem;
     line-height: 1.25rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-31 {
+  .emotion-68 {
     font-size: 1rem;
     line-height: 1.25rem;
   }
 }
 
-.emotion-31:hover,
-.emotion-31:focus {
+.emotion-68:hover,
+.emotion-68:focus {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-31:before {
+.emotion-68:before {
   bottom: 0;
   content: '';
   left: 0;
@@ -774,31 +1078,31 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 @media (min-width: 25rem) {
-  .emotion-31 {
+  .emotion-68 {
     font-size: 1.125rem;
     line-height: 1.375rem;
   }
 
   @media (min-width: 20rem) and (max-width: 37.4375rem) {
-    .emotion-31 {
+    .emotion-68 {
       font-size: 1.125rem;
       line-height: 1.375rem;
     }
   }
 
   @media (min-width: 37.5rem) {
-    .emotion-31 {
+    .emotion-68 {
       font-size: 1.25rem;
       line-height: 1.5rem;
     }
   }
 }
 
-.emotion-32 {
+.emotion-69 {
   padding-top: 0.5rem;
 }
 
-.emotion-33 {
+.emotion-70 {
   font-size: 0.875rem;
   line-height: 1.125rem;
   color: #545658;
@@ -809,14 +1113,14 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-33 {
+  .emotion-70 {
     font-size: 0.875rem;
     line-height: 1.125rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-33 {
+  .emotion-70 {
     font-size: 0.8125rem;
     line-height: 1rem;
   }
@@ -830,22 +1134,123 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
     <div>
       chartbeat
     </div>
-    <div
+    <aside
       class="emotion-1"
+      role="complementary"
+    >
+      <section
+        aria-labelledby="Most-Read-scrollable"
+        class="emotion-2 emotion-3"
+        dir="ltr"
+        role="region"
+      >
+        <strong
+          class="emotion-4 emotion-5"
+          data-testid="eoj-recommendations-heading"
+          dir="ltr"
+          id="Most-Read-scrollable"
+        >
+          Most Read
+        </strong>
+        <ul
+          class="emotion-6 emotion-7"
+          dir="ltr"
+          role="list"
+        >
+          <li
+            class="emotion-8 emotion-9"
+            dir="ltr"
+          >
+            <div
+              class="emotion-10 emotion-11"
+            >
+              <a
+                class="emotion-12 emotion-13"
+                href="https://www.bbc.com/pidgin/articles/cz5kkgv41v0o"
+              >
+                Teams wey qualify for Afcon 2023 and how things stand for each group
+              </a>
+            </div>
+          </li>
+          <li
+            class="emotion-8 emotion-9"
+            dir="ltr"
+          >
+            <div
+              class="emotion-10 emotion-11"
+            >
+              <a
+                class="emotion-12 emotion-13"
+                href="https://www.bbc.com/pidgin/articles/czd44wvly0qo"
+              >
+                'We dey hear gospel songs den screaming' - Woman tok of Uganda school attack 
+              </a>
+            </div>
+          </li>
+          <li
+            class="emotion-8 emotion-9"
+            dir="ltr"
+          >
+            <div
+              class="emotion-10 emotion-11"
+            >
+              <a
+                class="emotion-12 emotion-13"
+                href="https://www.bbc.com/pidgin/articles/cgr6g81j2g8o"
+              >
+                Super Eagles qualify for Nations Cup afta beating Sierra Leone for Monrovia
+              </a>
+            </div>
+          </li>
+          <li
+            class="emotion-8 emotion-9"
+            dir="ltr"
+          >
+            <div
+              class="emotion-10 emotion-11"
+            >
+              <a
+                class="emotion-12 emotion-13"
+                href="https://www.bbc.com/pidgin/articles/cx047w4gxqzo"
+              >
+                Forbes top ten list of highest paid athletes for 2023 and wetin dem earn
+              </a>
+            </div>
+          </li>
+          <li
+            class="emotion-8 emotion-9"
+            dir="ltr"
+          >
+            <div
+              class="emotion-10 emotion-11"
+            >
+              <a
+                class="emotion-12 emotion-13"
+                href="/pidgin/65817572"
+              >
+                Tins to sabi about 2023 Sierra Leone general election
+              </a>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </aside>
+    <div
+      class="emotion-38"
     >
       <div
-        class="emotion-2"
+        class="emotion-39"
       >
         <main
-          class="emotion-3"
+          class="emotion-40"
           role="main"
         >
           <div
-            class="emotion-4 emotion-5"
+            class="emotion-41 emotion-3"
             dir="ltr"
           >
             <h1
-              class="emotion-6 emotion-7"
+              class="emotion-43 emotion-44"
               id="content"
               tabindex="-1"
             >
@@ -853,11 +1258,11 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
             </h1>
           </div>
           <div
-            class="emotion-8 emotion-5"
+            class="emotion-45 emotion-3"
             dir="ltr"
           >
             <p
-              class="emotion-10 emotion-11"
+              class="emotion-47 emotion-48"
               dir="ltr"
             >
               A paragraph in Pidgin.
@@ -868,27 +1273,27 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
     </div>
     <section
       aria-labelledby="Most-Read"
-      class="emotion-12"
+      class="emotion-49"
       data-e2e="most-read"
       data-testid="most-read"
       role="region"
     >
       <div
-        class="emotion-13 emotion-14"
+        class="emotion-50 emotion-51"
       >
         <h2
-          class="emotion-15 emotion-16"
+          class="emotion-52 emotion-53"
           id="section-label-heading-Most-Read"
           tabindex="-1"
         >
           <span
-            class="emotion-17 emotion-18"
+            class="emotion-54 emotion-55"
           >
             <span
-              class="emotion-19 emotion-20"
+              class="emotion-56 emotion-57"
             >
               <span
-                class="emotion-21 emotion-22"
+                class="emotion-58 emotion-59"
                 dir="ltr"
                 id="Most-Read"
               >
@@ -899,43 +1304,43 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
         </h2>
       </div>
       <ol
-        class="emotion-23 emotion-5"
+        class="emotion-60 emotion-3"
         dir="ltr"
         role="list"
       >
         <li
-          class="emotion-25 emotion-5"
+          class="emotion-62 emotion-3"
           dir="ltr"
           role="listitem"
         >
           <div
-            class="emotion-27"
+            class="emotion-64"
           >
             <div
-              class="emotion-28"
+              class="emotion-65"
               dir="ltr"
             >
               <span
-                class="emotion-29"
+                class="emotion-66"
               >
                 1
               </span>
             </div>
             <div
-              class="emotion-30"
+              class="emotion-67"
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="focusIndicatorDisplayTableCell emotion-68"
                 href="https://www.bbc.com/pidgin/articles/cz5kkgv41v0o"
               >
                 Teams wey qualify for Afcon 2023 and how things stand for each group
               </a>
               <div
-                class="emotion-32"
+                class="emotion-69"
               >
                 <time
-                  class="emotion-33 emotion-34"
+                  class="emotion-70 emotion-71"
                   datetime="2023-06-19"
                 >
                   De one we dem update for: 19th June 2023
@@ -945,38 +1350,38 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
           </div>
         </li>
         <li
-          class="emotion-25 emotion-5"
+          class="emotion-62 emotion-3"
           dir="ltr"
           role="listitem"
         >
           <div
-            class="emotion-27"
+            class="emotion-64"
           >
             <div
-              class="emotion-28"
+              class="emotion-65"
               dir="ltr"
             >
               <span
-                class="emotion-29"
+                class="emotion-66"
               >
                 2
               </span>
             </div>
             <div
-              class="emotion-30"
+              class="emotion-67"
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="focusIndicatorDisplayTableCell emotion-68"
                 href="https://www.bbc.com/pidgin/articles/czd44wvly0qo"
               >
                 'We dey hear gospel songs den screaming' - Woman tok of Uganda school attack 
               </a>
               <div
-                class="emotion-32"
+                class="emotion-69"
               >
                 <time
-                  class="emotion-33 emotion-34"
+                  class="emotion-70 emotion-71"
                   datetime="2023-06-19"
                 >
                   De one we dem update for: 19th June 2023
@@ -986,38 +1391,38 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
           </div>
         </li>
         <li
-          class="emotion-25 emotion-5"
+          class="emotion-62 emotion-3"
           dir="ltr"
           role="listitem"
         >
           <div
-            class="emotion-27"
+            class="emotion-64"
           >
             <div
-              class="emotion-28"
+              class="emotion-65"
               dir="ltr"
             >
               <span
-                class="emotion-29"
+                class="emotion-66"
               >
                 3
               </span>
             </div>
             <div
-              class="emotion-30"
+              class="emotion-67"
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="focusIndicatorDisplayTableCell emotion-68"
                 href="https://www.bbc.com/pidgin/articles/cgr6g81j2g8o"
               >
                 Super Eagles qualify for Nations Cup afta beating Sierra Leone for Monrovia
               </a>
               <div
-                class="emotion-32"
+                class="emotion-69"
               >
                 <time
-                  class="emotion-33 emotion-34"
+                  class="emotion-70 emotion-71"
                   datetime="2023-06-18"
                 >
                   De one we dem update for: 18th June 2023
@@ -1027,38 +1432,38 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
           </div>
         </li>
         <li
-          class="emotion-25 emotion-5"
+          class="emotion-62 emotion-3"
           dir="ltr"
           role="listitem"
         >
           <div
-            class="emotion-27"
+            class="emotion-64"
           >
             <div
-              class="emotion-28"
+              class="emotion-65"
               dir="ltr"
             >
               <span
-                class="emotion-29"
+                class="emotion-66"
               >
                 4
               </span>
             </div>
             <div
-              class="emotion-30"
+              class="emotion-67"
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="focusIndicatorDisplayTableCell emotion-68"
                 href="https://www.bbc.com/pidgin/articles/cx047w4gxqzo"
               >
                 Forbes top ten list of highest paid athletes for 2023 and wetin dem earn
               </a>
               <div
-                class="emotion-32"
+                class="emotion-69"
               >
                 <time
-                  class="emotion-33 emotion-34"
+                  class="emotion-70 emotion-71"
                   datetime="2023-05-03"
                 >
                   De one we dem update for: 3rd May 2023
@@ -1068,38 +1473,38 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
           </div>
         </li>
         <li
-          class="emotion-25 emotion-5"
+          class="emotion-62 emotion-3"
           dir="ltr"
           role="listitem"
         >
           <div
-            class="emotion-27"
+            class="emotion-64"
           >
             <div
-              class="emotion-28"
+              class="emotion-65"
               dir="ltr"
             >
               <span
-                class="emotion-29"
+                class="emotion-66"
               >
                 5
               </span>
             </div>
             <div
-              class="emotion-30"
+              class="emotion-67"
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="focusIndicatorDisplayTableCell emotion-68"
                 href="/pidgin/65817572"
               >
                 Tins to sabi about 2023 Sierra Leone general election
               </a>
               <div
-                class="emotion-32"
+                class="emotion-69"
               >
                 <time
-                  class="emotion-33 emotion-34"
+                  class="emotion-70 emotion-71"
                   datetime="2023-06-18"
                 >
                   De one we dem update for: 18th June 2023
@@ -1120,6 +1525,310 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 .emotion-1 {
+  display: none;
+}
+
+@media (max-width: 62.9375rem) {
+  .emotion-1 {
+    display: block;
+  }
+}
+
+@media (max-width: 14.9375rem) {
+  .emotion-2 {
+    margin-left: 0%;
+  }
+}
+
+@media (min-width: 15rem) and (max-width: 24.9375rem) {
+  .emotion-2 {
+    margin-left: 0%;
+  }
+}
+
+@media (min-width: 25rem) and (max-width: 37.4375rem) {
+  .emotion-2 {
+    margin-left: 0%;
+  }
+}
+
+@media (min-width: 37.5rem) and (max-width: 62.9375rem) {
+  .emotion-2 {
+    margin-left: 0%;
+  }
+}
+
+@media (min-width: 63rem) and (max-width: 79.9375rem) {
+  .emotion-2 {
+    margin-left: 20%;
+  }
+}
+
+@media (min-width: 80rem) {
+  .emotion-2 {
+    margin-left: 40%;
+  }
+}
+
+@supports (display: grid) {
+  .emotion-2 {
+    display: block;
+    width: initial;
+    margin: 0;
+  }
+
+  @media (max-width: 14.9375rem) {
+    .emotion-2 {
+      grid-template-columns: repeat(6, 1fr);
+      grid-column-end: span 6;
+      grid-column-start: 1;
+    }
+  }
+
+  @media (min-width: 15rem) and (max-width: 24.9375rem) {
+    .emotion-2 {
+      grid-template-columns: repeat(6, 1fr);
+      grid-column-end: span 6;
+      grid-column-start: 1;
+    }
+  }
+
+  @media (min-width: 25rem) and (max-width: 37.4375rem) {
+    .emotion-2 {
+      grid-template-columns: repeat(6, 1fr);
+      grid-column-end: span 6;
+      grid-column-start: 1;
+    }
+  }
+
+  @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
+    .emotion-2 {
+      grid-template-columns: repeat(5, 1fr);
+      grid-column-end: span 5;
+      grid-column-start: 1;
+    }
+  }
+
+  @media (min-width: 63rem) and (max-width: 79.9375rem) {
+    .emotion-2 {
+      grid-template-columns: repeat(5, 1fr);
+      grid-column-end: span 5;
+      grid-column-start: 2;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .emotion-2 {
+      grid-template-columns: repeat(10, 1fr);
+      grid-column-end: span 10;
+      grid-column-start: 5;
+    }
+  }
+}
+
+.emotion-4 {
+  display: block;
+  font-size: 1.125rem;
+  line-height: 1.375rem;
+  font-family: ReithSans,Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 1rem;
+  color: #3F3F42;
+}
+
+@media (min-width: 20rem) and (max-width: 37.4375rem) {
+  .emotion-4 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .emotion-4 {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 0rem) {
+  .emotion-4 {
+    margin-left: 0.5rem;
+  }
+}
+
+@media (min-width: 25rem) {
+  .emotion-4 {
+    margin-left: 1rem;
+  }
+}
+
+@media (min-width: 63rem) {
+  .emotion-4 {
+    margin-left: 0;
+  }
+}
+
+.emotion-6 {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.emotion-6::-webkit-scrollbar {
+  display: none;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+@media (min-width: 0rem) {
+  .emotion-8 {
+    margin-left: 0.5rem;
+  }
+
+  .emotion-8:first-child {
+    margin-left: 0.5rem;
+  }
+
+  .emotion-8:last-child {
+    margin-right: 0.5rem;
+  }
+}
+
+@media (min-width: 25rem) {
+  .emotion-8 {
+    margin-left: 1rem;
+  }
+
+  .emotion-8:first-child {
+    margin-left: 1rem;
+  }
+}
+
+@media (min-width: 63rem) {
+  .emotion-8 {
+    margin-left: 1rem;
+  }
+
+  .emotion-8:first-child {
+    margin-left: 0;
+  }
+}
+
+.emotion-10 {
+  position: relative;
+  background-color: #FFFFFF;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 0rem) {
+  .emotion-10 {
+    width: 14.8125rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .emotion-10 {
+    width: 11.125rem;
+  }
+}
+
+@media (min-width: 63rem) {
+  .emotion-10 {
+    width: 12.6875rem;
+  }
+}
+
+.emotion-12 {
+  position: static;
+  color: #222222;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  overflow-wrap: break-word;
+  display: inline-block;
+  font-size: 0.9375rem;
+  line-height: 1.25rem;
+  font-family: ReithSerif,Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  width: 100%;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  color: #202224;
+}
+
+.emotion-12:before {
+  bottom: 0;
+  content: '';
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.emotion-12:hover,
+.emotion-12:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-12:visited {
+  color: #6E6E73;
+}
+
+@media (min-width: 20rem) and (max-width: 37.4375rem) {
+  .emotion-12 {
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .emotion-12 {
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+}
+
+.emotion-12:hover,
+.emotion-12:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-12:visited {
+  color: #545658;
+}
+
+.emotion-38 {
   max-width: 63rem;
   margin: 0 auto;
   display: grid;
@@ -1127,77 +1836,77 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @media (min-width: 63rem) {
-  .emotion-1 {
+  .emotion-38 {
     padding: 0 1rem;
     -webkit-column-gap: 1rem;
     column-gap: 1rem;
   }
 }
 
-.emotion-2 {
+.emotion-39 {
   grid-column: 1/span 12;
   padding-bottom: 2rem;
 }
 
 @media (min-width: 63rem) {
-  .emotion-2 {
+  .emotion-39 {
     grid-column: 1/span 8;
   }
 }
 
-.emotion-3 {
+.emotion-40 {
   padding-bottom: 1.5rem;
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-4 {
+  .emotion-41 {
     padding: 0 0.5rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-4 {
+  .emotion-41 {
     padding: 0 0.5rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-4 {
+  .emotion-41 {
     padding: 0 1rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-  .emotion-4 {
+  .emotion-41 {
     padding: 0 1rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
-  .emotion-4 {
+  .emotion-41 {
     margin-left: 16.666666666666668%;
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-4 {
+  .emotion-41 {
     margin-left: 33.333333333333336%;
   }
 }
 
 @supports (display: grid) {
-  .emotion-4 {
+  .emotion-41 {
     display: block;
     width: initial;
     margin: 0;
   }
 
   @media (max-width: 14.9375rem) {
-    .emotion-4 {
+    .emotion-41 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 0.5rem;
@@ -1206,7 +1915,7 @@ exports[`Article Page should render a news article correctly 1`] = `
   }
 
   @media (min-width: 15rem) and (max-width: 24.9375rem) {
-    .emotion-4 {
+    .emotion-41 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 0.5rem;
@@ -1215,7 +1924,7 @@ exports[`Article Page should render a news article correctly 1`] = `
   }
 
   @media (min-width: 25rem) and (max-width: 37.4375rem) {
-    .emotion-4 {
+    .emotion-41 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 1rem;
@@ -1224,7 +1933,7 @@ exports[`Article Page should render a news article correctly 1`] = `
   }
 
   @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-    .emotion-4 {
+    .emotion-41 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 1rem;
@@ -1233,7 +1942,7 @@ exports[`Article Page should render a news article correctly 1`] = `
   }
 
   @media (min-width: 63rem) and (max-width: 79.9375rem) {
-    .emotion-4 {
+    .emotion-41 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       grid-column-start: 2;
@@ -1241,7 +1950,7 @@ exports[`Article Page should render a news article correctly 1`] = `
   }
 
   @media (min-width: 80rem) {
-    .emotion-4 {
+    .emotion-41 {
       grid-template-columns: repeat(12, 1fr);
       grid-column-end: span 12;
       grid-column-start: 5;
@@ -1249,7 +1958,7 @@ exports[`Article Page should render a news article correctly 1`] = `
   }
 }
 
-.emotion-6 {
+.emotion-43 {
   font-size: 1.75rem;
   line-height: 2rem;
   font-family: ReithSerif,Helvetica,Arial,sans-serif;
@@ -1263,78 +1972,78 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-6 {
+  .emotion-43 {
     font-size: 2rem;
     line-height: 2.25rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-6 {
+  .emotion-43 {
     font-size: 2.75rem;
     line-height: 3rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-6 {
+  .emotion-43 {
     padding: 2.5rem 0;
   }
 }
 
-.emotion-6:focus {
+.emotion-43:focus {
   outline: none;
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-8 {
+  .emotion-45 {
     padding: 0 0.5rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-8 {
+  .emotion-45 {
     padding: 0 0.5rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-8 {
+  .emotion-45 {
     padding: 0 1rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-  .emotion-8 {
+  .emotion-45 {
     padding: 0 1rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
-  .emotion-8 {
+  .emotion-45 {
     margin-left: 20%;
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-8 {
+  .emotion-45 {
     margin-left: 40%;
   }
 }
 
 @supports (display: grid) {
-  .emotion-8 {
+  .emotion-45 {
     display: block;
     width: initial;
     margin: 0;
   }
 
   @media (max-width: 14.9375rem) {
-    .emotion-8 {
+    .emotion-45 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 0.5rem;
@@ -1343,7 +2052,7 @@ exports[`Article Page should render a news article correctly 1`] = `
   }
 
   @media (min-width: 15rem) and (max-width: 24.9375rem) {
-    .emotion-8 {
+    .emotion-45 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 0.5rem;
@@ -1352,7 +2061,7 @@ exports[`Article Page should render a news article correctly 1`] = `
   }
 
   @media (min-width: 25rem) and (max-width: 37.4375rem) {
-    .emotion-8 {
+    .emotion-45 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 1rem;
@@ -1361,7 +2070,7 @@ exports[`Article Page should render a news article correctly 1`] = `
   }
 
   @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-    .emotion-8 {
+    .emotion-45 {
       grid-template-columns: repeat(5, 1fr);
       grid-column-end: span 5;
       padding: 0 1rem;
@@ -1370,7 +2079,7 @@ exports[`Article Page should render a news article correctly 1`] = `
   }
 
   @media (min-width: 63rem) and (max-width: 79.9375rem) {
-    .emotion-8 {
+    .emotion-45 {
       grid-template-columns: repeat(5, 1fr);
       grid-column-end: span 5;
       grid-column-start: 2;
@@ -1378,7 +2087,7 @@ exports[`Article Page should render a news article correctly 1`] = `
   }
 
   @media (min-width: 80rem) {
-    .emotion-8 {
+    .emotion-45 {
       grid-template-columns: repeat(10, 1fr);
       grid-column-end: span 10;
       grid-column-start: 5;
@@ -1386,7 +2095,7 @@ exports[`Article Page should render a news article correctly 1`] = `
   }
 }
 
-.emotion-10 {
+.emotion-47 {
   font-size: 0.9375rem;
   line-height: 1.25rem;
   font-family: ReithSans,Helvetica,Arial,sans-serif;
@@ -1398,26 +2107,26 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-10 {
+  .emotion-47 {
     font-size: 1rem;
     line-height: 1.375rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-10 {
+  .emotion-47 {
     font-size: 1rem;
     line-height: 1.375rem;
   }
 }
 
 @media (min-width: 63rem) {
-  .emotion-10 {
+  .emotion-47 {
     padding-right: 2.5rem;
   }
 }
 
-.emotion-12 {
+.emotion-49 {
   max-width: 100%;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1425,26 +2134,26 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @media (min-width: 25rem) {
-  .emotion-12 {
+  .emotion-49 {
     padding-left: 1rem;
     padding-right: 1rem;
   }
 }
 
 @media (min-width: 63rem) {
-  .emotion-12 {
+  .emotion-49 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
-.emotion-13 {
+.emotion-50 {
   margin: 0;
   padding-bottom: 1.5rem;
   width: 100%;
 }
 
-.emotion-14 {
+.emotion-51 {
   position: relative;
   height: 0;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSI0NzkiIGhlaWdodD0iMTM2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGcgZmlsbD0iI0Q1RDBDRCI+PGc+PHBhdGggZD0iTTQ0OS41NTYgOTEuNTUzbC0yLjMxIDEuNDFjLTExLjE2NyA2LjgxOC0yMy4zMTMgMTAuNDc0LTM0LjM0NiAxMC40Ny0yMy42MS0uMDktMzkuMTYzLTE0LjA4My0zOS4yMjctMzQuNDUzLjAzLTE5LjkxOCAxNi4yNy0zNC42NjMgMzguNjMzLTM0LjcxOCAxMS4zODcuMDEgMjEuNzAzIDIuOTU0IDMzLjk2MiA5LjY3MmwyLjI1MSAxLjI0di0xOC4xOWwtLjk2Mi0uMzc3Yy0xMy44MjQtNS40NTgtMjQuNTMtNy44OS0zNS4xMDMtNy44ODQtMTYuMzQ2LS4wMDYtMzAuNTMzIDUuMzk0LTQwLjYzNyAxNC41NTctMTAuMTA1IDkuMTYzLTE2LjEwNiAyMi4xMDItMTYuMDk5IDM2Ljk1My4wMDggMTAuMzQ4IDQuMjc5IDIyLjQ4IDEzLjQyIDMyLjEwNSA5LjEyMSA5LjYyOCAyMy4xNjUgMTYuNjQ4IDQyLjQzIDE2LjYzOWguMDYzYzE1Ljk4IDAgMjcuMDYyLTMuNTYzIDM3LjA3NC04LjQ5MmwuODUxLS40MTRWOTEuNTUzek0zMzQgMTM1LjY5N2gxNDQuMTk1VjBIMzM0djEzNS42OTd6Ii8+PHBhdGggZD0iTTI3Ni45MzcgODkuOTY4Yy4wNDEtMTIuMzMtOC4xNzEtMjEuNjk2LTIxLjMwOC0yNS4zIDMuNTQ0LTEuODA5IDYuMzUtNC4wMjMgOC40MDQtNi43MjcgMi43NS0zLjYyMiA0LjA2MS04LjA2NCA0LjA0Ni0xMy4yMzUuMDE1LTYuMzU5LTIuNDg2LTEyLjgzOS03Ljg1OC0xNy42ODctNS4zNzItNC44NDctMTMuNTI2LTcuOTk3LTI0LjY1NC03Ljk5MUgyMDQuODN2OTcuNzI4aDM2LjA3M2MxMi44NyAwIDIxLjkwNi0zLjQ4MiAyNy43MjItOC42NSA1LjgxOC01LjE1NSA4LjMyLTExLjkxIDguMzEyLTE4LjEzOHpNMTY3IDEzNS42OThoMTQ0LjE5N1YwSDE2N3YxMzUuNjk3eiIvPjxwYXRoIGQ9Ik0xMDkuOTM3IDg5Ljk2OGMuMDQxLTEyLjMzLTguMTcxLTIxLjY5Ni0yMS4zMDgtMjUuMyAzLjU0NC0xLjgwOSA2LjM1LTQuMDIzIDguNDA0LTYuNzI3IDIuNzUtMy42MjIgNC4wNjEtOC4wNjQgNC4wNDYtMTMuMjM1LjAxNS02LjM1OS0yLjQ4Ni0xMi44MzktNy44NTgtMTcuNjg3LTUuMzcyLTQuODQ3LTEzLjUyNi03Ljk5Ny0yNC42NTQtNy45OTFIMzcuODN2OTcuNzI4aDM2LjA3M2MxMi44NyAwIDIxLjkwNi0zLjQ4MiAyNy43MjItOC42NSA1LjgxOC01LjE1NSA4LjMyLTExLjkxIDguMzEyLTE4LjEzOHpNMCAxMzUuNjk4aDE0NC4xOTdWMEgwdjEzNS42OTd6Ii8+PHBhdGggZD0iTTI1OC42NjIgODguMTk4Yy0uMDEzIDMuMjI5LTEuMDA3IDYuNDc1LTMuODk2IDkuMDExLTIuODg0IDIuNTM3LTcuODczIDQuNDYzLTE2LjEzMyA0LjQ2M0gyMjJWNzVoMTUuODkzYzcuNDExIDAgMTIuNjcgMS41MDIgMTUuOTY1IDMuODUgMy4yODkgMi4zNjIgNC43NzYgNS40NjMgNC44MDQgOS4zNDgiLz48cGF0aCBkPSJNOTEuNjYyIDg4LjE5OGMtLjAxMyAzLjIyOS0xLjAwNyA2LjQ3NS0zLjg5NiA5LjAxMS0yLjg4NCAyLjUzNy03Ljg3NCA0LjQ2My0xNi4xMzMgNC40NjNINTVWNzVoMTUuODkyYzcuNDEyIDAgMTIuNjcyIDEuNTAyIDE1Ljk2NiAzLjg1IDMuMjg5IDIuMzYyIDQuNzc2IDUuNDYzIDQuODA0IDkuMzQ4Ii8+PHBhdGggZD0iTTI0NS4xODYgNTUuNzljMy4wOTYtMi4yMzcgNC41OS01LjM4NiA0LjYxMy0xMC4xMjQtLjAxNS0zLjI1LS45NDMtNi4wMzMtMy4yODEtOC4xMTEtMi4zNDYtMi4wNzgtNi4zMy0zLjU1NS0xMi43NTQtMy41NTVIMjIydjI1LjI3NWg4LjA3NmM2Ljk4OC4wMDQgMTEuOTk4LTEuMjQzIDE1LjExLTMuNDg2Ii8+PHBhdGggZD0iTTc4LjE4NiA1NS43OWMzLjA5Ni0yLjIzNyA0LjU5LTUuMzg2IDQuNjEzLTEwLjEyNC0uMDE1LTMuMjUtLjk0My02LjAzMy0zLjI4Mi04LjExMUM3Ny4xNzIgMzUuNDc3IDczLjE4OCAzNCA2Ni43NjQgMzRINTV2MjUuMjc1aDguMDc2YzYuOTg4LjAwNCAxMS45OTgtMS4yNDMgMTUuMTEtMy40ODYiLz48L2c+PC9nPjwvZz48L3N2Zz4K);
@@ -1457,27 +2166,27 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @media (min-width: 25rem) {
-  .emotion-14 {
+  .emotion-51 {
     -webkit-background-size: 77px 22px;
     background-size: 77px 22px;
   }
 }
 
 @media (min-width: 63rem) {
-  .emotion-14 {
+  .emotion-51 {
     -webkit-background-size: 93px 27px;
     background-size: 93px 27px;
   }
 }
 
-.emotion-15 {
+.emotion-52 {
   width: 100%;
   object-fit: cover;
   height: auto;
 }
 
 @media (max-width: 24.9375rem) {
-  .emotion-16 {
+  .emotion-53 {
     margin: 0 0.5rem;
     padding-bottom: 1.5rem;
   }
@@ -1485,7 +2194,7 @@ exports[`Article Page should render a news article correctly 1`] = `
 
 @media (min-width: 25rem) {
   @media (max-width: 62.9375rem) {
-    .emotion-16 {
+    .emotion-53 {
       margin: 0 1rem;
       padding-bottom: 2rem;
     }
@@ -1493,21 +2202,21 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
-  .emotion-16 {
+  .emotion-53 {
     margin: 0 1rem;
     padding-bottom: 2.5rem;
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-16 {
+  .emotion-53 {
     margin: 0 auto;
     padding: 0 1rem 1.5rem;
     max-width: 80rem;
   }
 }
 
-.emotion-17 {
+.emotion-54 {
   position: relative;
   z-index: 0;
   color: #141414;
@@ -1515,36 +2224,36 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-17 {
+  .emotion-54 {
     margin-top: 1.5rem;
   }
 }
 
 @media (min-width: 63rem) {
-  .emotion-17 {
+  .emotion-54 {
     margin-bottom: 1.5rem;
   }
 }
 
 @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-  .emotion-17 {
+  .emotion-54 {
     margin-bottom: 1rem;
   }
 }
 
-.emotion-19 {
+.emotion-56 {
   margin: 0;
   padding: 0;
   scroll-margin-top: 1rem;
 }
 
-.emotion-19:focus-visible {
+.emotion-56:focus-visible {
   outline: 0.1875rem solid #000000;
   box-shadow: 0 0 0 0.1875rem #FFFFFF;
   outline-offset: 0.1875rem;
 }
 
-.emotion-21 {
+.emotion-58 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1554,7 +2263,7 @@ exports[`Article Page should render a news article correctly 1`] = `
   flex-direction: column;
 }
 
-.emotion-23 {
+.emotion-60 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1574,7 +2283,7 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-23 {
+  .emotion-60 {
     -webkit-align-items: stretch;
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
@@ -1582,7 +2291,7 @@ exports[`Article Page should render a news article correctly 1`] = `
   }
 }
 
-.emotion-25 {
+.emotion-62 {
   font-size: 1.125rem;
   line-height: 1.375rem;
   font-family: ReithSans,Helvetica,Arial,sans-serif;
@@ -1602,32 +2311,32 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-25 {
+  .emotion-62 {
     font-size: 1.25rem;
     line-height: 1.5rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-25 {
+  .emotion-62 {
     font-size: 1.5rem;
     line-height: 1.75rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-25 {
+  .emotion-62 {
     margin: 0;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-25 {
+  .emotion-62 {
     padding-right: 1rem;
   }
 }
 
-.emotion-27 {
+.emotion-64 {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -1636,7 +2345,7 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @supports (display: grid) {
-  .emotion-27 {
+  .emotion-64 {
     display: grid;
     position: initial;
     width: initial;
@@ -1644,7 +2353,7 @@ exports[`Article Page should render a news article correctly 1`] = `
   }
 
   @media (max-width: 14.9375rem) {
-    .emotion-27 {
+    .emotion-64 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       grid-column-gap: 0.5rem;
@@ -1652,7 +2361,7 @@ exports[`Article Page should render a news article correctly 1`] = `
   }
 
   @media (min-width: 15rem) and (max-width: 24.9375rem) {
-    .emotion-27 {
+    .emotion-64 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       grid-column-gap: 0.5rem;
@@ -1660,7 +2369,7 @@ exports[`Article Page should render a news article correctly 1`] = `
   }
 
   @media (min-width: 25rem) and (max-width: 37.4375rem) {
-    .emotion-27 {
+    .emotion-64 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       grid-column-gap: 0.5rem;
@@ -1668,7 +2377,7 @@ exports[`Article Page should render a news article correctly 1`] = `
   }
 
   @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-    .emotion-27 {
+    .emotion-64 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       grid-column-gap: 1rem;
@@ -1676,7 +2385,7 @@ exports[`Article Page should render a news article correctly 1`] = `
   }
 
   @media (min-width: 63rem) and (max-width: 79.9375rem) {
-    .emotion-27 {
+    .emotion-64 {
       grid-template-columns: repeat(8, 1fr);
       grid-column-end: span 8;
       grid-column-gap: 1rem;
@@ -1684,7 +2393,7 @@ exports[`Article Page should render a news article correctly 1`] = `
   }
 
   @media (min-width: 80rem) {
-    .emotion-27 {
+    .emotion-64 {
       grid-template-columns: repeat(20, 1fr);
       grid-column-end: span 20;
       grid-column-gap: 1rem;
@@ -1693,24 +2402,24 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @media (min-width: 80rem) {
-  .emotion-27 {
+  .emotion-64 {
     grid-auto-flow: row;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-27 {
+  .emotion-64 {
     grid-template-rows: repeat(5, auto);
   }
 }
 
-.emotion-29 {
+.emotion-66 {
   position: relative;
   padding-bottom: 1.5rem;
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-29 {
+  .emotion-66 {
     width: calc(100%);
     display: inline-block;
     vertical-align: top;
@@ -1718,7 +2427,7 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-29 {
+  .emotion-66 {
     width: calc(100%);
     display: inline-block;
     vertical-align: top;
@@ -1726,7 +2435,7 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-29 {
+  .emotion-66 {
     width: calc(100%);
     display: inline-block;
     vertical-align: top;
@@ -1734,7 +2443,7 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-  .emotion-29 {
+  .emotion-66 {
     width: calc(50%);
     display: inline-block;
     vertical-align: top;
@@ -1742,7 +2451,7 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
-  .emotion-29 {
+  .emotion-66 {
     width: calc(50%);
     display: inline-block;
     vertical-align: top;
@@ -1750,7 +2459,7 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @media (min-width: 80rem) {
-  .emotion-29 {
+  .emotion-66 {
     width: calc(20%);
     display: inline-block;
     vertical-align: top;
@@ -1758,56 +2467,56 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @supports (display: grid) {
-  .emotion-29 {
+  .emotion-66 {
     display: block;
     width: initial;
     margin: 0;
   }
 
   @media (max-width: 14.9375rem) {
-    .emotion-29 {
+    .emotion-66 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
     }
   }
 
   @media (min-width: 15rem) and (max-width: 24.9375rem) {
-    .emotion-29 {
+    .emotion-66 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
     }
   }
 
   @media (min-width: 25rem) and (max-width: 37.4375rem) {
-    .emotion-29 {
+    .emotion-66 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
     }
   }
 
   @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-    .emotion-29 {
+    .emotion-66 {
       grid-template-columns: repeat(3, 1fr);
       grid-column-end: span 3;
     }
   }
 
   @media (min-width: 63rem) and (max-width: 79.9375rem) {
-    .emotion-29 {
+    .emotion-66 {
       grid-template-columns: repeat(4, 1fr);
       grid-column-end: span 4;
     }
   }
 
   @media (min-width: 80rem) {
-    .emotion-29 {
+    .emotion-66 {
       grid-template-columns: repeat(4, 1fr);
       grid-column-end: span 4;
     }
   }
 }
 
-.emotion-31 {
+.emotion-68 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1820,50 +2529,50 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-32 {
+  .emotion-69 {
     min-width: 2.5rem;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-32 {
+  .emotion-69 {
     min-width: 2.5rem;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-32 {
+  .emotion-69 {
     min-width: 3rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-32 {
+  .emotion-69 {
     min-width: 4rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-32 {
+  .emotion-69 {
     min-width: 2rem;
   }
 }
 
 @supports (grid-template-columns: fit-content(200px)) {
   @media (min-width: 37.5rem) {
-    .emotion-32 {
+    .emotion-69 {
       min-width: 2rem;
     }
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-32 {
+  .emotion-69 {
     min-width: 2rem;
   }
 }
 
-.emotion-33 {
+.emotion-70 {
   font-family: ReithSerif,Helvetica,Arial,sans-serif;
   font-style: normal;
   font-weight: 300;
@@ -1876,32 +2585,32 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-33 {
+  .emotion-70 {
     font-size: 2.5rem;
     line-height: 2.75rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-33 {
+  .emotion-70 {
     font-size: 3.5rem;
     line-height: 3.75rem;
   }
 }
 
-.emotion-34 {
+.emotion-71 {
   padding-top: 0.375rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
 @supports (grid-template-columns: fit-content(200px)) {
-  .emotion-34 {
+  .emotion-71 {
     padding-right: 0;
   }
 }
 
-.emotion-35 {
+.emotion-72 {
   font-size: 0.9375rem;
   line-height: 1.25rem;
   font-family: ReithSerif,Helvetica,Arial,sans-serif;
@@ -1915,26 +2624,26 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-35 {
+  .emotion-72 {
     font-size: 1rem;
     line-height: 1.25rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-35 {
+  .emotion-72 {
     font-size: 1rem;
     line-height: 1.25rem;
   }
 }
 
-.emotion-35:hover,
-.emotion-35:focus {
+.emotion-72:hover,
+.emotion-72:focus {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-35:before {
+.emotion-72:before {
   bottom: 0;
   content: '';
   left: 0;
@@ -1947,31 +2656,31 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @media (min-width: 25rem) {
-  .emotion-35 {
+  .emotion-72 {
     font-size: 1.125rem;
     line-height: 1.375rem;
   }
 
   @media (min-width: 20rem) and (max-width: 37.4375rem) {
-    .emotion-35 {
+    .emotion-72 {
       font-size: 1.125rem;
       line-height: 1.375rem;
     }
   }
 
   @media (min-width: 37.5rem) {
-    .emotion-35 {
+    .emotion-72 {
       font-size: 1.25rem;
       line-height: 1.5rem;
     }
   }
 }
 
-.emotion-36 {
+.emotion-73 {
   padding-top: 0.5rem;
 }
 
-.emotion-37 {
+.emotion-74 {
   font-size: 0.875rem;
   line-height: 1.125rem;
   color: #545658;
@@ -1982,235 +2691,235 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-37 {
+  .emotion-74 {
     font-size: 0.875rem;
     line-height: 1.125rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-37 {
+  .emotion-74 {
     font-size: 0.8125rem;
     line-height: 1rem;
   }
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-42 {
+  .emotion-79 {
     min-width: 2.5rem;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-42 {
+  .emotion-79 {
     min-width: 2.5rem;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-42 {
+  .emotion-79 {
     min-width: 3rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-42 {
+  .emotion-79 {
     min-width: 4rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-42 {
+  .emotion-79 {
     min-width: 4rem;
   }
 }
 
 @supports (grid-template-columns: fit-content(200px)) {
   @media (min-width: 37.5rem) {
-    .emotion-42 {
+    .emotion-79 {
       min-width: 2rem;
     }
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-42 {
+  .emotion-79 {
     min-width: 2rem;
   }
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-72 {
+  .emotion-109 {
     min-width: 2.5rem;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-72 {
+  .emotion-109 {
     min-width: 2.5rem;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-72 {
+  .emotion-109 {
     min-width: 3rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-72 {
+  .emotion-109 {
     min-width: 4rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-72 {
+  .emotion-109 {
     min-width: 2rem;
   }
 }
 
 @supports (grid-template-columns: fit-content(200px)) {
   @media (min-width: 37.5rem) {
-    .emotion-72 {
+    .emotion-109 {
       min-width: 2rem;
     }
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-72 {
+  .emotion-109 {
     min-width: 4rem;
   }
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-82 {
+  .emotion-119 {
     min-width: 2.5rem;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-82 {
+  .emotion-119 {
     min-width: 2.5rem;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-82 {
+  .emotion-119 {
     min-width: 3rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-82 {
+  .emotion-119 {
     min-width: 4rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-82 {
+  .emotion-119 {
     min-width: 4rem;
   }
 }
 
 @supports (grid-template-columns: fit-content(200px)) {
   @media (min-width: 37.5rem) {
-    .emotion-82 {
+    .emotion-119 {
       min-width: 4rem;
     }
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-82 {
+  .emotion-119 {
     min-width: 2rem;
   }
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-92 {
+  .emotion-129 {
     min-width: 2.5rem;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-92 {
+  .emotion-129 {
     min-width: 2.5rem;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-92 {
+  .emotion-129 {
     min-width: 3rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-92 {
+  .emotion-129 {
     min-width: 4rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-92 {
+  .emotion-129 {
     min-width: 2rem;
   }
 }
 
 @supports (grid-template-columns: fit-content(200px)) {
   @media (min-width: 37.5rem) {
-    .emotion-92 {
+    .emotion-129 {
       min-width: 4rem;
     }
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-92 {
+  .emotion-129 {
     min-width: 2rem;
   }
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-122 {
+  .emotion-159 {
     min-width: 2.5rem;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-122 {
+  .emotion-159 {
     min-width: 2.5rem;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-122 {
+  .emotion-159 {
     min-width: 3rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-122 {
+  .emotion-159 {
     min-width: 4rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-122 {
+  .emotion-159 {
     min-width: 4rem;
   }
 }
 
 @supports (grid-template-columns: fit-content(200px)) {
   @media (min-width: 37.5rem) {
-    .emotion-122 {
+    .emotion-159 {
       min-width: 4rem;
     }
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-122 {
+  .emotion-159 {
     min-width: 4rem;
   }
 }
@@ -2223,22 +2932,123 @@ exports[`Article Page should render a news article correctly 1`] = `
     <div>
       chartbeat
     </div>
-    <div
+    <aside
       class="emotion-1"
+      role="complementary"
+    >
+      <section
+        aria-labelledby="Most-Read-scrollable"
+        class="emotion-2 emotion-3"
+        dir="ltr"
+        role="region"
+      >
+        <strong
+          class="emotion-4 emotion-5"
+          data-testid="eoj-recommendations-heading"
+          dir="ltr"
+          id="Most-Read-scrollable"
+        >
+          Most Read
+        </strong>
+        <ul
+          class="emotion-6 emotion-7"
+          dir="ltr"
+          role="list"
+        >
+          <li
+            class="emotion-8 emotion-9"
+            dir="ltr"
+          >
+            <div
+              class="emotion-10 emotion-11"
+            >
+              <a
+                class="emotion-12 emotion-13"
+                href="/news/world-us-canada-65981277"
+              >
+                Why the oxygen timeline on sub may not be so fixed
+              </a>
+            </div>
+          </li>
+          <li
+            class="emotion-8 emotion-9"
+            dir="ltr"
+          >
+            <div
+              class="emotion-10 emotion-11"
+            >
+              <a
+                class="emotion-12 emotion-13"
+                href="/news/uk-wales-65986742"
+              >
+                MasterChef contestant jailed for child abuse images
+              </a>
+            </div>
+          </li>
+          <li
+            class="emotion-8 emotion-9"
+            dir="ltr"
+          >
+            <div
+              class="emotion-10 emotion-11"
+            >
+              <a
+                class="emotion-12 emotion-13"
+                href="/news/business-65981876"
+              >
+                Musk and Zuckerberg agree to hold cage fight
+              </a>
+            </div>
+          </li>
+          <li
+            class="emotion-8 emotion-9"
+            dir="ltr"
+          >
+            <div
+              class="emotion-10 emotion-11"
+            >
+              <a
+                class="emotion-12 emotion-13"
+                href="/news/entertainment-arts-65986136"
+              >
+                Cindy Beale returns to EastEnders after 25 years
+              </a>
+            </div>
+          </li>
+          <li
+            class="emotion-8 emotion-9"
+            dir="ltr"
+          >
+            <div
+              class="emotion-10 emotion-11"
+            >
+              <a
+                class="emotion-12 emotion-13"
+                href="/news/health-65985838"
+              >
+                Mosquito-borne diseases risk increasing in Europe
+              </a>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </aside>
+    <div
+      class="emotion-38"
     >
       <div
-        class="emotion-2"
+        class="emotion-39"
       >
         <main
-          class="emotion-3"
+          class="emotion-40"
           role="main"
         >
           <div
-            class="emotion-4 emotion-5"
+            class="emotion-41 emotion-3"
             dir="ltr"
           >
             <h1
-              class="emotion-6 emotion-7"
+              class="emotion-43 emotion-44"
               id="content"
               tabindex="-1"
             >
@@ -2246,18 +3056,18 @@ exports[`Article Page should render a news article correctly 1`] = `
             </h1>
           </div>
           <div
-            class="emotion-8 emotion-5"
+            class="emotion-45 emotion-3"
             dir="ltr"
           >
             <p
-              class="emotion-10 emotion-11"
+              class="emotion-47 emotion-48"
               dir="ltr"
             >
               A paragraph.
             </p>
           </div>
           <div
-            class="emotion-12"
+            class="emotion-49"
             data-testid="embed"
           >
             <div
@@ -2282,15 +3092,15 @@ exports[`Article Page should render a news article correctly 1`] = `
             </div>
           </div>
           <figure
-            class="emotion-13"
+            class="emotion-50"
           >
             <div
-              class="emotion-14"
+              class="emotion-51"
               style="padding-bottom: 56.26%;"
             >
               <img
                 alt="Shiroo buddeen waliin"
-                class="emotion-15"
+                class="emotion-52"
                 height="535"
                 loading="lazy"
                 sizes="(min-width: 1008px) 760px, 100vw"
@@ -2305,27 +3115,27 @@ exports[`Article Page should render a news article correctly 1`] = `
     </div>
     <section
       aria-labelledby="Most-Read"
-      class="emotion-16"
+      class="emotion-53"
       data-e2e="most-read"
       data-testid="most-read"
       role="region"
     >
       <div
-        class="emotion-17 emotion-18"
+        class="emotion-54 emotion-55"
       >
         <h2
-          class="emotion-19 emotion-20"
+          class="emotion-56 emotion-57"
           id="section-label-heading-Most-Read"
           tabindex="-1"
         >
           <span
-            class="emotion-21 emotion-22"
+            class="emotion-58 emotion-59"
           >
             <span
-              class="emotion-23 emotion-24"
+              class="emotion-60 emotion-61"
             >
               <span
-                class="emotion-25 emotion-26"
+                class="emotion-62 emotion-63"
                 dir="ltr"
                 id="Most-Read"
               >
@@ -2336,43 +3146,43 @@ exports[`Article Page should render a news article correctly 1`] = `
         </h2>
       </div>
       <ol
-        class="emotion-27 emotion-5"
+        class="emotion-64 emotion-3"
         dir="ltr"
         role="list"
       >
         <li
-          class="emotion-29 emotion-5"
+          class="emotion-66 emotion-3"
           dir="ltr"
           role="listitem"
         >
           <div
-            class="emotion-31"
+            class="emotion-68"
           >
             <div
-              class="emotion-32"
+              class="emotion-69"
               dir="ltr"
             >
               <span
-                class="emotion-33"
+                class="emotion-70"
               >
                 1
               </span>
             </div>
             <div
-              class="emotion-34"
+              class="emotion-71"
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-35"
+                class="focusIndicatorDisplayTableCell emotion-72"
                 href="/news/world-us-canada-65981277"
               >
                 Why the oxygen timeline on sub may not be so fixed
               </a>
               <div
-                class="emotion-36"
+                class="emotion-73"
               >
                 <time
-                  class="emotion-37 emotion-38"
+                  class="emotion-74 emotion-75"
                   datetime="2023-06-22"
                 >
                   Last updated: 22 June 2023
@@ -2382,38 +3192,38 @@ exports[`Article Page should render a news article correctly 1`] = `
           </div>
         </li>
         <li
-          class="emotion-29 emotion-5"
+          class="emotion-66 emotion-3"
           dir="ltr"
           role="listitem"
         >
           <div
-            class="emotion-31"
+            class="emotion-68"
           >
             <div
-              class="emotion-42"
+              class="emotion-79"
               dir="ltr"
             >
               <span
-                class="emotion-33"
+                class="emotion-70"
               >
                 2
               </span>
             </div>
             <div
-              class="emotion-34"
+              class="emotion-71"
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-35"
+                class="focusIndicatorDisplayTableCell emotion-72"
                 href="/news/uk-wales-65986742"
               >
                 MasterChef contestant jailed for child abuse images
               </a>
               <div
-                class="emotion-36"
+                class="emotion-73"
               >
                 <time
-                  class="emotion-37 emotion-38"
+                  class="emotion-74 emotion-75"
                   datetime="2023-06-22"
                 >
                   Last updated: 22 June 2023
@@ -2423,38 +3233,38 @@ exports[`Article Page should render a news article correctly 1`] = `
           </div>
         </li>
         <li
-          class="emotion-29 emotion-5"
+          class="emotion-66 emotion-3"
           dir="ltr"
           role="listitem"
         >
           <div
-            class="emotion-31"
+            class="emotion-68"
           >
             <div
-              class="emotion-32"
+              class="emotion-69"
               dir="ltr"
             >
               <span
-                class="emotion-33"
+                class="emotion-70"
               >
                 3
               </span>
             </div>
             <div
-              class="emotion-34"
+              class="emotion-71"
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-35"
+                class="focusIndicatorDisplayTableCell emotion-72"
                 href="/news/business-65981876"
               >
                 Musk and Zuckerberg agree to hold cage fight
               </a>
               <div
-                class="emotion-36"
+                class="emotion-73"
               >
                 <time
-                  class="emotion-37 emotion-38"
+                  class="emotion-74 emotion-75"
                   datetime="2023-06-22"
                 >
                   Last updated: 22 June 2023
@@ -2464,38 +3274,38 @@ exports[`Article Page should render a news article correctly 1`] = `
           </div>
         </li>
         <li
-          class="emotion-29 emotion-5"
+          class="emotion-66 emotion-3"
           dir="ltr"
           role="listitem"
         >
           <div
-            class="emotion-31"
+            class="emotion-68"
           >
             <div
-              class="emotion-42"
+              class="emotion-79"
               dir="ltr"
             >
               <span
-                class="emotion-33"
+                class="emotion-70"
               >
                 4
               </span>
             </div>
             <div
-              class="emotion-34"
+              class="emotion-71"
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-35"
+                class="focusIndicatorDisplayTableCell emotion-72"
                 href="/news/entertainment-arts-65986136"
               >
                 Cindy Beale returns to EastEnders after 25 years
               </a>
               <div
-                class="emotion-36"
+                class="emotion-73"
               >
                 <time
-                  class="emotion-37 emotion-38"
+                  class="emotion-74 emotion-75"
                   datetime="2023-06-22"
                 >
                   Last updated: 22 June 2023
@@ -2505,38 +3315,38 @@ exports[`Article Page should render a news article correctly 1`] = `
           </div>
         </li>
         <li
-          class="emotion-29 emotion-5"
+          class="emotion-66 emotion-3"
           dir="ltr"
           role="listitem"
         >
           <div
-            class="emotion-31"
+            class="emotion-68"
           >
             <div
-              class="emotion-72"
+              class="emotion-109"
               dir="ltr"
             >
               <span
-                class="emotion-33"
+                class="emotion-70"
               >
                 5
               </span>
             </div>
             <div
-              class="emotion-34"
+              class="emotion-71"
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-35"
+                class="focusIndicatorDisplayTableCell emotion-72"
                 href="/news/health-65985838"
               >
                 Mosquito-borne diseases risk increasing in Europe
               </a>
               <div
-                class="emotion-36"
+                class="emotion-73"
               >
                 <time
-                  class="emotion-37 emotion-38"
+                  class="emotion-74 emotion-75"
                   datetime="2023-06-22"
                 >
                   Last updated: 22 June 2023
@@ -2546,38 +3356,38 @@ exports[`Article Page should render a news article correctly 1`] = `
           </div>
         </li>
         <li
-          class="emotion-29 emotion-5"
+          class="emotion-66 emotion-3"
           dir="ltr"
           role="listitem"
         >
           <div
-            class="emotion-31"
+            class="emotion-68"
           >
             <div
-              class="emotion-82"
+              class="emotion-119"
               dir="ltr"
             >
               <span
-                class="emotion-33"
+                class="emotion-70"
               >
                 6
               </span>
             </div>
             <div
-              class="emotion-34"
+              class="emotion-71"
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-35"
+                class="focusIndicatorDisplayTableCell emotion-72"
                 href="/news/uk-scotland-65987986"
               >
                 Teenager guilty of murdering boy at train station
               </a>
               <div
-                class="emotion-36"
+                class="emotion-73"
               >
                 <time
-                  class="emotion-37 emotion-38"
+                  class="emotion-74 emotion-75"
                   datetime="2023-06-22"
                 >
                   Last updated: 22 June 2023
@@ -2587,38 +3397,38 @@ exports[`Article Page should render a news article correctly 1`] = `
           </div>
         </li>
         <li
-          class="emotion-29 emotion-5"
+          class="emotion-66 emotion-3"
           dir="ltr"
           role="listitem"
         >
           <div
-            class="emotion-31"
+            class="emotion-68"
           >
             <div
-              class="emotion-92"
+              class="emotion-129"
               dir="ltr"
             >
               <span
-                class="emotion-33"
+                class="emotion-70"
               >
                 7
               </span>
             </div>
             <div
-              class="emotion-34"
+              class="emotion-71"
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-35"
+                class="focusIndicatorDisplayTableCell emotion-72"
                 href="/news/world-65983001"
               >
                 At least 30 migrants feared dead off Canary Islands
               </a>
               <div
-                class="emotion-36"
+                class="emotion-73"
               >
                 <time
-                  class="emotion-37 emotion-38"
+                  class="emotion-74 emotion-75"
                   datetime="2023-06-22"
                 >
                   Last updated: 22 June 2023
@@ -2628,38 +3438,38 @@ exports[`Article Page should render a news article correctly 1`] = `
           </div>
         </li>
         <li
-          class="emotion-29 emotion-5"
+          class="emotion-66 emotion-3"
           dir="ltr"
           role="listitem"
         >
           <div
-            class="emotion-31"
+            class="emotion-68"
           >
             <div
-              class="emotion-82"
+              class="emotion-119"
               dir="ltr"
             >
               <span
-                class="emotion-33"
+                class="emotion-70"
               >
                 8
               </span>
             </div>
             <div
-              class="emotion-34"
+              class="emotion-71"
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-35"
+                class="focusIndicatorDisplayTableCell emotion-72"
                 href="/news/business-65982981"
               >
                 Bank boss warns interest rate hike hard for many
               </a>
               <div
-                class="emotion-36"
+                class="emotion-73"
               >
                 <time
-                  class="emotion-37 emotion-38"
+                  class="emotion-74 emotion-75"
                   datetime="2023-06-22"
                 >
                   Last updated: 22 June 2023
@@ -2669,38 +3479,38 @@ exports[`Article Page should render a news article correctly 1`] = `
           </div>
         </li>
         <li
-          class="emotion-29 emotion-5"
+          class="emotion-66 emotion-3"
           dir="ltr"
           role="listitem"
         >
           <div
-            class="emotion-31"
+            class="emotion-68"
           >
             <div
-              class="emotion-92"
+              class="emotion-129"
               dir="ltr"
             >
               <span
-                class="emotion-33"
+                class="emotion-70"
               >
                 9
               </span>
             </div>
             <div
-              class="emotion-34"
+              class="emotion-71"
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-35"
+                class="focusIndicatorDisplayTableCell emotion-72"
                 href="/news/world-europe-65982817"
               >
                 Ukraine strikes bridge to Crimea, says Russia
               </a>
               <div
-                class="emotion-36"
+                class="emotion-73"
               >
                 <time
-                  class="emotion-37 emotion-38"
+                  class="emotion-74 emotion-75"
                   datetime="2023-06-22"
                 >
                   Last updated: 22 June 2023
@@ -2710,38 +3520,38 @@ exports[`Article Page should render a news article correctly 1`] = `
           </div>
         </li>
         <li
-          class="emotion-29 emotion-5"
+          class="emotion-66 emotion-3"
           dir="ltr"
           role="listitem"
         >
           <div
-            class="emotion-31"
+            class="emotion-68"
           >
             <div
-              class="emotion-122"
+              class="emotion-159"
               dir="ltr"
             >
               <span
-                class="emotion-33"
+                class="emotion-70"
               >
                 10
               </span>
             </div>
             <div
-              class="emotion-34"
+              class="emotion-71"
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-35"
+                class="focusIndicatorDisplayTableCell emotion-72"
                 href="/news/world-us-canada-65923956"
               >
                 The woman who wants to end abortion in America
               </a>
               <div
-                class="emotion-36"
+                class="emotion-73"
               >
                 <time
-                  class="emotion-37 emotion-38"
+                  class="emotion-74 emotion-75"
                   datetime="2023-06-22"
                 >
                   Last updated: 22 June 2023
@@ -2762,6 +3572,16 @@ exports[`Article Page should render a news article with headline in the middle c
 }
 
 .emotion-1 {
+  display: none;
+}
+
+@media (max-width: 62.9375rem) {
+  .emotion-1 {
+    display: block;
+  }
+}
+
+.emotion-2 {
   max-width: 63rem;
   margin: 0 auto;
   display: grid;
@@ -2769,29 +3589,29 @@ exports[`Article Page should render a news article with headline in the middle c
 }
 
 @media (min-width: 63rem) {
-  .emotion-1 {
+  .emotion-2 {
     padding: 0 1rem;
     -webkit-column-gap: 1rem;
     column-gap: 1rem;
   }
 }
 
-.emotion-2 {
+.emotion-3 {
   grid-column: 1/span 12;
   padding-bottom: 2rem;
 }
 
 @media (min-width: 63rem) {
-  .emotion-2 {
+  .emotion-3 {
     grid-column: 1/span 8;
   }
 }
 
-.emotion-3 {
+.emotion-4 {
   padding-bottom: 1.5rem;
 }
 
-.emotion-4 {
+.emotion-5 {
   -webkit-clip-path: inset(100%);
   clip-path: inset(100%);
   clip: rect(1px, 1px, 1px, 1px);
@@ -2803,54 +3623,54 @@ exports[`Article Page should render a news article with headline in the middle c
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-5 {
+  .emotion-6 {
     padding: 0 0.5rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-5 {
+  .emotion-6 {
     padding: 0 0.5rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-5 {
+  .emotion-6 {
     padding: 0 1rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-  .emotion-5 {
+  .emotion-6 {
     padding: 0 1rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
-  .emotion-5 {
+  .emotion-6 {
     margin-left: 20%;
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-5 {
+  .emotion-6 {
     margin-left: 40%;
   }
 }
 
 @supports (display: grid) {
-  .emotion-5 {
+  .emotion-6 {
     display: block;
     width: initial;
     margin: 0;
   }
 
   @media (max-width: 14.9375rem) {
-    .emotion-5 {
+    .emotion-6 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 0.5rem;
@@ -2859,7 +3679,7 @@ exports[`Article Page should render a news article with headline in the middle c
   }
 
   @media (min-width: 15rem) and (max-width: 24.9375rem) {
-    .emotion-5 {
+    .emotion-6 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 0.5rem;
@@ -2868,7 +3688,7 @@ exports[`Article Page should render a news article with headline in the middle c
   }
 
   @media (min-width: 25rem) and (max-width: 37.4375rem) {
-    .emotion-5 {
+    .emotion-6 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 1rem;
@@ -2877,7 +3697,7 @@ exports[`Article Page should render a news article with headline in the middle c
   }
 
   @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-    .emotion-5 {
+    .emotion-6 {
       grid-template-columns: repeat(5, 1fr);
       grid-column-end: span 5;
       padding: 0 1rem;
@@ -2886,7 +3706,7 @@ exports[`Article Page should render a news article with headline in the middle c
   }
 
   @media (min-width: 63rem) and (max-width: 79.9375rem) {
-    .emotion-5 {
+    .emotion-6 {
       grid-template-columns: repeat(5, 1fr);
       grid-column-end: span 5;
       grid-column-start: 2;
@@ -2894,7 +3714,7 @@ exports[`Article Page should render a news article with headline in the middle c
   }
 
   @media (min-width: 80rem) {
-    .emotion-5 {
+    .emotion-6 {
       grid-template-columns: repeat(10, 1fr);
       grid-column-end: span 10;
       grid-column-start: 5;
@@ -2902,7 +3722,7 @@ exports[`Article Page should render a news article with headline in the middle c
   }
 }
 
-.emotion-7 {
+.emotion-8 {
   font-size: 0.9375rem;
   line-height: 1.25rem;
   font-family: ReithSans,Helvetica,Arial,sans-serif;
@@ -2914,74 +3734,74 @@ exports[`Article Page should render a news article with headline in the middle c
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-7 {
+  .emotion-8 {
     font-size: 1rem;
     line-height: 1.375rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-7 {
+  .emotion-8 {
     font-size: 1rem;
     line-height: 1.375rem;
   }
 }
 
 @media (min-width: 63rem) {
-  .emotion-7 {
+  .emotion-8 {
     padding-right: 2.5rem;
   }
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-9 {
+  .emotion-10 {
     padding: 0 0.5rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-9 {
+  .emotion-10 {
     padding: 0 0.5rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-9 {
+  .emotion-10 {
     padding: 0 1rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-  .emotion-9 {
+  .emotion-10 {
     padding: 0 1rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
-  .emotion-9 {
+  .emotion-10 {
     margin-left: 16.666666666666668%;
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-9 {
+  .emotion-10 {
     margin-left: 33.333333333333336%;
   }
 }
 
 @supports (display: grid) {
-  .emotion-9 {
+  .emotion-10 {
     display: block;
     width: initial;
     margin: 0;
   }
 
   @media (max-width: 14.9375rem) {
-    .emotion-9 {
+    .emotion-10 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 0.5rem;
@@ -2990,7 +3810,7 @@ exports[`Article Page should render a news article with headline in the middle c
   }
 
   @media (min-width: 15rem) and (max-width: 24.9375rem) {
-    .emotion-9 {
+    .emotion-10 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 0.5rem;
@@ -2999,7 +3819,7 @@ exports[`Article Page should render a news article with headline in the middle c
   }
 
   @media (min-width: 25rem) and (max-width: 37.4375rem) {
-    .emotion-9 {
+    .emotion-10 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 1rem;
@@ -3008,7 +3828,7 @@ exports[`Article Page should render a news article with headline in the middle c
   }
 
   @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-    .emotion-9 {
+    .emotion-10 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 1rem;
@@ -3017,7 +3837,7 @@ exports[`Article Page should render a news article with headline in the middle c
   }
 
   @media (min-width: 63rem) and (max-width: 79.9375rem) {
-    .emotion-9 {
+    .emotion-10 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       grid-column-start: 2;
@@ -3025,7 +3845,7 @@ exports[`Article Page should render a news article with headline in the middle c
   }
 
   @media (min-width: 80rem) {
-    .emotion-9 {
+    .emotion-10 {
       grid-template-columns: repeat(12, 1fr);
       grid-column-end: span 12;
       grid-column-start: 5;
@@ -3033,7 +3853,7 @@ exports[`Article Page should render a news article with headline in the middle c
   }
 }
 
-.emotion-11 {
+.emotion-12 {
   font-size: 1.75rem;
   line-height: 2rem;
   font-family: ReithSerif,Helvetica,Arial,sans-serif;
@@ -3047,26 +3867,26 @@ exports[`Article Page should render a news article with headline in the middle c
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-11 {
+  .emotion-12 {
     font-size: 2rem;
     line-height: 2.25rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-11 {
+  .emotion-12 {
     font-size: 2.75rem;
     line-height: 3rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-11 {
+  .emotion-12 {
     padding: 2.5rem 0;
   }
 }
 
-.emotion-11:focus {
+.emotion-12:focus {
   outline: none;
 }
 
@@ -3078,50 +3898,54 @@ exports[`Article Page should render a news article with headline in the middle c
     <div>
       chartbeat
     </div>
-    <div
+    <aside
       class="emotion-1"
+      role="complementary"
+    />
+    <div
+      class="emotion-2"
     >
       <div
-        class="emotion-2"
+        class="emotion-3"
       >
         <main
-          class="emotion-3"
+          class="emotion-4"
           role="main"
         >
           <h1
-            class="emotion-4"
+            class="emotion-5"
             id="content"
             tabindex="-1"
           >
             SEO Headline
           </h1>
           <div
-            class="emotion-5 emotion-6"
+            class="emotion-6 emotion-7"
             dir="ltr"
           >
             <p
-              class="emotion-7 emotion-8"
+              class="emotion-8 emotion-9"
               dir="ltr"
             >
               Paragraph above headline
             </p>
           </div>
           <div
-            class="emotion-9 emotion-6"
+            class="emotion-10 emotion-7"
             dir="ltr"
           >
             <strong
-              class="emotion-11 emotion-12"
+              class="emotion-12 emotion-13"
             >
               Article Headline
             </strong>
           </div>
           <div
-            class="emotion-5 emotion-6"
+            class="emotion-6 emotion-7"
             dir="ltr"
           >
             <p
-              class="emotion-7 emotion-8"
+              class="emotion-8 emotion-9"
               dir="ltr"
             >
               Paragraph below headline
@@ -3140,6 +3964,16 @@ exports[`Article Page should render a news article without headline correctly 1`
 }
 
 .emotion-1 {
+  display: none;
+}
+
+@media (max-width: 62.9375rem) {
+  .emotion-1 {
+    display: block;
+  }
+}
+
+.emotion-2 {
   max-width: 63rem;
   margin: 0 auto;
   display: grid;
@@ -3147,29 +3981,29 @@ exports[`Article Page should render a news article without headline correctly 1`
 }
 
 @media (min-width: 63rem) {
-  .emotion-1 {
+  .emotion-2 {
     padding: 0 1rem;
     -webkit-column-gap: 1rem;
     column-gap: 1rem;
   }
 }
 
-.emotion-2 {
+.emotion-3 {
   grid-column: 1/span 12;
   padding-bottom: 2rem;
 }
 
 @media (min-width: 63rem) {
-  .emotion-2 {
+  .emotion-3 {
     grid-column: 1/span 8;
   }
 }
 
-.emotion-3 {
+.emotion-4 {
   padding-bottom: 1.5rem;
 }
 
-.emotion-4 {
+.emotion-5 {
   -webkit-clip-path: inset(100%);
   clip-path: inset(100%);
   clip: rect(1px, 1px, 1px, 1px);
@@ -3181,54 +4015,54 @@ exports[`Article Page should render a news article without headline correctly 1`
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-5 {
+  .emotion-6 {
     padding: 0 0.5rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-5 {
+  .emotion-6 {
     padding: 0 0.5rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-5 {
+  .emotion-6 {
     padding: 0 1rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-  .emotion-5 {
+  .emotion-6 {
     padding: 0 1rem;
     margin-left: 0%;
   }
 }
 
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
-  .emotion-5 {
+  .emotion-6 {
     margin-left: 20%;
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-5 {
+  .emotion-6 {
     margin-left: 40%;
   }
 }
 
 @supports (display: grid) {
-  .emotion-5 {
+  .emotion-6 {
     display: block;
     width: initial;
     margin: 0;
   }
 
   @media (max-width: 14.9375rem) {
-    .emotion-5 {
+    .emotion-6 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 0.5rem;
@@ -3237,7 +4071,7 @@ exports[`Article Page should render a news article without headline correctly 1`
   }
 
   @media (min-width: 15rem) and (max-width: 24.9375rem) {
-    .emotion-5 {
+    .emotion-6 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 0.5rem;
@@ -3246,7 +4080,7 @@ exports[`Article Page should render a news article without headline correctly 1`
   }
 
   @media (min-width: 25rem) and (max-width: 37.4375rem) {
-    .emotion-5 {
+    .emotion-6 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 1rem;
@@ -3255,7 +4089,7 @@ exports[`Article Page should render a news article without headline correctly 1`
   }
 
   @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-    .emotion-5 {
+    .emotion-6 {
       grid-template-columns: repeat(5, 1fr);
       grid-column-end: span 5;
       padding: 0 1rem;
@@ -3264,7 +4098,7 @@ exports[`Article Page should render a news article without headline correctly 1`
   }
 
   @media (min-width: 63rem) and (max-width: 79.9375rem) {
-    .emotion-5 {
+    .emotion-6 {
       grid-template-columns: repeat(5, 1fr);
       grid-column-end: span 5;
       grid-column-start: 2;
@@ -3272,7 +4106,7 @@ exports[`Article Page should render a news article without headline correctly 1`
   }
 
   @media (min-width: 80rem) {
-    .emotion-5 {
+    .emotion-6 {
       grid-template-columns: repeat(10, 1fr);
       grid-column-end: span 10;
       grid-column-start: 5;
@@ -3280,7 +4114,7 @@ exports[`Article Page should render a news article without headline correctly 1`
   }
 }
 
-.emotion-7 {
+.emotion-8 {
   font-size: 0.9375rem;
   line-height: 1.25rem;
   font-family: ReithSans,Helvetica,Arial,sans-serif;
@@ -3292,21 +4126,21 @@ exports[`Article Page should render a news article without headline correctly 1`
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-7 {
+  .emotion-8 {
     font-size: 1rem;
     line-height: 1.375rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-7 {
+  .emotion-8 {
     font-size: 1rem;
     line-height: 1.375rem;
   }
 }
 
 @media (min-width: 63rem) {
-  .emotion-7 {
+  .emotion-8 {
     padding-right: 2.5rem;
   }
 }
@@ -3319,29 +4153,33 @@ exports[`Article Page should render a news article without headline correctly 1`
     <div>
       chartbeat
     </div>
-    <div
+    <aside
       class="emotion-1"
+      role="complementary"
+    />
+    <div
+      class="emotion-2"
     >
       <div
-        class="emotion-2"
+        class="emotion-3"
       >
         <main
-          class="emotion-3"
+          class="emotion-4"
           role="main"
         >
           <h1
-            class="emotion-4"
+            class="emotion-5"
             id="content"
             tabindex="-1"
           >
             Article Headline
           </h1>
           <div
-            class="emotion-5 emotion-6"
+            class="emotion-6 emotion-7"
             dir="ltr"
           >
             <p
-              class="emotion-7 emotion-8"
+              class="emotion-8 emotion-9"
               dir="ltr"
             >
               Paragraph 1
@@ -3360,6 +4198,310 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 .emotion-1 {
+  display: none;
+}
+
+@media (max-width: 62.9375rem) {
+  .emotion-1 {
+    display: block;
+  }
+}
+
+@media (max-width: 14.9375rem) {
+  .emotion-2 {
+    margin-right: 0%;
+  }
+}
+
+@media (min-width: 15rem) and (max-width: 24.9375rem) {
+  .emotion-2 {
+    margin-right: 0%;
+  }
+}
+
+@media (min-width: 25rem) and (max-width: 37.4375rem) {
+  .emotion-2 {
+    margin-right: 0%;
+  }
+}
+
+@media (min-width: 37.5rem) and (max-width: 62.9375rem) {
+  .emotion-2 {
+    margin-right: 0%;
+  }
+}
+
+@media (min-width: 63rem) and (max-width: 79.9375rem) {
+  .emotion-2 {
+    margin-right: 20%;
+  }
+}
+
+@media (min-width: 80rem) {
+  .emotion-2 {
+    margin-right: 40%;
+  }
+}
+
+@supports (display: grid) {
+  .emotion-2 {
+    display: block;
+    width: initial;
+    margin: 0;
+  }
+
+  @media (max-width: 14.9375rem) {
+    .emotion-2 {
+      grid-template-columns: repeat(6, 1fr);
+      grid-column-end: span 6;
+      grid-column-start: 1;
+    }
+  }
+
+  @media (min-width: 15rem) and (max-width: 24.9375rem) {
+    .emotion-2 {
+      grid-template-columns: repeat(6, 1fr);
+      grid-column-end: span 6;
+      grid-column-start: 1;
+    }
+  }
+
+  @media (min-width: 25rem) and (max-width: 37.4375rem) {
+    .emotion-2 {
+      grid-template-columns: repeat(6, 1fr);
+      grid-column-end: span 6;
+      grid-column-start: 1;
+    }
+  }
+
+  @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
+    .emotion-2 {
+      grid-template-columns: repeat(5, 1fr);
+      grid-column-end: span 5;
+      grid-column-start: 1;
+    }
+  }
+
+  @media (min-width: 63rem) and (max-width: 79.9375rem) {
+    .emotion-2 {
+      grid-template-columns: repeat(5, 1fr);
+      grid-column-end: span 5;
+      grid-column-start: 2;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .emotion-2 {
+      grid-template-columns: repeat(10, 1fr);
+      grid-column-end: span 10;
+      grid-column-start: 5;
+    }
+  }
+}
+
+.emotion-4 {
+  display: block;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-family: "BBC Reith Qalam","Times New Roman",Arial,Verdana,Geneva,Helvetica,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 1rem;
+  color: #3F3F42;
+}
+
+@media (min-width: 20rem) and (max-width: 37.4375rem) {
+  .emotion-4 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .emotion-4 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@media (min-width: 0rem) {
+  .emotion-4 {
+    margin-right: 0.5rem;
+  }
+}
+
+@media (min-width: 25rem) {
+  .emotion-4 {
+    margin-right: 1rem;
+  }
+}
+
+@media (min-width: 63rem) {
+  .emotion-4 {
+    margin-right: 0;
+  }
+}
+
+.emotion-6 {
+  list-style: none;
+  padding-right: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.emotion-6::-webkit-scrollbar {
+  display: none;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+@media (min-width: 0rem) {
+  .emotion-8 {
+    margin-right: 0.5rem;
+  }
+
+  .emotion-8:first-child {
+    margin-right: 0.5rem;
+  }
+
+  .emotion-8:last-child {
+    margin-left: 0.5rem;
+  }
+}
+
+@media (min-width: 25rem) {
+  .emotion-8 {
+    margin-right: 1rem;
+  }
+
+  .emotion-8:first-child {
+    margin-right: 1rem;
+  }
+}
+
+@media (min-width: 63rem) {
+  .emotion-8 {
+    margin-right: 1rem;
+  }
+
+  .emotion-8:first-child {
+    margin-right: 0;
+  }
+}
+
+.emotion-10 {
+  position: relative;
+  background-color: #FFFFFF;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 0rem) {
+  .emotion-10 {
+    width: 14.8125rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .emotion-10 {
+    width: 11.125rem;
+  }
+}
+
+@media (min-width: 63rem) {
+  .emotion-10 {
+    width: 12.6875rem;
+  }
+}
+
+.emotion-12 {
+  position: static;
+  color: #222222;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  overflow-wrap: break-word;
+  display: inline-block;
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+  font-family: "BBC Reith Qalam","Times New Roman",Arial,Verdana,Geneva,Helvetica,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  width: 100%;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  color: #202224;
+}
+
+.emotion-12:before {
+  bottom: 0;
+  content: '';
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.emotion-12:hover,
+.emotion-12:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-12:visited {
+  color: #6E6E73;
+}
+
+@media (min-width: 20rem) and (max-width: 37.4375rem) {
+  .emotion-12 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .emotion-12 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+.emotion-12:hover,
+.emotion-12:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-12:visited {
+  color: #545658;
+}
+
+.emotion-38 {
   max-width: 63rem;
   margin: 0 auto;
   display: grid;
@@ -3367,77 +4509,77 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 @media (min-width: 63rem) {
-  .emotion-1 {
+  .emotion-38 {
     padding: 0 1rem;
     -webkit-column-gap: 1rem;
     column-gap: 1rem;
   }
 }
 
-.emotion-2 {
+.emotion-39 {
   grid-column: 1/span 12;
   padding-bottom: 2rem;
 }
 
 @media (min-width: 63rem) {
-  .emotion-2 {
+  .emotion-39 {
     grid-column: 1/span 8;
   }
 }
 
-.emotion-3 {
+.emotion-40 {
   padding-bottom: 1.5rem;
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-4 {
+  .emotion-41 {
     padding: 0 0.5rem;
     margin-right: 0%;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-4 {
+  .emotion-41 {
     padding: 0 0.5rem;
     margin-right: 0%;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-4 {
+  .emotion-41 {
     padding: 0 1rem;
     margin-right: 0%;
   }
 }
 
 @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-  .emotion-4 {
+  .emotion-41 {
     padding: 0 1rem;
     margin-right: 0%;
   }
 }
 
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
-  .emotion-4 {
+  .emotion-41 {
     margin-right: 16.666666666666668%;
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-4 {
+  .emotion-41 {
     margin-right: 33.333333333333336%;
   }
 }
 
 @supports (display: grid) {
-  .emotion-4 {
+  .emotion-41 {
     display: block;
     width: initial;
     margin: 0;
   }
 
   @media (max-width: 14.9375rem) {
-    .emotion-4 {
+    .emotion-41 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 0.5rem;
@@ -3446,7 +4588,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   }
 
   @media (min-width: 15rem) and (max-width: 24.9375rem) {
-    .emotion-4 {
+    .emotion-41 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 0.5rem;
@@ -3455,7 +4597,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   }
 
   @media (min-width: 25rem) and (max-width: 37.4375rem) {
-    .emotion-4 {
+    .emotion-41 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 1rem;
@@ -3464,7 +4606,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   }
 
   @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-    .emotion-4 {
+    .emotion-41 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 1rem;
@@ -3473,7 +4615,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   }
 
   @media (min-width: 63rem) and (max-width: 79.9375rem) {
-    .emotion-4 {
+    .emotion-41 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       grid-column-start: 2;
@@ -3481,7 +4623,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   }
 
   @media (min-width: 80rem) {
-    .emotion-4 {
+    .emotion-41 {
       grid-template-columns: repeat(12, 1fr);
       grid-column-end: span 12;
       grid-column-start: 5;
@@ -3489,7 +4631,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   }
 }
 
-.emotion-6 {
+.emotion-43 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "BBC Reith Qalam","Times New Roman",Arial,Verdana,Geneva,Helvetica,sans-serif;
@@ -3503,78 +4645,78 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-6 {
+  .emotion-43 {
     font-size: 1.75rem;
     line-height: 2.375rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-6 {
+  .emotion-43 {
     font-size: 2.5rem;
     line-height: 3.375rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-6 {
+  .emotion-43 {
     padding: 2.5rem 0;
   }
 }
 
-.emotion-6:focus {
+.emotion-43:focus {
   outline: none;
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-8 {
+  .emotion-45 {
     padding: 0 0.5rem;
     margin-right: 0%;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-8 {
+  .emotion-45 {
     padding: 0 0.5rem;
     margin-right: 0%;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-8 {
+  .emotion-45 {
     padding: 0 1rem;
     margin-right: 0%;
   }
 }
 
 @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-  .emotion-8 {
+  .emotion-45 {
     padding: 0 1rem;
     margin-right: 0%;
   }
 }
 
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
-  .emotion-8 {
+  .emotion-45 {
     margin-right: 20%;
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-8 {
+  .emotion-45 {
     margin-right: 40%;
   }
 }
 
 @supports (display: grid) {
-  .emotion-8 {
+  .emotion-45 {
     display: block;
     width: initial;
     margin: 0;
   }
 
   @media (max-width: 14.9375rem) {
-    .emotion-8 {
+    .emotion-45 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 0.5rem;
@@ -3583,7 +4725,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   }
 
   @media (min-width: 15rem) and (max-width: 24.9375rem) {
-    .emotion-8 {
+    .emotion-45 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 0.5rem;
@@ -3592,7 +4734,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   }
 
   @media (min-width: 25rem) and (max-width: 37.4375rem) {
-    .emotion-8 {
+    .emotion-45 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       padding: 0 1rem;
@@ -3601,7 +4743,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   }
 
   @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-    .emotion-8 {
+    .emotion-45 {
       grid-template-columns: repeat(5, 1fr);
       grid-column-end: span 5;
       padding: 0 1rem;
@@ -3610,7 +4752,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   }
 
   @media (min-width: 63rem) and (max-width: 79.9375rem) {
-    .emotion-8 {
+    .emotion-45 {
       grid-template-columns: repeat(5, 1fr);
       grid-column-end: span 5;
       grid-column-start: 2;
@@ -3618,7 +4760,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   }
 
   @media (min-width: 80rem) {
-    .emotion-8 {
+    .emotion-45 {
       grid-template-columns: repeat(10, 1fr);
       grid-column-end: span 10;
       grid-column-start: 5;
@@ -3626,7 +4768,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   }
 }
 
-.emotion-10 {
+.emotion-47 {
   font-size: 0.9375rem;
   line-height: 1.5rem;
   font-family: "BBC Reith Qalam","Times New Roman",Arial,Verdana,Geneva,Helvetica,sans-serif;
@@ -3638,27 +4780,27 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-10 {
+  .emotion-47 {
     font-size: 1rem;
     line-height: 1.625rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-10 {
+  .emotion-47 {
     font-size: 1rem;
     line-height: 1.625rem;
   }
 }
 
 @media (min-width: 63rem) {
-  .emotion-10 {
+  .emotion-47 {
     padding-left: 2.5rem;
   }
 }
 
 @media (max-width: 24.9375rem) {
-  .emotion-12 {
+  .emotion-49 {
     margin: 0 0.5rem;
     padding-bottom: 1.5rem;
   }
@@ -3666,7 +4808,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 
 @media (min-width: 25rem) {
   @media (max-width: 62.9375rem) {
-    .emotion-12 {
+    .emotion-49 {
       margin: 0 1rem;
       padding-bottom: 2rem;
     }
@@ -3674,21 +4816,21 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
-  .emotion-12 {
+  .emotion-49 {
     margin: 0 1rem;
     padding-bottom: 2.5rem;
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-12 {
+  .emotion-49 {
     margin: 0 auto;
     padding: 0 1rem 1.5rem;
     max-width: 80rem;
   }
 }
 
-.emotion-13 {
+.emotion-50 {
   position: relative;
   z-index: 0;
   color: #141414;
@@ -3696,36 +4838,36 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-13 {
+  .emotion-50 {
     margin-top: 1.5rem;
   }
 }
 
 @media (min-width: 63rem) {
-  .emotion-13 {
+  .emotion-50 {
     margin-bottom: 1.5rem;
   }
 }
 
 @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-  .emotion-13 {
+  .emotion-50 {
     margin-bottom: 1rem;
   }
 }
 
-.emotion-15 {
+.emotion-52 {
   margin: 0;
   padding: 0;
   scroll-margin-top: 1rem;
 }
 
-.emotion-15:focus-visible {
+.emotion-52:focus-visible {
   outline: 0.1875rem solid #000000;
   box-shadow: 0 0 0 0.1875rem #FFFFFF;
   outline-offset: 0.1875rem;
 }
 
-.emotion-17 {
+.emotion-54 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3735,7 +4877,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   flex-direction: column;
 }
 
-.emotion-19 {
+.emotion-56 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3755,7 +4897,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-19 {
+  .emotion-56 {
     -webkit-align-items: stretch;
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
@@ -3763,7 +4905,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   }
 }
 
-.emotion-21 {
+.emotion-58 {
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-family: "BBC Reith Qalam","Times New Roman",Arial,Verdana,Geneva,Helvetica,sans-serif;
@@ -3783,32 +4925,32 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-21 {
+  .emotion-58 {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-21 {
+  .emotion-58 {
     font-size: 1.5rem;
     line-height: 2rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-21 {
+  .emotion-58 {
     margin: 0;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-21 {
+  .emotion-58 {
     padding-left: 1rem;
   }
 }
 
-.emotion-23 {
+.emotion-60 {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -3817,7 +4959,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 @supports (display: grid) {
-  .emotion-23 {
+  .emotion-60 {
     display: grid;
     position: initial;
     width: initial;
@@ -3825,7 +4967,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   }
 
   @media (max-width: 14.9375rem) {
-    .emotion-23 {
+    .emotion-60 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       grid-column-gap: 0.5rem;
@@ -3833,7 +4975,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   }
 
   @media (min-width: 15rem) and (max-width: 24.9375rem) {
-    .emotion-23 {
+    .emotion-60 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       grid-column-gap: 0.5rem;
@@ -3841,7 +4983,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   }
 
   @media (min-width: 25rem) and (max-width: 37.4375rem) {
-    .emotion-23 {
+    .emotion-60 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       grid-column-gap: 0.5rem;
@@ -3849,7 +4991,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   }
 
   @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-    .emotion-23 {
+    .emotion-60 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
       grid-column-gap: 1rem;
@@ -3857,7 +4999,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   }
 
   @media (min-width: 63rem) and (max-width: 79.9375rem) {
-    .emotion-23 {
+    .emotion-60 {
       grid-template-columns: repeat(8, 1fr);
       grid-column-end: span 8;
       grid-column-gap: 1rem;
@@ -3865,7 +5007,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   }
 
   @media (min-width: 80rem) {
-    .emotion-23 {
+    .emotion-60 {
       grid-template-columns: repeat(20, 1fr);
       grid-column-end: span 20;
       grid-column-gap: 1rem;
@@ -3874,24 +5016,24 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 @media (min-width: 80rem) {
-  .emotion-23 {
+  .emotion-60 {
     grid-auto-flow: row;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-23 {
+  .emotion-60 {
     grid-template-rows: repeat(5, auto);
   }
 }
 
-.emotion-25 {
+.emotion-62 {
   position: relative;
   padding-bottom: 1.5rem;
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-25 {
+  .emotion-62 {
     width: calc(100%);
     display: inline-block;
     vertical-align: top;
@@ -3899,7 +5041,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-25 {
+  .emotion-62 {
     width: calc(100%);
     display: inline-block;
     vertical-align: top;
@@ -3907,7 +5049,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-25 {
+  .emotion-62 {
     width: calc(100%);
     display: inline-block;
     vertical-align: top;
@@ -3915,7 +5057,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-  .emotion-25 {
+  .emotion-62 {
     width: calc(50%);
     display: inline-block;
     vertical-align: top;
@@ -3923,7 +5065,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
-  .emotion-25 {
+  .emotion-62 {
     width: calc(50%);
     display: inline-block;
     vertical-align: top;
@@ -3931,7 +5073,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 @media (min-width: 80rem) {
-  .emotion-25 {
+  .emotion-62 {
     width: calc(20%);
     display: inline-block;
     vertical-align: top;
@@ -3939,56 +5081,56 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 @supports (display: grid) {
-  .emotion-25 {
+  .emotion-62 {
     display: block;
     width: initial;
     margin: 0;
   }
 
   @media (max-width: 14.9375rem) {
-    .emotion-25 {
+    .emotion-62 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
     }
   }
 
   @media (min-width: 15rem) and (max-width: 24.9375rem) {
-    .emotion-25 {
+    .emotion-62 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
     }
   }
 
   @media (min-width: 25rem) and (max-width: 37.4375rem) {
-    .emotion-25 {
+    .emotion-62 {
       grid-template-columns: repeat(6, 1fr);
       grid-column-end: span 6;
     }
   }
 
   @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
-    .emotion-25 {
+    .emotion-62 {
       grid-template-columns: repeat(3, 1fr);
       grid-column-end: span 3;
     }
   }
 
   @media (min-width: 63rem) and (max-width: 79.9375rem) {
-    .emotion-25 {
+    .emotion-62 {
       grid-template-columns: repeat(4, 1fr);
       grid-column-end: span 4;
     }
   }
 
   @media (min-width: 80rem) {
-    .emotion-25 {
+    .emotion-62 {
       grid-template-columns: repeat(4, 1fr);
       grid-column-end: span 4;
     }
   }
 }
 
-.emotion-27 {
+.emotion-64 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4001,50 +5143,50 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-28 {
+  .emotion-65 {
     min-width: 1rem;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-28 {
+  .emotion-65 {
     min-width: 1.5rem;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-28 {
+  .emotion-65 {
     min-width: 1.5rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-28 {
+  .emotion-65 {
     min-width: 2rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-28 {
+  .emotion-65 {
     min-width: 1.5rem;
   }
 }
 
 @supports (grid-template-columns: fit-content(200px)) {
   @media (min-width: 37.5rem) {
-    .emotion-28 {
+    .emotion-65 {
       min-width: 1.5rem;
     }
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-28 {
+  .emotion-65 {
     min-width: 1.5rem;
   }
 }
 
-.emotion-29 {
+.emotion-66 {
   font-family: "BBC Reith Qalam","Times New Roman",Arial,Verdana,Geneva,Helvetica,sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -4057,32 +5199,32 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-29 {
+  .emotion-66 {
     font-size: 2.5rem;
     line-height: 2.75rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-29 {
+  .emotion-66 {
     font-size: 3.5rem;
     line-height: 3.75rem;
   }
 }
 
-.emotion-30 {
+.emotion-67 {
   padding-top: 0.375rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
 @supports (grid-template-columns: fit-content(200px)) {
-  .emotion-30 {
+  .emotion-67 {
     padding-left: 0;
   }
 }
 
-.emotion-31 {
+.emotion-68 {
   font-size: 0.9375rem;
   line-height: 1.5rem;
   font-family: "BBC Reith Qalam","Times New Roman",Arial,Verdana,Geneva,Helvetica,sans-serif;
@@ -4096,26 +5238,26 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-31 {
+  .emotion-68 {
     font-size: 1rem;
     line-height: 1.5rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-31 {
+  .emotion-68 {
     font-size: 1rem;
     line-height: 1.5rem;
   }
 }
 
-.emotion-31:hover,
-.emotion-31:focus {
+.emotion-68:hover,
+.emotion-68:focus {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-31:before {
+.emotion-68:before {
   bottom: 0;
   content: '';
   left: 0;
@@ -4128,31 +5270,31 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 @media (min-width: 25rem) {
-  .emotion-31 {
+  .emotion-68 {
     font-size: 1.125rem;
     line-height: 1.625rem;
   }
 
   @media (min-width: 20rem) and (max-width: 37.4375rem) {
-    .emotion-31 {
+    .emotion-68 {
       font-size: 1.125rem;
       line-height: 1.625rem;
     }
   }
 
   @media (min-width: 37.5rem) {
-    .emotion-31 {
+    .emotion-68 {
       font-size: 1.25rem;
       line-height: 1.75rem;
     }
   }
 }
 
-.emotion-32 {
+.emotion-69 {
   padding-top: 0.5rem;
 }
 
-.emotion-33 {
+.emotion-70 {
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: #545658;
@@ -4163,235 +5305,235 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-33 {
+  .emotion-70 {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-33 {
+  .emotion-70 {
     font-size: 0.8125rem;
     line-height: 1.25rem;
   }
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-38 {
+  .emotion-75 {
     min-width: 1rem;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-38 {
+  .emotion-75 {
     min-width: 1.5rem;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-38 {
+  .emotion-75 {
     min-width: 1.5rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-38 {
+  .emotion-75 {
     min-width: 2rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-38 {
+  .emotion-75 {
     min-width: 2rem;
   }
 }
 
 @supports (grid-template-columns: fit-content(200px)) {
   @media (min-width: 37.5rem) {
-    .emotion-38 {
+    .emotion-75 {
       min-width: 1.5rem;
     }
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-38 {
+  .emotion-75 {
     min-width: 1.5rem;
   }
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-68 {
+  .emotion-105 {
     min-width: 1rem;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-68 {
+  .emotion-105 {
     min-width: 1.5rem;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-68 {
+  .emotion-105 {
     min-width: 1.5rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-68 {
+  .emotion-105 {
     min-width: 2rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-68 {
+  .emotion-105 {
     min-width: 1.5rem;
   }
 }
 
 @supports (grid-template-columns: fit-content(200px)) {
   @media (min-width: 37.5rem) {
-    .emotion-68 {
+    .emotion-105 {
       min-width: 1.5rem;
     }
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-68 {
+  .emotion-105 {
     min-width: 2rem;
   }
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-78 {
+  .emotion-115 {
     min-width: 1rem;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-78 {
+  .emotion-115 {
     min-width: 1.5rem;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-78 {
+  .emotion-115 {
     min-width: 1.5rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-78 {
+  .emotion-115 {
     min-width: 2rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-78 {
+  .emotion-115 {
     min-width: 2rem;
   }
 }
 
 @supports (grid-template-columns: fit-content(200px)) {
   @media (min-width: 37.5rem) {
-    .emotion-78 {
+    .emotion-115 {
       min-width: 2rem;
     }
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-78 {
+  .emotion-115 {
     min-width: 1.5rem;
   }
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-88 {
+  .emotion-125 {
     min-width: 1rem;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-88 {
+  .emotion-125 {
     min-width: 1.5rem;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-88 {
+  .emotion-125 {
     min-width: 1.5rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-88 {
+  .emotion-125 {
     min-width: 2rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-88 {
+  .emotion-125 {
     min-width: 1.5rem;
   }
 }
 
 @supports (grid-template-columns: fit-content(200px)) {
   @media (min-width: 37.5rem) {
-    .emotion-88 {
+    .emotion-125 {
       min-width: 2rem;
     }
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-88 {
+  .emotion-125 {
     min-width: 1.5rem;
   }
 }
 
 @media (max-width: 14.9375rem) {
-  .emotion-118 {
+  .emotion-155 {
     min-width: 1rem;
   }
 }
 
 @media (min-width: 15rem) and (max-width: 24.9375rem) {
-  .emotion-118 {
+  .emotion-155 {
     min-width: 1.5rem;
   }
 }
 
 @media (min-width: 25rem) and (max-width: 37.4375rem) {
-  .emotion-118 {
+  .emotion-155 {
     min-width: 1.5rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-118 {
+  .emotion-155 {
     min-width: 2rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-118 {
+  .emotion-155 {
     min-width: 2rem;
   }
 }
 
 @supports (grid-template-columns: fit-content(200px)) {
   @media (min-width: 37.5rem) {
-    .emotion-118 {
+    .emotion-155 {
       min-width: 2rem;
     }
   }
 }
 
 @media (min-width: 80rem) {
-  .emotion-118 {
+  .emotion-155 {
     min-width: 2rem;
   }
 }
@@ -4404,22 +5546,123 @@ exports[`Article Page should render a rtl article (persian) with most read corre
     <div>
       chartbeat
     </div>
-    <div
+    <aside
       class="emotion-1"
+      role="complementary"
+    >
+      <section
+        aria-labelledby="Most-Read-scrollable"
+        class="emotion-2 emotion-3"
+        dir="rtl"
+        role="region"
+      >
+        <strong
+          class="emotion-4 emotion-5"
+          data-testid="eoj-recommendations-heading"
+          dir="rtl"
+          id="Most-Read-scrollable"
+        >
+          Most Read
+        </strong>
+        <ul
+          class="emotion-6 emotion-7"
+          dir="rtl"
+          role="list"
+        >
+          <li
+            class="emotion-8 emotion-9"
+            dir="rtl"
+          >
+            <div
+              class="emotion-10 emotion-11"
+            >
+              <a
+                class="emotion-12 emotion-13"
+                href="https://www.bbc.com/persian/articles/c4n9j7rx27lo"
+              >
+                ایران در آستانه بحران بنزین؛ تابستانی دشوار برای دولت رئیسی در پیش است
+              </a>
+            </div>
+          </li>
+          <li
+            class="emotion-8 emotion-9"
+            dir="rtl"
+          >
+            <div
+              class="emotion-10 emotion-11"
+            >
+              <a
+                class="emotion-12 emotion-13"
+                href="https://www.bbc.com/persian/articles/cm58lxneyrvo"
+              >
+                پرونده حمید نوری؛ وکلای مدافع: نوری فریب خورد
+              </a>
+            </div>
+          </li>
+          <li
+            class="emotion-8 emotion-9"
+            dir="rtl"
+          >
+            <div
+              class="emotion-10 emotion-11"
+            >
+              <a
+                class="emotion-12 emotion-13"
+                href="https://www.bbc.com/persian/articles/cx7e0eexdeeo"
+              >
+                اما رادوکانو: گاهی آرزو می‌کنم که ای کاش قهرمان اوپن آمریکا نمی‌شدم
+              </a>
+            </div>
+          </li>
+          <li
+            class="emotion-8 emotion-9"
+            dir="rtl"
+          >
+            <div
+              class="emotion-10 emotion-11"
+            >
+              <a
+                class="emotion-12 emotion-13"
+                href="https://www.bbc.com/persian/articles/cqe0045zrpdo"
+              >
+                ملی‌پوش سابق هلند برای چاقو زدن به فامیلش به ۱۸ ماه حبس محکوم شد
+              </a>
+            </div>
+          </li>
+          <li
+            class="emotion-8 emotion-9"
+            dir="rtl"
+          >
+            <div
+              class="emotion-10 emotion-11"
+            >
+              <a
+                class="emotion-12 emotion-13"
+                href="https://www.bbc.com/persian/articles/cjmyylvr1nvo"
+              >
+                وزیر خارجه آمریکا در پکن؛ شی: پیشرفت‌هایی در روابط حاصل شده است، بلینکن: رقابت نباید بدل به دشمنی شود
+              </a>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </aside>
+    <div
+      class="emotion-38"
     >
       <div
-        class="emotion-2"
+        class="emotion-39"
       >
         <main
-          class="emotion-3"
+          class="emotion-40"
           role="main"
         >
           <div
-            class="emotion-4 emotion-5"
+            class="emotion-41 emotion-3"
             dir="rtl"
           >
             <h1
-              class="emotion-6 emotion-7"
+              class="emotion-43 emotion-44"
               id="content"
               tabindex="-1"
             >
@@ -4427,11 +5670,11 @@ exports[`Article Page should render a rtl article (persian) with most read corre
             </h1>
           </div>
           <div
-            class="emotion-8 emotion-5"
+            class="emotion-45 emotion-3"
             dir="rtl"
           >
             <p
-              class="emotion-10 emotion-11"
+              class="emotion-47 emotion-48"
               dir="rtl"
             >
               یک پاراگراف.
@@ -4442,27 +5685,27 @@ exports[`Article Page should render a rtl article (persian) with most read corre
     </div>
     <section
       aria-labelledby="Most-Read"
-      class="emotion-12"
+      class="emotion-49"
       data-e2e="most-read"
       data-testid="most-read"
       role="region"
     >
       <div
-        class="emotion-13 emotion-14"
+        class="emotion-50 emotion-51"
       >
         <h2
-          class="emotion-15 emotion-16"
+          class="emotion-52 emotion-53"
           id="section-label-heading-Most-Read"
           tabindex="-1"
         >
           <span
-            class="emotion-17 emotion-18"
+            class="emotion-54 emotion-55"
           >
             <span
-              class="emotion-19 emotion-20"
+              class="emotion-56 emotion-57"
             >
               <span
-                class="emotion-21 emotion-22"
+                class="emotion-58 emotion-59"
                 dir="rtl"
                 id="Most-Read"
               >
@@ -4473,43 +5716,43 @@ exports[`Article Page should render a rtl article (persian) with most read corre
         </h2>
       </div>
       <ol
-        class="emotion-23 emotion-5"
+        class="emotion-60 emotion-3"
         dir="rtl"
         role="list"
       >
         <li
-          class="emotion-25 emotion-5"
+          class="emotion-62 emotion-3"
           dir="rtl"
           role="listitem"
         >
           <div
-            class="emotion-27"
+            class="emotion-64"
           >
             <div
-              class="emotion-28"
+              class="emotion-65"
               dir="rtl"
             >
               <span
-                class="emotion-29"
+                class="emotion-66"
               >
                 ۱
               </span>
             </div>
             <div
-              class="emotion-30"
+              class="emotion-67"
               dir="rtl"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="focusIndicatorDisplayTableCell emotion-68"
                 href="https://www.bbc.com/persian/articles/c4n9j7rx27lo"
               >
                 ایران در آستانه بحران بنزین؛ تابستانی دشوار برای دولت رئیسی در پیش است
               </a>
               <div
-                class="emotion-32"
+                class="emotion-69"
               >
                 <time
-                  class="emotion-33 emotion-34"
+                  class="emotion-70 emotion-71"
                   datetime="2023-06-19"
                 >
                   به روز شده در ۱۹ ژوئن ۲۰۲۳
@@ -4519,38 +5762,38 @@ exports[`Article Page should render a rtl article (persian) with most read corre
           </div>
         </li>
         <li
-          class="emotion-25 emotion-5"
+          class="emotion-62 emotion-3"
           dir="rtl"
           role="listitem"
         >
           <div
-            class="emotion-27"
+            class="emotion-64"
           >
             <div
-              class="emotion-38"
+              class="emotion-75"
               dir="rtl"
             >
               <span
-                class="emotion-29"
+                class="emotion-66"
               >
                 ۲
               </span>
             </div>
             <div
-              class="emotion-30"
+              class="emotion-67"
               dir="rtl"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="focusIndicatorDisplayTableCell emotion-68"
                 href="https://www.bbc.com/persian/articles/cm58lxneyrvo"
               >
                 پرونده حمید نوری؛ وکلای مدافع: نوری فریب خورد
               </a>
               <div
-                class="emotion-32"
+                class="emotion-69"
               >
                 <time
-                  class="emotion-33 emotion-34"
+                  class="emotion-70 emotion-71"
                   datetime="2023-06-19"
                 >
                   به روز شده در ۱۹ ژوئن ۲۰۲۳
@@ -4560,38 +5803,38 @@ exports[`Article Page should render a rtl article (persian) with most read corre
           </div>
         </li>
         <li
-          class="emotion-25 emotion-5"
+          class="emotion-62 emotion-3"
           dir="rtl"
           role="listitem"
         >
           <div
-            class="emotion-27"
+            class="emotion-64"
           >
             <div
-              class="emotion-28"
+              class="emotion-65"
               dir="rtl"
             >
               <span
-                class="emotion-29"
+                class="emotion-66"
               >
                 ۳
               </span>
             </div>
             <div
-              class="emotion-30"
+              class="emotion-67"
               dir="rtl"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="focusIndicatorDisplayTableCell emotion-68"
                 href="https://www.bbc.com/persian/articles/cx7e0eexdeeo"
               >
                 اما رادوکانو: گاهی آرزو می‌کنم که ای کاش قهرمان اوپن آمریکا نمی‌شدم
               </a>
               <div
-                class="emotion-32"
+                class="emotion-69"
               >
                 <time
-                  class="emotion-33 emotion-34"
+                  class="emotion-70 emotion-71"
                   datetime="2023-06-19"
                 >
                   به روز شده در ۱۹ ژوئن ۲۰۲۳
@@ -4601,38 +5844,38 @@ exports[`Article Page should render a rtl article (persian) with most read corre
           </div>
         </li>
         <li
-          class="emotion-25 emotion-5"
+          class="emotion-62 emotion-3"
           dir="rtl"
           role="listitem"
         >
           <div
-            class="emotion-27"
+            class="emotion-64"
           >
             <div
-              class="emotion-38"
+              class="emotion-75"
               dir="rtl"
             >
               <span
-                class="emotion-29"
+                class="emotion-66"
               >
                 ۴
               </span>
             </div>
             <div
-              class="emotion-30"
+              class="emotion-67"
               dir="rtl"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="focusIndicatorDisplayTableCell emotion-68"
                 href="https://www.bbc.com/persian/articles/cqe0045zrpdo"
               >
                 ملی‌پوش سابق هلند برای چاقو زدن به فامیلش به ۱۸ ماه حبس محکوم شد
               </a>
               <div
-                class="emotion-32"
+                class="emotion-69"
               >
                 <time
-                  class="emotion-33 emotion-34"
+                  class="emotion-70 emotion-71"
                   datetime="2023-06-19"
                 >
                   به روز شده در ۱۹ ژوئن ۲۰۲۳
@@ -4642,38 +5885,38 @@ exports[`Article Page should render a rtl article (persian) with most read corre
           </div>
         </li>
         <li
-          class="emotion-25 emotion-5"
+          class="emotion-62 emotion-3"
           dir="rtl"
           role="listitem"
         >
           <div
-            class="emotion-27"
+            class="emotion-64"
           >
             <div
-              class="emotion-68"
+              class="emotion-105"
               dir="rtl"
             >
               <span
-                class="emotion-29"
+                class="emotion-66"
               >
                 ۵
               </span>
             </div>
             <div
-              class="emotion-30"
+              class="emotion-67"
               dir="rtl"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="focusIndicatorDisplayTableCell emotion-68"
                 href="https://www.bbc.com/persian/articles/cjmyylvr1nvo"
               >
                 وزیر خارجه آمریکا در پکن؛ شی: پیشرفت‌هایی در روابط حاصل شده است، بلینکن: رقابت نباید بدل به دشمنی شود
               </a>
               <div
-                class="emotion-32"
+                class="emotion-69"
               >
                 <time
-                  class="emotion-33 emotion-34"
+                  class="emotion-70 emotion-71"
                   datetime="2023-06-19"
                 >
                   به روز شده در ۱۹ ژوئن ۲۰۲۳
@@ -4683,38 +5926,38 @@ exports[`Article Page should render a rtl article (persian) with most read corre
           </div>
         </li>
         <li
-          class="emotion-25 emotion-5"
+          class="emotion-62 emotion-3"
           dir="rtl"
           role="listitem"
         >
           <div
-            class="emotion-27"
+            class="emotion-64"
           >
             <div
-              class="emotion-78"
+              class="emotion-115"
               dir="rtl"
             >
               <span
-                class="emotion-29"
+                class="emotion-66"
               >
                 ۶
               </span>
             </div>
             <div
-              class="emotion-30"
+              class="emotion-67"
               dir="rtl"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="focusIndicatorDisplayTableCell emotion-68"
                 href="https://www.bbc.com/persian/articles/cyxgqq1796qo"
               >
                 سگم سرطان پستان مرا تشخیص داد
               </a>
               <div
-                class="emotion-32"
+                class="emotion-69"
               >
                 <time
-                  class="emotion-33 emotion-34"
+                  class="emotion-70 emotion-71"
                   datetime="2023-06-18"
                 >
                   به روز شده در ۱۸ ژوئن ۲۰۲۳
@@ -4724,38 +5967,38 @@ exports[`Article Page should render a rtl article (persian) with most read corre
           </div>
         </li>
         <li
-          class="emotion-25 emotion-5"
+          class="emotion-62 emotion-3"
           dir="rtl"
           role="listitem"
         >
           <div
-            class="emotion-27"
+            class="emotion-64"
           >
             <div
-              class="emotion-88"
+              class="emotion-125"
               dir="rtl"
             >
               <span
-                class="emotion-29"
+                class="emotion-66"
               >
                 ۷
               </span>
             </div>
             <div
-              class="emotion-30"
+              class="emotion-67"
               dir="rtl"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="focusIndicatorDisplayTableCell emotion-68"
                 href="https://www.bbc.com/persian/articles/cydg800g89yo"
               >
                 لوح ۲۸۰۰ ساله از ایتالیا به عراق بازگردانده شد
               </a>
               <div
-                class="emotion-32"
+                class="emotion-69"
               >
                 <time
-                  class="emotion-33 emotion-34"
+                  class="emotion-70 emotion-71"
                   datetime="2023-06-18"
                 >
                   به روز شده در ۱۸ ژوئن ۲۰۲۳
@@ -4765,38 +6008,38 @@ exports[`Article Page should render a rtl article (persian) with most read corre
           </div>
         </li>
         <li
-          class="emotion-25 emotion-5"
+          class="emotion-62 emotion-3"
           dir="rtl"
           role="listitem"
         >
           <div
-            class="emotion-27"
+            class="emotion-64"
           >
             <div
-              class="emotion-78"
+              class="emotion-115"
               dir="rtl"
             >
               <span
-                class="emotion-29"
+                class="emotion-66"
               >
                 ۸
               </span>
             </div>
             <div
-              class="emotion-30"
+              class="emotion-67"
               dir="rtl"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="focusIndicatorDisplayTableCell emotion-68"
                 href="https://www.bbc.com/persian/articles/cgr664ezld5o"
               >
                 نمایندگان کشورها و نهادها در اجلاس سازمان ملل خواستار پایان یافتن سیاست‌های تبعیض‌آمیز طالبان علیه زنان شدند
               </a>
               <div
-                class="emotion-32"
+                class="emotion-69"
               >
                 <time
-                  class="emotion-33 emotion-34"
+                  class="emotion-70 emotion-71"
                   datetime="2023-06-19"
                 >
                   به روز شده در ۱۹ ژوئن ۲۰۲۳
@@ -4806,38 +6049,38 @@ exports[`Article Page should render a rtl article (persian) with most read corre
           </div>
         </li>
         <li
-          class="emotion-25 emotion-5"
+          class="emotion-62 emotion-3"
           dir="rtl"
           role="listitem"
         >
           <div
-            class="emotion-27"
+            class="emotion-64"
           >
             <div
-              class="emotion-88"
+              class="emotion-125"
               dir="rtl"
             >
               <span
-                class="emotion-29"
+                class="emotion-66"
               >
                 ۹
               </span>
             </div>
             <div
-              class="emotion-30"
+              class="emotion-67"
               dir="rtl"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="focusIndicatorDisplayTableCell emotion-68"
                 href="https://www.bbc.com/persian/articles/c9wj7ejl17po"
               >
                 چرا موبایل داغ می‌کند و چطور آن را خنک نگه داریم؟
               </a>
               <div
-                class="emotion-32"
+                class="emotion-69"
               >
                 <time
-                  class="emotion-33 emotion-34"
+                  class="emotion-70 emotion-71"
                   datetime="2023-06-18"
                 >
                   به روز شده در ۱۸ ژوئن ۲۰۲۳
@@ -4847,38 +6090,38 @@ exports[`Article Page should render a rtl article (persian) with most read corre
           </div>
         </li>
         <li
-          class="emotion-25 emotion-5"
+          class="emotion-62 emotion-3"
           dir="rtl"
           role="listitem"
         >
           <div
-            class="emotion-27"
+            class="emotion-64"
           >
             <div
-              class="emotion-118"
+              class="emotion-155"
               dir="rtl"
             >
               <span
-                class="emotion-29"
+                class="emotion-66"
               >
                 ۱۰
               </span>
             </div>
             <div
-              class="emotion-30"
+              class="emotion-67"
               dir="rtl"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="focusIndicatorDisplayTableCell emotion-68"
                 href="https://www.bbc.com/persian/articles/c6plvgyz614o"
               >
                 هشتگ «داستان_ما_یکیست» در چهلمین سالگرد اعدام ۱۰ زن بهائی در شیراز
               </a>
               <div
-                class="emotion-32"
+                class="emotion-69"
               >
                 <time
-                  class="emotion-33 emotion-34"
+                  class="emotion-70 emotion-71"
                   datetime="2023-06-18"
                 >
                   به روز شده در ۱۸ ژوئن ۲۰۲۳

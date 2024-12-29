@@ -232,7 +232,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     showRelatedTopics && topics.length > 0 && !isTransliterated,
   );
 
-  const variantValue = 'A'; // I don't know how changing this works in real experiments
+  const variantValue = 'B'; // I don't know how changing this works in real experiments
   // so just manually switch the hardcoded variant for now while getting this working
   const variant: 'A' | 'B' | 'none' = ['A', 'B'].includes(variantValue)
     ? (variantValue as 'A' | 'B')
@@ -240,7 +240,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   let dataForOJExperiment;
   if (variant === 'A') {
     dataForOJExperiment = topStoriesContent;
-  } else if (variant === 'B') {
+  } else if (variant === 'B' && mostReadInitialData) {
     dataForOJExperiment = mostReadInitialData.items;
   } else {
     dataForOJExperiment = [];
