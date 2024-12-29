@@ -64,7 +64,6 @@ const ScrollablePromo = ({
 }) => {
   const { script, service, dir, translations, mostRead } =
     useContext(ServiceContext);
-  console.log('translations is ', translations.topStoriesTitle);
   console.log('Blocks in scrollable promo:', blocks, blocks.type);
   const eventTrackingData = {
     componentName: `edoj${blockGroupIndex}`,

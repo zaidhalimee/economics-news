@@ -245,7 +245,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   } else {
     dataForOJExperiment = [];
   }
-  console.log('most read', dataForOJExperiment);
+
   const newProps = {
     blocks: dataForOJExperiment,
     variant,
