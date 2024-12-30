@@ -21,7 +21,7 @@ import {
   FEATURE_INDEX_PAGE,
 } from '#app/routes/utils/pageTypes';
 import { Article } from '#app/models/types/optimo';
-import getInitialData from './getInitialData';
+import getInitialData from '#app/routes/article/getInitialData';
 
 type SupportedPageTypes =
   | typeof ARTICLE_PAGE

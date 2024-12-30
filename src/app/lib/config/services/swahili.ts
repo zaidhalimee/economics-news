@@ -138,7 +138,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'Ndio',
           reject: 'Fahamu kilichobadilika',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

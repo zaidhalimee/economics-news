@@ -1,15 +1,18 @@
 import pipe from 'ramda/src/pipe';
-import nodeLogger from '../../../lib/logger.node';
-import { Services, Toggles, Variants } from '../../../models/types/global';
-import getOnwardsPageData from '../utils/getOnwardsData';
-import addAnalyticsCounterName from '../utils/addAnalyticsCounterName';
-import augmentWithDisclaimer from '../utils/augmentWithDisclaimer';
-import { advertisingAllowed, isSfv } from '../utils/paramChecks';
-import { FetchError, GetAgent } from '../../../models/types/fetch';
-import handleError from '../../utils/handleError';
-import fetchDataFromBFF from '../../utils/fetchDataFromBFF';
-import { BFF_FETCH_ERROR } from '../../../lib/logger.const';
-import certsRequired from '../../utils/certsRequired';
+import nodeLogger from '#lib/logger.node';
+import { Services, Toggles, Variants } from '#models/types/global';
+import getOnwardsPageData from '#app/routes/article/utils/getOnwardsData';
+import addAnalyticsCounterName from '#app/routes/article/utils/addAnalyticsCounterName';
+import augmentWithDisclaimer from '#app/routes/article/utils/augmentWithDisclaimer';
+import {
+  advertisingAllowed,
+  isSfv,
+} from '#app/routes/article/utils/paramChecks';
+import { FetchError, GetAgent } from '#models/types/fetch';
+import handleError from '#app/routes/utils/handleError';
+import fetchDataFromBFF from '#app/routes/utils/fetchDataFromBFF';
+import { BFF_FETCH_ERROR } from '#lib/logger.const';
+import certsRequired from '#app/routes/utils/certsRequired';
 
 const logger = nodeLogger(__filename);
 
