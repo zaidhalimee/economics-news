@@ -77,19 +77,21 @@ const ScrollablePromo = ({
     return null;
   }
 
-  let title =
-    blocks[0].type === 'title' &&
-    path(
-      ['0', 'model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'text'],
-      blocks,
-    );
+  let title;
   if (variant === 'A') {
     title = translations.topStoriesTitle || 'Top Stories';
   }
   if (variant === 'B') {
     title = mostRead.header || 'Most Read';
+  } else {
+    title =
+      blocks[0].type === 'title' &&
+      path(
+        ['0', 'model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'text'],
+        blocks,
+      );
   }
-  console.log('blocks', blocks, 'titlexx', title, 'variant', variant);
+
   const blocksWithoutTitle = blocks[0].type === 'title' ? tail(blocks) : blocks;
 
   const isSingleItem = blocksWithoutTitle.length === 1;
