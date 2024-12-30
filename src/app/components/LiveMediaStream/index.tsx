@@ -50,8 +50,8 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
           data-testid="watch-now-button"
           css={styles.playButton}
         >
-          {watchNow}
           {mediaIcons.video}
+          {watchNow}
         </button>
       )}
       {showMedia && (
