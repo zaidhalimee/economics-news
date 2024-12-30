@@ -12,18 +12,18 @@ export default {
       display: 'block',
       width: '100%',
     }),
-  playButton: ({ spacings, mq }: Theme) =>
+  playButton: ({ spacings, palette, mq }: Theme) =>
     css({
       width: '40%',
+      border: 0,
+      backgroundColor: palette.LIVE_LIGHT,
+      padding: `${spacings.DOUBLE}rem`,
 
       [mq.GROUP_2_MAX_WIDTH]: {
         width: '100%',
       },
     }),
-  // closeButton: () =>
-  //   css({
 
-  //   }),
   liveMediaSpan: () =>
     css({
       display: 'flex',

@@ -50,7 +50,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
           css={styles.playButton}
         >
           {mediaIcons.video}
-          {watchNow}
+          <Text>{watchNow}</Text>
         </button>
       )}
       {showMedia && (
