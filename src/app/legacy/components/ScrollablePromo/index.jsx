@@ -80,8 +80,7 @@ const ScrollablePromo = ({
   let title;
   if (variant === 'A') {
     title = translations.topStoriesTitle || 'Top Stories';
-  }
-  if (variant === 'B') {
+  } else if (variant === 'B') {
     title = mostRead.header || 'Most Read';
   } else {
     title =
@@ -91,7 +90,6 @@ const ScrollablePromo = ({
         blocks,
       );
   }
-
   const blocksWithoutTitle = blocks[0].type === 'title' ? tail(blocks) : blocks;
 
   const isSingleItem = blocksWithoutTitle.length === 1;
