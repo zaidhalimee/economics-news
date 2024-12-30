@@ -91,6 +91,10 @@ export const service: SerbianConfig = {
           text: 'Kontaktirajte BBC',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -109,10 +113,6 @@ export const service: SerbianConfig = {
       {
         title: 'Početna strana',
         url: '/serbian/lat',
-      },
-      {
-        title: 'Ukrajina',
-        url: '/serbian/lat/topics/c5wzvzzz5vrt',
       },
       {
         title: 'Srbija',
@@ -234,7 +234,7 @@ export const service: SerbianConfig = {
           },
           accept: 'U redu',
           reject: 'Saznajte šta se promenilo',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -484,6 +484,10 @@ export const service: SerbianConfig = {
           text: 'Контактирајте ББЦ',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -502,26 +506,6 @@ export const service: SerbianConfig = {
       {
         title: 'Почетна страна',
         url: '/serbian/cyr',
-      },
-      {
-        title: 'Украјина',
-        url: '/serbian/cyr/topics/cqwvxvvw9qrt',
-      },
-      {
-        title: 'Србија',
-        url: '/serbian/cyr/topics/cvjp1d3k9dvt',
-      },
-      {
-        title: 'Балкан',
-        url: '/serbian/cyr/topics/c8y9k0k2pvvt',
-      },
-      {
-        title: 'Свет',
-        url: '/serbian/cyr/topics/c3m1x951mljt',
-      },
-      {
-        title: 'Видео',
-        url: '/serbian/cyr/topics/crg7kj2ejj2t',
       },
       {
         title: 'Најпопуларније',
@@ -627,7 +611,7 @@ export const service: SerbianConfig = {
           },
           accept: 'У реду',
           reject: 'Сазнајте шта се променило',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

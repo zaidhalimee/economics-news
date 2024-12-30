@@ -1,17 +1,24 @@
 import { PageTypes, Services } from '#app/models/types/global';
-import { MEDIA_PAGE } from '#app/routes/utils/pageTypes';
-import hindiTvProgramme from '#data/hindi/bbc_hindi_tv/tv_programmes/w13xttlw.json';
+import { data as hindiTvProgramme } from '#data/hindi/bbc_hindi_tv/tv_programmes/w13xttlw.json';
+import {
+  AUDIO_PAGE,
+  LIVE_RADIO_PAGE,
+  TV_PAGE,
+} from '#app/routes/utils/pageTypes';
 import hausaLiveRadio from '#data/hausa/bbc_hausa_radio/liveradio.json';
+import afriqueRadio from '#data/afrique/bbc_afrique_radio/p030s6dq.json';
 import { service as hausaServiceConfig } from '#app/lib/config/services/hausa';
 import { service as hindiServiceConfig } from '#app/lib/config/services/hindi';
+import { service as afriqueServiceConfig } from '#app/lib/config/services/afrique';
 import isLive from '#app/lib/utilities/isLive';
 import buildSettings from './buildSettings';
 import {
   aresMediaBlocks,
   clipMediaBlocks,
-  aresMediaPlayerBlock,
+  buildAresMediaPlayerBlock,
   aresMediaBlock,
   aresMediaLiveStreamBlocks,
+  legacyMediaBlock,
 } from '../fixture';
 import {
   BuildConfigProps,
@@ -60,7 +67,7 @@ describe('buildSettings', () => {
           },
           enableToucan: true,
           externalEmbedUrl:
-            '/ws/av-embeds/cps/serbian/lat/srbija-68707945/p01thw22/sr-latn',
+            'https://www.bbc.com/serbian/lat/av-embeds/srbija-68707945/vpid/p01thw22',
           appName: 'news-serbian',
           appType: 'responsive',
           counterName: 'live_coverage.testID.page',
@@ -81,6 +88,7 @@ describe('buildSettings', () => {
             embedRights: 'allowed',
           },
           ui: {
+            skin: 'classic',
             controls: { enabled: true },
             locale: { lang: 'sr-latn' },
             subtitles: { enabled: true, defaultOn: true },
@@ -132,6 +140,7 @@ describe('buildSettings', () => {
 
       expect(result).toStrictEqual({
         mediaType: 'video',
+        orientation: 'landscape',
         playerConfig: {
           autoplay: true,
           product: 'news',
@@ -158,6 +167,7 @@ describe('buildSettings', () => {
             embedRights: 'allowed',
           },
           ui: {
+            skin: 'classic',
             controls: { enabled: true },
             locale: { lang: 'sr-latn' },
             subtitles: { enabled: true, defaultOn: true },
@@ -181,6 +191,8 @@ describe('buildSettings', () => {
             'This video cannot play in your browser. Please enable JavaScript or try a different browser.',
         } satisfies PlaceholderConfig,
         showAds: false,
+        ampIframeUrl:
+          'https://web-cdn.api.bbci.co.uk/ws/av-embeds/cps/serbian/lat/srbija-68707945/p01k6msp/sr-latn/amp',
       } satisfies ConfigBuilderReturnProps);
     });
 
@@ -193,6 +205,7 @@ describe('buildSettings', () => {
 
       expect(result).toStrictEqual({
         mediaType: 'video',
+        orientation: 'landscape',
         playerConfig: {
           autoplay: false,
           preload: 'high',
@@ -220,6 +233,7 @@ describe('buildSettings', () => {
             embedRights: 'allowed',
           },
           ui: {
+            skin: 'classic',
             controls: { enabled: true },
             locale: { lang: 'sr-latn' },
             subtitles: { enabled: true, defaultOn: true },
@@ -243,6 +257,8 @@ describe('buildSettings', () => {
             'This video cannot play in your browser. Please enable JavaScript or try a different browser.',
         },
         showAds: false,
+        ampIframeUrl:
+          'https://web-cdn.api.bbci.co.uk/ws/av-embeds/cps/serbian/lat/srbija-68707945/p01k6msp/sr-latn/amp',
       } satisfies ConfigBuilderReturnProps);
     });
 
@@ -291,12 +307,89 @@ describe('buildSettings', () => {
           simulcast: true,
         },
         ui: {
+          skin: 'classic',
           controls: { enabled: true },
           locale: { lang: 'sr-latn' },
           subtitles: { enabled: true, defaultOn: true },
           fullscreen: { enabled: true },
         },
       });
+    });
+
+    it('Should process a LegacyMediaBlock into a valid playlist item for a "MAP" page', () => {
+      const legacyMediaOverrides = {
+        model: {
+          pageTitleOverride: 'Legacy Media Page Title',
+        },
+        type: 'mediaOverrides',
+      };
+
+      const result = buildSettings({
+        ...baseSettings,
+        service: 'arabic',
+        lang: 'ar',
+        producer: 'ARABIC',
+        counterName: 'arabic.multimedia.2013.12.131208_iraq_blast_.page',
+        blocks: [...legacyMediaBlock, legacyMediaOverrides] as MediaBlock[],
+      });
+
+      expect(result).toStrictEqual({
+        mediaType: 'video',
+        playerConfig: {
+          autoplay: true,
+          product: 'news',
+          statsObject: {
+            destination: 'WS_NEWS_LANGUAGES',
+            producer: 'ARABIC',
+          },
+          enableToucan: true,
+          appName: 'news-arabic',
+          appType: 'responsive',
+          counterName: 'arabic.multimedia.2013.12.131208_iraq_blast_.page',
+          playlistObject: {
+            title: 'Legacy Media Page Title',
+            holdingImageURL:
+              'http://a.files.bbci.co.uk/worldservice/live/assets/images/2013/12/08/131208135805_iraq_blast_640x360_bbc_nocredit.jpg',
+            items: [
+              {
+                href: 'https://wsodprogrf.akamaized.net/arabic/dps/2013/12/iraqblast_16x9_lo.mp4',
+                kind: 'programme',
+              },
+              {
+                href: 'https://wsodprogrf.akamaized.net/arabic/dps/2013/12/iraqblast_16x9_med.mp4',
+                kind: 'programme',
+              },
+              {
+                href: 'https://wsodprogrf.akamaized.net/arabic/dps/2013/12/iraqblast_16x9_hi.mp4',
+                kind: 'programme',
+              },
+            ],
+          },
+          ui: {
+            skin: 'classic',
+            controls: { enabled: true },
+            locale: { lang: 'ar' },
+            subtitles: { enabled: true, defaultOn: true },
+            fullscreen: { enabled: true },
+          },
+        },
+        placeholderConfig: {
+          mediaInfo: {
+            datetime: undefined,
+            duration: '00:00',
+            durationSpoken: 'Duration 0,00',
+            guidanceMessage: undefined,
+            title: 'Legacy Media Page Title',
+            type: 'video',
+          },
+          placeholderSrc:
+            'http://a.files.bbci.co.uk/worldservice/live/assets/images/2013/12/08/131208135805_iraq_blast_640x360_bbc_nocredit.jpg',
+          placeholderSrcset: '',
+          translatedNoJSMessage:
+            'This video cannot play in your browser. Please enable JavaScript or try a different browser.',
+        } as PlaceholderConfig,
+        showAds: false,
+      } satisfies ConfigBuilderReturnProps);
     });
 
     it('Should process an AresMedia block into a valid playlist item for syndication.', () => {
@@ -308,6 +401,7 @@ describe('buildSettings', () => {
 
       expect(result).toStrictEqual({
         mediaType: 'video',
+        orientation: 'landscape',
         playerConfig: {
           autoplay: true,
           product: 'news',
@@ -336,6 +430,7 @@ describe('buildSettings', () => {
             embedRights: 'allowed',
           },
           ui: {
+            skin: 'classic',
             controls: { enabled: true },
             locale: { lang: 'sr-latn' },
             subtitles: { enabled: true, defaultOn: true },
@@ -359,7 +454,78 @@ describe('buildSettings', () => {
             'This video cannot play in your browser. Please enable JavaScript or try a different browser.',
         } satisfies PlaceholderConfig,
         showAds: false,
+        ampIframeUrl:
+          'https://web-cdn.api.bbci.co.uk/ws/av-embeds/cps/serbian/lat/srbija-68707945/p01k6msp/sr-latn/amp',
       } satisfies ConfigBuilderReturnProps);
+    });
+    it('Should process an AresMedia block with portrait video as the orientation', () => {
+      const myFixture = [
+        {
+          ...aresMediaBlock,
+          model: {
+            blocks: [
+              {
+                ...buildAresMediaPlayerBlock({ types: ['Portrait'] }),
+              },
+            ],
+          },
+        },
+      ] as unknown as MediaBlock[];
+
+      const result = buildSettings({
+        ...baseSettings,
+        blocks: myFixture,
+      });
+
+      expect(result?.orientation).toEqual('portrait');
+    });
+
+    it('Should process an AresMedia block with landscape video as the orientation if nothing exists in types', () => {
+      const myFixture = [
+        {
+          ...aresMediaBlock,
+          model: {
+            blocks: [
+              {
+                ...buildAresMediaPlayerBlock({
+                  types: [],
+                }),
+              },
+            ],
+          },
+        },
+      ] as unknown as MediaBlock[];
+
+      const result = buildSettings({
+        ...baseSettings,
+        blocks: myFixture,
+      });
+
+      expect(result?.orientation).toEqual('landscape');
+    });
+
+    it('Should process an AresMedia block with landscape video as the orientation if type is unrecognised', () => {
+      const myFixture = [
+        {
+          ...aresMediaBlock,
+          model: {
+            blocks: [
+              {
+                ...buildAresMediaPlayerBlock({
+                  types: ['Foo'],
+                }),
+              },
+            ],
+          },
+        },
+      ] as unknown as MediaBlock[];
+
+      const result = buildSettings({
+        ...baseSettings,
+        blocks: myFixture,
+      });
+
+      expect(result?.orientation).toEqual('landscape');
     });
 
     it('Should return null if the AresMedia block contains invalid data.', () => {
@@ -427,7 +593,7 @@ describe('buildSettings', () => {
           model: {
             blocks: [
               {
-                ...aresMediaPlayerBlock,
+                ...buildAresMediaPlayerBlock({ types: ['Original'] }),
                 model: {
                   id: 'p01k6msm',
                   subType: 'episode',
@@ -485,7 +651,7 @@ describe('buildSettings', () => {
           model: {
             blocks: [
               {
-                ...aresMediaPlayerBlock,
+                ...buildAresMediaPlayerBlock({ types: ['Original'] }),
                 model: {
                   id: 'p01k6msm',
                   embedding: false,
@@ -498,7 +664,6 @@ describe('buildSettings', () => {
       const result = buildSettings({
         ...baseSettings,
         embedded: true,
-        // @ts-expect-error partial data used for testing purposes
         blocks: myFixture as MediaBlock[],
       });
       expect(result?.playerConfig).not.toHaveProperty(
@@ -517,31 +682,11 @@ describe('buildSettings', () => {
       translations: hindiServiceConfig.default.translations,
     } as BuildConfigProps;
 
-    const hindiTvMediaBlocks = hindiTvProgramme.content.blocks.map(
-      tvMediaBlock => {
-        return {
-          type: 'tv',
-          model: {
-            ...tvMediaBlock,
-          },
-        };
-      },
-    );
-
     it('Should process an On Demand TV block into a valid playlist item.', () => {
-      const hindiTvMediaOverrides = {
-        model: {
-          language: 'hi',
-          pageIdentifierOverride: 'hindi.bbc_hindi_tv.tv.w172zm8920nck2z.page',
-          pageTitleOverride: 'दुनिया',
-        },
-        type: 'mediaOverrides',
-      };
-
       const result = buildSettings({
         ...hindiTvBaseSettings,
-        blocks: [...hindiTvMediaBlocks, hindiTvMediaOverrides] as MediaBlock[],
-        pageType: MEDIA_PAGE,
+        blocks: hindiTvProgramme.mediaBlocks as MediaBlock[],
+        pageType: TV_PAGE,
       });
 
       expect(result).toStrictEqual({
@@ -555,9 +700,10 @@ describe('buildSettings', () => {
           statsObject: {
             destination: 'WS_NEWS_LANGUAGES',
             producer: 'HINDI',
-            episodePID: 'w172zm89sk8n4lc',
+            episodePID: 'w172zm8g4s25k2f',
           },
           ui: {
+            skin: 'classic',
             controls: { enabled: true },
             fullscreen: { enabled: true },
             locale: {
@@ -571,10 +717,10 @@ describe('buildSettings', () => {
           playlistObject: {
             title: 'दुनिया',
             holdingImageURL:
-              'https://ichef.bbci.co.uk/images/ic/$recipe/p0jlxsx8.jpg',
+              'https://ichef.bbci.co.uk/images/ic/$recipe/p0jss0kp.jpg',
             items: [
               {
-                versionID: 'w1mskyp9nwh0dvl',
+                versionID: 'w1mskypg138jtbn',
                 kind: 'programme',
                 duration: 1192,
               },
@@ -586,7 +732,8 @@ describe('buildSettings', () => {
         mediaType: 'video',
         placeholderConfig: {
           mediaInfo: {
-            title: 'दुनिया',
+            title:
+              'रूस ने यूक्रेन पर क्या पहली बार किया ताक़तवर इंटरकॉन्टिनेन्टल मिसाइल से हमला?',
             datetime: 'PT19M52S',
             duration: '19:52',
             durationSpoken: 'अवधि 19,52',
@@ -594,56 +741,13 @@ describe('buildSettings', () => {
             guidanceMessage: undefined,
           },
           placeholderSrc:
-            'https://ichef.bbci.co.uk/images/ic/$recipe/p0jlxsx8.jpg',
+            'https://ichef.bbci.co.uk/images/ic/$recipe/p0jss0kp.jpg',
           placeholderSrcset:
-            'https://ichef.bbci.co.uk/images/ic/240xn/p0jlxsx8.jpg.webp 240w, https://ichef.bbci.co.uk/images/ic/320xn/p0jlxsx8.jpg.webp 320w, https://ichef.bbci.co.uk/images/ic/480xn/p0jlxsx8.jpg.webp 480w, https://ichef.bbci.co.uk/images/ic/624xn/p0jlxsx8.jpg.webp 624w, https://ichef.bbci.co.uk/images/ic/800xn/p0jlxsx8.jpg.webp 800w',
-          translatedNoJSMessage:
-            'This video cannot play in your browser. Please enable JavaScript or try a different browser.',
+            'https://ichef.bbci.co.uk/images/ic/240xn/p0jss0kp.jpg.webp 240w, https://ichef.bbci.co.uk/images/ic/320xn/p0jss0kp.jpg.webp 320w, https://ichef.bbci.co.uk/images/ic/480xn/p0jss0kp.jpg.webp 480w, https://ichef.bbci.co.uk/images/ic/624xn/p0jss0kp.jpg.webp 624w, https://ichef.bbci.co.uk/images/ic/800xn/p0jss0kp.jpg.webp 800w',
+          translatedNoJSMessage: 'प्लेबैक आपके उपकरण पर नहीं हो पा रहा',
         },
         showAds: false,
       });
-    });
-
-    it('Should use the language override to build the On Demand TV SMP configuration', () => {
-      const hindiTvMediaOverrides = {
-        model: {
-          language: 'languageOverride',
-          pageIdentifierOverride: 'hindi.bbc_hindi_tv.tv.w172zm8920nck2z.page',
-          pageTitleOverride: 'दुनिया',
-        },
-        type: 'mediaOverrides',
-      };
-
-      const result = buildSettings({
-        ...hindiTvBaseSettings,
-        blocks: [...hindiTvMediaBlocks, hindiTvMediaOverrides] as MediaBlock[],
-        pageType: MEDIA_PAGE,
-      });
-
-      expect(result?.playerConfig?.ui?.locale).toEqual({
-        lang: 'languageOverride',
-      });
-    });
-
-    it('Should use the page title override to build the On Demand TV SMP configuration', () => {
-      const hindiTvMediaOverrides = {
-        model: {
-          language: 'hi',
-          pageIdentifierOverride: 'hindi.bbc_hindi_tv.tv.w172zm8920nck2z.page',
-          pageTitleOverride: 'pageTitleOverride',
-        },
-        type: 'mediaOverrides',
-      };
-
-      const result = buildSettings({
-        ...hindiTvBaseSettings,
-        blocks: [...hindiTvMediaBlocks, hindiTvMediaOverrides] as MediaBlock[],
-        pageType: MEDIA_PAGE,
-      });
-
-      expect(result?.playerConfig?.playlistObject?.title).toEqual(
-        'pageTitleOverride',
-      );
     });
   });
 
@@ -753,17 +857,10 @@ describe('buildSettings', () => {
     } as BuildConfigProps;
 
     it('Should process a Live Radio block into a valid playlist item.', () => {
-      const hausaLiveRadioBlocks = [
-        {
-          type: 'liveRadio',
-          model: hausaLiveRadio?.content?.blocks,
-        },
-      ];
-
       const result = buildSettings({
         ...hausaLiveRadioBaseSettings,
-        blocks: hausaLiveRadioBlocks as MediaBlock[],
-        pageType: MEDIA_PAGE,
+        blocks: hausaLiveRadio?.data?.mediaBlock as MediaBlock[],
+        pageType: LIVE_RADIO_PAGE,
       });
 
       expect(result).toStrictEqual({
@@ -813,6 +910,89 @@ describe('buildSettings', () => {
           },
         },
         mediaType: 'liveRadio',
+        showAds: false,
+      });
+    });
+  });
+
+  describe('OnDemandAudio', () => {
+    const afriqueAudioBaseSettings = {
+      counterName: 'afrique.bbc_afrique_radio.w172zn0kxd65h3g.page',
+      lang: 'fr',
+      service: 'afrique' as Services,
+      statsDestination: 'WS_NEWS_LANGUAGES',
+      producer: 'AFRIQUE',
+      translations: afriqueServiceConfig.default.translations,
+    } as BuildConfigProps;
+
+    const afriqueAudioMediaBlocks = afriqueRadio.data.mediaBlocks;
+
+    it('Should process an on demand audio block into a valid playlist item.', () => {
+      const afriqueAudioMediaOverrides = {
+        model: {
+          language: 'fr',
+          pageIdentifierOverride:
+            'afrique.bbc_afrique_radio.w172zn0kxd65h3g.page',
+        },
+        type: 'mediaOverrides',
+      };
+      const result = buildSettings({
+        ...afriqueAudioBaseSettings,
+        blocks: [
+          ...afriqueAudioMediaBlocks,
+          afriqueAudioMediaOverrides,
+        ] as MediaBlock[],
+        pageType: AUDIO_PAGE,
+      });
+
+      expect(result).toStrictEqual({
+        playerConfig: {
+          product: 'news',
+          enableToucan: true,
+          appType: 'responsive',
+          autoplay: false,
+          appName: 'news-afrique',
+          counterName: 'afrique.bbc_afrique_radio.w172zn0kxd65h3g.page',
+          statsObject: {
+            destination: 'WS_NEWS_LANGUAGES',
+            producer: 'AFRIQUE',
+            episodePID: 'w172zzz2x3918yn',
+          },
+          ui: {
+            controls: {
+              volumeSlider: true,
+              enabled: true,
+            },
+            fullscreen: { enabled: true },
+            locale: {
+              lang: 'fr',
+            },
+            subtitles: {
+              defaultOn: true,
+              enabled: true,
+            },
+            skin: 'audio',
+            colour: '#b80000',
+            foreColour: '#222222',
+            baseColour: '#222222',
+            colourOnBaseColour: '#ffffff',
+            fallbackBackgroundColour: '#ffffff',
+          },
+          playlistObject: {
+            title: '26/11/2024 GMT',
+            holdingImageURL:
+              'https://ichef.bbci.co.uk/images/ic/$recipe/p0gsjjjl.png',
+            items: [
+              {
+                versionID: 'w1mslblghzlxffm',
+                kind: 'radioProgramme',
+                duration: 300,
+              },
+            ],
+            summary: "Le tour du monde de l'actualité en 2 minutes ",
+          },
+        },
+        mediaType: 'audio',
         showAds: false,
       });
     });

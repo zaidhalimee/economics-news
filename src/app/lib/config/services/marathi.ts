@@ -47,7 +47,7 @@ export const service: DefaultServiceConfig = {
     podcastPromo: {
       title: 'पॉडकास्ट',
       brandTitle: 'तीन गोष्टी',
-      brandDescription: 'दिवसभरातल्या कोरोना आणि इतर घडामोडींचा आढावा',
+      brandDescription: 'दिवसभरातील घडामोडींचा आढावा',
       image: {
         src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p0940n6j.jpg',
         alt: 'तीन गोष्टी',
@@ -145,7 +145,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ओके',
           reject: 'पाहा नेमकं काय बदललंय',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -321,6 +321,10 @@ export const service: DefaultServiceConfig = {
           text: 'बीबीसीशी संपर्क साधाा',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -340,6 +344,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'महाराष्ट्र',
         url: '/marathi/topics/c5qvpxvv7y3t',
+      },
+      {
+        title: 'विधानसभा निवडणूक',
+        url: '/marathi/topics/c625x8zjyj7t',
       },
       {
         title: 'भारत',

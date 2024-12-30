@@ -138,7 +138,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ઓકે',
           reject: 'જાણો, શું ફેરફારો થયા છે',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -307,6 +307,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/gujarati/send/u50853313',
           text: 'BBC નો સંપર્ક કરો',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',

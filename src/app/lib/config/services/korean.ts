@@ -138,7 +138,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: '네',
           reject: '변경사항을 확인하세요',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -308,6 +308,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/korean/send/u50853423',
           text: '고객센터',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',

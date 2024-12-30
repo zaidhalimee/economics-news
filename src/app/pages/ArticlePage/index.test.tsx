@@ -46,8 +46,14 @@ jest.mock('../../components/ChartbeatAnalytics', () => {
   const ChartbeatAnalytics = () => <div>chartbeat</div>;
   return ChartbeatAnalytics;
 });
-
 jest.mock('../../components/ATIAnalytics');
+jest.mock('#app/legacy/containers/OptimizelyArticleCompleteTracking');
+jest.mock('#app/legacy/containers/OptimizelyPageViewTracking');
+
+jest.mock('#app/hooks/useOptimizelyVariation', () => ({
+  __esModule: true,
+  default: jest.fn(),
+}));
 
 const input = {
   bbcOrigin: 'https://www.test.bbc.co.uk',
@@ -65,6 +71,8 @@ type Props = {
   showAdsBasedOnLocation?: boolean;
   isApp?: boolean;
   promo?: boolean | null;
+  isAmp?: boolean;
+  id?: string | null;
 };
 
 const Context = ({
@@ -75,12 +83,16 @@ const Context = ({
   showAdsBasedOnLocation = false,
   isApp = false,
   promo = null,
+  isAmp = false,
+  id,
 }: PropsWithChildren<Props> = {}) => {
   const appInput = {
     ...input,
     service,
     showAdsBasedOnLocation,
     isApp,
+    isAmp,
+    id,
   };
 
   return (

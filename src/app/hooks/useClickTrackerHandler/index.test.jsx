@@ -82,10 +82,12 @@ const TestComponentSingleLink = ({ hookProps }) => {
 
 beforeEach(() => {
   jest.clearAllMocks();
+  const { href, assign, ...rest } = window.location;
   delete window.location;
   window.location = {
     href: 'http://bbc.com/pidgin/tori-51745682',
     assign: jest.fn(),
+    ...rest,
   };
 });
 
@@ -366,6 +368,47 @@ describe('Click tracking', () => {
 
     expect(urlToObject(viewEventUrl).searchParams.atc).toEqual(
       'PUB-[custom-campaign]-[brand]-[]-[CHD=promo::2]-[news::pidgin.news.story.51745682.page]-[]-[]-[]',
+    );
+  });
+
+  it('should use "optimizelyMetricNameOverride" property if provided in eventTrackingData object', async () => {
+    const mockOptimizelyTrack = jest.fn();
+    const mockUserId = 'test';
+    const mockAttributes = { foo: 'bar' };
+
+    const mockOptimizely = {
+      optimizely: {
+        track: mockOptimizelyTrack,
+        user: { attributes: mockAttributes, id: mockUserId },
+      },
+      optimizelyMetricNameOverride: 'myEvent',
+    };
+    const {
+      metadata: { atiAnalytics },
+    } = pidginData;
+
+    const { getByTestId } = render(
+      <TestComponent hookProps={{ ...defaultProps, ...mockOptimizely }} />,
+      {
+        atiData: atiAnalytics,
+        pageData: pidginData,
+        pageType: STORY_PAGE,
+        pathname: '/pidgin',
+        service: 'pidgin',
+        toggles: defaultToggles,
+      },
+    );
+
+    fireEvent.click(getByTestId('test-component'));
+
+    expect(mockOptimizelyTrack).toHaveBeenCalledTimes(1);
+    expect(mockOptimizelyTrack).toHaveBeenCalledWith(
+      'myEvent_clicks',
+      mockUserId,
+      {
+        clicked_wsoj: true,
+        foo: 'bar',
+      },
     );
   });
 

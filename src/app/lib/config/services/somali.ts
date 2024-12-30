@@ -132,7 +132,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'HAYE',
           reject: 'Ogow waxa isbedelay',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -313,6 +313,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/somali/send/u50853709',
           text: 'La xiriir BBC',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',

@@ -134,7 +134,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ঠিক আছে।',
           reject: 'কী পরিবর্তন হয়েছে দেখুন।',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -310,6 +310,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/bengali/send/u50853247',
           text: 'বিবিসির সাথে যোগাযোগ করুন',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',

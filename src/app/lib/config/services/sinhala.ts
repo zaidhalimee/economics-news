@@ -132,7 +132,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'හරි',
           reject: 'වෙනස් කර ඇත්තේ මොනවාදැයි දැනගන්න',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -299,6 +299,10 @@ export const service: DefaultServiceConfig = {
           text: 'බීබීසී ය අමතන්න',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -312,10 +316,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'මුල් පිටුව',
         url: '/sinhala',
-      },
-      {
-        title: 'ජනාධිපතිවරණය 2024',
-        url: '/sinhala/topics/cg3e84v9ky0t',
       },
       {
         title: 'ශ්‍රී ලංකා',

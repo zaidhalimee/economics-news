@@ -1,6 +1,6 @@
 /** @jsx jsx */
-
-import { useContext } from 'react';
+/* @jsxFrag React.Fragment */
+import React, { useContext } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 import useToggle from '#hooks/useToggle';
 import { singleTextBlock } from '#app/models/blocks';
@@ -13,7 +13,6 @@ import text from '#containers/Text';
 import Blocks from '#containers/Blocks';
 import Timestamp from '#containers/ArticleTimestamp';
 import ComscoreAnalytics from '#containers/ComscoreAnalytics';
-import articleMediaPlayer from '#containers/ArticleMediaPlayer';
 import SocialEmbedContainer from '#containers/SocialEmbed';
 import MediaLoader from '#app/components/MediaLoader';
 import {
@@ -36,11 +35,15 @@ import {
 import filterForBlockType from '#lib/utilities/blockHandlers';
 import RelatedTopics from '#containers/RelatedTopics';
 import NielsenAnalytics from '#containers/NielsenAnalytics';
-import ScrollablePromo from '#components/ScrollablePromo';
 import CpsRecommendations from '#containers/CpsRecommendations';
 import InlinePodcastPromo from '#containers/PodcastPromo/Inline';
 import { Article, OptimoBylineBlock } from '#app/models/types/optimo';
-
+import ScrollablePromo from '#components/ScrollablePromo';
+import JumpTo, { JumpToProps } from '#app/components/JumpTo';
+import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
+import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
+import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
+import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
 import EmbedImages from '../../components/Embeds/EmbedImages';
@@ -61,20 +64,20 @@ import {
 import { ServiceContext } from '../../contexts/ServiceContext';
 import RelatedContentSection from '../../components/RelatedContentSection';
 import Disclaimer from '../../components/Disclaimer';
-
 import SecondaryColumn from './SecondaryColumn';
-
 import styles from './ArticlePage.styles';
 import { ComponentToRenderProps, TimeStampProps } from './types';
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
-  const { isApp, isAmp, pageType, service } = useContext(RequestContext);
+  const { isApp, pageType, service } = useContext(RequestContext);
+
   const {
     articleAuthor,
     isTrustProjectParticipant,
     showRelatedTopics,
     brandName,
   } = useContext(ServiceContext);
+
   const { enabled: preloadLeadImageToggle } = useToggle('preloadLeadImage');
 
   const {
@@ -95,8 +98,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const aboutTags = getAboutTags(pageData);
   const topics = pageData?.metadata?.topics ?? [];
   const blocks = pageData?.content?.model?.blocks ?? [];
-  const startsWithHeading = blocks?.[0]?.type === 'headline' ?? false;
-
+  const startsWithHeading = blocks?.[0]?.type === 'headline' || false;
   const bylineBlock = blocks.find(
     block => block.type === 'byline',
   ) as OptimoBylineBlock;
@@ -128,6 +130,22 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     mostRead: mostReadInitialData,
   } = pageData;
 
+  const jumpToVariation = useOptimizelyVariation(
+    'jump_to',
+  ) as unknown as string;
+
+  const hasJumpToBlockForExperiment = blocks.some(
+    block => block.type === 'jumpTo',
+  );
+
+  const enableOptimizelyEventTracking = Boolean(
+    jumpToVariation && hasJumpToBlockForExperiment,
+  );
+
+  const showRelatedContent = blocks.some(
+    block => block.type === 'relatedContent',
+  );
+
   const atiData = {
     ...atiAnalytics,
     ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
@@ -137,8 +155,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     visuallyHiddenHeadline,
     headline: headings,
     subheadline: headings,
-    audio: isAmp ? articleMediaPlayer : MediaLoader,
-    video: isAmp ? articleMediaPlayer : MediaLoader,
+    audio: MediaLoader,
+    video: MediaLoader,
     text,
     image: (props: ComponentToRenderProps) => (
       <ImageWithCaption
@@ -176,6 +194,10 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       <Disclaimer {...props} increasePaddingOnDesktop={false} />
     ),
     podcastPromo: () => (podcastPromoEnabled ? <InlinePodcastPromo /> : null),
+    jumpTo: (props: ComponentToRenderProps & JumpToProps) =>
+      jumpToVariation === 'on' ? (
+        <JumpTo {...props} showRelatedContentLink={showRelatedContent} />
+      ) : null,
   };
 
   const visuallyHiddenBlock = {
@@ -197,7 +219,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   );
 
   const promoImageRawBlock = filterForBlockType(promoImageBlocks, 'rawImage');
-
   const promoImageAltText =
     promoImageAltTextBlock?.model?.blocks?.[0]?.model?.blocks?.[0]?.model?.text;
 
@@ -251,6 +272,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       {allowAdvertising && (
         <AdContainer slotType="leaderboard" adcampaign={adcampaign} />
       )}
+      <ElectionBanner aboutTags={aboutTags} taggings={taggings} />
       <div css={styles.grid}>
         <div css={!isPGL ? styles.primaryColumn : styles.pglColumn}>
           <main css={styles.mainContent} role="main">
@@ -268,7 +290,10 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
               tagBackgroundColour={WHITE}
             />
           )}
-          <RelatedContentSection content={blocks} />
+          <RelatedContentSection
+            content={blocks}
+            sendOptimizelyEvents={enableOptimizelyEventTracking}
+          />
         </div>
         {!isApp && !isPGL && <SecondaryColumn pageData={pageData} />}
       </div>
@@ -281,6 +306,12 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           headingBackgroundColour={GREY_2}
           mobileDivider={showTopics}
         />
+      )}
+      {enableOptimizelyEventTracking && (
+        <>
+          <OptimizelyArticleCompleteTracking />
+          <OptimizelyPageViewTracking />
+        </>
       )}
     </div>
   );

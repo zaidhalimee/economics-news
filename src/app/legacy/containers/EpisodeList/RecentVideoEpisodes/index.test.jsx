@@ -4,6 +4,7 @@ import { render } from '../../../../components/react-testing-library-with-provid
 import { ServiceContextProvider } from '../../../../contexts/ServiceContext';
 import RecentVideoEpisodes from '.';
 import { afrique } from './fixtures';
+import { TV_PAGE } from '../../../../routes/utils/pageTypes';
 
 const RecentVideoEpisodesWithContext = ({ episodes, isAmp = false }) => (
   <ServiceContextProvider service="afrique">
@@ -11,7 +12,7 @@ const RecentVideoEpisodesWithContext = ({ episodes, isAmp = false }) => (
       isAmp={isAmp}
       pathname="test"
       service="afrique"
-      pageType="media"
+      pageType={TV_PAGE}
     >
       <RecentVideoEpisodes masterBrand="bbc_afrique_tv" episodes={episodes} />
     </RequestContextProvider>
@@ -23,8 +24,7 @@ describe('Recent Video Episodes', () => {
     const { container } = render(
       <RecentVideoEpisodes masterBrand="bbc_afrique_tv" episodes={afrique} />,
       {
-        pageType: 'media',
-        derivedPageType: 'On Demand TV',
+        pageType: TV_PAGE,
         service: 'afrique',
       },
     );

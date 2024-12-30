@@ -139,7 +139,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: 'Nəyin dəyişdiyini öyrənin',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -303,6 +303,10 @@ export const service: DefaultServiceConfig = {
           text: 'BBC ilə Əlaqə',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -328,6 +332,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Beynəlxalq',
         url: '/azeri/topics/cde15l4vn02t',
+      },
+      {
+        title: 'COP29',
+        url: '/azeri/topics/cv2dz9j8ywyt',
       },
     ],
   },

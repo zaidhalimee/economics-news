@@ -142,7 +142,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'Ok',
           reject: 'Descubre lo que ha cambiado',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -388,6 +388,10 @@ export const service: DefaultServiceConfig = {
           text: 'Escribe a BBC Mundo',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -434,10 +438,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Tecnología',
         url: '/mundo/topics/cyx5krnw38vt',
-      },
-      {
-        title: 'Centroamérica Cuenta',
-        url: '/mundo/topics/c404v5z1k8wt',
       },
     ],
   },

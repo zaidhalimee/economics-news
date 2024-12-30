@@ -1006,12 +1006,10 @@ describe('Server', () => {
       });
     });
 
-    describe('for front pages', () => {
+    describe('for home pages', () => {
       it('should respond with JSON', async () => {
         const { body } = await makeRequest('/serbian/cyr.json');
-        expect(body.data.article).toEqual(
-          expect.objectContaining({ content: expect.any(Object) }),
-        );
+        expect(body.data.pageType).toEqual('home');
       });
 
       describe('with non-existent data', () => {
@@ -1043,7 +1041,10 @@ describe('Server', () => {
           '/korean/bbc_korean_radio/liveradio.json',
         );
         expect(body).toEqual(
-          expect.objectContaining({ content: expect.any(Object) }),
+          expect.objectContaining({
+            data: expect.any(Object),
+            contentType: 'application/json; charset=utf-8',
+          }),
         );
       });
 
@@ -1088,7 +1089,7 @@ describe('Server', () => {
           '/pashto/bbc_pashto_tv/tv_programmes/w13xttn4.json',
         );
         expect(body).toEqual(
-          expect.objectContaining({ content: expect.any(Object) }),
+          expect.objectContaining({ data: expect.any(Object) }),
         );
       });
 

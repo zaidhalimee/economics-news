@@ -162,7 +162,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'تایید',
           reject: 'ببنید چه تغییراتی ایجاد شده است',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -421,6 +421,10 @@ export const service: DefaultServiceConfig = {
           text: 'تماس با بی بی سی',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -436,8 +440,12 @@ export const service: DefaultServiceConfig = {
         url: '/persian',
       },
       {
-        title: 'جنگ اسرائیل-غزه',
-        url: '/persian/topics/clm0z4jgj3xt',
+        title: 'بحران خاورمیانه',
+        url: '/persian/topics/cj31ldvmg1et',
+      },
+      {
+        title: 'انتخابات آمریکا',
+        url: '/persian/topics/cj1gj22k6z6t',
       },
       {
         title: 'پخش زنده',

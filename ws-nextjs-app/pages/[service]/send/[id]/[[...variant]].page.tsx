@@ -1,14 +1,13 @@
 import { GetServerSideProps } from 'next';
-import nodeLogger from '#lib/logger.node';
+import dynamic from 'next/dynamic';
 import PageDataParams from '#models/types/pageDataParams';
 import { UGC_PAGE } from '#app/routes/utils/pageTypes';
 import isLitePath from '#app/routes/utils/isLitePath';
 import isAppPath from '#app/routes/utils/isAppPath';
 import getPageData from '../../../../utilities/pageRequests/getPageData';
-import UGCPageLayout from './UGCPageLayout';
 import extractHeaders from '../../../../../src/server/utilities/extractHeaders';
 
-const logger = nodeLogger(__filename);
+const UGCPageLayout = dynamic(() => import('./UGCPageLayout'));
 
 export const getServerSideProps: GetServerSideProps = async context => {
   context.res.setHeader(
@@ -27,24 +26,14 @@ export const getServerSideProps: GetServerSideProps = async context => {
     renderer_env: rendererEnv,
   } = context.query as PageDataParams;
 
-  const fetchPageDataParams = {
+  const { data, toggles } = await getPageData({
     id,
     service,
+    variant,
     rendererEnv,
     resolvedUrl: context.resolvedUrl,
-  };
-
-  const constructUrlParams = {
     pageType: UGC_PAGE,
-    service,
-    variant,
-  };
-
-  const { data, toggles } = await getPageData(
-    fetchPageDataParams,
-    constructUrlParams,
-    logger,
-  );
+  });
 
   const { pageData = null, status } = data;
 

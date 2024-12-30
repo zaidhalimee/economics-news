@@ -129,7 +129,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: '変更点を見る',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -292,6 +292,10 @@ export const service: DefaultServiceConfig = {
           text: 'BBC に連絡する',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -307,16 +311,12 @@ export const service: DefaultServiceConfig = {
         url: '/japanese',
       },
       {
-        title: 'ガザ',
-        url: '/japanese/topics/cw5wn2e9rpnt',
+        title: '中東危機',
+        url: '/japanese/topics/cn7y603vz3lt',
       },
       {
         title: 'ウクライナ侵攻',
         url: '/japanese/topics/c50vpymk750t',
-      },
-      {
-        title: '米大統領選',
-        url: '/japanese/topics/c5qx4zgm86et',
       },
       {
         title: '気候変動',

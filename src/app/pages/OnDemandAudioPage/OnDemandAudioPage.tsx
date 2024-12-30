@@ -1,28 +1,24 @@
 import React, { useContext } from 'react';
 import path from 'ramda/src/path';
 import is from 'ramda/src/is';
-import pathOr from 'ramda/src/pathOr';
-import useLocation from '#hooks/useLocation';
 import ComscoreAnalytics from '#containers/ComscoreAnalytics';
 import Grid, { GelPageGrid } from '#components/Grid';
 import StyledRadioHeadingContainer from '#containers/OnDemandHeading/StyledRadioHeadingContainer';
 import OnDemandParagraphContainer from '#containers/OnDemandParagraph';
-import AVPlayer from '#containers/AVPlayer';
 import EpisodeImage from '#containers/OnDemandImage';
-import getMediaId from '#lib/utilities/getMediaId';
-import getMasterbrand from '#lib/utilities/getMasterbrand';
-import getEmbedUrl, {
-  makeAbsolute,
-} from '#lib/utilities/getUrlHelpers/getEmbedUrl';
 import RadioScheduleContainer from '#containers/RadioSchedule';
 import RecentAudioEpisodes from '#containers/EpisodeList/RecentAudioEpisodes';
 import FooterTimestamp from '#containers/OnDemandFooterTimestamp';
 import PodcastExternalLinks from '#containers/PodcastExternalLinks';
-import { getEnvConfig } from '#app/lib/utilities/getEnvConfig';
+import MediaLoader from '#app/components/MediaLoader';
 import { PageTypes } from '#app/models/types/global';
 import { RadioScheduleData } from '#app/models/types/radioSchedule';
 import { ContentType } from '#app/components/ChartbeatAnalytics/types';
-import { OnDemandAudioBlock } from '#app/models/types/media';
+import {
+  EpisodeAvailability,
+  OnDemandAudioBlock,
+} from '#app/models/types/media';
+import { ATIData } from '#app/components/ATIAnalytics/types';
 import styles from './index.styles';
 import ATIAnalytics from '../../components/ATIAnalytics';
 import ChartbeatAnalytics from '../../components/ChartbeatAnalytics';
@@ -31,12 +27,6 @@ import LinkedData from '../../components/LinkedData';
 import { ServiceContext } from '../../contexts/ServiceContext';
 
 const SKIP_LINK_ANCHOR_ID = 'content';
-
-const staticAssetsPath = `${
-  getEnvConfig().SIMORGH_PUBLIC_STATIC_ASSETS_ORIGIN
-}${getEnvConfig().SIMORGH_PUBLIC_STATIC_ASSETS_PATH}`;
-
-const audioPlaceholderImageSrc = `${staticAssetsPath}images/amp_audio_placeholder.png`;
 
 const getGroups = (
   zero: number | boolean,
@@ -72,9 +62,12 @@ const PageGrid = ({ children }: any) => (
 
 export interface OnDemandAudioProps {
   pageData: {
+    mediaBlocks: OnDemandAudioBlock[];
     metadata: {
       type: PageTypes;
+      atiAnalytics?: ATIData;
     };
+    episodeAvailability: EpisodeAvailability;
     isPodcast: boolean;
     language: string;
     brandTitle: string;
@@ -95,7 +88,6 @@ export interface OnDemandAudioProps {
     episodeTitle: string;
     externalLinks: string[];
     contentType: ContentType;
-    mediaBlocks?: OnDemandAudioBlock[];
   };
   mediaIsAvailable?: boolean;
   MediaError: React.Component;
@@ -115,7 +107,6 @@ const OnDemandAudioPage = ({
     summary,
     shortSynopsis,
     masterBrand,
-    episodeId,
     releaseDateTimeStamp,
     imageUrl,
     imageAltText,
@@ -131,29 +122,8 @@ const OnDemandAudioPage = ({
 
   const pageType = path(['metadata', 'type'], pageData);
 
-  const location = useLocation();
-  const { dir, liveRadioOverrides, lang, service, translations, serviceName } =
-    useContext(ServiceContext);
+  const { dir, serviceName } = useContext(ServiceContext);
   const oppDir = dir === 'rtl' ? 'ltr' : 'rtl';
-
-  const mediaId = getMediaId({
-    assetId: episodeId,
-    masterBrand: getMasterbrand(masterBrand, liveRadioOverrides),
-    lang,
-    service,
-  });
-
-  const embedUrl = getEmbedUrl({
-    mediaId,
-    type: 'media',
-    queryString: location.search,
-  });
-
-  const iframeTitle = pathOr(
-    'Audio player',
-    ['mediaAssetPage', 'audioPlayer'],
-    translations,
-  );
 
   const hasRecentEpisodes = recentEpisodes && Boolean(recentEpisodes.length);
   const metadataTitle = episodeTitle
@@ -170,11 +140,13 @@ const OnDemandAudioPage = ({
 
   return (
     <>
-      <ATIAnalytics data={pageData} />
+      <ATIAnalytics atiData={pageData?.metadata.atiAnalytics} />
       <ChartbeatAnalytics
         mediaPageType={isPodcast ? 'Podcasts' : 'Radio'}
         title={headline}
-        contentType={pageData?.contentType}
+        contentType={
+          pageData?.metadata.atiAnalytics?.contentType as ContentType
+        }
       />
       <ComscoreAnalytics />
       <MetadataContainer
@@ -221,7 +193,7 @@ const OnDemandAudioPage = ({
                 episodeTitle={episodeTitle}
                 releaseDateTimeStamp={releaseDateTimeStamp}
               />
-              <OnDemandParagraphContainer text={summary} />
+              <OnDemandParagraphContainer testid="summary" text={summary} />
               {episodeTitle && (
                 <FooterTimestamp releaseDateTimeStamp={releaseDateTimeStamp} />
               )}
@@ -238,15 +210,7 @@ const OnDemandAudioPage = ({
             </Grid>
           </GelPageGrid>
           {mediaIsAvailable ? (
-            <AVPlayer
-              assetId={episodeId}
-              embedUrl={embedUrl}
-              iframeTitle={iframeTitle}
-              title="On-demand radio"
-              type="audio"
-              skin="audio"
-              placeholderSrc={audioPlaceholderImageSrc}
-            />
+            <MediaLoader blocks={pageData?.mediaBlocks} />
           ) : (
             //  @ts-expect-error allow rendering of MediaError component when media is not available
             <MediaError skin="audio" />
@@ -265,7 +229,6 @@ const OnDemandAudioPage = ({
                       thumbnailUrl: thumbnailImageUrl,
                       duration: durationISO8601,
                       uploadDate: new Date(releaseDateTimeStamp).toISOString(),
-                      embedURL: makeAbsolute(embedUrl),
                     },
                   ]
                 : []
@@ -289,7 +252,10 @@ const OnDemandAudioPage = ({
         </PageGrid>
       )}
       {radioScheduleData && (
-        <RadioScheduleContainer initialData={radioScheduleData} />
+        <RadioScheduleContainer
+          initialData={radioScheduleData}
+          toggleName="onDemandRadioSchedule"
+        />
       )}
     </>
   );

@@ -60,6 +60,7 @@ const homePageServices = [
   'portuguese',
   'punjabi',
   'russian',
+  'serbian',
   'sinhala',
   'somali',
   'swahili',
@@ -70,11 +71,11 @@ const homePageServices = [
   'turkce',
   'ukrainian',
   'urdu',
+  'uzbek',
   'vietnamese',
   'yoruba',
+  'zhongwen',
 ];
-
-const servicesWithVariants = ['serbian', 'ukchina', 'zhongwen'];
 
 export const getFrontPageRegex = services => {
   let frontPages = services;
@@ -83,9 +84,7 @@ export const getFrontPageRegex = services => {
       service => !homePageServices.includes(service),
     );
   } else {
-    frontPages = services.filter(service =>
-      servicesWithVariants.includes(service),
-    );
+    frontPages = [];
   }
   const serviceRegex = getServiceRegex(frontPages);
   return `/:service(${serviceRegex}):variant(${variantRegex})?:amp(${ampRegex})?:lite(${liteRegex})?`;
@@ -100,10 +99,6 @@ export const getHomePageRegex = services => {
   let homePages = services;
   if (isLive()) {
     homePages = services.filter(service => homePageServices.includes(service));
-  } else {
-    homePages = services.filter(
-      service => !servicesWithVariants.includes(service),
-    );
   }
   const homePageServiceRegex = getServiceRegex(homePages);
   return `/:service(${homePageServiceRegex}):variant(${variantRegex})?:amp(${ampRegex})?:lite(${liteRegex})?`;

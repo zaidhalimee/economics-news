@@ -100,7 +100,7 @@ module.exports = () => ({
           },
           local: {
             paths: ['/afaanoromoo/23149891'], // CPS MAP with video clip
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -323,7 +323,7 @@ module.exports = () => ({
               '/afrique/region-23278969', // CPS MAP
               '/afrique/nos_emissions/2016/06/160622_tc2_testmap1', // TC2 MAP video
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -517,7 +517,7 @@ module.exports = () => ({
           },
           local: {
             paths: ['/amharic/news-23263266'], // CPS MAP with video clip
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -699,7 +699,7 @@ module.exports = () => ({
             enabled: true,
           },
         },
-        smoke: false,
+        smoke: true,
       },
       onDemandTV: { environments: undefined, smoke: false },
       topicPage: {
@@ -740,7 +740,7 @@ module.exports = () => ({
               '/arabic/world-23278971', // CPS audio
               '/arabic/worldnews/2015/11/151120_t_arabic_av', // TC2 video
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -901,7 +901,7 @@ module.exports = () => ({
               '/azeri/azerbaijan-23257464', // CPS MAP with video clip
               '/azeri/multimedia/2015/08/150804_azeri_test', // TC2 MAP with video clip
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -1100,7 +1100,7 @@ module.exports = () => ({
               '/bengali/media-23269006', // CPS MAP with video clip
               '/bengali/multimedia/2016/08/160803_tc2_testmap1', // TC2 MAP with video clip
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -1331,7 +1331,7 @@ module.exports = () => ({
               '/burmese/media-23269011', // CPS MAP with video clip
               '/burmese/sport/2016/08/160811_tc2_testmap1', // TC2 MAP with video clip
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -1518,11 +1518,11 @@ module.exports = () => ({
             enabled: false,
           },
           local: {
-            paths: ['/gahuza/articles/cey23zx8wx8o'],
-            enabled: false,
+            paths: ['/gahuza/articles/c5y51yxeg53o'],
+            enabled: true,
           },
         },
-        smoke: false,
+        smoke: true,
       },
       errorPage404: {
         environments: {
@@ -1568,7 +1568,7 @@ module.exports = () => ({
               '/gahuza/podcasts/p07yh8hb', // Podcast Brand
               '/gahuza/podcasts/p07yh8hb/p09km4t4', // Podcast Episode
             ],
-            enabled: false,
+            enabled: true,
           },
           test: {
             paths: [
@@ -1577,7 +1577,7 @@ module.exports = () => ({
               '/gahuza/podcasts/p07yh8hb', // Podcast Brand
               '/gahuza/podcasts/p07yh8hb/p09km4t4', // Podcast Episode
             ],
-            enabled: false,
+            enabled: true,
           },
           local: {
             paths: [
@@ -1588,7 +1588,7 @@ module.exports = () => ({
             enabled: true,
           },
         },
-        smoke: false,
+        smoke: true,
       },
       onDemandTV: { environments: undefined, smoke: false },
       topicPage: { environments: undefined, smoke: false },
@@ -1796,7 +1796,7 @@ module.exports = () => ({
           },
           local: {
             paths: ['/gujarati/other-news-23130286'], // CPS MAP with video clip
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -1998,7 +1998,7 @@ module.exports = () => ({
           },
           local: {
             paths: [
-              '/hausa/bbc_hausa_tv/tv/w172xcg0kg6vph8', // Episode
+              '/hausa/bbc_hausa_tv/tv/w172yjj7rfhxp1p', // Episode
             ],
             enabled: true,
           },
@@ -2255,7 +2255,7 @@ module.exports = () => ({
               '/hindi/23201477', // CPS video
               '/hindi/sport/2016/08/160822_tc2_testmap1', // TC2 video
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -2411,7 +2411,7 @@ module.exports = () => ({
           },
           local: {
             paths: ['/igbo/media-23256786'], // CPS MAP with video clip
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -2620,7 +2620,7 @@ module.exports = () => ({
               '/indonesia/media-23269037', // CPS MAP with video clip
               '/indonesia/olahraga/2016/10/161003_tc2_videomap1', // TC2 MAP with video clip
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -2775,7 +2775,7 @@ module.exports = () => ({
           },
           local: {
             paths: ['/japanese/video-23248670'], // CPS MAP with video clip
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -2968,7 +2968,7 @@ module.exports = () => ({
           },
           local: {
             paths: ['/korean/media-23248686'], // CPS MAP with video clip
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -3210,7 +3210,7 @@ module.exports = () => ({
               '/kyrgyz/media-23257484', // CPS MAP with video clip
               // '/kyrgyz/multimedia/2015/03/150330_map_test', // TC2 MAP with audio clip
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -3409,7 +3409,7 @@ module.exports = () => ({
           },
           local: {
             paths: ['/marathi/media-23127353'], // CPS MAP with video clip
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -3570,7 +3570,7 @@ module.exports = () => ({
               '/mundo/media-23283126', // CPS MAP
               '/mundo/noticias/2016/04/160427_tc2_testmap1', // TC2 MAP video
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -3873,7 +3873,7 @@ module.exports = () => ({
               '/nepali/media-23269034', // CPS MAP with audio clip
               '/nepali/multimedia/2016/07/160725_tc2_testmap1', // TC2 MAP with video clip
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -4027,7 +4027,7 @@ module.exports = () => ({
           },
           local: {
             paths: ['/news/uk-56342465', '/news/technology-56294493'],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -4090,7 +4090,7 @@ module.exports = () => ({
           },
           local: {
             paths: ['/newsround/56331357'],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -4936,7 +4936,7 @@ module.exports = () => ({
               '/portuguese/media-23282671', // CPS MAP
               '/portuguese/revista/2016/05/160506_tc2_map_0605', // TC2 MAP video
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -5091,7 +5091,7 @@ module.exports = () => ({
           },
           local: {
             paths: ['/punjabi/media-23248705'], // CPS MAP with video clip
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -5485,21 +5485,8 @@ module.exports = () => ({
         smoke: true,
       },
       frontPage: {
-        environments: {
-          live: {
-            paths: ['/serbian/cyr'],
-            enabled: true,
-          },
-          test: {
-            paths: ['/serbian/cyr'],
-            enabled: true,
-          },
-          local: {
-            paths: ['/serbian/cyr'],
-            enabled: true,
-          },
-        },
-        smoke: true,
+        environments: undefined,
+        smoke: false,
       },
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
@@ -5519,7 +5506,7 @@ module.exports = () => ({
           },
           local: {
             paths: ['/serbian/cyr/23279016'], // CPS video
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -5655,20 +5642,7 @@ module.exports = () => ({
         smoke: true,
       },
       frontPage: {
-        environments: {
-          live: {
-            paths: ['/serbian/lat'],
-            enabled: true,
-          },
-          test: {
-            paths: ['/serbian/lat'],
-            enabled: true,
-          },
-          local: {
-            paths: ['/serbian/lat'],
-            enabled: true,
-          },
-        },
+        environments: undefined,
         smoke: true,
       },
       liveRadio: { environments: undefined, smoke: false },
@@ -5705,7 +5679,7 @@ module.exports = () => ({
           },
           local: {
             paths: ['/serbian/lat/23279016'], // CPS video
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -5865,7 +5839,7 @@ module.exports = () => ({
             paths: [
               '/sinhala/23248970', // CPS MAP with audio clip
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -6087,7 +6061,7 @@ module.exports = () => ({
               '/somali/hayadeed-23269042', // CPS MAP with video clip
               '/somali/maqal_iyo_muuqaal/2016/06/160628_tc2_testmap1', // TC2 MAP with video clip
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -6368,7 +6342,7 @@ module.exports = () => ({
               // '/swahili/media-23268999', // CPS MAP with live stream
               '/swahili/michezo/2016/07/160712_tc2_testmap1', // TC2 MAP with video clip
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -6591,7 +6565,7 @@ module.exports = () => ({
               '/tamil/india-23268994', // CPS MAP with video clip
               '/tamil/global/2016/08/160822_tc2_testmap1', // TC2 MAP with video clip
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -6771,7 +6745,7 @@ module.exports = () => ({
           },
           local: {
             paths: ['/telugu/international-23263261'], // CPS MAP with video clip
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -6927,7 +6901,7 @@ module.exports = () => ({
           },
           local: {
             paths: ['/thai/23122810'], // CPS MAP with video clip
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: true,
@@ -7140,7 +7114,7 @@ module.exports = () => ({
           },
           local: {
             paths: ['/tigrinya/news-23263262'], // CPS MAP with video clip
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -7301,7 +7275,7 @@ module.exports = () => ({
               '/turkce/media-23268997', // CPS MAP with video clip
               '/turkce/multimedya/2016/05/160524_tc2_testmap1', // TC2 MAP with video clip
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -7866,7 +7840,7 @@ module.exports = () => ({
               '/ukrainian/other-news-23279018', // Ukrainian CPS
               '/ukrainian/entertainment/2016/10/161025_tc2_testmap1', // TC2 Ukrainian video (no Russian TC2 MAP)
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -8088,7 +8062,7 @@ module.exports = () => ({
               '/urdu/world-23268929', // CPS MAP with video clip
               '/urdu/sport/2016/09/160902_tc2_testmap2', // TC2 MAP with video clip
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -8315,7 +8289,7 @@ module.exports = () => ({
               '/uzbek/23279019', // CPS MAP Latin
               '/uzbek/multimedia/2016/06/160610_tc2_testmap1', // TC2 MAP Cyrillic
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -8554,7 +8528,7 @@ module.exports = () => ({
               '/vietnamese/23222411', // CPS MAP with video clip
               '/vietnamese/sport/2016/09/160922_tc2_testmap2', // TC2 MAP with video clip
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -8710,7 +8684,7 @@ module.exports = () => ({
           },
           local: {
             paths: ['/yoruba/media-23256797'], // CPS MAP with video clip
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -8846,21 +8820,8 @@ module.exports = () => ({
         smoke: true,
       },
       frontPage: {
-        environments: {
-          live: {
-            paths: ['/zhongwen/simp'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/zhongwen/simp'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/zhongwen/simp'],
-            enabled: true,
-          },
-        },
-        smoke: true,
+        environments: undefined,
+        smoke: false,
       },
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: {
@@ -8917,7 +8878,7 @@ module.exports = () => ({
               '/zhongwen/simp/uk-23283128', // CPS Audio
               '/zhongwen/simp/multimedia/2016/11/161107_tc2_testmap1', // TC2 Video
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,
@@ -9053,21 +9014,8 @@ module.exports = () => ({
         smoke: true,
       },
       frontPage: {
-        environments: {
-          live: {
-            paths: ['/zhongwen/trad'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/zhongwen/trad'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/zhongwen/trad'],
-            enabled: true,
-          },
-        },
-        smoke: true,
+        environments: undefined,
+        smoke: false,
       },
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: {
@@ -9124,7 +9072,7 @@ module.exports = () => ({
               '/zhongwen/trad/uk-23283128', // CPS Audio
               '/zhongwen/trad/multimedia/2016/11/161107_tc2_testmap1', // TC2 Video
             ],
-            enabled: true,
+            enabled: false,
           },
         },
         smoke: false,

@@ -6,16 +6,13 @@ import ComscoreAnalytics from '#containers/ComscoreAnalytics';
 import Grid, { GelPageGrid } from '#components/Grid';
 import StyledTvHeadingContainer from '#containers/OnDemandHeading/StyledTvHeadingContainer';
 import OnDemandParagraphContainer from '#containers/OnDemandParagraph';
-import getEmbedUrl, {
-  makeAbsolute,
-} from '#lib/utilities/getUrlHelpers/getEmbedUrl';
 import RecentVideoEpisodes from '#containers/EpisodeList/RecentVideoEpisodes';
 import FooterTimestamp from '#containers/OnDemandFooterTimestamp';
-import useLocation from '#hooks/useLocation';
 import { PageTypes } from '#app/models/types/global';
 import { ContentType } from '#app/components/ChartbeatAnalytics/types';
 import MediaLoader from '#app/components/MediaLoader';
-import { OnDemandTVBlock, MediaOverrides } from '#app/models/types/media';
+import { OnDemandTVBlock } from '#app/models/types/media';
+import { ATIData } from '#app/components/ATIAnalytics/types';
 import ATIAnalytics from '../../components/ATIAnalytics';
 import ChartbeatAnalytics from '../../components/ChartbeatAnalytics';
 import LinkedData from '../../components/LinkedData';
@@ -45,6 +42,7 @@ export interface OnDemandTVProps {
     mediaBlocks: OnDemandTVBlock[];
     metadata: {
       type: PageTypes;
+      atiAnalytics: ATIData;
     };
     language: string;
     headline: string;
@@ -78,19 +76,16 @@ const OnDemandTvPage = ({
     brandTitle,
     releaseDateTimeStamp,
     masterBrand,
-    episodeId,
     promoBrandTitle,
     thumbnailImageUrl,
     durationISO8601,
     recentEpisodes,
     episodeTitle,
     mediumSynopsis,
-    contentType,
+    metadata: { atiAnalytics },
   } = pageData;
 
-  const { lang, timezone, datetimeLocale, service, brandName } =
-    useContext(ServiceContext);
-  const location = useLocation();
+  const { timezone, datetimeLocale, brandName } = useContext(ServiceContext);
 
   const formattedTimestamp = formatUnixTimestamp({
     timestamp: releaseDateTimeStamp,
@@ -100,38 +95,19 @@ const OnDemandTvPage = ({
     isRelative: false,
   });
 
-  const mediaId = `${service}/${masterBrand}/${episodeId}/${lang}`;
-
-  const embedUrl = getEmbedUrl({
-    mediaId,
-    type: 'media',
-    queryString: location.search,
-  });
-
   const hasRecentEpisodes = recentEpisodes && Boolean(recentEpisodes.length);
   const metadataTitle = episodeTitle
     ? `${brandTitle} - ${episodeTitle} - ${brandName}`
     : headline;
-
-  const mediaOverrides: MediaOverrides = {
-    model: {
-      language,
-      pageIdentifierOverride: `${service}.bbc_${service}_tv.tv.${episodeId}.page`,
-      pageTitleOverride: promoBrandTitle,
-    },
-    type: 'mediaOverrides',
-  };
-
-  const mediaBlocksWithOverrides = [...pageData?.mediaBlocks, mediaOverrides];
 
   return (
     <div css={styles.wrapper}>
       <ChartbeatAnalytics
         mediaPageType="TV"
         title={headline}
-        contentType={contentType}
+        contentType={atiAnalytics.contentType as ContentType}
       />
-      <ATIAnalytics data={pageData} />
+      <ATIAnalytics atiData={atiAnalytics} />
       <ComscoreAnalytics />
       <MetadataContainer
         title={metadataTitle}
@@ -153,7 +129,6 @@ const OnDemandTvPage = ({
                   thumbnailUrl: thumbnailImageUrl,
                   duration: durationISO8601,
                   uploadDate: new Date(releaseDateTimeStamp).toISOString(),
-                  embedURL: makeAbsolute(embedUrl),
                 },
               ]
             : []
@@ -180,7 +155,7 @@ const OnDemandTvPage = ({
           </VisuallyHiddenText>
           {mediaIsAvailable ? (
             <MediaLoader
-              blocks={mediaBlocksWithOverrides}
+              blocks={pageData?.mediaBlocks}
               css={styles.mediaPlayer}
             />
           ) : (

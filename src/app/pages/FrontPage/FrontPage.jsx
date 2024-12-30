@@ -95,6 +95,7 @@ const FrontPage = ({ pageData }) => {
                 radioSchedulePosition === group.semanticGroupName && (
                   <StyledRadioScheduleContainer
                     initialData={radioScheduleData}
+                    toggleName="frontPageRadioSchedule"
                   />
                 )}
               <IndexPageSection group={group} sectionNumber={index} />

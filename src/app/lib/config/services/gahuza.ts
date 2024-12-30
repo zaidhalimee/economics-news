@@ -73,6 +73,14 @@ export const service: DefaultServiceConfig = {
       relatedContent: 'Ibindi bisa n’ibi',
       relatedTopics: 'Ibindi bisa n’ibi',
       navMenuText: 'Imice',
+      liteSite: {
+        onboardingMessage: `Uriko ubona ku rubuga aherekana amakuru mu nyandiko gusa, hakoresha uburyo buke. Ja ku rubuga nyamukuru ubone amakuru mu nyandiko iherekejwe n'amasanamu.`,
+        toMainSite: 'Njana ku rubuga nyamukuru canke aho gusoma gusa',
+        informationPage:
+          'Ibindi vyerekeye ingene urwo rubuga rugutwara uburyo (ama mega) buke',
+        informationPageLink: 'https://www.bbc.com/gahuza/articles/cn7y7pvem0vo',
+        dataSaving: 'Ahagusaba uburyo (ama mega) buke',
+      },
       mediaAssetPage: {
         mediaPlayer: 'Ibikinwa',
         audioPlayer: 'Kina amajwi',
@@ -151,7 +159,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: 'Menya ivyahindutse',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -326,6 +334,10 @@ export const service: DefaultServiceConfig = {
           text: 'Vugana na BBC',
         },
         {
+          href: 'https://www.bbc.com/ws/languages?xtor=CS1-13-[wsgahuza~N~A39~MBC]-[Owned]&utm_source=mktg',
+          text: 'Bona amakuru mu zindi ndimi',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -359,6 +371,7 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Amajwi n’amashusho',
         url: '/gahuza/topics/crldzm936jmt',
+        hideOnLiteSite: true,
       },
     ],
   },

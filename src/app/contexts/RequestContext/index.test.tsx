@@ -204,7 +204,7 @@ describe('RequestContext', () => {
         isAmp: false,
         isApp: false,
         isLite: true,
-        platform: 'canonical',
+        platform: 'lite',
       });
     });
 

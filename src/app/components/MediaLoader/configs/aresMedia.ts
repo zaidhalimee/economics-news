@@ -9,14 +9,20 @@ import {
   AresMediaMetadataBlock,
   ConfigBuilderProps,
   ConfigBuilderReturnProps,
+  Orientations,
   PlaylistItem,
 } from '../types';
 import getCaptionBlock from '../utils/getCaptionBlock';
 import buildPlaceholderConfig from '../utils/buildPlaceholderConfig';
 import shouldDisplayAds from '../utils/shouldDisplayAds';
-import { getExternalEmbedUrl } from '../utils/urlConstructors';
+import { getAmpIframeUrl, getExternalEmbedUrl } from '../utils/urlConstructors';
 
 const DEFAULT_WIDTH = 512;
+
+const ORIENTATION_MAPPING: Record<string, Orientations> = {
+  Portrait: 'portrait',
+  Original: 'landscape',
+};
 
 export default ({
   id,
@@ -52,6 +58,10 @@ export default ({
   const versionsBlock = aresMediaMetadata?.[versionParameter]?.[0];
 
   const versionID = versionsBlock?.versionId ?? '';
+
+  const orientation =
+    ORIENTATION_MAPPING[versionsBlock?.types?.[0]] ??
+    ORIENTATION_MAPPING.Original;
 
   const format = aresMediaMetadata?.format;
 
@@ -110,6 +120,8 @@ export default ({
     placeholderImageLocator: locator,
   });
 
+  const ampIframeUrl = getAmpIframeUrl({ id, versionID, lang });
+
   const externalEmbedUrl = getExternalEmbedUrl({ id, versionID, lang });
 
   return {
@@ -137,5 +149,7 @@ export default ({
     },
     placeholderConfig,
     showAds,
+    orientation,
+    ...(ampIframeUrl && { ampIframeUrl }),
   };
 };

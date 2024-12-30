@@ -30,7 +30,7 @@ const headerFooterTranslations = {
       },
       accept: 'ОК',
       reject: 'Посмотреть, что изменилось',
-      rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+      rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
     },
     cookie: {
       amp: {
@@ -419,6 +419,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/russian/send/u50853643',
           text: 'Связаться с Би-би-си',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',

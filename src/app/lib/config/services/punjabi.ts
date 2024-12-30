@@ -135,7 +135,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ਓਕੇ',
           reject: 'ਜਾਣੋ ਕੀ ਬਦਲਿਆ ਹੈ',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -324,6 +324,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/punjabi/send/u50853621',
           text: 'ਬੀਬੀਸੀ ਨਾਲ ਸੰਪਰਕ ਕਰੋ',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',
