@@ -8,7 +8,6 @@ import filterForBlockType from '#app/lib/utilities/blockHandlers';
 import { ServiceContext } from '#app/contexts/ServiceContext';
 import mediaIcons from '#psammead/psammead-assets/src/svgs/mediaIcons';
 import styles from './index.styles';
-import { Close } from '../icons';
 
 type Props = { mediaCollection: MediaCollection[] | null };
 const DEFAULT_WATCH__NOW = 'Watch Now';
