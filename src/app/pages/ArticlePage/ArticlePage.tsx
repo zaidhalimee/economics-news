@@ -184,11 +184,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     embedImages: EmbedImages,
     embedUploader: Uploader,
     group: gist,
-    links: (props: ComponentToRenderProps) => {
-      console.log('props', props);
-
-      return <ScrollablePromo {...props} />;
-    },
+    links: (props: ComponentToRenderProps) => <ScrollablePromo {...props} />,
     mpu: (props: ComponentToRenderProps) =>
       allowAdvertising ? <AdContainer {...props} slotType="mpu" /> : null,
     wsoj: (props: ComponentToRenderProps) => (
@@ -231,8 +227,10 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const showTopics = Boolean(
     showRelatedTopics && topics.length > 0 && !isTransliterated,
   );
-
-  const variantValue = 'B'; // I don't know how changing this works in real experiments
+  // const scrollableOJExperimentVariation = useOptimizelyVariation(
+  //   'oj_scroll',
+  // ) as unknown as string;
+  const variantValue = 'A'; // We would get this value from useOptimizelyVariation (as commented out above)
   // so just manually switch the hardcoded variant for now while getting this working
   const variant: 'A' | 'B' | 'none' = ['A', 'B'].includes(variantValue)
     ? (variantValue as 'A' | 'B')
@@ -246,7 +244,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     dataForOJExperiment = [];
   }
 
-  const newProps = {
+  const propsForOJExperiment = {
     blocks: dataForOJExperiment,
     variant,
   };
@@ -297,7 +295,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       )}
       {!isPGL && !isTC2Asset && variant !== 'none' && (
         <aside css={styles.aside} role="complementary">
-          <ScrollablePromo {...newProps} />
+          <ScrollablePromo {...propsForOJExperiment} />
         </aside>
       )}
       <ElectionBanner aboutTags={aboutTags} taggings={taggings} />
