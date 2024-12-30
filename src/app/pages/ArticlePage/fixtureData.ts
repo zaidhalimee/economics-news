@@ -260,6 +260,51 @@ export const articleDataNews = articleDataBuilder(
   },
 ) as unknown as Article;
 
+export const articleDataNewsLongLength = articleDataBuilder(
+  'c0000000001o',
+  'News',
+  'en-gb',
+  'http://www.bbc.co.uk/ontologies/passport/home/News',
+  [
+    'Article Headline',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+    'A paragraph.',
+  ],
+  'Article Headline for SEO',
+  'Article Headline for Promo',
+  'Article summary.',
+  presetThings,
+  false,
+  blocksWithHeadlineAndText,
+  {
+    categoryName: 'Royal+Wedding+2018~Duchess+of+Sussex',
+    contentId: 'urn:bbc:optimo:c0000000001o',
+    contentType: 'article',
+    language: 'en-gb',
+    ldpThingIds:
+      '2351f2b2-ce36-4f44-996d-c3c4f7f90eaa~803eaeb9-c0c3-4f1b-9a66-90efac3df2dc',
+    ldpThingLabels: 'Royal+Wedding+2018~Duchess+of+Sussex',
+    nationsProducer: null,
+    pageIdentifier: 'news.articles.c0000000001o.page',
+    pageTitle: 'Article Headline for SEO',
+    timePublished: '2018-01-01T12:01:00.000Z',
+    timeUpdated: '2018-01-01T14:00:00.000Z',
+  },
+) as unknown as Article;
+
 export const articleDataNewsWithEmbeds = articleDataBuilder(
   'c0000000001o',
   'News',
@@ -796,139 +841,6 @@ export const articleStyDataPidgin = articleDataBuilder(
   'STY',
 ) as unknown as Article;
 
-export const bylineWithNoRole = [
-  {
-    type: 'contributor',
-    model: {
-      topicId: '',
-      topicUrl: '/news/topics/c8qx38nq177t',
-      blocks: [
-        {
-          type: 'name',
-          model: {
-            blocks: [
-              {
-                type: 'text',
-                model: {
-                  blocks: [
-                    {
-                      type: 'paragraph',
-                      model: {
-                        text: 'Single Byline (all values)',
-                        blocks: [
-                          {
-                            type: 'fragment',
-                            model: {
-                              text: 'Single Byline (all values)',
-                              attributes: [],
-                            },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                },
-              },
-            ],
-          },
-        },
-        {
-          type: 'link',
-          model: {
-            blocks: [
-              {
-                type: 'text',
-                model: {
-                  blocks: [
-                    {
-                      type: 'paragraph',
-                      model: {
-                        text: 'test',
-                        blocks: [
-                          {
-                            type: 'urlLink',
-                            model: {
-                              text: 'test',
-                              locator: 'https://twitter.com/test',
-                              blocks: [
-                                {
-                                  type: 'fragment',
-                                  model: {
-                                    text: 'test',
-                                    attributes: [],
-                                  },
-                                },
-                              ],
-                              isExternal: true,
-                            },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                },
-              },
-            ],
-          },
-        },
-        {
-          type: 'location',
-          model: {
-            blocks: [
-              {
-                type: 'text',
-                model: {
-                  blocks: [
-                    {
-                      type: 'paragraph',
-                      model: {
-                        text: 'London',
-                        blocks: [
-                          {
-                            type: 'fragment',
-                            model: {
-                              text: 'London',
-                              attributes: [],
-                            },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                },
-              },
-            ],
-          },
-        },
-        {
-          type: 'images',
-          model: {
-            blocks: [
-              {
-                type: 'image',
-                model: {
-                  blocks: [
-                    {
-                      type: 'rawImage',
-                      model: {
-                        width: 640,
-                        height: 562,
-                        locator:
-                          'f974/live/36226e20-94aa-11ec-9acc-37a09ce5ea88.png',
-                        originCode: 'cpsprodpb',
-                      },
-                    },
-                  ],
-                },
-              },
-            ],
-          },
-        },
-      ],
-    },
-  },
-] as OptimoBylineContributorBlock[];
-
 export const bylineWithNoAuthor = [
   {
     type: 'contributor',
@@ -965,110 +877,6 @@ export const bylineWithNoAuthor = [
             ],
           },
         },
-        {
-          type: 'link',
-          model: {
-            blocks: [
-              {
-                type: 'text',
-                model: {
-                  blocks: [
-                    {
-                      type: 'paragraph',
-                      model: {
-                        text: 'test',
-                        blocks: [
-                          {
-                            type: 'urlLink',
-                            model: {
-                              text: 'test',
-                              locator: 'https://twitter.com/test',
-                              blocks: [
-                                {
-                                  type: 'fragment',
-                                  model: {
-                                    text: 'test',
-                                    attributes: [],
-                                  },
-                                },
-                              ],
-                              isExternal: true,
-                            },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                },
-              },
-            ],
-          },
-        },
-        {
-          type: 'location',
-          model: {
-            blocks: [
-              {
-                type: 'text',
-                model: {
-                  blocks: [
-                    {
-                      type: 'paragraph',
-                      model: {
-                        text: 'London',
-                        blocks: [
-                          {
-                            type: 'fragment',
-                            model: {
-                              text: 'London',
-                              attributes: [],
-                            },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                },
-              },
-            ],
-          },
-        },
-        {
-          type: 'images',
-          model: {
-            blocks: [
-              {
-                type: 'image',
-                model: {
-                  blocks: [
-                    {
-                      type: 'rawImage',
-                      model: {
-                        width: 640,
-                        height: 562,
-                        locator:
-                          'f974/live/36226e20-94aa-11ec-9acc-37a09ce5ea88.png',
-                        originCode: 'cpsprodpb',
-                      },
-                    },
-                  ],
-                },
-              },
-            ],
-          },
-        },
-      ],
-    },
-  },
-] as OptimoBylineContributorBlock[];
-
-export const bylineWithNoAuthorAndRole = [
-  {
-    type: 'contributor',
-    model: {
-      topicId: '',
-      topicUrl: '',
-      blocks: [
         {
           type: 'link',
           model: {

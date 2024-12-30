@@ -1,11 +1,13 @@
 import { GetServerSideProps } from 'next';
+import dynamic from 'next/dynamic';
 import PageDataParams from '#models/types/pageDataParams';
 import { UGC_PAGE } from '#app/routes/utils/pageTypes';
 import isLitePath from '#app/routes/utils/isLitePath';
 import isAppPath from '#app/routes/utils/isAppPath';
 import getPageData from '../../../../utilities/pageRequests/getPageData';
-import UGCPageLayout from './UGCPageLayout';
 import extractHeaders from '../../../../../src/server/utilities/extractHeaders';
+
+const UGCPageLayout = dynamic(() => import('./UGCPageLayout'));
 
 export const getServerSideProps: GetServerSideProps = async context => {
   context.res.setHeader(

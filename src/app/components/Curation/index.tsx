@@ -135,7 +135,12 @@ export default ({
         />
       );
     case RADIO_SCHEDULE:
-      return <RadioSchedule initialData={radioSchedule} />;
+      return (
+        <RadioSchedule
+          initialData={radioSchedule}
+          toggleName="frontPageRadioSchedule"
+        />
+      );
     case EMBED:
       return embed ? <Embed oembed={embed} /> : null;
     case SIMPLE_CURATION_GRID:

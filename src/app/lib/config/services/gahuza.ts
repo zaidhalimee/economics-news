@@ -159,7 +159,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: 'Menya ivyahindutse',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -334,8 +334,8 @@ export const service: DefaultServiceConfig = {
           text: 'Vugana na BBC',
         },
         {
-          href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          href: 'https://www.bbc.com/ws/languages?xtor=CS1-13-[wsgahuza~N~A39~MBC]-[Owned]&utm_source=mktg',
+          text: 'Bona amakuru mu zindi ndimi',
         },
         {
           id: 'COOKIE_SETTINGS',
@@ -371,6 +371,7 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Amajwi n’amashusho',
         url: '/gahuza/topics/crldzm936jmt',
+        hideOnLiteSite: true,
       },
     ],
   },

@@ -129,7 +129,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: '変更点を見る',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -317,10 +317,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'ウクライナ侵攻',
         url: '/japanese/topics/c50vpymk750t',
-      },
-      {
-        title: '米大統領選',
-        url: '/japanese/topics/c5qx4zgm86et',
       },
       {
         title: '気候変動',

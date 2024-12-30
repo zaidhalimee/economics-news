@@ -162,7 +162,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ओके',
           reject: 'जानें कि क्या बदला है',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -440,10 +440,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'भारत',
         url: '/hindi/topics/ckdxnkz7607t',
-      },
-      {
-        title: 'अमेरिकी चुनाव 2024',
-        url: '/hindi/topics/cp9r94x30m5t',
       },
       {
         title: 'विदेश',

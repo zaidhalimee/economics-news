@@ -132,7 +132,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'හරි',
           reject: 'වෙනස් කර ඇත්තේ මොනවාදැයි දැනගන්න',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -316,10 +316,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'මුල් පිටුව',
         url: '/sinhala',
-      },
-      {
-        title: 'මහ මැතිවරණය 2024',
-        url: '/sinhala/topics/c5y3ve4z2lkt',
       },
       {
         title: 'ශ්‍රී ලංකා',

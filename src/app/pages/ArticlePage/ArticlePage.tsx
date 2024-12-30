@@ -1,9 +1,8 @@
 /** @jsx jsx */
-/** @jsxFrag React.Fragment */
+/* @jsxFrag React.Fragment */
 import React, { useContext } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 import useToggle from '#hooks/useToggle';
-import useOptimizelyMvtVariation from '#hooks/useOptimizelyMvtVariation';
 import { singleTextBlock } from '#app/models/blocks';
 import ArticleMetadata from '#containers/ArticleMetadata';
 import { RequestContext } from '#contexts/RequestContext';
@@ -40,11 +39,11 @@ import CpsRecommendations from '#containers/CpsRecommendations';
 import InlinePodcastPromo from '#containers/PodcastPromo/Inline';
 import { Article, OptimoBylineBlock } from '#app/models/types/optimo';
 import ScrollablePromo from '#components/ScrollablePromo';
+import JumpTo, { JumpToProps } from '#app/components/JumpTo';
+import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
 import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
 import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
-import JumpTo from '#app/components/JumpTo';
 import ElectionBanner from './ElectionBanner';
-
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
 import EmbedImages from '../../components/Embeds/EmbedImages';
@@ -68,15 +67,9 @@ import Disclaimer from '../../components/Disclaimer';
 import SecondaryColumn from './SecondaryColumn';
 import styles from './ArticlePage.styles';
 import { ComponentToRenderProps, TimeStampProps } from './types';
-import AmpExperiment from '../../components/AmpExperiment';
-import {
-  experimentTopStoriesConfig,
-  getExperimentTopStories,
-  ExperimentTopStories,
-} from './experimentTopStories/helpers';
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
-  const { isApp, pageType, service, isAmp, id } = useContext(RequestContext);
+  const { isApp, pageType, service } = useContext(RequestContext);
 
   const {
     articleAuthor,
@@ -90,10 +83,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const {
     palette: { GREY_2, WHITE },
   } = useTheme();
-
-  const experimentVariant = useOptimizelyMvtVariation(
-    'newswb_01_ap_banner_election',
-  );
 
   const allowAdvertising = pageData?.metadata?.allowAdvertising ?? false;
   const adcampaign = pageData?.metadata?.adCampaignKeyword;
@@ -110,7 +99,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const topics = pageData?.metadata?.topics ?? [];
   const blocks = pageData?.content?.model?.blocks ?? [];
   const startsWithHeading = blocks?.[0]?.type === 'headline' || false;
-
   const bylineBlock = blocks.find(
     block => block.type === 'byline',
   ) as OptimoBylineBlock;
@@ -142,21 +130,26 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     mostRead: mostReadInitialData,
   } = pageData;
 
+  const jumpToVariation = useOptimizelyVariation(
+    'jump_to',
+  ) as unknown as string;
+
+  const hasJumpToBlockForExperiment = blocks.some(
+    block => block.type === 'jumpTo',
+  );
+
+  const enableOptimizelyEventTracking = Boolean(
+    jumpToVariation && hasJumpToBlockForExperiment,
+  );
+
+  const showRelatedContent = blocks.some(
+    block => block.type === 'relatedContent',
+  );
+
   const atiData = {
     ...atiAnalytics,
     ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
-    ...(experimentVariant && { experimentVariant }),
   };
-
-  const topStoriesContent = pageData?.secondaryColumn?.topStories;
-  const { shouldEnableExperimentTopStories, transformedBlocks } =
-    getExperimentTopStories({
-      blocks,
-      topStoriesContent,
-      isAmp,
-      service,
-      id,
-    });
 
   const componentsToRender = {
     visuallyHiddenHeadline,
@@ -201,11 +194,10 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       <Disclaimer {...props} increasePaddingOnDesktop={false} />
     ),
     podcastPromo: () => (podcastPromoEnabled ? <InlinePodcastPromo /> : null),
-    experimentTopStories: () =>
-      topStoriesContent ? (
-        <ExperimentTopStories topStoriesContent={topStoriesContent} />
+    jumpTo: (props: ComponentToRenderProps & JumpToProps) =>
+      jumpToVariation === 'on' ? (
+        <JumpTo {...props} showRelatedContentLink={showRelatedContent} />
       ) : null,
-    jumpTo: JumpTo,
   };
 
   const visuallyHiddenBlock = {
@@ -215,8 +207,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   };
 
   const articleBlocks = startsWithHeading
-    ? transformedBlocks
-    : [visuallyHiddenBlock, ...transformedBlocks];
+    ? blocks
+    : [visuallyHiddenBlock, ...blocks];
 
   const promoImageBlocks =
     pageData?.promo?.images?.defaultPromoImage?.blocks ?? [];
@@ -238,9 +230,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   return (
     <div css={styles.pageWrapper}>
-      {shouldEnableExperimentTopStories && (
-        <AmpExperiment experimentConfig={experimentTopStoriesConfig} />
-      )}
       <ATIAnalytics atiData={atiData} />
       <ChartbeatAnalytics
         sectionName={pageData?.relatedContent?.section?.name}
@@ -301,7 +290,10 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
               tagBackgroundColour={WHITE}
             />
           )}
-          <RelatedContentSection content={blocks} />
+          <RelatedContentSection
+            content={blocks}
+            sendOptimizelyEvents={enableOptimizelyEventTracking}
+          />
         </div>
         {!isApp && !isPGL && <SecondaryColumn pageData={pageData} />}
       </div>
@@ -315,7 +307,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           mobileDivider={showTopics}
         />
       )}
-      {experimentVariant && (
+      {enableOptimizelyEventTracking && (
         <>
           <OptimizelyArticleCompleteTracking />
           <OptimizelyPageViewTracking />
