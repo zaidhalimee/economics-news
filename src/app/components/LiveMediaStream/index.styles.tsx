@@ -23,7 +23,17 @@ export default {
         width: '100%',
       },
     }),
-
+  playButtonText: ({ spacings, palette, mq }: Theme) =>
+    css({
+      color: palette.WHITE,
+    }),
+  playIcon: ({ spacings, palette }: Theme) =>
+    css({
+      svg: {
+        color: palette.WHITE,
+        marginBottom: `${spacings.FULL}rem`,
+      },
+    }),
   liveMediaSpan: () =>
     css({
       display: 'flex',
