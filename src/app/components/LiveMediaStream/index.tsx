@@ -6,6 +6,7 @@ import { MediaCollection } from '#app/components/MediaLoader/types';
 import MediaLoader, { BumpLoader } from '#app/components/MediaLoader';
 import filterForBlockType from '#app/lib/utilities/blockHandlers';
 import { ServiceContext } from '#app/contexts/ServiceContext';
+import mediaIcons from '#psammead/psammead-assets/src/svgs/mediaIcons';
 import styles from './index.styles';
 import { Close } from '../icons';
 
@@ -50,6 +51,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
           css={styles.playButton}
         >
           {watchNow}
+          {mediaIcons.video}
         </button>
       )}
       {showMedia && (
@@ -61,7 +63,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
               onClick={handleClick}
               data-testid="close-button"
             >
-              <Close />
+              {mediaIcons.close}
             </button>
           </div>
           <MediaLoader blocks={mediaCollection} />
