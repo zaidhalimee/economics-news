@@ -79,9 +79,9 @@ const ScrollablePromo = ({
 
   let title;
   if (variant === 'A') {
-    title = translations.topStoriesTitle || 'Top Stories';
+    title = `${translations.topStoriesTitle || 'Top Stories'} - `;
   } else if (variant === 'B') {
-    title = mostRead.header || 'Most Read';
+    title = `${mostRead.header || 'Most Read'} - `;
   } else {
     title =
       blocks[0].type === 'title' &&
@@ -94,8 +94,7 @@ const ScrollablePromo = ({
 
   const isSingleItem = blocksWithoutTitle.length === 1;
 
-  const ariaLabel =
-    title && idSanitiser(`${title}${variant !== 'none' ? ' scrollable' : ''}`);
+  const ariaLabel = title && idSanitiser(title);
 
   const a11yAttributes = {
     as: 'section',
