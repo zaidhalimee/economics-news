@@ -114,6 +114,9 @@ export type Player = {
     parameters: { updatedAdTag: string },
   ): void;
   load: () => void;
+  play: () => void;
+  pause: () => void;
+  stop: () => void;
   bind: (event: string, callback: () => void) => void;
   loadPlugin: (
     pluginName: { [key: string]: string },

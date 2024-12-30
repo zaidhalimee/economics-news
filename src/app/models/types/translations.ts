@@ -173,7 +173,7 @@ export interface Translations {
     recentEpisodes?: string;
     podcastExternalLinks?: string;
     download?: string;
-    watchNow: string;
+    watchNow?: string;
   };
   socialEmbed: {
     caption?: {

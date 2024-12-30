@@ -1,8 +1,14 @@
 /** @jsx jsx */
 /* @jsxFrag React.Fragment */
-
-import { jsx } from '@emotion/react';
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import { jsx, SerializedStyles } from '@emotion/react';
+import React, {
+  FC,
+  ReactHTMLElement,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { Helmet } from 'react-helmet';
 import { RequestContext } from '#contexts/RequestContext';
 import { MEDIA_PLAYER_STATUS } from '#app/lib/logger.const';
@@ -16,7 +22,7 @@ import {
 import filterForBlockType from '#lib/utilities/blockHandlers';
 import { PageTypes } from '#app/models/types/global';
 import { EventTrackingContext } from '#app/contexts/EventTrackingContext';
-import { BumpType, MediaBlock, PlayerConfig } from './types';
+import { BumpType, MediaBlock, Player, PlayerConfig } from './types';
 import Caption from '../Caption';
 import nodeLogger from '../../lib/logger.node';
 import buildConfig from './utils/buildSettings';
@@ -93,13 +99,24 @@ const AdvertTagLoader = () => {
   );
 };
 
+export type ManualControlProps = {
+  mediaControls?: Player;
+  mediaContainer: ReactHTMLElement<HTMLDivElement>;
+};
+
 type MediaContainerProps = {
   playerConfig: PlayerConfig;
   showAds: boolean;
+  ManualControls?: FC<ManualControlProps>;
 };
 
-const MediaContainer = ({ playerConfig, showAds }: MediaContainerProps) => {
+const MediaContainer = ({
+  playerConfig,
+  showAds,
+  ManualControls,
+}: MediaContainerProps) => {
   const playerElementRef = useRef<HTMLDivElement>(null);
+  const [mediaControls, setMediaControls] = useState<Player>();
 
   useEffect(() => {
     try {
@@ -111,6 +128,7 @@ const MediaContainer = ({ playerConfig, showAds }: MediaContainerProps) => {
           );
 
           mediaPlayer.load();
+          setMediaControls(mediaPlayer);
 
           if (showAds) {
             const adTag = await window.dotcom.ads.getAdTag();
@@ -145,7 +163,7 @@ const MediaContainer = ({ playerConfig, showAds }: MediaContainerProps) => {
     }
   }, [playerConfig, showAds]);
 
-  return (
+  const container = (
     <div
       ref={playerElementRef}
       data-e2e="media-player"
@@ -156,15 +174,36 @@ const MediaContainer = ({ playerConfig, showAds }: MediaContainerProps) => {
       }
     />
   );
+
+  return (
+    <>
+      {ManualControls ? (
+        <ManualControls
+          mediaControls={mediaControls}
+          mediaContainer={container as ManualControlProps['mediaContainer']}
+        />
+      ) : (
+        container
+      )}
+    </>
+  );
 };
 
 type Props = {
   blocks: MediaBlock[];
   className?: string;
   embedded?: boolean;
+  placeholderOverride?: boolean;
+  ManualControls?: FC<ManualControlProps>;
 };
 
-const MediaLoader = ({ blocks, className, embedded }: Props) => {
+const MediaLoader = ({
+  blocks,
+  className,
+  embedded,
+  placeholderOverride = true,
+  ManualControls,
+}: Props) => {
   const { lang, translations } = useContext(ServiceContext);
   const { pageIdentifier } = useContext(EventTrackingContext);
   const { enabled: adsEnabled } = useToggle('ads');
@@ -225,7 +264,9 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
     mediaInfo,
   } = placeholderConfig ?? {};
 
-  const hasPlaceholder = Boolean(showPlaceholder && placeholderSrc);
+  const hasPlaceholder = Boolean(
+    placeholderOverride && showPlaceholder && placeholderSrc,
+  );
 
   const showPortraitTitle = orientation === 'portrait' && !embedded;
 
@@ -274,7 +315,11 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
                 onClick={() => setShowPlaceholder(false)}
               />
             ) : (
-              <MediaContainer playerConfig={playerConfig} showAds={showAds} />
+              <MediaContainer
+                playerConfig={playerConfig}
+                showAds={showAds}
+                ManualControls={ManualControls}
+              />
             )}
           </>
         )}
