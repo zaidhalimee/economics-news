@@ -90,21 +90,22 @@ const Promo = ({ block, variant, onClick }) => {
   let timestamp;
   switch (variant) {
     case 'A':
-      title = pathOr(
-        '',
-        [
-          'headlines',
-          'promoHeadline',
-          'blocks',
-          '0',
-          'model',
-          'blocks',
-          '0',
-          'model',
-          'text',
-        ],
-        block,
-      );
+      title =
+        pathOr(
+          '',
+          [
+            'headlines',
+            'promoHeadline',
+            'blocks',
+            '0',
+            'model',
+            'blocks',
+            '0',
+            'model',
+            'text',
+          ],
+          block,
+        ) || block.headline;
       href = pathOr('', ['locators', 'canonicalUrl'], block);
       break;
     case 'B':
