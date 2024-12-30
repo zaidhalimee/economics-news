@@ -5,8 +5,11 @@ import {
   ComponentPropsWithoutRef,
   forwardRef,
   ForwardedRef,
+  useContext,
 } from 'react';
 import { jsx, Theme } from '@emotion/react';
+import { RequestContext } from '../../contexts/RequestContext';
+import helmetFontVariants from '../ThemeProvider/fontVariants/helmet';
 
 import { GelFontSize, FontVariant } from '../../models/types/theming';
 
@@ -30,6 +33,7 @@ const Text = forwardRef(function Text<T extends ElementType = 'span'>(
   ref: ForwardedRef<HTMLElement>,
 ) {
   const Component = as || 'span';
+  const { saveData } = useContext(RequestContext);
   return (
     <Component
       {...(ref && { ref })}
@@ -38,7 +42,7 @@ const Text = forwardRef(function Text<T extends ElementType = 'span'>(
           color: palette.GREY_10,
         },
         fontSizes[size],
-        fontVariants[fontVariant],
+        saveData ? helmetFontVariants[fontVariant] : fontVariants[fontVariant],
       ]}
       className={className}
       {...htmlAttributes}

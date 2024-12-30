@@ -1,80 +1,60 @@
+import { useContext } from 'react';
+import { RequestContext } from '#contexts/RequestContext';
 import * as fonts from './font-families';
 
+const getFontFromObject = (service) => {
+    const { saveData } = useContext(RequestContext);
+    if (fonts[service] && !saveData) {
+        return service;
+    }
+    return 'helmetDefault';
+}
+
 export const getSansRegular = service => {
-  if (!fonts[service]) {
-    return null;
-  }
-  return fonts[service].sansRegular;
+  return fonts[getFontFromObject(service)].sansRegular;
 };
 
 export const getSansRegularItalic = service => {
-  if (!fonts[service]) {
-    return null;
-  }
-  const { sansRegularItalic, sansRegular } = fonts[service];
+  const { sansRegularItalic, sansRegular } = fonts[getFontFromObject(service)];
   return sansRegularItalic || sansRegular;
 };
 
 export const getSansBold = service => {
-  if (!fonts[service]) {
-    return null;
-  }
-  const { sansBold, sansRegular } = fonts[service];
+  const { sansBold, sansRegular } = fonts[getFontFromObject(service)];
   return sansBold || sansRegular;
 };
 
 export const getSansBoldItalic = service => {
-  if (!fonts[service]) {
-    return null;
-  }
-  const { sansBoldItalic } = fonts[service];
+  const { sansBoldItalic } = fonts[getFontFromObject(service)];
   return sansBoldItalic || getSansBold(service);
 };
 
 export const getSansLight = service => {
-  if (!fonts[service]) {
-    return null;
-  }
-  const { sansLight } = fonts[service];
+  const { sansLight } = fonts[getFontFromObject(service)];
   return sansLight || getSansRegular(service);
 };
 
 export const getSerifRegular = service => {
-  if (!fonts[service]) {
-    return null;
-  }
-  const { serifRegular } = fonts[service];
+  const { serifRegular } = fonts[getFontFromObject(service)];
   return serifRegular || getSansRegular(service);
 };
 
 export const getSerifMedium = service => {
-  if (!fonts[service]) {
-    return null;
-  }
-  const { serifMedium } = fonts[service];
+  const { serifMedium } = fonts[getFontFromObject(service)];
   return serifMedium || getSansBold(service);
 };
 
 export const getSerifMediumItalic = service => {
-  if (!fonts[service]) {
-    return null;
-  }
-  const { serifMediumItalic } = fonts[service];
+  const { serifMediumItalic } = fonts[getFontFromObject(service)];
   return serifMediumItalic || getSansBoldItalic(service);
 };
 
 export const getSerifBold = service => {
-  if (!fonts[service]) {
-    return null;
-  }
-  const { serifBold } = fonts[service];
+  const { serifBold } = fonts[getFontFromObject(service)];
   return serifBold || getSansBold(service);
 };
 
 export const getSerifLight = service => {
-  if (!fonts[service]) {
-    return null;
-  }
-  const { serifLight } = fonts[service];
+  const { serifLight } = fonts[getFontFromObject(service)];
   return serifLight || getSerifRegular(service);
 };
