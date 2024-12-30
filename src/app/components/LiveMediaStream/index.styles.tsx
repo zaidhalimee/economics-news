@@ -29,7 +29,7 @@ export default {
       display: 'flex',
       justifyContent: 'space-between',
     }),
-  mediaDescription: ({ spacings, mq }: Theme) =>
+  mediaDescription: ({ spacings }: Theme) =>
     css({
       margin: `${spacings.FULL}rem`,
       marginLeft: 0,

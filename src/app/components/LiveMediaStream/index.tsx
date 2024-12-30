@@ -41,7 +41,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
   return (
     <div css={styles.liveMediaStreamContainer}>
       <BumpLoader />
-      <span css={styles.mediaDescription}>{short}</span>
+      <Text css={styles.mediaDescription}>{short}</Text>
       {!showMedia && (
         <button
           type="button"
