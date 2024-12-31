@@ -100,7 +100,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
       <div css={styles.mediaLoaderContainer}>
         <MediaLoader
           blocks={mediaCollection}
-          placeholderOverride={false}
+          placeholderOverride
           ManualControls={ManualControls as FC}
         />
       </div>
