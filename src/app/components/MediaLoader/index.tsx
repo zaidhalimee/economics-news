@@ -127,9 +127,10 @@ const MediaContainer = ({
             playerConfig,
           );
 
+          console.log('CHECK 1');
           mediaPlayer.load();
           setMediaControls(mediaPlayer);
-
+          console.log('CHECK 2');
           if (showAds) {
             const adTag = await window.dotcom.ads.getAdTag();
             mediaPlayer.loadPlugin(
@@ -145,7 +146,7 @@ const MediaContainer = ({
                 },
               },
             );
-
+            console.log('CHECK 3');
             mediaPlayer.bind('playlistLoaded', async () => {
               const updatedAdTag = await window.dotcom.ads.getAdTag();
               mediaPlayer.dispatchEvent(

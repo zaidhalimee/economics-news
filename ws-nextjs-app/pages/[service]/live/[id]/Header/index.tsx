@@ -84,7 +84,29 @@ const Header = ({
             </Text>
           )}
           {mediaCollections && (
-            <LiveMediaStream mediaCollection={mediaCollections} />
+            <LiveMediaStream
+              mediaCollection={[
+                {
+                  type: 'liveMedia',
+                  model: {
+                    title: 'Non-Stop Cartoons!',
+                    synopses: {
+                      short: 'Toon in, kick back and relax to 100% cartoons!',
+                    },
+                    imageUrlTemplate:
+                      'https://ichef.bbci.co.uk/images/ic/$recipe/p0k31t4d.jpg',
+                    masterbrand: {
+                      networkName: 'CBBC',
+                    },
+                    version: {
+                      vpid: 'p0gh4n67',
+                      duration: 'PT24H',
+                      status: 'LIVE',
+                    },
+                  },
+                },
+              ]}
+            />
           )}
         </div>
       </div>
