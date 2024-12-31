@@ -1,7 +1,7 @@
 /** @jsx jsx */
 /* @jsxFrag React.Fragment */
 import { jsx } from '@emotion/react';
-import React, { FC, useContext, useState } from 'react';
+import React, { FC, useContext, useEffect, useState } from 'react';
 import Text from '#app/components/Text';
 import { MediaCollection } from '#app/components/MediaLoader/types';
 import MediaLoader, {
@@ -43,22 +43,21 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
     mediaContainer,
   }: ManualControlProps) => {
     const handleClick = () => {
-      if (!showMedia) {
+      setShowMedia(previousState => !previousState);
+    };
+
+    useEffect(() => {
+      if (showMedia) {
         mediaControls?.play();
       } else {
         mediaControls?.pause();
       }
-      setShowMedia(previousState => !previousState);
-    };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [mediaControls, showMedia]);
 
     return (
       <>
-        <div
-          css={[
-            styles.liveMediaSpan,
-            showMedia ? styles.showContent : styles.hideContent,
-          ]}
-        >
+        <div css={styles.liveMediaSpan}>
           <Text>{`${title} - ${networkName}`}</Text>
           <button
             type="button"
@@ -86,7 +85,9 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
             {watchNow}
           </Text>
         </button>
-        {mediaContainer}
+        <div css={showMedia ? styles.showContent : styles.hideContent}>
+          {mediaContainer}
+        </div>
       </>
     );
   };
