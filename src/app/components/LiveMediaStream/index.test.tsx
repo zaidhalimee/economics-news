@@ -16,7 +16,9 @@ describe('liveMediaStream', () => {
       <LiveMediaStream mediaCollection={fixtureData as MediaCollection[]} />,
     );
 
-    const playButton = container.querySelector('button');
+    const playButton = container
+      .querySelector('button')
+      ?.querySelectorAll('span')?.[1];
 
     expect(playButton?.innerHTML).toBe('Watch Now');
   });
