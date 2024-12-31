@@ -38,8 +38,16 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
     },
   } = mediaItem;
 
-  const ManualControls = ({ mediaContainer }: ManualControlProps) => {
+  const ManualControls = ({
+    mediaControls,
+    mediaContainer,
+  }: ManualControlProps) => {
     const handleClick = () => {
+      if (!showMedia) {
+        mediaControls?.play();
+      } else {
+        mediaControls?.pause();
+      }
       setShowMedia(previousState => !previousState);
     };
 
