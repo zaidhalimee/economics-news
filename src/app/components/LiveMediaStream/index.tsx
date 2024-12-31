@@ -50,14 +50,19 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
       if (showMedia) {
         mediaControls?.play();
       } else {
-        mediaControls?.pause();
+        mediaControls?.stop();
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [mediaControls, showMedia]);
 
     return (
       <>
-        <div css={styles.liveMediaSpan}>
+        <div
+          css={[
+            styles.liveMediaSpan,
+            showMedia ? styles.showContent : styles.hideContent,
+          ]}
+        >
           <Text>{`${title} - ${networkName}`}</Text>
           <button
             type="button"
