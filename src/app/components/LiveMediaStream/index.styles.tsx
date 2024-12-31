@@ -4,8 +4,15 @@ import PlayButton from '../MediaLoader/Placeholder/PlayButton';
 export default {
   liveMediaStreamContainer: ({ palette, spacings, mq }: Theme) =>
     css({
-      // backgroundColor: `${palette.BLACK}`,
+      backgroundColor: `${palette.BLACK}`,
       margin: `0 ${spacings.FULL}rem`,
+      marginLeft: 0,
+    }),
+  liveMediaStreamText: ({ spacings, palette }: Theme) =>
+    css({
+      color: palette.WHITE,
+      padding: `${spacings.FULL}rem`,
+      margin: 0,
     }),
   title: () =>
     css({
@@ -34,20 +41,32 @@ export default {
         marginBottom: `${spacings.FULL}rem`,
       },
     }),
+  closeIconButton: ({ spacings, palette }: Theme) =>
+    css({
+      background: 'none',
+      border: 0,
+      outline: 0,
+      padding: 0,
+      margin: 0,
+      svg: {
+        color: palette.WHITE,
+      },
+    }),
   liveMediaSpan: () =>
     css({
       display: 'flex',
       justifyContent: 'space-between',
     }),
-  mediaDescription: ({ spacings }: Theme) =>
+  mediaDescription: ({ spacings, palette }: Theme) =>
     css({
+      color: palette.WHITE,
       margin: `${spacings.FULL}rem`,
       marginLeft: 0,
       display: 'block',
       width: '100%',
     }),
-  mediaLoaderContainer: ({ palette, spacings, mq }: Theme) =>
-    css({
-      backgroundColor: `${palette.POSTBOX}`,
-    }),
+  // mediaLoaderContainer: ({ palette, spacings, mq }: Theme) =>
+  //   css({
+  //     backgroundColor: `${palette.POSTBOX}`,
+  //   }),
 };

@@ -51,7 +51,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
         >
           <span css={styles.playIcon}>{mediaIcons.video}</span>
           <Text
-            css={styles.playButtonText}
+            css={styles.liveMediaStreamText}
             size="doublePica"
             fontVariant="sansBold"
           >
@@ -60,15 +60,18 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
         </button>
       )}
       {showMedia && (
-        <div css={styles.mediaLoaderContainer}>
+        <div>
           <div css={styles.liveMediaSpan}>
-            <Text>{`${title} - ${networkName}`}</Text>
+            <Text
+              css={styles.liveMediaStreamText}
+            >{`${title} - ${networkName}`}</Text>
             <button
               type="button"
               onClick={handleClick}
               data-testid="close-button"
+              css={styles.closeIconButton}
             >
-              {mediaIcons.close}
+              <span css={styles.closeIconButton}>{mediaIcons.close}</span>
             </button>
           </div>
           <MediaLoader blocks={mediaCollection} />
