@@ -3,7 +3,7 @@
 import { jsx } from '@emotion/react';
 import Text from '#app/components/Text';
 import { MediaCollection } from '#app/components/MediaLoader/types';
-import MediaLoader, { BumpLoader } from '#app/components/MediaLoader';
+import { BumpLoader } from '#app/components/MediaLoader';
 import filterForBlockType from '#app/lib/utilities/blockHandlers';
 import styles from './index.styles';
 
@@ -71,9 +71,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
     <div css={styles.liveMediaStreamContainer}>
       <BumpLoader />
       <Text css={styles.mediaDescription}>{short}</Text>
-      <div css={styles.mediaLoaderContainer}>
-        <MediaLoader blocks={mediaCollection} placeholderOverride={false} />
-      </div>
+      <div css={styles.mediaLoaderContainer}>{short}</div>
     </div>
   );
 };
