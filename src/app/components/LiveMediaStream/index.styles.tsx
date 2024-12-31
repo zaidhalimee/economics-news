@@ -12,7 +12,7 @@ export default {
     css({
       color: palette.WHITE,
       padding: `${spacings.FULL}rem`,
-      margin: 0,
+      paddingLeft: 0,
     }),
   title: () =>
     css({
