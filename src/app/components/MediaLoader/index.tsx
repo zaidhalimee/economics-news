@@ -1,6 +1,6 @@
 /** @jsx jsx */
 /* @jsxFrag React.Fragment */
-import { jsx, SerializedStyles } from '@emotion/react';
+import { jsx } from '@emotion/react';
 import React, {
   FC,
   ReactHTMLElement,
