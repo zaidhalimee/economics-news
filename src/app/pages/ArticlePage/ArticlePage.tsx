@@ -230,7 +230,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   // const scrollableOJExperimentVariation = useOptimizelyVariation(
   //   'oj_scroll',
   // ) as unknown as string;
-  const variantValue = 'B'; // We would get this value from useOptimizelyVariation (as commented out above)
+  const variantValue = 'none'; // We would get this value from useOptimizelyVariation (as commented out above)
   // so just manually switch the hardcoded variant for now while getting this working
   const variant: 'A' | 'B' | 'none' = ['A', 'B'].includes(variantValue)
     ? (variantValue as 'A' | 'B')
