@@ -3,7 +3,7 @@ import { jsx } from '@emotion/react';
 import Heading from '#app/components/Heading';
 import Text from '#app/components/Text';
 import MaskedImage from '#app/components/MaskedImage';
-import MediaLoader, { BumpLoader } from '#app/components/MediaLoader';
+import MediaLoader from '#app/components/MediaLoader';
 import { MediaBlock, MediaCollection } from '#app/components/MediaLoader/types';
 import { useContext, useState } from 'react';
 import mediaIcons from '#psammead/psammead-assets/src/svgs/mediaIcons';
