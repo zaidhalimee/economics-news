@@ -2,7 +2,6 @@
 /* @jsxFrag React.Fragment */
 import { jsx } from '@emotion/react';
 import React, {
-  ReactHTMLElement,
   useContext,
   useEffect,
   useRef,
