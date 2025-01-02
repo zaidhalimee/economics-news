@@ -13,7 +13,7 @@ type Props = { mediaCollection: MediaCollection[] | null };
 const DEFAULT_WATCH__NOW = 'Watch Now';
 
 const LiveMediaStream = ({ mediaCollection }: Props) => {
-  const [showMedia, setShowMedia] = useState(true);
+  const [showMedia, setShowMedia] = useState(false);
   const { translations } = useContext(ServiceContext);
 
   if (mediaCollection == null || mediaCollection.length === 0) {
@@ -74,7 +74,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
               <span css={styles.closeIconButton}>{mediaIcons.close}</span>
             </button>
           </div>
-          <MediaLoader blocks={mediaCollection} placeholderOverride={false} />
+          <MediaLoader blocks={mediaCollection} />
         </div>
       )}
     </div>
