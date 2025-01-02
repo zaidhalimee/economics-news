@@ -17,55 +17,6 @@ export default {
         outline: 'none',
       },
     }),
-  headerButtonContainer: ({ spacings }: Theme) =>
-    css({
-      padding: `${spacings.DOUBLE}rem`,
-      paddingLeft: 0,
-      paddingRight: 0,
-    }),
-  mediaButton: ({ palette, mq }: Theme) =>
-    css({
-      backgroundColor: palette.LIVE_LIGHT,
-      border: 0,
-      outline: 0,
-      [mq.GROUP_2_MAX_WIDTH]: {
-        width: '100%',
-      },
-    }),
-  closeButton: ({ palette }: Theme) =>
-    css({
-      backgroundColor: palette.GREY_10,
-      border: 0,
-      outline: 0,
-      padding: 0,
-      margin: 0,
-      float: 'right',
-    }),
-  headerButtonIcon: ({ palette }: Theme) =>
-    css({
-      display: 'inline',
-      svg: {
-        color: palette.WHITE,
-      },
-    }),
-  closeButtonIcon: ({ palette }: Theme) =>
-    css({
-      display: 'inline',
-      svg: {
-        color: palette.WHITE,
-        width: '1rem',
-      },
-    }),
-  mediaInfo: ({ palette }: Theme) =>
-    css({
-      color: palette.WHITE,
-    }),
-  headerButtonText: ({ spacings, palette }: Theme) =>
-    css({
-      color: palette.WHITE,
-      padding: `${spacings.FULL}rem`,
-      margin: 0,
-    }),
   backgroundContainer: () =>
     css({
       position: 'absolute',
