@@ -4,8 +4,8 @@ import React, { PropsWithChildren } from 'react';
 import { jsx } from '@emotion/react';
 import { LiveLabelProps } from './types';
 import styles from './index.styles';
-import Text from '../LiveLabelText';
-import Pulse from '../LiveLabelPulse';
+import Text from '../LiveText';
+import Pulse from '../LivePulse';
 
 const LiveLabel = ({
   lang = 'en-GB',
