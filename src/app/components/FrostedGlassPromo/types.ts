@@ -1,7 +1,4 @@
-import {
-  EventTrackingBlock,
-  ReverbEventTrackingMetadata,
-} from '../../models/types/eventTracking';
+import { EventTrackingBlock } from '../../models/types/eventTracking';
 
 export type ImageProps = {
   width: number;
@@ -51,5 +48,5 @@ export type FormattedPromo = {
   image: object | null;
   url?: string;
   footer: JSX.Element;
-  eventTrackingData?: EventTrackingBlock['block'] | ReverbEventTrackingMetadata;
+  eventTrackingData?: EventTrackingBlock['block'];
 };
