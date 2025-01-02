@@ -2,13 +2,8 @@
 import { jsx } from '@emotion/react';
 import Heading from '#app/components/Heading';
 import Text from '#app/components/Text';
+
 import MaskedImage from '#app/components/MaskedImage';
-import MediaLoader from '#app/components/MediaLoader';
-import { MediaBlock, MediaCollection } from '#app/components/MediaLoader/types';
-import { useContext, useState } from 'react';
-import mediaIcons from '#psammead/psammead-assets/src/svgs/mediaIcons';
-import Helmet from 'react-helmet';
-import { ServiceContext } from '#app/contexts/ServiceContext';
 import LiveLabelHeader from './LiveLabelHeader';
 import styles from './styles';
 
@@ -19,7 +14,6 @@ const Header = ({
   imageUrl,
   imageUrlTemplate,
   imageWidth,
-  mediaCollections,
 }: {
   showLiveLabel: boolean;
   title: string;
@@ -27,9 +21,7 @@ const Header = ({
   imageUrl?: string;
   imageUrlTemplate?: string;
   imageWidth?: number;
-  mediaCollections?: MediaCollection[] | null;
 }) => {
-  const { translations } = useContext(ServiceContext);
   const isHeaderImage = !!imageUrl && !!imageUrlTemplate && !!imageWidth;
 
   const Title = (
@@ -40,20 +32,8 @@ const Header = ({
     </span>
   );
 
-  const [showMedia, setShowMedia] = useState(false);
-
-  const handleClick = () => {
-    setShowMedia(!showMedia);
-  };
-
   return (
     <div css={styles.headerContainer}>
-      <Helmet>
-        <script
-          type="text/javascript"
-          src="https://static.bbci.co.uk/frameworks/requirejs/0.13.0/sharedmodules/require.js"
-        />
-      </Helmet>
       <div css={styles.backgroundContainer}>
         <div css={styles.backgroundColor} />
       </div>
@@ -99,43 +79,6 @@ const Header = ({
             >
               {description}
             </Text>
-          )}
-          {mediaCollections && (
-            <div css={styles.headerButtonContainer}>
-              <button
-                type="button"
-                onClick={handleClick}
-                css={showMedia ? styles.closeButton : styles.mediaButton}
-              >
-                <Text
-                  as="p"
-                  size="doublePica"
-                  fontVariant="sansBold"
-                  css={styles.headerButtonText}
-                >
-                  {!showMedia && (
-                    <span css={styles.headerButtonIcon}>
-                      {mediaIcons.video}
-                    </span>
-                  )}
-                  {showMedia ? (
-                    <span css={styles.closeButtonIcon}>{mediaIcons.close}</span>
-                  ) : (
-                    `${translations.media.watch} ${mediaCollections[0].model.version.status === 'LIVE' ? translations.media.liveLabel : ''}`
-                  )}
-                </Text>
-              </button>
-              {showMedia && (
-                <Text as="p" fontVariant="sansBold" css={styles.mediaInfo}>
-                  {mediaCollections[0].model.title}
-                  {' - '}
-                  {mediaCollections[0].model.masterbrand.networkName}
-                </Text>
-              )}
-            </div>
-          )}
-          {mediaCollections && showMedia && (
-            <MediaLoader blocks={mediaCollections as MediaBlock[]} />
           )}
         </div>
       </div>
