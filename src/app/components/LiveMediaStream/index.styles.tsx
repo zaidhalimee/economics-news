@@ -1,12 +1,16 @@
 import { css, Theme } from '@emotion/react';
-import PlayButton from '../MediaLoader/Placeholder/PlayButton';
 
 export default {
-  liveMediaStreamContainer: ({ palette, spacings, mq }: Theme) =>
+  ComponentContainer: ({ palette, spacings, mq }: Theme) =>
     css({
       backgroundColor: `${palette.BLACK}`,
       margin: `0 ${spacings.FULL}rem`,
       marginLeft: 0,
+      width: '100%',
+
+      [mq.GROUP_2_MAX_WIDTH]: {
+        width: '100%',
+      },
     }),
   liveMediaStreamText: ({ spacings, palette }: Theme) =>
     css({
@@ -30,7 +34,7 @@ export default {
         width: '100%',
       },
     }),
-  playButtonText: ({ spacings, palette, mq }: Theme) =>
+  playButtonText: ({ palette }: Theme) =>
     css({
       color: palette.WHITE,
     }),
@@ -41,7 +45,17 @@ export default {
         marginBottom: `${spacings.FULL}rem`,
       },
     }),
-  closeIconButton: ({ spacings, palette }: Theme) =>
+  liveMediaStreamContainer: ({mq }: Theme) =>
+    css({
+      maxWidth: '60%',
+      [mq.GROUP_2_MAX_WIDTH]: {
+        width: '100%',
+      },
+      [mq.GROUP_4_MAX_WIDTH]: {
+        width: '50%',
+      },
+    }),
+  closeIconButton: ({ palette }: Theme) =>
     css({
       background: 'none',
       border: 0,
@@ -56,6 +70,11 @@ export default {
     css({
       display: 'flex',
       justifyContent: 'space-between',
+      maxWidth: '100%',
+    }),
+  mediaLoader: () =>
+    css({
+      maxWidth: '100%',
     }),
   mediaDescription: ({ spacings, palette }: Theme) =>
     css({
@@ -65,8 +84,4 @@ export default {
       display: 'block',
       width: '100%',
     }),
-  // mediaLoaderContainer: ({ palette, spacings, mq }: Theme) =>
-  //   css({
-  //     backgroundColor: `${palette.POSTBOX}`,
-  //   }),
 };

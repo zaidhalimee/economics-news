@@ -39,7 +39,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
   };
 
   return (
-    <div css={styles.liveMediaStreamContainer}>
+    <div css={styles.ComponentContainer}>
       <BumpLoader />
       <Text css={styles.mediaDescription}>{short}</Text>
       {!showMedia && (
@@ -60,7 +60,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
         </button>
       )}
       {showMedia && (
-        <div>
+        <div css={styles.liveMediaStreamContainer}>
           <div css={styles.liveMediaSpan}>
             <Text
               css={styles.liveMediaStreamText}
@@ -74,7 +74,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
               <span css={styles.closeIconButton}>{mediaIcons.close}</span>
             </button>
           </div>
-          <MediaLoader blocks={mediaCollection} />
+          <MediaLoader blocks={mediaCollection} css={styles.mediaLoader} />
         </div>
       )}
     </div>
