@@ -91,8 +91,8 @@ const LiteMediaLoader = ({
               xhr.open('HEAD', srcToUse, true);
               
               xhr.onreadystatechange = function() {
-                if (xhr.readyState == XMLHttpRequest.DONE) {
-                  if (xhr.status == 200) {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                  if (xhr.status === 200) {
                     var size = xhr.getResponseHeader('Content-Length');
 
                     var fileSizeInBytes = parseInt(size, 10);
