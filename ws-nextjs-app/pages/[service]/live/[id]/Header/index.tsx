@@ -3,7 +3,7 @@ import { jsx } from '@emotion/react';
 import Heading from '#app/components/Heading';
 import Text from '#app/components/Text';
 import LiveMediaStream from '#app/components/LiveMediaStream';
-import { MediaBlock, MediaCollection } from '#app/components/MediaLoader/types';
+import MediaCollection from '#app/components/MediaLoader/types';
 
 import MaskedImage from '#app/components/MaskedImage';
 import LiveLabelHeader from './LiveLabelHeader';
