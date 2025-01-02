@@ -27,7 +27,7 @@ export default {
     css({
       width: '40%',
       border: 0,
-      backgroundColor: palette.LIVE_LIGHT,
+      backgroundColor: palette.LIVE_CORE,
       padding: `${spacings.DOUBLE}rem`,
 
       [mq.GROUP_2_MAX_WIDTH]: {
@@ -45,7 +45,7 @@ export default {
         marginBottom: `${spacings.FULL}rem`,
       },
     }),
-  liveMediaStreamContainer: ({mq }: Theme) =>
+  liveMediaStreamContainer: ({ mq }: Theme) =>
     css({
       maxWidth: '60%',
       [mq.GROUP_2_MAX_WIDTH]: {
