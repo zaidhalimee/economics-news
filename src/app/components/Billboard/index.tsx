@@ -6,10 +6,11 @@ import useViewTracker from '#app/hooks/useViewTracker';
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
 import Heading from '../Heading';
-import LiveLabel from '../LiveLabel';
 import MaskedImage from '../MaskedImage';
 import styles from './index.styles';
 import Text from '../Text';
+import LivePulse from '../LivePulse';
+import LiveText from '../LiveText';
 
 interface BillboardProps {
   heading: string;
@@ -60,14 +61,14 @@ const Billboard = forwardRef(
                 >
                   {showLiveLabel ? (
                     <div data-testid="billboard-live-label">
-                      <LiveLabel.Pulse
+                      <LivePulse
                         width="24"
                         height="24"
                         css={styles.liveLabelPulse}
                       />
-                      <LiveLabel.Text css={styles.liveLabelText}>
+                      <LiveText css={styles.liveLabelText}>
                         <div>{heading}</div>
-                      </LiveLabel.Text>
+                      </LiveText>
                     </div>
                   ) : (
                     heading
