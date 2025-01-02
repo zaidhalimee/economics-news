@@ -2,6 +2,8 @@
 import { jsx } from '@emotion/react';
 import Heading from '#app/components/Heading';
 import Text from '#app/components/Text';
+import LiveMediaStream from '#app/components/LiveMediaStream';
+import { MediaBlock, MediaCollection } from '#app/components/MediaLoader/types';
 
 import MaskedImage from '#app/components/MaskedImage';
 import LiveLabelHeader from './LiveLabelHeader';
@@ -14,6 +16,7 @@ const Header = ({
   imageUrl,
   imageUrlTemplate,
   imageWidth,
+  mediaCollections,
 }: {
   showLiveLabel: boolean;
   title: string;
@@ -21,6 +24,7 @@ const Header = ({
   imageUrl?: string;
   imageUrlTemplate?: string;
   imageWidth?: number;
+  mediaCollections?: MediaCollection[] | null;
 }) => {
   const isHeaderImage = !!imageUrl && !!imageUrlTemplate && !!imageWidth;
 
@@ -67,6 +71,9 @@ const Header = ({
               Title
             )}
           </Heading>
+          {mediaCollections && (
+            <LiveMediaStream mediaCollection={mediaCollections} />
+          )}
           {description && (
             <Text
               as="p"

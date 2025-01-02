@@ -65,7 +65,6 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
             <Text
               css={styles.liveMediaStreamText}
             >{`${title} - ${networkName}`}</Text>
-            <Text>${networkName}</Text>
             <button
               type="button"
               onClick={handleClick}
