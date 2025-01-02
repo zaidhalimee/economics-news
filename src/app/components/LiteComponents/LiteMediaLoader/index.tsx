@@ -99,7 +99,9 @@ const LiteMediaLoader = ({
                     var encodedBufferInBytes = 1000; 
                     var fileSizeInKB = Math.round((fileSizeInBytes  + encodedBufferInBytes) / 1024);
                     var srcEl = document.querySelector('[data-size-id="${dataId}"]');
+                    
                     srcEl.textContent = "Approximately: " + fileSizeInKB + "KB";
+                    srcEl.style.display = 'block';
                   }
                 }
               };
@@ -139,7 +141,7 @@ const LiteMediaLoader = ({
               data-size-id={dataId}
               size="brevier"
               fontVariant="sansRegularItalic"
-              css={styles.liteButtonInfoText}
+              css={[styles.liteButtonInfoText, { display: 'none' }]}
             />
           </Text>
         )}
