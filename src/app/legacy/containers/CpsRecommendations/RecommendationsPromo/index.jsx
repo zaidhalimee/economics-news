@@ -26,6 +26,10 @@ const StyledPromoWrapper = styled.div`
   background-color: ${props => props.theme.palette.GHOST};
 `;
 
+const StyledPromoGrid = styled(Grid)`
+  height: 100%;
+`;
+
 const ImageWrapper = styled.div`
   display: inline-block;
   position: relative;
@@ -113,6 +117,7 @@ const RecommendationsPromo = ({ promo, eventTrackingData = null }) => {
         group5: 1,
       }}
       enableGelGutters
+      as={StyledPromoGrid}
     >
       <StyledPromoWrapper data-e2e="story-promo-wrapper">
         {!isLite && (

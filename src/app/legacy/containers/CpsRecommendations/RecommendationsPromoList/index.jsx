@@ -1,4 +1,5 @@
 import React, { forwardRef, useContext } from 'react';
+import styled from '@emotion/styled';
 import {
   StoryPromoLiBase,
   StoryPromoUl,
@@ -20,6 +21,10 @@ const getEventTrackingDataWithOptimizely = ({ item, index, optimizely }) => {
     },
   };
 };
+
+const StyledStoryPromoUl = styled(StoryPromoUl)`
+  grid-auto-rows: 1fr;
+`;
 
 const RecommendationsPromoListItem = forwardRef(
   // 004_brasil_recommendations_experiment
@@ -85,7 +90,7 @@ const RecommendationsPromoList = ({ promoItems }) => {
         group4: 1,
         group5: 1,
       }}
-      as={StoryPromoUl}
+      as={StyledStoryPromoUl}
       enableGelGutters
     >
       {promoItems.map((item, index) => (
