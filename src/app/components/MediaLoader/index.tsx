@@ -34,7 +34,7 @@ const PAGETYPES_IGNORE_PLACEHOLDER: PageTypes[] = [
 
 const logger = nodeLogger(__filename);
 
-export const BumpLoader = () => (
+const BumpLoader = () => (
   <Helmet>
     <script
       type="text/javascript"
@@ -175,17 +175,10 @@ type Props = {
   blocks: MediaBlock[];
   className?: string;
   embedded?: boolean;
-  placeholderOverride?: boolean;
   uniqueId?: string;
 };
 
-const MediaLoader = ({
-  blocks,
-  className,
-  embedded,
-  placeholderOverride = true,
-  uniqueId,
-}: Props) => {
+const MediaLoader = ({ blocks, className, embedded, uniqueId }: Props) => {
   const { lang, translations } = useContext(ServiceContext);
   const { pageIdentifier } = useContext(EventTrackingContext);
   const { enabled: adsEnabled } = useToggle('ads');
@@ -246,9 +239,7 @@ const MediaLoader = ({
     mediaInfo,
   } = placeholderConfig ?? {};
 
-  const hasPlaceholder = Boolean(
-    placeholderOverride && showPlaceholder && placeholderSrc,
-  );
+  const hasPlaceholder = Boolean(showPlaceholder && placeholderSrc);
 
   const showPortraitTitle = orientation === 'portrait' && !embedded;
 

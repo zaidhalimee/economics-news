@@ -28,6 +28,7 @@ import {
   MediaBlock,
   PlaceholderConfig,
 } from '../types';
+import WARNING_LEVELS from '../configs/warningLevels';
 
 jest.mock('#app/lib/utilities/isLive', () =>
   jest.fn().mockImplementation(() => true),
@@ -1065,26 +1066,10 @@ describe('buildSettings', () => {
 
       expect(result).toStrictEqual({
         mediaType: 'video',
-        placeholderConfig: {
-          mediaInfo: {
-            datetime: 'PT24H',
-            duration: '24:00:00',
-            durationSpoken: 'Duración 24,00,00',
-            guidanceMessage: undefined,
-            title: 'Non-Stop Cartoons!',
-            type: 'video',
-          },
-          placeholderSrc:
-            'https://ichef.bbci.co.uk/images/ic/$recipe/p0k31t4d.jpg',
-          placeholderSrcset:
-            'https://ichef.bbci.co.uk/images/ic/240xn/p0k31t4d.jpg.webp 240w, https://ichef.bbci.co.uk/images/ic/320xn/p0k31t4d.jpg.webp 320w, https://ichef.bbci.co.uk/images/ic/480xn/p0k31t4d.jpg.webp 480w, https://ichef.bbci.co.uk/images/ic/624xn/p0k31t4d.jpg.webp 624w, https://ichef.bbci.co.uk/images/ic/800xn/p0k31t4d.jpg.webp 800w',
-          translatedNoJSMessage:
-            'Para ver este contenido, favor activar JavaScript, o intentar con otro navegador',
-        },
         playerConfig: {
           appName: 'news-mundo',
           appType: 'responsive',
-          autoplay: true,
+          autoplay: false,
           counterName: 'live_coverage.c7dkx155e626t.page',
           enableToucan: true,
           playlistObject: {
@@ -1126,6 +1111,118 @@ describe('buildSettings', () => {
         },
         showAds: false,
       });
+    });
+
+    it.each([
+      {
+        title:
+          'Should provide a placeholder config for Level 1 warnings and above.',
+        expectPlaceholder: true,
+        warning: [
+          {
+            warning_code: 'D1',
+            short_description: 'some upsetting scenes',
+          },
+          {
+            warning_code: 'D2',
+            short_description: 'upsetting scenes',
+          },
+          {
+            warning_code: 'L1',
+            short_description: 'some strong language',
+          },
+        ],
+      },
+      {
+        title: 'Should NOT provide a placeholder config for below L1 warnings.',
+        expectPlaceholder: false,
+        warning: [
+          {
+            warning_code: 'D1',
+            short_description: 'some upsetting scenes',
+          },
+          {
+            warning_code: 'D2',
+            short_description: 'upsetting scenes',
+          },
+        ],
+      },
+    ])('$title', ({ warning, expectPlaceholder }) => {
+      const mediaBlock = {
+        type: 'liveMedia',
+        model: {
+          urn: 'urn:bbc:pips:pid:p0gh4n63',
+          title: 'Non-Stop Cartoons!',
+          type: 'episode',
+          synopses: {
+            short: 'Toon in, kick back and relax to 100% cartoons!',
+            medium:
+              'Toon in, kick back and relax. From laugh out loud to mischief and mayhem. 100% cartoons all day long.',
+            long: 'Toon in, kick back and relax. From laugh out loud to mischief and mayhem. 100% cartoons all day long. Join your favourites Grizzy, Shaun, Taffy, Boy Girl Dog Cat Mouse Cheese, The Deep and those Monster Loving Maniacs.',
+          },
+          mediaType: 'audio_video',
+          imageUrlTemplate:
+            'https://ichef.bbci.co.uk/images/ic/$recipe/p0k31t4d.jpg',
+          masterbrand: {
+            id: 'cbbc',
+            name: 'CBBC',
+            networkName: 'CBBC',
+            type: 'tv',
+            imageUrlTemplate: 'ichef.bbci.co.uk/images/ic/$recipe/p0f8qps2.jpg',
+          },
+          version: {
+            vpid: 'p0gh4n67',
+            duration: 'PT24H',
+            availabilityType: 'webcast',
+            versionTypes: [
+              {
+                type: 'Original',
+                name: 'Original version',
+              },
+            ],
+            schedule: {
+              start: '2024-12-15T08:00:21Z',
+              accurateStart: '2024-12-15T08:00:21Z',
+              end: '2024-12-15T13:00:21Z',
+            },
+            serviceId: null,
+            authToken: null,
+            status: 'LIVE',
+            warnings: {
+              warning_text: 'some strong language.',
+              warning,
+            },
+          },
+          leadMedia: true,
+        },
+      };
+
+      const result = buildSettings({
+        ...mundoMediaBaseSettings,
+        blocks: [mediaBlock] as MediaBlock[],
+        pageType: LIVE_PAGE,
+      });
+
+      if (expectPlaceholder) {
+        expect(result?.placeholderConfig).toStrictEqual({
+          mediaInfo: {
+            datetime: 'PT24H',
+            duration: '24:00:00',
+            durationSpoken: 'Duración 24,00,00',
+            guidanceMessage: undefined,
+            title: 'Non-Stop Cartoons!',
+            type: 'video',
+          },
+          placeholderSrc:
+            'https://ichef.bbci.co.uk/images/ic/$recipe/p0k31t4d.jpg',
+          placeholderSrcset:
+            'https://ichef.bbci.co.uk/images/ic/240xn/p0k31t4d.jpg.webp 240w, https://ichef.bbci.co.uk/images/ic/320xn/p0k31t4d.jpg.webp 320w, https://ichef.bbci.co.uk/images/ic/480xn/p0k31t4d.jpg.webp 480w, https://ichef.bbci.co.uk/images/ic/624xn/p0k31t4d.jpg.webp 624w, https://ichef.bbci.co.uk/images/ic/800xn/p0k31t4d.jpg.webp 800w',
+          translatedNoJSMessage:
+            'Para ver este contenido, favor activar JavaScript, o intentar con otro navegador',
+        });
+      } else {
+        expect(result?.placeholderConfig).toBeUndefined();
+      }
     });
   });
 });

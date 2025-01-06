@@ -3,7 +3,7 @@ import { jsx } from '@emotion/react';
 import { memo, useContext, useState } from 'react';
 import Text from '#app/components/Text';
 import { MediaCollection } from '#app/components/MediaLoader/types';
-import MediaLoader, { BumpLoader } from '#app/components/MediaLoader';
+import MediaLoader from '#app/components/MediaLoader';
 import filterForBlockType from '#app/lib/utilities/blockHandlers';
 import { ServiceContext } from '#app/contexts/ServiceContext';
 import mediaIcons from '#psammead/psammead-assets/src/svgs/mediaIcons';
@@ -50,7 +50,6 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
 
   return (
     <div css={styles.ComponentContainer}>
-      <BumpLoader />
       <p css={styles.mediaDescription}>
         <Text size="pica" fontVariant="sansBold" as="span">
           {short}
@@ -96,11 +95,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
         </button>
       </div>
       <div css={showMedia ? styles.showComponent : styles.hideComponent}>
-        <MemoizedMediaPlayer
-          blocks={mediaCollection}
-          placeholderOverride={false}
-          uniqueId={vpid}
-        />
+        <MemoizedMediaPlayer blocks={mediaCollection} uniqueId={vpid} />
       </div>
     </div>
   );

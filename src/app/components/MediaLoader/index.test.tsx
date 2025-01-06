@@ -125,7 +125,6 @@ describe('MediaLoader', () => {
         render(
           <MediaPlayer
             blocks={aresMediaBlocks as MediaBlock[]}
-            placeholderOverride={false}
             uniqueId="testId"
           />,
           {

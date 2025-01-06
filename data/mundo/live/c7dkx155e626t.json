@@ -117,7 +117,15 @@
             "serviceId": null,
             "authToken": null,
             "status": "LIVE",
-            "warnings": null
+            "warnings": {
+              "warning_text": "Contains some upsetting scenes.",
+              "warning": [
+                {
+                  "warning_code": "L1",
+                  "short_description": "Some upsetting scenes"
+                }
+              ]
+            }
           },
           "leadMedia": true
         }
