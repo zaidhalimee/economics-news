@@ -199,7 +199,7 @@ exports[`AMP Home Page Footer Cookie Settings Button should match text and on ha
 
 exports[`AMP Home Page Footer I can click on the BBC branding and it would take me to the homepage 1`] = `"/serbian/cyr"`;
 
-exports[`AMP Home Page Footer Paragraphs should match text 1`] = `"© 2024 BBC. ББЦ није одговоран за садржај других сајтова. Прочитајте наша правила о линковању других сајтова."`;
+exports[`AMP Home Page Footer Paragraphs should match text 1`] = `"© 2025 BBC. ББЦ није одговоран за садржај других сајтова. Прочитајте наша правила о линковању других сајтова."`;
 
 exports[`AMP Home Page Header I can see the branding 1`] = `"BBC News, на српском"`;
 

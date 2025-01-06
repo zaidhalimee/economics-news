@@ -234,7 +234,7 @@ export const service: SerbianConfig = {
           },
           accept: 'U redu',
           reject: 'Saznajte šta se promenilo',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -611,7 +611,7 @@ export const service: SerbianConfig = {
           },
           accept: 'У реду',
           reject: 'Сазнајте шта се променило',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
