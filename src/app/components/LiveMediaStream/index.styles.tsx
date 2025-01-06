@@ -30,6 +30,10 @@ export default {
       backgroundColor: palette.LIVE_CORE,
       padding: `${spacings.DOUBLE}rem`,
 
+      '&:hover': {
+        backgroundColor: palette.LIVE_DARK,
+      },
+
       [mq.GROUP_2_MAX_WIDTH]: {
         width: '100%',
       },
