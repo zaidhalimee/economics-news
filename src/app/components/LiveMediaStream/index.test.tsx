@@ -11,36 +11,33 @@ import {
 const fixtureData = mundoLiveFixture.data.mediaCollections;
 
 describe('liveMediaStream', () => {
-  it('Displays a button on intial render.', () => {
+  it('Displays all components on intial render.', () => {
     const { container } = render(
       <LiveMediaStream mediaCollection={fixtureData as MediaCollection[]} />,
     );
 
-    const playButton = container
-      .querySelector('button')
-      ?.querySelectorAll('span')?.[1];
-
-    expect(playButton?.innerHTML).toBe('Watch Now');
-  });
-
-  it('Displays a media loader when clicked.', () => {
-    render(
-      <LiveMediaStream mediaCollection={fixtureData as MediaCollection[]} />,
+    const playButton = container.querySelector(
+      'button[data-testid="watch-now-button"]',
     );
+    const closeButton = container.querySelector(
+      'button[data-testid="close-button"]',
+    );
+    const mediaLoader = container.querySelector('figure');
 
-    const playButton = screen.getByTestId('watch-now-button');
-    fireEvent.click(playButton);
-
-    const mediaLoader = screen.getByRole('figure');
-    const closeButton = screen.getByTestId('close-button');
-    const mediaTitle = screen.getByText('Non-Stop Cartoons! - CBBC');
-
+    expect(playButton).toBeInTheDocument();
     expect(mediaLoader).toBeInTheDocument();
     expect(closeButton).toBeInTheDocument();
-    expect(mediaTitle).toBeInTheDocument();
   });
 
-  it('Removes the media loader when the close button is clicked.', () => {
+  it('Plays the media loader when the watch button is clicked.', () => {
+    window.mediaPlayers = {
+      p0gh4n67: {
+        player: { paused: jest.fn().mockReturnValueOnce(true) },
+        play: jest.fn(),
+        pause: jest.fn(),
+      },
+    };
+
     render(
       <LiveMediaStream mediaCollection={fixtureData as MediaCollection[]} />,
     );
@@ -48,15 +45,34 @@ describe('liveMediaStream', () => {
     const playButton = screen.getByTestId('watch-now-button');
     fireEvent.click(playButton);
 
-    const mediaLoader = screen.getByRole('figure');
+    expect(window.mediaPlayers.p0gh4n67.play).toHaveBeenCalled();
+  });
+
+  it('Paused the media loader when the close button is clicked.', () => {
+    window.mediaPlayers = {
+      p0gh4n67: {
+        player: {
+          paused: jest
+            .fn()
+            .mockReturnValueOnce(true)
+            .mockReturnValueOnce(false),
+        },
+        play: jest.fn(),
+        pause: jest.fn(),
+      },
+    };
+    render(
+      <LiveMediaStream mediaCollection={fixtureData as MediaCollection[]} />,
+    );
+
+    const playButton = screen.getByTestId('watch-now-button');
+    fireEvent.click(playButton);
 
     const closeButton = screen.getByTestId('close-button');
     fireEvent.click(closeButton);
 
-    const playButtonAfterClose = screen.getByTestId('watch-now-button');
-
-    expect(mediaLoader).not.toBeInTheDocument();
-    expect(playButtonAfterClose).toBeInTheDocument();
+    expect(window.mediaPlayers.p0gh4n67.play).toHaveBeenCalledTimes(1);
+    expect(window.mediaPlayers.p0gh4n67.pause).toHaveBeenCalledTimes(1);
   });
 
   it('Displays nothing if no mediaCollection is passed in.', () => {

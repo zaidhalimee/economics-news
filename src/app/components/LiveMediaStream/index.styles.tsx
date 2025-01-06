@@ -1,53 +1,53 @@
+import pixelsToRem from '#app/utilities/pixelsToRem';
 import { css, Theme } from '@emotion/react';
 
 export default {
-  ComponentContainer: ({ palette, spacings, mq }: Theme) =>
+  ComponentContainer: ({ spacings, mq }: Theme) =>
     css({
-      backgroundColor: `${palette.BLACK}`,
-      margin: `0 ${spacings.FULL}rem`,
-      marginLeft: 0,
+      margin: `${spacings.FULL}rem 0`,
       width: '100%',
-
       [mq.GROUP_2_MAX_WIDTH]: {
         width: '100%',
       },
     }),
-  liveMediaStreamText: ({ spacings, palette }: Theme) =>
+  playButtonText: ({ spacings, palette }: Theme) =>
     css({
       color: palette.WHITE,
-      padding: `${spacings.FULL}rem`,
-      paddingLeft: 0,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      svg: {
+        height: `${spacings.DOUBLE}rem`,
+        width: `${spacings.DOUBLE}rem`,
+        verticalAlign: 'middle',
+        fill: 'currentcolor',
+        color: palette.WHITE,
+        margin: `0`,
+        marginInlineEnd: `${spacings.FULL}rem`,
+      },
     }),
   title: () =>
     css({
       display: 'block',
       width: '100%',
     }),
-  playButton: ({ spacings, palette, mq }: Theme) =>
+  playButton: ({ palette, mq }: Theme) =>
     css({
-      width: '40%',
+      cursor: 'pointer',
+      width: `${pixelsToRem(171)}rem`,
       border: 0,
       backgroundColor: palette.LIVE_CORE,
-      padding: `${spacings.DOUBLE}rem`,
-
+      padding: `${pixelsToRem(11)}rem`,
       '&:hover': {
         backgroundColor: palette.LIVE_DARK,
       },
-
       [mq.GROUP_2_MAX_WIDTH]: {
         width: '100%',
       },
     }),
-  playButtonText: ({ palette }: Theme) =>
+  liveMediaStreamText: ({ palette }: Theme) =>
     css({
-      color: palette.WHITE,
-    }),
-  playIcon: ({ spacings, palette }: Theme) =>
-    css({
-      svg: {
-        color: palette.WHITE,
-        marginBottom: `${spacings.FULL}rem`,
-      },
+      color: palette.GREY_4,
     }),
   liveMediaStreamContainer: ({ mq }: Theme) =>
     css({
@@ -59,15 +59,20 @@ export default {
         width: '50%',
       },
     }),
-  closeIconButton: ({ palette }: Theme) =>
+  closeIconButton: ({ spacings, palette }: Theme) =>
     css({
+      cursor: 'pointer',
       background: 'none',
       border: 0,
       outline: 0,
       padding: 0,
       margin: 0,
       svg: {
+        fill: 'currentcolor',
         color: palette.WHITE,
+        height: `${spacings.DOUBLE}rem`,
+        width: `${spacings.DOUBLE}rem`,
+        verticalAlign: 'middle',
       },
     }),
   liveMediaSpan: () =>
@@ -82,10 +87,11 @@ export default {
     }),
   mediaDescription: ({ spacings, palette }: Theme) =>
     css({
-      color: palette.WHITE,
-      margin: `${spacings.FULL}rem`,
-      marginLeft: 0,
+      span: { color: palette.GREY_4 },
+      margin: `${spacings.FULL}rem 0`,
       display: 'block',
       width: '100%',
     }),
+  hideComponent: () => css({ display: 'none' }),
+  showComponent: () => css({ display: 'unset' }),
 };

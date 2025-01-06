@@ -114,6 +114,8 @@ export type Player = {
     parameters: { updatedAdTag: string },
   ): void;
   load: () => void;
+  play: () => void;
+  pause: () => void;
   bind: (event: string, callback: () => void) => void;
   loadPlugin: (
     pluginName: { [key: string]: string },
@@ -125,6 +127,7 @@ export type Player = {
       };
     },
   ) => void;
+  player: { paused: () => boolean };
 };
 
 export type BumpType = {

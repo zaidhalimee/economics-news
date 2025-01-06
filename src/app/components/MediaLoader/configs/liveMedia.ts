@@ -33,7 +33,7 @@ export default ({
   return {
     playerConfig: {
       ...basePlayerConfig,
-      autoplay: true,
+      autoplay: false,
       statsObject: {
         ...basePlayerConfig.statsObject,
         episodePID: liveMediaBlock.id,

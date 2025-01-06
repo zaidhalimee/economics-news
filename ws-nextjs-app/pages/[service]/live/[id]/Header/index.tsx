@@ -71,9 +71,6 @@ const Header = ({
               Title
             )}
           </Heading>
-          {mediaCollections && (
-            <LiveMediaStream mediaCollection={mediaCollections} />
-          )}
           {description && (
             <Text
               as="p"
@@ -86,6 +83,9 @@ const Header = ({
             >
               {description}
             </Text>
+          )}
+          {mediaCollections && (
+            <LiveMediaStream mediaCollection={mediaCollections} />
           )}
         </div>
       </div>

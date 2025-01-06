@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import { useContext, useState } from 'react';
+import { memo, useContext, useState } from 'react';
 import Text from '#app/components/Text';
 import { MediaCollection } from '#app/components/MediaLoader/types';
 import MediaLoader, { BumpLoader } from '#app/components/MediaLoader';
@@ -12,9 +12,11 @@ import styles from './index.styles';
 type Props = { mediaCollection: MediaCollection[] | null };
 const DEFAULT_WATCH__NOW = 'Watch Now';
 
+const MemoizedMediaPlayer = memo(MediaLoader);
+
 const LiveMediaStream = ({ mediaCollection }: Props) => {
-  const [showMedia, setShowMedia] = useState(false);
   const { translations } = useContext(ServiceContext);
+  const [showMedia, setShowMedia] = useState(false);
 
   if (mediaCollection == null || mediaCollection.length === 0) {
     return null;
@@ -31,52 +33,75 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
       title,
       masterbrand: { networkName },
       synopses: { short },
+      version: { vpid },
     },
   } = mediaItem;
 
   const handleClick = () => {
-    setShowMedia(!showMedia);
+    const mediaPlayer = window.mediaPlayers?.[vpid];
+    if (mediaPlayer?.player.paused()) {
+      mediaPlayer?.play();
+      setShowMedia(true);
+    } else {
+      mediaPlayer?.pause();
+      setShowMedia(false);
+    }
   };
 
   return (
     <div css={styles.ComponentContainer}>
       <BumpLoader />
-      <Text css={styles.mediaDescription}>{short}</Text>
-      {!showMedia && (
+      <p css={styles.mediaDescription}>
+        <Text size="pica" fontVariant="sansBold" as="span">
+          {short}
+        </Text>{' '}
+        <Text size="pica" fontVariant="sansRegular" as="span">
+          {networkName}
+        </Text>
+      </p>
+      <button
+        type="button"
+        onClick={handleClick}
+        data-testid="watch-now-button"
+        css={[
+          styles.playButton,
+          showMedia ? styles.hideComponent : styles.showComponent,
+        ]}
+      >
+        <Text
+          css={styles.playButtonText}
+          size="greatPrimer"
+          fontVariant="sansBold"
+        >
+          {mediaIcons.video}
+          {watchNow}
+        </Text>
+      </button>
+      <div css={[showMedia ? styles.liveMediaSpan : styles.hideComponent]}>
+        <p css={styles.mediaDescription}>
+          <Text size="pica" fontVariant="sansBold" as="span">
+            {title}
+          </Text>{' '}
+          <Text size="pica" fontVariant="sansRegular" as="span">
+            {networkName}
+          </Text>
+        </p>
         <button
           type="button"
           onClick={handleClick}
-          data-testid="watch-now-button"
-          css={styles.playButton}
+          data-testid="close-button"
+          css={styles.closeIconButton}
         >
-          <span css={styles.playIcon}>{mediaIcons.video}</span>
-          <Text
-            css={styles.liveMediaStreamText}
-            size="doublePica"
-            fontVariant="sansBold"
-          >
-            {watchNow}
-          </Text>
+          {mediaIcons.close}
         </button>
-      )}
-      {showMedia && (
-        <div css={styles.liveMediaStreamContainer}>
-          <div css={styles.liveMediaSpan}>
-            <Text
-              css={styles.liveMediaStreamText}
-            >{`${title} - ${networkName}`}</Text>
-            <button
-              type="button"
-              onClick={handleClick}
-              data-testid="close-button"
-              css={styles.closeIconButton}
-            >
-              <span css={styles.closeIconButton}>{mediaIcons.close}</span>
-            </button>
-          </div>
-          <MediaLoader blocks={mediaCollection} css={styles.mediaLoader} />
-        </div>
-      )}
+      </div>
+      <div css={showMedia ? styles.showComponent : styles.hideComponent}>
+        <MemoizedMediaPlayer
+          blocks={mediaCollection}
+          placeholderOverride={false}
+          uniqueId={vpid}
+        />
+      </div>
     </div>
   );
 };
