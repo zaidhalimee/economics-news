@@ -8,8 +8,17 @@ import filterForBlockType from '#app/lib/utilities/blockHandlers';
 import { ServiceContext } from '#app/contexts/ServiceContext';
 import mediaIcons from '#psammead/psammead-assets/src/svgs/mediaIcons';
 import styles from './index.styles';
+import WARNING_LEVELS from '../MediaLoader/configs/warningLevels';
+
+type WarningItem = {
+  // eslint-disable-next-line camelcase
+  warning_code: string;
+  // eslint-disable-next-line camelcase
+  short_description: string;
+};
 
 type Props = { mediaCollection: MediaCollection[] | null };
+
 const DEFAULT_WATCH__NOW = 'Watch Now';
 
 const MemoizedMediaPlayer = memo(MediaLoader);
@@ -17,6 +26,7 @@ const MemoizedMediaPlayer = memo(MediaLoader);
 const LiveMediaStream = ({ mediaCollection }: Props) => {
   const { translations } = useContext(ServiceContext);
   const [showMedia, setShowMedia] = useState(false);
+  let warningLevel = WARNING_LEVELS.NO_WARNING;
 
   if (mediaCollection == null || mediaCollection.length === 0) {
     return null;
@@ -33,18 +43,36 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
       title,
       masterbrand: { networkName },
       synopses: { short },
-      version: { vpid },
+      version: { vpid, warnings },
     },
   } = mediaItem;
 
+  if (warnings) {
+    const { warning } = warnings;
+    const highestWarning = warning.reduce(
+      (maxWarning: WarningItem, currWarning: WarningItem) => {
+        const maxWarningCode = WARNING_LEVELS[maxWarning.warning_code];
+        const currWarningCode = WARNING_LEVELS[currWarning.warning_code];
+        if (currWarningCode > maxWarningCode) {
+          return currWarning;
+        }
+        return maxWarning;
+      },
+    );
+
+    warningLevel = WARNING_LEVELS[highestWarning.warning_code];
+  }
+
   const handleClick = () => {
-    const mediaPlayer = window.mediaPlayers?.[vpid];
-    if (mediaPlayer?.player.paused()) {
-      mediaPlayer?.play();
-      setShowMedia(true);
-    } else {
-      mediaPlayer?.pause();
-      setShowMedia(false);
+    if (warningLevel < WARNING_LEVELS.L1) {
+      const mediaPlayer = window.mediaPlayers?.[vpid];
+      if (showMedia) {
+        mediaPlayer?.pause();
+        setShowMedia(false);
+      } else {
+        mediaPlayer?.play();
+        setShowMedia(true);
+      }
     }
   };
 

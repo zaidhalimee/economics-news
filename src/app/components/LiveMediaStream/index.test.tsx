@@ -51,12 +51,6 @@ describe('liveMediaStream', () => {
   it('Paused the media loader when the close button is clicked.', () => {
     window.mediaPlayers = {
       p0gh4n67: {
-        player: {
-          paused: jest
-            .fn()
-            .mockReturnValueOnce(true)
-            .mockReturnValueOnce(false),
-        },
         play: jest.fn(),
         pause: jest.fn(),
       },
@@ -87,5 +81,63 @@ describe('liveMediaStream', () => {
     );
 
     expect(container).toBeEmptyDOMElement();
+  });
+
+  it.each([
+    {
+      title: 'Should NOT autoplay for Level 1 warnings and above.',
+      playCalls: 0,
+      warning: [
+        {
+          warning_code: 'D1',
+          short_description: 'some upsetting scenes',
+        },
+        {
+          warning_code: 'D2',
+          short_description: 'upsetting scenes',
+        },
+        {
+          warning_code: 'L1',
+          short_description: 'some strong language',
+        },
+      ],
+    },
+    {
+      title: 'Should autoplay for below L1 warnings.',
+      playCalls: 1,
+      warning: [
+        {
+          warning_code: 'D1',
+          short_description: 'some upsetting scenes',
+        },
+        {
+          warning_code: 'D2',
+          short_description: 'upsetting scenes',
+        },
+      ],
+    },
+  ])('$title', ({ warning, playCalls }) => {
+    const mediaBlock = fixtureData[0];
+    mediaBlock.model.version.warnings = {
+      warning_text: '',
+      warning,
+    };
+
+    window.mediaPlayers = {
+      p0gh4n67: {
+        player: { paused: jest.fn().mockReturnValueOnce(true) },
+        play: jest.fn(),
+        pause: jest.fn(),
+      },
+    };
+
+    render(
+      <LiveMediaStream mediaCollection={fixtureData as MediaCollection[]} />,
+    );
+
+    const playButton = screen.getByTestId('watch-now-button');
+    fireEvent.click(playButton);
+
+    expect(window.mediaPlayers.p0gh4n67.play).toHaveBeenCalledTimes(playCalls);
   });
 });

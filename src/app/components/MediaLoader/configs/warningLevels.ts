@@ -1,4 +1,5 @@
 const WARNING_LEVELS: Record<string, number> = {
+  NO_WARNING: -1,
   D1: 0,
   D2: 1,
   D3: 2,
