@@ -37,6 +37,7 @@ export type PlayerConfig = {
     embedRights?: 'allowed';
     liveRewind?: boolean;
     simulcast?: boolean;
+    warning?: string;
   };
 };
 

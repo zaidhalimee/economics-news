@@ -7,6 +7,7 @@ import MediaLoader from '#app/components/MediaLoader';
 import filterForBlockType from '#app/lib/utilities/blockHandlers';
 import { ServiceContext } from '#app/contexts/ServiceContext';
 import mediaIcons from '#psammead/psammead-assets/src/svgs/mediaIcons';
+import { RequestContext } from '#app/contexts/RequestContext';
 import styles from './index.styles';
 import WARNING_LEVELS from '../MediaLoader/configs/warningLevels';
 
@@ -25,10 +26,11 @@ const MemoizedMediaPlayer = memo(MediaLoader);
 
 const LiveMediaStream = ({ mediaCollection }: Props) => {
   const { translations } = useContext(ServiceContext);
+  const { isLite } = useContext(RequestContext);
   const [showMedia, setShowMedia] = useState(false);
   let warningLevel = WARNING_LEVELS.NO_WARNING;
 
-  if (mediaCollection == null || mediaCollection.length === 0) {
+  if (isLite || mediaCollection == null || mediaCollection.length === 0) {
     return null;
   }
 
@@ -64,21 +66,26 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
   }
 
   const handleClick = () => {
-    if (warningLevel < WARNING_LEVELS.L1) {
-      const mediaPlayer = window.mediaPlayers?.[vpid];
-      if (showMedia) {
-        mediaPlayer?.pause();
-        setShowMedia(false);
-      } else {
+    const mediaPlayer = window.mediaPlayers?.[vpid];
+    if (showMedia) {
+      mediaPlayer?.pause();
+      setShowMedia(false);
+    } else {
+      if (warningLevel < WARNING_LEVELS.L1) {
         mediaPlayer?.play();
-        setShowMedia(true);
       }
+      setShowMedia(true);
     }
   };
 
   return (
     <div css={styles.componentContainer}>
-      <p css={styles.mediaDescription}>
+      <p
+        css={[
+          styles.mediaDescription,
+          warnings && styles.mediaDescriptionGuidance,
+        ]}
+      >
         <Text size="pica" fontVariant="sansBold" as="span">
           {short}
         </Text>{' '}
@@ -86,6 +93,11 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
           {networkName}
         </Text>
       </p>
+      {warnings && (
+        <Text as="p" css={styles.guidanceMessage}>
+          {warnings.warning_text}
+        </Text>
+      )}
       <button
         type="button"
         onClick={() => handleClick()}

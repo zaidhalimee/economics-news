@@ -7,6 +7,7 @@ export default ({
   basePlayerConfig,
 }: ConfigBuilderProps): ConfigBuilderReturnProps => {
   const { model: liveMediaBlock } = filterForBlockType(blocks, 'liveMedia');
+  let warning = null;
 
   const {
     imageUrlTemplate: holdingImageURL,
@@ -14,6 +15,12 @@ export default ({
     title,
     synopses: { short },
   } = liveMediaBlock;
+
+  const { warnings } = video;
+
+  if (warnings) {
+    warning = warnings.warning_text;
+  }
 
   const rawDuration = moment.duration(video?.duration).asSeconds();
 
@@ -37,8 +44,10 @@ export default ({
           },
         ],
         summary: short,
+        warning,
       },
     },
+    ...(warning && { warning }),
     mediaType: 'video',
     showAds: false,
   };

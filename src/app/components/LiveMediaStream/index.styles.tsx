@@ -28,6 +28,11 @@ export default {
       display: 'block',
       width: '100%',
     }),
+  guidanceMessage: ({ palette, spacings }: Theme) =>
+    css({
+      margin: `${spacings.FULL}rem 0 `,
+      color: palette.WHITE,
+    }),
   playButton: ({ palette, mq }: Theme) =>
     css({
       cursor: 'pointer',
@@ -82,12 +87,15 @@ export default {
     css({
       maxWidth: '100%',
     }),
-  mediaDescription: ({ spacings, palette }: Theme) =>
+  mediaDescription: ({ palette }: Theme) =>
     css({
       span: { color: palette.GREY_4 },
-      margin: `${spacings.FULL}rem 0`,
       display: 'block',
       width: '100%',
+    }),
+  mediaDescriptionGuidance: ({ spacings }: Theme) =>
+    css({
+      margin: `${spacings.DOUBLE}rem 0 0 0`,
     }),
   hideComponent: () => css({ display: 'none' }),
 };
