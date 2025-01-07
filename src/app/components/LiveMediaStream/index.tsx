@@ -88,7 +88,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
       </p>
       <button
         type="button"
-        onClick={handleClick}
+        onClick={() => handleClick()}
         data-testid="watch-now-button"
         css={[showMedia ? styles.hideComponent : styles.playButton]}
       >
@@ -112,7 +112,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
         </p>
         <button
           type="button"
-          onClick={handleClick}
+          onClick={() => handleClick()}
           data-testid="close-button"
           css={styles.closeIconButton}
         >
