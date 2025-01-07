@@ -10,6 +10,7 @@ import mediaIcons from '#psammead/psammead-assets/src/svgs/mediaIcons';
 import { RequestContext } from '#app/contexts/RequestContext';
 import styles from './index.styles';
 import WARNING_LEVELS from '../MediaLoader/configs/warningLevels';
+import VisuallyHiddenText from '../VisuallyHiddenText';
 
 type WarningItem = {
   // eslint-disable-next-line camelcase
@@ -20,7 +21,7 @@ type WarningItem = {
 
 type Props = { mediaCollection: MediaCollection[] | null };
 
-const DEFAULT_WATCH__NOW = 'Watch Now';
+const DEFAULT_WATCH__NOW = 'Watch Live';
 
 const MemoizedMediaPlayer = memo(MediaLoader);
 
@@ -80,38 +81,49 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
 
   return (
     <div css={styles.componentContainer}>
-      <p
-        css={[
-          styles.mediaDescription,
-          warnings && styles.mediaDescriptionGuidance,
-        ]}
-      >
-        <Text size="pica" fontVariant="sansBold" as="span">
-          {short}
-        </Text>{' '}
-        <Text size="pica" fontVariant="sansRegular" as="span">
-          {networkName}
-        </Text>
-      </p>
-      {warnings && (
-        <Text as="p" css={styles.guidanceMessage}>
-          {warnings.warning_text}
-        </Text>
-      )}
       <button
         type="button"
         onClick={() => handleClick()}
         data-testid="watch-now-button"
-        css={[showMedia ? styles.hideComponent : styles.playButton]}
+        css={styles.playButton}
       >
         <Text
-          css={styles.playButtonText}
-          size="greatPrimer"
+          size="pica"
           fontVariant="sansBold"
+          as="span"
+          css={[
+            styles.mediaDescription,
+            warnings && styles.mediaDescriptionGuidance,
+          ]}
         >
-          {mediaIcons.video}
-          {watchNow}
+          <Text size="pica" fontVariant="sansBold" as="span">
+            {short}
+          </Text>{' '}
+          <VisuallyHiddenText>, </VisuallyHiddenText>
+          <Text size="pica" fontVariant="sansRegular" as="span">
+            {networkName}
+          </Text>
         </Text>
+        {warnings && (
+          <Text
+            as="span"
+            size="brevier"
+            fontVariant="sansRegular"
+            css={styles.guidanceMessage}
+          >
+            {warnings.warning_text}
+          </Text>
+        )}
+        <div css={[showMedia ? styles.hideComponent : styles.watchLiveCTA]}>
+          <Text
+            css={styles.watchLiveCTAText}
+            size="greatPrimer"
+            fontVariant="sansBold"
+          >
+            {mediaIcons.video}
+            {watchNow}
+          </Text>
+        </div>
       </button>
       <div css={[showMedia ? styles.liveMediaSpan : styles.hideComponent]}>
         <p css={styles.mediaDescription}>

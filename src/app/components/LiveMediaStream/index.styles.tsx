@@ -7,7 +7,17 @@ export default {
       margin: `${spacings.FULL}rem 0`,
       width: '100%',
     }),
-  playButtonText: ({ spacings, palette }: Theme) =>
+  playButton: () =>
+    css({
+      cursor: 'pointer',
+      backgroundColor: 'unset',
+      border: 'unset',
+      textAlign: 'start',
+      padding: 0,
+      display: 'block', // check with UX if we want click area this large
+      width: '100%', // check with UX if we want click area this large
+    }),
+  watchLiveCTAText: ({ spacings, palette }: Theme) =>
     css({
       color: palette.WHITE,
       display: 'flex',
@@ -30,16 +40,17 @@ export default {
     }),
   guidanceMessage: ({ palette, spacings }: Theme) =>
     css({
+      display: 'block',
       margin: `${spacings.FULL}rem 0 `,
-      color: palette.WHITE,
+      color: palette.GREY_2,
     }),
-  playButton: ({ palette, mq }: Theme) =>
+  watchLiveCTA: ({ palette, mq, spacings }: Theme) =>
     css({
-      cursor: 'pointer',
       width: `${pixelsToRem(171)}rem`,
       border: 0,
       backgroundColor: palette.LIVE_CORE,
       padding: `${pixelsToRem(11)}rem`,
+      marginTop: `${spacings.FULL}rem`,
       '&:hover': {
         backgroundColor: palette.LIVE_DARK,
       },
@@ -87,11 +98,12 @@ export default {
     css({
       maxWidth: '100%',
     }),
-  mediaDescription: ({ palette }: Theme) =>
+  mediaDescription: ({ palette, spacings }: Theme) =>
     css({
       span: { color: palette.GREY_4 },
       display: 'block',
       width: '100%',
+      marginTop: `${spacings.HALF}rem`, // not in designs - check with UX
     }),
   mediaDescriptionGuidance: ({ spacings }: Theme) =>
     css({
