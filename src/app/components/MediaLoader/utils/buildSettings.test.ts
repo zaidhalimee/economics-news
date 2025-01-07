@@ -28,7 +28,6 @@ import {
   MediaBlock,
   PlaceholderConfig,
 } from '../types';
-import WARNING_LEVELS from '../configs/warningLevels';
 
 jest.mock('#app/lib/utilities/isLive', () =>
   jest.fn().mockImplementation(() => true),
