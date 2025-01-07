@@ -49,7 +49,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
   };
 
   return (
-    <div css={styles.ComponentContainer}>
+    <div css={styles.componentContainer}>
       <p css={styles.mediaDescription}>
         <Text size="pica" fontVariant="sansBold" as="span">
           {short}
@@ -62,10 +62,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
         type="button"
         onClick={handleClick}
         data-testid="watch-now-button"
-        css={[
-          styles.playButton,
-          showMedia ? styles.hideComponent : styles.showComponent,
-        ]}
+        css={[showMedia ? styles.hideComponent : styles.playButton]}
       >
         <Text
           css={styles.playButtonText}
@@ -94,7 +91,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
           {mediaIcons.close}
         </button>
       </div>
-      <div css={showMedia ? styles.showComponent : styles.hideComponent}>
+      <div css={!showMedia && styles.hideComponent}>
         <MemoizedMediaPlayer blocks={mediaCollection} uniqueId={vpid} />
       </div>
     </div>

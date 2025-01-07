@@ -2,13 +2,10 @@ import pixelsToRem from '#app/utilities/pixelsToRem';
 import { css, Theme } from '@emotion/react';
 
 export default {
-  ComponentContainer: ({ spacings, mq }: Theme) =>
+  componentContainer: ({ spacings }: Theme) =>
     css({
       margin: `${spacings.FULL}rem 0`,
       width: '100%',
-      [mq.GROUP_2_MAX_WIDTH]: {
-        width: '100%',
-      },
     }),
   playButtonText: ({ spacings, palette }: Theme) =>
     css({
@@ -93,5 +90,4 @@ export default {
       width: '100%',
     }),
   hideComponent: () => css({ display: 'none' }),
-  showComponent: () => css({ display: 'unset' }),
 };
