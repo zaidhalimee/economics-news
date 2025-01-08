@@ -98,11 +98,11 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
           className="hoverStylesText"
         >
           <Text size="pica" fontVariant="sansBold" as="span">
-            {short}
-          </Text>{' '}
-          <VisuallyHiddenText>, </VisuallyHiddenText>
+            {short},{' '}
+          </Text>
           <Text size="pica" fontVariant="sansRegular" as="span">
             {networkName}
+            <VisuallyHiddenText>, </VisuallyHiddenText>
           </Text>
         </Text>
         {warnings && (
@@ -113,6 +113,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
             css={styles.guidanceMessage}
           >
             {warnings.warning_text}
+            <VisuallyHiddenText>, </VisuallyHiddenText>
           </Text>
         )}
         <div

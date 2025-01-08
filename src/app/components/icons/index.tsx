@@ -149,6 +149,8 @@ export const PlayIcon = ({ className }: { className?: string }) => (
     width="12"
     height="12"
     className={className}
+    focusable="false"
+    aria-hidden="true"
   >
     <path d="M29 16 5.8 1v30z" />
   </svg>
