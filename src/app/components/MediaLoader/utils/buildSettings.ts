@@ -55,7 +55,6 @@ const buildSettings = ({
       fullscreen: { enabled: true },
     },
     ...(counterName && { counterName }),
-    // DISABLE THIS TO ALLOW US TO PLAY LIVE VIDEO FROM TEST ENV
     ...(isTestRequested() && { mediator: { host: 'open.test.bbc.co.uk' } }),
     statsObject: {
       destination: statsDestination,

@@ -120,11 +120,6 @@ const mediaIcons = {
       <path d="M0,32H24V8H0ZM4,12H20V28H4Z" />
     </SeriesStackIcon>
   ),
-  close: (
-    <MediaIcon viewBox="0 0 32 32" width="32" height="32" {...defaultAttrs}>
-      <path d="m30 4.6-2.8-2.8L2 27.4l2.8 2.8zM4.8 1.8 1.9 4.7l25.2 25.5 2.9-2.9z" />
-    </MediaIcon>
-  ),
 };
 
 export default mediaIcons;
