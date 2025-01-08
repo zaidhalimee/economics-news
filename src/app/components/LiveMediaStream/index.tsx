@@ -102,7 +102,6 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
           </Text>
           <Text size="pica" fontVariant="sansRegular" as="span">
             {networkName}
-            <VisuallyHiddenText>, </VisuallyHiddenText>
           </Text>
         </Text>
         {warnings && (
