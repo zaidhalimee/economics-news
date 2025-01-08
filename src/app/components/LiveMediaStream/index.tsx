@@ -6,11 +6,11 @@ import { MediaCollection } from '#app/components/MediaLoader/types';
 import MediaLoader from '#app/components/MediaLoader';
 import filterForBlockType from '#app/lib/utilities/blockHandlers';
 import { ServiceContext } from '#app/contexts/ServiceContext';
-import mediaIcons from '#psammead/psammead-assets/src/svgs/mediaIcons';
 import { RequestContext } from '#app/contexts/RequestContext';
 import styles from './index.styles';
 import WARNING_LEVELS from '../MediaLoader/configs/warningLevels';
 import VisuallyHiddenText from '../VisuallyHiddenText';
+import { Close, PlayIcon } from '../icons';
 
 type WarningItem = {
   // eslint-disable-next-line camelcase
@@ -124,7 +124,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
             size="greatPrimer"
             fontVariant="sansBold"
           >
-            {mediaIcons.video}
+            <PlayIcon />
             {watchNow}
           </Text>
         </div>
@@ -144,7 +144,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
           data-testid="close-button"
           css={styles.closeIconButton}
         >
-          {mediaIcons.close}
+          <Close />
         </button>
       </div>
       <div css={!showMedia && styles.hideComponent}>

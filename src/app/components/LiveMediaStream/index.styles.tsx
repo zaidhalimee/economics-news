@@ -38,7 +38,6 @@ export default {
         verticalAlign: 'middle',
         fill: 'currentcolor',
         color: palette.WHITE,
-        margin: `0`,
         marginInlineEnd: `${spacings.FULL}rem`,
       },
     }),
@@ -88,8 +87,7 @@ export default {
       background: 'none',
       border: 0,
       outline: 0,
-      padding: 0,
-      margin: 0,
+      padding: `${pixelsToRem(12)}rem ${pixelsToRem(14)}rem`,
       svg: {
         fill: 'currentcolor',
         color: palette.WHITE,
@@ -102,7 +100,6 @@ export default {
     css({
       display: 'flex',
       justifyContent: 'space-between',
-      maxWidth: '100%',
     }),
   mediaLoader: () =>
     css({

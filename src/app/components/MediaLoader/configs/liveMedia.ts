@@ -44,10 +44,9 @@ export default ({
           },
         ],
         summary: short,
-        warning,
+        ...(warning && { warning }),
       },
     },
-    ...(warning && { warning }),
     mediaType: 'video',
     showAds: false,
   };
