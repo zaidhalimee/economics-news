@@ -14,13 +14,14 @@ export default {
       border: 'unset',
       textAlign: 'start',
       padding: 0,
-      display: 'block',
-      width: '100%',
       '&:hover .hoverStylesText span, &:focus .hoverStylesText span': {
         textDecoration: 'underline',
       },
       '&:hover .hoverStylesCTA, &:focus .hoverStylesCTA': {
         backgroundColor: palette.LIVE_DARK,
+        [mq.FORCED_COLOURS]: {
+          textDecoration: 'underline',
+        },
       },
       [mq.FORCED_COLOURS]: {
         color: 'canvasText',
