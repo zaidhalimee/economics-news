@@ -81,7 +81,7 @@ export default {
         width: '50%',
       },
     }),
-  closeIconButton: ({ spacings, palette }: Theme) =>
+  closeContainer: ({ spacings, palette }: Theme) =>
     css({
       display: 'flex',
       justifyContent: 'space-between',
@@ -90,13 +90,15 @@ export default {
       width: '100%',
       border: 0,
       outline: 0,
-      padding: `${pixelsToRem(12)}rem ${pixelsToRem(14)}rem`,
+    }),
+  closeIconContainer: ({ spacings, palette }: Theme) =>
+    css({
       svg: {
         fill: 'currentcolor',
         color: palette.WHITE,
         height: `${spacings.DOUBLE}rem`,
         width: `${spacings.DOUBLE}rem`,
-        verticalAlign: 'middle',
+        margin: `${pixelsToRem(14)}rem`,
       },
     }),
   liveMediaSpan: () =>
@@ -109,10 +111,9 @@ export default {
     }),
   mediaDescription: ({ palette, spacings }: Theme) =>
     css({
-      span: { color: palette.GREY_4 },
-      display: 'block',
-      width: '100%',
-      marginTop: `${spacings.FULL}rem`,
+      span: { color: palette.GREY_4, margin: 0 },
+      margin: 0,
+      // marginTop: `${spacings.FULL}rem`,
     }),
   mediaDescriptionGuidance: ({ spacings }: Theme) =>
     css({

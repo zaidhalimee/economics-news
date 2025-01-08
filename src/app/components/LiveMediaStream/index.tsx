@@ -28,7 +28,7 @@ const MemoizedMediaPlayer = memo(MediaLoader);
 const LiveMediaStream = ({ mediaCollection }: Props) => {
   const { translations } = useContext(ServiceContext);
   const { isLite } = useContext(RequestContext);
-  const [showMedia, setShowMedia] = useState(true); //change back
+  const [showMedia, setShowMedia] = useState(true); // change back
   let warningLevel = WARNING_LEVELS.NO_WARNING;
 
   if (isLite || mediaCollection == null || mediaCollection.length === 0) {
@@ -134,7 +134,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
           type="button"
           onClick={() => handleClick()}
           data-testid="close-button"
-          css={styles.closeIconButton}
+          css={styles.closeContainer}
         >
           <p css={styles.mediaDescription}>
             <Text size="pica" fontVariant="sansBold" as="span">
@@ -144,7 +144,9 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
               {networkName}
             </Text>
           </p>
-          <Close />
+          <div css={styles.closeIconContainer}>
+            <Close />
+          </div>
         </button>
       </div>
       <div css={!showMedia && styles.hideComponent}>
