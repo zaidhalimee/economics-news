@@ -90,6 +90,8 @@ export default {
       width: '100%',
       border: 0,
       outline: 0,
+      lineHeight: 0,
+      padding: 0,
     }),
   closeIconContainer: ({ spacings, palette }: Theme) =>
     css({
