@@ -114,20 +114,20 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
         </Text>
       </button>
       <div css={[showMedia ? styles.liveMediaSpan : styles.hideComponent]}>
-        <p css={styles.mediaDescription}>
-          <Text size="pica" fontVariant="sansBold" as="span">
-            {title}
-          </Text>{' '}
-          <Text size="pica" fontVariant="sansRegular" as="span">
-            {networkName}
-          </Text>
-        </p>
         <button
           type="button"
           onClick={() => handleClick()}
           data-testid="close-button"
           css={styles.closeIconButton}
         >
+          <p css={styles.mediaDescription}>
+            <Text size="pica" fontVariant="sansBold" as="span">
+              {title}
+            </Text>{' '}
+            <Text size="pica" fontVariant="sansRegular" as="span">
+              {networkName}
+            </Text>
+          </p>
           {mediaIcons.close}
         </button>
       </div>
