@@ -1,5 +1,12 @@
 import { ReactSDKClient } from '@optimizely/react-sdk';
 
+export type ReverbClient = {
+  isReady: () => boolean;
+  initialise: () => Promise<void>;
+  viewEvent: () => void;
+  userActionEvent: () => void;
+};
+
 export type EventTrackingMetadata = {
   componentName: string;
   detailedPlacement?: string;

@@ -18,7 +18,6 @@ const reverbMock = {
   userActionEvent: jest.fn(),
 };
 
-// @ts-expect-error '__reverb' is added to the window object by a script tag
 // eslint-disable-next-line no-underscore-dangle
 window.__reverb = {
   __reverbLoadedPromise: Promise.resolve(reverbMock),
