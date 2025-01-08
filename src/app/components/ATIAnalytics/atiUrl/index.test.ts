@@ -1,6 +1,12 @@
 import { resetWindowValue } from '#psammead/psammead-test-helpers/src';
+import { Platforms } from '#app/models/types/global';
 import * as genericLabelHelpers from '../../../lib/analyticsUtils';
-import { buildATIPageTrackPath, buildATIEventTrackUrl } from '.';
+import {
+  buildATIPageTrackPath,
+  buildATIEventTrackUrl,
+  buildReverbAnalyticsModel,
+  buildReverbPageSectionEventModel,
+} from '.';
 
 // @ts-expect-error required for testing purposes
 const mockAndSet = ({ name, source }, response) => {
@@ -309,5 +315,140 @@ describe('buildATIEventTrackUrl', () => {
       'mv_creation=variant_1',
       'type=AT',
     ]);
+  });
+});
+
+describe('buildReverbAnalyticsModel', () => {
+  const input = {
+    appName: 'news',
+    campaigns: [
+      {
+        campaignId: '1',
+        campaignName: 'campaign1',
+      },
+      {
+        campaignId: '2',
+        campaignName: 'campaign2',
+      },
+    ],
+    categoryName: 'categoryName',
+    contentId: 'contentId',
+    contentType: 'contentType',
+    language: 'language',
+    ldpThingIds: 'ldpThingIds',
+    ldpThingLabels: 'ldpThingLabels',
+    libraryVersion: 'libraryVersion',
+    pageIdentifier: 'pageIdentifier',
+    pageTitle: 'pageTitle',
+    platform: 'canonical' as Platforms,
+    previousPath: '',
+    producerName: 'producerName',
+    origin: 'http://localhost',
+    nationsProducer: '',
+    statsDestination: 'statsDestination',
+    timePublished: 'timePublished',
+    timeUpdated: 'timeUpdated',
+  };
+
+  it('should return the correct Reverb analytics model', () => {
+    const reverbAnalyticsModel = buildReverbAnalyticsModel(input);
+
+    const pageParams = {
+      contentId: 'contentId',
+      contentType: 'contentType',
+      destination: 'statsDestination',
+      name: 'pageIdentifier',
+      producer: 'producerName',
+      additionalProperties: {
+        app_name: 'news',
+        app_type: 'responsive',
+        content_language: 'language',
+        product_platform: null,
+        referrer_url: null,
+        x5: 'http%253A%252F%252Flocalhost%252F',
+        x8: 'libraryVersion',
+        x9: 'pageTitle',
+        x10: '',
+        x11: 'timePublished',
+        x12: 'timeUpdated',
+        x13: 'ldpThingLabels',
+        x14: 'ldpThingIds',
+        x16: 'campaign1~campaign2',
+        x17: 'categoryName',
+        x18: false,
+      },
+    };
+
+    expect(reverbAnalyticsModel.params.page).toEqual(pageParams);
+  });
+});
+
+describe('buildReverbPageSectionEventModel', () => {
+  const input = {
+    pageIdentifier: 'mundo.page',
+    producerName: 'MUNDO',
+    statsDestination: 'statsDestination',
+    componentName: 'top-stories',
+    campaignID: '1234',
+    format: 'format',
+    type: 'view',
+    advertiserID: 'advertiserID',
+    url: 'http://localhost',
+  };
+
+  it('should return the correct Reverb page section view event model', () => {
+    const reverbPageSectionViewEventModel =
+      buildReverbPageSectionEventModel(input);
+
+    const pageSectionViewEventParams = {
+      destination: 'statsDestination',
+      name: 'mundo.page',
+      producer: 'MUNDO',
+      additionalProperties: {
+        ati: 'PUB-[1234]-[top-stories]-[]-[format]-[mundo.page]-[]-[advertiserID]-[http://localhost]',
+        type: 'AT',
+      },
+    };
+
+    expect(reverbPageSectionViewEventModel.params.page).toEqual(
+      pageSectionViewEventParams,
+    );
+  });
+
+  it('should return the correct eventName for the Reverb page section view event model', () => {
+    const reverbPageSectionViewEventModel =
+      buildReverbPageSectionEventModel(input);
+
+    expect(reverbPageSectionViewEventModel.eventName).toEqual('sectionView');
+  });
+
+  it('should return the correct Reverb page section click event model', () => {
+    const reverbPageSectionViewEventModel = buildReverbPageSectionEventModel({
+      ...input,
+      type: 'click',
+    });
+
+    const pageSectionViewEventParams = {
+      destination: 'statsDestination',
+      name: 'mundo.page',
+      producer: 'MUNDO',
+      additionalProperties: {
+        atc: 'PUB-[1234]-[top-stories]-[]-[format]-[mundo.page]-[]-[advertiserID]-[http://localhost]',
+        type: 'AT',
+      },
+    };
+
+    expect(reverbPageSectionViewEventModel.params.page).toEqual(
+      pageSectionViewEventParams,
+    );
+  });
+
+  it('should return the correct eventName for the Reverb page section click event model', () => {
+    const reverbPageSectionViewEventModel = buildReverbPageSectionEventModel({
+      ...input,
+      type: 'click',
+    });
+
+    expect(reverbPageSectionViewEventModel.eventName).toEqual('sectionClick');
   });
 });
