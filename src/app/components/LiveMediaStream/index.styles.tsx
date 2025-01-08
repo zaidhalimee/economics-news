@@ -67,6 +67,7 @@ export default {
       justifyContent: 'space-between',
       cursor: 'pointer',
       background: 'none',
+      width: '100%',
       border: 0,
       outline: 0,
       padding: 0,
@@ -91,7 +92,6 @@ export default {
     css({
       span: { color: palette.GREY_4 },
       display: 'block',
-      width: '100%',
     }),
   mediaDescriptionGuidance: ({ spacings }: Theme) =>
     css({

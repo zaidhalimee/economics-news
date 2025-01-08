@@ -27,7 +27,7 @@ const MemoizedMediaPlayer = memo(MediaLoader);
 const LiveMediaStream = ({ mediaCollection }: Props) => {
   const { translations } = useContext(ServiceContext);
   const { isLite } = useContext(RequestContext);
-  const [showMedia, setShowMedia] = useState(false);
+  const [showMedia, setShowMedia] = useState(true); //change back
   let warningLevel = WARNING_LEVELS.NO_WARNING;
 
   if (isLite || mediaCollection == null || mediaCollection.length === 0) {
