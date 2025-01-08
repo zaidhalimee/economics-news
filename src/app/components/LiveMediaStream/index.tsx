@@ -95,6 +95,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
             styles.mediaDescription,
             warnings && styles.mediaDescriptionGuidance,
           ]}
+          className="hoverStylesText"
         >
           <Text size="pica" fontVariant="sansBold" as="span">
             {short}
@@ -114,7 +115,10 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
             {warnings.warning_text}
           </Text>
         )}
-        <div css={[showMedia ? styles.hideComponent : styles.watchLiveCTA]}>
+        <div
+          className="hoverStylesCTA"
+          css={[showMedia ? styles.hideComponent : styles.watchLiveCTA]}
+        >
           <Text
             css={styles.watchLiveCTAText}
             size="greatPrimer"

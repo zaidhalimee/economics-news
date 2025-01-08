@@ -7,7 +7,7 @@ export default {
       margin: `${spacings.FULL}rem 0`,
       width: '100%',
     }),
-  playButton: () =>
+  playButton: ({ palette, mq }: Theme) =>
     css({
       cursor: 'pointer',
       backgroundColor: 'unset',
@@ -16,6 +16,15 @@ export default {
       padding: 0,
       display: 'block', // check with UX if we want click area this large
       width: '100%', // check with UX if we want click area this large
+      '&:hover .hoverStylesText span': {
+        textDecoration: 'underline',
+      },
+      '&:hover .hoverStylesCTA': {
+        backgroundColor: palette.LIVE_DARK,
+      },
+      [mq.FORCED_COLOURS]: {
+        color: 'canvasText', // can move out of mq
+      },
     }),
   watchLiveCTAText: ({ spacings, palette }: Theme) =>
     css({
@@ -51,12 +60,13 @@ export default {
       backgroundColor: palette.LIVE_CORE,
       padding: `${pixelsToRem(11)}rem`,
       marginTop: `${spacings.FULL}rem`,
-      '&:hover': {
-        backgroundColor: palette.LIVE_DARK,
-      },
       [mq.GROUP_2_MAX_WIDTH]: {
         width: '100%',
       },
+      [mq.FORCED_COLOURS]: {
+        color: 'canvasText',
+        border: `${pixelsToRem(2)}rem solid canvasText`,
+      }, // check this is sufficient
     }),
   liveMediaStreamText: ({ palette }: Theme) =>
     css({
