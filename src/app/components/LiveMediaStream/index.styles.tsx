@@ -7,23 +7,23 @@ export default {
       margin: `${spacings.FULL}rem 0`,
       width: '100%',
     }),
-  playButton: ({ palette, mq }: Theme) =>
+  mediaButton: ({ palette, mq }: Theme) =>
     css({
       cursor: 'pointer',
       backgroundColor: 'unset',
       border: 'unset',
       textAlign: 'start',
       padding: 0,
-      display: 'block', // check with UX if we want click area this large
-      width: '100%', // check with UX if we want click area this large
-      '&:hover .hoverStylesText span': {
+      display: 'block',
+      width: '100%',
+      '&:hover .hoverStylesText span, &:focus .hoverStylesText span': {
         textDecoration: 'underline',
       },
-      '&:hover .hoverStylesCTA': {
+      '&:hover .hoverStylesCTA, &:focus .hoverStylesCTA': {
         backgroundColor: palette.LIVE_DARK,
       },
       [mq.FORCED_COLOURS]: {
-        color: 'canvasText', // can move out of mq
+        color: 'canvasText',
       },
     }),
   watchLiveCTAText: ({ spacings, palette }: Theme) =>
@@ -66,7 +66,7 @@ export default {
       [mq.FORCED_COLOURS]: {
         color: 'canvasText',
         border: `${pixelsToRem(2)}rem solid canvasText`,
-      }, // check this is sufficient
+      },
     }),
   liveMediaStreamText: ({ palette }: Theme) =>
     css({
@@ -113,7 +113,7 @@ export default {
       span: { color: palette.GREY_4 },
       display: 'block',
       width: '100%',
-      marginTop: `${spacings.HALF}rem`, // not in designs - check with UX
+      marginTop: `${spacings.HALF}rem`,
     }),
   mediaDescriptionGuidance: ({ spacings }: Theme) =>
     css({

@@ -85,7 +85,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
         type="button"
         onClick={() => handleClick()}
         data-testid="watch-now-button"
-        css={styles.playButton}
+        css={styles.mediaButton}
       >
         <Text
           size="pica"
