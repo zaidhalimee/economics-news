@@ -63,6 +63,8 @@ export default {
     }),
   closeIconButton: ({ spacings, palette }: Theme) =>
     css({
+      display: 'flex',
+      justifyContent: 'space-between',
       cursor: 'pointer',
       background: 'none',
       border: 0,
@@ -79,8 +81,6 @@ export default {
     }),
   liveMediaSpan: () =>
     css({
-      display: 'flex',
-      justifyContent: 'space-between',
       maxWidth: '100%',
     }),
   mediaLoader: () =>
