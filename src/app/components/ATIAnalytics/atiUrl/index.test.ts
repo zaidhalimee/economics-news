@@ -56,6 +56,7 @@ describe('getThingAttributes', () => {
 
   afterEach(() => {
     jest.resetAllMocks();
+
     resetWindowValue('location', windowLocation);
   });
 
@@ -319,6 +320,16 @@ describe('buildATIEventTrackUrl', () => {
 });
 
 describe('buildReverbAnalyticsModel', () => {
+  beforeEach(() => {
+    analyticsUtilFunctions.forEach(func => {
+      mockAndSet(func, func.name);
+    });
+  });
+
+  afterEach(() => {
+    jest.resetAllMocks();
+  });
+
   const input = {
     appName: 'news',
     campaigns: [
@@ -361,13 +372,13 @@ describe('buildReverbAnalyticsModel', () => {
       producer: 'producerName',
       additionalProperties: {
         app_name: 'news',
-        app_type: 'responsive',
+        app_type: 'getAppType',
         content_language: 'language',
         product_platform: null,
-        referrer_url: null,
-        x5: 'http%253A%252F%252Flocalhost%252F',
+        referrer_url: 'getReferrer',
+        x5: 'getHref',
         x8: 'libraryVersion',
-        x9: 'pageTitle',
+        x9: 'sanitise',
         x10: '',
         x11: 'timePublished',
         x12: 'timeUpdated',
@@ -375,7 +386,7 @@ describe('buildReverbAnalyticsModel', () => {
         x14: 'ldpThingIds',
         x16: 'campaign1~campaign2',
         x17: 'categoryName',
-        x18: false,
+        x18: 'isLocServeCookieSet',
       },
     };
 
