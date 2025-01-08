@@ -81,7 +81,7 @@ export default {
         width: '50%',
       },
     }),
-  closeContainer: ({ spacings, palette }: Theme) =>
+  closeContainer: ({ spacings, palette, mq }: Theme) =>
     css({
       display: 'flex',
       justifyContent: 'space-between',
@@ -92,6 +92,11 @@ export default {
       outline: 0,
       lineHeight: 0,
       padding: 0,
+
+      '&:focus, &:hover': {
+        textDecoration: 'underline',
+        textDecorationColor: palette.GREY_4,
+      },
     }),
   closeIconContainer: ({ spacings, palette }: Theme) =>
     css({
