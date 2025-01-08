@@ -38,5 +38,3 @@ It accepts `experimentConfig` and `analyticsConfig` as props. These are objects 
 This component is designed to have a separate `<amp-analytics/>` component from existing ones on a page for better isolation of code/events specific to a given experiment.
 
 **Note: This component will not add AMP experiment name/variant information to pageview events. This should be done separately by passing `ampExperimentName` to the `atiData` used.**
-
-More information about how to use this component/experimentation on AMP can be found here: **TODO: confluence link**
