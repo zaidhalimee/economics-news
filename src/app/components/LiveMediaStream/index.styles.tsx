@@ -4,8 +4,8 @@ import { css, Theme } from '@emotion/react';
 export default {
   componentContainer: ({ spacings }: Theme) =>
     css({
-      margin: `${spacings.FULL}rem 0`,
       width: '100%',
+      marginTop: `${spacings.FULL}rem`,
     }),
   mediaButton: ({ palette, mq }: Theme) =>
     css({
@@ -59,7 +59,7 @@ export default {
       border: 0,
       backgroundColor: palette.LIVE_CORE,
       padding: `${pixelsToRem(11)}rem`,
-      marginTop: `${spacings.FULL}rem`,
+      marginTop: `${spacings.DOUBLE}rem`,
       [mq.GROUP_2_MAX_WIDTH]: {
         width: '100%',
       },
@@ -113,7 +113,7 @@ export default {
       span: { color: palette.GREY_4 },
       display: 'block',
       width: '100%',
-      marginTop: `${spacings.HALF}rem`,
+      marginTop: `${spacings.FULL}rem`,
     }),
   mediaDescriptionGuidance: ({ spacings }: Theme) =>
     css({
