@@ -25,24 +25,40 @@ describe('JumpTo Component', () => {
 
   describe('Render jumpTo', () => {
     it('renders the Jump To title', () => {
-      render(<JumpTo jumpToHeadings={jumpToHeadings} />);
+      render(
+        <JumpTo jumpToHeadings={jumpToHeadings} variation="variation_1" />,
+      );
       const title = screen.getByText('Jump to');
       expect(title).toBeInTheDocument();
     });
 
     it('renders the correct number of headings without related content link', () => {
-      render(<JumpTo jumpToHeadings={jumpToHeadings} />);
+      render(
+        <JumpTo jumpToHeadings={jumpToHeadings} variation="variation_1" />,
+      );
       const headings = screen.getAllByRole('listitem');
       expect(headings.length).toBe(jumpToHeadings.length);
     });
     it('renders the correct number of headings with related content link', () => {
-      render(<JumpTo jumpToHeadings={jumpToHeadings} showRelatedContentLink />);
+      render(
+        <JumpTo
+          jumpToHeadings={jumpToHeadings}
+          showRelatedContentLink
+          variation="variation_1"
+        />,
+      );
       const headings = screen.getAllByRole('listitem');
       expect(headings.length).toBe(jumpToHeadings.length + 1); // related content heading is added into the array inside the component
     });
 
     it('renders each item with a link to the corresponding subheading on the same page', () => {
-      render(<JumpTo jumpToHeadings={jumpToHeadings} showRelatedContentLink />);
+      render(
+        <JumpTo
+          jumpToHeadings={jumpToHeadings}
+          showRelatedContentLink
+          variation="variation_1"
+        />,
+      );
       jumpToHeadings.forEach(({ heading, sanitisedId }) => {
         const id = sanitisedId || idSanitiser(heading);
         const link = screen.getByTestId(`jump-to-link-${id}`);
@@ -61,7 +77,9 @@ describe('JumpTo Component', () => {
       const viewTrackerSpy = jest.spyOn(viewTracking, 'default');
       // jumpToTrackerData is always present on render
       it('should register view tracker with componentName "jumpto"', () => {
-        render(<JumpTo jumpToHeadings={jumpToHeadings} />);
+        render(
+          <JumpTo jumpToHeadings={jumpToHeadings} variation="variation_1" />,
+        );
 
         expect(viewTrackerSpy).toHaveBeenCalledWith(jumpToTrackerData);
       });
@@ -73,14 +91,18 @@ describe('JumpTo Component', () => {
         .mockImplementation();
 
       it('should register click tracker with componentName "jumpto"', () => {
-        render(<JumpTo jumpToHeadings={jumpToHeadings} />);
+        render(
+          <JumpTo jumpToHeadings={jumpToHeadings} variation="variation_1" />,
+        );
 
         expect(clickTrackerSpy).toHaveBeenCalledWith(jumpToTrackerData);
       });
       it('should handle a click event when link clicked', () => {
         clickTrackerSpy.mockRestore();
 
-        render(<JumpTo jumpToHeadings={jumpToHeadings} />);
+        render(
+          <JumpTo jumpToHeadings={jumpToHeadings} variation="variation_1" />,
+        );
 
         jumpToHeadings.forEach(({ heading, sanitisedId }) => {
           const id = sanitisedId || idSanitiser(heading);
