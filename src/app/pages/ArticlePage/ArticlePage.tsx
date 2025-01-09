@@ -130,7 +130,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     mostRead: mostReadInitialData,
   } = pageData;
 
-  const jumpToVariation = useOptimizelyVariation(
+  const optimizelyVariation = useOptimizelyVariation(
     'jump_to_onward_journeys',
   ) as unknown as Variation | 'off';
 
@@ -139,7 +139,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   );
 
   const enableOptimizelyEventTracking = Boolean(
-    jumpToVariation && hasJumpToBlockForExperiment,
+    optimizelyVariation && hasJumpToBlockForExperiment,
   );
 
   const showRelatedContent = blocks.some(
@@ -149,6 +149,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const atiData = {
     ...atiAnalytics,
     ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
+    ...(optimizelyVariation && { experimentVariant: optimizelyVariation }),
   };
 
   const componentsToRender = {
@@ -196,8 +197,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     podcastPromo: () => (podcastPromoEnabled ? <InlinePodcastPromo /> : null),
     jumpTo: (props: ComponentToRenderProps & JumpToProps) => {
       if (
-        jumpToVariation === 'off' ||
-        !jumpToVariation ||
+        optimizelyVariation === 'off' ||
+        !optimizelyVariation ||
         !hasJumpToBlockForExperiment
       )
         return null;
@@ -207,7 +208,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           {...props}
           jumpToHeadings={props.jumpToHeadings}
           showRelatedContentLink={showRelatedContent}
-          variation={jumpToVariation}
+          variation={optimizelyVariation}
         />
       );
     },
