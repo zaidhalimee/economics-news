@@ -1,8 +1,6 @@
 /* eslint-disable no-console */
 import { useContext, useCallback, useState } from 'react';
 
-// import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
-
 import { EventTrackingContext } from '../../contexts/EventTrackingContext';
 import useTrackingToggle from '../useTrackingToggle';
 import OPTIMIZELY_CONFIG from '../../lib/config/optimizely';
@@ -25,7 +23,6 @@ const useClickTrackerHandler = (props = {}) => {
   const { trackingIsEnabled } = useTrackingToggle(componentName);
   const [clicked, setClicked] = useState(false);
   const eventTrackingContext = useContext(EventTrackingContext);
-  // const optimizelyVariation = useOptimizelyVariation('jump_to_onward_journeys');
 
   const { pageIdentifier, platform, producerId, statsDestination } =
     eventTrackingContext;

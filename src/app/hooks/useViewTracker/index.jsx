@@ -1,8 +1,6 @@
 import { useContext, useEffect, useState, useRef } from 'react';
 import prop from 'ramda/src/prop';
 
-// import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
-
 import { sendEventBeacon } from '../../components/ATIAnalytics/beacon';
 import { EventTrackingContext } from '../../contexts/EventTrackingContext';
 import useTrackingToggle from '../useTrackingToggle';
@@ -28,7 +26,6 @@ const useViewTracker = (props = {}) => {
   const [eventSent, setEventSent] = useState(false);
   const { trackingIsEnabled } = useTrackingToggle(componentName);
   const eventTrackingContext = useContext(EventTrackingContext);
-  // const optimizelyVariation = useOptimizelyVariation('jump_to_onward_journeys');
 
   const { pageIdentifier, platform, producerId, statsDestination } =
     eventTrackingContext;
