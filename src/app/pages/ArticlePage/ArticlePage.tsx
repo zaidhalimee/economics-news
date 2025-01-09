@@ -195,8 +195,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     ),
     podcastPromo: () => (podcastPromoEnabled ? <InlinePodcastPromo /> : null),
     jumpTo: (props: ComponentToRenderProps & JumpToProps) => {
-      if (!hasJumpToBlockForExperiment) return null;
-      if (jumpToVariation === 'off') return null;
+      if (jumpToVariation === 'off' || !hasJumpToBlockForExperiment)
+        return null;
 
       return (
         <JumpTo
@@ -304,7 +304,12 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
             sendOptimizelyEvents={enableOptimizelyEventTracking}
           />
         </div>
-        {!isApp && !isPGL && <SecondaryColumn pageData={pageData} />}
+        {!isApp && !isPGL && (
+          <SecondaryColumn
+            pageData={pageData}
+            sendOptimizelyEvents={enableOptimizelyEventTracking}
+          />
+        )}
       </div>
       {!isApp && !isPGL && (
         <MostRead
@@ -314,6 +319,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           size="default"
           headingBackgroundColour={GREY_2}
           mobileDivider={showTopics}
+          sendOptimizelyEvents={enableOptimizelyEventTracking}
         />
       )}
       {enableOptimizelyEventTracking && (

@@ -3,6 +3,7 @@ import { RequestContext } from '#contexts/RequestContext';
 import useToggle from '#hooks/useToggle';
 import { getMostReadEndpoint } from '#app/lib/utilities/getUrlHelpers/getMostReadUrls';
 import { getEnvConfig } from '#app/lib/utilities/getEnvConfig';
+import { OptimizelyContext } from '@optimizely/react-sdk';
 import { ServiceContext } from '../../contexts/ServiceContext';
 import Canonical from './Canonical';
 import Amp from './Amp';
@@ -35,6 +36,7 @@ interface MostReadProps {
   mobileDivider?: boolean;
   headingBackgroundColour?: string;
   className?: string;
+  sendOptimizelyEvents: boolean;
 }
 
 const MostRead = ({
@@ -44,8 +46,10 @@ const MostRead = ({
   mobileDivider = false,
   headingBackgroundColour = WHITE,
   className = '',
+  sendOptimizelyEvents = false,
 }: MostReadProps) => {
   const { isAmp, pageType, variant } = useContext(RequestContext);
+  const { optimizely } = useContext(OptimizelyContext);
   const {
     service,
     mostRead: { hasMostRead },
@@ -84,6 +88,14 @@ const MostRead = ({
       </MostReadSection>
     ) : null;
 
+  const eventTrackingData = {
+    ...blockLevelEventTrackingData,
+    ...(sendOptimizelyEvents && {
+      optimizely,
+      optimizelyMetricNameOverride: 'most_read',
+    }),
+  };
+
   // Do not render on Canonical if data is not provided
   const CanonicalMostRead = () =>
     data ? (
@@ -96,7 +108,7 @@ const MostRead = ({
           data={data}
           columnLayout={columnLayout}
           size={size}
-          eventTrackingData={blockLevelEventTrackingData}
+          eventTrackingData={eventTrackingData}
         />
       </MostReadSection>
     ) : null;
