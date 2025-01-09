@@ -58,7 +58,7 @@ const TopStoriesSection = ({
   sendOptimizelyEvents,
 }: {
   content: TopStoryItem[];
-  sendOptimizelyEvents: boolean;
+  sendOptimizelyEvents?: boolean;
 }) => {
   const { translations, script, service } = useContext(ServiceContext);
   const { optimizely } = useContext(OptimizelyContext);

@@ -36,7 +36,7 @@ interface MostReadProps {
   mobileDivider?: boolean;
   headingBackgroundColour?: string;
   className?: string;
-  sendOptimizelyEvents: boolean;
+  sendOptimizelyEvents?: boolean;
 }
 
 const MostRead = ({
