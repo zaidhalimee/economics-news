@@ -102,7 +102,8 @@ const renderContainer = (service: Services, pageData: Article) => {
   );
 };
 
-describe('OptimizelyRecommendations', () => {
+// TODO: Remove if we want to experiment with recommendations again
+describe.skip('OptimizelyRecommendations', () => {
   describe('when toggle is enabled and the service supports recommendations', () => {
     beforeEach(() => {
       jest.resetAllMocks();
