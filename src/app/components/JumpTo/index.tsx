@@ -137,18 +137,16 @@ const JumpTo = ({
   const capitializedService =
     service?.substring(0, 1).toUpperCase() + service?.substring(1);
 
+  const { jumpToTitle } = articlePage || {};
+
   const titleToRender = {
-    variation_1: articlePage?.jumpToTitle?.variation_1 || 'Jump to',
+    variation_1: jumpToTitle?.variation_1 || 'Jump to',
     variation_2:
-      articlePage?.jumpToTitle?.variation_2.replace(
-        '{service}',
-        capitializedService,
-      ) || `Discover more from BBC ${capitializedService}`,
+      jumpToTitle?.variation_2.replace('{service}', capitializedService) ||
+      `Discover more from BBC ${capitializedService}`,
     variation_3:
-      articlePage?.jumpToTitle?.variation_3?.replace(
-        '{service}',
-        capitializedService,
-      ) || `More from BBC ${capitializedService}`,
+      jumpToTitle?.variation_3?.replace('{service}', capitializedService) ||
+      `More from BBC ${capitializedService}`,
   }[variation];
 
   return (
