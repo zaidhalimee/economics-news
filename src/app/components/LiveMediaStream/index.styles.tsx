@@ -105,7 +105,12 @@ export default {
         color: palette.WHITE,
         height: `${spacings.DOUBLE}rem`,
         width: `${spacings.DOUBLE}rem`,
-        margin: `${pixelsToRem(14)}rem`,
+        margin: `${pixelsToRem(13)}rem`,
+      },
+      backgroundColor: palette.BLACK,
+      border: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
+      'button:hover &': {
+        backgroundColor: palette.POSTBOX,
       },
     }),
   liveMediaSpan: () =>
