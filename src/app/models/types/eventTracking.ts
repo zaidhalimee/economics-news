@@ -4,8 +4,7 @@ export type ReverbClient = {
   isReady: () => boolean;
   initialise: () => Promise<void>;
   viewEvent: () => void;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  userActionEvent: (...args: any[]) => void;
+  userActionEvent: (...args: unknown[]) => void;
 };
 
 export type EventTrackingMetadata = {
