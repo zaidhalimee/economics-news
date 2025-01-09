@@ -9,6 +9,8 @@ import {
   setWindowValue,
   resetWindowValue,
 } from '#psammead/psammead-test-helpers/src';
+import { ServiceContext } from '#contexts/ServiceContext';
+import { ServiceConfig } from '#models/types/serviceConfig';
 import styAssetData from './fixtures/storyPage.json';
 import pglAssetData from './fixtures/photoGalleryPage.json';
 import mapAssetData from './fixtures/mediaAssetPage.json';
@@ -1133,6 +1135,70 @@ describe('ATI Analytics Container', () => {
         x11: '[2019-05-30T14:23:38.000Z]',
         x12: '[2019-07-19T12:46:18.000Z]',
         ref: '${documentReferrer}',
+      });
+    });
+  });
+
+  describe('Reverb', () => {
+    it('should supply reverbParams when Reverb is enabled', () => {
+      const mockCanonical = jest.fn().mockReturnValue('canonical-return-value');
+      // @ts-expect-error - we need to mock these functions to ensure tests are deterministic
+      canonical.default = mockCanonical;
+
+      const {
+        metadata: { atiAnalytics },
+      } = articleDataNews;
+
+      // @ts-expect-error - only partial data required to manually set 'useReverb' to true
+      const serviceContextProps: ServiceConfig = {
+        atiAnalyticsAppName: 'atiAnalyticsAppName',
+        atiAnalyticsProducerId: 'atiAnalyticsProducerId',
+        service: 'pidgin',
+        brandName: 'brandName',
+        lang: 'pcm',
+        useReverb: true,
+      };
+
+      render(
+        <ServiceContext.Provider value={serviceContextProps}>
+          <ATIAnalytics atiData={atiAnalytics} />
+        </ServiceContext.Provider>,
+        {
+          ...defaultRenderProps,
+          atiData: atiAnalytics,
+          isAmp: false,
+          pageData: articleDataNews,
+          pageType: ARTICLE_PAGE,
+          service: 'pidgin',
+          isUK: true,
+        },
+      );
+
+      const { reverbParams } = mockCanonical.mock.calls[0][0];
+
+      expect(reverbParams.params.page).toEqual({
+        contentId: 'urn:bbc:optimo:c0000000001o',
+        contentType: 'article',
+        destination: 'WS_NEWS_LANGUAGES_TEST',
+        name: 'news.articles.c0000000001o.page',
+        additionalProperties: {
+          app_name: 'atiAnalyticsAppName',
+          app_type: 'responsive',
+          content_language: 'en-gb',
+          product_platform: null,
+          referrer_url: null,
+          x5: 'http%253A%252F%252Flocalhost%252F',
+          x8: 'simorgh',
+          x9: 'Article%20Headline%20for%20SEO',
+          x10: null,
+          x11: '2018-01-01T12:01:00.000Z',
+          x12: '2018-01-01T14:00:00.000Z',
+          x13: 'Royal+Wedding+2018~Duchess+of+Sussex',
+          x14: '2351f2b2-ce36-4f44-996d-c3c4f7f90eaa~803eaeb9-c0c3-4f1b-9a66-90efac3df2dc',
+          x16: '',
+          x17: 'Royal+Wedding+2018~Duchess+of+Sussex',
+          x18: false,
+        },
       });
     });
   });
