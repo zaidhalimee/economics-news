@@ -123,7 +123,8 @@ export default {
     }),
   mediaDescription: ({ palette, spacings }: Theme) =>
     css({
-      span: { color: palette.GREY_4, margin: 0 },
+      color: palette.WHITE,
+      span: { color: palette.WHITE, margin: 0 },
       margin: 0,
       // marginTop: `${spacings.FULL}rem`,
     }),
