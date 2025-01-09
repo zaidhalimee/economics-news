@@ -16,6 +16,11 @@ import useViewTracker from '.';
 
 import fixtureData from './fixtureData.json';
 
+jest.mock('#app/hooks/useOptimizelyVariation', () => ({
+  __esModule: true,
+  default: jest.fn(),
+}));
+
 process.env.SIMORGH_ATI_BASE_URL = 'https://logws1363.ati-host.net?';
 
 const observers = new Map();

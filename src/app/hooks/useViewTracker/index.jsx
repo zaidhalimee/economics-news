@@ -1,6 +1,4 @@
 import { useContext, useEffect, useState, useRef } from 'react';
-import path from 'ramda/src/path';
-import pathOr from 'ramda/src/pathOr';
 import prop from 'ramda/src/prop';
 
 import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
@@ -16,11 +14,11 @@ const VIEWED_DURATION_MS = 1000;
 const MIN_VIEWED_PERCENT = 0.5;
 
 const useViewTracker = (props = {}) => {
-  const componentName = path(['componentName'], props);
-  const format = path(['format'], props);
-  const advertiserID = path(['advertiserID'], props);
-  const url = path(['url'], props);
-  const optimizely = path(['optimizely'], props);
+  const componentName = props?.componentName;
+  const format = props?.format;
+  const advertiserID = props?.advertiserID;
+  const url = props?.url;
+  const optimizely = props?.optimizely;
   const optimizelyMetricNameOverride = props?.optimizelyMetricNameOverride;
   const detailedPlacement = props?.detailedPlacement;
 
@@ -34,11 +32,9 @@ const useViewTracker = (props = {}) => {
 
   const { pageIdentifier, platform, producerId, statsDestination } =
     eventTrackingContext;
-  const campaignID = pathOr(
-    path(['campaignID'], eventTrackingContext),
-    ['campaignID'],
-    props,
-  );
+
+  const campaignID = props?.campaignID || eventTrackingContext?.campaignID;
+
   const { service } = useContext(ServiceContext);
 
   const initObserver = async () => {

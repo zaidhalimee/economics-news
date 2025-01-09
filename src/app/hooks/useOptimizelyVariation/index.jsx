@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useState, useEffect } from 'react';
-import { useDecision } from '@optimizely/react-sdk';
+import { useState, useEffect, useContext } from 'react';
+import { useDecision, OptimizelyContext } from '@optimizely/react-sdk';
 
 const isClientSide = true;
 
@@ -12,6 +12,10 @@ const useOptimizelyVariation = (
   overrideAttributes = {},
   useClientSide = isClientSide,
 ) => {
+  const { optimizely } = useContext(OptimizelyContext);
+
+  if (!optimizely) return null;
+
   if (useClientSide) {
     const [decision, isClientReady, didTimeout] = useDecision(
       flagId,
