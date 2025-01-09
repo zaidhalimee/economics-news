@@ -61,41 +61,43 @@ describe('beacon', () => {
       });
     });
 
-    it('should call reverb view event exactly once', async () => {
-      await sendEventBeacon({
-        type: 'view',
-        service: 'news',
-        componentName: 'component',
-        pageIdentifier: 'pageIdentifier',
-        detailedPlacement: 'detailedPlacement',
-        useReverb: true,
+    describe('Reverb', () => {
+      it('should call reverb view event exactly once', async () => {
+        await sendEventBeacon({
+          type: 'view',
+          service: 'news',
+          componentName: 'component',
+          pageIdentifier: 'pageIdentifier',
+          detailedPlacement: 'detailedPlacement',
+          useReverb: true,
+        });
+        expect(sendBeaconSpy).toHaveBeenCalledTimes(1);
+
+        expect(reverbMock.viewEvent).toHaveBeenCalledTimes(1);
       });
-      expect(sendBeaconSpy).toHaveBeenCalledTimes(1);
 
-      expect(reverbMock.viewEvent).toHaveBeenCalledTimes(1);
-    });
+      it('should call reverb click event exactly once', async () => {
+        await sendEventBeacon({
+          type: 'click',
+          service: 'news',
+          componentName: 'component',
+          pageIdentifier: 'pageIdentifier',
+          detailedPlacement: 'detailedPlacement',
+          useReverb: true,
+        });
+        expect(sendBeaconSpy).toHaveBeenCalledTimes(1);
 
-    it('should call reverb click event exactly once', async () => {
-      await sendEventBeacon({
-        type: 'click',
-        service: 'news',
-        componentName: 'component',
-        pageIdentifier: 'pageIdentifier',
-        detailedPlacement: 'detailedPlacement',
-        useReverb: true,
+        expect(reverbMock.userActionEvent).toHaveBeenCalledTimes(1);
+
+        expect(reverbMock.userActionEvent).toHaveBeenCalledWith(
+          'click',
+          'Top Stories Link',
+          {},
+          {},
+          {},
+          true,
+        );
       });
-      expect(sendBeaconSpy).toHaveBeenCalledTimes(1);
-
-      expect(reverbMock.userActionEvent).toHaveBeenCalledTimes(1);
-
-      expect(reverbMock.userActionEvent).toHaveBeenCalledWith(
-        'click',
-        'Top Stories Link',
-        {},
-        {},
-        {},
-        true,
-      );
     });
   });
 });
