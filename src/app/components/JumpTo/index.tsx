@@ -10,25 +10,102 @@ import { OptimizelyContext } from '@optimizely/react-sdk';
 import idSanitiser from '../../lib/utilities/idSanitiser';
 import styles from './index.styles';
 
-export interface JumpToProps {
+export type Variation = 'variation_1' | 'variation_2' | 'variation_3';
+
+export type JumpToProps = {
   jumpToHeadings: Array<{ heading: string; id?: string }>;
   showRelatedContentLink?: boolean;
-}
+  variation: Variation;
+};
 
-const JumpTo = ({ jumpToHeadings, showRelatedContentLink }: JumpToProps) => {
+type ItemsToRenderProps = JumpToProps & {
+  headingTranslations: {
+    featuresAnalysisTitle?: string;
+    mostReadTitle?: string;
+    relatedContent?: string;
+    topStoriesTitle?: string;
+  };
+};
+
+const getItemsToRender = ({
+  jumpToHeadings,
+  showRelatedContentLink,
+  headingTranslations,
+  variation,
+}: ItemsToRenderProps) => {
+  if (variation === 'variation_1') {
+    return [
+      ...jumpToHeadings.map(({ heading }) => ({
+        heading,
+        id: idSanitiser(heading),
+      })),
+      ...(showRelatedContentLink
+        ? [
+            {
+              heading: headingTranslations?.relatedContent || 'Related content',
+              id: 'section-label-heading-related-content-heading',
+            },
+          ]
+        : []),
+    ];
+  }
+
+  if (variation === 'variation_2' || variation === 'variation_3') {
+    return [
+      ...(showRelatedContentLink
+        ? [
+            {
+              heading: headingTranslations?.relatedContent || 'Related content',
+              id: 'section-label-heading-related-content-heading',
+            },
+          ]
+        : []),
+      {
+        heading: headingTranslations?.topStoriesTitle || 'Top Stories',
+        id: 'section-label-heading-top-stories-heading',
+      },
+      {
+        heading:
+          headingTranslations?.featuresAnalysisTitle || 'Features & Analysis',
+        id: 'section-label-heading-features-analysis-heading',
+      },
+      {
+        heading: headingTranslations?.mostReadTitle || 'Most Read',
+        id: 'section-label-heading-Most-Read',
+      },
+    ];
+  }
+
+  return null;
+};
+
+const JumpTo = ({
+  jumpToHeadings,
+  showRelatedContentLink,
+  variation,
+}: JumpToProps) => {
   const { optimizely } = useContext(OptimizelyContext);
+  const {
+    service,
+    translations: {
+      articlePage: { jumpTo = 'Jump to' } = {},
+      featuresAnalysisTitle,
+      relatedContent,
+      topStoriesTitle,
+    },
+    mostRead: { header: mostReadTitle },
+  } = useContext(ServiceContext);
 
   const eventTrackingData: EventTrackingMetadata = {
     componentName: 'jumpto',
     optimizely,
   };
 
-  const { translations } = useContext(ServiceContext);
   const [hash, setHash] = useState('');
-  const { jumpTo = 'Jump to' } = translations?.articlePage || {};
-  const relatedContent = translations?.relatedContent || 'Related content';
+
   const viewRef = useViewTracker(eventTrackingData);
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
+
   useEffect(() => {
     setHash(window.location.hash);
   }, []);
@@ -40,23 +117,29 @@ const JumpTo = ({ jumpToHeadings, showRelatedContentLink }: JumpToProps) => {
     clickTrackerHandler(e);
     setHash(subheadingId);
   };
-  const headingsToRender = [
-    // Add article subheadings into a copy of the array to stop mutation of the original array
-    ...jumpToHeadings.map(({ heading }) => ({
-      heading,
-      id: idSanitiser(heading),
-    })),
-    // Related content link also added to the headings list when that OJ is present on the page
-    ...(showRelatedContentLink
-      ? [
-          {
-            heading: relatedContent,
-            id: 'section-label-heading-related-content-heading',
-          },
-        ]
-      : []),
-  ];
+
+  const headingsToRender = getItemsToRender({
+    jumpToHeadings,
+    showRelatedContentLink,
+    headingTranslations: {
+      featuresAnalysisTitle,
+      mostReadTitle,
+      relatedContent,
+      topStoriesTitle,
+    },
+    variation,
+  });
+
   const titleId = 'jump-to-heading';
+
+  const capitializedService =
+    service?.substring(0, 1).toUpperCase() + service?.substring(1);
+
+  const titleToRender = {
+    variation_1: jumpTo,
+    variation_2: `Discover more from BBC ${capitializedService}`,
+    variation_3: `More from BBC ${capitializedService}`,
+  }[variation];
 
   return (
     <nav
@@ -73,7 +156,7 @@ const JumpTo = ({ jumpToHeadings, showRelatedContentLink }: JumpToProps) => {
         fontVariant="sansBold"
         css={styles.title}
       >
-        {jumpTo}
+        {titleToRender}
       </Text>
       <ol role="list" css={styles.list}>
         {headingsToRender?.map(({ heading, id }) => {

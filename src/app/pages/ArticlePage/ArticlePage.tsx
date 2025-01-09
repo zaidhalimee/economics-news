@@ -39,7 +39,7 @@ import CpsRecommendations from '#containers/CpsRecommendations';
 import InlinePodcastPromo from '#containers/PodcastPromo/Inline';
 import { Article, OptimoBylineBlock } from '#app/models/types/optimo';
 import ScrollablePromo from '#components/ScrollablePromo';
-import JumpTo, { JumpToProps } from '#app/components/JumpTo';
+import JumpTo, { JumpToProps, Variation } from '#app/components/JumpTo';
 import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
 import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
 import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
@@ -130,9 +130,11 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     mostRead: mostReadInitialData,
   } = pageData;
 
-  const jumpToVariation = useOptimizelyVariation(
-    'jump_to',
-  ) as unknown as string;
+  // const jumpToVariation = useOptimizelyVariation(
+  //   'jump_to',
+  // ) as unknown as string;
+
+  const jumpToVariation: Variation | 'off' = 'variation_2';
 
   const hasJumpToBlockForExperiment = blocks.some(
     block => block.type === 'jumpTo',
@@ -194,10 +196,19 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       <Disclaimer {...props} increasePaddingOnDesktop={false} />
     ),
     podcastPromo: () => (podcastPromoEnabled ? <InlinePodcastPromo /> : null),
-    jumpTo: (props: ComponentToRenderProps & JumpToProps) =>
-      jumpToVariation === 'on' ? (
-        <JumpTo {...props} showRelatedContentLink={showRelatedContent} />
-      ) : null,
+    jumpTo: (props: ComponentToRenderProps & JumpToProps) => {
+      if (!hasJumpToBlockForExperiment) return null;
+      if (jumpToVariation === 'off') return null;
+
+      return (
+        <JumpTo
+          {...props}
+          jumpToHeadings={props.jumpToHeadings}
+          showRelatedContentLink={showRelatedContent}
+          variation={jumpToVariation}
+        />
+      );
+    },
   };
 
   const visuallyHiddenBlock = {
