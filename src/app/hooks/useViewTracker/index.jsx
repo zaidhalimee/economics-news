@@ -3,6 +3,8 @@ import path from 'ramda/src/path';
 import pathOr from 'ramda/src/pathOr';
 import prop from 'ramda/src/prop';
 
+import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
+
 import { sendEventBeacon } from '../../components/ATIAnalytics/beacon';
 import { EventTrackingContext } from '../../contexts/EventTrackingContext';
 import useTrackingToggle from '../useTrackingToggle';
@@ -28,6 +30,8 @@ const useViewTracker = (props = {}) => {
   const [eventSent, setEventSent] = useState(false);
   const { trackingIsEnabled } = useTrackingToggle(componentName);
   const eventTrackingContext = useContext(EventTrackingContext);
+  const optimizelyVariation = useOptimizelyVariation('jump_to_onward_journeys');
+
   const { pageIdentifier, platform, producerId, statsDestination } =
     eventTrackingContext;
   const campaignID = pathOr(
@@ -104,6 +108,10 @@ const useViewTracker = (props = {}) => {
             advertiserID,
             url,
             detailedPlacement,
+            ...(optimizelyVariation &&
+              optimizelyVariation !== 'off' && {
+                experimentVariant: optimizelyVariation,
+              }),
           });
           setEventSent(true);
           observer.current.disconnect();
@@ -136,6 +144,7 @@ const useViewTracker = (props = {}) => {
     optimizely,
     optimizelyMetricNameOverride,
     detailedPlacement,
+    optimizelyVariation,
   ]);
 
   return async element => {
