@@ -1,16 +1,11 @@
 import React from 'react';
-import optimizelyReactSdk, {
-  OptimizelyProvider,
-  createInstance,
-} from '@optimizely/react-sdk';
+import optimizelyReactSdk, { OptimizelyProvider } from '@optimizely/react-sdk';
 import { renderHook } from '#app/components/react-testing-library-with-providers';
 import useOptimizelyVariation from '.';
 
-const optimizely = createInstance({
-  sdkKey: '12345',
-  eventBatchSize: 10,
-  eventFlushInterval: 1000,
-});
+const optimizely = {
+  setUser: jest.fn(() => Promise.resolve()),
+};
 
 const wrapper = ({ children }) => (
   <OptimizelyProvider optimizely={optimizely}>{children}</OptimizelyProvider>
