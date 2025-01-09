@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import pixelsToRem from '#app/utilities/pixelsToRem';
 import { css, Theme } from '@emotion/react';
 
@@ -7,7 +8,7 @@ export default {
       width: '100%',
       marginTop: `${spacings.FULL}rem`,
     }),
-  mediaButton: ({ palette, mq }: Theme) =>
+  watchnNowButton: ({ palette, mq }: Theme) =>
     css({
       cursor: 'pointer',
       backgroundColor: 'unset',
@@ -81,7 +82,7 @@ export default {
         width: '50%',
       },
     }),
-  closeContainer: ({ spacings, palette, mq }: Theme) =>
+  closeButton: ({ spacings, palette, mq }: Theme) =>
     css({
       display: 'flex',
       justifyContent: 'space-between',
@@ -92,6 +93,7 @@ export default {
       outline: 0,
       lineHeight: 0,
       padding: 0,
+      alignItems: 'center',
 
       '&:focus, &:hover': {
         textDecoration: 'underline',
@@ -100,6 +102,7 @@ export default {
     }),
   closeIconContainer: ({ spacings, palette }: Theme) =>
     css({
+      verticalAlign: 'center',
       svg: {
         fill: 'currentcolor',
         color: palette.WHITE,
@@ -113,6 +116,11 @@ export default {
         backgroundColor: palette.POSTBOX,
       },
     }),
+  closeInfo: ({ spacings, palette }: Theme) =>
+    css({
+      textAlign: 'start',
+      color: palette.WHITE,
+    }),
   liveMediaSpan: () =>
     css({
       maxWidth: '100%',
@@ -123,10 +131,17 @@ export default {
     }),
   mediaDescription: ({ palette, spacings }: Theme) =>
     css({
-      color: palette.WHITE,
-      span: { color: palette.WHITE, margin: 0 },
+      span: { margin: 0 },
       margin: 0,
       // marginTop: `${spacings.FULL}rem`,
+    }),
+  openMediaDescription: ({ palette, spacings }: Theme) =>
+    css({
+      span: { color: palette.GREY_4 },
+    }),
+  closeMediaDescription: ({ palette, spacings }: Theme) =>
+    css({
+      span: { color: palette.WHITE },
     }),
   mediaDescriptionGuidance: ({ spacings }: Theme) =>
     css({
