@@ -319,147 +319,149 @@ describe('buildATIEventTrackUrl', () => {
   });
 });
 
-describe('buildReverbAnalyticsModel', () => {
-  beforeEach(() => {
-    analyticsUtilFunctions.forEach(func => {
-      mockAndSet(func, func.name);
+describe('Reverb', () => {
+  describe('buildReverbAnalyticsModel', () => {
+    beforeEach(() => {
+      analyticsUtilFunctions.forEach(func => {
+        mockAndSet(func, func.name);
+      });
     });
-  });
 
-  afterEach(() => {
-    jest.resetAllMocks();
-  });
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
 
-  const input = {
-    appName: 'news',
-    campaigns: [
-      {
-        campaignId: '1',
-        campaignName: 'campaign1',
-      },
-      {
-        campaignId: '2',
-        campaignName: 'campaign2',
-      },
-    ],
-    categoryName: 'categoryName',
-    contentId: 'contentId',
-    contentType: 'contentType',
-    language: 'language',
-    ldpThingIds: 'ldpThingIds',
-    ldpThingLabels: 'ldpThingLabels',
-    libraryVersion: 'libraryVersion',
-    pageIdentifier: 'pageIdentifier',
-    pageTitle: 'pageTitle',
-    platform: 'canonical' as Platforms,
-    previousPath: '',
-    producerName: 'producerName',
-    origin: 'http://localhost',
-    nationsProducer: '',
-    statsDestination: 'statsDestination',
-    timePublished: 'timePublished',
-    timeUpdated: 'timeUpdated',
-  };
-
-  it('should return the correct Reverb analytics model', () => {
-    const reverbAnalyticsModel = buildReverbAnalyticsModel(input);
-
-    const pageParams = {
+    const input = {
+      appName: 'news',
+      campaigns: [
+        {
+          campaignId: '1',
+          campaignName: 'campaign1',
+        },
+        {
+          campaignId: '2',
+          campaignName: 'campaign2',
+        },
+      ],
+      categoryName: 'categoryName',
       contentId: 'contentId',
       contentType: 'contentType',
-      destination: 'statsDestination',
-      name: 'pageIdentifier',
-      producer: 'producerName',
-      additionalProperties: {
-        app_name: 'news',
-        app_type: 'getAppType',
-        content_language: 'language',
-        product_platform: null,
-        referrer_url: 'getReferrer',
-        x5: 'getHref',
-        x8: 'libraryVersion',
-        x9: 'sanitise',
-        x10: '',
-        x11: 'timePublished',
-        x12: 'timeUpdated',
-        x13: 'ldpThingLabels',
-        x14: 'ldpThingIds',
-        x16: 'campaign1~campaign2',
-        x17: 'categoryName',
-        x18: 'isLocServeCookieSet',
-      },
+      language: 'language',
+      ldpThingIds: 'ldpThingIds',
+      ldpThingLabels: 'ldpThingLabels',
+      libraryVersion: 'libraryVersion',
+      pageIdentifier: 'pageIdentifier',
+      pageTitle: 'pageTitle',
+      platform: 'canonical' as Platforms,
+      previousPath: '',
+      producerName: 'producerName',
+      origin: 'http://localhost',
+      nationsProducer: '',
+      statsDestination: 'statsDestination',
+      timePublished: 'timePublished',
+      timeUpdated: 'timeUpdated',
     };
 
-    expect(reverbAnalyticsModel.params.page).toEqual(pageParams);
+    it('should return the correct Reverb analytics model', () => {
+      const reverbAnalyticsModel = buildReverbAnalyticsModel(input);
+
+      const pageParams = {
+        contentId: 'contentId',
+        contentType: 'contentType',
+        destination: 'statsDestination',
+        name: 'pageIdentifier',
+        producer: 'producerName',
+        additionalProperties: {
+          app_name: 'news',
+          app_type: 'getAppType',
+          content_language: 'language',
+          product_platform: null,
+          referrer_url: 'getReferrer',
+          x5: 'getHref',
+          x8: 'libraryVersion',
+          x9: 'sanitise',
+          x10: '',
+          x11: 'timePublished',
+          x12: 'timeUpdated',
+          x13: 'ldpThingLabels',
+          x14: 'ldpThingIds',
+          x16: 'campaign1~campaign2',
+          x17: 'categoryName',
+          x18: 'isLocServeCookieSet',
+        },
+      };
+
+      expect(reverbAnalyticsModel.params.page).toEqual(pageParams);
+    });
   });
-});
 
-describe('buildReverbPageSectionEventModel', () => {
-  const input = {
-    pageIdentifier: 'mundo.page',
-    producerName: 'MUNDO',
-    statsDestination: 'statsDestination',
-    componentName: 'top-stories',
-    campaignID: '1234',
-    format: 'format',
-    type: 'view',
-    advertiserID: 'advertiserID',
-    url: 'http://localhost',
-  };
-
-  it('should return the correct Reverb page section view event model', () => {
-    const reverbPageSectionViewEventModel =
-      buildReverbPageSectionEventModel(input);
-
-    const pageSectionViewEventParams = {
-      destination: 'statsDestination',
-      name: 'mundo.page',
-      producer: 'MUNDO',
-      additionalProperties: {
-        ati: 'PUB-[1234]-[top-stories]-[]-[format]-[mundo.page]-[]-[advertiserID]-[http://localhost]',
-        type: 'AT',
-      },
+  describe('buildReverbPageSectionEventModel', () => {
+    const input = {
+      pageIdentifier: 'mundo.page',
+      producerName: 'MUNDO',
+      statsDestination: 'statsDestination',
+      componentName: 'top-stories',
+      campaignID: '1234',
+      format: 'format',
+      type: 'view',
+      advertiserID: 'advertiserID',
+      url: 'http://localhost',
     };
 
-    expect(reverbPageSectionViewEventModel.params.page).toEqual(
-      pageSectionViewEventParams,
-    );
-  });
+    it('should return the correct Reverb page section view event model', () => {
+      const reverbPageSectionViewEventModel =
+        buildReverbPageSectionEventModel(input);
 
-  it('should return the correct eventName for the Reverb page section view event model', () => {
-    const reverbPageSectionViewEventModel =
-      buildReverbPageSectionEventModel(input);
+      const pageSectionViewEventParams = {
+        destination: 'statsDestination',
+        name: 'mundo.page',
+        producer: 'MUNDO',
+        additionalProperties: {
+          ati: 'PUB-[1234]-[top-stories]-[]-[format]-[mundo.page]-[]-[advertiserID]-[http://localhost]',
+          type: 'AT',
+        },
+      };
 
-    expect(reverbPageSectionViewEventModel.eventName).toEqual('sectionView');
-  });
-
-  it('should return the correct Reverb page section click event model', () => {
-    const reverbPageSectionViewEventModel = buildReverbPageSectionEventModel({
-      ...input,
-      type: 'click',
+      expect(reverbPageSectionViewEventModel.params.page).toEqual(
+        pageSectionViewEventParams,
+      );
     });
 
-    const pageSectionViewEventParams = {
-      destination: 'statsDestination',
-      name: 'mundo.page',
-      producer: 'MUNDO',
-      additionalProperties: {
-        atc: 'PUB-[1234]-[top-stories]-[]-[format]-[mundo.page]-[]-[advertiserID]-[http://localhost]',
-        type: 'AT',
-      },
-    };
+    it('should return the correct eventName for the Reverb page section view event model', () => {
+      const reverbPageSectionViewEventModel =
+        buildReverbPageSectionEventModel(input);
 
-    expect(reverbPageSectionViewEventModel.params.page).toEqual(
-      pageSectionViewEventParams,
-    );
-  });
-
-  it('should return the correct eventName for the Reverb page section click event model', () => {
-    const reverbPageSectionViewEventModel = buildReverbPageSectionEventModel({
-      ...input,
-      type: 'click',
+      expect(reverbPageSectionViewEventModel.eventName).toEqual('sectionView');
     });
 
-    expect(reverbPageSectionViewEventModel.eventName).toEqual('sectionClick');
+    it('should return the correct Reverb page section click event model', () => {
+      const reverbPageSectionViewEventModel = buildReverbPageSectionEventModel({
+        ...input,
+        type: 'click',
+      });
+
+      const pageSectionViewEventParams = {
+        destination: 'statsDestination',
+        name: 'mundo.page',
+        producer: 'MUNDO',
+        additionalProperties: {
+          atc: 'PUB-[1234]-[top-stories]-[]-[format]-[mundo.page]-[]-[advertiserID]-[http://localhost]',
+          type: 'AT',
+        },
+      };
+
+      expect(reverbPageSectionViewEventModel.params.page).toEqual(
+        pageSectionViewEventParams,
+      );
+    });
+
+    it('should return the correct eventName for the Reverb page section click event model', () => {
+      const reverbPageSectionViewEventModel = buildReverbPageSectionEventModel({
+        ...input,
+        type: 'click',
+      });
+
+      expect(reverbPageSectionViewEventModel.eventName).toEqual('sectionClick');
+    });
   });
 });
