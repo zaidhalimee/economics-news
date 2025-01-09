@@ -45,9 +45,9 @@ export const Variation1 = () => {
 };
 
 export const Variation2 = () => {
-  return <Component jumpToHeadings={jumpToHeadings} variation="variation_2" />;
+  return <Component variation="variation_2" />;
 };
 
 export const Variation3 = () => {
-  return <Component jumpToHeadings={jumpToHeadings} variation="variation_3" />;
+  return <Component variation="variation_3" />;
 };

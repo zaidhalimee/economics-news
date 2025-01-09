@@ -13,7 +13,7 @@ import styles from './index.styles';
 export type Variation = 'variation_1' | 'variation_2' | 'variation_3';
 
 export type JumpToProps = {
-  jumpToHeadings: Array<{ heading: string; id?: string }>;
+  jumpToHeadings?: Array<{ heading: string; id?: string }>;
   showRelatedContentLink?: boolean;
   variation: Variation;
 };
@@ -35,10 +35,12 @@ const getItemsToRender = ({
 }: ItemsToRenderProps) => {
   if (variation === 'variation_1') {
     return [
-      ...jumpToHeadings.map(({ heading }) => ({
-        heading,
-        id: idSanitiser(heading),
-      })),
+      ...(jumpToHeadings
+        ? jumpToHeadings.map(({ heading }) => ({
+            heading,
+            id: idSanitiser(heading),
+          }))
+        : []),
       ...(showRelatedContentLink
         ? [
             {
