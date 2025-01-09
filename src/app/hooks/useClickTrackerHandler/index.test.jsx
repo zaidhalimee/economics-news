@@ -16,11 +16,6 @@ import {
 import pidginData from './fixtureData/tori-51745682.json';
 import useClickTrackerHandler from '.';
 
-jest.mock('#app/hooks/useOptimizelyVariation', () => ({
-  __esModule: true,
-  default: jest.fn(),
-}));
-
 const trackingToggleSpy = jest.spyOn(trackingToggle, 'default');
 
 const { location } = window;

@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState, useRef } from 'react';
 import prop from 'ramda/src/prop';
 
-import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
+// import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
 
 import { sendEventBeacon } from '../../components/ATIAnalytics/beacon';
 import { EventTrackingContext } from '../../contexts/EventTrackingContext';
@@ -28,7 +28,7 @@ const useViewTracker = (props = {}) => {
   const [eventSent, setEventSent] = useState(false);
   const { trackingIsEnabled } = useTrackingToggle(componentName);
   const eventTrackingContext = useContext(EventTrackingContext);
-  const optimizelyVariation = useOptimizelyVariation('jump_to_onward_journeys');
+  // const optimizelyVariation = useOptimizelyVariation('jump_to_onward_journeys');
 
   const { pageIdentifier, platform, producerId, statsDestination } =
     eventTrackingContext;
@@ -104,10 +104,10 @@ const useViewTracker = (props = {}) => {
             advertiserID,
             url,
             detailedPlacement,
-            ...(optimizelyVariation &&
-              optimizelyVariation !== 'off' && {
-                experimentVariant: optimizelyVariation,
-              }),
+            // ...(optimizelyVariation &&
+            //   optimizelyVariation !== 'off' && {
+            //     experimentVariant: optimizelyVariation,
+            //   }),
           });
           setEventSent(true);
           observer.current.disconnect();
@@ -140,7 +140,7 @@ const useViewTracker = (props = {}) => {
     optimizely,
     optimizelyMetricNameOverride,
     detailedPlacement,
-    optimizelyVariation,
+    // optimizelyVariation,
   ]);
 
   return async element => {

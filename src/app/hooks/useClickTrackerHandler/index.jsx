@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { useContext, useCallback, useState } from 'react';
 
-import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
+// import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
 
 import { EventTrackingContext } from '../../contexts/EventTrackingContext';
 import useTrackingToggle from '../useTrackingToggle';
@@ -25,7 +25,7 @@ const useClickTrackerHandler = (props = {}) => {
   const { trackingIsEnabled } = useTrackingToggle(componentName);
   const [clicked, setClicked] = useState(false);
   const eventTrackingContext = useContext(EventTrackingContext);
-  const optimizelyVariation = useOptimizelyVariation('jump_to_onward_journeys');
+  // const optimizelyVariation = useOptimizelyVariation('jump_to_onward_journeys');
 
   const { pageIdentifier, platform, producerId, statsDestination } =
     eventTrackingContext;
@@ -90,10 +90,10 @@ const useClickTrackerHandler = (props = {}) => {
               statsDestination,
               url,
               detailedPlacement,
-              ...(optimizelyVariation &&
-                optimizelyVariation !== 'off' && {
-                  experimentVariant: optimizelyVariation,
-                }),
+              // ...(optimizelyVariation &&
+              //   optimizelyVariation !== 'off' && {
+              //     experimentVariant: optimizelyVariation,
+              //   }),
             });
           } finally {
             if (nextPageUrl && !preventNavigation) {
@@ -123,7 +123,7 @@ const useClickTrackerHandler = (props = {}) => {
       optimizely,
       optimizelyMetricNameOverride,
       detailedPlacement,
-      optimizelyVariation,
+      // optimizelyVariation,
     ],
   );
 };
