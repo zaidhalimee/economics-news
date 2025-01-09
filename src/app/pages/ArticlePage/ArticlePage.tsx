@@ -130,11 +130,9 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     mostRead: mostReadInitialData,
   } = pageData;
 
-  // const jumpToVariation = useOptimizelyVariation(
-  //   'jump_to',
-  // ) as unknown as string;
-
-  const jumpToVariation: Variation | 'off' = 'variation_2';
+  const jumpToVariation = useOptimizelyVariation('jump_to') as unknown as
+    | Variation
+    | 'off';
 
   const hasJumpToBlockForExperiment = blocks.some(
     block => block.type === 'jumpTo',
