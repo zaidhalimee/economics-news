@@ -272,8 +272,6 @@ describe('buildATIEventTrackUrl', () => {
       'hl=getCurrentTime',
       'lng=getDeviceLanguage',
       'atc=PUB-[campaignID]-[component]-[variant_1]-[format]-[pageIdentifier]-[detailedPlacement]-[]-[url]',
-      'mv_test=JumpTo Onward Journeys experiment',
-      'mv_creation=variant_1',
       'type=AT',
     ]);
   });
@@ -293,6 +291,7 @@ describe('buildATIEventTrackUrl', () => {
       url: 'url',
       detailedPlacement: 'detailedPlacement',
       experimentVariant: 'variant_1',
+      ampExperimentName: 'someExperiment',
     });
 
     expect(splitUrl(atiEventTrackUrl)).toEqual([
@@ -305,7 +304,8 @@ describe('buildATIEventTrackUrl', () => {
       'hl=getCurrentTime',
       'lng=getDeviceLanguage',
       'atc=PUB-[campaignID]-[component]-[variant_1]-[format]-[pageIdentifier]-[detailedPlacement]-[]-[url]',
-      'mv_test=JumpTo Onward Journeys experiment',
+      'mv_test=Google Discover',
+      'mv_experiment_id=someExperiment',
       'mv_creation=variant_1',
       'type=AT',
     ]);
