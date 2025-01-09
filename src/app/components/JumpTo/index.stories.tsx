@@ -34,7 +34,7 @@ export default {
   },
 };
 
-export const ExampleWithRelatedContentLink = () => {
+export const Variation1 = () => {
   return (
     <Component
       jumpToHeadings={jumpToHeadings}
@@ -44,6 +44,10 @@ export const ExampleWithRelatedContentLink = () => {
   );
 };
 
-export const Example = () => {
-  return <Component jumpToHeadings={jumpToHeadings} variation="variation_1" />;
+export const Variation2 = () => {
+  return <Component jumpToHeadings={jumpToHeadings} variation="variation_2" />;
+};
+
+export const Variation3 = () => {
+  return <Component jumpToHeadings={jumpToHeadings} variation="variation_3" />;
 };
