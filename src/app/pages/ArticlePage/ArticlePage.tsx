@@ -195,7 +195,11 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     ),
     podcastPromo: () => (podcastPromoEnabled ? <InlinePodcastPromo /> : null),
     jumpTo: (props: ComponentToRenderProps & JumpToProps) => {
-      if (jumpToVariation === 'off' || !hasJumpToBlockForExperiment)
+      if (
+        jumpToVariation === 'off' ||
+        !jumpToVariation ||
+        !hasJumpToBlockForExperiment
+      )
         return null;
 
       return (
