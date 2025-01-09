@@ -7,22 +7,13 @@ export default {
       width: '100%',
       marginTop: `${spacings.FULL}rem`,
     }),
-  mediaButton: ({ palette, mq }: Theme) =>
+  mediaButton: ({ mq }: Theme) =>
     css({
       cursor: 'pointer',
       backgroundColor: 'unset',
       border: 'unset',
       textAlign: 'start',
       padding: 0,
-      '&:hover .hoverStylesText span, &:focus .hoverStylesText span': {
-        textDecoration: 'underline',
-      },
-      '&:hover .hoverStylesCTA, &:focus .hoverStylesCTA': {
-        backgroundColor: palette.LIVE_DARK,
-        [mq.FORCED_COLOURS]: {
-          textDecoration: 'underline',
-        },
-      },
       [mq.FORCED_COLOURS]: {
         color: 'canvasText',
       },
@@ -66,6 +57,12 @@ export default {
       [mq.FORCED_COLOURS]: {
         color: 'canvasText',
         border: `${pixelsToRem(2)}rem solid canvasText`,
+      },
+      'button:hover &, button:focus &': {
+        backgroundColor: palette.LIVE_DARK,
+        [mq.FORCED_COLOURS]: {
+          textDecoration: 'underline',
+        },
       },
     }),
   liveMediaStreamText: ({ palette }: Theme) =>
@@ -112,6 +109,9 @@ export default {
       display: 'block',
       width: '100%',
       marginTop: `${spacings.FULL}rem`,
+      'button:hover & span, button:focus & span': {
+        textDecoration: 'underline',
+      },
     }),
   mediaDescriptionGuidance: ({ spacings }: Theme) =>
     css({
