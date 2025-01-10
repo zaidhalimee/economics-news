@@ -8,13 +8,13 @@ export default {
       width: '100%',
       marginTop: `${spacings.FULL}rem`,
     }),
-  mediaButton: ({ spacings, mq }: Theme) =>
+  mediaButton: ({ mq }: Theme) =>
     css({
       [mq.FORCED_COLOURS]: {
         color: 'canvasText',
       },
     }),
-  openButton: ({ mq }: Theme) =>
+  openButton: () =>
     css({
       cursor: 'pointer',
       backgroundColor: 'unset',
@@ -84,7 +84,7 @@ export default {
         width: '50%',
       },
     }),
-  closeButton: ({ spacings, palette, mq }: Theme) =>
+  closeButton: () =>
     css({
       display: 'flex',
       justifyContent: 'space-between',
@@ -126,7 +126,7 @@ export default {
       marginTop: `${pixelsToRem(3)}rem`,
       maxWidth: '100%',
     }),
-  mediaDescription: ({ palette, spacings }: Theme) =>
+  mediaDescription: ({ spacings }: Theme) =>
     css({
       display: 'block',
       width: '100%',
@@ -137,7 +137,7 @@ export default {
         textDecoration: 'underline',
       },
     }),
-  openMediaDescription: ({ palette, spacings }: Theme) =>
+  openMediaDescription: ({ palette }: Theme) =>
     css({
       span: { color: palette.GREY_4 },
     }),
