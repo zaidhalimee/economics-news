@@ -85,7 +85,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
         type="button"
         onClick={() => handleClick()}
         data-testid="watch-now-button"
-        css={[showMedia ? styles.closeButton : styles.mediaButton]}
+        css={[showMedia ? styles.closeButton : styles.openButton, styles.mediaButton]}
       >
         <div>
           <Text
@@ -140,7 +140,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
           <Close />
         </div>
       </button>
-      <div css={!showMedia && styles.hideComponent}>
+      <div css={showMedia ? styles.mediaLoader : styles.hideComponent}>
         <MemoizedMediaPlayer blocks={mediaCollection} uniqueId={vpid} />
       </div>
     </div>

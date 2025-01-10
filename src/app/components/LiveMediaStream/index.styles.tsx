@@ -8,16 +8,19 @@ export default {
       width: '100%',
       marginTop: `${spacings.FULL}rem`,
     }),
-  mediaButton: ({ mq }: Theme) =>
+  mediaButton: ({ spacings, mq }: Theme) =>
+    css({
+      [mq.FORCED_COLOURS]: {
+        color: 'canvasText',
+      },
+    }),
+  openButton: ({ mq }: Theme) =>
     css({
       cursor: 'pointer',
       backgroundColor: 'unset',
       border: 'unset',
       textAlign: 'start',
       padding: 0,
-      [mq.FORCED_COLOURS]: {
-        color: 'canvasText',
-      },
     }),
   watchLiveCTAText: ({ spacings, palette }: Theme) =>
     css({
@@ -93,11 +96,6 @@ export default {
       lineHeight: 0,
       padding: 0,
       alignItems: 'center',
-
-      [mq.FORCED_COLOURS]: {
-        color: 'canvasText',
-      },
-
     }),
   closeIconContainer: ({ spacings, palette, mq }: Theme) =>
     css({
@@ -107,7 +105,7 @@ export default {
         color: palette.WHITE,
         height: `${spacings.DOUBLE}rem`,
         width: `${spacings.DOUBLE}rem`,
-        margin: `${pixelsToRem(13)}rem`,  
+        margin: `${pixelsToRem(13)}rem`,
       },
       backgroundColor: palette.BLACK,
       border: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
@@ -125,13 +123,14 @@ export default {
     }),
   mediaLoader: () =>
     css({
+      marginTop: `${pixelsToRem(3)}rem`,
       maxWidth: '100%',
     }),
   mediaDescription: ({ palette, spacings }: Theme) =>
     css({
       display: 'block',
-        width: '100%',
-        marginTop: `${spacings.FULL}rem`,
+      width: '100%',
+      marginTop: `${spacings.FULL}rem`,
       span: { margin: 0 },
       margin: 0,
       'button:hover & span, button:focus & span': {
@@ -142,11 +141,11 @@ export default {
     css({
       span: { color: palette.GREY_4 },
     }),
-    closeMediaDescription: ({ palette, spacings }: Theme) =>
-      css({
-        span: { color: palette.WHITE},
-        textAlign: 'start',
-      }),
+  closeMediaDescription: ({ palette, spacings }: Theme) =>
+    css({
+      span: { color: palette.WHITE },
+      textAlign: 'start',
+    }),
   mediaDescriptionGuidance: ({ spacings }: Theme) =>
     css({
       margin: `${spacings.DOUBLE}rem 0 0 0`,
