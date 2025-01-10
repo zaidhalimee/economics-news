@@ -140,25 +140,6 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
           <Close />
         </div>
       </button>
-
-      {/* <div css={[showMedia ? styles.liveMediaSpan : styles.hideComponent]}>
-        <button
-          type="button"
-          onClick={() => handleClick()}
-          data-testid="close-button"
-          css={styles.closeContainer}
-        >
-          <p css={styles.mediaDescription}>
-            <Text size="pica" fontVariant="sansBold" as="span">
-              {title}
-            </Text>{' '}
-            <Text size="pica" fontVariant="sansRegular" as="span">
-              {networkName}
-            </Text>
-          </p>
-        
-        </button>
-      </div> */}
       <div css={!showMedia && styles.hideComponent}>
         <MemoizedMediaPlayer blocks={mediaCollection} uniqueId={vpid} />
       </div>

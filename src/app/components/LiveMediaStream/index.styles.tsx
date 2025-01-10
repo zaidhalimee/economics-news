@@ -82,7 +82,7 @@ export default {
         width: '50%',
       },
     }),
-  closeButton: ({ spacings, palette, mq }: Theme) =>
+  closeButton: ({ palette }: Theme) =>
     css({
       display: 'flex',
       justifyContent: 'space-between',
@@ -99,8 +99,6 @@ export default {
         textDecoration: 'underline',
         textDecorationColor: palette.GREY_4,
       },
-      
-
     }),
   closeIconContainer: ({ spacings, palette, mq }: Theme) =>
     css({
@@ -110,7 +108,7 @@ export default {
         color: palette.WHITE,
         height: `${spacings.DOUBLE}rem`,
         width: `${spacings.DOUBLE}rem`,
-        margin: `${pixelsToRem(13)}rem`,  
+        margin: `${pixelsToRem(13)}rem`,
       },
       backgroundColor: palette.BLACK,
       border: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
@@ -122,7 +120,7 @@ export default {
         color: 'canvasText',
       },
     }),
-  closeInfo: ({ spacings, palette, mq }: Theme) =>
+  closeInfo: ({ palette, mq }: Theme) =>
     css({
       textAlign: 'start',
       color: palette.WHITE,
@@ -138,17 +136,17 @@ export default {
     css({
       maxWidth: '100%',
     }),
-  mediaDescription: ({ palette, spacings }: Theme) =>
+  mediaDescription: () =>
     css({
       span: { margin: 0 },
       margin: 0,
       // marginTop: `${spacings.FULL}rem`,
     }),
-  openMediaDescription: ({ palette, spacings }: Theme) =>
+  openMediaDescription: ({ palette }: Theme) =>
     css({
       span: { color: palette.GREY_4 },
     }),
-  closeMediaDescription: ({ palette, mq }: Theme) =>
+  closeMediaDescription: ({ palette }: Theme) =>
     css({
       span: { color: palette.WHITE },
     }),
