@@ -314,7 +314,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'Habari za BBC kwa lugha zingine',
         },
         {
           id: 'COOKIE_SETTINGS',

@@ -313,7 +313,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'ఇతర భాషల్లో బీబీసీ వార్తలు',
         },
         {
           id: 'COOKIE_SETTINGS',
