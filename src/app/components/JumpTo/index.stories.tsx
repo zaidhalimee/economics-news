@@ -51,3 +51,7 @@ export const Variation2 = () => {
 export const Variation3 = () => {
   return <Component variation="variation_3" />;
 };
+
+export const Variation2and3withRelatedContent = () => {
+  return <Component variation="variation_3" showRelatedContentLink />;
+};
