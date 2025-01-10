@@ -44,7 +44,6 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
 
   const {
     model: {
-      title,
       masterbrand: { networkName },
       synopses: { short },
       version: { vpid, warnings },
@@ -105,7 +104,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
             ]}
             className="hoverStylesText"
           >
-            {showMedia && <VisuallyHiddenText>{close}</VisuallyHiddenText>}
+            {showMedia && <VisuallyHiddenText>{close} </VisuallyHiddenText>}
             <Text size="pica" fontVariant="sansBold" as="span">
               {short},{' '}
             </Text>
@@ -126,7 +125,6 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
             </Text>
           )}
         </div>
-
         <div
           className="hoverStylesCTA"
           css={[showMedia ? styles.hideComponent : styles.watchLiveCTA]}
