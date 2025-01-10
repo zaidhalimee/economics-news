@@ -8,21 +8,13 @@ export default {
       width: '100%',
       marginTop: `${spacings.FULL}rem`,
     }),
-  watchnNowButton: ({ palette, mq }: Theme) =>
+  mediaButton: ({ mq }: Theme) =>
     css({
       cursor: 'pointer',
       backgroundColor: 'unset',
       border: 'unset',
       textAlign: 'start',
       padding: 0,
-      display: 'block',
-      width: '100%',
-      '&:hover .hoverStylesText span, &:focus .hoverStylesText span': {
-        textDecoration: 'underline',
-      },
-      '&:hover .hoverStylesCTA, &:focus .hoverStylesCTA': {
-        backgroundColor: palette.LIVE_DARK,
-      },
       [mq.FORCED_COLOURS]: {
         color: 'canvasText',
       },
@@ -52,6 +44,7 @@ export default {
       display: 'block',
       margin: `${spacings.FULL}rem 0 `,
       color: palette.GREY_2,
+      textAlign: 'start',
     }),
   watchLiveCTA: ({ palette, mq, spacings }: Theme) =>
     css({
@@ -66,6 +59,12 @@ export default {
       [mq.FORCED_COLOURS]: {
         color: 'canvasText',
         border: `${pixelsToRem(2)}rem solid canvasText`,
+      },
+      'button:hover &, button:focus &': {
+        backgroundColor: palette.LIVE_DARK,
+        [mq.FORCED_COLOURS]: {
+          textDecoration: 'underline',
+        },
       },
     }),
   liveMediaStreamText: ({ palette }: Theme) =>
@@ -95,11 +94,9 @@ export default {
       padding: 0,
       alignItems: 'center',
 
-      '&:focus, &:hover': {
-        textDecoration: 'underline',
-        textDecorationColor: palette.GREY_4,
+      [mq.FORCED_COLOURS]: {
+        color: 'canvasText',
       },
-      
 
     }),
   closeIconContainer: ({ spacings, palette, mq }: Theme) =>
@@ -122,14 +119,6 @@ export default {
         color: 'canvasText',
       },
     }),
-  closeInfo: ({ spacings, palette, mq }: Theme) =>
-    css({
-      textAlign: 'start',
-      color: palette.WHITE,
-      [mq.FORCED_COLOURS]: {
-        color: 'canvasText',
-      },
-    }),
   liveMediaSpan: () =>
     css({
       maxWidth: '100%',
@@ -140,18 +129,24 @@ export default {
     }),
   mediaDescription: ({ palette, spacings }: Theme) =>
     css({
+      display: 'block',
+        width: '100%',
+        marginTop: `${spacings.FULL}rem`,
       span: { margin: 0 },
       margin: 0,
-      // marginTop: `${spacings.FULL}rem`,
+      'button:hover & span, button:focus & span': {
+        textDecoration: 'underline',
+      },
     }),
   openMediaDescription: ({ palette, spacings }: Theme) =>
     css({
       span: { color: palette.GREY_4 },
     }),
-  closeMediaDescription: ({ palette, mq }: Theme) =>
-    css({
-      span: { color: palette.WHITE },
-    }),
+    closeMediaDescription: ({ palette, spacings }: Theme) =>
+      css({
+        span: { color: palette.WHITE},
+        textAlign: 'start',
+      }),
   mediaDescriptionGuidance: ({ spacings }: Theme) =>
     css({
       margin: `${spacings.DOUBLE}rem 0 0 0`,

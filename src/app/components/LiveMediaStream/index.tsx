@@ -28,7 +28,7 @@ const MemoizedMediaPlayer = memo(MediaLoader);
 const LiveMediaStream = ({ mediaCollection }: Props) => {
   const { translations } = useContext(ServiceContext);
   const { isLite } = useContext(RequestContext);
-  const [showMedia, setShowMedia] = useState(false); // change back
+  const [showMedia, setShowMedia] = useState(true); // change back
   let warningLevel = WARNING_LEVELS.NO_WARNING;
 
   if (isLite || mediaCollection == null || mediaCollection.length === 0) {
@@ -36,7 +36,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
   }
 
   const {
-    media: { watchNow = DEFAULT_WATCH__NOW },
+    media: { watch = DEFAULT_WATCH__NOW },
   } = translations;
 
   const mediaItem = filterForBlockType(mediaCollection, 'liveMedia');
@@ -85,9 +85,9 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
         type="button"
         onClick={() => handleClick()}
         data-testid="watch-now-button"
-        css={[showMedia ? styles.closeButton : styles.watchnNowButton]}
+        css={[showMedia ? styles.closeButton : styles.mediaButton]}
       >
-        <div css={[showMedia && styles.closeInfo]}>
+        <div>
           <Text
             size="pica"
             fontVariant="sansBold"
@@ -102,9 +102,8 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
             className="hoverStylesText"
           >
             <Text size="pica" fontVariant="sansBold" as="span">
-              {short}
-            </Text>{' '}
-            <VisuallyHiddenText>, </VisuallyHiddenText>
+              {short},{' '}
+            </Text>
             <Text size="pica" fontVariant="sansRegular" as="span">
               {networkName}
             </Text>
@@ -117,6 +116,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
               css={styles.guidanceMessage}
             >
               {warnings.warning_text}
+              <VisuallyHiddenText>, </VisuallyHiddenText>
             </Text>
           )}
         </div>
@@ -131,7 +131,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
             fontVariant="sansBold"
           >
             <PlayIcon />
-            {watchNow}
+            {watch}
           </Text>
         </div>
         <div
@@ -140,25 +140,6 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
           <Close />
         </div>
       </button>
-
-      {/* <div css={[showMedia ? styles.liveMediaSpan : styles.hideComponent]}>
-        <button
-          type="button"
-          onClick={() => handleClick()}
-          data-testid="close-button"
-          css={styles.closeContainer}
-        >
-          <p css={styles.mediaDescription}>
-            <Text size="pica" fontVariant="sansBold" as="span">
-              {title}
-            </Text>{' '}
-            <Text size="pica" fontVariant="sansRegular" as="span">
-              {networkName}
-            </Text>
-          </p>
-        
-        </button>
-      </div> */}
       <div css={!showMedia && styles.hideComponent}>
         <MemoizedMediaPlayer blocks={mediaCollection} uniqueId={vpid} />
       </div>
