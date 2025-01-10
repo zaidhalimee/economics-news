@@ -66,6 +66,58 @@ describe('JumpTo Component', () => {
         expect(link).toHaveAttribute('href', expectedHref);
       });
     });
+
+    it('renders variation_2 correctly', () => {
+      render(
+        <JumpTo
+          jumpToHeadings={jumpToHeadings}
+          showRelatedContentLink
+          variation="variation_2"
+        />,
+      );
+      const headings = screen.getAllByRole('listitem');
+
+      const hrefs = headings.map(heading => {
+        const link = heading.querySelector('a');
+        return link?.getAttribute('href');
+      });
+
+      const title = screen.getByText('Discover more from BBC News');
+      expect(title).toBeInTheDocument();
+
+      expect(hrefs).toEqual([
+        '#section-label-heading-related-content-heading',
+        '#section-label-heading-top-stories-heading',
+        '#section-label-heading-features-analysis-heading',
+        '#section-label-heading-Most-Read',
+      ]);
+    });
+
+    it('renders variation_3 correctly', () => {
+      render(
+        <JumpTo
+          jumpToHeadings={jumpToHeadings}
+          showRelatedContentLink
+          variation="variation_3"
+        />,
+      );
+      const headings = screen.getAllByRole('listitem');
+
+      const hrefs = headings.map(heading => {
+        const link = heading.querySelector('a');
+        return link?.getAttribute('href');
+      });
+
+      const title = screen.getByText('More from BBC News');
+      expect(title).toBeInTheDocument();
+
+      expect(hrefs).toEqual([
+        '#section-label-heading-related-content-heading',
+        '#section-label-heading-top-stories-heading',
+        '#section-label-heading-features-analysis-heading',
+        '#section-label-heading-Most-Read',
+      ]);
+    });
   });
 
   describe('Event Tracking', () => {
