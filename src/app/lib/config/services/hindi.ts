@@ -90,8 +90,8 @@ export const service: DefaultServiceConfig = {
       articlePage: {
         jumpToTitle: {
           variation_1: 'इस पर जाएं',
-          variation_2: 'Discover more from BBC {service}',
-          variation_3: 'More from BBC {service}',
+          variation_2: 'Discover more from BBC Hindi',
+          variation_3: 'More from BBC Hindi',
         },
       },
       liveExperiencePage: {

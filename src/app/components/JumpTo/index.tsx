@@ -142,11 +142,10 @@ const JumpTo = ({
   const titleToRender = {
     variation_1: jumpToTitle?.variation_1 || 'Jump to',
     variation_2:
-      jumpToTitle?.variation_2.replace('{service}', capitializedService) ||
+      jumpToTitle?.variation_2 ||
       `Discover more from BBC ${capitializedService}`,
     variation_3:
-      jumpToTitle?.variation_3?.replace('{service}', capitializedService) ||
-      `More from BBC ${capitializedService}`,
+      jumpToTitle?.variation_3 || `More from BBC ${capitializedService}`,
   }[variation];
 
   return (
