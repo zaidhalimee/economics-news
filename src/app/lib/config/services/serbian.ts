@@ -92,7 +92,7 @@ export const service: SerbianConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'BBC News na drugim jezicima',
         },
         {
           id: 'COOKIE_SETTINGS',
@@ -485,7 +485,7 @@ export const service: SerbianConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'BBC News на другим језицима',
         },
         {
           id: 'COOKIE_SETTINGS',

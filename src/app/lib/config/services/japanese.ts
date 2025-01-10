@@ -293,7 +293,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'BBCニュースを他言語で読む',
         },
         {
           id: 'COOKIE_SETTINGS',

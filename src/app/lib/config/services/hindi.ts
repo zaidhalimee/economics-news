@@ -417,7 +417,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'अन्य भाषाएँ',
         },
         {
           id: 'COOKIE_SETTINGS',

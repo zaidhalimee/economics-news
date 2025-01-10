@@ -401,7 +401,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'بي بي سي نيوز عربي في لغات أخرى',
         },
         {
           id: 'COOKIE_SETTINGS',
