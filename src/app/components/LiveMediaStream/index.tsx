@@ -36,7 +36,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
   }
 
   const {
-    media: { watchNow = DEFAULT_WATCH__NOW },
+    media: { watch = DEFAULT_WATCH__NOW },
   } = translations;
 
   const mediaItem = filterForBlockType(mediaCollection, 'liveMedia');
@@ -125,7 +125,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
             fontVariant="sansBold"
           >
             <PlayIcon />
-            {watchNow}
+            {watch}
           </Text>
         </div>
       </button>
