@@ -52,6 +52,10 @@ export const Variation2withRelatedContent = () => {
   return <Component variation="variation_2" showRelatedContentLink />;
 };
 
+export const Variation3 = () => {
+  return <Component variation="variation_3" />;
+};
+
 export const Variation3withRelatedContent = () => {
   return <Component variation="variation_3" showRelatedContentLink />;
 };
