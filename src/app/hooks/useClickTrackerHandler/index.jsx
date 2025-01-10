@@ -72,7 +72,8 @@ const useClickTrackerHandler = (props = {}) => {
             );
           }
 
-          const optimizelyVariation = window.optimizelyVariation || null;
+          const optimizelyVariation =
+            (optimizely && window.optimizelyVariation) || null;
 
           try {
             await sendEventBeacon({

@@ -88,7 +88,8 @@ const useViewTracker = (props = {}) => {
             );
           }
 
-          const optimizelyVariation = window.optimizelyVariation || null;
+          const optimizelyVariation =
+            (optimizely && window.optimizelyVariation) || null;
 
           sendEventBeacon({
             campaignID,
