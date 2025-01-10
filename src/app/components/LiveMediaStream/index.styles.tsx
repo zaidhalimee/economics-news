@@ -134,7 +134,6 @@ export default {
       width: '100%',
       marginTop: `${spacings.FULL}rem`,
       span: { margin: 0 },
-      margin: 0,
       'button:hover & span, button:focus & span': {
         textDecoration: 'underline',
       },
