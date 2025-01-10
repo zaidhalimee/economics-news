@@ -26,6 +26,10 @@ const useOptimizelyVariation = (
     useEffect(() => {
       if (isClientReady && !didTimeout) {
         setVariation(decision.variationKey);
+
+        // Exposes the variation key to the window object for use in the global scope
+        // Could potentially be moved to a Context and accessed that way
+        window.optimizelyVariation = decision.variationKey;
       }
     }, [isClientReady, decision.variationKey, didTimeout]);
 

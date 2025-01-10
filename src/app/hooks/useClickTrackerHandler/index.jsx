@@ -26,7 +26,6 @@ const useClickTrackerHandler = (props = {}) => {
 
   const { pageIdentifier, platform, producerId, statsDestination } =
     eventTrackingContext;
-
   const campaignID = props?.campaignID || eventTrackingContext?.campaignID;
 
   const { service } = useContext(ServiceContext);
@@ -73,6 +72,8 @@ const useClickTrackerHandler = (props = {}) => {
             );
           }
 
+          const optimizelyVariation = window.optimizelyVariation || null;
+
           try {
             await sendEventBeacon({
               type: EVENT_TYPE,
@@ -87,10 +88,10 @@ const useClickTrackerHandler = (props = {}) => {
               statsDestination,
               url,
               detailedPlacement,
-              // ...(optimizelyVariation &&
-              //   optimizelyVariation !== 'off' && {
-              //     experimentVariant: optimizelyVariation,
-              //   }),
+              ...(optimizelyVariation &&
+                optimizelyVariation !== 'off' && {
+                  experimentVariant: optimizelyVariation,
+                }),
             });
           } finally {
             if (nextPageUrl && !preventNavigation) {
@@ -120,7 +121,6 @@ const useClickTrackerHandler = (props = {}) => {
       optimizely,
       optimizelyMetricNameOverride,
       detailedPlacement,
-      // optimizelyVariation,
     ],
   );
 };

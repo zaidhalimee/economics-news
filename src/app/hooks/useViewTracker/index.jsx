@@ -88,6 +88,8 @@ const useViewTracker = (props = {}) => {
             );
           }
 
+          const optimizelyVariation = window.optimizelyVariation || null;
+
           sendEventBeacon({
             campaignID,
             componentName,
@@ -101,10 +103,10 @@ const useViewTracker = (props = {}) => {
             advertiserID,
             url,
             detailedPlacement,
-            // ...(optimizelyVariation &&
-            //   optimizelyVariation !== 'off' && {
-            //     experimentVariant: optimizelyVariation,
-            //   }),
+            ...(optimizelyVariation &&
+              optimizelyVariation !== 'off' && {
+                experimentVariant: optimizelyVariation,
+              }),
           });
           setEventSent(true);
           observer.current.disconnect();
@@ -137,7 +139,6 @@ const useViewTracker = (props = {}) => {
     optimizely,
     optimizelyMetricNameOverride,
     detailedPlacement,
-    // optimizelyVariation,
   ]);
 
   return async element => {
