@@ -22,7 +22,7 @@ type WarningItem = {
 type Props = { mediaCollection: MediaCollection[] | null };
 
 const DEFAULT_WATCH__NOW = 'Watch Live';
-const DEFAULT_CLOSE = 'Close';
+const DEFAULT_CLOSE = 'Close video';
 
 const MemoizedMediaPlayer = memo(MediaLoader);
 
