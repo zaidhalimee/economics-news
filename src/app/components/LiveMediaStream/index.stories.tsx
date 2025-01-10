@@ -21,7 +21,7 @@ export const Component = ({ warnings }: Props) => {
   fixtureData[0].model.version.warnings = warnings;
 
   return (
-    <div css={({ palette }: Theme) => css({ background: palette.BLUEJAY })}>
+    <div css={({ palette }: Theme) => css({ background: palette.BLACK })}>
       <LiveMediaStream mediaCollection={fixtureData as MediaCollection[]} />
     </div>
   );

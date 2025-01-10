@@ -22,7 +22,7 @@ type WarningItem = {
 type Props = { mediaCollection: MediaCollection[] | null };
 
 const DEFAULT_WATCH__NOW = 'Watch Live';
-const DEFAULT_CLOSE = 'Close';
+const DEFAULT_CLOSE_VIDEO = 'Close video';
 
 const MemoizedMediaPlayer = memo(MediaLoader);
 
@@ -30,6 +30,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
   const { translations } = useContext(ServiceContext);
   const { isLite } = useContext(RequestContext);
   const [showMedia, setShowMedia] = useState(false);
+
   let warningLevel = WARNING_LEVELS.NO_WARNING;
 
   if (isLite || mediaCollection == null || mediaCollection.length === 0) {
@@ -37,7 +38,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
   }
 
   const {
-    media: { watch = DEFAULT_WATCH__NOW, close = DEFAULT_CLOSE },
+    media: { watch = DEFAULT_WATCH__NOW, closeVideo = DEFAULT_CLOSE_VIDEO },
   } = translations;
 
   const mediaItem = filterForBlockType(mediaCollection, 'liveMedia');
@@ -104,7 +105,9 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
             ]}
             className="hoverStylesText"
           >
-            {showMedia && <VisuallyHiddenText>{close} </VisuallyHiddenText>}
+            {showMedia && (
+              <VisuallyHiddenText>{closeVideo}, </VisuallyHiddenText>
+            )}
             <Text size="pica" fontVariant="sansBold" as="span">
               {short},{' '}
             </Text>
@@ -125,24 +128,23 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
             </Text>
           )}
         </div>
-        <div
-          className="hoverStylesCTA"
-          css={[showMedia ? styles.hideComponent : styles.watchLiveCTA]}
-        >
-          <Text
-            css={styles.watchLiveCTAText}
-            size="greatPrimer"
-            fontVariant="sansBold"
-          >
-            <PlayIcon />
-            {watch}
-          </Text>
-        </div>
-        <div
-          css={[showMedia ? styles.closeIconContainer : styles.hideComponent]}
-        >
-          <Close />
-        </div>
+        {!showMedia && (
+          <div className="hoverStylesCTA" css={styles.watchLiveCTA}>
+            <Text
+              css={styles.watchLiveCTAText}
+              size="greatPrimer"
+              fontVariant="sansBold"
+            >
+              <PlayIcon />
+              {watch}
+            </Text>
+          </div>
+        )}
+        {showMedia && (
+          <div css={styles.closeIconContainer}>
+            <Close />
+          </div>
+        )}
       </button>
       <div css={showMedia ? styles.mediaLoader : styles.hideComponent}>
         <MemoizedMediaPlayer blocks={mediaCollection} uniqueId={vpid} />

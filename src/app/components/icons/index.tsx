@@ -137,6 +137,8 @@ export const Close = ({ className }: { className?: string }) => (
     width="12"
     height="12"
     className={className}
+    focusable="false"
+    aria-hidden="true"
   >
     <path d="m30 4.6-2.8-2.8L2 27.4l2.8 2.8zM4.8 1.8 1.9 4.7l25.2 25.5 2.9-2.9z" />
   </svg>

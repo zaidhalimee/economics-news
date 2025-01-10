@@ -10,6 +10,8 @@ export default {
     }),
   mediaButton: ({ mq }: Theme) =>
     css({
+      zIndex: '1',
+      position: 'relative',
       [mq.FORCED_COLOURS]: {
         color: 'canvasText',
       },
@@ -109,8 +111,9 @@ export default {
       },
       backgroundColor: palette.BLACK,
       border: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
-      'button:hover &': {
+      'button:hover &, button:focus &': {
         backgroundColor: palette.POSTBOX,
+        outline: `${palette.WHITE} solid ${pixelsToRem(2)}rem`,
       },
 
       [mq.FORCED_COLOURS]: {
@@ -123,7 +126,6 @@ export default {
     }),
   mediaLoader: () =>
     css({
-      marginTop: `${pixelsToRem(3)}rem`,
       maxWidth: '100%',
     }),
   mediaDescription: ({ spacings }: Theme) =>

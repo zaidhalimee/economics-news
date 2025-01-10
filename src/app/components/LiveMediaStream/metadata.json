@@ -18,5 +18,12 @@
       "url": "https://paper.dropbox.com/doc/Media-streaming-on-Live-page-header-Accessibility-Acceptance-Criteria--Cd9XeuiOa~qvgofSxoEXe6jRAg-IJpFNBmz2Anh6JxczSMit",
       "label": "Accessibility Acceptance Criteria"
     }
+  },
+  "swarm": {
+    "done": false,
+    "reference": {
+      "url": "",
+      "label": "Accessibility Swarm Notes"
+    }
   }
 }
