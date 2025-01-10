@@ -99,8 +99,10 @@ export default {
         textDecoration: 'underline',
         textDecorationColor: palette.GREY_4,
       },
+      
+
     }),
-  closeIconContainer: ({ spacings, palette }: Theme) =>
+  closeIconContainer: ({ spacings, palette, mq }: Theme) =>
     css({
       verticalAlign: 'center',
       svg: {
@@ -108,18 +110,25 @@ export default {
         color: palette.WHITE,
         height: `${spacings.DOUBLE}rem`,
         width: `${spacings.DOUBLE}rem`,
-        margin: `${pixelsToRem(13)}rem`,
+        margin: `${pixelsToRem(13)}rem`,  
       },
       backgroundColor: palette.BLACK,
       border: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
       'button:hover &': {
         backgroundColor: palette.POSTBOX,
       },
+
+      [mq.FORCED_COLOURS]: {
+        color: 'canvasText',
+      },
     }),
-  closeInfo: ({ spacings, palette }: Theme) =>
+  closeInfo: ({ spacings, palette, mq }: Theme) =>
     css({
       textAlign: 'start',
       color: palette.WHITE,
+      [mq.FORCED_COLOURS]: {
+        color: 'canvasText',
+      },
     }),
   liveMediaSpan: () =>
     css({
@@ -139,7 +148,7 @@ export default {
     css({
       span: { color: palette.GREY_4 },
     }),
-  closeMediaDescription: ({ palette, spacings }: Theme) =>
+  closeMediaDescription: ({ palette, mq }: Theme) =>
     css({
       span: { color: palette.WHITE },
     }),
