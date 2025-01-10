@@ -9,6 +9,7 @@ import { ServiceContext } from '#app/contexts/ServiceContext';
 import { RequestContext } from '#app/contexts/RequestContext';
 import styles from './index.styles';
 import WARNING_LEVELS from '../MediaLoader/configs/warningLevels';
+import VisuallyHiddenText from '../VisuallyHiddenText';
 import { Close, PlayIcon } from '../icons';
 
 type WarningItem = {
@@ -20,7 +21,7 @@ type WarningItem = {
 
 type Props = { mediaCollection: MediaCollection[] | null };
 
-const DEFAULT_WATCH__NOW = 'Watch Now';
+const DEFAULT_WATCH__NOW = 'Watch Live';
 
 const MemoizedMediaPlayer = memo(MediaLoader);
 
@@ -35,7 +36,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
   }
 
   const {
-    media: { watchNow = DEFAULT_WATCH__NOW },
+    media: { watch = DEFAULT_WATCH__NOW },
   } = translations;
 
   const mediaItem = filterForBlockType(mediaCollection, 'liveMedia');
@@ -80,38 +81,53 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
 
   return (
     <div css={styles.componentContainer}>
-      <p
-        css={[
-          styles.mediaDescription,
-          warnings && styles.mediaDescriptionGuidance,
-        ]}
-      >
-        <Text size="pica" fontVariant="sansBold" as="span">
-          {short}
-        </Text>{' '}
-        <Text size="pica" fontVariant="sansRegular" as="span">
-          {networkName}
-        </Text>
-      </p>
-      {warnings && (
-        <Text as="p" css={styles.guidanceMessage}>
-          {warnings.warning_text}
-        </Text>
-      )}
       <button
         type="button"
         onClick={() => handleClick()}
         data-testid="watch-now-button"
-        css={[showMedia ? styles.hideComponent : styles.playButton]}
+        css={styles.mediaButton}
       >
         <Text
-          css={styles.playButtonText}
-          size="greatPrimer"
+          size="pica"
           fontVariant="sansBold"
+          as="span"
+          css={[
+            styles.mediaDescription,
+            warnings && styles.mediaDescriptionGuidance,
+          ]}
+          className="hoverStylesText"
         >
-          <PlayIcon />
-          {watchNow}
+          <Text size="pica" fontVariant="sansBold" as="span">
+            {short},{' '}
+          </Text>
+          <Text size="pica" fontVariant="sansRegular" as="span">
+            {networkName}
+          </Text>
         </Text>
+        {warnings && (
+          <Text
+            as="span"
+            size="brevier"
+            fontVariant="sansRegular"
+            css={styles.guidanceMessage}
+          >
+            {warnings.warning_text}
+            <VisuallyHiddenText>, </VisuallyHiddenText>
+          </Text>
+        )}
+        <div
+          className="hoverStylesCTA"
+          css={[showMedia ? styles.hideComponent : styles.watchLiveCTA]}
+        >
+          <Text
+            css={styles.watchLiveCTAText}
+            size="greatPrimer"
+            fontVariant="sansBold"
+          >
+            <PlayIcon />
+            {watch}
+          </Text>
+        </div>
       </button>
       <div css={[showMedia ? styles.liveMediaSpan : styles.hideComponent]}>
         <p css={styles.mediaDescription}>

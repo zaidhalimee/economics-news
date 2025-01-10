@@ -4,10 +4,21 @@ import { css, Theme } from '@emotion/react';
 export default {
   componentContainer: ({ spacings }: Theme) =>
     css({
-      margin: `${spacings.FULL}rem 0`,
       width: '100%',
+      marginTop: `${spacings.FULL}rem`,
     }),
-  playButtonText: ({ spacings, palette }: Theme) =>
+  mediaButton: ({ mq }: Theme) =>
+    css({
+      cursor: 'pointer',
+      backgroundColor: 'unset',
+      border: 'unset',
+      textAlign: 'start',
+      padding: 0,
+      [mq.FORCED_COLOURS]: {
+        color: 'canvasText',
+      },
+    }),
+  watchLiveCTAText: ({ spacings, palette }: Theme) =>
     css({
       color: palette.WHITE,
       display: 'flex',
@@ -29,21 +40,29 @@ export default {
     }),
   guidanceMessage: ({ palette, spacings }: Theme) =>
     css({
+      display: 'block',
       margin: `${spacings.FULL}rem 0 `,
-      color: palette.WHITE,
+      color: palette.GREY_2,
     }),
-  playButton: ({ palette, mq }: Theme) =>
+  watchLiveCTA: ({ palette, mq, spacings }: Theme) =>
     css({
-      cursor: 'pointer',
       width: `${pixelsToRem(171)}rem`,
       border: 0,
       backgroundColor: palette.LIVE_CORE,
       padding: `${pixelsToRem(11)}rem`,
-      '&:hover': {
-        backgroundColor: palette.LIVE_DARK,
-      },
+      marginTop: `${spacings.DOUBLE}rem`,
       [mq.GROUP_2_MAX_WIDTH]: {
         width: '100%',
+      },
+      [mq.FORCED_COLOURS]: {
+        color: 'canvasText',
+        border: `${pixelsToRem(2)}rem solid canvasText`,
+      },
+      'button:hover &, button:focus &': {
+        backgroundColor: palette.LIVE_DARK,
+        [mq.FORCED_COLOURS]: {
+          textDecoration: 'underline',
+        },
       },
     }),
   liveMediaStreamText: ({ palette }: Theme) =>
@@ -84,12 +103,15 @@ export default {
     css({
       maxWidth: '100%',
     }),
-  mediaDescription: ({ palette }: Theme) =>
+  mediaDescription: ({ palette, spacings }: Theme) =>
     css({
       span: { color: palette.GREY_4 },
       display: 'block',
       width: '100%',
-      margin: `${pixelsToRem(12)}rem 0`,
+      marginTop: `${spacings.FULL}rem`,
+      'button:hover & span, button:focus & span': {
+        textDecoration: 'underline',
+      },
     }),
   mediaDescriptionGuidance: ({ spacings }: Theme) =>
     css({
