@@ -84,7 +84,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
       <button
         type="button"
         onClick={() => handleClick()}
-        data-testid="watch-now-button"
+        data-testid="watch-now-close-button"
         css={[showMedia ? styles.closeButton : styles.watchnNowButton]}
       >
         <div css={[showMedia && styles.closeInfo]}>
@@ -115,6 +115,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
               size="brevier"
               fontVariant="sansRegular"
               css={styles.guidanceMessage}
+              data-testid="warning-message"
             >
               {warnings.warning_text}
             </Text>
