@@ -4,6 +4,7 @@ import { css, jsx, Theme } from '@emotion/react';
 import mundoLiveFixture from '#data/mundo/live/c7dkx155e626t.json';
 import LiveMediaStream from '.';
 import { MediaCollection } from '../MediaLoader/types';
+import metadata from './metadata.json';
 
 type Props = {
   warnings: {
@@ -38,4 +39,10 @@ const l1Warning = {
 
 export const ComponentWithGuidance = () => <Component warnings={l1Warning} />;
 
-export default { title: 'Components/LiveMediaStream', Component };
+export default {
+  title: 'Components/LiveMediaStream',
+  Component,
+  parameters: {
+    metadata,
+  },
+};

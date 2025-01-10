@@ -96,7 +96,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
         <button
           type="button"
           onClick={() => handleClick()}
-          data-testid="watch-now-button"
+          data-testid="watch-now-close-button"
           css={[
             showMedia ? styles.closeButton : styles.openButton,
             styles.mediaButton,
