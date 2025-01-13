@@ -178,7 +178,7 @@ exports[`AMP Home Page Footer Anchors should match text and url 7`] = `
 
 exports[`AMP Home Page Footer Anchors should match text and url 8`] = `
 {
-  "text": "Other Languages",
+  "text": "BBC News на другим језицима",
   "url": "https://www.bbc.com/ws/languages",
 }
 `;

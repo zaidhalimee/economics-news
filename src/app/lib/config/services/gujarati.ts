@@ -310,7 +310,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'BBC News અન્ય ભાષાઓમાં',
         },
         {
           id: 'COOKIE_SETTINGS',
