@@ -89,9 +89,7 @@ const useViewTracker = (props = {}) => {
           }
 
           const optimizelyVariation =
-            (optimizely &&
-              optimizely?.getVariation(OPTIMIZELY_CONFIG.ruleKey)) ||
-            null;
+            optimizely?.getVariation(OPTIMIZELY_CONFIG.ruleKey) || null;
 
           sendEventBeacon({
             campaignID,
