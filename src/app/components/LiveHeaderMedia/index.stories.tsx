@@ -40,7 +40,7 @@ const l1Warning = {
 export const ComponentWithGuidance = () => <Component warnings={l1Warning} />;
 
 export default {
-  title: 'Components/LiveMediaStream',
+  title: 'Components/LiveHeaderMedia',
   Component,
   parameters: {
     metadata,
