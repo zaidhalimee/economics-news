@@ -54,7 +54,7 @@ export default {
     css({
       width: `${pixelsToRem(171)}rem`,
       border: 0,
-      backgroundColor: palette.LIVE_CORE,
+      backgroundColor: palette.LIVE_MEDIUM,
       padding: `${pixelsToRem(11)}rem`,
       marginTop: `${spacings.DOUBLE}rem`,
       [mq.GROUP_2_MAX_WIDTH]: {
@@ -65,7 +65,6 @@ export default {
         border: `${pixelsToRem(2)}rem solid canvasText`,
       },
       'button:hover &, button:focus &': {
-        backgroundColor: palette.LIVE_DARK,
         [mq.FORCED_COLOURS]: {
           textDecoration: 'underline',
         },

@@ -27,6 +27,7 @@ export const GREY_8 = '#202224';
 export const KINGFISHER = '#11708C';
 export const LE_TEAL = '#09838B';
 export const LIVE_LIGHT = '#00CCC7';
+export const LIVE_MEDIUM = '#008282';
 export const LIVE_DARK = '#006666';
 export const LIVE_CORE = '#009E9E';
 export const LUNAR = '#F2F2F2';
