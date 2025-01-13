@@ -208,6 +208,7 @@ describe('Expected use', () => {
       optimizely: {
         track: mockOptimizelyTrack,
         user: { attributes: mockAttributes, id: mockUserId },
+        getVariation: jest.fn(() => 'off'),
       },
       optimizelyMetricNameOverride: 'myEvent',
     };
@@ -611,6 +612,7 @@ describe('Expected use', () => {
       optimizely: {
         track: mockOptimizelyTrack,
         user: { attributes: mockAttributes, id: mockUserId },
+        getVariation: jest.fn(() => 'off'),
       },
     };
 
