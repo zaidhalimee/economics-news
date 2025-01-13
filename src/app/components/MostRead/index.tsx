@@ -37,6 +37,66 @@ interface MostReadProps {
   className?: string;
 }
 
+// We render amp on ONLY STY, CSP and ARTICLE pages using amp-list.
+const AmpMostRead = ({
+  pageType,
+  className,
+  mobileDivider,
+  headingBackgroundColour,
+  endpoint,
+  size,
+}: {
+  pageType: PageTypes;
+  className: string;
+  mobileDivider: boolean;
+  headingBackgroundColour: string;
+  endpoint: string;
+  size: Size;
+}) =>
+  mostReadAmpPageTypes.includes(pageType) ? (
+    <MostReadSection {...(className && { className })}>
+      <MostReadSectionLabel
+        mobileDivider={mobileDivider}
+        backgroundColor={headingBackgroundColour}
+      />
+      <Amp
+        endpoint={`${getEnvConfig().SIMORGH_MOST_READ_CDN_URL}${endpoint}`}
+        size={size}
+      />
+    </MostReadSection>
+  ) : null;
+
+// Do not render on Canonical if data is not provided
+const CanonicalMostRead = ({
+  data,
+  className,
+  mobileDivider,
+  headingBackgroundColour,
+  columnLayout,
+  size,
+}: {
+  data: MostReadData | undefined;
+  className: string;
+  mobileDivider: boolean;
+  headingBackgroundColour: string;
+  columnLayout?: ColumnLayout;
+  size: Size;
+}) =>
+  data ? (
+    <MostReadSection className={className}>
+      <MostReadSectionLabel
+        mobileDivider={mobileDivider}
+        backgroundColor={headingBackgroundColour}
+      />
+      <Canonical
+        data={data}
+        columnLayout={columnLayout}
+        size={size}
+        eventTrackingData={blockLevelEventTrackingData}
+      />
+    </MostReadSection>
+  ) : null;
+
 const MostRead = ({
   data,
   columnLayout = 'multiColumn',
@@ -69,39 +129,25 @@ const MostRead = ({
     isBff,
   });
 
-  // We render amp on ONLY STY, CSP and ARTICLE pages using amp-list.
-  const AmpMostRead = () =>
-    mostReadAmpPageTypes.includes(pageType) ? (
-      <MostReadSection {...(className && { className })}>
-        <MostReadSectionLabel
-          mobileDivider={mobileDivider}
-          backgroundColor={headingBackgroundColour}
-        />
-        <Amp
-          endpoint={`${getEnvConfig().SIMORGH_MOST_READ_CDN_URL}${endpoint}`}
-          size={size}
-        />
-      </MostReadSection>
-    ) : null;
-
-  // Do not render on Canonical if data is not provided
-  const CanonicalMostRead = () =>
-    data ? (
-      <MostReadSection className={className}>
-        <MostReadSectionLabel
-          mobileDivider={mobileDivider}
-          backgroundColor={headingBackgroundColour}
-        />
-        <Canonical
-          data={data}
-          columnLayout={columnLayout}
-          size={size}
-          eventTrackingData={blockLevelEventTrackingData}
-        />
-      </MostReadSection>
-    ) : null;
-
-  return isAmp ? <AmpMostRead /> : <CanonicalMostRead />;
+  return isAmp ? (
+    <AmpMostRead
+      pageType={pageType}
+      className={className}
+      mobileDivider={mobileDivider}
+      headingBackgroundColour={headingBackgroundColour}
+      endpoint={endpoint}
+      size={size}
+    />
+  ) : (
+    <CanonicalMostRead
+      data={data}
+      className={className}
+      mobileDivider={mobileDivider}
+      headingBackgroundColour={headingBackgroundColour}
+      columnLayout={columnLayout}
+      size={size}
+    />
+  );
 };
 
 export default MostRead;

@@ -2,15 +2,15 @@ import React from 'react';
 import { EPISODE_STATUS } from '../episodeStatus';
 import ErrorMessage from '../ErrorMessage';
 
+const ErrorComponent = ({ errorProps, episodeAvailability }) => (
+  <ErrorMessage {...errorProps} episodeAvailability={episodeAvailability} />
+);
+
 const withMediaError = PageComponent => {
   const MediaErrorComponent = props => {
     const { pageData: { episodeAvailability } = null } = props;
     const mediaIsAvailable =
       episodeAvailability === EPISODE_STATUS.EPISODE_IS_AVAILABLE;
-
-    const ErrorComponent = errorProps => (
-      <ErrorMessage {...errorProps} episodeAvailability={episodeAvailability} />
-    );
 
     return (
       <PageComponent
