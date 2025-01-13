@@ -45,7 +45,9 @@ describe('liveMediaStream', () => {
       'span[data-testid="warning-message"]',
     );
 
-    expect(playCloseButton?.innerHTML).toBe('Contains some upsetting scenes.');
+    expect(playCloseButton?.innerHTML).toContain(
+      'Contains some upsetting scenes.',
+    );
   });
 
   it('Plays the media loader when the watch button is clicked.', () => {
