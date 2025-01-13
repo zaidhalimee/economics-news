@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import pixelsToRem from '#app/utilities/pixelsToRem';
 import { css, Theme } from '@emotion/react';
 
