@@ -1,6 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { NextResponse } from 'next/server';
-import { NextRequest } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 
 import addPlatformToRequestChain from '#server/utilities/addPlatformToRequestChain';
 import cspHeaderResponse from './utilities/cspHeaderResponse';
@@ -25,7 +24,6 @@ export function middleware(request: NextRequest) {
     'req-svc-chain',
     addPlatformToRequestChain({
       headers: request.headers,
-      application: 'NEXTJS',
     }),
   );
 
