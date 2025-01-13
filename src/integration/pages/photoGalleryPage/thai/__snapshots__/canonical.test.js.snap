@@ -111,7 +111,7 @@ exports[`Canonical Photo Gallery Page Footer Anchors should match text and url 7
 
 exports[`Canonical Photo Gallery Page Footer Anchors should match text and url 8`] = `
 {
-  "text": "Other Languages",
+  "text": "บีบีซีนิวส์ภาษาอื่น ๆ",
   "url": "https://www.bbc.com/ws/languages",
 }
 `;

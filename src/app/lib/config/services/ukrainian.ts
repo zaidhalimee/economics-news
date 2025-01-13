@@ -319,7 +319,7 @@ const baseServiceConfig = {
       },
       {
         href: 'https://www.bbc.com/ws/languages',
-        text: 'Other Languages',
+        text: 'Новини ВВС іншими мовами',
       },
       {
         id: 'COOKIE_SETTINGS',

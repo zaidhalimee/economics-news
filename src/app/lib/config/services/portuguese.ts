@@ -403,7 +403,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'BBC News em outras línguas',
         },
         {
           id: 'COOKIE_SETTINGS',

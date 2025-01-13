@@ -398,7 +398,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'Labaran BBC a sauran harsuna',
         },
         {
           id: 'COOKIE_SETTINGS',

@@ -10,7 +10,6 @@ import {
   FEATURE_INDEX_PAGE,
   MOST_READ_PAGE,
   PHOTO_GALLERY_PAGE,
-  MEDIA_PAGE,
   ERROR_PAGE,
   LIVE_PAGE,
   CPS_ASSET,
@@ -22,10 +21,6 @@ import {
   AUDIO_PAGE,
   TV_PAGE,
 } from '../../../routes/utils/pageTypes';
-import {
-  buildTvRadioATIParams,
-  buildTvRadioATIUrl,
-} from './tvRadioPage/buildParams';
 import {
   buildPageATIUrl,
   buildPageATIParams,
@@ -73,7 +68,6 @@ const pageTypeUrlBuilders = {
   [MEDIA_ARTICLE_PAGE]: noOp,
   [STORY_PAGE]: noOp,
   [FRONT_PAGE]: buildIndexPageATIUrl,
-  [MEDIA_PAGE]: buildTvRadioATIUrl,
   [MOST_READ_PAGE]: noOp,
   [FEATURE_INDEX_PAGE]: noOp,
   [TOPIC_PAGE]: noOp,
@@ -97,7 +91,6 @@ const pageTypeParamBuilders = {
   [ARTICLE_PAGE]: noOp,
   [MEDIA_ARTICLE_PAGE]: noOp,
   [FRONT_PAGE]: buildIndexPageATIParams,
-  [MEDIA_PAGE]: buildTvRadioATIParams,
   [MOST_READ_PAGE]: noOp,
   [FEATURE_INDEX_PAGE]: noOp,
   [TOPIC_PAGE]: noOp,
@@ -180,30 +173,19 @@ export const buildATIEventTrackingParams = ({
   data,
   atiData,
 }: ATIConfigurationDetailsProviders) => {
-  try {
-    const { pageType } = requestContext;
-    if (atiData && isMigrated(pageType)) {
-      return buildPageATIParams({
-        atiData,
-        requestContext,
-        serviceContext,
-      });
-    }
-
-    const buildParams = createBuilderFactory(
+  const { pageType } = requestContext;
+  if (atiData && isMigrated(pageType)) {
+    return buildPageATIParams({
+      atiData,
       requestContext,
-      pageTypeParamBuilders,
-    );
-
-    return buildParams(data as PageData, requestContext, serviceContext);
-  } catch (error: unknown) {
-    const { message } = error as Error;
-
-    // eslint-disable-next-line no-console
-    console.error(
-      `ATI Event Tracking Error: Could not parse tracking values from page data:\n${message}`,
-    );
-
-    return {};
+      serviceContext,
+    });
   }
+
+  const buildParams = createBuilderFactory(
+    requestContext,
+    pageTypeParamBuilders,
+  );
+
+  return buildParams(data as PageData, requestContext, serviceContext);
 };

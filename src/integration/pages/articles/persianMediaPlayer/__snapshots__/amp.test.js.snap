@@ -145,7 +145,7 @@ exports[`AMP Articles Footer Anchors should match text and url 7`] = `
 
 exports[`AMP Articles Footer Anchors should match text and url 8`] = `
 {
-  "text": "Other Languages",
+  "text": "اخبار به زبان‌های دیگر",
   "url": "https://www.bbc.com/ws/languages",
 }
 `;

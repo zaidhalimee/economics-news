@@ -323,7 +323,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'نورې ژبې',
         },
         {
           id: 'COOKIE_SETTINGS',

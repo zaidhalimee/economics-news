@@ -364,7 +364,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'ቢቢሲን በተለያዩ ቋንቋዎች',
         },
         {
           id: 'COOKIE_SETTINGS',

@@ -309,7 +309,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'अरू भाषामा बीबीसी',
         },
         {
           id: 'COOKIE_SETTINGS',

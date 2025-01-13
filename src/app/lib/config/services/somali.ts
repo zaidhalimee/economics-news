@@ -317,7 +317,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'Wararka BBC ee luqadaha kale',
         },
         {
           id: 'COOKIE_SETTINGS',

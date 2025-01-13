@@ -336,7 +336,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'အခြားဘာသာစကားနှင့် ဘီဘီစီသတင်းများ',
         },
         {
           id: 'COOKIE_SETTINGS',

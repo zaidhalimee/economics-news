@@ -314,7 +314,7 @@ const defaultCyrillicConfig = {
       },
       {
         href: 'https://www.bbc.com/ws/languages',
-        text: 'Other Languages',
+        text: 'BBC News бошқа тилларда',
       },
       {
         id: 'COOKIE_SETTINGS',
@@ -649,7 +649,7 @@ export const service: UzbekConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'BBC News бошқа тилларда',
         },
         {
           id: 'COOKIE_SETTINGS',
