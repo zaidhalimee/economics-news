@@ -124,7 +124,6 @@ const LiveHeaderMedia = ({ mediaCollection }: Props) => {
               data-testid="warning-message"
             >
               {warnings.warning_text}
-              <VisuallyHiddenText>, </VisuallyHiddenText>
             </Text>
           )}
         </div>
