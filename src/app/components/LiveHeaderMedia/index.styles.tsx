@@ -98,7 +98,7 @@ export default {
       padding: 0,
       alignItems: 'center',
     }),
-  closeIconContainer: ({ spacings, palette, mq }: Theme) =>
+  closeContainer: ({ spacings, palette, mq }: Theme) =>
     css({
       verticalAlign: 'center',
       svg: {

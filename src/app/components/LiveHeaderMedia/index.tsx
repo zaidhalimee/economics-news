@@ -140,7 +140,7 @@ const LiveHeaderMedia = ({ mediaCollection }: Props) => {
           </div>
         )}
         {showMedia && (
-          <div css={styles.closeIconContainer}>
+          <div css={styles.closeContainer}>
             <Close />
           </div>
         )}
