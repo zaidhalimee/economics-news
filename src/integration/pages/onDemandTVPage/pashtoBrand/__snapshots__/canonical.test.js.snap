@@ -99,7 +99,7 @@ exports[`Canonical On Demand T V Page Footer Anchors should match text and url 7
 
 exports[`Canonical On Demand T V Page Footer Anchors should match text and url 8`] = `
 {
-  "text": "Other Languages",
+  "text": "نورې ژبې",
   "url": "https://www.bbc.com/ws/languages",
 }
 `;
