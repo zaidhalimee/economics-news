@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { css, jsx, Theme } from '@emotion/react';
 import mundoLiveFixture from '#data/mundo/live/c7dkx155e626t.json';
-import LiveMediaStream from '.';
+import LiveHeaderMedia from '.';
 import { MediaCollection } from '../MediaLoader/types';
 import metadata from './metadata.json';
 
@@ -21,8 +21,8 @@ export const Component = ({ warnings }: Props) => {
   fixtureData[0].model.version.warnings = warnings;
 
   return (
-    <div css={({ palette }: Theme) => css({ background: palette.BLUEJAY })}>
-      <LiveMediaStream mediaCollection={fixtureData as MediaCollection[]} />
+    <div css={({ palette }: Theme) => css({ background: palette.BLACK })}>
+      <LiveHeaderMedia mediaCollection={fixtureData as MediaCollection[]} />
     </div>
   );
 };
@@ -40,7 +40,7 @@ const l1Warning = {
 export const ComponentWithGuidance = () => <Component warnings={l1Warning} />;
 
 export default {
-  title: 'Components/LiveMediaStream',
+  title: 'Components/LiveHeaderMedia',
   Component,
   parameters: {
     metadata,

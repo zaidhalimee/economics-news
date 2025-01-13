@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import NO_JS_CLASSNAME from '#app/lib/noJs.const';
 import pixelsToRem from '#app/utilities/pixelsToRem';
 import { css, Theme } from '@emotion/react';
@@ -7,7 +6,7 @@ export default {
   componentContainer: ({ spacings }: Theme) =>
     css({
       width: '100%',
-      marginTop: `${spacings.FULL}rem`,
+      marginTop: `${spacings.DOUBLE}rem`,
       [`.${NO_JS_CLASSNAME} &`]: {
         display: 'none',
       },
@@ -17,6 +16,9 @@ export default {
       ...fontSizes.pica,
       ...fontVariants.sansRegular,
       color: palette.WHITE,
+      div: {
+        marginTop: `${spacings.DOUBLE}rem`,
+      },
       strong: {
         display: 'block',
         marginTop: `${spacings.DOUBLE}rem`,
@@ -25,6 +27,9 @@ export default {
     }),
   mediaButton: ({ mq }: Theme) =>
     css({
+      zIndex: '1',
+      position: 'relative',
+      padding: 0,
       [mq.FORCED_COLOURS]: {
         color: 'canvasText',
       },
@@ -35,9 +40,8 @@ export default {
       backgroundColor: 'unset',
       border: 'unset',
       textAlign: 'start',
-      padding: 0,
     }),
-  watchLiveCTAText: ({ spacings, palette }: Theme) =>
+  watchLiveCTAText: ({ spacings, palette, mq }: Theme) =>
     css({
       color: palette.WHITE,
       display: 'flex',
@@ -51,6 +55,12 @@ export default {
         color: palette.WHITE,
         marginInlineEnd: `${spacings.FULL}rem`,
       },
+      'button:hover &, button:focus &': {
+        textDecoration: 'underline',
+        [mq.FORCED_COLOURS]: {
+          textDecoration: 'underline',
+        },
+      },
     }),
   title: () =>
     css({
@@ -60,7 +70,7 @@ export default {
   guidanceMessage: ({ palette, spacings }: Theme) =>
     css({
       display: 'block',
-      margin: `${spacings.FULL}rem 0 `,
+      marginTop: `${spacings.DOUBLE}rem`,
       color: palette.GREY_2,
       textAlign: 'start',
     }),
@@ -68,7 +78,7 @@ export default {
     css({
       width: `${pixelsToRem(171)}rem`,
       border: 0,
-      backgroundColor: palette.LIVE_CORE,
+      backgroundColor: palette.LIVE_MEDIUM,
       padding: `${pixelsToRem(11)}rem`,
       marginTop: `${spacings.DOUBLE}rem`,
       [mq.GROUP_2_MAX_WIDTH]: {
@@ -77,12 +87,6 @@ export default {
       [mq.FORCED_COLOURS]: {
         color: 'canvasText',
         border: `${pixelsToRem(2)}rem solid canvasText`,
-      },
-      'button:hover &, button:focus &': {
-        backgroundColor: palette.LIVE_DARK,
-        [mq.FORCED_COLOURS]: {
-          textDecoration: 'underline',
-        },
       },
     }),
   liveMediaStreamText: ({ palette }: Theme) =>
@@ -109,10 +113,9 @@ export default {
       border: 0,
       outline: 0,
       lineHeight: 0,
-      padding: 0,
       alignItems: 'center',
     }),
-  closeIconContainer: ({ spacings, palette, mq }: Theme) =>
+  closeContainer: ({ spacings, palette, mq }: Theme) =>
     css({
       verticalAlign: 'center',
       svg: {
@@ -124,10 +127,10 @@ export default {
       },
       backgroundColor: palette.BLACK,
       border: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
-      'button:hover &': {
+      'button:hover &, button:focus &': {
         backgroundColor: palette.POSTBOX,
+        outline: `${palette.WHITE} solid ${pixelsToRem(2)}rem`,
       },
-
       [mq.FORCED_COLOURS]: {
         color: 'canvasText',
       },
@@ -136,34 +139,34 @@ export default {
     css({
       maxWidth: '100%',
     }),
-  mediaLoader: () =>
+  mediaLoader: ({ spacings }: Theme) =>
     css({
-      marginTop: `${pixelsToRem(3)}rem`,
       maxWidth: '100%',
+      marginTop: `${spacings.DOUBLE}rem`,
     }),
-  mediaDescription: ({ spacings }: Theme) =>
+  mediaDescription: () =>
     css({
       display: 'block',
       width: '100%',
-      marginTop: `${spacings.FULL}rem`,
+      marginTop: 0,
       span: { margin: 0 },
-      margin: 0,
-      'button:hover & span, button:focus & span': {
-        textDecoration: 'underline',
-      },
     }),
   openMediaDescription: ({ palette }: Theme) =>
     css({
       span: { color: palette.GREY_4 },
     }),
-  closeMediaDescription: ({ palette }: Theme) =>
+  closeMediaDescription: ({ mq, palette }: Theme) =>
     css({
-      span: { color: palette.WHITE },
       textAlign: 'start',
-    }),
-  mediaDescriptionGuidance: ({ spacings }: Theme) =>
-    css({
-      margin: `${spacings.DOUBLE}rem 0 0 0`,
+      span: { color: palette.WHITE },
+      'button:hover &, button:focus &': {
+        span: {
+          textDecoration: 'underline',
+          [mq.FORCED_COLOURS]: {
+            textDecoration: 'underline',
+          },
+        },
+      },
     }),
   hideComponent: () => css({ display: 'none' }),
 };

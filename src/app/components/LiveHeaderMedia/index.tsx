@@ -23,13 +23,13 @@ type WarningItem = {
 type Props = { mediaCollection: MediaCollection[] | null };
 
 const DEFAULT_WATCH__NOW = 'Watch Live';
-const DEFAULT_CLOSE = 'Close';
+const DEFAULT_CLOSE_VIDEO = 'Close video';
 const DEFAULT_NO_JS_MESSAGE =
   'This video cannot play in your browser. Please enable JavaScript or try a different browser.';
 
 const MemoizedMediaPlayer = memo(MediaLoader);
 
-const LiveMediaStream = ({ mediaCollection }: Props) => {
+const LiveHeaderMedia = ({ mediaCollection }: Props) => {
   const { translations } = useContext(ServiceContext);
   const { isLite } = useContext(RequestContext);
   const [showMedia, setShowMedia] = useState(false);
@@ -43,7 +43,7 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
   const {
     media: {
       watch = DEFAULT_WATCH__NOW,
-      close = DEFAULT_CLOSE,
+      closeVideo = DEFAULT_CLOSE_VIDEO,
       noJs = DEFAULT_NO_JS_MESSAGE,
     },
   } = translations;
@@ -87,9 +87,46 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
     }
   };
 
+  const description = (
+    <div>
+      <Text
+        size="pica"
+        fontVariant="sansBold"
+        as="span"
+        css={[
+          styles.mediaDescription,
+          showMedia
+            ? styles.closeMediaDescription
+            : styles.openMediaDescription,
+        ]}
+        className="hoverStylesText"
+      >
+        {showMedia && <VisuallyHiddenText>{closeVideo}, </VisuallyHiddenText>}
+        <Text size="pica" fontVariant="sansBold" as="span">
+          {short},{' '}
+        </Text>
+        <Text size="pica" fontVariant="sansRegular" as="span">
+          {networkName}
+        </Text>
+      </Text>
+      {warnings && (
+        <Text
+          as="span"
+          size="brevier"
+          fontVariant="sansRegular"
+          css={styles.guidanceMessage}
+          data-testid="warning-message"
+        >
+          {warnings.warning_text}
+        </Text>
+      )}
+    </div>
+  );
+
   return (
     <>
       <noscript css={styles.nojs}>
+        {description}
         <strong>{noJs}</strong>
       </noscript>
       <div css={styles.componentContainer}>
@@ -102,59 +139,24 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
             styles.mediaButton,
           ]}
         >
-          <div>
-            <Text
-              size="pica"
-              fontVariant="sansBold"
-              as="span"
-              css={[
-                styles.mediaDescription,
-                warnings && styles.mediaDescriptionGuidance,
-                showMedia
-                  ? styles.closeMediaDescription
-                  : styles.openMediaDescription,
-              ]}
-              className="hoverStylesText"
-            >
-              {showMedia && <VisuallyHiddenText>{close} </VisuallyHiddenText>}
-              <Text size="pica" fontVariant="sansBold" as="span">
-                {short},{' '}
-              </Text>
-              <Text size="pica" fontVariant="sansRegular" as="span">
-                {networkName}
-              </Text>
-            </Text>
-            {warnings && (
+          {description}
+          {!showMedia && (
+            <div className="hoverStylesCTA" css={styles.watchLiveCTA}>
               <Text
-                as="span"
-                size="brevier"
-                fontVariant="sansRegular"
-                css={styles.guidanceMessage}
-                data-testid="warning-message"
+                css={styles.watchLiveCTAText}
+                size="greatPrimer"
+                fontVariant="sansBold"
               >
-                {warnings.warning_text}
-                <VisuallyHiddenText>, </VisuallyHiddenText>
+                <PlayIcon />
+                {watch}
               </Text>
-            )}
-          </div>
-          <div
-            className="hoverStylesCTA"
-            css={[showMedia ? styles.hideComponent : styles.watchLiveCTA]}
-          >
-            <Text
-              css={styles.watchLiveCTAText}
-              size="greatPrimer"
-              fontVariant="sansBold"
-            >
-              <PlayIcon />
-              {watch}
-            </Text>
-          </div>
-          <div
-            css={[showMedia ? styles.closeIconContainer : styles.hideComponent]}
-          >
-            <Close />
-          </div>
+            </div>
+          )}
+          {showMedia && (
+            <div css={styles.closeContainer}>
+              <Close />
+            </div>
+          )}
         </button>
         <div css={showMedia ? styles.mediaLoader : styles.hideComponent}>
           <MemoizedMediaPlayer blocks={mediaCollection} uniqueId={vpid} />
@@ -164,4 +166,4 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
   );
 };
 
-export default LiveMediaStream;
+export default LiveHeaderMedia;
