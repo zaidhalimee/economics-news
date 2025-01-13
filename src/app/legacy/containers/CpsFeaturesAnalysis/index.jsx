@@ -121,7 +121,7 @@ const PromoComponent = ({ promo, dir = 'ltr', sendOptimizelyEvents }) => {
     },
   };
 
-  const viewRef = useViewTracker(eventTrackingDataWithOptimizely);
+  const viewRef = useViewTracker(eventTrackingDataWithOptimizely.block);
 
   return (
     <div ref={viewRef}>
