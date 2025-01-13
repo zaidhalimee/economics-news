@@ -9,7 +9,6 @@ export default {
     }),
   mediaButton: ({ mq }: Theme) =>
     css({
-      zIndex: '1',
       position: 'relative',
       padding: 0,
       [mq.FORCED_COLOURS]: {
@@ -38,6 +37,7 @@ export default {
         marginInlineEnd: `${spacings.FULL}rem`,
       },
       'button:hover &, button:focus &': {
+        textDecoration: 'underline',
         [mq.FORCED_COLOURS]: {
           textDecoration: 'underline',
         },
@@ -68,9 +68,6 @@ export default {
       [mq.FORCED_COLOURS]: {
         color: 'canvasText',
         border: `${pixelsToRem(2)}rem solid canvasText`,
-      },
-      'button:hover & span, button:focus & span': {
-        textDecoration: 'underline',
       },
     }),
   liveMediaStreamText: ({ palette }: Theme) =>
@@ -115,7 +112,6 @@ export default {
         backgroundColor: palette.POSTBOX,
         outline: `${palette.WHITE} solid ${pixelsToRem(2)}rem`,
       },
-
       [mq.FORCED_COLOURS]: {
         color: 'canvasText',
       },
@@ -133,18 +129,25 @@ export default {
     css({
       display: 'block',
       width: '100%',
+      marginTop: 0,
       span: { margin: 0 },
     }),
-  openMediaDescription: ({ palette, spacings }: Theme) =>
+  openMediaDescription: ({ palette }: Theme) =>
     css({
-      marginTop: `${spacings.FULL}rem`,
       span: { color: palette.GREY_4 },
     }),
-  closeMediaDescription: ({ palette }: Theme) =>
+  closeMediaDescription: ({ mq, palette }: Theme) =>
     css({
-      marginTop: 0,
-      span: { color: palette.WHITE },
       textAlign: 'start',
+      span: { color: palette.WHITE },
+      'button:hover &, button:focus &': {
+        span: {
+          textDecoration: 'underline',
+          [mq.FORCED_COLOURS]: {
+            textDecoration: 'underline',
+          },
+        },
+      },
     }),
   hideComponent: () => css({ display: 'none' }),
 };

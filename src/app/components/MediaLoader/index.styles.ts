@@ -20,7 +20,6 @@ export default {
     ({ spacings }: Theme) =>
       css({
         position: 'relative',
-        zIndex: '0',
         width: '100%',
         ...(isEmbedded && { margin: '0' }),
         ...(!isEmbedded && { margin: `0 0 ${spacings.TRIPLE}rem 0` }),
