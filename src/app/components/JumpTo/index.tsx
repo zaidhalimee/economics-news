@@ -88,7 +88,6 @@ const JumpTo = ({
 }: JumpToProps) => {
   const { optimizely } = useContext(OptimizelyContext);
   const {
-    service,
     translations: {
       articlePage,
       featuresAnalysisTitle,
@@ -134,18 +133,12 @@ const JumpTo = ({
 
   const titleId = 'jump-to-heading';
 
-  const capitializedService =
-    service?.substring(0, 1).toUpperCase() + service?.substring(1);
-
   const { jumpToTitle } = articlePage || {};
 
   const titleToRender = {
     variation_1: jumpToTitle?.variation_1 || 'Jump to',
-    variation_2:
-      jumpToTitle?.variation_2 ||
-      `Discover more from BBC ${capitializedService}`,
-    variation_3:
-      jumpToTitle?.variation_3 || `More from BBC ${capitializedService}`,
+    variation_2: jumpToTitle?.variation_2 || `Discover more from BBC News`,
+    variation_3: jumpToTitle?.variation_3 || `More from BBC News`,
   }[variation];
 
   return (
