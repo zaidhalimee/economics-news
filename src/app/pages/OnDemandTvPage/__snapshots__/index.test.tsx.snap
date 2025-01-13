@@ -200,6 +200,7 @@ exports[`OnDemand TV Page  Dark Mode Design - should match snapshot 1`] = `
 
 .emotion-7 {
   position: relative;
+  z-index: 0;
   width: 100%;
   margin: 0 0 1.5rem 0;
   aspect-ratio: 16/9;
