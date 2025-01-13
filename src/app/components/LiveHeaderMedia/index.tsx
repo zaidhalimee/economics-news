@@ -26,7 +26,7 @@ const DEFAULT_CLOSE_VIDEO = 'Close video';
 
 const MemoizedMediaPlayer = memo(MediaLoader);
 
-const LiveMediaStream = ({ mediaCollection }: Props) => {
+const LiveHeaderMedia = ({ mediaCollection }: Props) => {
   const { translations } = useContext(ServiceContext);
   const { isLite } = useContext(RequestContext);
   const [showMedia, setShowMedia] = useState(false);
@@ -153,4 +153,4 @@ const LiveMediaStream = ({ mediaCollection }: Props) => {
   );
 };
 
-export default LiveMediaStream;
+export default LiveHeaderMedia;

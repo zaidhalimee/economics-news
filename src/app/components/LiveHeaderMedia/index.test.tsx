@@ -1,6 +1,6 @@
 import mundoLiveFixture from '#data/mundo/live/c7dkx155e626t.json';
 import React from 'react';
-import LiveMediaStream from '.';
+import LiveHeaderMedia from '.';
 import { MediaCollection } from '../MediaLoader/types';
 import {
   screen,
@@ -13,7 +13,7 @@ const fixtureData = mundoLiveFixture.data.mediaCollections;
 describe('liveMediaStream', () => {
   it('Displays all components on intial render.', () => {
     const { container } = render(
-      <LiveMediaStream mediaCollection={fixtureData as MediaCollection[]} />,
+      <LiveHeaderMedia mediaCollection={fixtureData as MediaCollection[]} />,
     );
 
     const playCloseButton = container.querySelector(
@@ -38,7 +38,7 @@ describe('liveMediaStream', () => {
     };
 
     const { container } = render(
-      <LiveMediaStream mediaCollection={fixtureData as MediaCollection[]} />,
+      <LiveHeaderMedia mediaCollection={fixtureData as MediaCollection[]} />,
     );
 
     const playCloseButton = container.querySelector(
@@ -60,7 +60,7 @@ describe('liveMediaStream', () => {
     };
 
     render(
-      <LiveMediaStream mediaCollection={fixtureData as MediaCollection[]} />,
+      <LiveHeaderMedia mediaCollection={fixtureData as MediaCollection[]} />,
     );
 
     const playCloseButton = screen.getByTestId('watch-now-close-button');
@@ -77,7 +77,7 @@ describe('liveMediaStream', () => {
       },
     };
     render(
-      <LiveMediaStream mediaCollection={fixtureData as MediaCollection[]} />,
+      <LiveHeaderMedia mediaCollection={fixtureData as MediaCollection[]} />,
     );
 
     const playCloseButton = screen.getByTestId('watch-now-close-button');
@@ -89,14 +89,14 @@ describe('liveMediaStream', () => {
   });
 
   it('Displays nothing if no mediaCollection is passed in.', () => {
-    const { container } = render(<LiveMediaStream mediaCollection={null} />);
+    const { container } = render(<LiveHeaderMedia mediaCollection={null} />);
 
     expect(container).toBeEmptyDOMElement();
   });
 
   it('Displays nothing if an empty array is passed in.', () => {
     const { container } = render(
-      <LiveMediaStream mediaCollection={[] as MediaCollection[]} />,
+      <LiveHeaderMedia mediaCollection={[] as MediaCollection[]} />,
     );
 
     expect(container).toBeEmptyDOMElement();
@@ -151,7 +151,7 @@ describe('liveMediaStream', () => {
     };
 
     render(
-      <LiveMediaStream mediaCollection={fixtureData as MediaCollection[]} />,
+      <LiveHeaderMedia mediaCollection={fixtureData as MediaCollection[]} />,
     );
 
     const playCloseButton = screen.getByTestId('watch-now-close-button');
