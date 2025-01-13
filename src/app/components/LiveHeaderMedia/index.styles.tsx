@@ -27,7 +27,6 @@ export default {
     }),
   mediaButton: ({ mq }: Theme) =>
     css({
-      zIndex: '1',
       position: 'relative',
       padding: 0,
       [mq.FORCED_COLOURS]: {
@@ -55,7 +54,7 @@ export default {
         color: palette.WHITE,
         marginInlineEnd: `${spacings.FULL}rem`,
       },
-      'button:hover &, button:focus &': {
+      'button:hover &, button:focus-visible &': {
         textDecoration: 'underline',
         [mq.FORCED_COLOURS]: {
           textDecoration: 'underline',
@@ -111,7 +110,6 @@ export default {
       background: 'none',
       width: '100%',
       border: 0,
-      outline: 0,
       lineHeight: 0,
       alignItems: 'center',
     }),
@@ -127,9 +125,9 @@ export default {
       },
       backgroundColor: palette.BLACK,
       border: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
-      'button:hover &, button:focus &': {
+      'button:hover &, button:focus-visible &': {
         backgroundColor: palette.POSTBOX,
-        outline: `${palette.WHITE} solid ${pixelsToRem(2)}rem`,
+        outline: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
       },
       [mq.FORCED_COLOURS]: {
         color: 'canvasText',
@@ -159,7 +157,7 @@ export default {
     css({
       textAlign: 'start',
       span: { color: palette.WHITE },
-      'button:hover &, button:focus &': {
+      'button:hover &, button:focus-visible &': {
         span: {
           textDecoration: 'underline',
           [mq.FORCED_COLOURS]: {
@@ -168,5 +166,7 @@ export default {
         },
       },
     }),
+
+  underlineFocus: () => css({ display: 'none' }),
   hideComponent: () => css({ display: 'none' }),
 };
