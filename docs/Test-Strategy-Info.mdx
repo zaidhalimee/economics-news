@@ -62,6 +62,7 @@ Broadly speaking, we follow the test pyramid. We have a large set of unit tests,
 
 ![Image](https://blog.getmason.io/content/images/2020/11/Testing-pyramid--6--1.jpg)
 Image [Source](https://blog.getmason.io/content/images/2020/11/Testing-pyramid--6--1.jpg)
+
 To avoid confusion, we will clarify what the test levels mean in our context.
 
 ### Unit tests
@@ -69,7 +70,7 @@ We use jest to write unit tests. They normally exercise a single component (UI c
 Some patterns:
 
 - We use [data-driven tests](https://github.com/bbc/simorgh/blob/bfbed54d2b1fe880e8f171023054c16d1c274ca2/src/app/hooks/useImageColour/index.test.js#L10) to define inputs to tests
-- We use [snapshot tests](https://github.com/bbc/simorgh/blob/4f385d94bee96af48eff2eca49c24cf382a3a494/src/app/components/FrostedGlassPromo/index.test.tsx#L76) to easily test certain scenarios such as (TODO what does this test show us?)
+- We use [snapshot tests](https://github.com/bbc/simorgh/blob/4f385d94bee96af48eff2eca49c24cf382a3a494/src/app/components/FrostedGlassPromo/index.test.tsx#L76) to easily test certain scenarios.
     
 
 ### Component tests
@@ -109,7 +110,7 @@ The critical path is the set of components and workflows that is required for th
 We should have smoke tests for validating that core functionality is not broken, for example, that the page loads, has titles and content. These should run as often as possible (on each PR), they should be quick, reliable and repeatable (not flaky).
 
 #### As little as possible
-The rule of thumb is that we should avoid writing an end to end test if there is an alternative to validating the functionality. The alternative can be a combination of layers, for example, an integration test combined with an API test (which doesn’t exist right now) can be enough to reach the same confidence as an e2e test with less cost.
+The rule of thumb is that we should avoid writing an end to end test if there is an alternative to validating the functionality. The alternative can be a combination of layers, for example, an integration test combined with an API test (which doesn’t exist right now) can be enough to reach the same confidence as an E2E test with less cost.
 
 ### PUMA approach
 Adopting the [PUMA](https://confluence.dev.bbc.co.uk/display/podtest/PUMA) approach can provide a framework to decide if a proposed test genuinely meets the definition of an E2E. According to PUMA, an E2E test should:
@@ -151,27 +152,27 @@ We have many custom commands that make common tasks easier, these are located wi
 > 
 > However, a test that flickers between the two states indicates something is not right and should not be ignored! I believe describing these as flaky makes it easy to ignore potential problems either in the functionality of the system under test or the test itself.
 > 
-> quote from  @sframpton
+> quote from  [Simon Frampton, Principal Test Engineer, BBC](@sframpton)
 
 
 
 > 🔊 Discussion with team: 
-> What are other good practices?
-> Any anti-patterns?
+> - What are other good practices?
+> - Any anti-patterns?
 
 
 #### Who should automate?
 #### Responsibilities
 |             | Unit tests         | Integration        | E2E                |
 | ----------- | ------------------ | ------------------ | ------------------ |
-| Responsible | Developers         | Developers and QA* | QA and Developers* |
+| Responsible | Developers         | Developers and QA (^) | QA and Developers (^) |
 | Accountable | Developers         | Developers         | QA                 |
-| Consulted** | Developers and QA# | Developers and QA  | Developers and QA  |
-| Informed**  | Developers and QA# | Developers and QA  | Developers and QA  |
+| Consulted (+) | Developers and QA# | Developers and QA  | Developers and QA  |
+| Informed (+) | Developers and QA# | Developers and QA  | Developers and QA  |
 
-* For integration tests, developers are accountable for them, but sometimes QA can be involved in their implementation. For E2E, QA are accountable for them but developers can be involved in the implementation too.
+(^) For integration tests, developers are accountable for them, but sometimes QA can be involved in their implementation. For E2E, QA are accountable for them but developers can be involved in the implementation too.
 
-** Consulting and informing in this context happens mainly during the sprint planning or three amigos. As a team, we can decide on whether a feature requires an integration or e2e test (or both). Consulting also includes code reviews of tests being added.
+(+) Consulting and informing in this context happens mainly during the sprint planning or three amigos. As a team, we can decide on whether a feature requires an integration or E2E test (or both). Consulting also includes code reviews of tests being added.
 
 > [!NOTE]
 There is no reason why QA cannot be consulted and informed about the content of unit tests. As specialists, they might consider and uncover edge cases/scenarios that do not occur to developers and can also help to review the language used to frame the tests (think about `describe` and `it` blocks) even if they are not confident writing the test code itself.
