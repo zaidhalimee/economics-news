@@ -132,7 +132,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'HAYE',
           reject: 'Ogow waxa isbedelay',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -315,6 +315,10 @@ export const service: DefaultServiceConfig = {
           text: 'La xiriir BBC',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Wararka BBC ee luqadaha kale',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -329,10 +333,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'War',
         url: '/somali',
-      },
-      {
-        title: 'Doorashada Mareykanka 2024',
-        url: '/somali/topics/cv2g4v31x97t',
       },
       {
         title: 'Ganacsi',

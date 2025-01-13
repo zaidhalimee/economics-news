@@ -160,7 +160,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OKE',
           reject: 'Coba lihat apa yang berubah',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -243,6 +243,7 @@ export const service: DefaultServiceConfig = {
         video: 'Video',
         listen: 'Dengar',
         watch: 'Tonton',
+        watchMoments: 'Saksikan juga',
         listenLive: 'Mendengarkan langsung',
         listenNext: 'Dengar yang berikut',
         liveLabel: 'LANGSUNG',
@@ -335,6 +336,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/indonesia/send/u50853401',
           text: 'Hubungi BBC',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'BC News dalam bahasa-bahasa lain',
         },
         {
           id: 'COOKIE_SETTINGS',

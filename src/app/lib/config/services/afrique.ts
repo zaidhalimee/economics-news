@@ -136,7 +136,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: 'Découvrez ce qui a changé',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -318,6 +318,10 @@ export const service: DefaultServiceConfig = {
           text: 'Contactez la BBC',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Autres langues',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -332,6 +336,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Accueil',
         url: '/afrique',
+      },
+      {
+        title: 'Ecoutez en direct',
+        url: '/afrique/bbc_afrique_radio/liveradio',
       },
       {
         title: 'Afrique',
@@ -364,10 +372,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Nos émissions',
         url: '/afrique/topics/c88nzggm8gxt',
-      },
-      {
-        title: 'Ecoutez en direct',
-        url: '/afrique/bbc_afrique_radio/liveradio',
       },
     ],
   },

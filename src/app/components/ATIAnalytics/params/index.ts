@@ -10,7 +10,6 @@ import {
   FEATURE_INDEX_PAGE,
   MOST_READ_PAGE,
   PHOTO_GALLERY_PAGE,
-  MEDIA_PAGE,
   ERROR_PAGE,
   LIVE_PAGE,
   CPS_ASSET,
@@ -18,16 +17,15 @@ import {
   UGC_PAGE,
   AV_EMBEDS,
   DOWNLOADS_PAGE,
+  LIVE_RADIO_PAGE,
+  AUDIO_PAGE,
+  TV_PAGE,
 } from '../../../routes/utils/pageTypes';
-import {
-  buildTvRadioATIParams,
-  buildTvRadioATIUrl,
-} from './tvRadioPage/buildParams';
-import { buildPageATIUrl, buildPageATIParams } from './genericPage/buildParams';
+import { buildPageATIUrl, buildPageATIParams } from './buildParams';
 import {
   buildIndexPageATIParams,
   buildIndexPageATIUrl,
-} from './indexPage/buildParams';
+} from './frontPage/buildParams';
 import { RequestContextProps } from '../../../contexts/RequestContext';
 import { ServiceConfig } from '../../../models/types/serviceConfig';
 import {
@@ -51,6 +49,9 @@ const MIGRATED_PAGE_TYPES: PageTypes[] = [
   LIVE_PAGE,
   STATIC_PAGE,
   DOWNLOADS_PAGE,
+  LIVE_RADIO_PAGE,
+  AUDIO_PAGE,
+  TV_PAGE,
 ];
 
 const noOp = () => {
@@ -62,7 +63,6 @@ const pageTypeUrlBuilders = {
   [MEDIA_ARTICLE_PAGE]: noOp,
   [STORY_PAGE]: noOp,
   [FRONT_PAGE]: buildIndexPageATIUrl,
-  [MEDIA_PAGE]: buildTvRadioATIUrl,
   [MOST_READ_PAGE]: noOp,
   [FEATURE_INDEX_PAGE]: noOp,
   [TOPIC_PAGE]: noOp,
@@ -77,13 +77,15 @@ const pageTypeUrlBuilders = {
   [UGC_PAGE]: noOp,
   [AV_EMBEDS]: noOp,
   [DOWNLOADS_PAGE]: noOp,
+  [LIVE_RADIO_PAGE]: noOp,
+  [AUDIO_PAGE]: noOp,
+  [TV_PAGE]: noOp,
 };
 
 const pageTypeParamBuilders = {
   [ARTICLE_PAGE]: noOp,
   [MEDIA_ARTICLE_PAGE]: noOp,
   [FRONT_PAGE]: buildIndexPageATIParams,
-  [MEDIA_PAGE]: buildTvRadioATIParams,
   [MOST_READ_PAGE]: noOp,
   [FEATURE_INDEX_PAGE]: noOp,
   [TOPIC_PAGE]: noOp,
@@ -99,6 +101,9 @@ const pageTypeParamBuilders = {
   [UGC_PAGE]: noOp,
   [AV_EMBEDS]: noOp,
   [DOWNLOADS_PAGE]: noOp,
+  [LIVE_RADIO_PAGE]: noOp,
+  [AUDIO_PAGE]: noOp,
+  [TV_PAGE]: noOp,
 };
 
 type BuilderFunction = {
@@ -133,6 +138,7 @@ export const buildATIUrl = ({
   atiData,
 }: ATIConfigurationDetailsProviders) => {
   const { pageType } = requestContext;
+
   if (atiData && isMigrated(pageType)) {
     return buildPageATIUrl({ atiData, requestContext, serviceContext });
   }
@@ -154,32 +160,21 @@ export const buildATIEventTrackingParams = ({
   data,
   atiData,
 }: ATIConfigurationDetailsProviders) => {
-  try {
-    const { pageType } = requestContext;
-    if (atiData && isMigrated(pageType)) {
-      return buildPageATIParams({
-        atiData,
-        requestContext,
-        serviceContext,
-      });
-    }
-
-    const buildParams = createBuilderFactory(
+  const { pageType } = requestContext;
+  if (atiData && isMigrated(pageType)) {
+    return buildPageATIParams({
+      atiData,
       requestContext,
-      pageTypeParamBuilders,
-    );
-
-    return buildParams(data as PageData, requestContext, serviceContext);
-  } catch (error: unknown) {
-    const { message } = error as Error;
-
-    // eslint-disable-next-line no-console
-    console.error(
-      `ATI Event Tracking Error: Could not parse tracking values from page data:\n${message}`,
-    );
-
-    return {};
+      serviceContext,
+    });
   }
+
+  const buildParams = createBuilderFactory(
+    requestContext,
+    pageTypeParamBuilders,
+  );
+
+  return buildParams(data as PageData, requestContext, serviceContext);
 };
 
 export default buildATIUrl;

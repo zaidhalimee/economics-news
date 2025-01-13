@@ -149,7 +149,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'Madalla',
           reject: 'Duba abin da ya sauya',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -394,6 +394,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/hausa/send/u50853335',
           text: 'Tuntubi BBC',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Labaran BBC a sauran harsuna',
         },
         {
           id: 'COOKIE_SETTINGS',

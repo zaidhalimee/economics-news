@@ -72,7 +72,7 @@ const defaultCyrillicConfig = {
     home: 'Бош саҳифа',
     currentPage: 'Жорий саҳифа',
     skipLinkText: 'Саҳифага ўтиш',
-    relatedContent: 'Бу мавзуда батафсилроқ',
+    relatedContent: 'Мавзуга алоқадор',
     relatedTopics: 'Алоқадор мавзулар',
     navMenuText: 'Бўлимлар',
     mediaAssetPage: {
@@ -146,7 +146,7 @@ const defaultCyrillicConfig = {
         },
         accept: 'Маъқул',
         reject: 'Нималар ўзгарди?',
-        rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+        rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
       },
       cookie: {
         amp: {
@@ -312,6 +312,10 @@ const defaultCyrillicConfig = {
         text: "'Bi-bi-si bilan bog’laning'",
       },
       {
+        href: 'https://www.bbc.com/ws/languages',
+        text: 'BBC News бошқа тилларда',
+      },
+      {
         id: 'COOKIE_SETTINGS',
         href: '#',
         text: 'Do not share or sell my info',
@@ -403,7 +407,7 @@ export const service: UzbekConfig = {
       home: 'Bosh sahifa',
       currentPage: 'Joriy sahifa',
       skipLinkText: 'Sahifaga o‘tish',
-      relatedContent: 'Bu mavzuda batafsilroq',
+      relatedContent: 'Mavzuga aloqador',
       relatedTopics: 'Aloqador mavzular',
       navMenuText: 'Bo‘limlar',
       mediaAssetPage: {
@@ -477,7 +481,7 @@ export const service: UzbekConfig = {
           },
           accept: 'Ma’qul',
           reject: 'Nimalar o‘zgardi?',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -641,6 +645,10 @@ export const service: UzbekConfig = {
         {
           href: 'https://www.bbc.co.uk/uzbek/send/u50853929',
           text: "'Bi-bi-si bilan bog’laning'",
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'BBC News бошқа тилларда',
         },
         {
           id: 'COOKIE_SETTINGS',

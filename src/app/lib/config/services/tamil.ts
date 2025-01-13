@@ -141,7 +141,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'சரி',
           reject: 'என்ன மாறியுள்ளது என்பதைப் பாருங்கள்.',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -391,6 +391,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/tamil/send/u50853753',
           text: 'பிபிசியுடன் தொடர்பு கொள்ள',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'பிபிசி நியூஸ் பிற மொழிகளில்',
         },
         {
           id: 'COOKIE_SETTINGS',

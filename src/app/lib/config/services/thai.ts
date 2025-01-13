@@ -132,7 +132,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ตกลง',
           reject: 'ดูว่ามีอะไรเปลี่ยนแปลงไปบ้าง',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -328,6 +328,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/thai/send/u50853797',
           text: 'ติดต่อบีบีซี',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'บีบีซีนิวส์ภาษาอื่น ๆ',
         },
         {
           id: 'COOKIE_SETTINGS',

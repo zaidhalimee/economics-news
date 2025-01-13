@@ -53,6 +53,13 @@ exports[`Canonical Send Footer Anchors should match text and url 7`] = `
 
 exports[`Canonical Send Footer Anchors should match text and url 8`] = `
 {
+  "text": "Wararka BBC ee luqadaha kale",
+  "url": "https://www.bbc.com/ws/languages",
+}
+`;
+
+exports[`Canonical Send Footer Anchors should match text and url 9`] = `
+{
   "text": "Akhri xogta ku saabsan sida aan u abaarno bogagga dibadda.",
   "url": "https://www.bbc.co.uk/editorialguidelines/guidance/feeds-and-links",
 }
@@ -60,7 +67,7 @@ exports[`Canonical Send Footer Anchors should match text and url 8`] = `
 
 exports[`Canonical Send Footer I can click on the BBC branding and it would take me to the homepage 1`] = `"/somali"`;
 
-exports[`Canonical Send Footer Paragraphs should match text 1`] = `"© 2024 BBC. BBC masuul kama ahan macluumadka bogagga kale ee dibadda. Akhri xogta ku saabsan sida aan u abaarno bogagga dibadda."`;
+exports[`Canonical Send Footer Paragraphs should match text 1`] = `"© 2025 BBC. BBC masuul kama ahan macluumadka bogagga kale ee dibadda. Akhri xogta ku saabsan sida aan u abaarno bogagga dibadda."`;
 
 exports[`Canonical Send Header I can see the branding 1`] = `"BBC News, Somali"`;
 
@@ -73,33 +80,26 @@ exports[`Canonical Send Header Navigation link should match text and url 1`] = `
 
 exports[`Canonical Send Header Navigation link should match text and url 2`] = `
 {
-  "text": "Doorashada Mareykanka 2024",
-  "url": "/somali/topics/cv2g4v31x97t",
-}
-`;
-
-exports[`Canonical Send Header Navigation link should match text and url 3`] = `
-{
   "text": "Ganacsi",
   "url": "/somali/topics/c2dwqd32v4yt",
 }
 `;
 
-exports[`Canonical Send Header Navigation link should match text and url 4`] = `
+exports[`Canonical Send Header Navigation link should match text and url 3`] = `
 {
   "text": "Cayaaraha",
   "url": "/somali/topics/cpzd4zj1pn2t",
 }
 `;
 
-exports[`Canonical Send Header Navigation link should match text and url 5`] = `
+exports[`Canonical Send Header Navigation link should match text and url 4`] = `
 {
   "text": "Muuqaal",
   "url": "/somali/topics/c7pl4k5r9xxt",
 }
 `;
 
-exports[`Canonical Send Header Navigation link should match text and url 6`] = `
+exports[`Canonical Send Header Navigation link should match text and url 5`] = `
 {
   "text": "Barnaamijyada Idaacadda",
   "url": "/somali/topics/cn6rqlrkm0pt",

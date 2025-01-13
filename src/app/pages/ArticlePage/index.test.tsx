@@ -39,7 +39,6 @@ import { ServiceContextProvider } from '../../contexts/ServiceContext';
 import ArticlePage from './ArticlePage';
 import ThemeProvider from '../../components/ThemeProvider';
 import ATIAnalytics from '../../components/ATIAnalytics';
-import { topStoriesList } from './PagePromoSections/TopStoriesSection/fixture/index';
 
 jest.mock('../../components/ThemeProvider');
 
@@ -48,6 +47,13 @@ jest.mock('../../components/ChartbeatAnalytics', () => {
   return ChartbeatAnalytics;
 });
 jest.mock('../../components/ATIAnalytics');
+jest.mock('#app/legacy/containers/OptimizelyArticleCompleteTracking');
+jest.mock('#app/legacy/containers/OptimizelyPageViewTracking');
+
+jest.mock('#app/hooks/useOptimizelyVariation', () => ({
+  __esModule: true,
+  default: jest.fn(),
+}));
 
 const input = {
   bbcOrigin: 'https://www.test.bbc.co.uk',
@@ -875,70 +881,5 @@ describe('Article Page', () => {
         {},
       );
     });
-  });
-
-  describe('when rendering an AMP page', () => {
-    const pageDataWithSecondaryColumn = {
-      ...articleDataNews,
-      secondaryColumn: {
-        topStories: topStoriesList,
-        features: [],
-      },
-    };
-
-    const renderAmpPage = ({
-      service,
-      id,
-    }: {
-      service: Services;
-      id: string | null;
-    }) => {
-      return render(
-        <Context isAmp service={service} id={id}>
-          <ArticlePage pageData={pageDataWithSecondaryColumn} />
-        </Context>,
-        {
-          isAmp: true,
-          service,
-          id,
-        },
-      );
-    };
-
-    const validNewsAsset = 'c6v11qzyv8po';
-    const validSportAsset = 'cpgw0xjmpd3o';
-
-    it.each`
-      service    | id
-      ${'news'}  | ${validNewsAsset}
-      ${'sport'} | ${validSportAsset}
-    `(
-      'should render page with experiment-top-stories blocks only on specific $service assets',
-      ({ service, id }) => {
-        const { queryByTestId } = renderAmpPage({
-          service,
-          id,
-        });
-
-        expect(queryByTestId('experiment-top-stories')).toBeInTheDocument();
-      },
-    );
-
-    it.each`
-      service     | id                | testDescription
-      ${'news'}   | ${'c1231qzyv8po'} | ${'news assets not specified'}
-      ${'sport'}  | ${'c1231qzyv8po'} | ${'sport assets not specified'}
-      ${'pidgin'} | ${'c6v11qzyv8po'} | ${`services which are not 'news' or 'sport'`}
-    `(
-      'should render page without experiment-top-stories blocks on $testDescription',
-      ({ service, id }) => {
-        const { queryByTestId } = renderAmpPage({
-          service,
-          id,
-        });
-
-        expect(queryByTestId('experiment-top-stories')).not.toBeInTheDocument();
-      },
-    );
   });
 });

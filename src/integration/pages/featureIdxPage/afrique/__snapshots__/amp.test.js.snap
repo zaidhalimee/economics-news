@@ -189,6 +189,13 @@ exports[`AMP Feature Index page Footer Anchors should match text and url 7`] = `
 
 exports[`AMP Feature Index page Footer Anchors should match text and url 8`] = `
 {
+  "text": "Autres langues",
+  "url": "https://www.bbc.com/ws/languages",
+}
+`;
+
+exports[`AMP Feature Index page Footer Anchors should match text and url 9`] = `
+{
   "text": "Découvrez notre approche en matière de liens externes.",
   "url": "https://www.bbc.co.uk/editorialguidelines/guidance/feeds-and-links",
 }
@@ -203,7 +210,7 @@ exports[`AMP Feature Index page Footer Cookie Settings Button should match text 
 
 exports[`AMP Feature Index page Footer I can click on the BBC branding and it would take me to the homepage 1`] = `"/afrique"`;
 
-exports[`AMP Feature Index page Footer Paragraphs should match text 1`] = `"© 2024 BBC. La BBC n'est pas responsable du contenu des sites externes. Découvrez notre approche en matière de liens externes."`;
+exports[`AMP Feature Index page Footer Paragraphs should match text 1`] = `"© 2025 BBC. La BBC n'est pas responsable du contenu des sites externes. Découvrez notre approche en matière de liens externes."`;
 
 exports[`AMP Feature Index page Header I can see the branding 1`] = `"BBC News, Afrique"`;
 
@@ -216,64 +223,64 @@ exports[`AMP Feature Index page Header Navigation link should match text and url
 
 exports[`AMP Feature Index page Header Navigation link should match text and url 2`] = `
 {
+  "text": "Ecoutez en direct",
+  "url": "/afrique/bbc_afrique_radio/liveradio",
+}
+`;
+
+exports[`AMP Feature Index page Header Navigation link should match text and url 3`] = `
+{
   "text": "Afrique",
   "url": "/afrique/topics/cvqxn2k7kv7t",
 }
 `;
 
-exports[`AMP Feature Index page Header Navigation link should match text and url 3`] = `
+exports[`AMP Feature Index page Header Navigation link should match text and url 4`] = `
 {
   "text": "Monde",
   "url": "/afrique/topics/cvqxn21vx11t",
 }
 `;
 
-exports[`AMP Feature Index page Header Navigation link should match text and url 4`] = `
+exports[`AMP Feature Index page Header Navigation link should match text and url 5`] = `
 {
   "text": "Santé",
   "url": "/afrique/topics/c06gq9jxz3rt",
 }
 `;
 
-exports[`AMP Feature Index page Header Navigation link should match text and url 5`] = `
+exports[`AMP Feature Index page Header Navigation link should match text and url 6`] = `
 {
   "text": "Science et technologie",
   "url": "/afrique/topics/crezq2zk0q4t",
 }
 `;
 
-exports[`AMP Feature Index page Header Navigation link should match text and url 6`] = `
+exports[`AMP Feature Index page Header Navigation link should match text and url 7`] = `
 {
   "text": "Economie",
   "url": "/afrique/topics/cnq687nr9v1t",
 }
 `;
 
-exports[`AMP Feature Index page Header Navigation link should match text and url 7`] = `
+exports[`AMP Feature Index page Header Navigation link should match text and url 8`] = `
 {
   "text": "Culture",
   "url": "/afrique/topics/cnq687nrrw8t",
 }
 `;
 
-exports[`AMP Feature Index page Header Navigation link should match text and url 8`] = `
+exports[`AMP Feature Index page Header Navigation link should match text and url 9`] = `
 {
   "text": "Vidéos",
   "url": "/afrique/topics/cz4vn9gyd6rt",
 }
 `;
 
-exports[`AMP Feature Index page Header Navigation link should match text and url 9`] = `
+exports[`AMP Feature Index page Header Navigation link should match text and url 10`] = `
 {
   "text": "Nos émissions",
   "url": "/afrique/topics/c88nzggm8gxt",
-}
-`;
-
-exports[`AMP Feature Index page Header Navigation link should match text and url 10`] = `
-{
-  "text": "Ecoutez en direct",
-  "url": "/afrique/bbc_afrique_radio/liveradio",
 }
 `;
 

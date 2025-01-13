@@ -315,6 +315,13 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
   }
 }
 
+@media (min-width: 25rem) {
+  .emotion-18 {
+    height: 3.75rem;
+    padding: 0 1rem;
+  }
+}
+
 @media (min-width: 37.5rem) {
   .emotion-18 {
     height: 4rem;
@@ -868,6 +875,13 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
   }
 }
 
+@media (min-width: 25rem) {
+  .emotion-140 {
+    height: 3.75rem;
+    padding: 0 1rem;
+  }
+}
+
 @media (min-width: 37.5rem) {
   .emotion-140 {
     height: 4rem;
@@ -891,7 +905,7 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
   font-style: normal;
   font-weight: 400;
   background-color: #222222;
-  padding: 0 0.5rem;
+  padding: 0 1rem;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -905,6 +919,12 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
   .emotion-149 {
     font-size: 0.8125rem;
     line-height: 1rem;
+  }
+}
+
+@media (max-width: 24.9375rem) {
+  .emotion-149 {
+    padding: 0 0.5rem;
   }
 }
 
@@ -1115,7 +1135,7 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
                   <span>
                     <a
                       data-terms-banner="reject"
-                      href="https://www.bbc.co.uk/usingthebbc/your-data-matters"
+                      href="https://www.bbc.co.uk/usingthebbc/privacy-policy/"
                     >
                       Find out what's changed
                     </a>
@@ -1690,7 +1710,7 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
               ©
                
             </span>
-            2024 BBC. The BBC is not responsible for the content of external sites.
+            2025 BBC. The BBC is not responsible for the content of external sites.
              
             <a
               class="focusIndicatorInvert emotion-161"

@@ -30,7 +30,7 @@ const headerFooterTranslations = {
       },
       accept: 'ОК',
       reject: 'Посмотреть, что изменилось',
-      rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+      rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
     },
     cookie: {
       amp: {
@@ -421,6 +421,10 @@ export const service: DefaultServiceConfig = {
           text: 'Связаться с Би-би-си',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Би-би-си на других языках',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -439,10 +443,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Война в Украине',
         url: '/russian/topics/cez0n29ggrdt',
-      },
-      {
-        title: 'Выборы в США',
-        url: '/russian/topics/ce802g1vrdgt',
       },
       {
         title: 'Истории',

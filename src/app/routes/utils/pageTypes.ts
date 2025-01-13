@@ -1,7 +1,6 @@
 export const ARTICLE_PAGE = 'article' as const;
 export const MEDIA_ARTICLE_PAGE = 'mediaArticle' as const;
 export const FRONT_PAGE = 'frontPage' as const;
-export const MEDIA_PAGE = 'media' as const;
 export const MOST_READ_PAGE = 'mostRead' as const;
 export const ERROR_PAGE = 'error' as const;
 export const FEATURE_INDEX_PAGE = 'FIX' as const;
@@ -17,3 +16,6 @@ export const STATIC_PAGE = 'static' as const;
 export const UGC_PAGE = 'ugcForm' as const;
 export const AV_EMBEDS = 'avEmbeds' as const;
 export const DOWNLOADS_PAGE = 'downloads' as const;
+export const LIVE_RADIO_PAGE = 'liveRadio' as const;
+export const AUDIO_PAGE = 'audio' as const;
+export const TV_PAGE = 'tv' as const;

@@ -139,7 +139,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: 'Nəyin dəyişdiyini öyrənin',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -301,6 +301,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/azeri/send/u50853225',
           text: 'BBC ilə Əlaqə',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'BBC News digər dillərdə',
         },
         {
           id: 'COOKIE_SETTINGS',

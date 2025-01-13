@@ -138,7 +138,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: '네',
           reject: '변경사항을 확인하세요',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -310,6 +310,10 @@ export const service: DefaultServiceConfig = {
           text: '고객센터',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: '다른 언어로 보기',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -323,10 +327,6 @@ export const service: DefaultServiceConfig = {
       {
         title: '뉴스',
         url: '/korean',
-      },
-      {
-        title: '2024 미국 대선',
-        url: '/korean/topics/cxdyjwpx5v0t',
       },
       {
         title: '비디오',

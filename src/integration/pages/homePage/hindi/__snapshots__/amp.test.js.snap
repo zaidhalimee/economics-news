@@ -178,6 +178,13 @@ exports[`AMP Home Page Footer Anchors should match text and url 7`] = `
 
 exports[`AMP Home Page Footer Anchors should match text and url 8`] = `
 {
+  "text": "अन्य भाषाएँ",
+  "url": "https://www.bbc.com/ws/languages",
+}
+`;
+
+exports[`AMP Home Page Footer Anchors should match text and url 9`] = `
+{
   "text": "बाहरी साइटों का लिंक देने की हमारी नीति के बारे में पढ़ें.",
   "url": "https://www.bbc.co.uk/editorialguidelines/guidance/feeds-and-links",
 }
@@ -194,7 +201,7 @@ exports[`AMP Home Page Footer I can click on the BBC branding and it would take 
 
 exports[`AMP Home Page Footer Paragraphs should match text 1`] = `"बीबीसी के लिए कलेक्टिव न्यूज़रूम की ओर से प्रकाशित"`;
 
-exports[`AMP Home Page Footer Paragraphs should match text 2`] = `"© 2024 BBC. बाहरी साइटों की सामग्री के लिए बीबीसी ज़िम्मेदार नहीं है. बाहरी साइटों का लिंक देने की हमारी नीति के बारे में पढ़ें."`;
+exports[`AMP Home Page Footer Paragraphs should match text 2`] = `"© 2025 BBC. बाहरी साइटों की सामग्री के लिए बीबीसी ज़िम्मेदार नहीं है. बाहरी साइटों का लिंक देने की हमारी नीति के बारे में पढ़ें."`;
 
 exports[`AMP Home Page Header I can see the branding 1`] = `"BBC News, हिंदी"`;
 
@@ -214,54 +221,47 @@ exports[`AMP Home Page Header Navigation link should match text and url 2`] = `
 
 exports[`AMP Home Page Header Navigation link should match text and url 3`] = `
 {
-  "text": "अमेरिकी चुनाव 2024",
-  "url": "/hindi/topics/cp9r94x30m5t",
-}
-`;
-
-exports[`AMP Home Page Header Navigation link should match text and url 4`] = `
-{
   "text": "विदेश",
   "url": "/hindi/topics/c9wpm0en87xt",
 }
 `;
 
-exports[`AMP Home Page Header Navigation link should match text and url 5`] = `
+exports[`AMP Home Page Header Navigation link should match text and url 4`] = `
 {
   "text": "मनोरंजन",
   "url": "/hindi/topics/c06gq3n0pp7t",
 }
 `;
 
-exports[`AMP Home Page Header Navigation link should match text and url 6`] = `
+exports[`AMP Home Page Header Navigation link should match text and url 5`] = `
 {
   "text": "खेल",
   "url": "/hindi/topics/cwr9j8g1kj9t",
 }
 `;
 
-exports[`AMP Home Page Header Navigation link should match text and url 7`] = `
+exports[`AMP Home Page Header Navigation link should match text and url 6`] = `
 {
   "text": "विज्ञान-टेक्नॉलॉजी",
   "url": "/hindi/topics/c2lej0594knt",
 }
 `;
 
-exports[`AMP Home Page Header Navigation link should match text and url 8`] = `
+exports[`AMP Home Page Header Navigation link should match text and url 7`] = `
 {
   "text": "सोशल",
   "url": "/hindi/topics/c2e4q0z9qznt",
 }
 `;
 
-exports[`AMP Home Page Header Navigation link should match text and url 9`] = `
+exports[`AMP Home Page Header Navigation link should match text and url 8`] = `
 {
   "text": "वीडियो",
   "url": "/hindi/topics/cw9kv0kpxydt",
 }
 `;
 
-exports[`AMP Home Page Header Navigation link should match text and url 10`] = `
+exports[`AMP Home Page Header Navigation link should match text and url 9`] = `
 {
   "text": "पॉडकास्ट",
   "url": "/hindi/institutional-61824775",

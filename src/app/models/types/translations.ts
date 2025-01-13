@@ -31,6 +31,9 @@ export interface Translations {
     audioPlayer: string;
     videoPlayer: string;
   };
+  articlePage?: {
+    jumpTo: string;
+  };
   liveExperiencePage: {
     liveLabel: string;
     liveCoverage: string;
@@ -159,6 +162,7 @@ export interface Translations {
     bbc_yoruba_radio?: OnDemandRadioTvTranslations;
     listen: string;
     watch: string;
+    watchMoments?: string;
     listenLive?: string;
     listenNext?: string;
     liveLabel?: string;

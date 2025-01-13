@@ -91,6 +91,10 @@ export const service: SerbianConfig = {
           text: 'Kontaktirajte BBC',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'BBC News na drugim jezicima',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -109,10 +113,6 @@ export const service: SerbianConfig = {
       {
         title: 'Početna strana',
         url: '/serbian/lat',
-      },
-      {
-        title: 'Američki izbori',
-        url: '/serbian/lat/topics/c1v8enng1npt',
       },
       {
         title: 'Srbija',
@@ -234,7 +234,7 @@ export const service: SerbianConfig = {
           },
           accept: 'U redu',
           reject: 'Saznajte šta se promenilo',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -484,6 +484,10 @@ export const service: SerbianConfig = {
           text: 'Контактирајте ББЦ',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'BBC News на другим језицима',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -607,7 +611,7 @@ export const service: SerbianConfig = {
           },
           accept: 'У реду',
           reject: 'Сазнајте шта се променило',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

@@ -134,7 +134,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ঠিক আছে।',
           reject: 'কী পরিবর্তন হয়েছে দেখুন।',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -312,6 +312,10 @@ export const service: DefaultServiceConfig = {
           text: 'বিবিসির সাথে যোগাযোগ করুন',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'অন্যান্য ভাষায় বিবিসির সংবাদ',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -326,10 +330,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'মূলপাতা',
         url: '/bengali',
-      },
-      {
-        title: 'যুক্তরাষ্ট্র নির্বাচন ২০২৪',
-        url: '/bengali/topics/cjlgjr0d2d2t',
       },
       {
         title: 'রাজনীতি',

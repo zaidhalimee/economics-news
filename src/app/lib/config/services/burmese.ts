@@ -153,7 +153,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ကောင်းပါပြီ။',
           reject: 'ဘာတွေပြောင်းလဲသွားသလဲ ကြည့်ရန်',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -332,6 +332,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/burmese/send/u50853269',
           text: 'ဘီဘီစီကို ဆက်သွယ်ရန်',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'အခြားဘာသာစကားနှင့် ဘီဘီစီသတင်းများ',
         },
         {
           id: 'COOKIE_SETTINGS',
