@@ -1,7 +1,7 @@
 import liveRadioJson from '#data/korean/bbc_korean_radio/liveradio.json';
 import { LIVE_RADIO_PAGE } from '#app/routes/utils/pageTypes';
+import * as fetchPageData from '#app/routes/utils/fetchPageData';
 import getInitialData from '.';
-import * as fetchPageData from '../../utils/fetchPageData';
 
 fetch.mockResponse(JSON.stringify(liveRadioJson));
 

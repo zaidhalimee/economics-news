@@ -5,9 +5,9 @@ import { InitialDataProps } from '#app/models/types/initialData';
 import fetchDataFromBFF from '#app/routes/utils/fetchDataFromBFF';
 import overrideRendererOnTest from '#app/routes/utils/overrideRendererOnTest';
 import isTest from '#app/lib/utilities/isTest';
-import getErrorStatusCode from '../../utils/fetchPageData/utils/getErrorStatusCode';
-import { getPodcastExternalLinks } from '../tempData/podcastExternalLinks';
-import nodeLogger from '../../../lib/logger.node';
+import getErrorStatusCode from '#app/routes/utils/fetchPageData/utils/getErrorStatusCode';
+import { getPodcastExternalLinks } from '#app/routes/onDemandAudio/tempData/podcastExternalLinks';
+import nodeLogger from '#lib/logger.node';
 
 const logger = nodeLogger(__filename);
 const getScheduleToggle = path(['onDemandRadioSchedule', 'enabled']);

@@ -8,10 +8,10 @@ import addIdsToGroups from '#app/routes/utils/sharedDataTransformers/addIdsToGro
 import filterGroupsWithoutStraplines from '#app/routes/utils/sharedDataTransformers/filterGroupsWithoutStraplines';
 import handleError from '#app/routes/utils/handleError';
 import fetchDataFromBFF from '#app/routes/utils/fetchDataFromBFF';
-import getErrorStatusCode from '../../utils/fetchPageData/utils/getErrorStatusCode';
-import { CPS_ASSET } from '../../utils/pageTypes';
-import nodeLogger from '../../../lib/logger.node';
-import { BFF_FETCH_ERROR } from '../../../lib/logger.const';
+import getErrorStatusCode from '#app/routes/utils/fetchPageData/utils/getErrorStatusCode';
+import { CPS_ASSET } from '#app/routes/utils/pageTypes';
+import nodeLogger from '#app/lib/logger.node';
+import { BFF_FETCH_ERROR } from '#app/lib/logger.const';
 
 const logger = nodeLogger(__filename);
 
