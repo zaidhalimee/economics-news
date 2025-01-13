@@ -234,7 +234,7 @@ describe('implementation of buildPageATIParams and buildPageATIUrl', () => {
       const result = buildPageATIParams({
         atiData: {
           ...articlePageAtiData,
-          ampExperimentName: 'topStoriesExperiment',
+          ampExperimentName: 'someAmpExperiment',
         },
         requestContext: {
           ...requestContext,
@@ -247,7 +247,7 @@ describe('implementation of buildPageATIParams and buildPageATIUrl', () => {
       });
       expect(result).toEqual({
         ...validPageURLParams,
-        ampExperimentName: 'topStoriesExperiment',
+        ampExperimentName: 'someAmpExperiment',
       });
     });
   });

@@ -394,7 +394,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'பிபிசி நியூஸ் பிற மொழிகளில்',
         },
         {
           id: 'COOKIE_SETTINGS',

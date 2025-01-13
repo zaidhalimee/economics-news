@@ -422,7 +422,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'اخبار به زبان‌های دیگر',
         },
         {
           id: 'COOKIE_SETTINGS',

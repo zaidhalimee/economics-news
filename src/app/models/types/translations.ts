@@ -38,7 +38,11 @@ export interface Translations {
     videoPlayer: string;
   };
   articlePage?: {
-    jumpTo: string;
+    jumpToTitle: {
+      variation_1: string;
+      variation_2: string;
+      variation_3: string;
+    };
   };
   liveExperiencePage: {
     liveLabel: string;
