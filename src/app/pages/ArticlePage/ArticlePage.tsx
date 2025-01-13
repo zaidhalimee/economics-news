@@ -43,6 +43,7 @@ import JumpTo, { JumpToProps, Variation } from '#app/components/JumpTo';
 import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
 import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
 import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
+import OPTIMIZELY_CONFIG from '#app/lib/config/optimizely';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
@@ -131,7 +132,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   } = pageData;
 
   const optimizelyVariation = useOptimizelyVariation(
-    'jump_to_onward_journeys',
+    OPTIMIZELY_CONFIG.flagKey,
   ) as unknown as Variation | 'off';
 
   const hasJumpToBlockForExperiment = blocks.some(
