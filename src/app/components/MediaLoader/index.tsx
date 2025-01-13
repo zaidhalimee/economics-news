@@ -27,6 +27,7 @@ import styles from './index.styles';
 import { getBootstrapSrc } from '../Ad/Canonical';
 import Metadata from './Metadata';
 import AmpMediaLoader from './Amp';
+import Message from './Message';
 
 const PAGETYPES_IGNORE_PLACEHOLDER: PageTypes[] = [
   MEDIA_ARTICLE_PAGE,
@@ -96,9 +97,14 @@ const AdvertTagLoader = () => {
 type MediaContainerProps = {
   playerConfig: PlayerConfig;
   showAds: boolean;
+  noJsMessage?: string;
 };
 
-const MediaContainer = ({ playerConfig, showAds }: MediaContainerProps) => {
+const MediaContainer = ({
+  playerConfig,
+  showAds,
+  noJsMessage,
+}: MediaContainerProps) => {
   const playerElementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -154,7 +160,11 @@ const MediaContainer = ({ playerConfig, showAds }: MediaContainerProps) => {
           ? styles.audioMediaContainer
           : styles.standardMediaContainer
       }
-    />
+    >
+      <noscript>
+        <Message message={noJsMessage} />
+      </noscript>
+    </div>
   );
 };
 
@@ -225,6 +235,11 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
     mediaInfo,
   } = placeholderConfig ?? {};
 
+  let noJsMessage = translatedNoJSMessage;
+  if (!noJsMessage) {
+    noJsMessage = translations?.media?.noJs;
+  }
+
   const hasPlaceholder = Boolean(showPlaceholder && placeholderSrc);
 
   const showPortraitTitle = orientation === 'portrait' && !embedded;
@@ -259,7 +274,7 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
             title={mediaInfo?.title}
             placeholderSrc={placeholderSrc}
             placeholderSrcset={placeholderSrcset}
-            noJsMessage={translatedNoJSMessage}
+            noJsMessage={noJsMessage}
           />
         ) : (
           <>
@@ -269,12 +284,16 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
               <Placeholder
                 src={placeholderSrc}
                 srcSet={placeholderSrcset}
-                noJsMessage={translatedNoJSMessage}
+                noJsMessage={noJsMessage}
                 mediaInfo={mediaInfo}
                 onClick={() => setShowPlaceholder(false)}
               />
             ) : (
-              <MediaContainer playerConfig={playerConfig} showAds={showAds} />
+              <MediaContainer
+                playerConfig={playerConfig}
+                showAds={showAds}
+                noJsMessage={noJsMessage}
+              />
             )}
           </>
         )}
