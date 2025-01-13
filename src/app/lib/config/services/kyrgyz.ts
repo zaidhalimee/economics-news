@@ -312,7 +312,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'Башка тилдерде',
         },
         {
           id: 'COOKIE_SETTINGS',

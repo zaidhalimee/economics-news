@@ -39,10 +39,11 @@ import CpsRecommendations from '#containers/CpsRecommendations';
 import InlinePodcastPromo from '#containers/PodcastPromo/Inline';
 import { Article, OptimoBylineBlock } from '#app/models/types/optimo';
 import ScrollablePromo from '#components/ScrollablePromo';
-import JumpTo, { JumpToProps } from '#app/components/JumpTo';
+import JumpTo, { JumpToProps, Variation } from '#app/components/JumpTo';
 import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
 import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
 import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
+import OPTIMIZELY_CONFIG from '#app/lib/config/optimizely';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
@@ -130,16 +131,16 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     mostRead: mostReadInitialData,
   } = pageData;
 
-  const jumpToVariation = useOptimizelyVariation(
-    'jump_to',
-  ) as unknown as string;
+  const optimizelyVariation = useOptimizelyVariation(
+    OPTIMIZELY_CONFIG.flagKey,
+  ) as unknown as Variation | 'off';
 
   const hasJumpToBlockForExperiment = blocks.some(
     block => block.type === 'jumpTo',
   );
 
   const enableOptimizelyEventTracking = Boolean(
-    jumpToVariation && hasJumpToBlockForExperiment,
+    optimizelyVariation && hasJumpToBlockForExperiment,
   );
 
   const showRelatedContent = blocks.some(
@@ -149,6 +150,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const atiData = {
     ...atiAnalytics,
     ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
+    ...(optimizelyVariation && { experimentVariant: optimizelyVariation }),
   };
 
   const componentsToRender = {
@@ -194,10 +196,23 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       <Disclaimer {...props} increasePaddingOnDesktop={false} />
     ),
     podcastPromo: () => (podcastPromoEnabled ? <InlinePodcastPromo /> : null),
-    jumpTo: (props: ComponentToRenderProps & JumpToProps) =>
-      jumpToVariation === 'on' ? (
-        <JumpTo {...props} showRelatedContentLink={showRelatedContent} />
-      ) : null,
+    jumpTo: (props: ComponentToRenderProps & JumpToProps) => {
+      if (
+        optimizelyVariation === 'off' ||
+        !optimizelyVariation ||
+        !hasJumpToBlockForExperiment
+      )
+        return null;
+
+      return (
+        <JumpTo
+          {...props}
+          jumpToHeadings={props.jumpToHeadings}
+          showRelatedContentLink={showRelatedContent}
+          variation={optimizelyVariation}
+        />
+      );
+    },
   };
 
   const visuallyHiddenBlock = {
@@ -295,7 +310,12 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
             sendOptimizelyEvents={enableOptimizelyEventTracking}
           />
         </div>
-        {!isApp && !isPGL && <SecondaryColumn pageData={pageData} />}
+        {!isApp && !isPGL && (
+          <SecondaryColumn
+            pageData={pageData}
+            sendOptimizelyEvents={enableOptimizelyEventTracking}
+          />
+        )}
       </div>
       {!isApp && !isPGL && (
         <MostRead
@@ -305,6 +325,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           size="default"
           headingBackgroundColour={GREY_2}
           mobileDivider={showTopics}
+          sendOptimizelyEvents={enableOptimizelyEventTracking}
         />
       )}
       {enableOptimizelyEventTracking && (

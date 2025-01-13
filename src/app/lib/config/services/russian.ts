@@ -422,7 +422,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'Би-би-си на других языках',
         },
         {
           id: 'COOKIE_SETTINGS',
