@@ -88,7 +88,7 @@ const LiveHeaderMedia = ({ mediaCollection }: Props) => {
   };
 
   const description = (
-    <div>
+    <>
       <Text
         size="pica"
         fontVariant="sansBold"
@@ -120,13 +120,13 @@ const LiveHeaderMedia = ({ mediaCollection }: Props) => {
           {warnings.warning_text}
         </Text>
       )}
-    </div>
+    </>
   );
 
   return (
     <>
       <noscript css={styles.nojs}>
-        {description}
+        <p>{description}</p>
         <strong>{noJs}</strong>
       </noscript>
       <div css={styles.componentContainer}>
@@ -139,7 +139,7 @@ const LiveHeaderMedia = ({ mediaCollection }: Props) => {
             styles.mediaButton,
           ]}
         >
-          {description}
+          <div>{description}</div>
           {!showMedia && (
             <div className="hoverStylesCTA" css={styles.watchLiveCTA}>
               <Text
