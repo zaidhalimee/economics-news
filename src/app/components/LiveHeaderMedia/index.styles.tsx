@@ -23,7 +23,7 @@ export default {
       border: 'unset',
       textAlign: 'start',
     }),
-  watchLiveCTAText: ({ spacings, palette }: Theme) =>
+  watchLiveCTAText: ({ spacings, palette, mq }: Theme) =>
     css({
       color: palette.WHITE,
       display: 'flex',
@@ -36,6 +36,11 @@ export default {
         fill: 'currentcolor',
         color: palette.WHITE,
         marginInlineEnd: `${spacings.FULL}rem`,
+      },
+      'button:hover &, button:focus &': {
+        [mq.FORCED_COLOURS]: {
+          textDecoration: 'underline',
+        },
       },
     }),
   title: () =>
@@ -64,10 +69,8 @@ export default {
         color: 'canvasText',
         border: `${pixelsToRem(2)}rem solid canvasText`,
       },
-      'button:hover &, button:focus &': {
-        [mq.FORCED_COLOURS]: {
-          textDecoration: 'underline',
-        },
+      'button:hover & span, button:focus & span': {
+        textDecoration: 'underline',
       },
     }),
   liveMediaStreamText: ({ palette }: Theme) =>
@@ -131,9 +134,6 @@ export default {
       display: 'block',
       width: '100%',
       span: { margin: 0 },
-      'button:hover & span, button:focus & span': {
-        textDecoration: 'underline',
-      },
     }),
   openMediaDescription: ({ palette, spacings }: Theme) =>
     css({
