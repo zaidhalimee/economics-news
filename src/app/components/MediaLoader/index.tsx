@@ -235,10 +235,7 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
     mediaInfo,
   } = placeholderConfig ?? {};
 
-  let noJsMessage = translatedNoJSMessage;
-  if (!noJsMessage) {
-    noJsMessage = translations?.media?.noJs;
-  }
+  const noJsMessage = translatedNoJSMessage || translations?.media?.noJs;
 
   const hasPlaceholder = Boolean(showPlaceholder && placeholderSrc);
 
