@@ -98,7 +98,6 @@ const LiveHeaderMedia = ({ mediaCollection }: Props) => {
             as="span"
             css={[
               styles.mediaDescription,
-              warnings && styles.mediaDescriptionGuidance,
               showMedia
                 ? styles.closeMediaDescription
                 : styles.openMediaDescription,

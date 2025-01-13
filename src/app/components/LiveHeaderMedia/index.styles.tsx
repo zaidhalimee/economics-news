@@ -5,12 +5,13 @@ export default {
   componentContainer: ({ spacings }: Theme) =>
     css({
       width: '100%',
-      marginTop: `${spacings.FULL}rem`,
+      marginTop: `${spacings.DOUBLE}rem`,
     }),
   mediaButton: ({ mq }: Theme) =>
     css({
       zIndex: '1',
       position: 'relative',
+      padding: 0,
       [mq.FORCED_COLOURS]: {
         color: 'canvasText',
       },
@@ -21,7 +22,6 @@ export default {
       backgroundColor: 'unset',
       border: 'unset',
       textAlign: 'start',
-      padding: 0,
     }),
   watchLiveCTAText: ({ spacings, palette }: Theme) =>
     css({
@@ -46,7 +46,7 @@ export default {
   guidanceMessage: ({ palette, spacings }: Theme) =>
     css({
       display: 'block',
-      margin: `${spacings.FULL}rem 0 `,
+      marginTop: `${spacings.DOUBLE}rem`,
       color: palette.GREY_2,
       textAlign: 'start',
     }),
@@ -95,7 +95,6 @@ export default {
       border: 0,
       outline: 0,
       lineHeight: 0,
-      padding: 0,
       alignItems: 'center',
     }),
   closeContainer: ({ spacings, palette, mq }: Theme) =>
@@ -123,32 +122,30 @@ export default {
     css({
       maxWidth: '100%',
     }),
-  mediaLoader: () =>
+  mediaLoader: ({ spacings }: Theme) =>
     css({
       maxWidth: '100%',
+      marginTop: `${spacings.DOUBLE}rem`,
     }),
-  mediaDescription: ({ spacings }: Theme) =>
+  mediaDescription: () =>
     css({
       display: 'block',
       width: '100%',
-      marginTop: `${spacings.FULL}rem`,
       span: { margin: 0 },
       'button:hover & span, button:focus & span': {
         textDecoration: 'underline',
       },
     }),
-  openMediaDescription: ({ palette }: Theme) =>
+  openMediaDescription: ({ palette, spacings }: Theme) =>
     css({
+      marginTop: `${spacings.FULL}rem`,
       span: { color: palette.GREY_4 },
     }),
   closeMediaDescription: ({ palette }: Theme) =>
     css({
+      marginTop: 0,
       span: { color: palette.WHITE },
       textAlign: 'start',
-    }),
-  mediaDescriptionGuidance: ({ spacings }: Theme) =>
-    css({
-      margin: `${spacings.DOUBLE}rem 0 0 0`,
     }),
   hideComponent: () => css({ display: 'none' }),
 };
