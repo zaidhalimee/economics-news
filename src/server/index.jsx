@@ -162,10 +162,7 @@ const injectDefaultCacheHeader = (req, res, next) => {
 };
 
 const injectPlatformToRequestChain = (req, res, next) => {
-  res.set(
-    'req-svc-chain',
-    addPlatformToRequestChain({ headers: req.headers, application: 'EXPRESS' }),
-  );
+  res.set('req-svc-chain', addPlatformToRequestChain({ headers: req.headers }));
   next();
 };
 
