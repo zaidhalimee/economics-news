@@ -339,7 +339,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'BC News dalam bahasa-bahasa lain',
         },
         {
           id: 'COOKIE_SETTINGS',

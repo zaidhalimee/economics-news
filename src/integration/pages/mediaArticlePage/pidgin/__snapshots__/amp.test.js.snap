@@ -189,7 +189,7 @@ exports[`AMP Media Article Page Footer Anchors should match text and url 7`] = `
 
 exports[`AMP Media Article Page Footer Anchors should match text and url 8`] = `
 {
-  "text": "Other Languages",
+  "text": "BBC News for oda languages",
   "url": "https://www.bbc.com/ws/languages",
 }
 `;
