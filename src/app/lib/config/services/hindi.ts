@@ -89,7 +89,11 @@ export const service: DefaultServiceConfig = {
         videoPlayer: 'वीडियो प्लेयर',
       },
       articlePage: {
-        jumpTo: 'इस पर जाएं',
+        jumpToTitle: {
+          variation_1: 'इस पर जाएं',
+          variation_2: 'Discover more from BBC Hindi',
+          variation_3: 'More from BBC Hindi',
+        },
       },
       liveExperiencePage: {
         liveLabel: 'लाइव',

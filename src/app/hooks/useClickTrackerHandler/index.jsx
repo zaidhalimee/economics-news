@@ -1,7 +1,5 @@
 /* eslint-disable no-console */
 import { useContext, useCallback, useState } from 'react';
-import path from 'ramda/src/path';
-import pathOr from 'ramda/src/pathOr';
 
 import { EventTrackingContext } from '../../contexts/EventTrackingContext';
 import useTrackingToggle from '../useTrackingToggle';
@@ -13,18 +11,19 @@ import { isValidClick } from './clickTypes';
 const EVENT_TYPE = 'click';
 
 const useClickTrackerHandler = (props = {}) => {
-  const preventNavigation = path(['preventNavigation'], props);
-  const componentName = path(['componentName'], props);
-  const url = path(['url'], props);
-  const advertiserID = path(['advertiserID'], props);
-  const format = path(['format'], props);
-  const optimizely = path(['optimizely'], props);
+  const preventNavigation = props?.preventNavigation;
+  const componentName = props?.componentName;
+  const url = props?.url;
+  const advertiserID = props?.advertiserID;
+  const format = props?.format;
+  const optimizely = props?.optimizely;
   const optimizelyMetricNameOverride = props?.optimizelyMetricNameOverride;
   const detailedPlacement = props?.detailedPlacement;
 
   const { trackingIsEnabled } = useTrackingToggle(componentName);
   const [clicked, setClicked] = useState(false);
   const eventTrackingContext = useContext(EventTrackingContext);
+
   const {
     pageIdentifier,
     platform,
@@ -32,11 +31,8 @@ const useClickTrackerHandler = (props = {}) => {
     producerName,
     statsDestination,
   } = eventTrackingContext;
-  const campaignID = pathOr(
-    path(['campaignID'], eventTrackingContext),
-    ['campaignID'],
-    props,
-  );
+  const campaignID = props?.campaignID || eventTrackingContext?.campaignID;
+
   const { service, useReverb } = useContext(ServiceContext);
 
   return useCallback(
@@ -60,7 +56,7 @@ const useClickTrackerHandler = (props = {}) => {
           statsDestination,
         ].every(Boolean);
         if (shouldSendEvent) {
-          const nextPageUrl = path(['currentTarget', 'href'], event);
+          const nextPageUrl = event?.currentTarget?.href;
 
           event.stopPropagation();
           event.preventDefault();
@@ -82,6 +78,9 @@ const useClickTrackerHandler = (props = {}) => {
             );
           }
 
+          const optimizelyVariation =
+            optimizely?.getVariation(OPTIMIZELY_CONFIG.ruleKey) || null;
+
           try {
             await sendEventBeacon({
               type: EVENT_TYPE,
@@ -98,6 +97,10 @@ const useClickTrackerHandler = (props = {}) => {
               url,
               detailedPlacement,
               useReverb,
+              ...(optimizelyVariation &&
+                optimizelyVariation !== 'off' && {
+                  experimentVariant: optimizelyVariation,
+                }),
             });
           } finally {
             if (nextPageUrl && !preventNavigation) {
