@@ -737,7 +737,6 @@ exports[`OnDemand Radio Page  should match snapshot 1`] = `
 
 .emotion-31 {
   position: relative;
-  z-index: 0;
   width: 100%;
   margin: 0 0 1.5rem 0;
 }

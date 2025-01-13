@@ -110,7 +110,7 @@ export default {
       border: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
       'button:hover &, button:focus &': {
         backgroundColor: palette.POSTBOX,
-        outline: `${palette.WHITE} solid ${pixelsToRem(2)}rem`,
+        outline: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
       },
       [mq.FORCED_COLOURS]: {
         color: 'canvasText',
@@ -149,5 +149,7 @@ export default {
         },
       },
     }),
+
+  underlineFocus: () => css({ display: 'none' }),
   hideComponent: () => css({ display: 'none' }),
 };
