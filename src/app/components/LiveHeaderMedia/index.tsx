@@ -20,7 +20,10 @@ type WarningItem = {
   short_description: string;
 };
 
-type Props = { mediaCollection: MediaCollection[] | null };
+type Props = {
+  mediaCollection: MediaCollection[] | null;
+  clickCallback?: () => void;
+};
 
 const DEFAULT_WATCH__NOW = 'Watch Live';
 const DEFAULT_CLOSE_VIDEO = 'Close video';
@@ -29,7 +32,10 @@ const DEFAULT_NO_JS_MESSAGE =
 
 const MemoizedMediaPlayer = memo(MediaLoader);
 
-const LiveHeaderMedia = ({ mediaCollection }: Props) => {
+const LiveHeaderMedia = ({
+  mediaCollection,
+  clickCallback = () => null,
+}: Props) => {
   const { translations } = useContext(ServiceContext);
   const { isLite } = useContext(RequestContext);
   const [showMedia, setShowMedia] = useState(false);
@@ -85,6 +91,8 @@ const LiveHeaderMedia = ({ mediaCollection }: Props) => {
       }
       setShowMedia(true);
     }
+
+    clickCallback();
   };
 
   const description = (

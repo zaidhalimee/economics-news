@@ -42,6 +42,19 @@ export default {
         width: '100%',
       },
     }),
+  textContainerMediaOpen: ({ mq, gridWidths, spacings }: Theme) =>
+    css({
+      position: 'relative',
+      padding: `${spacings.DOUBLE}rem ${spacings.FULL}rem 0`,
+      maxWidth: `${pixelsToRem(gridWidths[1280])}rem`,
+      margin: '0 auto',
+      [mq.GROUP_2_MIN_WIDTH]: {
+        padding: `${spacings.DOUBLE}rem ${spacings.DOUBLE}rem 0`,
+      },
+      [mq.GROUP_4_MIN_WIDTH]: {
+        paddingTop: `${spacings.TRIPLE}rem`,
+      },
+    }),
   textContainerWithoutImage: ({ mq, gridWidths, spacings }: Theme) =>
     css({
       position: 'relative',
