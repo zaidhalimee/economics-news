@@ -101,7 +101,7 @@ export const service: ZhongwenConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: '以其他语言阅览BBC新闻',
         },
         {
           id: 'COOKIE_SETTINGS',
@@ -408,7 +408,7 @@ export const service: ZhongwenConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: '以其他語言閱覽BBC新聞',
         },
         {
           id: 'COOKIE_SETTINGS',

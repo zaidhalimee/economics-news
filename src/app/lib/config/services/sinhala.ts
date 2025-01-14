@@ -300,7 +300,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'බීබීසී පුවත් වෙනත් භාෂාවලින්',
         },
         {
           id: 'COOKIE_SETTINGS',
