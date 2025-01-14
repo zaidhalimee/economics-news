@@ -20,7 +20,7 @@
     }
   },
   "swarm": {
-    "done": false,
+    "done": true,
     "reference": {
       "url": "https://paper.dropbox.com/doc/A11Y-Swarm-Live-page-header-Streamed-Media--CeUOiCNKMADIzJAdF1fNyKS8Ag-GUnv4JyaoWuciSkdhuLLz",
       "label": "Accessibility Swarm Notes"
