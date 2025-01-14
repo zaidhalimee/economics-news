@@ -85,7 +85,12 @@ const Header = ({
             </Text>
           )}
           {mediaCollections && (
-            <LiveHeaderMedia mediaCollection={mediaCollections} />
+            <LiveHeaderMedia
+              mediaCollection={mediaCollections}
+              eventTrackingData={{
+                componentName: 'live-header-media',
+              }}
+            />
           )}
         </div>
       </div>
