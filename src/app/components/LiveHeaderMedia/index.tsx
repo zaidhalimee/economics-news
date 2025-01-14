@@ -11,7 +11,7 @@ import { RequestContext } from '#app/contexts/RequestContext';
 import styles from './index.styles';
 import WARNING_LEVELS from '../MediaLoader/configs/warningLevels';
 import VisuallyHiddenText from '../VisuallyHiddenText';
-import { Close, PlayIcon } from '../icons';
+import { Close, Play } from '../icons';
 
 type WarningItem = {
   // eslint-disable-next-line camelcase
@@ -116,6 +116,7 @@ const LiveHeaderMedia = ({
         <Text size="pica" fontVariant="sansRegular" as="span">
           {networkName}
         </Text>
+        <VisuallyHiddenText>, </VisuallyHiddenText>
       </Text>
       {warnings && (
         <Text
@@ -128,7 +129,6 @@ const LiveHeaderMedia = ({
           {warnings.warning_text}
         </Text>
       )}
-      <VisuallyHiddenText>, </VisuallyHiddenText>
     </>
   );
 
@@ -157,7 +157,7 @@ const LiveHeaderMedia = ({
                 size="greatPrimer"
                 fontVariant="sansBold"
               >
-                <PlayIcon />
+                <Play />
                 {watch}
               </Text>
             </div>
