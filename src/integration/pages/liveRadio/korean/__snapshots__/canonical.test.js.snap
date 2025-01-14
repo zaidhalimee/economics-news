@@ -99,7 +99,7 @@ exports[`Canonical Korean Live Radio Page Footer Anchors should match text and u
 
 exports[`Canonical Korean Live Radio Page Footer Anchors should match text and url 8`] = `
 {
-  "text": "Other Languages",
+  "text": "다른 언어로 보기",
   "url": "https://www.bbc.com/ws/languages",
 }
 `;

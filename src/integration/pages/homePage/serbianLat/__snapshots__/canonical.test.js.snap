@@ -99,7 +99,7 @@ exports[`Canonical Home Page Footer Anchors should match text and url 7`] = `
 
 exports[`Canonical Home Page Footer Anchors should match text and url 8`] = `
 {
-  "text": "Other Languages",
+  "text": "BBC News na drugim jezicima",
   "url": "https://www.bbc.com/ws/languages",
 }
 `;

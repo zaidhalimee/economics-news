@@ -40,7 +40,7 @@ export default {
       border: 'unset',
       textAlign: 'start',
     }),
-  watchLiveCTAText: ({ spacings, palette, mq }: Theme) =>
+  watchLiveCTAText: ({ spacings, palette }: Theme) =>
     css({
       color: palette.WHITE,
       display: 'flex',
@@ -56,9 +56,6 @@ export default {
       },
       'button:hover &, button:focus-visible &': {
         textDecoration: 'underline',
-        [mq.FORCED_COLOURS]: {
-          textDecoration: 'underline',
-        },
       },
     }),
   title: () =>

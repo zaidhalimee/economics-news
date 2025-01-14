@@ -395,7 +395,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'بی بی سی نیوز دیگر زبانوں میں',
         },
         {
           id: 'COOKIE_SETTINGS',
