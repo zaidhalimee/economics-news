@@ -5,18 +5,22 @@ export default {
   componentContainer: ({ spacings }: Theme) =>
     css({
       width: '100%',
-      marginTop: `${spacings.FULL}rem`,
+      marginTop: `${spacings.DOUBLE}rem`,
     }),
   mediaButton: ({ mq }: Theme) =>
+    css({
+      position: 'relative',
+      padding: 0,
+      [mq.FORCED_COLOURS]: {
+        color: 'canvasText',
+      },
+    }),
+  openButton: () =>
     css({
       cursor: 'pointer',
       backgroundColor: 'unset',
       border: 'unset',
       textAlign: 'start',
-      padding: 0,
-      [mq.FORCED_COLOURS]: {
-        color: 'canvasText',
-      },
     }),
   watchLiveCTAText: ({ spacings, palette }: Theme) =>
     css({
@@ -32,6 +36,9 @@ export default {
         color: palette.WHITE,
         marginInlineEnd: `${spacings.FULL}rem`,
       },
+      'button:hover &, button:focus-visible &': {
+        textDecoration: 'underline',
+      },
     }),
   title: () =>
     css({
@@ -41,14 +48,15 @@ export default {
   guidanceMessage: ({ palette, spacings }: Theme) =>
     css({
       display: 'block',
-      margin: `${spacings.FULL}rem 0 `,
+      marginTop: `${spacings.DOUBLE}rem`,
       color: palette.GREY_2,
+      textAlign: 'start',
     }),
   watchLiveCTA: ({ palette, mq, spacings }: Theme) =>
     css({
       width: `${pixelsToRem(171)}rem`,
       border: 0,
-      backgroundColor: palette.LIVE_CORE,
+      backgroundColor: palette.LIVE_MEDIUM,
       padding: `${pixelsToRem(11)}rem`,
       marginTop: `${spacings.DOUBLE}rem`,
       [mq.GROUP_2_MAX_WIDTH]: {
@@ -57,12 +65,6 @@ export default {
       [mq.FORCED_COLOURS]: {
         color: 'canvasText',
         border: `${pixelsToRem(2)}rem solid canvasText`,
-      },
-      'button:hover &, button:focus &': {
-        backgroundColor: palette.LIVE_DARK,
-        [mq.FORCED_COLOURS]: {
-          textDecoration: 'underline',
-        },
       },
     }),
   liveMediaStreamText: ({ palette }: Theme) =>
@@ -79,43 +81,71 @@ export default {
         width: '50%',
       },
     }),
-  closeIconButton: ({ spacings, palette }: Theme) =>
+  closeButton: () =>
     css({
+      display: 'flex',
+      justifyContent: 'space-between',
       cursor: 'pointer',
       background: 'none',
+      width: '100%',
       border: 0,
-      outline: 0,
-      padding: `${pixelsToRem(12)}rem ${pixelsToRem(14)}rem`,
+      lineHeight: 0,
+      alignItems: 'center',
+    }),
+  closeContainer: ({ spacings, palette, mq }: Theme) =>
+    css({
+      verticalAlign: 'center',
       svg: {
         fill: 'currentcolor',
         color: palette.WHITE,
         height: `${spacings.DOUBLE}rem`,
         width: `${spacings.DOUBLE}rem`,
-        verticalAlign: 'middle',
+        margin: `${pixelsToRem(13)}rem`,
+      },
+      backgroundColor: palette.BLACK,
+      border: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
+      'button:hover &, button:focus-visible &': {
+        backgroundColor: palette.POSTBOX,
+        outline: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
+      },
+      [mq.FORCED_COLOURS]: {
+        color: 'canvasText',
       },
     }),
   liveMediaSpan: () =>
     css({
-      display: 'flex',
-      justifyContent: 'space-between',
-    }),
-  mediaLoader: () =>
-    css({
       maxWidth: '100%',
     }),
-  mediaDescription: ({ palette, spacings }: Theme) =>
+  mediaLoader: ({ spacings }: Theme) =>
     css({
-      span: { color: palette.GREY_4 },
+      maxWidth: '100%',
+      marginTop: `${spacings.DOUBLE}rem`,
+    }),
+  mediaDescription: () =>
+    css({
       display: 'block',
       width: '100%',
-      marginTop: `${spacings.FULL}rem`,
-      'button:hover & span, button:focus & span': {
-        textDecoration: 'underline',
+      marginTop: 0,
+      span: { margin: 0 },
+    }),
+  openMediaDescription: ({ palette }: Theme) =>
+    css({
+      span: { color: palette.GREY_4 },
+    }),
+  closeMediaDescription: ({ mq, palette }: Theme) =>
+    css({
+      textAlign: 'start',
+      span: { color: palette.WHITE },
+      'button:hover &, button:focus-visible &': {
+        span: {
+          textDecoration: 'underline',
+          [mq.FORCED_COLOURS]: {
+            textDecoration: 'underline',
+          },
+        },
       },
     }),
-  mediaDescriptionGuidance: ({ spacings }: Theme) =>
-    css({
-      margin: `${spacings.DOUBLE}rem 0 0 0`,
-    }),
+
+  underlineFocus: () => css({ display: 'none' }),
   hideComponent: () => css({ display: 'none' }),
 };

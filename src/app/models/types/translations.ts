@@ -178,6 +178,7 @@ export interface Translations {
     podcastExternalLinks?: string;
     download?: string;
     watchNow?: string;
+    closeVideo?: string;
   };
   socialEmbed: {
     caption?: {

@@ -1,6 +1,6 @@
 import mundoLiveFixture from '#data/mundo/live/c7dkx155e626t.json';
 import React from 'react';
-import LiveMediaStream from '.';
+import LiveHeaderMedia from '.';
 import { MediaCollection } from '../MediaLoader/types';
 import {
   screen,
@@ -13,20 +13,41 @@ const fixtureData = mundoLiveFixture.data.mediaCollections;
 describe('liveMediaStream', () => {
   it('Displays all components on intial render.', () => {
     const { container } = render(
-      <LiveMediaStream mediaCollection={fixtureData as MediaCollection[]} />,
+      <LiveHeaderMedia mediaCollection={fixtureData as MediaCollection[]} />,
     );
 
-    const playButton = container.querySelector(
-      'button[data-testid="watch-now-button"]',
-    );
-    const closeButton = container.querySelector(
-      'button[data-testid="close-button"]',
+    const playCloseButton = container.querySelector(
+      'button[data-testid="watch-now-close-button"]',
     );
     const mediaLoader = container.querySelector('figure');
 
-    expect(playButton).toBeInTheDocument();
+    expect(playCloseButton).toBeInTheDocument();
     expect(mediaLoader).toBeInTheDocument();
-    expect(closeButton).toBeInTheDocument();
+  });
+
+  it('Displays a warning message when needed.', () => {
+    const mediaBlock = fixtureData[0];
+    mediaBlock.model.version.warnings = {
+      warning_text: 'Contains some upsetting scenes.',
+      warning: [
+        {
+          warning_code: 'D1',
+          short_description: 'some upsetting scenes',
+        },
+      ],
+    };
+
+    const { container } = render(
+      <LiveHeaderMedia mediaCollection={fixtureData as MediaCollection[]} />,
+    );
+
+    const playCloseButton = container.querySelector(
+      'span[data-testid="warning-message"]',
+    );
+
+    expect(playCloseButton?.innerHTML).toContain(
+      'Contains some upsetting scenes.',
+    );
   });
 
   it('Plays the media loader when the watch button is clicked.', () => {
@@ -39,11 +60,11 @@ describe('liveMediaStream', () => {
     };
 
     render(
-      <LiveMediaStream mediaCollection={fixtureData as MediaCollection[]} />,
+      <LiveHeaderMedia mediaCollection={fixtureData as MediaCollection[]} />,
     );
 
-    const playButton = screen.getByTestId('watch-now-button');
-    fireEvent.click(playButton);
+    const playCloseButton = screen.getByTestId('watch-now-close-button');
+    fireEvent.click(playCloseButton);
 
     expect(window.mediaPlayers.p0gh4n67.play).toHaveBeenCalled();
   });
@@ -56,28 +77,26 @@ describe('liveMediaStream', () => {
       },
     };
     render(
-      <LiveMediaStream mediaCollection={fixtureData as MediaCollection[]} />,
+      <LiveHeaderMedia mediaCollection={fixtureData as MediaCollection[]} />,
     );
 
-    const playButton = screen.getByTestId('watch-now-button');
-    fireEvent.click(playButton);
-
-    const closeButton = screen.getByTestId('close-button');
-    fireEvent.click(closeButton);
+    const playCloseButton = screen.getByTestId('watch-now-close-button');
+    fireEvent.click(playCloseButton);
+    fireEvent.click(playCloseButton);
 
     expect(window.mediaPlayers.p0gh4n67.play).toHaveBeenCalledTimes(1);
     expect(window.mediaPlayers.p0gh4n67.pause).toHaveBeenCalledTimes(1);
   });
 
   it('Displays nothing if no mediaCollection is passed in.', () => {
-    const { container } = render(<LiveMediaStream mediaCollection={null} />);
+    const { container } = render(<LiveHeaderMedia mediaCollection={null} />);
 
     expect(container).toBeEmptyDOMElement();
   });
 
   it('Displays nothing if an empty array is passed in.', () => {
     const { container } = render(
-      <LiveMediaStream mediaCollection={[] as MediaCollection[]} />,
+      <LiveHeaderMedia mediaCollection={[] as MediaCollection[]} />,
     );
 
     expect(container).toBeEmptyDOMElement();
@@ -132,11 +151,11 @@ describe('liveMediaStream', () => {
     };
 
     render(
-      <LiveMediaStream mediaCollection={fixtureData as MediaCollection[]} />,
+      <LiveHeaderMedia mediaCollection={fixtureData as MediaCollection[]} />,
     );
 
-    const playButton = screen.getByTestId('watch-now-button');
-    fireEvent.click(playButton);
+    const playCloseButton = screen.getByTestId('watch-now-close-button');
+    fireEvent.click(playCloseButton);
 
     expect(window.mediaPlayers.p0gh4n67.play).toHaveBeenCalledTimes(playCalls);
   });

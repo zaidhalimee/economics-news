@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/react';
 import Heading from '#app/components/Heading';
 import Text from '#app/components/Text';
-import LiveMediaStream from '#app/components/LiveMediaStream';
+import LiveHeaderMedia from '#app/components/LiveHeaderMedia';
 import { MediaCollection } from '#app/components/MediaLoader/types';
 
 import MaskedImage from '#app/components/MaskedImage';
@@ -85,7 +85,7 @@ const Header = ({
             </Text>
           )}
           {mediaCollections && (
-            <LiveMediaStream mediaCollection={mediaCollections} />
+            <LiveHeaderMedia mediaCollection={mediaCollections} />
           )}
         </div>
       </div>
