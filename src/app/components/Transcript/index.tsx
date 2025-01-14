@@ -1,6 +1,7 @@
 /** @jsx jsx */
 /* eslint-disable jsx-a11y/aria-role */
 import { jsx } from '@emotion/react';
+import useViewTracker from '#app/hooks/useViewTracker';
 import styles from './index.styles';
 import Text from '../Text';
 import TranscriptTimestamp from './TranscriptTimestamp';
@@ -28,6 +29,7 @@ const Transcript = ({
   transcript: TranscriptBlock;
   title?: string;
 }) => {
+  const viewRef = useViewTracker({ componentName: 'Transcript' });
   const transcriptItems = transcript?.model?.blocks;
   if (!transcriptItems) {
     return null;
@@ -47,7 +49,7 @@ const Transcript = ({
           {title && <VisuallyHiddenText>{formattedTitle}</VisuallyHiddenText>}
         </span>
       </summary>
-      <ul css={styles.ul} role="list">
+      <ul css={styles.ul} role="list" ref={viewRef}>
         {/*  eslint-disable-next-line @typescript-eslint/no-unused-vars */}
         {transcriptItems.map((item, _index) => (
           <TranscriptListItem

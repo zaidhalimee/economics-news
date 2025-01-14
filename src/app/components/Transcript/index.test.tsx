@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from '../react-testing-library-with-providers';
 import transcriptFixture from './fixture.json';
 import Transcript from './index';
+import * as viewTracking from '../../hooks/useViewTracker';
 
 describe('Transcript Component', () => {
   it('should match snapshot (temp)', () => {
@@ -57,5 +58,17 @@ describe('Transcript Component', () => {
     );
     const details = container.querySelector('details');
     expect(details).not.toBeInTheDocument();
+  });
+
+  describe('view tracking', () => {
+    const viewTrackerSpy = jest.spyOn(viewTracking, 'default');
+
+    it('should register view tracking', () => {
+      render(<Transcript transcript={transcriptFixture} title="My Title" />);
+
+      expect(viewTrackerSpy).toHaveBeenCalledWith({
+        componentName: 'Transcript',
+      });
+    });
   });
 });
