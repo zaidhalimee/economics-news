@@ -5,6 +5,7 @@ import {
   Theme,
 } from '@emotion/react';
 import focusIndicator from './focusIndicator';
+import helmetFontVariants from './fontVariants/helmet';
 import { RequestContext } from '../../contexts/RequestContext';
 
 import {
@@ -290,19 +291,39 @@ const withThemeProvider = ({
     isLite: false,
   };
 
+  const getHelmetVariants = () => {
+    return {
+      sans: {
+        regular: getSansRegular(helmetFontVariants),
+        regularItalic: getSansRegularItalic(helmetFontVariants),
+        bold: getSansBold(helmetFontVariants),
+        boldItalic: getSansBoldItalic(helmetFontVariants),
+        light: getSansLight(helmetFontVariants),
+      },
+      serif: {
+        regular: getSerifRegular(helmetFontVariants),
+        medium: getSerifMedium(helmetFontVariants),
+        mediumItalic: getSerifMediumItalic(helmetFontVariants),
+        bold: getSerifBold(helmetFontVariants),
+        light: getSerifLight(helmetFontVariants),
+      }
+    };
+  };
+
   const ThemeProvider: React.FC<Props> = ({ children }) => {
-    const { isAmp, isLite, pageType } = useContext(RequestContext);
+    const { isAmp, isLite, pageType, saveData } = useContext(RequestContext);
 
     const theme = {
       ...themeConfig,
       isDarkUi: isDarkUiPage(pageType),
       isLite,
+      fontVariants: saveData ? getHelmetVariants() : fontVariants,
     };
 
     return (
       <EmotionThemeProvider theme={theme}>
         {children}
-        {isAmp && <Global styles={fontFaces} />}
+        {isAmp && <Global styles={saveData ? [] : fontFaces} />}
         <Global styles={focusIndicator} />
       </EmotionThemeProvider>
     );

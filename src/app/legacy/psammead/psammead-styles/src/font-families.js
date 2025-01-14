@@ -362,6 +362,8 @@ const optimoBaseFontStyles = {
   sansLight: latinReithFontStyles.sansLight,
 };
 
+export const helmetDefault = helmetFontStyles;
+
 export const afaanoromoo = helmetFontStyles;
 export const afrique = helmetFontStyles;
 export const amharic = amharicStyles;

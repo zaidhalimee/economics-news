@@ -34,6 +34,7 @@ export type RequestContextProps = {
   pathname: string;
   platform: Platforms;
   previousPath: string | null;
+  saveData: boolean;
   service: Services;
   showAdsBasedOnLocation: boolean;
   showCookieBannerBasedOnCountry: boolean;
@@ -59,6 +60,7 @@ type RequestProviderProps = {
   pageType: PageTypes;
   pathname: string;
   previousPath?: string | null;
+  saveData?: boolean;
   service: Services;
   showAdsBasedOnLocation?: boolean;
   showCookieBannerBasedOnCountry?: boolean;
@@ -82,6 +84,7 @@ export const RequestContextProvider = ({
   pageType,
   pathname,
   previousPath = null,
+  saveData = false,
   service,
   showAdsBasedOnLocation = false,
   showCookieBannerBasedOnCountry = true,
@@ -138,6 +141,7 @@ export const RequestContextProvider = ({
       previousPath,
       variant,
       timeOnServer,
+      saveData,
       showAdsBasedOnLocation,
       showCookieBannerBasedOnCountry,
       service,
@@ -160,6 +164,7 @@ export const RequestContextProvider = ({
       pathname,
       platform,
       previousPath,
+      saveData,
       service,
       showAdsBasedOnLocation,
       showCookieBannerBasedOnCountry,
