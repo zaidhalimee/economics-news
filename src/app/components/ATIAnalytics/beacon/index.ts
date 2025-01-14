@@ -15,6 +15,7 @@ export const sendEventBeacon = async ({
   advertiserID,
   url,
   detailedPlacement,
+  experimentVariant,
 }: ATIEventTrackingProps) => {
   await sendBeacon(
     buildATIEventTrackUrl({
@@ -30,6 +31,7 @@ export const sendEventBeacon = async ({
       advertiserID,
       url,
       detailedPlacement,
+      experimentVariant,
     }),
   );
 };
