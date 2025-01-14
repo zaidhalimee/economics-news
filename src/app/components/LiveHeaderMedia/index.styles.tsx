@@ -38,9 +38,6 @@ export default {
       },
       'button:hover &, button:focus-visible &': {
         textDecoration: 'underline',
-        [mq.FORCED_COLOURS]: {
-          textDecoration: 'underline',
-        },
       },
     }),
   title: () =>
