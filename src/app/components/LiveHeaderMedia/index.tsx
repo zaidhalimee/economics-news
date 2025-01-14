@@ -120,6 +120,7 @@ const LiveHeaderMedia = ({ mediaCollection }: Props) => {
           {warnings.warning_text}
         </Text>
       )}
+      <VisuallyHiddenText>, </VisuallyHiddenText>
     </>
   );
 
