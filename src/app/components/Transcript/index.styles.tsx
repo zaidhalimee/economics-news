@@ -3,6 +3,11 @@ import pixelsToRem from '#app/utilities/pixelsToRem';
 import { focusIndicatorThickness } from '../ThemeProvider/focusIndicator';
 
 export default {
+  isThisTerrible: () =>
+    css({
+      display: 'none',
+    }),
+
   details: ({ spacings, palette, isDarkUi }: Theme) =>
     css({
       backgroundColor: isDarkUi ? palette.GREY_7 : palette.WHITE,
@@ -17,6 +22,9 @@ export default {
       },
       '&[open] summary svg': {
         transform: 'rotate(90deg)',
+      },
+      '&[open] #isThisTerrible': {
+        display: 'initial',
       },
     }),
 
