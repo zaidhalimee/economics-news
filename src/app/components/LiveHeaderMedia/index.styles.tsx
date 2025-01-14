@@ -22,7 +22,7 @@ export default {
       border: 'unset',
       textAlign: 'start',
     }),
-  watchLiveCTAText: ({ spacings, palette, mq }: Theme) =>
+  watchLiveCTAText: ({ spacings, palette }: Theme) =>
     css({
       color: palette.WHITE,
       display: 'flex',
