@@ -134,6 +134,7 @@ const LiveHeaderMedia = ({ mediaCollection }: Props) => {
           type="button"
           onClick={() => handleClick()}
           data-testid="watch-now-close-button"
+          className="focusIndicatorInvert"
           css={[
             showMedia ? styles.closeButton : styles.openButton,
             styles.mediaButton,
