@@ -1,3 +1,4 @@
+import NO_JS_CLASSNAME from '#app/lib/noJs.const';
 import pixelsToRem from '#app/utilities/pixelsToRem';
 import { css, Theme } from '@emotion/react';
 
@@ -6,6 +7,23 @@ export default {
     css({
       width: '100%',
       marginTop: `${spacings.DOUBLE}rem`,
+      [`.${NO_JS_CLASSNAME} &`]: {
+        display: 'none',
+      },
+    }),
+  nojs: ({ palette, spacings, fontSizes, fontVariants }: Theme) =>
+    css({
+      ...fontSizes.pica,
+      ...fontVariants.sansRegular,
+      color: palette.WHITE,
+      div: {
+        marginTop: `${spacings.DOUBLE}rem`,
+      },
+      strong: {
+        display: 'block',
+        marginTop: `${spacings.DOUBLE}rem`,
+        fontWeight: 'normal',
+      },
     }),
   mediaButton: ({ mq }: Theme) =>
     css({

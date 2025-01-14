@@ -1,6 +1,7 @@
 /** @jsx jsx */
+/** @jsxFrag */
 import { jsx } from '@emotion/react';
-import { memo, useContext, useState } from 'react';
+import React, { memo, useContext, useState } from 'react';
 import Text from '#app/components/Text';
 import { MediaCollection } from '#app/components/MediaLoader/types';
 import MediaLoader from '#app/components/MediaLoader';
@@ -23,6 +24,8 @@ type Props = { mediaCollection: MediaCollection[] | null };
 
 const DEFAULT_WATCH__NOW = 'Watch Live';
 const DEFAULT_CLOSE_VIDEO = 'Close video';
+const DEFAULT_NO_JS_MESSAGE =
+  'This video cannot play in your browser. Please enable JavaScript or try a different browser.';
 
 const MemoizedMediaPlayer = memo(MediaLoader);
 
@@ -38,7 +41,11 @@ const LiveHeaderMedia = ({ mediaCollection }: Props) => {
   }
 
   const {
-    media: { watch = DEFAULT_WATCH__NOW, closeVideo = DEFAULT_CLOSE_VIDEO },
+    media: {
+      watch = DEFAULT_WATCH__NOW,
+      closeVideo = DEFAULT_CLOSE_VIDEO,
+      noJs = DEFAULT_NO_JS_MESSAGE,
+    },
   } = translations;
 
   const mediaItem = filterForBlockType(mediaCollection, 'liveMedia');
@@ -80,74 +87,82 @@ const LiveHeaderMedia = ({ mediaCollection }: Props) => {
     }
   };
 
-  return (
-    <div css={styles.componentContainer}>
-      <button
-        type="button"
-        onClick={() => handleClick()}
-        data-testid="watch-now-close-button"
+  const description = (
+    <>
+      <Text
+        size="pica"
+        fontVariant="sansBold"
+        as="span"
         css={[
-          showMedia ? styles.closeButton : styles.openButton,
-          styles.mediaButton,
+          styles.mediaDescription,
+          showMedia
+            ? styles.closeMediaDescription
+            : styles.openMediaDescription,
         ]}
+        className="hoverStylesText"
       >
-        <div>
-          <Text
-            size="pica"
-            fontVariant="sansBold"
-            as="span"
-            css={[
-              styles.mediaDescription,
-              showMedia
-                ? styles.closeMediaDescription
-                : styles.openMediaDescription,
-            ]}
-            className="hoverStylesText"
-          >
-            {showMedia && (
-              <VisuallyHiddenText>{closeVideo}, </VisuallyHiddenText>
-            )}
-            <Text size="pica" fontVariant="sansBold" as="span">
-              {short},{' '}
-            </Text>
-            <Text size="pica" fontVariant="sansRegular" as="span">
-              {networkName}
-            </Text>
-          </Text>
-          {warnings && (
-            <Text
-              as="span"
-              size="brevier"
-              fontVariant="sansRegular"
-              css={styles.guidanceMessage}
-              data-testid="warning-message"
-            >
-              {warnings.warning_text}
-            </Text>
+        {showMedia && <VisuallyHiddenText>{closeVideo}, </VisuallyHiddenText>}
+        <Text size="pica" fontVariant="sansBold" as="span">
+          {short},{' '}
+        </Text>
+        <Text size="pica" fontVariant="sansRegular" as="span">
+          {networkName}
+        </Text>
+      </Text>
+      {warnings && (
+        <Text
+          as="span"
+          size="brevier"
+          fontVariant="sansRegular"
+          css={styles.guidanceMessage}
+          data-testid="warning-message"
+        >
+          {warnings.warning_text}
+        </Text>
+      )}
+    </>
+  );
+
+  return (
+    <>
+      <noscript css={styles.nojs}>
+        <p>{description}</p>
+        <strong>{noJs}</strong>
+      </noscript>
+      <div css={styles.componentContainer}>
+        <button
+          type="button"
+          onClick={() => handleClick()}
+          data-testid="watch-now-close-button"
+          css={[
+            showMedia ? styles.closeButton : styles.openButton,
+            styles.mediaButton,
+          ]}
+        >
+          <div>{description}</div>
+          {!showMedia && (
+            <div className="hoverStylesCTA" css={styles.watchLiveCTA}>
+              <Text
+                css={styles.watchLiveCTAText}
+                size="greatPrimer"
+                fontVariant="sansBold"
+              >
+                <PlayIcon />
+                {watch}
+              </Text>
+            </div>
           )}
+          {showMedia && (
+            <div css={styles.closeContainer}>
+              <Close />
+            </div>
+          )}
+        </button>
+        <div css={showMedia ? styles.mediaLoader : styles.hideComponent}>
+          <MemoizedMediaPlayer blocks={mediaCollection} uniqueId={vpid} />
         </div>
-        {!showMedia && (
-          <div className="hoverStylesCTA" css={styles.watchLiveCTA}>
-            <Text
-              css={styles.watchLiveCTAText}
-              size="greatPrimer"
-              fontVariant="sansBold"
-            >
-              <PlayIcon />
-              {watch}
-            </Text>
-          </div>
-        )}
-        {showMedia && (
-          <div css={styles.closeContainer}>
-            <Close />
-          </div>
-        )}
-      </button>
-      <div css={showMedia ? styles.mediaLoader : styles.hideComponent}>
-        <MemoizedMediaPlayer blocks={mediaCollection} uniqueId={vpid} />
       </div>
-    </div>
+    </>
   );
 };
 
