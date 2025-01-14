@@ -53,7 +53,7 @@ exports[`Canonical Send Footer Anchors should match text and url 7`] = `
 
 exports[`Canonical Send Footer Anchors should match text and url 8`] = `
 {
-  "text": "Other Languages",
+  "text": "Otros idiomas",
   "url": "https://www.bbc.com/ws/languages",
 }
 `;
