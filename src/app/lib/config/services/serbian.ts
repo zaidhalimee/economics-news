@@ -323,6 +323,7 @@ export const service: SerbianConfig = {
         previousRadioShow: 'Prethodna radio emisija',
         nextRadioShow: 'Sledeća radio emisija',
         duration: 'Trajanje',
+        closeVideo: 'Изађи',
       },
       socialEmbed: {
         caption: {
