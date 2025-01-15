@@ -175,6 +175,7 @@ export interface Translations {
     download?: string;
     watchNow?: string;
     closeVideo?: string;
+    exit?: string;
   };
   socialEmbed: {
     caption?: {
