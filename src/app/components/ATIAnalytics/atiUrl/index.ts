@@ -46,6 +46,7 @@ export const buildATIPageTrackPath = ({
   campaigns,
   nationsProducer,
   ampExperimentName,
+  experimentVariant,
 }: ATIPageTrackingProps) => {
   const href = getHref(platform);
   const referrer = getReferrer(platform, origin, previousPath);
@@ -215,6 +216,24 @@ export const buildATIPageTrackPath = ({
       value: getATIMarketingString(href, campaignType),
       wrap: false,
     },
+    ...(experimentVariant
+      ? [
+          {
+            key: 'mv_test',
+            description: 'JumpTo Onward Journeys experiment',
+            value: `JumpTo Onward Journeys experiment`,
+            wrap: false,
+            disableEncoding: true,
+          },
+          {
+            key: 'mv_creation',
+            description: 'JumpTo Onward Journeys variant',
+            value: `${experimentVariant}`,
+            wrap: false,
+            disableEncoding: true,
+          },
+        ]
+      : []),
     ...(ampExperimentName
       ? [
           {
@@ -349,6 +368,24 @@ export const buildATIEventTrackUrl = ({
       wrap: false,
       disableEncoding: true,
     },
+    ...(experimentVariant
+      ? [
+          {
+            key: 'mv_test',
+            description: 'JumpTo Onward Journeys experiment',
+            value: `JumpTo Onward Journeys experiment`,
+            wrap: false,
+            disableEncoding: true,
+          },
+          {
+            key: 'mv_creation',
+            description: 'JumpTo Onward Journeys variant',
+            value: `${experimentVariant}`,
+            wrap: false,
+            disableEncoding: true,
+          },
+        ]
+      : []),
     ...(ampExperimentName
       ? [
           {

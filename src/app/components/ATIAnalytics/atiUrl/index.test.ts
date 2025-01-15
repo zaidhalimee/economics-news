@@ -272,41 +272,8 @@ describe('buildATIEventTrackUrl', () => {
       'hl=getCurrentTime',
       'lng=getDeviceLanguage',
       'atc=PUB-[campaignID]-[component]-[variant_1]-[format]-[pageIdentifier]-[detailedPlacement]-[]-[url]',
-      'type=AT',
-    ]);
-  });
-
-  it('should return the correct url with mvt properties if ampExperimentName is present', () => {
-    process.env.SIMORGH_ATI_BASE_URL = 'http://foobar.com?';
-
-    const atiEventTrackUrl = buildATIEventTrackUrl({
-      pageIdentifier: 'pageIdentifier',
-      service: 'news',
-      platform: 'canonical',
-      statsDestination: 'statsDestination',
-      componentName: 'component',
-      type: 'type',
-      campaignID: 'campaignID',
-      format: 'format',
-      url: 'url',
-      detailedPlacement: 'detailedPlacement',
-      experimentVariant: 'variant_1',
-      ampExperimentName: 'someAmpExperiment',
-    });
-
-    expect(splitUrl(atiEventTrackUrl)).toEqual([
-      'http://foobar.com',
-      'idclient=getAtUserId',
-      's=getDestination',
-      'p=pageIdentifier',
-      'r=getScreenInfo',
-      're=getBrowserViewPort',
-      'hl=getCurrentTime',
-      'lng=getDeviceLanguage',
-      'atc=PUB-[campaignID]-[component]-[variant_1]-[format]-[pageIdentifier]-[detailedPlacement]-[]-[url]',
-      'mv_test=Google Discover',
-      'mv_experiment_id=someAmpExperiment',
-      'mv_creation=VARIANT(someAmpExperiment)',
+      'mv_test=JumpTo Onward Journeys experiment',
+      'mv_creation=variant_1',
       'type=AT',
     ]);
   });

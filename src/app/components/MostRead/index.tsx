@@ -3,6 +3,7 @@ import { RequestContext } from '#contexts/RequestContext';
 import useToggle from '#hooks/useToggle';
 import { getMostReadEndpoint } from '#app/lib/utilities/getUrlHelpers/getMostReadUrls';
 import { getEnvConfig } from '#app/lib/utilities/getEnvConfig';
+import { OptimizelyContext, ReactSDKClient } from '@optimizely/react-sdk';
 import { ServiceContext } from '../../contexts/ServiceContext';
 import Canonical from './Canonical';
 import Amp from './Amp';
@@ -35,6 +36,7 @@ interface MostReadProps {
   mobileDivider?: boolean;
   headingBackgroundColour?: string;
   className?: string;
+  sendOptimizelyEvents?: boolean;
 }
 
 // We render amp on ONLY STY, CSP and ARTICLE pages using amp-list.
@@ -74,6 +76,7 @@ const CanonicalMostRead = ({
   headingBackgroundColour,
   columnLayout,
   size,
+  eventTrackingData,
 }: {
   data: MostReadData | undefined;
   className: string;
@@ -81,6 +84,11 @@ const CanonicalMostRead = ({
   headingBackgroundColour: string;
   columnLayout?: ColumnLayout;
   size: Size;
+  eventTrackingData: {
+    optimizely?: ReactSDKClient | null | undefined;
+    optimizelyMetricNameOverride?: string | undefined;
+    componentName: string;
+  };
 }) =>
   data ? (
     <MostReadSection className={className}>
@@ -92,7 +100,7 @@ const CanonicalMostRead = ({
         data={data}
         columnLayout={columnLayout}
         size={size}
-        eventTrackingData={blockLevelEventTrackingData}
+        eventTrackingData={eventTrackingData}
       />
     </MostReadSection>
   ) : null;
@@ -104,8 +112,10 @@ const MostRead = ({
   mobileDivider = false,
   headingBackgroundColour = WHITE,
   className = '',
+  sendOptimizelyEvents = false,
 }: MostReadProps) => {
   const { isAmp, pageType, variant } = useContext(RequestContext);
+  const { optimizely } = useContext(OptimizelyContext);
   const {
     service,
     mostRead: { hasMostRead },
@@ -129,6 +139,14 @@ const MostRead = ({
     isBff,
   });
 
+  const eventTrackingData = {
+    ...blockLevelEventTrackingData,
+    ...(sendOptimizelyEvents && {
+      optimizely,
+      optimizelyMetricNameOverride: 'most_read',
+    }),
+  };
+
   return isAmp ? (
     <AmpMostRead
       pageType={pageType}
@@ -146,6 +164,7 @@ const MostRead = ({
       headingBackgroundColour={headingBackgroundColour}
       columnLayout={columnLayout}
       size={size}
+      eventTrackingData={eventTrackingData}
     />
   );
 };
