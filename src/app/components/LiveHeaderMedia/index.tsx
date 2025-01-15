@@ -109,7 +109,7 @@ const LiveHeaderMedia = ({
         ]}
         className="hoverStylesText"
       >
-        {showMedia && <VisuallyHiddenText>{closeVideo}, </VisuallyHiddenText>}
+        {showMedia && <VisuallyHiddenText>{translations.media.closeVideo}, </VisuallyHiddenText>}
         <Text size="pica" fontVariant="sansBold" as="span">
           {short},{' '}
         </Text>
