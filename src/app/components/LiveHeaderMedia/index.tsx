@@ -122,18 +122,6 @@ const LiveHeaderMedia = ({
           {networkName}
         </Text>
       </Text>
-      {warnings && (
-        <Text
-          as="span"
-          size="brevier"
-          fontVariant="sansRegular"
-          css={styles.guidanceMessage}
-          data-testid="warning-message"
-        >
-          <VisuallyHiddenText>, </VisuallyHiddenText>
-          {warnings.warning_text}
-        </Text>
-      )}
     </>
   );
 
@@ -154,7 +142,21 @@ const LiveHeaderMedia = ({
             styles.mediaButton,
           ]}
         >
-          <div>{description}</div>
+          <div>
+            {description}
+            {warnings && (
+              <Text
+                as="span"
+                size="brevier"
+                fontVariant="sansRegular"
+                css={styles.guidanceMessage}
+                data-testid="warning-message"
+              >
+                <VisuallyHiddenText>, </VisuallyHiddenText>
+                {warnings.warning_text}
+              </Text>
+            )}
+          </div>
           {!showMedia && (
             <div className="hoverStylesCTA" css={styles.watchLiveCTA}>
               <Text
