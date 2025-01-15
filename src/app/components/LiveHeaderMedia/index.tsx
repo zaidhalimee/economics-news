@@ -1,6 +1,7 @@
 /** @jsx jsx */
+/** @jsxFrag */
 import { jsx } from '@emotion/react';
-import { memo, useContext, useState, forwardRef } from 'react';
+import React, { memo, useContext, useState, forwardRef } from 'react';
 import Text from '#app/components/Text';
 import { MediaCollection } from '#app/components/MediaLoader/types';
 import MediaLoader from '#app/components/MediaLoader';
@@ -13,7 +14,7 @@ import { EventTrackingMetadata } from '#app/models/types/eventTracking';
 import styles from './index.styles';
 import WARNING_LEVELS from '../MediaLoader/configs/warningLevels';
 import VisuallyHiddenText from '../VisuallyHiddenText';
-import { Close, PlayIcon } from '../icons';
+import { Close, Play } from '../icons';
 
 type WarningItem = {
   // eslint-disable-next-line camelcase
@@ -25,15 +26,25 @@ type WarningItem = {
 type LiveHeaderMediaProps = {
   mediaCollection: MediaCollection[] | null;
   eventTrackingData?: EventTrackingMetadata;
+  clickCallback?: () => void;
 };
 
 const DEFAULT_WATCH__NOW = 'Watch Live';
 const DEFAULT_CLOSE_VIDEO = 'Close video';
+const DEFAULT_NO_JS_MESSAGE =
+  'This video cannot play in your browser. Please enable JavaScript or try a different browser.';
 
 const MemoizedMediaPlayer = memo(MediaLoader);
 
 const LiveHeaderMedia = forwardRef(
-  ({ mediaCollection, eventTrackingData }: LiveHeaderMediaProps, viewRef) => {
+  (
+    {
+      mediaCollection,
+      eventTrackingData,
+      clickCallback = () => null,
+    }: LiveHeaderMediaProps,
+    viewRef,
+  ) => {
     const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
     const { translations } = useContext(ServiceContext);
     const { isLite } = useContext(RequestContext);
@@ -46,7 +57,11 @@ const LiveHeaderMedia = forwardRef(
     }
 
     const {
-      media: { watch = DEFAULT_WATCH__NOW, closeVideo = DEFAULT_CLOSE_VIDEO },
+      media: {
+        watch = DEFAULT_WATCH__NOW,
+        closeVideo = DEFAULT_CLOSE_VIDEO,
+        noJs = DEFAULT_NO_JS_MESSAGE,
+      },
     } = translations;
 
     const mediaItem = filterForBlockType(mediaCollection, 'liveMedia');
@@ -86,6 +101,8 @@ const LiveHeaderMedia = forwardRef(
         }
         setShowMedia(true);
       }
+
+      clickCallback();
     };
 
     const handleClick = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
@@ -93,74 +110,83 @@ const LiveHeaderMedia = forwardRef(
       clickToggleMedia();
     };
 
-    return (
-      <div css={styles.componentContainer} ref={viewRef}>
-        <button
-          type="button"
-          onClick={e => handleClick(e)}
-          data-testid="watch-now-close-button"
+    const description = (
+      <>
+        <Text
+          size="pica"
+          fontVariant="sansBold"
+          as="span"
           css={[
-            showMedia ? styles.closeButton : styles.openButton,
-            styles.mediaButton,
+            styles.mediaDescription,
+            showMedia
+              ? styles.closeMediaDescription
+              : styles.openMediaDescription,
           ]}
+          className="hoverStylesText"
         >
-          <div>
-            <Text
-              size="pica"
-              fontVariant="sansBold"
-              as="span"
-              css={[
-                styles.mediaDescription,
-                showMedia
-                  ? styles.closeMediaDescription
-                  : styles.openMediaDescription,
-              ]}
-              className="hoverStylesText"
-            >
-              {showMedia && (
-                <VisuallyHiddenText>{closeVideo}, </VisuallyHiddenText>
-              )}
-              <Text size="pica" fontVariant="sansBold" as="span">
-                {short},{' '}
-              </Text>
-              <Text size="pica" fontVariant="sansRegular" as="span">
-                {networkName}
-              </Text>
-            </Text>
-            {warnings && (
-              <Text
-                as="span"
-                size="brevier"
-                fontVariant="sansRegular"
-                css={styles.guidanceMessage}
-                data-testid="warning-message"
-              >
-                {warnings.warning_text}
-              </Text>
+          {showMedia && <VisuallyHiddenText>{closeVideo}, </VisuallyHiddenText>}
+          <Text size="pica" fontVariant="sansBold" as="span">
+            {short},{' '}
+          </Text>
+          <Text size="pica" fontVariant="sansRegular" as="span">
+            {networkName}
+          </Text>
+          <VisuallyHiddenText>, </VisuallyHiddenText>
+        </Text>
+        {warnings && (
+          <Text
+            as="span"
+            size="brevier"
+            fontVariant="sansRegular"
+            css={styles.guidanceMessage}
+            data-testid="warning-message"
+          >
+            {warnings.warning_text}
+          </Text>
+        )}
+      </>
+    );
+
+    return (
+      <>
+        <noscript css={styles.nojs}>
+          <p>{description}</p>
+          <strong>{noJs}</strong>
+        </noscript>
+        <div css={styles.componentContainer} ref={viewRef}>
+          <button
+            type="button"
+            onClick={e => handleClick(e)}
+            data-testid="watch-now-close-button"
+            css={[
+              showMedia ? styles.closeButton : styles.openButton,
+              styles.mediaButton,
+            ]}
+          >
+            <div>{description}</div>
+            {!showMedia && (
+              <div className="hoverStylesCTA" css={styles.watchLiveCTA}>
+                <Text
+                  css={styles.watchLiveCTAText}
+                  size="greatPrimer"
+                  fontVariant="sansBold"
+                >
+                  <Play />
+                  {watch}
+                </Text>
+              </div>
             )}
+            {showMedia && (
+              <div css={styles.closeContainer}>
+                <Close />
+              </div>
+            )}
+          </button>
+          <div css={showMedia ? styles.mediaLoader : styles.hideComponent}>
+            <MemoizedMediaPlayer blocks={mediaCollection} uniqueId={vpid} />
           </div>
-          {!showMedia && (
-            <div className="hoverStylesCTA" css={styles.watchLiveCTA}>
-              <Text
-                css={styles.watchLiveCTAText}
-                size="greatPrimer"
-                fontVariant="sansBold"
-              >
-                <PlayIcon />
-                {watch}
-              </Text>
-            </div>
-          )}
-          {showMedia && (
-            <div css={styles.closeContainer}>
-              <Close />
-            </div>
-          )}
-        </button>
-        <div css={showMedia ? styles.mediaLoader : styles.hideComponent}>
-          <MemoizedMediaPlayer blocks={mediaCollection} uniqueId={vpid} />
         </div>
-      </div>
+      </>
     );
   },
 );

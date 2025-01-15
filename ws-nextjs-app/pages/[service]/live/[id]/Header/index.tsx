@@ -6,6 +6,7 @@ import LiveHeaderMedia from '#app/components/LiveHeaderMedia';
 import { MediaCollection } from '#app/components/MediaLoader/types';
 
 import MaskedImage from '#app/components/MaskedImage';
+import { useState } from 'react';
 import LiveLabelHeader from './LiveLabelHeader';
 import styles from './styles';
 
@@ -26,7 +27,12 @@ const Header = ({
   imageWidth?: number;
   mediaCollections?: MediaCollection[] | null;
 }) => {
+  const [isMediaOpen, setLiveMediaOpen] = useState(false);
   const isHeaderImage = !!imageUrl && !!imageUrlTemplate && !!imageWidth;
+
+  const watchVideoClickHandler = () => {
+    setLiveMediaOpen(!isMediaOpen);
+  };
 
   const Title = (
     <span
@@ -50,11 +56,11 @@ const Header = ({
           />
         ) : null}
         <div
-          css={
-            isHeaderImage
-              ? styles.textContainerWithImage
-              : styles.textContainerWithoutImage
-          }
+          css={[
+            isHeaderImage && !isMediaOpen && styles.textContainerWithImage,
+            !isHeaderImage && !isMediaOpen && styles.textContainerWithoutImage,
+            isMediaOpen && styles.textContainerMediaOpen,
+          ]}
         >
           <Heading
             size="trafalgar"
@@ -90,6 +96,7 @@ const Header = ({
               eventTrackingData={{
                 componentName: 'live-header-media',
               }}
+              clickCallback={watchVideoClickHandler}
             />
           )}
         </div>
