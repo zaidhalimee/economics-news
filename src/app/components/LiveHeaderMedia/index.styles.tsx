@@ -64,6 +64,11 @@ export default {
         color: 'canvasText',
       },
     }),
+  title: () =>
+    css({
+      display: 'block',
+      width: '100%',
+    }), // delete
   guidanceMessage: ({ palette, spacings, mq }: Theme) =>
     css({
       display: 'block',
@@ -88,6 +93,20 @@ export default {
         border: `${pixelsToRem(2)}rem solid canvasText`,
       },
     }),
+  liveMediaStreamText: ({ palette }: Theme) =>
+    css({
+      color: palette.GREY_4,
+    }), // delete
+  liveMediaStreamContainer: ({ mq }: Theme) =>
+    css({
+      maxWidth: '60%',
+      [mq.GROUP_2_MAX_WIDTH]: {
+        width: '100%',
+      },
+      [mq.GROUP_4_MAX_WIDTH]: {
+        width: '50%',
+      },
+    }), // delete
   closeButton: () =>
     css({
       display: 'flex',
@@ -119,6 +138,10 @@ export default {
         outline: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
       },
     }),
+  liveMediaSpan: () =>
+    css({
+      maxWidth: '100%',
+    }), // delete
   mediaLoader: ({ spacings }: Theme) =>
     css({
       maxWidth: '100%',
@@ -154,5 +177,6 @@ export default {
       },
     }),
 
+  underlineFocus: () => css({ display: 'none' }), // delete
   hideComponent: () => css({ display: 'none' }),
 };
