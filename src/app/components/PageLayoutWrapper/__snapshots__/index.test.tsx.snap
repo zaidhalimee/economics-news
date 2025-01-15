@@ -1637,9 +1637,7 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
                 Why you can trust the BBC
               </a>
             </li>
-            <li
-              role="listitem"
-            >
+            <li>
               <a
                 class="focusIndicatorInvert emotion-153"
                 href="https://www.bbc.com/terms"
@@ -1647,9 +1645,7 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
                 Terms of Use
               </a>
             </li>
-            <li
-              role="listitem"
-            >
+            <li>
               <a
                 class="focusIndicatorInvert emotion-153"
                 href="https://www.bbc.co.uk/aboutthebbc/"
@@ -1657,9 +1653,7 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
                 About the BBC
               </a>
             </li>
-            <li
-              role="listitem"
-            >
+            <li>
               <a
                 class="focusIndicatorInvert emotion-153"
                 href="https://www.bbc.com/privacy/"
@@ -1667,9 +1661,7 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
                 Privacy Policy
               </a>
             </li>
-            <li
-              role="listitem"
-            >
+            <li>
               <a
                 class="focusIndicatorInvert emotion-153"
                 href="https://www.bbc.com/usingthebbc/cookies/"
@@ -1677,9 +1669,7 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
                 Cookies
               </a>
             </li>
-            <li
-              role="listitem"
-            >
+            <li>
               <a
                 class="focusIndicatorInvert emotion-153"
                 href="https://www.bbc.com/accessibility/"
@@ -1687,9 +1677,7 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
                 Accessibility Help
               </a>
             </li>
-            <li
-              role="listitem"
-            >
+            <li>
               <a
                 class="focusIndicatorInvert emotion-153"
                 href="https://www.bbc.com/contact/"
