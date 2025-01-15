@@ -2,6 +2,7 @@ import { PageTypes, Services } from '#app/models/types/global';
 import { data as hindiTvProgramme } from '#data/hindi/bbc_hindi_tv/tv_programmes/w13xttlw.json';
 import {
   AUDIO_PAGE,
+  LIVE_PAGE,
   LIVE_RADIO_PAGE,
   TV_PAGE,
 } from '#app/routes/utils/pageTypes';
@@ -10,6 +11,7 @@ import afriqueRadio from '#data/afrique/bbc_afrique_radio/p030s6dq.json';
 import { service as hausaServiceConfig } from '#app/lib/config/services/hausa';
 import { service as hindiServiceConfig } from '#app/lib/config/services/hindi';
 import { service as afriqueServiceConfig } from '#app/lib/config/services/afrique';
+import { service as mundoServiceConfig } from '#app/lib/config/services/mundo';
 import isLive from '#app/lib/utilities/isLive';
 import buildSettings from './buildSettings';
 import {
@@ -993,6 +995,119 @@ describe('buildSettings', () => {
           },
         },
         mediaType: 'audio',
+        showAds: false,
+      });
+    });
+  });
+
+  describe('liveMedia', () => {
+    const mundoMediaBaseSettings = {
+      counterName: 'live_coverage.c7dkx155e626t.page',
+      lang: 'es',
+      service: 'mundo' as Services,
+      statsDestination: 'WS_NEWS_LANGUAGES',
+      producer: 'MUNDO',
+      translations: mundoServiceConfig.default.translations,
+    } as BuildConfigProps;
+
+    it('Should process a live media block into a valid playlist item.', () => {
+      const mediaBlock = {
+        type: 'liveMedia',
+        model: {
+          urn: 'urn:bbc:pips:pid:p0gh4n63',
+          title: 'Non-Stop Cartoons!',
+          type: 'episode',
+          synopses: {
+            short: 'Toon in, kick back and relax to 100% cartoons!',
+            medium:
+              'Toon in, kick back and relax. From laugh out loud to mischief and mayhem. 100% cartoons all day long.',
+            long: 'Toon in, kick back and relax. From laugh out loud to mischief and mayhem. 100% cartoons all day long. Join your favourites Grizzy, Shaun, Taffy, Boy Girl Dog Cat Mouse Cheese, The Deep and those Monster Loving Maniacs.',
+          },
+          mediaType: 'audio_video',
+          imageUrlTemplate:
+            'https://ichef.bbci.co.uk/images/ic/$recipe/p0k31t4d.jpg',
+          masterbrand: {
+            id: 'cbbc',
+            name: 'CBBC',
+            networkName: 'CBBC',
+            type: 'tv',
+            imageUrlTemplate: 'ichef.bbci.co.uk/images/ic/$recipe/p0f8qps2.jpg',
+          },
+          version: {
+            vpid: 'p0gh4n67',
+            duration: 'PT24H',
+            availabilityType: 'webcast',
+            versionTypes: [
+              {
+                type: 'Original',
+                name: 'Original version',
+              },
+            ],
+            schedule: {
+              start: '2024-12-15T08:00:21Z',
+              accurateStart: '2024-12-15T08:00:21Z',
+              end: '2024-12-15T13:00:21Z',
+            },
+            serviceId: null,
+            authToken: null,
+            status: 'LIVE',
+            warnings: null,
+          },
+          leadMedia: true,
+        },
+      };
+
+      const result = buildSettings({
+        ...mundoMediaBaseSettings,
+        blocks: [mediaBlock] as MediaBlock[],
+        pageType: LIVE_PAGE,
+      });
+
+      expect(result).toStrictEqual({
+        mediaType: 'video',
+        playerConfig: {
+          appName: 'news-mundo',
+          appType: 'responsive',
+          autoplay: false,
+          counterName: 'live_coverage.c7dkx155e626t.page',
+          enableToucan: true,
+          playlistObject: {
+            holdingImageURL:
+              'https://ichef.bbci.co.uk/images/ic/$recipe/p0k31t4d.jpg',
+            items: [
+              {
+                duration: 86400,
+                kind: 'programme',
+                live: true,
+                versionID: 'p0gh4n67',
+              },
+            ],
+            summary: 'Toon in, kick back and relax to 100% cartoons!',
+            title: 'Non-Stop Cartoons!',
+          },
+          product: 'news',
+          statsObject: {
+            destination: 'WS_NEWS_LANGUAGES',
+            episodePID: undefined,
+            producer: 'MUNDO',
+          },
+          ui: {
+            controls: {
+              enabled: true,
+            },
+            fullscreen: {
+              enabled: true,
+            },
+            locale: {
+              lang: 'es',
+            },
+            skin: 'classic',
+            subtitles: {
+              defaultOn: true,
+              enabled: true,
+            },
+          },
+        },
         showAds: false,
       });
     });

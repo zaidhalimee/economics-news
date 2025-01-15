@@ -129,3 +129,31 @@ export const Calculator = ({ className }: { className?: string }) => (
     <path d="M22.8 32H9.2c-1.2 0-2.1-.3-2.6-.8s-.8-1.4-.8-2.6V3.4c0-1.2.3-2.1.8-2.6S8 0 9.2 0h13.6c1.3 0 2.1.3 2.6.8s.8 1.4.8 2.6v25.2c0 1.2-.3 2.1-.8 2.6s-1.3.8-2.6.8zm.8-29.4H8.4V12h15.2V2.6zM12.1 14.2H8.4v3.7h3.7v-3.7zm0 5.7H8.4v3.7h3.7v-3.7zm0 5.8H8.4v3.7h3.7v-3.7zm5.7-11.5h-3.7v3.7h3.7v-3.7zm0 5.7h-3.7v3.7h3.7v-3.7zm0 5.8h-3.7v3.7h3.7v-3.7zm5.8-11.5h-3.7v3.7h3.7v-3.7zm0 5.7h-3.7v9.5h3.7v-9.5z" />
   </svg>
 );
+
+export const Close = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 32"
+    width="12"
+    height="12"
+    className={className}
+    focusable="false"
+    aria-hidden="true"
+  >
+    <path d="m30 4.6-2.8-2.8L2 27.4l2.8 2.8zM4.8 1.8 1.9 4.7l25.2 25.5 2.9-2.9z" />
+  </svg>
+);
+
+export const Play = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 32"
+    width="12"
+    height="12"
+    className={className}
+    focusable="false"
+    aria-hidden="true"
+  >
+    <path d="M29 16 5.8 1v30z" />
+  </svg>
+);
