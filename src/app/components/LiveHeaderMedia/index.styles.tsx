@@ -147,26 +147,33 @@ export default {
       maxWidth: '100%',
       marginTop: `${spacings.DOUBLE}rem`,
     }),
-  mediaDescription: ({ mq }: Theme) =>
+  mediaDescription: () =>
     css({
       display: 'block',
       width: '100%',
       marginTop: 0,
       span: {
         margin: 0,
+      },
+    }),
+  openMediaDescription: ({ mq, palette }: Theme) =>
+    css({
+      span: {
+        color: palette.GREY_4,
         [mq.FORCED_COLOURS]: {
           color: 'canvasText',
         },
       },
     }),
-  openMediaDescription: ({ palette }: Theme) =>
-    css({
-      span: { color: palette.GREY_4 },
-    }),
   closeMediaDescription: ({ mq, palette }: Theme) =>
     css({
       textAlign: 'start',
-      span: { color: palette.WHITE },
+      span: {
+        color: palette.WHITE,
+        [mq.FORCED_COLOURS]: {
+          color: 'canvasText',
+        },
+      },
       'button:hover &, button:focus-visible &': {
         span: {
           textDecoration: 'underline',
