@@ -2,7 +2,7 @@ import React from 'react';
 import { EPISODE_STATUS } from '../episodeStatus';
 import ErrorMessage from '../ErrorMessage';
 
-const ErrorComponent = ({ errorProps, episodeAvailability }) => (
+const getErrorComponent = episodeAvailability => errorProps => (
   <ErrorMessage {...errorProps} episodeAvailability={episodeAvailability} />
 );
 
@@ -16,7 +16,9 @@ const withMediaError = PageComponent => {
       <PageComponent
         {...props}
         mediaIsAvailable={mediaIsAvailable}
-        MediaError={mediaIsAvailable ? () => null : ErrorComponent}
+        MediaError={
+          mediaIsAvailable ? () => null : getErrorComponent(episodeAvailability)
+        }
       />
     );
   };
