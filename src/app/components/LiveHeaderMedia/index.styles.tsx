@@ -64,11 +64,6 @@ export default {
         color: 'canvasText',
       },
     }),
-  title: () =>
-    css({
-      display: 'block',
-      width: '100%',
-    }),
   guidanceMessage: ({ palette, spacings, mq }: Theme) =>
     css({
       display: 'block',
@@ -91,20 +86,6 @@ export default {
       },
       [mq.FORCED_COLOURS]: {
         border: `${pixelsToRem(2)}rem solid canvasText`,
-      },
-    }),
-  liveMediaStreamText: ({ palette }: Theme) =>
-    css({
-      color: palette.GREY_4,
-    }),
-  liveMediaStreamContainer: ({ mq }: Theme) =>
-    css({
-      maxWidth: '60%',
-      [mq.GROUP_2_MAX_WIDTH]: {
-        width: '100%',
-      },
-      [mq.GROUP_4_MAX_WIDTH]: {
-        width: '50%',
       },
     }),
   closeButton: () =>
@@ -140,10 +121,6 @@ export default {
       [mq.FORCED_COLOURS]: {
         color: 'canvasText',
       },
-    }),
-  liveMediaSpan: () =>
-    css({
-      maxWidth: '100%',
     }),
   mediaLoader: ({ spacings }: Theme) =>
     css({
@@ -185,6 +162,5 @@ export default {
       },
     }),
 
-  underlineFocus: () => css({ display: 'none' }),
   hideComponent: () => css({ display: 'none' }),
 };
