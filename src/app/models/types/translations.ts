@@ -177,6 +177,7 @@ export interface Translations {
     recentEpisodes?: string;
     podcastExternalLinks?: string;
     download?: string;
+    closeVideo?: string;
   };
   socialEmbed: {
     caption?: {

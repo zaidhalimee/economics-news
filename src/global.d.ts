@@ -10,6 +10,7 @@ declare global {
       bumpVersion: string[],
       callback: (Bump: BumpType) => void,
     ) => void;
+    mediaPlayers: Record<string, Player>;
     dotcom: {
       ads: {
         getAdTag: () => Promise<string>;
