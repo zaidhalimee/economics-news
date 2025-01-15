@@ -145,7 +145,7 @@ const baseServiceConfig = {
         },
         accept: 'ОК',
         reject: 'Подивитися, що змінилося',
-        rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+        rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
       },
       cookie: {
         amp: {
@@ -318,7 +318,7 @@ const baseServiceConfig = {
       },
       {
         href: 'https://www.bbc.com/ws/languages',
-        text: 'Other Languages',
+        text: 'Новини ВВС іншими мовами',
       },
       {
         id: 'COOKIE_SETTINGS',

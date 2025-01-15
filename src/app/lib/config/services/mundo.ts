@@ -142,7 +142,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'Ok',
           reject: 'Descubre lo que ha cambiado',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -389,7 +389,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'Otros idiomas',
         },
         {
           id: 'COOKIE_SETTINGS',
@@ -416,10 +416,6 @@ export const service: DefaultServiceConfig = {
         url: '/mundo/topics/c2lej05epw5t',
       },
       {
-        title: 'Elecciones EE.UU. 2024',
-        url: '/mundo/topics/c1v8en6r2qgt',
-      },
-      {
         title: 'Hay Festival',
         url: '/mundo/topics/cr50y7p7qyqt',
       },
@@ -442,10 +438,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Tecnología',
         url: '/mundo/topics/cyx5krnw38vt',
-      },
-      {
-        title: 'Centroamérica Cuenta',
-        url: '/mundo/topics/c404v5z1k8wt',
       },
     ],
   },

@@ -3,7 +3,6 @@ import * as analyticsUtils from '../../../lib/analyticsUtils';
 import {
   ARTICLE_PAGE,
   FRONT_PAGE,
-  MEDIA_PAGE,
   MEDIA_ASSET_PAGE,
   PHOTO_GALLERY_PAGE,
   MEDIA_ARTICLE_PAGE,
@@ -12,7 +11,7 @@ import {
   LIVE_PAGE,
 } from '../../../routes/utils/pageTypes';
 import { buildATIUrl, buildATIEventTrackingParams } from '.';
-import * as buildPageATIFunctionImports from './genericPage/buildParams';
+import * as buildPageATIFunctionImports from './buildParams';
 import { RequestContextProps } from '../../../contexts/RequestContext';
 import { ServiceConfig } from '../../../models/types/serviceConfig';
 import { ATIData, PageData } from '../types';
@@ -56,14 +55,6 @@ const frontPage: PageData = {
     language: 'language',
     title: 'title',
   },
-};
-
-const media: PageData = {
-  id: 'id',
-  language: 'language',
-  pageIdentifier: 'pageIdentifier',
-  pageTitle: 'pageTitle',
-  contentType: 'player-live',
 };
 
 const homePageAnalyticsData: ATIData = {
@@ -260,36 +251,6 @@ describe('ATIAnalytics params', () => {
       });
     });
 
-    it('should return the correct media url', () => {
-      const url = buildATIUrl({
-        requestContext: { ...requestContext, pageType: MEDIA_PAGE },
-        data: media,
-        serviceContext,
-      });
-
-      const parsedATIParams = Object.fromEntries(
-        new URLSearchParams(url as string),
-      );
-
-      expect(parsedATIParams).toEqual({
-        s: '598285',
-        s2: 'atiAnalyticsProducerId',
-        p: 'pageIdentifier',
-        r: '0x0x24x24',
-        re: '1024x768',
-        hl: '00-00-00',
-        lng: 'en-US',
-        x1: '[id]',
-        x2: '[responsive]',
-        x3: '[atiAnalyticsAppName]',
-        x4: '[language]',
-        x5: '[http%3A%2F%2Flocalhost%2F]',
-        x7: '[player-live]',
-        x8: '[simorgh]',
-        x9: '[pageTitle]',
-      });
-    });
-
     it('should return the correct MAP url', () => {
       const url = buildATIUrl({
         requestContext: { ...requestContext, pageType: MEDIA_ASSET_PAGE },
@@ -470,10 +431,10 @@ describe('ATIAnalytics params', () => {
         );
       });
 
-      it('should not invoke buildPageATIUrl for an unsupported page types', () => {
+      it('should not invoke buildPageATIUrl for an unmigrated page type with no atiData', () => {
         buildATIUrl({
-          requestContext: { ...requestContext, pageType: MEDIA_PAGE },
-          atiData: homePageAnalyticsData,
+          requestContext: { ...requestContext, pageType: FRONT_PAGE },
+          atiData: undefined,
           serviceContext,
         });
 
@@ -579,27 +540,6 @@ describe('ATIAnalytics params', () => {
         statsDestination: 'statsDestination',
         timePublished: '1970-01-01T00:00:00.000Z',
         timeUpdated: '1970-01-01T00:00:00.000Z',
-      });
-    });
-
-    it('should return the correct media params', () => {
-      const params = buildATIEventTrackingParams({
-        requestContext: { ...requestContext, pageType: MEDIA_PAGE },
-        data: media,
-        serviceContext,
-      });
-      expect(params).toEqual({
-        appName: 'atiAnalyticsAppName',
-        contentId: 'id',
-        contentType: 'player-live',
-        language: 'language',
-        pageIdentifier: 'pageIdentifier',
-        pageTitle: 'pageTitle',
-        libraryVersion: 'simorgh',
-        platform: 'canonical',
-        producerId: 'atiAnalyticsProducerId',
-        service: 'pidgin',
-        statsDestination: 'statsDestination',
       });
     });
 
@@ -743,60 +683,15 @@ describe('ATIAnalytics params', () => {
         );
       });
 
-      it('should not invoke buildPageATIParams for an unsupported page types', () => {
+      it('should not invoke buildPageATIParams for an unmigrated page type with no atiData', () => {
         buildATIEventTrackingParams({
-          requestContext: { ...requestContext, pageType: MEDIA_PAGE },
-          atiData: homePageAnalyticsData,
+          requestContext: { ...requestContext, pageType: FRONT_PAGE },
+          atiData: undefined,
           serviceContext,
         });
 
-        expect(console.error)
-          .toHaveBeenCalledWith(`ATI Event Tracking Error: Could not parse tracking values from page data:
-Cannot read properties of undefined (reading 'id')`);
         expect(buildPageATIParamsSpy).not.toHaveBeenCalled();
       });
-    });
-
-    it('should not throw exception and return empty object if no pageData is passed in', () => {
-      const { error } = console;
-      console.error = jest.fn();
-
-      const pageData = null;
-      const params = buildATIEventTrackingParams({
-        requestContext: { ...requestContext, pageType: MEDIA_PAGE },
-        // @ts-expect-error - pass in null value to ensure error handling working as expected
-        data: pageData,
-        serviceContext,
-      });
-
-      expect(params).toEqual({});
-      expect(console.error).toHaveBeenCalledWith(
-        expect.stringContaining(
-          'ATI Event Tracking Error: Could not parse tracking values from page data:',
-        ),
-      );
-      console.error = error;
-    });
-
-    it('should not throw exception and return empty object if no atiData is passed in', () => {
-      const { error } = console;
-      console.error = jest.fn();
-
-      const atiData = null;
-      const params = buildATIEventTrackingParams({
-        requestContext: { ...requestContext, pageType: MEDIA_PAGE },
-        // @ts-expect-error - pass in null value to ensure error handling working as expected
-        atiData,
-        serviceContext,
-      });
-
-      expect(params).toEqual({});
-      expect(console.error).toHaveBeenCalledWith(
-        expect.stringContaining(
-          'ATI Event Tracking Error: Could not parse tracking values from page data:',
-        ),
-      );
-      console.error = error;
     });
   });
 });

@@ -74,7 +74,13 @@ exports[`Toggles Config when application environment is local should contain cor
   "eventTracking": {
     "enabled": true,
   },
+  "frontPageRadioSchedule": {
+    "enabled": true,
+  },
   "include": {
+    "enabled": true,
+  },
+  "liveRadioSchedule": {
     "enabled": true,
   },
   "mostRead": {
@@ -83,13 +89,13 @@ exports[`Toggles Config when application environment is local should contain cor
   "nielsenAnalytics": {
     "enabled": true,
   },
+  "onDemandRadioSchedule": {
+    "enabled": true,
+  },
   "preloadLeadImage": {
     "enabled": true,
   },
   "prerollAds": {
-    "enabled": true,
-  },
-  "radioSchedule": {
     "enabled": true,
   },
   "scriptLink": {

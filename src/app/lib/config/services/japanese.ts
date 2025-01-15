@@ -129,7 +129,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: '変更点を見る',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -293,7 +293,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'BBCニュースを他言語で読む',
         },
         {
           id: 'COOKIE_SETTINGS',

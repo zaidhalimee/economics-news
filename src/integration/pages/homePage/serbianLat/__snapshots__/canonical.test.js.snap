@@ -2,7 +2,51 @@
 
 exports[`Canonical Home Page A11y I can see the skip to content link 1`] = `"Pređite na sadržaj"`;
 
-exports[`Canonical Home Page Analytics ATI 1`] = `"<img height="1px" width="1px" alt="" style="position:absolute" src="https://logws1363.ati-host.net?s=598343&amp;s2=81&amp;p=serbianlat.page&amp;x1=[urn%3Abbc%3Atipo%3Atopic%3Ac6zr6pp47w7t]&amp;x2=[responsive]&amp;x3=[news-serbian]&amp;x4=[sr-latn]&amp;x7=[index-home]&amp;x8=[simorgh-nojs]&amp;x9=[Po%C4%8Detna%2520stranica]"/>"`;
+exports[`Canonical Home Page Analytics ATI tracking pixel excluding src 1`] = `
+<img
+  alt=""
+  height="1px"
+  style="position:absolute"
+  width="1px"
+/>
+`;
+
+exports[`Canonical Home Page Analytics ATI tracking pixel hostname 1`] = `"https://logws1363.ati-host.net/"`;
+
+exports[`Canonical Home Page Analytics ATI tracking pixel search params 1`] = `
+[
+  {
+    "s": "598343",
+  },
+  {
+    "s2": "81",
+  },
+  {
+    "p": "serbianlat.page",
+  },
+  {
+    "x1": "[urn:bbc:tipo:topic:c6zr6pp47w7t]",
+  },
+  {
+    "x2": "[responsive]",
+  },
+  {
+    "x3": "[news-serbian]",
+  },
+  {
+    "x4": "[sr-latn]",
+  },
+  {
+    "x7": "[index-home]",
+  },
+  {
+    "x8": "[simorgh-nojs]",
+  },
+  {
+    "x9": "[Početna%20stranica]",
+  },
+]
+`;
 
 exports[`Canonical Home Page Footer Anchors should match text and url 1`] = `
 {
@@ -55,7 +99,7 @@ exports[`Canonical Home Page Footer Anchors should match text and url 7`] = `
 
 exports[`Canonical Home Page Footer Anchors should match text and url 8`] = `
 {
-  "text": "Other Languages",
+  "text": "BBC News na drugim jezicima",
   "url": "https://www.bbc.com/ws/languages",
 }
 `;
@@ -69,7 +113,7 @@ exports[`Canonical Home Page Footer Anchors should match text and url 9`] = `
 
 exports[`Canonical Home Page Footer I can click on the BBC branding and it would take me to the homepage 1`] = `"/serbian/lat"`;
 
-exports[`Canonical Home Page Footer Paragraphs should match text 1`] = `"© 2024 BBC. BBC nije odgovoran za sadržaj drugih sajtova. Pročitajte naša pravila o linkovanju drugih sajtova."`;
+exports[`Canonical Home Page Footer Paragraphs should match text 1`] = `"© 2025 BBC. BBC nije odgovoran za sadržaj drugih sajtova. Pročitajte naša pravila o linkovanju drugih sajtova."`;
 
 exports[`Canonical Home Page Header I can see the branding 1`] = `"BBC News, na srpskom"`;
 
@@ -82,40 +126,33 @@ exports[`Canonical Home Page Header Navigation link should match text and url 1`
 
 exports[`Canonical Home Page Header Navigation link should match text and url 2`] = `
 {
-  "text": "Američki izbori",
-  "url": "/serbian/lat/topics/c1v8enng1npt",
-}
-`;
-
-exports[`Canonical Home Page Header Navigation link should match text and url 3`] = `
-{
   "text": "Srbija",
   "url": "/serbian/lat/topics/cr50vdy9q6wt",
 }
 `;
 
-exports[`Canonical Home Page Header Navigation link should match text and url 4`] = `
+exports[`Canonical Home Page Header Navigation link should match text and url 3`] = `
 {
   "text": "Balkan",
   "url": "/serbian/lat/topics/c06g87137jgt",
 }
 `;
 
-exports[`Canonical Home Page Header Navigation link should match text and url 5`] = `
+exports[`Canonical Home Page Header Navigation link should match text and url 4`] = `
 {
   "text": "Svet",
   "url": "/serbian/lat/topics/c2lej05e1eqt",
 }
 `;
 
-exports[`Canonical Home Page Header Navigation link should match text and url 6`] = `
+exports[`Canonical Home Page Header Navigation link should match text and url 5`] = `
 {
   "text": "Video",
   "url": "/serbian/lat/topics/c44vyp5g049t",
 }
 `;
 
-exports[`Canonical Home Page Header Navigation link should match text and url 7`] = `
+exports[`Canonical Home Page Header Navigation link should match text and url 6`] = `
 {
   "text": "Najpopularnije",
   "url": "/serbian/lat/popular/read",

@@ -2,7 +2,63 @@
 
 exports[`Canonical Story Page A11y I can see the skip to content link 1`] = `"Ir al contenido"`;
 
-exports[`Canonical Story Page Analytics ATI 1`] = `"<img height="1px" width="1px" alt="" style="position:absolute" src="https://logws1363.ati-host.net?s=598343&amp;s2=62&amp;p=mundo.world.story.51266689.page&amp;x1=[urn%3Abbc%3Acps%3Acurie%3Aasset%3Afaf2993a-dcc0-0746-81a6-a6aca4cd59b1]&amp;x2=[responsive]&amp;x3=[news-mundo]&amp;x4=[es]&amp;x7=[article]&amp;x8=[simorgh-nojs]&amp;x9=[Brexit%3A%2520qu%C3%A9%2520cambiar%C3%A1%2520para%2520visitar%2C%2520trabajar%2520y%2520estudiar%2520en%2520Reino%2520Unido%2520tras%2520la%2520salida%2520del%2520pa%C3%ADs%2520de%2520la%2520Uni%C3%B3n%2520Europea%2520-%2520BBC%2520News%2520Mundo]&amp;x11=[2020-01-30T06%3A35%3A49.000Z]&amp;x12=[2020-01-30T06%3A35%3A49.000Z]&amp;x16=[WS%20-%20Give%20me%20perspective]&amp;x17=[Explainer]"/>"`;
+exports[`Canonical Story Page Analytics ATI tracking pixel excluding src 1`] = `
+<img
+  alt=""
+  height="1px"
+  style="position:absolute"
+  width="1px"
+/>
+`;
+
+exports[`Canonical Story Page Analytics ATI tracking pixel hostname 1`] = `"https://logws1363.ati-host.net/"`;
+
+exports[`Canonical Story Page Analytics ATI tracking pixel search params 1`] = `
+[
+  {
+    "s": "598343",
+  },
+  {
+    "s2": "62",
+  },
+  {
+    "p": "mundo.world.story.51266689.page",
+  },
+  {
+    "x1": "[urn:bbc:cps:curie:asset:faf2993a-dcc0-0746-81a6-a6aca4cd59b1]",
+  },
+  {
+    "x2": "[responsive]",
+  },
+  {
+    "x3": "[news-mundo]",
+  },
+  {
+    "x4": "[es]",
+  },
+  {
+    "x7": "[article]",
+  },
+  {
+    "x8": "[simorgh-nojs]",
+  },
+  {
+    "x9": "[Brexit:%20qué%20cambiará%20para%20visitar,%20trabajar%20y%20estudiar%20en%20Reino%20Unido%20tras%20la%20salida%20del%20país%20de%20la%20Unión%20Europea%20-%20BBC%20News%20Mundo]",
+  },
+  {
+    "x11": "[2020-01-30T06:35:49.000Z]",
+  },
+  {
+    "x12": "[2020-01-30T06:35:49.000Z]",
+  },
+  {
+    "x16": "[WS - Give me perspective]",
+  },
+  {
+    "x17": "[Explainer]",
+  },
+]
+`;
 
 exports[`Canonical Story Page Footer Anchors should match text and url 1`] = `
 {
@@ -55,7 +111,7 @@ exports[`Canonical Story Page Footer Anchors should match text and url 7`] = `
 
 exports[`Canonical Story Page Footer Anchors should match text and url 8`] = `
 {
-  "text": "Other Languages",
+  "text": "Otros idiomas",
   "url": "https://www.bbc.com/ws/languages",
 }
 `;
@@ -76,7 +132,7 @@ exports[`Canonical Story Page Footer Anchors should match text and url 10`] = `
 
 exports[`Canonical Story Page Footer I can click on the BBC branding and it would take me to the homepage 1`] = `"/mundo"`;
 
-exports[`Canonical Story Page Footer Paragraphs should match text 1`] = `"© 2024 BBC. La BBC no se hace responsable del contenido de sitios externos. Lee sobre nuestra postura acerca de enlaces externos."`;
+exports[`Canonical Story Page Footer Paragraphs should match text 1`] = `"© 2025 BBC. La BBC no se hace responsable del contenido de sitios externos. Lee sobre nuestra postura acerca de enlaces externos."`;
 
 exports[`Canonical Story Page Header I can see the branding 1`] = `"BBC News, Mundo"`;
 
@@ -103,57 +159,43 @@ exports[`Canonical Story Page Header Navigation link should match text and url 3
 
 exports[`Canonical Story Page Header Navigation link should match text and url 4`] = `
 {
-  "text": "Elecciones EE.UU. 2024",
-  "url": "/mundo/topics/c1v8en6r2qgt",
-}
-`;
-
-exports[`Canonical Story Page Header Navigation link should match text and url 5`] = `
-{
   "text": "Hay Festival",
   "url": "/mundo/topics/cr50y7p7qyqt",
 }
 `;
 
-exports[`Canonical Story Page Header Navigation link should match text and url 6`] = `
+exports[`Canonical Story Page Header Navigation link should match text and url 5`] = `
 {
   "text": "Economía",
   "url": "/mundo/topics/c06gq9v4xp3t",
 }
 `;
 
-exports[`Canonical Story Page Header Navigation link should match text and url 7`] = `
+exports[`Canonical Story Page Header Navigation link should match text and url 6`] = `
 {
   "text": "Ciencia",
   "url": "/mundo/topics/ckdxnw959n7t",
 }
 `;
 
-exports[`Canonical Story Page Header Navigation link should match text and url 8`] = `
+exports[`Canonical Story Page Header Navigation link should match text and url 7`] = `
 {
   "text": "Salud",
   "url": "/mundo/topics/cpzd498zkxgt",
 }
 `;
 
-exports[`Canonical Story Page Header Navigation link should match text and url 9`] = `
+exports[`Canonical Story Page Header Navigation link should match text and url 8`] = `
 {
   "text": "Cultura",
   "url": "/mundo/topics/c2dwq9zyv4yt",
 }
 `;
 
-exports[`Canonical Story Page Header Navigation link should match text and url 10`] = `
+exports[`Canonical Story Page Header Navigation link should match text and url 9`] = `
 {
   "text": "Tecnología",
   "url": "/mundo/topics/cyx5krnw38vt",
-}
-`;
-
-exports[`Canonical Story Page Header Navigation link should match text and url 11`] = `
-{
-  "text": "Centroamérica Cuenta",
-  "url": "/mundo/topics/c404v5z1k8wt",
 }
 `;
 

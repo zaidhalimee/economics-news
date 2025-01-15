@@ -37,6 +37,7 @@ export type PlayerConfig = {
     embedRights?: 'allowed';
     liveRewind?: boolean;
     simulcast?: boolean;
+    warning?: string;
   };
 };
 
@@ -114,6 +115,8 @@ export type Player = {
     parameters: { updatedAdTag: string },
   ): void;
   load: () => void;
+  play: () => void;
+  pause: () => void;
   bind: (event: string, callback: () => void) => void;
   loadPlugin: (
     pluginName: { [key: string]: string },
@@ -125,6 +128,7 @@ export type Player = {
       };
     },
   ) => void;
+  player: { paused: () => boolean };
 };
 
 export type BumpType = {
@@ -239,6 +243,26 @@ export type LegacyMediaBlock = {
   };
 };
 
+export type MediaCollection = {
+  type: 'liveMedia';
+  model: {
+    synopses: {
+      short: string;
+    };
+    masterbrand: {
+      networkName: string;
+    };
+    version: {
+      vpid?: string;
+      serviceID?: string;
+      duration: string;
+      status: string;
+    };
+    imageUrlTemplate: string;
+    title: string;
+  };
+};
+
 export type MediaBlock =
   | AresMediaBlock
   | ClipMediaBlock
@@ -247,7 +271,8 @@ export type MediaBlock =
   | OnDemandTVBlock
   | OnDemandAudioBlock
   | CaptionBlock
-  | MediaOverrides;
+  | MediaOverrides
+  | MediaCollection;
 
 export type BuildConfigProps = {
   id: string;
