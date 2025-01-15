@@ -234,6 +234,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Próximo programa',
         duration: 'Duración',
         recentEpisodes: 'Más',
+        exit: 'Salir',
       },
       socialEmbed: {
         caption: {
