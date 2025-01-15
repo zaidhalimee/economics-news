@@ -1,4 +1,5 @@
 import React, { useContext, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import SkipLink from '#psammead/psammead-brand/src/SkipLink';
 import { RequestContext } from '#contexts/RequestContext';
 import useOperaMiniDetection from '#hooks/useOperaMiniDetection';
@@ -50,12 +51,13 @@ const Header = ({ brandRef, borderBottom, skipLink, scriptLink, linkId }) => {
 const HeaderContainer = ({
   scriptSwitchId = '',
   renderScriptSwitch = true,
+  propsForOJExperiment,
 }) => {
   const { isAmp, isApp, pageType, isLite } = useContext(RequestContext);
   const { service, script, translations, dir, scriptLink, lang, serviceLang } =
     useContext(ServiceContext);
   const { skipLinkText } = translations;
-
+  console.log('propsForOJExperiment in HeaderContainer:', propsForOJExperiment);
   const isOperaMini = useOperaMiniDetection();
 
   const brandRef = useRef(null);
@@ -116,9 +118,39 @@ const HeaderContainer = ({
         />
       )}
       {renderLiteSiteCTA && <LiteSiteCta />}
-      <NavigationContainer />
+      <NavigationContainer propsForOJExperiment={propsForOJExperiment} />
     </header>
   );
 };
+HeaderContainer.propTypes = {
+  scriptSwitchId: PropTypes.string,
+  renderScriptSwitch: PropTypes.bool,
+  propsForOJExperiment: PropTypes.shape({
+    blocks: PropTypes.arrayOf(
+      PropTypes.oneOfType([
+        PropTypes.shape({
+          headlines: PropTypes.shape({
+            promoHeadline: PropTypes.shape({
+              text: PropTypes.string.isRequired,
+            }).isRequired,
+          }).isRequired,
+          locators: PropTypes.shape({
+            canonicalUrl: PropTypes.string.isRequired,
+          }).isRequired,
+        }),
+        PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          href: PropTypes.string.isRequired,
+        }),
+      ]),
+    ),
+    experimentVariant: PropTypes.oneOf(['A', 'B', 'none']),
+  }),
+};
 
+HeaderContainer.defaultProps = {
+  scriptSwitchId: '',
+  renderScriptSwitch: true,
+  propsForOJExperiment: null,
+};
 export default HeaderContainer;

@@ -81,14 +81,14 @@ const TimeStamp = styled(PromoTimestamp)`
   color: ${({ theme }) => theme.isDarkUi && theme.palette.GREY_6};
 `;
 
-const Promo = ({ block, variant, onClick }) => {
+const Promo = ({ block, experimentVariant, onClick }) => {
   const { script, service, serviceDatetimeLocale } = useContext(ServiceContext);
   let title;
   let href;
   let textBlock;
   let aresLinkBlock;
   let timestamp;
-  switch (variant) {
+  switch (experimentVariant) {
     case 'A':
       title = pathOr(
         block.headline || '',
@@ -151,7 +151,7 @@ const Promo = ({ block, variant, onClick }) => {
       >
         {title}
       </StyledLink>
-      {timestamp && !variant && (
+      {timestamp && !experimentVariant && (
         <TimeStamp serviceDatetimeLocale={serviceDatetimeLocale}>
           {timestamp}
         </TimeStamp>

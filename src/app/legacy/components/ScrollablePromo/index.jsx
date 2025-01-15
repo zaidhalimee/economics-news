@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import {
   GEL_SPACING,
   GEL_SPACING_DBL,
+  GEL_SPACING_QUAD,
 } from '#psammead/gel-foundations/src/spacings';
 
 import { getDoublePica } from '#psammead/gel-foundations/src/typography';
@@ -37,8 +38,10 @@ const PromoWrapper = styled.div`
 
 const LabelComponent = styled.strong`
   display: block;
+  border: 1px solid red;
   ${({ script }) => script && getDoublePica(script)};
   ${({ service }) => getSansRegular(service)}
+
   margin-bottom: ${GEL_SPACING_DBL};
   color: ${({ theme }) =>
     theme.isDarkUi ? theme.palette.GREY_2 : theme.palette.SHADOW};
@@ -55,12 +58,19 @@ const LabelComponent = styled.strong`
         margin-${dir === 'ltr' ? `left` : `right`}: 0;
     }
 `}
+  ${({ experimentVariant }) =>
+    experimentVariant &&
+    `
+    display: flex;
+    align-items: center;
+    height: ${GEL_SPACING_QUAD};
+  `}
 `;
 
 const ScrollablePromo = ({
   blocks,
   blockGroupIndex = null,
-  variant = 'none',
+  experimentVariant = 'none',
 }) => {
   const { script, service, dir, translations, mostRead } =
     useContext(ServiceContext);
@@ -78,10 +88,12 @@ const ScrollablePromo = ({
   }
 
   let title;
-  if (variant === 'A') {
-    title = `${translations.topStoriesTitle || 'Top Stories'} - `;
-  } else if (variant === 'B') {
-    title = `${mostRead.header || 'Most Read'} - `;
+  if (experimentVariant === 'A') {
+    // title = `${translations.topStoriesTitle || 'Top Stories'} - `;
+    title = translations.topStoriesTitle || 'Top Stories';
+  } else if (experimentVariant === 'B') {
+    // title = `${mostRead.header || 'Most Read'} - `;
+    title = mostRead.header || 'Most Read';
   } else {
     title =
       blocks[0].type === 'title' &&
@@ -94,7 +106,9 @@ const ScrollablePromo = ({
 
   const isSingleItem = blocksWithoutTitle.length === 1;
 
-  const ariaLabel = title && idSanitiser(title);
+  const ariaLabel =
+    title &&
+    idSanitiser(`${title}${experimentVariant !== 'none' ? ' scrollable' : ''}`);
 
   const a11yAttributes = {
     as: 'section',
@@ -118,24 +132,25 @@ const ScrollablePromo = ({
           script={script}
           service={service}
           dir={dir}
+          experimentVariant={experimentVariant}
         >
           {title}
         </LabelComponent>
       )}
-      {variant !== 'none' && (
+      {experimentVariant !== 'none' && (
         <PromoList
           blocks={blocks}
-          variant={variant}
+          experimentVariant={experimentVariant}
           viewTracker={viewRef}
           onClick={handleClickTracking}
         />
       )}
-      {variant === 'none' && isSingleItem && (
+      {experimentVariant === 'none' && isSingleItem && (
         <PromoWrapper dir={dir} ref={viewRef}>
           <Promo block={blocksWithoutTitle[0]} onClick={handleClickTracking} />
         </PromoWrapper>
       )}
-      {variant === 'none' && !isSingleItem && (
+      {experimentVariant === 'none' && !isSingleItem && (
         <PromoList
           blocks={blocksWithoutTitle}
           viewTracker={viewRef}
