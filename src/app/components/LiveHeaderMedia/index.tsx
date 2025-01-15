@@ -115,10 +115,10 @@ const LiveHeaderMedia = ({
         {showMedia && <VisuallyHiddenText>{closeVideo}, </VisuallyHiddenText>}
         <Text size="pica" fontVariant="sansBold" as="span">
           {short}
-          {!titleHasPunctuation && ','}{' '}
-          {titleHasPunctuation && <VisuallyHiddenText>, </VisuallyHiddenText>}
+          {!titleHasPunctuation && ','}
         </Text>
         <Text size="pica" fontVariant="sansRegular" as="span">
+          {' '}
           {networkName}
         </Text>
       </Text>
