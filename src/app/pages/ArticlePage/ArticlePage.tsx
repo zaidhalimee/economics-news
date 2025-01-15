@@ -103,8 +103,6 @@ const getTimestampComponent =
       <Timestamp {...props} popOut={false} />
     );
 
-const Links = (props: ComponentToRenderProps) => <ScrollablePromo {...props} />;
-
 const getMpuComponent =
   (allowAdvertising: boolean) => (props: ComponentToRenderProps) =>
     allowAdvertising ? <AdContainer {...props} slotType="mpu" /> : null;
@@ -250,7 +248,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     embedImages: EmbedImages,
     embedUploader: Uploader,
     group: gist,
-    links: Links,
+    links: ScrollablePromo,
     mpu: getMpuComponent(allowAdvertising),
     wsoj: getWsojComponent(recommendationsData),
     disclaimer: DisclaimerWithPaddingOverride,
