@@ -37,15 +37,17 @@ const InlineDiv = styled.div`
   display: inline;
 `;
 
-const AmpImage = ({ episode: { image, altText } }) => (
-  <amp-img
-    layout="responsive"
-    width="16"
-    height="9"
-    src={image}
-    alt={altText}
-  />
-);
+const getAmpImageComponent =
+  ({ image, altText }) =>
+  () => (
+    <amp-img
+      layout="responsive"
+      width="16"
+      height="9"
+      src={image}
+      alt={altText}
+    />
+  );
 
 const RecentVideoEpisodes = ({ masterBrand, episodes }) => {
   const { script, service, dir, timezone, datetimeLocale, translations } =
@@ -112,7 +114,7 @@ const RecentVideoEpisodes = ({ masterBrand, episodes }) => {
                 locale: datetimeLocale,
               })}
               {...(isAmp && {
-                as: <AmpImage episode={episode} />,
+                as: getAmpImageComponent(episode),
               })}
             />
             {/* these must be concatenated for screen reader UX */}
