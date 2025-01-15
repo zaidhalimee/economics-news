@@ -194,6 +194,7 @@ const LiveHeaderMedia = forwardRef(
 export default ({
   mediaCollection,
   eventTrackingData,
+  clickCallback = () => null,
 }: LiveHeaderMediaProps) => {
   const viewRef = useViewTracker(eventTrackingData);
 
@@ -201,6 +202,9 @@ export default ({
     <LiveHeaderMedia
       mediaCollection={mediaCollection}
       eventTrackingData={eventTrackingData}
+      clickCallback={clickCallback}
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore - TODO: come back to this
       ref={viewRef}
     />
   );
