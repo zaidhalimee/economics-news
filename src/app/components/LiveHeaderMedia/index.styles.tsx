@@ -11,7 +11,7 @@ export default {
         display: 'none',
       },
     }),
-  nojs: ({ palette, spacings, fontSizes, fontVariants }: Theme) =>
+  nojs: ({ palette, spacings, fontSizes, fontVariants, mq }: Theme) =>
     css({
       ...fontSizes.pica,
       ...fontVariants.sansRegular,
@@ -24,14 +24,14 @@ export default {
         marginTop: `${spacings.DOUBLE}rem`,
         fontWeight: 'normal',
       },
-    }),
-  mediaButton: ({ mq }: Theme) =>
-    css({
-      position: 'relative',
-      padding: 0,
       [mq.FORCED_COLOURS]: {
         color: 'canvasText',
       },
+    }),
+  mediaButton: () =>
+    css({
+      position: 'relative',
+      padding: 0,
     }),
   openButton: () =>
     css({
@@ -64,17 +64,15 @@ export default {
         color: 'canvasText',
       },
     }),
-  title: () =>
-    css({
-      display: 'block',
-      width: '100%',
-    }),
-  guidanceMessage: ({ palette, spacings }: Theme) =>
+  guidanceMessage: ({ palette, spacings, mq }: Theme) =>
     css({
       display: 'block',
       marginTop: `${spacings.DOUBLE}rem`,
       color: palette.GREY_2,
       textAlign: 'start',
+      [mq.FORCED_COLOURS]: {
+        color: 'canvasText',
+      },
     }),
   watchLiveCTA: ({ palette, mq, spacings }: Theme) =>
     css({
@@ -88,20 +86,6 @@ export default {
       },
       [mq.FORCED_COLOURS]: {
         border: `${pixelsToRem(2)}rem solid canvasText`,
-      },
-    }),
-  liveMediaStreamText: ({ palette }: Theme) =>
-    css({
-      color: palette.GREY_4,
-    }),
-  liveMediaStreamContainer: ({ mq }: Theme) =>
-    css({
-      maxWidth: '60%',
-      [mq.GROUP_2_MAX_WIDTH]: {
-        width: '100%',
-      },
-      [mq.GROUP_4_MAX_WIDTH]: {
-        width: '50%',
       },
     }),
   closeButton: () =>
@@ -135,21 +119,22 @@ export default {
         outline: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
       },
     }),
-  liveMediaSpan: () =>
-    css({
-      maxWidth: '100%',
-    }),
   mediaLoader: ({ spacings }: Theme) =>
     css({
       maxWidth: '100%',
       marginTop: `${spacings.DOUBLE}rem`,
     }),
-  mediaDescription: () =>
+  mediaDescription: ({ mq }: Theme) =>
     css({
       display: 'block',
       width: '100%',
       marginTop: 0,
-      span: { margin: 0 },
+      span: {
+        margin: 0,
+        [mq.FORCED_COLOURS]: {
+          color: 'canvasText',
+        },
+      },
     }),
   openMediaDescription: ({ palette }: Theme) =>
     css({
@@ -169,6 +154,5 @@ export default {
       },
     }),
 
-  underlineFocus: () => css({ display: 'none' }),
   hideComponent: () => css({ display: 'none' }),
 };
