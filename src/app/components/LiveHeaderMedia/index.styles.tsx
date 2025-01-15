@@ -40,7 +40,7 @@ export default {
       border: 'unset',
       textAlign: 'start',
     }),
-  watchLiveCTAText: ({ spacings, palette }: Theme) =>
+  watchLiveCTAText: ({ spacings, palette, mq }: Theme) =>
     css({
       color: palette.WHITE,
       display: 'flex',
@@ -53,9 +53,15 @@ export default {
         fill: 'currentcolor',
         color: palette.WHITE,
         marginInlineEnd: `${spacings.FULL}rem`,
+        [mq.FORCED_COLOURS]: {
+          color: 'canvasText',
+        },
       },
       'button:hover &, button:focus-visible &': {
         textDecoration: 'underline',
+      },
+      [mq.FORCED_COLOURS]: {
+        color: 'canvasText',
       },
     }),
   title: () =>
@@ -81,7 +87,6 @@ export default {
         width: '100%',
       },
       [mq.FORCED_COLOURS]: {
-        color: 'canvasText',
         border: `${pixelsToRem(2)}rem solid canvasText`,
       },
     }),
@@ -119,15 +124,15 @@ export default {
         height: `${spacings.DOUBLE}rem`,
         width: `${spacings.DOUBLE}rem`,
         margin: `${pixelsToRem(13)}rem`,
+        [mq.FORCED_COLOURS]: {
+          color: 'canvasText',
+        },
       },
       backgroundColor: palette.BLACK,
       border: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
       'button:hover &, button:focus-visible &': {
         backgroundColor: palette.POSTBOX,
         outline: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
-      },
-      [mq.FORCED_COLOURS]: {
-        color: 'canvasText',
       },
     }),
   liveMediaSpan: () =>
