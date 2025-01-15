@@ -201,6 +201,7 @@ export const service: DefaultServiceConfig = {
         nextLabel: 'NEXT',
         previousRadioShow: 'Previous radio show',
         nextRadioShow: 'Next radio show',
+        duration: 'Duration',
       },
       socialEmbed: {},
     },
