@@ -137,6 +137,9 @@ export default {
         backgroundColor: palette.POSTBOX,
         outline: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
       },
+      [mq.FORCED_COLOURS]: {
+        color: 'canvasText',
+      },
     }),
   liveMediaSpan: () =>
     css({
