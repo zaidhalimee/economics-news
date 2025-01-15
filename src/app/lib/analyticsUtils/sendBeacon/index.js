@@ -51,17 +51,17 @@ const setReverbPageValues = async ({ pageVars, userVars }) => {
   };
 };
 
-const reverbPageViews = async reverbInstance => {
+const reverbPageViews = async ({ reverbInstance }) => {
   reverbInstance.viewEvent();
 };
 
-const reverbLinkClick = async reverbInstance => {
-  const config = {};
+const reverbLinkClick = async ({ reverbInstance, eventDetails }) => {
+  const { componentName, container } = eventDetails;
 
   return reverbInstance.userActionEvent(
     'click',
-    'Top Stories Link',
-    config,
+    componentName,
+    { container },
     {},
     {},
     true,
@@ -74,17 +74,25 @@ const reverbHandlers = {
   sectionClick: reverbLinkClick,
 };
 
-const callReverb = async eventName => {
+const callReverb = async eventDetails => {
+  const { eventName } = eventDetails;
+
   // eslint-disable-next-line no-underscore-dangle
   window.__reverb.__reverbLoadedPromise.then(
     async reverb => {
       if (reverb.isReady()) {
-        await reverbHandlers[eventName](reverb);
+        await reverbHandlers[eventName]({
+          reverbInstance: reverb,
+          eventDetails,
+        });
         return;
       }
 
       reverb.initialise().then(async () => {
-        await reverbHandlers[eventName](reverb);
+        await reverbHandlers[eventName]({
+          reverbInstance: reverb,
+          eventDetails,
+        });
       });
     },
     () => {
@@ -101,12 +109,12 @@ const sendBeacon = async (url, reverbBeaconConfig) => {
       if (reverbBeaconConfig) {
         const {
           params: { page, user },
-          eventName,
+          eventDetails,
         } = reverbBeaconConfig;
 
         await setReverbPageValues({ pageVars: page, userVars: user });
 
-        await callReverb(eventName);
+        await callReverb(eventDetails);
       } else {
         await fetch(url, { credentials: 'include' }).then(res => res.text());
       }

@@ -448,6 +448,10 @@ export const buildReverbAnalyticsModel = ({
 
   const hashedId = getAtUserId();
 
+  const eventDetails = {
+    eventName: 'pageView',
+  };
+
   const reverbVariables = {
     params: {
       page: {
@@ -481,7 +485,7 @@ export const buildReverbAnalyticsModel = ({
         isSignedIn: !!hashedId,
       },
     },
-    eventName: 'pageView',
+    eventDetails,
   };
 
   return reverbVariables;
@@ -499,6 +503,14 @@ export const buildReverbPageSectionEventModel = ({
   url,
 }: ATIEventTrackingProps) => {
   const eventPublisher = type === 'view' ? 'ati' : 'atc';
+
+  const eventDetails = {
+    eventName: type === 'view' ? 'sectionView' : 'sectionClick',
+    ...(type === 'click' && {
+      componentName,
+      container: campaignID,
+    }),
+  };
 
   return {
     params: {
@@ -523,6 +535,6 @@ export const buildReverbPageSectionEventModel = ({
         isSignedIn: false,
       },
     },
-    eventName: type === 'view' ? 'sectionView' : 'sectionClick',
+    eventDetails,
   };
 };
