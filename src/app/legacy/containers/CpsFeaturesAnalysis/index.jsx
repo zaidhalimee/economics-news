@@ -111,7 +111,7 @@ const PromoComponent = ({ promo, dir = 'ltr' }) => {
 };
 
 const FeaturesAnalysis = ({
-  content = [],
+  content,
   parentColumns,
   sectionLabelBackground,
 }) => {
