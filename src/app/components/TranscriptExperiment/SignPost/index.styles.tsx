@@ -21,7 +21,6 @@ const styles = {
         left: `calc(100% - ${pixelsToRem(WIDTH)}rem)`,
         width: `${pixelsToRem(WIDTH)}rem`,
         height: 'unset',
-        background: `rgba(14, 98, 0, 1)`,
       },
       [`@media (max-width: ${BUTTON_COLLAPSE_WIDTH}rem)`]: {
         padding: `${spacings.DOUBLE}rem`,
@@ -38,7 +37,9 @@ const styles = {
     }),
   fanIcon: ({ spacings }: Theme) =>
     css({
+      marginTop: `${pixelsToRem(2)}rem`,
       marginInlineEnd: `${spacings.FULL}rem`,
+      marginInlineStart: `${spacings.HALF}rem`,
     }),
   plusIcon: () =>
     css({
@@ -58,7 +59,7 @@ const styles = {
   underline: ({ palette }: Theme) =>
     css({
       borderBottom: `${pixelsToRem(1)}rem solid ${palette.WHITE}`,
-      '&:hover, &:focus': {
+      '.placeholder:hover &, .placeholder:focus &': {
         borderBottom: `${pixelsToRem(2)}rem solid ${palette.WHITE}`,
       },
     }),

@@ -18,11 +18,10 @@ const MediaIndicator = ({
   datetime,
   duration,
   durationSpoken,
-  type = 'video',
+  type = 'Video',
   title = '',
-  guidanceMessage,
 }: MediaIndicatorProps) => {
-  const hiddenText = `${guidanceMessage || ''} Play ${type}, ${
+  const hiddenText = `${type}, ${
     datetime && duration && durationSpoken
       ? `"${title}", ${durationSpoken}`
       : `"${title}"`
@@ -32,7 +31,9 @@ const MediaIndicator = ({
 
   return (
     <div css={style.mediaIcon}>
-      <VisuallyHiddenText>{hiddenText}</VisuallyHiddenText>
+      <p>
+        <VisuallyHiddenText as="strong">{hiddenText}</VisuallyHiddenText>
+      </p>
       <div aria-hidden="true" css={[style.iconWrapper, style.item]}>
         {(mediaIcons as Record<string, ReactElement>)[type]}
       </div>

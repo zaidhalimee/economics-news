@@ -47,6 +47,10 @@ const Transcript = ({
           {title && <VisuallyHiddenText>{formattedTitle}</VisuallyHiddenText>}
         </span>
       </summary>
+      <Text size="brevier" css={styles.disclaimer} as="small">
+        This transcript has been reviewed by a journalist, it was generated with
+        AI (artificial intelligence).
+      </Text>
       <ul css={styles.ul} role="list">
         {/*  eslint-disable-next-line @typescript-eslint/no-unused-vars */}
         {transcriptItems.map((item, _index) => (
@@ -58,9 +62,6 @@ const Transcript = ({
           />
         ))}
       </ul>
-      <Text size="brevier" css={styles.disclaimer} as="small">
-        This transcript was reviewed by a journalist after AI generation.
-      </Text>
     </details>
   );
 };

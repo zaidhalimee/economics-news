@@ -70,7 +70,7 @@ const MediaPlayerPlaceholder = ({
     />
   );
 
-  const experimentSignPost = <SignPost />;
+  const experimentSignPost = <SignPost title={title} />;
 
   return (
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
@@ -78,6 +78,7 @@ const MediaPlayerPlaceholder = ({
       onClick={onClick}
       css={styles.placeholder}
       data-e2e="media-loader__placeholder"
+      className="placeholder"
     >
       {experimentStage === Stages.STAGE_3 ? guideComponent : null}
       {experimentStage === Stages.STAGE_2 ? experimentPlayButton : playButton}
