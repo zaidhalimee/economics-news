@@ -275,6 +275,7 @@ export const service: ChineseConfig = {
         nextRadioShow: '下期广播节目',
         duration: '节目全长',
         recentEpisodes: '存档节目',
+        closeVideo: '退出',
       },
       socialEmbed: {
         caption: {
