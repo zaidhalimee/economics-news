@@ -145,19 +145,6 @@ const getJumptoComponent =
     );
   };
 
-// const Image = ({
-//   preloadLeadImageToggle,
-//   ...props
-// }: ComponentToRenderProps) => {
-//   return (
-//     <ImageWithCaption
-//       {...props}
-//       sizes="(min-width: 1008px) 760px, 100vw"
-//       shouldPreload={preloadLeadImageToggle}
-//     />
-//   );
-// };
-
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const { isApp, pageType, service } = useContext(RequestContext);
 
