@@ -8,6 +8,9 @@ import MediaLoader from '#app/components/MediaLoader';
 import filterForBlockType from '#app/lib/utilities/blockHandlers';
 import { ServiceContext } from '#app/contexts/ServiceContext';
 import { RequestContext } from '#app/contexts/RequestContext';
+import useViewTracker from '#app/hooks/useViewTracker';
+import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
+import { EventTrackingMetadata } from '#app/models/types/eventTracking';
 import styles from './index.styles';
 import WARNING_LEVELS from '../MediaLoader/configs/warningLevels';
 import VisuallyHiddenText from '../VisuallyHiddenText';
@@ -20,8 +23,9 @@ type WarningItem = {
   short_description: string;
 };
 
-type Props = {
+type LiveHeaderMediaProps = {
   mediaCollection: MediaCollection[] | null;
+  eventTrackingData?: EventTrackingMetadata;
   clickCallback?: () => void;
 };
 
@@ -34,11 +38,15 @@ const MemoizedMediaPlayer = memo(MediaLoader);
 
 const LiveHeaderMedia = ({
   mediaCollection,
+  eventTrackingData,
   clickCallback = () => null,
-}: Props) => {
+}: LiveHeaderMediaProps) => {
+  const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
   const { translations } = useContext(ServiceContext);
   const { isLite } = useContext(RequestContext);
   const [showMedia, setShowMedia] = useState(false);
+
+  const viewRef = useViewTracker(eventTrackingData);
 
   let warningLevel = WARNING_LEVELS.NO_WARNING;
 
@@ -80,7 +88,7 @@ const LiveHeaderMedia = ({
     warningLevel = WARNING_LEVELS[highestWarning.warning_code];
   }
 
-  const handleClick = () => {
+  const clickToggleMedia = () => {
     const mediaPlayer = window.mediaPlayers?.[vpid];
     if (showMedia) {
       mediaPlayer?.pause();
@@ -93,6 +101,11 @@ const LiveHeaderMedia = ({
     }
 
     clickCallback();
+  };
+
+  const handleClick = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
+    clickTrackerHandler(e);
+    clickToggleMedia();
   };
 
   const description = (
@@ -138,10 +151,10 @@ const LiveHeaderMedia = ({
         <p>{description}</p>
         <strong>{noJs}</strong>
       </noscript>
-      <div css={styles.componentContainer}>
+      <div css={styles.componentContainer} ref={viewRef}>
         <button
           type="button"
-          onClick={() => handleClick()}
+          onClick={e => handleClick(e)}
           data-testid="watch-now-close-button"
           className="focusIndicatorInvert"
           css={[
