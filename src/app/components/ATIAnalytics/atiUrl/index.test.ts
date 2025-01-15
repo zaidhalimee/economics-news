@@ -359,6 +359,9 @@ describe('Reverb', () => {
       };
 
       expect(reverbAnalyticsModel.params.page).toEqual(pageParams);
+      expect(reverbAnalyticsModel.eventDetails).toEqual({
+        eventName: 'pageView',
+      });
     });
   });
 
@@ -398,7 +401,9 @@ describe('Reverb', () => {
       const reverbPageSectionViewEventModel =
         buildReverbPageSectionEventModel(input);
 
-      expect(reverbPageSectionViewEventModel.eventName).toEqual('sectionView');
+      expect(reverbPageSectionViewEventModel.eventDetails).toEqual({
+        eventName: 'sectionView',
+      });
     });
 
     it('should return the correct Reverb page section click event model', () => {
@@ -422,13 +427,17 @@ describe('Reverb', () => {
       );
     });
 
-    it('should return the correct eventName for the Reverb page section click event model', () => {
+    it('should return the correct event details for the Reverb page section click event model', () => {
       const reverbPageSectionViewEventModel = buildReverbPageSectionEventModel({
         ...input,
         type: 'click',
       });
 
-      expect(reverbPageSectionViewEventModel.eventName).toEqual('sectionClick');
+      expect(reverbPageSectionViewEventModel.eventDetails).toEqual({
+        eventName: 'sectionClick',
+        componentName: 'top-stories',
+        container: '1234',
+      });
     });
   });
 });

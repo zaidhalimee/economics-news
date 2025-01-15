@@ -81,6 +81,7 @@ describe('beacon', () => {
           type: 'click',
           service: 'news',
           componentName: 'component',
+          campaignID: 'campaign1',
           pageIdentifier: 'pageIdentifier',
           detailedPlacement: 'detailedPlacement',
           useReverb: true,
@@ -91,8 +92,8 @@ describe('beacon', () => {
 
         expect(reverbMock.userActionEvent).toHaveBeenCalledWith(
           'click',
-          'Top Stories Link',
-          {},
+          'component',
+          { container: 'campaign1' },
           {},
           {},
           true,

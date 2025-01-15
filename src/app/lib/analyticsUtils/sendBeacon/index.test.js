@@ -56,7 +56,9 @@ describe('sendBeacon', () => {
         page: 'page',
         user: '1234-5678',
       },
-      eventName: 'pageView',
+      eventDetails: {
+        eventName: 'pageView',
+      },
     };
 
     it('should call Reverb viewEvent if Reverb config is passed', async () => {
