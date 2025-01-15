@@ -323,7 +323,7 @@ export const service: SerbianConfig = {
         previousRadioShow: 'Prethodna radio emisija',
         nextRadioShow: 'Sledeća radio emisija',
         duration: 'Trajanje',
-        closeVideo: 'Изађи',
+        closeVideo: 'Izađi',
       },
       socialEmbed: {
         caption: {
@@ -702,6 +702,7 @@ export const service: SerbianConfig = {
         nextRadioShow: 'Следећа радио емисија',
         duration: 'Трајање',
         recentEpisodes: 'Претходне епизоде',
+        closeVideo: 'Изађи',
       },
       socialEmbed: {
         caption: {
