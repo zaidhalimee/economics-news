@@ -276,13 +276,13 @@ exports[`FooterContainer snapshots should render correctly 1`] = `
 
 @media (min-width: 15rem) and (max-width: 37.4375rem) {
   .emotion-14 {
-    grid-template-rows: repeat(5, auto);
+    grid-template-rows: repeat(4, auto);
   }
 }
 
 @media (min-width: 37.5rem) and (max-width: 62.9375rem) {
   .emotion-14 {
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(3, auto);
   }
 }
 
@@ -475,9 +475,6 @@ exports[`FooterContainer snapshots should render correctly 1`] = `
               Contact the BBC
             </a>
           </li>
-          <li
-            role="listitem"
-          />
         </ul>
         <p
           class="emotion-23"
