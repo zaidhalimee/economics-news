@@ -57,8 +57,8 @@ const Header = ({
         ) : null}
         <div
           css={[
-            isHeaderImage && !isMediaOpen && styles.textContainerWithImage,
-            !isHeaderImage && !isMediaOpen && styles.textContainerWithoutImage,
+            isHeaderImage && styles.textContainerWithImage,
+            !isHeaderImage && styles.textContainerWithoutImage,
             isMediaOpen && styles.textContainerMediaOpen,
           ]}
         >
