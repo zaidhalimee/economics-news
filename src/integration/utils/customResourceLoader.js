@@ -1,11 +1,9 @@
 const jsdom = require('jsdom');
+const dotenv = require('dotenv');
 
 class CustomResourceLoader extends jsdom.ResourceLoader {
   fetch(url, options) {
-    if (
-      url ===
-      'https://mybbc-analytics.files.bbci.co.uk/reverb-client-js/reverb-3.9.2.js'
-    ) {
+    if (url === dotenv.config().parsed.SIMORGH_REVERB_SOURCE) {
       return super.fetch(url, options);
     }
 

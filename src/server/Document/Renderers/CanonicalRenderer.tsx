@@ -2,7 +2,10 @@
 import React from 'react';
 import IfAboveIE9 from '#app/legacy/components/IfAboveIE9Comment';
 import NO_JS_CLASSNAME from '#app/lib/noJs.const';
-import { getProcessEnvAppVariables } from '#app/lib/utilities/getEnvConfig';
+import {
+  getEnvConfig,
+  getProcessEnvAppVariables,
+} from '#app/lib/utilities/getEnvConfig';
 import serialiseForScript from '#app/lib/utilities/serialiseForScript';
 import { BaseRendererProps } from './types';
 
@@ -49,10 +52,7 @@ export default function CanonicalRenderer({
             }, 5000);`,
           }}
         />
-        <script
-          async
-          src="https://mybbc-analytics.files.bbci.co.uk/reverb-client-js/reverb-3.9.2.js"
-        />
+        <script async src={`${getEnvConfig().SIMORGH_REVERB_SOURCE}`} />
 
         {isApp && <meta name="robots" content="noindex" />}
         {title}
