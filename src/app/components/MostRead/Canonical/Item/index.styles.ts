@@ -11,6 +11,7 @@ const styles = {
       color: palette.EBON,
       textDecoration: 'none',
       marginBottom: `${spacings.FULL}rem`,
+      display: 'table-cell',
 
       '&:hover, &:focus': {
         textDecoration: 'underline',
