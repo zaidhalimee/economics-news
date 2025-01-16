@@ -5395,13 +5395,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kamilkisiela/fast-url-parser@npm:^1.1.4":
-  version: 1.1.4
-  resolution: "@kamilkisiela/fast-url-parser@npm:1.1.4"
-  checksum: 10/5b79438235a81817b02b96ddc581c996961cec5b40c7d6ebabd01ac6af8d4a35a43b9b263144af25386cef92c054c3ef6b1723b09eb0d8cf7b4053781a474c5f
-  languageName: node
-  linkType: hard
-
 "@leichtgewicht/ip-codec@npm:^2.0.1":
   version: 2.0.5
   resolution: "@leichtgewicht/ip-codec@npm:2.0.5"
@@ -7392,35 +7385,44 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@whatwg-node/fetch@npm:^0.9.19":
-  version: 0.9.19
-  resolution: "@whatwg-node/fetch@npm:0.9.19"
+"@whatwg-node/disposablestack@npm:^0.0.5":
+  version: 0.0.5
+  resolution: "@whatwg-node/disposablestack@npm:0.0.5"
   dependencies:
-    "@whatwg-node/node-fetch": "npm:^0.5.16"
+    tslib: "npm:^2.6.3"
+  checksum: 10/4e47701c51e505f5d793af4ec9ec63f114c73b82dc55c55e16c9ce28a70b094f68f982ca0b054fc28fd195023551a8bd2eb4f9485a3f66230e10b38dc291b75d
+  languageName: node
+  linkType: hard
+
+"@whatwg-node/fetch@npm:^0.10.0":
+  version: 0.10.3
+  resolution: "@whatwg-node/fetch@npm:0.10.3"
+  dependencies:
+    "@whatwg-node/node-fetch": "npm:^0.7.7"
     urlpattern-polyfill: "npm:^10.0.0"
-  checksum: 10/11c31acd89bf3c2d2b718f117f0208a20f2f068520b60edc0c46957f9575c1c88d25955bb795b11e08ada15fd7d3bfbf45ebaaec9755ba3a37caf8ae5c16616e
+  checksum: 10/dca9741084bfc1c28566af02c57a1ed6030636ea14e6c8079bd7c7b4344507a96f2f4d373ef1847c8b49f9eccfcc034bf4d2876868267aa23222f9dd7856ce0d
   languageName: node
   linkType: hard
 
-"@whatwg-node/node-fetch@npm:^0.5.16":
-  version: 0.5.20
-  resolution: "@whatwg-node/node-fetch@npm:0.5.20"
+"@whatwg-node/node-fetch@npm:^0.7.7":
+  version: 0.7.7
+  resolution: "@whatwg-node/node-fetch@npm:0.7.7"
   dependencies:
-    "@kamilkisiela/fast-url-parser": "npm:^1.1.4"
+    "@whatwg-node/disposablestack": "npm:^0.0.5"
     busboy: "npm:^1.6.0"
-    fast-querystring: "npm:^1.1.1"
     tslib: "npm:^2.6.3"
-  checksum: 10/7138f8906d5d53bdee8c9cdccbd7cade279646aa7d31e73ed9fccc306f34b47c9b1aaa13fef0aada97e982e9d3f97123317aba7ce3101506d61d296f49576849
+  checksum: 10/fe88c2766fc6cbe33c5bf58fb1ce5230f499d083a154643f0c46edfa3db679e173ae13ceb20cb89087252176c42b5e9ad7b540c6979f407b0c2444cf488121d1
   languageName: node
   linkType: hard
 
-"@whatwg-node/server@npm:^0.9.34":
-  version: 0.9.46
-  resolution: "@whatwg-node/server@npm:0.9.46"
+"@whatwg-node/server@npm:^0.9.50":
+  version: 0.9.65
+  resolution: "@whatwg-node/server@npm:0.9.65"
   dependencies:
-    "@whatwg-node/fetch": "npm:^0.9.19"
+    "@whatwg-node/disposablestack": "npm:^0.0.5"
+    "@whatwg-node/fetch": "npm:^0.10.0"
     tslib: "npm:^2.6.3"
-  checksum: 10/045b44311bc9169be1f875b99f108c5a6eac14ccbd104d0484aea03b458f8cc6a16cd592f723ce0e33b761616975114128212d9fb4c13b892e029b19d3fa09c5
+  checksum: 10/5a75e19ee4261d56b26b5a15a9c41d9cf929c777b2480d4e1857f50954dfe09aef7a31f3db770e5f450a976f9cdc6deb3454b0f46eeea580f909d73790110545
   languageName: node
   linkType: hard
 
@@ -9625,10 +9627,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:^3.37.1":
-  version: 3.37.1
-  resolution: "core-js@npm:3.37.1"
-  checksum: 10/25d6bd15fcc6ffd2a0ec0be57a78ff3358b3e1fdffdb6800fc93dcfdb3854037aee41f3d101aed8c37905d107daf98218b3e7ee95cec383710d2a66a5d9e541b
+"core-js@npm:^3.38.1":
+  version: 3.40.0
+  resolution: "core-js@npm:3.40.0"
+  checksum: 10/9c7e7d2839db6c3c7b72725a3ce5edf6dd61fc771e1551e08b5622ca7da330f2f5d3c7dcd6a6e7889baa8d4cc5a909ba75b4add0d1f3da940a2a60a3e0603be5
   languageName: node
   linkType: hard
 
@@ -12033,13 +12035,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-decode-uri-component@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "fast-decode-uri-component@npm:1.0.1"
-  checksum: 10/4b6ed26974414f688be4a15eab6afa997bad4a7c8605cb1deb928b28514817b4523a1af0fa06621c6cbfedb7e5615144c2c3e7512860e3a333a31a28d537dca7
-  languageName: node
-  linkType: hard
-
 "fast-deep-equal@npm:^3.1.1, fast-deep-equal@npm:^3.1.3":
   version: 3.1.3
   resolution: "fast-deep-equal@npm:3.1.3"
@@ -12085,15 +12080,6 @@ __metadata:
   version: 2.0.6
   resolution: "fast-levenshtein@npm:2.0.6"
   checksum: 10/eb7e220ecf2bab5159d157350b81d01f75726a4382f5a9266f42b9150c4523b9795f7f5d9fbbbeaeac09a441b2369f05ee02db48ea938584205530fe5693cfe1
-  languageName: node
-  linkType: hard
-
-"fast-querystring@npm:^1.1.1":
-  version: 1.1.2
-  resolution: "fast-querystring@npm:1.1.2"
-  dependencies:
-    fast-decode-uri-component: "npm:^1.0.1"
-  checksum: 10/981da9b914f2b639dc915bdfa4f34ab028b967d428f02fbd293d99258593fde69c48eea73dfa03ced088268e0a8045c642e8debcd9b4821ebd125e130a0430c7
   languageName: node
   linkType: hard
 
@@ -16621,16 +16607,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-test-api-route-handler@npm:^4.0.8":
-  version: 4.0.8
-  resolution: "next-test-api-route-handler@npm:4.0.8"
+"next-test-api-route-handler@npm:4.0.14":
+  version: 4.0.14
+  resolution: "next-test-api-route-handler@npm:4.0.14"
   dependencies:
-    "@whatwg-node/server": "npm:^0.9.34"
-    cookie: "npm:^0.6.0"
-    core-js: "npm:^3.37.1"
+    "@whatwg-node/server": "npm:^0.9.50"
+    cookie: "npm:^1.0.1"
+    core-js: "npm:^3.38.1"
   peerDependencies:
     next: ">=9"
-  checksum: 10/900eed00f4e3f3ff2ee58299cb374b8f22c993939960ccb4722dc6163882563409742dd3208bd59227e2cee1bead33edd29e698ed751ee02b9275ba8c8d6e758
+  checksum: 10/a42445ebccda7ec3fad250f514828effbf884dfec7519ff8dc53f881b348783c29c4f8e9102ae5c15c11e6877c2b9cd000ac3e4026781336d2b12732167e5b24
   languageName: node
   linkType: hard
 
@@ -19488,7 +19474,7 @@ __metadata:
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     next: "npm:14.2.21"
-    next-test-api-route-handler: "npm:^4.0.8"
+    next-test-api-route-handler: "npm:4.0.14"
     npm-run-all2: "npm:7.0.2"
     ts-node: "npm:^10.9.2"
   languageName: unknown
