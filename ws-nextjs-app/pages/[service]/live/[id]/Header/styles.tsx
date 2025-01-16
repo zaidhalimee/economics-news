@@ -42,6 +42,12 @@ export default {
         width: '100%',
       },
     }),
+  textContainerMediaOpen: ({ mq }: Theme) =>
+    css({
+      [mq.GROUP_4_MIN_WIDTH]: {
+        maxWidth: '100%',
+      },
+    }),
   textContainerWithoutImage: ({ mq, gridWidths, spacings }: Theme) =>
     css({
       position: 'relative',

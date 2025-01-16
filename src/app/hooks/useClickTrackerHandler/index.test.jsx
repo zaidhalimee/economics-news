@@ -380,6 +380,7 @@ describe('Click tracking', () => {
       optimizely: {
         track: mockOptimizelyTrack,
         user: { attributes: mockAttributes, id: mockUserId },
+        getVariation: jest.fn(() => 'off'),
       },
       optimizelyMetricNameOverride: 'myEvent',
     };
@@ -424,6 +425,7 @@ describe('Click tracking', () => {
       optimizely: {
         track: mockOptimizelyTrack,
         user: { attributes: mockAttributes, id: mockUserId },
+        getVariation: jest.fn(() => 'off'),
       },
     };
     const {

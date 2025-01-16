@@ -85,6 +85,13 @@ export const service: DefaultServiceConfig = {
         audioPlayer: 'Audio player',
         videoPlayer: 'Video player',
       },
+      articlePage: {
+        jumpToTitle: {
+          variation_1: 'پر جائیں',
+          variation_2: 'بی بی سی نیوز اردو کی مدد سے مزید جانیے',
+          variation_3: 'بی بی سی اردو نیوز سے مزید',
+        },
+      },
       liveExperiencePage: {
         liveLabel: 'لائیو',
         liveCoverage: 'لائیو کوریج',
@@ -395,7 +402,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'بی بی سی نیوز دیگر زبانوں میں',
         },
         {
           id: 'COOKIE_SETTINGS',
