@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useContext } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { jsx } from '@emotion/react';
 import { ServiceContext } from '#contexts/ServiceContext';
 import { RequestContext } from '#app/contexts/RequestContext';
@@ -26,6 +26,12 @@ const MaskedImage = ({
 }) => {
   const { dir } = useContext(ServiceContext);
   const { isAmp } = useContext(RequestContext);
+  const divRef = useRef<HTMLDivElement | null>(null);
+  const [divHeight, setDivHeight] = useState<number | null>(null);
+
+  useEffect(() => {
+    setDivHeight(divRef.current?.clientHeight ?? null);
+  });
 
   const isRtl = dir === 'rtl';
 
@@ -44,10 +50,11 @@ const MaskedImage = ({
   return (
     <div
       css={[
-        styles.maskedImageWrapper,
+        styles.maskedImageWrapper(divHeight),
         isRtl ? styles.linearGradientRtl : styles.linearGradientLtr,
         hideImage && styles.hideImage,
       ]}
+      ref={divRef}
     >
       <Image
         alt={altText}
