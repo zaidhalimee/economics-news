@@ -237,7 +237,6 @@ describe('liveMediaStream', () => {
     const eventTrackingData = { componentName: 'live-header-media' };
 
     describe('Click tracking', () => {
-      // const clickTrackerSpy = jest.spyOn(clickTracking, 'default');
       const clickTrackerSpy = jest.spyOn(clickTracking, 'default');
 
       it('should register click tracker', () => {
