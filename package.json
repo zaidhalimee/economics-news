@@ -106,7 +106,7 @@
     "aws-embedded-metrics": "4.2.0",
     "compression": "1.7.4",
     "core-js": "3.39.0",
-    "dotenv": "16.4.5",
+    "dotenv": "16.4.7",
     "express": "4.21.1",
     "express-static-gzip": "2.1.8",
     "helmet": "8.0.0",
