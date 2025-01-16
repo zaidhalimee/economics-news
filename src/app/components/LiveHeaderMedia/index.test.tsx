@@ -173,7 +173,7 @@ describe('liveMediaStream', () => {
       // const clickTrackerSpy = jest.spyOn(clickTracking, 'default');
       const clickTrackerSpy = jest.spyOn(clickTracking, 'default');
 
-      it('should register click tracker if event tracking data provided', () => {
+      it('should register click tracker', () => {
         render(
           <LiveHeaderMedia
             mediaCollection={fixtureData as MediaCollection[]}
