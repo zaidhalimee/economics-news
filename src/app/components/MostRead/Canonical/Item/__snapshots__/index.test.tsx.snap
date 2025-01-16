@@ -209,6 +209,7 @@ exports[`MostReadItemWrapper should render ltr correctly with 10 items 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin-bottom: 0.5rem;
+  display: table-cell;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -508,7 +509,7 @@ exports[`MostReadItemWrapper should render ltr correctly with 10 items 1`] = `
         dir="ltr"
       >
         <a
-          class="focusIndicatorDisplayTableCell emotion-6"
+          class="emotion-6"
           href="https://www.bbc.com/pidgin/articles/cwl08rd38l6o"
         >
           Tins you need to know about Babcock University
@@ -539,7 +540,7 @@ exports[`MostReadItemWrapper should render ltr correctly with 10 items 1`] = `
         dir="ltr"
       >
         <a
-          class="focusIndicatorDisplayTableCell emotion-6"
+          class="emotion-6"
           href="https://www.bbc.com/pidgin/articles/cwl08rd38l6o"
         >
           Tins you need to know about Babcock University
@@ -570,7 +571,7 @@ exports[`MostReadItemWrapper should render ltr correctly with 10 items 1`] = `
         dir="ltr"
       >
         <a
-          class="focusIndicatorDisplayTableCell emotion-6"
+          class="emotion-6"
           href="https://www.bbc.com/pidgin/articles/cwl08rd38l6o"
         >
           Tins you need to know about Babcock University
@@ -601,7 +602,7 @@ exports[`MostReadItemWrapper should render ltr correctly with 10 items 1`] = `
         dir="ltr"
       >
         <a
-          class="focusIndicatorDisplayTableCell emotion-6"
+          class="emotion-6"
           href="https://www.bbc.com/pidgin/articles/cwl08rd38l6o"
         >
           Tins you need to know about Babcock University
@@ -632,7 +633,7 @@ exports[`MostReadItemWrapper should render ltr correctly with 10 items 1`] = `
         dir="ltr"
       >
         <a
-          class="focusIndicatorDisplayTableCell emotion-6"
+          class="emotion-6"
           href="https://www.bbc.com/pidgin/articles/cwl08rd38l6o"
         >
           Tins you need to know about Babcock University
@@ -663,7 +664,7 @@ exports[`MostReadItemWrapper should render ltr correctly with 10 items 1`] = `
         dir="ltr"
       >
         <a
-          class="focusIndicatorDisplayTableCell emotion-6"
+          class="emotion-6"
           href="https://www.bbc.com/pidgin/articles/cwl08rd38l6o"
         >
           Tins you need to know about Babcock University
@@ -694,7 +695,7 @@ exports[`MostReadItemWrapper should render ltr correctly with 10 items 1`] = `
         dir="ltr"
       >
         <a
-          class="focusIndicatorDisplayTableCell emotion-6"
+          class="emotion-6"
           href="https://www.bbc.com/pidgin/articles/cwl08rd38l6o"
         >
           Tins you need to know about Babcock University
@@ -725,7 +726,7 @@ exports[`MostReadItemWrapper should render ltr correctly with 10 items 1`] = `
         dir="ltr"
       >
         <a
-          class="focusIndicatorDisplayTableCell emotion-6"
+          class="emotion-6"
           href="https://www.bbc.com/pidgin/articles/cwl08rd38l6o"
         >
           Tins you need to know about Babcock University
@@ -756,7 +757,7 @@ exports[`MostReadItemWrapper should render ltr correctly with 10 items 1`] = `
         dir="ltr"
       >
         <a
-          class="focusIndicatorDisplayTableCell emotion-6"
+          class="emotion-6"
           href="https://www.bbc.com/pidgin/articles/cwl08rd38l6o"
         >
           Tins you need to know about Babcock University
@@ -787,7 +788,7 @@ exports[`MostReadItemWrapper should render ltr correctly with 10 items 1`] = `
         dir="ltr"
       >
         <a
-          class="focusIndicatorDisplayTableCell emotion-6"
+          class="emotion-6"
           href="https://www.bbc.com/pidgin/articles/cwl08rd38l6o"
         >
           Tins you need to know about Babcock University
@@ -1007,6 +1008,7 @@ exports[`MostReadItemWrapper should render rtl correctly with 10 items 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin-bottom: 0.5rem;
+  display: table-cell;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -1306,7 +1308,7 @@ exports[`MostReadItemWrapper should render rtl correctly with 10 items 1`] = `
         dir="rtl"
       >
         <a
-          class="focusIndicatorDisplayTableCell emotion-6"
+          class="emotion-6"
           href="https://www.bbc.com/persian/articles/cej3lzd5e0go"
         >
           در این جشنواره برای نخستین بار از کارگران افغانستان در شهر تهران تقدیر شد
@@ -1337,7 +1339,7 @@ exports[`MostReadItemWrapper should render rtl correctly with 10 items 1`] = `
         dir="rtl"
       >
         <a
-          class="focusIndicatorDisplayTableCell emotion-6"
+          class="emotion-6"
           href="https://www.bbc.com/persian/articles/cej3lzd5e0go"
         >
           در این جشنواره برای نخستین بار از کارگران افغانستان در شهر تهران تقدیر شد
@@ -1368,7 +1370,7 @@ exports[`MostReadItemWrapper should render rtl correctly with 10 items 1`] = `
         dir="rtl"
       >
         <a
-          class="focusIndicatorDisplayTableCell emotion-6"
+          class="emotion-6"
           href="https://www.bbc.com/persian/articles/cej3lzd5e0go"
         >
           در این جشنواره برای نخستین بار از کارگران افغانستان در شهر تهران تقدیر شد
@@ -1399,7 +1401,7 @@ exports[`MostReadItemWrapper should render rtl correctly with 10 items 1`] = `
         dir="rtl"
       >
         <a
-          class="focusIndicatorDisplayTableCell emotion-6"
+          class="emotion-6"
           href="https://www.bbc.com/persian/articles/cej3lzd5e0go"
         >
           در این جشنواره برای نخستین بار از کارگران افغانستان در شهر تهران تقدیر شد
@@ -1430,7 +1432,7 @@ exports[`MostReadItemWrapper should render rtl correctly with 10 items 1`] = `
         dir="rtl"
       >
         <a
-          class="focusIndicatorDisplayTableCell emotion-6"
+          class="emotion-6"
           href="https://www.bbc.com/persian/articles/cej3lzd5e0go"
         >
           در این جشنواره برای نخستین بار از کارگران افغانستان در شهر تهران تقدیر شد
@@ -1461,7 +1463,7 @@ exports[`MostReadItemWrapper should render rtl correctly with 10 items 1`] = `
         dir="rtl"
       >
         <a
-          class="focusIndicatorDisplayTableCell emotion-6"
+          class="emotion-6"
           href="https://www.bbc.com/persian/articles/cej3lzd5e0go"
         >
           در این جشنواره برای نخستین بار از کارگران افغانستان در شهر تهران تقدیر شد
@@ -1492,7 +1494,7 @@ exports[`MostReadItemWrapper should render rtl correctly with 10 items 1`] = `
         dir="rtl"
       >
         <a
-          class="focusIndicatorDisplayTableCell emotion-6"
+          class="emotion-6"
           href="https://www.bbc.com/persian/articles/cej3lzd5e0go"
         >
           در این جشنواره برای نخستین بار از کارگران افغانستان در شهر تهران تقدیر شد
@@ -1523,7 +1525,7 @@ exports[`MostReadItemWrapper should render rtl correctly with 10 items 1`] = `
         dir="rtl"
       >
         <a
-          class="focusIndicatorDisplayTableCell emotion-6"
+          class="emotion-6"
           href="https://www.bbc.com/persian/articles/cej3lzd5e0go"
         >
           در این جشنواره برای نخستین بار از کارگران افغانستان در شهر تهران تقدیر شد
@@ -1554,7 +1556,7 @@ exports[`MostReadItemWrapper should render rtl correctly with 10 items 1`] = `
         dir="rtl"
       >
         <a
-          class="focusIndicatorDisplayTableCell emotion-6"
+          class="emotion-6"
           href="https://www.bbc.com/persian/articles/cej3lzd5e0go"
         >
           در این جشنواره برای نخستین بار از کارگران افغانستان در شهر تهران تقدیر شد
@@ -1585,7 +1587,7 @@ exports[`MostReadItemWrapper should render rtl correctly with 10 items 1`] = `
         dir="rtl"
       >
         <a
-          class="focusIndicatorDisplayTableCell emotion-6"
+          class="emotion-6"
           href="https://www.bbc.com/persian/articles/cej3lzd5e0go"
         >
           در این جشنواره برای نخستین بار از کارگران افغانستان در شهر تهران تقدیر شد
@@ -1620,6 +1622,7 @@ exports[`MostReadLink should render ltr correctly 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin-bottom: 0.5rem;
+  display: table-cell;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -1681,7 +1684,7 @@ exports[`MostReadLink should render ltr correctly 1`] = `
     dir="ltr"
   >
     <a
-      class="focusIndicatorDisplayTableCell emotion-1"
+      class="emotion-1"
       href="https://www.bbc.com/pidgin/articles/cwl08rd38l6o"
     >
       Tins you need to know about Babcock University
@@ -1714,6 +1717,7 @@ exports[`MostReadLink should render rtl correctly 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin-bottom: 0.5rem;
+  display: table-cell;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -1775,7 +1779,7 @@ exports[`MostReadLink should render rtl correctly 1`] = `
     dir="rtl"
   >
     <a
-      class="focusIndicatorDisplayTableCell emotion-1"
+      class="emotion-1"
       href="https://www.bbc.com/persian/articles/cej3lzd5e0go"
     >
       در این جشنواره برای نخستین بار از کارگران افغانستان در شهر تهران تقدیر شد
@@ -1808,6 +1812,7 @@ exports[`MostReadLink should render with last updated date correctly 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin-bottom: 0.5rem;
+  display: table-cell;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -1897,7 +1902,7 @@ exports[`MostReadLink should render with last updated date correctly 1`] = `
     dir="ltr"
   >
     <a
-      class="focusIndicatorDisplayTableCell emotion-1"
+      class="emotion-1"
       href="https://www.bbc.com/pidgin/articles/cwl08rd38l6o"
     >
       Tins you need to know about Babcock University
