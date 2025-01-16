@@ -482,7 +482,7 @@ export const buildReverbAnalyticsModel = ({
       },
       user: {
         hashedId,
-        isSignedIn: !!hashedId,
+        isSignedIn: false,
       },
     },
     eventDetails,
