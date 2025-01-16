@@ -1,6 +1,5 @@
 /** @jsx jsx */
 /* @jsxFrag React.Fragment */
-
 import { jsx } from '@emotion/react';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
@@ -97,12 +96,14 @@ const AdvertTagLoader = () => {
 type MediaContainerProps = {
   playerConfig: PlayerConfig;
   showAds: boolean;
+  uniqueId?: string;
   noJsMessage?: string;
 };
 
 const MediaContainer = ({
   playerConfig,
   showAds,
+  uniqueId,
   noJsMessage,
 }: MediaContainerProps) => {
   const playerElementRef = useRef<HTMLDivElement>(null);
@@ -117,6 +118,15 @@ const MediaContainer = ({
           );
 
           mediaPlayer.load();
+
+          if (uniqueId != null) {
+            const { mediaPlayers } = window;
+            if (mediaPlayers == null) {
+              window.mediaPlayers = { [uniqueId]: mediaPlayer };
+            } else {
+              mediaPlayers[uniqueId] = mediaPlayer;
+            }
+          }
 
           if (showAds) {
             const adTag = await window.dotcom.ads.getAdTag();
@@ -149,7 +159,7 @@ const MediaContainer = ({
     } catch (error) {
       logger.error(MEDIA_PLAYER_STATUS, error);
     }
-  }, [playerConfig, showAds]);
+  }, [playerConfig, showAds, uniqueId]);
 
   return (
     <div
@@ -172,9 +182,10 @@ type Props = {
   blocks: MediaBlock[];
   className?: string;
   embedded?: boolean;
+  uniqueId?: string;
 };
 
-const MediaLoader = ({ blocks, className, embedded }: Props) => {
+const MediaLoader = ({ blocks, className, embedded, uniqueId }: Props) => {
   const { lang, translations } = useContext(ServiceContext);
   const { pageIdentifier } = useContext(EventTrackingContext);
   const { enabled: adsEnabled } = useToggle('ads');
@@ -289,6 +300,7 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
               <MediaContainer
                 playerConfig={playerConfig}
                 showAds={showAds}
+                uniqueId={uniqueId}
                 noJsMessage={noJsMessage}
               />
             )}

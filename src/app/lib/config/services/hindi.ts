@@ -88,7 +88,11 @@ export const service: DefaultServiceConfig = {
         videoPlayer: 'वीडियो प्लेयर',
       },
       articlePage: {
-        jumpTo: 'इस पर जाएं',
+        jumpToTitle: {
+          variation_1: 'इस पर जाएं',
+          variation_2: 'बीबीसी न्यूज़ हिंदी  से और अधिक जानें',
+          variation_3: 'बीबीसी न्यूज़ हिंदी से और ख़बरें पढ़ें',
+        },
       },
       liveExperiencePage: {
         liveLabel: 'लाइव',
