@@ -11,6 +11,7 @@ import { RequestContext } from '#app/contexts/RequestContext';
 import useViewTracker from '#app/hooks/useViewTracker';
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
+import { regexPunctuationSymbols } from '#app/lib/utilities/idSanitiser';
 import styles from './index.styles';
 import WARNING_LEVELS from '../MediaLoader/configs/warningLevels';
 import VisuallyHiddenText from '../VisuallyHiddenText';
@@ -89,6 +90,8 @@ const LiveHeaderMedia = ({
     warningLevel = WARNING_LEVELS[highestWarning.warning_code];
   }
 
+  const titleHasPunctuation = short.slice(-1).match(regexPunctuationSymbols);
+
   const clickToggleMedia = () => {
     const mediaPlayer = window.mediaPlayers?.[vpid];
     if (showMedia) {
@@ -125,24 +128,14 @@ const LiveHeaderMedia = ({
       >
         {showMedia && <VisuallyHiddenText>{closeVideo}, </VisuallyHiddenText>}
         <Text size="pica" fontVariant="sansBold" as="span">
-          {short},{' '}
+          {short}
+          {!titleHasPunctuation && ','}
         </Text>
         <Text size="pica" fontVariant="sansRegular" as="span">
+          {' '}
           {networkName}
         </Text>
-        <VisuallyHiddenText>, </VisuallyHiddenText>
       </Text>
-      {warnings && (
-        <Text
-          as="span"
-          size="brevier"
-          fontVariant="sansRegular"
-          css={styles.guidanceMessage}
-          data-testid="warning-message"
-        >
-          {warnings.warning_text}
-        </Text>
-      )}
     </>
   );
 
@@ -163,7 +156,21 @@ const LiveHeaderMedia = ({
             styles.mediaButton,
           ]}
         >
-          <div>{description}</div>
+          <div>
+            {description}
+            {warnings && (
+              <Text
+                as="span"
+                size="brevier"
+                fontVariant="sansRegular"
+                css={styles.guidanceMessage}
+                data-testid="warning-message"
+              >
+                <VisuallyHiddenText>, </VisuallyHiddenText>
+                {warnings.warning_text}
+              </Text>
+            )}
+          </div>
           {!showMedia && (
             <div className="hoverStylesCTA" css={styles.watchLiveCTA}>
               <Text
@@ -172,6 +179,7 @@ const LiveHeaderMedia = ({
                 fontVariant="sansBold"
               >
                 <Play />
+                {!warnings && <VisuallyHiddenText>, </VisuallyHiddenText>}
                 {watch}
               </Text>
             </div>
