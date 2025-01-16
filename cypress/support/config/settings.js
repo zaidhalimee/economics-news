@@ -4429,24 +4429,15 @@ module.exports = () => ({
       liveRadio: {
         environments: {
           live: {
-            paths: [
-              '/persian/bbc_persian_radio/liveradio',
-              '/persian/bbc_dari_radio/liveradio',
-            ],
+            paths: ['/persian/bbc_dari_radio/liveradio'],
             enabled: true,
           },
           test: {
-            paths: [
-              '/persian/bbc_persian_radio/liveradio?renderer_env=live',
-              '/persian/bbc_dari_radio/liveradio?renderer_env=live',
-            ],
+            paths: ['/persian/bbc_dari_radio/liveradio?renderer_env=live'],
             enabled: true,
           },
           local: {
-            paths: [
-              '/persian/bbc_persian_radio/liveradio',
-              '/persian/bbc_dari_radio/liveradio',
-            ],
+            paths: ['/persian/bbc_dari_radio/liveradio'],
             enabled: true,
           },
         },
