@@ -245,7 +245,7 @@
     "stream-browserify": "3.0.0",
     "strip-ansi": "7.1.0",
     "supertest": "7.0.0",
-    "terser-webpack-plugin": "5.3.10",
+    "terser-webpack-plugin": "5.3.11",
     "timemachine": "0.3.2",
     "ts-jest": "29.2.5",
     "ts-loader": "9.5.2",
