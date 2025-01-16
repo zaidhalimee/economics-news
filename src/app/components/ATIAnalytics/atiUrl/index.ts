@@ -446,8 +446,6 @@ export const buildReverbAnalyticsModel = ({
     .map(({ campaignName }) => campaignName)
     .join('~');
 
-  const hashedId = getAtUserId();
-
   const eventDetails = {
     eventName: 'pageView',
   };
@@ -481,7 +479,7 @@ export const buildReverbAnalyticsModel = ({
         },
       },
       user: {
-        hashedId,
+        hashedId: getAtUserId(),
         isSignedIn: false,
       },
     },
