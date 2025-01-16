@@ -5684,17 +5684,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@optimizely/react-sdk@npm:3.2.2":
-  version: 3.2.2
-  resolution: "@optimizely/react-sdk@npm:3.2.2"
+"@optimizely/react-sdk@npm:3.2.3":
+  version: 3.2.3
+  resolution: "@optimizely/react-sdk@npm:3.2.3"
   dependencies:
     "@optimizely/optimizely-sdk": "npm:^5.3.4"
     hoist-non-react-statics: "npm:^3.3.2"
-    prop-types: "npm:^15.8.1"
     utility-types: "npm:^2.1.0 || ^3.0.0"
   peerDependencies:
     react: ">=16.8.0"
-  checksum: 10/3b3435d0582a59c14a8376c85bb13ee887025fdc69ad5f058cd358930f8341619ed59def5d4f05cda9c6f76037c755dc2ff3c204bc47d284eceac67642ba76fc
+  checksum: 10/d2ee8bbfd29d6ad084415e316af1ba7618ffabc3429f46e0517969106ea73a16dbac47f59ffa7586c95f235a7c257995afc10d31cfb9d45aaf4097d050f7653b
   languageName: node
   linkType: hard
 
@@ -19561,7 +19560,7 @@ __metadata:
     "@next/swc-linux-x64-gnu": "npm:14.2.14"
     "@next/swc-win32-arm64-msvc": "npm:14.2.14"
     "@next/swc-win32-x64-msvc": "npm:14.2.14"
-    "@optimizely/react-sdk": "npm:3.2.2"
+    "@optimizely/react-sdk": "npm:3.2.3"
     "@storybook/addon-a11y": "npm:8.4.4"
     "@storybook/addon-backgrounds": "npm:8.4.4"
     "@storybook/addon-controls": "npm:8.4.4"
