@@ -9794,9 +9794,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress-terminal-report@npm:7.0.4":
-  version: 7.0.4
-  resolution: "cypress-terminal-report@npm:7.0.4"
+"cypress-terminal-report@npm:7.1.0":
+  version: 7.1.0
+  resolution: "cypress-terminal-report@npm:7.1.0"
   dependencies:
     chalk: "npm:^4.0.0"
     compare-versions: "npm:^6.1.1"
@@ -9805,7 +9805,7 @@ __metadata:
     superstruct: "npm:0.14.2"
   peerDependencies:
     cypress: ">=10.0.0"
-  checksum: 10/253e01855eb56b842e572e02635521e095e4ca250c4b8c03155d3a1953dfdcc9e496246a118642b9b7ea9137f67debaf6039a2081f377c39a1a483d17038fecd
+  checksum: 10/c8a01e618e04189e66629b4f875ef85c60b0b68b036e53ed4108f51cb004a995151f551ba84cc0e6feefa572ef8328c11a656cdb8bd90f4a54cfd3254f2b6c85
   languageName: node
   linkType: hard
 
@@ -19401,7 +19401,7 @@ __metadata:
     babel-plugin-transform-rename-import: "npm:2.3.0"
     cypress: "npm:13.17.0"
     cypress-axe: "npm:^1.5.0"
-    cypress-terminal-report: "npm:7.0.4"
+    cypress-terminal-report: "npm:7.1.0"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     next: "npm:14.2.21"
@@ -19503,7 +19503,7 @@ __metadata:
     cypress: "npm:13.17.0"
     cypress-axe: "npm:1.5.0"
     cypress-multi-reporters: "npm:2.0.4"
-    cypress-terminal-report: "npm:7.0.4"
+    cypress-terminal-report: "npm:7.1.0"
     depcheck: "npm:1.4.7"
     dotenv: "npm:16.4.7"
     eslint: "npm:7.32.0"
