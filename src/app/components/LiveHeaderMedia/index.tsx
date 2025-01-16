@@ -25,7 +25,6 @@ type WarningItem = {
 
 type LiveHeaderMediaProps = {
   mediaCollection: MediaCollection[] | null;
-  eventTrackingData?: EventTrackingMetadata;
   clickCallback?: () => void;
 };
 
@@ -38,14 +37,16 @@ const MemoizedMediaPlayer = memo(MediaLoader);
 
 const LiveHeaderMedia = ({
   mediaCollection,
-  eventTrackingData,
   clickCallback = () => null,
 }: LiveHeaderMediaProps) => {
-  const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
   const { translations } = useContext(ServiceContext);
   const { isLite } = useContext(RequestContext);
   const [showMedia, setShowMedia] = useState(false);
 
+  const eventTrackingData: EventTrackingMetadata = {
+    componentName: 'live-header-media',
+  };
+  const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
   const viewRef = useViewTracker(eventTrackingData);
 
   let warningLevel = WARNING_LEVELS.NO_WARNING;

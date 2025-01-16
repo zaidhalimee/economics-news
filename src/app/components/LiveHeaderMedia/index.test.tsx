@@ -13,6 +13,10 @@ import * as clickTracking from '../../hooks/useClickTrackerHandler';
 const fixtureData = mundoLiveFixture.data.mediaCollections;
 
 describe('liveMediaStream', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('Displays all components on intial render.', () => {
     const { container } = render(
       <LiveHeaderMedia mediaCollection={fixtureData as MediaCollection[]} />,
@@ -163,58 +167,29 @@ describe('liveMediaStream', () => {
   });
 
   describe('Event Tracking', () => {
-    beforeEach(() => {
-      jest.clearAllMocks();
-    });
     const eventTrackingData = { componentName: 'live-header-media' };
 
     describe('Click tracking', () => {
+      // const clickTrackerSpy = jest.spyOn(clickTracking, 'default');
       const clickTrackerSpy = jest.spyOn(clickTracking, 'default');
 
-      it('should not be enabled if event tracking data not provided', () => {
-        render(
-          <LiveHeaderMedia
-            mediaCollection={fixtureData as MediaCollection[]}
-          />,
-        );
-        const playCloseButton = screen.getByTestId('watch-now-close-button');
-        fireEvent.click(playCloseButton);
-        expect(clickTrackerSpy).toHaveBeenCalledWith(undefined);
-      });
       it('should register click tracker if event tracking data provided', () => {
         render(
           <LiveHeaderMedia
             mediaCollection={fixtureData as MediaCollection[]}
-            eventTrackingData={{
-              componentName: 'live-header-media',
-            }}
           />,
         );
         expect(clickTrackerSpy).toHaveBeenCalledWith(eventTrackingData);
-        expect(clickTrackerSpy).toHaveBeenCalledTimes(1);
       });
     });
 
     describe('View tracking', () => {
       const viewTrackerSpy = jest.spyOn(viewTracking, 'default');
 
-      it('should not be enabled if event tracking data not provided', () => {
-        render(
-          <LiveHeaderMedia
-            mediaCollection={fixtureData as MediaCollection[]}
-          />,
-        );
-
-        expect(viewTrackerSpy).toHaveBeenCalledWith(undefined);
-      });
-
       it('should register view tracker if event tracking data provided', () => {
         render(
           <LiveHeaderMedia
             mediaCollection={fixtureData as MediaCollection[]}
-            eventTrackingData={{
-              componentName: 'live-header-media',
-            }}
           />,
         );
 

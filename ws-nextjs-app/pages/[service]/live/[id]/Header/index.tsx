@@ -93,9 +93,6 @@ const Header = ({
           {mediaCollections && (
             <LiveHeaderMedia
               mediaCollection={mediaCollections}
-              eventTrackingData={{
-                componentName: 'live-header-media',
-              }}
               clickCallback={watchVideoClickHandler}
             />
           )}
