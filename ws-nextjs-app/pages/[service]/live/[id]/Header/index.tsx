@@ -53,13 +53,13 @@ const Header = ({
             imageUrl={imageUrl}
             imageUrlTemplate={imageUrlTemplate}
             imageWidth={imageWidth}
+            hideImage={isMediaOpen}
           />
         ) : null}
         <div
           css={[
             isHeaderImage && styles.textContainerWithImage,
             !isHeaderImage && styles.textContainerWithoutImage,
-            isMediaOpen && styles.textContainerMediaOpen,
           ]}
         >
           <Heading
@@ -90,6 +90,8 @@ const Header = ({
               {description}
             </Text>
           )}
+        </div>
+        <div css={[styles.liveMediaClose, isMediaOpen && styles.liveMediaOpen]}>
           {mediaCollections && (
             <LiveHeaderMedia
               mediaCollection={mediaCollections}

@@ -42,7 +42,18 @@ export default {
         width: '100%',
       },
     }),
-  textContainerMediaOpen: ({ mq }: Theme) =>
+  liveMediaClose: ({ mq, spacings }: Theme) =>
+    css({
+      padding: `${spacings.FULL}rem ${spacings.FULL}rem ${spacings.DOUBLE}rem`,
+      [mq.GROUP_2_MIN_WIDTH]: {
+        padding: `${spacings.FULL}rem ${spacings.DOUBLE}rem ${spacings.DOUBLE}rem`,
+      },
+      [mq.GROUP_4_MIN_WIDTH]: {
+        padding: `0 ${spacings.DOUBLE}rem ${spacings.TRIPLE}rem`,
+        maxWidth: '50%', // determines width of text overlay.
+      },
+    }),
+  liveMediaOpen: ({ mq }: Theme) =>
     css({
       [mq.GROUP_4_MIN_WIDTH]: {
         maxWidth: '100%',
@@ -57,7 +68,6 @@ export default {
       [mq.GROUP_2_MIN_WIDTH]: {
         padding: `${spacings.DOUBLE}rem`,
       },
-
       [mq.GROUP_4_MIN_WIDTH]: {
         paddingTop: `${spacings.TRIPLE}rem`,
         paddingBottom: `${spacings.QUADRUPLE}rem`,
@@ -71,12 +81,7 @@ export default {
         padding: `${spacings.FULL}rem ${spacings.DOUBLE}rem ${spacings.DOUBLE}rem`,
       },
       [mq.GROUP_4_MIN_WIDTH]: {
-        padding: `${spacings.DOUBLE}rem`,
-        minHeight: `${pixelsToRem(440)}rem`, // calculation includes padding
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
+        padding: `${pixelsToRem(40)}rem ${spacings.DOUBLE}rem 0`,
         maxWidth: '50%', // determines width of text overlay.
       },
     }),
