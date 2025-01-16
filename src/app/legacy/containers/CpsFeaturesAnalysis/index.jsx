@@ -138,7 +138,7 @@ const PromoComponent = ({ promo, dir = 'ltr', sendOptimizelyEvents }) => {
 };
 
 const FeaturesAnalysis = ({
-  content = [],
+  content,
   parentColumns,
   sectionLabelBackground,
   sendOptimizelyEvents,
