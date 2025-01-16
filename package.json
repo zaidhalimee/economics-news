@@ -237,7 +237,7 @@
     "minimist": "1.2.8",
     "mkdirp": "3.0.1",
     "mocha-junit-reporter": "2.2.1",
-    "npm-run-all2": "7.0.1",
+    "npm-run-all2": "7.0.2",
     "prettier": "3.3.3",
     "retry": "0.13.1",
     "start-server-nestjs-webpack-plugin": "2.2.5",
