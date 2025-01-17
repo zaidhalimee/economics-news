@@ -71,8 +71,6 @@ export default function App({ Component, pageProps }: Props) {
     isUK,
   } = pageProps;
 
-  if (!service) return null;
-
   const { metadata: { atiAnalytics = undefined } = {} } = pageData ?? {};
 
   const RenderChildrenOrError =
