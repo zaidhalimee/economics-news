@@ -14,14 +14,14 @@ import {
   MEDIA_ASSET_PAGE,
   PHOTO_GALLERY_PAGE,
 } from '#app/routes/utils/pageTypes';
-import {
-  isOptimoIdCheck,
-  isCpsIdCheck,
-} from '#app/routes/utils/constructPageFetchUrl';
+// import {
+//   isOptimoIdCheck,
+//   isCpsIdCheck,
+// } from '#app/routes/utils/constructPageFetchUrl';
 import { PageTypes } from '#app/models/types/global';
 import handleAvRoute from './av-embeds/handleAvRoute';
 import { AvEmbedsPageProps } from './av-embeds/types';
-import handleArticleRoute from './articles/handleArticleRoute';
+// import handleArticleRoute from './articles/handleArticleRoute';
 import { ArticlePageProps } from './articles/types';
 
 // Dynamic imports of page layouts
@@ -72,9 +72,9 @@ export const getServerSideProps: GetServerSideProps = async context => {
   }
 
   // Route to Articles (Optimo + CPS)
-  if (isOptimoIdCheck(resolvedUrl) || isCpsIdCheck(resolvedUrl)) {
-    return handleArticleRoute(context);
-  }
+  // if (isOptimoIdCheck(resolvedUrl) || isCpsIdCheck(resolvedUrl)) {
+  //   return handleArticleRoute(context);
+  // }
 
   const isLite = isLitePath(resolvedUrl);
 
