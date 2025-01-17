@@ -1,6 +1,5 @@
 /** @jsx jsx */
 /* @jsxFrag React.Fragment */
-
 import { jsx } from '@emotion/react';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
@@ -99,9 +98,14 @@ const AdvertTagLoader = () => {
 type MediaContainerProps = {
   playerConfig: PlayerConfig;
   showAds: boolean;
+  uniqueId?: string;
 };
 
-const MediaContainer = ({ playerConfig, showAds }: MediaContainerProps) => {
+const MediaContainer = ({
+  playerConfig,
+  showAds,
+  uniqueId,
+}: MediaContainerProps) => {
   const playerElementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -114,6 +118,15 @@ const MediaContainer = ({ playerConfig, showAds }: MediaContainerProps) => {
           );
 
           mediaPlayer.load();
+
+          if (uniqueId != null) {
+            const { mediaPlayers } = window;
+            if (mediaPlayers == null) {
+              window.mediaPlayers = { [uniqueId]: mediaPlayer };
+            } else {
+              mediaPlayers[uniqueId] = mediaPlayer;
+            }
+          }
 
           if (showAds) {
             const adTag = await window.dotcom.ads.getAdTag();
@@ -146,7 +159,7 @@ const MediaContainer = ({ playerConfig, showAds }: MediaContainerProps) => {
     } catch (error) {
       logger.error(MEDIA_PLAYER_STATUS, error);
     }
-  }, [playerConfig, showAds]);
+  }, [playerConfig, showAds, uniqueId]);
 
   return (
     <div
@@ -166,9 +179,10 @@ type Props = {
   className?: string;
   embedded?: boolean;
   forceStage?: Stages;
+  uniqueId?: string;
 };
 
-const MediaLoader = ({ blocks, className, embedded, forceStage }: Props) => {
+const MediaLoader = ({ blocks, className, embedded, uniqueId, forceStage }: Props) => {
   const { lang, translations } = useContext(ServiceContext);
   const { pageIdentifier } = useContext(EventTrackingContext);
   const { enabled: adsEnabled } = useToggle('ads');
@@ -292,7 +306,11 @@ const MediaLoader = ({ blocks, className, embedded, forceStage }: Props) => {
                 experimentStage={experimentStage}
               />
             ) : (
-              <MediaContainer playerConfig={playerConfig} showAds={showAds} />
+              <MediaContainer
+                playerConfig={playerConfig}
+                showAds={showAds}
+                uniqueId={uniqueId}
+              />
             )}
           </>
         )}

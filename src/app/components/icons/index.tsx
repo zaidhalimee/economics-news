@@ -51,3 +51,31 @@ export const RightArrow = ({ className }: { className?: string }) => (
     </g>
   </svg>
 );
+
+export const Close = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 32"
+    width="12"
+    height="12"
+    className={className}
+    focusable="false"
+    aria-hidden="true"
+  >
+    <path d="m30 4.6-2.8-2.8L2 27.4l2.8 2.8zM4.8 1.8 1.9 4.7l25.2 25.5 2.9-2.9z" />
+  </svg>
+);
+
+export const Play = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 32"
+    width="12"
+    height="12"
+    className={className}
+    focusable="false"
+    aria-hidden="true"
+  >
+    <path d="M29 16 5.8 1v30z" />
+  </svg>
+);
