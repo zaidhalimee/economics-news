@@ -12,7 +12,7 @@ describe('Document Component', () => {
   const originalProcessEnv = process.env;
 
   // Load environment variables into process.env to ensure CanonicalRenderer
-  // uses values set in the .env file in liue of mocked values
+  // uses values set in the .env file in lieu of mocked values
   dotenv.config();
 
   afterEach(() => {
