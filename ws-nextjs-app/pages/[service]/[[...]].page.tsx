@@ -29,16 +29,10 @@ const AvEmbedsPageLayout = dynamic(
   () => import('./av-embeds/AvEmbedsPageLayout'),
 );
 const ArticlePage = dynamic(
-  () => import('#app/pages/ArticlePage/ArticlePage'),
-  {
-    ssr: false,
-  },
+  () => import('../../../src/app/pages/ArticlePage/ArticlePage'),
 );
 const MediaArticlePage = dynamic(
-  () => import('#app/pages/MediaArticlePage/MediaArticlePage'),
-  {
-    ssr: false,
-  },
+  () => import('../../../src/app/pages/MediaArticlePage/MediaArticlePage'),
 );
 
 type PageProps = {
