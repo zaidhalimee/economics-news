@@ -443,6 +443,10 @@ export const service: DefaultServiceConfig = {
         url: '/hindi',
       },
       {
+        title: 'दिल्ली विधानसभा चुनाव',
+        url: '/hindi/topics/c8dqegnm6d9t',
+      },
+      {
         title: 'भारत',
         url: '/hindi/topics/ckdxnkz7607t',
       },
