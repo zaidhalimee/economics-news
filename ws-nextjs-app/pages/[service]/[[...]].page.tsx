@@ -7,31 +7,39 @@ import extractHeaders from '#server/utilities/extractHeaders';
 // AV Embeds
 import {
   AV_EMBEDS,
-  // ARTICLE_PAGE,
-  // MEDIA_ARTICLE_PAGE,
-  // STORY_PAGE,
-  // CORRESPONDENT_STORY_PAGE,
-  // MEDIA_ASSET_PAGE,
-  // PHOTO_GALLERY_PAGE,
+  ARTICLE_PAGE,
+  MEDIA_ARTICLE_PAGE,
+  STORY_PAGE,
+  CORRESPONDENT_STORY_PAGE,
+  MEDIA_ASSET_PAGE,
+  PHOTO_GALLERY_PAGE,
 } from '#app/routes/utils/pageTypes';
-// import {
-//   isOptimoIdCheck,
-//   isCpsIdCheck,
-// } from '#app/routes/utils/constructPageFetchUrl';
+import {
+  isOptimoIdCheck,
+  isCpsIdCheck,
+} from '#app/routes/utils/constructPageFetchUrl';
 import { PageTypes } from '#app/models/types/global';
 import handleAvRoute from './av-embeds/handleAvRoute';
 import { AvEmbedsPageProps } from './av-embeds/types';
-// import handleArticleRoute from './articles/handleArticleRoute';
+import handleArticleRoute from './articles/handleArticleRoute';
 import { ArticlePageProps } from './articles/types';
 
 // Dynamic imports of page layouts
 const AvEmbedsPageLayout = dynamic(
   () => import('./av-embeds/AvEmbedsPageLayout'),
 );
-// const ArticlePage = dynamic(() => import('#app/pages/ArticlePage/ArticlePage'));
-// const MediaArticlePage = dynamic(
-//   () => import('#app/pages/MediaArticlePage/MediaArticlePage'),
-// );
+const ArticlePage = dynamic(
+  () => import('#app/pages/ArticlePage/ArticlePage'),
+  {
+    ssr: false,
+  },
+);
+const MediaArticlePage = dynamic(
+  () => import('#app/pages/MediaArticlePage/MediaArticlePage'),
+  {
+    ssr: false,
+  },
+);
 
 type PageProps = {
   pageType?: PageTypes;
@@ -44,15 +52,15 @@ export default function Page({ pageType, ...rest }: PageProps) {
     case AV_EMBEDS:
       return <AvEmbedsPageLayout {...rest} />;
     // Article Pages (Optimo + CPS)
-    // case STORY_PAGE:
-    // case CORRESPONDENT_STORY_PAGE:
-    // case PHOTO_GALLERY_PAGE:
-    // case ARTICLE_PAGE:
-    //   return <ArticlePage {...rest} />;
-    // // Media Article Pages (Optimo + CPS)
-    // case MEDIA_ASSET_PAGE:
-    // case MEDIA_ARTICLE_PAGE:
-    //   return <MediaArticlePage {...rest} />;
+    case STORY_PAGE:
+    case CORRESPONDENT_STORY_PAGE:
+    case PHOTO_GALLERY_PAGE:
+    case ARTICLE_PAGE:
+      return <ArticlePage {...rest} />;
+    // Media Article Pages (Optimo + CPS)
+    case MEDIA_ASSET_PAGE:
+    case MEDIA_ARTICLE_PAGE:
+      return <MediaArticlePage {...rest} />;
     default:
       // Return nothing, 404 is handled in _app.tsx
       return null;
@@ -72,9 +80,9 @@ export const getServerSideProps: GetServerSideProps = async context => {
   }
 
   // Route to Articles (Optimo + CPS)
-  // if (isOptimoIdCheck(resolvedUrl) || isCpsIdCheck(resolvedUrl)) {
-  //   return handleArticleRoute(context);
-  // }
+  if (isOptimoIdCheck(resolvedUrl) || isCpsIdCheck(resolvedUrl)) {
+    return handleArticleRoute(context);
+  }
 
   const isLite = isLitePath(resolvedUrl);
 
