@@ -3,10 +3,9 @@ import pixelsToRem from '#app/utilities/pixelsToRem';
 import { css, Theme } from '@emotion/react';
 
 export default {
-  componentContainer: ({ spacings }: Theme) =>
+  componentContainer: () =>
     css({
       width: '100%',
-      marginTop: `${spacings.DOUBLE}rem`,
       [`.${NO_JS_CLASSNAME} &`]: {
         display: 'none',
       },
@@ -30,6 +29,7 @@ export default {
     }),
   mediaButton: () =>
     css({
+      width: '100%',
       position: 'relative',
       padding: 0,
     }),

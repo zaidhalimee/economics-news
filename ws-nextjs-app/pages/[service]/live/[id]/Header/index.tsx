@@ -29,6 +29,7 @@ const Header = ({
 }) => {
   const [isMediaOpen, setLiveMediaOpen] = useState(false);
   const isHeaderImage = !!imageUrl && !!imageUrlTemplate && !!imageWidth;
+  const isWithImageLayout = isHeaderImage || !!mediaCollections;
 
   const watchVideoClickHandler = () => {
     setLiveMediaOpen(!isMediaOpen);
@@ -36,7 +37,7 @@ const Header = ({
 
   const Title = (
     <span
-      css={isHeaderImage ? styles.titleWithImage : styles.titleWithoutImage}
+      css={isWithImageLayout ? styles.titleWithImage : styles.titleWithoutImage}
     >
       {title}
     </span>
@@ -58,8 +59,11 @@ const Header = ({
         ) : null}
         <div
           css={[
-            isHeaderImage && styles.textContainerWithImage,
-            !isHeaderImage && styles.textContainerWithoutImage,
+            isWithImageLayout && styles.textContainerWithImage,
+            !isHeaderImage &&
+              !mediaCollections &&
+              styles.textContainerWithoutImage,
+            mediaCollections && styles.fixedHeight,
           ]}
         >
           <Heading
@@ -70,7 +74,7 @@ const Header = ({
             css={styles.heading}
           >
             {showLiveLabel ? (
-              <LiveLabelHeader isHeaderImage={isHeaderImage}>
+              <LiveLabelHeader isHeaderImage={isWithImageLayout}>
                 {Title}
               </LiveLabelHeader>
             ) : (
@@ -83,7 +87,7 @@ const Header = ({
               css={[
                 styles.description,
                 showLiveLabel &&
-                  !isHeaderImage &&
+                  !isWithImageLayout &&
                   styles.layoutWithLiveLabelNoImage,
               ]}
             >
@@ -91,14 +95,16 @@ const Header = ({
             </Text>
           )}
         </div>
-        <div css={[styles.liveMediaClose, isMediaOpen && styles.liveMediaOpen]}>
-          {mediaCollections && (
+        {mediaCollections && (
+          <div
+            css={[styles.liveMediaClose, isMediaOpen && styles.liveMediaOpen]}
+          >
             <LiveHeaderMedia
               mediaCollection={mediaCollections}
               clickCallback={watchVideoClickHandler}
             />
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );

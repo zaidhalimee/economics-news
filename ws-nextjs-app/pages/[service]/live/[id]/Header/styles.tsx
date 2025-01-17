@@ -44,12 +44,12 @@ export default {
     }),
   liveMediaClose: ({ mq, spacings }: Theme) =>
     css({
-      padding: `${spacings.FULL}rem ${spacings.FULL}rem ${spacings.DOUBLE}rem`,
+      padding: `0rem ${spacings.FULL}rem ${spacings.DOUBLE}rem`,
       [mq.GROUP_2_MIN_WIDTH]: {
-        padding: `${spacings.FULL}rem ${spacings.DOUBLE}rem ${spacings.DOUBLE}rem`,
+        padding: `0rem ${spacings.DOUBLE}rem ${spacings.DOUBLE}rem`,
       },
       [mq.GROUP_4_MIN_WIDTH]: {
-        padding: `0 ${spacings.DOUBLE}rem ${spacings.TRIPLE}rem`,
+        padding: `${spacings.DOUBLE}rem  ${spacings.DOUBLE}rem ${pixelsToRem(40)}rem`,
         maxWidth: '50%', // determines width of text overlay.
       },
     }),
@@ -57,6 +57,14 @@ export default {
     css({
       [mq.GROUP_4_MIN_WIDTH]: {
         maxWidth: '100%',
+      },
+    }),
+  fixedHeight: ({ mq, spacings }: Theme) =>
+    css({
+      [mq.GROUP_4_MIN_WIDTH]: {
+        minHeight: '0',
+        padding: `${pixelsToRem(40)}rem ${spacings.DOUBLE}rem 0`,
+        maxWidth: '50%', // determines width of text overlay.
       },
     }),
   textContainerWithoutImage: ({ mq, gridWidths, spacings }: Theme) =>
@@ -81,7 +89,12 @@ export default {
         padding: `${spacings.FULL}rem ${spacings.DOUBLE}rem ${spacings.DOUBLE}rem`,
       },
       [mq.GROUP_4_MIN_WIDTH]: {
-        padding: `${pixelsToRem(40)}rem ${spacings.DOUBLE}rem 0`,
+        padding: `${spacings.DOUBLE}rem`,
+        minHeight: `${pixelsToRem(440)}rem`, // calculation includes padding
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
         maxWidth: '50%', // determines width of text overlay.
       },
     }),
