@@ -28,10 +28,8 @@ import { ArticlePageProps } from './articles/types';
 const AvEmbedsPageLayout = dynamic(
   () => import('./av-embeds/AvEmbedsPageLayout'),
 );
-const ArticlePage = dynamic(() => import('#app/pages/ArticlePage/ArticlePage'));
-const MediaArticlePage = dynamic(
-  () => import('#app/pages/MediaArticlePage/MediaArticlePage'),
-);
+const ArticlePage = () => <div>ArticlePage</div>;
+const MediaArticlePage = () => <div>MediaArticlePage</div>;
 
 type PageProps = {
   pageType?: PageTypes;
