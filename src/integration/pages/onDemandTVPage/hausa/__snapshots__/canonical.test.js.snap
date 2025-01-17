@@ -178,19 +178,9 @@ exports[`Canonical On Demand T V Page Media Loader a11y assistive technology can
 
 exports[`Canonical On Demand T V Page Media Loader renders a figure caption 1`] = `
 <div
-  class="bbc-182h924"
+  class="placeholder bbc-182h924"
   data-e2e="media-loader__placeholder"
 >
-  <div
-    class="bbc-1xawjgp"
-    data-e2e="media-player__guidance"
-  >
-    <noscript
-      class="bbc-n2zqlz"
-    >
-      &lt;strong&gt;Na&#x27;urarku na da matsalar sauraren sauti&lt;/strong&gt;
-    </noscript>
-  </div>
   <button
     class="focusIndicatorRemove bbc-4vlf9b"
     type="button"
@@ -236,7 +226,7 @@ exports[`Canonical On Demand T V Page Media Loader renders a figure caption 1`] 
     </time>
   </button>
   <noscript>
-    &lt;div class="bbc-fym37b"&gt;&lt;p class="bbc-cqzsv2"&gt;Na&#x27;urarku na da matsalar sauraren sauti&lt;/p&gt;&lt;/div&gt;
+    &lt;div class="bbc-kvi82l"&gt;&lt;p class="bbc-8ugaiq"&gt;Na&#x27;urarku na da matsalar sauraren sauti&lt;/p&gt;&lt;/div&gt;
   </noscript>
   <div
     class="bbc-lgx6cw"
@@ -255,19 +245,9 @@ exports[`Canonical On Demand T V Page Media Loader renders a figure caption 1`] 
 
 exports[`Canonical On Demand T V Page Media Loader renders a placeholder 1`] = `
 <div
-  class="bbc-182h924"
+  class="placeholder bbc-182h924"
   data-e2e="media-loader__placeholder"
 >
-  <div
-    class="bbc-1xawjgp"
-    data-e2e="media-player__guidance"
-  >
-    <noscript
-      class="bbc-n2zqlz"
-    >
-      &lt;strong&gt;Na&#x27;urarku na da matsalar sauraren sauti&lt;/strong&gt;
-    </noscript>
-  </div>
   <button
     class="focusIndicatorRemove bbc-4vlf9b"
     type="button"
@@ -313,7 +293,7 @@ exports[`Canonical On Demand T V Page Media Loader renders a placeholder 1`] = `
     </time>
   </button>
   <noscript>
-    &lt;div class="bbc-fym37b"&gt;&lt;p class="bbc-cqzsv2"&gt;Na&#x27;urarku na da matsalar sauraren sauti&lt;/p&gt;&lt;/div&gt;
+    &lt;div class="bbc-kvi82l"&gt;&lt;p class="bbc-8ugaiq"&gt;Na&#x27;urarku na da matsalar sauraren sauti&lt;/p&gt;&lt;/div&gt;
   </noscript>
   <div
     class="bbc-lgx6cw"
@@ -332,23 +312,13 @@ exports[`Canonical On Demand T V Page Media Loader renders a placeholder 1`] = `
 
 exports[`Canonical On Demand T V Page Media Loader renders a valid container 1`] = `
 <figure
-  class="bbc-7rf7s3"
+  class="bbc-aq3yn0"
   data-e2e="media-loader__container"
 >
   <div
-    class="bbc-182h924"
+    class="placeholder bbc-182h924"
     data-e2e="media-loader__placeholder"
   >
-    <div
-      class="bbc-1xawjgp"
-      data-e2e="media-player__guidance"
-    >
-      <noscript
-        class="bbc-n2zqlz"
-      >
-        &lt;strong&gt;Na&#x27;urarku na da matsalar sauraren sauti&lt;/strong&gt;
-      </noscript>
-    </div>
     <button
       class="focusIndicatorRemove bbc-4vlf9b"
       type="button"
@@ -394,7 +364,7 @@ exports[`Canonical On Demand T V Page Media Loader renders a valid container 1`]
       </time>
     </button>
     <noscript>
-      &lt;div class="bbc-fym37b"&gt;&lt;p class="bbc-cqzsv2"&gt;Na&#x27;urarku na da matsalar sauraren sauti&lt;/p&gt;&lt;/div&gt;
+      &lt;div class="bbc-kvi82l"&gt;&lt;p class="bbc-8ugaiq"&gt;Na&#x27;urarku na da matsalar sauraren sauti&lt;/p&gt;&lt;/div&gt;
     </noscript>
     <div
       class="bbc-lgx6cw"

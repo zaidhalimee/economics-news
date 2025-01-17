@@ -8,19 +8,9 @@ exports[`Canonical Articles Media Loader a11y assistive technology can read the 
 
 exports[`Canonical Articles Media Loader renders a figure caption 1`] = `
 <div
-  class="bbc-182h924"
+  class="placeholder bbc-182h924"
   data-e2e="media-loader__placeholder"
 >
-  <div
-    class="bbc-1xawjgp"
-    data-e2e="media-player__guidance"
-  >
-    <noscript
-      class="bbc-n2zqlz"
-    >
-      &lt;strong&gt;Pour regarder ce contenu, veuillez activer JavaScript ou essayer un autre navigateur.&lt;/strong&gt;
-    </noscript>
-  </div>
   <button
     class="focusIndicatorRemove bbc-4vlf9b"
     type="button"
@@ -66,7 +56,7 @@ exports[`Canonical Articles Media Loader renders a figure caption 1`] = `
     </time>
   </button>
   <noscript>
-    &lt;div class="bbc-fym37b"&gt;&lt;p class="bbc-cqzsv2"&gt;Pour regarder ce contenu, veuillez activer JavaScript ou essayer un autre navigateur.&lt;/p&gt;&lt;/div&gt;
+    &lt;div class="bbc-kvi82l"&gt;&lt;p class="bbc-8ugaiq"&gt;Pour regarder ce contenu, veuillez activer JavaScript ou essayer un autre navigateur.&lt;/p&gt;&lt;/div&gt;
   </noscript>
   <div
     class="bbc-lgx6cw"
@@ -85,19 +75,9 @@ exports[`Canonical Articles Media Loader renders a figure caption 1`] = `
 
 exports[`Canonical Articles Media Loader renders a placeholder 1`] = `
 <div
-  class="bbc-182h924"
+  class="placeholder bbc-182h924"
   data-e2e="media-loader__placeholder"
 >
-  <div
-    class="bbc-1xawjgp"
-    data-e2e="media-player__guidance"
-  >
-    <noscript
-      class="bbc-n2zqlz"
-    >
-      &lt;strong&gt;Pour regarder ce contenu, veuillez activer JavaScript ou essayer un autre navigateur.&lt;/strong&gt;
-    </noscript>
-  </div>
   <button
     class="focusIndicatorRemove bbc-4vlf9b"
     type="button"
@@ -143,7 +123,7 @@ exports[`Canonical Articles Media Loader renders a placeholder 1`] = `
     </time>
   </button>
   <noscript>
-    &lt;div class="bbc-fym37b"&gt;&lt;p class="bbc-cqzsv2"&gt;Pour regarder ce contenu, veuillez activer JavaScript ou essayer un autre navigateur.&lt;/p&gt;&lt;/div&gt;
+    &lt;div class="bbc-kvi82l"&gt;&lt;p class="bbc-8ugaiq"&gt;Pour regarder ce contenu, veuillez activer JavaScript ou essayer un autre navigateur.&lt;/p&gt;&lt;/div&gt;
   </noscript>
   <div
     class="bbc-lgx6cw"
@@ -162,23 +142,13 @@ exports[`Canonical Articles Media Loader renders a placeholder 1`] = `
 
 exports[`Canonical Articles Media Loader renders a valid container 1`] = `
 <figure
-  class="bbc-1hu5uc3"
+  class="bbc-9ondlp"
   data-e2e="media-loader__container"
 >
   <div
-    class="bbc-182h924"
+    class="placeholder bbc-182h924"
     data-e2e="media-loader__placeholder"
   >
-    <div
-      class="bbc-1xawjgp"
-      data-e2e="media-player__guidance"
-    >
-      <noscript
-        class="bbc-n2zqlz"
-      >
-        &lt;strong&gt;Pour regarder ce contenu, veuillez activer JavaScript ou essayer un autre navigateur.&lt;/strong&gt;
-      </noscript>
-    </div>
     <button
       class="focusIndicatorRemove bbc-4vlf9b"
       type="button"
@@ -224,7 +194,7 @@ exports[`Canonical Articles Media Loader renders a valid container 1`] = `
       </time>
     </button>
     <noscript>
-      &lt;div class="bbc-fym37b"&gt;&lt;p class="bbc-cqzsv2"&gt;Pour regarder ce contenu, veuillez activer JavaScript ou essayer un autre navigateur.&lt;/p&gt;&lt;/div&gt;
+      &lt;div class="bbc-kvi82l"&gt;&lt;p class="bbc-8ugaiq"&gt;Pour regarder ce contenu, veuillez activer JavaScript ou essayer un autre navigateur.&lt;/p&gt;&lt;/div&gt;
     </noscript>
     <div
       class="bbc-lgx6cw"
@@ -240,7 +210,7 @@ exports[`Canonical Articles Media Loader renders a valid container 1`] = `
     </div>
   </div>
   <figcaption
-    class="bbc-12vqlmi"
+    class="bbc-1m3e0cf"
     dir="ltr"
   >
     <span
