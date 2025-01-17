@@ -310,12 +310,12 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
             sendOptimizelyEvents={enableOptimizelyEventTracking}
           />
         </div>
-        {/* {!isApp && !isPGL && (
+        {!isApp && !isPGL && (
           <SecondaryColumn
             pageData={pageData}
             sendOptimizelyEvents={enableOptimizelyEventTracking}
           />
-        )} */}
+        )}
       </div>
       {!isApp && !isPGL && (
         <MostRead
