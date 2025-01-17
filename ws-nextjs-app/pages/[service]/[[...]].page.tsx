@@ -62,7 +62,7 @@ export default function Page({ pageType, ...rest }: PageProps) {
 export const getServerSideProps: GetServerSideProps = async context => {
   const {
     resolvedUrl,
-    query: { service = 'news', variant },
+    query: { service, variant },
     req: { headers: reqHeaders },
   } = context;
 
