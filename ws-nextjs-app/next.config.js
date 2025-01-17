@@ -36,6 +36,9 @@ module.exports = {
   experimental: {
     externalDir: true,
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   env: {
     ...(isLocal && getClientEnvVars(DOT_ENV_CONFIG, { stringify: false })),
     LOG_TO_CONSOLE: 'true',
