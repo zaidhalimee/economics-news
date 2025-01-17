@@ -90,8 +90,8 @@ export const service: DefaultServiceConfig = {
       articlePage: {
         jumpToTitle: {
           variation_1: 'इस पर जाएं',
-          variation_2: 'Discover more from BBC Hindi',
-          variation_3: 'More from BBC Hindi',
+          variation_2: 'बीबीसी न्यूज़ हिंदी  से और अधिक जानें',
+          variation_3: 'बीबीसी न्यूज़ हिंदी से और ख़बरें पढ़ें',
         },
       },
       liveExperiencePage: {
@@ -440,6 +440,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'होम पेज',
         url: '/hindi',
+      },
+      {
+        title: 'दिल्ली विधानसभा चुनाव',
+        url: '/hindi/topics/c8dqegnm6d9t',
       },
       {
         title: 'भारत',
