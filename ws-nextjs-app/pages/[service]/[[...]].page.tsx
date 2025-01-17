@@ -28,8 +28,10 @@ import { ArticlePageProps } from './articles/types';
 const AvEmbedsPageLayout = dynamic(
   () => import('./av-embeds/AvEmbedsPageLayout'),
 );
-const ArticlePage = () => <div>ArticlePage</div>;
-const MediaArticlePage = () => <div>MediaArticlePage</div>;
+const ArticlePage = dynamic(() => import('#app/pages/ArticlePage/ArticlePage'));
+const MediaArticlePage = dynamic(
+  () => import('#app/pages/MediaArticlePage/MediaArticlePage'),
+);
 
 type PageProps = {
   pageType?: PageTypes;
@@ -60,7 +62,7 @@ export default function Page({ pageType, ...rest }: PageProps) {
 export const getServerSideProps: GetServerSideProps = async context => {
   const {
     resolvedUrl,
-    query: { service, variant },
+    query: { service = 'news', variant },
     req: { headers: reqHeaders },
   } = context;
 
