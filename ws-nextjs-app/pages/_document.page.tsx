@@ -144,19 +144,19 @@ export default class AppDocument extends Document<DocProps> {
     const helmetScriptTags = helmet.script.toComponent();
 
     switch (true) {
-      case isAmp:
-        return (
-          <AmpRenderer
-            bodyContent={<Main />}
-            helmetLinkTags={helmetLinkTags}
-            helmetMetaTags={helmetMetaTags}
-            helmetScriptTags={helmetScriptTags}
-            htmlAttrs={htmlAttrs}
-            ids={ids}
-            styles={css}
-            title={title}
-          />
-        );
+      // case isAmp:
+      //   return (
+      //     <AmpRenderer
+      //       bodyContent={<Main />}
+      //       helmetLinkTags={helmetLinkTags}
+      //       helmetMetaTags={helmetMetaTags}
+      //       helmetScriptTags={helmetScriptTags}
+      //       htmlAttrs={htmlAttrs}
+      //       ids={ids}
+      //       styles={css}
+      //       title={title}
+      //     />
+      //   );
       case isLite:
         return (
           <LiteRenderer
