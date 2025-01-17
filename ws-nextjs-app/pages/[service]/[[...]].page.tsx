@@ -19,6 +19,7 @@ import {
   isCpsIdCheck,
 } from '#app/routes/utils/constructPageFetchUrl';
 import { PageTypes } from '#app/models/types/global';
+import { ArticlePage, MediaArticlePage } from '#pages/index';
 import handleAvRoute from './av-embeds/handleAvRoute';
 import { AvEmbedsPageProps } from './av-embeds/types';
 import handleArticleRoute from './articles/handleArticleRoute';
@@ -28,12 +29,10 @@ import { ArticlePageProps } from './articles/types';
 const AvEmbedsPageLayout = dynamic(
   () => import('./av-embeds/AvEmbedsPageLayout'),
 );
-const ArticlePage = dynamic(
-  () => import('../../../src/app/pages/ArticlePage/ArticlePage'),
-);
-const MediaArticlePage = dynamic(
-  () => import('../../../src/app/pages/MediaArticlePage/MediaArticlePage'),
-);
+// const ArticlePage = dynamic(() => import('#app/pages/ArticlePage/ArticlePage'));
+// const MediaArticlePage = dynamic(
+//   () => import('#app/pages/MediaArticlePage/MediaArticlePage'),
+// );
 
 type PageProps = {
   pageType?: PageTypes;
