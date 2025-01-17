@@ -11,7 +11,7 @@ export default {
         display: 'none',
       },
     }),
-  nojs: ({ palette, spacings, fontSizes, fontVariants }: Theme) =>
+  nojs: ({ palette, spacings, fontSizes, fontVariants, mq }: Theme) =>
     css({
       ...fontSizes.pica,
       ...fontVariants.sansRegular,
@@ -24,14 +24,14 @@ export default {
         marginTop: `${spacings.DOUBLE}rem`,
         fontWeight: 'normal',
       },
-    }),
-  mediaButton: ({ mq }: Theme) =>
-    css({
-      position: 'relative',
-      padding: 0,
       [mq.FORCED_COLOURS]: {
         color: 'canvasText',
       },
+    }),
+  mediaButton: () =>
+    css({
+      position: 'relative',
+      padding: 0,
     }),
   openButton: () =>
     css({
@@ -40,7 +40,7 @@ export default {
       border: 'unset',
       textAlign: 'start',
     }),
-  watchLiveCTAText: ({ spacings, palette }: Theme) =>
+  watchLiveCTAText: ({ spacings, palette, mq }: Theme) =>
     css({
       color: palette.WHITE,
       display: 'flex',
@@ -53,22 +53,26 @@ export default {
         fill: 'currentcolor',
         color: palette.WHITE,
         marginInlineEnd: `${spacings.FULL}rem`,
+        [mq.FORCED_COLOURS]: {
+          color: 'canvasText',
+        },
       },
       'button:hover &, button:focus-visible &': {
         textDecoration: 'underline',
       },
+      [mq.FORCED_COLOURS]: {
+        color: 'canvasText',
+      },
     }),
-  title: () =>
-    css({
-      display: 'block',
-      width: '100%',
-    }),
-  guidanceMessage: ({ palette, spacings }: Theme) =>
+  guidanceMessage: ({ palette, spacings, mq }: Theme) =>
     css({
       display: 'block',
       marginTop: `${spacings.DOUBLE}rem`,
       color: palette.GREY_2,
       textAlign: 'start',
+      [mq.FORCED_COLOURS]: {
+        color: 'canvasText',
+      },
     }),
   watchLiveCTA: ({ palette, mq, spacings }: Theme) =>
     css({
@@ -81,22 +85,7 @@ export default {
         width: '100%',
       },
       [mq.FORCED_COLOURS]: {
-        color: 'canvasText',
         border: `${pixelsToRem(2)}rem solid canvasText`,
-      },
-    }),
-  liveMediaStreamText: ({ palette }: Theme) =>
-    css({
-      color: palette.GREY_4,
-    }),
-  liveMediaStreamContainer: ({ mq }: Theme) =>
-    css({
-      maxWidth: '60%',
-      [mq.GROUP_2_MAX_WIDTH]: {
-        width: '100%',
-      },
-      [mq.GROUP_4_MAX_WIDTH]: {
-        width: '50%',
       },
     }),
   closeButton: () =>
@@ -119,6 +108,9 @@ export default {
         height: `${spacings.DOUBLE}rem`,
         width: `${spacings.DOUBLE}rem`,
         margin: `${pixelsToRem(13)}rem`,
+        [mq.FORCED_COLOURS]: {
+          color: 'canvasText',
+        },
       },
       backgroundColor: palette.BLACK,
       border: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
@@ -129,10 +121,6 @@ export default {
       [mq.FORCED_COLOURS]: {
         color: 'canvasText',
       },
-    }),
-  liveMediaSpan: () =>
-    css({
-      maxWidth: '100%',
     }),
   mediaLoader: ({ spacings }: Theme) =>
     css({
@@ -146,14 +134,24 @@ export default {
       marginTop: 0,
       span: { margin: 0 },
     }),
-  openMediaDescription: ({ palette }: Theme) =>
+  openMediaDescription: ({ palette, mq }: Theme) =>
     css({
-      span: { color: palette.GREY_4 },
+      span: {
+        color: palette.GREY_4,
+        [mq.FORCED_COLOURS]: {
+          color: 'canvasText',
+        },
+      },
     }),
   closeMediaDescription: ({ mq, palette }: Theme) =>
     css({
       textAlign: 'start',
-      span: { color: palette.WHITE },
+      span: {
+        color: palette.WHITE,
+        [mq.FORCED_COLOURS]: {
+          color: 'canvasText',
+        },
+      },
       'button:hover &, button:focus-visible &': {
         span: {
           textDecoration: 'underline',
@@ -164,6 +162,5 @@ export default {
       },
     }),
 
-  underlineFocus: () => css({ display: 'none' }),
   hideComponent: () => css({ display: 'none' }),
 };
