@@ -22,12 +22,10 @@ describe('MediaIcon', () => {
         service: 'news',
       },
     );
-    const guidanceMessage = container?.querySelector('span')?.innerHTML;
+    const guidanceMessage = container?.querySelector('strong')?.innerHTML;
     const time = container?.querySelector('time')?.innerHTML;
 
-    expect(guidanceMessage).toEqual(
-      'Guidance: May contain strong language that may offend. Play video, "My Video", 2 minutes 30 seconds',
-    );
+    expect(guidanceMessage).toEqual('Video, "My Video", 2 minutes 30 seconds');
     expect(time).toEqual('2:30');
   });
 });

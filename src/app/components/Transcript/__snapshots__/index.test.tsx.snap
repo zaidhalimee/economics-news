@@ -85,84 +85,6 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
 }
 
 .emotion-4 {
-  padding: 0 0.5rem;
-  list-style: none;
-  margin: 0;
-}
-
-.emotion-5 {
-  padding-bottom: 1rem;
-}
-
-.emotion-5::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-.emotion-6 {
-  color: #141414;
-  font-size: 0.9375rem;
-  line-height: 1.25rem;
-  font-family: ReithSans,Helvetica,Arial,sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  color: #545658;
-}
-
-@media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-6 {
-    font-size: 1rem;
-    line-height: 1.375rem;
-  }
-}
-
-@media (min-width: 37.5rem) {
-  .emotion-6 {
-    font-size: 1rem;
-    line-height: 1.375rem;
-  }
-}
-
-.emotion-7 {
-  float: inline-start;
-  width: 100%;
-}
-
-@media (min-width: 15rem) {
-  .emotion-7 {
-    width: auto;
-  }
-}
-
-.emotion-9 {
-  float: inline-start;
-  width: 100%;
-}
-
-@media (min-width: 15rem) {
-  .emotion-9 {
-    -webkit-padding-start: 0.5rem;
-    padding-inline-start: 0.5rem;
-    width: calc(75% - 0.5rem);
-  }
-}
-
-@media (min-width: 25rem) {
-  .emotion-9 {
-    width: calc(85% - 0.5rem);
-  }
-}
-
-@media (min-width: 37.5rem) {
-  .emotion-9 {
-    -webkit-padding-start: 1rem;
-    padding-inline-start: 1rem;
-    width: calc(90% - 1rem);
-  }
-}
-
-.emotion-175 {
   color: #141414;
   font-size: 0.875rem;
   line-height: 1.125rem;
@@ -176,16 +98,94 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-175 {
+  .emotion-4 {
     font-size: 0.875rem;
     line-height: 1.125rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-175 {
+  .emotion-4 {
     font-size: 0.8125rem;
     line-height: 1rem;
+  }
+}
+
+.emotion-5 {
+  padding: 0 0.5rem;
+  list-style: none;
+  margin: 0;
+}
+
+.emotion-6 {
+  padding-bottom: 1rem;
+}
+
+.emotion-6::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.emotion-7 {
+  color: #141414;
+  font-size: 0.9375rem;
+  line-height: 1.25rem;
+  font-family: ReithSans,Helvetica,Arial,sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #545658;
+}
+
+@media (min-width: 20rem) and (max-width: 37.4375rem) {
+  .emotion-7 {
+    font-size: 1rem;
+    line-height: 1.375rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .emotion-7 {
+    font-size: 1rem;
+    line-height: 1.375rem;
+  }
+}
+
+.emotion-8 {
+  float: inline-start;
+  width: 100%;
+}
+
+@media (min-width: 15rem) {
+  .emotion-8 {
+    width: auto;
+  }
+}
+
+.emotion-10 {
+  float: inline-start;
+  width: 100%;
+}
+
+@media (min-width: 15rem) {
+  .emotion-10 {
+    -webkit-padding-start: 0.5rem;
+    padding-inline-start: 0.5rem;
+    width: calc(75% - 0.5rem);
+  }
+}
+
+@media (min-width: 25rem) {
+  .emotion-10 {
+    width: calc(85% - 0.5rem);
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .emotion-10 {
+    -webkit-padding-start: 1rem;
+    padding-inline-start: 1rem;
+    width: calc(90% - 1rem);
   }
 }
 
@@ -224,19 +224,24 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
         </span>
       </span>
     </summary>
-    <ul
+    <small
       class="emotion-4"
+    >
+      This transcript has been reviewed by a journalist, it was generated with AI (artificial intelligence).
+    </small>
+    <ul
+      class="emotion-5"
       role="list"
     >
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             00:00
           </span>
@@ -246,21 +251,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Na nutsu.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             00:01
           </span>
@@ -270,21 +275,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Ni 19 ne kuma wannan ita ce motata tafarko da na saya da kaina.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             00:04
           </span>
@@ -294,21 +299,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Na 1938 Austin goma Cambridge.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             00:14
           </span>
@@ -318,21 +323,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             A koyaushe ina sha'awar tarihin cewa akwaia cikin daji.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             00:18
           </span>
@@ -342,21 +347,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Don haka ba shakka, lokacin da nake samunkatina, dole ne ya zama tsohon.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             00:21
           </span>
@@ -366,21 +371,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Ba zai taba zama motar zamani ba.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             00:24
           </span>
@@ -390,21 +395,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             1112 shine lokacin da na yanke shawararcewa ina son daya da gaske kuma zan fara
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             00:28
           </span>
@@ -414,21 +419,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             tarawa ɗaya.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             00:29
           </span>
@@ -438,21 +443,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Don haka akwai 'yan kudin aljihu daabubuwa makamantansu.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             00:31
           </span>
@@ -462,21 +467,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Ƙananan ayyuka.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             00:32
           </span>
@@ -486,21 +491,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Zan sake yin ɗan kuɗin aljihu, ajiye shi.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             00:35
           </span>
@@ -510,21 +515,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Sannan a lokacin da nake makarantarsakandare, na samu aikin wucin gadi na,
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             00:39
           </span>
@@ -534,21 +539,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             sai wani bangare na albashina ya tafi,wanda hakan ya taimaka mini da sauri.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             00:43
           </span>
@@ -558,21 +563,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Ya kasance matashi sosai kuma yana tare dakakan da kaina da yawa.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             00:49
           </span>
@@ -582,21 +587,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Kuma um, sun kasance suna son, um,tsofaffin jiragen kasa na tururi da, um,
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             00:55
           </span>
@@ -606,21 +611,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             John yana da wasu motoci da ƙananan motocikuma ya kira su suna son duk tsofaffin
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             01:01
           </span>
@@ -630,21 +635,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             masu salo, wanda muke tunanin yana da bandariya sosai.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             01:06
           </span>
@@ -654,21 +659,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Wannan shine ainihin daftari da na samutare da wanda zai zo da kati a lokacin.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             01:12
           </span>
@@ -678,21 +683,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Kudin can £215, shilling 16 da £11 kenan.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             01:21
           </span>
@@ -702,21 +707,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Dama.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             01:21
           </span>
@@ -726,21 +731,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Kuna da abubuwa kamar haruffan zirga-zirga.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             01:25
           </span>
@@ -750,21 +755,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Akwai a cikin allonku ɗaya, gidaje.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             01:31
           </span>
@@ -774,21 +779,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Kamar da yawa.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             01:33
           </span>
@@ -798,21 +803,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Na tabbata zan kasance kyakkyawa a ranarzafi mai zafi.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             01:35
           </span>
@@ -822,21 +827,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Ban sami wannan damar ba tukuna, kodayake.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             01:37
           </span>
@@ -846,21 +851,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Kuma akwai anti dazzle kuma.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             01:40
           </span>
@@ -870,21 +875,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Wannan saitin a bayyane yake a cikinwannan motar.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             01:42
           </span>
@@ -894,21 +899,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Yin tuƙi a ciki, da gaske kun sami ma'anartarihi fiye da yadda za ku taɓa samu.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             01:47
           </span>
@@ -918,21 +923,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Tsaya ka gan su a tsaye a cikin gidankayan gargajiya kuma ina nufin da yawa
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             01:50
           </span>
@@ -942,21 +947,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             daga cikin wadannan motoci da gidajentarihi da abin da ba, ba zan sake komawa.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             01:53
           </span>
@@ -966,21 +971,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Su kenan har karshen rayuwarsu da gidankayan gargajiya.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             01:57
           </span>
@@ -990,21 +995,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Kuma ba abin da suke can ba ne.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             01:58
           </span>
@@ -1014,21 +1019,21 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Ana son a yi amfani da su kuma a more su.
           </span>
         </span>
       </li>
       <li
-        class="emotion-5"
+        class="emotion-6"
       >
         <span
-          class="emotion-6"
+          class="emotion-7"
           role="text"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             02:00
           </span>
@@ -1038,18 +1043,13 @@ exports[`Transcript Component should match snapshot (temp) 1`] = `
              
           </span>
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             Don haka, eh, abin da nake yi ke nan.
           </span>
         </span>
       </li>
     </ul>
-    <small
-      class="emotion-175"
-    >
-      This transcript was reviewed by a journalist after AI generation.
-    </small>
   </details>
 </div>
 `;
