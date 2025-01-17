@@ -28,13 +28,9 @@ import { ArticlePageProps } from './articles/types';
 const AvEmbedsPageLayout = dynamic(
   () => import('./av-embeds/AvEmbedsPageLayout'),
 );
-const ArticlePage = dynamic(
-  () => import('#app/pages/ArticlePage/ArticlePage'),
-  { loading: () => <span /> },
-);
+const ArticlePage = <div>ArticlePage</div>;
 const MediaArticlePage = dynamic(
   () => import('#app/pages/MediaArticlePage/MediaArticlePage'),
-  { loading: () => <span /> },
 );
 
 type PageProps = {
