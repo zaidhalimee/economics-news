@@ -17,15 +17,21 @@ import certsRequired from '#app/routes/utils/certsRequired';
 import getAgent from '#server/utilities/getAgent';
 import handleError from '#app/routes/utils/handleError';
 import getOnwardsPageData from '#app/routes/article/utils/getOnwardsData';
-import pipe from 'ramda/src/pipe';
 import { PageTypes, Toggles } from '#app/models/types/global';
 import addAnalyticsCounterName from '#app/routes/article/utils/addAnalyticsCounterName';
 import augmentWithDisclaimer from '#app/routes/article/utils/augmentWithDisclaimer';
 import shouldRender from '#app/legacy/containers/PageHandlers/withData/shouldRender';
-import { ArticleMetadata } from '#app/models/types/optimo';
+import { Article, ArticleMetadata } from '#app/models/types/optimo';
 import getPageData from '../../../utilities/pageRequests/getPageData';
 
 const logger = nodeLogger(__filename);
+
+type Fn = (pageData: Article) => Article;
+
+const pipe =
+  (...fns: Fn[]) =>
+  (x: Article) =>
+    fns.reduce((result, nextFn) => nextFn(result), x);
 
 const transformPageData = (toggles?: Toggles) =>
   pipe(
@@ -77,15 +83,14 @@ export default async (context: GetServerSidePropsContext) => {
     pageType: ARTICLE_PAGE,
   });
 
-  context.res.statusCode = data.status;
+  const { pageData, status } = data;
+
+  context.res.statusCode = status;
 
   let routingInfoLogger = logger.debug;
 
   const { hasRequestSucceeded, status: shouldRenderStatus } = shouldRender(
-    {
-      pageData: data.pageData,
-      status: data.status,
-    },
+    { pageData, status },
     service,
     urlWithoutQuery,
     ARTICLE_PAGE,
@@ -146,7 +151,7 @@ export default async (context: GetServerSidePropsContext) => {
 
   routingInfoLogger(ROUTING_INFORMATION, {
     url: urlWithoutQuery,
-    status: data.status,
+    status,
     pageType: ARTICLE_PAGE,
   });
 
@@ -172,7 +177,7 @@ export default async (context: GetServerSidePropsContext) => {
       pageType: derivedPageType,
       pathname: urlWithoutQuery,
       service,
-      status: data.status,
+      status,
       toggles,
       variant: variant || null,
       ...extractHeaders(reqHeaders),
