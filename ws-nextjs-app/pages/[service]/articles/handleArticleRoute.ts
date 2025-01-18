@@ -21,17 +21,11 @@ import { PageTypes, Toggles } from '#app/models/types/global';
 import addAnalyticsCounterName from '#app/routes/article/utils/addAnalyticsCounterName';
 import augmentWithDisclaimer from '#app/routes/article/utils/augmentWithDisclaimer';
 import shouldRender from '#app/legacy/containers/PageHandlers/withData/shouldRender';
-import { Article, ArticleMetadata } from '#app/models/types/optimo';
+import { ArticleMetadata } from '#app/models/types/optimo';
+import pipe from '#app/utilities/pipe';
 import getPageData from '../../../utilities/pageRequests/getPageData';
 
 const logger = nodeLogger(__filename);
-
-type Fn = (pageData: Article) => Article;
-
-const pipe =
-  (...fns: Fn[]) =>
-  (x: Article) =>
-    fns.reduce((result, nextFn) => nextFn(result), x);
 
 const transformPageData = (toggles?: Toggles) =>
   pipe(
