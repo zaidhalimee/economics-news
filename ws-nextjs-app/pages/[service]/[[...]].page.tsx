@@ -4,7 +4,6 @@ import dynamic from 'next/dynamic';
 import logResponseTime from '#server/utilities/logResponseTime';
 import isLitePath from '#app/routes/utils/isLitePath';
 import extractHeaders from '#server/utilities/extractHeaders';
-// AV Embeds
 import {
   AV_EMBEDS,
   ARTICLE_PAGE,
@@ -19,8 +18,10 @@ import {
   isCpsIdCheck,
 } from '#app/routes/utils/constructPageFetchUrl';
 import { PageTypes } from '#app/models/types/global';
+// AV Embeds
 import handleAvRoute from './av-embeds/handleAvRoute';
 import { AvEmbedsPageProps } from './av-embeds/types';
+// Articles (Optimo + CPS)
 import handleArticleRoute from './articles/handleArticleRoute';
 import { ArticlePageProps } from './articles/types';
 
