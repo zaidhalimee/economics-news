@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useContext } from 'react';
+import { LegacyRef, useContext } from 'react';
 import { jsx } from '@emotion/react';
 
 import SectionLabel from '#psammead/psammead-section-label/src';
@@ -11,16 +11,13 @@ import generatePromoId from '../../../../lib/utilities/generatePromoId';
 import LatestMediaItem from './LatestMediaItem';
 import styles from './index.styles';
 import { LatestMedia } from './types';
-import {
-  EventTrackingBlock,
-  viewTrackerRef,
-} from '../../../../models/types/eventTracking';
+import { EventTrackingBlock } from '../../../../models/types/eventTracking';
 
 const renderLatestMediaList = (
   item: LatestMedia,
   index: number,
   eventTrackingData: EventTrackingBlock,
-  viewRef: viewTrackerRef,
+  viewRef: LegacyRef<HTMLDivElement>,
 ) => {
   const ariaLabelledBy = generatePromoId({
     sectionType: 'latest-media',
@@ -54,7 +51,7 @@ const LatestMediaSection = ({ content }: { content: LatestMedia[] | null }) => {
 
   const eventTrackingDataSend = eventTrackingData?.block;
 
-  const viewRef = useViewTracker(eventTrackingDataSend) as viewTrackerRef;
+  const viewRef = useViewTracker(eventTrackingDataSend);
   const LABEL_ID = 'latest-media-heading';
 
   if (!content || content?.length === 0) return null;

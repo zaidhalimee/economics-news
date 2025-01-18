@@ -3,10 +3,7 @@
 import { jsx, useTheme } from '@emotion/react';
 import React, { useContext } from 'react';
 import useViewTracker from '#hooks/useViewTracker';
-import {
-  EventTrackingBlock,
-  viewTrackerRef,
-} from '#app/models/types/eventTracking';
+import { EventTrackingBlock } from '#app/models/types/eventTracking';
 import SectionLabel from '#psammead/psammead-section-label/src';
 import PromoItem from '#components/OptimoPromos/PromoItem/index.styles';
 import PromoList from '#components/OptimoPromos/PromoList';
@@ -76,7 +73,7 @@ const TopStoriesSection = ({
     },
   };
   const eventTrackingDataSend = eventTrackingData?.block;
-  const viewRef = useViewTracker(eventTrackingDataSend) as viewTrackerRef;
+  const viewRef = useViewTracker(eventTrackingDataSend);
 
   const {
     palette: { GREY_2 },

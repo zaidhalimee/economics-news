@@ -11,6 +11,9 @@ const EVENT_TYPE = 'view';
 const VIEWED_DURATION_MS = 1000;
 const MIN_VIEWED_PERCENT = 0.5;
 
+/**
+ * @returns {LegacyRef<HTMLElement>} A function to observe the element for view tracking.
+ */
 const useViewTracker = (props = {}) => {
   const componentName = props?.componentName;
   const format = props?.format;

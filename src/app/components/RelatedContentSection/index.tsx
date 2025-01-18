@@ -21,10 +21,7 @@ import generatePromoId from '../../lib/utilities/generatePromoId';
 import RelatedContentItem from './RelatedContentItem';
 import PromoList from '../../legacy/components/OptimoPromos/PromoList';
 import PromoItem from '../../legacy/components/OptimoPromos/PromoItem/index.styles';
-import {
-  EventTrackingBlock,
-  viewTrackerRef,
-} from '../../models/types/eventTracking';
+import { EventTrackingBlock } from '../../models/types/eventTracking';
 import { OptimoBlock } from '../../models/types/optimo';
 
 const BLOCKS_TO_IGNORE = ['wsoj', 'mpu'];
@@ -120,7 +117,7 @@ const RelatedContentSection = ({ content, sendOptimizelyEvents }: Props) => {
     },
   };
   const eventTrackingDataSend = path<object>(['block'], eventTrackingData);
-  const viewRef = useViewTracker(eventTrackingDataSend) as viewTrackerRef;
+  const viewRef = useViewTracker(eventTrackingDataSend);
 
   if (!pathEq('relatedContent', ['type'], blocks)) return null;
 

@@ -14,6 +14,3 @@ export type EventTrackingBlock = {
     componentName: EventTrackingMetadata['componentName'];
   };
 };
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type viewTrackerRef = any;

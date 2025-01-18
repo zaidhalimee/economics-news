@@ -5,10 +5,7 @@ import { ServiceContext } from '#contexts/ServiceContext';
 import useViewTracker from '#app/hooks/useViewTracker';
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import Text from '#app/components/Text';
-import {
-  EventTrackingMetadata,
-  viewTrackerRef,
-} from '#app/models/types/eventTracking';
+import { EventTrackingMetadata } from '#app/models/types/eventTracking';
 import { OptimizelyContext } from '@optimizely/react-sdk';
 import idSanitiser from '../../lib/utilities/idSanitiser';
 import styles from './index.styles';
@@ -107,7 +104,7 @@ const JumpTo = ({
 
   const [hash, setHash] = useState('');
 
-  const viewRef = useViewTracker(eventTrackingData) as viewTrackerRef;
+  const viewRef = useViewTracker(eventTrackingData);
 
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
 
