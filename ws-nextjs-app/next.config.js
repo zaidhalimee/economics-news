@@ -47,6 +47,7 @@ module.exports = {
   pageExtensions: ['page.tsx', 'page.ts', 'api.ts'],
   poweredByHeader: false,
   reactStrictMode: true,
+  // This points to the 'name' field in the package.json for the base Simorgh app
   transpilePackages: ['simorgh'],
   webpack: (config, { webpack, isServer }) => {
     config.resolve.fallback = {
