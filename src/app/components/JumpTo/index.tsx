@@ -105,7 +105,6 @@ const JumpTo = ({
   const [hash, setHash] = useState('');
 
   const viewRef = useViewTracker(eventTrackingData);
-
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
 
   useEffect(() => {
