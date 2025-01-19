@@ -14,8 +14,6 @@ import { CacheProvider } from '@emotion/react';
 import createEmotionServer from '@emotion/server/create-instance';
 import createCache from '@emotion/cache';
 
-import isAppPath from '#app/routes/utils/isAppPath';
-import isLitePath from '#app/routes/utils/isLitePath';
 import {
   EnvConfig,
   getProcessEnvAppVariables,
@@ -35,7 +33,7 @@ import {
 import { OK, INTERNAL_SERVER_ERROR } from '#app/lib/statusCodes.const';
 import NO_JS_CLASSNAME from '#app/lib/noJs.const';
 
-import isAmpPath from '#app/routes/utils/isAmpPath';
+import getPathExtension from '#app/utilities/getPathExtension';
 import removeSensitiveHeaders from '../utilities/removeSensitiveHeaders';
 import derivePageType from '../utilities/derivePageType';
 
@@ -91,9 +89,7 @@ type DocProps = {
 export default class AppDocument extends Document<DocProps> {
   static async getInitialProps(ctx: DocumentContext) {
     const url = ctx.asPath || '';
-    const isAmp = isAmpPath(url);
-    const isApp = isAppPath(url);
-    const isLite = isLitePath(url);
+    const { isApp, isAmp, isLite } = getPathExtension(url);
 
     const cache = createCache({ key: 'css' });
     const { extractCritical } = createEmotionServer(cache);

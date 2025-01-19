@@ -9,9 +9,7 @@ import parseAvRoute from '#app/routes/utils/parseAvRoute';
 import nodeLogger from '#lib/logger.node';
 import { OK } from '#app/lib/statusCodes.const';
 import { ROUTING_INFORMATION } from '#app/lib/logger.const';
-import isAppPath from '#app/routes/utils/isAppPath';
-import isLitePath from '#app/routes/utils/isLitePath';
-import isAmpPath from '#app/routes/utils/isAmpPath';
+import getPathExtension from '#app/utilities/getPathExtension';
 import PageDataParams from '#app/models/types/pageDataParams';
 import certsRequired from '#app/routes/utils/certsRequired';
 import getAgent from '#server/utilities/getAgent';
@@ -63,9 +61,7 @@ export default async (context: GetServerSidePropsContext) => {
 
   const urlWithoutQuery = resolvedUrl.split('?')?.[0];
 
-  const isAmp = isAmpPath(urlWithoutQuery);
-  const isApp = isAppPath(urlWithoutQuery);
-  const isLite = isLitePath(urlWithoutQuery);
+  const { isAmp, isApp, isLite } = getPathExtension(urlWithoutQuery);
   const { variant } = parseAvRoute(resolvedUrl);
 
   const { data, toggles } = await getPageData({

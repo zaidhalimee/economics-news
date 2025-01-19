@@ -2,8 +2,8 @@ import React from 'react';
 import { GetServerSideProps } from 'next';
 import dynamic from 'next/dynamic';
 import logResponseTime from '#server/utilities/logResponseTime';
-import isLitePath from '#app/routes/utils/isLitePath';
 import extractHeaders from '#server/utilities/extractHeaders';
+import getPathExtension from '#app/utilities/getPathExtension';
 import {
   AV_EMBEDS,
   ARTICLE_PAGE,
@@ -77,20 +77,16 @@ export const getServerSideProps: GetServerSideProps = async context => {
     return handleArticleRoute(context);
   }
 
-  const isLite = isLitePath(resolvedUrl);
+  const { isAmp, isApp, isLite } = getPathExtension(resolvedUrl);
 
-  logResponseTime(
-    {
-      path: context.resolvedUrl,
-    },
-    context.res,
-    () => null,
-  );
+  logResponseTime({ path: context.resolvedUrl }, context.res, () => null);
 
   context.res.statusCode = 404;
 
   return {
     props: {
+      isApp,
+      isAmp,
       isLite,
       isNextJs: true,
       service,

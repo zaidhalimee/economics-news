@@ -4,13 +4,12 @@ import dynamic from 'next/dynamic';
 import { LIVE_PAGE } from '#app/routes/utils/pageTypes';
 import nodeLogger from '#lib/logger.node';
 import logResponseTime from '#server/utilities/logResponseTime';
-import isAppPath from '#app/routes/utils/isAppPath';
 
+import getPathExtension from '#app/utilities/getPathExtension';
 import { ROUTING_INFORMATION } from '#app/lib/logger.const';
 import { OK } from '#app/lib/statusCodes.const';
 import sendCustomMetric from '#server/utilities/customMetrics';
 import { NON_200_RESPONSE } from '#server/utilities/customMetrics/metrics.const';
-import isLitePath from '#app/routes/utils/isLitePath';
 import PageDataParams from '#app/models/types/pageDataParams';
 
 import extractHeaders from '../../../../../src/server/utilities/extractHeaders';
@@ -45,8 +44,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
 
   const { headers: reqHeaders } = context.req;
 
-  const isApp = isAppPath(context.resolvedUrl);
-  const isLite = isLitePath(context.resolvedUrl);
+  const { isApp, isLite } = getPathExtension(context.resolvedUrl);
 
   if (!isValidPageNumber(page)) {
     context.res.statusCode = 404;

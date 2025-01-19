@@ -2,8 +2,7 @@ import { GetServerSideProps } from 'next';
 import dynamic from 'next/dynamic';
 import PageDataParams from '#models/types/pageDataParams';
 import { UGC_PAGE } from '#app/routes/utils/pageTypes';
-import isLitePath from '#app/routes/utils/isLitePath';
-import isAppPath from '#app/routes/utils/isAppPath';
+import getPathExtension from '#app/utilities/getPathExtension';
 import getPageData from '../../../../utilities/pageRequests/getPageData';
 import extractHeaders from '../../../../../src/server/utilities/extractHeaders';
 
@@ -16,8 +15,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
   );
 
   const { headers: reqHeaders } = context.req;
-  const isLite = isLitePath(context.resolvedUrl);
-  const isApp = isAppPath(context.resolvedUrl);
+  const { isApp, isLite } = getPathExtension(context.resolvedUrl);
 
   const {
     id,
