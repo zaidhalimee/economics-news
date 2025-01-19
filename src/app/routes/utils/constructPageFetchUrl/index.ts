@@ -227,17 +227,18 @@ const constructPageFetchUrl = ({
       case ARTICLE_PAGE: {
         const host = `http://${process.env.HOSTNAME || 'localhost'}`;
         const port = process.env.PORT ? `:${process.env.PORT}` : '';
+        const { assetId } = parseAvRoute(pathname);
 
         if (isOptimoIdCheck(pathname)) {
           fetchUrl = Url(
-            `${host}${port}/api/local/${service}/articles/${id}${variant ? `/${variant}` : ''}`,
+            `${host}${port}/api/local/${service}/articles/${assetId}${variant ? `/${variant}` : ''}`,
           );
           break;
         }
 
         if (isCpsIdCheck(pathname)) {
           fetchUrl = Url(
-            `${host}${port}/api/local/${service}/cpsAssets/${variant ? `${variant}/` : ''}${id}`,
+            `${host}${port}/api/local/${service}/cpsAssets/${variant ? `${variant}/` : ''}${assetId}`,
           );
           break;
         }
