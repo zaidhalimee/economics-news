@@ -11,7 +11,7 @@ export default {
         display: 'none',
       },
     }),
-  nojs: ({ palette, spacings, fontSizes, fontVariants, mq }: Theme) =>
+  nojs: ({ palette, spacings, fontSizes, fontVariants }: Theme) =>
     css({
       ...fontSizes.pica,
       ...fontVariants.sansRegular,
@@ -24,9 +24,9 @@ export default {
         marginTop: `${spacings.DOUBLE}rem`,
         fontWeight: 'normal',
       },
-      [mq.FORCED_COLOURS]: {
-        color: 'canvasText',
-      },
+      // [mq.FORCED_COLOURS]: {
+      //   color: 'canvasText',
+      // },
     }),
   mediaButton: () =>
     css({
@@ -40,7 +40,7 @@ export default {
       border: 'unset',
       textAlign: 'start',
     }),
-  watchLiveCTAText: ({ spacings, palette, mq }: Theme) =>
+  watchLiveCTAText: ({ spacings, palette }: Theme) =>
     css({
       color: palette.WHITE,
       display: 'flex',
@@ -53,26 +53,26 @@ export default {
         fill: 'currentcolor',
         color: palette.WHITE,
         marginInlineEnd: `${spacings.FULL}rem`,
-        [mq.FORCED_COLOURS]: {
-          color: 'canvasText',
-        },
+        // [mq.FORCED_COLOURS]: {
+        //   color: 'canvasText',
+        // },
       },
       'button:hover &, button:focus-visible &': {
         textDecoration: 'underline',
       },
-      [mq.FORCED_COLOURS]: {
-        color: 'canvasText',
-      },
+      // [mq.FORCED_COLOURS]: {
+      //   color: 'canvasText',
+      // },
     }),
-  guidanceMessage: ({ palette, spacings, mq }: Theme) =>
+  guidanceMessage: ({ palette, spacings }: Theme) =>
     css({
       display: 'block',
       marginTop: `${spacings.DOUBLE}rem`,
       color: palette.GREY_2,
       textAlign: 'start',
-      [mq.FORCED_COLOURS]: {
-        color: 'canvasText',
-      },
+      // [mq.FORCED_COLOURS]: {
+      //   color: 'canvasText',
+      // },
     }),
   watchLiveCTA: ({ palette, mq, spacings }: Theme) =>
     css({
@@ -85,7 +85,8 @@ export default {
         width: '100%',
       },
       [mq.FORCED_COLOURS]: {
-        border: `${pixelsToRem(2)}rem solid canvasText`,
+        // border: `${pixelsToRem(2)}rem solid canvasText`,
+        border: `${pixelsToRem(2)}rem solid transparent`,
       },
     }),
   closeButton: () =>
@@ -99,7 +100,7 @@ export default {
       lineHeight: 0,
       alignItems: 'center',
     }),
-  closeContainer: ({ spacings, palette, mq }: Theme) =>
+  closeContainer: ({ spacings, palette }: Theme) =>
     css({
       verticalAlign: 'center',
       svg: {
@@ -108,9 +109,9 @@ export default {
         height: `${spacings.DOUBLE}rem`,
         width: `${spacings.DOUBLE}rem`,
         margin: `${pixelsToRem(13)}rem`,
-        [mq.FORCED_COLOURS]: {
-          color: 'canvasText',
-        },
+        // [mq.FORCED_COLOURS]: {
+        //   color: 'canvasText',
+        // },
       },
       backgroundColor: palette.BLACK,
       border: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
@@ -118,9 +119,9 @@ export default {
         backgroundColor: palette.POSTBOX,
         outline: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
       },
-      [mq.FORCED_COLOURS]: {
-        color: 'canvasText',
-      },
+      // [mq.FORCED_COLOURS]: {
+      //   color: 'canvasText',
+      // },
     }),
   mediaLoader: ({ spacings }: Theme) =>
     css({
@@ -134,13 +135,13 @@ export default {
       marginTop: 0,
       span: { margin: 0 },
     }),
-  openMediaDescription: ({ palette, mq }: Theme) =>
+  openMediaDescription: ({ palette }: Theme) =>
     css({
       span: {
         color: palette.GREY_4,
-        [mq.FORCED_COLOURS]: {
-          color: 'canvasText',
-        },
+        // [mq.FORCED_COLOURS]: {
+        //   color: 'canvasText',
+        // },
       },
     }),
   closeMediaDescription: ({ mq, palette }: Theme) =>
@@ -148,9 +149,9 @@ export default {
       textAlign: 'start',
       span: {
         color: palette.WHITE,
-        [mq.FORCED_COLOURS]: {
-          color: 'canvasText',
-        },
+        // [mq.FORCED_COLOURS]: {
+        //   color: 'canvasText',
+        // },
       },
       'button:hover &, button:focus-visible &': {
         span: {
