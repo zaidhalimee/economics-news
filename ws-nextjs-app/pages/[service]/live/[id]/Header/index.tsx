@@ -49,20 +49,19 @@ const Header = ({
         <div css={styles.backgroundColor} />
       </div>
       <div css={styles.contentContainer}>
-        {isHeaderImage ? (
-          <MaskedImage
-            imageUrl={imageUrl}
-            imageUrlTemplate={imageUrlTemplate}
-            imageWidth={imageWidth}
-            hideImage={isMediaOpen}
-          />
-        ) : null}
+        <div css={[isMediaOpen && styles.hideMaskedImage]}>
+          {isHeaderImage ? (
+            <MaskedImage
+              imageUrl={imageUrl}
+              imageUrlTemplate={imageUrlTemplate}
+              imageWidth={imageWidth}
+            />
+          ) : null}
+        </div>
         <div
           css={[
             isWithImageLayout && styles.textContainerWithImage,
-            !isHeaderImage &&
-              !mediaCollections &&
-              styles.textContainerWithoutImage,
+            !isWithImageLayout && styles.textContainerWithoutImage,
             mediaCollections && styles.fixedHeight,
           ]}
         >
@@ -97,7 +96,10 @@ const Header = ({
         </div>
         {mediaCollections && (
           <div
-            css={[styles.liveMediaClose, isMediaOpen && styles.liveMediaOpen]}
+            css={[
+              styles.LiveMediaBaseStyling,
+              isMediaOpen && styles.liveMediaOpen,
+            ]}
           >
             <LiveHeaderMedia
               mediaCollection={mediaCollections}

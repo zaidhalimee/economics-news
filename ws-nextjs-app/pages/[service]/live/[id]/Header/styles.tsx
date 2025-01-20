@@ -17,6 +17,12 @@ export default {
         outline: 'none',
       },
     }),
+  hideMaskedImage: ({ mq }: Theme) =>
+    css({
+      [mq.GROUP_4_MIN_WIDTH]: {
+        opacity: 0,
+      },
+    }),
   backgroundContainer: () =>
     css({
       position: 'absolute',
@@ -42,7 +48,7 @@ export default {
         width: '100%',
       },
     }),
-  liveMediaClose: ({ mq, spacings }: Theme) =>
+  LiveMediaBaseStyling: ({ mq, spacings }: Theme) =>
     css({
       padding: `0rem ${spacings.FULL}rem ${spacings.DOUBLE}rem`,
       [mq.GROUP_2_MIN_WIDTH]: {

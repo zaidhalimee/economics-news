@@ -15,14 +15,12 @@ const MaskedImage = ({
   imageWidth,
   altText = '',
   showPlaceholder = true,
-  hideImage = false,
 }: {
   imageUrl: string;
   imageUrlTemplate: string;
   imageWidth: number;
   altText?: string;
   showPlaceholder?: boolean;
-  hideImage?: boolean;
 }) => {
   const { dir } = useContext(ServiceContext);
   const { isAmp } = useContext(RequestContext);
@@ -46,7 +44,6 @@ const MaskedImage = ({
       css={[
         styles.maskedImageWrapper,
         isRtl ? styles.linearGradientRtl : styles.linearGradientLtr,
-        hideImage && styles.hideImage,
       ]}
     >
       <Image
