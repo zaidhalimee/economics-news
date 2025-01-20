@@ -248,6 +248,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'Mais',
         podcastExternalLinks: 'O podcast está disponível em',
         download: 'Baixar episódio',
+        closeVideo: 'Sair',
       },
       socialEmbed: {
         caption: {
