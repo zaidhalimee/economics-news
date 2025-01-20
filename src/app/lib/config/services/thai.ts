@@ -220,6 +220,7 @@ export const service: DefaultServiceConfig = {
         previousRadioShow: 'รายการวิทยุก่อนหน้า',
         nextRadioShow: 'รายการวิทยุถัดไป',
         duration: 'ความยาว',
+        closeVideo: 'ออก',
       },
       socialEmbed: {
         caption: {
