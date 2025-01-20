@@ -48,7 +48,7 @@ export default {
         width: '100%',
       },
     }),
-  LiveMediaBaseStyling: ({ mq, spacings }: Theme) =>
+  liveMedia: ({ mq, spacings }: Theme) =>
     css({
       padding: `0rem ${spacings.FULL}rem ${spacings.DOUBLE}rem`,
       [mq.GROUP_2_MIN_WIDTH]: {

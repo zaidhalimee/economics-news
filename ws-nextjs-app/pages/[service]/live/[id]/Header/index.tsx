@@ -95,12 +95,7 @@ const Header = ({
           )}
         </div>
         {mediaCollections && (
-          <div
-            css={[
-              styles.LiveMediaBaseStyling,
-              isMediaOpen && styles.liveMediaOpen,
-            ]}
-          >
+          <div css={[styles.liveMedia, isMediaOpen && styles.liveMediaOpen]}>
             <LiveHeaderMedia
               mediaCollection={mediaCollections}
               clickCallback={watchVideoClickHandler}
