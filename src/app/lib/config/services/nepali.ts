@@ -229,6 +229,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'पहिलेका कार्यक्रमहरू',
         podcastExternalLinks: 'यो पडकास्ट सुन्नकालागि यहाँ उपलब्ध छ',
         download: 'एपिसोड डाउनलोड',
+        closeVideo: 'बाहिरिनुहोस्',
       },
       socialEmbed: {
         caption: {

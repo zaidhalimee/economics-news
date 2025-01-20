@@ -227,6 +227,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Next radio show',
         duration: 'Duration',
         recentEpisodes: 'Daha ətraflı',
+        closeVideo: 'Bağla',
       },
       socialEmbed: {
         caption: {

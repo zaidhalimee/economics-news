@@ -232,6 +232,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'આગામી રેડિયો શો',
         duration: 'અવધિ',
         recentEpisodes: 'તાજેતરનાં એપિસોડ્સ',
+        closeVideo: 'બહાર નીકળો',
       },
       socialEmbed: {
         caption: {
