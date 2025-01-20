@@ -216,6 +216,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: '次のラジオ番組',
         duration: '所要時間',
         recentEpisodes: 'さらに',
+        closeVideo: '閉じる',
       },
       socialEmbed: {
         caption: {
