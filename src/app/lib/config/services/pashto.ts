@@ -241,6 +241,7 @@ export const service: DefaultServiceConfig = {
         previousRadioShow: 'تېره راډیویي‌ خپرونه',
         nextRadioShow: 'راتلونکې راډیویي خپرونه',
         duration: 'موده',
+        closeVideo: 'وتل',
       },
       socialEmbed: {
         caption: {

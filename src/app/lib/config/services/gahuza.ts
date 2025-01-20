@@ -256,6 +256,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'Ibiganiro byashise',
         podcastExternalLinks: 'Iyi podcast iraboneka kandi kuri',
         download: 'Pakurura ikiganiro',
+        closeVideo: 'Sohoka',
       },
       socialEmbed: {
         caption: {

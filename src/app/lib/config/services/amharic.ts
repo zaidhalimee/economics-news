@@ -222,6 +222,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'ቀጣይ የሬዲዮ ስርጭት',
         duration: 'ርዝመት',
         recentEpisodes: 'ያለፉ ዝግጅቶች’',
+        closeVideo: 'ይውጡ',
       },
       socialEmbed: {
         caption: {

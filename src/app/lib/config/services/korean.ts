@@ -227,6 +227,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: '다음 라디오 방송',
         duration: '방송 길이',
         recentEpisodes: '이전',
+        closeVideo: '나가기',
       },
       socialEmbed: {
         caption: {

@@ -208,6 +208,7 @@ export const mainTranslations = {
     episodes: 'передачи',
     podcastExternalLinks: 'Этот подкаст доступен на',
     download: 'Загрузить эпизод',
+    closeVideo: 'Выйти',
   },
   socialEmbed: {
     caption: {

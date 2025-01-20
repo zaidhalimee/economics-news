@@ -245,6 +245,7 @@ const defaultCyrillicConfig = {
       nextRadioShow: 'Кейинги радио дастур',
       duration: 'Давомийлиги',
       recentEpisodes: 'Олдинги дастурлар',
+      closeVideo: 'Чиқиш',
     },
     socialEmbed: {
       caption: {

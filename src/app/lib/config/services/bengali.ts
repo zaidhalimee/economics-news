@@ -229,6 +229,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'পরবর্তী রেডিও অনুষ্ঠান',
         duration: 'স্থিতিকাল',
         recentEpisodes: 'পুরনো অনুষ্ঠান',
+        closeVideo: 'বন্ধ করুন',
       },
       socialEmbed: {
         caption: {
