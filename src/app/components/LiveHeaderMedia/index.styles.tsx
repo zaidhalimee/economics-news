@@ -24,9 +24,6 @@ export default {
         marginTop: `${spacings.DOUBLE}rem`,
         fontWeight: 'normal',
       },
-      // [mq.FORCED_COLOURS]: {
-      //   color: 'canvasText',
-      // },
     }),
   mediaButton: () =>
     css({
@@ -40,7 +37,7 @@ export default {
       border: 'unset',
       textAlign: 'start',
     }),
-  watchLiveCTAText: ({ spacings, palette }: Theme) =>
+  watchLiveCTAText: ({ spacings, palette, mq }: Theme) =>
     css({
       color: palette.WHITE,
       display: 'flex',
@@ -53,16 +50,13 @@ export default {
         fill: 'currentcolor',
         color: palette.WHITE,
         marginInlineEnd: `${spacings.FULL}rem`,
-        // [mq.FORCED_COLOURS]: {
-        //   color: 'canvasText',
-        // },
+        [mq.FORCED_COLOURS]: {
+          color: 'buttonText',
+        },
       },
       'button:hover &, button:focus-visible &': {
         textDecoration: 'underline',
       },
-      // [mq.FORCED_COLOURS]: {
-      //   color: 'canvasText',
-      // },
     }),
   guidanceMessage: ({ palette, spacings }: Theme) =>
     css({
@@ -70,9 +64,6 @@ export default {
       marginTop: `${spacings.DOUBLE}rem`,
       color: palette.GREY_2,
       textAlign: 'start',
-      // [mq.FORCED_COLOURS]: {
-      //   color: 'canvasText',
-      // },
     }),
   watchLiveCTA: ({ palette, mq, spacings }: Theme) =>
     css({
@@ -85,7 +76,6 @@ export default {
         width: '100%',
       },
       [mq.FORCED_COLOURS]: {
-        // border: `${pixelsToRem(2)}rem solid canvasText`,
         border: `${pixelsToRem(2)}rem solid transparent`,
       },
     }),
@@ -100,7 +90,7 @@ export default {
       lineHeight: 0,
       alignItems: 'center',
     }),
-  closeContainer: ({ spacings, palette }: Theme) =>
+  closeContainer: ({ spacings, palette, mq }: Theme) =>
     css({
       verticalAlign: 'center',
       svg: {
@@ -109,9 +99,9 @@ export default {
         height: `${spacings.DOUBLE}rem`,
         width: `${spacings.DOUBLE}rem`,
         margin: `${pixelsToRem(13)}rem`,
-        // [mq.FORCED_COLOURS]: {
-        //   color: 'canvasText',
-        // },
+        [mq.FORCED_COLOURS]: {
+          color: 'buttonText',
+        },
       },
       backgroundColor: palette.BLACK,
       border: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
@@ -119,9 +109,6 @@ export default {
         backgroundColor: palette.POSTBOX,
         outline: `${palette.WHITE} solid ${pixelsToRem(1)}rem`,
       },
-      // [mq.FORCED_COLOURS]: {
-      //   color: 'canvasText',
-      // },
     }),
   mediaLoader: ({ spacings }: Theme) =>
     css({
@@ -139,9 +126,6 @@ export default {
     css({
       span: {
         color: palette.GREY_4,
-        // [mq.FORCED_COLOURS]: {
-        //   color: 'canvasText',
-        // },
       },
     }),
   closeMediaDescription: ({ mq, palette }: Theme) =>
@@ -149,9 +133,6 @@ export default {
       textAlign: 'start',
       span: {
         color: palette.WHITE,
-        // [mq.FORCED_COLOURS]: {
-        //   color: 'canvasText',
-        // },
       },
       'button:hover &, button:focus-visible &': {
         span: {
