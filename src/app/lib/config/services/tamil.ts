@@ -242,6 +242,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'அடுத்த வானொலி நிகழ்ச்சி',
         duration: 'கால அளவு',
         recentEpisodes: 'முந்தைய நிகழ்ச்சிகள்',
+        closeVideo: 'மூடுக',
       },
       socialEmbed: {
         caption: {

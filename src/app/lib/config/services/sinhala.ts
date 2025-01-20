@@ -226,6 +226,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Next radio show',
         duration: 'ධාවන කාලය',
         recentEpisodes: 'පෙර වැඩසටහන්',
+        closeVideo: 'ඉවත්වෙන්න',
       },
       socialEmbed: {
         caption: {

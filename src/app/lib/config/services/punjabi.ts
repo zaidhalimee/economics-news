@@ -226,6 +226,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Next radio show',
         duration: 'Duration',
         recentEpisodes: 'ਤਾਜ਼ਾ ਐਪੀਸੋਡ',
+        closeVideo: 'ਬਾਹਰ ਜਾਓ',
       },
       socialEmbed: {
         caption: {
