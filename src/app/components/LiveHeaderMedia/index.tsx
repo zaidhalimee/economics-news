@@ -113,30 +113,26 @@ const LiveHeaderMedia = ({
   };
 
   const description = (
-    <>
-      <Text
-        size="pica"
-        fontVariant="sansBold"
-        as="span"
-        css={[
-          styles.mediaDescription,
-          showMedia
-            ? styles.closeMediaDescription
-            : styles.openMediaDescription,
-        ]}
-        className="hoverStylesText"
-      >
-        {showMedia && <VisuallyHiddenText>{closeVideo}, </VisuallyHiddenText>}
-        <Text size="pica" fontVariant="sansBold" as="span">
-          {short}
-          {!titleHasPunctuation && ','}
-        </Text>
-        <Text size="pica" fontVariant="sansRegular" as="span">
-          {' '}
-          {networkName}
-        </Text>
+    <Text
+      size="pica"
+      fontVariant="sansBold"
+      as="span"
+      css={[
+        styles.mediaDescription,
+        showMedia ? styles.closeMediaDescription : styles.openMediaDescription,
+      ]}
+      className="hoverStylesText"
+    >
+      {showMedia && <VisuallyHiddenText>{closeVideo}, </VisuallyHiddenText>}
+      <Text size="pica" fontVariant="sansBold" as="span">
+        {short}
+        {!titleHasPunctuation && ','}
       </Text>
-    </>
+      <Text size="pica" fontVariant="sansRegular" as="span">
+        {' '}
+        {networkName}
+      </Text>
+    </Text>
   );
 
   return (

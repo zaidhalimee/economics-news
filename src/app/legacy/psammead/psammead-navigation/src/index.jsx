@@ -137,18 +137,16 @@ const CurrentLink = ({
   script,
   currentPageText = null,
 }) => (
-  <>
-    <StyledSpan
-      // eslint-disable-next-line jsx-a11y/aria-role
-      role="text"
-      script={script}
-      // This is a temporary fix for the a11y nested span's bug experienced in TalkBack, refer to the following issue: https://github.com/bbc/simorgh/issues/9652
-      id={`NavigationLinks-${linkId}`}
-    >
-      <VisuallyHiddenText>{`${currentPageText}, `}</VisuallyHiddenText>
-      {link}
-    </StyledSpan>
-  </>
+  <StyledSpan
+    // eslint-disable-next-line jsx-a11y/aria-role
+    role="text"
+    script={script}
+    // This is a temporary fix for the a11y nested span's bug experienced in TalkBack, refer to the following issue: https://github.com/bbc/simorgh/issues/9652
+    id={`NavigationLinks-${linkId}`}
+  >
+    <VisuallyHiddenText>{`${currentPageText}, `}</VisuallyHiddenText>
+    {link}
+  </StyledSpan>
 );
 
 export const NavigationUl = ({ children, ...props }) => (

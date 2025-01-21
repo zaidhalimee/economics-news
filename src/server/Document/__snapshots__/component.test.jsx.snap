@@ -135,15 +135,15 @@ exports[`Document Component should render APP version correctly 1`] = `
     </script>
     <link
       href="modern.main.js"
-      rel="modulePreload"
+      rel="modulepreload"
     />
     <link
       href="modern.vendor.js"
-      rel="modulePreload"
+      rel="modulepreload"
     />
     <link
       href="modern.igbo.js"
-      rel="modulePreload"
+      rel="modulepreload"
     />
     <div>
       <!--[if !IE]&gt;&lt;!-->
@@ -275,15 +275,15 @@ exports[`Document Component should render correctly 1`] = `
     </script>
     <link
       href="modern.main.js"
-      rel="modulePreload"
+      rel="modulepreload"
     />
     <link
       href="modern.vendor.js"
-      rel="modulePreload"
+      rel="modulepreload"
     />
     <link
       href="modern.igbo.js"
-      rel="modulePreload"
+      rel="modulepreload"
     />
     <div>
       <!--[if !IE]&gt;&lt;!-->
