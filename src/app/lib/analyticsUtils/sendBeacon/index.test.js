@@ -27,7 +27,7 @@ describe('sendBeacon', () => {
   });
 
   afterEach(() => {
-    fetch.resetMocks();
+    jest.clearAllMocks();
   });
 
   it(`should fetch`, () => {
@@ -61,20 +61,76 @@ describe('sendBeacon', () => {
       },
     };
 
-    it('should call Reverb viewEvent if Reverb config is passed', async () => {
-      const sendBeacon = require('./index').default;
+    const originalProcessEnv = process.env;
 
-      await sendBeacon('https://foobar.com', reverbConfig);
-
-      expect(reverbMock.viewEvent).toHaveBeenCalledTimes(1);
+    afterEach(() => {
+      process.env = originalProcessEnv;
     });
 
-    it('should not call "fetch" if Reverb config is passed', async () => {
-      const sendBeacon = require('./index').default;
+    describe('LOCAL', () => {
+      beforeEach(() => {
+        process.env.SIMORGH_APP_ENV = 'local';
+      });
+      
+      it('should call Reverb viewEvent if Reverb config is passed', async () => {
+        const sendBeacon = require('./index').default;
+  
+        await sendBeacon('https://foobar.com', reverbConfig);
+  
+        expect(reverbMock.viewEvent).toHaveBeenCalledTimes(1);
+      });
 
-      await sendBeacon('https://foobar.com', reverbConfig);
+      it('should not call "fetch" if Reverb config is passed', async () => {
+        const sendBeacon = require('./index').default;
+  
+        await sendBeacon('https://foobar.com', reverbConfig);
+  
+        expect(fetch).not.toHaveBeenCalled();
+      });
+    });
 
-      expect(fetch).not.toHaveBeenCalled();
+    describe('TEST', () => {
+      beforeEach(() => {
+        process.env.SIMORGH_APP_ENV = 'test';
+      });
+      
+      it('should call Reverb viewEvent if Reverb config is passed', async () => {
+        const sendBeacon = require('./index').default;
+  
+        await sendBeacon('https://foobar.com', reverbConfig);
+  
+        expect(reverbMock.viewEvent).toHaveBeenCalledTimes(1);
+      });
+
+      it('should not call "fetch" if Reverb config is passed', async () => {
+        const sendBeacon = require('./index').default;
+  
+        await sendBeacon('https://foobar.com', reverbConfig);
+  
+        expect(fetch).not.toHaveBeenCalled();
+      });
+    });
+
+    describe('LIVE', () => {
+      beforeEach(() => {
+        process.env.SIMORGH_APP_ENV = 'live';
+      });
+      
+      it('should not call Reverb viewEvent if Reverb config is passed', async () => {
+        const sendBeacon = require('./index').default;
+  
+        await sendBeacon('https://foobar.com', reverbConfig);
+  
+        expect(reverbMock.viewEvent).not.toHaveBeenCalled();
+      });
+
+      it('should call "fetch" when Reverb config is passed', async () => {
+        const sendBeacon = require('./index').default;
+  
+        await sendBeacon('https://foobar.com', reverbConfig);
+  
+        expect(fetch).toHaveBeenCalledTimes(1);
+      });
     });
   });
 
@@ -84,10 +140,6 @@ describe('sendBeacon', () => {
     beforeEach(() => {
       error = new Error('An error');
       fetchResponse = Promise.reject(error);
-    });
-
-    afterEach(() => {
-      jest.resetAllMocks();
     });
 
     it(`should send error to logger`, async () => {
