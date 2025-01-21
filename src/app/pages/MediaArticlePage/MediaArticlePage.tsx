@@ -2,12 +2,15 @@
 
 import { useContext } from 'react';
 import { jsx, useTheme, Theme } from '@emotion/react';
-import { OEmbedProps } from '#app/components/Embeds/types';
 import MediaLoader from '#app/components/MediaLoader';
 import { MediaBlock } from '#app/components/MediaLoader/types';
 import { ARTICLE_PAGE, MEDIA_ASSET_PAGE } from '#app/routes/utils/pageTypes';
 import { Tag } from '#app/components/LinkedData/types';
-import { Article, OptimoBylineBlock } from '#app/models/types/optimo';
+import {
+  Article,
+  OptimoBylineBlock,
+  OptimoBylineContributorBlock,
+} from '#app/models/types/optimo';
 import { RequestContext } from '#app/contexts/RequestContext';
 import { MediaOverrides } from '#app/models/types/media';
 import useToggle from '../../hooks/useToggle';
@@ -60,12 +63,75 @@ import RelatedContentSection from '../../components/RelatedContentSection';
 import SecondaryColumn from './SecondaryColumn';
 
 import styles from './MediaArticlePage.styles';
-import {
-  ComponentToRenderProps,
-  EmbedHtmlProps,
-  TimestampProps,
-} from './types';
+import { ComponentToRenderProps, TimestampProps } from './types';
 import checkIsLiveMedia from './utils/checkIsLiveMedia';
+
+const getAudioVideoComponent =
+  (isCpsMap: boolean) => (props: ComponentToRenderProps) => {
+    const { blocks } = props;
+    return (
+      <div
+        css={({ spacings }: Theme) => [
+          `padding-top: ${spacings.TRIPLE}rem`,
+          isCpsMap && styles.cafMediaPlayer,
+        ]}
+      >
+        <MediaLoader blocks={blocks as MediaBlock[]} />
+      </div>
+    );
+  };
+
+const getLegacyMediaComponent =
+  (isCpsMap: boolean, headline: string) => (props: ComponentToRenderProps) => {
+    const mediaOverrides: MediaOverrides = {
+      model: { pageTitleOverride: headline },
+      type: 'mediaOverrides',
+    };
+
+    return (
+      <div
+        css={({ spacings }: Theme) => [
+          `padding-top: ${spacings.TRIPLE}rem`,
+          isCpsMap && styles.cafMediaPlayer,
+        ]}
+      >
+        <MediaLoader blocks={[props, mediaOverrides] as MediaBlock[]} />
+      </div>
+    );
+  };
+
+const getBylineComponent =
+  (
+    hasByline: boolean,
+    bylineContribBlocks: OptimoBylineContributorBlock[],
+    firstPublished: string,
+    lastPublished: string,
+  ) =>
+  () =>
+    hasByline ? (
+      <Byline blocks={bylineContribBlocks}>
+        <Timestamp
+          firstPublished={new Date(firstPublished).getTime()}
+          lastPublished={new Date(lastPublished).getTime()}
+          popOut={false}
+        />
+      </Byline>
+    ) : null;
+
+const Links = (props: ComponentToRenderProps) => <ScrollablePromo {...props} />;
+
+const getImageComponent =
+  (preloadLeadImageToggle: boolean) => (props: ComponentToRenderProps) => (
+    <ImageWithCaption
+      {...props}
+      sizes="(min-width: 1008px) 760px, 100vw"
+      shouldPreload={preloadLeadImageToggle}
+    />
+  );
+
+const getTimestampComponent =
+  (showTimestamp: boolean) => (props: TimestampProps) =>
+    showTimestamp ? <Timestamp {...props} popOut={false} /> : null;
 
 const MediaArticlePage = ({ pageData }: { pageData: Article }) => {
   const { pageType, service } = useContext(RequestContext);
@@ -154,69 +220,24 @@ const MediaArticlePage = ({ pageData }: { pageData: Article }) => {
     visuallyHiddenHeadline,
     headline: headings,
     subheadline: headings,
-    audio: (props: ComponentToRenderProps) => (
-      <div
-        css={({ spacings }: Theme) => [
-          `padding-top: ${spacings.TRIPLE}rem`,
-          isCpsMap && styles.cafMediaPlayer,
-        ]}
-      >
-        <MediaLoader blocks={props.blocks as MediaBlock[]} />
-      </div>
-    ),
-    video: (props: ComponentToRenderProps) => (
-      <div
-        css={({ spacings }: Theme) => [
-          `padding-top: ${spacings.TRIPLE}rem`,
-          isCpsMap && styles.cafMediaPlayer,
-        ]}
-      >
-        <MediaLoader blocks={props.blocks as MediaBlock[]} />
-      </div>
-    ),
-    legacyMedia: (props: ComponentToRenderProps) => {
-      const mediaOverrides: MediaOverrides = {
-        model: { pageTitleOverride: headline },
-        type: 'mediaOverrides',
-      };
-
-      return (
-        <div
-          css={({ spacings }: Theme) => [
-            `padding-top: ${spacings.TRIPLE}rem`,
-            isCpsMap && styles.cafMediaPlayer,
-          ]}
-        >
-          <MediaLoader blocks={[props, mediaOverrides] as MediaBlock[]} />
-        </div>
-      );
-    },
+    audio: getAudioVideoComponent(isCpsMap),
+    video: getAudioVideoComponent(isCpsMap),
+    legacyMedia: getLegacyMediaComponent(isCpsMap, headline),
     text,
-    byline: () =>
-      hasByline ? (
-        <Byline blocks={bylineContribBlocks}>
-          <Timestamp
-            firstPublished={new Date(firstPublished).getTime()}
-            lastPublished={new Date(lastPublished).getTime()}
-            popOut={false}
-          />
-        </Byline>
-      ) : null,
-    image: (props: ComponentToRenderProps) => (
-      <ImageWithCaption
-        {...props}
-        sizes="(min-width: 1008px) 760px, 100vw"
-        shouldPreload={preloadLeadImageToggle}
-      />
+    byline: getBylineComponent(
+      hasByline,
+      bylineContribBlocks,
+      firstPublished,
+      lastPublished,
     ),
-    timestamp: (props: TimestampProps) =>
-      showTimestamp ? <Timestamp {...props} popOut={false} /> : null,
+    image: getImageComponent(preloadLeadImageToggle),
+    timestamp: getTimestampComponent(showTimestamp),
     social: SocialEmbedContainer,
-    embedHtml: (props: EmbedHtmlProps) => <EmbedHtml {...props} />,
-    embedImages: (props: ComponentToRenderProps) => <EmbedImages {...props} />,
-    oEmbed: (props: OEmbedProps) => <OEmbedLoader {...props} />,
+    embedHtml: EmbedHtml,
+    embedImages: EmbedImages,
+    oEmbed: OEmbedLoader,
     group: gist,
-    links: (props: ComponentToRenderProps) => <ScrollablePromo {...props} />,
+    links: Links,
   };
 
   return (

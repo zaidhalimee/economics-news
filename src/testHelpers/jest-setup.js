@@ -2,9 +2,16 @@ import fetch from 'jest-fetch-mock';
 import path from 'path';
 import { TextEncoder, TextDecoder } from 'util';
 import { ReadableStream } from 'node:stream/web';
+import { MessagePort } from 'node:worker_threads';
 
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
+global.fetch = fetch;
+global.AbortSignal = {
+  timeout: jest.fn(),
+};
+global.ReadableStream = ReadableStream;
+global.MessagePort = MessagePort;
 
 window.require = jest.fn();
 
@@ -28,12 +35,6 @@ window.matchMedia = jest.fn().mockImplementation(query => {
 
 // Mock RequireJS globally and let individual tests mock it as needed
 window.require = jest.fn();
-
-global.fetch = fetch;
-global.AbortSignal = {
-  timeout: jest.fn(),
-};
-global.ReadableStream = ReadableStream;
 
 process.env.SIMORGH_PUBLIC_STATIC_ASSETS_ORIGIN = 'http://localhost:7080';
 process.env.SIMORGH_PUBLIC_STATIC_ASSETS_PATH = '/';
