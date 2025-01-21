@@ -208,8 +208,7 @@ exports[`MostReadItemWrapper should render ltr correctly with 10 items 1`] = `
   color: #222222;
   -webkit-text-decoration: none;
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  display: table-cell;
+  display: inline-block;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -1007,8 +1006,7 @@ exports[`MostReadItemWrapper should render rtl correctly with 10 items 1`] = `
   color: #222222;
   -webkit-text-decoration: none;
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  display: table-cell;
+  display: inline-block;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -1621,8 +1619,7 @@ exports[`MostReadLink should render ltr correctly 1`] = `
   color: #222222;
   -webkit-text-decoration: none;
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  display: table-cell;
+  display: inline-block;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -1716,8 +1713,7 @@ exports[`MostReadLink should render rtl correctly 1`] = `
   color: #222222;
   -webkit-text-decoration: none;
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  display: table-cell;
+  display: inline-block;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -1811,8 +1807,7 @@ exports[`MostReadLink should render with last updated date correctly 1`] = `
   color: #222222;
   -webkit-text-decoration: none;
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  display: table-cell;
+  display: inline-block;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {

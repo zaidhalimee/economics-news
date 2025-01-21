@@ -164,8 +164,7 @@ exports[`AmpMostRead should render as expected 1`] = `
   color: #222222;
   -webkit-text-decoration: none;
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  display: table-cell;
+  display: inline-block;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {

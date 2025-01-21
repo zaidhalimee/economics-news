@@ -273,8 +273,7 @@ exports[`MostReadList should render burmese most read with a one column layout 1
   color: #222222;
   -webkit-text-decoration: none;
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  display: table-cell;
+  display: inline-block;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -780,8 +779,7 @@ exports[`MostReadList should render with ltr bengali items with correct dir 1`] 
   color: #222222;
   -webkit-text-decoration: none;
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  display: table-cell;
+  display: inline-block;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -1650,8 +1648,7 @@ exports[`MostReadList should render with ltr burmese items with correct dir 1`] 
   color: #222222;
   -webkit-text-decoration: none;
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  display: table-cell;
+  display: inline-block;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -2452,8 +2449,7 @@ exports[`MostReadList should render with ltr news items with a max of one column
   color: #222222;
   -webkit-text-decoration: none;
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  display: table-cell;
+  display: inline-block;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -3102,8 +3098,7 @@ exports[`MostReadList should render with ltr news items with a max of two column
   color: #222222;
   -webkit-text-decoration: none;
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  display: table-cell;
+  display: inline-block;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -3878,8 +3873,7 @@ exports[`MostReadList should render with ltr news items with a multi column layo
   color: #222222;
   -webkit-text-decoration: none;
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  display: table-cell;
+  display: inline-block;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -4760,8 +4754,7 @@ exports[`MostReadList should render with ltr news items with correct dir 1`] = `
   color: #222222;
   -webkit-text-decoration: none;
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  display: table-cell;
+  display: inline-block;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -5642,8 +5635,7 @@ exports[`MostReadList should render with rtl persian items with correct dir 1`] 
   color: #222222;
   -webkit-text-decoration: none;
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  display: table-cell;
+  display: inline-block;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
