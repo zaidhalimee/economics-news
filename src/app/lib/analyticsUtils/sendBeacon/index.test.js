@@ -71,20 +71,20 @@ describe('sendBeacon', () => {
       beforeEach(() => {
         process.env.SIMORGH_APP_ENV = 'local';
       });
-      
+
       it('should call Reverb viewEvent if Reverb config is passed', async () => {
         const sendBeacon = require('./index').default;
-  
+
         await sendBeacon('https://foobar.com', reverbConfig);
-  
+
         expect(reverbMock.viewEvent).toHaveBeenCalledTimes(1);
       });
 
       it('should not call "fetch" if Reverb config is passed', async () => {
         const sendBeacon = require('./index').default;
-  
+
         await sendBeacon('https://foobar.com', reverbConfig);
-  
+
         expect(fetch).not.toHaveBeenCalled();
       });
     });
@@ -93,20 +93,20 @@ describe('sendBeacon', () => {
       beforeEach(() => {
         process.env.SIMORGH_APP_ENV = 'test';
       });
-      
+
       it('should call Reverb viewEvent if Reverb config is passed', async () => {
         const sendBeacon = require('./index').default;
-  
+
         await sendBeacon('https://foobar.com', reverbConfig);
-  
+
         expect(reverbMock.viewEvent).toHaveBeenCalledTimes(1);
       });
 
       it('should not call "fetch" if Reverb config is passed', async () => {
         const sendBeacon = require('./index').default;
-  
+
         await sendBeacon('https://foobar.com', reverbConfig);
-  
+
         expect(fetch).not.toHaveBeenCalled();
       });
     });
@@ -115,20 +115,20 @@ describe('sendBeacon', () => {
       beforeEach(() => {
         process.env.SIMORGH_APP_ENV = 'live';
       });
-      
+
       it('should not call Reverb viewEvent if Reverb config is passed', async () => {
         const sendBeacon = require('./index').default;
-  
+
         await sendBeacon('https://foobar.com', reverbConfig);
-  
+
         expect(reverbMock.viewEvent).not.toHaveBeenCalled();
       });
 
       it('should call "fetch" when Reverb config is passed', async () => {
         const sendBeacon = require('./index').default;
-  
+
         await sendBeacon('https://foobar.com', reverbConfig);
-  
+
         expect(fetch).toHaveBeenCalledTimes(1);
       });
     });
