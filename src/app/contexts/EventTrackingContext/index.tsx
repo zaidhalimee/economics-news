@@ -104,7 +104,7 @@ export const EventTrackingContextProvider = ({
   const { pageType } = requestContext;
 
   const serviceContext = useContext(ServiceContext);
-  const { atiAnalyticsProducerId } = serviceContext;
+  const { atiAnalyticsProducerId, atiAnalyticsProducerName } = serviceContext;
 
   const { enabled: eventTrackingIsEnabled } = useToggle('eventTracking');
 
@@ -125,12 +125,14 @@ export const EventTrackingContextProvider = ({
         pageIdentifier,
         platform,
         producerId: atiAnalyticsProducerId,
+        producerName: atiAnalyticsProducerName,
         statsDestination,
       };
     }
     return null;
   }, [
     atiAnalyticsProducerId,
+    atiAnalyticsProducerName,
     atiData,
     data,
     eventTrackingIsEnabled,

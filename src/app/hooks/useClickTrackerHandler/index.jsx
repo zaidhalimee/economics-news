@@ -24,11 +24,16 @@ const useClickTrackerHandler = (props = {}) => {
   const [clicked, setClicked] = useState(false);
   const eventTrackingContext = useContext(EventTrackingContext);
 
-  const { pageIdentifier, platform, producerId, statsDestination } =
-    eventTrackingContext;
+  const {
+    pageIdentifier,
+    platform,
+    producerId,
+    producerName,
+    statsDestination,
+  } = eventTrackingContext;
   const campaignID = props?.campaignID || eventTrackingContext?.campaignID;
 
-  const { service } = useContext(ServiceContext);
+  const { service, useReverb } = useContext(ServiceContext);
 
   return useCallback(
     async event => {
@@ -46,6 +51,7 @@ const useClickTrackerHandler = (props = {}) => {
           pageIdentifier,
           platform,
           producerId,
+          producerName,
           service,
           statsDestination,
         ].every(Boolean);
@@ -84,11 +90,13 @@ const useClickTrackerHandler = (props = {}) => {
               pageIdentifier,
               platform,
               producerId,
+              producerName,
               service,
               advertiserID,
               statsDestination,
               url,
               detailedPlacement,
+              useReverb,
               ...(optimizelyVariation &&
                 optimizelyVariation !== 'off' && {
                   experimentVariant: optimizelyVariation,
@@ -114,6 +122,7 @@ const useClickTrackerHandler = (props = {}) => {
       platform,
       preventNavigation,
       producerId,
+      producerName,
       service,
       statsDestination,
       url,
@@ -122,6 +131,7 @@ const useClickTrackerHandler = (props = {}) => {
       optimizely,
       optimizelyMetricNameOverride,
       detailedPlacement,
+      useReverb,
     ],
   );
 };

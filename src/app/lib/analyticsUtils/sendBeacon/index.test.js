@@ -5,6 +5,18 @@ import { ATI_LOGGING_ERROR } from '#app/lib/logger.const';
 let fetchResponse;
 let isOnClient;
 
+const reverbMock = {
+  isReady: jest.fn(),
+  initialise: jest.fn(() => Promise.resolve()),
+  viewEvent: jest.fn(),
+  userActionEvent: jest.fn(),
+};
+
+// eslint-disable-next-line no-underscore-dangle
+window.__reverb = {
+  __reverbLoadedPromise: Promise.resolve(reverbMock),
+};
+
 describe('sendBeacon', () => {
   beforeEach(() => {
     isOnClient = true;
@@ -36,6 +48,34 @@ describe('sendBeacon', () => {
     sendBeacon('https://foobar.com');
 
     expect(fetch).not.toHaveBeenCalled();
+  });
+
+  describe('Reverb', () => {
+    const reverbConfig = {
+      params: {
+        page: 'page',
+        user: '1234-5678',
+      },
+      eventDetails: {
+        eventName: 'pageView',
+      },
+    };
+
+    it('should call Reverb viewEvent if Reverb config is passed', async () => {
+      const sendBeacon = require('./index').default;
+
+      await sendBeacon('https://foobar.com', reverbConfig);
+
+      expect(reverbMock.viewEvent).toHaveBeenCalledTimes(1);
+    });
+
+    it('should not call "fetch" if Reverb config is passed', async () => {
+      const sendBeacon = require('./index').default;
+
+      await sendBeacon('https://foobar.com', reverbConfig);
+
+      expect(fetch).not.toHaveBeenCalled();
+    });
   });
 
   describe('when the fetch fails', () => {
