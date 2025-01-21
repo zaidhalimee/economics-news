@@ -66,7 +66,7 @@ const Billboard = forwardRef(
                       </LiveText>
                     </div>
                   ) : (
-                    heading
+                    <div>{heading}</div>
                   )}
                 </a>
               </Heading>

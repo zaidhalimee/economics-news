@@ -27,12 +27,16 @@ const useViewTracker = (props = {}) => {
   const { trackingIsEnabled } = useTrackingToggle(componentName);
   const eventTrackingContext = useContext(EventTrackingContext);
 
-  const { pageIdentifier, platform, producerId, statsDestination } =
-    eventTrackingContext;
-
+  const {
+    pageIdentifier,
+    platform,
+    producerId,
+    producerName,
+    statsDestination,
+  } = eventTrackingContext;
   const campaignID = props?.campaignID || eventTrackingContext?.campaignID;
 
-  const { service } = useContext(ServiceContext);
+  const { service, useReverb } = useContext(ServiceContext);
 
   const initObserver = async () => {
     if (typeof window.IntersectionObserver === 'undefined') {
@@ -60,6 +64,7 @@ const useViewTracker = (props = {}) => {
           pageIdentifier,
           platform,
           producerId,
+          producerName,
           service,
           statsDestination,
         ].every(Boolean);
@@ -98,12 +103,14 @@ const useViewTracker = (props = {}) => {
             pageIdentifier,
             platform,
             producerId,
+            producerName,
             service,
             statsDestination,
             type: EVENT_TYPE,
             advertiserID,
             url,
             detailedPlacement,
+            useReverb,
             ...(optimizelyVariation &&
               optimizelyVariation !== 'off' && {
                 experimentVariant: optimizelyVariation,
@@ -131,6 +138,7 @@ const useViewTracker = (props = {}) => {
     pageIdentifier,
     platform,
     producerId,
+    producerName,
     service,
     statsDestination,
     trackingIsEnabled,
@@ -140,6 +148,7 @@ const useViewTracker = (props = {}) => {
     optimizely,
     optimizelyMetricNameOverride,
     detailedPlacement,
+    useReverb,
   ]);
 
   return async element => {
