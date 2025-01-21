@@ -60,6 +60,12 @@ module.exports = {
     'linebreak-style': process.platform === 'win32' ? 'off' : ['error', 'unix'],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    'import/no-import-module-exports': [
+      'error',
+      {
+        exceptions: ['**/*/startServer.js'],
+      },
+    ],
     'import/no-extraneous-dependencies': [
       'off',
       {
