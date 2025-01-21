@@ -269,6 +269,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'प्रसारण का समय',
         podcastExternalLinks: 'ये पॉडकास्ट इन प्लेटफ़ॉर्म्स पर भी उपलब्ध है -',
         download: 'एपिसोड डाउनलोड करें',
+        closeVideo: 'बाहर निकलें',
       },
       socialEmbed: {
         caption: {
@@ -440,6 +441,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'होम पेज',
         url: '/hindi',
+      },
+      {
+        title: 'दिल्ली विधानसभा चुनाव',
+        url: '/hindi/topics/c8dqegnm6d9t',
       },
       {
         title: 'भारत',

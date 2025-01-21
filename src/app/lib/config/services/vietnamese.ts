@@ -227,6 +227,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Show radio sau',
         duration: 'Thời lượng',
         recentEpisodes: 'Xem thêm',
+        closeVideo: 'Thoát',
       },
       socialEmbed: {
         caption: {
