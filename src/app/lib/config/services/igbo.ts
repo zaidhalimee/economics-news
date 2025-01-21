@@ -232,6 +232,7 @@ export const service: DefaultServiceConfig = {
         previousRadioShow: 'Previous radio show',
         nextRadioShow: 'Next radio show',
         duration: 'Duration',
+        closeVideo: 'Wepu',
       },
       socialEmbed: {
         caption: {

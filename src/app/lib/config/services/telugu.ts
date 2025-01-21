@@ -235,6 +235,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'తర్వాత రేడియో షో',
         duration: 'వ్యవధి',
         recentEpisodes: 'ఇటీవలి ఎపిసోడ్లు',
+        closeVideo: 'నిష్క్రమించు',
       },
       socialEmbed: {
         caption: {

@@ -212,6 +212,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'ዝቕጽል ፈነወ ራድዮ',
         duration: 'ዕምሪ ፈነወ',
         recentEpisodes: 'ዝሓለፉ ክፋላት',
+        closeVideo: 'ออก',
       },
       socialEmbed: {
         caption: {

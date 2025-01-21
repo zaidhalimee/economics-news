@@ -21,9 +21,9 @@ const props = {
   },
 };
 
-const TestComponent = () => {
-  const Component = () => <h1>Hola Optimizely</h1>;
+const Component = () => <h1>Hola Optimizely</h1>;
 
+const TestComponent = () => {
   const OptimizelyComponent = withOptimizelyProvider(Component);
 
   const memoizedServiceContextValue = useMemo(
