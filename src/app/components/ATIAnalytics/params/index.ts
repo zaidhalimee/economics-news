@@ -121,7 +121,7 @@ type BuilderFunction = {
 };
 
 type PageTypeHandlers = {
-  [key in PageTypes]: BuilderFunction;
+  [_key in PageTypes]: BuilderFunction;
 };
 
 const isMigrated = (pageType: PageTypes) =>

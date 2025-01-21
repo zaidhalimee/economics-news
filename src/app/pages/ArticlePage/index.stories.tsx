@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
+import React, { useMemo } from 'react';
 import ThemeProvider from '#app/components/ThemeProvider';
 import { ToggleContextProvider } from '#contexts/ToggleContext';
 import {
@@ -112,6 +112,11 @@ const ComponentWithServiceContext = ({
   podcastEnabled = false,
   electionBanner = false,
 }: Props) => {
+  const memoisedServiceContext = useMemo(
+    () => ({ ...serviceContextMock, service }),
+    [service],
+  );
+
   return (
     <ToggleContextProvider
       toggles={{
@@ -125,7 +130,7 @@ const ComponentWithServiceContext = ({
       {/* Service set to news to enable most read. Article data is in english */}
       <ServiceContext.Provider
         // @ts-expect-error - passing partial service context
-        value={{ ...serviceContextMock, service }}
+        value={memoisedServiceContext}
       >
         <ThemeProvider service={service}>
           <Page
