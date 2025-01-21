@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-marathi',
     atiAnalyticsProducerId: '59',
+    atiAnalyticsProducerName: 'MARATHI',
     chartbeatDomain: 'marathi.bbc.co.uk',
     brandName: 'BBC News मराठी',
     product: 'BBC News',
@@ -242,6 +243,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'ताजे एपिसोड',
         podcastExternalLinks: 'हे पॉडकास्ट तुम्ही इथे ऐकू शकता',
         download: 'एपिसोड डाऊनलोड करा',
+        closeVideo: 'बंद करा',
       },
       socialEmbed: {
         caption: {

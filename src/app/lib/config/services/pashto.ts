@@ -14,6 +14,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-pashto',
     atiAnalyticsProducerId: '68',
+    atiAnalyticsProducerName: 'PASHTO',
     brandName: 'BBC News پښتو',
     chartbeatDomain: 'pashto.bbc.co.uk',
     serviceLocalizedName: 'پښتو',
@@ -240,6 +241,7 @@ export const service: DefaultServiceConfig = {
         previousRadioShow: 'تېره راډیویي‌ خپرونه',
         nextRadioShow: 'راتلونکې راډیویي خپرونه',
         duration: 'موده',
+        closeVideo: 'وتل',
       },
       socialEmbed: {
         caption: {

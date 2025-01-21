@@ -12,6 +12,7 @@ const baseServiceConfig = {
   articleTimestampSuffix: '',
   atiAnalyticsAppName: 'news-zhongwen',
   atiAnalyticsProducerId: '38',
+  atiAnalyticsProducerName: 'CHINESE',
   chartbeatDomain: 'zhongwen.bbc.co.uk',
   brandName: 'BBC News 中文',
   product: 'BBC News',
@@ -329,6 +330,7 @@ export const service: ZhongwenConfig = {
         recentEpisodes: '存档节目',
         podcastExternalLinks: 'This podcast is also available on',
         download: '下载本集节目',
+        closeVideo: '退出',
       },
       socialEmbed: {
         caption: {
@@ -636,6 +638,7 @@ export const service: ZhongwenConfig = {
         recentEpisodes: '存档节目',
         podcastExternalLinks: 'This podcast is also available on',
         download: '下載本集節目',
+        closeVideo: '退出',
       },
       socialEmbed: {
         caption: {
