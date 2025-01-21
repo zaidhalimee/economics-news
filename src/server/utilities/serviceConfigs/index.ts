@@ -58,9 +58,7 @@ import { Services, Variants } from '../../../app/models/types/global';
 import { ServiceConfig } from '../../../app/models/types/serviceConfig';
 
 type AllServices = {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   [s in Services]: {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     [v in Variants]: ServiceConfig;
   };
 };
