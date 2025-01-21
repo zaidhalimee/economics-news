@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-igbo',
     atiAnalyticsProducerId: '53',
+    atiAnalyticsProducerName: 'IGBO',
     chartbeatDomain: 'igbo.bbc.co.uk',
     brandName: 'BBC News Ìgbò',
     product: 'BBC News',
@@ -71,6 +72,11 @@ export const service: DefaultServiceConfig = {
         breaking: 'Na Akpọtụ Ugbu A',
         postedAt: 'Ebisara na',
         summary: 'Nchịkọta',
+        shareButtonText: 'Kekọrịta',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'Nchịkọta',
       error: {
@@ -136,7 +142,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'Ọ dị mma',
           reject: 'Chọpụta ihe gbanwere',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -226,6 +232,7 @@ export const service: DefaultServiceConfig = {
         previousRadioShow: 'Previous radio show',
         nextRadioShow: 'Next radio show',
         duration: 'Duration',
+        closeVideo: 'Wepu',
       },
       socialEmbed: {
         caption: {
@@ -266,11 +273,6 @@ export const service: DefaultServiceConfig = {
       lastUpdated: 'Emelitere ikpeazụ na:',
       numberOfItems: 5,
       hasMostRead: true,
-    },
-    mostWatched: {
-      header: 'Elelere',
-      numberOfItems: 10,
-      hasMostWatched: true,
     },
     radioSchedule: {
       hasRadioSchedule: false,
@@ -325,6 +327,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/igbo/send/u50853379',
           text: 'Kpọtụrụ BBC',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Akụkọ BBC n’asụsụ ndị ọzọ',
         },
         {
           id: 'COOKIE_SETTINGS',

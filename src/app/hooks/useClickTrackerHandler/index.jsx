@@ -1,7 +1,5 @@
 /* eslint-disable no-console */
 import { useContext, useCallback, useState } from 'react';
-import path from 'ramda/src/path';
-import pathOr from 'ramda/src/pathOr';
 
 import { EventTrackingContext } from '../../contexts/EventTrackingContext';
 import useTrackingToggle from '../useTrackingToggle';
@@ -13,25 +11,29 @@ import { isValidClick } from './clickTypes';
 const EVENT_TYPE = 'click';
 
 const useClickTrackerHandler = (props = {}) => {
-  const preventNavigation = path(['preventNavigation'], props);
-  const componentName = path(['componentName'], props);
-  const url = path(['url'], props);
-  const advertiserID = path(['advertiserID'], props);
-  const format = path(['format'], props);
-  const optimizely = path(['optimizely'], props);
+  const preventNavigation = props?.preventNavigation;
+  const componentName = props?.componentName;
+  const url = props?.url;
+  const advertiserID = props?.advertiserID;
+  const format = props?.format;
+  const optimizely = props?.optimizely;
+  const optimizelyMetricNameOverride = props?.optimizelyMetricNameOverride;
   const detailedPlacement = props?.detailedPlacement;
 
   const { trackingIsEnabled } = useTrackingToggle(componentName);
   const [clicked, setClicked] = useState(false);
   const eventTrackingContext = useContext(EventTrackingContext);
-  const { pageIdentifier, platform, producerId, statsDestination } =
-    eventTrackingContext;
-  const campaignID = pathOr(
-    path(['campaignID'], eventTrackingContext),
-    ['campaignID'],
-    props,
-  );
-  const { service } = useContext(ServiceContext);
+
+  const {
+    pageIdentifier,
+    platform,
+    producerId,
+    producerName,
+    statsDestination,
+  } = eventTrackingContext;
+  const campaignID = props?.campaignID || eventTrackingContext?.campaignID;
+
+  const { service, useReverb } = useContext(ServiceContext);
 
   return useCallback(
     async event => {
@@ -40,7 +42,6 @@ const useClickTrackerHandler = (props = {}) => {
         !clicked,
         isValidClick(event),
       ].every(Boolean);
-
       if (shouldRegisterClick) {
         setClicked(true);
 
@@ -50,28 +51,35 @@ const useClickTrackerHandler = (props = {}) => {
           pageIdentifier,
           platform,
           producerId,
+          producerName,
           service,
           statsDestination,
         ].every(Boolean);
-
         if (shouldSendEvent) {
-          const nextPageUrl = path(['currentTarget', 'href'], event);
+          const nextPageUrl = event?.currentTarget?.href;
 
           event.stopPropagation();
           event.preventDefault();
 
           if (optimizely) {
+            const eventName = OPTIMIZELY_CONFIG.viewClickAttributeId;
+
             const overrideAttributes = {
               ...optimizely.user.attributes,
-              [`clicked_${OPTIMIZELY_CONFIG.viewClickAttributeId}`]: true,
+              [`clicked_${eventName}`]: true,
             };
 
             optimizely.track(
-              'component_clicks',
+              optimizelyMetricNameOverride
+                ? `${optimizelyMetricNameOverride}_clicks`
+                : 'component_clicks',
               optimizely.user.id,
               overrideAttributes,
             );
           }
+
+          const optimizelyVariation =
+            optimizely?.getVariation(OPTIMIZELY_CONFIG.ruleKey) || null;
 
           try {
             await sendEventBeacon({
@@ -82,11 +90,17 @@ const useClickTrackerHandler = (props = {}) => {
               pageIdentifier,
               platform,
               producerId,
+              producerName,
               service,
               advertiserID,
               statsDestination,
               url,
               detailedPlacement,
+              useReverb,
+              ...(optimizelyVariation &&
+                optimizelyVariation !== 'off' && {
+                  experimentVariant: optimizelyVariation,
+                }),
             });
           } finally {
             if (nextPageUrl && !preventNavigation) {
@@ -108,13 +122,16 @@ const useClickTrackerHandler = (props = {}) => {
       platform,
       preventNavigation,
       producerId,
+      producerName,
       service,
       statsDestination,
       url,
       advertiserID,
       format,
       optimizely,
+      optimizelyMetricNameOverride,
       detailedPlacement,
+      useReverb,
     ],
   );
 };

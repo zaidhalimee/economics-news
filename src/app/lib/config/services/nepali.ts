@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: 'अद्यावधिक',
     atiAnalyticsAppName: 'news-nepali',
     atiAnalyticsProducerId: '63',
+    atiAnalyticsProducerName: 'NEPALI',
     chartbeatDomain: 'nepali.bbc.co.uk',
     brandName: 'BBC News नेपाली',
     product: 'BBC News',
@@ -72,6 +73,11 @@ export const service: DefaultServiceConfig = {
         breaking: 'ब्रेकिंग',
         postedAt: 'पोस्ट गरिएको',
         summary: 'सारांश',
+        shareButtonText: 'शेयर गर्नुहोस्',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'सारांश',
       error: {
@@ -126,7 +132,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'मान्य छ।',
           reject: 'परिमार्जित कुरा हेर्नुहोस्।',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -224,6 +230,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'पहिलेका कार्यक्रमहरू',
         podcastExternalLinks: 'यो पडकास्ट सुन्नकालागि यहाँ उपलब्ध छ',
         download: 'एपिसोड डाउनलोड',
+        closeVideo: 'बाहिरिनुहोस्',
       },
       socialEmbed: {
         caption: {
@@ -263,11 +270,6 @@ export const service: DefaultServiceConfig = {
       numberOfItems: 5,
       hasMostRead: true,
     },
-    mostWatched: {
-      header: 'धेरै हेरिएको',
-      numberOfItems: 10,
-      hasMostWatched: true,
-    },
     radioSchedule: {
       hasRadioSchedule: true,
       header: 'पछिल्लो कार्यक्रम सुन्नुहोस्',
@@ -305,6 +307,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/nepali/send/u50853511',
           text: 'बीबीसीलाई सम्पर्क गर्नुहोस्',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'अरू भाषामा बीबीसी',
         },
         {
           id: 'COOKIE_SETTINGS',

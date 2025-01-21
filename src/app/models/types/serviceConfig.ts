@@ -5,7 +5,9 @@ import {
   ChineseService,
   ZhongwenService,
   UkrainianService,
+  UzbekService,
   Direction,
+  Variants,
 } from './global';
 import { Translations } from './translations';
 
@@ -29,6 +31,10 @@ export type UkrainianConfig = {
   [key in UkrainianService['variant']]: ServiceConfig;
 };
 
+export type UzbekConfig = {
+  [key in UzbekService['variant']]: ServiceConfig;
+};
+
 export type ServiceConfig = {
   lang: string;
   articleAuthor: string;
@@ -36,6 +42,8 @@ export type ServiceConfig = {
   articleTimestampSuffix?: string;
   atiAnalyticsAppName: string;
   atiAnalyticsProducerId: string;
+  atiAnalyticsProducerName?: string;
+  useReverb?: boolean;
   chartbeatDomain: string;
   brandName: string;
   product: string;
@@ -84,7 +92,6 @@ export type ServiceConfig = {
   };
   translations: Translations;
   mostRead: MostRead;
-  mostWatched: MostWatched;
   radioSchedule?: RadioSchedule;
   recommendations?: Recommendations;
   footer: Footer;
@@ -92,10 +99,11 @@ export type ServiceConfig = {
   navigation?: {
     title: string;
     url: string;
+    hideOnLiteSite?: boolean;
   }[];
   scriptLink?: {
     text: string;
-    variant: string;
+    variant: Variants;
   };
   timezone: string;
   liveRadioOverrides?: {
@@ -129,12 +137,6 @@ export interface MostRead {
   lastUpdated: string;
   numberOfItems: number;
   hasMostRead: boolean;
-}
-
-export interface MostWatched {
-  header: string;
-  numberOfItems?: number;
-  hasMostWatched: boolean;
 }
 
 export interface RadioSchedule {

@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-telugu',
     atiAnalyticsProducerId: '89',
+    atiAnalyticsProducerName: 'TELUGU',
     chartbeatDomain: 'telugu.bbc.co.uk',
     brandName: 'BBC News తెలుగు',
     product: 'BBC News',
@@ -71,6 +72,11 @@ export const service: DefaultServiceConfig = {
         breaking: 'బ్రేకింగ్ న్యూస్',
         postedAt: 'పోస్ట్ చేసిన సమయం',
         summary: 'సారాంశం',
+        shareButtonText: 'షేర్ చేయండి',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'సారాంశం',
       error: {
@@ -133,7 +139,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ఓకే',
           reject: 'ఏం మార్పులు చేశామో తెలుసుకోండి',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -229,6 +235,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'తర్వాత రేడియో షో',
         duration: 'వ్యవధి',
         recentEpisodes: 'ఇటీవలి ఎపిసోడ్లు',
+        closeVideo: 'నిష్క్రమించు',
       },
       socialEmbed: {
         caption: {
@@ -270,11 +277,6 @@ export const service: DefaultServiceConfig = {
       numberOfItems: 10,
       hasMostRead: true,
     },
-    mostWatched: {
-      header: 'ఎక్కువగా చూసినవి',
-      numberOfItems: 10,
-      hasMostWatched: true,
-    },
     radioSchedule: {
       hasRadioSchedule: false,
     },
@@ -312,6 +314,10 @@ export const service: DefaultServiceConfig = {
           text: 'BBCని సంప్రదించండి',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'ఇతర భాషల్లో బీబీసీ వార్తలు',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -327,10 +333,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'వార్తలు',
         url: '/telugu',
-      },
-      {
-        title: 'ఆంధ్ర ప్రదేశ్ అసెంబ్లీ ఎన్నికలు 2024',
-        url: '/telugu/topics/c442kv3851yt',
       },
       {
         title: 'వీడియో',

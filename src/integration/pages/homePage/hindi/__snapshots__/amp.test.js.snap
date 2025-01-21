@@ -178,6 +178,13 @@ exports[`AMP Home Page Footer Anchors should match text and url 7`] = `
 
 exports[`AMP Home Page Footer Anchors should match text and url 8`] = `
 {
+  "text": "अन्य भाषाएँ",
+  "url": "https://www.bbc.com/ws/languages",
+}
+`;
+
+exports[`AMP Home Page Footer Anchors should match text and url 9`] = `
+{
   "text": "बाहरी साइटों का लिंक देने की हमारी नीति के बारे में पढ़ें.",
   "url": "https://www.bbc.co.uk/editorialguidelines/guidance/feeds-and-links",
 }
@@ -194,7 +201,7 @@ exports[`AMP Home Page Footer I can click on the BBC branding and it would take 
 
 exports[`AMP Home Page Footer Paragraphs should match text 1`] = `"बीबीसी के लिए कलेक्टिव न्यूज़रूम की ओर से प्रकाशित"`;
 
-exports[`AMP Home Page Footer Paragraphs should match text 2`] = `"© 2024 BBC. बाहरी साइटों की सामग्री के लिए बीबीसी ज़िम्मेदार नहीं है. बाहरी साइटों का लिंक देने की हमारी नीति के बारे में पढ़ें."`;
+exports[`AMP Home Page Footer Paragraphs should match text 2`] = `"© 2025 BBC. बाहरी साइटों की सामग्री के लिए बीबीसी ज़िम्मेदार नहीं है. बाहरी साइटों का लिंक देने की हमारी नीति के बारे में पढ़ें."`;
 
 exports[`AMP Home Page Header I can see the branding 1`] = `"BBC News, हिंदी"`;
 
@@ -207,8 +214,8 @@ exports[`AMP Home Page Header Navigation link should match text and url 1`] = `
 
 exports[`AMP Home Page Header Navigation link should match text and url 2`] = `
 {
-  "text": "लोकसभा चुनाव 2024",
-  "url": "/hindi/topics/cm5m26q8qxpt",
+  "text": "दिल्ली विधानसभा चुनाव",
+  "url": "/hindi/topics/c8dqegnm6d9t",
 }
 `;
 
@@ -271,6 +278,16 @@ exports[`AMP Home Page Header Navigation link should match text and url 10`] = `
 exports[`AMP Home Page Main heading should match text 1`] = `"BBC News, हिंदी - होम पेज"`;
 
 exports[`AMP Home Page Page content First item in the first curation is the correct headline 1`] = `"पाक: मोदी की 'तारीफ़' पर गद्दारी का मुकदमा! 23"`;
+
+exports[`AMP Home Page Page content First item in the first curation is the correct image 1`] = `
+<amp-img
+  alt="पढ़ें"
+  class="bbc-image"
+  fallback=""
+  layout="fill"
+  src="https://ichef.test.bbci.co.uk/ace/standard/240/cpsdevpb/15392/test/_63503968_160822002233_rio_olympic_closing_624x351_afp.jpg"
+/>
+`;
 
 exports[`AMP Home Page SEO Apple Touch Icon should match attributes 1`] = `
 {
@@ -410,9 +427,15 @@ exports[`AMP Home Page SEO Linked data should match text 1`] = `
           "position": 3,
           "url": "https://www.bbc.com/hindi/international-23069805",
         },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://www.bbc.com/hindi/articles/c558wpnqq4qo",
+        },
       ],
       "name": "BBC News हिंदी",
-      "numberOfItems": 3,
+      "numberOfItems": 4,
     },
   ],
 }

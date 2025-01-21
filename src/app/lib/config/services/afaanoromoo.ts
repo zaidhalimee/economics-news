@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-afaanoromoo',
     atiAnalyticsProducerId: '2',
+    atiAnalyticsProducerName: 'AFAAN_OROMOO',
     chartbeatDomain: 'afaanoromoo.bbc.co.uk',
     brandName: 'BBC News Afaan Oromoo',
     product: 'BBC News',
@@ -73,6 +74,11 @@ export const service: DefaultServiceConfig = {
         breaking: 'Amma nu gahe',
         postedAt: '...tti maxxanfame',
         summary: 'Guduunfaa',
+        shareButtonText: 'Qoodi',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'Guduunfaa',
       error: {
@@ -135,7 +141,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'TOLE',
           reject: 'Maaltu akka jijjirame bari',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -227,6 +233,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Sagantaa raadiyoo itti aanu',
         duration: 'Turtii',
         recentEpisodes: 'Sagantaawwan darban',
+        closeVideo: 'Bahi',
       },
       socialEmbed: {
         caption: {
@@ -267,11 +274,6 @@ export const service: DefaultServiceConfig = {
       numberOfItems: 10,
       hasMostRead: true,
     },
-    mostWatched: {
-      header: 'Hedduu kan ilaalaman',
-      numberOfItems: 5,
-      hasMostWatched: true,
-    },
     radioSchedule: {
       hasRadioSchedule: true,
       header: 'Dhaggeeffadhaa',
@@ -309,6 +311,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/afaanoromoo/send/u50777768',
           text: 'BBC qunnami',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Afaanoota biroo',
         },
         {
           id: 'COOKIE_SETTINGS',

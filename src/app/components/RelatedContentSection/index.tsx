@@ -12,6 +12,7 @@ import identity from 'ramda/src/identity';
 import last from 'ramda/src/last';
 import filter from 'ramda/src/filter';
 import pipe from 'ramda/src/pipe';
+import { OptimizelyContext } from '@optimizely/react-sdk';
 
 import useViewTracker from '#hooks/useViewTracker';
 import { ServiceContext } from '../../contexts/ServiceContext';
@@ -92,8 +93,14 @@ const renderRelatedContentList = ({
   );
 };
 
-const RelatedContentSection = ({ content }: { content: OptimoBlock[] }) => {
+type Props = {
+  content: OptimoBlock[];
+  sendOptimizelyEvents?: boolean;
+};
+
+const RelatedContentSection = ({ content, sendOptimizelyEvents }: Props) => {
   const { translations, script, service } = useContext(ServiceContext);
+  const { optimizely } = useContext(OptimizelyContext);
 
   const {
     palette: { GREY_2 },
@@ -103,12 +110,16 @@ const RelatedContentSection = ({ content }: { content: OptimoBlock[] }) => {
   const eventTrackingData = {
     block: {
       componentName: 'related-content',
+      ...(sendOptimizelyEvents && {
+        optimizely,
+        optimizelyMetricNameOverride: 'related_content',
+      }),
     },
   };
   const eventTrackingDataSend = path<object>(['block'], eventTrackingData);
   const viewRef = useViewTracker(eventTrackingDataSend);
 
-  if (!pathEq(['type'], 'relatedContent', blocks)) return null;
+  if (!pathEq('relatedContent', ['type'], blocks)) return null;
 
   if (!blocks) return null;
 
@@ -116,7 +127,7 @@ const RelatedContentSection = ({ content }: { content: OptimoBlock[] }) => {
   const LABEL_ID = 'related-content-heading';
 
   const customTitle =
-    pathEq([0, 'type'], 'title', items) &&
+    pathEq('title', [0, 'type'], items) &&
     pathOr(
       [],
       [0, 'model', 'blocks', 0, 'model', 'blocks', 0, 'model', 'text'],
@@ -165,8 +176,6 @@ const RelatedContentSection = ({ content }: { content: OptimoBlock[] }) => {
       role="region"
       data-e2e={LABEL_ID}
     >
-      {/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-expect-error - TS inferring props it thinks are required  */}
       <SectionLabel
         labelId={LABEL_ID}
         backgroundColor={GREY_2}

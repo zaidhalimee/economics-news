@@ -16,6 +16,7 @@ const baseServiceConfig = {
   articleTimestampPrefix: 'Оновлено: ',
   atiAnalyticsAppName: 'news-ukrainian',
   atiAnalyticsProducerId: '94',
+  atiAnalyticsProducerName: 'UKRAINIAN',
   chartbeatDomain: 'ukrainian.bbc.co.uk',
   brandName: 'BBC News Україна',
   product: 'BBC News',
@@ -85,6 +86,11 @@ const baseServiceConfig = {
       breaking: 'Терміново',
       postedAt: 'Опубілковано о',
       summary: 'Стисло',
+      shareButtonText: 'Поділитися',
+    },
+    downloads: {
+      instructions: 'You can download and view today’s news.',
+      title: 'File Download',
     },
     gist: 'Стисло',
     error: {
@@ -140,7 +146,7 @@ const baseServiceConfig = {
         },
         accept: 'ОК',
         reject: 'Подивитися, що змінилося',
-        rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+        rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
       },
       cookie: {
         amp: {
@@ -238,6 +244,7 @@ const baseServiceConfig = {
       recentEpisodes: 'Більше',
       podcastExternalLinks: 'Цей подкаст доступний у',
       download: 'Завантажити епізод',
+      closeVideo: 'Вийти',
     },
     socialEmbed: {
       caption: {
@@ -279,11 +286,6 @@ const baseServiceConfig = {
     numberOfItems: 10,
     hasMostRead: true,
   },
-  mostWatched: {
-    header: 'Найпопулярніше',
-    numberOfItems: 5,
-    hasMostWatched: false,
-  },
   radioSchedule: {
     hasRadioSchedule: false,
   },
@@ -317,6 +319,10 @@ const baseServiceConfig = {
         text: 'Напишіть на ВВС',
       },
       {
+        href: 'https://www.bbc.com/ws/languages',
+        text: 'Новини ВВС іншими мовами',
+      },
+      {
         id: 'COOKIE_SETTINGS',
         href: '#',
         text: 'Do not share or sell my info',
@@ -345,7 +351,7 @@ const baseServiceConfig = {
     },
     {
       title: 'Книга року BBC',
-      url: '/ukrainian/features-50320117',
+      url: '/ukrainian/topics/cqwrq3rkdrnt',
     },
     {
       title: 'Подкасти',

@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-kyrgyz',
     atiAnalyticsProducerId: '58',
+    atiAnalyticsProducerName: 'KYRGYZ',
     chartbeatDomain: 'kyrgyz.bbc.co.uk',
     brandName: 'BBC News Кыргыз Кызматы',
     product: 'BBC News',
@@ -72,6 +73,11 @@ export const service: DefaultServiceConfig = {
         breaking: 'Чукул кабар',
         postedAt: 'Чыгарылган убакыт',
         summary: 'Корутунду',
+        shareButtonText: 'Бөлүшүү',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'Корутунду',
       error: {
@@ -126,7 +132,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ЖАРАЙТ',
           reject: 'Кандай өзгөрүүлөр болгонун билип алыңыз.',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -229,6 +235,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'Мурдагы берүүлөр',
         podcastExternalLinks: 'Бул подкастты башка платформалардан дагы угуңуз',
         download: 'Подкастты жүктөп алыңыз',
+        closeVideo: 'Чыгуу',
       },
       socialEmbed: {
         caption: {
@@ -269,11 +276,6 @@ export const service: DefaultServiceConfig = {
       numberOfItems: 5,
       hasMostRead: true,
     },
-    mostWatched: {
-      header: 'Эң көп көрүлгөндөр',
-      numberOfItems: 5,
-      hasMostWatched: true,
-    },
     radioSchedule: {
       hasRadioSchedule: false,
     },
@@ -309,6 +311,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/kyrgyz/send/u50853445',
           text: 'Би-Би-Си менен байланышыңыз',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Башка тилдерде',
         },
         {
           id: 'COOKIE_SETTINGS',

@@ -6,7 +6,7 @@ import Url from 'url-parse';
 
 import { FontVariant, GelFontSize } from '../../models/types/theming';
 import { ServiceContext } from '../../contexts/ServiceContext';
-import styles from './index.styles';
+import { styles } from './index.styles';
 
 interface Props extends HTMLAttributes<HTMLElement> {
   className?: string;
@@ -36,7 +36,8 @@ const InlineLink: FC<Props> = ({
 }: Props) => {
   const { externalLinkText } = useContext(ServiceContext);
   const { hostname } = new Url(to);
-  const isExternalLink = !bbcDomains.some(bbcDomain => hostname === bbcDomain);
+  const isExternalLink =
+    hostname && !bbcDomains.some(bbcDomain => hostname === bbcDomain);
   const linkProps = {
     ...(isExternalLink &&
       typeof text === 'string' && {

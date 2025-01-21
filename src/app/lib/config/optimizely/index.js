@@ -1,13 +1,11 @@
 export default {
-  experimentId: '005_brasil_hybrid_recommendations',
-  featureId: '005_brasil_hybrid_recommendations',
+  // This is the key of the whole experiment
+  flagKey: 'jump_to_onward_journeys',
+  // This is the key for the 'rule' that is attached to the experiment
+  ruleKey: 'jump_to_onward_journeys_experiment',
   viewClickAttributeId: 'wsoj',
   variationMappings: {
-    hybrid_recs: 'datalabHybridRecommendations',
-    variation_1: 'datalabHybridRecommendationsV1x1',
-    variation_2: 'datalabHybridRecommendationsV1x2',
-    variation_3: 'datalabHybridRecommendationsV1x3',
-    variation_4: 'datalabHybridRecommendationsV1x4',
-    variation_5: 'datalabHybridRecommendationsV1x5',
+    on: 'on',
+    off: 'off',
   },
 };

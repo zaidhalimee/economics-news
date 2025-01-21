@@ -2,7 +2,7 @@ import * as PAGE_TYPES from '../../routes/utils/pageTypes';
 
 export type Environments = 'local' | 'test' | 'live';
 
-export type Platforms = 'amp' | 'canonical' | 'app';
+export type Platforms = 'amp' | 'canonical' | 'app' | 'lite';
 
 export type Direction = 'rtl' | 'ltr';
 
@@ -50,11 +50,17 @@ export type UkrainianService = {
   variant: 'default' | 'ru-UA';
 };
 
+export type UzbekService = {
+  service: 'uzbek';
+  variant: 'default' | 'cyr' | 'lat';
+};
+
 export type ServicesWithVariants =
   | SerbianService
   | ChineseService
   | ZhongwenService
-  | UkrainianService;
+  | UkrainianService
+  | UzbekService;
 
 export type ServicesWithNoVariants = {
   service:
@@ -99,7 +105,6 @@ export type ServicesWithNoVariants = {
     | 'tigrinya'
     | 'turkce'
     | 'urdu'
-    | 'uzbek'
     | 'vietnamese'
     | 'ws'
     | 'yoruba';

@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-marathi',
     atiAnalyticsProducerId: '59',
+    atiAnalyticsProducerName: 'MARATHI',
     chartbeatDomain: 'marathi.bbc.co.uk',
     brandName: 'BBC News मराठी',
     product: 'BBC News',
@@ -47,7 +48,7 @@ export const service: DefaultServiceConfig = {
     podcastPromo: {
       title: 'पॉडकास्ट',
       brandTitle: 'तीन गोष्टी',
-      brandDescription: 'दिवसभरातल्या कोरोना आणि इतर घडामोडींचा आढावा',
+      brandDescription: 'दिवसभरातील घडामोडींचा आढावा',
       image: {
         src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p0940n6j.jpg',
         alt: 'तीन गोष्टी',
@@ -86,6 +87,11 @@ export const service: DefaultServiceConfig = {
         breaking: 'ब्रेकिंग',
         postedAt: 'वाजता पोस्ट केलं',
         summary: 'थोडक्यात',
+        shareButtonText: 'शेअर करा',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'थोडक्यात',
       error: {
@@ -140,7 +146,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ओके',
           reject: 'पाहा नेमकं काय बदललंय',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -237,6 +243,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'ताजे एपिसोड',
         podcastExternalLinks: 'हे पॉडकास्ट तुम्ही इथे ऐकू शकता',
         download: 'एपिसोड डाऊनलोड करा',
+        closeVideo: 'बंद करा',
       },
       socialEmbed: {
         caption: {
@@ -279,11 +286,6 @@ export const service: DefaultServiceConfig = {
       numberOfItems: 10,
       hasMostRead: true,
     },
-    mostWatched: {
-      header: 'सर्वाधिक पाहिलेले',
-      numberOfItems: 10,
-      hasMostWatched: true,
-    },
     radioSchedule: {
       hasRadioSchedule: false,
     },
@@ -321,6 +323,10 @@ export const service: DefaultServiceConfig = {
           text: 'बीबीसीशी संपर्क साधाा',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'BBC News इतर भाषांमध्ये',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -338,12 +344,12 @@ export const service: DefaultServiceConfig = {
         url: '/marathi',
       },
       {
-        title: 'लोकसभा निवडणूक 2024',
-        url: '/marathi/topics/c1wmk63rjkvt',
-      },
-      {
         title: 'महाराष्ट्र',
         url: '/marathi/topics/c5qvpxvv7y3t',
+      },
+      {
+        title: 'विधानसभा निवडणूक',
+        url: '/marathi/topics/c625x8zjyj7t',
       },
       {
         title: 'भारत',

@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/aria-role */
 import React, { useContext } from 'react';
 import { useTheme } from '@emotion/react';
-import { arrayOf, shape, string, number } from 'prop-types';
 import styled from '@emotion/styled';
 import pathOr from 'ramda/src/pathOr';
 import Timestamp from '#psammead/psammead-timestamp-container/src';
@@ -33,9 +32,22 @@ const StyledSectionLabel = styled(SectionLabel)`
     margin-bottom: ${GEL_SPACING_TRPL};
   }
 `;
+
 const InlineDiv = styled.div`
   display: inline;
 `;
+
+const getAmpImageComponent =
+  ({ image, altText }) =>
+  () => (
+    <amp-img
+      layout="responsive"
+      width="16"
+      height="9"
+      src={image}
+      alt={altText}
+    />
+  );
 
 const RecentVideoEpisodes = ({ masterBrand, episodes }) => {
   const { script, service, dir, timezone, datetimeLocale, translations } =
@@ -102,15 +114,7 @@ const RecentVideoEpisodes = ({ masterBrand, episodes }) => {
                 locale: datetimeLocale,
               })}
               {...(isAmp && {
-                as: () => (
-                  <amp-img
-                    layout="responsive"
-                    width="16"
-                    height="9"
-                    src={episode.image}
-                    alt={episode.altText}
-                  />
-                ),
+                as: getAmpImageComponent(episode),
               })}
             />
             {/* these must be concatenated for screen reader UX */}
@@ -151,22 +155,6 @@ const RecentVideoEpisodes = ({ masterBrand, episodes }) => {
       </EpisodeList>
     </aside>
   );
-};
-
-RecentVideoEpisodes.propTypes = {
-  masterBrand: string.isRequired,
-  episodes: arrayOf(
-    shape({
-      id: string.isRequired,
-      url: string.isRequired,
-      brandTitle: string.isRequired,
-      episodeTitle: string,
-      timestamp: number.isRequired,
-      duration: string.isRequired,
-      image: string.isRequired,
-      altText: string.isRequired,
-    }),
-  ).isRequired,
 };
 
 export default RecentVideoEpisodes;

@@ -39,6 +39,9 @@ export type PromoProps = {
     assetTypeCode?: string;
   };
   eventTrackingData?: EventTrackingBlock;
+  minimumContrast?: number;
+  paletteSize?: number;
+  isAmp?: boolean;
 };
 
 export type FormattedPromo = {

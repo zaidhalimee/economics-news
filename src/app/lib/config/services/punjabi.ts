@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-punjabi',
     atiAnalyticsProducerId: '73',
+    atiAnalyticsProducerName: 'PUNJABI',
     chartbeatDomain: 'punjabi.bbc.co.uk',
     brandName: 'BBC News ਪੰਜਾਬੀ',
     product: 'BBC News',
@@ -71,6 +72,11 @@ export const service: DefaultServiceConfig = {
         breaking: 'ਤਾਜ਼ਾ',
         postedAt: 'ਇਸ ‘ਤੇ ਪੋਸਟ ਕੀਤਾ',
         summary: 'ਸਾਰ',
+        shareButtonText: 'ਸਾਂਝਾ ਕਰੋ',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'ਸਾਰ',
       error: {
@@ -130,7 +136,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ਓਕੇ',
           reject: 'ਜਾਣੋ ਕੀ ਬਦਲਿਆ ਹੈ',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -221,6 +227,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Next radio show',
         duration: 'Duration',
         recentEpisodes: 'ਤਾਜ਼ਾ ਐਪੀਸੋਡ',
+        closeVideo: 'ਬਾਹਰ ਜਾਓ',
       },
       socialEmbed: {
         caption: {
@@ -262,11 +269,6 @@ export const service: DefaultServiceConfig = {
       numberOfItems: 10,
       hasMostRead: true,
     },
-    mostWatched: {
-      header: 'ਸਭ ਤੋਂ ਵੱਧ ਦੇਖਿਆ',
-      numberOfItems: 10,
-      hasMostWatched: true,
-    },
     radioSchedule: {
       hasRadioSchedule: false,
     },
@@ -277,10 +279,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'ਖ਼ਬਰਾਂ',
         url: '/punjabi',
-      },
-      {
-        title: 'ਲੋਕ ਸਭਾ ਚੋਣਾਂ 2024',
-        url: '/punjabi/topics/cz4xp0dw200t',
       },
       {
         title: 'ਵੀਡੀਓ',
@@ -328,6 +326,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/punjabi/send/u50853621',
           text: 'ਬੀਬੀਸੀ ਨਾਲ ਸੰਪਰਕ ਕਰੋ',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'ਬੀਬੀਸੀ ’ਤੇ ਹੋਰ ਭਾਸ਼ਾਵਾਂ ਵਿੱਚ ਖ਼ਬਰਾਂ',
         },
         {
           id: 'COOKIE_SETTINGS',

@@ -11,6 +11,7 @@ import { RequestContext } from '#app/contexts/RequestContext';
 import MetadataContainer from '#app/components/Metadata';
 import LinkedDataContainer from '#app/components/LinkedData';
 import getLiveBlogPostingSchema from '#app/lib/seoUtils/getLiveBlogPostingSchema';
+import { MediaCollection } from '#app/components/MediaLoader/types';
 import Stream from './Stream';
 import Header from './Header';
 import KeyPoints from './KeyPoints';
@@ -28,7 +29,7 @@ interface LivePromoImage {
   copyright?: string;
 }
 
-type ComponentProps = {
+export type ComponentProps = {
   pageData: {
     title: string;
     description?: string;
@@ -52,7 +53,8 @@ type ComponentProps = {
     promoImage: LivePromoImage | null;
     startDateTime?: string;
     endDateTime?: string;
-    atiAnalytics: ATIData;
+    metadata: { atiAnalytics: ATIData };
+    mediaCollections: MediaCollection[] | null;
   };
 };
 
@@ -69,9 +71,10 @@ const LivePage = ({ pageData }: ComponentProps) => {
     isLive,
     summaryPoints: { content: keyPoints },
     liveTextStream,
-    atiAnalytics,
+    metadata: { atiAnalytics = undefined } = {},
     headerImage,
     promoImage,
+    mediaCollections,
   } = pageData;
 
   const {
@@ -151,6 +154,7 @@ const LivePage = ({ pageData }: ComponentProps) => {
           imageUrl={imageUrl}
           imageUrlTemplate={imageUrlTemplate}
           imageWidth={imageWidth}
+          mediaCollections={mediaCollections}
         />
         <div css={styles.outerGrid}>
           <div css={styles.firstSection}>

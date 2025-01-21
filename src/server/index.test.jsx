@@ -10,7 +10,7 @@ import {
   SERVER_SIDE_RENDER_REQUEST_RECEIVED,
   SERVER_SIDE_REQUEST_FAILED,
 } from '#lib/logger.const';
-import { FRONT_PAGE, MEDIA_PAGE } from '#app/routes/utils/pageTypes';
+import { FRONT_PAGE, LIVE_RADIO_PAGE } from '#app/routes/utils/pageTypes';
 import Document from './Document/component';
 import routes from '../app/routes';
 import * as renderDocument from './Document';
@@ -562,7 +562,7 @@ const testMediaPages = ({
     });
 
     describe('404 status code', () => {
-      const pageType = MEDIA_PAGE;
+      const pageType = LIVE_RADIO_PAGE;
 
       beforeEach(() => {
         mockRouteProps({
@@ -589,7 +589,7 @@ const testMediaPages = ({
     });
 
     describe('Unknown error within the data fetch, react router or its dependencies', () => {
-      const pageType = 'liveRadio';
+      const pageType = LIVE_RADIO_PAGE;
 
       beforeEach(() => {
         mockRouteProps({
@@ -1006,12 +1006,10 @@ describe('Server', () => {
       });
     });
 
-    describe('for front pages', () => {
+    describe('for home pages', () => {
       it('should respond with JSON', async () => {
         const { body } = await makeRequest('/serbian/cyr.json');
-        expect(body.data.article).toEqual(
-          expect.objectContaining({ content: expect.any(Object) }),
-        );
+        expect(body.data.pageType).toEqual('home');
       });
 
       describe('with non-existent data', () => {
@@ -1043,7 +1041,10 @@ describe('Server', () => {
           '/korean/bbc_korean_radio/liveradio.json',
         );
         expect(body).toEqual(
-          expect.objectContaining({ content: expect.any(Object) }),
+          expect.objectContaining({
+            data: expect.any(Object),
+            contentType: 'application/json; charset=utf-8',
+          }),
         );
       });
 
@@ -1088,7 +1089,7 @@ describe('Server', () => {
           '/pashto/bbc_pashto_tv/tv_programmes/w13xttn4.json',
         );
         expect(body).toEqual(
-          expect.objectContaining({ content: expect.any(Object) }),
+          expect.objectContaining({ data: expect.any(Object) }),
         );
       });
 
@@ -1464,7 +1465,9 @@ describe('Server HTTP Headers - Page Endpoints', () => {
 
     const { header } = await makeRequest('/mundo/c0000000001o');
 
-    expect(header.vary).toBe('mvt-simorgh_dark_mode, Accept-Encoding');
+    expect(header.vary).toBe(
+      'X-Country, mvt-simorgh_dark_mode, Accept-Encoding',
+    );
   });
 
   it(`should not add mvt experiment header names to vary if they are not enabled`, async () => {
@@ -1475,7 +1478,7 @@ describe('Server HTTP Headers - Page Endpoints', () => {
 
     const { header } = await makeRequest('/mundo/articles/c0000000001o');
 
-    expect(header.vary).toBe('Accept-Encoding');
+    expect(header.vary).toBe('X-Country, Accept-Encoding');
   });
 
   it(`should not add mvt experiment header names to vary if on AMP`, async () => {
@@ -1487,7 +1490,7 @@ describe('Server HTTP Headers - Page Endpoints', () => {
 
     const { header } = await makeRequest('/mundo/articles/c0000000001o');
 
-    expect(header.vary).toBe('Accept-Encoding');
+    expect(header.vary).toBe('X-Country, Accept-Encoding');
   });
 
   it(`should set isUK value to true when 'x-bbc-edge-isuk' is set to 'yes'`, async () => {

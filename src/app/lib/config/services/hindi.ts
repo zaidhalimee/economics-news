@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-hindi',
     atiAnalyticsProducerId: '52',
+    atiAnalyticsProducerName: 'HINDI',
     chartbeatDomain: 'hindi.bbc.co.uk',
     brandName: 'BBC News हिंदी',
     product: 'BBC News',
@@ -87,12 +88,24 @@ export const service: DefaultServiceConfig = {
         audioPlayer: 'ऑडिया प्लेयर',
         videoPlayer: 'वीडियो प्लेयर',
       },
+      articlePage: {
+        jumpToTitle: {
+          variation_1: 'इस पर जाएं',
+          variation_2: 'बीबीसी न्यूज़ हिंदी  से और अधिक जानें',
+          variation_3: 'बीबीसी न्यूज़ हिंदी से और ख़बरें पढ़ें',
+        },
+      },
       liveExperiencePage: {
         liveLabel: 'लाइव',
         liveCoverage: 'लाइव कवरेज',
         breaking: 'ब्रेकिंग न्यूज़',
         postedAt: 'पोस्ट किया गया',
         summary: 'सारांश',
+        shareButtonText: 'साझा कीजिए',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'सारांश',
       error: {
@@ -154,7 +167,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ओके',
           reject: 'जानें कि क्या बदला है',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -257,6 +270,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'प्रसारण का समय',
         podcastExternalLinks: 'ये पॉडकास्ट इन प्लेटफ़ॉर्म्स पर भी उपलब्ध है -',
         download: 'एपिसोड डाउनलोड करें',
+        closeVideo: 'बाहर निकलें',
       },
       socialEmbed: {
         caption: {
@@ -293,17 +307,79 @@ export const service: DefaultServiceConfig = {
       topStoriesTitle: 'टॉप स्टोरी',
       featuresAnalysisTitle: 'ज़रूर पढ़ें',
       latestMediaTitle: 'ताज़ा',
+      ugc: {
+        // No JavaScript
+        noJsHeading: undefined,
+        noJsDescription: undefined,
+
+        // Optional
+        optional: 'वैकल्पिक',
+
+        // File upload
+        fileUploadLiveRegionText: undefined,
+        fileUploadLiveRegionUpdateText: undefined,
+        fileUploadListHeading: 'आप इसे अपलोड कर रहे हैं:',
+        fileUploadButton: 'एक फाइल चुनें',
+        fileUploadRemoveButton: undefined,
+
+        // Submit button
+        submitButton: 'भेजें',
+
+        // Validation
+        validationRequired: 'कुछ तो गड़बड़ है',
+        validationInvalidEmail:
+          'कुछ गड़बड़ लग रही है. कृपया आप सही ई-मेल लिखें',
+        validationInvalidTelephone: undefined,
+        validationFilesNotEnough:
+          'यहां आवश्यक फाइलों की संख्या पूरी नहीं है. कृपया भेजने के लिए कम से कम फाइलें अपलोड करें {{minFiles}}.',
+        validationFilesTooMany:
+          'यहां पर ज़्यादा फाइलें हैं. आप अधिकतम फाइलें ही भेज सकते हैं {{maxFiles}}.',
+        validationFilesInvalidType:
+          'खेद है. हम इस तरह की फाइल का इस्तेमाल नहीं कर सकते. आप इन फाइलों में से किसी एक तरह की फाइल का चुनाव करें {{fileTypes}}.',
+        validationFilesTooSmall:
+          'इस फाइल में कुछ गड़बड़ है. किसी अन्य फाइल का चुनाव करें',
+        validationFilesSizeExceeded:
+          'खेद है. आपकी फाइलें काफी बड़ी हैं. आप एक बार में केवल 2GB की फाइलें ही अपलोड कर सकते हैं',
+        validationWordLimit:
+          'अधिकतम {{wordLimit}} शब्दों की फाइल ही भेज सकते हैं',
+
+        // Messaging
+        retentionPeriodDays: undefined,
+        referenceNumber: 'रेफरेंस नंबर',
+        submissionInfoSignedOutMessage:
+          'आप अपने रेफरेंस के लिए इन बातो को नोट कर सकते हैं',
+        privacyInfoHtml: undefined,
+        emailToHtml:
+          'ई-मेल {{emailLink}} अगर आप अपना विचार बदलते हैं, तो बस अपने रेफरेंस नंबर के साथ हमें ई-मेल करें कि आप अपनी भेजी सामग्री इस्तेमाल नहीं होने देना चाहते हैं',
+        removalGuidelineText: undefined,
+
+        // Form Screen
+        dataPolicyHeading: undefined,
+
+        // Uploading Screen
+        uploadingHeading: 'आपकी फाइल अपलोड हो रही है...',
+        uploadingDescription: 'जब तक पूरा न हो जाए, तब तक इंतज़ार करें',
+
+        // Success Screen
+        successHeading: 'संदेश भेजा जा चुका है',
+        successDescription: 'हमसे संपर्क करने के लिए आपका शुक्रिया',
+        privacyPolicyLinkHref: undefined,
+        privacyPolicyLinkText: undefined,
+
+        // Error Screen
+        errorHeading: 'आपका संदेश नहीं भेजा गया है',
+        errorDescription: 'कृपया फिर भेजने का प्रयास करें',
+
+        // Closed Screen
+        closedHeading: 'अब यह विकल्प बंद हो चुका है',
+        closedDescription: 'ये इस तारीख़ को बंद हो चुका है {{date}}.',
+      },
     },
     mostRead: {
       header: 'सबसे अधिक पढ़ी गईं',
       lastUpdated: 'अंतिम अपडेट:',
       numberOfItems: 10,
       hasMostRead: true,
-    },
-    mostWatched: {
-      header: 'सबसे ज्यादा देखे गए',
-      numberOfItems: 10,
-      hasMostWatched: true,
     },
     radioSchedule: {
       hasRadioSchedule: false,
@@ -346,6 +422,10 @@ export const service: DefaultServiceConfig = {
           text: 'बीबीसी से संपर्क',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'अन्य भाषाएँ',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -364,8 +444,8 @@ export const service: DefaultServiceConfig = {
         url: '/hindi',
       },
       {
-        title: 'लोकसभा चुनाव 2024',
-        url: '/hindi/topics/cm5m26q8qxpt',
+        title: 'दिल्ली विधानसभा चुनाव',
+        url: '/hindi/topics/c8dqegnm6d9t',
       },
       {
         title: 'भारत',

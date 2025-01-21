@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-yoruba',
     atiAnalyticsProducerId: '107',
+    atiAnalyticsProducerName: 'YORUBA',
     chartbeatDomain: 'yoruba.bbc.co.uk',
     brandName: 'BBC News Yorùbá',
     product: 'BBC News',
@@ -71,6 +72,11 @@ export const service: DefaultServiceConfig = {
         breaking: 'Kókó',
         postedAt: 'Tí a fiṣọwọ́ ní',
         summary: 'Ìsọníṣókí',
+        shareButtonText: 'Ṣe alábàápín',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'Ìsọníṣókí',
       error: {
@@ -126,7 +132,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'Ó dára bẹ́ẹ̀',
           reject: 'Ẹ ṣe ìwádìí ohun tó yípadà',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -216,6 +222,7 @@ export const service: DefaultServiceConfig = {
         previousRadioShow: 'Previous radio show',
         nextRadioShow: 'Next radio show',
         duration: 'Duration',
+        closeVideo: 'Jáde',
       },
       socialEmbed: {
         caption: {
@@ -252,11 +259,6 @@ export const service: DefaultServiceConfig = {
       numberOfItems: 10,
       hasMostRead: true,
     },
-    mostWatched: {
-      header: 'Èyí tí a wò jùlọ',
-      numberOfItems: 10,
-      hasMostWatched: true,
-    },
     radioSchedule: {
       hasRadioSchedule: false,
     },
@@ -292,6 +294,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/yoruba/send/u50853973',
           text: 'Kàn sí BBC',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Ka ìròyìn BBC l’èdè míràn nibi',
         },
         {
           id: 'COOKIE_SETTINGS',
