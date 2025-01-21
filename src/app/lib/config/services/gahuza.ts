@@ -159,7 +159,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: 'Menya ivyahindutse',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -255,6 +255,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'Ibiganiro byashise',
         podcastExternalLinks: 'Iyi podcast iraboneka kandi kuri',
         download: 'Pakurura ikiganiro',
+        closeVideo: 'Sohoka',
       },
       socialEmbed: {
         caption: {

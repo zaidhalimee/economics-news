@@ -153,7 +153,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ကောင်းပါပြီ။',
           reject: 'ဘာတွေပြောင်းလဲသွားသလဲ ကြည့်ရန်',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -257,6 +257,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'ထုတ်လွှင့်ပြီး အစီအစဉ်မျာ',
         podcastExternalLinks: 'ဒီပေါ့ဒ်ကတ်စ်ကို နောက်ထပ်ရနိုင်သည့်နေရာ',
         download: 'ဒေါင်းလုပ်လုပ် ရယူရန်',
+        closeVideo: 'ပိတ်မယ်',
       },
       socialEmbed: {
         caption: {
@@ -335,7 +336,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'အခြားဘာသာစကားနှင့် ဘီဘီစီသတင်းများ',
         },
         {
           id: 'COOKIE_SETTINGS',

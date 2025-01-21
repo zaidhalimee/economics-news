@@ -37,12 +37,18 @@ import RelatedTopics from '#containers/RelatedTopics';
 import NielsenAnalytics from '#containers/NielsenAnalytics';
 import CpsRecommendations from '#containers/CpsRecommendations';
 import InlinePodcastPromo from '#containers/PodcastPromo/Inline';
-import { Article, OptimoBylineBlock } from '#app/models/types/optimo';
+import {
+  Article,
+  OptimoBylineBlock,
+  OptimoBylineContributorBlock,
+  Recommendation,
+} from '#app/models/types/optimo';
 import ScrollablePromo from '#components/ScrollablePromo';
-import JumpTo, { JumpToProps } from '#app/components/JumpTo';
+import JumpTo, { JumpToProps, Variation } from '#app/components/JumpTo';
 import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
 import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
 import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
+import OPTIMIZELY_CONFIG from '#app/lib/config/optimizely';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
@@ -67,24 +73,84 @@ import Disclaimer from '../../components/Disclaimer';
 import SecondaryColumn from './SecondaryColumn';
 import styles from './ArticlePage.styles';
 import { ComponentToRenderProps, TimeStampProps } from './types';
-import AmpExperiment from '../../components/AmpExperiment';
-import {
-  experimentName,
-  experimentTopStoriesConfig,
-  getExperimentAnalyticsConfig,
-  getExperimentTopStories,
-  ExperimentTopStories,
-} from './experimentTopStories/helpers';
+
+const getImageComponent =
+  (preloadLeadImageToggle: boolean) => (props: ComponentToRenderProps) => (
+    <ImageWithCaption
+      {...props}
+      sizes="(min-width: 1008px) 760px, 100vw"
+      shouldPreload={preloadLeadImageToggle}
+    />
+  );
+
+const getTimestampComponent =
+  (
+    hasByline: boolean,
+    bylineContribBlocks: OptimoBylineContributorBlock[],
+    firstPublished: string,
+    lastPublished: string,
+  ) =>
+  (props: ComponentToRenderProps & TimeStampProps) =>
+    hasByline ? (
+      <Byline blocks={bylineContribBlocks}>
+        <Timestamp
+          firstPublished={new Date(firstPublished).getTime()}
+          lastPublished={new Date(lastPublished).getTime()}
+          popOut={false}
+        />
+      </Byline>
+    ) : (
+      <Timestamp {...props} popOut={false} />
+    );
+
+const getMpuComponent =
+  (allowAdvertising: boolean) => (props: ComponentToRenderProps) =>
+    allowAdvertising ? <AdContainer {...props} slotType="mpu" /> : null;
+
+const getWsojComponent =
+  (recommendationsData: Recommendation[]) =>
+  (props: ComponentToRenderProps) => (
+    <CpsRecommendations {...props} items={recommendationsData} />
+  );
+
+const DisclaimerWithPaddingOverride = (props: ComponentToRenderProps) => (
+  <Disclaimer {...props} increasePaddingOnDesktop={false} />
+);
+
+const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
+  podcastPromoEnabled ? <InlinePodcastPromo /> : null;
+
+const getJumptoComponent =
+  (
+    optimizelyVariation: Variation | 'off',
+    hasJumpToBlockForExperiment: boolean,
+    showRelatedContent: boolean,
+  ) =>
+  (props: ComponentToRenderProps & JumpToProps) => {
+    if (
+      optimizelyVariation === 'off' ||
+      !optimizelyVariation ||
+      !hasJumpToBlockForExperiment
+    )
+      return null;
+
+    return (
+      <JumpTo
+        {...props}
+        showRelatedContentLink={showRelatedContent}
+        variation={optimizelyVariation}
+      />
+    );
+  };
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
-  const { isApp, pageType, service, isAmp, env } = useContext(RequestContext);
+  const { isApp, pageType, service } = useContext(RequestContext);
 
   const {
     articleAuthor,
     isTrustProjectParticipant,
     showRelatedTopics,
     brandName,
-    atiAnalyticsProducerId,
   } = useContext(ServiceContext);
 
   const { enabled: preloadLeadImageToggle } = useToggle('preloadLeadImage');
@@ -139,26 +205,17 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     mostRead: mostReadInitialData,
   } = pageData;
 
-  const jumpToVariation = useOptimizelyVariation(
-    'jump_to',
-  ) as unknown as string;
+  const optimizelyVariation = useOptimizelyVariation(
+    OPTIMIZELY_CONFIG.flagKey,
+  ) as unknown as Variation | 'off';
 
   const hasJumpToBlockForExperiment = blocks.some(
     block => block.type === 'jumpTo',
   );
 
   const enableOptimizelyEventTracking = Boolean(
-    jumpToVariation && hasJumpToBlockForExperiment,
+    optimizelyVariation && hasJumpToBlockForExperiment,
   );
-
-  const topStoriesContent = pageData?.secondaryColumn?.topStories;
-  const { shouldEnableExperimentTopStories, transformedBlocks } =
-    getExperimentTopStories({
-      blocks,
-      topStoriesContent,
-      isAmp,
-      service,
-    });
 
   const showRelatedContent = blocks.some(
     block => block.type === 'relatedContent',
@@ -167,9 +224,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const atiData = {
     ...atiAnalytics,
     ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
-    ...(shouldEnableExperimentTopStories && {
-      ampExperimentName: `${experimentName}`,
-    }),
+    ...(optimizelyVariation && { experimentVariant: optimizelyVariation }),
   };
 
   const componentsToRender = {
@@ -179,25 +234,13 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     audio: MediaLoader,
     video: MediaLoader,
     text,
-    image: (props: ComponentToRenderProps) => (
-      <ImageWithCaption
-        {...props}
-        sizes="(min-width: 1008px) 760px, 100vw"
-        shouldPreload={preloadLeadImageToggle}
-      />
+    image: getImageComponent(preloadLeadImageToggle),
+    timestamp: getTimestampComponent(
+      hasByline,
+      bylineContribBlocks,
+      firstPublished,
+      lastPublished,
     ),
-    timestamp: (props: ComponentToRenderProps & TimeStampProps) =>
-      hasByline ? (
-        <Byline blocks={bylineContribBlocks}>
-          <Timestamp
-            firstPublished={new Date(firstPublished).getTime()}
-            lastPublished={new Date(lastPublished).getTime()}
-            popOut={false}
-          />
-        </Byline>
-      ) : (
-        <Timestamp {...props} popOut={false} />
-      ),
     social: SocialEmbedContainer,
     embed: UnsupportedEmbed,
     embedHtml: EmbedHtml,
@@ -205,42 +248,16 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     embedImages: EmbedImages,
     embedUploader: Uploader,
     group: gist,
-    links: (props: ComponentToRenderProps) => <ScrollablePromo {...props} />,
-    mpu: (props: ComponentToRenderProps) =>
-      allowAdvertising ? <AdContainer {...props} slotType="mpu" /> : null,
-    wsoj: (props: ComponentToRenderProps) => (
-      <CpsRecommendations {...props} items={recommendationsData} />
+    links: ScrollablePromo,
+    mpu: getMpuComponent(allowAdvertising),
+    wsoj: getWsojComponent(recommendationsData),
+    disclaimer: DisclaimerWithPaddingOverride,
+    podcastPromo: getPodcastPromoComponent(podcastPromoEnabled),
+    jumpTo: getJumptoComponent(
+      optimizelyVariation,
+      hasJumpToBlockForExperiment,
+      showRelatedContent,
     ),
-    disclaimer: (props: ComponentToRenderProps) => (
-      <Disclaimer {...props} increasePaddingOnDesktop={false} />
-    ),
-    podcastPromo: () => (podcastPromoEnabled ? <InlinePodcastPromo /> : null),
-    experimentTopStoriesQuarter: () =>
-      topStoriesContent ? (
-        <ExperimentTopStories
-          topStoriesContent={topStoriesContent}
-          variantName="Quarter"
-        />
-      ) : null,
-    experimentTopStoriesHalf: () =>
-      topStoriesContent ? (
-        <ExperimentTopStories
-          topStoriesContent={topStoriesContent}
-          variantName="Half"
-        />
-      ) : null,
-    experimentTopStoriesThreeQuarters: () =>
-      topStoriesContent ? (
-        <ExperimentTopStories
-          topStoriesContent={topStoriesContent}
-          variantName="ThreeQuarters"
-        />
-      ) : null,
-
-    jumpTo: (props: ComponentToRenderProps & JumpToProps) =>
-      jumpToVariation === 'on' ? (
-        <JumpTo {...props} showRelatedContentLink={showRelatedContent} />
-      ) : null,
   };
 
   const visuallyHiddenBlock = {
@@ -250,8 +267,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   };
 
   const articleBlocks = startsWithHeading
-    ? transformedBlocks
-    : [visuallyHiddenBlock, ...transformedBlocks];
+    ? blocks
+    : [visuallyHiddenBlock, ...blocks];
 
   const promoImageBlocks =
     pageData?.promo?.images?.defaultPromoImage?.blocks ?? [];
@@ -273,16 +290,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   return (
     <div css={styles.pageWrapper}>
-      {shouldEnableExperimentTopStories && (
-        <AmpExperiment
-          experimentConfig={experimentTopStoriesConfig}
-          analyticsConfig={getExperimentAnalyticsConfig({
-            env,
-            service,
-            atiAnalyticsProducerId,
-          })}
-        />
-      )}
       <ATIAnalytics atiData={atiData} />
       <ChartbeatAnalytics
         sectionName={pageData?.relatedContent?.section?.name}
@@ -348,7 +355,12 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
             sendOptimizelyEvents={enableOptimizelyEventTracking}
           />
         </div>
-        {!isApp && !isPGL && <SecondaryColumn pageData={pageData} />}
+        {!isApp && !isPGL && (
+          <SecondaryColumn
+            pageData={pageData}
+            sendOptimizelyEvents={enableOptimizelyEventTracking}
+          />
+        )}
       </div>
       {!isApp && !isPGL && (
         <MostRead
@@ -358,6 +370,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           size="default"
           headingBackgroundColour={GREY_2}
           mobileDivider={showTopics}
+          sendOptimizelyEvents={enableOptimizelyEventTracking}
         />
       )}
       {enableOptimizelyEventTracking && (

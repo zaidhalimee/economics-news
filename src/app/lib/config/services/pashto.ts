@@ -138,7 +138,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'اوکې',
           reject: 'دلته وګورئ چې څه بدل شوي',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -240,6 +240,7 @@ export const service: DefaultServiceConfig = {
         previousRadioShow: 'تېره راډیویي‌ خپرونه',
         nextRadioShow: 'راتلونکې راډیویي خپرونه',
         duration: 'موده',
+        closeVideo: 'وتل',
       },
       socialEmbed: {
         caption: {
@@ -322,7 +323,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'نورې ژبې',
         },
         {
           id: 'COOKIE_SETTINGS',

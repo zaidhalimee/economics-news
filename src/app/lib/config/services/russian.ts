@@ -30,7 +30,7 @@ const headerFooterTranslations = {
       },
       accept: 'ОК',
       reject: 'Посмотреть, что изменилось',
-      rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+      rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
     },
     cookie: {
       amp: {
@@ -208,6 +208,7 @@ export const mainTranslations = {
     episodes: 'передачи',
     podcastExternalLinks: 'Этот подкаст доступен на',
     download: 'Загрузить эпизод',
+    closeVideo: 'Выйти',
   },
   socialEmbed: {
     caption: {
@@ -422,7 +423,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'Би-би-си на других языках',
         },
         {
           id: 'COOKIE_SETTINGS',

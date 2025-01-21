@@ -124,7 +124,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ሕራይ',
           reject: 'እንታይ ከምዝተለወጠ ረኣዩ',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -211,6 +211,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'ዝቕጽል ፈነወ ራድዮ',
         duration: 'ዕምሪ ፈነወ',
         recentEpisodes: 'ዝሓለፉ ክፋላት',
+        closeVideo: 'ออก',
       },
       socialEmbed: {
         caption: {
@@ -288,7 +289,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'ብኻልኦት ቋንቋታት',
         },
         {
           id: 'COOKIE_SETTINGS',

@@ -132,7 +132,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'හරි',
           reject: 'වෙනස් කර ඇත්තේ මොනවාදැයි දැනගන්න',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -226,6 +226,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Next radio show',
         duration: 'ධාවන කාලය',
         recentEpisodes: 'පෙර වැඩසටහන්',
+        closeVideo: 'ඉවත්වෙන්න',
       },
       socialEmbed: {
         caption: {
@@ -300,7 +301,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'බීබීසී පුවත් වෙනත් භාෂාවලින්',
         },
         {
           id: 'COOKIE_SETTINGS',

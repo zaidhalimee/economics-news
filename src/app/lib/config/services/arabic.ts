@@ -155,7 +155,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'موافق',
           reject: 'إطلع على التغييرات',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -251,6 +251,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'البرامج السابقة',
         podcastExternalLinks: 'هذا البودكاست متاح عبر',
         download: 'تحميل الحلقة',
+        closeVideo: 'خروج',
       },
       socialEmbed: {
         caption: {
@@ -401,7 +402,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'بي بي سي نيوز عربي في لغات أخرى',
         },
         {
           id: 'COOKIE_SETTINGS',

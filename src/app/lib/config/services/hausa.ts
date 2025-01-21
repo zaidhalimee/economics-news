@@ -149,7 +149,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'Madalla',
           reject: 'Duba abin da ya sauya',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -252,6 +252,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'Kari',
         podcastExternalLinks: 'Za a iya samun wannan Podcast din a',
         download: 'Sauke shiri',
+        closeVideo: 'Fita',
       },
       socialEmbed: {
         caption: {
@@ -397,7 +398,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'Labaran BBC a sauran harsuna',
         },
         {
           id: 'COOKIE_SETTINGS',

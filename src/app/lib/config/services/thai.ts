@@ -132,7 +132,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ตกลง',
           reject: 'ดูว่ามีอะไรเปลี่ยนแปลงไปบ้าง',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -220,6 +220,7 @@ export const service: DefaultServiceConfig = {
         previousRadioShow: 'รายการวิทยุก่อนหน้า',
         nextRadioShow: 'รายการวิทยุถัดไป',
         duration: 'ความยาว',
+        closeVideo: 'ออก',
       },
       socialEmbed: {
         caption: {
@@ -331,7 +332,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'บีบีซีนิวส์ภาษาอื่น ๆ',
         },
         {
           id: 'COOKIE_SETTINGS',

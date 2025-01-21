@@ -138,7 +138,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ઓકે',
           reject: 'જાણો, શું ફેરફારો થયા છે',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -232,6 +232,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'આગામી રેડિયો શો',
         duration: 'અવધિ',
         recentEpisodes: 'તાજેતરનાં એપિસોડ્સ',
+        closeVideo: 'બહાર નીકળો',
       },
       socialEmbed: {
         caption: {
@@ -310,7 +311,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'BBC News અન્ય ભાષાઓમાં',
         },
         {
           id: 'COOKIE_SETTINGS',

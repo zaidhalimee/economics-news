@@ -139,7 +139,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: 'Nəyin dəyişdiyini öyrənin',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -227,6 +227,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Next radio show',
         duration: 'Duration',
         recentEpisodes: 'Daha ətraflı',
+        closeVideo: 'Bağla',
       },
       socialEmbed: {
         caption: {
@@ -304,7 +305,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'BBC News digər dillərdə',
         },
         {
           id: 'COOKIE_SETTINGS',

@@ -138,7 +138,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ఓకే',
           reject: 'ఏం మార్పులు చేశామో తెలుసుకోండి',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -234,6 +234,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'తర్వాత రేడియో షో',
         duration: 'వ్యవధి',
         recentEpisodes: 'ఇటీవలి ఎపిసోడ్లు',
+        closeVideo: 'నిష్క్రమించు',
       },
       socialEmbed: {
         caption: {
@@ -313,7 +314,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'ఇతర భాషల్లో బీబీసీ వార్తలు',
         },
         {
           id: 'COOKIE_SETTINGS',

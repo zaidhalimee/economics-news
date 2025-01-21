@@ -134,7 +134,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ঠিক আছে।',
           reject: 'কী পরিবর্তন হয়েছে দেখুন।',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -228,6 +228,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'পরবর্তী রেডিও অনুষ্ঠান',
         duration: 'স্থিতিকাল',
         recentEpisodes: 'পুরনো অনুষ্ঠান',
+        closeVideo: 'বন্ধ করুন',
       },
       socialEmbed: {
         caption: {
@@ -313,7 +314,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'অন্যান্য ভাষায় বিবিসির সংবাদ',
         },
         {
           id: 'COOKIE_SETTINGS',

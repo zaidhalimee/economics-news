@@ -138,7 +138,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: '네',
           reject: '변경사항을 확인하세요',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -226,6 +226,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: '다음 라디오 방송',
         duration: '방송 길이',
         recentEpisodes: '이전',
+        closeVideo: '나가기',
       },
       socialEmbed: {
         caption: {
@@ -311,7 +312,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: '다른 언어로 보기',
         },
         {
           id: 'COOKIE_SETTINGS',

@@ -45,7 +45,7 @@ const LabelComponent = styled(SectionLabel)`
   }
 `;
 
-const CpsRecommendations = ({ items = [] }) => {
+const CpsRecommendations = ({ items }) => {
   const { recommendations, translations, script, service, dir } =
     useContext(ServiceContext);
   const { enabled } = useToggle('cpsRecommendations');

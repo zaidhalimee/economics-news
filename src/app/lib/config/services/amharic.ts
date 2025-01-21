@@ -134,7 +134,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'እሺ',
           reject: 'ምን እንደተቀየረ ይመልከቱ',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -221,6 +221,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'ቀጣይ የሬዲዮ ስርጭት',
         duration: 'ርዝመት',
         recentEpisodes: 'ያለፉ ዝግጅቶች’',
+        closeVideo: 'ይውጡ',
       },
       socialEmbed: {
         caption: {
@@ -363,7 +364,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'ቢቢሲን በተለያዩ ቋንቋዎች',
         },
         {
           id: 'COOKIE_SETTINGS',
@@ -382,6 +383,34 @@ export const service: DefaultServiceConfig = {
       {
         title: 'ኢትዮጵያ',
         url: '/amharic/topics/c7zp57r92v5t',
+      },
+      {
+        title: 'ፖለቲካ',
+        url: '/amharic/topics/cg7265pj1jvt',
+      },
+      {
+        title: 'ሴቶች',
+        url: '/amharic/topics/cnq681w4dq6t',
+      },
+      {
+        title: 'ጤና',
+        url: '/amharic/topics/cxnyk76p0q2t',
+      },
+      {
+        title: 'ስፖርት',
+        url: '/amharic/topics/cdr56g2x71dt',
+      },
+      {
+        title: 'ጥበብ',
+        url: '/amharic/topics/cr50yvqzzwpt',
+      },
+      {
+        title: 'ቴክኖሎጂ',
+        url: '/amharic/topics/c06gq8wx467t',
+      },
+      {
+        title: 'ምጣኔ ሃብት',
+        url: '/amharic/topics/cnq6815jj3xt',
       },
       {
         title: 'ቪዲዮ',

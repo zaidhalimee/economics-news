@@ -145,7 +145,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ओके',
           reject: 'पाहा नेमकं काय बदललंय',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -242,6 +242,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'ताजे एपिसोड',
         podcastExternalLinks: 'हे पॉडकास्ट तुम्ही इथे ऐकू शकता',
         download: 'एपिसोड डाऊनलोड करा',
+        closeVideo: 'बंद करा',
       },
       socialEmbed: {
         caption: {
@@ -322,7 +323,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'BBC News इतर भाषांमध्ये',
         },
         {
           id: 'COOKIE_SETTINGS',

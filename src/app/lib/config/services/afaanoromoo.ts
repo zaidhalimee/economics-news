@@ -140,7 +140,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'TOLE',
           reject: 'Maaltu akka jijjirame bari',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -232,6 +232,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Sagantaa raadiyoo itti aanu',
         duration: 'Turtii',
         recentEpisodes: 'Sagantaawwan darban',
+        closeVideo: 'Bahi',
       },
       socialEmbed: {
         caption: {
@@ -312,7 +313,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'Afaanoota biroo',
         },
         {
           id: 'COOKIE_SETTINGS',

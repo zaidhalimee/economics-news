@@ -85,6 +85,13 @@ export const service: DefaultServiceConfig = {
         audioPlayer: 'Audio player',
         videoPlayer: 'Video player',
       },
+      articlePage: {
+        jumpToTitle: {
+          variation_1: 'پر جائیں',
+          variation_2: 'بی بی سی نیوز اردو کی مدد سے مزید جانیے',
+          variation_3: 'بی بی سی اردو نیوز سے مزید',
+        },
+      },
       liveExperiencePage: {
         liveLabel: 'لائیو',
         liveCoverage: 'لائیو کوریج',
@@ -155,7 +162,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'اوکے',
           reject: 'جانیے کہ تبدیلیاں کیا ہیں',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -248,6 +255,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'سابق پروگرام',
         podcastExternalLinks: 'یہ پوڈکاسٹ ان پلیٹفارمز پر بھی دستیاب ہے',
         download: 'قسط ڈاؤن لوڈ کریں',
+        closeVideo: 'بند کریں',
       },
       socialEmbed: {
         caption: {
@@ -395,7 +403,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'بی بی سی نیوز دیگر زبانوں میں',
         },
         {
           id: 'COOKIE_SETTINGS',
