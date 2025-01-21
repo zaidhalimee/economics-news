@@ -79,10 +79,11 @@ const OperaStyledList = styled.li`
       margin-${dir === 'ltr' ? `left` : `right`}: 0;}`}
 `;
 
-const PromoList = ({ blocks, viewTracker, onClick }) => {
+const PromoList = ({ blocks, variant, viewTracker, onClick }) => {
+  console.log('in promo list', blocks, variant);
   const { dir } = useContext(ServiceContext);
   const isOperaMini = useOperaMiniDetection();
-  const listBlocks = blocks.slice(0, 3);
+  const listBlocks = variant === 'B' ? blocks.slice(0, 5) : blocks.slice(0, 3);
 
   const ScrollPromo = isOperaMini ? OperaScrollPromo : StandardScrollPromo;
   const List = isOperaMini ? OperaStyledList : StyledList;
@@ -97,7 +98,7 @@ const PromoList = ({ blocks, viewTracker, onClick }) => {
         return (
           // eslint-disable-next-line react/no-array-index-key
           <List key={index} dir={dir}>
-            <Promo block={block} onClick={onClick} />
+            <Promo block={block} variant={variant} onClick={onClick} />
           </List>
         );
       })}

@@ -57,9 +57,14 @@ const LabelComponent = styled.strong`
 `}
 `;
 
-const ScrollablePromo = ({ blocks, blockGroupIndex = null }) => {
-  const { script, service, dir, translations } = useContext(ServiceContext);
-
+const ScrollablePromo = ({
+  blocks,
+  blockGroupIndex = null,
+  variant = 'none',
+}) => {
+  const { script, service, dir, translations, mostRead } =
+    useContext(ServiceContext);
+  console.log('Blocks in scrollable promo:', blocks, blocks.type);
   const eventTrackingData = {
     componentName: `edoj${blockGroupIndex}`,
     format: 'CHD=edoj',
@@ -72,13 +77,19 @@ const ScrollablePromo = ({ blocks, blockGroupIndex = null }) => {
     return null;
   }
 
-  const title =
-    blocks[0].type === 'title' &&
-    path(
-      ['0', 'model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'text'],
-      blocks,
-    );
-
+  let title;
+  if (variant === 'A') {
+    title = `${translations.topStoriesTitle || 'Top Stories'} - `;
+  } else if (variant === 'B') {
+    title = `${mostRead.header || 'Most Read'} - `;
+  } else {
+    title =
+      blocks[0].type === 'title' &&
+      path(
+        ['0', 'model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'text'],
+        blocks,
+      );
+  }
   const blocksWithoutTitle = blocks[0].type === 'title' ? tail(blocks) : blocks;
 
   const isSingleItem = blocksWithoutTitle.length === 1;
@@ -98,7 +109,6 @@ const ScrollablePromo = ({ blocks, blockGroupIndex = null }) => {
           ),
         }),
   };
-
   return (
     <GridItemMediumNoMargin {...a11yAttributes}>
       {title && (
@@ -112,11 +122,20 @@ const ScrollablePromo = ({ blocks, blockGroupIndex = null }) => {
           {title}
         </LabelComponent>
       )}
-      {isSingleItem ? (
+      {variant !== 'none' && (
+        <PromoList
+          blocks={blocks}
+          variant={variant}
+          viewTracker={viewRef}
+          onClick={handleClickTracking}
+        />
+      )}
+      {variant === 'none' && isSingleItem && (
         <PromoWrapper dir={dir} ref={viewRef}>
           <Promo block={blocksWithoutTitle[0]} onClick={handleClickTracking} />
         </PromoWrapper>
-      ) : (
+      )}
+      {variant === 'none' && !isSingleItem && (
         <PromoList
           blocks={blocksWithoutTitle}
           viewTracker={viewRef}

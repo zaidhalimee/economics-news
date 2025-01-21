@@ -192,7 +192,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const formats = pageData?.metadata?.passport?.predicates?.formats ?? [];
 
   const recommendationsData = pageData?.recommendations ?? [];
-
+  const topStoriesContent = pageData?.secondaryColumn?.topStories;
   const isPGL = pageData?.metadata?.type === PHOTO_GALLERY_PAGE;
   const isSTY = pageData?.metadata?.type === STORY_PAGE;
   const isCPS = isPGL || isSTY;
@@ -287,6 +287,25 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const showTopics = Boolean(
     showRelatedTopics && topics.length > 0 && !isTransliterated,
   );
+  // const scrollableOJExperimentVariation = useOptimizelyVariation(
+  //   'oj_scroll',
+  // ) as unknown as string;
+  const variantValue = 'none'; // We would get this value from useOptimizelyVariation (as commented out above)
+  // so just manually switch the hardcoded variant for now while getting this working
+  const variant: 'A' | 'B' | 'none' = ['A', 'B'].includes(variantValue)
+    ? (variantValue as 'A' | 'B')
+    : 'none';
+  let dataForOJExperiment;
+  if (variant === 'A') {
+    dataForOJExperiment = topStoriesContent;
+  } else if (variant === 'B' && mostReadInitialData) {
+    dataForOJExperiment = mostReadInitialData.items;
+  }
+
+  const propsForOJExperiment = {
+    blocks: dataForOJExperiment,
+    variant,
+  };
 
   return (
     <div css={styles.pageWrapper}>
@@ -331,6 +350,11 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       />
       {allowAdvertising && (
         <AdContainer slotType="leaderboard" adcampaign={adcampaign} />
+      )}
+      {!isPGL && !isTC2Asset && variant !== 'none' && dataForOJExperiment && (
+        <aside css={styles.aside} role="complementary">
+          <ScrollablePromo {...propsForOJExperiment} />
+        </aside>
       )}
       <ElectionBanner aboutTags={aboutTags} taggings={taggings} />
       <div css={styles.grid}>

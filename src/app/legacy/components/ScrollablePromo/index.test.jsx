@@ -7,6 +7,8 @@ import {
   oneLinkOnly,
   oneLinkWithNoTitle,
   moreThanThreeLinks,
+  TopStoriesBlocks,
+  MostReadBlocks,
 } from './helpers/fixtureData';
 import ScrollablePromo from '.';
 import { edOjA, edOjB } from './fixtures';
@@ -157,5 +159,34 @@ describe('ScrollablePromo', () => {
       },
     );
     expect(container).toMatchSnapshot();
+  });
+
+  it('should render Top Stories ScrollablePromo with variant A', () => {
+    const { container, getByTestId, getByRole, getAllByRole } = render(
+      <ScrollablePromo blocks={TopStoriesBlocks} variant="A" />,
+    );
+    expect(container.childElementCount).toEqual(1);
+    const heading = getByTestId('eoj-recommendations-heading');
+    expect(heading).toBeInTheDocument();
+    expect(heading).toHaveTextContent('Top Stories'); // translations were not available in the rendered component
+
+    const list = getByRole('list');
+    expect(list).toBeInTheDocument();
+    const items = getAllByRole('listitem');
+    expect(items).toHaveLength(3);
+  });
+  it('should render Most Read ScrollablePromo with variant B', () => {
+    const { container, getByTestId, getByRole, getAllByRole } = render(
+      <ScrollablePromo blocks={MostReadBlocks} variant="B" />,
+    );
+    expect(container.childElementCount).toEqual(1);
+    const heading = getByTestId('eoj-recommendations-heading');
+    expect(heading).toBeInTheDocument();
+    expect(heading).toHaveTextContent('Most read'); // there is a 'translation' for this, but it is English
+
+    const list = getByRole('list');
+    expect(list).toBeInTheDocument();
+    const items = getAllByRole('listitem');
+    expect(items).toHaveLength(5);
   });
 });

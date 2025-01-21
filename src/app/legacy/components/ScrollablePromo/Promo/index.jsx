@@ -81,35 +81,66 @@ const TimeStamp = styled(PromoTimestamp)`
   color: ${({ theme }) => theme.isDarkUi && theme.palette.GREY_6};
 `;
 
-const Promo = ({ block, onClick }) => {
+const Promo = ({ block, variant, onClick }) => {
   const { script, service, serviceDatetimeLocale } = useContext(ServiceContext);
-  const textBlock = filterForBlockType(
-    pathOr({}, ['model', 'blocks'], block),
-    'text',
-  );
-  const aresLinkBlock = filterForBlockType(
-    pathOr({}, ['model', 'blocks'], block),
-    'aresLink',
-  );
-  const href = pathOr(
-    '',
-    ['model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'locator'],
-    textBlock,
-  );
-  const title = pathOr(
-    '',
-    ['model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'text'],
-    textBlock,
-  );
-  const timestamp = path(
-    ['model', 'blocks', '0', 'model', 'timestamp'],
-    aresLinkBlock,
-  );
+  let title;
+  let href;
+  let textBlock;
+  let aresLinkBlock;
+  let timestamp;
+  switch (variant) {
+    case 'A':
+      title = pathOr(
+        block.headline || '',
+        [
+          'headlines',
+          'promoHeadline',
+          'blocks',
+          '0',
+          'model',
+          'blocks',
+          '0',
+          'model',
+          'text',
+        ],
+        block,
+      );
+      href = pathOr('', ['locators', 'canonicalUrl'], block);
+      break;
+    case 'B':
+      title = block.title;
+      href = block.href;
+      break;
+    default:
+      textBlock = filterForBlockType(
+        pathOr({}, ['model', 'blocks'], block),
+        'text',
+      );
+      aresLinkBlock = filterForBlockType(
+        pathOr({}, ['model', 'blocks'], block),
+        'aresLink',
+      );
+      timestamp = path(
+        ['model', 'blocks', '0', 'model', 'timestamp'],
+        aresLinkBlock,
+      );
+      href = pathOr(
+        '',
+        ['model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'locator'],
+        textBlock,
+      );
+      title = pathOr(
+        '',
+        ['model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'text'],
+        textBlock,
+      );
+      break;
+  }
+  console.log('title', title, 'href', href, 'timestamp', timestamp);
 
   const isOperaMini = useOperaMiniDetection();
 
   const WrapperPromoBox = isOperaMini ? OperaPromoBox : PromoBox;
-
   return (
     <WrapperPromoBox>
       <StyledLink
@@ -120,7 +151,7 @@ const Promo = ({ block, onClick }) => {
       >
         {title}
       </StyledLink>
-      {timestamp && (
+      {timestamp && !variant && (
         <TimeStamp serviceDatetimeLocale={serviceDatetimeLocale}>
           {timestamp}
         </TimeStamp>
