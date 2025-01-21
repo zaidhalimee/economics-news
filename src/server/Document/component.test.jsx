@@ -2,12 +2,23 @@ import React from 'react';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import { Helmet } from 'react-helmet';
 import { JSDOM } from 'jsdom';
+import dotenv from 'dotenv';
 
 import DocumentComponent from './component';
 
 Helmet.canUseDOM = false;
 
 describe('Document Component', () => {
+  const originalProcessEnv = process.env;
+
+  // Load environment variables into process.env to ensure CanonicalRenderer
+  // uses values set in the .env file in lieu of mocked values
+  dotenv.config();
+
+  afterEach(() => {
+    process.env = originalProcessEnv;
+  });
+
   const data = { test: 'data' };
   const legacyScripts = (
     <>

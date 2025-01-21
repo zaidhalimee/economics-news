@@ -93,9 +93,16 @@ export interface ATIConfigurationDetailsProviders {
   atiData?: ATIData;
 }
 
+export interface ReverbDetailsProviders {
+  requestContext: RequestContextProps;
+  serviceContext: ServiceConfig;
+  atiData: ATIData;
+}
+
 export interface ATIAnalyticsProps {
   baseUrl?: string;
   pageviewParams: string;
+  reverbParams?: object | null;
 }
 
 export interface ATIEventTrackingProps {
@@ -105,12 +112,14 @@ export interface ATIEventTrackingProps {
   pageIdentifier?: string;
   platform?: Platforms;
   producerId?: string;
+  producerName?: string;
   service?: Services;
   statsDestination?: string;
   type?: string;
   advertiserID?: string;
   url?: string;
   detailedPlacement?: string;
+  useReverb?: boolean;
   experimentVariant?: string;
   ampExperimentName?: string;
 }
@@ -125,6 +134,7 @@ export interface ATIPageTrackingProps {
   pageIdentifier?: string;
   pageTitle?: string | null;
   producerId?: string;
+  producerName?: string;
   libraryVersion?: string;
   platform?: Platforms;
   statsDestination?: string;
