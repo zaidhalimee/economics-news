@@ -22,7 +22,7 @@ describe('ClientApp', () => {
 
   it('BrowserRouter should be called with the correct props', () => {
     const actualBrowserRouter = ReactRouter.BrowserRouter;
-    ReactRouter.BrowserRouter = jest.fn(() => <>{'Browser Router'}</>);
+    ReactRouter.BrowserRouter = jest.fn(() => <>Browser Router</>);
     renderClientApp();
     expect(ReactRouter.BrowserRouter).toHaveBeenCalledWith(
       {
@@ -63,7 +63,7 @@ describe('ServerApp', () => {
 
   it('StaticRouter should be called with the correct props', () => {
     const actualStaticRouter = ReactRouter.StaticRouter;
-    ReactRouter.StaticRouter = jest.fn(() => <>{'Static Router'}</>);
+    ReactRouter.StaticRouter = jest.fn(() => <>Static Router</>);
     renderServerApp();
     expect(ReactRouter.StaticRouter).toHaveBeenCalledWith(
       {
