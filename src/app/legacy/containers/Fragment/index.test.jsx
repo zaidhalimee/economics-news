@@ -18,6 +18,7 @@ const CreateFragment = ({
   text = '',
 } = {}) => (
   <ServiceContext.Provider value={context}>
+    {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
     <Fragment text={text} attributes={attributes} />
   </ServiceContext.Provider>
 );
