@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { shouldMatchSnapshot } from '#psammead/psammead-test-helpers/src';
 import { ServiceContext } from '../../../contexts/ServiceContext';
-import Fragment from './index';
+import FragmentContainer from './index';
 
 const newsContext = {
   service: 'news',
@@ -18,8 +18,7 @@ const CreateFragment = ({
   text = '',
 } = {}) => (
   <ServiceContext.Provider value={context}>
-    {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
-    <Fragment text={text} attributes={attributes} />
+    <FragmentContainer text={text} attributes={attributes} />
   </ServiceContext.Provider>
 );
 
