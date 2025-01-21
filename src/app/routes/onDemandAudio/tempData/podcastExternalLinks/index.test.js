@@ -37,11 +37,7 @@ describe('getPodcastExternalLinks', () => {
   });
 
   it('should return rss feed when brand is not found', async () => {
-    const otherLinks = await getPodcastExternalLinks(
-      'hausa',
-      'bar',
-      'h455a',
-    );
+    const otherLinks = await getPodcastExternalLinks('hausa', 'bar', 'h455a');
     expect(otherLinks).toEqual([
       {
         linkText: 'RSS',
