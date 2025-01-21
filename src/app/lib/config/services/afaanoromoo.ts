@@ -232,6 +232,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Sagantaa raadiyoo itti aanu',
         duration: 'Turtii',
         recentEpisodes: 'Sagantaawwan darban',
+        closeVideo: 'Bahi',
       },
       socialEmbed: {
         caption: {

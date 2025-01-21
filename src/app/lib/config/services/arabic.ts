@@ -251,6 +251,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'البرامج السابقة',
         podcastExternalLinks: 'هذا البودكاست متاح عبر',
         download: 'تحميل الحلقة',
+        closeVideo: 'خروج',
       },
       socialEmbed: {
         caption: {
