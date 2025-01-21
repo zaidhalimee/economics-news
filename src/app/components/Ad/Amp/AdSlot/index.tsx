@@ -68,7 +68,9 @@ interface DeviceSettings {
 }
 
 const slotConfigurations: {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   [slot in SlotType]: {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     [device in Device]?: DeviceSettings;
   };
 } = {

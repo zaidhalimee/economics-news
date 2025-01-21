@@ -12,26 +12,32 @@ import {
 import { Translations } from './translations';
 
 export type DefaultServiceConfig = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   [key in ServicesWithNoVariants['variant']]: ServiceConfig;
 };
 
 export type SerbianConfig = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   [key in SerbianService['variant']]: ServiceConfig;
 };
 
 export type ChineseConfig = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   [key in ChineseService['variant']]: ServiceConfig;
 };
 
 export type ZhongwenConfig = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   [key in ZhongwenService['variant']]: ServiceConfig;
 };
 
 export type UkrainianConfig = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   [key in UkrainianService['variant']]: ServiceConfig;
 };
 
 export type UzbekConfig = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   [key in UzbekService['variant']]: ServiceConfig;
 };
 

@@ -3,6 +3,7 @@ import { Services } from '../../../models/types/global';
 type Envs = 'test' | 'live';
 
 export const HOME_PAGE_CONFIG: {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   [service in Services]: { [env in Envs]: string };
 } = {
   kyrgyz: {

@@ -116,6 +116,7 @@ type BuilderFunction = {
 };
 
 type PageTypeHandlers = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   [key in PageTypes]: BuilderFunction;
 };
 

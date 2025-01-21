@@ -25,6 +25,7 @@ const BLOCK_TYPES = [
 
 const blockTypeMapping: Record<
   (typeof BLOCK_TYPES)[number],
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   (arg0: ConfigBuilderProps) => ConfigBuilderReturnProps
 > = {
   aresMedia,

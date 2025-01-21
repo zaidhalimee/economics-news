@@ -16,9 +16,11 @@ import { ConsentBannerProviders, getEventTrackingData } from '.';
 
 type BannerUrls = {
   cookiesUrl: {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     [key in ConsentBannerProviders]: string;
   };
   privacyUrl: {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     [key in ConsentBannerProviders]: string;
   };
 };
