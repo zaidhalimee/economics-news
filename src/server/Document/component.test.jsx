@@ -25,9 +25,9 @@ describe('Document Component', () => {
   );
   const links = (
     <>
-      <link rel="modulePreload" href="modern.main.js" />
-      <link rel="modulePreload" href="modern.vendor.js" />
-      <link rel="modulePreload" href="modern.igbo.js" />
+      <link rel="modulepreload" href="modern.main.js" />
+      <link rel="modulepreload" href="modern.vendor.js" />
+      <link rel="modulepreload" href="modern.igbo.js" />
     </>
   );
 
