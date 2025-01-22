@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '../../react-testing-library-with-providers';
 import ScriptLinkContainer from '.';
 
-const defaultToggleState = {
+const enabledToggleState = {
   scriptLink: {
     enabled: true,
   },
@@ -18,7 +18,7 @@ describe(`Script Link`, () => {
 
   it('should render correctly', () => {
     const { container } = render(<ScriptLinkContainer />, {
-      toggles: defaultToggleState,
+      toggles: enabledToggleState,
       service: 'serbian',
       variant: 'lat',
       pathname: '/serbian/lat',
@@ -48,7 +48,7 @@ describe(`Script Link`, () => {
           const isAmp = platform === 'amp';
 
           const { container } = render(<ScriptLinkContainer />, {
-            toggles: defaultToggleState,
+            toggles: enabledToggleState,
             service,
             variant,
             pathname: isAmp ? `${path}.amp` : path,
@@ -64,7 +64,7 @@ describe(`Script Link`, () => {
   });
 
   it('should not render when scriptLink toggle is off', () => {
-    const disabledToggles = {
+    const disabledToggleState = {
       scriptLink: {
         enabled: false,
       },
@@ -72,9 +72,21 @@ describe(`Script Link`, () => {
         enabled: false,
       },
     };
+
     const { container } = render(<ScriptLinkContainer />, {
-      toggles: disabledToggles,
+      toggles: disabledToggleState,
     });
+
+    expect(container).toBeEmptyDOMElement();
+  });
+
+  it('should not render when an alternate variant is not defined', () => {
+    const { container } = render(<ScriptLinkContainer />, {
+      toggles: enabledToggleState,
+      service: 'pidgin',
+      pathname: '/pidgin',
+    });
+
     expect(container).toBeEmptyDOMElement();
   });
 });
