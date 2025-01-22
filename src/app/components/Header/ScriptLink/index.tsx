@@ -19,9 +19,11 @@ const ScriptLink = () => {
   return (
     <a
       css={styles.link}
-      href={pathname
-        .replace(currentVariant as string, alternateVariant)
-        .replace('.amp', '')}
+      href={
+        pathname
+          .replace(currentVariant as string, alternateVariant)
+          .replace('.amp', '') // we don't want to link to AMP pages directly
+      }
       data-variant={alternateVariant}
       className="focusIndicatorRemove"
     >
