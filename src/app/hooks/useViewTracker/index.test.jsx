@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 
-import React, { createContext, useContext } from 'react';
+import React, { createContext } from 'react';
 import {
   renderHook,
   act,
