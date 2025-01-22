@@ -145,6 +145,13 @@ exports[`AMP Articles Footer Anchors should match text and url 7`] = `
 
 exports[`AMP Articles Footer Anchors should match text and url 8`] = `
 {
+  "text": "Labaran BBC a sauran harsuna",
+  "url": "https://www.bbc.com/ws/languages",
+}
+`;
+
+exports[`AMP Articles Footer Anchors should match text and url 9`] = `
+{
   "text": "Karanta hanyoyin da muke bi dangane da adireshin waje.",
   "url": "https://www.bbc.co.uk/editorialguidelines/guidance/feeds-and-links",
 }
@@ -159,7 +166,7 @@ exports[`AMP Articles Footer Cookie Settings Button should match text and on han
 
 exports[`AMP Articles Footer I can click on the BBC branding and it would take me to the homepage 1`] = `"/hausa"`;
 
-exports[`AMP Articles Footer Paragraphs should match text 1`] = `"© 2024 BBC. BBC ba za ta dauki alhakin abubuwan da wasu shafukan daban suka wallafa ba.  Karanta hanyoyin da muke bi dangane da adireshin waje."`;
+exports[`AMP Articles Footer Paragraphs should match text 1`] = `"© 2025 BBC. BBC ba za ta dauki alhakin abubuwan da wasu shafukan daban suka wallafa ba.  Karanta hanyoyin da muke bi dangane da adireshin waje."`;
 
 exports[`AMP Articles Header I can see the branding 1`] = `"BBC News, Hausa"`;
 
@@ -222,8 +229,8 @@ exports[`AMP Articles Image should match snapshot 1`] = `
   fallback=""
   height="351"
   layout="responsive"
-  src="https://ichef.bbci.co.uk/ace/ws/640/cpsdevpb/08d8/test/4926a890-de24-11e9-b23c-f1ac9644bb55.jpg"
-  srcset="https://ichef.bbci.co.uk/ace/ws/240/cpsdevpb/08d8/test/4926a890-de24-11e9-b23c-f1ac9644bb55.jpg 240w, https://ichef.bbci.co.uk/ace/ws/320/cpsdevpb/08d8/test/4926a890-de24-11e9-b23c-f1ac9644bb55.jpg 320w, https://ichef.bbci.co.uk/ace/ws/480/cpsdevpb/08d8/test/4926a890-de24-11e9-b23c-f1ac9644bb55.jpg 480w, https://ichef.bbci.co.uk/ace/ws/624/cpsdevpb/08d8/test/4926a890-de24-11e9-b23c-f1ac9644bb55.jpg 624w"
+  src="https://ichef.bbci.co.uk/ace/ws/640/cpsdevpb/08d8/test/4926a890-de24-11e9-b23c-f1ac9644bb55.jpg.webp"
+  srcset="https://ichef.bbci.co.uk/ace/ws/240/cpsdevpb/08d8/test/4926a890-de24-11e9-b23c-f1ac9644bb55.jpg.webp 240w, https://ichef.bbci.co.uk/ace/ws/320/cpsdevpb/08d8/test/4926a890-de24-11e9-b23c-f1ac9644bb55.jpg.webp 320w, https://ichef.bbci.co.uk/ace/ws/480/cpsdevpb/08d8/test/4926a890-de24-11e9-b23c-f1ac9644bb55.jpg.webp 480w, https://ichef.bbci.co.uk/ace/ws/624/cpsdevpb/08d8/test/4926a890-de24-11e9-b23c-f1ac9644bb55.jpg.webp 624w"
   width="624"
 />
 `;
@@ -371,7 +378,7 @@ exports[`AMP Articles SEO Linked data should match text 2`] = `
   "@type": "VideoObject",
   "description": "They may be tiny, but us humans could learn a thing or two from ants.",
   "duration": "PT3M11S",
-  "embedURL": "https://polling.test.bbc.co.uk/ws/av-embeds/articles/c2nr6xqmnewo/p01k6msp/ha/amp",
+  "embedURL": "https://www.test.bbc.com/ws/av-embeds/articles/c2nr6xqmnewo/p01k6msp/ha",
   "name": "Five things ants can teach us about management",
   "thumbnailUrl": "https://ichef.test.bbci.co.uk/images/ic/1024x576/p01k6mtv.jpg",
   "uploadDate": "2018-10-22T14:35:32.000Z",

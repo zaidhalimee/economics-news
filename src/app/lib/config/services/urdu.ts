@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-urdu',
     atiAnalyticsProducerId: '95',
+    atiAnalyticsProducerName: 'URDU',
     chartbeatDomain: 'urdu.bbc.co.uk',
     brandName: 'BBC News اردو',
     defaultImage: 'https://news.files.bbci.co.uk/ws/img/logos/og/urdu.png',
@@ -46,17 +47,17 @@ export const service: DefaultServiceConfig = {
     showAdPlaceholder: true,
     showRelatedTopics: true,
     podcastPromo: {
-      title: 'پوڈکاسٹ',
-      brandTitle: 'ڈرامہ کوئین',
+      title: 'واٹس ایپ',
+      brandTitle: 'بی بی سی اردو اب واٹس ایپ پر',
       brandDescription:
-        '’ڈرامہ کوئین‘ پوڈکاسٹ میں سنیے وہ باتیں جنہیں کسی کے ساتھ بانٹنے نہیں دیا جاتا',
+        'بی بی سی اردو کی خبروں اور فیچرز کو اپنے فون پر حاصل کریں اور سب سے پہلے جانیں پاکستان اور دنیا بھر سے ان کہانیوں کے بارے میں جو آپ کے لیے معنی رکھتی ہیں',
       image: {
-        src: 'http://ichef.bbci.co.uk/images/ic/448xn/p0c04zy8.jpg',
-        alt: 'ڈرامہ کوئین',
+        src: 'http://ichef.bbci.co.uk/images/ic/448xn/p0k7ks07.png',
+        alt: 'بی بی سی اردو اب واٹس ایپ پر',
       },
       linkLabel: {
-        text: 'قسطیں',
-        href: 'https://www.bbc.com/urdu/podcasts/p0c04t7w',
+        text: 'سبسکرائب کرنے کے لیے کلک کریں',
+        href: 'https://whatsapp.com/channel/0029Vateujy3wtbGKtkkMD44',
       },
       skipLink: {
         text: 'مواد پر جائیں',
@@ -85,12 +86,24 @@ export const service: DefaultServiceConfig = {
         audioPlayer: 'Audio player',
         videoPlayer: 'Video player',
       },
+      articlePage: {
+        jumpToTitle: {
+          variation_1: 'پر جائیں',
+          variation_2: 'بی بی سی نیوز اردو کی مدد سے مزید جانیے',
+          variation_3: 'بی بی سی اردو نیوز سے مزید',
+        },
+      },
       liveExperiencePage: {
         liveLabel: 'لائیو',
         liveCoverage: 'لائیو کوریج',
         breaking: 'بریکنگ',
         postedAt: 'پوسٹ کیا گیا',
         summary: 'خلاصہ',
+        shareButtonText: 'شیئر',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'خلاصہ',
       error: {
@@ -150,7 +163,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'اوکے',
           reject: 'جانیے کہ تبدیلیاں کیا ہیں',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -243,6 +256,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'سابق پروگرام',
         podcastExternalLinks: 'یہ پوڈکاسٹ ان پلیٹفارمز پر بھی دستیاب ہے',
         download: 'قسط ڈاؤن لوڈ کریں',
+        closeVideo: 'بند کریں',
       },
       socialEmbed: {
         caption: {
@@ -277,17 +291,78 @@ export const service: DefaultServiceConfig = {
       topStoriesTitle: 'اہم خبریں',
       featuresAnalysisTitle: 'فیچر اور تجزیے',
       latestMediaTitle: 'تازہ ترین',
+      ugc: {
+        // No JavaScript
+        noJsHeading: undefined,
+        noJsDescription: undefined,
+
+        // Optional
+        optional: 'اختیاری',
+
+        // File upload
+        fileUploadLiveRegionText: undefined,
+        fileUploadLiveRegionUpdateText: undefined,
+        fileUploadListHeading: 'یہ وہ مواد ہے جو آپ اپ لوڈ کر رہے ہیں',
+        fileUploadButton: 'فائل کا انتخاب کریں',
+        fileUploadRemoveButton: undefined,
+
+        // Submit button
+        submitButton: 'بھیجیں',
+
+        // Validation
+        validationRequired: 'کچھ کمی ہے۔',
+        validationInvalidEmail: 'یہ درست نہیں لگ رہا۔ درست ای میل پتا لکھیں',
+        validationInvalidTelephone: undefined,
+        validationFilesNotEnough:
+          'یہ کافی فائلز نہیں۔ کم از کم {{minFiles}} فائل شامل کریں',
+        validationFilesTooMany:
+          'یہ حد سے زیادہ فائلیں ہیں۔ آپ {{maxFiles}} فائلیں شامل کر سکتے ہیں',
+        validationFilesInvalidType:
+          'معاف کیجیے ہم اس قسم کی فائل استعمال نہیں کر سکتے۔ برائے مہربانی {{fileTypes}} میں سے انتخاب کریں',
+        validationFilesTooSmall:
+          'یہ فائل درست نہیں۔ کسی دیگر فائل کا انتخاب کریں',
+        validationFilesSizeExceeded:
+          'معاف کیجیے یہ فائل حد سے زیادہ بڑی ہے۔ آپ ایک وقت میں 1.2 گیگا بائٹ کی فائل اپ لوڈ کر سکتے ہیں۔',
+        validationWordLimit: 'الفاظ کی مقررہ حد {{wordLimit}}',
+
+        // Messaging
+        retentionPeriodDays: undefined,
+        referenceNumber: 'ریفرینس نمبر',
+        submissionInfoSignedOutMessage:
+          'آپ شاید اپنے ریکارڈ کے لیے ان تفصیلات کو نوٹ کرنا چاہیں گے',
+        privacyInfoHtml:
+          'فکرمند نہ ہوں ہم آپ کے مواد کا تحفظ کرتے ہیں۔ مزید تفصیلات کے لیے {{privacyInfoLink}} .پڑھیں',
+        emailToHtml:
+          'اگر آپ کا ارادہ بدل جائے تو {{emailLink}} پر ای میل کریں۔ ریفرینس نمبر دیں اور بتائیں کہ آپ نہیں چاہتے کہ ہم آپ کا مواد استعمال کریں۔',
+        removalGuidelineText: undefined,
+
+        // Form Screen
+        dataPolicyHeading: undefined,
+
+        // Uploading Screen
+        uploadingHeading: 'آپ کی فائلیں اپ لوڈ ہو رہی ہیں',
+        uploadingDescription: 'عمل مکمل ہونے تک انتظار کریں',
+
+        // Success Screen
+        successHeading: 'پیغام بھیج دیا گیا',
+        successDescription: 'رابطہ کرنے کا شکریہ',
+        privacyPolicyLinkHref: undefined,
+        privacyPolicyLinkText: undefined,
+
+        // Error Screen
+        errorHeading: 'آپ کا پیغام نہیں بھیجا جا سکا',
+        errorDescription: 'دوبارہ بھیجنے کی کوشش کریں',
+
+        // Closed Screen
+        closedHeading: 'یہ اب بند ہو چکا ہے',
+        closedDescription: 'یہ {{date}}  کو بند ہوا',
+      },
     },
     mostRead: {
       header: 'سب سے زیادہ پڑھی جانے والی',
       lastUpdated: 'آخری اپ ڈیٹ',
       numberOfItems: 10,
       hasMostRead: true,
-    },
-    mostWatched: {
-      header: 'سب سے زیادہ دیکھی گئی',
-      numberOfItems: 10,
-      hasMostWatched: true,
     },
     radioSchedule: {
       hasRadioSchedule: true,
@@ -326,6 +401,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/urdu/send/u50853907',
           text: 'بی بی سی سے رابطہ کریں',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'بی بی سی نیوز دیگر زبانوں میں',
         },
         {
           id: 'COOKIE_SETTINGS',

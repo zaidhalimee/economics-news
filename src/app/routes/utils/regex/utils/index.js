@@ -60,6 +60,7 @@ const homePageServices = [
   'portuguese',
   'punjabi',
   'russian',
+  'serbian',
   'sinhala',
   'somali',
   'swahili',
@@ -70,11 +71,11 @@ const homePageServices = [
   'turkce',
   'ukrainian',
   'urdu',
+  'uzbek',
   'vietnamese',
   'yoruba',
+  'zhongwen',
 ];
-
-const servicesWithVariants = ['serbian', 'ukchina', 'zhongwen'];
 
 export const getFrontPageRegex = services => {
   let frontPages = services;
@@ -83,9 +84,7 @@ export const getFrontPageRegex = services => {
       service => !homePageServices.includes(service),
     );
   } else {
-    frontPages = services.filter(service =>
-      servicesWithVariants.includes(service),
-    );
+    frontPages = [];
   }
   const serviceRegex = getServiceRegex(frontPages);
   return `/:service(${serviceRegex}):variant(${variantRegex})?:amp(${ampRegex})?:lite(${liteRegex})?`;
@@ -100,10 +99,6 @@ export const getHomePageRegex = services => {
   let homePages = services;
   if (isLive()) {
     homePages = services.filter(service => homePageServices.includes(service));
-  } else {
-    homePages = services.filter(
-      service => !servicesWithVariants.includes(service),
-    );
   }
   const homePageServiceRegex = getServiceRegex(homePages);
   return `/:service(${homePageServiceRegex}):variant(${variantRegex})?:amp(${ampRegex})?:lite(${liteRegex})?`;
@@ -131,27 +126,27 @@ export const getLegacyAssetRegex = services => {
 
 export const getLiveRadioRegex = services => {
   const serviceRegex = getServiceRegex(services);
-  return `/:service(${serviceRegex})/:masterBrand(${radioMasterBrandRegex})/:mediaId(liveRadio):amp(${ampRegex})?:lite(${liteRegex})?`;
+  return `/:service(${serviceRegex})/:masterBrand(${radioMasterBrandRegex})/:mediaId(liveRadio):lite(${liteRegex})?`;
 };
 
 export const getPodcastEpisodeRegex = services => {
   const serviceRegex = getServiceRegex(services);
-  return `/:service(${serviceRegex}):variant(${variantRegex})?/podcasts/:brandId(${mediaIdRegex})/:mediaId(${mediaIdRegex}):amp(${ampRegex})?:lite(${liteRegex})?`;
+  return `/:service(${serviceRegex}):variant(${variantRegex})?/podcasts/:brandId(${mediaIdRegex})/:mediaId(${mediaIdRegex}):lite(${liteRegex})?`;
 };
 
 export const getPodcastBrandRegex = services => {
   const serviceRegex = getServiceRegex(services);
-  return `/:service(${serviceRegex}):variant(${variantRegex})?/podcasts/:brandId(${mediaIdRegex}):amp(${ampRegex})?:lite(${liteRegex})?`;
+  return `/:service(${serviceRegex}):variant(${variantRegex})?/podcasts/:brandId(${mediaIdRegex}):lite(${liteRegex})?`;
 };
 
 export const getOnDemandRadioRegex = services => {
   const serviceRegex = getServiceRegex(services);
-  return `/:service(${serviceRegex}):variant(${variantRegex})?/:serviceId(${radioMasterBrandRegex})(/programmes)?/:mediaId(${mediaIdRegex}):amp(${ampRegex})?:lite(${liteRegex})?`;
+  return `/:service(${serviceRegex}):variant(${variantRegex})?/:serviceId(${radioMasterBrandRegex})(/programmes)?/:mediaId(${mediaIdRegex}):lite(${liteRegex})?`;
 };
 
 export const getOnDemandTvRegex = services => {
   const serviceRegex = getServiceRegex(services);
-  return `/:service(${serviceRegex})/:serviceId(${tvMasterBrandRegex})/:brandEpisode(${brandEpisodeRegex})/:mediaId(${mediaIdRegex}):amp(${ampRegex})?:lite(${liteRegex})?`;
+  return `/:service(${serviceRegex})/:serviceId(${tvMasterBrandRegex})/:brandEpisode(${brandEpisodeRegex})/:mediaId(${mediaIdRegex}):lite(${liteRegex})?`;
 };
 
 export const getTopicPageRegex = services => {
@@ -172,16 +167,6 @@ export const getMostReadPageRegex = services => {
 export const getMostReadDataRegex = services => {
   const serviceRegex = getServiceRegex(services);
   return `/:service(${serviceRegex})/mostread:variant(${variantRegex})?.json`;
-};
-
-export const getMostWatchedDataRegex = services => {
-  const serviceRegex = getServiceRegex(services);
-  return `/:service(${serviceRegex})/mostwatched:variant(${variantRegex})?.json`;
-};
-
-export const getMostWatchedPageRegex = services => {
-  const serviceRegex = getServiceRegex(services);
-  return `/:service(${serviceRegex}):variant(${variantRegex})?/media/video:amp(${ampRegex})?:lite(${liteRegex})?`;
 };
 
 export const getSecondaryColumnDataRegex = services => {

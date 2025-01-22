@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-gujarati',
     atiAnalyticsProducerId: '50',
+    atiAnalyticsProducerName: 'GUJARATI',
     chartbeatDomain: 'gujarati.bbc.co.uk',
     brandName: 'BBC News ગુજરાતી',
     product: 'BBC News',
@@ -71,6 +72,11 @@ export const service: DefaultServiceConfig = {
         breaking: 'બ્રેકિંગ',
         postedAt: 'અહીં પોસ્ટ કર્યું',
         summary: 'સારાંશ',
+        shareButtonText: 'શેર કરો',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'સારાંશ',
       error: {
@@ -133,7 +139,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ઓકે',
           reject: 'જાણો, શું ફેરફારો થયા છે',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -227,6 +233,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'આગામી રેડિયો શો',
         duration: 'અવધિ',
         recentEpisodes: 'તાજેતરનાં એપિસોડ્સ',
+        closeVideo: 'બહાર નીકળો',
       },
       socialEmbed: {
         caption: {
@@ -267,11 +274,6 @@ export const service: DefaultServiceConfig = {
       numberOfItems: 10,
       hasMostRead: true,
     },
-    mostWatched: {
-      header: 'સૌથી વધુ જોવાયેલ',
-      numberOfItems: 10,
-      hasMostWatched: true,
-    },
     radioSchedule: {
       hasRadioSchedule: false,
     },
@@ -309,6 +311,10 @@ export const service: DefaultServiceConfig = {
           text: 'BBC નો સંપર્ક કરો',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'BBC News અન્ય ભાષાઓમાં',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -325,10 +331,6 @@ export const service: DefaultServiceConfig = {
         url: '/gujarati',
       },
       {
-        title: 'લોકસભા ચૂંટણી 2024',
-        url: '/gujarati/topics/cg843q7vgq3t',
-      },
-      {
         title: 'ગુજરાત',
         url: '/gujarati/topics/cz74kjn4j5wt',
       },
@@ -339,6 +341,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'વિદેશ',
         url: '/gujarati/topics/c83plvezd90t',
+      },
+      {
+        title: 'હવામાન સમાચાર',
+        url: '/gujarati/topics/cv2gk3nze31t',
       },
       {
         title: 'સ્પોર્ટ્સ',

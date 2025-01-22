@@ -7,7 +7,7 @@
 
 BBC World Service News websites are rendered using Simorgh, a ReactJS based application. Simorgh also renders AMP news article pages for World Service, Public Service News and BBC Sport.
 
-Simorgh provides a fast and accessible web experience used by millions of people around the world each month ([see list of websites using Simorgh](https://github.com/bbc/simorgh/blob/latest/docs/Simorgh-Release-Info.stories.mdx)). It is regularly maintained and well documented, and we welcome open source contributors.
+Simorgh provides a fast and accessible web experience used by millions of people around the world each month ([see list of websites using Simorgh](https://github.com/bbc/simorgh/blob/latest/docs/Simorgh-Release-Info.mdx)). It is regularly maintained and well documented, and we welcome open source contributors.
 
 Simorgh is primarily maintained by the BBC News Web Engineering teams. It delivers highly trusted news to readers all over the world, currently in ([41 languages](https://www.bbc.com/ws/languages)). We support a wide range of devices and care deeply about scale, performance, and accessibility. We work in agile, flexible teams, and have an exciting roadmap for future development.
 
@@ -18,12 +18,11 @@ Please familiarise yourself with our:
 - [Code of conduct](https://github.com/bbc/simorgh/blob/latest/.github/CODE_OF_CONDUCT.md)
 - [Coding Standards](https://github.com/bbc/simorgh/blob/latest/docs/Coding-Standards/README.md)
 - [Contributing guidelines](https://github.com/bbc/simorgh/blob/latest/CONTRIBUTING.md)
-- [Guide to Code Reviews](https://github.com/bbc/simorgh/blob/latest/docs/Code-Reviews.stories.mdx)
-- [Github Project Board Guide](https://github.com/bbc/simorgh/blob/latest/docs/Project-Board-Guide.stories.mdx)
-- [GPG Signing Guide](docs/GPG-Signing-Guide.stories.mdx)
+- [Guide to Code Reviews](https://github.com/bbc/simorgh/blob/latest/docs/Code-Reviews.mdx)
+- [GPG Signing Guide](https://github.com/bbc/simorgh/blob/latest/docs/GPG-Signing-Guide.mdx)
 - [Primary README](https://github.com/bbc/simorgh/blob/latest/README.md) (you are here)
-- [Recommended Tools](https://github.com/bbc/simorgh/blob/latest/docs/Recommended-Tools.stories.mdx)
-- [Troubleshooting](https://github.com/bbc/simorgh/blob/latest/docs/Troubleshooting.stories.mdx)
+- [Recommended Tools](https://github.com/bbc/simorgh/blob/latest/docs/Recommended-Tools.mdx)
+- [Troubleshooting](https://github.com/bbc/simorgh/blob/latest/docs/Troubleshooting.mdx)
 
 NB there is further documentation colocated with relevant code. The above list is an index of the top-level documentation of our repo.
 
@@ -62,7 +61,7 @@ Each render is passed through a set of HOC's (Higher Order Components) to enhanc
 - withData
 - withHashChangeHandler
 
-With a selection of page types passed through withOptimizelyProvider, currently [Article](https://github.com/bbc/simorgh/blob/latest/src/app/pages/ArticlePage/index.jsx) and [Story](https://github.com/bbc/simorgh/blob/latest/src/app/pages/StoryPage/index.jsx) pages.
+With a selection of page types passed through withOptimizelyProvider, that enables usage of Optimizely in the selected page types.
 
 #### withVariant
 
@@ -97,6 +96,20 @@ The withHashChangeHandler HOC is a wrapper applied to all pages that checks for 
 #### withOptimizelyProvider
 
 The withOptimizelyProvider HOC returns components that have been enhanced with access to an Optimizely client, that is used to run our A/B testing. This is done to limit bundle sizes, as we seperate some of our bundles by page type, that means if we're only running A/B testing on certain page types, we can prevent polluting page type bundles with the weight of the SDK library we use for Optimizely.
+
+withOptimizelyProvider should be added as the value of the `handlerBeforeContexts` object key within [applyBasicPageHandlers.js](https://github.com/bbc/simorgh/tree/latest/src/app/pages/utils/applyBasicPageHandlers.js#L8), as the `ckns_mvt` is [set within the UserContext](https://github.com/bbc/simorgh/tree/latest/src/app/contexts/UserContext/index.tsx#L33), so the `withOptimizelyProvider` HOC needs to be applied in the correct order alongside the [withContexts](https://github.com/bbc/simorgh/tree/latest/src/app/pages/utils/applyBasicPageHandlers.js#L13) HOC. This makes the `ckns_mvt` available on first time visits to pass into the `OptimizelyProvider`, along with attributes such as `service`, which is used for determining when Optimizely should enable an experiment.
+
+Example for Article page:
+```jsx
+import withOptimizelyProvider from '#app/legacy/containers/PageHandlers/withOptimizelyProvider';
+import ArticlePage from './ArticlePage';
+import applyBasicPageHandlers from '../utils/applyBasicPageHandlers';
+
+export default applyBasicPageHandlers(ArticlePage, {
+  handlerBeforeContexts: withOptimizelyProvider,
+});
+
+```
 
 ### Adding a new Page type
 
@@ -246,7 +259,7 @@ Please also note that if you would like to see the components rendered with our 
 
 ### Configuring the application to run on a local network
 
-If you want to host the application to be accessible through your local network, follow the instructions [here](https://github.com/bbc/simorgh/blob/latest/docs/A11y-Testing-Cross-Device.stories.mdx).
+If you want to host the application to be accessible through your local network, follow the instructions [here](https://github.com/bbc/simorgh/blob/latest/docs/A11y-Testing-Cross-Device.mdx).
 
 ## Production build locally
 

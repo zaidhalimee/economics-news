@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 
-import React from 'react';
+import React, { createContext } from 'react';
 import {
   renderHook,
   act,
@@ -11,7 +11,8 @@ import { RequestContextProvider } from '#contexts/RequestContext';
 import { ToggleContextProvider } from '#contexts/ToggleContext';
 import { STORY_PAGE } from '#app/routes/utils/pageTypes';
 import OPTIMIZELY_CONFIG from '#lib/config/optimizely';
-import { ServiceContextProvider } from '../../contexts/ServiceContext';
+import * as serviceContextModule from '../../contexts/ServiceContext';
+
 import useViewTracker from '.';
 
 import fixtureData from './fixtureData.json';
@@ -65,6 +66,17 @@ beforeEach(() => {
   jest.useFakeTimers();
   console.error = jest.fn();
   global.IntersectionObserver = IntersectionObserver;
+
+  jest.replaceProperty(
+    serviceContextModule,
+    'ServiceContext',
+    createContext({
+      atiAnalyticsProducerId: '70',
+      atiAnalyticsProducerName: 'PIDGIN',
+      service: 'pidgin',
+      useReverb: false,
+    }),
+  );
 });
 
 afterEach(() => {
@@ -98,13 +110,13 @@ const wrapper = ({ pageData, atiData, children, toggles = defaultToggles }) => (
     service="pidgin"
     pathname="/pidgin/tori-51745682"
   >
-    <ServiceContextProvider service="pidgin">
+    <serviceContextModule.ServiceContextProvider service="pidgin">
       <ToggleContextProvider toggles={toggles}>
         <EventTrackingContextProvider data={pageData} atiData={atiData}>
           {children}
         </EventTrackingContextProvider>
       </ToggleContextProvider>
-    </ServiceContextProvider>
+    </serviceContextModule.ServiceContextProvider>
   </RequestContextProvider>
 );
 
@@ -197,6 +209,63 @@ describe('Expected use', () => {
 
     expect(global.IntersectionObserver).not.toHaveBeenCalled();
     expect(global.fetch).not.toHaveBeenCalled();
+  });
+
+  it('should use "optimizelyMetricNameOverride" property if provided in eventTrackingData object', async () => {
+    const mockOptimizelyTrack = jest.fn();
+    const mockUserId = 'test';
+    const mockAttributes = { foo: 'bar' };
+
+    const mockOptimizely = {
+      optimizely: {
+        track: mockOptimizelyTrack,
+        user: { attributes: mockAttributes, id: mockUserId },
+        getVariation: jest.fn(() => 'off'),
+      },
+      optimizelyMetricNameOverride: 'myEvent',
+    };
+
+    const {
+      metadata: { atiAnalytics },
+    } = fixtureData;
+
+    const { result } = renderHook(
+      () => useViewTracker({ ...trackingData, ...mockOptimizely }),
+      {
+        wrapper: props =>
+          wrapper({ ...props, pageData: fixtureData, atiData: atiAnalytics }),
+      },
+    );
+    const element = document.createElement('div');
+
+    await result.current(element);
+
+    const observerInstance = getObserverInstance(element);
+
+    act(() => {
+      triggerIntersection({
+        changes: [{ isIntersecting: true }],
+        observer: observerInstance,
+      });
+    });
+
+    act(() => {
+      jest.advanceTimersByTime(1100);
+    });
+
+    const [[, options]] = global.IntersectionObserver.mock.calls;
+
+    expect(global.IntersectionObserver).toHaveBeenCalledTimes(1);
+    expect(options).toEqual({ threshold: [0.5] });
+    expect(mockOptimizelyTrack).toHaveBeenCalledTimes(1);
+    expect(mockOptimizelyTrack).toHaveBeenCalledWith(
+      'myEvent_views',
+      mockUserId,
+      {
+        foo: 'bar',
+        viewed_wsoj: true,
+      },
+    );
   });
 
   it('should send event to ATI and return correct tracking url when element is 50% or more in view for more than 1 second', async () => {
@@ -555,6 +624,7 @@ describe('Expected use', () => {
       optimizely: {
         track: mockOptimizelyTrack,
         user: { attributes: mockAttributes, id: mockUserId },
+        getVariation: jest.fn(() => 'off'),
       },
     };
 

@@ -14,9 +14,7 @@ import {
   GEL_SPACING_TRPL,
 } from '#psammead/gel-foundations/src/spacings';
 
-import { RequestContext } from '#contexts/RequestContext';
 import { GridWrapper, GridItemLarge } from '#components/Grid';
-import { MOST_WATCHED_PAGE } from '#app/routes/utils/pageTypes';
 import { ServiceContext } from '../../../contexts/ServiceContext';
 import SkipLinkWrapper from '../../components/SkipLinkWrapper';
 import { GHOST } from '../../../components/ThemeProvider/palette';
@@ -92,6 +90,28 @@ const OptionallyRenderedSkipWrapper = ({
     children
   );
 
+const CpsOnwardJourneyWrapper = ({
+  children,
+  parentColumns,
+  labelId,
+  a11yAttributes,
+  className,
+  dir,
+}) =>
+  parentColumns ? (
+    <Wrapper
+      data-e2e={labelId}
+      {...a11yAttributes}
+      {...(className && { className })}
+    >
+      {children}
+    </Wrapper>
+  ) : (
+    <GridWrapper data-e2e={labelId} {...a11yAttributes}>
+      <LegacyGridItemLarge dir={dir}>{children}</LegacyGridItemLarge>
+    </GridWrapper>
+  );
+
 const CpsOnwardJourney = ({
   className = '',
   LabelComponent = StyledSectionLabel,
@@ -108,38 +128,28 @@ const CpsOnwardJourney = ({
   columnType,
   skipLink = null,
   eventTrackingData = null,
+  sendOptimizelyEvents = false,
 }) => {
   const { script, service, dir } = useContext(ServiceContext);
-  const { pageType } = useContext(RequestContext);
 
-  const isMostWatched = pageType === MOST_WATCHED_PAGE;
-  const a11yAttributes = isMostWatched
-    ? {
-        as: 'div',
-      }
-    : { as: 'section', role: 'region', 'aria-labelledby': labelId };
-
-  const CpsOnwardJourneyWrapper = ({ children }) =>
-    parentColumns ? (
-      <Wrapper
-        data-e2e={labelId}
-        {...a11yAttributes}
-        {...(className && { className })}
-      >
-        {children}
-      </Wrapper>
-    ) : (
-      <GridWrapper data-e2e={labelId} {...a11yAttributes}>
-        <LegacyGridItemLarge dir={dir}>{children}</LegacyGridItemLarge>
-      </GridWrapper>
-    );
+  const a11yAttributes = {
+    as: 'section',
+    role: 'region',
+    'aria-labelledby': labelId,
+  };
 
   if (!content.length) return null;
   const hasSingleContent = content.length === 1;
   const [singleContent] = content;
 
   return (
-    <CpsOnwardJourneyWrapper>
+    <CpsOnwardJourneyWrapper
+      parentColumns={parentColumns}
+      labelId={labelId}
+      a11yAttributes={a11yAttributes}
+      className={className}
+      dir={dir}
+    >
       <OptionallyRenderedSkipWrapper skipLink={skipLink} service={service}>
         {title ? (
           <LabelComponent
@@ -161,6 +171,7 @@ const CpsOnwardJourney = ({
               promo={singleContent}
               dir={dir}
               eventTrackingData={eventTrackingData}
+              sendOptimizelyEvents={sendOptimizelyEvents}
             />
           </SingleContentWrapper>
         ) : (
@@ -169,6 +180,7 @@ const CpsOnwardJourney = ({
             dir={dir}
             isMediaContent={isMediaContent}
             eventTrackingData={eventTrackingData}
+            sendOptimizelyEvents={sendOptimizelyEvents}
           />
         )}
       </OptionallyRenderedSkipWrapper>

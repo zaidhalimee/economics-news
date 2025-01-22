@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news',
     atiAnalyticsProducerId: '64',
+    atiAnalyticsProducerName: 'NEWS',
     chartbeatDomain: 'bbc.co.uk',
     brandName: 'BBC News',
     product: 'BBC News',
@@ -61,6 +62,11 @@ export const service: DefaultServiceConfig = {
         breaking: 'Breaking',
         postedAt: 'Posted at',
         summary: 'Summary',
+        shareButtonText: 'Share',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'At a glance',
       error: {
@@ -115,7 +121,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: "Find out what's changed",
-          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -202,17 +208,13 @@ export const service: DefaultServiceConfig = {
         duration: 'Duration',
       },
       socialEmbed: {},
+      featuresAnalysisTitle: 'More to explore',
     },
     mostRead: {
       header: 'Most read',
       lastUpdated: 'Last updated:',
       numberOfItems: 10,
       hasMostRead: true,
-    },
-    mostWatched: {
-      header: 'Most watched',
-      numberOfItems: 10,
-      hasMostWatched: false,
     },
     radioSchedule: {
       hasRadioSchedule: false,

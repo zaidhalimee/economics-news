@@ -7,9 +7,7 @@ import { getReferrer } from '../../../lib/analyticsUtils';
 import {
   ARTICLE_PAGE,
   FRONT_PAGE,
-  MEDIA_PAGE,
   MOST_READ_PAGE,
-  MOST_WATCHED_PAGE,
   FEATURE_INDEX_PAGE,
   MEDIA_ASSET_PAGE,
   PHOTO_GALLERY_PAGE,
@@ -17,6 +15,9 @@ import {
   TOPIC_PAGE,
   LIVE_PAGE,
   MEDIA_ARTICLE_PAGE,
+  LIVE_RADIO_PAGE,
+  AUDIO_PAGE,
+  TV_PAGE,
 } from '../../../routes/utils/pageTypes';
 import {
   Environments,
@@ -32,7 +33,7 @@ export const chartbeatUID = 50924;
 export const useCanonical = true;
 export const chartbeatSource = '//static.chartbeat.com/js/chartbeat.js';
 
-const capitalize = (s: string) => s?.charAt(0).toUpperCase() + s?.slice(1);
+const capitalize = (s = '') => `${s?.charAt(0).toUpperCase()}${s?.slice(1)}`;
 
 const buildSectionArr = (service: Services, value: string, type: string) => [
   `${capitalize(service)} - ${value}`,
@@ -57,12 +58,13 @@ export const getType = (pageType: PageTypes | 'index', shorthand = false) => {
       return 'article-sfv';
     case MEDIA_ASSET_PAGE:
       return 'article-media-asset';
-    case MEDIA_PAGE:
+    case LIVE_RADIO_PAGE:
+    case AUDIO_PAGE:
       return 'Radio';
+    case TV_PAGE:
+      return 'TV';
     case MOST_READ_PAGE:
       return 'Most Read';
-    case MOST_WATCHED_PAGE:
-      return 'Most Watched';
     case STORY_PAGE:
       return STORY_PAGE;
     case PHOTO_GALLERY_PAGE:
@@ -145,7 +147,9 @@ export const buildSections = ({
           ? buildSectionItem(service, appendCategory(categoryName))
           : []),
       ].join(', ');
-    case MEDIA_PAGE:
+    case LIVE_RADIO_PAGE:
+    case AUDIO_PAGE:
+    case TV_PAGE:
       return [
         capitalize(service),
         ...(mediaPageType ? buildSectionItem(service, mediaPageType) : []),
@@ -180,10 +184,11 @@ export const getTitle = ({ pageType, title, brandName }: GetTitleProps) => {
     case FRONT_PAGE:
     case FEATURE_INDEX_PAGE:
     case MOST_READ_PAGE:
-    case MOST_WATCHED_PAGE:
     case TOPIC_PAGE:
     case LIVE_PAGE:
-    case MEDIA_PAGE:
+    case LIVE_RADIO_PAGE:
+    case AUDIO_PAGE:
+    case TV_PAGE:
     case 'index':
       return `${title} - ${brandName}`;
     case ARTICLE_PAGE:

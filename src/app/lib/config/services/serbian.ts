@@ -11,6 +11,7 @@ const baseServiceConfig = {
   articleAuthor: 'https://www.facebook.com/bbcnews',
   atiAnalyticsAppName: 'news-serbian',
   atiAnalyticsProducerId: '81',
+  atiAnalyticsProducerName: 'SERBIAN',
   chartbeatDomain: 'serbian.bbc.co.uk',
   product: 'BBC News',
   defaultImage: 'https://news.files.bbci.co.uk/ws/img/logos/og/serbian.png',
@@ -91,6 +92,10 @@ export const service: SerbianConfig = {
           text: 'Kontaktirajte BBC',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'BBC News na drugim jezicima',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -105,19 +110,10 @@ export const service: SerbianConfig = {
       numberOfItems: 10,
       hasMostRead: true,
     },
-    mostWatched: {
-      header: 'Najgledanije',
-      numberOfItems: 10,
-      hasMostWatched: true,
-    },
     navigation: [
       {
         title: 'Početna strana',
         url: '/serbian/lat',
-      },
-      {
-        title: 'Ukrajina',
-        url: '/serbian/lat/topics/c5wzvzzz5vrt',
       },
       {
         title: 'Srbija',
@@ -172,6 +168,11 @@ export const service: SerbianConfig = {
         breaking: 'Vanredne',
         postedAt: 'Objavljeno u',
         summary: 'Sažetak',
+        shareButtonText: 'Deli',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'Sažetak',
       error: {
@@ -234,7 +235,7 @@ export const service: SerbianConfig = {
           },
           accept: 'U redu',
           reject: 'Saznajte šta se promenilo',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -323,6 +324,7 @@ export const service: SerbianConfig = {
         previousRadioShow: 'Prethodna radio emisija',
         nextRadioShow: 'Sledeća radio emisija',
         duration: 'Trajanje',
+        closeVideo: 'Izađi',
       },
       socialEmbed: {
         caption: {
@@ -358,6 +360,74 @@ export const service: SerbianConfig = {
       topStoriesTitle: 'Najvažnije',
       featuresAnalysisTitle: 'Reportaže',
       latestMediaTitle: 'Najnovije',
+      ugc: {
+        // No JavaScript
+        noJsHeading: undefined,
+        noJsDescription: undefined,
+
+        // Optional
+        optional: 'opciono',
+
+        // File upload
+        fileUploadLiveRegionText: undefined,
+        fileUploadLiveRegionUpdateText: undefined,
+        fileUploadListHeading: 'Pogledajte šta postavljate',
+        fileUploadButton: 'Odaberite fajl',
+        fileUploadRemoveButton: undefined,
+
+        // Submit button
+        submitButton: 'Pošaljite',
+
+        // Validation
+        validationRequired: 'Nešto nedostaje.',
+        validationInvalidEmail:
+          'Nešto nije u redu. Molimo, unesite odgovarajuću imejl adresu.',
+        validationInvalidTelephone: undefined,
+        validationFilesNotEnough:
+          'Nema dovoljno fajlovsa. Molimo, dodajte najmanje {{minFiles}}',
+        validationFilesTooMany:
+          'Previše je fajlova. Možete dodati najviše {{maxFiles}}.',
+        validationFilesInvalidType:
+          'Izvinite, ne možemo da koristimo ovu vrstu fajlova. Molimo, dodajte {{fileTypes}}',
+        validationFilesTooSmall: 'Ovaj fajl je loš. Pokušajte sa drugim.',
+        validationFilesSizeExceeded:
+          'Izvinite, fajlovi su preveliki. Možete dodati do 1.2 GB u jednom pokušaju.',
+        validationWordLimit: 'Najviše {{wordLimit}} reči',
+
+        // Messaging
+        retentionPeriodDays: undefined,
+        referenceNumber: 'Referentni broj',
+        submissionInfoSignedOutMessage:
+          'Možda biste želeli da zapišete ove detalje za vaše potrebe.',
+        privacyInfoHtml:
+          'Ne brinite, mi štitimo vaše podatke - pročitajte {{privacyInfoLink}} za više detalja.',
+        emailToHtml:
+          'Pošaljite imejl na {{emailLink}} ako se predomislite. Samo navedite referentni broj i napišite da ne želite da koristimo materijal.',
+        removalGuidelineText:
+          'Ako ste poslali materijal za korišćenje u programu ili onlajn, nećemo biti u mogućnosti da ga uklonimo ako ga upotrebimo po prijemu.',
+
+        // Form Screen
+        dataPolicyHeading: undefined,
+
+        // Uploading Screen
+        uploadingHeading: 'Vaši fajlovi se šalju...',
+        uploadingDescription:
+          'Molimo, sačekajte da se završi slanje u potpunosti',
+
+        // Success Screen
+        successHeading: 'Poruka poslata',
+        successDescription: 'Hvala vam što ste nam se javili',
+        privacyPolicyLinkHref: undefined,
+        privacyPolicyLinkText: undefined,
+
+        // Error Screen
+        errorHeading: 'Vaša poruka nije otišla',
+        errorDescription: 'Pokušajte da pošaljete ponovo.',
+
+        // Closed Screen
+        closedHeading: 'Unos je sada zatvoren',
+        closedDescription: 'Unos je zatvoren {{date}}',
+      },
     },
   },
   cyr: {
@@ -416,6 +486,10 @@ export const service: SerbianConfig = {
           text: 'Контактирајте ББЦ',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'BBC News на другим језицима',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -430,35 +504,10 @@ export const service: SerbianConfig = {
       numberOfItems: 10,
       hasMostRead: true,
     },
-    mostWatched: {
-      header: 'Најгледаније',
-      numberOfItems: 5,
-      hasMostWatched: true,
-    },
     navigation: [
       {
         title: 'Почетна страна',
         url: '/serbian/cyr',
-      },
-      {
-        title: 'Украјина',
-        url: '/serbian/cyr/topics/cqwvxvvw9qrt',
-      },
-      {
-        title: 'Србија',
-        url: '/serbian/cyr/topics/cvjp1d3k9dvt',
-      },
-      {
-        title: 'Балкан',
-        url: '/serbian/cyr/topics/c8y9k0k2pvvt',
-      },
-      {
-        title: 'Свет',
-        url: '/serbian/cyr/topics/c3m1x951mljt',
-      },
-      {
-        title: 'Видео',
-        url: '/serbian/cyr/topics/crg7kj2ejj2t',
       },
       {
         title: 'Најпопуларније',
@@ -497,6 +546,11 @@ export const service: SerbianConfig = {
         breaking: 'Ванредне',
         postedAt: 'Објављено у',
         summary: 'Сажетак',
+        shareButtonText: 'Дели',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'Сажетак',
       error: {
@@ -559,7 +613,7 @@ export const service: SerbianConfig = {
           },
           accept: 'У реду',
           reject: 'Сазнајте шта се променило',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -649,6 +703,7 @@ export const service: SerbianConfig = {
         nextRadioShow: 'Следећа радио емисија',
         duration: 'Трајање',
         recentEpisodes: 'Претходне епизоде',
+        closeVideo: 'Изађи',
       },
       socialEmbed: {
         caption: {

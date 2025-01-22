@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-somali',
     atiAnalyticsProducerId: '83',
+    atiAnalyticsProducerName: 'SOMALI',
     chartbeatDomain: 'somali.bbc.co.uk',
     brandName: 'BBC News Somali',
     product: 'BBC News',
@@ -72,6 +73,11 @@ export const service: DefaultServiceConfig = {
         breaking: 'War deg deg ah',
         postedAt: '',
         summary: 'Kooban',
+        shareButtonText: 'La wadaag',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'Kooban',
       error: {
@@ -127,7 +133,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'HAYE',
           reject: 'Ogow waxa isbedelay',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -271,11 +277,6 @@ export const service: DefaultServiceConfig = {
       numberOfItems: 5,
       hasMostRead: true,
     },
-    mostWatched: {
-      header: 'Ugu daawasho badan',
-      numberOfItems: 10,
-      hasMostWatched: true,
-    },
     radioSchedule: {
       hasRadioSchedule: true,
       header: 'Barnaamijyada Idaacadda',
@@ -313,6 +314,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/somali/send/u50853709',
           text: 'La xiriir BBC',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Wararka BBC ee luqadaha kale',
         },
         {
           id: 'COOKIE_SETTINGS',

@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '에 업데이트 됨',
     atiAnalyticsAppName: 'news-korean',
     atiAnalyticsProducerId: '57',
+    atiAnalyticsProducerName: 'KOREAN',
     chartbeatDomain: 'korean.bbc.co.uk',
     brandName: 'BBC News 코리아',
     product: 'BBC News',
@@ -72,6 +73,11 @@ export const service: DefaultServiceConfig = {
         breaking: '속보',
         postedAt: '작성',
         summary: '요약',
+        shareButtonText: '공유',
+      },
+      downloads: {
+        instructions: '오늘의 뉴스를 다운받아 보실 수 있습니다',
+        title: '파일 다운로드',
       },
       gist: '요약',
       error: {
@@ -133,7 +139,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: '네',
           reject: '변경사항을 확인하세요',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -221,6 +227,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: '다음 라디오 방송',
         duration: '방송 길이',
         recentEpisodes: '이전',
+        closeVideo: '나가기',
       },
       socialEmbed: {
         caption: {
@@ -261,11 +268,6 @@ export const service: DefaultServiceConfig = {
       lastUpdated: '마지막 업데이트일',
       numberOfItems: 10,
       hasMostRead: true,
-    },
-    mostWatched: {
-      header: '인기 콘텐츠',
-      numberOfItems: 10,
-      hasMostWatched: true,
     },
     radioSchedule: {
       hasRadioSchedule: true,
@@ -308,6 +310,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/korean/send/u50853423',
           text: '고객센터',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: '다른 언어로 보기',
         },
         {
           id: 'COOKIE_SETTINGS',

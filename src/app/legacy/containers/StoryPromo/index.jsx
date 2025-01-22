@@ -40,6 +40,29 @@ const SingleColumnStoryPromo = styled(StoryPromo)`
   }
 `;
 
+// eslint-disable-next-line consistent-return
+const extractAltText = blocks => {
+  // eslint-disable-next-line no-restricted-syntax
+  for (const block of blocks) {
+    if (block.type === 'paragraph') {
+      return block.model.text;
+    }
+    if (block.model && block.model.blocks) {
+      return extractAltText(block.model.blocks);
+    }
+  }
+};
+
+const getBlockByType = (blocks, blockType) => {
+  let blockData;
+  blocks.forEach(block => {
+    if (!blockData && block.type === blockType) {
+      blockData = block;
+    }
+  });
+  return blockData;
+};
+
 const StoryPromoImage = ({
   isAmp = false,
   useLargeImages,
@@ -56,9 +79,22 @@ const StoryPromoImage = ({
     const landscapeRatio = (9 / 16) * 100;
     return <ImagePlaceholder ratio={landscapeRatio} />;
   }
-  const { height, width, path, altText, copyrightHolder } = imageValues;
-  const originCode = getOriginCode(path);
-  const locator = getLocator(path);
+
+  // eslint-disable-next-line prefer-const
+  let { height, width, path, altText, copyrightHolder } = imageValues;
+  let originCode = getOriginCode(path);
+  let locator = getLocator(path);
+  if (imageValues.defaultPromoImage) {
+    const { blocks } = imageValues.defaultPromoImage;
+    const rawImageBlock = getBlockByType(blocks, 'rawImage').model;
+    const altTextBlocks = getBlockByType(blocks, 'altText').model.blocks;
+    altText = extractAltText(altTextBlocks);
+    height = rawImageBlock.height;
+    width = rawImageBlock.width;
+    locator = rawImageBlock.locator;
+    originCode = rawImageBlock.originCode;
+    copyrightHolder = rawImageBlock.copyrightHolder;
+  }
   const imageResolutions = [70, 95, 144, 183, 240, 320, 660];
   const { primarySrcset, primaryMimeType, fallbackSrcset, fallbackMimeType } =
     createSrcsets({
@@ -113,7 +149,7 @@ const StoryPromoContainer = ({
   sectionType = '',
 }) => {
   const { script, service } = useContext(ServiceContext);
-  const { isAmp, isLite, pageType } = useContext(RequestContext);
+  const { isAmp, isLite, pageType, variant } = useContext(RequestContext);
   const handleClickTracking = useCombinedClickTrackerHandler(eventTrackingData);
 
   const linkId = buildUniquePromoId({
@@ -131,7 +167,8 @@ const StoryPromoContainer = ({
     isAssetTypeCode === 'PRO' &&
     pathOr(null, ['contentType'], item) === 'Guide';
   const headline = getHeadline(item);
-  const url = getUrl(item);
+
+  const url = getUrl(item, variant);
   const isLive = getIsLive(item);
 
   const overtypedSummary = pathOr(null, ['overtypedSummary'], item);
@@ -245,8 +282,8 @@ const StoryPromoContainer = ({
       )}
     </>
   );
-
-  const imageValues = pathOr(null, ['indexImage'], item);
+  const imageValues =
+    pathOr(null, ['indexImage'], item) || pathOr(null, ['images'], item);
 
   const MediaIndicator = (
     <MediaIndicatorContainer
@@ -261,7 +298,6 @@ const StoryPromoContainer = ({
   const StoryPromoComponent = isSingleColumnLayout
     ? SingleColumnStoryPromo
     : StoryPromo;
-
   return (
     <StoryPromoComponent
       data-e2e="story-promo"

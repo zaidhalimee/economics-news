@@ -2,6 +2,52 @@
 
 exports[`Canonical Home Page A11y I can see the skip to content link 1`] = `"सामग्री को स्किप करें"`;
 
+exports[`Canonical Home Page Analytics ATI tracking pixel excluding src 1`] = `
+<img
+  alt=""
+  height="1px"
+  style="position:absolute"
+  width="1px"
+/>
+`;
+
+exports[`Canonical Home Page Analytics ATI tracking pixel hostname 1`] = `"https://logws1363.ati-host.net/"`;
+
+exports[`Canonical Home Page Analytics ATI tracking pixel search params 1`] = `
+[
+  {
+    "s": "598343",
+  },
+  {
+    "s2": "52",
+  },
+  {
+    "p": "hindi.page",
+  },
+  {
+    "x1": "[urn:bbc:tipo:topic:cg8nwjjm7vet]",
+  },
+  {
+    "x2": "[responsive]",
+  },
+  {
+    "x3": "[news-hindi]",
+  },
+  {
+    "x4": "[hi]",
+  },
+  {
+    "x7": "[index-home]",
+  },
+  {
+    "x8": "[simorgh-nojs]",
+  },
+  {
+    "x9": "[BBC%20News%20हिंदी]",
+  },
+]
+`;
+
 exports[`Canonical Home Page Footer Anchors should match text and url 1`] = `
 {
   "text": "BBC News, हिंदी",
@@ -53,6 +99,13 @@ exports[`Canonical Home Page Footer Anchors should match text and url 7`] = `
 
 exports[`Canonical Home Page Footer Anchors should match text and url 8`] = `
 {
+  "text": "अन्य भाषाएँ",
+  "url": "https://www.bbc.com/ws/languages",
+}
+`;
+
+exports[`Canonical Home Page Footer Anchors should match text and url 9`] = `
+{
   "text": "बाहरी साइटों का लिंक देने की हमारी नीति के बारे में पढ़ें.",
   "url": "https://www.bbc.co.uk/editorialguidelines/guidance/feeds-and-links",
 }
@@ -62,7 +115,7 @@ exports[`Canonical Home Page Footer I can click on the BBC branding and it would
 
 exports[`Canonical Home Page Footer Paragraphs should match text 1`] = `"बीबीसी के लिए कलेक्टिव न्यूज़रूम की ओर से प्रकाशित"`;
 
-exports[`Canonical Home Page Footer Paragraphs should match text 2`] = `"© 2024 BBC. बाहरी साइटों की सामग्री के लिए बीबीसी ज़िम्मेदार नहीं है. बाहरी साइटों का लिंक देने की हमारी नीति के बारे में पढ़ें."`;
+exports[`Canonical Home Page Footer Paragraphs should match text 2`] = `"© 2025 BBC. बाहरी साइटों की सामग्री के लिए बीबीसी ज़िम्मेदार नहीं है. बाहरी साइटों का लिंक देने की हमारी नीति के बारे में पढ़ें."`;
 
 exports[`Canonical Home Page Header I can see the branding 1`] = `"BBC News, हिंदी"`;
 
@@ -75,8 +128,8 @@ exports[`Canonical Home Page Header Navigation link should match text and url 1`
 
 exports[`Canonical Home Page Header Navigation link should match text and url 2`] = `
 {
-  "text": "लोकसभा चुनाव 2024",
-  "url": "/hindi/topics/cm5m26q8qxpt",
+  "text": "दिल्ली विधानसभा चुनाव",
+  "url": "/hindi/topics/c8dqegnm6d9t",
 }
 `;
 
@@ -209,6 +262,16 @@ exports[`Canonical Home Page Most Read has item with rank 10`] = `
 `;
 
 exports[`Canonical Home Page Page content First item in the first curation is the correct headline 1`] = `"पाक: मोदी की 'तारीफ़' पर गद्दारी का मुकदमा! 23"`;
+
+exports[`Canonical Home Page Page content First item in the first curation is the correct image 1`] = `
+<img
+  alt="पढ़ें"
+  class="bbc-139onq"
+  loading="lazy"
+  src="https://ichef.test.bbci.co.uk/ace/standard/240/cpsdevpb/15392/test/_63503968_160822002233_rio_olympic_closing_624x351_afp.jpg"
+  style="aspect-ratio:16 / 9"
+/>
+`;
 
 exports[`Canonical Home Page SEO Apple Touch Icon should match attributes 1`] = `
 {
@@ -348,9 +411,15 @@ exports[`Canonical Home Page SEO Linked data should match text 1`] = `
           "position": 3,
           "url": "https://www.bbc.com/hindi/international-23069805",
         },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://www.bbc.com/hindi/articles/c558wpnqq4qo",
+        },
       ],
       "name": "BBC News हिंदी",
-      "numberOfItems": 3,
+      "numberOfItems": 4,
     },
   ],
 }

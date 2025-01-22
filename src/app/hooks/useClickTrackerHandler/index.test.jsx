@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React from 'react';
+import React, { createContext } from 'react';
 import userEvent from '@testing-library/user-event';
 import { waitFor } from '@testing-library/dom';
 import { STORY_PAGE } from '#app/routes/utils/pageTypes';
@@ -13,6 +13,8 @@ import {
   act,
   fireEvent,
 } from '../../components/react-testing-library-with-providers';
+import * as serviceContextModule from '../../contexts/ServiceContext';
+
 import pidginData from './fixtureData/tori-51745682.json';
 import useClickTrackerHandler from '.';
 
@@ -82,11 +84,24 @@ const TestComponentSingleLink = ({ hookProps }) => {
 
 beforeEach(() => {
   jest.clearAllMocks();
+  const { href, assign, ...rest } = window.location;
   delete window.location;
   window.location = {
     href: 'http://bbc.com/pidgin/tori-51745682',
     assign: jest.fn(),
+    ...rest,
   };
+
+  jest.replaceProperty(
+    serviceContextModule,
+    'ServiceContext',
+    createContext({
+      atiAnalyticsProducerId: '70',
+      atiAnalyticsProducerName: 'PIDGIN',
+      service: 'pidgin',
+      useReverb: false,
+    }),
+  );
 });
 
 afterEach(() => {
@@ -369,6 +384,48 @@ describe('Click tracking', () => {
     );
   });
 
+  it('should use "optimizelyMetricNameOverride" property if provided in eventTrackingData object', async () => {
+    const mockOptimizelyTrack = jest.fn();
+    const mockUserId = 'test';
+    const mockAttributes = { foo: 'bar' };
+
+    const mockOptimizely = {
+      optimizely: {
+        track: mockOptimizelyTrack,
+        user: { attributes: mockAttributes, id: mockUserId },
+        getVariation: jest.fn(() => 'off'),
+      },
+      optimizelyMetricNameOverride: 'myEvent',
+    };
+    const {
+      metadata: { atiAnalytics },
+    } = pidginData;
+
+    const { getByTestId } = render(
+      <TestComponent hookProps={{ ...defaultProps, ...mockOptimizely }} />,
+      {
+        atiData: atiAnalytics,
+        pageData: pidginData,
+        pageType: STORY_PAGE,
+        pathname: '/pidgin',
+        service: 'pidgin',
+        toggles: defaultToggles,
+      },
+    );
+
+    fireEvent.click(getByTestId('test-component'));
+
+    expect(mockOptimizelyTrack).toHaveBeenCalledTimes(1);
+    expect(mockOptimizelyTrack).toHaveBeenCalledWith(
+      'myEvent_clicks',
+      mockUserId,
+      {
+        clicked_wsoj: true,
+        foo: 'bar',
+      },
+    );
+  });
+
   it('should fire event to Optimizely if optimizely object exists', async () => {
     const mockOptimizelyTrack = jest.fn();
     const mockUserId = 'test';
@@ -381,6 +438,7 @@ describe('Click tracking', () => {
       optimizely: {
         track: mockOptimizelyTrack,
         user: { attributes: mockAttributes, id: mockUserId },
+        getVariation: jest.fn(() => 'off'),
       },
     };
     const {

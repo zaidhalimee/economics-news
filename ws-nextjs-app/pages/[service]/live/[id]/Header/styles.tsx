@@ -7,8 +7,14 @@ export default {
       display: 'flex',
       flexDirection: 'column',
       position: 'relative',
-      [mq.HIGH_CONTRAST]: {
+      [mq.FORCED_COLOURS]: {
         borderBottom: `solid ${pixelsToRem(1)}rem transparent`,
+      },
+    }),
+  heading: () =>
+    css({
+      '&:focus': {
+        outline: 'none',
       },
     }),
   backgroundContainer: () =>
@@ -34,6 +40,12 @@ export default {
         margin: '0 auto',
         position: 'relative',
         width: '100%',
+      },
+    }),
+  textContainerMediaOpen: ({ mq }: Theme) =>
+    css({
+      [mq.GROUP_4_MIN_WIDTH]: {
+        maxWidth: '100%',
       },
     }),
   textContainerWithoutImage: ({ mq, gridWidths, spacings }: Theme) =>

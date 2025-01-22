@@ -12,6 +12,8 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-pidgin',
     atiAnalyticsProducerId: '70',
+    atiAnalyticsProducerName: 'PIDGIN',
+    useReverb: true,
     chartbeatDomain: 'pidgin.bbc.co.uk',
     brandName: 'BBC News Pidgin',
     product: 'BBC News',
@@ -72,6 +74,11 @@ export const service: DefaultServiceConfig = {
         breaking: 'Breaking',
         postedAt: 'Posted at',
         summary: 'Summary',
+        shareButtonText: 'Share dis tori',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'Summary',
       error: {
@@ -126,7 +133,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: 'Find out wetin don change',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -218,6 +225,7 @@ export const service: DefaultServiceConfig = {
         previousRadioShow: 'Previous radio show',
         nextRadioShow: 'Next radio show',
         duration: 'Duration',
+        closeVideo: 'Exit',
       },
       socialEmbed: {
         caption: {
@@ -253,15 +261,10 @@ export const service: DefaultServiceConfig = {
       latestMediaTitle: 'New things',
     },
     mostRead: {
-      header: 'De one we dem de read well well',
+      header: 'Di one wey oda users dey read well well',
       lastUpdated: 'De one we dem update for:',
-      numberOfItems: 10,
+      numberOfItems: 5,
       hasMostRead: true,
-    },
-    mostWatched: {
-      header: 'De one we dem don look',
-      numberOfItems: 10,
-      hasMostWatched: true,
     },
     radioSchedule: {
       hasRadioSchedule: false,
@@ -336,6 +339,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/pidgin/send/u50853577',
           text: 'Call BBC',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'BBC News for oda languages',
         },
         {
           id: 'COOKIE_SETTINGS',

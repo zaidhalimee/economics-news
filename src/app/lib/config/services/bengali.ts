@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-bengali',
     atiAnalyticsProducerId: '31',
+    atiAnalyticsProducerName: 'BENGALI',
     chartbeatDomain: 'bengali.bbc.co.uk',
     brandName: 'BBC News বাংলা',
     product: 'BBC News',
@@ -71,10 +72,15 @@ export const service: DefaultServiceConfig = {
       },
       liveExperiencePage: {
         liveLabel: 'লাইভ',
-        liveCoverage: 'সরাসির কভারেজ',
+        liveCoverage: 'সরাসরি কভারেজ',
         breaking: 'ব্রেকিং',
         postedAt: 'পোস্ট করা হয়েছে',
         summary: 'সার সংক্ষেপ',
+        shareButtonText: 'শেয়ার করুন',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'সার সংক্ষেপ',
       error: {
@@ -129,7 +135,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ঠিক আছে।',
           reject: 'কী পরিবর্তন হয়েছে দেখুন।',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -223,6 +229,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'পরবর্তী রেডিও অনুষ্ঠান',
         duration: 'স্থিতিকাল',
         recentEpisodes: 'পুরনো অনুষ্ঠান',
+        closeVideo: 'বন্ধ করুন',
       },
       socialEmbed: {
         caption: {
@@ -263,11 +270,6 @@ export const service: DefaultServiceConfig = {
       lastUpdated: 'সর্বশেষ আপডেট হয়েছে:',
       numberOfItems: 5,
       hasMostRead: true,
-    },
-    mostWatched: {
-      header: 'সবচেয়ে বেশি দেখা হয়েছে',
-      numberOfItems: 10,
-      hasMostWatched: true,
     },
     radioSchedule: {
       hasRadioSchedule: true,
@@ -310,6 +312,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/bengali/send/u50853247',
           text: 'বিবিসির সাথে যোগাযোগ করুন',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'অন্যান্য ভাষায় বিবিসির সংবাদ',
         },
         {
           id: 'COOKIE_SETTINGS',

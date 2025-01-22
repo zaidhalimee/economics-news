@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-swahili',
     atiAnalyticsProducerId: '86',
+    atiAnalyticsProducerName: 'SWAHILI',
     chartbeatDomain: 'swahili.bbc.co.uk',
     brandName: 'BBC News Swahili',
     product: 'BBC News',
@@ -72,6 +73,11 @@ export const service: DefaultServiceConfig = {
         breaking: 'Habari za hivi punde',
         postedAt: 'Imepakiwa mnamo',
         summary: 'Muhtasari',
+        shareButtonText: 'Mshirikishe mwenzako',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'Muhtasari',
       error: {
@@ -133,7 +139,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'Ndio',
           reject: 'Fahamu kilichobadilika',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -266,13 +272,8 @@ export const service: DefaultServiceConfig = {
     mostRead: {
       header: 'Iliyosomwa zaidi',
       lastUpdated: 'Imeboreshwa mwisho:',
-      numberOfItems: 5,
-      hasMostRead: true,
-    },
-    mostWatched: {
-      header: 'Iliyoangaliwa zaidi',
       numberOfItems: 10,
-      hasMostWatched: true,
+      hasMostRead: true,
     },
     radioSchedule: {
       hasRadioSchedule: true,
@@ -311,6 +312,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/swahili/send/u50853731',
           text: 'Wasiliana na BBC',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Habari za BBC kwa lugha zingine',
         },
         {
           id: 'COOKIE_SETTINGS',

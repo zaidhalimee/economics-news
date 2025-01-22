@@ -53,7 +53,7 @@ const HiearchicalGrid = ({
           const duration = moment.duration(promo.duration, 'seconds');
           const separator = ',';
           const formattedDuration = formatDuration({ duration, separator });
-          const durationString = `${durationTranslation}, ${formattedDuration}`;
+          const durationString = `, ${durationTranslation} ${formattedDuration}`;
 
           const useLargeImages = i === 0 && promoItems.length >= 3;
 
@@ -107,11 +107,7 @@ const HiearchicalGrid = ({
                   })}
                 >
                   {isMedia ? (
-                    <Promo.A
-                      href={promo.link}
-                      aria-labelledby={promo.id}
-                      className="focusIndicatorDisplayBlock"
-                    >
+                    <Promo.A href={promo.link} aria-labelledby={promo.id}>
                       <span id={promo.id} role="text">
                         <VisuallyHiddenText data-testid="visually-hidden-text">
                           {typeTranslated}
@@ -125,10 +121,7 @@ const HiearchicalGrid = ({
                       </span>
                     </Promo.A>
                   ) : (
-                    <Promo.A
-                      href={promo.link}
-                      className="focusIndicatorDisplayBlock"
-                    >
+                    <Promo.A href={promo.link}>
                       {isLive ? (
                         <LiveLabel
                           {...(isFirstPromo && {

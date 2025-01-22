@@ -14,6 +14,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-thai',
     atiAnalyticsProducerId: '90',
+    atiAnalyticsProducerName: 'THAI',
     chartbeatDomain: 'thai.bbc.co.uk',
     brandName: 'BBC News ไทย',
     product: 'BBC News',
@@ -73,6 +74,11 @@ export const service: DefaultServiceConfig = {
         breaking: 'ด่วน',
         postedAt: 'โพสต์ทาง',
         summary: 'สรุป',
+        shareButtonText: 'แชร์"',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'สรุป',
       error: {
@@ -127,7 +133,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ตกลง',
           reject: 'ดูว่ามีอะไรเปลี่ยนแปลงไปบ้าง',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -215,6 +221,7 @@ export const service: DefaultServiceConfig = {
         previousRadioShow: 'รายการวิทยุก่อนหน้า',
         nextRadioShow: 'รายการวิทยุถัดไป',
         duration: 'ความยาว',
+        closeVideo: 'ออก',
       },
       socialEmbed: {
         caption: {
@@ -253,11 +260,6 @@ export const service: DefaultServiceConfig = {
       lastUpdated: 'อัพเดทล่าสุดเมื่อเวลา',
       numberOfItems: 5,
       hasMostRead: true,
-    },
-    mostWatched: {
-      header: 'มียอดชมมากที่สุด',
-      numberOfItems: 10,
-      hasMostWatched: true,
     },
     radioSchedule: {
       hasRadioSchedule: false,
@@ -328,6 +330,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/thai/send/u50853797',
           text: 'ติดต่อบีบีซี',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'บีบีซีนิวส์ภาษาอื่น ๆ',
         },
         {
           id: 'COOKIE_SETTINGS',

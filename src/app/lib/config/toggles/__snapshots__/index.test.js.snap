@@ -25,12 +25,6 @@ exports[`Toggles Config when application environment is live should contain corr
   "mostRead": {
     "enabled": true,
   },
-  "mostWatched": {
-    "enabled": false,
-  },
-  "navOnArticles": {
-    "enabled": true,
-  },
   "nielsenAnalytics": {
     "enabled": true,
   },
@@ -70,6 +64,9 @@ exports[`Toggles Config when application environment is local should contain cor
   "cpsRecommendations": {
     "enabled": true,
   },
+  "electionBanner": {
+    "enabled": true,
+  },
   "enableFetchingToggles": {
     "enabled": true,
     "value": "(afaanoromoo|afrique|amharic|arabic|archive|azeri|bengali|burmese|cymrufyw|gahuza|gujarati|hausa|hindi|igbo|indonesia|japanese|korean|kyrgyz|marathi|mundo|naidheachdan|nepali|news|pashto|persian|pidgin|portuguese|punjabi|russian|scotland|serbian|sinhala|somali|swahili|tamil|telugu|thai|tigrinya|turkce|ukchina|ukrainian|urdu|uzbek|vietnamese|yoruba|zhongwen)",
@@ -77,28 +74,28 @@ exports[`Toggles Config when application environment is local should contain cor
   "eventTracking": {
     "enabled": true,
   },
+  "frontPageRadioSchedule": {
+    "enabled": true,
+  },
   "include": {
+    "enabled": true,
+  },
+  "liveRadioSchedule": {
     "enabled": true,
   },
   "mostRead": {
     "enabled": true,
   },
-  "mostWatched": {
-    "enabled": true,
-  },
-  "navOnArticles": {
-    "enabled": true,
-  },
   "nielsenAnalytics": {
+    "enabled": true,
+  },
+  "onDemandRadioSchedule": {
     "enabled": true,
   },
   "preloadLeadImage": {
     "enabled": true,
   },
   "prerollAds": {
-    "enabled": true,
-  },
-  "radioSchedule": {
     "enabled": true,
   },
   "scriptLink": {
@@ -136,12 +133,6 @@ exports[`Toggles Config when application environment is test should contain corr
     "enabled": true,
   },
   "mostRead": {
-    "enabled": true,
-  },
-  "mostWatched": {
-    "enabled": true,
-  },
-  "navOnArticles": {
     "enabled": true,
   },
   "nielsenAnalytics": {

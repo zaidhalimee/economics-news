@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-arabic',
     atiAnalyticsProducerId: '5',
+    atiAnalyticsProducerName: 'ARABIC',
     chartbeatDomain: 'arabic.bbc.co.uk',
     brandName: 'BBC News عربي',
     product: 'BBC News',
@@ -48,16 +49,16 @@ export const service: DefaultServiceConfig = {
     googleSiteVerification: 'D-aEHUiyVaMoUJXjVRbDVkxS0dLTMUZLD3dLPTnWO4Q',
     podcastPromo: {
       title: 'يستحق الانتباه',
-      brandTitle: 'يستحق الانتباه',
+      brandTitle: 'حسابنا الرسمي على واتساب',
       brandDescription:
-        'شرح معمق لقصة بارزة من أخباراليوم، لمساعدتك على فهم أهم الأحداث حولك وأثرها على حياتك',
+        'تابعوا التغطية الشاملة من بي بي سي نيوز عربي على واتساب.',
       image: {
-        src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p0h6dt4s.jpg',
-        alt: 'يستحق الانتباه',
+        src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p0k7ksmj.png',
+        alt: 'حسابنا الرسمي على واتساب',
       },
       linkLabel: {
-        text: 'الحلقات',
-        href: 'https://www.bbc.com/arabic/podcasts/p0h6d6nm',
+        text: 'اضغط هنا',
+        href: 'https://www.whatsapp.com/channel/0029Val8KlE5a24BsTvuVd2e',
       },
       skipLink: {
         text: 'تخطى %title% وواصل القراءة',
@@ -94,6 +95,11 @@ export const service: DefaultServiceConfig = {
         breaking: 'عاجل',
         postedAt: 'توقيت النشر',
         summary: 'ملخص',
+        shareButtonText: 'شارك',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'ملخص',
       error: {
@@ -150,7 +156,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'موافق',
           reject: 'إطلع على التغييرات',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -235,6 +241,7 @@ export const service: DefaultServiceConfig = {
         },
         listen: 'استمع',
         watch: 'شاهد',
+        watchMoments: 'لحظات للمشاهدة',
         listenLive: 'استمع للبث المباشر',
         listenNext: 'واصل الاستماع',
         liveLabel: 'مباشر',
@@ -245,6 +252,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'البرامج السابقة',
         podcastExternalLinks: 'هذا البودكاست متاح عبر',
         download: 'تحميل الحلقة',
+        closeVideo: 'خروج',
       },
       socialEmbed: {
         caption: {
@@ -276,17 +284,78 @@ export const service: DefaultServiceConfig = {
       },
       topStoriesTitle: 'الأخبار الرئيسية',
       featuresAnalysisTitle: 'اخترنا لكم',
+      ugc: {
+        // No JavaScript
+        noJsHeading: undefined,
+        noJsDescription: undefined,
+
+        // Optional
+        optional: 'اختياري',
+
+        // File upload
+        fileUploadLiveRegionText: undefined,
+        fileUploadLiveRegionUpdateText: undefined,
+        fileUploadListHeading: 'هذا ما تحمّله:',
+        fileUploadButton: 'اختر ملفا',
+        fileUploadRemoveButton: undefined,
+
+        // Submit button
+        submitButton: 'إرسال',
+
+        // Validation
+        validationRequired: 'رجاء املأ هذه الخانة الإلزامية.',
+        validationInvalidEmail:
+          'هذا لا يبدو صحيحا. يرجى إدخال بريد إلكتروني صحيح.',
+        validationInvalidTelephone: undefined,
+        validationFilesTooMany:
+          'لقد أضفت ملفات أكثر من المسموح. الحد الأقصى لعدد الملفات {{maxFiles}}.',
+        validationFilesNotEnough:
+          'لا توجد ملفات كافية. يرجى إضافة {{minFiles}} على الأقل.',
+        validationFilesSizeExceeded:
+          'عذرا، حجم هذه الملفات أكبر من المسموح. يمكنك تحميل ملفات يصل حجمها إلى 1.2 غيغابايت في المرة الواحدة.',
+        validationFilesTooSmall: 'هذا الملف لا يصلح. جرب ملفا آخر.',
+        validationFilesInvalidType:
+          'عذرا، لا يمكننا استقبال هذا النوع من الملفات. يرجى إضافة ملفات من الأنواع التالية {{fileTypes}}.',
+        submissionInfoSignedOutMessage:
+          'ربما تود الاحتفاظ بنسخة من تلك البيانات للرجوع إليها وقت الحاجة.',
+        validationWordLimit: 'الحد الأقصى للكلمات {{wordLimit}}',
+
+        // Messaging
+        retentionPeriodDays: undefined,
+        removalGuidelineText: undefined,
+        referenceNumber: 'رقم المرجع',
+        emailToHtml:
+          'إذا غيرت رأيك راسلنا عبر {{emailLink}}. فقط اذكر رقم المرجع وأوضح أنك لا تريد أن نستخدمه.',
+        privacyInfoHtml:
+          'لا تقلق، نحن نحافظ على بياناتك — لمزيد من التفاصيل اقرأ {{privacyInfoLink}}.',
+
+        // Form Screen
+        dataPolicyHeading: undefined,
+
+        // Uploading Screen
+        uploadingHeading: 'جاري تحميل الملفات...',
+        uploadingDescription: 'يرجى الانتظار حتى اكتمال الإرسال.',
+
+        // Success Screen
+        successHeading: 'لقد تم الإرسال',
+        successDescription: 'شكرا لاتصالك.',
+        privacyPolicyLinkHref: undefined,
+        privacyPolicyLinkText: undefined,
+
+        // Error Screen
+        errorHeading: 'تعذر تحميل ملفاتك ',
+        errorDescription: 'جرب التحميل مرة أخرى.',
+
+        // Closed Screen
+        closedHeading: 'أغلق باب المشاركة',
+        closedDescription: 'أغلق باب المشاركة يوم {{date}}.',
+      },
     },
     mostRead: {
       header: 'الأكثر قراءة',
       lastUpdated: 'آخر تحديث',
       numberOfItems: 10,
       hasMostRead: true,
-    },
-    mostWatched: {
-      header: 'الأكثر مشاهدة',
-      numberOfItems: 10,
-      hasMostWatched: true,
     },
     radioSchedule: {
       hasRadioSchedule: true,
@@ -333,6 +402,10 @@ export const service: DefaultServiceConfig = {
           text: 'اتصل بـ بي بي سي',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'بي بي سي نيوز عربي في لغات أخرى',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -347,6 +420,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'رئيسية',
         url: '/arabic',
+      },
+      {
+        title: 'شاهد البث المباشر',
+        url: '/arabic/media-49522519',
       },
       {
         title: 'أخبار',
@@ -370,15 +447,15 @@ export const service: DefaultServiceConfig = {
       },
       {
         title: 'تحقيقات',
-        url: '/arabic/tv-and-radio-42414864',
+        url: '/arabic/topics/c51nnzdeg9zt',
       },
       {
         title: 'بودكاست',
-        url: '/arabic/tv-and-radio-52067221',
+        url: '/arabic/topics/cljddp5lw0dt',
       },
       {
         title: 'برامجنا',
-        url: '/arabic/tv-and-radio-37728883',
+        url: '/arabic/topics/crgyknwdlwnt',
       },
     ],
   },

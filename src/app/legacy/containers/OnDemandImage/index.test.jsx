@@ -1,6 +1,6 @@
 import React from 'react';
 import { RequestContextProvider } from '#contexts/RequestContext';
-import { MEDIA_PAGE } from '#app/routes/utils/pageTypes';
+import { AUDIO_PAGE } from '#app/routes/utils/pageTypes';
 import { render } from '../../../components/react-testing-library-with-providers';
 import { ServiceContextProvider } from '../../../contexts/ServiceContext';
 import OnDemandImage from '.';
@@ -10,7 +10,7 @@ const component = ({ url, isAmp, service, alt }) => (
     <RequestContextProvider
       isAmp={isAmp}
       service={service}
-      pageType={MEDIA_PAGE}
+      pageType={AUDIO_PAGE}
       pathname="/path"
     >
       <OnDemandImage imageUrl={url} alt={alt} />
@@ -36,7 +36,7 @@ describe('AudioPlayer blocks OnDemandHeading', () => {
     );
     const img = getByAltText('BBC News پښتو');
     expect(img.src).toEqual(
-      'https://ichef.bbci.co.uk/images/ic/256x256/p063j1dv.jpg',
+      'https://ichef.bbci.co.uk/images/ic/256x256/p063j1dv.jpg.webp',
     );
     expect(img.alt).toEqual('BBC News پښتو');
   });
@@ -63,7 +63,7 @@ describe('AudioPlayer blocks OnDemandHeading', () => {
     );
     const img = container.querySelector('amp-img');
     expect(img.getAttribute('src')).toEqual(
-      'https://ichef.bbci.co.uk/images/ic/256x256/p063j1dv.jpg',
+      'https://ichef.bbci.co.uk/images/ic/256x256/p063j1dv.jpg.webp',
     );
     expect(img.getAttribute('alt')).toEqual('BBC News Afaan Oromoo');
     expect(img.getAttribute('layout')).toEqual('responsive');

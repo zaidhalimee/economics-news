@@ -3,9 +3,7 @@ import onClient from '../../../lib/utilities/onClient';
 import {
   ARTICLE_PAGE,
   FRONT_PAGE,
-  MEDIA_PAGE,
   MOST_READ_PAGE,
-  MOST_WATCHED_PAGE,
   FEATURE_INDEX_PAGE,
   MEDIA_ASSET_PAGE,
   PHOTO_GALLERY_PAGE,
@@ -13,6 +11,9 @@ import {
   TOPIC_PAGE,
   MEDIA_ARTICLE_PAGE,
   LIVE_PAGE,
+  LIVE_RADIO_PAGE,
+  AUDIO_PAGE,
+  TV_PAGE,
 } from '../../../routes/utils/pageTypes';
 import {
   chartbeatUID,
@@ -83,19 +84,19 @@ describe('Chartbeat utilities', () => {
         expectedShortType: 'article-media-asset',
       },
       {
-        pageType: MEDIA_PAGE,
+        pageType: AUDIO_PAGE,
         expectedDefaultType: 'Radio',
         expectedShortType: 'Radio',
+      },
+      {
+        pageType: TV_PAGE,
+        expectedDefaultType: 'TV',
+        expectedShortType: 'TV',
       },
       {
         pageType: MOST_READ_PAGE,
         expectedDefaultType: 'Most Read',
         expectedShortType: 'Most Read',
-      },
-      {
-        pageType: MOST_WATCHED_PAGE,
-        expectedDefaultType: 'Most Watched',
-        expectedShortType: 'Most Watched',
       },
       {
         pageType: STORY_PAGE,
@@ -214,21 +215,21 @@ describe('Chartbeat utilities', () => {
       },
       {
         service: 'korean',
-        pageType: MEDIA_PAGE,
+        pageType: LIVE_RADIO_PAGE,
         description: 'should return expected section for live radio',
         mediaPageType: 'Radio',
         expected: 'Korean, Korean - Radio',
       },
       {
         service: 'indonesia',
-        pageType: MEDIA_PAGE,
+        pageType: AUDIO_PAGE,
         description: 'should return expected section for onDemand radio',
         mediaPageType: 'Radio',
         expected: 'Indonesia, Indonesia - Radio',
       },
       {
         service: 'pashto',
-        pageType: MEDIA_PAGE,
+        pageType: TV_PAGE,
         description: 'should return expected section for ondemand TV',
         mediaPageType: 'TV',
         expected: 'Pashto, Pashto - TV',
@@ -294,10 +295,10 @@ describe('Chartbeat utilities', () => {
       ${FRONT_PAGE}         | ${'Front Page Title'}         | ${'BBC News Pidgin'} | ${'Front Page Title - BBC News Pidgin'}
       ${FEATURE_INDEX_PAGE} | ${'Feature Index Page Title'} | ${'BBC News Pidgin'} | ${'Feature Index Page Title - BBC News Pidgin'}
       ${MOST_READ_PAGE}     | ${'Most Read Page Title'}     | ${'BBC News Pidgin'} | ${'Most Read Page Title - BBC News Pidgin'}
-      ${MOST_WATCHED_PAGE}  | ${'Most Watched Page Title'}  | ${'BBC News Pidgin'} | ${'Most Watched Page Title - BBC News Pidgin'}
       ${TOPIC_PAGE}         | ${'Topic Page Title'}         | ${'BBC News Pidgin'} | ${'Topic Page Title - BBC News Pidgin'}
       ${LIVE_PAGE}          | ${'Live Page Title'}          | ${'BBC News Pidgin'} | ${'Live Page Title - BBC News Pidgin'}
-      ${MEDIA_PAGE}         | ${'Media Page Title'}         | ${'BBC News Pidgin'} | ${'Media Page Title - BBC News Pidgin'}
+      ${AUDIO_PAGE}         | ${'Audio Page Title'}         | ${'BBC News Pidgin'} | ${'Audio Page Title - BBC News Pidgin'}
+      ${TV_PAGE}            | ${'TV Page Title'}            | ${'BBC News Pidgin'} | ${'TV Page Title - BBC News Pidgin'}
       ${'index'}            | ${'index Page Title'}         | ${'BBC News Pidgin'} | ${'index Page Title - BBC News Pidgin'}
     `(
       'should return correct title when pageType is $pageType and brandName is $brandName',
@@ -427,7 +428,7 @@ describe('Chartbeat utilities', () => {
         const fixtureData: GetConfigProps = {
           isAmp: true,
           platform: 'amp',
-          pageType: MEDIA_PAGE,
+          pageType: LIVE_RADIO_PAGE,
           mediaPageType: 'Radio',
           contentType: 'player-live',
           title: 'Live Radio Page Title',
@@ -684,75 +685,13 @@ describe('Chartbeat utilities', () => {
       });
     });
 
-    it('should return config for amp pages when page type is media (onDemand radio) and env is live', () => {
-      const fixtureData: GetConfigProps = {
-        isAmp: true,
-        platform: 'amp',
-        pageType: MEDIA_PAGE,
-        mediaPageType: 'Radio',
-        brandName: 'BBC News Korean',
-        contentType: 'player-episode',
-        chartbeatDomain: 'korean.bbc.co.uk',
-        env: 'live',
-        service: 'korean',
-        origin: 'bbc.com',
-        previousPath: '/previous-path',
-        title: 'OnDemand Radio Page Title',
-      };
-
-      const expectedConfig = {
-        domain: 'korean.bbc.co.uk',
-        idSync: {
-          bbc_hid: 'foobar',
-        },
-        sections: 'Korean, Korean - Radio',
-        title: 'OnDemand Radio Page Title - BBC News Korean',
-        contentType: 'player-episode',
-        uid: 50924,
-        virtualReferrer: `\${documentReferrer}`,
-      };
-
-      expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
-    });
-
-    it('should return config for amp pages when page type is media (onDemand TV) and env is live', () => {
-      const fixtureData: GetConfigProps = {
-        isAmp: true,
-        platform: 'amp',
-        pageType: MEDIA_PAGE,
-        mediaPageType: 'TV',
-        brandName: 'BBC News Korean',
-        chartbeatDomain: 'pashto.bbc.co.uk',
-        contentType: 'player-episode',
-        env: 'live',
-        service: 'pashto',
-        origin: 'bbc.com',
-        previousPath: '/previous-path',
-        title: 'OnDemand TV Page Title',
-      };
-
-      const expectedConfig = {
-        domain: 'pashto.bbc.co.uk',
-        idSync: {
-          bbc_hid: 'foobar',
-        },
-        sections: 'Pashto, Pashto - TV',
-        title: 'OnDemand TV Page Title - BBC News Korean',
-        contentType: 'player-episode',
-        uid: 50924,
-        virtualReferrer: `\${documentReferrer}`,
-      };
-
-      expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
-    });
-
     it('should return config for canonical pages when page type is media (onDemand TV) and env is live', () => {
       const fixtureData: GetConfigProps = {
         isAmp: false,
         platform: 'canonical',
-        pageType: MEDIA_PAGE,
+        pageType: TV_PAGE,
         mediaPageType: 'TV',
-        brandName: 'BBC News Korean',
+        brandName: 'BBC News Pashto',
         chartbeatDomain: 'pashto.bbc.co.uk',
         contentType: 'player-episode',
         env: 'live',
@@ -768,7 +707,7 @@ describe('Chartbeat utilities', () => {
           bbc_hid: 'foobar',
         },
         sections: 'Pashto, Pashto - TV',
-        title: 'OnDemand TV Page Title - BBC News Korean',
+        title: 'OnDemand TV Page Title - BBC News Pashto',
         type: 'player-episode',
         uid: 50924,
         virtualReferrer: 'bbc.com/previous-path',
@@ -783,7 +722,7 @@ describe('Chartbeat utilities', () => {
       const fixtureData: GetConfigProps = {
         isAmp: false,
         platform: 'canonical',
-        pageType: MEDIA_PAGE,
+        pageType: AUDIO_PAGE,
         mediaPageType: 'Podcasts',
         brandName: 'BBC News Arabic',
         chartbeatDomain: 'arabic.bbc.co.uk',
@@ -802,6 +741,39 @@ describe('Chartbeat utilities', () => {
         },
         sections: 'Arabic, Arabic - Podcasts',
         title: 'Podcast Page Title - BBC News Arabic',
+        type: 'player-episode',
+        uid: 50924,
+        virtualReferrer: 'bbc.com/previous-path',
+        useCanonical: true,
+        path: '/',
+      };
+
+      expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
+    });
+
+    it('should return config for canonical pages when page type is for onDemandAudio and env is live', () => {
+      const fixtureData: GetConfigProps = {
+        isAmp: false,
+        platform: 'canonical',
+        pageType: AUDIO_PAGE,
+        mediaPageType: 'Radio',
+        brandName: 'BBC News Arabic',
+        chartbeatDomain: 'arabic.bbc.co.uk',
+        contentType: 'player-episode',
+        env: 'live',
+        service: 'arabic',
+        origin: 'bbc.com',
+        previousPath: '/previous-path',
+        title: 'Audio Page Title',
+      };
+
+      const expectedConfig = {
+        domain: 'arabic.bbc.co.uk',
+        idSync: {
+          bbc_hid: 'foobar',
+        },
+        sections: 'Arabic, Arabic - Radio',
+        title: 'Audio Page Title - BBC News Arabic',
         type: 'player-episode',
         uid: 50924,
         virtualReferrer: 'bbc.com/previous-path',
@@ -897,37 +869,6 @@ describe('Chartbeat utilities', () => {
         sections: 'Korean, Korean - Most Read',
         type: 'Most Read',
         title: 'TOP 뉴스 - BBC News 코리아',
-        uid: 50924,
-        useCanonical: true,
-        virtualReferrer: 'test.bbc.com/previous-path',
-      };
-
-      expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
-    });
-
-    it('should return config for canonical pages when page type is mostWatched and env is not live', () => {
-      const fixtureData: GetConfigProps = {
-        isAmp: false,
-        platform: 'canonical',
-        pageType: MOST_WATCHED_PAGE,
-        brandName: 'BBC News Afaan Oromoo',
-        title: 'Hedduu kan ilaalaman',
-        chartbeatDomain: 'afaanoromoo.bbc.co.uk',
-        env: 'test',
-        service: 'afaanoromoo',
-        origin: 'test.bbc.com',
-        previousPath: '/previous-path',
-      };
-
-      const expectedConfig = {
-        domain: 'test.bbc.co.uk',
-        idSync: {
-          bbc_hid: 'foobar',
-        },
-        path: '/',
-        sections: 'Afaanoromoo, Afaanoromoo - Most Watched',
-        type: 'Most Watched',
-        title: 'Hedduu kan ilaalaman - BBC News Afaan Oromoo',
         uid: 50924,
         useCanonical: true,
         virtualReferrer: 'test.bbc.com/previous-path',

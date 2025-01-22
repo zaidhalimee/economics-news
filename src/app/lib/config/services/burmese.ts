@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-burmese',
     atiAnalyticsProducerId: '35',
+    atiAnalyticsProducerName: 'BURMESE',
     chartbeatDomain: 'burmese.bbc.co.uk',
     brandName: 'BBC News မြန်မာ',
     product: 'BBC News',
@@ -86,6 +87,11 @@ export const service: DefaultServiceConfig = {
         breaking: 'သတင်းထူး',
         postedAt: 'ပို့စ် တင်တဲ့အချိန်',
         summary: 'အနှစ်ချုပ်',
+        shareButtonText: 'ဝေမျှပါ',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'အနှစ်ချုပ်',
       error: {
@@ -148,7 +154,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ကောင်းပါပြီ။',
           reject: 'ဘာတွေပြောင်းလဲသွားသလဲ ကြည့်ရန်',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -252,6 +258,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'ထုတ်လွှင့်ပြီး အစီအစဉ်မျာ',
         podcastExternalLinks: 'ဒီပေါ့ဒ်ကတ်စ်ကို နောက်ထပ်ရနိုင်သည့်နေရာ',
         download: 'ဒေါင်းလုပ်လုပ် ရယူရန်',
+        closeVideo: 'ပိတ်မယ်',
       },
       socialEmbed: {
         caption: {
@@ -294,11 +301,6 @@ export const service: DefaultServiceConfig = {
       numberOfItems: 5,
       hasMostRead: true,
     },
-    mostWatched: {
-      header: 'လူကြည့်အများဆုံး',
-      numberOfItems: 5,
-      hasMostWatched: true,
-    },
     radioSchedule: {
       hasRadioSchedule: true,
       header: 'နောက်ဆုံးလွှင့် အစီအစဉ်များ',
@@ -332,6 +334,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/burmese/send/u50853269',
           text: 'ဘီဘီစီကို ဆက်သွယ်ရန်',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'အခြားဘာသာစကားနှင့် ဘီဘီစီသတင်းများ',
         },
         {
           id: 'COOKIE_SETTINGS',

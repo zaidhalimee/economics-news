@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-japanese',
     atiAnalyticsProducerId: '56',
+    atiAnalyticsProducerName: 'JAPANESE',
     chartbeatDomain: 'japanese.bbc.co.uk',
     brandName: 'BBCニュース',
     product: 'BBC News',
@@ -73,6 +74,11 @@ export const service: DefaultServiceConfig = {
         breaking: '速報',
         postedAt: '投稿時間',
         summary: '要点',
+        shareButtonText: '共有する',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: '要点',
       error: {
@@ -124,7 +130,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: '変更点を見る',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -211,6 +217,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: '次のラジオ番組',
         duration: '所要時間',
         recentEpisodes: 'さらに',
+        closeVideo: '閉じる',
       },
       socialEmbed: {
         caption: {
@@ -250,11 +257,6 @@ export const service: DefaultServiceConfig = {
       numberOfItems: 10,
       hasMostRead: true,
     },
-    mostWatched: {
-      header: 'よく見られています',
-      numberOfItems: 10,
-      hasMostWatched: true,
-    },
     radioSchedule: {
       hasRadioSchedule: false,
     },
@@ -292,6 +294,10 @@ export const service: DefaultServiceConfig = {
           text: 'BBC に連絡する',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'BBCニュースを他言語で読む',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -307,8 +313,8 @@ export const service: DefaultServiceConfig = {
         url: '/japanese',
       },
       {
-        title: 'ガザ',
-        url: '/japanese/topics/cw5wn2e9rpnt',
+        title: '中東危機',
+        url: '/japanese/topics/cn7y603vz3lt',
       },
       {
         title: 'ウクライナ侵攻',
@@ -335,7 +341,7 @@ export const service: DefaultServiceConfig = {
         url: '/japanese/topics/cdr56kqdr70t',
       },
       {
-        title: '解説・読み物',
+        title: '読み物',
         url: '/japanese/topics/c2xj7ep5812t',
       },
       {
@@ -343,7 +349,7 @@ export const service: DefaultServiceConfig = {
         url: '/japanese/topics/c132079wln0t',
       },
       {
-        title: 'ワールドニュースTV',
+        title: 'ニュースTV',
         url: 'https://www.bbcworldnews-japan.com/',
       },
     ],

@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-sinhala',
     atiAnalyticsProducerId: '82',
+    atiAnalyticsProducerName: 'SINHALA',
     chartbeatDomain: 'sinhala.bbc.co.uk',
     brandName: 'BBC News සිංහල',
     product: 'BBC News',
@@ -72,6 +73,11 @@ export const service: DefaultServiceConfig = {
         breaking: 'අලුත්ම පුවතක්',
         postedAt: 'යාවත්කාලීන කළේ',
         summary: 'සාරාංශය',
+        shareButtonText: 'යවන්න',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'සාරාංශය',
       error: {
@@ -127,7 +133,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'හරි',
           reject: 'වෙනස් කර ඇත්තේ මොනවාදැයි දැනගන්න',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -221,6 +227,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Next radio show',
         duration: 'ධාවන කාලය',
         recentEpisodes: 'පෙර වැඩසටහන්',
+        closeVideo: 'ඉවත්වෙන්න',
       },
       socialEmbed: {
         caption: {
@@ -261,11 +268,6 @@ export const service: DefaultServiceConfig = {
       numberOfItems: 5,
       hasMostRead: true,
     },
-    mostWatched: {
-      header: 'වැඩියෙන්ම නැරඹූ',
-      numberOfItems: 10,
-      hasMostWatched: true,
-    },
     radioSchedule: {
       hasRadioSchedule: false,
     },
@@ -297,6 +299,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/sinhala/send/u50853687',
           text: 'බීබීසී ය අමතන්න',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'බීබීසී පුවත් වෙනත් භාෂාවලින්',
         },
         {
           id: 'COOKIE_SETTINGS',

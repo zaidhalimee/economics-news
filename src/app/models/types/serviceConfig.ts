@@ -5,28 +5,34 @@ import {
   ChineseService,
   ZhongwenService,
   UkrainianService,
+  UzbekService,
   Direction,
+  Variants,
 } from './global';
 import { Translations } from './translations';
 
 export type DefaultServiceConfig = {
-  [key in ServicesWithNoVariants['variant']]: ServiceConfig;
+  [_key in ServicesWithNoVariants['variant']]: ServiceConfig;
 };
 
 export type SerbianConfig = {
-  [key in SerbianService['variant']]: ServiceConfig;
+  [_key in SerbianService['variant']]: ServiceConfig;
 };
 
 export type ChineseConfig = {
-  [key in ChineseService['variant']]: ServiceConfig;
+  [_key in ChineseService['variant']]: ServiceConfig;
 };
 
 export type ZhongwenConfig = {
-  [key in ZhongwenService['variant']]: ServiceConfig;
+  [_key in ZhongwenService['variant']]: ServiceConfig;
 };
 
 export type UkrainianConfig = {
-  [key in UkrainianService['variant']]: ServiceConfig;
+  [_key in UkrainianService['variant']]: ServiceConfig;
+};
+
+export type UzbekConfig = {
+  [_key in UzbekService['variant']]: ServiceConfig;
 };
 
 export type ServiceConfig = {
@@ -36,6 +42,8 @@ export type ServiceConfig = {
   articleTimestampSuffix?: string;
   atiAnalyticsAppName: string;
   atiAnalyticsProducerId: string;
+  atiAnalyticsProducerName?: string;
+  useReverb?: boolean;
   chartbeatDomain: string;
   brandName: string;
   product: string;
@@ -84,7 +92,6 @@ export type ServiceConfig = {
   };
   translations: Translations;
   mostRead: MostRead;
-  mostWatched: MostWatched;
   radioSchedule?: RadioSchedule;
   recommendations?: Recommendations;
   footer: Footer;
@@ -92,10 +99,11 @@ export type ServiceConfig = {
   navigation?: {
     title: string;
     url: string;
+    hideOnLiteSite?: boolean;
   }[];
   scriptLink?: {
     text: string;
-    variant: string;
+    variant: Variants;
   };
   timezone: string;
   liveRadioOverrides?: {
@@ -129,12 +137,6 @@ export interface MostRead {
   lastUpdated: string;
   numberOfItems: number;
   hasMostRead: boolean;
-}
-
-export interface MostWatched {
-  header: string;
-  numberOfItems?: number;
-  hasMostWatched: boolean;
 }
 
 export interface RadioSchedule {

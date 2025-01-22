@@ -73,7 +73,6 @@ const expectedOutput = {
   isAmp: true,
   isNextJs: false,
   isApp: false,
-  isCaf: false,
   isLite: false,
   platform: 'amp',
   variant: 'simp',
@@ -93,7 +92,6 @@ const expectedOutput = {
   service: 'service',
   pathname: '/current-path',
   mvtExperiments: input.mvtExperiments,
-  counterName: null,
 };
 
 describe('RequestContext', () => {
@@ -206,7 +204,7 @@ describe('RequestContext', () => {
         isAmp: false,
         isApp: false,
         isLite: true,
-        platform: 'canonical',
+        platform: 'lite',
       });
     });
 

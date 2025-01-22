@@ -1,8 +1,9 @@
-import React, { createRef } from 'react';
+import React, { createRef, useMemo } from 'react';
 import { UserContextProvider } from '#contexts/UserContext';
 import { ToggleContext } from '#contexts/ToggleContext';
 import { RequestContextProvider } from '#contexts/RequestContext';
 import { FRONT_PAGE } from '#app/routes/utils/pageTypes';
+import Cookies from 'js-cookie';
 import {
   render,
   fireEvent,
@@ -19,6 +20,13 @@ const defaultToggleState = {
 const mockToggleDispatch = jest.fn();
 
 const AmpBannerWithContext = ({ service, serviceConfig, variant }) => {
+  const toggleContextValue = useMemo(
+    () => ({
+      toggleState: defaultToggleState,
+      toggleDispatch: mockToggleDispatch,
+    }),
+    [],
+  );
   return (
     <RequestContextProvider
       isAmp
@@ -26,12 +34,7 @@ const AmpBannerWithContext = ({ service, serviceConfig, variant }) => {
       pathname="/"
       service={service}
     >
-      <ToggleContext.Provider
-        value={{
-          toggleState: defaultToggleState,
-          toggleDispatch: mockToggleDispatch,
-        }}
-      >
+      <ToggleContext.Provider value={toggleContextValue}>
         <UserContextProvider>
           <ServiceContext.Provider value={serviceConfig[variant]}>
             <ConsentBanner />
@@ -44,17 +47,19 @@ const AmpBannerWithContext = ({ service, serviceConfig, variant }) => {
 
 const CanonicalBannerWithContext = React.forwardRef(
   ({ serviceConfig, variant }, ref) => {
+    const toggleContextValue = useMemo(
+      () => ({
+        toggleState: defaultToggleState,
+        toggleDispatch: mockToggleDispatch,
+      }),
+      [],
+    );
     return (
       <>
         <div ref={ref}>
           <a href="/">BBC Brand</a>
         </div>
-        <ToggleContext.Provider
-          value={{
-            toggleState: defaultToggleState,
-            toggleDispatch: mockToggleDispatch,
-          }}
-        >
+        <ToggleContext.Provider value={toggleContextValue}>
           <UserContextProvider>
             <ServiceContext.Provider value={serviceConfig[variant]}>
               <ConsentBanner onDismissFocusRef={ref} />
@@ -67,6 +72,11 @@ const CanonicalBannerWithContext = React.forwardRef(
 );
 
 describe('canonical', () => {
+  beforeEach(() => {
+    Object.keys(Cookies.get()).forEach(cookieName => {
+      Cookies.remove(cookieName);
+    });
+  });
   it('should focus on canonical consent banner heading on mount on canonical', () => {
     const { getByText } = render(
       <CanonicalBannerWithContext

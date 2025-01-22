@@ -5,6 +5,7 @@ export default {
   link: ({ palette }: Theme) =>
     css({
       textDecoration: 'none',
+      display: 'block',
       color: palette.WHITE,
       cursor: 'pointer',
       '&:hover, &:focus': {
@@ -27,7 +28,7 @@ export default {
       display: 'flex',
       flexDirection: 'column',
       position: 'relative',
-      [mq.HIGH_CONTRAST]: {
+      [mq.FORCED_COLOURS]: {
         border: `solid ${pixelsToRem(3)}rem transparent`,
       },
     }),
@@ -77,7 +78,7 @@ export default {
         width: `${spacings.TRIPLE + spacings.HALF}rem`,
         height: `${spacings.TRIPLE + spacings.HALF}rem`,
       },
-      [mq.HIGH_CONTRAST]: {
+      [mq.FORCED_COLOURS]: {
         color: 'canvasText',
       },
     }),

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { render } from '../../react-testing-library-with-providers';
 import { OEmbedProps } from '../types';
 import { ServiceContextProvider } from '../../../contexts/ServiceContext';
@@ -22,31 +22,37 @@ import OEmbedLoader from '.';
 const Component = ({
   props,
   isAmp,
+  isLite,
   service = 'pidgin',
 }: {
   props: OEmbedProps;
   isAmp: boolean;
+  isLite?: boolean;
   service?: Services;
-}) => (
-  <RequestContext.Provider
-    value={
-      {
+}) => {
+  const OEmbedValue = useMemo(
+    () =>
+      ({
         id: 'c0000000000o',
         isAmp,
+        isLite,
         isApp: false,
         pageType: ARTICLE_PAGE,
         pathname: '/pathname',
         service,
         statusCode: 200,
         canonicalLink: 'canonical_link',
-      } as unknown as RequestContextProps
-    }
-  >
-    <ServiceContextProvider service={service}>
-      <OEmbedLoader {...props} />
-    </ServiceContextProvider>
-  </RequestContext.Provider>
-);
+      }) as unknown as RequestContextProps,
+    [isAmp, isLite, service],
+  );
+  return (
+    <RequestContext.Provider value={OEmbedValue}>
+      <ServiceContextProvider service={service}>
+        <OEmbedLoader {...props} />
+      </ServiceContextProvider>
+    </RequestContext.Provider>
+  );
+};
 
 describe('OEmbed', () => {
   describe('Canonical', () => {
@@ -182,6 +188,15 @@ describe('OEmbed', () => {
 
       expect(iFrameElement).toBe(null);
       expect(errorMessage).toBeInTheDocument();
+    });
+  });
+
+  describe('Lite', () => {
+    it('Should return null if isLite is true', () => {
+      const { container } = render(
+        <Component props={sampleRiddleProps} isAmp={false} isLite />,
+      );
+      expect(container).toBeEmptyDOMElement();
     });
   });
 });

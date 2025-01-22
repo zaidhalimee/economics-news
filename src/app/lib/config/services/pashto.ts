@@ -14,6 +14,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-pashto',
     atiAnalyticsProducerId: '68',
+    atiAnalyticsProducerName: 'PASHTO',
     brandName: 'BBC News پښتو',
     chartbeatDomain: 'pashto.bbc.co.uk',
     serviceLocalizedName: 'پښتو',
@@ -74,6 +75,11 @@ export const service: DefaultServiceConfig = {
         breaking: 'وروستی',
         postedAt: 'د خپرېدو نیټه',
         summary: 'لنډیز',
+        shareButtonText: 'شریک یې کړئ',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'لنډیز',
       error: {
@@ -133,7 +139,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'اوکې',
           reject: 'دلته وګورئ چې څه بدل شوي',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -235,6 +241,7 @@ export const service: DefaultServiceConfig = {
         previousRadioShow: 'تېره راډیویي‌ خپرونه',
         nextRadioShow: 'راتلونکې راډیویي خپرونه',
         duration: 'موده',
+        closeVideo: 'وتل',
       },
       socialEmbed: {
         caption: {
@@ -275,11 +282,6 @@ export const service: DefaultServiceConfig = {
       numberOfItems: 10,
       hasMostRead: true,
     },
-    mostWatched: {
-      header: 'تر ټولو ډېر لیدل شوی',
-      numberOfItems: 10,
-      hasMostWatched: true,
-    },
     radioSchedule: {
       hasRadioSchedule: true,
       frequenciesPageUrl: '/pashto/institutional/2012/03/000001_frequencies',
@@ -319,6 +321,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/pashto/send/u50853533',
           text: 'زموږ سره اړیکي',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'نورې ژبې',
         },
         {
           id: 'COOKIE_SETTINGS',

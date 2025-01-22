@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'newsround',
     atiAnalyticsProducerId: '65',
+    atiAnalyticsProducerName: 'NEWSROUND',
     chartbeatDomain: 'bbc.co.uk',
     brandName: 'CBBC Newsround',
     product: 'CBBC Newsround',
@@ -59,6 +60,11 @@ export const service: DefaultServiceConfig = {
         breaking: 'Breaking',
         postedAt: 'Posted at',
         summary: 'Summary',
+        shareButtonText: 'Share',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'At a glance',
       error: {
@@ -113,7 +119,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: "Find out what's changed",
-          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -206,11 +212,6 @@ export const service: DefaultServiceConfig = {
       lastUpdated: 'Last updated:',
       numberOfItems: 10,
       hasMostRead: false,
-    },
-    mostWatched: {
-      header: 'Most watched',
-      numberOfItems: 10,
-      hasMostWatched: false,
     },
     radioSchedule: {
       hasRadioSchedule: false,

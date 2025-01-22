@@ -22,6 +22,7 @@ import {
   DARK_SALTIRE,
   DIM_GREY,
   EBON,
+  ERROR_CORE,
   GHOST,
   GREY_10,
   GREY_11,
@@ -36,7 +37,9 @@ import {
   KINGFISHER,
   LE_TEAL,
   LIVE_LIGHT,
+  LIVE_MEDIUM,
   LIVE_DARK,
+  LIVE_CORE,
   LUNAR,
   LUNAR_LIGHT,
   METAL,
@@ -59,6 +62,7 @@ import {
   SPORT_YELLOW_30,
   STONE,
   STORM,
+  SUCCESS_CORE,
   WEATHER_BLUE,
   WHITE,
 } from './palette';
@@ -78,7 +82,7 @@ import {
   GROUP_4_MIN_WIDTH,
   GROUP_4_ONLY,
   GROUP_5_MIN_WIDTH,
-  HIGH_CONTRAST,
+  FORCED_COLOURS,
 } from './mediaQueries';
 import {
   HALF,
@@ -128,14 +132,12 @@ import {
 
 import gridWidths from './gridWidths';
 
-import { MEDIA_ARTICLE_PAGE, MEDIA_PAGE } from '../../routes/utils/pageTypes';
+import { MEDIA_ARTICLE_PAGE, TV_PAGE } from '../../routes/utils/pageTypes';
 import { BrandPalette, Typography, BrandSVG } from '../../models/types/theming';
 import { PageTypes } from '../../models/types/global';
 
-const isDarkUiPage = (pageType: PageTypes, derivedPageType: string | null) =>
-  pageType === MEDIA_ARTICLE_PAGE ||
-  (pageType === MEDIA_PAGE &&
-    derivedPageType?.toLowerCase() === 'on demand tv');
+const isDarkUiPage = (pageType: PageTypes) =>
+  pageType === MEDIA_ARTICLE_PAGE || pageType === TV_PAGE;
 
 type Props = {
   children: React.ReactNode;
@@ -211,7 +213,7 @@ const withThemeProvider = ({
       GROUP_4_MIN_WIDTH,
       GROUP_4_ONLY,
       GROUP_5_MIN_WIDTH,
-      HIGH_CONTRAST,
+      FORCED_COLOURS,
     },
     palette: {
       ARCHIVE_BLUE,
@@ -228,6 +230,7 @@ const withThemeProvider = ({
       DARK_SALTIRE,
       DIM_GREY,
       EBON,
+      ERROR_CORE,
       GHOST,
       GREY_10,
       GREY_11,
@@ -242,7 +245,9 @@ const withThemeProvider = ({
       KINGFISHER,
       LE_TEAL,
       LIVE_LIGHT,
+      LIVE_MEDIUM,
       LIVE_DARK,
+      LIVE_CORE,
       LUNAR,
       LUNAR_LIGHT,
       METAL,
@@ -265,6 +270,7 @@ const withThemeProvider = ({
       SPORT_YELLOW_30,
       STONE,
       STORM,
+      SUCCESS_CORE,
       WEATHER_BLUE,
       WHITE,
       BRAND_BACKGROUND,
@@ -289,12 +295,11 @@ const withThemeProvider = ({
   };
 
   const ThemeProvider: React.FC<Props> = ({ children }) => {
-    const { isAmp, isLite, pageType, derivedPageType } =
-      useContext(RequestContext);
+    const { isAmp, isLite, pageType } = useContext(RequestContext);
 
     const theme = {
       ...themeConfig,
-      isDarkUi: isDarkUiPage(pageType, derivedPageType),
+      isDarkUi: isDarkUiPage(pageType),
       isLite,
     };
 

@@ -189,6 +189,13 @@ exports[`AMP Feature Index page Footer Anchors should match text and url 7`] = `
 
 exports[`AMP Feature Index page Footer Anchors should match text and url 8`] = `
 {
+  "text": "Autres langues",
+  "url": "https://www.bbc.com/ws/languages",
+}
+`;
+
+exports[`AMP Feature Index page Footer Anchors should match text and url 9`] = `
+{
   "text": "Découvrez notre approche en matière de liens externes.",
   "url": "https://www.bbc.co.uk/editorialguidelines/guidance/feeds-and-links",
 }
@@ -203,7 +210,7 @@ exports[`AMP Feature Index page Footer Cookie Settings Button should match text 
 
 exports[`AMP Feature Index page Footer I can click on the BBC branding and it would take me to the homepage 1`] = `"/afrique"`;
 
-exports[`AMP Feature Index page Footer Paragraphs should match text 1`] = `"© 2024 BBC. La BBC n'est pas responsable du contenu des sites externes. Découvrez notre approche en matière de liens externes."`;
+exports[`AMP Feature Index page Footer Paragraphs should match text 1`] = `"© 2025 BBC. La BBC n'est pas responsable du contenu des sites externes. Découvrez notre approche en matière de liens externes."`;
 
 exports[`AMP Feature Index page Header I can see the branding 1`] = `"BBC News, Afrique"`;
 
@@ -216,29 +223,29 @@ exports[`AMP Feature Index page Header Navigation link should match text and url
 
 exports[`AMP Feature Index page Header Navigation link should match text and url 2`] = `
 {
+  "text": "Ecoutez en direct",
+  "url": "/afrique/bbc_afrique_radio/liveradio",
+}
+`;
+
+exports[`AMP Feature Index page Header Navigation link should match text and url 3`] = `
+{
   "text": "Afrique",
   "url": "/afrique/topics/cvqxn2k7kv7t",
 }
 `;
 
-exports[`AMP Feature Index page Header Navigation link should match text and url 3`] = `
+exports[`AMP Feature Index page Header Navigation link should match text and url 4`] = `
 {
   "text": "Monde",
   "url": "/afrique/topics/cvqxn21vx11t",
 }
 `;
 
-exports[`AMP Feature Index page Header Navigation link should match text and url 4`] = `
+exports[`AMP Feature Index page Header Navigation link should match text and url 5`] = `
 {
   "text": "Santé",
   "url": "/afrique/topics/c06gq9jxz3rt",
-}
-`;
-
-exports[`AMP Feature Index page Header Navigation link should match text and url 5`] = `
-{
-  "text": "Bien-être",
-  "url": "/afrique/topics/c0vmyy90q8zt",
 }
 `;
 
@@ -274,13 +281,6 @@ exports[`AMP Feature Index page Header Navigation link should match text and url
 {
   "text": "Nos émissions",
   "url": "/afrique/topics/c88nzggm8gxt",
-}
-`;
-
-exports[`AMP Feature Index page Header Navigation link should match text and url 11`] = `
-{
-  "text": "Ecoutez en direct",
-  "url": "/afrique/bbc_afrique_radio/liveradio",
 }
 `;
 
@@ -453,8 +453,8 @@ exports[`AMP Feature Index page Story Promo Image should match image 1`] = `
   height="549"
   layout="responsive"
   sizes="(min-width: 1100px) 496px, (min-width: 600px) 45.83vw, 94.29vw"
-  src="https://ichef.bbci.co.uk/ace/ws/660/cpsprodpb/4826/production/_107707481_equipesenegal.jpg"
-  srcset="https://ichef.bbci.co.uk/ace/ws/70/cpsprodpb/4826/production/_107707481_equipesenegal.jpg 70w, https://ichef.bbci.co.uk/ace/ws/95/cpsprodpb/4826/production/_107707481_equipesenegal.jpg 95w, https://ichef.bbci.co.uk/ace/ws/144/cpsprodpb/4826/production/_107707481_equipesenegal.jpg 144w, https://ichef.bbci.co.uk/ace/ws/183/cpsprodpb/4826/production/_107707481_equipesenegal.jpg 183w, https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/4826/production/_107707481_equipesenegal.jpg 240w, https://ichef.bbci.co.uk/ace/ws/320/cpsprodpb/4826/production/_107707481_equipesenegal.jpg 320w, https://ichef.bbci.co.uk/ace/ws/660/cpsprodpb/4826/production/_107707481_equipesenegal.jpg 660w"
+  src="https://ichef.bbci.co.uk/ace/ws/660/cpsprodpb/4826/production/_107707481_equipesenegal.jpg.webp"
+  srcset="https://ichef.bbci.co.uk/ace/ws/70/cpsprodpb/4826/production/_107707481_equipesenegal.jpg.webp 70w, https://ichef.bbci.co.uk/ace/ws/95/cpsprodpb/4826/production/_107707481_equipesenegal.jpg.webp 95w, https://ichef.bbci.co.uk/ace/ws/144/cpsprodpb/4826/production/_107707481_equipesenegal.jpg.webp 144w, https://ichef.bbci.co.uk/ace/ws/183/cpsprodpb/4826/production/_107707481_equipesenegal.jpg.webp 183w, https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/4826/production/_107707481_equipesenegal.jpg.webp 240w, https://ichef.bbci.co.uk/ace/ws/320/cpsprodpb/4826/production/_107707481_equipesenegal.jpg.webp 320w, https://ichef.bbci.co.uk/ace/ws/660/cpsprodpb/4826/production/_107707481_equipesenegal.jpg.webp 660w"
   width="976"
 />
 `;

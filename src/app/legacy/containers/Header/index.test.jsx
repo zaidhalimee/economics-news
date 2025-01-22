@@ -1,13 +1,7 @@
 import React from 'react';
-import {
-  INDEX_PAGE,
-  ARTICLE_PAGE,
-  FRONT_PAGE,
-  MEDIA_PAGE,
-  MEDIA_ASSET_PAGE,
-  TOPIC_PAGE,
-} from '#app/routes/utils/pageTypes';
+import * as PAGE_TYPES from '#app/routes/utils/pageTypes';
 import userEvent from '@testing-library/user-event';
+import Cookies from 'js-cookie';
 import {
   render,
   screen,
@@ -15,11 +9,20 @@ import {
 } from '../../../components/react-testing-library-with-providers';
 import { service as pidginServiceConfig } from '../../../lib/config/services/pidgin';
 import HeaderContainer from './index';
+import { AUDIO_PAGE } from '../../../routes/utils/pageTypes';
+
+const {
+  INDEX_PAGE,
+  ARTICLE_PAGE,
+  FRONT_PAGE,
+  LIVE_RADIO_PAGE,
+  MEDIA_ASSET_PAGE,
+  TOPIC_PAGE,
+  HOME_PAGE,
+  TV_PAGE,
+} = PAGE_TYPES;
 
 const defaultToggleState = {
-  navOnArticles: {
-    enabled: true,
-  },
   scriptLink: {
     enabled: true,
   },
@@ -43,6 +46,12 @@ const HeaderContainerWithContext = ({
   });
 
 describe(`Header`, () => {
+  beforeEach(() => {
+    Object.keys(Cookies.get()).forEach(cookieName => {
+      Cookies.remove(cookieName);
+    });
+  });
+
   describe('Snapshots', () => {
     it('should render correctly for news article', () => {
       const { container } = HeaderContainerWithContext({
@@ -68,7 +77,27 @@ describe(`Header`, () => {
     it('should render correctly for WS radio page', () => {
       const { container } = HeaderContainerWithContext({
         renderOptions: {
-          pageType: MEDIA_PAGE,
+          pageType: LIVE_RADIO_PAGE,
+        },
+      });
+
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('should render correctly for WS TV page', () => {
+      const { container } = HeaderContainerWithContext({
+        renderOptions: {
+          pageType: TV_PAGE,
+        },
+      });
+
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('should render correctly for WS on demand audio page', () => {
+      const { container } = HeaderContainerWithContext({
+        renderOptions: {
+          pageType: AUDIO_PAGE,
         },
       });
 
@@ -128,6 +157,49 @@ describe(`Header`, () => {
       });
 
       expect(container.querySelectorAll(scriptLinkSelector).length).toBe(1);
+    });
+
+    describe('when service is uzbek', () => {
+      describe.each(['cyr', 'lat'])('and variant is %s', variant => {
+        const supportedUzbekPageTypes = [ARTICLE_PAGE, HOME_PAGE, TOPIC_PAGE];
+        const unsupportedUzbekPageTypes = Object.values(PAGE_TYPES).filter(
+          pageType => !supportedUzbekPageTypes.includes(pageType),
+        );
+
+        it.each(supportedUzbekPageTypes)(
+          'should render script link when page type is %s',
+          pageType => {
+            const { container } = HeaderContainerWithContext({
+              renderOptions: {
+                pageType,
+                service: 'uzbek',
+                variant,
+              },
+            });
+
+            expect(container.querySelectorAll(scriptLinkSelector).length).toBe(
+              1,
+            );
+          },
+        );
+
+        it.each(unsupportedUzbekPageTypes)(
+          'should not render script link when page type is %s',
+          pageType => {
+            const { container } = HeaderContainerWithContext({
+              renderOptions: {
+                pageType,
+                service: 'uzbek',
+                variant,
+              },
+            });
+
+            expect(container.querySelectorAll(scriptLinkSelector).length).toBe(
+              0,
+            );
+          },
+        );
+      });
     });
 
     it('should not render script link on Topic page when missing variant topic ID', () => {

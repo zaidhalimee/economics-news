@@ -35,7 +35,7 @@ const CurationPromo = ({
   const separator = ',';
 
   const formattedDuration = formatDuration({ duration, separator });
-  const durationString = `${durationTranslation}, ${formattedDuration}`;
+  const durationString = `, ${durationTranslation} ${formattedDuration}`;
 
   const showDuration = mediaDuration && ['video', 'audio'].includes(type);
   const isMedia = ['video', 'audio', 'photogallery'].includes(type);
@@ -55,11 +55,7 @@ const CurationPromo = ({
       </Promo.Image>
       <Promo.Heading as={`h${headingLevel}`}>
         {isMedia ? (
-          <Promo.A
-            href={link}
-            aria-labelledby={id}
-            className="focusIndicatorDisplayBlock"
-          >
+          <Promo.A href={link} aria-labelledby={id}>
             <span id={id} role="text">
               <VisuallyHiddenText data-testid="visually-hidden-text">
                 {typeTranslated}
@@ -71,7 +67,7 @@ const CurationPromo = ({
             </span>
           </Promo.A>
         ) : (
-          <Promo.A href={link} className="focusIndicatorDisplayBlock">
+          <Promo.A href={link}>
             {isLive ? <LiveLabel>{title}</LiveLabel> : title}
           </Promo.A>
         )}

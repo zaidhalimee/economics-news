@@ -69,7 +69,7 @@ The first argument in Storybook story components is the `args` object:
 export const MyFirstStory = args => <Component {...args} />;
 ```
 
-This is does not need to be used, but is always the first argument. `args` are useful if you want to add 'controls' to dynamically change the props in the Storybook UI. To use it, you define the `args` and `argTypes` objects in your default export for the story. For example:
+This does not need to be used, but is always the first argument. `args` are useful if you want to add 'controls' to dynamically change the props in the Storybook UI. To use it, you define the `args` and `argTypes` objects in your default export for the story. For example:
 
 ```tsx
 export default {
@@ -134,6 +134,8 @@ export const MyFirstStory = ({ backgroundColor }, { service, variant }) => (
 );
 ```
 
+**Do not spread the second argument in its entirety, always destructure**. If you spread, this can potentially cause issues with rendering as the second argument contains Storybook specific functions that shouldn't be spread into components.
+
 ## Manually defining `service` and `variant` values
 
 You can of course supply the `service` and `variant` values manually in your story, for example:
@@ -185,16 +187,3 @@ const Component = () => (
 
 This will ensure that the service being rendered is `mundo`, in this example. This is useful for creating stories to demonstrate layout for left-to-right and right-to-left languages.
 
-## Overriding the default service
-
-You can automatically set the `service` for a story by using the `withServicesDecorator` function. To do this, import the function and add it to the `decorators` array in the default export for the story. For example:
-
-```tsx
-import { withServicesDecorator } from '#storybook/withServicesDecorator';
-
-export default {
-  title: 'MyFirstStory',
-  component: Component,
-  decorators: [withServicesDecorator({ defaultService: 'mundo' })],
-};
-```

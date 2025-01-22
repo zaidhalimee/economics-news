@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-turkce',
     atiAnalyticsProducerId: '92',
+    atiAnalyticsProducerName: 'TURKISH',
     chartbeatDomain: 'turkish.bbc.co.uk', // this is meant to be different to the service name
     brandName: 'BBC News Türkçe',
     product: 'BBC News',
@@ -73,6 +74,11 @@ export const service: DefaultServiceConfig = {
         breaking: 'Son dakika',
         postedAt: 'Basım saati',
         summary: 'Özet',
+        shareButtonText: 'Paylaş',
+      },
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
       },
       gist: 'Özet',
       error: {
@@ -135,7 +141,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'Tamam',
           reject: 'Neler değişti?',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -223,6 +229,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Next radio show',
         duration: 'Duration',
         recentEpisodes: 'Diğerleri',
+        closeVideo: 'Çıkış',
       },
       socialEmbed: {
         caption: {
@@ -263,11 +270,6 @@ export const service: DefaultServiceConfig = {
       numberOfItems: 10,
       hasMostRead: true,
     },
-    mostWatched: {
-      header: 'En fazla izlenen içerik',
-      numberOfItems: 5,
-      hasMostWatched: true,
-    },
     radioSchedule: {
       hasRadioSchedule: false,
     },
@@ -305,6 +307,10 @@ export const service: DefaultServiceConfig = {
           text: "BBC'ye ulaş",
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Farklı dillerde BBC haberleri',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -325,8 +331,8 @@ export const service: DefaultServiceConfig = {
         url: '/turkce/topics/ckdxn2xk95gt',
       },
       {
-        title: '31 Mart 2024 Yerel Seçimleri',
-        url: '/turkce/topics/cv2lyll8e02t',
+        title: 'Orta Doğu',
+        url: '/turkce/topics/cg726y2qxg1t',
       },
       {
         title: 'Rusya-Ukrayna Savaşı',
