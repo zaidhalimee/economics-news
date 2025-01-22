@@ -15,6 +15,10 @@ describe('Document Component', () => {
   // uses values set in the .env file in lieu of mocked values
   dotenv.config();
 
+  beforeEach(() => {
+    process.env.SIMORGH_APP_ENV = 'local';
+  });
+
   afterEach(() => {
     process.env = originalProcessEnv;
   });
