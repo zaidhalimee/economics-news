@@ -99,7 +99,7 @@ beforeEach(() => {
       atiAnalyticsProducerId: '70',
       atiAnalyticsProducerName: 'PIDGIN',
       service: 'pidgin',
-      useReverb: false
+      useReverb: false,
     }),
   );
 });
