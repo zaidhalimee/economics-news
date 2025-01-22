@@ -111,7 +111,7 @@ export default async (context: GetServerSidePropsContext) => {
     throw handleError('Article data is malformed', 500);
   }
 
-  const { article, secondaryData } = data?.pageData;
+  const { article, secondaryData } = data?.pageData || {};
 
   const isAdvertising = article?.metadata?.allowAdvertising ?? false;
   const isArticleSfv = article?.metadata?.consumableAsSFV ?? false;
