@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '../../react-testing-library-with-providers';
-import ScriptLinkContainer from '.';
+import ScriptLink from '.';
 
 const enabledToggleState = {
   scriptLink: {
@@ -17,7 +17,7 @@ describe(`Script Link`, () => {
   });
 
   it('should render correctly', () => {
-    const { container } = render(<ScriptLinkContainer />, {
+    const { container } = render(<ScriptLink />, {
       toggles: enabledToggleState,
       service: 'serbian',
       variant: 'lat',
@@ -27,7 +27,7 @@ describe(`Script Link`, () => {
   });
 
   describe('assertions', () => {
-    describe.each(['canonical', 'amp'])('%s', platform => {
+    describe.each(['canonical', 'amp', 'lite'])('%s', platform => {
       it.each`
         service      | variant   | pageType             | path                                                                                 | variantPath
         ${'serbian'} | ${'lat'}  | ${'article'}         | ${'/serbian/articles/c805k05kr73o/lat'}                                              | ${'/serbian/articles/c805k05kr73o/cyr'}
@@ -46,12 +46,18 @@ describe(`Script Link`, () => {
         'Script Link should contain link to other variant when on $service $variant $pageType',
         ({ service, variant, path, variantPath }) => {
           const isAmp = platform === 'amp';
+          const isLite = platform === 'lite';
 
-          const { container } = render(<ScriptLinkContainer />, {
+          let pathToUse = path;
+
+          if (isAmp) pathToUse = `${path}.amp`;
+          if (isLite) pathToUse = `${path}.lite`;
+
+          const { container } = render(<ScriptLink />, {
             toggles: enabledToggleState,
             service,
             variant,
-            pathname: isAmp ? `${path}.amp` : path,
+            pathname: pathToUse,
             isAmp,
           });
 
@@ -73,7 +79,7 @@ describe(`Script Link`, () => {
       },
     };
 
-    const { container } = render(<ScriptLinkContainer />, {
+    const { container } = render(<ScriptLink />, {
       toggles: disabledToggleState,
     });
 
@@ -81,10 +87,20 @@ describe(`Script Link`, () => {
   });
 
   it('should not render when an alternate variant is not defined', () => {
-    const { container } = render(<ScriptLinkContainer />, {
+    const { container } = render(<ScriptLink />, {
       toggles: enabledToggleState,
       service: 'pidgin',
       pathname: '/pidgin',
+    });
+
+    expect(container).toBeEmptyDOMElement();
+  });
+
+  it('should not render if pathname is not defined', () => {
+    const { container } = render(<ScriptLink />, {
+      toggles: enabledToggleState,
+      service: 'serbian',
+      pathname: '',
     });
 
     expect(container).toBeEmptyDOMElement();
