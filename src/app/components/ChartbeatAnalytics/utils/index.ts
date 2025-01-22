@@ -33,7 +33,7 @@ export const chartbeatUID = 50924;
 export const useCanonical = true;
 export const chartbeatSource = '//static.chartbeat.com/js/chartbeat.js';
 
-const capitalize = (s: string) => s?.charAt(0).toUpperCase() + s?.slice(1);
+const capitalize = (s = '') => `${s?.charAt(0).toUpperCase()}${s?.slice(1)}`;
 
 const buildSectionArr = (service: Services, value: string, type: string) => [
   `${capitalize(service)} - ${value}`,

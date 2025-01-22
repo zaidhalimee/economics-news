@@ -54,7 +54,6 @@ export const MostReadLink = ({
         css={[styles.link, size === 'default' && styles.defaultLink]}
         href={href}
         onClick={clickTrackerHandler}
-        className="focusIndicatorDisplayTableCell"
       >
         {title}
       </a>
