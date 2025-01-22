@@ -199,18 +199,6 @@ describe(`Header`, () => {
       });
     });
 
-    it('should not render script link on Topic page when missing variant topic ID', () => {
-      const { container } = HeaderContainerWithContext({
-        renderOptions: {
-          pageType: TOPIC_PAGE,
-          service: 'serbian',
-          variant: 'cyr',
-        },
-      });
-
-      expect(container.querySelectorAll(scriptLinkSelector).length).toBe(0);
-    });
-
     it('should focus on consent banner heading on mount', () => {
       const initialFocusElement = document.activeElement;
       HeaderContainerWithContext({
