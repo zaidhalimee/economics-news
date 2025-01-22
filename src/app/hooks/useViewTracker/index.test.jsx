@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 
-import React from 'react';
+import React, { createContext, useContext } from 'react';
 import {
   renderHook,
   act,
@@ -11,7 +11,8 @@ import { RequestContextProvider } from '#contexts/RequestContext';
 import { ToggleContextProvider } from '#contexts/ToggleContext';
 import { STORY_PAGE } from '#app/routes/utils/pageTypes';
 import OPTIMIZELY_CONFIG from '#lib/config/optimizely';
-import { ServiceContextProvider } from '../../contexts/ServiceContext';
+import * as serviceContextModule from '../../contexts/ServiceContext';
+
 import useViewTracker from '.';
 
 import fixtureData from './fixtureData.json';
@@ -65,6 +66,17 @@ beforeEach(() => {
   jest.useFakeTimers();
   console.error = jest.fn();
   global.IntersectionObserver = IntersectionObserver;
+
+  jest.replaceProperty(
+    serviceContextModule,
+    'ServiceContext',
+    createContext({
+      atiAnalyticsProducerId: '70',
+      atiAnalyticsProducerName: 'PIDGIN',
+      service: 'pidgin',
+      useReverb: false
+    }),
+  );
 });
 
 afterEach(() => {
@@ -98,13 +110,13 @@ const wrapper = ({ pageData, atiData, children, toggles = defaultToggles }) => (
     service="pidgin"
     pathname="/pidgin/tori-51745682"
   >
-    <ServiceContextProvider service="pidgin">
+    <serviceContextModule.ServiceContextProvider service="pidgin">
       <ToggleContextProvider toggles={toggles}>
         <EventTrackingContextProvider data={pageData} atiData={atiData}>
           {children}
         </EventTrackingContextProvider>
       </ToggleContextProvider>
-    </ServiceContextProvider>
+    </serviceContextModule.ServiceContextProvider>
   </RequestContextProvider>
 );
 
