@@ -57,9 +57,6 @@ const PageLayoutWrapper = ({
   const { service } = useContext(ServiceContext);
   const { isLite, isAmp } = useContext(RequestContext);
 
-  const scriptSwitchId = pathOr('', ['scriptSwitchId'], pageData);
-  const renderScriptSwitch = pathOr(true, ['renderScriptSwitch'], pageData);
-
   const isErrorPage = ![200].includes(status) || !status;
   const pageType = pageData?.metadata?.type;
   const reportingPageType = pageType?.replace(/ /g, '');
@@ -206,10 +203,7 @@ const PageLayoutWrapper = ({
       {!isErrorPage && <WebVitals pageType={pageType} />}
       <GlobalStyles />
       <div id="main-wrapper" css={styles.wrapper}>
-        <HeaderContainer
-          scriptSwitchId={scriptSwitchId}
-          renderScriptSwitch={renderScriptSwitch}
-        />
+        <HeaderContainer />
         <div css={styles.content}>{children}</div>
         <FooterContainer />
       </div>

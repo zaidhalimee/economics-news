@@ -35,7 +35,6 @@ export default ({ service, pageType, variant, currentPath }) => {
         cy.getPageDataFromWindow().then(data => {
           const { pageData } = data;
           topicTitle = pageData.title;
-          variantTopicId = pageData.scriptSwitchId;
           pageCount = pageData.pageCount;
           numberOfItems = pageData.curations?.[0]?.summaries.length;
           firstItemHeadline = pageData.curations?.[0]?.summaries?.[0]?.title;

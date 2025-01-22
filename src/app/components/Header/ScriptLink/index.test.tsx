@@ -162,7 +162,7 @@ describe(`Script Link`, () => {
         const otherVariant = 'cyr';
 
         const { container } = withRouter(
-          <ScriptLinkContainerWithContext scriptSwitchId="c7zp707dy8yt" />,
+          <ScriptLinkContainerWithContext />,
           matchPath,
           path,
         );

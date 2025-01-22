@@ -47,10 +47,7 @@ const Header = ({ brandRef, borderBottom, skipLink, scriptLink, linkId }) => {
   );
 };
 
-const HeaderContainer = ({
-  scriptSwitchId = '',
-  renderScriptSwitch = true,
-}) => {
+const HeaderContainer = () => {
   const { isAmp, isApp, pageType, isLite } = useContext(RequestContext);
   const { service, script, translations, dir, scriptLink, lang, serviceLang } =
     useContext(ServiceContext);
@@ -77,7 +74,7 @@ const HeaderContainer = ({
 
   let shouldRenderScriptSwitch = false;
 
-  if (scriptLink && renderScriptSwitch) {
+  if (scriptLink) {
     if (
       service === 'uzbek' &&
       ![ARTICLE_PAGE, HOME_PAGE, TOPIC_PAGE].includes(pageType)
@@ -98,21 +95,13 @@ const HeaderContainer = ({
         <Header
           linkId="brandLink"
           skipLink={skipLink}
-          scriptLink={
-            shouldRenderScriptSwitch && (
-              <ScriptLink scriptSwitchId={scriptSwitchId} />
-            )
-          }
+          scriptLink={shouldRenderScriptSwitch && <ScriptLink />}
         />
       ) : (
         <Header
           brandRef={brandRef}
           skipLink={skipLink}
-          scriptLink={
-            shouldRenderScriptSwitch && (
-              <ScriptLink scriptSwitchId={scriptSwitchId} />
-            )
-          }
+          scriptLink={shouldRenderScriptSwitch && <ScriptLink />}
         />
       )}
       {renderLiteSiteCTA && <LiteSiteCta />}

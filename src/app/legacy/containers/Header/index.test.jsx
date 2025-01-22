@@ -36,11 +36,8 @@ jest.mock('react-router-dom', () => ({
   useRouteMatch: () => ({ path: '/news', params: {} }),
 }));
 
-const HeaderContainerWithContext = ({
-  renderScriptSwitch = true,
-  renderOptions,
-}) =>
-  render(<HeaderContainer renderScriptSwitch={renderScriptSwitch} />, {
+const HeaderContainerWithContext = ({ renderOptions }) =>
+  render(<HeaderContainer />, {
     toggles: defaultToggleState,
     ...renderOptions,
   });
@@ -204,7 +201,6 @@ describe(`Header`, () => {
 
     it('should not render script link on Topic page when missing variant topic ID', () => {
       const { container } = HeaderContainerWithContext({
-        renderScriptSwitch: false,
         renderOptions: {
           pageType: TOPIC_PAGE,
           service: 'serbian',

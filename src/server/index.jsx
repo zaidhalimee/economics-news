@@ -205,7 +205,7 @@ server.get(
         isLite: isLiteRouteSuffix,
         route: { getInitialData, pageType },
         variant,
-      } = getRouteProps(urlPath);
+      } = getRouteProps(url);
 
       // Check if using the .lite route
       const isLite = isLiteRouteSuffix;
@@ -237,7 +237,7 @@ server.get(
       const { isUK, showCookieBannerBasedOnCountry } = extractHeaders(headers);
 
       data.toggles = toggles;
-      data.path = urlPath;
+      data.path = url;
       data.timeOnServer = Date.now();
       data.showAdsBasedOnLocation = headers['bbc-adverts'] === 'true';
       data.showCookieBannerBasedOnCountry = showCookieBannerBasedOnCountry;
