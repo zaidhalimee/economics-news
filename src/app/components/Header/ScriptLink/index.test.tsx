@@ -57,9 +57,7 @@ describe(`Script Link`, () => {
 
           const scriptLink = container.querySelector(`a[data-variant]`);
 
-          expect(scriptLink?.getAttribute('href')).toBe(
-            isAmp ? `${variantPath}.amp` : variantPath,
-          );
+          expect(scriptLink?.getAttribute('href')).toBe(variantPath);
         },
       );
     });

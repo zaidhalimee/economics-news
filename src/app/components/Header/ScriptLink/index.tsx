@@ -19,7 +19,9 @@ const ScriptLink = () => {
   return (
     <a
       css={styles.link}
-      href={pathname.replace(currentVariant as string, alternateVariant)}
+      href={pathname
+        .replace(currentVariant as string, alternateVariant)
+        .replace('.amp', '')}
       data-variant={alternateVariant}
       className="focusIndicatorRemove"
     >
