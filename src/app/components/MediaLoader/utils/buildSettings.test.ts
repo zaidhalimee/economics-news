@@ -1131,14 +1131,14 @@ describe('buildSettings', () => {
           type: 'episode',
           synopses: {
             short:
-              'يلقي برنامج إكسترا التلفزيوني الضوء على قصص إنسانية فريدة من حياتنا، نعيشها ونرويها للشباب العربي',
+              'جولة إخبارية يومية تتناول أهم الأحداث العربية والعالمية في تقارير ولقاءات وتحليلات ',
             medium:
-              'يلقي برنامج إكسترا التلفزيوني الضوء على قصص إنسانية فريدة من حياتنا، نعيشها ونرويها للشباب العربي',
-            long: 'يلقي برنامج إكسترا التلفزيوني الضوء على قصص إنسانية فريدة من حياتنا، نعيشها ونرويها للشباب العربي',
+              'جولة إخبارية يومية تتناول أهم الأحداث العربية والعالمية في تقارير ولقاءات وتحليلات ',
+            long: 'جولة إخبارية يومية تتناول أهم الأحداث العربية والعالمية في تقارير ولقاءات وتحليلات ',
           },
           mediaType: 'audio_video',
           imageUrlTemplate:
-            'https://ichef.bbci.co.uk/images/ic/$recipe/p0hwr92l.jpg',
+            'https://ichef.bbci.co.uk/images/ic/$recipe/p08b23t4.png',
           masterbrand: {
             id: 'bbc_arabic_tv',
             name: 'تلفزيون بي بي سي عربي',
@@ -1147,10 +1147,15 @@ describe('buildSettings', () => {
             imageUrlTemplate: 'ichef.bbci.co.uk/images/ic/$recipe/p08b23t4.png',
           },
           version: {
-            vpid: 'n4pdlz1s10',
-            duration: 'PT30M',
+            vpid: 'n4pdm3cdh4',
+            duration: 'PT1H',
             availabilityType: 'simulcast',
-            versionTypes: [{ type: 'Original', name: 'Original version' }],
+            versionTypes: [
+              {
+                type: 'Original',
+                name: 'Original version',
+              },
+            ],
             schedule: null,
             serviceId: 'bbc_arabic_tv',
             authToken: null,
@@ -1177,7 +1182,7 @@ describe('buildSettings', () => {
           enableToucan: true,
           playlistObject: {
             holdingImageURL:
-              'https://ichef.bbci.co.uk/images/ic/$recipe/p0hwr92l.jpg',
+              'https://ichef.bbci.co.uk/images/ic/$recipe/p08b23t4.png',
             items: [
               {
                 kind: 'programme',
@@ -1186,7 +1191,7 @@ describe('buildSettings', () => {
               },
             ],
             summary:
-              'يلقي برنامج إكسترا التلفزيوني الضوء على قصص إنسانية فريدة من حياتنا، نعيشها ونرويها للشباب العربي',
+              'جولة إخبارية يومية تتناول أهم الأحداث العربية والعالمية في تقارير ولقاءات وتحليلات ',
             title: 'BBC Arabic TV',
           },
           product: 'news',

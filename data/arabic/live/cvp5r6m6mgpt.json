@@ -12,9 +12,15 @@
       "adSubCategory": null,
       "hasAdvertising": false
     },
-    "sportDataEvent": { "id": null },
-    "eavisEvent": { "id": null },
-    "article": { "id": null },
+    "sportDataEvent": {
+      "id": null
+    },
+    "eavisEvent": {
+      "id": null
+    },
+    "article": {
+      "id": null
+    },
     "mediaCollections": [
       {
         "type": "liveMedia",
@@ -23,12 +29,12 @@
           "title": "BBC Arabic TV",
           "type": "episode",
           "synopses": {
-            "short": "يلقي برنامج إكسترا التلفزيوني الضوء على قصص إنسانية فريدة من حياتنا، نعيشها ونرويها للشباب العربي",
-            "medium": "يلقي برنامج إكسترا التلفزيوني الضوء على قصص إنسانية فريدة من حياتنا، نعيشها ونرويها للشباب العربي",
-            "long": "يلقي برنامج إكسترا التلفزيوني الضوء على قصص إنسانية فريدة من حياتنا، نعيشها ونرويها للشباب العربي"
+            "short": "جولة إخبارية يومية تتناول أهم الأحداث العربية والعالمية في تقارير ولقاءات وتحليلات ",
+            "medium": "جولة إخبارية يومية تتناول أهم الأحداث العربية والعالمية في تقارير ولقاءات وتحليلات ",
+            "long": "جولة إخبارية يومية تتناول أهم الأحداث العربية والعالمية في تقارير ولقاءات وتحليلات "
           },
           "mediaType": "audio_video",
-          "imageUrlTemplate": "https://ichef.bbci.co.uk/images/ic/$recipe/p0hwr92l.jpg",
+          "imageUrlTemplate": "https://ichef.bbci.co.uk/images/ic/$recipe/p08b23t4.png",
           "masterbrand": {
             "id": "bbc_arabic_tv",
             "name": "تلفزيون بي بي سي عربي",
@@ -37,11 +43,14 @@
             "imageUrlTemplate": "ichef.bbci.co.uk/images/ic/$recipe/p08b23t4.png"
           },
           "version": {
-            "vpid": "n4pdlz1s10",
-            "duration": "PT30M",
+            "vpid": "n4pdm3cdh4",
+            "duration": "PT1H",
             "availabilityType": "simulcast",
             "versionTypes": [
-              { "type": "Original", "name": "Original version" }
+              {
+                "type": "Original",
+                "name": "Original version"
+              }
             ],
             "schedule": null,
             "serviceId": "bbc_arabic_tv",
@@ -51,51 +60,20 @@
           },
           "leadMedia": true
         }
-      },
-      {
-        "type": "liveMedia",
-        "model": {
-          "urn": "urn:bbc:pips:pid:p0gh4n63",
-          "title": "Non-Stop Cartoons!",
-          "type": "episode",
-          "synopses": {
-            "short": "Toon in, kick back and relax to 100% cartoons!",
-            "medium": "Toon in, kick back and relax. From laugh out loud to mischief and mayhem. 100% cartoons all day long.",
-            "long": "Toon in, kick back and relax. From laugh out loud to mischief and mayhem. 100% cartoons all day long. Join your favourites Grizzy, Shaun, Taffy, Boy Girl Dog Cat Mouse Cheese, The Deep and those Monster Loving Maniacs."
-          },
-          "mediaType": "audio_video",
-          "imageUrlTemplate": "https://ichef.bbci.co.uk/images/ic/$recipe/p0kdrkzk.jpg",
-          "masterbrand": {
-            "id": "cbbc",
-            "name": "CBBC",
-            "networkName": "CBBC",
-            "type": "tv",
-            "imageUrlTemplate": "ichef.bbci.co.uk/images/ic/$recipe/p0f8qps2.jpg"
-          },
-          "version": {
-            "vpid": "p0gh4n67",
-            "duration": "PT24H",
-            "availabilityType": "webcast",
-            "versionTypes": [
-              { "type": "Original", "name": "Original version" }
-            ],
-            "schedule": {
-              "start": "2025-01-23T14:00:21Z",
-              "accurateStart": "2025-01-23T15:00:21Z",
-              "end": "2025-01-23T19:00:21Z"
-            },
-            "serviceId": null,
-            "authToken": null,
-            "status": "LIVE",
-            "warnings": null
-          }
-        }
       }
     ],
-    "keyHighlight": { "id": null },
-    "electionBanner": { "id": null },
-    "supportingLinks": { "id": null },
-    "riddle": { "id": null },
+    "keyHighlight": {
+      "id": null
+    },
+    "electionBanner": {
+      "id": null
+    },
+    "supportingLinks": {
+      "id": null
+    },
+    "riddle": {
+      "id": null
+    },
     "seo": {
       "seoTitle": "نتائج الانتخابات الأمريكية: احصل على آخر التحديثات",
       "seoDescription": "البث المباشر: حفل تنصيب الرئيس الخامس والأربعين للولايات المتحدة",
@@ -108,7 +86,10 @@
     "type": "live-coverage",
     "dataSource": "TIPO",
     "isLive": false,
-    "summaryPoints": { "id": null, "content": null },
+    "summaryPoints": {
+      "id": null,
+      "content": null
+    },
     "liveTextStream": {
       "id": "39A9B954BC394441ACFDC0A2E6CAD80F",
       "contributors": null,
@@ -121,23 +102,23 @@
                 "model": {
                   "blocks": [
                     {
-                      "id": "fa6d5d51",
+                      "id": "f4dc5312",
                       "type": "headline",
                       "model": {
                         "blocks": [
                           {
-                            "id": "4fd96423",
+                            "id": "d9a41071",
                             "type": "text",
                             "model": {
                               "blocks": [
                                 {
-                                  "id": "a37e8f80",
+                                  "id": "df5cbb32",
                                   "type": "paragraph",
                                   "model": {
                                     "text": "انشر عنوانًا واحدًا",
                                     "blocks": [
                                       {
-                                        "id": "4919cadf",
+                                        "id": "3dea2ef4",
                                         "type": "fragment",
                                         "model": {
                                           "text": "انشر عنوانًا واحدًا",
@@ -154,23 +135,23 @@
                       }
                     },
                     {
-                      "id": "f24e954f",
+                      "id": "eff4c25c",
                       "type": "subheadline",
                       "model": {
                         "blocks": [
                           {
-                            "id": "2cb4fb4d",
+                            "id": "e0fb639f",
                             "type": "text",
                             "model": {
                               "blocks": [
                                 {
-                                  "id": "e1513dd9",
+                                  "id": "2bb7258d",
                                   "type": "paragraph",
                                   "model": {
                                     "text": "أضف عنوان فرعي واحد",
                                     "blocks": [
                                       {
-                                        "id": "a765c253",
+                                        "id": "d4c63f8a",
                                         "type": "fragment",
                                         "model": {
                                           "text": "أضف عنوان فرعي واحد",
@@ -193,13 +174,13 @@
                 "model": {
                   "blocks": [
                     {
-                      "id": "2be4253d",
+                      "id": "047416cb",
                       "type": "paragraph",
                       "model": {
                         "text": "انشر نص واحد هنا",
                         "blocks": [
                           {
-                            "id": "9880e11f",
+                            "id": "43167322",
                             "type": "fragment",
                             "model": {
                               "text": "انشر نص واحد هنا",
@@ -210,18 +191,21 @@
                       }
                     },
                     {
-                      "id": "d6b4ee9c",
+                      "id": "f511af36",
                       "type": "paragraph",
-                      "model": { "text": "", "blocks": [] }
+                      "model": {
+                        "text": "",
+                        "blocks": []
+                      }
                     },
                     {
-                      "id": "d33e0f59",
+                      "id": "47e47ec1",
                       "type": "paragraph",
                       "model": {
                         "text": "انشر نص واحد هنا",
                         "blocks": [
                           {
-                            "id": "390ff5ff",
+                            "id": "c3f2553c",
                             "type": "fragment",
                             "model": {
                               "text": "انشر نص واحد هنا",
@@ -232,18 +216,21 @@
                       }
                     },
                     {
-                      "id": "631ce9f0",
+                      "id": "a0b92a9d",
                       "type": "paragraph",
-                      "model": { "text": "", "blocks": [] }
+                      "model": {
+                        "text": "",
+                        "blocks": []
+                      }
                     },
                     {
-                      "id": "1a5e4edc",
+                      "id": "d12a64cf",
                       "type": "paragraph",
                       "model": {
                         "text": "انشر نص واحد هنا",
                         "blocks": [
                           {
-                            "id": "f801d19a",
+                            "id": "31e6edf3",
                             "type": "fragment",
                             "model": {
                               "text": "انشر نص واحد هنا",
@@ -254,19 +241,28 @@
                       }
                     },
                     {
-                      "id": "28977105",
+                      "id": "e70c8ab7",
                       "type": "paragraph",
-                      "model": { "text": "", "blocks": [] }
+                      "model": {
+                        "text": "",
+                        "blocks": []
+                      }
                     },
                     {
-                      "id": "32620158",
+                      "id": "b051f499",
                       "type": "paragraph",
-                      "model": { "text": "", "blocks": [] }
+                      "model": {
+                        "text": "",
+                        "blocks": []
+                      }
                     },
                     {
-                      "id": "ae3e51dc",
+                      "id": "54b1f147",
                       "type": "paragraph",
-                      "model": { "text": "", "blocks": [] }
+                      "model": {
+                        "text": "",
+                        "blocks": []
+                      }
                     }
                   ]
                 }
@@ -274,15 +270,27 @@
               "link": null,
               "urn": "asset:09f3b54d-fbe4-4bfd-a19e-263bc0f26633",
               "type": "POST",
-              "options": { "isBreakingNews": false },
+              "options": {
+                "isBreakingNews": false
+              },
               "dates": {
                 "firstPublished": "2023-03-22T11:34:11.000Z",
                 "lastPublished": "2023-03-22T11:34:11.000Z",
                 "time": null,
                 "curated": "2023-03-22T11:34:12.537Z"
               },
-              "titles": [{ "title": null, "source": "primary" }],
-              "descriptions": [{ "text": null, "source": "summary" }],
+              "titles": [
+                {
+                  "title": null,
+                  "source": "primary"
+                }
+              ],
+              "descriptions": [
+                {
+                  "text": null,
+                  "source": "summary"
+                }
+              ],
               "images": [
                 {
                   "originalUrl": null,
@@ -294,7 +302,10 @@
               ]
             }
           ],
-          "page": { "index": 1, "total": 1 }
+          "page": {
+            "index": 1,
+            "total": 1
+          }
         }
       }
     },
