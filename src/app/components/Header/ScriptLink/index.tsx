@@ -21,11 +21,11 @@ const ScriptLink = () => {
     .replace(/\.[^/.]+$/, '') // remove any extensions
     .split('/');
 
-  const variantIndex = pathPartsWithoutExtension.indexOf(
+  const currentVariantIndex = pathPartsWithoutExtension.indexOf(
     currentVariant as string,
   );
 
-  pathPartsWithoutExtension[variantIndex] = alternateVariant;
+  pathPartsWithoutExtension[currentVariantIndex] = alternateVariant;
   const newPath = pathPartsWithoutExtension.join('/').replace('.amp', ''); // we don't want to link to AMP pages directly;
 
   return (
