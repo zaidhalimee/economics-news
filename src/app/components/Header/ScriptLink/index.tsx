@@ -18,7 +18,7 @@ const ScriptLink = () => {
   if (!alternateVariant) return null;
 
   const pathPartsWithoutExtension = pathname
-    .replace(/\.[^/.]+$/, '') // remove any extensions
+    .replace(/\.[^/.]+$/, '') // remove any extensions, we don't want to link to AMP pages directly
     .split('/');
 
   const currentVariantIndex = pathPartsWithoutExtension.indexOf(
@@ -26,12 +26,12 @@ const ScriptLink = () => {
   );
 
   pathPartsWithoutExtension[currentVariantIndex] = alternateVariant;
-  const newPath = pathPartsWithoutExtension.join('/').replace('.amp', ''); // we don't want to link to AMP pages directly;
+  const pathToVariant = pathPartsWithoutExtension.join('/');
 
   return (
     <a
       css={styles.link}
-      href={newPath}
+      href={pathToVariant}
       data-variant={alternateVariant}
       className="focusIndicatorRemove"
     >
