@@ -37,10 +37,12 @@ export default ({
         holdingImageURL,
         items: [
           {
-            versionID: video?.vpid,
+            serviceID: video.serviceId,
+            ...(!video.serviceId && {versionID: video?.vpid}),
             kind: 'programme',
             duration: rawDuration,
             live: video.status === 'LIVE',
+
           },
         ],
         summary: short,
