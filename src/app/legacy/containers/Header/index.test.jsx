@@ -19,6 +19,7 @@ const {
   MEDIA_ASSET_PAGE,
   HOME_PAGE,
   TV_PAGE,
+  TOPIC_PAGE,
 } = PAGE_TYPES;
 
 const defaultToggleState = {
@@ -154,6 +155,21 @@ describe(`Header`, () => {
 
       expect(container.querySelectorAll(scriptLinkSelector).length).toBe(1);
     });
+
+    // TODO: Remove once Vivo streams allow for script switching
+    it.each(['serbian', 'uzbek', 'zhongwen'])(
+      'should not render script link for topic pages on %s service',
+      service => {
+        const { container } = HeaderContainerWithContext({
+          renderOptions: {
+            pageType: TOPIC_PAGE,
+            service,
+          },
+        });
+
+        expect(container.querySelectorAll(scriptLinkSelector).length).toBe(0);
+      },
+    );
 
     describe('when service is uzbek', () => {
       describe.each(['cyr', 'lat'])('and variant is %s', variant => {
