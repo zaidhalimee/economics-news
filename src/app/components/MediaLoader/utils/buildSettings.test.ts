@@ -1180,7 +1180,6 @@ describe('buildSettings', () => {
               'https://ichef.bbci.co.uk/images/ic/$recipe/p0hwr92l.jpg',
             items: [
               {
-                duration: 1800,
                 kind: 'programme',
                 live: true,
                 serviceID: 'bbc_arabic_tv',
