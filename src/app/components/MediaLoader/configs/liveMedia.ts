@@ -38,7 +38,7 @@ export default ({
         items: [
           {
             serviceID: video.serviceId,
-            ...(!video.serviceId && {versionID: video?.vpid}),
+            ...(!video.serviceId && { versionID: video?.vpid }),
             kind: 'programme',
             duration: rawDuration,
             live: video.status === 'LIVE',
