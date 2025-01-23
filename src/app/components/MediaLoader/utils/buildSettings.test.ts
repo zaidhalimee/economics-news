@@ -1011,14 +1011,14 @@ describe('buildSettings', () => {
       translations: mundoServiceConfig.default.translations,
     } as BuildConfigProps;
 
-        const arabicMediaBaseSettings = {
-          counterName: 'live_coverage.cvp5r6m6mgpt.page',
-          lang: 'ar',
-          service: 'arabic' as Services,
-          statsDestination: 'WS_NEWS_LANGUAGES',
-          producer: 'ARABIC',
-          translations: arabicServiceConfig.default.translations,
-        } as BuildConfigProps;
+    const arabicMediaBaseSettings = {
+      counterName: 'live_coverage.cvp5r6m6mgpt.page',
+      lang: 'ar',
+      service: 'arabic' as Services,
+      statsDestination: 'WS_NEWS_LANGUAGES',
+      producer: 'ARABIC',
+      translations: arabicServiceConfig.default.translations,
+    } as BuildConfigProps;
 
     it('Should process a live media block into a valid playlist item.', () => {
       const mediaBlock = {
@@ -1122,100 +1122,99 @@ describe('buildSettings', () => {
       });
     });
 
-        it('Should process a live media block with service ID into a valid playlist item', () => {
-          const mediaBlock = {
-            type: 'liveMedia',
-            model: {
-              urn: 'urn:bbc:pips:sid:bbc_arabic_tv',
-              title: 'BBC Arabic TV',
-              type: 'episode',
-              synopses: {
-                short:
-                  'يلقي برنامج إكسترا التلفزيوني الضوء على قصص إنسانية فريدة من حياتنا، نعيشها ونرويها للشباب العربي',
-                medium:
-                  'يلقي برنامج إكسترا التلفزيوني الضوء على قصص إنسانية فريدة من حياتنا، نعيشها ونرويها للشباب العربي',
-                long: 'يلقي برنامج إكسترا التلفزيوني الضوء على قصص إنسانية فريدة من حياتنا، نعيشها ونرويها للشباب العربي',
-              },
-              mediaType: 'audio_video',
-              imageUrlTemplate:
-                'https://ichef.bbci.co.uk/images/ic/$recipe/p0hwr92l.jpg',
-              masterbrand: {
-                id: 'bbc_arabic_tv',
-                name: 'تلفزيون بي بي سي عربي',
-                networkName: 'تلفزيون بي بي سي عربي',
-                type: 'tv',
-                imageUrlTemplate:
-                  'ichef.bbci.co.uk/images/ic/$recipe/p08b23t4.png',
-              },
-              version: {
-                vpid: 'n4pdlz1s10',
-                duration: 'PT30M',
-                availabilityType: 'simulcast',
-                versionTypes: [{ type: 'Original', name: 'Original version' }],
-                schedule: null,
-                serviceId: 'bbc_arabic_tv',
-                authToken: null,
-                status: 'LIVE',
-                warnings: null,
-              },
-              leadMedia: true,
-            },
-          };
+    it('Should process a live media block with service ID into a valid playlist item', () => {
+      const mediaBlock = {
+        type: 'liveMedia',
+        model: {
+          urn: 'urn:bbc:pips:sid:bbc_arabic_tv',
+          title: 'BBC Arabic TV',
+          type: 'episode',
+          synopses: {
+            short:
+              'يلقي برنامج إكسترا التلفزيوني الضوء على قصص إنسانية فريدة من حياتنا، نعيشها ونرويها للشباب العربي',
+            medium:
+              'يلقي برنامج إكسترا التلفزيوني الضوء على قصص إنسانية فريدة من حياتنا، نعيشها ونرويها للشباب العربي',
+            long: 'يلقي برنامج إكسترا التلفزيوني الضوء على قصص إنسانية فريدة من حياتنا، نعيشها ونرويها للشباب العربي',
+          },
+          mediaType: 'audio_video',
+          imageUrlTemplate:
+            'https://ichef.bbci.co.uk/images/ic/$recipe/p0hwr92l.jpg',
+          masterbrand: {
+            id: 'bbc_arabic_tv',
+            name: 'تلفزيون بي بي سي عربي',
+            networkName: 'تلفزيون بي بي سي عربي',
+            type: 'tv',
+            imageUrlTemplate: 'ichef.bbci.co.uk/images/ic/$recipe/p08b23t4.png',
+          },
+          version: {
+            vpid: 'n4pdlz1s10',
+            duration: 'PT30M',
+            availabilityType: 'simulcast',
+            versionTypes: [{ type: 'Original', name: 'Original version' }],
+            schedule: null,
+            serviceId: 'bbc_arabic_tv',
+            authToken: null,
+            status: 'LIVE',
+            warnings: null,
+          },
+          leadMedia: true,
+        },
+      };
 
-          const result = buildSettings({
-            ...arabicMediaBaseSettings,
-            blocks: [mediaBlock] as MediaBlock[],
-            pageType: LIVE_PAGE,
-          });
+      const result = buildSettings({
+        ...arabicMediaBaseSettings,
+        blocks: [mediaBlock] as MediaBlock[],
+        pageType: LIVE_PAGE,
+      });
 
-          expect(result).toStrictEqual({
-            mediaType: 'video',
-            playerConfig: {
-              appName: 'news-arabic',
-              appType: 'responsive',
-              autoplay: false,
-              counterName: 'live_coverage.cvp5r6m6mgpt.page',
-              enableToucan: true,
-              playlistObject: {
-                holdingImageURL:
-                  'https://ichef.bbci.co.uk/images/ic/$recipe/p0hwr92l.jpg',
-                items: [
-                  {
-                    duration: 1800,
-                    kind: 'programme',
-                    live: true,
-                    serviceID: 'bbc_arabic_tv',
-                  },
-                ],
-                summary:
-                  'يلقي برنامج إكسترا التلفزيوني الضوء على قصص إنسانية فريدة من حياتنا، نعيشها ونرويها للشباب العربي',
-                title: 'BBC Arabic TV',
+      expect(result).toStrictEqual({
+        mediaType: 'video',
+        playerConfig: {
+          appName: 'news-arabic',
+          appType: 'responsive',
+          autoplay: false,
+          counterName: 'live_coverage.cvp5r6m6mgpt.page',
+          enableToucan: true,
+          playlistObject: {
+            holdingImageURL:
+              'https://ichef.bbci.co.uk/images/ic/$recipe/p0hwr92l.jpg',
+            items: [
+              {
+                duration: 1800,
+                kind: 'programme',
+                live: true,
+                serviceID: 'bbc_arabic_tv',
               },
-              product: 'news',
-              statsObject: {
-                destination: 'WS_NEWS_LANGUAGES',
-                episodePID: undefined,
-                producer: 'ARABIC',
-              },
-              ui: {
-                controls: {
-                  enabled: true,
-                },
-                fullscreen: {
-                  enabled: true,
-                },
-                locale: {
-                  lang: 'ar',
-                },
-                skin: 'classic',
-                subtitles: {
-                  defaultOn: true,
-                  enabled: true,
-                },
-              },
+            ],
+            summary:
+              'يلقي برنامج إكسترا التلفزيوني الضوء على قصص إنسانية فريدة من حياتنا، نعيشها ونرويها للشباب العربي',
+            title: 'BBC Arabic TV',
+          },
+          product: 'news',
+          statsObject: {
+            destination: 'WS_NEWS_LANGUAGES',
+            episodePID: undefined,
+            producer: 'ARABIC',
+          },
+          ui: {
+            controls: {
+              enabled: true,
             },
-            showAds: false,
-          });
-        });
+            fullscreen: {
+              enabled: true,
+            },
+            locale: {
+              lang: 'ar',
+            },
+            skin: 'classic',
+            subtitles: {
+              defaultOn: true,
+              enabled: true,
+            },
+          },
+        },
+        showAds: false,
+      });
+    });
   });
 });
