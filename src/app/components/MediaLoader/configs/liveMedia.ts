@@ -42,7 +42,6 @@ export default ({
             kind: 'programme',
             duration: rawDuration,
             live: video.status === 'LIVE',
-
           },
         ],
         summary: short,
