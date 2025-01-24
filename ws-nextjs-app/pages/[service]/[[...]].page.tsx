@@ -72,7 +72,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     return handleAvRoute(context);
   }
 
-  // Route to Articles (Optimo + CPS)
+  // Route to Articles (Optimo + CPS + Legacy TC2)
   if (isOptimoIdCheck(resolvedUrl) || isCpsIdCheck(resolvedUrl)) {
     return handleArticleRoute(context);
   }
