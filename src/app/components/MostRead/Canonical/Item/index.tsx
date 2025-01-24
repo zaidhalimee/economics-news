@@ -1,7 +1,9 @@
 /** @jsx jsx */
 import React, { PropsWithChildren } from 'react';
 import { jsx } from '@emotion/react';
-import useClickTrackerHandler from '#hooks/useClickTrackerHandler';
+import useClickTrackerHandler, {
+  constructLiteSiteURL,
+} from '#hooks/useClickTrackerHandler';
 import styles from './index.styles';
 import {
   mostReadListGridProps,
@@ -47,6 +49,7 @@ export const MostReadLink = ({
   eventTrackingData,
 }: PropsWithChildren<MostReadLinkProps>) => {
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
+  const liteUrl = constructLiteSiteURL(eventTrackingData);
 
   return (
     <div css={getItemCss({ dir, size })} dir={dir}>
@@ -54,6 +57,7 @@ export const MostReadLink = ({
         css={[styles.link, size === 'default' && styles.defaultLink]}
         href={href}
         onClick={clickTrackerHandler}
+        add-lite-tracker-params={liteUrl}
       >
         {title}
       </a>

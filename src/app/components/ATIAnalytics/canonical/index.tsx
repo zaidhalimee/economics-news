@@ -7,6 +7,7 @@ import sendBeacon from '../../../lib/analyticsUtils/sendBeacon';
 import { ATIAnalyticsProps } from '../types';
 import sendBeaconOperaMiniScript from './sendBeaconOperaMiniScript';
 import sendBeaconLite from './sendBeaconLite';
+import { liteTrackingScript } from '#app/hooks/useClickTrackerHandler';
 
 const getNoJsATIPageViewUrl = (atiPageViewUrl: string) =>
   atiPageViewUrl.includes('x8=[simorgh]')
@@ -42,9 +43,11 @@ const addOperaMiniExtremeScript = (atiPageViewUrlString: string) => {
 
 const addLiteScript = (atiPageViewUrlString: string) => {
   const script = sendBeaconLite(atiPageViewUrlString);
+const clickTrackerScript = liteTrackingScript();
 
   return (
     <Helmet>
+      <script type="text/javascript">{clickTrackerScript}</script>
       <script type="text/javascript">{script}</script>
     </Helmet>
   );

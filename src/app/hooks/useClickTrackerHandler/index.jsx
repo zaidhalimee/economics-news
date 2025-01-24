@@ -7,6 +7,7 @@ import OPTIMIZELY_CONFIG from '../../lib/config/optimizely';
 import { sendEventBeacon } from '../../components/ATIAnalytics/beacon/index';
 import { ServiceContext } from '../../contexts/ServiceContext';
 import { isValidClick } from './clickTypes';
+import { buildATIEventTrackUrl } from '#app/components/ATIAnalytics/atiUrl';
 
 const EVENT_TYPE = 'click';
 
@@ -134,6 +135,58 @@ const useClickTrackerHandler = (props = {}) => {
       useReverb,
     ],
   );
+};
+
+export const LITE_TRACKER_FUNCTION = 'liteTrackerFunction';
+
+export const liteTrackingScript = () => {
+  return `function ${LITE_TRACKER_FUNCTION}(atiURL){
+      prompt(atiURL)
+  }`;
+};
+
+export const constructLiteSiteURL = props => {
+  const eventTrackingContext = useContext(EventTrackingContext);
+  const { service, useReverb } = useContext(ServiceContext);
+  const optimizelyVariation =
+    optimizely?.getVariation(OPTIMIZELY_CONFIG.ruleKey) || null;
+
+  const componentName = props?.componentName;
+  const url = props?.url;
+  const advertiserID = props?.advertiserID;
+  const format = props?.format;
+  const optimizely = props?.optimizely;
+  const detailedPlacement = props?.detailedPlacement;
+
+  const {
+    pageIdentifier,
+    platform,
+    producerId,
+    producerName,
+    statsDestination,
+  } = eventTrackingContext;
+  const campaignID = props?.campaignID || eventTrackingContext?.campaignID;
+
+  const atiClickTrackingUrl = buildATIEventTrackUrl({
+    campaignID,
+    componentName,
+    format,
+    pageIdentifier,
+    platform,
+    producerId,
+    service,
+    statsDestination,
+    type: EVENT_TYPE,
+    advertiserID,
+    url,
+    detailedPlacement,
+    ...(optimizelyVariation &&
+      optimizelyVariation !== 'off' && {
+        experimentVariant: optimizelyVariation,
+      }),
+  });
+
+  return atiClickTrackingUrl;
 };
 
 export default useClickTrackerHandler;
