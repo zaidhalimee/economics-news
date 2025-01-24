@@ -612,7 +612,7 @@ describe('topicPath', () => {
     '/zhongwen/trad/topics/c1ez1k4emn0t',
     '/serbian/lat/topics/cr50vdy9q6wt',
     '/serbian/lat/topics/c2lej05e1eqt',
-    '/pidgin/topics/c2dwqd1zr92t'
+    '/pidgin/topics/c2dwqd1zr92t',
   ];
   shouldMatchValidRoutes(validRoutes, topicPath);
 
@@ -635,7 +635,7 @@ describe('topicVariantPath', () => {
     '/zhongwen/topics/c1ez1k4emn0t/trad',
     '/serbian/topics/cr50vdy9q6wt/lat',
     '/serbian/topics/c2lej05e1eqt/lat',
-    '/pidgin/topics/c2dwqd1zr92t'
+    '/pidgin/topics/c2dwqd1zr92t',
   ];
   shouldMatchValidRoutes(validRoutes, variantTopicPath);
 

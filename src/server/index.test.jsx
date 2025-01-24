@@ -396,7 +396,7 @@ const testArticles = ({ platform, service, variant, queryString = '' }) => {
   });
 };
 
-const testTopics =  ({ service, variant, queryString = '' }) => {
+const testTopics = ({ service, variant, queryString = '' }) => {
   describe(`Tipo Topic: /${service}/topics/tipoId/${variant}${queryString}`, () => {
     const successDataResponse = {
       data: { some: 'data' },
@@ -488,7 +488,7 @@ const testTopics =  ({ service, variant, queryString = '' }) => {
       });
     });
   });
-}
+};
 
 const testAssetPages = ({
   platform,
@@ -1296,7 +1296,6 @@ describe('Server', () => {
   });
 
   testTopics({ service: 'zhongwen', variant: 'simp' });
-
 
   testMediaPages({
     platform: 'amp',
