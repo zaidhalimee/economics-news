@@ -39,7 +39,7 @@ type PageProps = {
 } & AvEmbedsPageProps &
   ArticlePageProps;
 
-export default function Page({ pageType, ...rest }: PageProps) {
+export default function PageTypeToRender({ pageType, ...rest }: PageProps) {
   switch (pageType) {
     // AV Embeds
     case AV_EMBEDS:
@@ -60,6 +60,14 @@ export default function Page({ pageType, ...rest }: PageProps) {
   }
 }
 
+const getPageTypeFromPath = (path: string): PageTypes | null => {
+  if (path.includes('av-embeds')) return AV_EMBEDS;
+
+  if (isOptimoIdCheck(path) || isCpsIdCheck(path)) return ARTICLE_PAGE;
+
+  return null;
+};
+
 export const getServerSideProps: GetServerSideProps = async context => {
   const {
     resolvedUrl,
@@ -67,14 +75,18 @@ export const getServerSideProps: GetServerSideProps = async context => {
     req: { headers: reqHeaders },
   } = context;
 
-  // Route to AV Embeds
-  if (resolvedUrl?.includes('av-embeds')) {
-    return handleAvRoute(context);
-  }
+  // Get the page type from the path
+  const pageType = getPageTypeFromPath(resolvedUrl);
 
-  // Route to Articles (Optimo + CPS + Legacy TC2)
-  if (isOptimoIdCheck(resolvedUrl) || isCpsIdCheck(resolvedUrl)) {
-    return handleArticleRoute(context);
+  switch (pageType) {
+    case AV_EMBEDS:
+      return handleAvRoute(context);
+    // (Optimo + CPS + Legacy TC2 articles)
+    case ARTICLE_PAGE:
+      return handleArticleRoute(context);
+    // Default break out and return 404 below
+    default:
+      break;
   }
 
   const { isAmp, isApp, isLite } = getPathExtension(resolvedUrl);
