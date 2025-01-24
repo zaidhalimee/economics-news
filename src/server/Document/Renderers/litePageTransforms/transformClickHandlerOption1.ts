@@ -17,7 +17,7 @@ export default (html: string) => {
           tag,
           tag.replace(
             toReplace,
-            `onclick='${LITE_TRACKER_FUNCTION}("${atiURL}")'`,
+            `onclick='${LITE_TRACKER_FUNCTION}(event, "${atiURL}")'`,
           ),
         );
       }

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, useContext } from 'react';
 import { jsx } from '@emotion/react';
 import useClickTrackerHandler, {
   constructLiteSiteURL,
@@ -17,6 +17,7 @@ import {
 } from '../../types';
 import { Direction } from '../../../../models/types/global';
 import Grid from '../../../../legacy/components/Grid';
+import { RequestContext } from '#app/contexts/RequestContext';
 
 export const getParentColumns = (columnLayout: ColumnLayout) => {
   return columnLayout !== 'oneColumn'
@@ -53,14 +54,13 @@ export const MostReadLink = ({
 
   return (
     <div css={getItemCss({ dir, size })} dir={dir}>
-      <a
+      <button
         css={[styles.link, size === 'default' && styles.defaultLink]}
-        href={href}
         onClick={clickTrackerHandler}
         add-lite-tracker-params={liteUrl}
       >
         {title}
-      </a>
+      </button>
       {children && <div css={styles.timestamp}>{children}</div>}
     </div>
   );
