@@ -54,13 +54,14 @@ export const MostReadLink = ({
 
   return (
     <div css={getItemCss({ dir, size })} dir={dir}>
-      <button
+      <a
         css={[styles.link, size === 'default' && styles.defaultLink]}
+        href={href}
         onClick={clickTrackerHandler}
-        add-lite-tracker-params={liteUrl}
+        {...(liteUrl && {'add-lite-tracker-params': liteUrl})}
       >
         {title}
-      </button>
+      </a>
       {children && <div css={styles.timestamp}>{children}</div>}
     </div>
   );

@@ -114,7 +114,7 @@ const MostRead = ({
   className = '',
   sendOptimizelyEvents = false,
 }: MostReadProps) => {
-  const { isAmp, pageType, variant } = useContext(RequestContext);
+  const { isLite, isAmp, pageType, variant } = useContext(RequestContext);
   const { optimizely } = useContext(OptimizelyContext);
   const {
     service,
@@ -145,6 +145,9 @@ const MostRead = ({
       optimizely,
       optimizelyMetricNameOverride: 'most_read',
     }),
+    ...(isLite && {
+      liteSiteUrl: 'liteSiteUrl',
+    })
   };
 
   return isAmp ? (

@@ -2,6 +2,7 @@
 import { useContext, useCallback, useState } from 'react';
 
 import { EventTrackingContext } from '../../contexts/EventTrackingContext';
+import { RequestContext } from '../../contexts/RequestContext';
 import useTrackingToggle from '../useTrackingToggle';
 import OPTIMIZELY_CONFIG from '../../lib/config/optimizely';
 import { sendEventBeacon } from '../../components/ATIAnalytics/beacon/index';
@@ -139,7 +140,16 @@ export const LITE_TRACKER_FUNCTION = 'liteTrackerFunction';
 
 export const liteTrackingScript = () => {
   return `function ${LITE_TRACKER_FUNCTION}(event, atiURL){
-      console.log(event, atiURL);
+      // console.log(event, atiURL);
+
+      event.stopPropagation();
+      event.preventDefault();
+
+      var nextPageUrl = event.currentTarget.href;
+
+      sendBeaconLite(atiURL);
+
+      window.location.assign(nextPageUrl);
   }`;
 };
 

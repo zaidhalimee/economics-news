@@ -43,7 +43,7 @@ const addOperaMiniExtremeScript = (atiPageViewUrlString: string) => {
 
 const addLiteScript = (atiPageViewUrlString: string) => {
   const script = sendBeaconLite(atiPageViewUrlString);
-const clickTrackerScript = liteTrackingScript();
+  const clickTrackerScript = liteTrackingScript();
 
   return (
     <Helmet>
