@@ -37,7 +37,12 @@ import RelatedTopics from '#containers/RelatedTopics';
 import NielsenAnalytics from '#containers/NielsenAnalytics';
 import CpsRecommendations from '#containers/CpsRecommendations';
 import InlinePodcastPromo from '#containers/PodcastPromo/Inline';
-import { Article, OptimoBylineBlock } from '#app/models/types/optimo';
+import {
+  Article,
+  OptimoBylineBlock,
+  OptimoBylineContributorBlock,
+  Recommendation,
+} from '#app/models/types/optimo';
 import ScrollablePromo from '#components/ScrollablePromo';
 import JumpTo, { JumpToProps, Variation } from '#app/components/JumpTo';
 import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
@@ -68,6 +73,75 @@ import Disclaimer from '../../components/Disclaimer';
 import SecondaryColumn from './SecondaryColumn';
 import styles from './ArticlePage.styles';
 import { ComponentToRenderProps, TimeStampProps } from './types';
+
+const getImageComponent =
+  (preloadLeadImageToggle: boolean) => (props: ComponentToRenderProps) => (
+    <ImageWithCaption
+      {...props}
+      sizes="(min-width: 1008px) 760px, 100vw"
+      shouldPreload={preloadLeadImageToggle}
+    />
+  );
+
+const getTimestampComponent =
+  (
+    hasByline: boolean,
+    bylineContribBlocks: OptimoBylineContributorBlock[],
+    firstPublished: string,
+    lastPublished: string,
+  ) =>
+  (props: ComponentToRenderProps & TimeStampProps) =>
+    hasByline ? (
+      <Byline blocks={bylineContribBlocks}>
+        <Timestamp
+          firstPublished={new Date(firstPublished).getTime()}
+          lastPublished={new Date(lastPublished).getTime()}
+          popOut={false}
+        />
+      </Byline>
+    ) : (
+      <Timestamp {...props} popOut={false} />
+    );
+
+const getMpuComponent =
+  (allowAdvertising: boolean) => (props: ComponentToRenderProps) =>
+    allowAdvertising ? <AdContainer {...props} slotType="mpu" /> : null;
+
+const getWsojComponent =
+  (recommendationsData: Recommendation[]) =>
+  (props: ComponentToRenderProps) => (
+    <CpsRecommendations {...props} items={recommendationsData} />
+  );
+
+const DisclaimerWithPaddingOverride = (props: ComponentToRenderProps) => (
+  <Disclaimer {...props} increasePaddingOnDesktop={false} />
+);
+
+const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
+  podcastPromoEnabled ? <InlinePodcastPromo /> : null;
+
+const getJumptoComponent =
+  (
+    optimizelyVariation: Variation | 'off',
+    hasJumpToBlockForExperiment: boolean,
+    showRelatedContent: boolean,
+  ) =>
+  (props: ComponentToRenderProps & JumpToProps) => {
+    if (
+      optimizelyVariation === 'off' ||
+      !optimizelyVariation ||
+      !hasJumpToBlockForExperiment
+    )
+      return null;
+
+    return (
+      <JumpTo
+        {...props}
+        showRelatedContentLink={showRelatedContent}
+        variation={optimizelyVariation}
+      />
+    );
+  };
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const { isApp, pageType, service } = useContext(RequestContext);
@@ -160,25 +234,13 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     audio: MediaLoader,
     video: MediaLoader,
     text,
-    image: (props: ComponentToRenderProps) => (
-      <ImageWithCaption
-        {...props}
-        sizes="(min-width: 1008px) 760px, 100vw"
-        shouldPreload={preloadLeadImageToggle}
-      />
+    image: getImageComponent(preloadLeadImageToggle),
+    timestamp: getTimestampComponent(
+      hasByline,
+      bylineContribBlocks,
+      firstPublished,
+      lastPublished,
     ),
-    timestamp: (props: ComponentToRenderProps & TimeStampProps) =>
-      hasByline ? (
-        <Byline blocks={bylineContribBlocks}>
-          <Timestamp
-            firstPublished={new Date(firstPublished).getTime()}
-            lastPublished={new Date(lastPublished).getTime()}
-            popOut={false}
-          />
-        </Byline>
-      ) : (
-        <Timestamp {...props} popOut={false} />
-      ),
     social: SocialEmbedContainer,
     embed: UnsupportedEmbed,
     embedHtml: EmbedHtml,
@@ -186,33 +248,16 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     embedImages: EmbedImages,
     embedUploader: Uploader,
     group: gist,
-    links: (props: ComponentToRenderProps) => <ScrollablePromo {...props} />,
-    mpu: (props: ComponentToRenderProps) =>
-      allowAdvertising ? <AdContainer {...props} slotType="mpu" /> : null,
-    wsoj: (props: ComponentToRenderProps) => (
-      <CpsRecommendations {...props} items={recommendationsData} />
+    links: ScrollablePromo,
+    mpu: getMpuComponent(allowAdvertising),
+    wsoj: getWsojComponent(recommendationsData),
+    disclaimer: DisclaimerWithPaddingOverride,
+    podcastPromo: getPodcastPromoComponent(podcastPromoEnabled),
+    jumpTo: getJumptoComponent(
+      optimizelyVariation,
+      hasJumpToBlockForExperiment,
+      showRelatedContent,
     ),
-    disclaimer: (props: ComponentToRenderProps) => (
-      <Disclaimer {...props} increasePaddingOnDesktop={false} />
-    ),
-    podcastPromo: () => (podcastPromoEnabled ? <InlinePodcastPromo /> : null),
-    jumpTo: (props: ComponentToRenderProps & JumpToProps) => {
-      if (
-        optimizelyVariation === 'off' ||
-        !optimizelyVariation ||
-        !hasJumpToBlockForExperiment
-      )
-        return null;
-
-      return (
-        <JumpTo
-          {...props}
-          jumpToHeadings={props.jumpToHeadings}
-          showRelatedContentLink={showRelatedContent}
-          variation={optimizelyVariation}
-        />
-      );
-    },
   };
 
   const visuallyHiddenBlock = {

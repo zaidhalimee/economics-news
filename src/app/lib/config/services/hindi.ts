@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-hindi',
     atiAnalyticsProducerId: '52',
+    atiAnalyticsProducerName: 'HINDI',
     chartbeatDomain: 'hindi.bbc.co.uk',
     brandName: 'BBC News हिंदी',
     product: 'BBC News',
@@ -90,8 +91,8 @@ export const service: DefaultServiceConfig = {
       articlePage: {
         jumpToTitle: {
           variation_1: 'इस पर जाएं',
-          variation_2: 'Discover more from BBC Hindi',
-          variation_3: 'More from BBC Hindi',
+          variation_2: 'बीबीसी न्यूज़ हिंदी  से और अधिक जानें',
+          variation_3: 'बीबीसी न्यूज़ हिंदी से और ख़बरें पढ़ें',
         },
       },
       liveExperiencePage: {
@@ -269,6 +270,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'प्रसारण का समय',
         podcastExternalLinks: 'ये पॉडकास्ट इन प्लेटफ़ॉर्म्स पर भी उपलब्ध है -',
         download: 'एपिसोड डाउनलोड करें',
+        closeVideo: 'बाहर निकलें',
       },
       socialEmbed: {
         caption: {
@@ -440,6 +442,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'होम पेज',
         url: '/hindi',
+      },
+      {
+        title: 'दिल्ली विधानसभा चुनाव',
+        url: '/hindi/topics/c8dqegnm6d9t',
       },
       {
         title: 'भारत',

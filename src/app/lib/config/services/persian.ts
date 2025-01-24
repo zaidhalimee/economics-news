@@ -14,6 +14,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-persian',
     atiAnalyticsProducerId: '69',
+    atiAnalyticsProducerName: 'PERSIAN',
     chartbeatDomain: 'persian.bbc.co.uk',
     brandName: 'BBC News فارسی',
     serviceLocalizedName: 'فارسی',
@@ -270,6 +271,7 @@ export const service: DefaultServiceConfig = {
         duration: 'مدت',
         podcastExternalLinks: 'این پادکست در این زمان قابل دسترس است',
         download: 'دانلود برنامه',
+        closeVideo: 'خروج',
       },
       socialEmbed: {
         caption: {

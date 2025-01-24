@@ -4429,24 +4429,15 @@ module.exports = () => ({
       liveRadio: {
         environments: {
           live: {
-            paths: [
-              '/persian/bbc_persian_radio/liveradio',
-              '/persian/bbc_dari_radio/liveradio',
-            ],
+            paths: ['/persian/bbc_dari_radio/liveradio'],
             enabled: true,
           },
           test: {
-            paths: [
-              '/persian/bbc_persian_radio/liveradio?renderer_env=live',
-              '/persian/bbc_dari_radio/liveradio?renderer_env=live',
-            ],
+            paths: ['/persian/bbc_dari_radio/liveradio?renderer_env=live'],
             enabled: true,
           },
           local: {
-            paths: [
-              '/persian/bbc_persian_radio/liveradio',
-              '/persian/bbc_dari_radio/liveradio',
-            ],
+            paths: ['/persian/bbc_dari_radio/liveradio'],
             enabled: true,
           },
         },
@@ -4457,9 +4448,7 @@ module.exports = () => ({
           live: {
             paths: [
               '/persian/bbc_dari_radio/programmes/p0340v0s', // On Demand Brand Dari
-              '/persian/bbc_persian_radio/programmes/p0340vyx', // On Demand Brand Persian
               '/persian/bbc_dari_radio/w172y2n5p9pfj6x', // On Demand Episode Dari
-              '/persian/bbc_persian_radio/w3ct2cv6', // On Demand Episode Persian
               '/persian/podcasts/p02pc9wf', // Podcast Brand
               '/persian/podcasts/p02pc9wf/p09knl1v', // Podcast Episode
             ],
@@ -4468,9 +4457,7 @@ module.exports = () => ({
           test: {
             paths: [
               '/persian/bbc_dari_radio/programmes/p0364sj5', // On Demand Brand Dari
-              '/persian/bbc_persian_radio/programmes/p0340vyw', // On Demand Brand Persian
               '/persian/bbc_dari_radio/w172y2n5p9pfj6x', // On Demand Episode Dari
-              '/persian/bbc_persian_radio/w3ct2cv6', // On Demand Episode Persian
               '/persian/podcasts/p02pc9wf', // Podcast Brand
               '/persian/podcasts/p02pc9wf/p09knl1v', // Podcast Episode
             ],
@@ -4478,7 +4465,6 @@ module.exports = () => ({
           },
           local: {
             paths: [
-              '/persian/bbc_persian_radio/w172x32355t5635',
               '/persian/bbc_dari_radio/w3csz7mf',
               '/persian/podcasts/p02pc9wf', // Podcast Brand
               '/persian/podcasts/p02pc9wf/p095lyj1', // Podcast Episode
@@ -4622,12 +4608,9 @@ module.exports = () => ({
               // '/persian/world-51497110', // CPS MAP
               // '/persian/media-49522521', // CPS MAP with live stream
               // '/persian/world/2016/06/160613_om_naked_dining', // TC2 MAP
-              // '/persian/bbc_persian_radio/liveradio', // Live Radio
               // '/persian/bbc_dari_radio/liveradio', // Live Radio
               // '/persian/bbc_dari_radio/programmes/p0340v0s', // On Demand Radio Brand
-              // '/persian/bbc_persian_radio/programmes/p0340vyx', // On Demand Radio Brand
               // '/persian/bbc_dari_radio/w3ct0bst', // On Demand Radio Episode
-              // '/persian/bbc_persian_radio/w3ct0s49', // On Demand Radio Episode
             ],
             enabled: false,
           },
@@ -4639,12 +4622,9 @@ module.exports = () => ({
               // '/persian/iran-23231114', // CPS MAP
               // '/persian/iran/2016/09/160907_tc2_testmap1?renderer_env=test', // TC2 MAP
               // '/persian/23104784', // CPS PGL
-              // '/persian/bbc_persian_radio/liveradio', // Live Radio
               // '/persian/bbc_dari_radio/liveradio', // Live Radio
               // '/persian/bbc_dari_radio/programmes/p0340v0s', // On Demand Radio Brand
-              // '/persian/bbc_persian_radio/programmes/p0340vyx', // On Demand Radio Brand
               // '/persian/bbc_dari_radio/w3ct0bst', // On Demand Radio Episode
-              // '/persian/bbc_persian_radio/w3ct0s49', // On Demand Radio Episode
             ],
             enabled: false,
           },
@@ -4657,11 +4637,9 @@ module.exports = () => ({
               // '/persian/iran/2016/09/160907_tc2_testmap1', // TC2 MAP
               // '/persian/magazine-49281981', // CPS PGL
               // '/persian/arts-52166891', // CPS STY
-              // '/persian/bbc_persian_radio/liveradio', // Live Radio
               // '/persian/bbc_dari_radio/liveradio', // Live Radio
               // // '', // On Demand Radio Brand
               // // '', // On Demand Radio Brand
-              // '/persian/bbc_persian_radio/w172x32355t5635', // On Demand Radio Episode
               // '/persian/bbc_dari_radio/w3csz7mf', // On Demand Radio Episode
             ],
             enabled: false,
