@@ -60,6 +60,7 @@ export default function PageTypeToRender({ pageType, ...rest }: PageProps) {
   }
 }
 
+// TODO: This could be changed to inspect a custom header to determine the page type, rather than the path
 const getPageTypeFromPath = (path: string): PageTypes | null => {
   if (path.includes('av-embeds')) return AV_EMBEDS;
 
@@ -75,7 +76,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     req: { headers: reqHeaders },
   } = context;
 
-  // Get the page type from the path
+  // Determine the page type
   const pageType = getPageTypeFromPath(resolvedUrl);
 
   switch (pageType) {
