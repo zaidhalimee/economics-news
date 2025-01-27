@@ -1089,7 +1089,6 @@ describe('buildSettings', () => {
                 duration: 86400,
                 kind: 'programme',
                 live: true,
-                serviceID: null,
                 versionID: 'p0gh4n67',
               },
             ],
