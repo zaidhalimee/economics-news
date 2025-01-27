@@ -154,6 +154,11 @@ export const getTopicPageRegex = services => {
   return `/:service(${serviceRegex}):variant(${variantRegex})?/topics/:id(${topicIdRegex})?:lite(${liteRegex})?`;
 };
 
+export const getVariantTopicPageRegex = services => {
+  const serviceRegex = getServiceRegex(services);
+  return `/:service(${serviceRegex})/topics/:id(${topicIdRegex})?:variant(${variantRegex})?:lite(${liteRegex})?`;
+};
+
 export const getErrorPageRegex = services => {
   const serviceRegex = getServiceRegex(services);
   return `/:service(${serviceRegex})/:errorCode(${errorCodeRegex}):variant(${variantRegex})?:lite(${liteRegex})?`;
