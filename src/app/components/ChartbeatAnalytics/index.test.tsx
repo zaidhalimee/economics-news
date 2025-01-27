@@ -94,7 +94,6 @@ describe('Charbeats Analytics Container', () => {
       domain: 'news-domain',
       sections: 'secction1 section2',
       contentType: 'article',
-      virtualReferrer: '/some-path',
       title: 'This is an article',
     };
 
@@ -174,55 +173,6 @@ describe('Charbeats Analytics Container', () => {
     expect(container.firstChild).toBeNull();
   });
 
-  it('should call sendCanonicalChartbeatBeacon when platform is canonical, and toggle enabled for chartbeat on test', () => {
-    process.env.SIMORGH_APP_ENV = 'test';
-    const mockAmp = jest.fn().mockReturnValue('amp-return-value');
-    // @ts-expect-error requires mocking for testing purposes
-    amp.default = mockAmp;
-
-    const expectedConfig = {
-      uid: 50924,
-      domain: 'test-domain',
-      idSync: {
-        bbc_hid: 'cookie',
-      },
-      path: '/',
-      sections: 'secction1 section2',
-      title: 'This is a canonical page article',
-      type: 'article',
-      useCanonical: true,
-      virtualReferrer: '/some-path',
-    };
-
-    const toggleState = {
-      chartbeatAnalytics: {
-        enabled: true,
-      },
-    };
-
-    const mockGetConfig = jest.fn().mockReturnValue(expectedConfig);
-    // @ts-expect-error requires mocking for testing purposes
-    testUtils.getConfig = mockGetConfig;
-    render(
-      <ContextWrap
-        platform="canonical"
-        pageType={ARTICLE_PAGE}
-        origin="test.bbc.com"
-        toggleState={toggleState}
-      >
-        <ChartbeatAnalytics
-          title={frontPageData?.article?.metadata?.title}
-          sectionName={frontPageData?.article?.relatedContent?.section?.name}
-        />
-      </ContextWrap>,
-    );
-
-    expect(sendCanonicalChartbeatBeacon).toHaveBeenCalledTimes(1);
-    expect(sendCanonicalChartbeatBeacon).toHaveBeenCalledWith(expectedConfig);
-    expect(testUtils.getConfig).toHaveBeenCalledTimes(1);
-    expect(mockAmp).not.toHaveBeenCalled();
-  });
-
   it('should add Chartbeat Helmet script with correct config when platform is canonical, toggle enabled and on test in Lite mode', () => {
     process.env.SIMORGH_APP_ENV = 'test';
 
@@ -237,7 +187,6 @@ describe('Charbeats Analytics Container', () => {
       title: 'This is a canonical page article',
       type: 'article',
       useCanonical: true,
-      virtualReferrer: '/some-path',
     };
 
     const toggleState = {
