@@ -146,8 +146,61 @@ export const liteTrackingScript = () => {
       event.preventDefault();
 
       var nextPageUrl = event.currentTarget.href;
+      
+      const { screen: {width, height, colorDepth, pixelDepth}, innerWidth, innerHeight } = window;
+      const now = new Date();
+      const hours = now.getHours();
+      const mins = now.getMinutes();
+      const secs = now.getSeconds();
 
-      sendBeaconLite(atiURL);
+      function getCookie () {
+        const cookieName = 'atuserid';
+        const expires = 397; // expires in 13 months
+	      let value = \`; $\{document.cookie\}\`;
+	      let parts = value.split(\`; $\{cookieName\}=\`);
+        let user = null;
+
+	      if (parts.length === 2){
+          user = parts.pop().split(';').shift();
+          if(!user && crypto.randomUUID){
+            user = crypto.randomUUID();
+          }
+        } 
+
+        if(user){
+          document.cookie = \`$\{cookieName\}=$\{uid\}; path=/; max-age=$\{expires\};\`;
+        }
+      
+        return user;
+      }
+
+      const rValue = [
+        width || 0,
+        height || 0,
+        colorDepth || 0,
+        pixelDepth || 0,
+      ].join('x')
+      
+      const reValue = [innerWidth || 0, innerHeight || 0].join('x');
+
+      const hlValue = [hours, mins, secs].join('x');
+
+      let clientSideAtiURL = atiURL
+                                .concat('&', 'r=', rValue)
+                                .concat('&', 're=', reValue)
+                                .concat('&', 'hl=', hlValue)
+      
+      if (navigator.language) {
+        clientSideAtiURL = clientSideAtiURL.concat('&', 'lng=', navigator.language)
+      }                     
+      
+      const cookieId = getCookie();
+      console.log("CHECK", cookieId)
+      if (cookieId) {
+        clientSideAtiURL = clientSideAtiURL.concat('&', 'idclient=', cookieId)
+      }     
+
+      sendBeaconLite(clientSideAtiURL);
 
       window.location.assign(nextPageUrl);
   }`;
