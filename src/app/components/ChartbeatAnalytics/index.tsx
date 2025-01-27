@@ -19,15 +19,12 @@ const ChartbeatAnalytics = ({
   chapter,
 }: ChartbeatProps) => {
   const { service, brandName, chartbeatDomain } = useContext(ServiceContext);
-  const { sendCanonicalChartbeatBeacon } = useContext(UserContext);
-  const { env, isAmp, isLite, platform, pageType, previousPath, origin } =
+  const { env, isAmp, platform, pageType, previousPath, origin } =
     useContext(RequestContext);
 
   const { enabled } = useToggle('chartbeatAnalytics');
 
-  const isAmpAndEnabled = isAmp && enabled;
-  const isCanonicalAndEnabled = !isAmp && enabled;
-  const isLiteAndEnabled = isLite && enabled;
+  if (!enabled) return null;
 
   const configDependencies: GetConfigProps = {
     isAmp,
@@ -51,29 +48,9 @@ const ChartbeatAnalytics = ({
 
   const chartbeatConfig = getConfig(configDependencies);
 
-  if (isLiteAndEnabled) {
-    return <CanonicalChartbeatBeacon chartbeatConfig={chartbeatConfig} />;
-  }
+  if (isAmp) return <AmpChartbeatBeacon chartbeatConfig={chartbeatConfig} />;
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  useEffect(() => {
-    if (isCanonicalAndEnabled) {
-      sendCanonicalChartbeatBeacon(chartbeatConfig);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [
-    sectionName,
-    categoryName,
-    mediaPageType,
-    title,
-    taggings,
-    contentType,
-    isCanonicalAndEnabled,
-  ]);
-
-  return isAmpAndEnabled ? (
-    <AmpChartbeatBeacon chartbeatConfig={chartbeatConfig} />
-  ) : null;
+  return <CanonicalChartbeatBeacon chartbeatConfig={chartbeatConfig} />;
 };
 
 export default ChartbeatAnalytics;

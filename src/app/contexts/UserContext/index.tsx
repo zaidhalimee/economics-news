@@ -5,20 +5,15 @@ import React, {
   SetStateAction,
   useMemo,
 } from 'react';
-import { CanonicalChartbeatConfig } from '#app/components/ChartbeatAnalytics/types';
 import { v4 as uuid } from 'uuid';
 import Cookie from 'js-cookie';
 import onClient from '#app/lib/utilities/onClient';
 import isOperaProxy from '#app/lib/utilities/isOperaProxy';
 import setCookie from '#app/lib/utilities/setCookie';
 import { getCookiePolicy, personalisationEnabled } from './cookies';
-import Chartbeat from './Chartbeat';
 
 export type UserContextProps = {
   cookiePolicy: string;
-  sendCanonicalChartbeatBeacon: Dispatch<
-    SetStateAction<CanonicalChartbeatConfig | null>
-  >;
   updateCookiePolicy: Dispatch<SetStateAction<null>>;
   personalisationEnabled: boolean;
 };
@@ -39,8 +34,6 @@ const cknsMvtCookie = () => {
 
 export const UserContextProvider = ({ children }: PropsWithChildren) => {
   const [cookiePolicy, setCookiePolicy] = useState(getCookiePolicy());
-  const [chartbeatConfig, sendCanonicalChartbeatBeacon] =
-    useState<CanonicalChartbeatConfig | null>(null);
 
   if (onClient() && !isOperaProxy()) {
     cknsMvtCookie();
@@ -49,17 +42,11 @@ export const UserContextProvider = ({ children }: PropsWithChildren) => {
   const value = useMemo(
     () => ({
       cookiePolicy,
-      sendCanonicalChartbeatBeacon,
       updateCookiePolicy: () => setCookiePolicy(getCookiePolicy()),
       personalisationEnabled: personalisationEnabled(cookiePolicy),
     }),
     [cookiePolicy],
   );
 
-  return (
-    <UserContext.Provider value={value}>
-      <Chartbeat config={chartbeatConfig} />
-      {children}
-    </UserContext.Provider>
-  );
+  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };
