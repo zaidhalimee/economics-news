@@ -68,7 +68,7 @@ const useClickTrackerHandler = (props = {}) => {
   const [clicked, setClicked] = useState(false);
 
   const { useReverb } = useContext(ServiceContext);
-  console.log('OUTSIDE USE CALLBACK');
+
   return useCallback(async event => {
     const shouldRegisterClick = [
       trackingIsEnabled,
@@ -77,7 +77,7 @@ const useClickTrackerHandler = (props = {}) => {
     ].every(Boolean);
     if (shouldRegisterClick) {
       setClicked(true);
-      console.log('INSIDE USE CALLBACK');
+
       const shouldSendEvent = [
         campaignID,
         componentName,
@@ -140,45 +140,43 @@ export const LITE_TRACKER_FUNCTION = 'liteTrackerFunction';
 
 export const liteTrackingScript = () => {
   return `function ${LITE_TRACKER_FUNCTION}(event, atiURL){
-      // console.log(event, atiURL);
-
       event.stopPropagation();
       event.preventDefault();
 
       var nextPageUrl = event.currentTarget.href;
-      
+     
       const { screen: {width, height, colorDepth, pixelDepth}, innerWidth, innerHeight } = window;
       const now = new Date();
       const hours = now.getHours();
       const mins = now.getMinutes();
       const secs = now.getSeconds();
-
-      function getCookie () {
-        const cookieName = 'atuserid';
-        const expires = 397; // expires in 13 months
-	      let value = \`; $\{document.cookie\}\`;
-	      let parts = value.split(\`; $\{cookieName\}=\`);
-        let val = null;
     
-	      if (parts.length === 2){
-          const cookie = parts.pop().split(';').shift();
-          if(cookie){
-            let decodedCookie = decodeURI(cookie);
-            const user = JSON.parse(decodedCookie);
-            val = user.val;
-          }
-          else if(crypto.randomUUID){
-            val = JSON.stringify({val:crypto.randomUUID()});
-          }
-        } 
+      // COOKIE SETTINGS
+      const cookieName = 'atuserid';
+      const expires = 397; // expires in 13 months
+      let cookiesForPage = \`; $\{document.cookie\}\`;
+      let atUserIdCookie = cookiesForPage.split(\`; $\{cookieName\}=\`);
+      let atUserIdValue = null;
 
-        if(val){
-          document.cookie = \`$\{cookieName\}=$\{val\}; path=/; max-age=$\{expires\};\`;
+      if (atUserIdCookie.length === 2){
+        const cookieInfo = atUserIdCookie.pop().split(';').shift();
+
+        if(cookieInfo){
+          let decodedCookie = decodeURI(cookieInfo);
+          const user = JSON.parse(decodedCookie);
+          atUserIdValue = user.val;
         }
-      
-        return val;
+      } 
+
+      if(!atUserIdValue && crypto.randomUUID){
+          atUserIdValue =  crypto.randomUUID();
       }
 
+      const stringifiedCookieValue = JSON.stringify({val: atUserIdValue});
+      if(atUserIdValue){
+        document.cookie = \`$\{cookieName\}=$\{stringifiedCookieValue\}; path=/; max-age=$\{expires\};\`;
+      }
+      
       const rValue = [
         width || 0,
         height || 0,
@@ -198,11 +196,9 @@ export const liteTrackingScript = () => {
       if (navigator.language) {
         clientSideAtiURL = clientSideAtiURL.concat('&', 'lng=', navigator.language)
       }                     
-      
-      const cookieId = getCookie();
-
-      if (cookieId) {
-        clientSideAtiURL = clientSideAtiURL.concat('&', 'idclient=', cookieId)
+       
+      if (atUserIdValue) {
+        clientSideAtiURL = clientSideAtiURL.concat('&', 'idclient=', atUserIdValue)
       }     
 
       sendBeaconLite(clientSideAtiURL);
