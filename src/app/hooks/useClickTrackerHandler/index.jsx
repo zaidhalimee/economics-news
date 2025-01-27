@@ -158,20 +158,25 @@ export const liteTrackingScript = () => {
         const expires = 397; // expires in 13 months
 	      let value = \`; $\{document.cookie\}\`;
 	      let parts = value.split(\`; $\{cookieName\}=\`);
-        let user = null;
-
+        let val = null;
+    
 	      if (parts.length === 2){
-          user = parts.pop().split(';').shift();
-          if(!user && crypto.randomUUID){
-            user = crypto.randomUUID();
+          const cookie = parts.pop().split(';').shift();
+          if(cookie){
+            let decodedCookie = decodeURI(cookie);
+            const user = JSON.parse(decodedCookie);
+            val = user.val;
+          }
+          else if(crypto.randomUUID){
+            val = JSON.stringify({val:crypto.randomUUID()});
           }
         } 
 
-        if(user){
-          document.cookie = \`$\{cookieName\}=$\{uid\}; path=/; max-age=$\{expires\};\`;
+        if(val){
+          document.cookie = \`$\{cookieName\}=$\{val\}; path=/; max-age=$\{expires\};\`;
         }
       
-        return user;
+        return val;
       }
 
       const rValue = [
@@ -195,7 +200,7 @@ export const liteTrackingScript = () => {
       }                     
       
       const cookieId = getCookie();
-      console.log("CHECK", cookieId)
+
       if (cookieId) {
         clientSideAtiURL = clientSideAtiURL.concat('&', 'idclient=', cookieId)
       }     

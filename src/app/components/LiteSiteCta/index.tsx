@@ -1,6 +1,9 @@
 /** @jsx jsx */
 import { useContext } from 'react';
 import { jsx } from '@emotion/react';
+import useClickTrackerHandler, {
+  constructLiteSiteURL,
+} from '#app/hooks/useClickTrackerHandler';
 import Paragraph from '../Paragraph';
 import Text from '../Text';
 import { LeftChevron, RightChevron } from '../icons';
@@ -17,6 +20,7 @@ type CtaLinkProps = {
   showChevron?: boolean;
   ignoreLiteExtension?: boolean;
   className?: string;
+  eventTrackingData: { componentName: string };
 };
 
 const CtaLink = ({
@@ -27,6 +31,7 @@ const CtaLink = ({
   showChevron = false,
   ignoreLiteExtension = false,
   className,
+  eventTrackingData,
 }: CtaLinkProps) => {
   const chevron = isRtl ? (
     <LeftChevron css={styles.chevron} />
@@ -34,11 +39,16 @@ const CtaLink = ({
     <RightChevron css={styles.chevron} />
   );
 
+  const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
+  const liteUrl = constructLiteSiteURL(eventTrackingData);
+
   return (
     <a
       href={href}
       className={className}
       css={styles.link}
+      onClick={clickTrackerHandler}
+      {...(liteUrl && { 'add-lite-tracker-params': liteUrl })}
       {...(ignoreLiteExtension && { 'data-ignore-lite': true })}
     >
       <Text size="brevier" fontVariant={fontVariant} css={styles.linkText}>
@@ -62,6 +72,8 @@ const LiteSiteCta = () => {
     dataSaving,
   } = liteSite;
   const id = 'LiteSiteCta';
+  const eventTrackingDataSiteSwitch = { componentName: 'switch-to-canonical' };
+  const eventTrackingLiteSiteInfo = { componentName: 'lite-site-info' };
 
   return (
     <section
@@ -86,6 +98,7 @@ const LiteSiteCta = () => {
             css={styles.topLinkSpacing}
             ignoreLiteExtension
             showChevron
+            eventTrackingData={eventTrackingDataSiteSwitch}
           />
         </Paragraph>
         <Paragraph data-e2e="information-page">
@@ -94,6 +107,7 @@ const LiteSiteCta = () => {
             href={informationPageLink}
             text={informationPage}
             css={styles.bottomLinkSpacing}
+            eventTrackingData={eventTrackingLiteSiteInfo}
           />
         </Paragraph>
       </div>
