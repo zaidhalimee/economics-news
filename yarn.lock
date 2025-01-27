@@ -5176,12 +5176,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/user-event@npm:14.6.0":
-  version: 14.6.0
-  resolution: "@testing-library/user-event@npm:14.6.0"
+"@testing-library/user-event@npm:14.6.1":
+  version: 14.6.1
+  resolution: "@testing-library/user-event@npm:14.6.1"
   peerDependencies:
     "@testing-library/dom": ">=7.21.4"
-  checksum: 10/01a7481642ceda10324ff5356e3cfd9c6131b0cecbcbdd5938096d4d3f8ce9e548e9b460ef35bad8f3649dc392c808044a5abd78de8218a4bc21c91125be85df
+  checksum: 10/34b74fff56a0447731a94b40d4cf246deb8dbc1c1e3aec93acd1c3377a760bb062e979f1572bb34ec164ad28ee2a391744b42d0d6d6cc16c4ce527e5e09610e1
   languageName: node
   linkType: hard
 
@@ -7835,9 +7835,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:11.25.0":
-  version: 11.25.0
-  resolution: "chromatic@npm:11.25.0"
+"chromatic@npm:11.25.1":
+  version: 11.25.1
+  resolution: "chromatic@npm:11.25.1"
   peerDependencies:
     "@chromatic-com/cypress": ^0.*.* || ^1.0.0
     "@chromatic-com/playwright": ^0.*.* || ^1.0.0
@@ -7850,7 +7850,7 @@ __metadata:
     chroma: dist/bin.js
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
-  checksum: 10/df1554940c122d8bcdd5700108ed9546b5eb42b08a3a0b31e3fa3e4fd03f5775f939307fecc7c0800211f96c559e5ef0ce0d68abe895f858330756d0d0e168d0
+  checksum: 10/57f29fa5e351f7131073933a3cb033bedeb9ad4edaee7586fc58975d33021307cf350ce8677cbbf7eea46bf1af9f2ad1ecc35077791cd7c1ec66412be202e705
   languageName: node
   linkType: hard
 
@@ -17231,7 +17231,7 @@ __metadata:
     "@testing-library/jest-dom": "npm:6.6.3"
     "@testing-library/react": "npm:16.2.0"
     "@testing-library/react-hooks": "npm:8.0.1"
-    "@testing-library/user-event": "npm:14.6.0"
+    "@testing-library/user-event": "npm:14.6.1"
     "@types/jest": "npm:29.5.14"
     "@types/js-cookie": "npm:^3.0.3"
     "@types/jsdom": "npm:21.1.7"
@@ -17253,7 +17253,7 @@ __metadata:
     babel-loader: "npm:9.2.1"
     babel-plugin-dynamic-import-node: "npm:2.3.3"
     chalk: "npm:5.4.1"
-    chromatic: "npm:11.25.0"
+    chromatic: "npm:11.25.1"
     cli-table: "npm:0.3.11"
     colors: "npm:^1.4.0"
     compression: "npm:1.7.5"
@@ -17325,7 +17325,7 @@ __metadata:
     ts-jest: "npm:29.2.5"
     ts-loader: "npm:9.5.2"
     typescript: "npm:5.7.3"
-    undici: "npm:7.2.3"
+    undici: "npm:7.3.0"
     url-parse: "npm:1.5.10"
     uuid: "npm:8.3.2"
     wait-on: "npm:8.0.2"
@@ -18749,10 +18749,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:7.2.3":
-  version: 7.2.3
-  resolution: "undici@npm:7.2.3"
-  checksum: 10/92870d186682c19f4b9909e4b6229a88b4e73e6e12d7a3e151033cefb66579bdc1d36e46d97e386161ba0afcd84b718e917fca7b7f08d409d918689343034c09
+"undici@npm:7.3.0":
+  version: 7.3.0
+  resolution: "undici@npm:7.3.0"
+  checksum: 10/8165c3a18cd045c70b009db006bee1784c5ba405634e8d2017107f65220a23190e2dfbbcb314bec71add1e43cabcd7515cd29b655c819f22e59b5e2e7025db20
   languageName: node
   linkType: hard
 
