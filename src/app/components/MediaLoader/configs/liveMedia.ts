@@ -16,13 +16,19 @@ export default ({
     synopses: { short },
   } = liveMediaBlock;
 
-  const { warnings } = video;
+  const {
+    warnings,
+    serviceId: serviceID,
+    vpid,
+    status,
+    duration,
+  } = video || {};
 
   if (warnings) {
     warning = warnings.warning_text;
   }
 
-  const rawDuration = moment.duration(video?.duration).asSeconds();
+  const rawDuration = moment.duration(duration).asSeconds();
 
   return {
     playerConfig: {
@@ -37,13 +43,13 @@ export default ({
         holdingImageURL,
         items: [
           {
-            ...(video.serviceId && { serviceID: video.serviceId }),
-            ...(!video.serviceId && {
-              versionID: video?.vpid,
+            ...(serviceID && { serviceID }),
+            ...(!serviceID && {
+              versionID: vpid,
               duration: rawDuration,
             }),
             kind: 'programme',
-            live: video.status === 'LIVE',
+            live: status === 'LIVE',
           },
         ],
         summary: short,
