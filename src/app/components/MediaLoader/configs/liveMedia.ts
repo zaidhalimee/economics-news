@@ -19,7 +19,7 @@ export default ({
   const {
     warnings,
     serviceId: serviceID,
-    vpid,
+    vpid: versionID,
     status,
     duration,
   } = video || {};
@@ -45,7 +45,7 @@ export default ({
           {
             ...(serviceID && { serviceID }),
             ...(!serviceID && {
-              versionID: vpid,
+              versionID,
               duration: rawDuration,
             }),
             kind: 'programme',
