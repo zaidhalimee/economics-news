@@ -22,6 +22,7 @@ import {
   secondaryColumnDataRegexPath,
   tipoHomeDataPath,
   tipoHomePath,
+  topicPath,
 } from './index';
 
 import serviceConfig from '../../../lib/config/services/loadableConfig';
@@ -602,4 +603,27 @@ describe('frontPage -> homePage migration', () => {
 
     shouldNotMatchInvalidRoutes(liveFrontPageRoutes, homePageRegex);
   });
+});
+
+describe('topicPath', () => {
+  const validRoutes = [
+    '/zhongwen/topics/cd6qem06z92t/trad',
+    '/zhongwen/topics/c1ez1k4emn0t/trad',
+    '/serbian/topics/cr50vdy9q6wt/lat',
+    '/serbian/topics/c2lej05e1eqt/lat',
+    '/pidgin/topics/c2dwqd1zr92t',
+  ];
+  shouldMatchValidRoutes(validRoutes, topicPath);
+
+  const invalidRoutes = [
+    '/serbian/lat/topics/c2lej05e1eqt',
+    '/serbian/lat/topics/c2lej05qwesae1eqt',
+    '/zhongwen/c1ez1k4emn0t',
+    '/zhongwen/trad/topics',
+    '/hindi/topic/c5jje4ejkqv',
+    '/mundo/topic/',
+    '/serbian/topic/c5jje4ejkqvo/foobar',
+    '/urdu/topic/c5jje4ejkqvo/.amp',
+  ];
+  shouldNotMatchInvalidRoutes(invalidRoutes, topicPath);
 });

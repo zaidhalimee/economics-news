@@ -46,6 +46,7 @@ export const buildATIPageTrackPath = ({
   campaigns,
   nationsProducer,
   ampExperimentName,
+  experimentVariant,
 }: ATIPageTrackingProps) => {
   const href = getHref(platform);
   const referrer = getReferrer(platform, origin, previousPath);
@@ -215,6 +216,24 @@ export const buildATIPageTrackPath = ({
       value: getATIMarketingString(href, campaignType),
       wrap: false,
     },
+    ...(experimentVariant
+      ? [
+          {
+            key: 'mv_test',
+            description: 'JumpTo Onward Journeys experiment',
+            value: `JumpTo Onward Journeys experiment`,
+            wrap: false,
+            disableEncoding: true,
+          },
+          {
+            key: 'mv_creation',
+            description: 'JumpTo Onward Journeys variant',
+            value: `${experimentVariant}`,
+            wrap: false,
+            disableEncoding: true,
+          },
+        ]
+      : []),
     ...(ampExperimentName
       ? [
           {
@@ -349,6 +368,24 @@ export const buildATIEventTrackUrl = ({
       wrap: false,
       disableEncoding: true,
     },
+    ...(experimentVariant
+      ? [
+          {
+            key: 'mv_test',
+            description: 'JumpTo Onward Journeys experiment',
+            value: `JumpTo Onward Journeys experiment`,
+            wrap: false,
+            disableEncoding: true,
+          },
+          {
+            key: 'mv_creation',
+            description: 'JumpTo Onward Journeys variant',
+            value: `${experimentVariant}`,
+            wrap: false,
+            disableEncoding: true,
+          },
+        ]
+      : []),
     ...(ampExperimentName
       ? [
           {
@@ -379,4 +416,123 @@ export const buildATIEventTrackUrl = ({
   return `${getEnvConfig().SIMORGH_ATI_BASE_URL}${getAtiUrl(
     eventTrackingBeaconValues,
   )}&type=AT`;
+};
+
+export const buildReverbAnalyticsModel = ({
+  appName,
+  campaigns,
+  categoryName,
+  contentId,
+  contentType,
+  language,
+  ldpThingIds,
+  ldpThingLabels,
+  libraryVersion,
+  pageIdentifier,
+  pageTitle,
+  platform,
+  previousPath,
+  producerName,
+  origin,
+  nationsProducer,
+  statsDestination,
+  timePublished,
+  timeUpdated,
+}: ATIPageTrackingProps) => {
+  const href = getHref(platform);
+  const referrer = getReferrer(platform, origin, previousPath);
+
+  const aggregatedCampaigns = (Array.isArray(campaigns) ? campaigns : [])
+    .map(({ campaignName }) => campaignName)
+    .join('~');
+
+  const eventDetails = {
+    eventName: 'pageView',
+  };
+
+  const reverbVariables = {
+    params: {
+      page: {
+        contentId,
+        contentType,
+        destination: statsDestination,
+        name: pageIdentifier,
+        producer: producerName,
+        additionalProperties: {
+          app_name: platform === 'app' ? `${appName}-app` : appName,
+          app_type: getAppType(platform),
+          content_language: language,
+          product_platform: onOnionTld() ? 'tor-bbc' : null,
+          referrer_url:
+            referrer && encodeURIComponent(encodeURIComponent(referrer)),
+          x5: href && encodeURIComponent(encodeURIComponent(href)),
+          x8: libraryVersion,
+          x9: sanitise(pageTitle),
+          x10: nationsProducer && nationsProducer,
+          x11: timePublished,
+          x12: timeUpdated,
+          x13: ldpThingLabels,
+          x14: ldpThingIds,
+          x16: aggregatedCampaigns,
+          x17: categoryName,
+          x18: isLocServeCookieSet(),
+        },
+      },
+      user: {
+        hashedId: getAtUserId(),
+        isSignedIn: false,
+      },
+    },
+    eventDetails,
+  };
+
+  return reverbVariables;
+};
+
+export const buildReverbPageSectionEventModel = ({
+  pageIdentifier,
+  producerName,
+  statsDestination,
+  componentName,
+  campaignID,
+  format,
+  type,
+  advertiserID,
+  url,
+}: ATIEventTrackingProps) => {
+  const eventPublisher = type === 'view' ? 'ati' : 'atc';
+
+  const eventDetails = {
+    eventName: type === 'view' ? 'sectionView' : 'sectionClick',
+    ...(type === 'click' && {
+      componentName,
+      container: campaignID,
+    }),
+  };
+
+  return {
+    params: {
+      page: {
+        destination: statsDestination,
+        name: pageIdentifier,
+        producer: producerName,
+        additionalProperties: {
+          [eventPublisher]: getEventInfo({
+            campaignID,
+            componentName,
+            format,
+            pageIdentifier,
+            advertiserID,
+            url,
+          }),
+          type: 'AT',
+        },
+      },
+      user: {
+        hashedId: getAtUserId(),
+        isSignedIn: false,
+      },
+    },
+    eventDetails,
+  };
 };

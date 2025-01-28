@@ -11,6 +11,7 @@ const baseServiceConfig = {
   articleAuthor: 'https://www.facebook.com/bbcnews',
   atiAnalyticsAppName: 'news-serbian',
   atiAnalyticsProducerId: '81',
+  atiAnalyticsProducerName: 'SERBIAN',
   chartbeatDomain: 'serbian.bbc.co.uk',
   product: 'BBC News',
   defaultImage: 'https://news.files.bbci.co.uk/ws/img/logos/og/serbian.png',
@@ -116,19 +117,19 @@ export const service: SerbianConfig = {
       },
       {
         title: 'Srbija',
-        url: '/serbian/lat/topics/cr50vdy9q6wt',
+        url: '/serbian/topics/cr50vdy9q6wt/lat',
       },
       {
         title: 'Balkan',
-        url: '/serbian/lat/topics/c06g87137jgt',
+        url: '/serbian/topics/c06g87137jgt/lat',
       },
       {
         title: 'Svet',
-        url: '/serbian/lat/topics/c2lej05e1eqt',
+        url: '/serbian/topics/c2lej05e1eqt/lat',
       },
       {
         title: 'Video',
-        url: '/serbian/lat/topics/c44vyp5g049t',
+        url: '/serbian/topics/c44vyp5g049t/lat',
       },
       {
         title: 'Najpopularnije',
@@ -323,6 +324,7 @@ export const service: SerbianConfig = {
         previousRadioShow: 'Prethodna radio emisija',
         nextRadioShow: 'Sledeća radio emisija',
         duration: 'Trajanje',
+        closeVideo: 'Izađi',
       },
       socialEmbed: {
         caption: {
@@ -506,6 +508,22 @@ export const service: SerbianConfig = {
       {
         title: 'Почетна страна',
         url: '/serbian/cyr',
+      },
+      {
+        title: 'Србија',
+        url: '/serbian/topics/cr50vdy9q6wt/cyr',
+      },
+      {
+        title: 'Балкан',
+        url: '/serbian/topics/c06g87137jgt/cyr',
+      },
+      {
+        title: 'Свет',
+        url: '/serbian/topics/c2lej05e1eqt/cyr',
+      },
+      {
+        title: 'Видео',
+        url: '/serbian/topics/c44vyp5g049t/cyr',
       },
       {
         title: 'Најпопуларније',
@@ -701,6 +719,7 @@ export const service: SerbianConfig = {
         nextRadioShow: 'Следећа радио емисија',
         duration: 'Трајање',
         recentEpisodes: 'Претходне епизоде',
+        closeVideo: 'Изађи',
       },
       socialEmbed: {
         caption: {

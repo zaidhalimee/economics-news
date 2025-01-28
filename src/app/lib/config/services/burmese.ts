@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-burmese',
     atiAnalyticsProducerId: '35',
+    atiAnalyticsProducerName: 'BURMESE',
     chartbeatDomain: 'burmese.bbc.co.uk',
     brandName: 'BBC News မြန်မာ',
     product: 'BBC News',
@@ -257,6 +258,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'ထုတ်လွှင့်ပြီး အစီအစဉ်မျာ',
         podcastExternalLinks: 'ဒီပေါ့ဒ်ကတ်စ်ကို နောက်ထပ်ရနိုင်သည့်နေရာ',
         download: 'ဒေါင်းလုပ်လုပ် ရယူရန်',
+        closeVideo: 'ပိတ်မယ်',
       },
       socialEmbed: {
         caption: {
