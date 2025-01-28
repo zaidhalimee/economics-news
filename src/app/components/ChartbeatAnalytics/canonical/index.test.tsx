@@ -5,11 +5,6 @@ import CanonicalChartbeatAnalytics from '.';
 import { CanonicalChartbeatConfig } from '../types';
 
 describe('CanonicalChartbeatAnalytics', () => {
-  // @ts-expect-error chartbeat requires pSUPERFLY object on global window
-  global.pSUPERFLY = {
-    virtualPage: jest.fn(),
-  };
-
   afterEach(jest.clearAllMocks);
 
   const pageConfig: CanonicalChartbeatConfig = {
