@@ -149,11 +149,6 @@ export const getOnDemandTvRegex = services => {
   return `/:service(${serviceRegex})/:serviceId(${tvMasterBrandRegex})/:brandEpisode(${brandEpisodeRegex})/:mediaId(${mediaIdRegex}):lite(${liteRegex})?`;
 };
 
-export const getTopicPageRegex = services => {
-  const serviceRegex = getServiceRegex(services);
-  return `/:service(${serviceRegex}):variant(${variantRegex})?/topics/:id(${topicIdRegex})?:lite(${liteRegex})?`;
-};
-
 export const getVariantTopicPageRegex = services => {
   const serviceRegex = getServiceRegex(services);
   return `/:service(${serviceRegex})/topics/:id(${topicIdRegex})?:variant(${variantRegex})?:lite(${liteRegex})?`;
