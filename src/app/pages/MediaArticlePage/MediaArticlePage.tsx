@@ -189,8 +189,7 @@ const MediaArticlePage = ({ pageData }: { pageData: Article }) => {
   };
 
   const isTransliterated =
-    ['serbian', 'zhongwen', 'uzbek'].includes(service) &&
-    pageType === ARTICLE_PAGE;
+    ['uzbek'].includes(service) && pageType === ARTICLE_PAGE;
 
   const promoImageBlocks =
     pageData?.promo?.images?.defaultPromoImage?.blocks ?? [];
