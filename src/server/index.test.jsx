@@ -1297,7 +1297,7 @@ describe('Server', () => {
 
   testTopics({ service: 'pidgin' });
 
-  testVariantTopics({ service: 'zhongwen', variant: 'simp' });
+  testTopics({ service: 'zhongwen', variant: 'simp' });
 
   testMediaPages({
     platform: 'amp',
