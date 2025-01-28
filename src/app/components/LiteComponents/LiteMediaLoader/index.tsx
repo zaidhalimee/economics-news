@@ -67,7 +67,7 @@ const LiteMediaLoader = ({
   width,
   height,
   src,
-  showFileSize = true,
+  showFileSize = false,
   children,
 }: PropsWithChildren<Props>) => {
   const dataId = useId();
