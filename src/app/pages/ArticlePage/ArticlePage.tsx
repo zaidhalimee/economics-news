@@ -161,9 +161,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const allowAdvertising = pageData?.metadata?.allowAdvertising ?? false;
   const adcampaign = pageData?.metadata?.adCampaignKeyword;
-  const isTransliterated =
-    ['serbian', 'zhongwen', 'uzbek'].includes(service) &&
-    pageType === ARTICLE_PAGE;
+  const isUzbekArticle = service === 'uzbek' && pageType === ARTICLE_PAGE;
 
   const { enabled: podcastPromoEnabled } = useToggle('podcastPromo');
   const headline = getHeadline(pageData) ?? '';
@@ -285,7 +283,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const promoImage = promoImageRawBlock?.model?.locator;
 
   const showTopics = Boolean(
-    showRelatedTopics && topics.length > 0 && !isTransliterated,
+    showRelatedTopics && topics.length > 0 && !isUzbekArticle,
   );
 
   return (
