@@ -7,16 +7,12 @@ import getPathExtension from '#app/utilities/getPathExtension';
 import {
   AV_EMBEDS,
   ARTICLE_PAGE,
-  MEDIA_ARTICLE_PAGE,
   STORY_PAGE,
   CORRESPONDENT_STORY_PAGE,
   MEDIA_ASSET_PAGE,
   PHOTO_GALLERY_PAGE,
 } from '#app/routes/utils/pageTypes';
-import {
-  isOptimoIdCheck,
-  isCpsIdCheck,
-} from '#app/routes/utils/constructPageFetchUrl';
+import { isCpsIdCheck } from '#app/routes/utils/constructPageFetchUrl';
 import { PageTypes } from '#app/models/types/global';
 // AV Embeds
 import handleAvRoute from './av-embeds/handleAvRoute';
@@ -44,15 +40,13 @@ export default function PageTypeToRender({ pageType, ...rest }: PageProps) {
     // AV Embeds
     case AV_EMBEDS:
       return <AvEmbedsPageLayout {...rest} />;
-    // Article Pages (Optimo + CPS)
+    // Article Pages (CPS + Legacy TC2 assets)
     case STORY_PAGE:
     case CORRESPONDENT_STORY_PAGE:
     case PHOTO_GALLERY_PAGE:
-    case ARTICLE_PAGE:
       return <ArticlePage {...rest} />;
-    // Media Article Pages (Optimo + CPS)
+    // Media Article Pages (CPS + Legacy TC2 assets)
     case MEDIA_ASSET_PAGE:
-    case MEDIA_ARTICLE_PAGE:
       return <MediaArticlePage {...rest} />;
     default:
       // Return nothing, 404 is handled in _app.tsx
@@ -64,7 +58,7 @@ export default function PageTypeToRender({ pageType, ...rest }: PageProps) {
 const getPageTypeFromPath = (path: string): PageTypes | null => {
   if (path.includes('av-embeds')) return AV_EMBEDS;
 
-  if (isOptimoIdCheck(path) || isCpsIdCheck(path)) return ARTICLE_PAGE;
+  if (isCpsIdCheck(path)) return ARTICLE_PAGE;
 
   return null;
 };
@@ -82,7 +76,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
   switch (pageType) {
     case AV_EMBEDS:
       return handleAvRoute(context);
-    // (Optimo + CPS + Legacy TC2 articles)
+    // (CPS + Legacy TC2 articles)
     case ARTICLE_PAGE:
       return handleArticleRoute(context);
     // Default break out and return 404 below
