@@ -188,8 +188,7 @@ const MediaArticlePage = ({ pageData }: { pageData: Article }) => {
     ...(isCpsMap && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
   };
 
-  const isUzbekArticle =
-    ['uzbek'].includes(service) && pageType === ARTICLE_PAGE;
+  const isUzbekArticle = service === 'uzbek' && pageType === ARTICLE_PAGE;
 
   const promoImageBlocks =
     pageData?.promo?.images?.defaultPromoImage?.blocks ?? [];

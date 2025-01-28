@@ -161,8 +161,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const allowAdvertising = pageData?.metadata?.allowAdvertising ?? false;
   const adcampaign = pageData?.metadata?.adCampaignKeyword;
-  const isUzbekArticle =
-    ['uzbek'].includes(service) && pageType === ARTICLE_PAGE;
+  const isUzbekArticle = service === 'uzbek' && pageType === ARTICLE_PAGE;
 
   const { enabled: podcastPromoEnabled } = useToggle('podcastPromo');
   const headline = getHeadline(pageData) ?? '';
