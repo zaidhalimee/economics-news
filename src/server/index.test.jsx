@@ -396,7 +396,7 @@ const testArticles = ({ platform, service, variant, queryString = '' }) => {
   });
 };
 
-const testVariantTopics = ({ service, variant, queryString = '' }) => {
+const testTopics = ({ service, variant, queryString = '' }) => {
   describe(`Tipo Topic: /${service}/topics/tipoId/${variant}${queryString}`, () => {
     const successDataResponse = {
       data: { some: 'data' },
