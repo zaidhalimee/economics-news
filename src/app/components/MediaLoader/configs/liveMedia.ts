@@ -1,6 +1,7 @@
 import filterForBlockType from '#lib/utilities/blockHandlers';
 import moment from 'moment';
 import { ConfigBuilderProps, ConfigBuilderReturnProps } from '../types';
+import AUDIO_UI_CONFIG from './constants';
 
 export default ({
   blocks,
@@ -14,6 +15,7 @@ export default ({
     version: video,
     title,
     synopses: { short },
+    masterbrand: { type },
   } = liveMediaBlock;
 
   const {
@@ -55,8 +57,12 @@ export default ({
         summary: short,
         ...(warning && { warning }),
       },
+      ui: {
+        ...basePlayerConfig.ui,
+        ...(type === 'radio' && AUDIO_UI_CONFIG),
+      },
     },
-    mediaType: 'video',
+    mediaType: type === 'radio' ? 'audio' : 'video',
     showAds: false,
   };
 };

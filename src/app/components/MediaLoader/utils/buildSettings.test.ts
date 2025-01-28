@@ -1122,7 +1122,7 @@ describe('buildSettings', () => {
       });
     });
 
-    it('Should process a live media block with service ID into a valid playlist item', () => {
+    it('Should process a live media block with TV service ID into a valid playlist item', () => {
       const mediaBlock = {
         type: 'liveMedia',
         model: {
@@ -1211,6 +1211,118 @@ describe('buildSettings', () => {
               lang: 'ar',
             },
             skin: 'classic',
+            subtitles: {
+              defaultOn: true,
+              enabled: true,
+            },
+          },
+        },
+        showAds: false,
+      });
+    });
+
+    it('Should process a live media block with audio service ID into a valid playlist item', () => {
+      const afriqueLiveAudioBaseSettings = {
+        counterName: 'live_coverage.cvp5r6m6mgpt.page',
+        lang: 'fr',
+        service: 'afrique' as Services,
+        statsDestination: 'WS_NEWS_LANGUAGES',
+        producer: 'AFRIQUE',
+        translations: afriqueServiceConfig.default.translations,
+      } as BuildConfigProps;
+
+      const mediaBlock = {
+        type: 'liveMedia',
+        model: {
+          urn: 'urn:bbc:pips:sid:bbc_afrique_radio',
+          title: 'BBC News Afrique live radio stream',
+          type: 'episode',
+          synopses: {
+            short: 'BBC News Afrique live radio stream',
+            medium:
+              'Vivez le meilleur de la musique africaine et internationale.',
+            long: '',
+          },
+          mediaType: 'audio',
+          imageUrlTemplate:
+            'https://ichef.bbci.co.uk/images/ic/$recipe/p0gsjjjl.png',
+          masterbrand: {
+            id: 'bbc_afrique_radio',
+            name: 'BBC Afrique Radio',
+            networkName: 'BBC Afrique Radio',
+            type: 'radio',
+            imageUrlTemplate: 'ichef.bbci.co.uk/images/ic/$recipe/p02xxpx6.jpg',
+          },
+          version: {
+            vpid: 'w1mslc13lfd83c8',
+            duration: 'PT29M',
+            availabilityType: 'simulcast',
+            versionTypes: [
+              {
+                type: 'Original',
+                name: 'Original version',
+              },
+            ],
+            schedule: null,
+            serviceId: 'bbc_afrique_radio',
+            authToken: null,
+            status: 'LIVE',
+            warnings: null,
+          },
+          leadMedia: true,
+        },
+      };
+
+      const result = buildSettings({
+        ...afriqueLiveAudioBaseSettings,
+        blocks: [mediaBlock] as MediaBlock[],
+        pageType: LIVE_PAGE,
+      });
+
+      expect(result).toStrictEqual({
+        mediaType: 'audio',
+        playerConfig: {
+          appName: 'news-afrique',
+          appType: 'responsive',
+          autoplay: false,
+          counterName: 'live_coverage.cvp5r6m6mgpt.page',
+          enableToucan: true,
+          playlistObject: {
+            holdingImageURL:
+              'https://ichef.bbci.co.uk/images/ic/$recipe/p0gsjjjl.png',
+            items: [
+              {
+                kind: 'programme',
+                live: true,
+                serviceID: 'bbc_afrique_radio',
+              },
+            ],
+            summary: 'BBC News Afrique live radio stream',
+            title: 'BBC News Afrique live radio stream',
+          },
+          product: 'news',
+          statsObject: {
+            destination: 'WS_NEWS_LANGUAGES',
+            episodePID: undefined,
+            producer: 'AFRIQUE',
+          },
+          ui: {
+            controls: {
+              enabled: true,
+              volumeSlider: true,
+            },
+            fullscreen: {
+              enabled: true,
+            },
+            locale: {
+              lang: 'fr',
+            },
+            skin: 'audio',
+            baseColour: '#222222',
+            colour: '#b80000',
+            colourOnBaseColour: '#ffffff',
+            fallbackBackgroundColour: '#ffffff',
+            foreColour: '#222222',
             subtitles: {
               defaultOn: true,
               enabled: true,
