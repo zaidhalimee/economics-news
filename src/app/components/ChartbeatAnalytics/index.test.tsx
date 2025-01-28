@@ -182,7 +182,7 @@ describe('Charbeats Analytics Container', () => {
       idSync: {
         bbc_hid: 'cookie',
       },
-      path: '/.lite',
+      path: '/pidgin/articles/c00000000o.lite',
       sections: 'section1 section2',
       title: 'This is a canonical page article',
       type: 'article',
