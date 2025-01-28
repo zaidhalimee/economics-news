@@ -15,7 +15,11 @@ import Timestamp from '#containers/ArticleTimestamp';
 import ComscoreAnalytics from '#containers/ComscoreAnalytics';
 import SocialEmbedContainer from '#containers/SocialEmbed';
 import MediaLoader from '#app/components/MediaLoader';
-import { PHOTO_GALLERY_PAGE, STORY_PAGE } from '#app/routes/utils/pageTypes';
+import {
+  ARTICLE_PAGE,
+  PHOTO_GALLERY_PAGE,
+  STORY_PAGE,
+} from '#app/routes/utils/pageTypes';
 
 import {
   getArticleId,
@@ -140,7 +144,7 @@ const getJumptoComponent =
   };
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
-  const { isApp } = useContext(RequestContext);
+  const { isApp, pageType, service } = useContext(RequestContext);
 
   const {
     articleAuthor,
@@ -157,6 +161,9 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const allowAdvertising = pageData?.metadata?.allowAdvertising ?? false;
   const adcampaign = pageData?.metadata?.adCampaignKeyword;
+  const isTransliterated =
+    ['serbian', 'zhongwen', 'uzbek'].includes(service) &&
+    pageType === ARTICLE_PAGE;
 
   const { enabled: podcastPromoEnabled } = useToggle('podcastPromo');
   const headline = getHeadline(pageData) ?? '';
@@ -277,7 +284,9 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const promoImage = promoImageRawBlock?.model?.locator;
 
-  const showTopics = Boolean(showRelatedTopics && topics.length > 0);
+  const showTopics = Boolean(
+    showRelatedTopics && topics.length > 0 && !isTransliterated,
+  );
 
   return (
     <div css={styles.pageWrapper}>
