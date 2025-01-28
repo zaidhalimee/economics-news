@@ -132,7 +132,7 @@ describe('Charbeats Analytics Container', () => {
     expect(container.firstChild?.textContent).toEqual('amp-return-value');
   });
 
-  it('should return null when toggle is disbaled for live', () => {
+  it('should return null when toggle is disabled for live', () => {
     const toggleState = {
       chartbeatAnalytics: {
         enabled: false,
