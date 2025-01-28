@@ -14,7 +14,7 @@ import {
   getPodcastBrandRegex,
   getOnDemandRadioRegex,
   getOnDemandTvRegex,
-  getVariantTopicPageRegex,
+  getTopicPageRegex,
   getErrorPageRegex,
   getLegacyAssetRegex,
   getMostReadPageRegex,
@@ -62,9 +62,8 @@ export const podcastBrandDataPath = `${podcastBrandPath}.json`;
 export const onDemandTvPath = getOnDemandTvRegex(allServices);
 export const onDemandTvDataPath = `${onDemandTvPath}.json`;
 
+export const topicPath = getTopicPageRegex(allServices);
 export const topicDataPath = `${topicPath}.json`;
-
-export const variantTopicPath = getVariantTopicPageRegex(allServices);
 
 export const errorPagePath = getErrorPageRegex(allServices);
 
