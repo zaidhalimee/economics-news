@@ -521,10 +521,10 @@ export const service: SerbianConfig = {
         title: 'Свет',
         url: '/serbian/topics/c2lej05e1eqt/cyr',
       },
-      // {
-      //   title: 'Video',
-      //   url: '/serbian/topics/c44vyp5g049t/cyr',
-      // },
+      {
+        title: 'Видео',
+        url: '/serbian/topics/c44vyp5g049t/cyr',
+      },
       {
         title: 'Најпопуларније',
         url: '/serbian/cyr/popular/read',
