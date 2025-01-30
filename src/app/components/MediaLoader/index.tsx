@@ -288,11 +288,14 @@ const MediaLoader = ({ blocks, className, embedded, uniqueId }: Props) => {
                 onClick={() => setShowPlaceholder(false)}
               />
             ) : (
-              <MediaContainer
-                playerConfig={playerConfig}
-                showAds={showAds}
-                uniqueId={uniqueId}
-              />
+              <>
+                <MediaContainer
+                  playerConfig={playerConfig}
+                  showAds={showAds}
+                  uniqueId={uniqueId}
+                />
+                <svg width="100%" height="100vh" css={styles.hideIfCss}></svg>
+              </>
             )}
           </>
         )}
@@ -304,7 +307,6 @@ const MediaLoader = ({ blocks, className, embedded, uniqueId }: Props) => {
           />
         )}
       </figure>
-      <svg width="100%" height="100vh" css={styles.hideIfCss}></svg>
     </>
   );
 };
