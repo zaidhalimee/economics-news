@@ -355,6 +355,10 @@ export const service: DefaultServiceConfig = {
         url: '/gahuza',
       },
       {
+        title: 'Ibitero bya M23 muri Congo',
+        url: '/gahuza/topics/cx2qn9pqx4yt',
+      },
+      {
         title: 'Ibiyaga binini',
         url: '/gahuza/topics/c06gq67y3w5t',
       },
