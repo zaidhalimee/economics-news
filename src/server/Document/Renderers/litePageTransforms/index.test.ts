@@ -96,4 +96,24 @@ describe('litePageTransforms', () => {
       expect(modifiedHtml).toEqual(originalHtml);
     });
   });
+
+  describe('tags within head', () => {
+    it('should remove data-react-helmet attribute', () => {
+      const originalHtml = `
+        <title data-react-helmet="true">Title</title>
+        <meta data-react-helmet="true" name="name" content="content"/>
+        <link data-react-helmet="true" rel="canonical" href="https://www.bbc.com/pidgin">
+        <script data-react-helmet="true" type="application/ld+json">{"key": "value"}</>
+        <script data-react-helmet="true" type="text/javascript">console.log("Hello World");</>`;
+
+      const modifiedHtml = litePageTransforms(originalHtml);
+
+      expect(modifiedHtml).toEqual(`
+        <title>Title</title>
+        <meta name="name" content="content"/>
+        <link rel="canonical" href="https://www.bbc.com/pidgin">
+        <script type="application/ld+json">{"key": "value"}</>
+        <script type="text/javascript">console.log("Hello World");</>`);
+    });
+  });
 });
