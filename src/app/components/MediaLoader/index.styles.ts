@@ -97,4 +97,9 @@ export default {
         marginInline: '0',
       },
     }),
+
+  hideIfCss: () =>
+    css({
+      display: 'none', // only visually renders component if css is disabled
+    }),
 };

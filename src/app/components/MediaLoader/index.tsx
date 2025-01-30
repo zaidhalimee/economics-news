@@ -304,6 +304,7 @@ const MediaLoader = ({ blocks, className, embedded, uniqueId }: Props) => {
           />
         )}
       </figure>
+      <svg width="100%" height="100vh" css={styles.hideIfCss}></svg>
     </>
   );
 };
