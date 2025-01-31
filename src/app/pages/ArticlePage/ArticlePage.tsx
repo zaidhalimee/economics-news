@@ -49,8 +49,8 @@ import JumpTo, { JumpToProps, Variation } from '#app/components/JumpTo';
 import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
 import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
 import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
-import EasyReadCTAVersion2 from '#app/components/EasyReadCTA';
 import OPTIMIZELY_CONFIG from '#app/lib/config/optimizely';
+import EasyReadCTA from '#app/components/EasyReadCTA';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
@@ -146,6 +146,7 @@ const getJumptoComponent =
   };
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
+  const { translations } = useContext(ServiceContext);
   const { isApp, pageType, service } = useContext(RequestContext);
 
   const {
@@ -290,6 +291,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     links: ScrollablePromo,
     mpu: getMpuComponent(allowAdvertising),
     wsoj: getWsojComponent(recommendationsData),
+    easyReadMeta: EasyReadCTA,
     disclaimer: DisclaimerWithPaddingOverride,
     podcastPromo: getPodcastPromoComponent(podcastPromoEnabled),
     jumpTo: getJumptoComponent(
@@ -297,12 +299,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       hasJumpToBlockForExperiment,
       showRelatedContent,
     ),
-
-    podcastPromo: () => (podcastPromoEnabled ? <InlinePodcastPromo /> : null),
-    jumpTo: (props: ComponentToRenderProps & JumpToProps) =>
-      jumpToVariation === 'on' ? (
-        <JumpTo {...props} showRelatedContentLink={showRelatedContent} />
-      ) : null,
   };
 
   const visuallyHiddenBlock = {
@@ -332,7 +328,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const showTopics = Boolean(
     showRelatedTopics && topics.length > 0 && !isUzbekArticle,
   );
-
   return (
     <div css={styles.pageWrapper}>
       <ATIAnalytics atiData={atiData} />
@@ -344,7 +339,11 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       <NielsenAnalytics />
       <ArticleMetadata
         articleId={getArticleId(pageData)}
-        title={isEasyPage ? `Easy Read | ${headline}` : headline}
+        title={
+          isEasyPage
+            ? `${translations.easyReadSite?.easySite} | ${headline}`
+            : headline
+        }
         author={articleAuthor}
         twitterHandle={articleAuthorTwitterHandle}
         firstPublished={firstPublished}

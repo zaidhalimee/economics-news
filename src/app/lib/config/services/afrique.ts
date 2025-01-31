@@ -73,7 +73,7 @@ export const service: DefaultServiceConfig = {
         standardSite: 'Standard',
         format: 'Format',
         aIDisclaimer: `Cet article en version facile à lire et à comprendre a été vérifié par un journaliste. Il a été créé avec l'IA (intelligence artificielle) à partir de la version originale. En savoir plus sur la version facile à lire et à comprendre`,
-        learnMore: 'Learn more about easy read',
+        learnMore: 'En savoir plus sur la version facile à lire',
         learnMoreLink: 'https://www.bbc.co.uk/',
       },
       mediaAssetPage: {
