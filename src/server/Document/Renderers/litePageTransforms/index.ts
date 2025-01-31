@@ -1,5 +1,4 @@
 import transformAnchorTags from './transformAnchorTags';
-import transformTagsWithinHead from './transformTagsWithinHead';
 
 type Fn = (html: string) => string;
 
@@ -8,4 +7,4 @@ const pipe =
   (x: string) =>
     fns.reduce((result, nextFn) => nextFn(result), x);
 
-export default pipe(transformAnchorTags, transformTagsWithinHead);
+export default pipe(transformAnchorTags);

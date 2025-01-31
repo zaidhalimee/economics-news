@@ -7,6 +7,7 @@ import LiteRenderer from './Renderers/LiteRenderer';
 import CanonicalRenderer from './Renderers/CanonicalRenderer';
 import AmpRenderer from './Renderers/AmpRenderer';
 import litePageTransforms from './Renderers/litePageTransforms';
+import removeDataReactHelmetAttribute from './Renderers/litePageTransforms/removeDataReactHelmetAttribute';
 
 type Props = {
   app: EmotionCritical;
@@ -48,12 +49,16 @@ const Document = ({
               dangerouslySetInnerHTML={{ __html: litePageTransforms(html) }}
             />
           }
-          helmetLinkTags={helmetLinkTags}
-          helmetMetaTags={helmetMetaTags}
-          helmetScriptTags={helmetScriptTags}
+          // @ts-expect-error helmetLinkTags is an array of ReactElements
+          helmetLinkTags={removeDataReactHelmetAttribute(helmetLinkTags)}
+          // @ts-expect-error helmetMetaTags is an array of ReactElements
+          helmetMetaTags={removeDataReactHelmetAttribute(helmetMetaTags)}
+          // @ts-expect-error helmetScriptTags is an array of ReactElements
+          helmetScriptTags={removeDataReactHelmetAttribute(helmetScriptTags)}
           htmlAttrs={htmlAttrs}
           styles={css}
-          title={title}
+          // @ts-expect-error title is a ReactElement
+          title={removeDataReactHelmetAttribute(title)}
         />
       );
     case isAmp:
