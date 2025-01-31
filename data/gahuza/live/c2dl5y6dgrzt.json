@@ -1,0 +1,3847 @@
+{
+  "data": {
+    "title": "Donald Trump ni we agiye kuba umukuru w'igihugu wa Reta Zunze Ubumwe za Amerika agira 47",
+    "description": "Umurepubulikani Donald Trump yashoboye kuronka amajwi arengeye ayo yarondera kugira ngo atsinde ano matora, akaba ari agiye kuramutswa igihugu, atsinze Umudemokarate Kamala Harris.",
+    "language": "rw",
+    "headerImage": {
+      "url": "https://ichef.bbci.co.uk/ace/standard/480/cpsprodpb/3cec/live/e7bcb070-9c34-11ef-82c3-45a801b7330b.jpg",
+      "urlTemplate": "https://ichef.bbci.co.uk/ace/standard/{width}/cpsprodpb/3cec/live/e7bcb070-9c34-11ef-82c3-45a801b7330b.jpg",
+      "height": 576,
+      "width": 1024,
+      "copyright": "BBC"
+    },
+    "promoImage": {
+      "url": "https://ichef.bbci.co.uk/ace/standard/480/cpsprodpb/b6ff/live/58881340-9c34-11ef-82c3-45a801b7330b.png",
+      "urlTemplate": "https://ichef.bbci.co.uk/ace/standard/{width}/cpsprodpb/b6ff/live/58881340-9c34-11ef-82c3-45a801b7330b.png",
+      "height": 667,
+      "width": 1194,
+      "copyright": "BBC"
+    },
+    "home": "gahuza",
+    "section": null,
+    "commercialInfo": {
+      "adCategory": null,
+      "adSubCategory": null,
+      "hasAdvertising": true
+    },
+    "sportDataEvent": { "id": null },
+    "eavisEvent": { "id": null },
+    "article": { "id": null },
+    "mediaCollections": null,
+    "keyHighlight": { "id": null },
+    "electionBanner": { "id": null },
+    "supportingLinks": { "id": null },
+    "riddle": { "id": null },
+    "seo": {
+      "seoTitle": "Donald Trump ni we agiye kuba umukuru w'igihugu wa Reta Zunze Ubumwe za Amerika agira 47",
+      "seoDescription": "Umurepubulikani Donald Trump yashoboye kuronka amajwi arengeye ayo yarondera kugira ngo atsinde ano matora, akaba ari agiye kuramutswa igihugu, atsinze Umudemokarate Kamala Harris.",
+      "datePublished": "2024-11-05T21:45:00.000Z",
+      "dateModified": "2024-11-06T11:11:00.000Z"
+    },
+    "endDateTime": "2024-11-06T15:00:00.000Z",
+    "startDateTime": "2024-11-05T21:45:00.000Z",
+    "firstPublishedDateTime": "2024-11-05T21:24:06.768Z",
+    "type": "live-coverage",
+    "dataSource": "TIPO",
+    "isLive": false,
+    "summaryPoints": {
+      "id": "urn:bbc:optimo:asset:cdrd5v685yzo",
+      "content": {
+        "model": {
+          "blocks": [
+            {
+              "id": "0d2dc930",
+              "type": "text",
+              "model": {
+                "blocks": [
+                  {
+                    "id": "e6cb81b9",
+                    "type": "unorderedList",
+                    "model": {
+                      "blocks": [
+                        {
+                          "id": "62be9f4c",
+                          "type": "listItem",
+                          "model": {
+                            "blocks": [
+                              {
+                                "id": "9bbebd0c",
+                                "type": "paragraph",
+                                "model": {
+                                  "text": "Donald Trump yamaze kwizigira intsinzi akaba ahejeje gushikiriza ijambo aho abwira Abanyamerika ko atazobahemukira",
+                                  "blocks": [
+                                    {
+                                      "id": "44e4c1aa",
+                                      "type": "fragment",
+                                      "model": {
+                                        "text": "Donald Trump yamaze kwizigira intsinzi akaba ahejeje gushikiriza ijambo aho abwira Abanyamerika ko atazobahemukira",
+                                        "attributes": []
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "id": "3e287755",
+                          "type": "listItem",
+                          "model": {
+                            "blocks": [
+                              {
+                                "id": "200c8213",
+                                "type": "paragraph",
+                                "model": {
+                                  "text": "Abanyamerika  bitabiriye amatora y’umukuru w’igihugu cabo ku wa 5 Munyonyo",
+                                  "blocks": [
+                                    {
+                                      "id": "5c5ed1fa",
+                                      "type": "fragment",
+                                      "model": {
+                                        "text": "Abanyamerika  ",
+                                        "attributes": []
+                                      }
+                                    },
+                                    {
+                                      "id": "2cc284b9",
+                                      "type": "urlLink",
+                                      "model": {
+                                        "text": "bitabiriye amatora y’umukuru w’igihugu cabo",
+                                        "blocks": [
+                                          {
+                                            "id": "cfd69e36",
+                                            "type": "fragment",
+                                            "model": {
+                                              "text": "bitabiriye amatora y’umukuru w’igihugu cabo",
+                                              "attributes": []
+                                            }
+                                          }
+                                        ],
+                                        "locator": "https://www.bbc.com/gahuza/articles/cn4vq3jjvzko",
+                                        "isExternal": false
+                                      }
+                                    },
+                                    {
+                                      "id": "25147a75",
+                                      "type": "fragment",
+                                      "model": {
+                                        "text": " ku wa 5 Munyonyo",
+                                        "attributes": []
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "id": "2e0bcf23",
+                          "type": "listItem",
+                          "model": {
+                            "blocks": [
+                              {
+                                "id": "541e3f23",
+                                "type": "paragraph",
+                                "model": {
+                                  "text": "Abarenga imiriyoni 82 ni bo bari bamaze gutora imbere y’uno musi nyezina w’amatora",
+                                  "blocks": [
+                                    {
+                                      "id": "b95af1c1",
+                                      "type": "fragment",
+                                      "model": {
+                                        "text": "Abarenga imiriyoni 82 ni bo bari bamaze gutora imbere y’uno musi nyezina w’amatora",
+                                        "attributes": []
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "id": "7dfc8360",
+                          "type": "listItem",
+                          "model": {
+                            "blocks": [
+                              {
+                                "id": "22771905",
+                                "type": "paragraph",
+                                "model": {
+                                  "text": "Kamala Harris w’imyaka 60 na Donald Trump w’imyaka 78 nibo bahiganira iki kibanza",
+                                  "blocks": [
+                                    {
+                                      "id": "3e1c7570",
+                                      "type": "urlLink",
+                                      "model": {
+                                        "text": "Kamala Harris",
+                                        "blocks": [
+                                          {
+                                            "id": "443353da",
+                                            "type": "fragment",
+                                            "model": {
+                                              "text": "Kamala Harris",
+                                              "attributes": []
+                                            }
+                                          }
+                                        ],
+                                        "locator": "https://www.bbc.com/gahuza/articles/c17l78dpky0o",
+                                        "isExternal": false
+                                      }
+                                    },
+                                    {
+                                      "id": "d80e6bd1",
+                                      "type": "fragment",
+                                      "model": {
+                                        "text": " w’imyaka 60 na ",
+                                        "attributes": []
+                                      }
+                                    },
+                                    {
+                                      "id": "f6a644e2",
+                                      "type": "urlLink",
+                                      "model": {
+                                        "text": "Donald Trump",
+                                        "blocks": [
+                                          {
+                                            "id": "fba0faf3",
+                                            "type": "fragment",
+                                            "model": {
+                                              "text": "Donald Trump",
+                                              "attributes": []
+                                            }
+                                          }
+                                        ],
+                                        "locator": "https://www.bbc.com/gahuza/articles/cwylyg5yy98o",
+                                        "isExternal": false
+                                      }
+                                    },
+                                    {
+                                      "id": "3f8ca877",
+                                      "type": "fragment",
+                                      "model": {
+                                        "text": " w’imyaka 78 nibo bahiganira iki kibanza",
+                                        "attributes": []
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "id": "9e8eef61",
+                          "type": "listItem",
+                          "model": {
+                            "blocks": [
+                              {
+                                "id": "a6dd2763",
+                                "type": "paragraph",
+                                "model": {
+                                  "text": "Harris yari yiyemeje guharanira uburenganzira bwo gukoroza inda no kugabanya ibiciro vy’imfungurwa no gupanga ku miryango y’abakozi",
+                                  "blocks": [
+                                    {
+                                      "id": "68a8f9be",
+                                      "type": "fragment",
+                                      "model": {
+                                        "text": "Harris yari yiyemeje guharanira uburenganzira bwo gukoroza inda no kugabanya ibiciro vy’imfungurwa no gupanga ku miryango y’abakozi",
+                                        "attributes": []
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "id": "030310ff",
+                          "type": "listItem",
+                          "model": {
+                            "blocks": [
+                              {
+                                "id": "456a2e84",
+                                "type": "paragraph",
+                                "model": {
+                                  "text": "Trump yiyemeje kwubaka uruhome rwo kuzibira umupaka, no kugabanya amakori afise agaciro k’imiriyaridi ziharurwa mu bihumbi",
+                                  "blocks": [
+                                    {
+                                      "id": "8dc265b8",
+                                      "type": "fragment",
+                                      "model": {
+                                        "text": "Trump yiyemeje kwubaka uruhome rwo kuzibira umupaka, no kugabanya amakori afise agaciro k’imiriyaridi ziharurwa mu bihumbi",
+                                        "attributes": []
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "id": "537d0883",
+                          "type": "listItem",
+                          "model": {
+                            "blocks": [
+                              {
+                                "id": "470bdb63",
+                                "type": "paragraph",
+                                "model": {
+                                  "text": "Hampande y'umukuru w'igihugu, habaye kandi n'amatora y'abashingamateka: Nk’uko bigenda buri myaka ibiri, abanyagihugu baratora kandi abashingamateka 435, ubu Abarepubulikani ni bo biganje mu nama nshingamateka ihari ubu.",
+                                  "blocks": [
+                                    {
+                                      "id": "e3d3f8bc",
+                                      "type": "fragment",
+                                      "model": {
+                                        "text": "Hampande y'umukuru w'igihugu, habaye kandi n'amatora y'abashingamateka: Nk’uko bigenda buri myaka ibiri, abanyagihugu baratora kandi abashingamateka 435, ubu Abarepubulikani ni bo biganje mu nama nshingamateka ihari ubu.",
+                                        "attributes": []
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "id": "b3b8773e",
+                          "type": "listItem",
+                          "model": {
+                            "blocks": [
+                              {
+                                "id": "f8005f1e",
+                                "type": "paragraph",
+                                "model": {
+                                  "text": "Ica gatatu c’abakenguzamateka ba Amerika - 34 kw’100 - na co nyene kiriko kirarondera. Abademokarate ubu bagenzura inama nkenguzamateka",
+                                  "blocks": [
+                                    {
+                                      "id": "83c8f153",
+                                      "type": "fragment",
+                                      "model": {
+                                        "text": "Ica gatatu c’abakenguzamateka ba Amerika - 34 kw’100 - na co nyene kiriko kirarondera. Abademokarate ubu bagenzura inama nkenguzamateka",
+                                        "attributes": []
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "id": "cf04e250",
+                          "type": "listItem",
+                          "model": {
+                            "blocks": [
+                              {
+                                "id": "26e3bed7",
+                                "type": "paragraph",
+                                "model": {
+                                  "text": "Umugambwe w'Abarepubulika ubu ni wo ugiye kugenzura inama nkenguzamateka",
+                                  "blocks": [
+                                    {
+                                      "id": "d95bc94e",
+                                      "type": "fragment",
+                                      "model": {
+                                        "text": "Umugambwe w'Abarepubulika ubu ni wo ugiye kugenzura inama nkenguzamateka",
+                                        "attributes": []
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "liveTextStream": {
+      "id": "AB3F1F89DDC045AAA8718FA3B23DFFC3",
+      "contributors": "Na Bernard Bankukira\n\nBBC Great Lakes",
+      "content": {
+        "data": {
+          "results": [
+            {
+              "typeCode": null,
+              "header": { "model": { "blocks": [] } },
+              "content": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "22bf506e",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Ni na hano turangirije ano makuru y'ikibiriraho, murakoze mwese mubandanya mudukurikirana. ",
+                        "blocks": [
+                          {
+                            "id": "476fa521",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Ni na hano turangirije ano makuru y'ikibiriraho, murakoze mwese mubandanya mudukurikirana. ",
+                              "attributes": ["bold", "italic"]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "link": null,
+              "urn": "asset:dedd21c7-e692-40b8-a2a4-31d837f5e23a",
+              "type": "POST",
+              "options": { "isBreakingNews": false },
+              "dates": {
+                "firstPublished": "2024-11-06T10:53:38.000Z",
+                "lastPublished": "2024-11-06T11:11:00.000Z",
+                "time": null,
+                "curated": "2024-11-06T10:53:40.537Z"
+              },
+              "titles": [{ "title": null, "source": "primary" }],
+              "descriptions": [{ "text": null, "source": "summary" }],
+              "images": [
+                {
+                  "originalUrl": null,
+                  "altText": null,
+                  "copyright": null,
+                  "urlTemplate": null,
+                  "url": null
+                }
+              ]
+            },
+            {
+              "typeCode": null,
+              "header": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "075ad2f3",
+                      "type": "headline",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "cbc4c69f",
+                            "type": "text",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "f77e6f51",
+                                  "type": "paragraph",
+                                  "model": {
+                                    "text": "Ibizigizigi vya Kamala biraheze, Trump ni we agiye kuramutswa igihugu",
+                                    "blocks": [
+                                      {
+                                        "id": "732ad5d7",
+                                        "type": "fragment",
+                                        "model": {
+                                          "text": "Ibizigizigi vya Kamala biraheze, Trump ni we agiye kuramutswa igihugu",
+                                          "attributes": []
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "content": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "452171fd",
+                      "type": "paragraph",
+                      "model": { "text": "", "blocks": [] }
+                    },
+                    {
+                      "id": "022ace99",
+                      "type": "image",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "9c987351",
+                            "type": "rawImage",
+                            "model": {
+                              "height": 670,
+                              "width": 1189,
+                              "locator": "vivo/live/images/2024/11/6/099d846b-4793-43cf-a5fc-8cb122a9c03b.png",
+                              "originCode": "cpsprodpb",
+                              "copyrightHolder": "BBC"
+                            }
+                          },
+                          {
+                            "id": "841b964b",
+                            "type": "altText",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "455d5c85",
+                                  "type": "text",
+                                  "model": {
+                                    "blocks": [
+                                      {
+                                        "id": "32fe44a5",
+                                        "type": "paragraph",
+                                        "model": {
+                                          "text": "Trump aratsinze",
+                                          "blocks": [
+                                            {
+                                              "id": "bf2b69e4",
+                                              "type": "fragment",
+                                              "model": {
+                                                "text": "Trump aratsinze",
+                                                "attributes": []
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "d7fa9662",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Inyuma y’uko ibiharuro\nvyo mu ntara ya Wisconsin, iyindi ntara mahindagu, ifise intebe 10  hamwe na Alaska ifise intebe 3, bihereye intebe 13 Donald\nTrump, aciye arenza amajwi 270 yarondera kugira ngo atsinde, ubu akaba agize\n279.",
+                        "blocks": [
+                          {
+                            "id": "6df9ab13",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Inyuma y’uko ibiharuro\nvyo mu ntara ya Wisconsin, iyindi ntara mahindagu, ifise intebe 10  hamwe na Alaska ifise intebe 3, bihereye intebe 13 Donald\nTrump, aciye arenza amajwi 270 yarondera kugira ngo atsinde, ubu akaba agize\n279.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "8f65328b",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Aya majwi amuhaye\nitsinzi itaziguye muri ano matora y’umukuru w’igihugu yabaye ejo ku wa 5 Munyonyo\n2024, akaba agiye kuba umukuru wa Reta Zunze Ubumwe za Amerika agira 47. ",
+                        "blocks": [
+                          {
+                            "id": "ce3d5bd6",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Aya majwi amuhaye\nitsinzi itaziguye muri ano matora y’umukuru w’igihugu yabaye ejo ku wa 5 Munyonyo\n2024, akaba agiye kuba umukuru wa Reta Zunze Ubumwe za Amerika agira 47. ",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "281d1a90",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Donald\nTrump asubiye kubikora, inyuma y’imyaka umunani yirahiye Hillary Clinton mu\nbintu abatari bake batari biteze, yongeye gutsinda uwundi mugore yahiganwa\nnawe. ",
+                        "blocks": [
+                          {
+                            "id": "92de09f2",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Donald\nTrump asubiye kubikora, inyuma y’imyaka umunani yirahiye Hillary Clinton mu\nbintu abatari bake batari biteze, yongeye gutsinda uwundi mugore yahiganwa\nnawe. ",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "9c928bc2",
+                      "type": "image",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "80803806",
+                            "type": "rawImage",
+                            "model": {
+                              "height": 800,
+                              "width": 640,
+                              "locator": "vivo/live/images/2024/11/6/ac6e340a-6d80-45a0-9a75-c8171096d1d5.jpg",
+                              "originCode": "cpsprodpb",
+                              "copyrightHolder": "b"
+                            }
+                          },
+                          {
+                            "id": "4f0907c0",
+                            "type": "altText",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "5879f1d0",
+                                  "type": "text",
+                                  "model": {
+                                    "blocks": [
+                                      {
+                                        "id": "6d7aca0c",
+                                        "type": "paragraph",
+                                        "model": {
+                                          "text": "Ivyavuye mu matora",
+                                          "blocks": [
+                                            {
+                                              "id": "4e3e2e38",
+                                              "type": "fragment",
+                                              "model": {
+                                                "text": "Ivyavuye mu matora",
+                                                "attributes": []
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "link": null,
+              "urn": "asset:31f0652c-5fb9-4aae-a965-0e763dd7968a",
+              "type": "POST",
+              "options": { "isBreakingNews": false },
+              "dates": {
+                "firstPublished": "2024-11-06T10:47:45.000Z",
+                "lastPublished": "2024-11-06T11:50:09.000Z",
+                "time": null,
+                "curated": "2024-11-06T10:47:47.832Z"
+              },
+              "titles": [{ "title": null, "source": "primary" }],
+              "descriptions": [{ "text": null, "source": "summary" }],
+              "images": [
+                {
+                  "originalUrl": null,
+                  "altText": null,
+                  "copyright": null,
+                  "urlTemplate": null,
+                  "url": null
+                }
+              ]
+            },
+            {
+              "typeCode": null,
+              "header": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "bcf39f6e",
+                      "type": "headline",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "43bf23a3",
+                            "type": "text",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "96432cc5",
+                                  "type": "paragraph",
+                                  "model": {
+                                    "text": "Donald Trump: Menya uno mutunzi ruhebwa yamaze gutangaza ko yatsindiye ikiringo kigira kabiri co kurongora Amerika",
+                                    "blocks": [
+                                      {
+                                        "id": "a56bfe70",
+                                        "type": "fragment",
+                                        "model": {
+                                          "text": "Donald Trump: Menya uno mutunzi ruhebwa yamaze gutangaza ko yatsindiye ikiringo kigira kabiri co kurongora Amerika",
+                                          "attributes": []
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "content": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "038a8ecf",
+                      "type": "paragraph",
+                      "model": { "text": "", "blocks": [] }
+                    },
+                    {
+                      "id": "f272b0ea",
+                      "type": "image",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "2f537f29",
+                            "type": "rawImage",
+                            "model": {
+                              "height": 538,
+                              "width": 964,
+                              "locator": "vivo/live/images/2024/11/6/4c75f3c1-f96b-4a64-8c53-961ee0f4141a.png",
+                              "originCode": "cpsprodpb",
+                              "copyrightHolder": "Getty Images"
+                            }
+                          },
+                          {
+                            "id": "6787e5ca",
+                            "type": "altText",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "4d4c3142",
+                                  "type": "text",
+                                  "model": {
+                                    "blocks": [
+                                      {
+                                        "id": "c5d804d6",
+                                        "type": "paragraph",
+                                        "model": {
+                                          "text": "Trump",
+                                          "blocks": [
+                                            {
+                                              "id": "9ed235eb",
+                                              "type": "fragment",
+                                              "model": {
+                                                "text": "Trump",
+                                                "attributes": []
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "43b65645",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Kuva na kera imbere y'uko agerageza kurondera kwiyamamariza kuba umukuru w'igihugu ca Reta Zunze Ubumwe za Amerika incuro zitatu zose, Donald Trump yari we mutunzi wa mbere yavugwa cane muri Amerika.",
+                        "blocks": [
+                          {
+                            "id": "45e20462",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Kuva na kera imbere y'uko agerageza kurondera kwiyamamariza kuba umukuru w'igihugu ca Reta Zunze Ubumwe za Amerika incuro zitatu zose, Donald Trump yari we mutunzi wa mbere yavugwa cane muri Amerika.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "191a3616",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Ubuzima bw'uno mutunzi ruhebwa w'i New York yari yashize imitahe yiwe mu nyubakwa bwaramamaye cane mu binyamakuru no ku mboneshakure mu myaka mirongo imbere y'uko, mu buryo butari bwitezwe mu 2015-16, agenwa kwitoreza ikibanza c'umukuru w'igihugu kw'izina ry'Abarepubulikani.",
+                        "blocks": [
+                          {
+                            "id": "08d53463",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Ubuzima bw'uno mutunzi ruhebwa w'i New York yari yashize imitahe yiwe mu nyubakwa bwaramamaye cane mu binyamakuru no ku mboneshakure mu myaka mirongo imbere y'uko, mu buryo butari bwitezwe mu 2015-16, agenwa kwitoreza ikibanza c'umukuru w'igihugu kw'izina ry'Abarepubulikani.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "6cedde58",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Izina ryiwe ryari rizwi cane n'ukwirekura mu mvugo kwiwe mu myiyamamazo vyaramufashije kwiganzura abanyaporitike bari rurangiranwa - ariko impari zaranze ubutegetsi bwiwe zatumye atongerwa ikiringo kigira kabiri. Fyonda ng'aha ubandanye usoma ino nkuru",
+                        "blocks": [
+                          {
+                            "id": "fd50d2a6",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Izina ryiwe ryari rizwi cane n'ukwirekura mu mvugo kwiwe mu myiyamamazo vyaramufashije kwiganzura abanyaporitike bari rurangiranwa - ariko impari zaranze ubutegetsi bwiwe zatumye atongerwa ikiringo kigira kabiri. ",
+                              "attributes": []
+                            }
+                          },
+                          {
+                            "id": "773cdf4a",
+                            "type": "urlLink",
+                            "model": {
+                              "text": "Fyonda ng'aha ubandanye usoma ino nkuru",
+                              "locator": "https://www.bbc.com/gahuza/articles/cwylyg5yy98o",
+                              "blocks": [
+                                {
+                                  "id": "a788087b",
+                                  "type": "fragment",
+                                  "model": {
+                                    "text": "Fyonda ng'aha ubandanye usoma ino nkuru",
+                                    "attributes": []
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "link": null,
+              "urn": "asset:2c61a8cd-5f77-45be-9dce-121055fadd4d",
+              "type": "POST",
+              "options": { "isBreakingNews": false },
+              "dates": {
+                "firstPublished": "2024-11-06T09:29:29.000Z",
+                "lastPublished": "2024-11-06T09:29:29.000Z",
+                "time": null,
+                "curated": "2024-11-06T09:29:30.774Z"
+              },
+              "titles": [{ "title": null, "source": "primary" }],
+              "descriptions": [{ "text": null, "source": "summary" }],
+              "images": [
+                {
+                  "originalUrl": null,
+                  "altText": null,
+                  "copyright": null,
+                  "urlTemplate": null,
+                  "url": null
+                }
+              ]
+            },
+            {
+              "typeCode": null,
+              "header": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "c164da7a",
+                      "type": "headline",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "79ea630c",
+                            "type": "text",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "f98c1223",
+                                  "type": "paragraph",
+                                  "model": {
+                                    "text": "Umugore wa mbere yabaye icegera ca prezida muri Amerika afise vyinshi bimuranga",
+                                    "blocks": [
+                                      {
+                                        "id": "8072b3c6",
+                                        "type": "fragment",
+                                        "model": {
+                                          "text": "Umugore wa mbere yabaye icegera ca prezida muri Amerika afise vyinshi bimuranga",
+                                          "attributes": []
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "content": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "35a3fa46",
+                      "type": "paragraph",
+                      "model": { "text": "", "blocks": [] }
+                    },
+                    {
+                      "id": "cfce05b2",
+                      "type": "image",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "33a4f9a9",
+                            "type": "rawImage",
+                            "model": {
+                              "height": 550,
+                              "width": 964,
+                              "locator": "vivo/live/images/2024/11/6/d0ce8fea-538a-4b38-b65b-6785e2c1e592.png",
+                              "originCode": "cpsprodpb",
+                              "copyrightHolder": "Getty Images"
+                            }
+                          },
+                          {
+                            "id": "c9cc4a12",
+                            "type": "altText",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "2ed339f7",
+                                  "type": "text",
+                                  "model": {
+                                    "blocks": [
+                                      {
+                                        "id": "0171b5ec",
+                                        "type": "paragraph",
+                                        "model": {
+                                          "text": "Harris",
+                                          "blocks": [
+                                            {
+                                              "id": "f77cbe28",
+                                              "type": "fragment",
+                                              "model": {
+                                                "text": "Harris",
+                                                "attributes": []
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "5c1fa4a5",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Vyafashe umwanya udashika n'isaha inyuma y'ingingo ya Biden yo gukura meza kugira aba Demokrate batangure kwiyamamariza Kamala Harris nk'umukandida mushasha w'umugambwe wabo mu matora yo mu 2024.",
+                        "blocks": [
+                          {
+                            "id": "429b9d5d",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Vyafashe umwanya udashika n'isaha inyuma y'ingingo ya Biden yo gukura meza kugira aba Demokrate batangure kwiyamamariza Kamala Harris nk'umukandida mushasha w'umugambwe wabo mu matora yo mu 2024.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "fecdd2d9",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Mu gihe icegera ca prezida wa Reta zunze Ubumwe za Amerika ashaka kuba umugore wa mbere agiye mu kibanza ca prezida, imyiyamamazo yiwe yahaye inguvu abari bacitse intege, ica n'umuhigo w'intererano yegeranijwe igera ku madorari imiriyoni 671 mu mezi abiri aheze - hafi incuro zitatu z'ayo uwo bahanganye w'umu Republikani, Donald Trump yaronse.",
+                        "blocks": [
+                          {
+                            "id": "8a8a8017",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Mu gihe icegera ca prezida wa Reta zunze Ubumwe za Amerika ashaka kuba umugore wa mbere agiye mu kibanza ca prezida, imyiyamamazo yiwe yahaye inguvu abari bacitse intege, ica n'umuhigo w'intererano yegeranijwe igera ku madorari imiriyoni 671 mu mezi abiri aheze - hafi incuro zitatu z'ayo uwo bahanganye w'umu Republikani, Donald Trump yaronse.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "32bd79cc",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Ariko gushika mu kibanza ca mbere ku rutonde vyabaye ntagereranywa, imitego myinshi hamwe n'ibibazo vy'urusobe. Ng'aya amabanga Harris yagiye ararangura, ivyaranze ubuzima bwiwe n'ingene yabaye umugore wa mbere w'umwirabure yitoje mu kibanza c'umukuru w'igihugu. Fyonda hano usome inkuru iramvuye",
+                        "blocks": [
+                          {
+                            "id": "e193c161",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Ariko gushika mu kibanza ca mbere ku rutonde vyabaye ntagereranywa, imitego myinshi hamwe n'ibibazo vy'urusobe. Ng'aya amabanga Harris yagiye ararangura, ivyaranze ubuzima bwiwe n'ingene yabaye umugore wa mbere w'umwirabure yitoje mu kibanza c'umukuru w'igihugu. ",
+                              "attributes": []
+                            }
+                          },
+                          {
+                            "id": "e58a4ffc",
+                            "type": "urlLink",
+                            "model": {
+                              "text": "Fyonda hano usome inkuru iramvuye",
+                              "locator": "https://www.bbc.com/gahuza/articles/c17l78dpky0o",
+                              "blocks": [
+                                {
+                                  "id": "0bf57f2b",
+                                  "type": "fragment",
+                                  "model": {
+                                    "text": "Fyonda hano usome inkuru iramvuye",
+                                    "attributes": []
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "link": null,
+              "urn": "asset:82051f62-c0e1-4d34-8e89-de1afe4b3098",
+              "type": "POST",
+              "options": { "isBreakingNews": false },
+              "dates": {
+                "firstPublished": "2024-11-06T09:19:01.000Z",
+                "lastPublished": "2024-11-06T09:19:01.000Z",
+                "time": null,
+                "curated": "2024-11-06T09:19:02.971Z"
+              },
+              "titles": [{ "title": null, "source": "primary" }],
+              "descriptions": [{ "text": null, "source": "summary" }],
+              "images": [
+                {
+                  "originalUrl": null,
+                  "altText": null,
+                  "copyright": null,
+                  "urlTemplate": null,
+                  "url": null
+                }
+              ]
+            },
+            {
+              "typeCode": null,
+              "header": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "6c13fc2a",
+                      "type": "headline",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "b6a385fa",
+                            "type": "text",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "d5f34f6a",
+                                  "type": "paragraph",
+                                  "model": {
+                                    "text": "Ubuzima butandukanye - Harris na Trump uko wari utarababona - Amafoto",
+                                    "blocks": [
+                                      {
+                                        "id": "b8c4f6c7",
+                                        "type": "fragment",
+                                        "model": {
+                                          "text": "Ubuzima butandukanye - Harris na Trump uko wari utarababona - Amafoto",
+                                          "attributes": []
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "content": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "2ed0e0f3",
+                      "type": "paragraph",
+                      "model": { "text": "", "blocks": [] }
+                    },
+                    {
+                      "id": "39673f9e",
+                      "type": "image",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "3fa47a11",
+                            "type": "rawImage",
+                            "model": {
+                              "height": 544,
+                              "width": 962,
+                              "locator": "vivo/live/images/2024/11/6/59a91b2c-d20d-4475-9001-3ca033a03e90.png",
+                              "originCode": "cpsprodpb",
+                              "copyrightHolder": "Alamy"
+                            }
+                          },
+                          {
+                            "id": "94760ed3",
+                            "type": "altText",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "a5b5e9df",
+                                  "type": "text",
+                                  "model": {
+                                    "blocks": [
+                                      {
+                                        "id": "fccccea5",
+                                        "type": "paragraph",
+                                        "model": {
+                                          "text": "Trump na Harris bakiri abana",
+                                          "blocks": [
+                                            {
+                                              "id": "f625e0ff",
+                                              "type": "fragment",
+                                              "model": {
+                                                "text": "Trump na Harris bakiri abana",
+                                                "attributes": []
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "948afdf2",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Mu gihe cyo kwiyamamaza cyose, abatora babonye amafoto menshi y’aba bakandida babiri – bavuga imbwirwaruhame, basuhuza abaje muri za mitingi zabo cyangwa bururuka mu ndege. Aya ni amafoto atandukanye y’abo ari bo n’aho bavuye.",
+                        "blocks": [
+                          {
+                            "id": "eedc1731",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Mu gihe cyo kwiyamamaza cyose, abatora babonye amafoto menshi y’aba bakandida babiri – bavuga imbwirwaruhame, basuhuza abaje muri za mitingi zabo cyangwa bururuka mu ndege. Aya ni amafoto atandukanye y’abo ari bo n’aho bavuye.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "d681d30b",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Mbere cyane y’uko banamenya icyo White House ari cyo… ku ifoto ibanza ni Kamala Harris na Donald Trump bombi bafite imyaka itatu.",
+                        "blocks": [
+                          {
+                            "id": "69b3833b",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Mbere cyane y’uko banamenya icyo White House ari cyo… ku ifoto ibanza ni Kamala Harris na Donald Trump bombi bafite imyaka itatu.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "5c9662b6",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Mu myaka mirongo barutana, Harris yabaye imyaka ye y’ibanze i Oakland muri California, naho Trump yakuriye mu gace ka Queens muri New York.",
+                        "blocks": [
+                          {
+                            "id": "f5ee59c9",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Mu myaka mirongo barutana, Harris yabaye imyaka ye y’ibanze i Oakland muri California, naho Trump yakuriye mu gace ka Queens muri New York.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "a2df72d2",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Soma inkuru irambuye hano",
+                        "blocks": [
+                          {
+                            "id": "f3b4511a",
+                            "type": "urlLink",
+                            "model": {
+                              "text": "Soma inkuru irambuye hano",
+                              "locator": "https://www.bbc.com/gahuza/articles/cq52z442dy4o",
+                              "blocks": [
+                                {
+                                  "id": "a4f7b157",
+                                  "type": "fragment",
+                                  "model": {
+                                    "text": "Soma inkuru irambuye hano",
+                                    "attributes": []
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "link": null,
+              "urn": "asset:a37139ca-cc97-4d85-952f-6d49f96906e3",
+              "type": "POST",
+              "options": { "isBreakingNews": false },
+              "dates": {
+                "firstPublished": "2024-11-06T09:13:58.000Z",
+                "lastPublished": "2024-11-06T09:13:58.000Z",
+                "time": null,
+                "curated": "2024-11-06T09:13:59.410Z"
+              },
+              "titles": [{ "title": null, "source": "primary" }],
+              "descriptions": [{ "text": null, "source": "summary" }],
+              "images": [
+                {
+                  "originalUrl": null,
+                  "altText": null,
+                  "copyright": null,
+                  "urlTemplate": null,
+                  "url": null
+                }
+              ]
+            },
+            {
+              "typeCode": null,
+              "header": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "ac6275a9",
+                      "type": "headline",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "84f6b6c5",
+                            "type": "text",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "443023fa",
+                                  "type": "paragraph",
+                                  "model": {
+                                    "text": "Abademokarate baza batanguye igikorwa co kwirimbura",
+                                    "blocks": [
+                                      {
+                                        "id": "e052cc2a",
+                                        "type": "fragment",
+                                        "model": {
+                                          "text": "Abademokarate baza batanguye igikorwa co kwirimbura",
+                                          "attributes": []
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "content": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "5d7d1114",
+                      "type": "paragraph",
+                      "model": { "text": "", "blocks": [] }
+                    },
+                    {
+                      "id": "98794163",
+                      "type": "image",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "cb274e00",
+                            "type": "rawImage",
+                            "model": {
+                              "height": 544,
+                              "width": 962,
+                              "locator": "vivo/live/images/2024/11/6/1772ee2a-828b-47d2-8a7b-7d72f7bd2af1.png",
+                              "originCode": "cpsprodpb",
+                              "copyrightHolder": "Reuters"
+                            }
+                          },
+                          {
+                            "id": "e4767175",
+                            "type": "altText",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "9ca3236d",
+                                  "type": "text",
+                                  "model": {
+                                    "blocks": [
+                                      {
+                                        "id": "60d3b643",
+                                        "type": "paragraph",
+                                        "model": {
+                                          "text": "Democrats",
+                                          "blocks": [
+                                            {
+                                              "id": "0710a326",
+                                              "type": "fragment",
+                                              "model": {
+                                                "text": "Democrats",
+                                                "attributes": []
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "1798f445",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Mu mirwi imwe imwe y’umugambwe w’abademokarate, igikorwa co kwirimbura kiza catanguye nubwo ibiharuro bitaradadanura ibintu burundu.",
+                        "blocks": [
+                          {
+                            "id": "09c4e0f8",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Mu mirwi imwe imwe y’umugambwe w’abademokarate, igikorwa co kwirimbura kiza catanguye nubwo ibiharuro bitaradadanura ibintu burundu.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "d5ca6e25",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Umwe mu bategetsi b’uno mugambwe avuga ko umugambwe \"ukeneye kwikurako abanyapolitike b’i Washington bigira incabwenge bishira hejuru kugira ngo utangure gushasha\".",
+                        "blocks": [
+                          {
+                            "id": "316352e8",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Umwe mu bategetsi b’uno mugambwe avuga ko umugambwe \"ukeneye kwikurako abanyapolitike b’i Washington bigira incabwenge bishira hejuru kugira ngo utangure gushasha\".",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "ca5882d8",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Eka n’abandi ni uko bavuga, nubwo bageguza – aho bavuga ko naho bashima utwigoro twakoze mu myiyamamazo, bumva ko umugambwe wabo ufise ‘ingorane y’ishusho’ mu gihe vya nkenerwa mu buzima bwa misi yose, nk’ikibazo c’ubuzima buzimvye, ari vyo biraje ishinga abatora hafi bose.",
+                        "blocks": [
+                          {
+                            "id": "df135dc9",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Eka n’abandi ni uko bavuga, nubwo bageguza – aho bavuga ko naho bashima utwigoro twakoze mu myiyamamazo, bumva ko umugambwe wabo ufise ‘ingorane y’ishusho’ mu gihe vya nkenerwa mu buzima bwa misi yose, nk’ikibazo c’ubuzima buzimvye, ari vyo biraje ishinga abatora hafi bose.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "ee7e7617",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Ukwo kwihebura kw’abademokarate kwibutsa amajambo yavuzwe n’umunyarepubulika  abwira umunyamakuru wa BBC igihe kimwe mu myiyamamazo ya Trump, aho yavuze ko  umukandida wabo “yahaye ishusho nshasha” umugambwe w’Abarepubulikani aho yawuvanye mu biyita ko ari bo ba kibirengeye mu gihugu akawushikana mur bantu batobato, mu gihe Abademokarate bobo babaye “umugambwe wa Hollywood\".",
+                        "blocks": [
+                          {
+                            "id": "aa66f8f9",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Ukwo kwihebura kw’abademokarate kwibutsa amajambo yavuzwe n’umunyarepubulika  abwira umunyamakuru wa BBC igihe kimwe mu myiyamamazo ya Trump, aho yavuze ko  umukandida wabo “yahaye ishusho nshasha” umugambwe w’Abarepubulikani aho yawuvanye mu biyita ko ari bo ba kibirengeye mu gihugu akawushikana mur bantu batobato, mu gihe Abademokarate bobo babaye “umugambwe wa Hollywood\".",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "link": null,
+              "urn": "asset:ca183947-3a1a-45a2-8744-f2953e9139f5",
+              "type": "POST",
+              "options": { "isBreakingNews": false },
+              "dates": {
+                "firstPublished": "2024-11-06T09:07:49.000Z",
+                "lastPublished": "2024-11-06T09:07:49.000Z",
+                "time": null,
+                "curated": "2024-11-06T09:07:50.495Z"
+              },
+              "titles": [{ "title": null, "source": "primary" }],
+              "descriptions": [{ "text": null, "source": "summary" }],
+              "images": [
+                {
+                  "originalUrl": null,
+                  "altText": null,
+                  "copyright": null,
+                  "urlTemplate": null,
+                  "url": null
+                }
+              ]
+            },
+            {
+              "typeCode": null,
+              "header": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "79f624a0",
+                      "type": "headline",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "7664f42d",
+                            "type": "text",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "8c4d8c80",
+                                  "type": "paragraph",
+                                  "model": {
+                                    "text": "'Tugiye gufasha igihugu cacu gukira' – Trump",
+                                    "blocks": [
+                                      {
+                                        "id": "100fa96b",
+                                        "type": "fragment",
+                                        "model": {
+                                          "text": "'Tugiye gufasha igihugu cacu gukira' – Trump",
+                                          "attributes": []
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "content": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "97056bfb",
+                      "type": "paragraph",
+                      "model": { "text": "", "blocks": [] }
+                    },
+                    {
+                      "id": "bde5eaf9",
+                      "type": "image",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "93ebdcd0",
+                            "type": "rawImage",
+                            "model": {
+                              "height": 547,
+                              "width": 955,
+                              "locator": "vivo/live/images/2024/11/6/776b5c8b-07c7-4923-845b-69a1dfd5cb9b.png",
+                              "originCode": "cpsprodpb",
+                              "copyrightHolder": "Reuters"
+                            }
+                          },
+                          {
+                            "id": "f2cb1ad7",
+                            "type": "altText",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "d99ebe09",
+                                  "type": "text",
+                                  "model": {
+                                    "blocks": [
+                                      {
+                                        "id": "7a67b5c5",
+                                        "type": "paragraph",
+                                        "model": {
+                                          "text": "Trump",
+                                          "blocks": [
+                                            {
+                                              "id": "465df734",
+                                              "type": "fragment",
+                                              "model": {
+                                                "text": "Trump",
+                                                "attributes": []
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "5c5ea6bc",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Donald Trump yamaze kwizigira intsinzi akaba ariko ashikiriza ijambo, aho avuga ati: \"Tugiye gufasha igihugu cacu gukira\".",
+                        "blocks": [
+                          {
+                            "id": "f5315a22",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Donald Trump yamaze kwizigira intsinzi akaba ariko ashikiriza ijambo, aho avuga ati: \"Tugiye gufasha igihugu cacu gukira\".",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "28edae84",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Ati: “Iyi ni intsinzi ikomeye cane ku Banyamerika izotuma dusubira gukomeza Amerika”, akoresheje invugo yiwe y’itora n’amajambo y’intangamarara.",
+                        "blocks": [
+                          {
+                            "id": "4fa811b9",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Ati: “Iyi ni intsinzi ikomeye cane ku Banyamerika izotuma dusubira gukomeza Amerika”, akoresheje invugo yiwe y’itora n’amajambo y’intangamarara.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "b5085987",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Trump yatangaje intsinzi, naho atarashika ku majwi asabwa kugira ngo abe yatsinze.",
+                        "blocks": [
+                          {
+                            "id": "f35cb6a6",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Trump yatangaje intsinzi, naho atarashika ku majwi asabwa kugira ngo abe yatsinze.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "7e2ca37b",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Trump yasavye Abanyamerika kwibagira ibibacanishamwo bakagira urunani.",
+                        "blocks": [
+                          {
+                            "id": "54692632",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Trump yasavye Abanyamerika kwibagira ibibacanishamwo bakagira urunani.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "e1e713a7",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Ati:\n“Igihe kirageze co gushira inyuma ibiducanishamwo tumazemwo imyaka ine iheze.\nNi igihe co kwubaka ubumwe.",
+                        "blocks": [
+                          {
+                            "id": "b4e364d7",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Ati:\n“Igihe kirageze co gushira inyuma ibiducanishamwo tumazemwo imyaka ine iheze.\nNi igihe co kwubaka ubumwe.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "6d7c6807",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "“Tubwirizwa gushiramwo igihugu cacu imbere n’imiburiburi mu kiringo kinaka.\nTubwirizwa kubikosora”.",
+                        "blocks": [
+                          {
+                            "id": "1aae8fd7",
+                            "type": "fragment",
+                            "model": {
+                              "text": "“Tubwirizwa gushiramwo igihugu cacu imbere n’imiburiburi mu kiringo kinaka.\nTubwirizwa kubikosora”.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "6baff5c3",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Muri iri jambo ryiwe, avuga kandi ko agiye gutorera umuti ikibazo c’imbibe, akongerako ko we n’umugambwe wiwe banditse amateka.",
+                        "blocks": [
+                          {
+                            "id": "83eac7a7",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Muri iri jambo ryiwe, avuga kandi ko agiye gutorera umuti ikibazo c’imbibe, akongerako ko we n’umugambwe wiwe banditse amateka.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "1d90fe7a",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Trump abandanya avuga ko ibibaye bigiye kuba “umwaka ntibagiranwa” kuri Amerika. ",
+                        "blocks": [
+                          {
+                            "id": "60838cee",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Trump abandanya avuga ko ibibaye bigiye kuba “umwaka ntibagiranwa” kuri Amerika. ",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "a7c11a9d",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Nubwo atarashikana amajwi asabwa kugira ngo abe yatsinze, ibiharuro biramuha amahirwe yose, aho mu majwi 270 akeneye abuzemwo ane gusa, ni ukuvuga ko afise 266, mu gihe Kamala Harris we agise 219. Mu biharuro bitarahera muri za ntara mahindagu zisigaye, Trump ari imbere cane muri zose ku rugero runini rw'amwajwi amaze guharurwa, ku buryo Harris ataco yoba acizera.",
+                        "blocks": [
+                          {
+                            "id": "6b50f67d",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Nubwo atarashikana amajwi asabwa kugira ngo abe yatsinze, ibiharuro biramuha amahirwe yose, aho mu majwi 270 akeneye abuzemwo ane gusa, ni ukuvuga ko afise 266, mu gihe Kamala Harris we agise 219. Mu biharuro bitarahera muri za ntara mahindagu zisigaye, Trump ari imbere cane muri zose ku rugero runini rw'amwajwi amaze guharurwa, ku buryo Harris ataco yoba acizera.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "link": null,
+              "urn": "asset:c18bcdca-1dd1-43e2-85a6-b4cff1270760",
+              "type": "POST",
+              "options": { "isBreakingNews": false },
+              "dates": {
+                "firstPublished": "2024-11-06T07:52:53.000Z",
+                "lastPublished": "2024-11-06T08:47:48.000Z",
+                "time": null,
+                "curated": "2024-11-06T07:52:55.694Z"
+              },
+              "titles": [{ "title": null, "source": "primary" }],
+              "descriptions": [{ "text": null, "source": "summary" }],
+              "images": [
+                {
+                  "originalUrl": null,
+                  "altText": null,
+                  "copyright": null,
+                  "urlTemplate": null,
+                  "url": null
+                }
+              ]
+            },
+            {
+              "typeCode": null,
+              "header": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "51501e59",
+                      "type": "headline",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "774c5a0f",
+                            "type": "text",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "0b079adf",
+                                  "type": "paragraph",
+                                  "model": {
+                                    "text": "Trump ariko arakabakaba intsindi y’amatora ya Amerika 2024",
+                                    "blocks": [
+                                      {
+                                        "id": "4a10fb71",
+                                        "type": "fragment",
+                                        "model": {
+                                          "text": "Trump ariko arakabakaba intsindi y’amatora ya Amerika 2024",
+                                          "attributes": []
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "content": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "cb636448",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Inyuma yo gutsindira\nintara mahindagu ikomeye ya Pennsylvania, Donald Trump yegereje cane igitigiri\ngikenewe c’intege 270 zikenewe mu ntumwa z’itora (collège électoral/electoral\ncollege)  kugira ngo atsinde amatora. ",
+                        "blocks": [
+                          {
+                            "id": "e74cfb97",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Inyuma yo gutsindira\nintara mahindagu ikomeye ya Pennsylvania, Donald Trump yegereje cane igitigiri\ngikenewe c’intege 270 zikenewe mu ntumwa z’itora (collège électoral/electoral\ncollege)  kugira ngo atsinde amatora. ",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "ba62394a",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Mu gihe yari\namaze gushikana 246, iyi ntara ya Pennsylvania ifise intebe 19, abenshi bafata\nko uwuyitsindiye aba afise amahirwe yo gutsinda, itumye aronka 265. ",
+                        "blocks": [
+                          {
+                            "id": "547a6cd0",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Mu gihe yari\namaze gushikana 246, iyi ntara ya",
+                              "attributes": []
+                            }
+                          },
+                          {
+                            "id": "354f9564",
+                            "type": "fragment",
+                            "model": {
+                              "text": " Pennsylvania ifise intebe 19",
+                              "attributes": ["bold", "italic"]
+                            }
+                          },
+                          {
+                            "id": "dbd322f9",
+                            "type": "fragment",
+                            "model": {
+                              "text": ", abenshi bafata\nko uwuyitsindiye aba afise amahirwe yo gutsinda, itumye aronka 265. ",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "94de9d57",
+                      "type": "image",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "a738d589",
+                            "type": "rawImage",
+                            "model": {
+                              "height": 735,
+                              "width": 809,
+                              "locator": "vivo/live/images/2024/11/6/0e6311c4-b13e-419d-b6e3-7cf7d97a4547.jpg",
+                              "originCode": "cpsprodpb",
+                              "copyrightHolder": "BBC"
+                            }
+                          },
+                          {
+                            "id": "23759db5",
+                            "type": "altText",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "f7c407fb",
+                                  "type": "text",
+                                  "model": {
+                                    "blocks": [
+                                      {
+                                        "id": "55281b59",
+                                        "type": "paragraph",
+                                        "model": {
+                                          "text": "Ivyavuyw mu matora",
+                                          "blocks": [
+                                            {
+                                              "id": "b1f92e89",
+                                              "type": "fragment",
+                                              "model": {
+                                                "text": "Ivyavuyw mu matora",
+                                                "attributes": []
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "link": null,
+              "urn": "asset:9593bff1-cb0b-4787-8d16-01f7a6746c28",
+              "type": "POST",
+              "options": { "isBreakingNews": false },
+              "dates": {
+                "firstPublished": "2024-11-06T07:19:23.000Z",
+                "lastPublished": "2024-11-06T07:19:23.000Z",
+                "time": null,
+                "curated": "2024-11-06T07:19:24.768Z"
+              },
+              "titles": [{ "title": null, "source": "primary" }],
+              "descriptions": [{ "text": null, "source": "summary" }],
+              "images": [
+                {
+                  "originalUrl": null,
+                  "altText": null,
+                  "copyright": null,
+                  "urlTemplate": null,
+                  "url": null
+                }
+              ]
+            },
+            {
+              "typeCode": null,
+              "header": { "model": { "blocks": [] } },
+              "content": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "f961a16b",
+                      "type": "paragraph",
+                      "model": { "text": "", "blocks": [] }
+                    },
+                    {
+                      "id": "83259dc9",
+                      "type": "image",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "294e4b32",
+                            "type": "rawImage",
+                            "model": {
+                              "height": 380,
+                              "width": 1087,
+                              "locator": "vivo/live/images/2024/11/6/557aa10d-7dff-4fce-8417-7fa5ec595d23.jpg",
+                              "originCode": "cpsprodpb",
+                              "copyrightHolder": "BBC"
+                            }
+                          },
+                          {
+                            "id": "e017b9f4",
+                            "type": "altText",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "9c547d07",
+                                  "type": "text",
+                                  "model": {
+                                    "blocks": [
+                                      {
+                                        "id": "c7314bef",
+                                        "type": "paragraph",
+                                        "model": {
+                                          "text": "prono",
+                                          "blocks": [
+                                            {
+                                              "id": "f5612525",
+                                              "type": "fragment",
+                                              "model": {
+                                                "text": "prono",
+                                                "attributes": []
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "link": null,
+              "urn": "asset:0522f3c0-7709-470f-a9b6-f5b1cbd17038",
+              "type": "POST",
+              "options": { "isBreakingNews": false },
+              "dates": {
+                "firstPublished": "2024-11-06T07:02:33.000Z",
+                "lastPublished": "2024-11-06T07:02:33.000Z",
+                "time": null,
+                "curated": "2024-11-06T07:02:35.216Z"
+              },
+              "titles": [{ "title": null, "source": "primary" }],
+              "descriptions": [{ "text": null, "source": "summary" }],
+              "images": [
+                {
+                  "originalUrl": null,
+                  "altText": null,
+                  "copyright": null,
+                  "urlTemplate": null,
+                  "url": null
+                }
+              ]
+            },
+            {
+              "typeCode": null,
+              "header": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "70834926",
+                      "type": "headline",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "bf1f5365",
+                            "type": "text",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "1842fe77",
+                                  "type": "paragraph",
+                                  "model": {
+                                    "text": "Ni mu gihe Abarepubulikani bobo umunezero ari wose",
+                                    "blocks": [
+                                      {
+                                        "id": "0cc5c80f",
+                                        "type": "fragment",
+                                        "model": {
+                                          "text": "Ni mu gihe Abarepubulikani bobo umunezero ari wose",
+                                          "attributes": []
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "content": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "70c7a6b0",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Nubwo ari kure cane mu majwi, Kamala Harris we ntarahebura. Avuga ko akirindiriye ko amajwi yose aharurwa, cane cane muri za ntara mahingadu, Donald Trump akaba amaze gutsindwamwo zibiri: Georgia na Caroline du Nord.  Hagati aho, abanywanyi biwe bobo batanguye umunezero.",
+                        "blocks": [
+                          {
+                            "id": "86ccac06",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Nubwo ari kure cane mu majwi, Kamala Harris we ntarahebura. Avuga ko akirindiriye ko amajwi yose aharurwa, cane cane muri za ntara mahingadu, Donald Trump akaba amaze gutsindwamwo zibiri: Georgia na Caroline du Nord.  Hagati aho, abanywanyi biwe bobo batanguye umunezero.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "82a9bc9e",
+                      "type": "image",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "c2c3f04e",
+                            "type": "rawImage",
+                            "model": {
+                              "height": 544,
+                              "width": 959,
+                              "locator": "vivo/live/images/2024/11/6/6ccde028-6872-459f-84b1-f4cbe6687341.png",
+                              "originCode": "cpsprodpb",
+                              "copyrightHolder": "Reuters"
+                            }
+                          },
+                          {
+                            "id": "b97bb448",
+                            "type": "altText",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "aef58b55",
+                                  "type": "text",
+                                  "model": {
+                                    "blocks": [
+                                      {
+                                        "id": "5d3afdd0",
+                                        "type": "paragraph",
+                                        "model": {
+                                          "text": "umunezero",
+                                          "blocks": [
+                                            {
+                                              "id": "3cea4bc1",
+                                              "type": "fragment",
+                                              "model": {
+                                                "text": "umunezero",
+                                                "attributes": []
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "b0ef9c12",
+                      "type": "image",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "ad531aac",
+                            "type": "rawImage",
+                            "model": {
+                              "height": 556,
+                              "width": 960,
+                              "locator": "vivo/live/images/2024/11/6/4789e086-10d5-4c4b-8674-b4eef0bf1075.png",
+                              "originCode": "cpsprodpb",
+                              "copyrightHolder": "Reuters"
+                            }
+                          },
+                          {
+                            "id": "9ab9315f",
+                            "type": "altText",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "c5348d1d",
+                                  "type": "text",
+                                  "model": {
+                                    "blocks": [
+                                      {
+                                        "id": "af1c5b76",
+                                        "type": "paragraph",
+                                        "model": {
+                                          "text": "umunezero",
+                                          "blocks": [
+                                            {
+                                              "id": "6c7603f7",
+                                              "type": "fragment",
+                                              "model": {
+                                                "text": "umunezero",
+                                                "attributes": []
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "b711217a",
+                      "type": "image",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "76cc0ee3",
+                            "type": "rawImage",
+                            "model": {
+                              "height": 542,
+                              "width": 966,
+                              "locator": "vivo/live/images/2024/11/6/580233ab-997a-4d56-92dc-e341e93cfcab.png",
+                              "originCode": "cpsprodpb",
+                              "copyrightHolder": "Reuters"
+                            }
+                          },
+                          {
+                            "id": "d17a853e",
+                            "type": "altText",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "2f8c4a39",
+                                  "type": "text",
+                                  "model": {
+                                    "blocks": [
+                                      {
+                                        "id": "2dbce766",
+                                        "type": "paragraph",
+                                        "model": {
+                                          "text": "umunezero",
+                                          "blocks": [
+                                            {
+                                              "id": "152ec984",
+                                              "type": "fragment",
+                                              "model": {
+                                                "text": "umunezero",
+                                                "attributes": []
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "8cdb701d",
+                      "type": "image",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "1aa70189",
+                            "type": "rawImage",
+                            "model": {
+                              "height": 540,
+                              "width": 964,
+                              "locator": "vivo/live/images/2024/11/6/28e98fe8-4a49-4580-890c-ec39984500e2.png",
+                              "originCode": "cpsprodpb",
+                              "copyrightHolder": "Reut"
+                            }
+                          },
+                          {
+                            "id": "bffd03ad",
+                            "type": "altText",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "6d60c03e",
+                                  "type": "text",
+                                  "model": {
+                                    "blocks": [
+                                      {
+                                        "id": "b56a19b5",
+                                        "type": "paragraph",
+                                        "model": {
+                                          "text": "umunezero",
+                                          "blocks": [
+                                            {
+                                              "id": "31a1eb82",
+                                              "type": "fragment",
+                                              "model": {
+                                                "text": "umunezero",
+                                                "attributes": []
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "link": null,
+              "urn": "asset:4e21b333-a78b-4f97-bd9f-96ab7668b288",
+              "type": "POST",
+              "options": { "isBreakingNews": false },
+              "dates": {
+                "firstPublished": "2024-11-06T06:09:17.000Z",
+                "lastPublished": "2024-11-06T06:13:57.000Z",
+                "time": null,
+                "curated": "2024-11-06T06:09:18.965Z"
+              },
+              "titles": [{ "title": null, "source": "primary" }],
+              "descriptions": [{ "text": null, "source": "summary" }],
+              "images": [
+                {
+                  "originalUrl": null,
+                  "altText": null,
+                  "copyright": null,
+                  "urlTemplate": null,
+                  "url": null
+                }
+              ]
+            },
+            {
+              "typeCode": null,
+              "header": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "6e4b7b54",
+                      "type": "headline",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "d6b8d6a7",
+                            "type": "text",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "e9f9038f",
+                                  "type": "paragraph",
+                                  "model": {
+                                    "text": "Abanywanyi ba Harris barakuye akarenge",
+                                    "blocks": [
+                                      {
+                                        "id": "736dfd67",
+                                        "type": "fragment",
+                                        "model": {
+                                          "text": "Abanywanyi ba Harris barakuye akarenge",
+                                          "attributes": []
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "content": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "18f69885",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Nubwo Kamala Harris aronse ayandi majwi atanu ya New Mexico, bigatuma ashikana 187, abanywanyi biwe bamaze kubona ko ata kivamwo, batanguye gutaha",
+                        "blocks": [
+                          {
+                            "id": "fa96efb4",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Nubwo Kamala Harris aronse ayandi majwi atanu ya New Mexico, bigatuma ashikana 187, abanywanyi biwe bamaze kubona ko ata kivamwo, batanguye gutaha",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "201cbe1e",
+                      "type": "image",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "d9b07896",
+                            "type": "rawImage",
+                            "model": {
+                              "height": 543,
+                              "width": 958,
+                              "locator": "vivo/live/images/2024/11/6/10679129-ff91-44eb-b2f5-9df5a2fa8544.png",
+                              "originCode": "cpsprodpb",
+                              "copyrightHolder": "Reuters"
+                            }
+                          },
+                          {
+                            "id": "bdbc07e9",
+                            "type": "altText",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "4fdf15b6",
+                                  "type": "text",
+                                  "model": {
+                                    "blocks": [
+                                      {
+                                        "id": "0e2fb02c",
+                                        "type": "paragraph",
+                                        "model": {
+                                          "text": "Baratashe",
+                                          "blocks": [
+                                            {
+                                              "id": "f0d5b067",
+                                              "type": "fragment",
+                                              "model": {
+                                                "text": "Baratashe",
+                                                "attributes": []
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "213684d6",
+                      "type": "image",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "46f031b6",
+                            "type": "rawImage",
+                            "model": {
+                              "height": 676,
+                              "width": 895,
+                              "locator": "vivo/live/images/2024/11/6/565694a3-56dc-4bdf-81f5-cc39efaec057.png",
+                              "originCode": "cpsprodpb",
+                              "copyrightHolder": "Holly Honderich / BBC"
+                            }
+                          },
+                          {
+                            "id": "aed84358",
+                            "type": "altText",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "d338c9b7",
+                                  "type": "text",
+                                  "model": {
+                                    "blocks": [
+                                      {
+                                        "id": "37f453b3",
+                                        "type": "paragraph",
+                                        "model": {
+                                          "text": "Baratashe",
+                                          "blocks": [
+                                            {
+                                              "id": "bfcc120a",
+                                              "type": "fragment",
+                                              "model": {
+                                                "text": "Baratashe",
+                                                "attributes": []
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "link": null,
+              "urn": "asset:0943a33e-5d3d-490c-b373-cfdbe206af40",
+              "type": "POST",
+              "options": { "isBreakingNews": false },
+              "dates": {
+                "firstPublished": "2024-11-06T06:03:18.000Z",
+                "lastPublished": "2024-11-06T06:03:58.000Z",
+                "time": null,
+                "curated": "2024-11-06T06:03:19.772Z"
+              },
+              "titles": [{ "title": null, "source": "primary" }],
+              "descriptions": [{ "text": null, "source": "summary" }],
+              "images": [
+                {
+                  "originalUrl": null,
+                  "altText": null,
+                  "copyright": null,
+                  "urlTemplate": null,
+                  "url": null
+                }
+              ]
+            },
+            {
+              "typeCode": null,
+              "header": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "e6b7d6d6",
+                      "type": "headline",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "032901ff",
+                            "type": "text",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "d6d257be",
+                                  "type": "paragraph",
+                                  "model": {
+                                    "text": "Amatora ariko aja ku ruhande rwa Trump",
+                                    "blocks": [
+                                      {
+                                        "id": "a1910be8",
+                                        "type": "fragment",
+                                        "model": {
+                                          "text": "Amatora ariko aja ku ruhande rwa Trump",
+                                          "attributes": []
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "content": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "7a4911ce",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Inyuma yo gutsinda muntara ya Georgia\nifise intebe 16, Donald Trump ubu asigaje kuronka 24 gusa azobe atsinze. ",
+                        "blocks": [
+                          {
+                            "id": "0887e55c",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Inyuma yo gutsinda muntara ya Georgia\nifise intebe 16, Donald Trump ubu asigaje kuronka 24 gusa azobe atsinze. ",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "b8ae05b2",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Ng’iki igicapo c’ukungene ibiharuro\nbihagaze gushika ubu:",
+                        "blocks": [
+                          {
+                            "id": "a3f79d6a",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Ng’iki igicapo c’ukungene ibiharuro\nbihagaze gushika ubu:",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "f789ba6e",
+                      "type": "image",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "8dd7c055",
+                            "type": "rawImage",
+                            "model": {
+                              "height": 830,
+                              "width": 955,
+                              "locator": "vivo/live/images/2024/11/6/27f38ecd-a8c0-463e-bcba-c20378b6a086.png",
+                              "originCode": "cpsprodpb",
+                              "copyrightHolder": "BBC"
+                            }
+                          },
+                          {
+                            "id": "fb38a73c",
+                            "type": "altText",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "42bffc1e",
+                                  "type": "text",
+                                  "model": {
+                                    "blocks": [
+                                      {
+                                        "id": "2f865fec",
+                                        "type": "paragraph",
+                                        "model": {
+                                          "text": "Ibiharuro",
+                                          "blocks": [
+                                            {
+                                              "id": "729eec7c",
+                                              "type": "fragment",
+                                              "model": {
+                                                "text": "Ibiharuro",
+                                                "attributes": []
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "link": null,
+              "urn": "asset:3506e20a-043c-413e-ab27-b7249a7eabe6",
+              "type": "POST",
+              "options": { "isBreakingNews": false },
+              "dates": {
+                "firstPublished": "2024-11-06T05:57:35.000Z",
+                "lastPublished": "2024-11-06T05:57:35.000Z",
+                "time": null,
+                "curated": "2024-11-06T05:57:37.821Z"
+              },
+              "titles": [{ "title": null, "source": "primary" }],
+              "descriptions": [{ "text": null, "source": "summary" }],
+              "images": [
+                {
+                  "originalUrl": null,
+                  "altText": null,
+                  "copyright": null,
+                  "urlTemplate": null,
+                  "url": null
+                }
+              ]
+            },
+            {
+              "typeCode": null,
+              "header": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "5edf0c84",
+                      "type": "headline",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "6237c746",
+                            "type": "text",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "bf143f80",
+                                  "type": "paragraph",
+                                  "model": {
+                                    "text": "Abarepubulika bariko baregereza gufata Inama nkenguzamateka",
+                                    "blocks": [
+                                      {
+                                        "id": "981be6a7",
+                                        "type": "fragment",
+                                        "model": {
+                                          "text": "Abarepubulika bariko baregereza gufata Inama nkenguzamateka",
+                                          "attributes": []
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "content": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "3f01fcda",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Abademokarate batakaje intebe zibiri mu nama nkenguzamateka, inyuma y’uko\numukenguzamateka Sherrod Brown wo muri Ohio atsinzwe, ibi bikaba biriko\nvyambura amahirwe uno mugambwe wo kubandanya ufise mu minwe inama\nnkenguzamateka.",
+                        "blocks": [
+                          {
+                            "id": "e563fd69",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Abademokarate batakaje intebe zibiri mu nama nkenguzamateka, inyuma y’uko\numukenguzamateka Sherrod Brown wo muri Ohio atsinzwe, ibi bikaba biriko\nvyambura amahirwe uno mugambwe wo kubandanya ufise mu minwe inama\nnkenguzamateka.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "4d45a519",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Uno mugambwe umaze gutakaza intebe zibiri –\nn’iya gatatu ya Jon Tester i Montana – ikaba igeze ahatemba. Hatabaye uwundi\nmudemokarate atsinda mu yindi ntara, iyi nama nkenguzamateka izoba ikorokeye mu\nmiwe y’Abarepubulikani. ",
+                        "blocks": [
+                          {
+                            "id": "6bbd8685",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Uno mugambwe umaze gutakaza intebe zibiri –\nn’iya gatatu ya Jon Tester i Montana – ikaba igeze ahatemba. Hatabaye uwundi\nmudemokarate atsinda mu yindi ntara, iyi nama nkenguzamateka izoba ikorokeye mu\nmiwe y’Abarepubulikani. ",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "c381d4a3",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Gushika\nubu, biragoye kuronka ahandi hantu Abademokarate boronkera icizere. Ni mu gihe\naba Bademokarate badahagaze neza mu matora y’umukuru w’igihugu, aho gushika ubu\nDonald Trump, Umurepubulikani, ari imbere cane ku majwi 230, mu gihe Kamala\nHarris, inyuma yo gutsinda muri Virginia ifise intebe 13, ashikanye amajwi 182. ",
+                        "blocks": [
+                          {
+                            "id": "08d6f148",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Gushika\nubu, biragoye kuronka ahandi hantu Abademokarate boronkera icizere. Ni mu gihe\naba Bademokarate badahagaze neza mu matora y’umukuru w’igihugu, aho gushika ubu\nDonald Trump, Umurepubulikani, ari imbere cane ku majwi 230, mu gihe Kamala\nHarris, inyuma yo gutsinda muri Virginia ifise intebe 13, ashikanye amajwi 182. ",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "link": null,
+              "urn": "asset:675d716d-06ee-451e-a4ad-80e87ea02fcb",
+              "type": "POST",
+              "options": { "isBreakingNews": false },
+              "dates": {
+                "firstPublished": "2024-11-06T05:33:01.000Z",
+                "lastPublished": "2024-11-06T05:33:01.000Z",
+                "time": null,
+                "curated": "2024-11-06T05:33:03.666Z"
+              },
+              "titles": [{ "title": null, "source": "primary" }],
+              "descriptions": [{ "text": null, "source": "summary" }],
+              "images": [
+                {
+                  "originalUrl": null,
+                  "altText": null,
+                  "copyright": null,
+                  "urlTemplate": null,
+                  "url": null
+                }
+              ]
+            },
+            {
+              "typeCode": null,
+              "header": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "7d887b4a",
+                      "type": "headline",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "120dbee1",
+                            "type": "text",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "4f037468",
+                                  "type": "paragraph",
+                                  "model": {
+                                    "text": "Abanywanyi ba Trump ni umunezero, mu gihe aba Harris bijiriwe",
+                                    "blocks": [
+                                      {
+                                        "id": "140f714f",
+                                        "type": "fragment",
+                                        "model": {
+                                          "text": "Abanywanyi ba Trump ni umunezero, mu gihe aba Harris bijiriwe",
+                                          "attributes": []
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "content": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "a2ccd75b",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Mu gihe ibiharuro bibandanya biduga umwanya ku mwanya, abanywanyi ba Donald Trump bafise icizere kinini intsinzi ari rwabo, abanywanyi na Kamala Harris nabo bakaba bijiriwe.",
+                        "blocks": [
+                          {
+                            "id": "b34b3e3a",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Mu gihe ibiharuro bibandanya biduga umwanya ku mwanya, abanywanyi ba Donald Trump bafise icizere kinini intsinzi ari rwabo, abanywanyi na Kamala Harris nabo bakaba bijiriwe.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "a63245e6",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Gushika ubu, ibiharo vyerekana ko Trump ahejeje gutsinda mu ntara imwe mahindagu, Caroline du Nord ifise intebe 16, akaba ashikanye amajwi 230, ubu akaba abura 40 gusa kugira ngo ashikane 270 akeneye. ",
+                        "blocks": [
+                          {
+                            "id": "8a3ec02d",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Gushika ubu, ibiharo vyerekana ko Trump ahejeje gutsinda mu ntara imwe mahindagu, ",
+                              "attributes": []
+                            }
+                          },
+                          {
+                            "id": "57ed8ff3",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Caroline du Nord ifise intebe 1",
+                              "attributes": ["bold", "italic"]
+                            }
+                          },
+                          {
+                            "id": "dc6a35a2",
+                            "type": "fragment",
+                            "model": {
+                              "text": "6, akaba ashikanye amajwi 230, ubu akaba abura 40 gusa kugira ngo ashikane 270 akeneye. ",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "29189f1d",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Kamala Harris wewe amaze gushikana amajwi 169, inyuma yo gutsinda mu ntara ya Washington ifise intebe 12, hamwe n'amazinga yaHawai afise intebe 4",
+                        "blocks": [
+                          {
+                            "id": "389634aa",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Kamala Harris wewe amaze gushikana amajwi 169, inyuma yo gutsinda mu ntara ya ",
+                              "attributes": []
+                            }
+                          },
+                          {
+                            "id": "fdefa47c",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Washington ifise intebe 12",
+                              "attributes": ["italic", "bold"]
+                            }
+                          },
+                          {
+                            "id": "d6e9649a",
+                            "type": "fragment",
+                            "model": { "text": ", ", "attributes": ["italic"] }
+                          },
+                          {
+                            "id": "b257d399",
+                            "type": "fragment",
+                            "model": {
+                              "text": "hamwe n'amazinga ya",
+                              "attributes": []
+                            }
+                          },
+                          {
+                            "id": "fb056220",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Hawai afise intebe 4",
+                              "attributes": ["italic", "bold"]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "link": null,
+              "urn": "asset:f8142240-35d4-4c0d-af77-4cf8457799ea",
+              "type": "POST",
+              "options": { "isBreakingNews": false },
+              "dates": {
+                "firstPublished": "2024-11-05T22:26:40.000Z",
+                "lastPublished": "2024-11-06T05:11:51.000Z",
+                "time": null,
+                "curated": "2024-11-06T04:51:26.584Z"
+              },
+              "titles": [{ "title": null, "source": "primary" }],
+              "descriptions": [{ "text": null, "source": "summary" }],
+              "images": [
+                {
+                  "originalUrl": null,
+                  "altText": null,
+                  "copyright": null,
+                  "urlTemplate": null,
+                  "url": null
+                }
+              ]
+            },
+            {
+              "typeCode": null,
+              "header": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "dfe0971d",
+                      "type": "headline",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "a8690bb7",
+                            "type": "text",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "82f77fe5",
+                                  "type": "paragraph",
+                                  "model": {
+                                    "text": "'Abanywanyi ba Trump buzuye umunezero aho bakoraniye'",
+                                    "blocks": [
+                                      {
+                                        "id": "c921475c",
+                                        "type": "fragment",
+                                        "model": {
+                                          "text": "'Abanywanyi ba Trump buzuye umunezero aho bakoraniye'",
+                                          "attributes": []
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "content": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "5956ac07",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Uwahoze ari\numushingamateka Tulsi Gabbard ashitse ahari abanywanyi ba Trump bateramiye muri\niri joro ry’amatora i Mar-a-Lago.",
+                        "blocks": [
+                          {
+                            "id": "a371abb7",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Uwahoze ari\numushingamateka Tulsi Gabbard ashitse ahari abanywanyi ba Trump bateramiye muri\niri joro ry’amatora i Mar-a-Lago.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "d6728bc3",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Ati:\n\"Hari abantu benshi baryohewe cane” bafise  “icizere ariko binengesereye”. ",
+                        "blocks": [
+                          {
+                            "id": "1b7f5e24",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Ati:\n\"Hari abantu benshi baryohewe cane” bafise  “icizere ariko binengesereye”. ",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "b9ec12b0",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "\"Nibaza\nko bose bariko bararaba ingene bigenda, babikurikiranira hagufi cane”. ",
+                        "blocks": [
+                          {
+                            "id": "4acbd40b",
+                            "type": "fragment",
+                            "model": {
+                              "text": "\"Nibaza\nko bose bariko bararaba ingene bigenda, babikurikiranira hagufi cane”. ",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "26809a14",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Hagati aho, inyuma y’uko\nibiharuro vyerekanye ko Kamala Harris yatsinze muri California ifise intebe 54,\nna Oregon ifise intebe 8, ibitigiri vyiwe vyaduze gushika kuri 153, ariko\nintambwe iracari ndende kugira ashikire Donald Trump afise gushika ubu 211.",
+                        "blocks": [
+                          {
+                            "id": "4517f6a1",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Hagati aho, inyuma y’uko\nibiharuro vyerekanye ko Kamala Harris yatsinze muri C",
+                              "attributes": []
+                            }
+                          },
+                          {
+                            "id": "4c39493f",
+                            "type": "fragment",
+                            "model": {
+                              "text": "alifornia ifise intebe 54",
+                              "attributes": ["bold", "italic"]
+                            }
+                          },
+                          {
+                            "id": "0fd607d7",
+                            "type": "fragment",
+                            "model": { "text": ",\nna ", "attributes": [] }
+                          },
+                          {
+                            "id": "d20acda1",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Oregon ifise intebe 8",
+                              "attributes": ["italic", "bold"]
+                            }
+                          },
+                          {
+                            "id": "69a93969",
+                            "type": "fragment",
+                            "model": {
+                              "text": ", ibitigiri vyiwe vyaduze gushika kuri ",
+                              "attributes": []
+                            }
+                          },
+                          {
+                            "id": "e439ad12",
+                            "type": "fragment",
+                            "model": { "text": "153", "attributes": ["bold"] }
+                          },
+                          {
+                            "id": "e369f8a0",
+                            "type": "fragment",
+                            "model": {
+                              "text": ", ariko\nintambwe iracari ndende kugira ashikire Donald Trump afise gushika ubu ",
+                              "attributes": []
+                            }
+                          },
+                          {
+                            "id": "a89318bf",
+                            "type": "fragment",
+                            "model": { "text": "211", "attributes": ["bold"] }
+                          },
+                          {
+                            "id": "6ed6011d",
+                            "type": "fragment",
+                            "model": { "text": ".", "attributes": [] }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "link": null,
+              "urn": "asset:63a76fb1-21a4-46f8-8c04-1bf05fee4759",
+              "type": "POST",
+              "options": { "isBreakingNews": false },
+              "dates": {
+                "firstPublished": "2024-11-06T04:12:32.000Z",
+                "lastPublished": "2024-11-06T05:11:22.000Z",
+                "time": null,
+                "curated": "2024-11-06T04:12:33.927Z"
+              },
+              "titles": [{ "title": null, "source": "primary" }],
+              "descriptions": [{ "text": null, "source": "summary" }],
+              "images": [
+                {
+                  "originalUrl": null,
+                  "altText": null,
+                  "copyright": null,
+                  "urlTemplate": null,
+                  "url": null
+                }
+              ]
+            },
+            {
+              "typeCode": null,
+              "header": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "d1c00acf",
+                      "type": "headline",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "0c2d571b",
+                            "type": "text",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "01229923",
+                                  "type": "paragraph",
+                                  "model": {
+                                    "text": "Ingene bimeze mu ntara mahindagu",
+                                    "blocks": [
+                                      {
+                                        "id": "7c92469d",
+                                        "type": "fragment",
+                                        "model": {
+                                          "text": "Ingene bimeze mu ntara mahindagu",
+                                          "attributes": []
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "content": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "8c59c136",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Mu gihe ibiharuro vyerekana ko Donald Trump yatsinze muri Iowa na Kansas zifise intebe 6 imw'imwe, maze ubu akaba ashikana intebe 207, muri za ntara mahindagu ibiharuro ntibiratungana. ",
+                        "blocks": [
+                          {
+                            "id": "f38f88e6",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Mu gihe ibiharuro vyerekana ko Donald Trump yatsinze muri Iowa na Kansas zifise intebe 6 imw'imwe, maze ubu akaba ashikana intebe 207, muri za ntara mahindagu ibiharuro ntibiratungana. ",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "a55bff4a",
+                      "type": "image",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "10526af4",
+                            "type": "rawImage",
+                            "model": {
+                              "height": 1269,
+                              "width": 797,
+                              "locator": "vivo/live/images/2024/11/6/51cb36a0-14ee-49ba-8d34-c4832def97bd.jpg",
+                              "originCode": "cpsprodpb",
+                              "copyrightHolder": "BBC"
+                            }
+                          },
+                          {
+                            "id": "27c300c4",
+                            "type": "altText",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "7c288d06",
+                                  "type": "text",
+                                  "model": {
+                                    "blocks": [
+                                      {
+                                        "id": "970877b3",
+                                        "type": "paragraph",
+                                        "model": {
+                                          "text": "Mahindagu",
+                                          "blocks": [
+                                            {
+                                              "id": "aa3d1775",
+                                              "type": "fragment",
+                                              "model": {
+                                                "text": "Mahindagu",
+                                                "attributes": []
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "link": null,
+              "urn": "asset:a70fb541-f62b-4b52-a402-eeb2f9ba92db",
+              "type": "POST",
+              "options": { "isBreakingNews": false },
+              "dates": {
+                "firstPublished": "2024-11-06T03:45:25.000Z",
+                "lastPublished": "2024-11-06T05:11:13.000Z",
+                "time": null,
+                "curated": "2024-11-06T03:45:26.363Z"
+              },
+              "titles": [{ "title": null, "source": "primary" }],
+              "descriptions": [{ "text": null, "source": "summary" }],
+              "images": [
+                {
+                  "originalUrl": null,
+                  "altText": null,
+                  "copyright": null,
+                  "urlTemplate": null,
+                  "url": null
+                }
+              ]
+            },
+            {
+              "typeCode": null,
+              "header": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "5185d748",
+                      "type": "headline",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "1c577ced",
+                            "type": "text",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "860b37af",
+                                  "type": "paragraph",
+                                  "model": {
+                                    "text": "Intara zirenga 40 kuri 50 zimaze kurangiza amatora",
+                                    "blocks": [
+                                      {
+                                        "id": "b1f3cae9",
+                                        "type": "fragment",
+                                        "model": {
+                                          "text": "Intara zirenga 40 kuri 50 zimaze kurangiza amatora",
+                                          "attributes": []
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "content": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "e82ed93a",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Mu gihe\nintara zirenga 40 kuri 50 zimaze kwugara ibiro vy’amatora kugira ngo zitangure\nguharura, ibiharuro birabandanya bisohoka bukebuke, aho Donald Trump abandanya\natera intambwe. ",
+                        "blocks": [
+                          {
+                            "id": "64037004",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Mu gihe\nintara zirenga 40 kuri 50 zimaze kwugara ibiro vy’amatora kugira ngo zitangure\nguharura, ibiharuro birabandanya bisohoka bukebuke, aho Donald Trump abandanya\natera intambwe. ",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "888c0ae9",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Ibiharuro\nbirerekana ko yatsinze mu ntara za Montana ifise intebe 4, Utah\nifise intebe 6, Ohio ifise intene 17, mu gihe kandi aboneka ko ashobora gutsinda muri Mississippi\nifise intebe 4. Gushika ubu, amaze gushikana 195, mu gihe uwo bahiganwa, Kamala Harris ashikanye 91, inyuma yo gutsinda muri Colorado ifise intebe 10.  Mu ntara ya Georgia, mu gihe ibice barenga 80% vy’amajwi bimaze\nguharurwa, Turmp aracari imbere ku majwi 51.9%. ",
+                        "blocks": [
+                          {
+                            "id": "d0ecbae7",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Ibiharuro\nbirerekana ko yatsinze mu ntara za ",
+                              "attributes": []
+                            }
+                          },
+                          {
+                            "id": "452a694e",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Montana ifise intebe 4",
+                              "attributes": ["bold", "italic"]
+                            }
+                          },
+                          {
+                            "id": "0897097c",
+                            "type": "fragment",
+                            "model": { "text": ", ", "attributes": [] }
+                          },
+                          {
+                            "id": "6156a36b",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Utah\nifise intebe 6",
+                              "attributes": ["bold", "italic"]
+                            }
+                          },
+                          {
+                            "id": "df8f5892",
+                            "type": "fragment",
+                            "model": { "text": ", ", "attributes": [] }
+                          },
+                          {
+                            "id": "9b5286a0",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Ohio ifise intene 17",
+                              "attributes": ["italic", "bold"]
+                            }
+                          },
+                          {
+                            "id": "77abf352",
+                            "type": "fragment",
+                            "model": {
+                              "text": ", mu gihe kandi aboneka ko ashobora gutsinda muri Mississippi\nifise intebe 4. Gushika ubu, amaze gushikana 195, mu gihe uwo bahiganwa, Kamala Harris ashikanye 91, inyuma yo gutsinda muri ",
+                              "attributes": []
+                            }
+                          },
+                          {
+                            "id": "c66501b6",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Colorado ifise intebe 10",
+                              "attributes": ["italic", "bold"]
+                            }
+                          },
+                          {
+                            "id": "80ddd079",
+                            "type": "fragment",
+                            "model": {
+                              "text": ".  Mu ntara ya Georgia, mu gihe ibice barenga 80% vy’amajwi bimaze\nguharurwa, Turmp aracari imbere ku majwi 51.9%. ",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "link": null,
+              "urn": "asset:ddec70ad-35aa-4c62-abed-bd6e970746ab",
+              "type": "POST",
+              "options": { "isBreakingNews": false },
+              "dates": {
+                "firstPublished": "2024-11-06T03:12:44.000Z",
+                "lastPublished": "2024-11-06T05:11:03.000Z",
+                "time": null,
+                "curated": "2024-11-06T03:12:45.717Z"
+              },
+              "titles": [{ "title": null, "source": "primary" }],
+              "descriptions": [{ "text": null, "source": "summary" }],
+              "images": [
+                {
+                  "originalUrl": null,
+                  "altText": null,
+                  "copyright": null,
+                  "urlTemplate": null,
+                  "url": null
+                }
+              ]
+            },
+            {
+              "typeCode": null,
+              "header": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "805ce842",
+                      "type": "headline",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "69d0255f",
+                            "type": "text",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "74b25fed",
+                                  "type": "paragraph",
+                                  "model": {
+                                    "text": "Kamala Harris amaze kugera ku ca kabiri c’amajwi ya Trump",
+                                    "blocks": [
+                                      {
+                                        "id": "04c7b1fb",
+                                        "type": "fragment",
+                                        "model": {
+                                          "text": "Kamala Harris amaze kugera ku ca kabiri c’amajwi ya Trump",
+                                          "attributes": []
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "content": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "bdb85b61",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Inyuma yo\ngutsinda muri Illinois, Kamala Harris ashobye gushika intebe 81, inusu y’izimaze\ngutsindirwa n’umukeba wiwe Donald Trump amaze gushikana 162.",
+                        "blocks": [
+                          {
+                            "id": "52011ae2",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Inyuma yo\ngutsinda muri Illinois, Kamala Harris ashobye gushika intebe 81, inusu y’izimaze\ngutsindirwa n’umukeba wiwe Donald Trump amaze gushikana 162.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "4a91c638",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Kugira ngo uwuhiganwa\natsinde, ategerezwa kugira intege 270 z’intumwa\nz’itora (collège electoral/electoral college) .",
+                        "blocks": [
+                          {
+                            "id": "5416d274",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Kugira ngo uwuhiganwa\natsinde, ategerezwa kugira intege 270 z’intumwa\nz’itora (collège electoral/electoral college) .",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "link": null,
+              "urn": "asset:96b03022-62a2-48d3-b19c-1f464df9075e",
+              "type": "POST",
+              "options": { "isBreakingNews": false },
+              "dates": {
+                "firstPublished": "2024-11-06T02:49:32.000Z",
+                "lastPublished": "2024-11-06T05:10:54.000Z",
+                "time": null,
+                "curated": "2024-11-06T02:49:34.043Z"
+              },
+              "titles": [{ "title": null, "source": "primary" }],
+              "descriptions": [{ "text": null, "source": "summary" }],
+              "images": [
+                {
+                  "originalUrl": null,
+                  "altText": null,
+                  "copyright": null,
+                  "urlTemplate": null,
+                  "url": null
+                }
+              ]
+            },
+            {
+              "typeCode": null,
+              "header": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "81239476",
+                      "type": "headline",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "faff6a30",
+                            "type": "text",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "cfe9afd4",
+                                  "type": "paragraph",
+                                  "model": {
+                                    "text": "Donald Trump aracari imbere",
+                                    "blocks": [
+                                      {
+                                        "id": "e9305d94",
+                                        "type": "fragment",
+                                        "model": {
+                                          "text": "Donald Trump aracari imbere",
+                                          "attributes": []
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "content": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "dd967995",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Ibiharuro\nbirabandanya gusohoka, aho Donald Trump yatsinze mu ntara za:  ",
+                        "blocks": [
+                          {
+                            "id": "42b78b87",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Ibiharuro\nbirabandanya gusohoka, aho Donald Trump yatsinze mu ntara za:  ",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "93579ef5",
+                      "type": "unorderedList",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "a18d59db",
+                            "type": "listItem",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "99a58bb2",
+                                  "type": "fragment",
+                                  "model": {
+                                    "text": "\n      North Dakota ifise intebe 3\n    ",
+                                    "attributes": []
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "id": "c64d66e7",
+                            "type": "listItem",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "b9db1239",
+                                  "type": "fragment",
+                                  "model": {
+                                    "text": "\n      South Dakota ifise intebe 3\n    ",
+                                    "attributes": []
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "id": "4bd19eb7",
+                            "type": "listItem",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "67932252",
+                                  "type": "fragment",
+                                  "model": {
+                                    "text": "\n      Wyomyng ifise intebe 3\n    ",
+                                    "attributes": []
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "id": "d863e188",
+                            "type": "listItem",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "893ce85f",
+                                  "type": "fragment",
+                                  "model": {
+                                    "text": "\n      Texas ifise intebe 40\n    ",
+                                    "attributes": []
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "id": "fcb4ae3c",
+                            "type": "listItem",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "562c930d",
+                                  "type": "fragment",
+                                  "model": {
+                                    "text": "\n      Louisiana intebe 8\n    ",
+                                    "attributes": []
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "bf6d0f17",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Gushika ubu, ibiharuro vyerekana ko amaze gushika ku majwi\n162, mu gihe uwo bahiganwa Kamala Harris afise 62, inyuma yo kumenyekana ko\nyatsinze mu ntara za New York ifise intebe 28,  Delaware ifise intebe 3, hamwe na Rhode Island ifise intebe 4, izi zose hamwe zikaba zije kwiyongera kuri 27 yari agifise. ",
+                        "blocks": [
+                          {
+                            "id": "967f08c3",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Gushika ubu, ibiharuro vyerekana ko amaze gushika ku majwi\n162, mu gihe uwo bahiganwa Kamala Harris afise 62, inyuma yo kumenyekana ko\nyatsinze mu ntara za ",
+                              "attributes": []
+                            }
+                          },
+                          {
+                            "id": "c72c5d65",
+                            "type": "fragment",
+                            "model": {
+                              "text": "New York ifise intebe 28",
+                              "attributes": ["italic", "bold"]
+                            }
+                          },
+                          {
+                            "id": "f9ea9de3",
+                            "type": "fragment",
+                            "model": { "text": ",  ", "attributes": [] }
+                          },
+                          {
+                            "id": "3125ef1f",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Delaware ifise intebe 3",
+                              "attributes": ["italic", "bold"]
+                            }
+                          },
+                          {
+                            "id": "e9313cfb",
+                            "type": "fragment",
+                            "model": { "text": ", hamwe na ", "attributes": [] }
+                          },
+                          {
+                            "id": "38d40204",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Rhode Island ifise intebe 4",
+                              "attributes": ["italic", "bold"]
+                            }
+                          },
+                          {
+                            "id": "0301d233",
+                            "type": "fragment",
+                            "model": {
+                              "text": ", izi zose hamwe zikaba zije kwiyongera kuri 27 yari agifise. ",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "link": null,
+              "urn": "asset:4876989b-8343-4331-89b2-c996ea3289ab",
+              "type": "POST",
+              "options": { "isBreakingNews": false },
+              "dates": {
+                "firstPublished": "2024-11-06T02:09:52.000Z",
+                "lastPublished": "2024-11-06T05:10:44.000Z",
+                "time": null,
+                "curated": "2024-11-06T02:09:53.924Z"
+              },
+              "titles": [{ "title": null, "source": "primary" }],
+              "descriptions": [{ "text": null, "source": "summary" }],
+              "images": [
+                {
+                  "originalUrl": null,
+                  "altText": null,
+                  "copyright": null,
+                  "urlTemplate": null,
+                  "url": null
+                }
+              ]
+            },
+            {
+              "typeCode": null,
+              "header": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "22e376af",
+                      "type": "headline",
+                      "model": {
+                        "blocks": [
+                          {
+                            "id": "7acc89a6",
+                            "type": "text",
+                            "model": {
+                              "blocks": [
+                                {
+                                  "id": "a016bb94",
+                                  "type": "paragraph",
+                                  "model": {
+                                    "text": "Donald Trump yatsinze muri Arkansas",
+                                    "blocks": [
+                                      {
+                                        "id": "5ddd5e72",
+                                        "type": "fragment",
+                                        "model": {
+                                          "text": "Donald Trump yatsinze muri Arkansas",
+                                          "attributes": []
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "content": {
+                "model": {
+                  "blocks": [
+                    {
+                      "id": "c0c2c20e",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Arkansas,\nintara iri mu bumanuko bw’igihugu ni intara y’Abarepubulikani kandi mu matora y’umukuru\nw’igihugu atanu aheruka, uno mugambwe ni wo wamye utsinda. ",
+                        "blocks": [
+                          {
+                            "id": "31d74471",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Arkansas,\nintara iri mu bumanuko bw’igihugu ni intara y’Abarepubulikani kandi mu matora y’umukuru\nw’igihugu atanu aheruka, uno mugambwe ni wo wamye utsinda. ",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "6bd4a20b",
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Vyari\nvyitezwe ko Trump ari we atsinda muri iyi ntara ifise intebe 6.",
+                        "blocks": [
+                          {
+                            "id": "48697a5c",
+                            "type": "fragment",
+                            "model": {
+                              "text": "Vyari\nvyitezwe ko Trump ari we atsinda muri iyi ntara ifise intebe 6.",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "link": null,
+              "urn": "asset:42978490-87e9-48b4-b1db-b513eb0257a6",
+              "type": "POST",
+              "options": { "isBreakingNews": false },
+              "dates": {
+                "firstPublished": "2024-11-06T01:40:35.000Z",
+                "lastPublished": "2024-11-06T05:10:29.000Z",
+                "time": null,
+                "curated": "2024-11-06T01:40:36.859Z"
+              },
+              "titles": [{ "title": null, "source": "primary" }],
+              "descriptions": [{ "text": null, "source": "summary" }],
+              "images": [
+                {
+                  "originalUrl": null,
+                  "altText": null,
+                  "copyright": null,
+                  "urlTemplate": null,
+                  "url": null
+                }
+              ]
+            }
+          ],
+          "page": { "index": 1, "total": 2 }
+        }
+      }
+    },
+    "metadata": {
+      "atiAnalytics": {
+        "contentId": "urn:bbc:tipo:topic:c2dl5y6dgrzt",
+        "contentType": "live-coverage",
+        "pageIdentifier": "live_coverage.c2dl5y6dgrzt.page",
+        "pageTitle": "Donald Trump ni we agiye kuba umukuru w'igihugu wa Reta Zunze Ubumwe za Amerika agira 47",
+        "timePublished": "2024-11-05T21:45:00.000Z",
+        "timeUpdated": "2024-11-06T11:11:00.000Z"
+      }
+    }
+  },
+  "contentType": "application/json; charset=utf-8"
+}
