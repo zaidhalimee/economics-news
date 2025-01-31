@@ -1,5 +1,5 @@
 /* eslint-disable react/no-danger */
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { EmotionCritical } from '@emotion/server/create-instance';
 
 import { HelmetData } from 'react-helmet';
@@ -49,16 +49,18 @@ const Document = ({
               dangerouslySetInnerHTML={{ __html: litePageTransforms(html) }}
             />
           }
-          // @ts-expect-error helmetLinkTags is an array of ReactElements
-          helmetLinkTags={removeDataReactHelmetAttribute(helmetLinkTags)}
-          // @ts-expect-error helmetMetaTags is an array of ReactElements
-          helmetMetaTags={removeDataReactHelmetAttribute(helmetMetaTags)}
-          // @ts-expect-error helmetScriptTags is an array of ReactElements
-          helmetScriptTags={removeDataReactHelmetAttribute(helmetScriptTags)}
+          helmetLinkTags={
+            removeDataReactHelmetAttribute(helmetLinkTags) as ReactElement
+          }
+          helmetMetaTags={
+            removeDataReactHelmetAttribute(helmetMetaTags) as ReactElement
+          }
+          helmetScriptTags={
+            removeDataReactHelmetAttribute(helmetScriptTags) as ReactElement
+          }
           htmlAttrs={htmlAttrs}
           styles={css}
-          // @ts-expect-error title is a ReactElement
-          title={removeDataReactHelmetAttribute(title)}
+          title={removeDataReactHelmetAttribute(title) as ReactElement}
         />
       );
     case isAmp:
