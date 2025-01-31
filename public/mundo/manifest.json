@@ -5,6 +5,7 @@
   "background_color": "#b80000",
   "display": "standalone",
   "theme_color": "#b80000",
+  "start_url": "/mundo",
   "icons": [
     {
       "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/mundo/images/icons/icon-72x72.png",

@@ -51,6 +51,7 @@ module.exports = ({ resolvePath, START_DEV_SERVER }) => {
         patterns: [
           { from: 'public/sw.js', to: 'public/sw.js' },
           { from: 'public/favicon.ico', to: 'public/favicon.ico' },
+          { from: 'public/mundo/manifest.json', to: 'public/mundo/manifest.json' },
         ],
       }),
     ];
