@@ -23,6 +23,7 @@ import {
 
 import LiteRenderer from '#server/Document/Renderers/LiteRenderer';
 import litePageTransforms from '#server/Document/Renderers/litePageTransforms';
+import removeDataReactHelmetAttribute from '#server/Document/Renderers/litePageTransforms/removeDataReactHelmetAttribute';
 import sendCustomMetric from '#server/utilities/customMetrics';
 import { NON_200_RESPONSE } from '#server/utilities/customMetrics/metrics.const';
 
@@ -143,12 +144,18 @@ export default class AppDocument extends Document<DocProps> {
         return (
           <LiteRenderer
             bodyContent={<Main />}
-            helmetLinkTags={helmetLinkTags}
-            helmetMetaTags={helmetMetaTags}
-            helmetScriptTags={helmetScriptTags}
+            helmetLinkTags={
+              removeDataReactHelmetAttribute(helmetLinkTags) as ReactElement
+            }
+            helmetMetaTags={
+              removeDataReactHelmetAttribute(helmetMetaTags) as ReactElement
+            }
+            helmetScriptTags={
+              removeDataReactHelmetAttribute(helmetScriptTags) as ReactElement
+            }
             htmlAttrs={htmlAttrs}
             styles={css}
-            title={title}
+            title={removeDataReactHelmetAttribute(title) as ReactElement}
           />
         );
       default:
