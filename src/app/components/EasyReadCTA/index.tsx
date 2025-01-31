@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { jsx } from '@emotion/react';
 import { GridItemMedium } from '#app/legacy/components/Grid';
 import { RequestContext } from '#app/contexts/RequestContext';
+import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import Text from '../Text';
 import { ServiceContext } from '../../contexts/ServiceContext';
 import styles from './index.styles';
@@ -28,11 +29,16 @@ export const createHrefRelativeToPage = (currentPath: string, id?: string) => {
 };
 
 const CtaLink = ({ href, text, className, selected = false }: CtaLinkProps) => {
+  const eventTrackingData = {
+    componentName: 'easyReadCta',
+  };
+  const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
   return (
     <a
       href={href}
       className={className}
       css={styles.linkContainer}
+      onClick={clickTrackerHandler}
       {...(selected && { 'aria-current': 'page' })}
     >
       <span css={styles.linkTextContainer}>
