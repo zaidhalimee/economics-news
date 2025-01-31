@@ -116,6 +116,10 @@ export const service: SerbianConfig = {
         url: '/serbian/lat',
       },
       {
+        title: 'Studentske blokade',
+        url: '/serbian/topics/cly9dd4w09wt/lat',
+      },
+      {
         title: 'Srbija',
         url: '/serbian/topics/cr50vdy9q6wt/lat',
       },
@@ -508,6 +512,10 @@ export const service: SerbianConfig = {
       {
         title: 'Почетна страна',
         url: '/serbian/cyr',
+      },
+      {
+        title: 'Студентске блокаде',
+        url: '/serbian/topics/cly9dd4w09wt/cyr',
       },
       {
         title: 'Србија',
