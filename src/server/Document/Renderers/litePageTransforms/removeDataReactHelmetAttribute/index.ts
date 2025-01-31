@@ -8,16 +8,12 @@ const getPropsExcludingDataReactHelmet = (props: object) => {
 
 export default (tags: ReactElement | ReactElement[]) => {
   if (Array.isArray(tags)) {
-    const modifiedTags = Array.from(tags).map(tag => {
-      const modifiedTag = {
+    return tags.map(tag => {
+      return {
         ...tag,
         props: getPropsExcludingDataReactHelmet(tag.props),
       };
-
-      return modifiedTag;
     });
-
-    return modifiedTags;
   }
 
   return {
