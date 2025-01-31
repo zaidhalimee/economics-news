@@ -11,6 +11,7 @@ const baseServiceConfig = {
   articleAuthor: `https://www.facebook.com/bbcnews`,
   atiAnalyticsAppName: 'news-uzbek',
   atiAnalyticsProducerId: '96',
+  atiAnalyticsProducerName: 'UZBEK',
   chartbeatDomain: 'uzbek.bbc.co.uk',
   product: 'BBC News',
   defaultImage: 'https://news.files.bbci.co.uk/ws/img/logos/og/uzbek.png',
@@ -244,6 +245,7 @@ const defaultCyrillicConfig = {
       nextRadioShow: 'Кейинги радио дастур',
       duration: 'Давомийлиги',
       recentEpisodes: 'Олдинги дастурлар',
+      closeVideo: 'Чиқиш',
     },
     socialEmbed: {
       caption: {
@@ -313,7 +315,7 @@ const defaultCyrillicConfig = {
       },
       {
         href: 'https://www.bbc.com/ws/languages',
-        text: 'Other Languages',
+        text: 'BBC News бошқа тилларда',
       },
       {
         id: 'COOKIE_SETTINGS',
@@ -648,7 +650,7 @@ export const service: UzbekConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'BBC News бошқа тилларда',
         },
         {
           id: 'COOKIE_SETTINGS',

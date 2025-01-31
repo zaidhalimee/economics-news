@@ -19,7 +19,7 @@ const OptimizelyRecommendation = ({
   );
 
   return (
-    <OptimizelyExperiment experiment={OPTIMIZELY_CONFIG.flagId}>
+    <OptimizelyExperiment experiment={OPTIMIZELY_CONFIG.flagKey}>
       {variation => {
         let unirecsHybridRecommendationData = null;
         if (variation && variation !== 'control') {

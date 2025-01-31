@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '에 업데이트 됨',
     atiAnalyticsAppName: 'news-korean',
     atiAnalyticsProducerId: '57',
+    atiAnalyticsProducerName: 'KOREAN',
     chartbeatDomain: 'korean.bbc.co.uk',
     brandName: 'BBC News 코리아',
     product: 'BBC News',
@@ -226,6 +227,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: '다음 라디오 방송',
         duration: '방송 길이',
         recentEpisodes: '이전',
+        closeVideo: '나가기',
       },
       socialEmbed: {
         caption: {
@@ -311,7 +313,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: '다른 언어로 보기',
         },
         {
           id: 'COOKIE_SETTINGS',

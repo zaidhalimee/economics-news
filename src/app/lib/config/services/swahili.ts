@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-swahili',
     atiAnalyticsProducerId: '86',
+    atiAnalyticsProducerName: 'SWAHILI',
     chartbeatDomain: 'swahili.bbc.co.uk',
     brandName: 'BBC News Swahili',
     product: 'BBC News',
@@ -271,7 +272,7 @@ export const service: DefaultServiceConfig = {
     mostRead: {
       header: 'Iliyosomwa zaidi',
       lastUpdated: 'Imeboreshwa mwisho:',
-      numberOfItems: 5,
+      numberOfItems: 10,
       hasMostRead: true,
     },
     radioSchedule: {
@@ -314,7 +315,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'Habari za BBC kwa lugha zingine',
         },
         {
           id: 'COOKIE_SETTINGS',

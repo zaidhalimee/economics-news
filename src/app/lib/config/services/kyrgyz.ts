@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-kyrgyz',
     atiAnalyticsProducerId: '58',
+    atiAnalyticsProducerName: 'KYRGYZ',
     chartbeatDomain: 'kyrgyz.bbc.co.uk',
     brandName: 'BBC News Кыргыз Кызматы',
     product: 'BBC News',
@@ -234,6 +235,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'Мурдагы берүүлөр',
         podcastExternalLinks: 'Бул подкастты башка платформалардан дагы угуңуз',
         download: 'Подкастты жүктөп алыңыз',
+        closeVideo: 'Чыгуу',
       },
       socialEmbed: {
         caption: {
@@ -312,7 +314,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'Башка тилдерде',
         },
         {
           id: 'COOKIE_SETTINGS',

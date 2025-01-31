@@ -208,6 +208,7 @@ export const mainTranslations = {
     episodes: 'передачи',
     podcastExternalLinks: 'Этот подкаст доступен на',
     download: 'Загрузить эпизод',
+    closeVideo: 'Выйти',
   },
   socialEmbed: {
     caption: {
@@ -318,6 +319,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-russian',
     atiAnalyticsProducerId: '75',
+    atiAnalyticsProducerName: 'RUSSIAN',
     chartbeatDomain: 'russian.bbc.co.uk',
     brandName: 'BBC News Русская служба',
     product: 'BBC News',
@@ -422,7 +424,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'Би-би-си на других языках',
         },
         {
           id: 'COOKIE_SETTINGS',
