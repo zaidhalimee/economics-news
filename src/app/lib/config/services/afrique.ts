@@ -340,6 +340,10 @@ export const service: DefaultServiceConfig = {
         url: '/afrique',
       },
       {
+        title: 'Conflit en RDC',
+        url: '/afrique/topics/cge72ry253jt',
+      },
+      {
         title: 'Ecoutez en direct',
         url: '/afrique/bbc_afrique_radio/liveradio',
       },
