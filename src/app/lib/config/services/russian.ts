@@ -447,6 +447,10 @@ export const service: DefaultServiceConfig = {
         url: '/russian/topics/cez0n29ggrdt',
       },
       {
+        title: 'Сводка потерь',
+        url: '/russian/topics/cqx9qqylwvgt',
+      },
+      {
         title: 'Истории',
         url: '/russian/topics/cv27xky1pppt',
       },
