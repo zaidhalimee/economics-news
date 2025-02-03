@@ -16,7 +16,7 @@ import {
 import * as serviceContextModule from '../../contexts/ServiceContext';
 
 import pidginData from './fixtureData/tori-51745682.json';
-import useClickTrackerHandler from '.';
+import useClickTrackerHandler, { useConstructLiteSiteUrl } from '.';
 
 const trackingToggleSpy = jest.spyOn(trackingToggle, 'default');
 
@@ -586,5 +586,24 @@ describe('Error handling', () => {
 
     expect(container.error).toBeUndefined();
     expect(global.fetch).not.toHaveBeenCalled();
+  });
+});
+
+describe('Lite Site - Click tracking', () => {
+  it('Returns a valid ati tracking url given the input props', () => {
+    const { result } = renderHook(
+      () =>
+        useConstructLiteSiteUrl({
+          ...defaultProps,
+          campaignID: 'custom-campaign',
+        }),
+      {
+        wrapper,
+      },
+    );
+
+    expect(result.current).toContain(
+      'atc=PUB-[custom-campaign]-[brand]-[]-[CHD=promo::2]-[]-[]-[]-[]&type=AT',
+    );
   });
 });

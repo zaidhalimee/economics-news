@@ -1,7 +1,10 @@
 /** @jsx jsx */
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, useContext } from 'react';
 import { jsx } from '@emotion/react';
-import useClickTrackerHandler from '#hooks/useClickTrackerHandler';
+import useClickTrackerHandler, {
+  LITE_TRACKER_PARAM,
+  useConstructLiteSiteUrl,
+} from '#hooks/useClickTrackerHandler';
 import styles from './index.styles';
 import {
   mostReadListGridProps,
@@ -15,6 +18,7 @@ import {
 } from '../../types';
 import { Direction } from '../../../../models/types/global';
 import Grid from '../../../../legacy/components/Grid';
+import { RequestContext } from '#app/contexts/RequestContext';
 
 export const getParentColumns = (columnLayout: ColumnLayout) => {
   return columnLayout !== 'oneColumn'
@@ -46,7 +50,9 @@ export const MostReadLink = ({
   size,
   eventTrackingData,
 }: PropsWithChildren<MostReadLinkProps>) => {
+  const { isLite } = useContext(RequestContext);
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
+  const liteUrl = useConstructLiteSiteUrl(eventTrackingData);
 
   return (
     <div css={getItemCss({ dir, size })} dir={dir}>
@@ -54,6 +60,7 @@ export const MostReadLink = ({
         css={[styles.link, size === 'default' && styles.defaultLink]}
         href={href}
         onClick={clickTrackerHandler}
+        {...(isLite && { [LITE_TRACKER_PARAM]: liteUrl })}
       >
         {title}
       </a>

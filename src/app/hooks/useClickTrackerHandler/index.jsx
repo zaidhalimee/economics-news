@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import { useContext, useCallback, useState } from 'react';
 
+import { buildATIEventTrackUrl } from '#app/components/ATIAnalytics/atiUrl';
 import { EventTrackingContext } from '../../contexts/EventTrackingContext';
 import useTrackingToggle from '../useTrackingToggle';
 import OPTIMIZELY_CONFIG from '../../lib/config/optimizely';
@@ -9,6 +10,7 @@ import { ServiceContext } from '../../contexts/ServiceContext';
 import { isValidClick } from './clickTypes';
 
 const EVENT_TYPE = 'click';
+export const LITE_TRACKER_PARAM = 'data-ati-tracking';
 
 const useClickTrackerHandler = (props = {}) => {
   const preventNavigation = props?.preventNavigation;
@@ -134,6 +136,37 @@ const useClickTrackerHandler = (props = {}) => {
       useReverb,
     ],
   );
+};
+
+export const useConstructLiteSiteUrl = (props = {}) => {
+  const eventTrackingContext = useContext(EventTrackingContext);
+
+  const componentName = props?.componentName;
+  const url = props?.url;
+  const advertiserID = props?.advertiserID;
+  const format = props?.format;
+  const detailedPlacement = props?.detailedPlacement;
+
+  const { pageIdentifier, platform, producerId, statsDestination } =
+    eventTrackingContext;
+
+  const campaignID = props?.campaignID || eventTrackingContext?.campaignID;
+
+  const atiClickTrackingUrl = buildATIEventTrackUrl({
+    pageIdentifier,
+    producerId,
+    platform,
+    statsDestination,
+    componentName,
+    campaignID,
+    format,
+    type: EVENT_TYPE,
+    advertiserID,
+    url,
+    detailedPlacement,
+  });
+
+  return atiClickTrackingUrl;
 };
 
 export default useClickTrackerHandler;
