@@ -294,7 +294,7 @@ const MediaLoader = ({ blocks, className, embedded, uniqueId }: Props) => {
                   showAds={showAds}
                   uniqueId={uniqueId}
                 />
-                <svg width="100%" height="100vh" css={styles.hideIfCss}></svg>
+                <svg width="100%" height="100vh" css={styles.hideIfCss} />
               </>
             )}
           </>
