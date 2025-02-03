@@ -1,4 +1,4 @@
-import trackingScript from './clickTracking';
+import trackingScript from '.';
 
 const dispatchClick = (targetElement: HTMLElement) => {
   document.body.appendChild(targetElement);

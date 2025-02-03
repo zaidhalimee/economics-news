@@ -1,6 +1,6 @@
 /* eslint-disable react/no-danger */
 import React, { ReactElement, PropsWithChildren } from 'react';
-import trackingScript from '#src/server/utilities/clickTrackingScript/clickTracking';
+import trackingScript from '#src/server/utilities/liteATIClickTracking';
 import { BaseRendererProps } from './types';
 
 interface Props extends BaseRendererProps {
