@@ -1,6 +1,6 @@
 import addPlatformToRequestChainHeader from '.';
 
-describe('addPlatformToRequestChain', () => {
+describe('addPlatformToRequestChainHeader', () => {
   it('appends SIMORGH to the req-svc-chain header if it exists', () => {
     const headers = { 'req-svc-chain': 'SERVICE_1,SERVICE_2' };
     const result = addPlatformToRequestChainHeader({
