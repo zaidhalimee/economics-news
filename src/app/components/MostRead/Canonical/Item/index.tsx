@@ -51,16 +51,21 @@ export const MostReadLink = ({
   eventTrackingData,
 }: PropsWithChildren<MostReadLinkProps>) => {
   const { isLite } = useContext(RequestContext);
-  const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
-  const liteUrl = useConstructLiteSiteUrl(eventTrackingData);
+
+  const clickTrackerHandler = isLite
+    ? {
+        [LITE_TRACKER_PARAM]: useConstructLiteSiteUrl(eventTrackingData),
+      }
+    : {
+        onClick: useClickTrackerHandler(eventTrackingData),
+      };
 
   return (
     <div css={getItemCss({ dir, size })} dir={dir}>
       <a
         css={[styles.link, size === 'default' && styles.defaultLink]}
         href={href}
-        onClick={clickTrackerHandler}
-        {...(isLite && { [LITE_TRACKER_PARAM]: liteUrl })}
+        {...clickTrackerHandler}
       >
         {title}
       </a>
