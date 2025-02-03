@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import { NextResponse, NextRequest } from 'next/server';
 
-import addPlatformToRequestChain from '#server/utilities/addPlatformToRequestChain';
+import addPlatformToRequestChainHeader from '#server/utilities/addPlatformToRequestChainHeader';
 import cspHeaderResponse from './utilities/cspHeaderResponse';
 
 const LOCALHOST_DOMAINS = ['localhost', '127.0.0.1'];
@@ -22,7 +22,7 @@ export function middleware(request: NextRequest) {
 
   response.headers.set(
     'req-svc-chain',
-    addPlatformToRequestChain({
+    addPlatformToRequestChainHeader({
       headers: request.headers,
     }),
   );
