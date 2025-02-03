@@ -3,7 +3,7 @@ import React, { PropsWithChildren, useContext } from 'react';
 import { jsx } from '@emotion/react';
 import useClickTrackerHandler, {
   LITE_TRACKER_PARAM,
-  useConstructLiteSiteUrl,
+  useConstructLiteSiteATIEventTrackUrl,
 } from '#hooks/useClickTrackerHandler';
 import styles from './index.styles';
 import {
@@ -54,7 +54,7 @@ export const MostReadLink = ({
 
   const clickTrackerHandler = isLite
     ? {
-        [LITE_TRACKER_PARAM]: useConstructLiteSiteUrl(eventTrackingData),
+        [LITE_TRACKER_PARAM]: useConstructLiteSiteATIEventTrackUrl(eventTrackingData),
       }
     : {
         onClick: useClickTrackerHandler(eventTrackingData),

@@ -1,18 +1,20 @@
 export default function trackingScript() {
   window.addEventListener('load', () => {
-    document.addEventListener('click', event => {
+    document.addEventListener('click', (event: MouseEvent) => {
+      const targetElement = event.target as HTMLElement;
       // eslint-disable-next-line no-undef
-      if (event.target.tagName === 'A') {
+      if (targetElement?.tagName === 'A') {
         event.stopPropagation();
         event.preventDefault();
 
-        const atiURL = event.target.getAttribute('data-ati-tracking');
+        const atiURL = targetElement.getAttribute('data-ati-tracking');
 
         if (atiURL == null) {
           return;
         }
 
-        const nextPageUrl = event.currentTarget.href;
+        const currentAnchorElement = event.currentTarget as HTMLAnchorElement;
+        const nextPageUrl = currentAnchorElement?.href;
 
         const {
           screen: { width, height, colorDepth, pixelDepth },
@@ -32,7 +34,7 @@ export default function trackingScript() {
         let atUserIdValue = null;
 
         if (atUserIdCookie.length === 2) {
-          const cookieInfo = atUserIdCookie.pop().split(';').shift();
+          const cookieInfo = atUserIdCookie.pop()?.split(';').shift();
 
           if (cookieInfo) {
             const decodedCookie = decodeURI(cookieInfo);
@@ -83,7 +85,7 @@ export default function trackingScript() {
         }
 
         // eslint-disable-next-line no-undef -- This is provided in a helmet script
-        sendBeaconLite(clientSideAtiURL);
+        window.sendBeaconLite(clientSideAtiURL);
 
         window.location.assign(nextPageUrl);
       }

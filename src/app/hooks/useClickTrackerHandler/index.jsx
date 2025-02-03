@@ -138,7 +138,7 @@ const useClickTrackerHandler = (props = {}) => {
   );
 };
 
-export const useConstructLiteSiteUrl = (props = {}) => {
+export const useConstructLiteSiteATIEventTrackUrl = (props = {}) => {
   const eventTrackingContext = useContext(EventTrackingContext);
 
   const componentName = props?.componentName;

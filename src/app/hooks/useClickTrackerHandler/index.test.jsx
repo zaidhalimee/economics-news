@@ -16,7 +16,7 @@ import {
 import * as serviceContextModule from '../../contexts/ServiceContext';
 
 import pidginData from './fixtureData/tori-51745682.json';
-import useClickTrackerHandler, { useConstructLiteSiteUrl } from '.';
+import useClickTrackerHandler, { useConstructLiteSiteATIEventTrackUrl } from '.';
 
 const trackingToggleSpy = jest.spyOn(trackingToggle, 'default');
 
@@ -593,7 +593,7 @@ describe('Lite Site - Click tracking', () => {
   it('Returns a valid ati tracking url given the input props', () => {
     const { result } = renderHook(
       () =>
-        useConstructLiteSiteUrl({
+        useConstructLiteSiteATIEventTrackUrl({
           ...defaultProps,
           campaignID: 'custom-campaign',
         }),

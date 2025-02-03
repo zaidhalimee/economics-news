@@ -1,6 +1,6 @@
 import trackingScript from './clickTracking';
 
-const dispatchClick = targetElement => {
+const dispatchClick = (targetElement: HTMLElement) => {
   document.body.appendChild(targetElement);
   const event = new MouseEvent('click', {
     view: window,
@@ -21,10 +21,15 @@ describe('Click tracking script', () => {
     document.cookie =
       'atuserid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     delete window.location;
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     window.location = {
       assign: jest.fn(),
     };
+
     window.sendBeaconLite = jest.fn();
 
     Object.defineProperty(global, 'crypto', {
@@ -60,7 +65,7 @@ describe('Click tracking script', () => {
     randomUUIDMock.mockReturnValueOnce('newCookieId');
     dispatchClick(anchorElement);
 
-    const callParam = window.sendBeaconLite.mock.calls[0][0];
+    const callParam = (window.sendBeaconLite as jest.Mock).mock.calls[0][0];
 
     expect(callParam).toContain('idclient=oldCookieId');
   });
@@ -72,7 +77,15 @@ describe('Click tracking script', () => {
       'https://logws1363.ati-host.net/?',
     );
 
-    window.screen = { width: 100, height: 400, colorDepth: 24, pixelDepth: 24 };
+    window.screen = {
+      width: 100,
+      height: 400,
+      colorDepth: 24,
+      pixelDepth: 24,
+      availWidth: 400,
+      availHeight: 100,
+      orientation: 'landscape' as unknown as ScreenOrientation,
+    };
     window.innerWidth = 4060;
     window.innerHeight = 1080;
     Object.defineProperty(navigator, 'language', {
@@ -83,7 +96,7 @@ describe('Click tracking script', () => {
 
     dispatchClick(anchorElement);
 
-    const callParam = window.sendBeaconLite.mock.calls[0][0];
+    const callParam = (window.sendBeaconLite as jest.Mock).mock.calls[0][0];
 
     expect(callParam).toContain(
       'r=0x0x24x24&re=4060x1080&hl=16x30x2&lng=en-GB',
