@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-indonesia',
     atiAnalyticsProducerId: '54',
+    atiAnalyticsProducerName: 'INDONESIAN',
     chartbeatDomain: 'indonesian.bbc.co.uk', // this is meant to be different to the service name
     brandName: 'BBC News Indonesia',
     product: 'BBC News',
@@ -254,6 +255,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'Siaran sebelumnya',
         podcastExternalLinks: 'Podcast ini juga tersedia di',
         download: 'Unduh episode',
+        closeVideo: 'Keluar',
       },
       socialEmbed: {
         caption: {
@@ -339,7 +341,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'BC News dalam bahasa-bahasa lain',
         },
         {
           id: 'COOKIE_SETTINGS',

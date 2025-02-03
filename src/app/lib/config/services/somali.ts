@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-somali',
     atiAnalyticsProducerId: '83',
+    atiAnalyticsProducerName: 'SOMALI',
     chartbeatDomain: 'somali.bbc.co.uk',
     brandName: 'BBC News Somali',
     product: 'BBC News',
@@ -316,7 +317,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'Wararka BBC ee luqadaha kale',
         },
         {
           id: 'COOKIE_SETTINGS',

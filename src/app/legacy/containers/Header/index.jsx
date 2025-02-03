@@ -3,11 +3,7 @@ import SkipLink from '#psammead/psammead-brand/src/SkipLink';
 import { RequestContext } from '#contexts/RequestContext';
 import useOperaMiniDetection from '#hooks/useOperaMiniDetection';
 import ScriptLink from '#app/components/Header/ScriptLink';
-import {
-  ARTICLE_PAGE,
-  HOME_PAGE,
-  TOPIC_PAGE,
-} from '#app/routes/utils/pageTypes';
+import { ARTICLE_PAGE, HOME_PAGE } from '#app/routes/utils/pageTypes';
 import LiteSiteCta from '#app/components/LiteSiteCta';
 import { liteEnabledServices } from '#app/components/LiteSiteCta/liteSiteConfig';
 import { ServiceContext } from '../../../contexts/ServiceContext';
@@ -47,10 +43,7 @@ const Header = ({ brandRef, borderBottom, skipLink, scriptLink, linkId }) => {
   );
 };
 
-const HeaderContainer = ({
-  scriptSwitchId = '',
-  renderScriptSwitch = true,
-}) => {
+const HeaderContainer = () => {
   const { isAmp, isApp, pageType, isLite } = useContext(RequestContext);
   const { service, script, translations, dir, scriptLink, lang, serviceLang } =
     useContext(ServiceContext);
@@ -77,14 +70,14 @@ const HeaderContainer = ({
 
   let shouldRenderScriptSwitch = false;
 
-  if (scriptLink && renderScriptSwitch) {
-    if (
-      service === 'uzbek' &&
-      ![ARTICLE_PAGE, HOME_PAGE, TOPIC_PAGE].includes(pageType)
-    ) {
-      shouldRenderScriptSwitch = false;
-    } else {
-      shouldRenderScriptSwitch = true;
+  if (scriptLink) {
+    switch (true) {
+      case service === 'uzbek' && ![ARTICLE_PAGE, HOME_PAGE].includes(pageType):
+        shouldRenderScriptSwitch = false;
+        break;
+      default:
+        shouldRenderScriptSwitch = true;
+        break;
     }
   }
 
@@ -98,21 +91,13 @@ const HeaderContainer = ({
         <Header
           linkId="brandLink"
           skipLink={skipLink}
-          scriptLink={
-            shouldRenderScriptSwitch && (
-              <ScriptLink scriptSwitchId={scriptSwitchId} />
-            )
-          }
+          scriptLink={shouldRenderScriptSwitch && <ScriptLink />}
         />
       ) : (
         <Header
           brandRef={brandRef}
           skipLink={skipLink}
-          scriptLink={
-            shouldRenderScriptSwitch && (
-              <ScriptLink scriptSwitchId={scriptSwitchId} />
-            )
-          }
+          scriptLink={shouldRenderScriptSwitch && <ScriptLink />}
         />
       )}
       {renderLiteSiteCTA && <LiteSiteCta />}

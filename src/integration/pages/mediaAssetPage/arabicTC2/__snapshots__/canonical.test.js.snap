@@ -102,7 +102,7 @@ exports[`Canonical Media Asset Page Footer Anchors should match text and url 7`]
 
 exports[`Canonical Media Asset Page Footer Anchors should match text and url 8`] = `
 {
-  "text": "Other Languages",
+  "text": "بي بي سي نيوز عربي في لغات أخرى",
   "url": "https://www.bbc.com/ws/languages",
 }
 `;

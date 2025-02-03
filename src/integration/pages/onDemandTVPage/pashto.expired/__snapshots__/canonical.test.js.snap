@@ -109,7 +109,7 @@ exports[`Canonical Pashto On Demand TV Page Footer Anchors should match text and
 
 exports[`Canonical Pashto On Demand TV Page Footer Anchors should match text and url 8`] = `
 {
-  "text": "Other Languages",
+  "text": "نورې ژبې",
   "url": "https://www.bbc.com/ws/languages",
 }
 `;

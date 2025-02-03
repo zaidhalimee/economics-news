@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-gahuza',
     atiAnalyticsProducerId: '40',
+    atiAnalyticsProducerName: 'GAHUZA',
     chartbeatDomain: 'gahuza.bbc.co.uk',
     brandName: 'BBC News Gahuza',
     product: 'BBC News',
@@ -255,6 +256,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'Ibiganiro byashise',
         podcastExternalLinks: 'Iyi podcast iraboneka kandi kuri',
         download: 'Pakurura ikiganiro',
+        closeVideo: 'Sohoka',
       },
       socialEmbed: {
         caption: {
@@ -351,6 +353,10 @@ export const service: DefaultServiceConfig = {
       {
         title: "Urupapuro rw'itangiriro",
         url: '/gahuza',
+      },
+      {
+        title: 'Ibitero bya M23 muri Congo',
+        url: '/gahuza/topics/cx2qn9pqx4yt',
       },
       {
         title: 'Ibiyaga binini',

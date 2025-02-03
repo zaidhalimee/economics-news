@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-japanese',
     atiAnalyticsProducerId: '56',
+    atiAnalyticsProducerName: 'JAPANESE',
     chartbeatDomain: 'japanese.bbc.co.uk',
     brandName: 'BBCニュース',
     product: 'BBC News',
@@ -216,6 +217,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: '次のラジオ番組',
         duration: '所要時間',
         recentEpisodes: 'さらに',
+        closeVideo: '閉じる',
       },
       socialEmbed: {
         caption: {
@@ -293,7 +295,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'BBCニュースを他言語で読む',
         },
         {
           id: 'COOKIE_SETTINGS',

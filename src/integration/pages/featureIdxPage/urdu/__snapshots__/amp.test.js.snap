@@ -189,7 +189,7 @@ exports[`AMP Feature Index page Footer Anchors should match text and url 7`] = `
 
 exports[`AMP Feature Index page Footer Anchors should match text and url 8`] = `
 {
-  "text": "Other Languages",
+  "text": "بی بی سی نیوز دیگر زبانوں میں",
   "url": "https://www.bbc.com/ws/languages",
 }
 `;

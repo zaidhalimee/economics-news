@@ -12,6 +12,7 @@ const baseServiceConfig = {
   articleTimestampSuffix: '',
   atiAnalyticsAppName: 'news-zhongwen',
   atiAnalyticsProducerId: '38',
+  atiAnalyticsProducerName: 'CHINESE',
   chartbeatDomain: 'zhongwen.bbc.co.uk',
   brandName: 'BBC News 中文',
   product: 'BBC News',
@@ -101,7 +102,7 @@ export const service: ZhongwenConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: '以其他语言阅览BBC新闻',
         },
         {
           id: 'COOKIE_SETTINGS',
@@ -125,31 +126,31 @@ export const service: ZhongwenConfig = {
       },
       {
         title: '国际',
-        url: '/zhongwen/simp/topics/ck2l9z0em07t',
+        url: '/zhongwen/topics/c83plve5vmjt/simp',
       },
       {
         title: '中国',
-        url: '/zhongwen/simp/topics/cv85rd690y1t',
+        url: '/zhongwen/topics/ckr7mn6r003t/simp',
       },
       {
         title: '香港',
-        url: '/zhongwen/simp/topics/c4vmr03pyn6t',
+        url: '/zhongwen/topics/cezw73jk755t/simp',
       },
       {
         title: '台湾',
-        url: '/zhongwen/simp/topics/c50nzmy3vent',
+        url: '/zhongwen/topics/cd6qem06z92t/simp',
       },
       {
         title: '英国',
-        url: '/zhongwen/simp/topics/c1nq04exqmlt',
+        url: '/zhongwen/topics/c1ez1k4emn0t/simp',
       },
       {
         title: '财经',
-        url: '/zhongwen/simp/topics/cdlxq9k9nqkt',
+        url: '/zhongwen/topics/cq8nqywy37yt/simp',
       },
       {
         title: '视频',
-        url: '/zhongwen/simp/topics/ck5rznle6edt',
+        url: '/zhongwen/topics/cgvl47l38e1t/simp',
       },
     ],
     scriptLink: {
@@ -329,6 +330,7 @@ export const service: ZhongwenConfig = {
         recentEpisodes: '存档节目',
         podcastExternalLinks: 'This podcast is also available on',
         download: '下载本集节目',
+        closeVideo: '退出',
       },
       socialEmbed: {
         caption: {
@@ -408,7 +410,7 @@ export const service: ZhongwenConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: '以其他語言閱覽BBC新聞',
         },
         {
           id: 'COOKIE_SETTINGS',
@@ -432,31 +434,31 @@ export const service: ZhongwenConfig = {
       },
       {
         title: '國際',
-        url: '/zhongwen/trad/topics/c83plve5vmjt',
+        url: '/zhongwen/topics/c83plve5vmjt/trad',
       },
       {
         title: '中國',
-        url: '/zhongwen/trad/topics/ckr7mn6r003t',
+        url: '/zhongwen/topics/ckr7mn6r003t/trad',
       },
       {
         title: '香港',
-        url: '/zhongwen/trad/topics/cezw73jk755t',
+        url: '/zhongwen/topics/cezw73jk755t/trad',
       },
       {
         title: '台灣',
-        url: '/zhongwen/trad/topics/cd6qem06z92t',
+        url: '/zhongwen/topics/cd6qem06z92t/trad',
       },
       {
         title: '英國',
-        url: '/zhongwen/trad/topics/c1ez1k4emn0t',
+        url: '/zhongwen/topics/c1ez1k4emn0t/trad',
       },
       {
         title: '財經',
-        url: '/zhongwen/trad/topics/cq8nqywy37yt',
+        url: '/zhongwen/topics/cq8nqywy37yt/trad',
       },
       {
         title: '影片',
-        url: '/zhongwen/trad/topics/cgvl47l38e1t',
+        url: '/zhongwen/topics/cgvl47l38e1t/trad',
       },
     ],
     scriptLink: {
@@ -636,6 +638,7 @@ export const service: ZhongwenConfig = {
         recentEpisodes: '存档节目',
         podcastExternalLinks: 'This podcast is also available on',
         download: '下載本集節目',
+        closeVideo: '退出',
       },
       socialEmbed: {
         caption: {

@@ -14,6 +14,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-persian',
     atiAnalyticsProducerId: '69',
+    atiAnalyticsProducerName: 'PERSIAN',
     chartbeatDomain: 'persian.bbc.co.uk',
     brandName: 'BBC News فارسی',
     serviceLocalizedName: 'فارسی',
@@ -270,6 +271,7 @@ export const service: DefaultServiceConfig = {
         duration: 'مدت',
         podcastExternalLinks: 'این پادکست در این زمان قابل دسترس است',
         download: 'دانلود برنامه',
+        closeVideo: 'خروج',
       },
       socialEmbed: {
         caption: {
@@ -422,7 +424,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'اخبار به زبان‌های دیگر',
         },
         {
           id: 'COOKIE_SETTINGS',
@@ -442,10 +444,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'بحران خاورمیانه',
         url: '/persian/topics/cj31ldvmg1et',
-      },
-      {
-        title: 'انتخابات آمریکا',
-        url: '/persian/topics/cj1gj22k6z6t',
       },
       {
         title: 'پخش زنده',

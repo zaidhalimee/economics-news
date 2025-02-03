@@ -22,13 +22,14 @@ describe('Canonical ATI Analytics', () => {
 
   it('calls atiBaseURL and sendBeacon with required params', () => {
     const expectedUrl = `${atiBaseUrl}${mockPageviewParams}`;
+    const reverbConfig = undefined;
 
     act(() => {
       render(<CanonicalATIAnalytics pageviewParams={mockPageviewParams} />);
     });
 
     expect(mockSendBeacon).toHaveBeenCalledTimes(1);
-    expect(mockSendBeacon).toHaveBeenCalledWith(expectedUrl);
+    expect(mockSendBeacon).toHaveBeenCalledWith(expectedUrl, reverbConfig);
   });
 
   it('should render lite Helmet script when isLite is true', () => {

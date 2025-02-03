@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-amharic',
     atiAnalyticsProducerId: '4',
+    atiAnalyticsProducerName: 'AMHARIC',
     chartbeatDomain: 'amharic.bbc.co.uk',
     brandName: 'BBC News አማርኛ',
     product: 'BBC News',
@@ -221,6 +222,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'ቀጣይ የሬዲዮ ስርጭት',
         duration: 'ርዝመት',
         recentEpisodes: 'ያለፉ ዝግጅቶች’',
+        closeVideo: 'ይውጡ',
       },
       socialEmbed: {
         caption: {
@@ -363,7 +365,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'ቢቢሲን በተለያዩ ቋንቋዎች',
         },
         {
           id: 'COOKIE_SETTINGS',

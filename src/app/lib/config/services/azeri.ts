@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-azeri',
     atiAnalyticsProducerId: '6',
+    atiAnalyticsProducerName: 'AZERI',
     chartbeatDomain: 'azeri.bbc.co.uk',
     brandName: 'BBC News Azərbaycanca',
     product: 'BBC News',
@@ -227,6 +228,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Next radio show',
         duration: 'Duration',
         recentEpisodes: 'Daha ətraflı',
+        closeVideo: 'Bağla',
       },
       socialEmbed: {
         caption: {
@@ -304,7 +306,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Other Languages',
+          text: 'BBC News digər dillərdə',
         },
         {
           id: 'COOKIE_SETTINGS',

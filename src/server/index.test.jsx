@@ -10,7 +10,7 @@ import {
   SERVER_SIDE_RENDER_REQUEST_RECEIVED,
   SERVER_SIDE_REQUEST_FAILED,
 } from '#lib/logger.const';
-import { FRONT_PAGE, MEDIA_PAGE } from '#app/routes/utils/pageTypes';
+import { FRONT_PAGE, LIVE_RADIO_PAGE } from '#app/routes/utils/pageTypes';
 import Document from './Document/component';
 import routes from '../app/routes';
 import * as renderDocument from './Document';
@@ -396,6 +396,100 @@ const testArticles = ({ platform, service, variant, queryString = '' }) => {
   });
 };
 
+const testTopics = ({ service, variant, queryString = '' }) => {
+  describe(`Tipo Topic: /${service}/topics/tipoId/${variant}${queryString}`, () => {
+    const successDataResponse = {
+      data: { some: 'data' },
+      service: 'someService',
+      status: 200,
+    };
+
+    const notFoundDataResponse = {
+      data: { some: 'data' },
+      service: 'someService',
+      status: 404,
+    };
+
+    const id = `c0000000001o`;
+    const topicURL = `/${service}/topics/${id}/${variant}${queryString}`;
+
+    describe('Successful render', () => {
+      describe('200 status code', () => {
+        beforeEach(() => {
+          mockRouteProps({
+            id,
+            service,
+            dataResponse: successDataResponse,
+            variant,
+          });
+        });
+
+        const configs = {
+          url: topicURL,
+          service,
+          successDataResponse,
+          variant,
+        };
+
+        it('should respond with rendered data', testRenderedData(configs));
+      });
+
+      describe('404 status code', () => {
+        const pageType = 'topic';
+
+        beforeEach(() => {
+          mockRouteProps({
+            id,
+            service,
+            dataResponse: notFoundDataResponse,
+            variant,
+            pageType,
+          });
+        });
+
+        it('should respond with a rendered 404', async () => {
+          const { status, text } = await makeRequest(topicURL);
+          expect(status).toBe(404);
+          expect(text).toEqual(
+            '<!doctype html><html><body><h1>Mock app</h1></body></html>',
+          );
+        });
+
+        assertNon200ResponseCustomMetrics({
+          requestUrl: topicURL,
+          pageType,
+          statusCode: 404,
+        });
+      });
+    });
+
+    describe('Unknown error within the data fetch, react router or its dependencies', () => {
+      const pageType = 'topic';
+      beforeEach(() => {
+        mockRouteProps({
+          id,
+          service,
+          dataResponse: Error('Error!'),
+          responseType: 'reject',
+          variant,
+          pageType,
+        });
+      });
+
+      it('should respond with a 500', async () => {
+        const { status, text } = await makeRequest(topicURL);
+        expect(status).toEqual(500);
+        expect(text).toEqual('Internal server error');
+      });
+
+      assertNon200ResponseCustomMetrics({
+        requestUrl: topicURL,
+        pageType,
+      });
+    });
+  });
+};
+
 const testAssetPages = ({
   platform,
   service,
@@ -562,7 +656,7 @@ const testMediaPages = ({
     });
 
     describe('404 status code', () => {
-      const pageType = MEDIA_PAGE;
+      const pageType = LIVE_RADIO_PAGE;
 
       beforeEach(() => {
         mockRouteProps({
@@ -589,7 +683,7 @@ const testMediaPages = ({
     });
 
     describe('Unknown error within the data fetch, react router or its dependencies', () => {
-      const pageType = 'liveRadio';
+      const pageType = LIVE_RADIO_PAGE;
 
       beforeEach(() => {
         mockRouteProps({
@@ -1205,6 +1299,10 @@ describe('Server', () => {
     service: 'yoruba',
     queryString: QUERY_STRING,
   });
+
+  testTopics({ service: 'pidgin' });
+
+  testTopics({ service: 'zhongwen', variant: 'simp' });
 
   testMediaPages({
     platform: 'amp',

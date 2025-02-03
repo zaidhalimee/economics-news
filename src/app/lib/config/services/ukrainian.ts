@@ -16,6 +16,7 @@ const baseServiceConfig = {
   articleTimestampPrefix: 'Оновлено: ',
   atiAnalyticsAppName: 'news-ukrainian',
   atiAnalyticsProducerId: '94',
+  atiAnalyticsProducerName: 'UKRAINIAN',
   chartbeatDomain: 'ukrainian.bbc.co.uk',
   brandName: 'BBC News Україна',
   product: 'BBC News',
@@ -243,6 +244,7 @@ const baseServiceConfig = {
       recentEpisodes: 'Більше',
       podcastExternalLinks: 'Цей подкаст доступний у',
       download: 'Завантажити епізод',
+      closeVideo: 'Вийти',
     },
     socialEmbed: {
       caption: {
@@ -318,7 +320,7 @@ const baseServiceConfig = {
       },
       {
         href: 'https://www.bbc.com/ws/languages',
-        text: 'Other Languages',
+        text: 'Новини ВВС іншими мовами',
       },
       {
         id: 'COOKIE_SETTINGS',
