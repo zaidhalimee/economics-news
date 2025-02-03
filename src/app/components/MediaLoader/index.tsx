@@ -241,6 +241,10 @@ const MediaLoader = ({ blocks, className, embedded, uniqueId }: Props) => {
 
   const hasPlaceholder = Boolean(showPlaceholder && placeholderSrc);
 
+  const blocksContentIfNoCSS = Boolean(
+    mediaType === 'audio_video' || mediaType === 'video',
+  );
+
   const showPortraitTitle = orientation === 'portrait' && !embedded;
 
   return (
@@ -294,7 +298,9 @@ const MediaLoader = ({ blocks, className, embedded, uniqueId }: Props) => {
                   showAds={showAds}
                   uniqueId={uniqueId}
                 />
-                <svg width="100%" height="100vh" css={styles.hideIfCss} />
+                {blocksContentIfNoCSS && (
+                  <svg width="100%" height="100vh" css={styles.hideIfCss} />
+                )}
               </>
             )}
           </>
