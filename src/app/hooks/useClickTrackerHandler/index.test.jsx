@@ -16,7 +16,9 @@ import {
 import * as serviceContextModule from '../../contexts/ServiceContext';
 
 import pidginData from './fixtureData/tori-51745682.json';
-import useClickTrackerHandler, { useConstructLiteSiteATIEventTrackUrl } from '.';
+import useClickTrackerHandler, {
+  useConstructLiteSiteATIEventTrackUrl,
+} from '.';
 
 const trackingToggleSpy = jest.spyOn(trackingToggle, 'default');
 

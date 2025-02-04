@@ -205,6 +205,77 @@ exports[`Document Component should render LITE version correctly 1`] = `
     <style>
       .css-7prgni-StyledLink{display:inline-block;}
     </style>
+    <script>
+      (function trackingScript() {
+  window.addEventListener('load', function () {
+    document.addEventListener('click', function (event) {
+      var targetElement = event.target;
+      // eslint-disable-next-line no-undef
+      if ((targetElement === null || targetElement === void 0 ? void 0 : targetElement.tagName) === 'A') {
+        event.stopPropagation();
+        event.preventDefault();
+        var atiURL = targetElement.getAttribute('data-ati-tracking');
+        if (atiURL == null) {
+          return;
+        }
+        var currentAnchorElement = event.currentTarget;
+        var nextPageUrl = currentAnchorElement === null || currentAnchorElement === void 0 ? void 0 : currentAnchorElement.href;
+        var _window = window,
+          _window$screen = _window.screen,
+          width = _window$screen.width,
+          height = _window$screen.height,
+          colorDepth = _window$screen.colorDepth,
+          pixelDepth = _window$screen.pixelDepth,
+          innerWidth = _window.innerWidth,
+          innerHeight = _window.innerHeight;
+        var now = new Date();
+        var hours = now.getHours();
+        var mins = now.getMinutes();
+        var secs = now.getSeconds();
+
+        // COOKIE SETTINGS
+        var cookieName = 'atuserid';
+        var expires = 397; // expires in 13 months
+        var cookiesForPage = "; ".concat(document.cookie);
+        var atUserIdCookie = cookiesForPage.split("; ".concat(cookieName, "="));
+        var atUserIdValue = null;
+        if (atUserIdCookie.length === 2) {
+          var _atUserIdCookie$pop;
+          var cookieInfo = (_atUserIdCookie$pop = atUserIdCookie.pop()) === null || _atUserIdCookie$pop === void 0 ? void 0 : _atUserIdCookie$pop.split(';').shift();
+          if (cookieInfo) {
+            var decodedCookie = decodeURI(cookieInfo);
+            var user = JSON.parse(decodedCookie);
+            atUserIdValue = user.val;
+          }
+        }
+        if (!atUserIdValue && crypto.randomUUID) {
+          atUserIdValue = crypto.randomUUID();
+        }
+        var stringifiedCookieValue = JSON.stringify({
+          val: atUserIdValue
+        });
+        if (atUserIdValue) {
+          document.cookie = "".concat(cookieName, "=").concat(stringifiedCookieValue, "; path=/; max-age=").concat(expires, ";");
+        }
+        var rValue = [width || 0, height || 0, colorDepth || 0, pixelDepth || 0].join('x');
+        var reValue = [innerWidth || 0, innerHeight || 0].join('x');
+        var hlValue = [hours, mins, secs].join('x');
+        var clientSideAtiURL = atiURL.concat('&', 'r=', rValue).concat('&', 're=', reValue).concat('&', 'hl=', hlValue);
+        if (navigator.language) {
+          clientSideAtiURL = clientSideAtiURL.concat('&', 'lng=', navigator.language);
+        }
+        if (atUserIdValue) {
+          clientSideAtiURL = clientSideAtiURL.concat('&', 'idclient=', atUserIdValue);
+        }
+
+        // eslint-disable-next-line no-undef -- This is provided in a helmet script
+        window.sendBeaconLite(clientSideAtiURL);
+        window.location.assign(nextPageUrl);
+      }
+    });
+  });
+})()
+    </script>
   </head>
   <body>
     <div>
