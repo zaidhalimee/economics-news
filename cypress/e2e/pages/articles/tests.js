@@ -13,17 +13,12 @@ const serviceHasTimestamp = service => ['news', 'urdu'].includes(service);
 const serviceHasInlineLink = service =>
   service === 'news' || service === 'afaanoromoo';
 
-// For testing important features that differ between services, e.g. Timestamps.
-// We recommend using inline conditional logic to limit tests to services which differ.
-export const testsThatAlwaysRun = ({ service, pageType }) => {
-  describe(`Running testsToAlwaysRun for ${service} ${pageType}`, () => {});
-};
-
 // For testing features that may differ across services but share a common logic e.g. translated strings.
+// eslint-disable-next-line import/prefer-default-export
 export const testsThatFollowSmokeTestConfig = ({
   service,
   pageType,
-  variant,
+  variant = 'default',
 }) => {
   describe(`Running tests for ${service} ${pageType}`, () => {
     describe(`Metadata`, () => {
