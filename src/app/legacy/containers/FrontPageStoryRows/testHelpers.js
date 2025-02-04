@@ -13,7 +13,10 @@ const getPromoFixtures = dir =>
   pathOr(null, ['content', 'groups'], getFixtureData(dir))
     .flatMap(group => pathOr(null, ['items'], group))
     .filter(item => pathOr(null, ['assetTypeCode'], item) === 'PRO')
-    .map(item => ({ id: getUUID(), ...item }));
+    .map((item, index) => ({
+      id: `${getUUID()}-${item.timestamp || new Date().getTime()}-${index}`,
+      ...item,
+    }));
 
 const getNumberPromoFixtures = (dir, number = 1) => {
   const promoFixtures = getPromoFixtures(dir);

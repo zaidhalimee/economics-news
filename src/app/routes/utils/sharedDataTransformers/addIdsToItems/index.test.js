@@ -44,17 +44,11 @@ const fixtureC = {
   },
 };
 
+jest.mock('#app/lib/utilities/getUUID', () =>
+  jest.fn().mockImplementation(() => 'mockId-12345'),
+);
+
 describe('addIdsToItems rule', () => {
-  const originalRandomUUID = global.crypto.randomUUID;
-
-  beforeEach(() => {
-    global.crypto.randomUUID = jest.fn().mockImplementation(() => 'mockId');
-  });
-
-  afterEach(() => {
-    global.crypto.randomUUID = originalRandomUUID;
-  });
-
   it('should add ids to all items without ids', () => {
     const actual = addIdsToItems({
       pathToItems: ['content', 'model', 'blocks'],

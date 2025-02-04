@@ -42,6 +42,10 @@ const noGroups = {
   },
 };
 
+jest.mock('#app/lib/utilities/getUUID', () =>
+  jest.fn().mockImplementation(() => 'mockId-12345'),
+);
+
 describe('addIdsToGroups rule', () => {
   it('should add ids to all content type items without ids', () => {
     const actual = addIdsToGroups(noId);
