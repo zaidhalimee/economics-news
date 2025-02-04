@@ -528,7 +528,6 @@ export const buildReverbPageSectionEventModel = ({
         },
       },
       user: {
-        hashedId: getAtUserId(),
         isSignedIn: false,
       },
     },
