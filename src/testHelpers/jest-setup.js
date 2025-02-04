@@ -13,7 +13,12 @@ global.AbortSignal = {
 global.ReadableStream = ReadableStream;
 global.MessagePort = MessagePort;
 
-window.require = jest.fn();
+Object.defineProperty(global, 'crypto', {
+  value: {
+    randomUUID: jest.fn(),
+    getRandomValues: jest.fn(),
+  },
+});
 
 /*
  * Mock to avoid async behaviour in tests

@@ -1,9 +1,5 @@
 import addIdsToGroups from '.';
 
-jest.mock('uuid', () => ({
-  v4: () => 'mockId',
-}));
-
 const noId = {
   content: {
     groups: [

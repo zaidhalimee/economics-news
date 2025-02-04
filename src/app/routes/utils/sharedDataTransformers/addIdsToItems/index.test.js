@@ -1,9 +1,5 @@
 import addIdsToItems from '.';
 
-jest.mock('uuid', () => ({
-  v4: () => 'mockId',
-}));
-
 const fixtureA = {
   content: {
     model: {
@@ -49,6 +45,16 @@ const fixtureC = {
 };
 
 describe('addIdsToItems rule', () => {
+  const originalRandomUUID = global.crypto.randomUUID;
+
+  beforeEach(() => {
+    global.crypto.randomUUID = jest.fn().mockImplementation(() => 'mockId');
+  });
+
+  afterEach(() => {
+    global.crypto.randomUUID = originalRandomUUID;
+  });
+
   it('should add ids to all items without ids', () => {
     const actual = addIdsToItems({
       pathToItems: ['content', 'model', 'blocks'],

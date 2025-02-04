@@ -8,6 +8,12 @@ Object.defineProperties(globalThis, {
   TextEncoder: { value: TextEncoder },
   ReadableStream: { value: ReadableStream },
   MessagePort: { value: MessagePort },
+  crypto: {
+    value: {
+      randomUUID: jest.fn(),
+      getRandomValues: jest.fn(),
+    },
+  },
 });
 
 global.console = {
