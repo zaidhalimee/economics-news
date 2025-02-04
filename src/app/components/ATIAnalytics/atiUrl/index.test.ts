@@ -357,8 +357,11 @@ describe('Reverb', () => {
           x18: 'isLocServeCookieSet',
         },
       };
+      const userParans = { isSignedIn: false };
 
       expect(reverbAnalyticsModel.params.page).toEqual(pageParams);
+      expect(reverbAnalyticsModel.params.user).toEqual(userParans);
+
       expect(reverbAnalyticsModel.eventDetails).toEqual({
         eventName: 'pageView',
       });
@@ -438,6 +441,15 @@ describe('Reverb', () => {
         componentName: 'top-stories',
         container: '1234',
       });
+    });
+
+    it('should return the correct Reverb user object configuration', () => {
+      const reverbPageSectionViewEventModel =
+        buildReverbPageSectionEventModel(input);
+
+      expect(reverbPageSectionViewEventModel.params.user).toEqual(
+        { isSignedIn: false }
+      );
     });
   });
 });
