@@ -30,12 +30,12 @@ describe('getUUID', () => {
     global.crypto.randomUUID = null;
 
     (global.crypto.getRandomValues as jest.Mock).mockImplementationOnce(() => [
-      12345, 67890, 9876, 54321, 2468,
+      12345, 67890, 98765, 54321, 24680,
     ]);
 
     const uuid = getUUID();
 
     expect(getRandomValuesSpy).toHaveBeenCalled();
-    expect(uuid).toBe('12345-67890-9876-54321-2468');
+    expect(uuid).toBe('12345-67890-98765-54321-24680');
   });
 });
