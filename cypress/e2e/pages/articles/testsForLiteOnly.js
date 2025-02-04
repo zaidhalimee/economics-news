@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import { liteEnabledServices } from '#app/components/LiteSiteCta/liteSiteConfig';
 
-export const testsForLiteOnly = ({ service, pageType }) => {
+export default ({ service, pageType }) => {
   describe(`Running testsForLiteOnly for ${service} ${pageType}`, () => {
     describe('CTA: Lite', () => {
       if (liteEnabledServices.includes(service)) {

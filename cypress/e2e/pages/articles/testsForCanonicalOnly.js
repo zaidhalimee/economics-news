@@ -8,11 +8,7 @@ import { getBlockData, getBlockByType, getVideoEmbedUrl } from './helpers';
 const serviceHasCaption = service => service === 'news';
 
 // For testing features that may differ across services but share a common logic e.g. translated strings.
-export const testsThatFollowSmokeTestConfigForCanonicalOnly = ({
-  service,
-  pageType,
-  variant,
-}) =>
+export default ({ service, pageType, variant }) =>
   describe(`Canonical Tests for ${service} ${pageType}`, () => {
     if (appToggles.chartbeatAnalytics.enabled) {
       describe('Chartbeat', () => {

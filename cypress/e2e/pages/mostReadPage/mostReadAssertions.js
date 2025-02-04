@@ -68,7 +68,7 @@ export const crossPlatform = ({ service, variant = 'default' }) => {
   }
 };
 
-export const ampOnly = ({ service, variant }) => {
+export const ampOnly = ({ service, variant = 'default' }) => {
   const serviceID = config[service]?.name || service;
 
   if (!MOST_READ_EXCLUDED_SERVICES.includes(serviceID)) {
