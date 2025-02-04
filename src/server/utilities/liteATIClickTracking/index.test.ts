@@ -98,9 +98,15 @@ describe('Click tracking script', () => {
 
     const callParam = (window.sendBeaconLite as jest.Mock).mock.calls[0][0];
 
-    expect(callParam).toContain(
-      'r=0x0x24x24&re=4060x1080&hl=16x30x2&lng=en-GB',
-    );
+    const parsedATIParams = Object.fromEntries(new URLSearchParams(callParam));
+
+    expect(parsedATIParams).toEqual({
+      'https://logws1363.ati-host.net/?': '',
+      hl: '16x30x2',
+      lng: 'en-GB',
+      r: '0x0x24x24',
+      re: '4060x1080',
+    });
   });
 
   it('Does not call sendBeacon if the event has no data-ati-tracking parameter', () => {
