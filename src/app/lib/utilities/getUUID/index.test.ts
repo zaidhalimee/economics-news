@@ -1,4 +1,3 @@
-import exp from 'node:constants';
 import getUUID from '.';
 
 const randomUUIDSpy = jest.spyOn(global.crypto, 'randomUUID');
