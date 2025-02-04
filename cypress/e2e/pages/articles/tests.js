@@ -14,12 +14,7 @@ const serviceHasInlineLink = service =>
   service === 'news' || service === 'afaanoromoo';
 
 // For testing features that may differ across services but share a common logic e.g. translated strings.
-// eslint-disable-next-line import/prefer-default-export
-export const testsThatFollowSmokeTestConfig = ({
-  service,
-  pageType,
-  variant = 'default',
-}) => {
+export default ({ service, pageType, variant = 'default' }) => {
   describe(`Running tests for ${service} ${pageType}`, () => {
     describe(`Metadata`, () => {
       // Here we should only have metadata tests that are unique to articles pages
