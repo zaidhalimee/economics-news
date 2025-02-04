@@ -447,9 +447,9 @@ describe('Reverb', () => {
       const reverbPageSectionViewEventModel =
         buildReverbPageSectionEventModel(input);
 
-      expect(reverbPageSectionViewEventModel.params.user).toEqual(
-        { isSignedIn: false }
-      );
+      expect(reverbPageSectionViewEventModel.params.user).toEqual({
+        isSignedIn: false,
+      });
     });
   });
 });
