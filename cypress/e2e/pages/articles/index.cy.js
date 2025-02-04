@@ -6,44 +6,49 @@ import ampTests from './testsForAMPOnly';
 import canonicalTests from './testsForCanonicalOnly';
 import liteTests from './testsForLiteOnly';
 
+const allTestsForAllPagesAndPlatforms = [
+  ...testsThatAlwaysRunForAllPages,
+  ...crossPlatformTests,
+];
+
 const canonicalTestSuites = [
   {
     path: '/gahuza/articles/c5y51yxeg53o',
     runforEnv: ['local'],
     service: 'gahuza',
-    tests: [testsThatAlwaysRunForAllPages, crossPlatformTests, canonicalTests],
+    tests: [...allTestsForAllPagesAndPlatforms, canonicalTests],
   },
   {
     path: '/news/articles/cn7k01xp8kxo',
     runforEnv: ['local'],
     service: 'news',
-    tests: [testsThatAlwaysRunForAllPages, crossPlatformTests, canonicalTests],
+    tests: [...allTestsForAllPagesAndPlatforms, canonicalTests],
   },
   {
     path: '/serbian/articles/c805k05kr73o/cyr',
     runforEnv: ['local'],
     service: 'serbian',
     variant: 'cyr',
-    tests: [testsThatAlwaysRunForAllPages, crossPlatformTests, canonicalTests],
+    tests: [...allTestsForAllPagesAndPlatforms, canonicalTests],
   },
   {
     path: '/serbian/articles/c805k05kr73o/lat',
     runforEnv: ['local'],
     service: 'serbian',
     variant: 'lat',
-    tests: [testsThatAlwaysRunForAllPages, crossPlatformTests, canonicalTests],
+    tests: [...allTestsForAllPagesAndPlatforms, canonicalTests],
   },
   {
     path: '/mundo/articles/ce7p1pw7165o',
     runforEnv: ['live'],
     service: 'mundo',
-    tests: [testsThatAlwaysRunForAllPages, crossPlatformTests, canonicalTests],
+    tests: [...allTestsForAllPagesAndPlatforms, canonicalTests],
   },
   {
     path: '/persian/articles/crgxnrdl1xvo',
     runforEnv: ['live'],
     service: 'persian',
-    tests: [testsThatAlwaysRunForAllPages, crossPlatformTests, canonicalTests],
+    tests: [...allTestsForAllPagesAndPlatforms, canonicalTests],
   },
 ];
 
@@ -52,7 +57,7 @@ const ampTestSuites = canonicalTestSuites.map(testSuite => {
   return {
     ...testSuite,
     path: `${testSuite.path}.amp`,
-    tests: [testsThatAlwaysRunForAllPages, crossPlatformTests, ampTests],
+    tests: [...allTestsForAllPagesAndPlatforms, ampTests],
   };
 });
 
@@ -61,7 +66,7 @@ const liteTestSuites = canonicalTestSuites.map(testSuite => {
   return {
     ...testSuite,
     path: `${testSuite.path}.lite`,
-    tests: [testsThatAlwaysRunForAllPages, crossPlatformTests, liteTests],
+    tests: [...allTestsForAllPagesAndPlatforms, liteTests],
   };
 });
 
