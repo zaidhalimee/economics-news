@@ -7,8 +7,8 @@ import canonicalTests from './testsForCanonicalOnly';
 import liteTests from './testsForLiteOnly';
 
 const allTestsForAllPagesAndPlatforms = [
-  ...testsThatAlwaysRunForAllPages,
-  ...crossPlatformTests,
+  testsThatAlwaysRunForAllPages,
+  crossPlatformTests,
 ];
 
 const canonicalTestSuites = [
