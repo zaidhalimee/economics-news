@@ -52,6 +52,7 @@ updates:
           - '@next/*'
           - 'next'
           - 'next-*'
+          - '@img-sharp-*'
       loadable-minor-patch:
         patterns:
           - '@loadable/*'
