@@ -43,7 +43,7 @@ const noGroups = {
 };
 
 jest.mock('#app/lib/utilities/getUUID', () =>
-  jest.fn().mockImplementation(() => 'mockId-12345'),
+  jest.fn().mockImplementation(() => 'mockId'),
 );
 
 describe('addIdsToGroups rule', () => {
