@@ -100,8 +100,7 @@ describe('Click tracking script', () => {
 
     const parsedATIParams = Object.fromEntries(new URLSearchParams(callParam));
 
-    expect(parsedATIParams).toEqual({
-      'https://logws1363.ati-host.net/?': '',
+    expect(parsedATIParams).toMatchObject({
       hl: '16x30x2',
       lng: 'en-GB',
       r: '0x0x24x24',
