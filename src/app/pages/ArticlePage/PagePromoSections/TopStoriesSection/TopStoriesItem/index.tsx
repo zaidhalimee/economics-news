@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import { jsx } from '@emotion/react';
-import { forwardRef, Ref } from 'react';
+import { ForwardedRef, forwardRef } from 'react';
 import { getIsLive } from '#lib/utilities/getStoryPromoInfo';
 import Promo from '#components/OptimoPromos';
 import { EventTrackingBlock } from '#app/models/types/eventTracking';
@@ -73,7 +73,7 @@ type TopStoriesItemProps = {
 const TopStoriesItem = forwardRef(
   (
     { item, ariaLabelledBy, eventTrackingData = null }: TopStoriesItemProps,
-    viewRef: Ref<HTMLDivElement>,
+    viewRef: ForwardedRef<HTMLDivElement>,
   ) => {
     if (!item || Object.keys(item).length === 0) return null;
 
