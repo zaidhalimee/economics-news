@@ -53,6 +53,10 @@ const FeatureIdxPageWithContext = ({
   </BrowserRouter>
 );
 
+jest.mock('#app/lib/utilities/getUUID', () =>
+  jest.fn().mockImplementation(() => 'mockId'),
+);
+
 jest.mock('../../components/ChartbeatAnalytics', () => {
   return () => <div>chartbeat</div>;
 });
