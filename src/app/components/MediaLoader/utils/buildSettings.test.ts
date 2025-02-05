@@ -74,6 +74,7 @@ describe('buildSettings', () => {
           appName: 'news-serbian',
           appType: 'responsive',
           counterName: 'live_coverage.testID.page',
+          superResponsive: true,
           playlistObject: {
             title:
               "BBC launch trailer for We Know Our Place women's sport campaign",
@@ -158,6 +159,7 @@ describe('buildSettings', () => {
           appName: 'news-serbian',
           appType: 'responsive',
           counterName: 'live_coverage.testID.page',
+          superResponsive: true,
           playlistObject: {
             title: 'Five things ants can teach us about management',
             summary: 'This is a caption!',
@@ -224,6 +226,7 @@ describe('buildSettings', () => {
           appName: 'news-serbian',
           appType: 'responsive',
           counterName: 'live_coverage.testID.page',
+          superResponsive: true,
           playlistObject: {
             title: 'Five things ants can teach us about management',
             summary: 'This is a caption!',
@@ -292,6 +295,7 @@ describe('buildSettings', () => {
         appName: 'news-serbian',
         appType: 'responsive',
         counterName: 'live_coverage.testID.page',
+        superResponsive: true,
         externalEmbedUrl:
           'https://www.bbc.com/serbian/lat/av-embeds/srbija-68707945/vpid/bbc_arabic_tv',
         playlistObject: {
@@ -349,6 +353,7 @@ describe('buildSettings', () => {
           appName: 'news-arabic',
           appType: 'responsive',
           counterName: 'arabic.multimedia.2013.12.131208_iraq_blast_.page',
+          superResponsive: true,
           playlistObject: {
             title: 'Legacy Media Page Title',
             holdingImageURL:
@@ -421,6 +426,7 @@ describe('buildSettings', () => {
           appName: 'news-serbian',
           appType: 'responsive',
           counterName: 'live_coverage.testID.page',
+          superResponsive: true,
           playlistObject: {
             title: 'Five things ants can teach us about management',
             summary: 'This is a caption!',
@@ -700,6 +706,7 @@ describe('buildSettings', () => {
           autoplay: false,
           appName: 'news-hindi',
           counterName: 'hindi.bbc_hindi_tv.tv.w172zm8920nck2z.page',
+          superResponsive: true,
           statsObject: {
             destination: 'WS_NEWS_LANGUAGES',
             producer: 'HINDI',
@@ -874,6 +881,7 @@ describe('buildSettings', () => {
           appType: 'responsive',
           autoplay: false,
           counterName: 'hausa.bbc_hausa_radio.liveradio.page',
+          superResponsive: true,
           playlistObject: {
             items: [
               {
@@ -956,6 +964,7 @@ describe('buildSettings', () => {
           autoplay: false,
           appName: 'news-afrique',
           counterName: 'afrique.bbc_afrique_radio.w172zn0kxd65h3g.page',
+          superResponsive: true,
           statsObject: {
             destination: 'WS_NEWS_LANGUAGES',
             producer: 'AFRIQUE',
@@ -1081,6 +1090,7 @@ describe('buildSettings', () => {
           autoplay: false,
           counterName: 'live_coverage.c7dkx155e626t.page',
           enableToucan: true,
+          superResponsive: true,
           playlistObject: {
             holdingImageURL:
               'https://ichef.bbci.co.uk/images/ic/$recipe/p0k31t4d.jpg',
@@ -1180,6 +1190,7 @@ describe('buildSettings', () => {
           autoplay: false,
           counterName: 'live_coverage.cvp5r6m6mgpt.page',
           enableToucan: true,
+          superResponsive: true,
           playlistObject: {
             holdingImageURL:
               'https://ichef.bbci.co.uk/images/ic/$recipe/p08b23t4.png',
