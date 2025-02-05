@@ -61,7 +61,7 @@ export default async ({
     const agent = certsRequired(pathname) ? await getAgent() : null;
 
     // Need to check the page type - if IDX or FIX then redirect to a Topic Page
-    if ([FEATURE_INDEX_PAGE, 'IDX'].includes(json?.data?.metadata.type)) {
+    if ([FEATURE_INDEX_PAGE, 'IDX'].includes(json?.data?.metadata?.type)) {
       return {
         status,
         pageData: { ...json.data },
