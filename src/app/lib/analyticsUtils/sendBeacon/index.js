@@ -47,7 +47,7 @@ const setReverbPageValues = async ({ pageVars, userVars }) => {
   });
 
   window.bbcuser = {
-    getHashedId: () => [userVars.hashedId],
+    getHashedId: () => null,
     isSignedIn: () => Promise.resolve(userVars.isSignedIn),
   };
 };
