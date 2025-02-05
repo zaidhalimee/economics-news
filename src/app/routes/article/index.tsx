@@ -20,7 +20,6 @@ import {
   STORY_PAGE,
   PHOTO_GALLERY_PAGE,
   FEATURE_INDEX_PAGE,
-  IDX_PAGE,
 } from '#app/routes/utils/pageTypes';
 import { Article } from '#app/models/types/optimo';
 import getInitialData from '#app/routes/article/getInitialData';
@@ -34,7 +33,7 @@ type SupportedPageTypes =
   | typeof MEDIA_ARTICLE_PAGE
   | typeof MEDIA_ASSET_PAGE
   | typeof FEATURE_INDEX_PAGE
-  | typeof IDX_PAGE;
+  | 'IDX';
 
 const ArticleVariation = (props: { pageData: Article }) => {
   const consumableAsSFV = props?.pageData?.metadata?.consumableAsSFV ?? false;
@@ -53,7 +52,7 @@ const ArticleVariation = (props: { pageData: Article }) => {
     [MEDIA_ARTICLE_PAGE]: MediaArticlePage,
     [MEDIA_ASSET_PAGE]: MediaArticlePage,
     [FEATURE_INDEX_PAGE]: TopicPage,
-    [IDX_PAGE]: HomePage,
+    IDX: HomePage,
   }[pageType];
 
   return PageType ? (

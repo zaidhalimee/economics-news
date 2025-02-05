@@ -13,8 +13,7 @@ import handleError from '#app/routes/utils/handleError';
 import fetchDataFromBFF from '#app/routes/utils/fetchDataFromBFF';
 import { BFF_FETCH_ERROR } from '#lib/logger.const';
 import certsRequired from '#app/routes/utils/certsRequired';
-import { FEATURE_INDEX_PAGE, IDX_PAGE } from '#app/routes/utils/pageTypes';
-import { getUkChinaHomepageRegex } from '#app/routes/utils/regex/utils';
+import { FEATURE_INDEX_PAGE } from '#app/routes/utils/pageTypes';
 
 const logger = nodeLogger(__filename);
 
@@ -62,7 +61,7 @@ export default async ({
     const agent = certsRequired(pathname) ? await getAgent() : null;
 
     // Need to check the page type - if IDX or FIX then redirect to a Topic Page
-    if ([FEATURE_INDEX_PAGE, IDX_PAGE].includes(json?.data?.metadata.type)) {
+    if ([FEATURE_INDEX_PAGE, 'IDX'].includes(json?.data?.metadata.type)) {
       return {
         status,
         pageData: { ...json.data },
