@@ -42,12 +42,6 @@ const smokeCanonicalTestSuites = [
     tests: [...canonicalTests],
   },
   {
-    path: '/news/articles/cn7k01xp8kxo',
-    runforEnv: ['local', 'test'],
-    service: 'news',
-    tests: [...canonicalTests],
-  },
-  {
     path: '/persian/articles/cej3lzd5e0go',
     runforEnv: ['local', 'test'],
     service: 'persian',
@@ -219,6 +213,12 @@ const ampTestSuites = canonicalTestSuites.map(testSuite => {
 // Additional scenarios for news on higher environments
 ampTestSuites.push(
   ...[
+    {
+      path: '/news/articles/cn7k01xp8kxo.amp',
+      runforEnv: ['local', 'test'],
+      service: 'news',
+      tests: [...ampTests],
+    },
     {
       path: '/news/articles/cj7xrxz0e8zo.amp',
       runforEnv: ['live'],
