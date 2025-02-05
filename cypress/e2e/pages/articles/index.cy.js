@@ -223,16 +223,15 @@ const ampTestSuites = canonicalTestSuites
     ],
   );
 
-// eslint-disable-next-line array-callback-return, consistent-return
-const liteTestSuites = canonicalTestSuites.map(testSuite => {
-  if (testSuite.service !== 'news') {
+const liteTestSuites = canonicalTestSuites
+  .filter(({ service }) => service !== 'news')
+  .map(testSuite => {
     return {
       ...testSuite,
       path: `${testSuite.path}.lite`,
       tests: [liteTests],
     };
-  }
-});
+  });
 
 runTestsForPage({
   pageType: 'articles',
