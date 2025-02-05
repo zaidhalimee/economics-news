@@ -92,6 +92,7 @@ export default class AppDocument extends Document<DocProps> {
     const isLite = isLitePath(url);
 
     const cache = createCache({ key: 'css' });
+    // @ts-expect-error - Emotion types are incorrect, come back to this
     const { extractCritical } = createEmotionServer(cache);
 
     const originalRenderPage = ctx.renderPage;
