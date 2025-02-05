@@ -11,7 +11,6 @@ const pageTypes = [
   'mostReadPage',
   'mediaAssetPage',
   'storyPage',
-  'featureIndexPage',
 ];
 
 // list of urls we have decided are acceptable to fail amp validation
