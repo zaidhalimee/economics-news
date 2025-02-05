@@ -1,6 +1,6 @@
 /** @jsx jsx */
 /* @jsxFrag React.Fragment */
-import { forwardRef } from 'react';
+import { forwardRef, Ref } from 'react';
 import { jsx } from '@emotion/react';
 import useViewTracker from '#app/hooks/useViewTracker';
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
@@ -35,7 +35,7 @@ const Billboard = forwardRef(
       eventTrackingData,
       showLiveLabel,
     }: BillboardProps,
-    viewRef,
+    viewRef: Ref<HTMLDivElement>,
   ) => {
     const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
 
