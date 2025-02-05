@@ -177,8 +177,6 @@ describe('Front Page', () => {
         variant: 'lat',
       });
 
-      console.log({ pageData });
-
       const { path } = pageData.content.groups[0].items[0].indexImage;
       const imageURL = `https://ichef.test.bbci.co.uk/ace/ws/660${path}.webp`;
       const expectedWebpSrcSetURLs = [
