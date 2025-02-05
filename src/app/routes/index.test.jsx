@@ -317,33 +317,6 @@ describe('Routes', () => {
       ).toBeInTheDocument();
     });
 
-    it('should route to and render a feature index page', async () => {
-      process.env.SIMORGH_APP_ENV = 'local';
-      const pathname = '/afrique/48465371';
-
-      fetch.mockResponse(JSON.stringify(featureIndexPageJson));
-
-      const { getInitialData, pageType } = getMatchingRoute(pathname);
-      const { pageData } = await getInitialData({
-        path: pathname,
-        pageType,
-      });
-
-      await renderRouter({
-        pathname,
-        pageData,
-        pageType,
-        service: 'afrique',
-      });
-
-      const EXPECTED_TEXT_RENDERED_IN_DOCUMENT =
-        'CAN 2019 : le Sénégal qualifié pour les huitièmes de finale';
-
-      expect(
-        await screen.findByText(EXPECTED_TEXT_RENDERED_IN_DOCUMENT),
-      ).toBeInTheDocument();
-    });
-
     it('should route to and render a 500 error page', async () => {
       const pathname = '/igbo/500';
       const { getInitialData, pageType } = getMatchingRoute(pathname);
