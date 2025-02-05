@@ -78,4 +78,5 @@ module.exports = {
     ],
   ],
   timers: 'modern',
+  workerIdleMemoryLimit: '512MB',
 };
