@@ -4,6 +4,7 @@ export const FRONT_PAGE = 'frontPage' as const;
 export const MOST_READ_PAGE = 'mostRead' as const;
 export const ERROR_PAGE = 'error' as const;
 export const FEATURE_INDEX_PAGE = 'FIX' as const;
+export const IDX_PAGE = 'IDX' as const;
 export const MEDIA_ASSET_PAGE = 'MAP' as const;
 export const STORY_PAGE = 'STY' as const;
 export const PHOTO_GALLERY_PAGE = 'PGL' as const;

@@ -96,7 +96,7 @@ export const getTipoHomeRegex = services => {
 };
 
 export const getHomePageRegex = services => {
-  let homePages = services;
+  let homePages = services.filter(service => service !== 'ukchina');
   if (isLive()) {
     homePages = services.filter(service => homePageServices.includes(service));
   }
@@ -117,6 +117,10 @@ export const getManifestRegex = services => {
 export const getCpsAssetRegex = services => {
   const serviceRegex = getServiceRegex(services);
   return `/:service(${serviceRegex}):variant(${variantRegex})?/:assetUri(${assetUriRegex}):amp(${ampRegex})?:lite(${liteRegex})?`;
+};
+
+export const getUkChinaHomepageRegex = () => {
+  return `/:service(ukchina):variant(${variantRegex})?:amp(${ampRegex})?:lite(${liteRegex})?`;
 };
 
 export const getLegacyAssetRegex = services => {

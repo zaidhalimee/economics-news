@@ -3,7 +3,8 @@ import {
   ArticlePage,
   ErrorPage,
   MediaArticlePage,
-  FeatureIdxPage,
+  TopicPage,
+  HomePage,
 } from '#pages/index';
 import {
   articlePath,
@@ -19,9 +20,11 @@ import {
   STORY_PAGE,
   PHOTO_GALLERY_PAGE,
   FEATURE_INDEX_PAGE,
+  IDX_PAGE,
 } from '#app/routes/utils/pageTypes';
 import { Article } from '#app/models/types/optimo';
 import getInitialData from '#app/routes/article/getInitialData';
+import { getUkChinaHomepageRegex } from '../utils/regex/utils';
 
 type SupportedPageTypes =
   | typeof ARTICLE_PAGE
@@ -30,7 +33,8 @@ type SupportedPageTypes =
   | typeof PHOTO_GALLERY_PAGE
   | typeof MEDIA_ARTICLE_PAGE
   | typeof MEDIA_ASSET_PAGE
-  | typeof FEATURE_INDEX_PAGE;
+  | typeof FEATURE_INDEX_PAGE
+  | typeof IDX_PAGE;
 
 const ArticleVariation = (props: { pageData: Article }) => {
   const consumableAsSFV = props?.pageData?.metadata?.consumableAsSFV ?? false;
@@ -39,6 +43,8 @@ const ArticleVariation = (props: { pageData: Article }) => {
     consumableAsSFV ? MEDIA_ARTICLE_PAGE : props?.pageData?.metadata?.type
   ) as SupportedPageTypes;
 
+  console.log({ pageType });
+
   const PageType = {
     [ARTICLE_PAGE]: ArticlePage,
     [CORRESPONDENT_STORY_PAGE]: ArticlePage,
@@ -46,7 +52,8 @@ const ArticleVariation = (props: { pageData: Article }) => {
     [PHOTO_GALLERY_PAGE]: ArticlePage,
     [MEDIA_ARTICLE_PAGE]: MediaArticlePage,
     [MEDIA_ASSET_PAGE]: MediaArticlePage,
-    [FEATURE_INDEX_PAGE]: FeatureIdxPage,
+    [FEATURE_INDEX_PAGE]: TopicPage,
+    [IDX_PAGE]: HomePage,
   }[pageType];
 
   return PageType ? (
@@ -57,7 +64,12 @@ const ArticleVariation = (props: { pageData: Article }) => {
 };
 
 export default {
-  path: [articlePath, cpsAssetPagePath, legacyAssetPagePath],
+  path: [
+    articlePath,
+    cpsAssetPagePath,
+    legacyAssetPagePath,
+    getUkChinaHomepageRegex(),
+  ],
   exact: true,
   component: ArticleVariation,
   getInitialData,
