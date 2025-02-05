@@ -1,0 +1,689 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Canonical Topic Page A11y I can see the skip to content link 1`] = `"Ir al contenido"`;
+
+exports[`Canonical Topic Page Analytics ATI tracking pixel excluding src 1`] = `
+<img
+  alt=""
+  height="1px"
+  style="position:absolute"
+  width="1px"
+/>
+`;
+
+exports[`Canonical Topic Page Analytics ATI tracking pixel hostname 1`] = `"https://logws1363.ati-host.net/"`;
+
+exports[`Canonical Topic Page Analytics ATI tracking pixel search params 1`] = `
+[
+  {
+    "s": "598343",
+  },
+  {
+    "s2": "62",
+  },
+  {
+    "p": "mundo.world.feature_index.53826365.page",
+  },
+  {
+    "x1": "[urn:bbc:cps:curie:asset:8fc304ad-d48d-4302-bc26-0522ccf72d34]",
+  },
+  {
+    "x2": "[responsive]",
+  },
+  {
+    "x3": "[news-mundo]",
+  },
+  {
+    "x4": "[es]",
+  },
+  {
+    "x7": "[FIX]",
+  },
+  {
+    "x8": "[simorgh-nojs]",
+  },
+  {
+    "x9": "[Elecciones%20presidenciales%20en%20Estados%20Unidos%202020]",
+  },
+]
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 1`] = `
+{
+  "text": "BBC News, Mundo",
+  "url": "/mundo",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 2`] = `
+{
+  "text": "Por qué puedes confiar en la BBC",
+  "url": "https://www.bbc.com/mundo/institucional-51359666",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 3`] = `
+{
+  "text": "Términos de uso",
+  "url": "https://www.bbc.com/mundo/institucional-36400005",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 4`] = `
+{
+  "text": "Sobre la BBC",
+  "url": "https://www.bbc.com/mundo/institucional-36400007",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 5`] = `
+{
+  "text": "Política de privacidad",
+  "url": "https://www.bbc.com/mundo/institucional-36400009",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 6`] = `
+{
+  "text": "Cookies",
+  "url": "https://www.bbc.com/usingthebbc/cookies/",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 7`] = `
+{
+  "text": "Escribe a BBC Mundo",
+  "url": "https://www.bbc.co.uk/mundo/send/u50853489",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 8`] = `
+{
+  "text": "Otros idiomas",
+  "url": "https://www.bbc.com/ws/languages",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 9`] = `
+{
+  "text": "Lee sobre nuestra postura acerca de enlaces externos.",
+  "url": "https://www.bbc.co.uk/editorialguidelines/guidance/feeds-and-links",
+}
+`;
+
+exports[`Canonical Topic Page Footer I can click on the BBC branding and it would take me to the homepage 1`] = `"/mundo"`;
+
+exports[`Canonical Topic Page Footer Paragraphs should match text 1`] = `"© 2025 BBC. La BBC no se hace responsable del contenido de sitios externos. Lee sobre nuestra postura acerca de enlaces externos."`;
+
+exports[`Canonical Topic Page Header I can see the branding 1`] = `"BBC News, Mundo"`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 1`] = `
+{
+  "text": "Noticias",
+  "url": "/mundo",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 2`] = `
+{
+  "text": "América Latina",
+  "url": "/mundo/topics/c7zp57yyz25t",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 3`] = `
+{
+  "text": "Internacional",
+  "url": "/mundo/topics/c2lej05epw5t",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 4`] = `
+{
+  "text": "Hay Festival",
+  "url": "/mundo/topics/cr50y7p7qyqt",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 5`] = `
+{
+  "text": "Economía",
+  "url": "/mundo/topics/c06gq9v4xp3t",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 6`] = `
+{
+  "text": "Ciencia",
+  "url": "/mundo/topics/ckdxnw959n7t",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 7`] = `
+{
+  "text": "Salud",
+  "url": "/mundo/topics/cpzd498zkxgt",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 8`] = `
+{
+  "text": "Cultura",
+  "url": "/mundo/topics/c2dwq9zyv4yt",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 9`] = `
+{
+  "text": "Tecnología",
+  "url": "/mundo/topics/cyx5krnw38vt",
+}
+`;
+
+exports[`Canonical Topic Page Main heading should match text 1`] = `"Elecciones presidenciales en Estados Unidos 2020"`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 1`] = `
+{
+  "sizes": null,
+  "url": "http://localhost:7080/mundo/images/icons/icon-192x192.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 2`] = `
+{
+  "sizes": "72x72",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/mundo/images/icons/icon-72x72.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 3`] = `
+{
+  "sizes": "96x96",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/mundo/images/icons/icon-96x96.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 4`] = `
+{
+  "sizes": "128x128",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/mundo/images/icons/icon-128x128.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 5`] = `
+{
+  "sizes": "144x144",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/mundo/images/icons/icon-144x144.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 6`] = `
+{
+  "sizes": "152x152",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/mundo/images/icons/icon-152x152.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 7`] = `
+{
+  "sizes": "180x180",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/mundo/images/icons/icon-180x180.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 8`] = `
+{
+  "sizes": "192x192",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/mundo/images/icons/icon-192x192.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 9`] = `
+{
+  "sizes": "384x384",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/mundo/images/icons/icon-384x384.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 10`] = `
+{
+  "sizes": "512x512",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/mundo/images/icons/icon-512x512.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Canonical link 1`] = `"http://localhost:7080/mundo/noticias-internacional-53826365"`;
+
+exports[`Canonical Topic Page SEO Dir attribute 1`] = `"ltr"`;
+
+exports[`Canonical Topic Page SEO FB app ID 1`] = `"1609039196070050"`;
+
+exports[`Canonical Topic Page SEO Heading level 1 1`] = `"Elecciones presidenciales en Estados Unidos 2020"`;
+
+exports[`Canonical Topic Page SEO Lang attribute 1`] = `"es"`;
+
+exports[`Canonical Topic Page SEO Linked data should match text 1`] = `
+{
+  "@context": "http://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "headline": "Elecciones presidenciales en Estados Unidos 2020",
+      "image": {
+        "@type": "ImageObject",
+        "height": 576,
+        "url": "https://news.files.bbci.co.uk/ws/img/logos/og/mundo.png",
+        "width": 1024,
+      },
+      "inLanguage": {
+        "@type": "Language",
+        "alternateName": "es",
+        "name": "Spanish",
+      },
+      "mainEntityOfPage": {
+        "@id": "http://localhost:7080/mundo/noticias-internacional-53826365",
+        "@type": "WebPage",
+        "name": "Elecciones presidenciales en Estados Unidos 2020",
+      },
+      "publisher": {
+        "@type": "NewsMediaOrganization",
+        "logo": {
+          "@type": "ImageObject",
+          "height": 576,
+          "url": "https://news.files.bbci.co.uk/ws/img/logos/og/mundo.png",
+          "width": 1024,
+        },
+        "name": "BBC News Mundo",
+        "publishingPrinciples": "https://www.bbc.com/mundo/institucional-51359666",
+      },
+      "thumbnailUrl": "https://news.files.bbci.co.uk/ws/img/logos/og/mundo.png",
+      "url": "http://localhost:7080/mundo/noticias-internacional-53826365",
+    },
+    {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55851378",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55910814",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://www.bbc.com/mundo/55777096",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55725976",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 5,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55725586",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 6,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55821065",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 7,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55641435",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 8,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55670753",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 9,
+          "url": "https://www.bbc.com/mundo/noticias-55138729",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 10,
+          "url": "https://www.bbc.com/mundo/noticias-54996294",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 11,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54857534",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 12,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54851879",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 13,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54856997",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 14,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55564219",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 15,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55613105",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 16,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55577442",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 17,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55568588",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 18,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55569919",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 19,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55627554",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 20,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55580746",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 21,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55583584",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 22,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55580273",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 23,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54926198",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 24,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54849142",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 25,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54930450",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 26,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55011673",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 27,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55154026",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 28,
+          "url": "https://www.bbc.com/mundo/noticias-55668477",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 29,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54866127",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 30,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54859756",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 31,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54850064",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 32,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54531559",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 33,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54756714",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 34,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54833634",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 35,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54833629",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 36,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-53787866",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 37,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54533331",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 38,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55067309",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 39,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55718496",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 40,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54834980",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 41,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55302864",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 42,
+          "url": "https://www.bbc.com/mundo/noticias-54574352",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 43,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54022541",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 44,
+          "url": "https://www.bbc.com/mundo/noticias-54605819",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 45,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54581371",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 46,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54677805",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 47,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55568591",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 48,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-55583766",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 49,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54927091",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 50,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54714592",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 51,
+          "url": "https://www.bbc.com/mundo/noticias-54124544",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 52,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54941430",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 53,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54877917",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 54,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-53743693",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 55,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-53745080",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 56,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-54857017",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 57,
+          "url": "https://www.bbc.com/mundo/noticias-internacional-53631951",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 58,
+          "url": "https://www.bbc.com/mundo/noticias-54618860",
+        },
+      ],
+      "name": "BBC News Mundo",
+      "numberOfItems": 58,
+    },
+  ],
+}
+`;
+
+exports[`Canonical Topic Page SEO OG image 1`] = `"https://news.files.bbci.co.uk/ws/img/logos/og/mundo.png"`;
+
+exports[`Canonical Topic Page SEO OG image alt 1`] = `"BBC News Mundo"`;
+
+exports[`Canonical Topic Page SEO OG locale 1`] = `"es-005"`;
+
+exports[`Canonical Topic Page SEO OG site name 1`] = `"BBC News Mundo"`;
+
+exports[`Canonical Topic Page SEO OG title 1`] = `"Elecciones presidenciales en Estados Unidos 2020 - BBC News Mundo"`;
+
+exports[`Canonical Topic Page SEO OG type 1`] = `"website"`;
+
+exports[`Canonical Topic Page SEO OG url 1`] = `"http://localhost:7080/mundo/noticias-internacional-53826365"`;
+
+exports[`Canonical Topic Page SEO Page title 1`] = `"Elecciones presidenciales en Estados Unidos 2020 - BBC News Mundo"`;
+
+exports[`Canonical Topic Page SEO Robots meta tag 1`] = `"noodp, noydir, max-image-preview:large"`;
+
+exports[`Canonical Topic Page SEO Twitter card 1`] = `"summary_large_image"`;
+
+exports[`Canonical Topic Page SEO Twitter creator 1`] = `"@bbcmundo"`;
+
+exports[`Canonical Topic Page SEO Twitter image alt 1`] = `"BBC News Mundo"`;
+
+exports[`Canonical Topic Page SEO Twitter image src 1`] = `"https://news.files.bbci.co.uk/ws/img/logos/og/mundo.png"`;
+
+exports[`Canonical Topic Page SEO Twitter site 1`] = `"@bbcmundo"`;
+
+exports[`Canonical Topic Page SEO Twitter title 1`] = `"Elecciones presidenciales en Estados Unidos 2020 - BBC News Mundo"`;
