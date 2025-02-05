@@ -58,8 +58,8 @@ describe('All Cypress Settings for all environments', () => {
     ({ smoke, pageType, environment }) => {
       // eslint-disable-next-line no-console
       console.log(
-        `smoke = ${smoke}, environment = ${environment}, pageType = ${pageType}
-`,
+        { smoke, pageType, environment },
+        '\n',
         getPageUrls({ pageType, environment, isSmoke: smoke }).flat(),
       );
 
