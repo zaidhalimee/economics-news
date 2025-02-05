@@ -12,7 +12,7 @@ jest.mock('../utilities/onClient', () => jest.fn());
 onClient.mockImplementation(() => isOnClient);
 
 jest.mock('#app/lib/utilities/getUUID', () =>
-  jest.fn().mockImplementation(() => 'newATUserID'),
+  jest.fn().mockImplementation(() => '12345678-abcd-1fed-0123-a1b2c3d4e5f6'),
 );
 
 const {
