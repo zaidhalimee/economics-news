@@ -479,7 +479,6 @@ export const buildReverbAnalyticsModel = ({
         },
       },
       user: {
-        hashedId: getAtUserId(),
         isSignedIn: false,
       },
     },
@@ -529,7 +528,6 @@ export const buildReverbPageSectionEventModel = ({
         },
       },
       user: {
-        hashedId: getAtUserId(),
         isSignedIn: false,
       },
     },
