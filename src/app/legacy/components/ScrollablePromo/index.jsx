@@ -36,9 +36,12 @@ const PromoWrapper = styled.div`
   }
 `;
 
+const ScrollablePromoContainer = styled.div`
+  background: #f6f6f6;
+  padding: ${GEL_SPACING};
+`;
+
 const LabelComponent = styled.strong`
-  display: block;
-  border: 1px solid red;
   ${({ script }) => script && getDoublePica(script)};
   ${({ service }) => getSansRegular(service)}
 
@@ -111,8 +114,10 @@ const ScrollablePromo = ({
     idSanitiser(`${title}${experimentVariant !== 'none' ? ' scrollable' : ''}`);
 
   const a11yAttributes = {
-    as: 'section',
-    role: 'region',
+    ...(experimentVariant !== 'none' && {
+      as: 'section',
+      role: 'region',
+    }),
     ...(ariaLabel
       ? { 'aria-labelledby': ariaLabel }
       : {
@@ -124,40 +129,45 @@ const ScrollablePromo = ({
         }),
   };
   return (
-    <GridItemMediumNoMargin {...a11yAttributes}>
-      {title && (
-        <LabelComponent
-          id={ariaLabel}
-          data-testid="eoj-recommendations-heading"
-          script={script}
-          service={service}
-          dir={dir}
-          experimentVariant={experimentVariant}
-        >
-          {title}
-        </LabelComponent>
-      )}
-      {experimentVariant !== 'none' && (
-        <PromoList
-          blocks={blocks}
-          experimentVariant={experimentVariant}
-          viewTracker={viewRef}
-          onClick={handleClickTracking}
-        />
-      )}
-      {experimentVariant === 'none' && isSingleItem && (
-        <PromoWrapper dir={dir} ref={viewRef}>
-          <Promo block={blocksWithoutTitle[0]} onClick={handleClickTracking} />
-        </PromoWrapper>
-      )}
-      {experimentVariant === 'none' && !isSingleItem && (
-        <PromoList
-          blocks={blocksWithoutTitle}
-          viewTracker={viewRef}
-          onClick={handleClickTracking}
-        />
-      )}
-    </GridItemMediumNoMargin>
+    <ScrollablePromoContainer>
+      <GridItemMediumNoMargin {...a11yAttributes}>
+        {title && (
+          <LabelComponent
+            id={ariaLabel}
+            data-testid="eoj-recommendations-heading"
+            script={script}
+            service={service}
+            dir={dir}
+            experimentVariant={experimentVariant}
+          >
+            {title}
+          </LabelComponent>
+        )}
+        {experimentVariant !== 'none' && (
+          <PromoList
+            blocks={blocks}
+            experimentVariant={experimentVariant}
+            viewTracker={viewRef}
+            onClick={handleClickTracking}
+          />
+        )}
+        {experimentVariant === 'none' && isSingleItem && (
+          <PromoWrapper dir={dir} ref={viewRef}>
+            <Promo
+              block={blocksWithoutTitle[0]}
+              onClick={handleClickTracking}
+            />
+          </PromoWrapper>
+        )}
+        {experimentVariant === 'none' && !isSingleItem && (
+          <PromoList
+            blocks={blocksWithoutTitle}
+            viewTracker={viewRef}
+            onClick={handleClickTracking}
+          />
+        )}
+      </GridItemMediumNoMargin>
+    </ScrollablePromoContainer>
   );
 };
 

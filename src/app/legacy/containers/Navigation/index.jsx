@@ -7,7 +7,6 @@ import {
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import useViewTracker from '#app/hooks/useViewTracker';
 import { RequestContext } from '#contexts/RequestContext';
-import ScrollablePromo from '#components/ScrollablePromo';
 import { ServiceContext } from '../../../contexts/ServiceContext';
 import Canonical from './index.canonical';
 import Amp from './index.amp';
@@ -23,48 +22,31 @@ const renderListItems = (
   clickTrackerHandler,
   viewRef,
   isLite,
-  blocks = null,
-  experimentVariant = null,
 ) =>
-  navigation
-    .reduce((listAcc, item, index) => {
-      const { title, url, hideOnLiteSite } = item;
-      const active = index === activeIndex;
+  navigation.reduce((listAcc, item, index) => {
+    const { title, url, hideOnLiteSite } = item;
+    const active = index === activeIndex;
 
-      if (hideOnLiteSite && isLite) return listAcc;
+    if (hideOnLiteSite && isLite) return listAcc;
 
-      const listItem = (
-        <Li
-          key={title}
-          url={url}
-          script={script}
-          active={active}
-          currentPageText={currentPage}
-          service={service}
-          dir={dir}
-          clickTrackerHandler={clickTrackerHandler}
-          viewRef={viewRef}
-        >
-          {title}
-        </Li>
-      );
-
-      return [...listAcc, listItem];
-    }, [])
-    .concat(
-      experimentVariant !== 'none' && blocks ? (
-        <li key="scrollable-promo">
-          <div>
-            <ScrollablePromo
-              blocks={blocks}
-              experimentVariant={experimentVariant}
-            />
-          </div>
-        </li>
-      ) : (
-        []
-      ),
+    const listItem = (
+      <Li
+        key={title}
+        url={url}
+        script={script}
+        active={active}
+        currentPageText={currentPage}
+        service={service}
+        dir={dir}
+        clickTrackerHandler={clickTrackerHandler}
+        viewRef={viewRef}
+      >
+        {title}
+      </Li>
     );
+
+    return [...listAcc, listItem];
+  }, []);
 
 const NavigationContainer = ({ propsForOJExperiment }) => {
   const { isAmp, isLite } = useContext(RequestContext);
@@ -159,6 +141,8 @@ const NavigationContainer = ({ propsForOJExperiment }) => {
       dir={dir}
       script={script}
       service={service}
+      experimentVariant={experimentVariant}
+      blocks={blocks}
     />
   );
 };

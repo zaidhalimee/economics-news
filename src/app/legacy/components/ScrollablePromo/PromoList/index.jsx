@@ -14,8 +14,6 @@ import { ServiceContext } from '../../../../contexts/ServiceContext';
 import Promo from '../Promo';
 
 const StandardScrollPromo = styled.ul`
-  list-style: none;
-  border: 1px solid red;
   ${({ dir }) => `padding-${dir === 'ltr' ? 'left' : 'right'}: 0;`}
   margin: 0;
   display: flex;
