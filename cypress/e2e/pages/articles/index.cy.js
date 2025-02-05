@@ -25,7 +25,7 @@ const ampTests = [
 const smokeCanonicalTestSuites = [
   {
     path: '/gahuza/articles/c5y51yxeg53o',
-    runforEnv: ['local'],
+    runforEnv: ['local', 'live'],
     service: 'gahuza',
     tests: [...canonicalTests],
   },
@@ -136,6 +136,12 @@ const nonSmokeCanonicalTestSuites = [
     path: '/azeri/articles/cv0lm08kngmo',
     runforEnv: ['live'],
     service: 'azeri',
+    tests: [...canonicalTests],
+  },
+  {
+    path: '/gahuza/articles/cey23zx8wx8o',
+    runforEnv: ['test'],
+    service: 'gahuza',
     tests: [...canonicalTests],
   },
   {
