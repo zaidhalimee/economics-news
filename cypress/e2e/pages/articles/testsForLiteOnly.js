@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import { liteEnabledServices } from '#app/components/LiteSiteCta/liteSiteConfig';
 
 export default ({ service, pageType }) => {

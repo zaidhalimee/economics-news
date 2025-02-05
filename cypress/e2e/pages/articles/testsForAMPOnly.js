@@ -15,7 +15,7 @@ const articleHasPlayer = articleId =>
   ].includes(articleId);
 
 // For testing features that may differ across services but share a common logic e.g. translated strings.
-export default ({ service, pageType, variant }) => {
+export default ({ service, pageType, variant = 'default' }) => {
   let articleId;
   describe(`Running testsForAMPOnly for ${service} ${pageType}`, () => {
     before(() => {

@@ -17,12 +17,14 @@ const serviceHasInlineLink = service =>
 export default ({ service, pageType, variant = 'default' }) => {
   describe(`Running tests for ${service} ${pageType}`, () => {
     describe(`Metadata`, () => {
+      const serviceID = config[service]?.name || service;
+
       // Here we should only have metadata tests that are unique to articles pages
       it('should have the correct articles metadata', () => {
         cy.get('meta[name="article:author"]').should(
           'have.attr',
           'content',
-          appConfig[config[service].name][variant].articleAuthor,
+          appConfig[serviceID][variant].articleAuthor,
         );
       });
 

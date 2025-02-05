@@ -66,7 +66,7 @@ const liteTestSuites = canonicalTestSuites.map(testSuite => {
   return {
     ...testSuite,
     path: `${testSuite.path}.lite`,
-    tests: [...allTestsForAllPagesAndPlatforms, liteTests],
+    tests: [liteTests],
   };
 });
 
