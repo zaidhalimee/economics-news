@@ -835,8 +835,7 @@ describe('useViewTracker', () => {
       await result.current(element);
 
       expect(result.error).toBeUndefined();
-      expect(
-global.IntersectionObserver).not.toHaveBeenCalled();
+      expect(global.IntersectionObserver).not.toHaveBeenCalled();
       expect(global.fetch).not.toHaveBeenCalled();
     });
   });
