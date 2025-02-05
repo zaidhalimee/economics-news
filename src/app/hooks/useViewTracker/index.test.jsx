@@ -62,7 +62,7 @@ const triggerIntersection = ({ changes, observer }) => {
 const { error } = console;
 
 jest.mock('#app/lib/utilities/getUUID', () =>
-  jest.fn().mockImplementation(() => '11111-22222-33333-44444-55555'),
+  jest.fn().mockImplementation(() => '12345678-abcd-1fed-0123-a1b2c3d4e5f6'),
 );
 
 beforeEach(() => {
