@@ -8,7 +8,6 @@ import defaultToggles from '#lib/config/toggles';
 // components being tested
 
 // mock data
-import featureIndexPageJson from '#data/afrique/cpsAssets/48465371.json';
 import gahuzaPodcastPage from '#data/gahuza/bbc_gahuza_radio/p07yh8hb.json';
 import legacyMediaAssetPage from '#data/azeri/legacyAssets/multimedia/2012/09/120919_georgia_prison_video.json';
 import liveRadioPageJson from '#data/korean/bbc_korean_radio/liveradio.json';
