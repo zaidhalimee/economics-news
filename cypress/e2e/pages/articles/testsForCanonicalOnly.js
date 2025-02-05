@@ -138,7 +138,7 @@ export default ({ service, pageType, variant = 'default' }) =>
         });
       });
       if (service === 'pidgin') {
-        it('should render an iframe with a valid URL when a user clicks play', () => {
+        it('should render a media player with a valid embed URL when a user clicks play', () => {
           cy.window().then(win => {
             const body = win.SIMORGH_DATA.pageData;
             const media = getBlockData('video', body);
