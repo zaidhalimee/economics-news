@@ -11,8 +11,9 @@ const {
   return Object.assign(acc, { [name]: value });
 }, {});
 
-console.log('filters', { smoke, pageType, environment });
-
-const urls = getPageUrls({ pageType, environment, isSmoke: smoke }).flat();
-
-console.log(urls);
+// eslint-disable-next-line no-console
+console.log(
+  { smoke, pageType, environment },
+  '\n',
+  getPageUrls({ pageType, environment, isSmoke: smoke }).flat(),
+);
