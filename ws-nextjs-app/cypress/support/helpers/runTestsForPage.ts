@@ -3,10 +3,12 @@ export default ({ pageType, testSuites }) => {
     const { path, tests, runforEnv, ...params } = testData;
     const cypressEnv = Cypress.env('APP_ENV');
     if (runforEnv.includes(cypressEnv)) {
-      before(() => {
-        cy.visit(path);
+      describe(`${Cypress.config().baseUrl}${path}`, () => {
+        before(() => {
+          cy.visit(path);
+        });
+        tests.forEach(test => test({ path, pageType, ...params }));
       });
-      tests.forEach(test => test({ path, pageType, ...params }));
     }
   });
 };
