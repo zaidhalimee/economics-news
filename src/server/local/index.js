@@ -75,20 +75,17 @@ export default server => {
 
       sendDataFile(res, dataFilePath, next);
     })
-    .get(
-      [homePageDataPath],
-      async ({ params }, res, next) => {
-        const { service, variant } = params;
+    .get([homePageDataPath], async ({ params }, res, next) => {
+      const { service, variant } = params;
 
-        const dataFilePath = constructDataFilePath({
-          pageType: 'homePage',
-          service,
-          variant,
-        });
+      const dataFilePath = constructDataFilePath({
+        pageType: 'homePage',
+        service,
+        variant,
+      });
 
-        sendDataFile(res, dataFilePath, next);
-      },
-    )
+      sendDataFile(res, dataFilePath, next);
+    })
 
     .get(mostReadDataRegexPath, async ({ params }, res, next) => {
       const { service, variant } = params;

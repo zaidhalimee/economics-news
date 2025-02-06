@@ -154,8 +154,8 @@ describe('Routes', () => {
     });
 
     it.each`
-      pathname              | description
-      ${'/kyrgyz'}          | ${'home'}
+      pathname     | description
+      ${'/kyrgyz'} | ${'home'}
     `(
       'should route to and render a $description page',
       async ({ pathname }) => {
