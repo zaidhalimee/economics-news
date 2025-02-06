@@ -4,7 +4,6 @@
 import React, { PropsWithChildren, useContext } from 'react';
 import { jsx } from '@emotion/react';
 import { Helmet } from 'react-helmet';
-import pathOr from 'ramda/src/pathOr';
 
 import GlobalStyles from '#psammead/psammead-styles/src/global-styles';
 import { PageTypes } from '#app/models/types/global';
@@ -79,9 +78,6 @@ const PageLayoutWrapper = ({
   };
 
   console.log('mostReadItems', mostReadItems, 'topStories', topStories);
-  const scriptSwitchId = pathOr('', ['scriptSwitchId'], pageData);
-  const renderScriptSwitch = pathOr(true, ['renderScriptSwitch'], pageData);
-
   const isErrorPage = ![200].includes(status) || !status;
   const pageType = pageData?.metadata?.type;
   const reportingPageType = pageType?.replace(/ /g, '');
@@ -228,11 +224,7 @@ const PageLayoutWrapper = ({
       {!isErrorPage && <WebVitals pageType={pageType} />}
       <GlobalStyles />
       <div id="main-wrapper" css={styles.wrapper}>
-        <HeaderContainer
-          scriptSwitchId={scriptSwitchId}
-          renderScriptSwitch={renderScriptSwitch}
-          propsForOJExperiment={propsForOJExperiment}
-        />
+        <HeaderContainer propsForOJExperiment={propsForOJExperiment} />
         <div css={styles.content}>{children}</div>
         <FooterContainer />
       </div>
