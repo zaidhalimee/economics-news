@@ -60,12 +60,12 @@ export default (indexPageData: CpsPageData) => {
           const duration = media?.versions?.[0].durationISO8601;
 
           return {
-            title: headlines?.headline as string,
+            title: headlines?.headline || '',
             type: media?.format || 'article',
             ...(duration && { duration }),
             lastPublished: new Date(timestamp).toISOString(),
             imageUrl: `https://ichef.bbci.co.uk/ace/ws/{width}${indexImage?.path}.webp`,
-            imageAlt: indexImage?.altText as string,
+            imageAlt: indexImage?.altText || '',
             id,
             link: `https://www.bbc.com${locators?.assetUri}`,
             description,
@@ -104,7 +104,7 @@ export default (indexPageData: CpsPageData) => {
 
   return {
     data: {
-      title: title as string,
+      title,
       curations,
       metadata: {
         analytics: {
@@ -112,10 +112,10 @@ export default (indexPageData: CpsPageData) => {
           producer: '',
         },
         atiAnalytics: {
-          contentId: analyticsLabels.contentId as string,
-          contentType: analyticsLabels.cps_asset_type?.toUpperCase() as string,
-          pageIdentifier: analyticsLabels.counterName as string,
-          pageTitle: title as string,
+          contentId: analyticsLabels.contentId,
+          contentType: analyticsLabels.cps_asset_type?.toUpperCase(),
+          pageIdentifier: analyticsLabels.counterName,
+          pageTitle: title,
         },
       },
       imageData: null,
