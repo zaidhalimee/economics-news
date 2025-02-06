@@ -80,6 +80,14 @@ describe('sendBeacon', () => {
         expect(reverbMock.viewEvent).toHaveBeenCalledTimes(1);
       });
 
+      it('should not call Reverb viewEvent if Reverb is not enabled for a service', async () => {
+        const sendBeacon = require('./index').default;
+
+        await sendBeacon('https://foobar.com', null);
+
+        expect(reverbMock.viewEvent).not.toHaveBeenCalled;
+      });
+
       it('should not call "fetch" if Reverb config is passed', async () => {
         const sendBeacon = require('./index').default;
 
@@ -102,6 +110,14 @@ describe('sendBeacon', () => {
         expect(reverbMock.viewEvent).toHaveBeenCalledTimes(1);
       });
 
+      it('should not call Reverb viewEvent if Reverb is not enabled for a service', async () => {
+        const sendBeacon = require('./index').default;
+
+        await sendBeacon('https://foobar.com', null);
+
+        expect(reverbMock.viewEvent).not.toHaveBeenCalled;
+      });
+
       it('should not call "fetch" if Reverb config is passed', async () => {
         const sendBeacon = require('./index').default;
 
@@ -122,6 +138,14 @@ describe('sendBeacon', () => {
         await sendBeacon('https://foobar.com', reverbConfig);
 
         expect(reverbMock.viewEvent).toHaveBeenCalled();
+      });
+
+      it('should not call Reverb viewEvent if Reverb is not enabled for a service', async () => {
+        const sendBeacon = require('./index').default;
+
+        await sendBeacon('https://foobar.com', null);
+
+        expect(reverbMock.viewEvent).not.toHaveBeenCalled;
       });
 
       it('should not call "fetch" when Reverb config is passed', async () => {
