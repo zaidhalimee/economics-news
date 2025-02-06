@@ -116,20 +116,20 @@ describe('sendBeacon', () => {
         process.env.SIMORGH_APP_ENV = 'live';
       });
 
-      it('should not call Reverb viewEvent if Reverb config is passed', async () => {
+      it('should call Reverb viewEvent if Reverb config is passed', async () => {
         const sendBeacon = require('./index').default;
 
         await sendBeacon('https://foobar.com', reverbConfig);
 
-        expect(reverbMock.viewEvent).not.toHaveBeenCalled();
+        expect(reverbMock.viewEvent).toHaveBeenCalled();
       });
 
-      it('should call "fetch" when Reverb config is passed', async () => {
+      it('should not call "fetch" when Reverb config is passed', async () => {
         const sendBeacon = require('./index').default;
 
         await sendBeacon('https://foobar.com', reverbConfig);
 
-        expect(fetch).toHaveBeenCalledTimes(1);
+        expect(fetch).not.toHaveBeenCalledTimes(1);
       });
     });
   });
