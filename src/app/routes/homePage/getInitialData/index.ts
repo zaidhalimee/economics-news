@@ -56,7 +56,7 @@ export default async ({
       service,
       status,
       pathname,
-      message: error,
+      message,
     });
 
     return { error: message, status };
