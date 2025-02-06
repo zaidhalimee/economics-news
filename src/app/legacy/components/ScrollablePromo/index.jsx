@@ -41,6 +41,7 @@ const ScrollablePromoContainer = styled.div`
   background: #f6f6f6;
   padding: ${GEL_SPACING};
   display: flex;
+  overflow: scroll;
   ${({ experimentVariant }) =>
     experimentVariant &&
     `
