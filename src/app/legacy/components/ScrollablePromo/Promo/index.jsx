@@ -62,6 +62,11 @@ const PromoBox = styled.div`
   @media (min-width: ${GEL_GROUP_4_SCREEN_WIDTH_MIN}) {
     width: 12.6875rem;
   }
+  ${({ experimentVariant }) =>
+    experimentVariant &&
+    `
+      margin-bottom: 0;
+    `}
 `;
 
 const OperaPromoBox = styled.div`
@@ -142,7 +147,7 @@ const Promo = ({ block, experimentVariant, onClick }) => {
 
   const WrapperPromoBox = isOperaMini ? OperaPromoBox : PromoBox;
   return (
-    <WrapperPromoBox>
+    <WrapperPromoBox experimentVariant={experimentVariant}>
       <StyledLink
         href={href}
         service={service}
