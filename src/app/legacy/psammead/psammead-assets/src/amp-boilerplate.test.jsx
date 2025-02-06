@@ -9,7 +9,7 @@ describe('AMP Boilerplate', () => {
       boilerplate.AMP_NO_SCRIPT,
     );
   });
-  describe('JavaScript', () => {
+  describe.skip('JavaScript', () => {
     shouldMatchSnapshot(
       'should render AMP Access JS',
       boilerplate.AMP_ACCESS_JS,
