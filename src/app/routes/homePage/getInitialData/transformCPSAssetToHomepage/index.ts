@@ -1,7 +1,7 @@
 import { MostReadData } from '#app/components/MostRead/types';
 import { Curation, Summary } from '#app/models/types/curationData';
 
-type CPSAsset = {
+type CpsArticle = {
   metadata: {
     analyticsLabels: {
       contentId: string;
@@ -17,9 +17,9 @@ type CPSAsset = {
       type: string;
       items: {
         id: string;
-        headlines?: { headline: string };
-        locators?: { assetUri: string };
-        indexImage?: { path: string; altText: string };
+        headlines: { headline: string };
+        locators: { assetUri: string };
+        indexImage: { path: string; altText: string };
         media?: {
           format: string;
           versions: {
@@ -37,22 +37,34 @@ type CPSAsset = {
 };
 
 type CpsPageData = {
-  article: CPSAsset;
+  article: CpsArticle;
   secondaryData: { mostRead: MostReadData };
 };
 
-export default (indexPageData: CpsPageData) => {
-  const { analyticsLabels, title } = indexPageData.article.metadata;
-  const { mostRead } = indexPageData.secondaryData;
+export default (cpsAsset: CpsPageData) => {
+  const {
+    article: {
+      metadata: {
+        analyticsLabels: {
+          contentId,
+          counterName: pageIdentifier,
+          cps_asset_type: contentType,
+        },
+        title,
+      },
+      content: { groups },
+    },
+    secondaryData: { mostRead },
+  } = cpsAsset;
 
-  const curations: Curation[] = indexPageData.article.content.groups.map(
+  const curations: Curation[] = groups.map(
     ({ type, items, strapline }, curationIndex) => {
       const summaries: Summary[] = items.map(
         ({
           id,
-          headlines,
-          locators,
-          indexImage,
+          headlines: { headline },
+          locators: { assetUri },
+          indexImage: { path: image, altText: imageAlt },
           media,
           summary: description,
           timestamp,
@@ -60,14 +72,14 @@ export default (indexPageData: CpsPageData) => {
           const duration = media?.versions?.[0].durationISO8601;
 
           return {
-            title: headlines?.headline || '',
+            title: headline || '',
             type: media?.format || 'article',
-            ...(duration && { duration }),
+            duration,
             lastPublished: new Date(timestamp).toISOString(),
-            imageUrl: `https://ichef.bbci.co.uk/ace/ws/{width}${indexImage?.path}.webp`,
-            imageAlt: indexImage?.altText || '',
+            imageUrl: `https://ichef.bbci.co.uk/ace/ws/{width}${image}.webp`,
+            imageAlt,
             id,
-            link: `https://www.bbc.com${locators?.assetUri}`,
+            link: `https://www.bbc.com${assetUri}`,
             description,
             isLive: false,
           };
@@ -107,18 +119,13 @@ export default (indexPageData: CpsPageData) => {
       title,
       curations,
       metadata: {
-        analytics: {
-          name: '',
-          producer: '',
-        },
         atiAnalytics: {
-          contentId: analyticsLabels.contentId,
-          contentType: analyticsLabels.cps_asset_type?.toUpperCase(),
-          pageIdentifier: analyticsLabels.counterName,
+          contentId,
+          contentType: contentType?.toUpperCase(),
+          pageIdentifier,
           pageTitle: title,
         },
       },
-      imageData: null,
       activePage: 1,
       pageCount: 1,
     },
