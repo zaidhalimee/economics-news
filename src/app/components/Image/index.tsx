@@ -159,7 +159,7 @@ const Image = ({
               attribution={attribution}
               {...(srcSet && { srcSet: imgSrcSet })}
               {...(imgSizes && { sizes: imgSizes })}
-              {...(preload && { 'data-hero': true })}
+              {...(preload && { 'data-hero': 'true' })}
             />
           </>
         ) : (
