@@ -23,7 +23,6 @@ import {
 } from '#app/routes/utils/pageTypes';
 import { Article } from '#app/models/types/optimo';
 import getInitialData from '#app/routes/article/getInitialData';
-import { getUkChinaHomepageRegex } from '../utils/regex/utils';
 
 type SupportedPageTypes =
   | typeof ARTICLE_PAGE
@@ -63,12 +62,7 @@ const ArticleVariation = (props: { pageData: Article }) => {
 };
 
 export default {
-  path: [
-    articlePath,
-    cpsAssetPagePath,
-    legacyAssetPagePath,
-    getUkChinaHomepageRegex(),
-  ],
+  path: [articlePath, cpsAssetPagePath, legacyAssetPagePath],
   exact: true,
   component: ArticleVariation,
   getInitialData,
