@@ -499,9 +499,7 @@ describe('frontPage -> homePage migration', () => {
   ];
 
   const worldServices = services.filter(
-    service =>
-      !servicesNotCoveredByWorldService.includes(service) &&
-      service !== 'ukchina',
+    service => !servicesNotCoveredByWorldService.includes(service),
   );
 
   const serviceToRoute = service => `/${service}`;
