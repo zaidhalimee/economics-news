@@ -22,7 +22,6 @@ describe('Local Server', () => {
     ${'Article with variant'}            | ${'/zhongwen/articles/c3xd4x9prgyo/simp.json'}                   | ${'/zhongwen/articles/c3xd4x9prgyo/simp.json'}
     ${'Migrated Home Page with variant'} | ${'/zhongwen/trad.json'}                                         | ${'/zhongwen/homePage/trad.json'}
     ${'Migrated Home Page'}              | ${'/pidgin.json'}                                                | ${'/pidgin/homePage/index.json'}
-    ${'Home Page'}                       | ${'/kyrgyz/tipohome.json'}                                       | ${'/kyrgyz/homePage/index.json'}
     ${'Most Read'}                       | ${'/pidgin/mostread.json'}                                       | ${'/pidgin/mostRead/index.json'}
     ${'Most Read with variant'}          | ${'/zhongwen/mostread/trad.json'}                                | ${'/zhongwen/mostRead/trad.json'}
     ${'On Demand Radio Brand'}           | ${'/korean/bbc_korean_radio/w3ct0kn5.json'}                      | ${'/korean/bbc_korean_radio/w3ct0kn5.json'}

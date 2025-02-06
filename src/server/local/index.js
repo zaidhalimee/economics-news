@@ -6,7 +6,6 @@ import {
   cpsAssetPageDataPath,
   frontPageDataPath,
   homePageDataPath,
-  tipoHomeDataPath,
   legacyAssetPageDataPath,
   mostReadDataRegexPath,
   onDemandRadioDataPath,
@@ -77,7 +76,7 @@ export default server => {
       sendDataFile(res, dataFilePath, next);
     })
     .get(
-      [homePageDataPath, tipoHomeDataPath],
+      [homePageDataPath],
       async ({ params }, res, next) => {
         const { service, variant } = params;
 

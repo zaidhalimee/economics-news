@@ -155,7 +155,6 @@ describe('Routes', () => {
 
     it.each`
       pathname              | description
-      ${'/kyrgyz/tipohome'} | ${'tipohome'}
       ${'/kyrgyz'}          | ${'home'}
     `(
       'should route to and render a $description page',
