@@ -75,7 +75,7 @@ export default server => {
 
       sendDataFile(res, dataFilePath, next);
     })
-    .get([homePageDataPath], async ({ params }, res, next) => {
+    .get(homePageDataPath, async ({ params }, res, next) => {
       const { service, variant } = params;
 
       const dataFilePath = constructDataFilePath({
