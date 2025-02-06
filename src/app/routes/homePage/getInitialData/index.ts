@@ -3,7 +3,8 @@ import nodeLogger from '#app/lib/logger.node';
 import { BFF_FETCH_ERROR } from '#app/lib/logger.const';
 import { FetchError } from '#app/models/types/fetch';
 import fetchDataFromBFF from '#app/routes/utils/fetchDataFromBFF';
-import { HOME_PAGE } from '#app/routes/utils/pageTypes';
+import { CPS_ASSET, HOME_PAGE } from '#app/routes/utils/pageTypes';
+import transformCPSAssetToHomepage from './transformCPSAssetToHomepage';
 
 const logger = nodeLogger(__filename);
 
@@ -15,13 +16,25 @@ export default async ({
   getAgent,
 }: InitialDataProps) => {
   try {
-    const { status, json } = await fetchDataFromBFF({
+    const isUKChina = service === 'ukchina';
+
+    const derivedPageType = isUKChina ? CPS_ASSET : HOME_PAGE;
+
+    let status;
+    let json;
+
+    // eslint-disable-next-line prefer-const
+    ({ status, json } = await fetchDataFromBFF({
       pathname,
-      pageType: HOME_PAGE,
+      pageType: derivedPageType,
       service,
       variant,
       getAgent,
-    });
+    }));
+
+    if (isUKChina) {
+      json = transformCPSAssetToHomepage(json?.data);
+    }
 
     const {
       data: { title, description, curations, metadata },
