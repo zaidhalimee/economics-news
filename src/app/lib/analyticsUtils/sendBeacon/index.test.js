@@ -85,7 +85,7 @@ describe('sendBeacon', () => {
 
         await sendBeacon('https://foobar.com', null);
 
-        expect(reverbMock.viewEvent).not.toHaveBeenCalled;
+        expect(reverbMock.viewEvent).not.toHaveBeenCalled();
       });
 
       it('should not call "fetch" if Reverb config is passed', async () => {
@@ -115,7 +115,7 @@ describe('sendBeacon', () => {
 
         await sendBeacon('https://foobar.com', null);
 
-        expect(reverbMock.viewEvent).not.toHaveBeenCalled;
+        expect(reverbMock.viewEvent).not.toHaveBeenCalled();
       });
 
       it('should not call "fetch" if Reverb config is passed', async () => {
@@ -145,7 +145,7 @@ describe('sendBeacon', () => {
 
         await sendBeacon('https://foobar.com', null);
 
-        expect(reverbMock.viewEvent).not.toHaveBeenCalled;
+        expect(reverbMock.viewEvent).not.toHaveBeenCalled();
       });
 
       it('should not call "fetch" when Reverb config is passed', async () => {
