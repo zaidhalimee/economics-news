@@ -242,15 +242,7 @@ const constructPageFetchUrl = ({
         break;
       case HOME_PAGE: {
         const variantPath = variant ? `/${variant}` : '';
-
-        if (isLocal) {
-          fetchUrl = Url(`/${service}${variantPath}`);
-        } else {
-          const homePageId = service
-            ? HOME_PAGE_CONFIG?.[service]?.[env]
-            : null;
-          fetchUrl = Url(`/${service}${variantPath}/${homePageId ?? ''}`);
-        }
+        fetchUrl = Url(`/${service}${variantPath}`);
         break;
       }
       case MOST_READ_PAGE:
