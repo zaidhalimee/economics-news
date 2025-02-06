@@ -18,7 +18,7 @@ const bundleToExecute = isModernBrowser ? 'modern' : 'legacy';
 // When on an unknown route, the SSR would be discarded and the user would only
 // see a blank screen. Avoid this by only hydrating when the embedded page data
 // and window location agree what the path is. Otherwise, fallback to the SSR.
-if (window.SIMORGH_DATA.path === window.location.pathname) {
+if (window?.SIMORGH_DATA?.path === window.location.pathname) {
   loadableReady(
     () => {
       const cache = createCache({ key: 'bbc' });
