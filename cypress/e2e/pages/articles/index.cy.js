@@ -195,18 +195,9 @@ const nonSmokeCanonicalTestSuites = [
   },
 ];
 
-/**
- * TODO: Determine whether when running scheduled E2Es, should we run the smoke URLs too?
- * Or should we only run the non-smoke tests - and leave the smoke tests for the Simorgh CD pipeline
- */
-let canonicalTestSuites = [
-  ...nonSmokeCanonicalTestSuites,
-  ...smokeCanonicalTestSuites,
-];
-
-if (Cypress.env.SMOKE) {
-  canonicalTestSuites = smokeCanonicalTestSuites;
-}
+const canonicalTestSuites = Cypress.env.SMOKE
+  ? smokeCanonicalTestSuites
+  : nonSmokeCanonicalTestSuites;
 
 const ampTestSuites = canonicalTestSuites.map(testSuite => {
   return {
