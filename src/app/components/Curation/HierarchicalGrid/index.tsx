@@ -87,7 +87,7 @@ const HiearchicalGrid = ({
               <Promo>
                 <Promo.Image
                   useLargeImages={useLargeImages}
-                  src={promo.imageUrl || ''}
+                  src={promo.imageUrl || null}
                   alt={promo.imageAlt}
                   lazyLoad={lazyLoadImages}
                   fetchPriority={fetchpriority}
@@ -124,9 +124,11 @@ const HiearchicalGrid = ({
                     <Promo.A href={promo.link}>
                       {isLive ? (
                         <LiveLabel
-                          {...(isFirstPromo && {
-                            className: 'first-promo',
-                          })}
+                          {...(isFirstPromo
+                            ? {
+                                className: 'first-promo',
+                              }
+                            : undefined)}
                         >
                           {promo.title}
                         </LiveLabel>
