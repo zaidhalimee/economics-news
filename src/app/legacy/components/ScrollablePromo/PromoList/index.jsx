@@ -39,7 +39,6 @@ const OperaScrollPromo = styled.ul`
 const StyledList = styled.li`
   display: flex;
   flex-shrink: 0;
-  border: 1px, solid, red;
 
   ${({ dir }) =>
     `
