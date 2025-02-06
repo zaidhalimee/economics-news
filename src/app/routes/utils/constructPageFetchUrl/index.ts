@@ -246,8 +246,10 @@ const constructPageFetchUrl = ({
         if (isLocal) {
           fetchUrl = Url(`/${service}${variantPath}`);
         } else {
-          const id = service ? HOME_PAGE_CONFIG?.[service]?.[env] : null;
-          fetchUrl = Url(`/${service}${variantPath}/${id ?? ''}`);
+          const homePageId = service
+            ? HOME_PAGE_CONFIG?.[service]?.[env]
+            : null;
+          fetchUrl = Url(`/${service}${variantPath}/${homePageId ?? ''}`);
         }
         break;
       }
