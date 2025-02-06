@@ -62,9 +62,9 @@ export default (cpsAsset: CpsPageData) => {
       const summaries: Summary[] = items.map(
         ({
           id,
-          headlines: { headline },
-          locators: { assetUri },
-          indexImage: { path: image, altText: imageAlt },
+          headlines,
+          locators,
+          indexImage,
           media,
           summary: description,
           timestamp,
@@ -72,14 +72,14 @@ export default (cpsAsset: CpsPageData) => {
           const duration = media?.versions?.[0].durationISO8601;
 
           return {
-            title: headline || '',
+            title: headlines?.headline || '',
             type: media?.format || 'article',
             duration,
             lastPublished: new Date(timestamp).toISOString(),
-            imageUrl: `https://ichef.bbci.co.uk/ace/ws/{width}${image}.webp`,
-            imageAlt,
+            imageUrl: `https://ichef.bbci.co.uk/ace/ws/{width}${indexImage?.path}.webp`,
+            imageAlt: indexImage?.altText || '',
             id,
-            link: `https://www.bbc.com${assetUri}`,
+            link: `https://www.bbc.com${locators?.assetUri}`,
             description,
             isLive: false,
           };
