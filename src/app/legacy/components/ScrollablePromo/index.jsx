@@ -15,6 +15,7 @@ import tail from 'ramda/src/tail';
 import {
   GEL_GROUP_0_SCREEN_WIDTH_MIN,
   GEL_GROUP_2_SCREEN_WIDTH_MIN,
+  GEL_GROUP_3_SCREEN_WIDTH_MAX,
   GEL_GROUP_4_SCREEN_WIDTH_MIN,
 } from '#psammead/gel-foundations/src/breakpoints';
 import { GridItemMediumNoMargin } from '#components/Grid';
@@ -39,6 +40,14 @@ const PromoWrapper = styled.div`
 const ScrollablePromoContainer = styled.div`
   background: #f6f6f6;
   padding: ${GEL_SPACING};
+  display: flex;
+  ${({ experimentVariant }) =>
+    experimentVariant &&
+    `
+    @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MAX}){
+      display: none;
+    }
+  `}
 `;
 
 const LabelComponent = styled.strong`
@@ -129,7 +138,7 @@ const ScrollablePromo = ({
         }),
   };
   return (
-    <ScrollablePromoContainer>
+    <ScrollablePromoContainer experimentVariant={experimentVariant}>
       <GridItemMediumNoMargin {...a11yAttributes}>
         {title && (
           <LabelComponent
