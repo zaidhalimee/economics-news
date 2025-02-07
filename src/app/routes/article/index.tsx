@@ -40,8 +40,6 @@ const ArticleVariation = (props: { pageData: Article }) => {
     consumableAsSFV ? MEDIA_ARTICLE_PAGE : props?.pageData?.metadata?.type
   ) as SupportedPageTypes;
 
-  console.log({ pageType });
-
   const PageType = {
     [ARTICLE_PAGE]: ArticlePage,
     [CORRESPONDENT_STORY_PAGE]: ArticlePage,
