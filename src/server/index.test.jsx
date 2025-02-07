@@ -938,6 +938,11 @@ describe('Server', () => {
     jest.clearAllMocks();
   });
 
+  it('should add SIMORGH platform to the service request chain header', async () => {
+    const { header } = await makeRequest('/*');
+    expect(header['req-svc-chain']).toBe('SIMORGH');
+  });
+
   describe('/status', () => {
     it('should respond with a 200', async () => {
       const { statusCode, text } = await makeRequest('/status');
