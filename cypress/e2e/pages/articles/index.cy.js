@@ -195,7 +195,7 @@ const nonSmokeCanonicalTestSuites = [
   },
 ];
 
-const canonicalTestSuites = Cypress.env.SMOKE
+const canonicalTestSuites = Cypress.env('SMOKE')
   ? smokeCanonicalTestSuites
   : nonSmokeCanonicalTestSuites;
 
