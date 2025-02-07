@@ -128,7 +128,10 @@ describe('sendBeacon', () => {
       });
 
       it('should not call Reverb viewEvent if Reverb is not enabled for a service', async () => {
-        await sendBeacon('https://foobar.com', reverbConfigWhenReverbIsDisabled);
+        await sendBeacon(
+          'https://foobar.com',
+          reverbConfigWhenReverbIsDisabled,
+        );
 
         expect(reverbMock.viewEvent).not.toHaveBeenCalled();
       });
