@@ -52,8 +52,6 @@ module.exports = {
           'custom-template',
           'fallback',
           'fetchpriority',
-          'imagesizes',
-          'imagesrcset',
         ],
       },
     ],
