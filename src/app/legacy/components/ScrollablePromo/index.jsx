@@ -43,7 +43,7 @@ const ScrollablePromoContainer = styled.div`
   display: flex;
   overflow: scroll;
   ${({ experimentVariant }) =>
-    experimentVariant &&
+    experimentVariant !== 'none' &&
     `
     @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MAX}){
       display: none;
@@ -92,7 +92,7 @@ const ScrollablePromo = ({
     componentName: `edoj${blockGroupIndex}`,
     format: 'CHD=edoj',
   };
-
+  console.log('experimentVariant:', experimentVariant);
   const viewRef = useViewTracker(eventTrackingData);
   const handleClickTracking = useClickTrackerHandler(eventTrackingData);
 
