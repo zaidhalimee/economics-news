@@ -1,5 +1,6 @@
 import { MostReadData } from '#app/components/MostRead/types';
 import { Curation, Summary } from '#app/models/types/curationData';
+import { HOME_PAGE } from '#app/routes/utils/pageTypes';
 
 type CpsArticle = {
   metadata: {
@@ -117,6 +118,7 @@ export default (cpsAsset: CpsPageData) => {
   return {
     data: {
       title,
+      pageType: HOME_PAGE,
       curations,
       metadata: {
         atiAnalytics: {
@@ -126,8 +128,6 @@ export default (cpsAsset: CpsPageData) => {
           pageTitle: title,
         },
       },
-      activePage: 1,
-      pageCount: 1,
     },
   };
 };
