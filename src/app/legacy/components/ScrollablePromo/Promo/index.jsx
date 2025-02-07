@@ -25,14 +25,18 @@ const StyledLink = styled(Link)`
   ${({ script }) => script && getPica(script)}
   ${({ service }) => service && getSerifBold(service)}
   width: 100%;
-  overflow-wrap: break-word;
-  text-overflow: ellipsis;
+
   text-decoration: none;
 
   overflow-x: hidden;
   overflow-y: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  ${({ experimentVariant }) =>
+    experimentVariant === 'none' &&
+    ` overflow-wrap: break-word;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 4;
+    `}
   -webkit-box-orient: vertical;
 
   &:hover,
@@ -53,6 +57,7 @@ const PromoBox = styled.div`
     theme.isDarkUi ? theme.palette.GREY_3 : theme.palette.WHITE};
   padding: ${GEL_SPACING_DBL};
   margin-bottom: ${GEL_SPACING_TRPL};
+  height: auto;
   @media (min-width: ${GEL_GROUP_0_SCREEN_WIDTH_MIN}) {
     width: 14.8125rem;
   }
