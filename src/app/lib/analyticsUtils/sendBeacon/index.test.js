@@ -1,6 +1,8 @@
 /* eslint-disable global-require */
 import loggerMock from '#testHelpers/loggerMock';
 import { ATI_LOGGING_ERROR } from '#app/lib/logger.const';
+import sendBeacon from './index';
+import * as onClient from '../../utilities/onClient';
 
 let fetchResponse;
 let isOnClient;
@@ -17,13 +19,12 @@ window.__reverb = {
   __reverbLoadedPromise: Promise.resolve(reverbMock),
 };
 
+jest.spyOn(onClient, 'default').mockImplementation(() => isOnClient);
+
 describe('sendBeacon', () => {
   beforeEach(() => {
     isOnClient = true;
     fetch.mockImplementation(() => fetchResponse);
-    jest.mock('../../utilities/onClient', () => jest.fn());
-    const onClient = require('../../utilities/onClient');
-    onClient.mockImplementation(() => isOnClient);
   });
 
   afterEach(() => {
@@ -31,8 +32,6 @@ describe('sendBeacon', () => {
   });
 
   it(`should fetch`, () => {
-    const sendBeacon = require('./index').default;
-
     sendBeacon('https://foobar.com');
 
     expect(fetch).toHaveBeenCalledWith('https://foobar.com', {
@@ -42,8 +41,6 @@ describe('sendBeacon', () => {
 
   it(`should not fetch when not on client`, () => {
     isOnClient = false;
-
-    const sendBeacon = require('./index').default;
 
     sendBeacon('https://foobar.com');
 
@@ -73,24 +70,18 @@ describe('sendBeacon', () => {
       });
 
       it('should call Reverb viewEvent if Reverb config is passed', async () => {
-        const sendBeacon = require('./index').default;
-
         await sendBeacon('https://foobar.com', reverbConfig);
 
         expect(reverbMock.viewEvent).toHaveBeenCalledTimes(1);
       });
 
       it('should not call Reverb viewEvent if Reverb is not enabled for a service', async () => {
-        const sendBeacon = require('./index').default;
-
         await sendBeacon('https://foobar.com', null);
 
         expect(reverbMock.viewEvent).not.toHaveBeenCalled();
       });
 
       it('should not call "fetch" if Reverb config is passed', async () => {
-        const sendBeacon = require('./index').default;
-
         await sendBeacon('https://foobar.com', reverbConfig);
 
         expect(fetch).not.toHaveBeenCalled();
@@ -103,24 +94,18 @@ describe('sendBeacon', () => {
       });
 
       it('should call Reverb viewEvent if Reverb config is passed', async () => {
-        const sendBeacon = require('./index').default;
-
         await sendBeacon('https://foobar.com', reverbConfig);
 
         expect(reverbMock.viewEvent).toHaveBeenCalledTimes(1);
       });
 
       it('should not call Reverb viewEvent if Reverb is not enabled for a service', async () => {
-        const sendBeacon = require('./index').default;
-
         await sendBeacon('https://foobar.com', null);
 
         expect(reverbMock.viewEvent).not.toHaveBeenCalled();
       });
 
       it('should not call "fetch" if Reverb config is passed', async () => {
-        const sendBeacon = require('./index').default;
-
         await sendBeacon('https://foobar.com', reverbConfig);
 
         expect(fetch).not.toHaveBeenCalled();
@@ -133,24 +118,18 @@ describe('sendBeacon', () => {
       });
 
       it('should call Reverb viewEvent if Reverb config is passed', async () => {
-        const sendBeacon = require('./index').default;
-
         await sendBeacon('https://foobar.com', reverbConfig);
 
         expect(reverbMock.viewEvent).toHaveBeenCalled();
       });
 
       it('should not call Reverb viewEvent if Reverb is not enabled for a service', async () => {
-        const sendBeacon = require('./index').default;
-
         await sendBeacon('https://foobar.com', null);
 
         expect(reverbMock.viewEvent).not.toHaveBeenCalled();
       });
 
       it('should not call "fetch" when Reverb config is passed', async () => {
-        const sendBeacon = require('./index').default;
-
         await sendBeacon('https://foobar.com', reverbConfig);
 
         expect(fetch).not.toHaveBeenCalledTimes(1);
@@ -167,8 +146,6 @@ describe('sendBeacon', () => {
     });
 
     it(`should send error to logger`, async () => {
-      const sendBeacon = require('./index').default;
-
       await sendBeacon('https://foobar.com');
 
       expect(loggerMock.error).toHaveBeenCalledWith(ATI_LOGGING_ERROR, {
