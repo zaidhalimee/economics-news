@@ -20,8 +20,7 @@ import {
   podcastEpisodePath,
   recommendationsDataRegex,
   secondaryColumnDataRegexPath,
-  tipoHomeDataPath,
-  tipoHomePath,
+  topicPath,
 } from './index';
 
 import serviceConfig from '../../../lib/config/services/loadableConfig';
@@ -129,46 +128,6 @@ describe('frontPageDataPath', () => {
     '/ukchina/trad.json',
   ];
   shouldNotMatchInvalidRoutes(invalidRoutes, frontPageDataPath);
-});
-
-describe('tipoHomePath', () => {
-  const validRoutes = [
-    '/news/tipohome',
-    '/persian/tipohome',
-    '/news/tipohome.amp',
-    '/persian/tipohome.amp',
-    '/news/simp/tipohome',
-    '/persian/trad/tipohome',
-    '/news/lat/tipohome.amp',
-    '/persian/cyr/tipohome.amp',
-  ];
-  shouldMatchValidRoutes(validRoutes, tipoHomePath);
-
-  const invalidRoutes = [
-    '/news/tipohome/simp',
-    '/news/tipohome/simp.amp',
-    '/tipohome/persian',
-    '/tipohome/persian.amp',
-  ];
-  shouldNotMatchInvalidRoutes(invalidRoutes, tipoHomePath);
-});
-
-describe('tipoHomeDataPath', () => {
-  const validRoutes = [
-    '/news/tipohome.json',
-    '/kyrgyz/tipohome.json',
-    '/news/cyr/tipohome.json',
-    '/persian/trad/tipohome.json',
-  ];
-  shouldMatchValidRoutes(validRoutes, tipoHomeDataPath);
-
-  const invalidRoutes = [
-    '/news/data/tipohome.json',
-    '/iplayer/tipohome.json',
-    '/news/foobar/tipohome.json',
-    '/persian/nontrad/tipohome.json',
-  ];
-  shouldNotMatchInvalidRoutes(invalidRoutes, tipoHomeDataPath);
 });
 
 describe('articleSwPath', () => {

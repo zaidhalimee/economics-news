@@ -1,6 +1,6 @@
 /** @jsx jsx */
 /* @jsxFrag React.Fragment */
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 import useToggle from '#hooks/useToggle';
 import { singleTextBlock } from '#app/models/blocks';
@@ -39,10 +39,6 @@ import CpsRecommendations from '#containers/CpsRecommendations';
 import InlinePodcastPromo from '#containers/PodcastPromo/Inline';
 import { Article, OptimoBylineBlock } from '#app/models/types/optimo';
 import ScrollablePromo from '#components/ScrollablePromo';
-import JumpTo, { JumpToProps } from '#app/components/JumpTo';
-import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
-import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
-import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
@@ -67,6 +63,52 @@ import Disclaimer from '../../components/Disclaimer';
 import SecondaryColumn from './SecondaryColumn';
 import styles from './ArticlePage.styles';
 import { ComponentToRenderProps, TimeStampProps } from './types';
+
+const getImageComponent =
+  (preloadLeadImageToggle: boolean) => (props: ComponentToRenderProps) => (
+    <ImageWithCaption
+      {...props}
+      sizes="(min-width: 1008px) 760px, 100vw"
+      shouldPreload={preloadLeadImageToggle}
+    />
+  );
+
+const getTimestampComponent =
+  (
+    hasByline: boolean,
+    bylineContribBlocks: OptimoBylineContributorBlock[],
+    firstPublished: string,
+    lastPublished: string,
+  ) =>
+  (props: ComponentToRenderProps & TimeStampProps) =>
+    hasByline ? (
+      <Byline blocks={bylineContribBlocks}>
+        <Timestamp
+          firstPublished={new Date(firstPublished).getTime()}
+          lastPublished={new Date(lastPublished).getTime()}
+          popOut={false}
+        />
+      </Byline>
+    ) : (
+      <Timestamp {...props} popOut={false} />
+    );
+
+const getMpuComponent =
+  (allowAdvertising: boolean) => (props: ComponentToRenderProps) =>
+    allowAdvertising ? <AdContainer {...props} slotType="mpu" /> : null;
+
+const getWsojComponent =
+  (recommendationsData: Recommendation[]) =>
+  (props: ComponentToRenderProps) => (
+    <CpsRecommendations {...props} items={recommendationsData} />
+  );
+
+const DisclaimerWithPaddingOverride = (props: ComponentToRenderProps) => (
+  <Disclaimer {...props} increasePaddingOnDesktop={false} />
+);
+
+const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
+  podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const { isApp, pageType, service } = useContext(RequestContext);
@@ -130,22 +172,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     mostRead: mostReadInitialData,
   } = pageData;
 
-  const jumpToVariation = useOptimizelyVariation(
-    'jump_to',
-  ) as unknown as string;
-
-  const hasJumpToBlockForExperiment = blocks.some(
-    block => block.type === 'jumpTo',
-  );
-
-  const enableOptimizelyEventTracking = Boolean(
-    jumpToVariation && hasJumpToBlockForExperiment,
-  );
-
-  const showRelatedContent = blocks.some(
-    block => block.type === 'relatedContent',
-  );
-
   const atiData = {
     ...atiAnalytics,
     ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
@@ -184,20 +210,11 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     embedImages: EmbedImages,
     embedUploader: Uploader,
     group: gist,
-    links: (props: ComponentToRenderProps) => <ScrollablePromo {...props} />,
-    mpu: (props: ComponentToRenderProps) =>
-      allowAdvertising ? <AdContainer {...props} slotType="mpu" /> : null,
-    wsoj: (props: ComponentToRenderProps) => (
-      <CpsRecommendations {...props} items={recommendationsData} />
-    ),
-    disclaimer: (props: ComponentToRenderProps) => (
-      <Disclaimer {...props} increasePaddingOnDesktop={false} />
-    ),
-    podcastPromo: () => (podcastPromoEnabled ? <InlinePodcastPromo /> : null),
-    jumpTo: (props: ComponentToRenderProps & JumpToProps) =>
-      jumpToVariation === 'on' ? (
-        <JumpTo {...props} showRelatedContentLink={showRelatedContent} />
-      ) : null,
+    links: ScrollablePromo,
+    mpu: getMpuComponent(allowAdvertising),
+    wsoj: getWsojComponent(recommendationsData),
+    disclaimer: DisclaimerWithPaddingOverride,
+    podcastPromo: getPodcastPromoComponent(podcastPromoEnabled),
   };
 
   const visuallyHiddenBlock = {
@@ -322,10 +339,12 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           )}
           <RelatedContentSection
             content={blocks}
-            sendOptimizelyEvents={enableOptimizelyEventTracking}
+            sendOptimizelyEvents={false}
           />
         </div>
-        {!isApp && !isPGL && <SecondaryColumn pageData={pageData} />}
+        {!isApp && !isPGL && (
+          <SecondaryColumn pageData={pageData} sendOptimizelyEvents={false} />
+        )}
       </div>
       {!isApp && !isPGL && (
         <MostRead
@@ -335,13 +354,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           size="default"
           headingBackgroundColour={GREY_2}
           mobileDivider={showTopics}
+          sendOptimizelyEvents={false}
         />
-      )}
-      {enableOptimizelyEventTracking && (
-        <>
-          <OptimizelyArticleCompleteTracking />
-          <OptimizelyPageViewTracking />
-        </>
       )}
     </div>
   );
