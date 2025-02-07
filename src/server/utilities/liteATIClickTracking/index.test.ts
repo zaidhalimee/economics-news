@@ -12,32 +12,34 @@ const dispatchClick = (targetElement: HTMLElement) => {
 
 describe('Click tracking script', () => {
   const randomUUIDMock = jest.fn();
-  beforeEach(() => {
-    jest.clearAllMocks();
-    jest.useFakeTimers().setSystemTime(new Date(1731515402000));
-
-    trackingScript();
-
-    document.cookie =
-      'atuserid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    delete window.location;
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    window.location = {
-      assign: jest.fn(),
-    };
-
-    window.sendBeaconLite = jest.fn();
-
+  beforeAll(() => {
+    let mockCookie = '';
+    Object.defineProperty(document, 'cookie', {
+      get() {
+        return mockCookie;
+      },
+      set(cookieValue) {
+        mockCookie = cookieValue;
+      },
+    });
+    Object.defineProperty(window, 'location', {
+      value: {
+        assign: jest.fn(),
+      },
+    });
     Object.defineProperty(global, 'crypto', {
       value: {
         randomUUID: randomUUIDMock,
       },
     });
+  });
+  beforeEach(() => {
+    jest.clearAllMocks();
+    jest.useFakeTimers().setSystemTime(new Date('2024-11-13T16:30:02.000Z'));
 
+    trackingScript();
+    document.cookie = '';
+    window.sendBeaconLite = jest.fn();
     window.dispatchEvent(new Event('load'));
   });
 
@@ -50,8 +52,9 @@ describe('Click tracking script', () => {
 
     randomUUIDMock.mockReturnValueOnce('randomUniqueId');
     dispatchClick(anchorElement);
-
-    expect(document.cookie).toBe('atuserid={"val":"randomUniqueId"}');
+    expect(document.cookie).toBe(
+      'atuserid={"val":"randomUniqueId"}; path=/; max-age=397; Secure;',
+    );
   });
 
   it('Reuses the atuserid cookie if there is a atuserid cookie on the user browser', () => {
@@ -61,7 +64,8 @@ describe('Click tracking script', () => {
       'https://logws1363.ati-host.net/?',
     );
 
-    document.cookie = 'atuserid={"val":"oldCookieId"}';
+    document.cookie =
+      'atuserid={"val":"oldCookieId"}; path=/; max-age=397; Secure;';
     randomUUIDMock.mockReturnValueOnce('newCookieId');
     dispatchClick(anchorElement);
 

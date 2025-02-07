@@ -49,7 +49,7 @@ export default function trackingScript() {
 
         const stringifiedCookieValue = JSON.stringify({ val: atUserIdValue });
         if (atUserIdValue) {
-          document.cookie = `${cookieName}=${stringifiedCookieValue}; path=/; max-age=${expires};`;
+          document.cookie = `${cookieName}=${stringifiedCookieValue}; path=/; max-age=${expires}; Secure;`;
         }
 
         const rValue = [

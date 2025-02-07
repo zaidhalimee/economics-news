@@ -1,6 +1,6 @@
+/* eslint-disable import/order */
 /* eslint-disable no-console */
 import { useContext, useCallback, useState } from 'react';
-
 import { buildATIEventTrackUrl } from '#app/components/ATIAnalytics/atiUrl';
 import { EventTrackingContext } from '../../contexts/EventTrackingContext';
 import useTrackingToggle from '../useTrackingToggle';
@@ -8,32 +8,59 @@ import OPTIMIZELY_CONFIG from '../../lib/config/optimizely';
 import { sendEventBeacon } from '../../components/ATIAnalytics/beacon/index';
 import { ServiceContext } from '../../contexts/ServiceContext';
 import { isValidClick } from './clickTypes';
+import { RequestContext } from '#app/contexts/RequestContext';
 
 const EVENT_TYPE = 'click';
-export const LITE_TRACKER_PARAM = 'data-ati-tracking';
+export const LITE_ATI_TRACKING = 'data-lite-ati-tracking';
 
+const useExtractTrackingProps = (props = {}) => {
+  const eventTrackingContext = useContext(EventTrackingContext);
+
+  const { componentName, url, advertiserID, format, detailedPlacement } = props;
+  const { pageIdentifier, platform, producerId, statsDestination } =
+    eventTrackingContext;
+
+  const campaignID = props?.campaignID || eventTrackingContext?.campaignID;
+
+  return {
+    pageIdentifier,
+    producerId,
+    platform,
+    statsDestination,
+    componentName,
+    campaignID,
+    format,
+    type: EVENT_TYPE,
+    advertiserID,
+    url,
+    detailedPlacement,
+  };
+};
+
+// TODO - Refactor this once all components have been updated to use the useATIClickTrackerHandler hook.
 const useClickTrackerHandler = (props = {}) => {
+  const {
+    pageIdentifier,
+    producerId,
+    platform,
+    statsDestination,
+    componentName,
+    campaignID,
+    format,
+    advertiserID,
+    url,
+    detailedPlacement,
+  } = useExtractTrackingProps(props);
+
   const preventNavigation = props?.preventNavigation;
-  const componentName = props?.componentName;
-  const url = props?.url;
-  const advertiserID = props?.advertiserID;
-  const format = props?.format;
   const optimizely = props?.optimizely;
   const optimizelyMetricNameOverride = props?.optimizelyMetricNameOverride;
-  const detailedPlacement = props?.detailedPlacement;
 
   const { trackingIsEnabled } = useTrackingToggle(componentName);
   const [clicked, setClicked] = useState(false);
   const eventTrackingContext = useContext(EventTrackingContext);
 
-  const {
-    pageIdentifier,
-    platform,
-    producerId,
-    producerName,
-    statsDestination,
-  } = eventTrackingContext;
-  const campaignID = props?.campaignID || eventTrackingContext?.campaignID;
+  const { producerName } = eventTrackingContext;
 
   const { service, useReverb } = useContext(ServiceContext);
 
@@ -139,34 +166,19 @@ const useClickTrackerHandler = (props = {}) => {
 };
 
 export const useConstructLiteSiteATIEventTrackUrl = (props = {}) => {
-  const eventTrackingContext = useContext(EventTrackingContext);
-
-  const componentName = props?.componentName;
-  const url = props?.url;
-  const advertiserID = props?.advertiserID;
-  const format = props?.format;
-  const detailedPlacement = props?.detailedPlacement;
-
-  const { pageIdentifier, platform, producerId, statsDestination } =
-    eventTrackingContext;
-
-  const campaignID = props?.campaignID || eventTrackingContext?.campaignID;
-
-  const atiClickTrackingUrl = buildATIEventTrackUrl({
-    pageIdentifier,
-    producerId,
-    platform,
-    statsDestination,
-    componentName,
-    campaignID,
-    format,
-    type: EVENT_TYPE,
-    advertiserID,
-    url,
-    detailedPlacement,
-  });
-
+  const atiTrackingParams = useExtractTrackingProps(props);
+  const atiClickTrackingUrl = buildATIEventTrackUrl(atiTrackingParams);
   return atiClickTrackingUrl;
+};
+
+export const useATIClickTrackerHandler = (props = {}) => {
+  const { isLite } = useContext(RequestContext);
+  const canonicalHandler = useClickTrackerHandler(props);
+  const liteHandler = useConstructLiteSiteATIEventTrackUrl(props);
+
+  return isLite
+    ? { [LITE_ATI_TRACKING]: liteHandler }
+    : { onClick: canonicalHandler };
 };
 
 export default useClickTrackerHandler;

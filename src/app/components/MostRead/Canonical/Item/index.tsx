@@ -1,10 +1,7 @@
 /** @jsx jsx */
-import React, { PropsWithChildren, useContext } from 'react';
+import React, { PropsWithChildren } from 'react';
 import { jsx } from '@emotion/react';
-import useClickTrackerHandler, {
-  LITE_TRACKER_PARAM,
-  useConstructLiteSiteATIEventTrackUrl,
-} from '#hooks/useClickTrackerHandler';
+import { useATIClickTrackerHandler } from '#hooks/useClickTrackerHandler';
 import styles from './index.styles';
 import {
   mostReadListGridProps,
@@ -18,7 +15,6 @@ import {
 } from '../../types';
 import { Direction } from '../../../../models/types/global';
 import Grid from '../../../../legacy/components/Grid';
-import { RequestContext } from '#app/contexts/RequestContext';
 
 export const getParentColumns = (columnLayout: ColumnLayout) => {
   return columnLayout !== 'oneColumn'
@@ -50,22 +46,14 @@ export const MostReadLink = ({
   size,
   eventTrackingData,
 }: PropsWithChildren<MostReadLinkProps>) => {
-  const { isLite } = useContext(RequestContext);
-
-  const clickTrackerHandler = isLite
-    ? {
-        [LITE_TRACKER_PARAM]: useConstructLiteSiteATIEventTrackUrl(eventTrackingData),
-      }
-    : {
-        onClick: useClickTrackerHandler(eventTrackingData),
-      };
+  const clickTrackerHandlerProp = useATIClickTrackerHandler(eventTrackingData);
 
   return (
     <div css={getItemCss({ dir, size })} dir={dir}>
       <a
         css={[styles.link, size === 'default' && styles.defaultLink]}
         href={href}
-        {...clickTrackerHandler}
+        {...clickTrackerHandlerProp}
       >
         {title}
       </a>
