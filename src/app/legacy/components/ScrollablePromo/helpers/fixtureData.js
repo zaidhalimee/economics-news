@@ -1335,7 +1335,7 @@ export const PromoSingleBlock = {
   position: [5, 3],
 };
 
-export const MostReadBlocks = [
+export const mostReadBlocks = [
   {
     id: 'urn:bbc:optimo:asset:cg4z0d2xgq3o',
     rank: 1,
@@ -1415,7 +1415,7 @@ export const MostReadBlocks = [
   },
 ];
 
-export const TopStoriesBlocks = [
+export const topStoriesBlocks = [
   {
     locators: {
       optimoUrn: 'urn:bbc:optimo:asset:cg4z0d2xgq3o',
