@@ -19,6 +19,7 @@ import {
 import filterForBlockType from '#lib/utilities/blockHandlers';
 import useOperaMiniDetection from '#hooks/useOperaMiniDetection';
 import PromoTimestamp from '#components/Promo/timestamp';
+import LiveLabel from '../../../../components/LiveLabel';
 import { ServiceContext } from '../../../../contexts/ServiceContext';
 
 const StyledLink = styled(Link)`
@@ -98,6 +99,7 @@ const Promo = ({ block, experimentVariant, onClick }) => {
   let textBlock;
   let aresLinkBlock;
   let timestamp;
+  let isLive;
   switch (experimentVariant) {
     case 'A':
       title = pathOr(
@@ -116,6 +118,7 @@ const Promo = ({ block, experimentVariant, onClick }) => {
         block,
       );
       href = pathOr('', ['locators', 'canonicalUrl'], block);
+      isLive = block.isLive;
       break;
     case 'B':
       title = block.title;
@@ -146,7 +149,16 @@ const Promo = ({ block, experimentVariant, onClick }) => {
       );
       break;
   }
-  console.log('title', title, 'href', href, 'timestamp', timestamp);
+  console.log(
+    'title',
+    title,
+    'href',
+    href,
+    'timestamp',
+    timestamp,
+    'isLive',
+    isLive,
+  );
 
   const isOperaMini = useOperaMiniDetection();
 
@@ -159,6 +171,7 @@ const Promo = ({ block, experimentVariant, onClick }) => {
         script={script}
         onClick={onClick}
       >
+        {isLive && <LiveLabel />}
         {title}
       </StyledLink>
       {timestamp && !experimentVariant && (
