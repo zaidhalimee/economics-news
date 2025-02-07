@@ -37,7 +37,12 @@ import RelatedTopics from '#containers/RelatedTopics';
 import NielsenAnalytics from '#containers/NielsenAnalytics';
 import CpsRecommendations from '#containers/CpsRecommendations';
 import InlinePodcastPromo from '#containers/PodcastPromo/Inline';
-import { Article, OptimoBylineBlock } from '#app/models/types/optimo';
+import {
+  Article,
+  OptimoBylineBlock,
+  OptimoBylineContributorBlock,
+  Recommendation,
+} from '#app/models/types/optimo';
 import ScrollablePromo from '#components/ScrollablePromo';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
@@ -128,9 +133,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const allowAdvertising = pageData?.metadata?.allowAdvertising ?? false;
   const adcampaign = pageData?.metadata?.adCampaignKeyword;
-  const isTransliterated =
-    ['serbian', 'zhongwen', 'uzbek'].includes(service) &&
-    pageType === ARTICLE_PAGE;
+  const isUzbekArticle = service === 'uzbek' && pageType === ARTICLE_PAGE;
 
   const { enabled: podcastPromoEnabled } = useToggle('podcastPromo');
   const headline = getHeadline(pageData) ?? '';
@@ -159,7 +162,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const formats = pageData?.metadata?.passport?.predicates?.formats ?? [];
 
   const recommendationsData = pageData?.recommendations ?? [];
-  // const topStoriesContent = pageData?.secondaryColumn?.topStories;
+
   const isPGL = pageData?.metadata?.type === PHOTO_GALLERY_PAGE;
   const isSTY = pageData?.metadata?.type === STORY_PAGE;
   const isCPS = isPGL || isSTY;
@@ -184,25 +187,13 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     audio: MediaLoader,
     video: MediaLoader,
     text,
-    image: (props: ComponentToRenderProps) => (
-      <ImageWithCaption
-        {...props}
-        sizes="(min-width: 1008px) 760px, 100vw"
-        shouldPreload={preloadLeadImageToggle}
-      />
+    image: getImageComponent(preloadLeadImageToggle),
+    timestamp: getTimestampComponent(
+      hasByline,
+      bylineContribBlocks,
+      firstPublished,
+      lastPublished,
     ),
-    timestamp: (props: ComponentToRenderProps & TimeStampProps) =>
-      hasByline ? (
-        <Byline blocks={bylineContribBlocks}>
-          <Timestamp
-            firstPublished={new Date(firstPublished).getTime()}
-            lastPublished={new Date(lastPublished).getTime()}
-            popOut={false}
-          />
-        </Byline>
-      ) : (
-        <Timestamp {...props} popOut={false} />
-      ),
     social: SocialEmbedContainer,
     embed: UnsupportedEmbed,
     embedHtml: EmbedHtml,
@@ -242,29 +233,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const promoImage = promoImageRawBlock?.model?.locator;
 
   const showTopics = Boolean(
-    showRelatedTopics && topics.length > 0 && !isTransliterated,
+    showRelatedTopics && topics.length > 0 && !isUzbekArticle,
   );
-  // const scrollableOJExperimentVariation = useOptimizelyVariation(
-  //   'oj_scroll',
-  // ) as unknown as string;
-  // const variantValue = 'B'; // We would get this value from useOptimizelyVariation (as commented out above)
-  // // so just manually switch the hardcoded variant for now while getting this working
-  // const experimentVariant: 'A' | 'B' | 'none' = ['A', 'B'].includes(
-  //   variantValue,
-  // )
-  //   ? (variantValue as 'A' | 'B')
-  //   : 'none';
-  // let dataForOJExperiment;
-  // if (experimentVariant === 'A') {
-  //   dataForOJExperiment = topStoriesContent;
-  // } else if (experimentVariant === 'B' && mostReadInitialData) {
-  //   dataForOJExperiment = mostReadInitialData.items;
-  // }
-
-  // const propsForOJExperiment = {
-  //   blocks: dataForOJExperiment,
-  //   experimentVariant,
-  // };
 
   return (
     <div css={styles.pageWrapper}>
@@ -307,15 +277,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
         aboutTags={aboutTags}
         imageLocator={promoImage}
       />
-      {/* 
-      {!isPGL &&
-        !isTC2Asset &&
-        experimentVariant !== 'none' &&
-        dataForOJExperiment && (
-          <aside css={styles.aside} role="complementary">
-            <ScrollablePromo {...propsForOJExperiment} />
-          </aside>
-        )} */}
       {allowAdvertising && (
         <AdContainer slotType="leaderboard" adcampaign={adcampaign} />
       )}
