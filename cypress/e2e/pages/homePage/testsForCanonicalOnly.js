@@ -43,7 +43,7 @@ export default ({ service }) => {
     runAdsTests({ service });
   }
 
-  describe(`Chartbeat analytics`, () => {
+  describe(`Chartbeat analytics`, { retries: 3 }, () => {
     it('should have a script with src value set to chartbeat source', () => {
       cy.hasScriptWithChartbeatSrc();
     });

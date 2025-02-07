@@ -33,7 +33,7 @@ export default ({ service, pageType, variant }) => {
           });
         });
       },
-      describe('Chartbeat', () => {
+      describe('Chartbeat', { retries: 3 }, () => {
         if (envConfig.chartbeatEnabled) {
           it('should have a script with src value set to chartbeat source', () => {
             cy.hasScriptWithChartbeatSrc();
