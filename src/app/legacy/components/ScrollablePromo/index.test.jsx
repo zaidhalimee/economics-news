@@ -7,8 +7,8 @@ import {
   oneLinkOnly,
   oneLinkWithNoTitle,
   moreThanThreeLinks,
-  TopStoriesBlocks,
-  MostReadBlocks,
+  topStoriesBlocks,
+  mostReadBlocks,
 } from './helpers/fixtureData';
 import ScrollablePromo from '.';
 import { edOjA, edOjB } from './fixtures';
@@ -161,9 +161,10 @@ describe('ScrollablePromo', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should render Top Stories ScrollablePromo with variant A', () => {
+  it('should render Top Stories ScrollablePromo with experimentVariant A', () => {
+    console.log('ccc', topStoriesBlocks);
     const { container, getByTestId, getByRole, getAllByRole } = render(
-      <ScrollablePromo blocks={TopStoriesBlocks} variant="A" />,
+      <ScrollablePromo blocks={topStoriesBlocks} experimentVariant="A" />,
     );
     expect(container.childElementCount).toEqual(1);
     const heading = getByTestId('eoj-recommendations-heading');
@@ -175,9 +176,9 @@ describe('ScrollablePromo', () => {
     const items = getAllByRole('listitem');
     expect(items).toHaveLength(3);
   });
-  it('should render Most Read ScrollablePromo with variant B', () => {
+  it('should render Most Read ScrollablePromo withexperimentVariant B', () => {
     const { container, getByTestId, getByRole, getAllByRole } = render(
-      <ScrollablePromo blocks={MostReadBlocks} variant="B" />,
+      <ScrollablePromo blocks={mostReadBlocks} experimentVariant="B" />,
     );
     expect(container.childElementCount).toEqual(1);
     const heading = getByTestId('eoj-recommendations-heading');
