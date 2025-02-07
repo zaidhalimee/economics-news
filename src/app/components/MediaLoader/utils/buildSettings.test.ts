@@ -2,6 +2,7 @@ import { PageTypes, Services } from '#app/models/types/global';
 import { data as hindiTvProgramme } from '#data/hindi/bbc_hindi_tv/tv_programmes/w13xttlw.json';
 import {
   AUDIO_PAGE,
+  LIVE_PAGE,
   LIVE_RADIO_PAGE,
   TV_PAGE,
 } from '#app/routes/utils/pageTypes';
@@ -10,6 +11,8 @@ import afriqueRadio from '#data/afrique/bbc_afrique_radio/p030s6dq.json';
 import { service as hausaServiceConfig } from '#app/lib/config/services/hausa';
 import { service as hindiServiceConfig } from '#app/lib/config/services/hindi';
 import { service as afriqueServiceConfig } from '#app/lib/config/services/afrique';
+import { service as mundoServiceConfig } from '#app/lib/config/services/mundo';
+import { service as arabicServiceConfig } from '#app/lib/config/services/arabic';
 import isLive from '#app/lib/utilities/isLive';
 import buildSettings from './buildSettings';
 import {
