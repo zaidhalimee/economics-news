@@ -111,7 +111,7 @@ describe('beacon', () => {
         });
 
         const reverbParams = sendBeaconSpy.mock.calls[0][1];
-        
+
         expect(sendBeaconSpy).toHaveBeenCalledTimes(1);
         expect(reverbParams).toBeNull();
       });

@@ -1211,22 +1211,19 @@ describe('ATI Analytics Container', () => {
         metadata: { atiAnalytics },
       } = articleDataNews;
 
-      render(
-        <ATIAnalytics atiData={atiAnalytics} />,
-        {
-          ...defaultRenderProps,
-          atiData: atiAnalytics,
-          isAmp: false,
-          pageData: articleDataNews,
-          pageType: ARTICLE_PAGE,
-          service: 'mundo',
-          isUK: true,
-        },
-      );
+      render(<ATIAnalytics atiData={atiAnalytics} />, {
+        ...defaultRenderProps,
+        atiData: atiAnalytics,
+        isAmp: false,
+        pageData: articleDataNews,
+        pageType: ARTICLE_PAGE,
+        service: 'mundo',
+        isUK: true,
+      });
 
       const { reverbParams } = mockCanonical.mock.calls[0][0];
 
-      expect(reverbParams).toBeNull()
+      expect(reverbParams).toBeNull();
     });
   });
 });
