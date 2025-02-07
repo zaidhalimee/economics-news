@@ -46,16 +46,16 @@ export const service: DefaultServiceConfig = {
     showAdPlaceholder: false,
     showRelatedTopics: true,
     podcastPromo: {
-      title: 'पॉडकास्ट',
-      brandTitle: 'तीन गोष्टी',
-      brandDescription: 'दिवसभरातील घडामोडींचा आढावा',
+      title: 'बीबीसी मराठी व्हॉट्सॲपवर',
+      brandTitle: 'बीबीसी न्यूज मराठी आता व्हॉट्सॲपवर',
+      brandDescription: 'तुमच्या कामाच्या गोष्टी आणि बातम्या आता थेट तुमच्या फोनवर',
       image: {
-        src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p0940n6j.jpg',
-        alt: 'तीन गोष्टी',
+        src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p0kptdp6.jpg',
+        alt: 'BBC News मराठी आत्ताच फॉलो करा WhatsApp कर',
       },
       linkLabel: {
-        text: 'भाग',
-        href: 'https://www.bbc.com/marathi/podcasts/p09431p4',
+        text: 'फॉलो करा',
+        href: 'https://www.whatsapp.com/channel/0029Vaa8TxTIyPtQpqWBTh3j',
       },
     },
     translations: {
@@ -346,10 +346,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'महाराष्ट्र',
         url: '/marathi/topics/c5qvpxvv7y3t',
-      },
-      {
-        title: 'विधानसभा निवडणूक',
-        url: '/marathi/topics/c625x8zjyj7t',
       },
       {
         title: 'भारत',
