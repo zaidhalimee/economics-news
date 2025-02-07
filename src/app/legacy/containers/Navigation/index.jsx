@@ -102,16 +102,6 @@ const NavigationContainer = ({ propsForOJExperiment }) => {
         blocks,
         experimentVariant,
       )}
-      {/* {blocks && experimentVariant && (
-        <li>
-          <ul>
-            <ScrollablePromo
-              blocks={blocks}
-              experimentVariant={experimentVariant}
-            />
-          </ul>
-        </li>
-      )} */}
     </NavigationUl>
   );
 

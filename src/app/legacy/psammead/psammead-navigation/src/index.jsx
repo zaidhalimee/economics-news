@@ -231,7 +231,6 @@ const StyledNav = styled.nav`
     bottom: 0;
     right: 0;
     left: 0;
-    border-bottom: 0.0625rem solid ${props => props.theme.palette.GREY_3};
   }
 
   ${StyledListItem} {
@@ -242,7 +241,7 @@ const StyledNav = styled.nav`
     `}
   }
 `;
-
+// border-bottom: 0.0625rem solid ${props => props.theme.palette.GREY_3};
 const Navigation = ({
   children,
   dir = 'ltr',

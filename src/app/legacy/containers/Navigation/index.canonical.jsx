@@ -14,7 +14,14 @@ import ScrollablePromo from '#components/ScrollablePromo';
 const ScrollableWrapper = styled.div`
   position: relative;
 `;
-
+const Divider = styled.div`
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-bottom: 0.0625rem solid ${props => props.theme.palette.GREY_3};
+`;
 const CanonicalNavigationContainer = ({
   script,
   service,
@@ -51,6 +58,7 @@ const CanonicalNavigationContainer = ({
             {scrollableListItems}
           </ScrollableNavigation>
         )}
+        <Divider />
       </ScrollableWrapper>
       <CanonicalDropdown isOpen={isOpen}>{dropdownListItems}</CanonicalDropdown>
       <ScrollablePromo blocks={blocks} experimentVariant={experimentVariant} />
