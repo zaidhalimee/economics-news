@@ -91,11 +91,6 @@ export const getFrontPageRegex = services => {
   return `/:service(${serviceRegex}):variant(${variantRegex})?:amp(${ampRegex})?:lite(${liteRegex})?`;
 };
 
-export const getTipoHomeRegex = services => {
-  const serviceRegex = getServiceRegex(services);
-  return `/:service(${serviceRegex}):variant(${variantRegex})?/tipohome:amp(${ampRegex})?:lite(${liteRegex})?`;
-};
-
 export const getHomePageRegex = services => {
   let homePages = services;
   if (isLive()) {
