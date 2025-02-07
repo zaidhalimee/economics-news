@@ -195,7 +195,7 @@ const nonSmokeCanonicalTestSuites = [
   },
 ];
 
-const canonicalTestSuites = Cypress.env.SMOKE
+const canonicalTestSuites = Cypress.env('SMOKE')
   ? smokeCanonicalTestSuites
   : nonSmokeCanonicalTestSuites;
 
@@ -234,6 +234,8 @@ const liteTestSuites = canonicalTestSuites
       tests: [liteArticleTests],
     };
   });
+
+console.log({ canonicalTestSuites, ampTestSuites });
 
 runTestsForPage({
   pageType: 'articles',
