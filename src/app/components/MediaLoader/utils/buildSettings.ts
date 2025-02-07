@@ -47,7 +47,6 @@ const buildSettings = ({
     enableToucan: true,
     appType: isAmp ? 'amp' : 'responsive',
     appName: service !== 'news' ? `news-${service}` : 'news',
-    superResponsive: true,
     ui: {
       skin: 'classic',
       controls: { enabled: true },
@@ -55,6 +54,7 @@ const buildSettings = ({
       subtitles: { enabled: true, defaultOn: true },
       fullscreen: { enabled: true },
     },
+    ...(!embedded && { superResponsive: true }),
     ...(counterName && { counterName }),
     ...(isTestRequested() && { mediator: { host: 'open.test.bbc.co.uk' } }),
     statsObject: {

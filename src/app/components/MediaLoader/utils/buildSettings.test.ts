@@ -426,7 +426,6 @@ describe('buildSettings', () => {
           appName: 'news-serbian',
           appType: 'responsive',
           counterName: 'live_coverage.testID.page',
-          superResponsive: true,
           playlistObject: {
             title: 'Five things ants can teach us about management',
             summary: 'This is a caption!',
