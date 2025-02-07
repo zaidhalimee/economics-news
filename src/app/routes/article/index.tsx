@@ -31,8 +31,7 @@ type SupportedPageTypes =
   | typeof PHOTO_GALLERY_PAGE
   | typeof MEDIA_ARTICLE_PAGE
   | typeof MEDIA_ASSET_PAGE
-  | typeof FEATURE_INDEX_PAGE
-  | 'IDX';
+  | typeof FEATURE_INDEX_PAGE;
 
 const ArticleVariation = (props: { pageData: Article }) => {
   const consumableAsSFV = props?.pageData?.metadata?.consumableAsSFV ?? false;
@@ -51,7 +50,6 @@ const ArticleVariation = (props: { pageData: Article }) => {
     [MEDIA_ARTICLE_PAGE]: MediaArticlePage,
     [MEDIA_ASSET_PAGE]: MediaArticlePage,
     [FEATURE_INDEX_PAGE]: TopicPage,
-    IDX: HomePage,
   }[pageType];
 
   return PageType ? (
