@@ -48,6 +48,8 @@ const ScrollablePromoContainer = styled.div`
     @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MAX}){
       display: none;
     }
+      width: 100vw;
+        margin-left: calc(-50vw + 50%);
   `}
 `;
 
