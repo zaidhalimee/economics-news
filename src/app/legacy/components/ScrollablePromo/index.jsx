@@ -49,7 +49,7 @@ const ScrollablePromoContainer = styled.div`
       display: none;
     }
       width: 100vw;
-        margin-left: calc(-50vw + 50%);
+      margin-left: calc(-50vw + 50%);
   `}
 `;
 
