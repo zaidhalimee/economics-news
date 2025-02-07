@@ -58,6 +58,10 @@ describe('sendBeacon', () => {
       },
     };
 
+    // Simulates reverbParams set to null in ATIAnalytics and sendEventBeacon
+    // in the event useReverb resolves to 'false'
+    const reverbConfigWhenReverbIsDisabled = null;
+
     const originalProcessEnv = process.env;
 
     afterEach(() => {
@@ -124,7 +128,7 @@ describe('sendBeacon', () => {
       });
 
       it('should not call Reverb viewEvent if Reverb is not enabled for a service', async () => {
-        await sendBeacon('https://foobar.com', null);
+        await sendBeacon('https://foobar.com', reverbConfigWhenReverbIsDisabled);
 
         expect(reverbMock.viewEvent).not.toHaveBeenCalled();
       });
