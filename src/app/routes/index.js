@@ -1,4 +1,5 @@
 import article from './article';
+import frontPage from './frontPage';
 import homePage from './homePage';
 import liveRadio from './liveRadio';
 import mostRead from './mostRead';
@@ -8,7 +9,6 @@ import onDemandTV from './onDemandTV';
 import topic from './topic';
 import error from './error';
 import errorNoRouteMatch from './errorNoRouteMatch';
-import frontPage from './frontPage';
 
 export default [
   homePage,
