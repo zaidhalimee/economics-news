@@ -235,8 +235,6 @@ const liteTestSuites = canonicalTestSuites
     };
   });
 
-console.log({ canonicalTestSuites, ampTestSuites });
-
 runTestsForPage({
   pageType: 'articles',
   testSuites: [...canonicalTestSuites, ...ampTestSuites, ...liteTestSuites],
