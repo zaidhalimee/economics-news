@@ -24,12 +24,10 @@ const topicJSON = {
         ],
         activePage: 1,
         pageCount: 14,
-        variantTopicId: null,
       },
     ],
     activePage: 1,
     pageCount: 14,
-    variantTopicId: null,
     metadata: {
       type: 'Topic',
       analytics: {
