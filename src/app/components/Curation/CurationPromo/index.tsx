@@ -46,20 +46,13 @@ const CurationPromo = ({
 
   return (
     <Promo>
-      {imageUrl && (
-        <Promo.Image
-          src={imageUrl}
-          alt={imageAlt}
-          lazyLoad={lazy}
-          isAmp={isAmp}
-        >
-          {isMedia && (
-            <Promo.MediaIcon type={type}>
-              {showDuration ? mediaDuration : ''}
-            </Promo.MediaIcon>
-          )}
-        </Promo.Image>
-      )}
+      <Promo.Image src={imageUrl} alt={imageAlt} lazyLoad={lazy} isAmp={isAmp}>
+        {isMedia && (
+          <Promo.MediaIcon type={type}>
+            {showDuration ? mediaDuration : ''}
+          </Promo.MediaIcon>
+        )}
+      </Promo.Image>
       <Promo.Heading as={`h${headingLevel}`}>
         {isMedia ? (
           <Promo.A href={link} aria-labelledby={id}>

@@ -102,7 +102,7 @@ const CpsOnwardJourneyWrapper = ({
     <Wrapper
       data-e2e={labelId}
       {...a11yAttributes}
-      {...(className ? { className } : undefined)}
+      {...(className && { className })}
     >
       {children}
     </Wrapper>

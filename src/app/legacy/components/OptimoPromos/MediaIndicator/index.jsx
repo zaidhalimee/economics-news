@@ -7,10 +7,7 @@ const MediaIndicator = ({ className = '' }) => {
   const { mediaType } = useContext(PromoContext);
   if (!mediaType) return null;
   return (
-    <MediaIndicatorWrapper
-      aria-hidden
-      {...(className ? { className } : undefined)}
-    >
+    <MediaIndicatorWrapper aria-hidden {...(className && { className })}>
       <MediaIndicatorAlignment>{mediaIcons[mediaType]}</MediaIndicatorAlignment>
     </MediaIndicatorWrapper>
   );

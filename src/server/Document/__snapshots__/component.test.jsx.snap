@@ -5,35 +5,16 @@ exports[`Document Component should render AMP version correctly 1`] = `
   lang="test"
 >
   <head>
-    <meta
-      content="width=device-width, initial-scale=1, minimum-scale=1"
-      data-react-helmet="true"
-      name="viewport"
-    />
-    <script
-      async=""
-      src="https://cdn.ampproject.org/v0.js"
-    />
-    <script
-      async=""
-      custom-element="amp-geo"
-      src="https://cdn.ampproject.org/v0/amp-geo-0.1.js"
-    />
-    <script
-      async=""
-      custom-element="amp-consent"
-      src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"
-    />
-    <script
-      async=""
-      custom-element="amp-analytics"
-      src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
-    />
     <title
       data-react-helmet="true"
     >
       Test title
     </title>
+    <meta
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+      data-react-helmet="true"
+      name="viewport"
+    />
     <link
       data-react-helmet="true"
       href="https://www.bbc.com/news/articles/c6v11qzyv8po"
@@ -57,6 +38,25 @@ exports[`Document Component should render AMP version correctly 1`] = `
         body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}
       </style>
     </noscript>
+    <script
+      async=""
+      src="https://cdn.ampproject.org/v0.js"
+    />
+    <script
+      async=""
+      custom-element="amp-geo"
+      src="https://cdn.ampproject.org/v0/amp-geo-0.1.js"
+    />
+    <script
+      async=""
+      custom-element="amp-consent"
+      src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"
+    />
+    <script
+      async=""
+      custom-element="amp-analytics"
+      src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+    />
   </head>
   <body
     class="amp-geo-pending"
@@ -78,11 +78,18 @@ exports[`Document Component should render APP version correctly 1`] = `
   lang="test"
 >
   <head>
-    <meta
-      content="width=device-width, initial-scale=1, minimum-scale=1"
-      data-react-helmet="true"
-      name="viewport"
-    />
+    <script>
+      
+            window.__reverb = {};
+            window.__reverb.__reverbLoadedPromise = new Promise((resolve, reject) =&gt; {
+              window.__reverb.__resolveReverbLoaded = resolve;
+              window.__reverb.__rejectReverbLoaded = reject;
+            });
+
+            window.__reverb.__reverbTimeout = setTimeout(() =&gt; {
+              window.__reverb.__rejectReverbLoaded();
+            }, 5000);
+    </script>
     <script
       async=""
       src="https://mybbc-analytics.files.bbci.co.uk/reverb-client-js/reverb-3.9.2.js"
@@ -96,35 +103,16 @@ exports[`Document Component should render APP version correctly 1`] = `
     >
       Test title
     </title>
+    <meta
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+      data-react-helmet="true"
+      name="viewport"
+    />
     <link
       data-react-helmet="true"
       href="https://www.bbc.com/news/articles/c6v11qzyv8po"
       rel="canonical"
     />
-    <link
-      href="modern.main.js"
-      rel="modulepreload"
-    />
-    <link
-      href="modern.vendor.js"
-      rel="modulepreload"
-    />
-    <link
-      href="modern.igbo.js"
-      rel="modulepreload"
-    />
-    <script>
-      
-            window.__reverb = {};
-            window.__reverb.__reverbLoadedPromise = new Promise((resolve, reject) =&gt; {
-              window.__reverb.__resolveReverbLoaded = resolve;
-              window.__reverb.__rejectReverbLoaded = reject;
-            });
-
-            window.__reverb.__reverbTimeout = setTimeout(() =&gt; {
-              window.__reverb.__rejectReverbLoaded();
-            }, 5000);
-    </script>
     <style
       data-emotion-css="7prgni-StyledLink"
     >
@@ -145,6 +133,18 @@ exports[`Document Component should render APP version correctly 1`] = `
     <script>
       window.SIMORGH_DATA={"test":"data"}
     </script>
+    <link
+      href="modern.main.js"
+      rel="modulepreload"
+    />
+    <link
+      href="modern.vendor.js"
+      rel="modulepreload"
+    />
+    <link
+      href="modern.igbo.js"
+      rel="modulepreload"
+    />
     <div>
       <!--[if !IE]&gt;&lt;!-->
     </div>
@@ -184,11 +184,6 @@ exports[`Document Component should render LITE version correctly 1`] = `
 >
   <head>
     <meta
-      content="width=device-width, initial-scale=1, minimum-scale=1"
-      data-react-helmet="true"
-      name="viewport"
-    />
-    <meta
       content="none"
       name="robots"
     />
@@ -197,6 +192,11 @@ exports[`Document Component should render LITE version correctly 1`] = `
     >
       Test title
     </title>
+    <meta
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+      data-react-helmet="true"
+      name="viewport"
+    />
     <link
       data-react-helmet="true"
       href="https://www.bbc.com/news/articles/c6v11qzyv8po"
@@ -222,37 +222,6 @@ exports[`Document Component should render correctly 1`] = `
   lang="test"
 >
   <head>
-    <meta
-      content="width=device-width, initial-scale=1, minimum-scale=1"
-      data-react-helmet="true"
-      name="viewport"
-    />
-    <script
-      async=""
-      src="https://mybbc-analytics.files.bbci.co.uk/reverb-client-js/reverb-3.9.2.js"
-    />
-    <title
-      data-react-helmet="true"
-    >
-      Test title
-    </title>
-    <link
-      data-react-helmet="true"
-      href="https://www.bbc.com/news/articles/c6v11qzyv8po"
-      rel="canonical"
-    />
-    <link
-      href="modern.main.js"
-      rel="modulepreload"
-    />
-    <link
-      href="modern.vendor.js"
-      rel="modulepreload"
-    />
-    <link
-      href="modern.igbo.js"
-      rel="modulepreload"
-    />
     <script>
       
             window.__reverb = {};
@@ -265,6 +234,25 @@ exports[`Document Component should render correctly 1`] = `
               window.__reverb.__rejectReverbLoaded();
             }, 5000);
     </script>
+    <script
+      async=""
+      src="https://mybbc-analytics.files.bbci.co.uk/reverb-client-js/reverb-3.9.2.js"
+    />
+    <title
+      data-react-helmet="true"
+    >
+      Test title
+    </title>
+    <meta
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+      data-react-helmet="true"
+      name="viewport"
+    />
+    <link
+      data-react-helmet="true"
+      href="https://www.bbc.com/news/articles/c6v11qzyv8po"
+      rel="canonical"
+    />
     <style
       data-emotion-css="7prgni-StyledLink"
     >
@@ -285,6 +273,18 @@ exports[`Document Component should render correctly 1`] = `
     <script>
       window.SIMORGH_DATA={"test":"data"}
     </script>
+    <link
+      href="modern.main.js"
+      rel="modulepreload"
+    />
+    <link
+      href="modern.vendor.js"
+      rel="modulepreload"
+    />
+    <link
+      href="modern.igbo.js"
+      rel="modulepreload"
+    />
     <div>
       <!--[if !IE]&gt;&lt;!-->
     </div>

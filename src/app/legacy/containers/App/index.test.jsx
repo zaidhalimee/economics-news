@@ -17,7 +17,7 @@ const renderServerApp = () =>
 describe('ClientApp', () => {
   it('App should be called with the correct props', () => {
     renderClientApp();
-    expect(App).toHaveBeenCalledWith({ initialData: 'someData!' }, undefined);
+    expect(App).toHaveBeenCalledWith({ initialData: 'someData!' }, {});
   });
 
   it('BrowserRouter should be called with the correct props', () => {
@@ -29,7 +29,7 @@ describe('ClientApp', () => {
         children: expect.anything(),
         data: 'someData!',
       },
-      undefined,
+      {},
     );
     ReactRouter.BrowserRouter = actualBrowserRouter; //  restore the original (non-mocked) implementation
   });
@@ -57,7 +57,7 @@ describe('ServerApp', () => {
         initialData: 'somePassedData',
         bbcOrigin: 'https://www.bbc.com',
       },
-      undefined,
+      {},
     );
   });
 
@@ -71,7 +71,7 @@ describe('ServerApp', () => {
         data: 'somePassedData',
         bbcOrigin: 'https://www.bbc.com',
       },
-      undefined,
+      {},
     );
     ReactRouter.StaticRouter = actualStaticRouter; //  restore the original (non-mocked) implementation
   });

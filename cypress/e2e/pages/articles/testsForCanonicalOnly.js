@@ -11,7 +11,7 @@ const serviceHasCaption = service => service === 'news';
 export default ({ service, pageType, variant = 'default' }) =>
   describe(`Canonical Tests for ${service} ${pageType}`, () => {
     if (appToggles.chartbeatAnalytics.enabled) {
-      describe('Chartbeat', { retries: 3 }, () => {
+      describe('Chartbeat', () => {
         if (envConfig.chartbeatEnabled) {
           it('should have a script with src value set to chartbeat source', () => {
             cy.hasScriptWithChartbeatSrc();
