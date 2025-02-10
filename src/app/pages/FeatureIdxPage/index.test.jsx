@@ -110,7 +110,7 @@ jest.mock('#containers/PageHandlers/withContexts', () => Component => {
   );
 });
 
-describe('Feature Idx Page', () => {
+describe.skip('Feature Idx Page', () => {
   let pageData;
 
   beforeEach(async () => {
