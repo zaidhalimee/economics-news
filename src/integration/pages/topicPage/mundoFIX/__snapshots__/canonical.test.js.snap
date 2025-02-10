@@ -658,6 +658,8 @@ exports[`Canonical Topic Page SEO Linked data should match text 1`] = `
 }
 `;
 
+exports[`Canonical Topic Page SEO OG description 1`] = `"Elecciones presidenciales en Estados Unidos 2020"`;
+
 exports[`Canonical Topic Page SEO OG image 1`] = `"https://news.files.bbci.co.uk/ws/img/logos/og/mundo.png"`;
 
 exports[`Canonical Topic Page SEO OG image alt 1`] = `"BBC News Mundo"`;
@@ -679,6 +681,8 @@ exports[`Canonical Topic Page SEO Robots meta tag 1`] = `"noodp, noydir, max-ima
 exports[`Canonical Topic Page SEO Twitter card 1`] = `"summary_large_image"`;
 
 exports[`Canonical Topic Page SEO Twitter creator 1`] = `"@bbcmundo"`;
+
+exports[`Canonical Topic Page SEO Twitter description 1`] = `"Elecciones presidenciales en Estados Unidos 2020"`;
 
 exports[`Canonical Topic Page SEO Twitter image alt 1`] = `"BBC News Mundo"`;
 
