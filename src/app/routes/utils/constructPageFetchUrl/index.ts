@@ -92,9 +92,9 @@ const getId = ({ pageType, service, variant, env }: GetIdProps) => {
       break;
     case HOME_PAGE:
       getIdFunction = () => {
-        return env !== 'local' && service
-          ? HOME_PAGE_CONFIG?.[service]?.[env]
-          : 'tipohome';
+        // ensure service is always defined before indexing
+        if (!service) return null;
+        return env !== 'local' ? HOME_PAGE_CONFIG?.[service]?.[env] : service;
       };
       break;
     case MOST_READ_PAGE:
@@ -252,7 +252,7 @@ const constructPageFetchUrl = ({
         break;
       case HOME_PAGE: {
         const variantPath = variant ? `/${variant}` : '';
-        fetchUrl = Url(`/${service}${variantPath}/${id}`);
+        fetchUrl = Url(`/${service}${variantPath}`);
         break;
       }
       case MOST_READ_PAGE:
