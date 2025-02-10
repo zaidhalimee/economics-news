@@ -480,3 +480,10 @@ exports[`Canonical Topic Page SEO Twitter image src 1`] = `"https://news.files.b
 exports[`Canonical Topic Page SEO Twitter site 1`] = `"@BBCNews"`;
 
 exports[`Canonical Topic Page SEO Twitter title 1`] = `"Donald Trump - BBC News Pidgin"`;
+
+exports[`Canonical Topic Page Timestamp should match text and date 1`] = `
+{
+  "date": "2023-04-05",
+  "text": "5th April 2023",
+}
+`;
