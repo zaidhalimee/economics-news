@@ -57,7 +57,7 @@ const InvalidMessageBox = forwardRef(
       validationCriteria,
       children,
     }: PropsWithChildren<InvalidMessageBoxProps>,
-    ref: ForwardedRef<HTMLDivElement>,
+    ref: ForwardedRef<HTMLElement>,
   ) => {
     const {
       translations: { ugc = fallbackTranslations },

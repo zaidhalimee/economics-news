@@ -45,7 +45,6 @@ const AmpMediaLoader = ({
       >
         <div
           data-e2e="image-placeholder"
-          // @ts-expect-error - placeholder is an AMP specific attribute
           placeholder=""
           css={styles.ampIframePlaceholder}
         />

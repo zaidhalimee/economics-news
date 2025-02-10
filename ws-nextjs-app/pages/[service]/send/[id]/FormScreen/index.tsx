@@ -40,7 +40,7 @@ export default function FormScreen({
     },
   } = useContext(ServiceContext);
 
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
 
   const hasAttemptedSubmit = attemptedSubmitCount > 0;
   const hasValidationErrors = validationErrors.length > 0;

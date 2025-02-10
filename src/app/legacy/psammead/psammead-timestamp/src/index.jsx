@@ -40,7 +40,7 @@ const Timestamp = ({
     padding={padding}
     service={service}
     suppressHydrationWarning
-    {...(className ? { className } : undefined)}
+    {...(className && { className })}
   >
     {children}
   </StyledTimestamp>
