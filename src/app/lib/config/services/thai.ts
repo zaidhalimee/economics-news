@@ -14,7 +14,6 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-thai',
     atiAnalyticsProducerId: '90',
-    atiAnalyticsProducerName: 'THAI',
     chartbeatDomain: 'thai.bbc.co.uk',
     brandName: 'BBC News ไทย',
     product: 'BBC News',
@@ -221,7 +220,6 @@ export const service: DefaultServiceConfig = {
         previousRadioShow: 'รายการวิทยุก่อนหน้า',
         nextRadioShow: 'รายการวิทยุถัดไป',
         duration: 'ความยาว',
-        closeVideo: 'ออก',
       },
       socialEmbed: {
         caption: {
@@ -333,7 +331,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'บีบีซีนิวส์ภาษาอื่น ๆ',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',

@@ -28,7 +28,7 @@ describe('sendBeacon', () => {
   });
 
   afterEach(() => {
-    jest.clearAllMocks();
+    fetch.resetMocks();
   });
 
   it(`should fetch`, () => {
@@ -156,6 +156,10 @@ describe('sendBeacon', () => {
     beforeEach(() => {
       error = new Error('An error');
       fetchResponse = Promise.reject(error);
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
     });
 
     it(`should send error to logger`, async () => {

@@ -128,6 +128,7 @@ export default {
         insetInlineEnd: 0,
       },
     }),
+
   linearGradientLtr: ({ mq }: Theme) =>
     css({
       [mq.GROUP_4_MIN_WIDTH]: {
@@ -139,6 +140,7 @@ export default {
           270deg, ${extraWideMask})`, // 270deg for LTR
       },
     }),
+
   linearGradientRtl: ({ mq }: Theme) =>
     css({
       [mq.GROUP_4_MIN_WIDTH]: {

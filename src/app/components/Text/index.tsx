@@ -29,7 +29,7 @@ const Text = forwardRef(function Text<T extends ElementType = 'span'>(
   }: Props<T> & Omit<ComponentPropsWithoutRef<T>, keyof Props<T>>,
   ref: ForwardedRef<HTMLElement>,
 ) {
-  const Component: React.ElementType = as || 'span';
+  const Component = as || 'span';
   return (
     <Component
       {...(ref && { ref })}

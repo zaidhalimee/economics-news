@@ -30,7 +30,7 @@ const StyledSectionLabel = styled(SectionLabel)`
 `;
 
 const RelatedTopics = ({
-  topics,
+  topics = [],
   mobileDivider = true,
   bar = true,
   className = '',

@@ -12,7 +12,6 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-afrique',
     atiAnalyticsProducerId: '3',
-    atiAnalyticsProducerName: 'AFRIQUE',
     chartbeatDomain: 'afrique.bbc.co.uk',
     brandName: 'BBC News Afrique',
     product: 'BBC News',
@@ -236,7 +235,6 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Emission de radio suivante',
         duration: 'Durée',
         recentEpisodes: 'Editions Précédentes',
-        closeVideo: 'Sortir',
       },
       socialEmbed: {
         caption: {
@@ -321,7 +319,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Autres langues',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',
@@ -338,10 +336,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Accueil',
         url: '/afrique',
-      },
-      {
-        title: 'Conflit en RDC',
-        url: '/afrique/topics/cge72ry253jt',
       },
       {
         title: 'Ecoutez en direct',

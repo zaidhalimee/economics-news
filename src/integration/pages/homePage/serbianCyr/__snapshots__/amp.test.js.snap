@@ -178,7 +178,7 @@ exports[`AMP Home Page Footer Anchors should match text and url 7`] = `
 
 exports[`AMP Home Page Footer Anchors should match text and url 8`] = `
 {
-  "text": "BBC News на другим језицима",
+  "text": "Other Languages",
   "url": "https://www.bbc.com/ws/languages",
 }
 `;
@@ -199,7 +199,7 @@ exports[`AMP Home Page Footer Cookie Settings Button should match text and on ha
 
 exports[`AMP Home Page Footer I can click on the BBC branding and it would take me to the homepage 1`] = `"/serbian/cyr"`;
 
-exports[`AMP Home Page Footer Paragraphs should match text 1`] = `"© 2025 BBC. ББЦ није одговоран за садржај других сајтова. Прочитајте наша правила о линковању других сајтова."`;
+exports[`AMP Home Page Footer Paragraphs should match text 1`] = `"© 2024 BBC. ББЦ није одговоран за садржај других сајтова. Прочитајте наша правила о линковању других сајтова."`;
 
 exports[`AMP Home Page Header I can see the branding 1`] = `"BBC News, на српском"`;
 
@@ -211,41 +211,6 @@ exports[`AMP Home Page Header Navigation link should match text and url 1`] = `
 `;
 
 exports[`AMP Home Page Header Navigation link should match text and url 2`] = `
-{
-  "text": "Студентске блокаде",
-  "url": "/serbian/topics/cly9dd4w09wt/cyr",
-}
-`;
-
-exports[`AMP Home Page Header Navigation link should match text and url 3`] = `
-{
-  "text": "Србија",
-  "url": "/serbian/topics/cr50vdy9q6wt/cyr",
-}
-`;
-
-exports[`AMP Home Page Header Navigation link should match text and url 4`] = `
-{
-  "text": "Балкан",
-  "url": "/serbian/topics/c06g87137jgt/cyr",
-}
-`;
-
-exports[`AMP Home Page Header Navigation link should match text and url 5`] = `
-{
-  "text": "Свет",
-  "url": "/serbian/topics/c2lej05e1eqt/cyr",
-}
-`;
-
-exports[`AMP Home Page Header Navigation link should match text and url 6`] = `
-{
-  "text": "Видео",
-  "url": "/serbian/topics/c44vyp5g049t/cyr",
-}
-`;
-
-exports[`AMP Home Page Header Navigation link should match text and url 7`] = `
 {
   "text": "Најпопуларније",
   "url": "/serbian/cyr/popular/read",

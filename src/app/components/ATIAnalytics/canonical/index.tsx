@@ -50,22 +50,17 @@ const addLiteScript = (atiPageViewUrlString: string) => {
   );
 };
 
-const CanonicalATIAnalytics = ({
-  pageviewParams,
-  reverbParams,
-}: ATIAnalyticsProps) => {
+const CanonicalATIAnalytics = ({ pageviewParams }: ATIAnalyticsProps) => {
   const { isLite } = useContext(RequestContext);
 
   const atiPageViewUrlString =
     getEnvConfig().SIMORGH_ATI_BASE_URL + pageviewParams;
 
-  const [reverbBeaconConfig] = useState(reverbParams);
-
   const [atiPageViewUrl] = useState(atiPageViewUrlString);
 
   useEffect(() => {
-    if (!isOperaProxy()) sendBeacon(atiPageViewUrl, reverbBeaconConfig);
-  }, [atiPageViewUrl, reverbBeaconConfig]);
+    if (!isOperaProxy()) sendBeacon(atiPageViewUrl);
+  }, [atiPageViewUrl]);
 
   return (
     <>

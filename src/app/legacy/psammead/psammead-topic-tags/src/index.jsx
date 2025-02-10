@@ -74,34 +74,38 @@ export const TopicTags = ({
 }) => {
   const hasMultipleChildren = children.length > 1;
 
-  return hasMultipleChildren ? (
-    <TopicsList role="list" service={service} script={script}>
-      {children.map((child, index) => {
-        if (child.type !== TopicTag) return null;
+  return (
+    <>
+      {hasMultipleChildren ? (
+        <TopicsList role="list" service={service} script={script}>
+          {children.map((child, index) => {
+            if (child.type !== TopicTag) return null;
 
-        return (
+            return (
+              <SingleTopicTagItem
+                as="li"
+                backgroundColour={tagBackgroundColour}
+                // eslint-disable-next-line react/no-array-index-key
+                key={index}
+                service={service}
+                script={script}
+              >
+                {child}
+              </SingleTopicTagItem>
+            );
+          })}
+        </TopicsList>
+      ) : (
+        <SingleTopicTagContainer service={service} script={script}>
           <SingleTopicTagItem
-            as="li"
-            backgroundColour={tagBackgroundColour}
-            // eslint-disable-next-line react/no-array-index-key
-            key={index}
             service={service}
             script={script}
+            backgroundColour={tagBackgroundColour}
           >
-            {child}
+            {children.type === TopicTag && children}
           </SingleTopicTagItem>
-        );
-      })}
-    </TopicsList>
-  ) : (
-    <SingleTopicTagContainer service={service} script={script}>
-      <SingleTopicTagItem
-        service={service}
-        script={script}
-        backgroundColour={tagBackgroundColour}
-      >
-        {children.type === TopicTag && children}
-      </SingleTopicTagItem>
-    </SingleTopicTagContainer>
+        </SingleTopicTagContainer>
+      )}
+    </>
   );
 };

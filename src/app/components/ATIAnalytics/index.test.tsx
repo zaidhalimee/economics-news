@@ -9,8 +9,6 @@ import {
   setWindowValue,
   resetWindowValue,
 } from '#psammead/psammead-test-helpers/src';
-import { ServiceContext } from '#contexts/ServiceContext';
-import { ServiceConfig } from '#models/types/serviceConfig';
 import styAssetData from './fixtures/storyPage.json';
 import pglAssetData from './fixtures/photoGalleryPage.json';
 import mapAssetData from './fixtures/mediaAssetPage.json';

@@ -7,10 +7,12 @@ import {
   act,
 } from '../../../../components/react-testing-library-with-providers';
 import { ServiceContextProvider } from '../../../../contexts/ServiceContext';
-import RadioSchedule from '.';
+import CanonicalRadioSchedule from '.';
 import processRadioSchedule from '../utilities/processRadioSchedule';
 
-const RadioScheduleWithContext = ({ radioSchedule, lang }) => (
+const endpoint = 'https://localhost/arabic/bbc_arabic_radio/schedule.json';
+
+const RadioScheduleWithContext = ({ initialData, lang }) => (
   <RequestContextProvider
     isAmp={false}
     pageType={FRONT_PAGE}
@@ -19,12 +21,16 @@ const RadioScheduleWithContext = ({ radioSchedule, lang }) => (
     timeOnServer={Date.now()}
   >
     <ServiceContextProvider service="arabic">
-      <RadioSchedule radioSchedule={radioSchedule} lang={lang} />
+      <CanonicalRadioSchedule
+        initialData={initialData}
+        endpoint={endpoint}
+        lang={lang}
+      />
     </ServiceContextProvider>
   </RequestContextProvider>
 );
 
-describe('RadioSchedule', () => {
+describe('Canonical RadioSchedule', () => {
   beforeEach(() => {
     fetch.resetMocks();
   });
@@ -43,7 +49,7 @@ describe('RadioSchedule', () => {
       let container;
       await act(async () => {
         container = render(
-          <RadioScheduleWithContext radioSchedule={initialData} />,
+          <RadioScheduleWithContext initialData={initialData} />,
         ).container;
       });
       expect(container).toMatchSnapshot();
@@ -59,7 +65,7 @@ describe('RadioSchedule', () => {
 
       await act(async () => {
         container = render(
-          <RadioScheduleWithContext radioSchedule={initialData} />,
+          <RadioScheduleWithContext initialData={initialData} />,
         ).container;
       });
       expect(container.querySelectorAll('li').length).toEqual(4);
@@ -101,6 +107,93 @@ describe('RadioSchedule', () => {
         container = render(
           <RadioScheduleWithContext initialData={initialData} />,
         ).container;
+      });
+      expect(container).toBeEmptyDOMElement();
+    });
+  });
+
+  describe('Without initial data', () => {
+    it('renders correctly for a service with a radio schedule and page frequency URL', async () => {
+      fetch.mockResponseOnce(JSON.stringify(arabicRadioScheduleData));
+      let container;
+
+      await act(async () => {
+        container = render(<RadioScheduleWithContext />).container;
+      });
+
+      expect(container).toMatchSnapshot();
+    });
+
+    it('contains four programs for a service with a radio schedule', async () => {
+      fetch.mockResponseOnce(JSON.stringify(arabicRadioScheduleData));
+      let container;
+
+      await act(async () => {
+        container = render(<RadioScheduleWithContext />).container;
+      });
+      expect(container.querySelectorAll('li').length).toEqual(4);
+    });
+
+    it('render radio schedules container with lang code', async () => {
+      fetch.mockResponseOnce(JSON.stringify(arabicRadioScheduleData));
+      let container;
+
+      await act(async () => {
+        container = render(<RadioScheduleWithContext lang="fa-AF" />).container;
+      });
+      expect(container.querySelector('section')).toHaveAttribute(
+        'lang',
+        'fa-AF',
+      );
+    });
+
+    it('does not render when data contains less than 4 programs', async () => {
+      const radioSchedule2Programmes = { ...arabicRadioScheduleData };
+      radioSchedule2Programmes.schedules =
+        radioSchedule2Programmes.schedules.slice(0, 2);
+
+      fetch.mockResponseOnce(JSON.stringify(radioSchedule2Programmes));
+
+      let container;
+
+      await act(async () => {
+        container = render(<RadioScheduleWithContext />).container;
+      });
+      expect(container).toBeEmptyDOMElement();
+    });
+
+    it('does not render when data contains no programs', async () => {
+      fetch.mockResponseOnce(
+        JSON.stringify({
+          schedules: [],
+        }),
+      );
+      let container;
+
+      await act(async () => {
+        container = render(<RadioScheduleWithContext />).container;
+      });
+      expect(container).toBeEmptyDOMElement();
+    });
+
+    it('does not render when data fetched returns non-ok status code', async () => {
+      global.console.error = jest.fn();
+      fetch.mockResponse({ status: 404 });
+      let container;
+
+      await act(async () => {
+        container = render(<RadioScheduleWithContext />).container;
+      });
+      expect(container).toBeEmptyDOMElement();
+    });
+
+    it('does not render when data fetch is rejected', async () => {
+      global.console.error = jest.fn();
+      fetch.mockRejectOnce(Error('Server not found'));
+      let container;
+
+      await act(async () => {
+        container = render(<RadioScheduleWithContext />).container;
       });
       expect(container).toBeEmptyDOMElement();
     });

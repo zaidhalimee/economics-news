@@ -1,2 +1,2 @@
 const ampOnlyServices = ['news', 'sport', 'newsround'];
-export default ampOnlyServices;
+export { ampOnlyServices as default };

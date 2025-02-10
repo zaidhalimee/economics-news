@@ -26,18 +26,15 @@ export default async (context: GetServerSidePropsContext) => {
   let pageStatus;
   let pageJson;
 
-  // Set x-robots-tag header to prevent search engine indexing
-  context.res.setHeader('x-robots-tag', 'noindex');
+  // Remove x-frame-options header to allow embedding
+  context.res.removeHeader('x-frame-options');
+
+  const parsedRoute = parseAvRoute(resolvedUrl);
 
   context.res.setHeader(
     'Cache-Control',
     'public, stale-if-error=90, stale-while-revalidate=30, max-age=30',
   );
-
-  // Remove x-frame-options header to allow embedding
-  context.res.removeHeader('x-frame-options');
-
-  const parsedRoute = parseAvRoute(resolvedUrl);
 
   const avEmbedsUrl = constructPageFetchUrl({
     pageType: AV_EMBEDS,

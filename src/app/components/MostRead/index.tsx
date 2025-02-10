@@ -3,7 +3,6 @@ import { RequestContext } from '#contexts/RequestContext';
 import useToggle from '#hooks/useToggle';
 import { getMostReadEndpoint } from '#app/lib/utilities/getUrlHelpers/getMostReadUrls';
 import { getEnvConfig } from '#app/lib/utilities/getEnvConfig';
-import { OptimizelyContext, ReactSDKClient } from '@optimizely/react-sdk';
 import { ServiceContext } from '../../contexts/ServiceContext';
 import Canonical from './Canonical';
 import Amp from './Amp';
@@ -36,7 +35,6 @@ interface MostReadProps {
   mobileDivider?: boolean;
   headingBackgroundColour?: string;
   className?: string;
-  sendOptimizelyEvents?: boolean;
 }
 
 // We render amp on ONLY STY, CSP and ARTICLE pages using amp-list.
@@ -112,10 +110,8 @@ const MostRead = ({
   mobileDivider = false,
   headingBackgroundColour = WHITE,
   className = '',
-  sendOptimizelyEvents = false,
 }: MostReadProps) => {
   const { isAmp, pageType, variant } = useContext(RequestContext);
-  const { optimizely } = useContext(OptimizelyContext);
   const {
     service,
     mostRead: { hasMostRead },
@@ -139,34 +135,39 @@ const MostRead = ({
     isBff,
   });
 
-  const eventTrackingData = {
-    ...blockLevelEventTrackingData,
-    ...(sendOptimizelyEvents && {
-      optimizely,
-      optimizelyMetricNameOverride: 'most_read',
-    }),
-  };
+  // We render amp on ONLY STY, CSP and ARTICLE pages using amp-list.
+  const AmpMostRead = () =>
+    mostReadAmpPageTypes.includes(pageType) ? (
+      <MostReadSection {...(className && { className })}>
+        <MostReadSectionLabel
+          mobileDivider={mobileDivider}
+          backgroundColor={headingBackgroundColour}
+        />
+        <Amp
+          endpoint={`${getEnvConfig().SIMORGH_MOST_READ_CDN_URL}${endpoint}`}
+          size={size}
+        />
+      </MostReadSection>
+    ) : null;
 
-  return isAmp ? (
-    <AmpMostRead
-      pageType={pageType}
-      className={className}
-      mobileDivider={mobileDivider}
-      headingBackgroundColour={headingBackgroundColour}
-      endpoint={endpoint}
-      size={size}
-    />
-  ) : (
-    <CanonicalMostRead
-      data={data}
-      className={className}
-      mobileDivider={mobileDivider}
-      headingBackgroundColour={headingBackgroundColour}
-      columnLayout={columnLayout}
-      size={size}
-      eventTrackingData={eventTrackingData}
-    />
-  );
+  // Do not render on Canonical if data is not provided
+  const CanonicalMostRead = () =>
+    data ? (
+      <MostReadSection className={className}>
+        <MostReadSectionLabel
+          mobileDivider={mobileDivider}
+          backgroundColor={headingBackgroundColour}
+        />
+        <Canonical
+          data={data}
+          columnLayout={columnLayout}
+          size={size}
+          eventTrackingData={blockLevelEventTrackingData}
+        />
+      </MostReadSection>
+    ) : null;
+
+  return isAmp ? <AmpMostRead /> : <CanonicalMostRead />;
 };
 
 export default MostRead;

@@ -12,7 +12,6 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'scotland',
     atiAnalyticsProducerId: '79',
-    atiAnalyticsProducerName: 'SCOTLAND',
     chartbeatDomain: 'bbc.co.uk',
     brandName: 'BBC Scotland',
     product: 'BBC Scotland',

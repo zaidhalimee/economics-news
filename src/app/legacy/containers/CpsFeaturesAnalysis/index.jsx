@@ -14,7 +14,6 @@ import {
   GEL_SPACING_DBL,
   GEL_SPACING_TRPL,
 } from '#psammead/gel-foundations/src/spacings';
-import { OptimizelyContext } from '@optimizely/react-sdk';
 import { ServiceContext } from '../../../contexts/ServiceContext';
 import CpsOnwardJourney from '../CpsOnwardJourney';
 import FrostedGlassPromo from '../../../components/FrostedGlassPromo/lazy';
@@ -61,25 +60,10 @@ const StoryPromoLiFeatures = styled(StoryPromoLi)`
   }
 `;
 
-const PromoListComponent = ({
-  promoItems,
-  dir = 'ltr',
-  sendOptimizelyEvents,
-}) => {
+const PromoListComponent = ({ promoItems, dir = 'ltr' }) => {
   const { serviceDatetimeLocale } = useContext(ServiceContext);
-  const { optimizely } = useContext(OptimizelyContext);
 
-  const eventTrackingDataWithOptimizely = {
-    block: {
-      ...eventTrackingData.block,
-      ...(sendOptimizelyEvents && {
-        optimizely,
-        optimizelyMetricNameOverride: 'features',
-      }),
-    },
-  };
-
-  const viewRef = useViewTracker(eventTrackingDataWithOptimizely.block);
+  const viewRef = useViewTracker(eventTrackingData.block);
 
   return (
     <StoryPromoUlFeatures>
@@ -97,7 +81,7 @@ const PromoListComponent = ({
               displayImage
               displaySummary={false}
               serviceDatetimeLocale={serviceDatetimeLocale}
-              eventTrackingData={eventTrackingDataWithOptimizely}
+              eventTrackingData={eventTrackingData}
               sectionType="features-and-analysis"
             />
           </StoryPromoLiFeatures>
@@ -107,21 +91,10 @@ const PromoListComponent = ({
   );
 };
 
-const PromoComponent = ({ promo, dir = 'ltr', sendOptimizelyEvents }) => {
-  const { optimizely } = useContext(OptimizelyContext);
+const PromoComponent = ({ promo, dir = 'ltr' }) => {
   const { serviceDatetimeLocale } = useContext(ServiceContext);
 
-  const eventTrackingDataWithOptimizely = {
-    block: {
-      ...eventTrackingData.block,
-      ...(sendOptimizelyEvents && {
-        optimizely,
-        optimizelyMetricNameOverride: 'features',
-      }),
-    },
-  };
-
-  const viewRef = useViewTracker(eventTrackingDataWithOptimizely.block);
+  const viewRef = useViewTracker(eventTrackingData);
 
   return (
     <div ref={viewRef}>
@@ -130,7 +103,7 @@ const PromoComponent = ({ promo, dir = 'ltr', sendOptimizelyEvents }) => {
         dir={dir}
         displayImage
         serviceDatetimeLocale={serviceDatetimeLocale}
-        eventTrackingData={eventTrackingDataWithOptimizely}
+        eventTrackingData={eventTrackingData}
         sectionType="features-and-analysis"
       />
     </div>
@@ -138,10 +111,9 @@ const PromoComponent = ({ promo, dir = 'ltr', sendOptimizelyEvents }) => {
 };
 
 const FeaturesAnalysis = ({
-  content,
+  content = [],
   parentColumns,
   sectionLabelBackground,
-  sendOptimizelyEvents,
 }) => {
   const { translations } = useContext(ServiceContext);
 
@@ -161,7 +133,6 @@ const FeaturesAnalysis = ({
       promoListComponent={PromoListComponent}
       columnType="secondary"
       sectionLabelBackground={sectionLabelBackground}
-      sendOptimizelyEvents={sendOptimizelyEvents}
     />
   );
 };

@@ -2,8 +2,7 @@
 import { PropsWithChildren } from 'react';
 import { jsx } from '@emotion/react';
 import { LiveLabelProps } from '#app/components/LiveLabel/types';
-import LivePulse from '#app/components/LivePulse';
-import LiveText from '#app/components/LiveText';
+import LiveLabel from '#app/components/LiveLabel';
 import styles from './index.styles';
 
 interface LiveLabelPromoProps extends LiveLabelProps {
@@ -20,13 +19,13 @@ const LiveLabelHeader = ({
 }: PropsWithChildren<LiveLabelPromoProps>) => {
   return (
     <div data-testid="live-label">
-      <LivePulse
+      <LiveLabel.Pulse
         className={className}
         width="24"
         height="24"
         css={styles.liveLabelPulse}
       />
-      <LiveText
+      <LiveLabel.Text
         lang={lang}
         id={id}
         offScreenText={offScreenText}
@@ -37,7 +36,7 @@ const LiveLabelHeader = ({
         }
       >
         {children}
-      </LiveText>
+      </LiveLabel.Text>
     </div>
   );
 };

@@ -12,7 +12,6 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: 'अद्यावधिक',
     atiAnalyticsAppName: 'news-nepali',
     atiAnalyticsProducerId: '63',
-    atiAnalyticsProducerName: 'NEPALI',
     chartbeatDomain: 'nepali.bbc.co.uk',
     brandName: 'BBC News नेपाली',
     product: 'BBC News',
@@ -230,7 +229,6 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'पहिलेका कार्यक्रमहरू',
         podcastExternalLinks: 'यो पडकास्ट सुन्नकालागि यहाँ उपलब्ध छ',
         download: 'एपिसोड डाउनलोड',
-        closeVideo: 'बाहिरिनुहोस्',
       },
       socialEmbed: {
         caption: {
@@ -310,7 +308,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'अरू भाषामा बीबीसी',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',

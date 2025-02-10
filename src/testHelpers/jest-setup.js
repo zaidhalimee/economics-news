@@ -36,6 +36,12 @@ window.matchMedia = jest.fn().mockImplementation(query => {
 // Mock RequireJS globally and let individual tests mock it as needed
 window.require = jest.fn();
 
+global.fetch = fetch;
+global.AbortSignal = {
+  timeout: jest.fn(),
+};
+global.ReadableStream = ReadableStream;
+
 process.env.SIMORGH_PUBLIC_STATIC_ASSETS_ORIGIN = 'http://localhost:7080';
 process.env.SIMORGH_PUBLIC_STATIC_ASSETS_PATH = '/';
 process.env.SIMORGH_ASSETS_MANIFEST_PATH = path.resolve(

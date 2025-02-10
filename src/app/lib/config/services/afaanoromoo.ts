@@ -12,7 +12,6 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-afaanoromoo',
     atiAnalyticsProducerId: '2',
-    atiAnalyticsProducerName: 'AFAAN_OROMOO',
     chartbeatDomain: 'afaanoromoo.bbc.co.uk',
     brandName: 'BBC News Afaan Oromoo',
     product: 'BBC News',
@@ -233,7 +232,6 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Sagantaa raadiyoo itti aanu',
         duration: 'Turtii',
         recentEpisodes: 'Sagantaawwan darban',
-        closeVideo: 'Bahi',
       },
       socialEmbed: {
         caption: {
@@ -314,7 +312,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Afaanoota biroo',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',

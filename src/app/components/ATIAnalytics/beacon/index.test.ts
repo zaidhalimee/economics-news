@@ -11,18 +11,6 @@ const sendBeaconSpy = jest.spyOn(sendBeacon, 'default');
   .fn()
   .mockReturnValue('00-00-00');
 
-const reverbMock = {
-  isReady: jest.fn(),
-  initialise: jest.fn(() => Promise.resolve()),
-  viewEvent: jest.fn(),
-  userActionEvent: jest.fn(),
-};
-
-// eslint-disable-next-line no-underscore-dangle
-window.__reverb = {
-  __reverbLoadedPromise: Promise.resolve(reverbMock),
-};
-
 describe('beacon', () => {
   const originalATIBaseUrl = process.env.SIMORGH_ATI_BASE_URL;
   const atiBaseUrl = 'https://foobar.com?';

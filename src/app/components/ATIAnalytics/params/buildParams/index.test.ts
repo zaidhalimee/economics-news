@@ -23,7 +23,6 @@ const requestContext: RequestContextProps = {
 const serviceContext: ServiceConfig = {
   atiAnalyticsAppName: 'atiAnalyticsAppName',
   atiAnalyticsProducerId: 'atiAnalyticsProducerId',
-  atiAnalyticsProducerName: 'atiAnalyticsProducerName',
   service: 'pidgin',
   lang: 'pcm',
 };
@@ -54,7 +53,6 @@ describe('implementation of buildPageATIParams and buildPageATIUrl', () => {
       platform: 'canonical',
       previousPath: undefined,
       producerId: 'atiAnalyticsProducerId',
-      producerName: 'atiAnalyticsProducerName',
       service: 'pidgin',
       statsDestination: 'statsDestination',
       timePublished: undefined,
@@ -151,7 +149,6 @@ describe('implementation of buildPageATIParams and buildPageATIUrl', () => {
       platform: 'canonical',
       previousPath: 'previousPath',
       producerId: 'atiAnalyticsProducerId',
-      producerName: 'atiAnalyticsProducerName',
       service: 'burmese',
       statsDestination: 'statsDestination',
       timePublished: '2023-07-13T05:03:56.214Z',
@@ -237,7 +234,7 @@ describe('implementation of buildPageATIParams and buildPageATIUrl', () => {
       const result = buildPageATIParams({
         atiData: {
           ...articlePageAtiData,
-          ampExperimentName: 'someAmpExperiment',
+          ampExperimentName: 'topStoriesExperiment',
         },
         requestContext: {
           ...requestContext,
@@ -250,7 +247,7 @@ describe('implementation of buildPageATIParams and buildPageATIUrl', () => {
       });
       expect(result).toEqual({
         ...validPageURLParams,
-        ampExperimentName: 'someAmpExperiment',
+        ampExperimentName: 'topStoriesExperiment',
       });
     });
   });
@@ -290,7 +287,6 @@ describe('implementation of buildPageATIParams and buildPageATIUrl', () => {
       platform: 'canonical',
       previousPath: 'previousPath',
       producerId: 'atiAnalyticsProducerId',
-      producerName: 'atiAnalyticsProducerName',
       service: 'hausa',
       statsDestination: 'statsDestination',
       timePublished: '2023-07-11T17:42:48.771Z',
@@ -383,7 +379,6 @@ describe('implementation of buildPageATIParams and buildPageATIUrl', () => {
       platform: 'canonical',
       previousPath: undefined,
       producerId: 'atiAnalyticsProducerId',
-      producerName: 'atiAnalyticsProducerName',
       service: 'pidgin',
       statsDestination: 'statsDestination',
       timePublished: undefined,
@@ -470,7 +465,6 @@ describe('implementation of buildPageATIParams and buildPageATIUrl', () => {
       platform: 'canonical',
       previousPath: undefined,
       producerId: 'atiAnalyticsProducerId',
-      producerName: 'atiAnalyticsProducerName',
       service: 'pidgin',
       statsDestination: 'statsDestination',
       timePublished: '2023-08-01T12:00:00Z',
@@ -586,7 +580,6 @@ describe('implementation of buildPageATIParams and buildPageATIUrl', () => {
         platform: 'canonical',
         previousPath: undefined,
         producerId: 'atiAnalyticsProducerId',
-        producerName: 'atiAnalyticsProducerName',
         service: 'mundo',
         statsDestination: 'statsDestination',
         timePublished: '2023-02-10T02:00:41.000Z',
@@ -701,7 +694,6 @@ describe('implementation of buildPageATIParams and buildPageATIUrl', () => {
         platform: 'canonical',
         previousPath: undefined,
         producerId: 'atiAnalyticsProducerId',
-        producerName: 'atiAnalyticsProducerName',
         service: 'mundo',
         statsDestination: 'statsDestination',
         timePublished: '2017-09-14T14:09:14.000Z',
@@ -814,7 +806,6 @@ describe('implementation of buildPageATIParams and buildPageATIUrl', () => {
         platform: 'canonical',
         previousPath: undefined,
         producerId: 'atiAnalyticsProducerId',
-        producerName: 'atiAnalyticsProducerName',
         service: 'mundo',
         statsDestination: 'statsDestination',
         timePublished: '2016-08-07T09:21:02.000Z',
@@ -922,7 +913,6 @@ describe('implementation of buildPageATIParams and buildPageATIUrl', () => {
         platform: 'canonical',
         previousPath: undefined,
         producerId: '64',
-        producerName: 'atiAnalyticsProducerName',
         service: 'news',
         statsDestination: 'statsDestination',
         timePublished: '2021-03-05T13:37:50.000Z',
@@ -1052,7 +1042,6 @@ describe('implementation of buildPageATIParams and buildPageATIUrl', () => {
         platform: 'canonical',
         previousPath: undefined,
         producerId: 'atiAnalyticsProducerId',
-        producerName: 'atiAnalyticsProducerName',
         service: 'urdu',
         statsDestination: 'statsDestination',
         timePublished: '2020-01-31T08:48:32.000Z',
@@ -1138,7 +1127,6 @@ describe('implementation of buildPageATIParams and buildPageATIUrl', () => {
         platform: 'canonical',
         previousPath: undefined,
         producerId: 'atiAnalyticsProducerId',
-        producerName: 'atiAnalyticsProducerName',
         service: 'serbian',
         statsDestination: 'statsDestination',
         timePublished: '2018-01-19T14:09:41.000Z',

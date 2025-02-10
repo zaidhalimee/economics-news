@@ -12,7 +12,6 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-marathi',
     atiAnalyticsProducerId: '59',
-    atiAnalyticsProducerName: 'MARATHI',
     chartbeatDomain: 'marathi.bbc.co.uk',
     brandName: 'BBC News मराठी',
     product: 'BBC News',
@@ -244,7 +243,6 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'ताजे एपिसोड',
         podcastExternalLinks: 'हे पॉडकास्ट तुम्ही इथे ऐकू शकता',
         download: 'एपिसोड डाऊनलोड करा',
-        closeVideo: 'बंद करा',
       },
       socialEmbed: {
         caption: {
@@ -325,7 +323,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'BBC News इतर भाषांमध्ये',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',

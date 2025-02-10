@@ -458,6 +458,7 @@ export const pidginSingleCurationEmptyStringSubheading = {
   ],
   activePage: 1,
   pageCount: 5,
+  variantTopicId: null,
   metadata: {
     analytics: {
       name: 'pidgin.topics.c3l19z3k1ert.page',
@@ -630,6 +631,7 @@ export const mundoMultipleCurations = {
   ],
   activePage: null,
   pageCount: null,
+  variantTopicId: null,
   contentType: 'application/json; charset=utf-8',
 };
 

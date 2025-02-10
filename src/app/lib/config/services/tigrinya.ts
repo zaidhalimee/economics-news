@@ -12,7 +12,6 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-tigrinya',
     atiAnalyticsProducerId: '91',
-    atiAnalyticsProducerName: 'TIGRINYA',
     chartbeatDomain: 'tigrinya.bbc.co.uk',
     brandName: 'BBC News ትግርኛ',
     product: 'BBC News',
@@ -212,7 +211,6 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'ዝቕጽል ፈነወ ራድዮ',
         duration: 'ዕምሪ ፈነወ',
         recentEpisodes: 'ዝሓለፉ ክፋላት',
-        closeVideo: 'ออก',
       },
       socialEmbed: {
         caption: {
@@ -290,7 +288,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'ብኻልኦት ቋንቋታት',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',

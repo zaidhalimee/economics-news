@@ -3,9 +3,21 @@ import React from 'react';
 import { render } from '../../../components/react-testing-library-with-providers';
 import FooterContainer from '.';
 
+const RealDate = Date;
+
 describe(`FooterContainer`, () => {
   beforeEach(() => {
-    jest.useFakeTimers().setSystemTime(new Date('3000-01-01T12:00:00Z'));
+    // eslint-disable-next-line prettier/prettier
+    global.Date = class extends RealDate {
+      constructor() {
+        super();
+        return new RealDate('3000-01-01T12:00:00');
+      }
+    };
+  });
+
+  afterEach(() => {
+    global.Date = RealDate;
   });
 
   describe('snapshots', () => {

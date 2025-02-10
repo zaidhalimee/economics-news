@@ -17,6 +17,7 @@ const {
   FRONT_PAGE,
   LIVE_RADIO_PAGE,
   MEDIA_ASSET_PAGE,
+  TOPIC_PAGE,
   HOME_PAGE,
   TV_PAGE,
 } = PAGE_TYPES;
@@ -35,8 +36,11 @@ jest.mock('react-router-dom', () => ({
   useRouteMatch: () => ({ path: '/news', params: {} }),
 }));
 
-const HeaderContainerWithContext = ({ renderOptions }) =>
-  render(<HeaderContainer />, {
+const HeaderContainerWithContext = ({
+  renderScriptSwitch = true,
+  renderOptions,
+}) =>
+  render(<HeaderContainer renderScriptSwitch={renderScriptSwitch} />, {
     toggles: defaultToggleState,
     ...renderOptions,
   });
@@ -157,7 +161,7 @@ describe(`Header`, () => {
 
     describe('when service is uzbek', () => {
       describe.each(['cyr', 'lat'])('and variant is %s', variant => {
-        const supportedUzbekPageTypes = [ARTICLE_PAGE, HOME_PAGE];
+        const supportedUzbekPageTypes = [ARTICLE_PAGE, HOME_PAGE, TOPIC_PAGE];
         const unsupportedUzbekPageTypes = Object.values(PAGE_TYPES).filter(
           pageType => !supportedUzbekPageTypes.includes(pageType),
         );
@@ -196,6 +200,19 @@ describe(`Header`, () => {
           },
         );
       });
+    });
+
+    it('should not render script link on Topic page when missing variant topic ID', () => {
+      const { container } = HeaderContainerWithContext({
+        renderScriptSwitch: false,
+        renderOptions: {
+          pageType: TOPIC_PAGE,
+          service: 'serbian',
+          variant: 'cyr',
+        },
+      });
+
+      expect(container.querySelectorAll(scriptLinkSelector).length).toBe(0);
     });
 
     it('should focus on consent banner heading on mount', () => {

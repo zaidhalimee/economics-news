@@ -59,7 +59,6 @@ describe('Expected use', () => {
       pageIdentifier: 'news::pidgin.news.story.51745682.page',
       platform: 'canonical',
       producerId: '70',
-      producerName: 'PIDGIN',
       statsDestination: 'WS_NEWS_LANGUAGES_TEST',
     });
   });
@@ -81,7 +80,6 @@ describe('Expected use', () => {
       pageIdentifier: 'kyrgyz.page',
       platform: 'canonical',
       producerId: '58',
-      producerName: 'KYRGYZ',
       statsDestination: 'WS_NEWS_LANGUAGES_TEST',
     });
   });

@@ -12,7 +12,6 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-turkce',
     atiAnalyticsProducerId: '92',
-    atiAnalyticsProducerName: 'TURKISH',
     chartbeatDomain: 'turkish.bbc.co.uk', // this is meant to be different to the service name
     brandName: 'BBC News Türkçe',
     product: 'BBC News',
@@ -229,7 +228,6 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Next radio show',
         duration: 'Duration',
         recentEpisodes: 'Diğerleri',
-        closeVideo: 'Çıkış',
       },
       socialEmbed: {
         caption: {
@@ -308,7 +306,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Farklı dillerde BBC haberleri',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',

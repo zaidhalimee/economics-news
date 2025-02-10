@@ -1,4 +1,6 @@
 import { useContext, useEffect, useState, useRef } from 'react';
+import path from 'ramda/src/path';
+import pathOr from 'ramda/src/pathOr';
 import prop from 'ramda/src/prop';
 
 import { sendEventBeacon } from '../../components/ATIAnalytics/beacon';
@@ -12,11 +14,11 @@ const VIEWED_DURATION_MS = 1000;
 const MIN_VIEWED_PERCENT = 0.5;
 
 const useViewTracker = (props = {}) => {
-  const componentName = props?.componentName;
-  const format = props?.format;
-  const advertiserID = props?.advertiserID;
-  const url = props?.url;
-  const optimizely = props?.optimizely;
+  const componentName = path(['componentName'], props);
+  const format = path(['format'], props);
+  const advertiserID = path(['advertiserID'], props);
+  const url = path(['url'], props);
+  const optimizely = path(['optimizely'], props);
   const optimizelyMetricNameOverride = props?.optimizelyMetricNameOverride;
   const detailedPlacement = props?.detailedPlacement;
 
@@ -26,17 +28,14 @@ const useViewTracker = (props = {}) => {
   const [eventSent, setEventSent] = useState(false);
   const { trackingIsEnabled } = useTrackingToggle(componentName);
   const eventTrackingContext = useContext(EventTrackingContext);
-
-  const {
-    pageIdentifier,
-    platform,
-    producerId,
-    producerName,
-    statsDestination,
-  } = eventTrackingContext;
-  const campaignID = props?.campaignID || eventTrackingContext?.campaignID;
-
-  const { service, useReverb } = useContext(ServiceContext);
+  const { pageIdentifier, platform, producerId, statsDestination } =
+    eventTrackingContext;
+  const campaignID = pathOr(
+    path(['campaignID'], eventTrackingContext),
+    ['campaignID'],
+    props,
+  );
+  const { service } = useContext(ServiceContext);
 
   const initObserver = async () => {
     if (typeof window.IntersectionObserver === 'undefined') {
@@ -64,7 +63,6 @@ const useViewTracker = (props = {}) => {
           pageIdentifier,
           platform,
           producerId,
-          producerName,
           service,
           statsDestination,
         ].every(Boolean);
@@ -93,9 +91,6 @@ const useViewTracker = (props = {}) => {
             );
           }
 
-          const optimizelyVariation =
-            optimizely?.getVariation(OPTIMIZELY_CONFIG.ruleKey) || null;
-
           sendEventBeacon({
             campaignID,
             componentName,
@@ -103,18 +98,12 @@ const useViewTracker = (props = {}) => {
             pageIdentifier,
             platform,
             producerId,
-            producerName,
             service,
             statsDestination,
             type: EVENT_TYPE,
             advertiserID,
             url,
             detailedPlacement,
-            useReverb,
-            ...(optimizelyVariation &&
-              optimizelyVariation !== 'off' && {
-                experimentVariant: optimizelyVariation,
-              }),
           });
           setEventSent(true);
           observer.current.disconnect();
@@ -138,7 +127,6 @@ const useViewTracker = (props = {}) => {
     pageIdentifier,
     platform,
     producerId,
-    producerName,
     service,
     statsDestination,
     trackingIsEnabled,
@@ -148,7 +136,6 @@ const useViewTracker = (props = {}) => {
     optimizely,
     optimizelyMetricNameOverride,
     detailedPlacement,
-    useReverb,
   ]);
 
   return async element => {

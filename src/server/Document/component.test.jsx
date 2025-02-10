@@ -2,27 +2,12 @@ import React from 'react';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import { Helmet } from 'react-helmet';
 import { JSDOM } from 'jsdom';
-import dotenv from 'dotenv';
 
 import DocumentComponent from './component';
 
 Helmet.canUseDOM = false;
 
 describe('Document Component', () => {
-  const originalProcessEnv = process.env;
-
-  // Load environment variables into process.env to ensure CanonicalRenderer
-  // uses values set in the .env file in lieu of mocked values
-  dotenv.config();
-
-  beforeEach(() => {
-    process.env.SIMORGH_APP_ENV = 'local';
-  });
-
-  afterEach(() => {
-    process.env = originalProcessEnv;
-  });
-
   const data = { test: 'data' };
   const legacyScripts = (
     <>
@@ -40,9 +25,9 @@ describe('Document Component', () => {
   );
   const links = (
     <>
-      <link rel="modulepreload" href="modern.main.js" />
-      <link rel="modulepreload" href="modern.vendor.js" />
-      <link rel="modulepreload" href="modern.igbo.js" />
+      <link rel="modulePreload" href="modern.main.js" />
+      <link rel="modulePreload" href="modern.vendor.js" />
+      <link rel="modulePreload" href="modern.igbo.js" />
     </>
   );
 

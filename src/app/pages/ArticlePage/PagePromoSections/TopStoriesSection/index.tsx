@@ -7,7 +7,6 @@ import { EventTrackingBlock } from '#app/models/types/eventTracking';
 import SectionLabel from '#psammead/psammead-section-label/src';
 import PromoItem from '#components/OptimoPromos/PromoItem/index.styles';
 import PromoList from '#components/OptimoPromos/PromoList';
-import { OptimizelyContext } from '@optimizely/react-sdk';
 import { ServiceContext } from '../../../../contexts/ServiceContext';
 import styles from './index.styles';
 import TopStoriesItem from './TopStoriesItem';
@@ -53,23 +52,11 @@ const renderTopStoriesList = ({
   );
 };
 
-const TopStoriesSection = ({
-  content = [],
-  sendOptimizelyEvents,
-}: {
-  content: TopStoryItem[];
-  sendOptimizelyEvents?: boolean;
-}) => {
+const TopStoriesSection = ({ content = [] }: { content: TopStoryItem[] }) => {
   const { translations, script, service } = useContext(ServiceContext);
-  const { optimizely } = useContext(OptimizelyContext);
-
   const eventTrackingData = {
     block: {
       componentName: 'top-stories',
-      ...(sendOptimizelyEvents && {
-        optimizely,
-        optimizelyMetricNameOverride: 'top_stories',
-      }),
     },
   };
   const eventTrackingDataSend = eventTrackingData?.block;

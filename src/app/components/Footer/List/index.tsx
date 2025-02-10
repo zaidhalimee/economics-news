@@ -36,7 +36,9 @@ export default ({
       )}
       {elements.map((elem, index) => (
         // eslint-disable-next-line react/no-array-index-key
-        <li key={index}>{elem}</li>
+        <li key={index} role="listitem">
+          {elem}
+        </li>
       ))}
     </ul>
   );

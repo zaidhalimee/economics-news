@@ -41,6 +41,14 @@ export default {
       gridColumn: '1 / span 12',
       paddingBottom: '2rem',
     }),
+  aside: ({ mq }: Theme) =>
+    css({
+      display: 'none',
+
+      [mq.GROUP_3_MAX_WIDTH]: {
+        display: 'block',
+      },
+    }),
   mainContent: ({ spacings }: Theme) =>
     css({
       paddingBottom: `${spacings.TRIPLE}rem`,
@@ -93,10 +101,18 @@ export default {
   topStoriesSection: ({ spacings, mq }: Theme) =>
     css({
       marginBottom: `${spacings.TRIPLE}rem`,
-
       [mq.GROUP_4_MIN_WIDTH]: {
+        display: 'block',
         marginBottom: `${spacings.FULL}rem`,
         padding: `${spacings.DOUBLE}rem`,
+      },
+      '[amp-x-topStoriesExperiment*="show"] &': {
+        display: 'none',
+        [mq.GROUP_4_MIN_WIDTH]: {
+          display: 'block',
+          marginBottom: `${spacings.FULL}rem`,
+          padding: `${spacings.DOUBLE}rem`,
+        },
       },
     }),
 };

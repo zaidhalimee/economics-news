@@ -48,9 +48,10 @@ const renderListItems = (
     return [...listAcc, listItem];
   }, []);
 
-const NavigationContainer = () => {
+const NavigationContainer = ({ propsForOJExperiment }) => {
   const { isAmp, isLite } = useContext(RequestContext);
-
+  const { blocks, experimentVariant } = propsForOJExperiment;
+  console.log('blocks in NavigationContainer:', blocks, experimentVariant);
   const { script, translations, navigation, service, dir } =
     useContext(ServiceContext);
 
@@ -98,6 +99,8 @@ const NavigationContainer = () => {
         scrollableNavClickTrackerHandler,
         scrollableNavViewRef,
         isLite,
+        blocks,
+        experimentVariant,
       )}
     </NavigationUl>
   );
@@ -128,6 +131,8 @@ const NavigationContainer = () => {
       dir={dir}
       script={script}
       service={service}
+      experimentVariant={experimentVariant}
+      blocks={blocks}
     />
   );
 };

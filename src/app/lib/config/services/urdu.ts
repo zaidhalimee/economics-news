@@ -13,7 +13,6 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-urdu',
     atiAnalyticsProducerId: '95',
-    atiAnalyticsProducerName: 'URDU',
     chartbeatDomain: 'urdu.bbc.co.uk',
     brandName: 'BBC News اردو',
     defaultImage: 'https://news.files.bbci.co.uk/ws/img/logos/og/urdu.png',
@@ -85,13 +84,6 @@ export const service: DefaultServiceConfig = {
         mediaPlayer: 'Media player',
         audioPlayer: 'Audio player',
         videoPlayer: 'Video player',
-      },
-      articlePage: {
-        jumpToTitle: {
-          variation_1: 'پر جائیں',
-          variation_2: 'بی بی سی نیوز اردو کی مدد سے مزید جانیے',
-          variation_3: 'بی بی سی اردو نیوز سے مزید',
-        },
       },
       liveExperiencePage: {
         liveLabel: 'لائیو',
@@ -256,7 +248,6 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'سابق پروگرام',
         podcastExternalLinks: 'یہ پوڈکاسٹ ان پلیٹفارمز پر بھی دستیاب ہے',
         download: 'قسط ڈاؤن لوڈ کریں',
-        closeVideo: 'بند کریں',
       },
       socialEmbed: {
         caption: {
@@ -404,7 +395,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'بی بی سی نیوز دیگر زبانوں میں',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',

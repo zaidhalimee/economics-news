@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { shouldMatchSnapshot } from '#psammead/psammead-test-helpers/src';
 import { ServiceContext } from '../../../contexts/ServiceContext';
-import FragmentContainer from './index';
+import Fragment from './index';
 
 const newsContext = {
   service: 'news',
@@ -18,7 +18,7 @@ const CreateFragment = ({
   text = '',
 } = {}) => (
   <ServiceContext.Provider value={context}>
-    <FragmentContainer text={text} attributes={attributes} />
+    <Fragment text={text} attributes={attributes} />
   </ServiceContext.Provider>
 );
 

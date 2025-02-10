@@ -55,7 +55,11 @@ const CurationPromo = ({
       </Promo.Image>
       <Promo.Heading as={`h${headingLevel}`}>
         {isMedia ? (
-          <Promo.A href={link} aria-labelledby={id}>
+          <Promo.A
+            href={link}
+            aria-labelledby={id}
+            className="focusIndicatorDisplayBlock"
+          >
             <span id={id} role="text">
               <VisuallyHiddenText data-testid="visually-hidden-text">
                 {typeTranslated}
@@ -67,7 +71,7 @@ const CurationPromo = ({
             </span>
           </Promo.A>
         ) : (
-          <Promo.A href={link}>
+          <Promo.A href={link} className="focusIndicatorDisplayBlock">
             {isLive ? <LiveLabel>{title}</LiveLabel> : title}
           </Promo.A>
         )}

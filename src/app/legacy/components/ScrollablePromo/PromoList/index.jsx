@@ -14,7 +14,6 @@ import { ServiceContext } from '../../../../contexts/ServiceContext';
 import Promo from '../Promo';
 
 const StandardScrollPromo = styled.ul`
-  list-style: none;
   ${({ dir }) => `padding-${dir === 'ltr' ? 'left' : 'right'}: 0;`}
   margin: 0;
   display: flex;
@@ -79,10 +78,12 @@ const OperaStyledList = styled.li`
       margin-${dir === 'ltr' ? `left` : `right`}: 0;}`}
 `;
 
-const PromoList = ({ blocks, viewTracker, onClick }) => {
+const PromoList = ({ blocks, experimentVariant, viewTracker, onClick }) => {
+  console.log('in promo list', blocks, experimentVariant);
   const { dir } = useContext(ServiceContext);
   const isOperaMini = useOperaMiniDetection();
-  const listBlocks = blocks.slice(0, 3);
+  const listBlocks =
+    experimentVariant === 'B' ? blocks.slice(0, 5) : blocks.slice(0, 3);
 
   const ScrollPromo = isOperaMini ? OperaScrollPromo : StandardScrollPromo;
   const List = isOperaMini ? OperaStyledList : StyledList;
@@ -97,7 +98,11 @@ const PromoList = ({ blocks, viewTracker, onClick }) => {
         return (
           // eslint-disable-next-line react/no-array-index-key
           <List key={index} dir={dir}>
-            <Promo block={block} onClick={onClick} />
+            <Promo
+              block={block}
+              experimentVariant={experimentVariant}
+              onClick={onClick}
+            />
           </List>
         );
       })}

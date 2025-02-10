@@ -7,13 +7,11 @@ import readme from './README.md';
 const Component = ({
   jumpToHeadings = [],
   showRelatedContentLink = false,
-  variation,
 }: JumpToProps) => {
   return (
     <JumpTo
       jumpToHeadings={jumpToHeadings}
       showRelatedContentLink={showRelatedContentLink}
-      variation={variation}
     />
   );
 };
@@ -34,28 +32,10 @@ export default {
   },
 };
 
-export const Variation1 = () => {
-  return (
-    <Component
-      jumpToHeadings={jumpToHeadings}
-      showRelatedContentLink
-      variation="variation_1"
-    />
-  );
+export const ExampleWithRelatedContentLink = () => {
+  return <Component jumpToHeadings={jumpToHeadings} showRelatedContentLink />;
 };
 
-export const Variation2 = () => {
-  return <Component variation="variation_2" />;
-};
-
-export const Variation2withRelatedContent = () => {
-  return <Component variation="variation_2" showRelatedContentLink />;
-};
-
-export const Variation3 = () => {
-  return <Component variation="variation_3" />;
-};
-
-export const Variation3withRelatedContent = () => {
-  return <Component variation="variation_3" showRelatedContentLink />;
+export const Example = () => {
+  return <Component jumpToHeadings={jumpToHeadings} />;
 };

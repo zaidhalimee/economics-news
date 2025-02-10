@@ -7,6 +7,7 @@ import { Helmet } from 'react-helmet';
 
 import GlobalStyles from '#psammead/psammead-styles/src/global-styles';
 import { PageTypes } from '#app/models/types/global';
+// import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
 import WebVitals from '../../legacy/containers/WebVitals';
 import HeaderContainer from '../../legacy/containers/Header';
 import FooterContainer from '../../legacy/containers/Footer';
@@ -33,15 +34,11 @@ type Props = {
   pageData: {
     metadata: {
       type: PageTypes;
-      topics?: [
-        {
-          topicName: string;
-        },
-      ];
+      topics?: { topicName: string }[];
     };
-    content?: {
-      model?: ModelType;
-    };
+    content?: { model?: ModelType };
+    secondaryColumn?: { topStories: any[] };
+    mostRead?: { items: any[] };
   };
   status: number;
 };
@@ -55,7 +52,32 @@ const PageLayoutWrapper = ({
 }: PropsWithChildren<Props>) => {
   const { service } = useContext(ServiceContext);
   const { isLite, isAmp } = useContext(RequestContext);
+  const topStories = pageData.secondaryColumn?.topStories;
+  const mostReadItems = pageData.mostRead?.items;
 
+  // const scrollableOJExperimentVariation = useOptimizelyVariation(
+  //   'oj_scroll',
+  // ) as unknown as string;
+  const variantValue = 'A'; // We would get this value from useOptimizelyVariation (as commented out above)
+  // so just manually switch the hardcoded variant for now while getting this working
+  const experimentVariant: 'A' | 'B' | 'none' = ['A', 'B'].includes(
+    variantValue,
+  )
+    ? (variantValue as 'A' | 'B')
+    : 'none';
+  let dataForOJExperiment;
+  if (experimentVariant === 'A') {
+    dataForOJExperiment = topStories;
+  } else if (experimentVariant === 'B' && mostReadItems) {
+    dataForOJExperiment = mostReadItems;
+  }
+
+  const propsForOJExperiment = {
+    blocks: dataForOJExperiment || [],
+    experimentVariant,
+  };
+
+  console.log('mostReadItems', mostReadItems, 'topStories', topStories);
   const isErrorPage = ![200].includes(status) || !status;
   const pageType = pageData?.metadata?.type;
   const reportingPageType = pageType?.replace(/ /g, '');
@@ -202,7 +224,7 @@ const PageLayoutWrapper = ({
       {!isErrorPage && <WebVitals pageType={pageType} />}
       <GlobalStyles />
       <div id="main-wrapper" css={styles.wrapper}>
-        <HeaderContainer />
+        <HeaderContainer propsForOJExperiment={propsForOJExperiment} />
         <div css={styles.content}>{children}</div>
         <FooterContainer />
       </div>

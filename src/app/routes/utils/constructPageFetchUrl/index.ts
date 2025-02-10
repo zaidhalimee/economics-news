@@ -250,7 +250,7 @@ const constructPageFetchUrl = ({
         break;
       case TOPIC_PAGE: {
         const variantPath = variant ? `/${variant}` : '';
-        fetchUrl = Url(`/${service}/topics/${id}${variantPath}`);
+        fetchUrl = Url(`/${service}${variantPath}/topics/${id}`);
         break;
       }
       case LIVE_PAGE: {

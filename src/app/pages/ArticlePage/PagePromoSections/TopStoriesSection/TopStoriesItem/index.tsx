@@ -24,7 +24,7 @@ const getArticleTopStoryItem = (item: TopStoryItem) => {
 
   const mediaType = item?.media?.format ?? '';
   const mediaDuration = item?.media?.duration ?? '';
-  const isPhotoGallery = item?.cpsType === 'PGL';
+  const isPhotoGallery = item?.cpsType === 'PGL' ?? null;
   const timestamp = item?.timestamp ?? null;
 
   const assetUri = item?.locators?.assetUri ?? '';

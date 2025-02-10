@@ -12,7 +12,7 @@ const OptimizelyArticleCompleteTracking = () => {
   const [pageCompleteSent, setPageCompleteSent] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
-  const experimentVariation = useOptimizelyVariation(OPTIMIZELY_CONFIG.flagKey);
+  const experimentVariation = useOptimizelyVariation(OPTIMIZELY_CONFIG.flagId);
 
   const sendPageCompleteEvent =
     experimentVariation && !isAmp && !pageCompleteSent && isVisible;

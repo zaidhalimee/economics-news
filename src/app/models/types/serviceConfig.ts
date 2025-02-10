@@ -12,27 +12,27 @@ import {
 import { Translations } from './translations';
 
 export type DefaultServiceConfig = {
-  [_key in ServicesWithNoVariants['variant']]: ServiceConfig;
+  [key in ServicesWithNoVariants['variant']]: ServiceConfig;
 };
 
 export type SerbianConfig = {
-  [_key in SerbianService['variant']]: ServiceConfig;
+  [key in SerbianService['variant']]: ServiceConfig;
 };
 
 export type ChineseConfig = {
-  [_key in ChineseService['variant']]: ServiceConfig;
+  [key in ChineseService['variant']]: ServiceConfig;
 };
 
 export type ZhongwenConfig = {
-  [_key in ZhongwenService['variant']]: ServiceConfig;
+  [key in ZhongwenService['variant']]: ServiceConfig;
 };
 
 export type UkrainianConfig = {
-  [_key in UkrainianService['variant']]: ServiceConfig;
+  [key in UkrainianService['variant']]: ServiceConfig;
 };
 
 export type UzbekConfig = {
-  [_key in UzbekService['variant']]: ServiceConfig;
+  [key in UzbekService['variant']]: ServiceConfig;
 };
 
 export type ServiceConfig = {
@@ -42,8 +42,6 @@ export type ServiceConfig = {
   articleTimestampSuffix?: string;
   atiAnalyticsAppName: string;
   atiAnalyticsProducerId: string;
-  atiAnalyticsProducerName?: string;
-  useReverb?: boolean;
   chartbeatDomain: string;
   brandName: string;
   product: string;

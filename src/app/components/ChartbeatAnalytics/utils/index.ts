@@ -7,6 +7,7 @@ import { getReferrer } from '../../../lib/analyticsUtils';
 import {
   ARTICLE_PAGE,
   FRONT_PAGE,
+  MEDIA_PAGE,
   MOST_READ_PAGE,
   FEATURE_INDEX_PAGE,
   MEDIA_ASSET_PAGE,
@@ -33,7 +34,7 @@ export const chartbeatUID = 50924;
 export const useCanonical = true;
 export const chartbeatSource = '//static.chartbeat.com/js/chartbeat.js';
 
-const capitalize = (s = '') => `${s?.charAt(0).toUpperCase()}${s?.slice(1)}`;
+const capitalize = (s: string) => s?.charAt(0).toUpperCase() + s?.slice(1);
 
 const buildSectionArr = (service: Services, value: string, type: string) => [
   `${capitalize(service)} - ${value}`,
@@ -60,6 +61,7 @@ export const getType = (pageType: PageTypes | 'index', shorthand = false) => {
       return 'article-media-asset';
     case LIVE_RADIO_PAGE:
     case AUDIO_PAGE:
+    case MEDIA_PAGE:
       return 'Radio';
     case TV_PAGE:
       return 'TV';
@@ -148,6 +150,7 @@ export const buildSections = ({
           : []),
       ].join(', ');
     case LIVE_RADIO_PAGE:
+    case MEDIA_PAGE:
     case AUDIO_PAGE:
     case TV_PAGE:
       return [
@@ -187,6 +190,7 @@ export const getTitle = ({ pageType, title, brandName }: GetTitleProps) => {
     case TOPIC_PAGE:
     case LIVE_PAGE:
     case LIVE_RADIO_PAGE:
+    case MEDIA_PAGE:
     case AUDIO_PAGE:
     case TV_PAGE:
     case 'index':

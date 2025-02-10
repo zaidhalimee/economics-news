@@ -1,8 +1,45 @@
 import React from 'react';
+import { MemoryRouter, Route } from 'react-router-dom';
+import { RequestContext, RequestContextProps } from '#contexts/RequestContext';
+import { ToggleContext } from '#contexts/ToggleContext';
+import {
+  articlePath,
+  cpsAssetPagePath,
+  errorPagePath,
+  homePagePath,
+  legacyAssetPagePath,
+  topicPath,
+} from '#app/routes/utils/regex';
 import { render } from '../../react-testing-library-with-providers';
-import ScriptLink from '.';
+import { service as ukChinaServiceConfig } from '../../../lib/config/services/ukchina';
+import { service as serbianServiceConfig } from '../../../lib/config/services/serbian';
+import { ServiceContext } from '../../../contexts/ServiceContext';
+import ScriptLinkContainer, { getVariantHref } from '.';
+import ThemeProvider from '../../ThemeProvider';
 
-const enabledToggleState = {
+const requestContextMock = {
+  variant: 'lat',
+  env: 'test',
+  isNextJs: false,
+};
+
+const withRouter = (
+  component: React.ReactElement,
+  matchPath: string,
+  path: string,
+) => {
+  const Wrapper = (
+    <MemoryRouter initialEntries={[path]}>
+      <Route path={matchPath}>{component}</Route>
+    </MemoryRouter>
+  );
+
+  return {
+    ...render(Wrapper),
+  };
+};
+
+const defaultToggleState = {
   scriptLink: {
     enabled: true,
   },
@@ -11,66 +48,247 @@ const enabledToggleState = {
   },
 };
 
+const mockToggleDispatch = jest.fn();
+
+const toggleContextMock = {
+  toggleState: defaultToggleState,
+  toggleDispatch: mockToggleDispatch,
+};
+
+const ScriptLinkContainerWithContext = ({
+  serviceContext = serbianServiceConfig.lat,
+  requestContext = requestContextMock,
+  toggleContext = toggleContextMock,
+  ...props
+}) => (
+  <ThemeProvider service="serbian" variant="lat">
+    <ToggleContext.Provider value={toggleContext}>
+      <ServiceContext.Provider value={serviceContext}>
+        <RequestContext.Provider value={requestContext as RequestContextProps}>
+          <ScriptLinkContainer {...props} />
+        </RequestContext.Provider>
+      </ServiceContext.Provider>
+    </ToggleContext.Provider>
+  </ThemeProvider>
+);
+
 describe(`Script Link`, () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
 
   it('should render correctly', () => {
-    const { container } = render(<ScriptLink />, {
-      toggles: enabledToggleState,
-      service: 'serbian',
-      variant: 'lat',
-      pathname: '/serbian/lat',
-    });
+    const { container } = render(
+      <MemoryRouter initialEntries={['/serbian/lat']}>
+        <Route path={homePagePath}>
+          <ScriptLinkContainerWithContext />
+        </Route>
+      </MemoryRouter>,
+    );
     expect(container).toMatchSnapshot();
   });
 
   describe('assertions', () => {
-    describe.each(['canonical', 'amp', 'lite'])('%s', platform => {
-      it.each`
-        service      | variant   | pageType             | path                                                                                 | variantPath
-        ${'serbian'} | ${'lat'}  | ${'article'}         | ${'/serbian/articles/c805k05kr73o/lat'}                                              | ${'/serbian/articles/c805k05kr73o/cyr'}
-        ${'serbian'} | ${'lat'}  | ${'cpsAssetPage'}    | ${'/serbian/lat/srbija-46748932'}                                                    | ${'/serbian/cyr/srbija-46748932'}
-        ${'serbian'} | ${'lat'}  | ${'errorPage'}       | ${'/serbian/404/lat'}                                                                | ${'/serbian/404/cyr'}
-        ${'serbian'} | ${'lat'}  | ${'homePage'}        | ${'/serbian/lat'}                                                                    | ${'/serbian/cyr'}
-        ${'serbian'} | ${'lat'}  | ${'topicPage'}       | ${'/serbian/lat/topics/c7zp707dy8yt'}                                                | ${'/serbian/cyr/topics/c7zp707dy8yt'}
-        ${'serbian'} | ${'cyr'}  | ${'article'}         | ${'/serbian/articles/c805k05kr73o/cyr'}                                              | ${'/serbian/articles/c805k05kr73o/lat'}
-        ${'serbian'} | ${'cyr'}  | ${'cpsAssetPage'}    | ${'/serbian/cyr/srbija-46748932'}                                                    | ${'/serbian/lat/srbija-46748932'}
-        ${'serbian'} | ${'cyr'}  | ${'errorPage'}       | ${'/serbian/404/cyr'}                                                                | ${'/serbian/404/lat'}
-        ${'serbian'} | ${'cyr'}  | ${'homePage'}        | ${'/serbian/cyr'}                                                                    | ${'/serbian/lat'}
-        ${'serbian'} | ${'cyr'}  | ${'topicPage'}       | ${'/serbian/cyr/topics/c7zp707dy8yt'}                                                | ${'/serbian/lat/topics/c7zp707dy8yt'}
-        ${'ukchina'} | ${'trad'} | ${'legacyAssetPage'} | ${'/ukchina/trad/multimedia/2015/11/151120_video_100w_london_chinese_entrepreneurs'} | ${'/ukchina/simp/multimedia/2015/11/151120_video_100w_london_chinese_entrepreneurs'}
-        ${'ukchina'} | ${'simp'} | ${'legacyAssetPage'} | ${'/ukchina/simp/multimedia/2015/11/151120_video_100w_london_chinese_entrepreneurs'} | ${'/ukchina/trad/multimedia/2015/11/151120_video_100w_london_chinese_entrepreneurs'}
-      `(
-        'Script Link should contain link to other variant when on $service $variant $pageType',
-        ({ service, variant, path, variantPath }) => {
-          const isAmp = platform === 'amp';
-          const isLite = platform === 'lite';
+    const testCases = {
+      article: {
+        matchPath: articlePath,
+        path: '/serbian/articles/c805k05kr73o/lat',
+        variantPath: '/serbian/articles/c805k05kr73o/cyr',
+      },
+      cpsAssetPage: {
+        matchPath: cpsAssetPagePath,
+        path: '/serbian/lat/srbija-46748932',
+        variantPath: '/serbian/cyr/srbija-46748932',
+      },
+      errorPage: {
+        matchPath: errorPagePath,
+        path: '/serbian/404/lat',
+        variantPath: '/serbian/404/cyr',
+      },
+      homePage: {
+        matchPath: homePagePath,
+        path: '/serbian/lat',
+        variantPath: '/serbian/cyr',
+      },
+      legacyAssetPage: {
+        matchPath: legacyAssetPagePath,
+        path: '/ukchina/trad/multimedia/2015/11/151120_video_100w_london_chinese_entrepreneurs',
+        variantPath:
+          '/ukchina/simp/multimedia/2015/11/151120_video_100w_london_chinese_entrepreneurs',
+        serviceContext: ukChinaServiceConfig.trad,
+        requestContext: { variant: 'trad', env: 'test' },
+        otherVariant: 'simp',
+      },
+    };
 
-          let pathToUse = path;
+    describe('canonical', () => {
+      Object.keys(testCases).forEach(testCase => {
+        it(`Script Link should contain link to other variant when on ${testCase}`, () => {
+          const {
+            matchPath,
+            path,
+            variantPath,
+            // @ts-expect-error type inference issue
+            serviceContext = serbianServiceConfig.lat,
+            // @ts-expect-error type inference issue
+            requestContext = requestContextMock,
+            // @ts-expect-error type inference issue
+            toggleContext = toggleContextMock,
+            // @ts-expect-error type inference issue
+            otherVariant = 'cyr',
+          } = testCases[testCase as keyof typeof testCases];
 
-          if (isAmp) pathToUse = `${path}.amp`;
-          if (isLite) pathToUse = `${path}.lite`;
+          const { container } = withRouter(
+            <ScriptLinkContainerWithContext
+              serviceContext={serviceContext}
+              requestContext={requestContext}
+              toggleContext={toggleContext}
+            />,
+            matchPath,
+            path,
+          );
 
-          const { container } = render(<ScriptLink />, {
-            toggles: enabledToggleState,
-            service,
-            variant,
-            pathname: pathToUse,
-            isAmp,
-          });
+          const scriptLink = container.querySelector(
+            `a[data-variant="${otherVariant}"]`,
+          ) as Element;
 
-          const scriptLink = container.querySelector(`a[data-variant]`);
+          expect(scriptLink.getAttribute('href')).toBe(variantPath);
+        });
+      });
+      it(`Script Link should contain link to other variant when on topic page`, () => {
+        const matchPath = topicPath;
+        const path = '/serbian/lat/topics/c06g871g3knt';
+        const variantPath = '/serbian/cyr/topics/c7zp707dy8yt';
+        const otherVariant = 'cyr';
 
-          expect(scriptLink?.getAttribute('href')).toBe(variantPath);
-        },
-      );
+        const { container } = withRouter(
+          <ScriptLinkContainerWithContext scriptSwitchId="c7zp707dy8yt" />,
+          matchPath,
+          path,
+        );
+
+        const scriptLink = container.querySelector(
+          `a[data-variant="${otherVariant}"]`,
+        ) as Element;
+
+        expect(scriptLink.getAttribute('href')).toBe(variantPath);
+      });
+    });
+
+    describe('amp', () => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { errorPage, ...ampTestCases } = testCases;
+      Object.keys(ampTestCases).forEach(testCase => {
+        it(`Script Link should contain link to other variant when on ${testCase}`, () => {
+          const {
+            matchPath,
+            path,
+            variantPath,
+            // @ts-expect-error type inference issue
+            serviceContext = serbianServiceConfig.lat,
+            // @ts-expect-error type inference issue
+            requestContext = requestContextMock,
+            // @ts-expect-error type inference issue
+            toggleContext = toggleContextMock,
+            // @ts-expect-error type inference issue
+            otherVariant = 'cyr',
+          } = testCases[testCase as keyof typeof testCases];
+
+          const { container } = withRouter(
+            <ScriptLinkContainerWithContext
+              serviceContext={serviceContext}
+              requestContext={requestContext}
+              toggleContext={toggleContext}
+            />,
+            matchPath,
+            `${path}.amp`,
+          );
+
+          const scriptLink = container.querySelector(
+            `a[data-variant="${otherVariant}"]`,
+          ) as Element;
+
+          expect(scriptLink.getAttribute('href')).toBe(`${variantPath}`);
+        });
+      });
+    });
+  });
+
+  describe('getVariantHref', () => {
+    it('should generate correct variant href on a canonical page', () => {
+      const path = '/:foo(foo)/:bar(bar):variant(/simp|/trad|/cyr|/lat)';
+
+      expect(
+        getVariantHref({
+          path,
+          params: { foo: 'foo', bar: 'bar', variant: '/lat' } as Record<
+            string,
+            string
+          >,
+          service: 'serbian',
+          variant: 'cyr',
+        }),
+      ).toEqual('/foo/bar/cyr');
+    });
+
+    it('should generate correct variant href on an amp page', () => {
+      const path =
+        '/:foo(foo)/:bar(bar):variant(/simp|/trad|/cyr|/lat):amp(.amp)?';
+
+      expect(
+        getVariantHref({
+          path,
+          params: { foo: 'foo', bar: 'bar', variant: '/lat', amp: '.amp' },
+          service: 'serbian',
+          variant: 'cyr',
+        }),
+      ).toEqual('/foo/bar/cyr');
+    });
+
+    it('should generate fallback if no path defined', () => {
+      expect(
+        getVariantHref({
+          params: {},
+          service: 'serbian',
+          variant: 'cyr',
+        }),
+      ).toEqual('/serbian/cyr');
+    });
+
+    it('should generate fallback if path does not match defined route from config', () => {
+      expect(
+        getVariantHref({
+          path: '/',
+          params: {},
+          service: 'serbian',
+          variant: 'cyr',
+        }),
+      ).toEqual('/serbian/cyr');
+    });
+
+    it('should generate fallback if a parameter specified in the path is not provided', () => {
+      expect(
+        getVariantHref({
+          path: '/:foo',
+          params: {},
+          service: 'serbian',
+          variant: 'cyr',
+        }),
+      ).toEqual('/serbian/cyr');
+
+      expect(
+        getVariantHref({
+          path: '/:foo:bar',
+          params: { foo: 'foo' },
+          service: 'serbian',
+          variant: 'cyr',
+        }),
+      ).toEqual('/serbian/cyr');
     });
   });
 
   it('should not render when scriptLink toggle is off', () => {
-    const disabledToggleState = {
+    const testToggles = {
       scriptLink: {
         enabled: false,
       },
@@ -78,31 +296,31 @@ describe(`Script Link`, () => {
         enabled: false,
       },
     };
-
-    const { container } = render(<ScriptLink />, {
-      toggles: disabledToggleState,
-    });
-
+    const { container } = withRouter(
+      <ScriptLinkContainerWithContext
+        toggleContext={{
+          toggleState: testToggles,
+          toggleDispatch: mockToggleDispatch,
+        }}
+      />,
+      homePagePath,
+      '/serbian/lat',
+    );
     expect(container).toBeEmptyDOMElement();
   });
 
-  it('should not render when an alternate variant is not defined', () => {
-    const { container } = render(<ScriptLink />, {
-      toggles: enabledToggleState,
-      service: 'pidgin',
-      pathname: '/pidgin',
-    });
-
-    expect(container).toBeEmptyDOMElement();
-  });
-
-  it('should not render if pathname is not defined', () => {
-    const { container } = render(<ScriptLink />, {
-      toggles: enabledToggleState,
-      service: 'serbian',
-      pathname: '',
-    });
-
+  it('should not render when app is Next.JS', () => {
+    const { container } = withRouter(
+      <ScriptLinkContainerWithContext
+        requestContext={{
+          variant: 'lat',
+          env: 'test',
+          isNextJs: true,
+        }}
+      />,
+      homePagePath,
+      '/serbian/lat',
+    );
     expect(container).toBeEmptyDOMElement();
   });
 });

@@ -58,8 +58,8 @@ import { Services, Variants } from '../../../app/models/types/global';
 import { ServiceConfig } from '../../../app/models/types/serviceConfig';
 
 type AllServices = {
-  [_service in Services]: {
-    [_variant in Variants]: ServiceConfig;
+  [s in Services]: {
+    [v in Variants]: ServiceConfig;
   };
 };
 

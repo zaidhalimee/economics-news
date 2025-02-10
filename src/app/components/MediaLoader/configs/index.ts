@@ -11,7 +11,6 @@ import {
   MediaBlock,
   ConfigBuilderProps,
 } from '../types';
-import liveMedia from './liveMedia';
 
 const BLOCK_TYPES = [
   'aresMedia',
@@ -20,12 +19,11 @@ const BLOCK_TYPES = [
   'liveRadio',
   'audio',
   'legacyMedia',
-  'liveMedia',
 ] as const;
 
 const blockTypeMapping: Record<
   (typeof BLOCK_TYPES)[number],
-  (_arg0: ConfigBuilderProps) => ConfigBuilderReturnProps
+  (arg0: ConfigBuilderProps) => ConfigBuilderReturnProps
 > = {
   aresMedia,
   clipMedia,
@@ -33,7 +31,6 @@ const blockTypeMapping: Record<
   liveRadio,
   audio,
   legacyMedia,
-  liveMedia,
 };
 
 export default (blocks: MediaBlock[]) => {

@@ -12,7 +12,6 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-hausa',
     atiAnalyticsProducerId: '51',
-    atiAnalyticsProducerName: 'HAUSA',
     chartbeatDomain: 'hausa.bbc.co.uk',
     brandName: 'BBC News Hausa',
     product: 'BBC News',
@@ -253,7 +252,6 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'Kari',
         podcastExternalLinks: 'Za a iya samun wannan Podcast din a',
         download: 'Sauke shiri',
-        closeVideo: 'Fita',
       },
       socialEmbed: {
         caption: {
@@ -399,7 +397,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Labaran BBC a sauran harsuna',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',

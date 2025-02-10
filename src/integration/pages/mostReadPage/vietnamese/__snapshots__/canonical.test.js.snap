@@ -102,7 +102,7 @@ exports[`Canonical Most Read Page Footer Anchors should match text and url 7`] =
 
 exports[`Canonical Most Read Page Footer Anchors should match text and url 8`] = `
 {
-  "text": "BBC News các ngôn ngữ khác",
+  "text": "Other Languages",
   "url": "https://www.bbc.com/ws/languages",
 }
 `;
@@ -116,7 +116,7 @@ exports[`Canonical Most Read Page Footer Anchors should match text and url 9`] =
 
 exports[`Canonical Most Read Page Footer I can click on the BBC branding and it would take me to the homepage 1`] = `"/vietnamese"`;
 
-exports[`Canonical Most Read Page Footer Paragraphs should match text 1`] = `"© 2025 BBC. BBC không chịu trách nhiệm nội dung các trang ngoài. Tìm hiểu cách chúng tôi tiếp cận việc dẫn tới trang ngoài"`;
+exports[`Canonical Most Read Page Footer Paragraphs should match text 1`] = `"© 2024 BBC. BBC không chịu trách nhiệm nội dung các trang ngoài. Tìm hiểu cách chúng tôi tiếp cận việc dẫn tới trang ngoài"`;
 
 exports[`Canonical Most Read Page Header I can see the branding 1`] = `"BBC News, Tiếng Việt"`;
 

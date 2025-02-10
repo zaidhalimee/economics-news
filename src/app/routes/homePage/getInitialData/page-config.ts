@@ -3,7 +3,7 @@ import { Services } from '../../../models/types/global';
 type Envs = 'test' | 'live';
 
 export const HOME_PAGE_CONFIG: {
-  [_service in Services]: { [_env in Envs]: string };
+  [service in Services]: { [env in Envs]: string };
 } = {
   kyrgyz: {
     test: 'cm7682qz7v1t',

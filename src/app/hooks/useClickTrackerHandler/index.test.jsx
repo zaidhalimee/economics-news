@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { createContext } from 'react';
+import React from 'react';
 import userEvent from '@testing-library/user-event';
 import { waitFor } from '@testing-library/dom';
 import { STORY_PAGE } from '#app/routes/utils/pageTypes';
@@ -13,8 +13,6 @@ import {
   act,
   fireEvent,
 } from '../../components/react-testing-library-with-providers';
-import * as serviceContextModule from '../../contexts/ServiceContext';
-
 import pidginData from './fixtureData/tori-51745682.json';
 import useClickTrackerHandler from '.';
 
@@ -91,17 +89,6 @@ beforeEach(() => {
     assign: jest.fn(),
     ...rest,
   };
-
-  jest.replaceProperty(
-    serviceContextModule,
-    'ServiceContext',
-    createContext({
-      atiAnalyticsProducerId: '70',
-      atiAnalyticsProducerName: 'PIDGIN',
-      service: 'pidgin',
-      useReverb: false,
-    }),
-  );
 });
 
 afterEach(() => {
@@ -393,7 +380,6 @@ describe('Click tracking', () => {
       optimizely: {
         track: mockOptimizelyTrack,
         user: { attributes: mockAttributes, id: mockUserId },
-        getVariation: jest.fn(() => 'off'),
       },
       optimizelyMetricNameOverride: 'myEvent',
     };
@@ -438,7 +424,6 @@ describe('Click tracking', () => {
       optimizely: {
         track: mockOptimizelyTrack,
         user: { attributes: mockAttributes, id: mockUserId },
-        getVariation: jest.fn(() => 'off'),
       },
     };
     const {

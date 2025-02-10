@@ -5,7 +5,6 @@ export default {
   link: ({ palette }: Theme) =>
     css({
       textDecoration: 'none',
-      display: 'block',
       color: palette.WHITE,
       cursor: 'pointer',
       '&:hover, &:focus': {

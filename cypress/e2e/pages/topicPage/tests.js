@@ -2,6 +2,7 @@ import idSanitiser from '../../../../src/app/lib/utilities/idSanitiser';
 
 export default ({ service, pageType, variant, currentPath }) => {
   let topicId;
+  let variantTopicId;
   let topicTitle;
   let firstItemHeadline;
   let pageCount;
@@ -34,6 +35,7 @@ export default ({ service, pageType, variant, currentPath }) => {
         cy.getPageDataFromWindow().then(data => {
           const { pageData } = data;
           topicTitle = pageData.title;
+          variantTopicId = pageData.scriptSwitchId;
           pageCount = pageData.pageCount;
           numberOfItems = pageData.curations?.[0]?.summaries.length;
           firstItemHeadline = pageData.curations?.[0]?.summaries?.[0]?.title;
@@ -269,7 +271,7 @@ export default ({ service, pageType, variant, currentPath }) => {
           // URL contains correct variant after click
           cy.url().should('contain', otherVariant);
           // URL contains the correct topic ID
-          cy.url().should('contain', topicId);
+          cy.url().should('contain', variantTopicId);
           // clicks script switch
           cy.get(`[data-variant="${variant}"]`).click();
           // URL contains correct variant after click

@@ -1,4 +1,5 @@
 import frontPageJsonSerbian from '#data/serbian/frontpage/lat.json';
+import radioScheduleJson from '#data/hausa/bbc_hausa_radio/schedule.json';
 import { CPS_ASSET as pageType } from '#app/routes/utils/pageTypes';
 import * as fetchPageData from '#app/routes/utils/fetchPageData';
 import { BFF_FETCH_ERROR } from '#app/lib/logger.const';
@@ -163,6 +164,91 @@ describe('Front Page - Get Initial Data', () => {
       service: 'serbian',
       message: 'Front page data is malformed',
       status: 500,
+    });
+  });
+
+  describe('with Radio Schedule', () => {
+    // Set all radio scheduled dates to the future
+    radioScheduleJson.schedules[2].publishedTimeStart = Date.now() - 100000;
+
+    it('should return data for a page without radio schedule', async () => {
+      const { pageData } = await getInitialData({
+        path: '/serbian/lat',
+        service: 'serbian',
+        variant: 'lat',
+        pageType,
+        getAgent: mockGetAgent,
+      });
+
+      expect(pageData.metadata.language).toEqual('sr-Latn');
+      expect(pageData.metadata.summary).toEqual(
+        'BBC na srpskom nudi ekskluzivan sadržaj - analitičko, istraživačko i nepristrasno izveštavanje u tekstovima i video prilozima prilagođenim i društvenim mrežama.',
+      );
+      expect(pageData.promo.name).toEqual('Početna strana');
+      expect(pageData.content.groups.length).toBeTruthy();
+
+      expect(pageData.radioScheduleData).toBeUndefined();
+    });
+
+    it('should return data to render a front page with radio schedules', async () => {
+      fetch.mockResponseOnce(JSON.stringify(frontPageJsonSerbian));
+      fetch.mockResponseOnce(JSON.stringify(radioScheduleJson));
+
+      const { pageData } = await getInitialData({
+        path: '/serbian/lat',
+        service: 'serbian',
+        variant: 'lat',
+        pageType,
+        toggles: {
+          frontPageRadioSchedule: {
+            enabled: true,
+            value: 'Features',
+          },
+        },
+        getAgent: mockGetAgent,
+      });
+
+      expect(pageData.content.groups.length).toBeTruthy();
+      expect(pageData.radioScheduleData.length).toBe(4);
+    });
+
+    it('should return data for service with radio schedules, but toggle is disabled', async () => {
+      const { pageData } = await getInitialData({
+        path: '/serbian/lat',
+        service: 'serbian',
+        variant: 'lat',
+        pageType,
+        toggles: {
+          frontPageRadioSchedule: {
+            enabled: false,
+          },
+        },
+        getAgent: mockGetAgent,
+      });
+
+      expect(pageData.content.groups.length).toBeTruthy();
+      expect(pageData.radioScheduleData).toBeUndefined();
+    });
+
+    it('should return page data for misconfigured service without radio schedules, but with radio schedules on front page', async () => {
+      fetch.mockResponseOnce(JSON.stringify(frontPageJsonSerbian));
+      fetch.mockResponseOnce(null);
+
+      const { pageData } = await getInitialData({
+        path: '/serbian/lat',
+        service: 'serbian',
+        variant: 'lat',
+        pageType,
+        toggles: {
+          frontPageRadioSchedule: {
+            enabled: true,
+          },
+        },
+        getAgent: mockGetAgent,
+      });
+
+      expect(pageData.content.groups.length).toBeTruthy();
+      expect(pageData.radioScheduleData).toBeNull();
     });
   });
 });

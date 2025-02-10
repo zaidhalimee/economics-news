@@ -12,8 +12,6 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-pidgin',
     atiAnalyticsProducerId: '70',
-    atiAnalyticsProducerName: 'PIDGIN',
-    useReverb: true,
     chartbeatDomain: 'pidgin.bbc.co.uk',
     brandName: 'BBC News Pidgin',
     product: 'BBC News',
@@ -225,7 +223,6 @@ export const service: DefaultServiceConfig = {
         previousRadioShow: 'Previous radio show',
         nextRadioShow: 'Next radio show',
         duration: 'Duration',
-        closeVideo: 'Exit',
       },
       socialEmbed: {
         caption: {
@@ -342,7 +339,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'BBC News for oda languages',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',

@@ -10,6 +10,7 @@ import useToggle from '../../hooks/useToggle';
 import {
   ARTICLE_PAGE,
   FRONT_PAGE,
+  MEDIA_PAGE,
   MOST_READ_PAGE,
   FEATURE_INDEX_PAGE,
   MEDIA_ASSET_PAGE,
@@ -59,6 +60,7 @@ const getCampaignID = (pageType: CampaignPageTypes) => {
     [ARTICLE_PAGE]: 'article',
     [MEDIA_ARTICLE_PAGE]: 'article-sfv',
     [FRONT_PAGE]: 'index-home',
+    [MEDIA_PAGE]: 'player-episode',
     [MOST_READ_PAGE]: 'list-datadriven-read',
     [FEATURE_INDEX_PAGE]: 'index-section-fix',
     [MEDIA_ASSET_PAGE]: 'article-media-asset',
@@ -104,7 +106,7 @@ export const EventTrackingContextProvider = ({
   const { pageType } = requestContext;
 
   const serviceContext = useContext(ServiceContext);
-  const { atiAnalyticsProducerId, atiAnalyticsProducerName } = serviceContext;
+  const { atiAnalyticsProducerId } = serviceContext;
 
   const { enabled: eventTrackingIsEnabled } = useToggle('eventTracking');
 
@@ -125,14 +127,12 @@ export const EventTrackingContextProvider = ({
         pageIdentifier,
         platform,
         producerId: atiAnalyticsProducerId,
-        producerName: atiAnalyticsProducerName,
         statsDestination,
       };
     }
     return null;
   }, [
     atiAnalyticsProducerId,
-    atiAnalyticsProducerName,
     atiData,
     data,
     eventTrackingIsEnabled,

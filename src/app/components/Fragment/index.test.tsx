@@ -1,17 +1,17 @@
 import React from 'react';
-import FragmentComponent from '.';
+import Fragment from '.';
 import { render } from '../react-testing-library-with-providers';
 
 describe('Fragment', () => {
   it('with no attributes', () => {
-    const { getByText } = render(<FragmentComponent text="HELLOWORLD" />);
+    const { getByText } = render(<Fragment text="HELLOWORLD" />);
 
     expect(getByText('HELLOWORLD').textContent).toEqual('HELLOWORLD');
   });
 
   it('with bold attributes', () => {
     const { container } = render(
-      <FragmentComponent text="BOLD TEXT" attributes={['bold']} />,
+      <Fragment text="BOLD TEXT" attributes={['bold']} />,
     );
 
     expect(container.querySelector('b')?.textContent).toEqual('BOLD TEXT');
@@ -19,7 +19,7 @@ describe('Fragment', () => {
 
   it('with italic attributes', () => {
     const { container } = render(
-      <FragmentComponent text="ITALIC TEXT" attributes={['italic']} />,
+      <Fragment text="ITALIC TEXT" attributes={['italic']} />,
     );
 
     expect(container.querySelector('i')?.textContent).toEqual('ITALIC TEXT');
@@ -27,7 +27,7 @@ describe('Fragment', () => {
 
   it('with unknown attributes', () => {
     const { container } = render(
-      <FragmentComponent
+      <Fragment
         text="BOLD WITH UNKNOWN TEXT"
         attributes={['bold', 'unknown']}
       />,
@@ -40,7 +40,7 @@ describe('Fragment', () => {
 
   it('with italic attributes in Farsi', () => {
     const { container } = render(
-      <FragmentComponent
+      <Fragment
         text="ITALIC WITH PERSIAN TEXT"
         attributes={['italic', 'unknown']}
       />,
@@ -54,7 +54,7 @@ describe('Fragment', () => {
   });
 
   it('should emit a null when provided with no content', () => {
-    const { container } = render(<FragmentComponent text="" />);
+    const { container } = render(<Fragment text="" />);
 
     expect(container.querySelector('div')).toBe(null);
   });

@@ -34,7 +34,6 @@ import getAgent from './utilities/getAgent';
 import { getMvtExperiments, getMvtVaryHeaders } from './utilities/mvtHeader';
 import getAssetOrigins from './utilities/getAssetOrigins';
 import extractHeaders from './utilities/extractHeaders';
-import addPlatformToRequestChainHeader from './utilities/addPlatformToRequestChainHeader';
 
 const morgan = require('morgan');
 
@@ -161,14 +160,6 @@ const injectDefaultCacheHeader = (req, res, next) => {
   next();
 };
 
-const injectPlatformToRequestChainHeader = (req, res, next) => {
-  res.set(
-    'req-svc-chain',
-    addPlatformToRequestChainHeader({ headers: req.headers }),
-  );
-  next();
-};
-
 const injectResourceHintsHeader = (req, res, next) => {
   const thisService = req.originalUrl.split('/')[1];
 
@@ -201,7 +192,6 @@ server.get(
     injectDefaultCacheHeader,
     injectReferrerPolicyHeader,
     injectResourceHintsHeader,
-    injectPlatformToRequestChainHeader,
   ],
   async ({ url, query, headers, path: urlPath }, res) => {
     let derivedPageType = 'Unknown';

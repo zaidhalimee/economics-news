@@ -1,5 +1,5 @@
 import { LIBRARY_VERSION } from '../../../../lib/analyticsUtils';
-import { buildATIPageTrackPath, buildReverbAnalyticsModel } from '../../atiUrl';
+import { buildATIPageTrackPath } from '../../atiUrl';
 import { ATIDataWithContexts } from '../../types';
 
 export const buildPageATIParams = ({
@@ -9,13 +9,8 @@ export const buildPageATIParams = ({
 }: ATIDataWithContexts) => {
   const { isUK, origin, platform, previousPath, statsDestination } =
     requestContext;
-  const {
-    atiAnalyticsAppName,
-    atiAnalyticsProducerId,
-    atiAnalyticsProducerName,
-    lang,
-    service,
-  } = serviceContext;
+  const { atiAnalyticsAppName, atiAnalyticsProducerId, lang, service } =
+    serviceContext;
   const {
     campaigns,
     categoryName,
@@ -31,7 +26,6 @@ export const buildPageATIParams = ({
     timePublished,
     timeUpdated,
     ampExperimentName,
-    experimentVariant,
   } = atiData;
 
   return {
@@ -52,13 +46,11 @@ export const buildPageATIParams = ({
     platform,
     previousPath,
     producerId: producerId || atiAnalyticsProducerId,
-    producerName: atiAnalyticsProducerName,
     service,
     statsDestination,
     timePublished,
     timeUpdated,
     ...(ampExperimentName && { ampExperimentName }),
-    ...(experimentVariant && { experimentVariant }),
   };
 };
 
@@ -68,14 +60,5 @@ export const buildPageATIUrl = ({
   serviceContext,
 }: ATIDataWithContexts) =>
   buildATIPageTrackPath(
-    buildPageATIParams({ atiData, requestContext, serviceContext }),
-  );
-
-export const buildPageReverbParams = ({
-  atiData,
-  requestContext,
-  serviceContext,
-}: ATIDataWithContexts) =>
-  buildReverbAnalyticsModel(
     buildPageATIParams({ atiData, requestContext, serviceContext }),
   );

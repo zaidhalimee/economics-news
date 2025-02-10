@@ -12,7 +12,6 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-gujarati',
     atiAnalyticsProducerId: '50',
-    atiAnalyticsProducerName: 'GUJARATI',
     chartbeatDomain: 'gujarati.bbc.co.uk',
     brandName: 'BBC News ગુજરાતી',
     product: 'BBC News',
@@ -233,7 +232,6 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'આગામી રેડિયો શો',
         duration: 'અવધિ',
         recentEpisodes: 'તાજેતરનાં એપિસોડ્સ',
-        closeVideo: 'બહાર નીકળો',
       },
       socialEmbed: {
         caption: {
@@ -312,7 +310,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'BBC News અન્ય ભાષાઓમાં',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',

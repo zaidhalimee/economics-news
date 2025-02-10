@@ -68,8 +68,8 @@ interface DeviceSettings {
 }
 
 const slotConfigurations: {
-  [_slot in SlotType]: {
-    [_device in Device]?: DeviceSettings;
+  [slot in SlotType]: {
+    [device in Device]?: DeviceSettings;
   };
 } = {
   leaderboard: {

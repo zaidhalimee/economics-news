@@ -4,8 +4,8 @@ import React, { PropsWithChildren } from 'react';
 import { jsx } from '@emotion/react';
 import { LiveLabelProps } from './types';
 import styles from './index.styles';
-import Text from '../LiveText';
-import Pulse from '../LivePulse';
+import Text from './Text';
+import Pulse from './Pulse';
 
 const LiveLabel = ({
   lang = 'en-GB',
@@ -21,12 +21,26 @@ const LiveLabel = ({
 
   return (
     <>
-      <Pulse className={className} width="16" height="16" css={pulse} />
-      <Text lang={lang} id={id} offScreenText={offScreenText}>
+      <Pulse
+        className={className}
+        width="16"
+        height="16"
+        css={pulse}
+        data-testid="live-label-pulse"
+      />
+      <Text
+        lang={lang}
+        id={id}
+        offScreenText={offScreenText}
+        data-testid="live-label-text"
+      >
         {children}
       </Text>
     </>
   );
 };
+
+LiveLabel.Text = Text;
+LiveLabel.Pulse = Pulse;
 
 export default LiveLabel;

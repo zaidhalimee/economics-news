@@ -16,10 +16,10 @@ import { ConsentBannerProviders, getEventTrackingData } from '.';
 
 type BannerUrls = {
   cookiesUrl: {
-    [_key in ConsentBannerProviders]: string;
+    [key in ConsentBannerProviders]: string;
   };
   privacyUrl: {
-    [_key in ConsentBannerProviders]: string;
+    [key in ConsentBannerProviders]: string;
   };
 };
 

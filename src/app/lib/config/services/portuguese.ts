@@ -12,7 +12,6 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-portuguese',
     atiAnalyticsProducerId: '33',
-    atiAnalyticsProducerName: 'BRASIL',
     chartbeatDomain: 'brasil.bbc.co.uk', // this is meant to be different to the service name
     brandName: 'BBC News Brasil',
     product: 'BBC News',
@@ -249,7 +248,6 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'Mais',
         podcastExternalLinks: 'O podcast está disponível em',
         download: 'Baixar episódio',
-        closeVideo: 'Sair',
       },
       socialEmbed: {
         caption: {
@@ -404,7 +402,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'BBC News em outras línguas',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',

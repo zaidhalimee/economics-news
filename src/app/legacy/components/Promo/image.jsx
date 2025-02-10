@@ -19,7 +19,7 @@ const ChildWrapper = styled.div`
 
 // promos with images via Programmes (which can be of type audio and possibly others) use a different iChef recipe requiring a second set of resolutions
 // https://github.com/bbc/programme-images/tree/master/webapp/ichef/recipes
-const createSrcSet = (imageUrl, isProgrammeImage, suffix = '') => {
+const createSrcSet = (imageUrl, suffix = '', isProgrammeImage) => {
   const imageResolutions = [85, 120, 170, 232, 325, 450, 660, 800];
   const imageResolutionsProgrammes = [96, 128, 176, 240, 352, 464, 672, 800];
 
@@ -63,9 +63,9 @@ const Image = props => {
     'https://ichef.bbci.co.uk/images/ic/',
   );
   const suffix = src.endsWith('.webp') ? '' : '.webp';
-  const primarySrcSet = createSrcSet(src, isProgrammeImage, suffix);
+  const primarySrcSet = createSrcSet(src, suffix, isProgrammeImage);
 
-  const fallbackSrcSet = createSrcSet(src, isProgrammeImage).replaceAll(
+  const fallbackSrcSet = createSrcSet(src, '', isProgrammeImage).replaceAll(
     '.webp',
     '',
   );

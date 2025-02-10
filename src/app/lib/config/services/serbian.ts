@@ -11,7 +11,6 @@ const baseServiceConfig = {
   articleAuthor: 'https://www.facebook.com/bbcnews',
   atiAnalyticsAppName: 'news-serbian',
   atiAnalyticsProducerId: '81',
-  atiAnalyticsProducerName: 'SERBIAN',
   chartbeatDomain: 'serbian.bbc.co.uk',
   product: 'BBC News',
   defaultImage: 'https://news.files.bbci.co.uk/ws/img/logos/og/serbian.png',
@@ -93,7 +92,7 @@ export const service: SerbianConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'BBC News na drugim jezicima',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',
@@ -116,24 +115,20 @@ export const service: SerbianConfig = {
         url: '/serbian/lat',
       },
       {
-        title: 'Studentske blokade',
-        url: '/serbian/topics/cly9dd4w09wt/lat',
-      },
-      {
         title: 'Srbija',
-        url: '/serbian/topics/cr50vdy9q6wt/lat',
+        url: '/serbian/lat/topics/cr50vdy9q6wt',
       },
       {
         title: 'Balkan',
-        url: '/serbian/topics/c06g87137jgt/lat',
+        url: '/serbian/lat/topics/c06g87137jgt',
       },
       {
         title: 'Svet',
-        url: '/serbian/topics/c2lej05e1eqt/lat',
+        url: '/serbian/lat/topics/c2lej05e1eqt',
       },
       {
         title: 'Video',
-        url: '/serbian/topics/c44vyp5g049t/lat',
+        url: '/serbian/lat/topics/c44vyp5g049t',
       },
       {
         title: 'Najpopularnije',
@@ -328,7 +323,6 @@ export const service: SerbianConfig = {
         previousRadioShow: 'Prethodna radio emisija',
         nextRadioShow: 'Sledeća radio emisija',
         duration: 'Trajanje',
-        closeVideo: 'Izađi',
       },
       socialEmbed: {
         caption: {
@@ -491,7 +485,7 @@ export const service: SerbianConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'BBC News на другим језицима',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',
@@ -512,26 +506,6 @@ export const service: SerbianConfig = {
       {
         title: 'Почетна страна',
         url: '/serbian/cyr',
-      },
-      {
-        title: 'Студентске блокаде',
-        url: '/serbian/topics/cly9dd4w09wt/cyr',
-      },
-      {
-        title: 'Србија',
-        url: '/serbian/topics/cr50vdy9q6wt/cyr',
-      },
-      {
-        title: 'Балкан',
-        url: '/serbian/topics/c06g87137jgt/cyr',
-      },
-      {
-        title: 'Свет',
-        url: '/serbian/topics/c2lej05e1eqt/cyr',
-      },
-      {
-        title: 'Видео',
-        url: '/serbian/topics/c44vyp5g049t/cyr',
       },
       {
         title: 'Најпопуларније',
@@ -727,7 +701,6 @@ export const service: SerbianConfig = {
         nextRadioShow: 'Следећа радио емисија',
         duration: 'Трајање',
         recentEpisodes: 'Претходне епизоде',
-        closeVideo: 'Изађи',
       },
       socialEmbed: {
         caption: {

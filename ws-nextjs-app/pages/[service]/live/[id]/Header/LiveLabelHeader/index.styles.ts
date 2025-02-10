@@ -25,13 +25,7 @@ const styles = {
         color: 'canvasText',
       },
     }),
-  liveLabelTextWithImage: ({
-    palette,
-    spacings,
-    fontSizes,
-    fontVariants,
-    mq,
-  }: Theme) =>
+  liveLabelTextWithImage: ({ palette, fontSizes, fontVariants, mq }: Theme) =>
     css({
       'span:first-of-type': {
         color: palette.LIVE_LIGHT,
@@ -41,9 +35,6 @@ const styles = {
           ...fontVariants.sansBold,
           ...fontSizes.paragon,
         },
-      },
-      'span:nth-of-type(3)': {
-        marginTop: `${spacings.DOUBLE}rem`,
       },
     }),
   liveLabelTextWithoutImage: ({

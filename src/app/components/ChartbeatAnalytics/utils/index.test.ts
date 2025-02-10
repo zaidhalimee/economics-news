@@ -3,6 +3,7 @@ import onClient from '../../../lib/utilities/onClient';
 import {
   ARTICLE_PAGE,
   FRONT_PAGE,
+  MEDIA_PAGE,
   MOST_READ_PAGE,
   FEATURE_INDEX_PAGE,
   MEDIA_ASSET_PAGE,
@@ -82,6 +83,11 @@ describe('Chartbeat utilities', () => {
         pageType: MEDIA_ASSET_PAGE,
         expectedDefaultType: 'article-media-asset',
         expectedShortType: 'article-media-asset',
+      },
+      {
+        pageType: MEDIA_PAGE,
+        expectedDefaultType: 'Radio',
+        expectedShortType: 'Radio',
       },
       {
         pageType: AUDIO_PAGE,
@@ -297,6 +303,7 @@ describe('Chartbeat utilities', () => {
       ${MOST_READ_PAGE}     | ${'Most Read Page Title'}     | ${'BBC News Pidgin'} | ${'Most Read Page Title - BBC News Pidgin'}
       ${TOPIC_PAGE}         | ${'Topic Page Title'}         | ${'BBC News Pidgin'} | ${'Topic Page Title - BBC News Pidgin'}
       ${LIVE_PAGE}          | ${'Live Page Title'}          | ${'BBC News Pidgin'} | ${'Live Page Title - BBC News Pidgin'}
+      ${MEDIA_PAGE}         | ${'Media Page Title'}         | ${'BBC News Pidgin'} | ${'Media Page Title - BBC News Pidgin'}
       ${AUDIO_PAGE}         | ${'Audio Page Title'}         | ${'BBC News Pidgin'} | ${'Audio Page Title - BBC News Pidgin'}
       ${TV_PAGE}            | ${'TV Page Title'}            | ${'BBC News Pidgin'} | ${'TV Page Title - BBC News Pidgin'}
       ${'index'}            | ${'index Page Title'}         | ${'BBC News Pidgin'} | ${'index Page Title - BBC News Pidgin'}

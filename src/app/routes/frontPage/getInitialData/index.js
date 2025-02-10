@@ -1,5 +1,6 @@
 import pipe from 'ramda/src/pipe';
 import path from 'ramda/src/path';
+import withRadioSchedule from '#app/routes/utils/withRadioSchedule';
 import filterUnknownContentTypes from '#app/routes/utils/sharedDataTransformers/filterUnknownContentTypes';
 import filterEmptyGroupItems from '#app/routes/utils/sharedDataTransformers/filterEmptyGroupItems';
 import squashTopStories from '#app/routes/utils/sharedDataTransformers/squashTopStories';
@@ -22,6 +23,7 @@ const transformJson = pipe(
   filterGroupsWithoutStraplines,
 );
 
+const getRadioScheduleToggle = path(['frontPageRadioSchedule', 'enabled']);
 const getRadioSchedulePosition = path(['frontPageRadioSchedule', 'value']);
 
 export default async ({
@@ -40,9 +42,16 @@ export default async ({
       getAgent,
     });
 
+    const radioScheduleIsEnabled = getRadioScheduleToggle(toggles);
     const radioSchedulePosition = getRadioSchedulePosition(toggles);
 
-    const { json, status } = await pageDataPromise;
+    const { json, status } = radioScheduleIsEnabled
+      ? await withRadioSchedule({
+          pageDataPromise,
+          service,
+          path: pathname,
+        })
+      : await pageDataPromise;
 
     if (!json?.data?.article) {
       throw handleError('Front page data is malformed', 500);

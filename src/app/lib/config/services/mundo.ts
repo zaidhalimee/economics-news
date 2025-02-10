@@ -12,7 +12,6 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-mundo',
     atiAnalyticsProducerId: '62',
-    atiAnalyticsProducerName: 'MUNDO',
     chartbeatDomain: 'mundo.bbc.co.uk',
     brandName: 'BBC News Mundo',
     product: 'BBC News',
@@ -235,7 +234,6 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Próximo programa',
         duration: 'Duración',
         recentEpisodes: 'Más',
-        closeVideo: 'Salir',
       },
       socialEmbed: {
         caption: {
@@ -391,7 +389,7 @@ export const service: DefaultServiceConfig = {
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'Otros idiomas',
+          text: 'Other Languages',
         },
         {
           id: 'COOKIE_SETTINGS',
