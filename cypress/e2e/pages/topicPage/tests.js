@@ -13,8 +13,7 @@ export default ({ service, pageType, variant, currentPath }) => {
 
   describe(`Tests for ${service} ${pageType}`, () => {
     beforeEach(() => {
-      // eslint-disable-next-line prefer-destructuring
-      topicId = Cypress.env('currentPath').match(/(c[a-zA-Z0-9]{10,}t)/)?.[1];;
+      topicId = Cypress.env('currentPath').match(/(c[a-zA-Z0-9]{10,}t)/)?.[1];
 
       if (scriptSwitchServices.includes(service)) {
         if (service === 'serbian') {
