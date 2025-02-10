@@ -1,0 +1,1172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Canonical Topic Page A11y I can see the skip to content link 1`] = `"مواد پر جائیں"`;
+
+exports[`Canonical Topic Page Analytics ATI tracking pixel excluding src 1`] = `
+<img
+  alt=""
+  height="1px"
+  style="position:absolute"
+  width="1px"
+/>
+`;
+
+exports[`Canonical Topic Page Analytics ATI tracking pixel hostname 1`] = `"https://logws1363.ati-host.net/"`;
+
+exports[`Canonical Topic Page Analytics ATI tracking pixel search params 1`] = `
+[
+  {
+    "s": "598343",
+  },
+  {
+    "s2": "95",
+  },
+  {
+    "p": "urdu.science.feature_index.51314202.page",
+  },
+  {
+    "x1": "[urn:bbc:cps:8c1f4760-de67-744b-bfd2-16eb1e9fd644]",
+  },
+  {
+    "x2": "[responsive]",
+  },
+  {
+    "x3": "[news-urdu]",
+  },
+  {
+    "x4": "[ur]",
+  },
+  {
+    "x7": "[index-section]",
+  },
+  {
+    "x8": "[simorgh-nojs]",
+  },
+  {
+    "x9": "[کورونا%20وائرس:%20تحقیق،%20تشخیص%20اور%20احتیاط]",
+  },
+  {
+    "x11": "[2020-01-31T08:48:32.000Z]",
+  },
+  {
+    "x12": "[2020-09-29T10:13:59.000Z]",
+  },
+]
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 1`] = `
+{
+  "text": "BBC News, اردو",
+  "url": "/urdu",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 2`] = `
+{
+  "text": "جانیے کہ آپ بی بی سی پر کیوں اعتماد کر سکتے ہیں",
+  "url": "https://www.bbc.com/urdu/institutional-49282935",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 3`] = `
+{
+  "text": "استعمال کے ضوابط",
+  "url": "https://www.bbc.com/urdu/institutional-37588278",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 4`] = `
+{
+  "text": "بی بی سی کے بارے میں",
+  "url": "https://www.bbc.com/urdu/institutional-37588280",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 5`] = `
+{
+  "text": "پرائیویسی پالیسی",
+  "url": "https://www.bbc.com/urdu/institutional-37588282",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 6`] = `
+{
+  "text": "کوکیز",
+  "url": "https://www.bbc.com/usingthebbc/cookies/",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 7`] = `
+{
+  "text": "بی بی سی سے رابطہ کریں",
+  "url": "https://www.bbc.co.uk/urdu/send/u50853907",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 8`] = `
+{
+  "text": "بی بی سی نیوز دیگر زبانوں میں",
+  "url": "https://www.bbc.com/ws/languages",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 9`] = `
+{
+  "text": "بیرونی لنکس کے بارے میں ہماری پالیسی.",
+  "url": "https://www.bbc.com/editorialguidelines/guidance/feeds-and-links",
+}
+`;
+
+exports[`Canonical Topic Page Footer I can click on the BBC branding and it would take me to the homepage 1`] = `"/urdu"`;
+
+exports[`Canonical Topic Page Footer Paragraphs should match text 1`] = `"© 2025 بی بی سی. بی بی سی بیرونی ویب سائٹس کے مواد کا ذمہ دار نہیں بیرونی لنکس کے بارے میں ہماری پالیسی."`;
+
+exports[`Canonical Topic Page Header I can see the branding 1`] = `"BBC News, اردو"`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 1`] = `
+{
+  "text": "صفحۂ اول",
+  "url": "/urdu",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 2`] = `
+{
+  "text": "پاکستان",
+  "url": "/urdu/topics/cjgn7n9zzq7t",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 3`] = `
+{
+  "text": "آس پاس",
+  "url": "/urdu/topics/cl8l9mveql2t",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 4`] = `
+{
+  "text": "ورلڈ",
+  "url": "/urdu/topics/cw57v2pmll9t",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 5`] = `
+{
+  "text": "کھیل",
+  "url": "/urdu/topics/c340q0p2585t",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 6`] = `
+{
+  "text": "فن فنکار",
+  "url": "/urdu/topics/ckdxnx900n5t",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 7`] = `
+{
+  "text": "سائنس",
+  "url": "/urdu/topics/c40379e2ymxt",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 8`] = `
+{
+  "text": "ویڈیو",
+  "url": "/urdu/topics/c1e0mzr3r2yt",
+}
+`;
+
+exports[`Canonical Topic Page Main heading should match text 1`] = `"کورونا وائرس: تحقیق، تشخیص اور احتیاط"`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 1`] = `
+{
+  "sizes": null,
+  "url": "http://localhost:7080/urdu/images/icons/icon-192x192.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 2`] = `
+{
+  "sizes": "72x72",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/urdu/images/icons/icon-72x72.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 3`] = `
+{
+  "sizes": "96x96",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/urdu/images/icons/icon-96x96.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 4`] = `
+{
+  "sizes": "128x128",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/urdu/images/icons/icon-128x128.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 5`] = `
+{
+  "sizes": "144x144",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/urdu/images/icons/icon-144x144.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 6`] = `
+{
+  "sizes": "152x152",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/urdu/images/icons/icon-152x152.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 7`] = `
+{
+  "sizes": "180x180",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/urdu/images/icons/icon-180x180.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 8`] = `
+{
+  "sizes": "192x192",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/urdu/images/icons/icon-192x192.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 9`] = `
+{
+  "sizes": "384x384",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/urdu/images/icons/icon-384x384.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 10`] = `
+{
+  "sizes": "512x512",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/urdu/images/icons/icon-512x512.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Canonical link 1`] = `"http://localhost:7080/urdu/science-51314202"`;
+
+exports[`Canonical Topic Page SEO Dir attribute 1`] = `"rtl"`;
+
+exports[`Canonical Topic Page SEO FB app ID 1`] = `"1609039196070050"`;
+
+exports[`Canonical Topic Page SEO Heading level 1 1`] = `"کورونا وائرس: تحقیق، تشخیص اور احتیاط"`;
+
+exports[`Canonical Topic Page SEO Lang attribute 1`] = `"ur"`;
+
+exports[`Canonical Topic Page SEO Linked data should match text 1`] = `
+{
+  "@context": "http://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "headline": "کورونا وائرس: تحقیق، تشخیص اور احتیاط",
+      "image": {
+        "@type": "ImageObject",
+        "height": 576,
+        "url": "https://news.files.bbci.co.uk/ws/img/logos/og/urdu.png",
+        "width": 1024,
+      },
+      "inLanguage": {
+        "@type": "Language",
+        "alternateName": "ur",
+        "name": "Urdu",
+      },
+      "mainEntityOfPage": {
+        "@id": "http://localhost:7080/urdu/science-51314202",
+        "@type": "WebPage",
+        "name": "کورونا وائرس: تحقیق، تشخیص اور احتیاط",
+      },
+      "publisher": {
+        "@type": "NewsMediaOrganization",
+        "logo": {
+          "@type": "ImageObject",
+          "height": 576,
+          "url": "https://news.files.bbci.co.uk/ws/img/logos/og/urdu.png",
+          "width": 1024,
+        },
+        "name": "BBC News اردو",
+        "publishingPrinciples": "https://www.bbc.com/urdu/institutional-49282935",
+      },
+      "thumbnailUrl": "https://news.files.bbci.co.uk/ws/img/logos/og/urdu.png",
+      "url": "http://localhost:7080/urdu/science-51314202",
+    },
+    {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://www.bbc.com/urdu/world-52952106",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://www.bbc.com/urdu/pakistan-52901572",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://www.bbc.com/urdu/science-52804477",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://www.bbc.com/urdu/science-52711548",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 5,
+          "url": "https://www.bbc.com/urdu/pakistan-52723337",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 6,
+          "url": "https://www.bbc.com/urdu/science-52314259",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 7,
+          "url": "https://www.bbc.com/urdu/science-52963412",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 8,
+          "url": "https://www.bbc.com/urdu/world-52992096",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 9,
+          "url": "https://www.bbc.com/urdu/world-52697062",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 10,
+          "url": "https://www.bbc.com/urdu/science-52079281",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 11,
+          "url": "https://www.bbc.com/urdu/science-52329621",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 12,
+          "url": "https://www.bbc.com/urdu/science-51524206",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 13,
+          "url": "https://www.bbc.com/urdu/science-52720783",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 14,
+          "url": "https://www.bbc.com/urdu/science-51869454",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 15,
+          "url": "https://www.bbc.com/urdu/world-52329624",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 16,
+          "url": "https://www.bbc.com/urdu/world-52119823",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 17,
+          "url": "https://www.bbc.com/urdu/pakistan-52958823",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 18,
+          "url": "https://www.bbc.com/urdu/world-52409070",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 19,
+          "url": "https://www.bbc.com/urdu/entertainment-52314257",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 20,
+          "url": "https://www.bbc.com/urdu/world-52004005",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 21,
+          "url": "https://www.bbc.com/urdu/world-52198147",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 22,
+          "url": "https://www.bbc.com/urdu/world-52277788",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 23,
+          "url": "https://www.bbc.com/urdu/science-52001525",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 24,
+          "url": "https://www.bbc.com/urdu/entertainment-52323207",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 25,
+          "url": "https://www.bbc.com/urdu/entertainment-51970343",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 26,
+          "url": "https://www.bbc.com/urdu/science-51657231",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 27,
+          "url": "https://www.bbc.com/urdu/science-52016991",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 28,
+          "url": "https://www.bbc.com/urdu/science-52767269",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 29,
+          "url": "https://www.bbc.com/urdu/science-52944851",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 30,
+          "url": "https://www.bbc.com/urdu/world-52664764",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 31,
+          "url": "https://www.bbc.com/urdu/science-52387562",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 32,
+          "url": "https://www.bbc.com/urdu/world-52532805",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 33,
+          "url": "https://www.bbc.com/urdu/science-52211136",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 34,
+          "url": "https://www.bbc.com/urdu/vert-fut-52229826",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 35,
+          "url": "https://www.bbc.com/urdu/science-51726360",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 36,
+          "url": "https://www.bbc.com/urdu/science-52110682",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 37,
+          "url": "https://www.bbc.com/urdu/science-51367658",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 38,
+          "url": "https://www.bbc.com/urdu/science-51768104",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 39,
+          "url": "https://www.bbc.com/urdu/science-51819072",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 40,
+          "url": "https://www.bbc.com/urdu/world-52350527",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 41,
+          "url": "https://www.bbc.com/urdu/science-52016419",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 42,
+          "url": "https://www.bbc.com/urdu/science-52028976",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 43,
+          "url": "https://www.bbc.com/urdu/science-52718766",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 44,
+          "url": "https://www.bbc.com/urdu/pakistan-52231559",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 45,
+          "url": "https://www.bbc.com/urdu/science-51807658",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 46,
+          "url": "https://www.bbc.com/urdu/science-52436888",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 47,
+          "url": "https://www.bbc.com/urdu/science-51760108",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 48,
+          "url": "https://www.bbc.com/urdu/science-51656121",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 49,
+          "url": "https://www.bbc.com/urdu/science-52385674",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 50,
+          "url": "https://www.bbc.com/urdu/science-51923604",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 51,
+          "url": "https://www.bbc.com/urdu/science-52127027",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 52,
+          "url": "https://www.bbc.com/urdu/pakistan-51944355",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 53,
+          "url": "https://www.bbc.com/urdu/science-52509448",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 54,
+          "url": "https://www.bbc.com/urdu/regional-51956660",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 55,
+          "url": "https://www.bbc.com/urdu/regional-51856539",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 56,
+          "url": "https://www.bbc.com/urdu/science-51867214",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 57,
+          "url": "https://www.bbc.com/urdu/world-52960341",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 58,
+          "url": "https://www.bbc.com/urdu/pakistan-52886209",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 59,
+          "url": "https://www.bbc.com/urdu/science-51875085",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 60,
+          "url": "https://www.bbc.com/urdu/science-52677394",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 61,
+          "url": "https://www.bbc.com/urdu/science-51653024",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 62,
+          "url": "https://www.bbc.com/urdu/pakistan-52906655",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 63,
+          "url": "https://www.bbc.com/urdu/science-52685421",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 64,
+          "url": "https://www.bbc.com/urdu/science-52089427",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 65,
+          "url": "https://www.bbc.com/urdu/world-52957979",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 66,
+          "url": "https://www.bbc.com/urdu/science-52491041",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 67,
+          "url": "https://www.bbc.com/urdu/world-51941382",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 68,
+          "url": "https://www.bbc.com/urdu/science-51223074",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 69,
+          "url": "https://www.bbc.com/urdu/world-51963537",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 70,
+          "url": "https://www.bbc.com/urdu/pakistan-52602982",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 71,
+          "url": "https://www.bbc.com/urdu/science-52085453",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 72,
+          "url": "https://www.bbc.com/urdu/vert-fut-52085466",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 73,
+          "url": "https://www.bbc.com/urdu/science-51978000",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 74,
+          "url": "https://www.bbc.com/urdu/science-52130873",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 75,
+          "url": "https://www.bbc.com/urdu/vert-fut-52085465",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 76,
+          "url": "https://www.bbc.com/urdu/science-52467696",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 77,
+          "url": "https://www.bbc.com/urdu/science-52909685",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 78,
+          "url": "https://www.bbc.com/urdu/science-52069323",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 79,
+          "url": "https://www.bbc.com/urdu/science-51324465",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 80,
+          "url": "https://www.bbc.com/urdu/vert-fut-52288610",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 81,
+          "url": "https://www.bbc.com/urdu/science-52111992",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 82,
+          "url": "https://www.bbc.com/urdu/world-52764446",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 83,
+          "url": "https://www.bbc.com/urdu/world-51835506",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 84,
+          "url": "https://www.bbc.com/urdu/world-52162815",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 85,
+          "url": "https://www.bbc.com/urdu/science-52356155",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 86,
+          "url": "https://www.bbc.com/urdu/science-52435615",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 87,
+          "url": "https://www.bbc.com/urdu/world-52644775",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 88,
+          "url": "https://www.bbc.com/urdu/science-51784320",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 89,
+          "url": "https://www.bbc.com/urdu/vert-fut-52305024",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 90,
+          "url": "https://www.bbc.com/urdu/world-52423638",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 91,
+          "url": "https://www.bbc.com/urdu/world-51814331",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 92,
+          "url": "https://www.bbc.com/urdu/science-52088668",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 93,
+          "url": "https://www.bbc.com/urdu/world-52449144",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 94,
+          "url": "https://www.bbc.com/urdu/science-52157171",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 95,
+          "url": "https://www.bbc.com/urdu/world-52235310",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 96,
+          "url": "https://www.bbc.com/urdu/world-52098811",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 97,
+          "url": "https://www.bbc.com/urdu/science-51402132",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 98,
+          "url": "https://www.bbc.com/urdu/world-51868026",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 99,
+          "url": "https://www.bbc.com/urdu/world-52302168",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 100,
+          "url": "https://www.bbc.com/urdu/vert-fut-52801948",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 101,
+          "url": "https://www.bbc.com/urdu/world-52378576",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 102,
+          "url": "https://www.bbc.com/urdu/science-51307056",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 103,
+          "url": "https://www.bbc.com/urdu/world-51986169",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 104,
+          "url": "https://www.bbc.com/urdu/world-52242227",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 105,
+          "url": "https://www.bbc.com/urdu/world-52048739",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 106,
+          "url": "https://www.bbc.com/urdu/vert-fut-52189695",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 107,
+          "url": "https://www.bbc.com/urdu/world-52211128",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 108,
+          "url": "https://www.bbc.com/urdu/world-51987167",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 109,
+          "url": "https://www.bbc.com/urdu/world-52089840",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 110,
+          "url": "https://www.bbc.com/urdu/sport-52989977",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 111,
+          "url": "https://www.bbc.com/urdu/regional-52888771",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 112,
+          "url": "https://www.bbc.com/urdu/science-52433259",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 113,
+          "url": "https://www.bbc.com/urdu/entertainment-52267207",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 114,
+          "url": "https://www.bbc.com/urdu/world-52904183",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 115,
+          "url": "https://www.bbc.com/urdu/world-52022139",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 116,
+          "url": "https://www.bbc.com/urdu/science-52900979",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 117,
+          "url": "https://www.bbc.com/urdu/regional-52946720",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 118,
+          "url": "https://www.bbc.com/urdu/science-52325480",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 119,
+          "url": "https://www.bbc.com/urdu/science-51877554",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 120,
+          "url": "https://www.bbc.com/urdu/world-52345863",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 121,
+          "url": "https://www.bbc.com/urdu/regional-52393145",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 122,
+          "url": "https://www.bbc.com/urdu/world-52658259",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 123,
+          "url": "https://www.bbc.com/urdu/world-52258698",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 124,
+          "url": "https://www.bbc.com/urdu/science-52339657",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 125,
+          "url": "https://www.bbc.com/urdu/science-52961018",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 126,
+          "url": "https://www.bbc.com/urdu/vert-cul-52391204",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 127,
+          "url": "https://www.bbc.com/urdu/world-52607724",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 128,
+          "url": "https://www.bbc.com/urdu/world-52663116",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 129,
+          "url": "https://www.bbc.com/urdu/science-51161089",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 130,
+          "url": "https://www.bbc.com/urdu/regional-51458357",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 131,
+          "url": "https://www.bbc.com/urdu/science-51632070",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 132,
+          "url": "https://www.bbc.com/urdu/science-51837177",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 133,
+          "url": "https://www.bbc.com/urdu/world-52167026",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 134,
+          "url": "https://www.bbc.com/urdu/world-51949148",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 135,
+          "url": "https://www.bbc.com/urdu/vert-fut-51819068",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 136,
+          "url": "https://www.bbc.com/urdu/science-52299729",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 137,
+          "url": "https://www.bbc.com/urdu/entertainment-51815406",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 138,
+          "url": "https://www.bbc.com/urdu/vert-fut-52194059",
+        },
+      ],
+      "name": "BBC News اردو",
+      "numberOfItems": 138,
+    },
+  ],
+}
+`;
+
+exports[`Canonical Topic Page SEO OG description 1`] = `"دنیا بھر میں کورونا وائرس سے متاثرہ افراد کی تعداد 25 لاکھ سے تجاوز کر گئی ہے اور دو لاکھ کے قریب اموات ہو چکی ہیں۔ دیکھیے اس وائرس کے بارے میں بی بی سی کی کوریج۔"`;
+
+exports[`Canonical Topic Page SEO OG image 1`] = `"https://news.files.bbci.co.uk/ws/img/logos/og/urdu.png"`;
+
+exports[`Canonical Topic Page SEO OG image alt 1`] = `"BBC News اردو"`;
+
+exports[`Canonical Topic Page SEO OG locale 1`] = `"ur"`;
+
+exports[`Canonical Topic Page SEO OG site name 1`] = `"BBC News اردو"`;
+
+exports[`Canonical Topic Page SEO OG title 1`] = `"کورونا وائرس: تحقیق، تشخیص اور احتیاط - BBC News اردو"`;
+
+exports[`Canonical Topic Page SEO OG type 1`] = `"website"`;
+
+exports[`Canonical Topic Page SEO OG url 1`] = `"http://localhost:7080/urdu/science-51314202"`;
+
+exports[`Canonical Topic Page SEO Page title 1`] = `"کورونا وائرس: تحقیق، تشخیص اور احتیاط - BBC News اردو"`;
+
+exports[`Canonical Topic Page SEO Robots meta tag 1`] = `"noodp, noydir, max-image-preview:large"`;
+
+exports[`Canonical Topic Page SEO Twitter card 1`] = `"summary_large_image"`;
+
+exports[`Canonical Topic Page SEO Twitter creator 1`] = `"@bbcurdu"`;
+
+exports[`Canonical Topic Page SEO Twitter description 1`] = `"دنیا بھر میں کورونا وائرس سے متاثرہ افراد کی تعداد 25 لاکھ سے تجاوز کر گئی ہے اور دو لاکھ کے قریب اموات ہو چکی ہیں۔ دیکھیے اس وائرس کے بارے میں بی بی سی کی کوریج۔"`;
+
+exports[`Canonical Topic Page SEO Twitter image alt 1`] = `"BBC News اردو"`;
+
+exports[`Canonical Topic Page SEO Twitter image src 1`] = `"https://news.files.bbci.co.uk/ws/img/logos/og/urdu.png"`;
+
+exports[`Canonical Topic Page SEO Twitter site 1`] = `"@bbcurdu"`;
+
+exports[`Canonical Topic Page SEO Twitter title 1`] = `"کورونا وائرس: تحقیق، تشخیص اور احتیاط - BBC News اردو"`;
