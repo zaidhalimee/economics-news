@@ -16,7 +16,8 @@ type CpsArticle = {
       cps_asset_type: string;
       counterName: string;
     };
-    title?: string;
+    title: string;
+    summary: string;
     type: string;
   };
   content: {
@@ -60,6 +61,7 @@ export default (cpsAsset: CpsPageData) => {
           cps_asset_type: contentType,
         },
         title,
+        summary: description,
         type: pageType,
       },
       content: { groups },
@@ -134,6 +136,7 @@ export default (cpsAsset: CpsPageData) => {
 
   return {
     title,
+    description,
     curations,
     metadata: {
       type: pageType,
