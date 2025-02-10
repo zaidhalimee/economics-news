@@ -276,7 +276,7 @@ describe('MostRead', () => {
             expect.objectContaining({
               endpoint: expect.stringContaining(endpoint),
             }),
-            {},
+            undefined,
           );
         },
       );
