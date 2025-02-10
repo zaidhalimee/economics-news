@@ -30,7 +30,7 @@ type Props = {
   sizes?: string;
   src: string;
   width?: number;
-  fetchpriority?: 'high';
+  fetchPriority?: 'high';
   hasCaption?: boolean;
 };
 
@@ -59,7 +59,7 @@ const Image = ({
   src,
   width,
   children,
-  fetchpriority,
+  fetchPriority,
   hasCaption,
 }: PropsWithChildren<Props>) => {
   const { pageType, isLite } = useContext(RequestContext);
@@ -109,8 +109,8 @@ const Image = ({
             rel="preload"
             as="image"
             href={src}
-            imagesrcset={srcSet}
-            imagesizes={sizes}
+            imageSrcSet={srcSet}
+            imageSizes={sizes}
           />
         </Helmet>
       )}
@@ -159,7 +159,7 @@ const Image = ({
               attribution={attribution}
               {...(srcSet && { srcSet: imgSrcSet })}
               {...(imgSizes && { sizes: imgSizes })}
-              {...(preload && { 'data-hero': true })}
+              {...(preload && { 'data-hero': 'true' })}
             />
           </>
         ) : (
@@ -190,7 +190,7 @@ const Image = ({
                   ? styles.imageFixedAspectRatio
                   : styles.imageResponsiveRatio,
               ]}
-              fetchpriority={fetchpriority}
+              fetchPriority={fetchPriority}
               style={{
                 aspectRatio: hasFixedAspectRatio
                   ? `${aspectRatioX} / ${aspectRatioY}`
