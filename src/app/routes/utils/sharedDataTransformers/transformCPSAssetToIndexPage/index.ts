@@ -1,6 +1,12 @@
 import { MostReadData } from '#app/components/MostRead/types';
-import { Curation, Summary } from '#app/models/types/curationData';
-import { PageTypes } from '#app/models/types/global';
+import {
+  Curation,
+  Summary,
+  VISUAL_PROMINENCE,
+  VisualProminence,
+} from '#app/models/types/curationData';
+
+const { HIGH, NORMAL } = VISUAL_PROMINENCE;
 
 type CpsArticle = {
   metadata: {
@@ -94,14 +100,20 @@ export default (cpsAsset: CpsPageData) => {
 
       const curationTitle = strapline?.name || '';
 
+      // Display each curation as a hierarchical collection
+      let visualProminence: VisualProminence = HIGH;
+
+      // Allows us to display as much content as possible from FIX pages - hierarchical collections must have at least 3 items
+      if (visualProminence === HIGH && summaries.length < 3) {
+        visualProminence = NORMAL;
+      }
+
       return {
         curationType: 'vivo-stream',
         curationId: type,
         title: curationIndex > 0 ? curationTitle : '',
         position: curationIndex + 1,
-        visualProminence: type.match('top-story|top-stories')
-          ? 'HIGH'
-          : 'NORMAL',
+        visualProminence,
         visualStyle: 'NONE',
         summaries,
       };
