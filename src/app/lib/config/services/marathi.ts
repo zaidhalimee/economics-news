@@ -48,7 +48,8 @@ export const service: DefaultServiceConfig = {
     podcastPromo: {
       title: 'बीबीसी मराठी व्हॉट्सॲपवर',
       brandTitle: 'बीबीसी न्यूज मराठी आता व्हॉट्सॲपवर',
-      brandDescription: 'तुमच्या कामाच्या गोष्टी आणि बातम्या आता थेट तुमच्या फोनवर',
+      brandDescription:
+        'तुमच्या कामाच्या गोष्टी आणि बातम्या आता थेट तुमच्या फोनवर',
       image: {
         src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p0kptdp6.jpg',
         alt: 'BBC News मराठी आत्ताच फॉलो करा WhatsApp कर',
