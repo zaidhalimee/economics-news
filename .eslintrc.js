@@ -51,7 +51,6 @@ module.exports = {
           'custom-element',
           'custom-template',
           'fallback',
-          'fetchpriority',
         ],
       },
     ],
