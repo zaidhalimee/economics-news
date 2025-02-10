@@ -13,6 +13,8 @@ import handleError from '#app/routes/utils/handleError';
 import fetchDataFromBFF from '#app/routes/utils/fetchDataFromBFF';
 import { BFF_FETCH_ERROR } from '#lib/logger.const';
 import certsRequired from '#app/routes/utils/certsRequired';
+import { FEATURE_INDEX_PAGE } from '#app/routes/utils/pageTypes';
+import transformCPSAssetToIndexPage from '#app/routes/utils/sharedDataTransformers/transformCPSAssetToIndexPage';
 
 const logger = nodeLogger(__filename);
 
@@ -84,6 +86,20 @@ export default async ({
     }
 
     const { topStories, features, latestMedia, mostRead } = secondaryData;
+
+    if (article?.metadata?.type === FEATURE_INDEX_PAGE) {
+      const transformedFIXPageData = transformCPSAssetToIndexPage({
+        article,
+        secondaryData,
+      });
+
+      return {
+        status,
+        pageData: {
+          ...transformedFIXPageData,
+        },
+      };
+    }
 
     const transformedArticleData = transformPageData(toggles)(article);
 
