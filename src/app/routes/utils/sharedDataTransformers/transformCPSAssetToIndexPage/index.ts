@@ -104,7 +104,7 @@ export default (cpsAsset: CpsPageData) => {
       let visualProminence: VisualProminence = HIGH;
 
       // Allows us to display as much content as possible from FIX pages - hierarchical collections must have at least 3 items
-      if (visualProminence === HIGH && summaries.length < 3) {
+      if (summaries.length < 3) {
         visualProminence = NORMAL;
       }
 
