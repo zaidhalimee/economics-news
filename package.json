@@ -13,7 +13,8 @@
     "@optimizely/js-sdk-utils": "0.4.0",
     "uuid": "3.4.0",
     "winston@3.8.2": "patch:winston@npm:3.8.2#.yarn/patches/winston-npm-3.8.2-2035e9cac4.patch",
-    "cookie": "0.7.1"
+    "cookie": "0.7.1",
+    "react-is": "19.0.0"
   },
   "workspaces": {
     "packages": [
@@ -120,8 +121,8 @@
     "morgan": "1.10.0",
     "polyfill-crypto.getrandomvalues": "1.0.0",
     "ramda": "0.30.1",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "react-helmet": "6.1.0",
     "react-lazyload": "3.2.1",
     "react-router-config": "5.1.1",
@@ -185,8 +186,8 @@
     "@types/jsdom": "21.1.7",
     "@types/loadable__component": "5.13.9",
     "@types/ramda": "0.30.2",
-    "@types/react": "18.3.3",
-    "@types/react-dom": "18.3.1",
+    "@types/react": "19.0.8",
+    "@types/react-dom": "19.0.3",
     "@types/react-helmet": "6.1.11",
     "@types/react-lazyload": "^3.2.0",
     "@types/react-router-dom": "5.3.3",
