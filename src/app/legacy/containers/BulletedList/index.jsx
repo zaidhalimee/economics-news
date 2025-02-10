@@ -32,7 +32,7 @@ const BulletedListContainer = ({
   const handleClickTracking = useClickTrackerHandler(eventTrackingData);
 
   return (
-    <StyledGridItemMedium {...(className ? { className } : undefined)}>
+    <StyledGridItemMedium {...(className && { className })}>
       <BulletedList
         {...pick(['bulletPointShape', 'bulletPointColour'], rest)}
         ref={blockGroupType === 'listWithLink' ? viewRef : null}

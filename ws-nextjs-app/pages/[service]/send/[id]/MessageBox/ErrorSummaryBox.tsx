@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import { ForwardedRef, forwardRef } from 'react';
+import React, { ForwardedRef, forwardRef } from 'react';
 import { WHITE } from '#app/components/ThemeProvider/palette';
 import { BulletedList, BulletedListItem } from '#app/components/BulletedList';
 import Text from '#app/components/Text';
@@ -38,7 +38,7 @@ const ErrorLabel = ({ labelText }: ListItemsProps) => {
 };
 
 const ErrorSummaryBox = forwardRef(
-  ({ labelMap }: ErrorSummaryProps, ref: ForwardedRef<HTMLDivElement>) => {
+  ({ labelMap }: ErrorSummaryProps, ref: ForwardedRef<HTMLElement>) => {
     const { validationErrors } = useFormContext();
     const isAndroid = useAndroidDetection();
 
@@ -50,16 +50,18 @@ const ErrorSummaryBox = forwardRef(
 
     const errorListItems = validationErrors.map(({ id }) => {
       const labelText = labelMap[id];
-
-      if (isSingleError) return <Component id={id} labelText={labelText} />;
-
       return (
-        <BulletedListItem css={styles.listItem} key={`listItemFor-${id}`}>
-          <Component id={id} labelText={labelText} />
-        </BulletedListItem>
+        <>
+          {isSingleError ? (
+            <Component id={id} labelText={labelText} />
+          ) : (
+            <BulletedListItem css={styles.listItem} key={`listItemFor-${id}`}>
+              <Component id={id} labelText={labelText} />
+            </BulletedListItem>
+          )}
+        </>
       );
     });
-
     return (
       <InvalidMessageBox
         id="errorSummaryBox"

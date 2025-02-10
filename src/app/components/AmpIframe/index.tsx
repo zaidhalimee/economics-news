@@ -75,7 +75,7 @@ const AmpIframe = ({
               Show more
             </button>
           </div>
-          <amp-img layout="fill" src={image} placeholder="true" />
+          <amp-img layout="fill" src={image} placeholder />
         </AmpIframeElement>
       </GridItemMedium>
     </>

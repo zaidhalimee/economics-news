@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Ref, useContext } from 'react';
+import { useContext } from 'react';
 import { jsx } from '@emotion/react';
 
 import SectionLabel from '#psammead/psammead-section-label/src';
@@ -17,7 +17,7 @@ const renderLatestMediaList = (
   item: LatestMedia,
   index: number,
   eventTrackingData: EventTrackingBlock,
-  viewRef: Ref<HTMLDivElement>,
+  viewRef: () => Promise<void>,
 ) => {
   const ariaLabelledBy = generatePromoId({
     sectionType: 'latest-media',

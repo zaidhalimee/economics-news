@@ -39,7 +39,7 @@ const PlayButton = ({
       type="button"
       css={styles.button}
       onClick={onClick}
-      {...(className ? { className } : undefined)}
+      {...(className && { className })}
     >
       <VisuallyHiddenText>{hiddenText}</VisuallyHiddenText>
       <div
