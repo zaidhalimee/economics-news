@@ -90,6 +90,28 @@ const OptionallyRenderedSkipWrapper = ({
     children
   );
 
+const CpsOnwardJourneyWrapper = ({
+  children,
+  parentColumns,
+  labelId,
+  a11yAttributes,
+  className,
+  dir,
+}) =>
+  parentColumns ? (
+    <Wrapper
+      data-e2e={labelId}
+      {...a11yAttributes}
+      {...(className ? { className } : undefined)}
+    >
+      {children}
+    </Wrapper>
+  ) : (
+    <GridWrapper data-e2e={labelId} {...a11yAttributes}>
+      <LegacyGridItemLarge dir={dir}>{children}</LegacyGridItemLarge>
+    </GridWrapper>
+  );
+
 const CpsOnwardJourney = ({
   className = '',
   LabelComponent = StyledSectionLabel,

@@ -2,9 +2,17 @@ import fetch from 'jest-fetch-mock';
 import path from 'path';
 import { TextEncoder, TextDecoder } from 'util';
 import { ReadableStream } from 'node:stream/web';
+import { MessageChannel, MessagePort } from 'node:worker_threads';
 
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
+global.fetch = fetch;
+global.AbortSignal = {
+  timeout: jest.fn(),
+};
+global.ReadableStream = ReadableStream;
+global.MessageChannel = MessageChannel;
+global.MessagePort = MessagePort;
 
 window.require = jest.fn();
 

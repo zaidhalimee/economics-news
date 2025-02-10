@@ -37,6 +37,72 @@ interface MostReadProps {
   className?: string;
 }
 
+// We render amp on ONLY STY, CSP and ARTICLE pages using amp-list.
+const AmpMostRead = ({
+  pageType,
+  className,
+  mobileDivider,
+  headingBackgroundColour,
+  endpoint,
+  size,
+}: {
+  pageType: PageTypes;
+  className: string;
+  mobileDivider: boolean;
+  headingBackgroundColour: string;
+  endpoint: string;
+  size: Size;
+}) =>
+  mostReadAmpPageTypes.includes(pageType) ? (
+    <MostReadSection {...(className ? { className } : undefined)}>
+      <MostReadSectionLabel
+        mobileDivider={mobileDivider}
+        backgroundColor={headingBackgroundColour}
+      />
+      <Amp
+        endpoint={`${getEnvConfig().SIMORGH_MOST_READ_CDN_URL}${endpoint}`}
+        size={size}
+      />
+    </MostReadSection>
+  ) : null;
+
+// Do not render on Canonical if data is not provided
+const CanonicalMostRead = ({
+  data,
+  className,
+  mobileDivider,
+  headingBackgroundColour,
+  columnLayout,
+  size,
+  eventTrackingData,
+}: {
+  data: MostReadData | undefined;
+  className: string;
+  mobileDivider: boolean;
+  headingBackgroundColour: string;
+  columnLayout?: ColumnLayout;
+  size: Size;
+  eventTrackingData: {
+    optimizely?: ReactSDKClient | null | undefined;
+    optimizelyMetricNameOverride?: string | undefined;
+    componentName: string;
+  };
+}) =>
+  data ? (
+    <MostReadSection className={className}>
+      <MostReadSectionLabel
+        mobileDivider={mobileDivider}
+        backgroundColor={headingBackgroundColour}
+      />
+      <Canonical
+        data={data}
+        columnLayout={columnLayout}
+        size={size}
+        eventTrackingData={eventTrackingData}
+      />
+    </MostReadSection>
+  ) : null;
+
 const MostRead = ({
   data,
   columnLayout = 'multiColumn',
