@@ -1201,5 +1201,29 @@ describe('ATI Analytics Container', () => {
         },
       });
     });
+
+    it('should set reverbParams to null when Reverb is disabled', () => {
+      const mockCanonical = jest.fn().mockReturnValue('canonical-return-value');
+      // @ts-expect-error - we need to mock these functions to ensure tests are deterministic
+      canonical.default = mockCanonical;
+
+      const {
+        metadata: { atiAnalytics },
+      } = articleDataNews;
+
+      render(<ATIAnalytics atiData={atiAnalytics} />, {
+        ...defaultRenderProps,
+        atiData: atiAnalytics,
+        isAmp: false,
+        pageData: articleDataNews,
+        pageType: ARTICLE_PAGE,
+        service: 'mundo',
+        isUK: true,
+      });
+
+      const { reverbParams } = mockCanonical.mock.calls[0][0];
+
+      expect(reverbParams).toBeNull();
+    });
   });
 });
