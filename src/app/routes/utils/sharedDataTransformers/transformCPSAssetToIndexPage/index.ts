@@ -18,8 +18,10 @@ type CpsArticle = {
       type: string;
       items: {
         id: string;
-        headlines: { headline: string };
-        locators: { assetUri: string };
+        headlines?: { headline: string };
+        uri?: string;
+        name?: string;
+        locators?: { assetUri: string };
         indexImage: { path: string; altText: string };
         media?: {
           format: string;
@@ -64,7 +66,9 @@ export default (cpsAsset: CpsPageData) => {
       const summaries: Summary[] = items.map(
         ({
           id,
+          name,
           headlines,
+          uri,
           locators,
           indexImage,
           media,
@@ -74,14 +78,14 @@ export default (cpsAsset: CpsPageData) => {
           const duration = media?.versions?.[0].durationISO8601;
 
           return {
-            title: headlines?.headline || '',
+            title: name || headlines?.headline || '',
             type: media?.format || 'article',
             duration,
             lastPublished: new Date(timestamp).toISOString(),
             imageUrl: `https://ichef.bbci.co.uk/ace/ws/{width}${indexImage?.path}.webp`,
             imageAlt: indexImage?.altText || '',
             id,
-            link: `https://www.bbc.com${locators?.assetUri}`,
+            link: uri || `https://www.bbc.com${locators?.assetUri}`,
             description,
             isLive: false,
           };
