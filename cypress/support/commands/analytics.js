@@ -15,6 +15,7 @@ Cypress.Commands.add('hasNoscriptImgAtiUrl', atiUrl => {
 
 // Should be moved into integration/pages/index.js once all pages have Chartbeat
 Cypress.Commands.add('hasScriptWithChartbeatSrc', () => {
+  cy.reload(true);
   cy.get(`script[src="//static.chartbeat.com/js/chartbeat.js"]`).should(
     'exist',
   );
@@ -22,5 +23,6 @@ Cypress.Commands.add('hasScriptWithChartbeatSrc', () => {
 
 // Should be moved into integration/pages/index.js once all pages have Chartbeat
 Cypress.Commands.add('hasGlobalChartbeatConfig', () => {
+  cy.reload(true);
   cy.window().should('have.property', '_sf_async_config');
 });
