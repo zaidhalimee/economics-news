@@ -279,7 +279,6 @@ describe('buildATIEventTrackUrl', () => {
       'hl=getCurrentTime',
       'lng=getDeviceLanguage',
       'atc=PUB-[campaignID]-[component]-[variant_1]-[format]-[pageIdentifier]-[detailedPlacement]-[]-[url]',
-      'mv_test=JumpTo Onward Journeys experiment',
       'mv_creation=variant_1',
       'type=AT',
     ]);
