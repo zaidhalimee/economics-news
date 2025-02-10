@@ -171,6 +171,7 @@ export const useConstructLiteSiteATIEventTrackUrl = (props = {}) => {
   return atiClickTrackingUrl;
 };
 
+// Change this one to the default export once all components have been changed to use this method.
 export const useATIClickTrackerHandler = (props = {}) => {
   const { isLite } = useContext(RequestContext);
   const canonicalHandler = useClickTrackerHandler(props);

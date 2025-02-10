@@ -7,7 +7,7 @@ export default function trackingScript() {
         event.stopPropagation();
         event.preventDefault();
 
-        const atiURL = targetElement.getAttribute('data-ati-tracking');
+        const atiURL = targetElement.getAttribute('data-lite-ati-tracking');
 
         if (atiURL == null) {
           return;

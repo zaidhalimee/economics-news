@@ -1,3 +1,4 @@
+import { LITE_ATI_TRACKING } from '#app/hooks/useClickTrackerHandler';
 import trackingScript from '.';
 
 const dispatchClick = (targetElement: HTMLElement) => {
@@ -11,7 +12,6 @@ const dispatchClick = (targetElement: HTMLElement) => {
 };
 
 describe('Click tracking script', () => {
-  const randomUUIDMock = jest.fn();
   beforeAll(() => {
     let mockCookie = '';
     Object.defineProperty(document, 'cookie', {
@@ -25,11 +25,6 @@ describe('Click tracking script', () => {
     Object.defineProperty(window, 'location', {
       value: {
         assign: jest.fn(),
-      },
-    });
-    Object.defineProperty(global, 'crypto', {
-      value: {
-        randomUUID: randomUUIDMock,
       },
     });
   });
@@ -46,11 +41,11 @@ describe('Click tracking script', () => {
   it('Sets a new cookie if there is no atuserid cookie on the user browser', () => {
     const anchorElement = document.createElement('a');
     anchorElement.setAttribute(
-      'data-ati-tracking',
+      LITE_ATI_TRACKING,
       'https://logws1363.ati-host.net/?',
     );
 
-    randomUUIDMock.mockReturnValueOnce('randomUniqueId');
+    (crypto.randomUUID as jest.Mock).mockReturnValueOnce('randomUniqueId');
     dispatchClick(anchorElement);
     expect(document.cookie).toBe(
       'atuserid={"val":"randomUniqueId"}; path=/; max-age=397; Secure;',
@@ -60,13 +55,13 @@ describe('Click tracking script', () => {
   it('Reuses the atuserid cookie if there is a atuserid cookie on the user browser', () => {
     const anchorElement = document.createElement('a');
     anchorElement.setAttribute(
-      'data-ati-tracking',
+      LITE_ATI_TRACKING,
       'https://logws1363.ati-host.net/?',
     );
 
     document.cookie =
       'atuserid={"val":"oldCookieId"}; path=/; max-age=397; Secure;';
-    randomUUIDMock.mockReturnValueOnce('newCookieId');
+    (crypto.randomUUID as jest.Mock).mockReturnValueOnce('newCookieId');
     dispatchClick(anchorElement);
 
     const callParam = (window.sendBeaconLite as jest.Mock).mock.calls[0][0];
@@ -77,7 +72,7 @@ describe('Click tracking script', () => {
   it('Calls sendBeaconLite() with the correct url', () => {
     const anchorElement = document.createElement('a');
     anchorElement.setAttribute(
-      'data-ati-tracking',
+      LITE_ATI_TRACKING,
       'https://logws1363.ati-host.net/?',
     );
 

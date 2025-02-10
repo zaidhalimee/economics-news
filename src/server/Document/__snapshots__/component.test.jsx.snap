@@ -214,7 +214,7 @@ exports[`Document Component should render LITE version correctly 1`] = `
       if ((targetElement === null || targetElement === void 0 ? void 0 : targetElement.tagName) === 'A') {
         event.stopPropagation();
         event.preventDefault();
-        var atiURL = targetElement.getAttribute('data-ati-tracking');
+        var atiURL = targetElement.getAttribute('data-lite-ati-tracking');
         if (atiURL == null) {
           return;
         }
