@@ -80,7 +80,7 @@ export default (cpsAsset: CpsPageData) => {
           locators,
           indexImage,
           media,
-          summary: description,
+          summary,
           timestamp,
         }) => {
           const duration = media?.versions?.[0].durationISO8601;
@@ -94,7 +94,7 @@ export default (cpsAsset: CpsPageData) => {
             imageAlt: indexImage?.altText || '',
             id,
             link: uri || `https://www.bbc.com${locators?.assetUri}`,
-            description,
+            description: summary,
             isLive: false,
           };
         },
