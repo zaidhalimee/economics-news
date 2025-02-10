@@ -693,3 +693,10 @@ exports[`Canonical Topic Page SEO Twitter image src 1`] = `"https://news.files.b
 exports[`Canonical Topic Page SEO Twitter site 1`] = `"@bbcafrique"`;
 
 exports[`Canonical Topic Page SEO Twitter title 1`] = `"Tout savoir sur la CAN 2019 - BBC News Afrique"`;
+
+exports[`Canonical Topic Page Timestamp should match text and date 1`] = `
+{
+  "date": "2019-07-02",
+  "text": "2 juillet 2019",
+}
+`;
