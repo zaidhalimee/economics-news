@@ -645,8 +645,8 @@ module.exports = () => ({
             enabled: true,
           },
           local: {
-            paths: [],
-            enabled: false,
+            paths: ['/arabic/topics/cwr9j7nv58nt'],
+            enabled: true,
           },
         },
         smoke: true,
@@ -4271,8 +4271,8 @@ module.exports = () => ({
             enabled: true,
           },
           local: {
-            paths: ['/pidgin/topics/cnq68qvkjp1t'], // DO NOT ENABLE
-            enabled: false,
+            paths: ['/pidgin/topics/c95y35941vrt'],
+            enabled: true,
           },
         },
         smoke: true,
@@ -5088,19 +5088,19 @@ module.exports = () => ({
       topicPage: {
         environments: {
           live: {
-            paths: ['/serbian/lat/topics/c1gd303q6y6t'],
+            paths: ['/serbian/topics/c1gd303q6y6t/lat'],
             enabled: true,
           },
           test: {
-            paths: ['/serbian/lat/topics/c1gd303q6y6t'],
+            paths: ['/serbian/topics/c1gd303q6y6t/lat'],
             enabled: true,
           },
           local: {
-            paths: [''],
-            enabled: false,
+            paths: ['/serbian/topics/c1gd303q6y6t/lat'],
+            enabled: true,
           },
         },
-        smoke: false,
+        smoke: true,
       },
       mediaAssetPage: {
         environments: {
