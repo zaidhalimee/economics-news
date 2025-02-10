@@ -1,0 +1,689 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Canonical Topic Page A11y I can see the skip to content link 1`] = `"Aller au contenu"`;
+
+exports[`Canonical Topic Page Analytics ATI tracking pixel excluding src 1`] = `
+<img
+  alt=""
+  height="1px"
+  style="position:absolute"
+  width="1px"
+/>
+`;
+
+exports[`Canonical Topic Page Analytics ATI tracking pixel hostname 1`] = `"https://logws1363.ati-host.net/"`;
+
+exports[`Canonical Topic Page Analytics ATI tracking pixel search params 1`] = `
+[
+  {
+    "s": "598343",
+  },
+  {
+    "s2": "3",
+  },
+  {
+    "p": "afrique.feature_index.48465371.page",
+  },
+  {
+    "x1": "[urn:bbc:cps:curie:asset:447a95b6-1c9f-e544-bf60-e23452e7fa71]",
+  },
+  {
+    "x2": "[responsive]",
+  },
+  {
+    "x3": "[news-afrique]",
+  },
+  {
+    "x4": "[fr]",
+  },
+  {
+    "x7": "[FIX]",
+  },
+  {
+    "x8": "[simorgh-nojs]",
+  },
+  {
+    "x9": "[Tout%20savoir%20sur%20la%20CAN%202019]",
+  },
+]
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 1`] = `
+{
+  "text": "BBC News, Afrique",
+  "url": "/afrique",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 2`] = `
+{
+  "text": "Pourquoi vous pouvez faire confiance à BBC News",
+  "url": "https://www.bbc.com/afrique/institutionelles-49283281",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 3`] = `
+{
+  "text": "Conditions d'utilisation",
+  "url": "https://www.bbc.com/afrique/institutionelles-36826639",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 4`] = `
+{
+  "text": "A propos de la BBC",
+  "url": "https://www.bbc.com/afrique/institutionelles-36826641",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 5`] = `
+{
+  "text": "Politique de confidentialité",
+  "url": "https://www.bbc.com/afrique/institutionelles-36826642",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 6`] = `
+{
+  "text": "Cookies",
+  "url": "https://www.bbc.com/usingthebbc/cookies/",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 7`] = `
+{
+  "text": "Contactez la BBC",
+  "url": "https://www.bbc.co.uk/afrique/send/u50853159",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 8`] = `
+{
+  "text": "Autres langues",
+  "url": "https://www.bbc.com/ws/languages",
+}
+`;
+
+exports[`Canonical Topic Page Footer Anchors should match text and url 9`] = `
+{
+  "text": "Découvrez notre approche en matière de liens externes.",
+  "url": "https://www.bbc.co.uk/editorialguidelines/guidance/feeds-and-links",
+}
+`;
+
+exports[`Canonical Topic Page Footer I can click on the BBC branding and it would take me to the homepage 1`] = `"/afrique"`;
+
+exports[`Canonical Topic Page Footer Paragraphs should match text 1`] = `"© 2025 BBC. La BBC n'est pas responsable du contenu des sites externes. Découvrez notre approche en matière de liens externes."`;
+
+exports[`Canonical Topic Page Header I can see the branding 1`] = `"BBC News, Afrique"`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 1`] = `
+{
+  "text": "Accueil",
+  "url": "/afrique",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 2`] = `
+{
+  "text": "Conflit en RDC",
+  "url": "/afrique/topics/cge72ry253jt",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 3`] = `
+{
+  "text": "Ecoutez en direct",
+  "url": "/afrique/bbc_afrique_radio/liveradio",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 4`] = `
+{
+  "text": "Afrique",
+  "url": "/afrique/topics/cvqxn2k7kv7t",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 5`] = `
+{
+  "text": "Monde",
+  "url": "/afrique/topics/cvqxn21vx11t",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 6`] = `
+{
+  "text": "Santé",
+  "url": "/afrique/topics/c06gq9jxz3rt",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 7`] = `
+{
+  "text": "Science et technologie",
+  "url": "/afrique/topics/crezq2zk0q4t",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 8`] = `
+{
+  "text": "Economie",
+  "url": "/afrique/topics/cnq687nr9v1t",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 9`] = `
+{
+  "text": "Culture",
+  "url": "/afrique/topics/cnq687nrrw8t",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 10`] = `
+{
+  "text": "Vidéos",
+  "url": "/afrique/topics/cz4vn9gyd6rt",
+}
+`;
+
+exports[`Canonical Topic Page Header Navigation link should match text and url 11`] = `
+{
+  "text": "Nos émissions",
+  "url": "/afrique/topics/c88nzggm8gxt",
+}
+`;
+
+exports[`Canonical Topic Page Main heading should match text 1`] = `"Tout savoir sur la CAN 2019"`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 1`] = `
+{
+  "sizes": null,
+  "url": "http://localhost:7080/afrique/images/icons/icon-192x192.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 2`] = `
+{
+  "sizes": "72x72",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/afrique/images/icons/icon-72x72.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 3`] = `
+{
+  "sizes": "96x96",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/afrique/images/icons/icon-96x96.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 4`] = `
+{
+  "sizes": "128x128",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/afrique/images/icons/icon-128x128.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 5`] = `
+{
+  "sizes": "144x144",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/afrique/images/icons/icon-144x144.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 6`] = `
+{
+  "sizes": "152x152",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/afrique/images/icons/icon-152x152.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 7`] = `
+{
+  "sizes": "180x180",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/afrique/images/icons/icon-180x180.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 8`] = `
+{
+  "sizes": "192x192",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/afrique/images/icons/icon-192x192.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 9`] = `
+{
+  "sizes": "384x384",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/afrique/images/icons/icon-384x384.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Apple Touch Icon should match attributes 10`] = `
+{
+  "sizes": "512x512",
+  "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/afrique/images/icons/icon-512x512.png",
+}
+`;
+
+exports[`Canonical Topic Page SEO Canonical link 1`] = `"http://localhost:7080/afrique/48465371"`;
+
+exports[`Canonical Topic Page SEO Dir attribute 1`] = `"ltr"`;
+
+exports[`Canonical Topic Page SEO FB app ID 1`] = `"1609039196070050"`;
+
+exports[`Canonical Topic Page SEO Heading level 1 1`] = `"Tout savoir sur la CAN 2019"`;
+
+exports[`Canonical Topic Page SEO Lang attribute 1`] = `"fr"`;
+
+exports[`Canonical Topic Page SEO Linked data should match text 1`] = `
+{
+  "@context": "http://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "headline": "Tout savoir sur la CAN 2019",
+      "image": {
+        "@type": "ImageObject",
+        "height": 576,
+        "url": "https://news.files.bbci.co.uk/ws/img/logos/og/afrique.png",
+        "width": 1024,
+      },
+      "inLanguage": {
+        "@type": "Language",
+        "alternateName": "fr",
+        "name": "French",
+      },
+      "mainEntityOfPage": {
+        "@id": "http://localhost:7080/afrique/48465371",
+        "@type": "WebPage",
+        "name": "Tout savoir sur la CAN 2019",
+      },
+      "publisher": {
+        "@type": "NewsMediaOrganization",
+        "logo": {
+          "@type": "ImageObject",
+          "height": 576,
+          "url": "https://news.files.bbci.co.uk/ws/img/logos/og/afrique.png",
+          "width": 1024,
+        },
+        "name": "BBC News Afrique",
+        "publishingPrinciples": "https://www.bbc.com/afrique/institutionelles-49283281",
+      },
+      "thumbnailUrl": "https://news.files.bbci.co.uk/ws/img/logos/og/afrique.png",
+      "url": "http://localhost:7080/afrique/48465371",
+    },
+    {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://www.bbc.com/afrique/sports-48835428",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://www.bbc.com/afrique/sports-48833323",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://www.bbc.com/afrique/sports-48616674",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://www.bbc.com/afrique/sports-48730746",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 5,
+          "url": "https://www.bbc.com/afrique/sports-48749028",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 6,
+          "url": "https://www.bbc.com/afrique/media-48811974",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 7,
+          "url": "https://www.bbc.com/afrique/sports-48202775",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 8,
+          "url": "https://www.bbc.com/afrique/sports-48759213",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 9,
+          "url": "https://www.bbc.com/afrique/sports-48821711",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 10,
+          "url": "https://www.bbc.com/afrique/sports-48724012",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 11,
+          "url": "https://www.bbc.com/afrique/sports-48449814",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 12,
+          "url": "https://www.bbc.com/afrique/sports-48480111",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 13,
+          "url": "https://www.bbc.com/afrique/sports-48724015",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 14,
+          "url": "https://www.bbc.com/afrique/sports-48818671",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 15,
+          "url": "https://www.bbc.com/afrique/sports-48811982",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 16,
+          "url": "https://www.bbc.com/afrique/sports-48818672",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 17,
+          "url": "https://www.bbc.com/afrique/sports-48811979",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 18,
+          "url": "https://www.bbc.com/afrique/sports-48811978",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 19,
+          "url": "https://www.bbc.com/afrique/48781656",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 20,
+          "url": "https://www.bbc.com/afrique/sports-48806246",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 21,
+          "url": "https://www.bbc.com/afrique/sports-48806247",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 22,
+          "url": "https://www.bbc.com/afrique/sports-48749032",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 23,
+          "url": "https://www.bbc.com/afrique/sports-48793950",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 24,
+          "url": "https://www.bbc.com/afrique/sports-48791240",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 25,
+          "url": "https://www.bbc.com/afrique/sports-48776939",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 26,
+          "url": "https://www.bbc.com/afrique/media-48776937",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 27,
+          "url": "https://www.bbc.com/afrique/sports-48766671",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 28,
+          "url": "https://www.bbc.com/afrique/sports-48821710",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 29,
+          "url": "https://www.bbc.com/afrique/sports-48639468",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 30,
+          "url": "https://www.bbc.com/afrique/sports-48580780",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 31,
+          "url": "https://www.bbc.com/afrique/sports-48177239",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 32,
+          "url": "https://www.bbc.com/afrique/region-48070784",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 33,
+          "url": "https://www.bbc.com/afrique/sports-48580779",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 34,
+          "url": "https://www.bbc.com/afrique/sports-48730747",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 35,
+          "url": "https://www.bbc.com/afrique/sports-48312305",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 36,
+          "url": "https://www.bbc.com/afrique/sports-48340393",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 37,
+          "url": "https://www.bbc.com/afrique/sports-48526271",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 38,
+          "url": "https://www.bbc.com/afrique/sports-48435065",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 39,
+          "url": "https://www.bbc.com/afrique/region-48070786",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 40,
+          "url": "https://www.bbc.com/afrique/sports-48561859",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 41,
+          "url": "https://www.bbc.com/afrique/sports-48435068",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 42,
+          "url": "https://www.bbc.com/afrique/sports-48177237",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 43,
+          "url": "https://www.bbc.com/afrique/sports-48177238",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 44,
+          "url": "https://www.bbc.com/afrique/region-48556147",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 45,
+          "url": "https://www.bbc.com/afrique/sports-48435069",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 46,
+          "url": "https://www.bbc.com/afrique/sports-48340389",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 47,
+          "url": "https://www.bbc.com/afrique/region-48070783",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 48,
+          "url": "https://www.bbc.com/afrique/sports-48435066",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 49,
+          "url": "https://www.bbc.com/afrique/sports-48435067",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 50,
+          "url": "https://www.bbc.com/afrique/sports-48340390",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 51,
+          "url": "https://www.bbc.com/afrique/sports-48177241",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 52,
+          "url": "https://www.bbc.com/afrique/sports-48340392",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 53,
+          "url": "https://www.bbc.com/afrique/sports-48177240",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 54,
+          "url": "https://www.bbc.com/afrique/region-48070785",
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "ListItem",
+          "position": 55,
+          "url": "https://www.bbc.com/afrique/sports-47873312",
+        },
+      ],
+      "name": "BBC News Afrique",
+      "numberOfItems": 55,
+    },
+  ],
+}
+`;
+
+exports[`Canonical Topic Page SEO OG description 1`] = `"La Coupe d'Afrique des nations, compétition de football la plus importante dans le continent, se joue en Egypte du 21 juin au 19 juillet 2019."`;
+
+exports[`Canonical Topic Page SEO OG image 1`] = `"https://news.files.bbci.co.uk/ws/img/logos/og/afrique.png"`;
+
+exports[`Canonical Topic Page SEO OG image alt 1`] = `"BBC News Afrique"`;
+
+exports[`Canonical Topic Page SEO OG locale 1`] = `"fr"`;
+
+exports[`Canonical Topic Page SEO OG site name 1`] = `"BBC News Afrique"`;
+
+exports[`Canonical Topic Page SEO OG title 1`] = `"Tout savoir sur la CAN 2019 - BBC News Afrique"`;
+
+exports[`Canonical Topic Page SEO OG type 1`] = `"website"`;
+
+exports[`Canonical Topic Page SEO OG url 1`] = `"http://localhost:7080/afrique/48465371"`;
+
+exports[`Canonical Topic Page SEO Page title 1`] = `"Tout savoir sur la CAN 2019 - BBC News Afrique"`;
+
+exports[`Canonical Topic Page SEO Robots meta tag 1`] = `"noodp, noydir, max-image-preview:large"`;
+
+exports[`Canonical Topic Page SEO Twitter card 1`] = `"summary_large_image"`;
+
+exports[`Canonical Topic Page SEO Twitter creator 1`] = `"@bbcafrique"`;
+
+exports[`Canonical Topic Page SEO Twitter description 1`] = `"La Coupe d'Afrique des nations, compétition de football la plus importante dans le continent, se joue en Egypte du 21 juin au 19 juillet 2019."`;
+
+exports[`Canonical Topic Page SEO Twitter image alt 1`] = `"BBC News Afrique"`;
+
+exports[`Canonical Topic Page SEO Twitter image src 1`] = `"https://news.files.bbci.co.uk/ws/img/logos/og/afrique.png"`;
+
+exports[`Canonical Topic Page SEO Twitter site 1`] = `"@bbcafrique"`;
+
+exports[`Canonical Topic Page SEO Twitter title 1`] = `"Tout savoir sur la CAN 2019 - BBC News Afrique"`;
