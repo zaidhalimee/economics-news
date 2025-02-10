@@ -1,5 +1,5 @@
 /* eslint-disable react/no-danger */
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { EmotionCritical } from '@emotion/server/create-instance';
 
 import { HelmetData } from 'react-helmet';
@@ -7,6 +7,7 @@ import LiteRenderer from './Renderers/LiteRenderer';
 import CanonicalRenderer from './Renderers/CanonicalRenderer';
 import AmpRenderer from './Renderers/AmpRenderer';
 import litePageTransforms from './Renderers/litePageTransforms';
+import removeDataReactHelmetAttribute from './Renderers/litePageTransforms/removeDataReactHelmetAttribute';
 
 type Props = {
   app: EmotionCritical;
@@ -48,12 +49,18 @@ const Document = ({
               dangerouslySetInnerHTML={{ __html: litePageTransforms(html) }}
             />
           }
-          helmetLinkTags={helmetLinkTags}
-          helmetMetaTags={helmetMetaTags}
-          helmetScriptTags={helmetScriptTags}
+          helmetLinkTags={
+            removeDataReactHelmetAttribute(helmetLinkTags) as ReactElement
+          }
+          helmetMetaTags={
+            removeDataReactHelmetAttribute(helmetMetaTags) as ReactElement
+          }
+          helmetScriptTags={
+            removeDataReactHelmetAttribute(helmetScriptTags) as ReactElement
+          }
           htmlAttrs={htmlAttrs}
           styles={css}
-          title={title}
+          title={removeDataReactHelmetAttribute(title) as ReactElement}
         />
       );
     case isAmp:

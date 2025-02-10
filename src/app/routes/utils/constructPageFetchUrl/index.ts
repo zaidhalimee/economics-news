@@ -31,7 +31,7 @@ import {
 import parseAvRoute from '../parseAvRoute';
 
 const removeLeadingSlash = (path: string) => path?.replace(/^\/+/g, '');
-const removeAmp = (path: string) => path.split('.')[0];
+const removeSuffix = (path: string) => path.split('.')[0];
 const getArticleId = (path: string) => path.match(/(c[a-zA-Z0-9]{10,}o)/)?.[1];
 const getCpsId = (path: string) => removeLeadingSlash(path);
 const getTVAudioId = (path: string) => removeLeadingSlash(path);
@@ -155,7 +155,7 @@ const getId = ({ pageType, service, variant, env }: GetIdProps) => {
       getIdFunction = () => null;
       break;
   }
-  return pipe(getUrlPath, removeAmp, getIdFunction);
+  return pipe(getUrlPath, removeSuffix, getIdFunction);
 };
 
 export interface UrlConstructParams {
@@ -257,9 +257,12 @@ const constructPageFetchUrl = ({
         const variantPath = variant ? `/${variant}` : '';
         const host = `http://${process.env.HOSTNAME || 'localhost'}`;
         const port = process.env.PORT ? `:${process.env.PORT}` : '';
-        // pathname is the ID of the Live page without /service/live/, and supports both Tipo & CPS IDs
+
+        let liveId = id;
+        if (!isTipoIdCheck(id)) liveId = removeSuffix(pathname);
+
         fetchUrl = Url(
-          `${host}${port}/api/local/${service}/live/${pathname}${variantPath}`,
+          `${host}${port}/api/local/${service}/live/${liveId}${variantPath}`,
         );
         break;
       }
