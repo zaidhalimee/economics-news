@@ -4106,7 +4106,7 @@ module.exports = () => ({
               '/persian/iran-23231114', // CPS MAP with audio clip
               '/persian/iran/2016/09/160907_tc2_testmap1', // TC2 MAP with video clip
             ],
-            enabled: false,
+            enabled: true,
           },
         },
         smoke: true,
