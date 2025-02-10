@@ -4,7 +4,6 @@ import {
   ErrorPage,
   MediaArticlePage,
   TopicPage,
-  HomePage,
 } from '#pages/index';
 import {
   articlePath,
