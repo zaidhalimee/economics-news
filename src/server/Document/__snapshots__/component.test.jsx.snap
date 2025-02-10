@@ -255,7 +255,7 @@ exports[`Document Component should render LITE version correctly 1`] = `
           val: atUserIdValue
         });
         if (atUserIdValue) {
-          document.cookie = "".concat(cookieName, "=").concat(stringifiedCookieValue, "; path=/; max-age=").concat(expires, ";");
+          document.cookie = "".concat(cookieName, "=").concat(stringifiedCookieValue, "; path=/; max-age=").concat(expires, "; Secure;");
         }
         var rValue = [width || 0, height || 0, colorDepth || 0, pixelDepth || 0].join('x');
         var reValue = [innerWidth || 0, innerHeight || 0].join('x');
