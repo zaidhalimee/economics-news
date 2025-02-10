@@ -102,13 +102,13 @@ export default (cpsAsset: CpsPageData) => {
 
       const curationTitle = strapline?.name || '';
 
-      // Display each curation as a hierarchical collection
-      let visualProminence: VisualProminence = HIGH;
-
-      // Allows us to display as much content as possible from FIX pages - hierarchical collections must have at least 3 items
-      if (summaries.length < 3) {
-        visualProminence = NORMAL;
-      }
+      /**
+       * Display each curation as a hierarchical collection,
+       * but if there are less than 3 promos,
+       * display the curation a collection
+       * */
+      const visualProminence: VisualProminence =
+        summaries.length < 3 ? NORMAL : HIGH;
 
       return {
         curationType: 'vivo-stream',
