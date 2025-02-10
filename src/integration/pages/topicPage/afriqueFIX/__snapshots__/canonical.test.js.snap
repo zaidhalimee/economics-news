@@ -25,7 +25,7 @@ exports[`Canonical Topic Page Analytics ATI tracking pixel search params 1`] = `
     "p": "afrique.feature_index.48465371.page",
   },
   {
-    "x1": "[urn:bbc:cps:curie:asset:447a95b6-1c9f-e544-bf60-e23452e7fa71]",
+    "x1": "[urn:bbc:cps:447a95b6-1c9f-e544-bf60-e23452e7fa71]",
   },
   {
     "x2": "[responsive]",
@@ -37,13 +37,19 @@ exports[`Canonical Topic Page Analytics ATI tracking pixel search params 1`] = `
     "x4": "[fr]",
   },
   {
-    "x7": "[FIX]",
+    "x7": "[index-section]",
   },
   {
     "x8": "[simorgh-nojs]",
   },
   {
     "x9": "[Tout%20savoir%20sur%20la%20CAN%202019]",
+  },
+  {
+    "x11": "[2019-05-30T14:23:38.000Z]",
+  },
+  {
+    "x12": "[2019-07-19T12:46:18.000Z]",
   },
 ]
 `;
