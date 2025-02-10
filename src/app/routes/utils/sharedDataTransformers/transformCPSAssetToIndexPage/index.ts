@@ -1,3 +1,4 @@
+import { ATIData } from '#app/components/ATIAnalytics/types';
 import { MostReadData } from '#app/components/MostRead/types';
 import {
   Curation,
@@ -10,12 +11,7 @@ const { HIGH, NORMAL } = VISUAL_PROMINENCE;
 
 type CpsArticle = {
   metadata: {
-    analyticsLabels: {
-      contentId: string;
-      // eslint-disable-next-line camelcase
-      cps_asset_type: string;
-      counterName: string;
-    };
+    atiAnalytics: ATIData;
     title: string;
     summary: string;
     type: string;
@@ -54,16 +50,7 @@ type CpsPageData = {
 export default (cpsAsset: CpsPageData) => {
   const {
     article: {
-      metadata: {
-        analyticsLabels: {
-          contentId,
-          counterName: pageIdentifier,
-          cps_asset_type: contentType,
-        },
-        title,
-        summary: description,
-        type: pageType,
-      },
+      metadata: { atiAnalytics, title, summary: description, type: pageType },
       content: { groups },
     },
     secondaryData: { mostRead },
@@ -140,12 +127,7 @@ export default (cpsAsset: CpsPageData) => {
     curations,
     metadata: {
       type: pageType,
-      atiAnalytics: {
-        contentId,
-        contentType: contentType?.toUpperCase(),
-        pageIdentifier,
-        pageTitle: title,
-      },
+      atiAnalytics,
     },
   };
 };
