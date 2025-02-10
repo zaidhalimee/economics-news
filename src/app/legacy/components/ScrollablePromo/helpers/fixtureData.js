@@ -1586,3 +1586,91 @@ export const topStoriesBlocks = [
     type: 'optimo',
   },
 ];
+
+export const topStoriesBlocksWithLiveItem = [
+  {
+    locators: {
+      optimoUrn: 'urn:bbc:optimo:asset:c78wqxgqq4do',
+      canonicalUrl: 'https://www.bbc.com/hindi/articles/c78wqxgqq4do',
+    },
+    timestamp: 1738939383381,
+    suitableForSyndication: true,
+    language: 'hi',
+    headlines: {
+      seoHeadline:
+        'US India: अपने नागरिकों के निर्वासन पर कोलंबिया जैसा कड़ा रुख़ भारत क्यक् नहीं दिखा सका',
+      promoHeadline: [Object],
+    },
+    images: { defaultPromoImage: [Object] },
+    summary: { blocks: [Array] },
+    passport: {
+      language: 'hi',
+      home: 'http://www.bbc.co.uk/ontologies/passport/home/Hindi',
+      locator: 'urn:bbc:optimo:asset:c78wqxgqq4do',
+      availability: 'AVAILABLE',
+      taggings: [Array],
+      schemaVersion: '1.4.0',
+      publishedState: 'PUBLISHED',
+      predicates: [Object],
+    },
+    byline: { blocks: [Array] },
+    serviceIdentifier: 'Hindi',
+    breakingNews: { isBreaking: false },
+    consumableAsSFV: false,
+    id: 'urn:bbc:ares::article:c78wqxgqq4do',
+    type: 'optimo',
+  },
+  {
+    headline: 'पूछताछ के बाद बांग्लादेशी अभिनेत्री शॉन और सबा को रिहा किया गया',
+    destinationUrl: '/hindi/live/c5yerl0rx49t',
+    isLive: true,
+    summary:
+      'ढाका मेट्रोपॉलिटन पुलिस की डिटेक्टिव ब्रांच (डीबी) ने बांग्लादेशी अभिनेत्री मेहर अफ़रोज़ शॉन और सोहाना सबा को रिहा कर दिया है.',
+    image: {
+      id: 'c2edf88d-8f38-4a26-b81e-cf2cad66ec25',
+      subType: 'promo',
+      href: 'http://c.files.bbci.co.uk/67d9/live/c79f90b0-e512-11ef-a819-277e390a7a08.jpg',
+      path: '/cpsprodpb/67d9/live/c79f90b0-e512-11ef-a819-277e390a7a08.jpg',
+      height: 683,
+      width: 1024,
+      altText: 'भारतीय रुपया',
+      copyrightHolder: 'Getty Images',
+      originCode: 'cpsprodpb',
+      type: 'image',
+    },
+    serviceIdentifier: 'hindi',
+    id: 'urn:bbc:tipo:topic:c5yerl0rx49t',
+    type: 'tipo-live',
+  },
+  {
+    locators: {
+      optimoUrn: 'urn:bbc:optimo:asset:c3rq57dejlyo',
+      canonicalUrl: 'https://www.bbc.com/hindi/articles/c3rq57dejlyo',
+    },
+    timestamp: 1738942111890,
+    suitableForSyndication: true,
+    language: 'hi',
+    headlines: {
+      seoHeadline:
+        'Delhi: दिल्ली चुनाव के नतीजों पर 8 फ़रवरी को सबकी नज़र, Delhi  में मेंसी रही बीते 15 सालों की राजनीति',
+      promoHeadline: [Object],
+    },
+    images: { defaultPromoImage: [Object] },
+    summary: { blocks: [Array] },
+    passport: {
+      language: 'hi',
+      home: 'http://www.bbc.co.uk/ontologies/passport/home/Hindi',
+      locator: 'urn:bbc:optimo:asset:c3rq57dejlyo',
+      availability: 'AVAILABLE',
+      taggings: [Array],
+      schemaVersion: '1.4.0',
+      publishedState: 'PUBLISHED',
+      predicates: [Object],
+    },
+    serviceIdentifier: 'Hindi',
+    breakingNews: { isBreaking: false },
+    consumableAsSFV: false,
+    id: 'urn:bbc:ares::article:c3rq57dejlyo',
+    type: 'optimo',
+  },
+];
