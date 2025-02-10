@@ -23,6 +23,7 @@ const styles = {
 
   item: ({ spacings, mq, palette }: Theme) =>
     css({
+      marginTop: '50px',
       '.promo-image': {
         [mq.GROUP_2_MAX_WIDTH]: {
           width: '33%',
