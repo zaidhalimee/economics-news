@@ -6328,7 +6328,6 @@ module.exports = () => ({
               '/thai/articles/c442rl3md0eo', // Article
               '/thai', // Front Page
               '/thai/popular/read', // Most Read
-              '/thai/23122810', // CPS MAP
               '/thai/international-23252840', // CPS PGL
               // '', // CPS STY
             ],
@@ -6339,7 +6338,6 @@ module.exports = () => ({
               '/thai/articles/c442rl3md0eo', // Article
               '/thai', // Front Page
               '/thai/popular/read', // Most Read
-              '/thai/23122810', // CPS MAP
               '/thai/thailand-49950038', // CPS PGL
             ],
             enabled: true,
