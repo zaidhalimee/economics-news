@@ -21,8 +21,19 @@ const LiveLabel = ({
 
   return (
     <>
-      <Pulse className={className} width="16" height="16" css={pulse} />
-      <Text lang={lang} id={id} offScreenText={offScreenText}>
+      <Pulse
+        className={className}
+        width="16"
+        height="16"
+        css={pulse}
+        data-testid="live-label-pulse"
+      />
+      <Text
+        lang={lang}
+        id={id}
+        offScreenText={offScreenText}
+        data-testid="live-label-text"
+      >
         {children}
       </Text>
     </>
