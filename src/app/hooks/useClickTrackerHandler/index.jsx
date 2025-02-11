@@ -36,7 +36,6 @@ const useExtractTrackingProps = (props = {}) => {
   };
 };
 
-// TODO - Refactor this once all components have been updated to use the useATIClickTrackerHandler hook.
 const useClickTrackerHandler = (props = {}) => {
   const {
     pageIdentifier,
@@ -170,7 +169,6 @@ export const useConstructLiteSiteATIEventTrackUrl = (props = {}) => {
   return atiClickTrackingUrl;
 };
 
-// Change this one to the default export once all components have been changed to use this method.
 export const useATIClickTrackerHandler = (props = {}) => {
   const { isLite } = useContext(RequestContext);
   const canonicalHandler = useClickTrackerHandler(props);
