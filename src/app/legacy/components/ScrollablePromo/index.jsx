@@ -45,6 +45,11 @@ const ScrollablePromoContainer = styled.div`
   padding: ${GEL_SPACING};
   display: flex;
   overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   ${({ experimentVariant }) =>
     experimentVariant !== 'none' &&
     `
