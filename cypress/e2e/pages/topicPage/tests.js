@@ -1,5 +1,6 @@
 import idSanitiser from '../../../../src/app/lib/utilities/idSanitiser';
 import getAppEnv from '../../../support/helpers/getAppEnv';
+import serviceConfigs from '../../../../src/server/utilities/serviceConfigs';
 
 export default ({ service, pageType, variant, currentPath }) => {
   let topicId;
@@ -8,21 +9,12 @@ export default ({ service, pageType, variant, currentPath }) => {
   let pageCount;
   let numberOfItems;
   let messageBanner;
-  const scriptSwitchServices = ['serbian', 'ukchina', 'zhongwen'];
-  let otherVariant;
+  const otherVariant = serviceConfigs[service][variant]?.scriptLink?.variant;
 
   describe(`Tests for ${service} ${pageType}`, () => {
     beforeEach(() => {
       topicId = Cypress.env('currentPath').match(/(c[a-zA-Z0-9]{10,}t)/)?.[1];
 
-      if (scriptSwitchServices.includes(service)) {
-        if (service === 'serbian') {
-          otherVariant = variant === 'lat' ? 'cyr' : 'lat';
-        }
-        if (service === 'ukchina' || service === 'zhongwen') {
-          otherVariant = variant === 'simp' ? 'trad' : 'simp';
-        }
-      }
       // Gets the topic page data for all the tests
       cy.getPageDataFromWindow().then(({ pageData }) => {
         topicTitle = pageData.title;
@@ -251,18 +243,13 @@ export default ({ service, pageType, variant, currentPath }) => {
       });
     });
 
-    describe(`Script switch`, () => {
-      it('Pages with 2 scripts should have a script switch button with correct other variant', () => {
-        if (scriptSwitchServices.includes(service)) {
+    if (otherVariant) {
+      describe(`Script switch`, () => {
+        it('Pages with 2 scripts should have a script switch button with correct other variant', () => {
           cy.get(`[data-variant="${otherVariant}"]`).should('be.visible');
-        } else {
-          cy.log('Not a script switch service');
-        }
-        cy.log(Cypress.env('currentPath'));
-      });
+        });
 
-      it('Script switch button switches the script', () => {
-        if (scriptSwitchServices.includes(service)) {
+        it('Script switch button switches the script', () => {
           cy.get(`[data-variant="${otherVariant}"]`).click();
           // URL contains correct variant after click
           cy.url().should('contain', otherVariant);
@@ -274,10 +261,8 @@ export default ({ service, pageType, variant, currentPath }) => {
           cy.url().should('contain', variant);
           // URL contains the correct topic ID
           cy.url().should('contain', topicId);
-        } else {
-          cy.log('Not a script switch service');
-        }
+        });
       });
-    });
+    }
   });
 };
