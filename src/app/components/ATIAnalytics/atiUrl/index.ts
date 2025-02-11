@@ -499,15 +499,46 @@ export const buildReverbPageSectionEventModel = ({
   advertiserID,
   url,
 }: ATIEventTrackingProps) => {
-  const eventPublisher = type === 'view' ? 'ati' : 'atc';
+  // const eventPublisher = type === 'view' ? 'ati' : 'atc';
 
   const eventDetails = {
     eventName: type === 'view' ? 'sectionView' : 'sectionClick',
-    ...(type === 'click' && {
+    ...{
+      ...{ eventPublisher: type === 'click' ? 'click' : 'impression' },
       componentName,
       container: campaignID,
-    }),
+      attribute: componentName,
+      placement: pageIdentifier,
+      source: advertiserID,
+      result: url,
+      ...{ isClick: type === 'click' ? true : false },
+    },
   };
+
+  // return {
+  //   params: {
+  //     page: {
+  //       destination: statsDestination,
+  //       name: pageIdentifier,
+  //       producer: producerName,
+  //       additionalProperties: {
+  //         [eventPublisher]: getEventInfo({
+  //           campaignID,
+  //           componentName,
+  //           format,
+  //           pageIdentifier,
+  //           advertiserID,
+  //           url,
+  //         }),
+  //         type: 'AT',
+  //       },
+  //     },
+  //     user: {
+  //       isSignedIn: false,
+  //     },
+  //   },
+  //   eventDetails,
+  // };
 
   return {
     params: {
@@ -516,14 +547,6 @@ export const buildReverbPageSectionEventModel = ({
         name: pageIdentifier,
         producer: producerName,
         additionalProperties: {
-          [eventPublisher]: getEventInfo({
-            campaignID,
-            componentName,
-            format,
-            pageIdentifier,
-            advertiserID,
-            url,
-          }),
           type: 'AT',
         },
       },
