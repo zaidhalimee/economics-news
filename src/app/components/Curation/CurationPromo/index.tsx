@@ -63,7 +63,7 @@ const CurationPromo = ({
           )}
         </Promo.Image>
       )}
-      <Promo.Heading css={styles.Promo} as={`h${headingLevel}`}>
+      <Promo.Heading css={styles.promo} as={`h${headingLevel}`}>
         {isMedia ? (
           <Promo.A href={link} aria-labelledby={id}>
             <span id={id} role="text">

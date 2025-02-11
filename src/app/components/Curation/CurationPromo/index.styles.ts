@@ -1,5 +1,12 @@
 import { css, Theme } from '@emotion/react';
 
 export default {
-  Promo: () => css({ marginTop: '24px' }),
+  promo: ({ isLite, spacings, mq }: Theme) =>
+    css({
+      ...(isLite && {
+        [mq.GROUP_2_MAX_WIDTH]: {
+          marginTop: '500px',
+        },
+      }),
+    }),
 };
