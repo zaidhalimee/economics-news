@@ -12,6 +12,7 @@ import {
 } from '#psammead/gel-foundations/src/spacings';
 import {
   GEL_GROUP_0_SCREEN_WIDTH_MIN,
+  GEL_GROUP_1_SCREEN_WIDTH_MIN,
   GEL_GROUP_2_SCREEN_WIDTH_MIN,
   GEL_GROUP_3_SCREEN_WIDTH_MIN,
   GEL_GROUP_4_SCREEN_WIDTH_MIN,
@@ -19,6 +20,7 @@ import {
 import filterForBlockType from '#lib/utilities/blockHandlers';
 import useOperaMiniDetection from '#hooks/useOperaMiniDetection';
 import PromoTimestamp from '#components/Promo/timestamp';
+import LiveLabel from '../../../../components/LiveLabel';
 import { ServiceContext } from '../../../../contexts/ServiceContext';
 
 const StyledLink = styled(Link)`
@@ -32,6 +34,12 @@ const StyledLink = styled(Link)`
   overflow-x: hidden;
   overflow-y: hidden;
   display: -webkit-box;
+  ${({ experimentVariant }) =>
+    experimentVariant === 'none' &&
+    ` overflow-wrap: break-word;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 4;
+    `}
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 
@@ -53,6 +61,7 @@ const PromoBox = styled.div`
     theme.isDarkUi ? theme.palette.GREY_3 : theme.palette.WHITE};
   padding: ${GEL_SPACING_DBL};
   margin-bottom: ${GEL_SPACING_TRPL};
+  height: auto;
   @media (min-width: ${GEL_GROUP_0_SCREEN_WIDTH_MIN}) {
     width: 14.8125rem;
   }
@@ -62,6 +71,18 @@ const PromoBox = styled.div`
   @media (min-width: ${GEL_GROUP_4_SCREEN_WIDTH_MIN}) {
     width: 12.6875rem;
   }
+  ${({ experimentVariant }) =>
+    experimentVariant !== 'none' &&
+    `
+      margin-bottom: 0;
+      width: 11.5rem;
+      @media (min-width: ${GEL_GROUP_1_SCREEN_WIDTH_MIN}) {
+        width: 17rem;
+      }
+      @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MIN}) {
+        width: 15.5rem;
+      }
+    `}
 `;
 
 const OperaPromoBox = styled.div`
@@ -81,29 +102,72 @@ const TimeStamp = styled(PromoTimestamp)`
   color: ${({ theme }) => theme.isDarkUi && theme.palette.GREY_6};
 `;
 
-const Promo = ({ block, onClick }) => {
+const Promo = ({ block, experimentVariant, onClick }) => {
   const { script, service, serviceDatetimeLocale } = useContext(ServiceContext);
-  const textBlock = filterForBlockType(
-    pathOr({}, ['model', 'blocks'], block),
-    'text',
-  );
-  const aresLinkBlock = filterForBlockType(
-    pathOr({}, ['model', 'blocks'], block),
-    'aresLink',
-  );
-  const href = pathOr(
-    '',
-    ['model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'locator'],
-    textBlock,
-  );
-  const title = pathOr(
-    '',
-    ['model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'text'],
-    textBlock,
-  );
-  const timestamp = path(
-    ['model', 'blocks', '0', 'model', 'timestamp'],
-    aresLinkBlock,
+  let title;
+  let href;
+  let textBlock;
+  let aresLinkBlock;
+  let timestamp;
+  let isLive;
+  switch (experimentVariant) {
+    case 'A':
+      title = pathOr(
+        block.headline || '',
+        [
+          'headlines',
+          'promoHeadline',
+          'blocks',
+          '0',
+          'model',
+          'blocks',
+          '0',
+          'model',
+          'text',
+        ],
+        block,
+      );
+      href = pathOr('', ['locators', 'canonicalUrl'], block);
+      isLive = block.isLive;
+      break;
+    case 'B':
+      title = block.title;
+      href = block.href;
+      break;
+    default:
+      textBlock = filterForBlockType(
+        pathOr({}, ['model', 'blocks'], block),
+        'text',
+      );
+      aresLinkBlock = filterForBlockType(
+        pathOr({}, ['model', 'blocks'], block),
+        'aresLink',
+      );
+      timestamp = path(
+        ['model', 'blocks', '0', 'model', 'timestamp'],
+        aresLinkBlock,
+      );
+      href = pathOr(
+        '',
+        ['model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'locator'],
+        textBlock,
+      );
+      title = pathOr(
+        '',
+        ['model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'text'],
+        textBlock,
+      );
+      break;
+  }
+  console.log(
+    'title',
+    title,
+    'href',
+    href,
+    'timestamp',
+    timestamp,
+    'isLive',
+    isLive,
   );
 
   const isOperaMini = useOperaMiniDetection();
@@ -111,16 +175,17 @@ const Promo = ({ block, onClick }) => {
   const WrapperPromoBox = isOperaMini ? OperaPromoBox : PromoBox;
 
   return (
-    <WrapperPromoBox>
+    <WrapperPromoBox experimentVariant={experimentVariant}>
       <StyledLink
         href={href}
         service={service}
         script={script}
         onClick={onClick}
       >
+        {isLive && <LiveLabel />}
         {title}
       </StyledLink>
-      {timestamp && (
+      {timestamp && !experimentVariant && (
         <TimeStamp serviceDatetimeLocale={serviceDatetimeLocale}>
           {timestamp}
         </TimeStamp>
