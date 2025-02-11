@@ -319,7 +319,6 @@ describe('Reverb', () => {
       pageIdentifier: 'pageIdentifier',
       pageTitle: 'pageTitle',
       platform: 'canonical' as Platforms,
-      previousPath: '',
       producerName: 'producerName',
       origin: 'http://localhost',
       nationsProducer: '',
