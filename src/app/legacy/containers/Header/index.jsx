@@ -43,7 +43,7 @@ const Header = ({ brandRef, borderBottom, skipLink, scriptLink, linkId }) => {
   );
 };
 
-const HeaderContainer = propsForOJExperiment => {
+const HeaderContainer = ({ propsForOJExperiment }) => {
   const { isAmp, isApp, pageType, isLite } = useContext(RequestContext);
   const { service, script, translations, dir, scriptLink, lang, serviceLang } =
     useContext(ServiceContext);
@@ -80,7 +80,7 @@ const HeaderContainer = propsForOJExperiment => {
         break;
     }
   }
-
+  console.log('in Header.index', propsForOJExperiment);
   const renderLiteSiteCTA = isLite && liteEnabledServices.includes(service);
 
   if (isApp) return null;
