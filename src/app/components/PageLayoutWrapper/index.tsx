@@ -52,35 +52,12 @@ const PageLayoutWrapper = ({
 }: PropsWithChildren<Props>) => {
   const { service } = useContext(ServiceContext);
   const { isLite, isAmp } = useContext(RequestContext);
-  const topStories = pageData.secondaryColumn?.topStories;
-  const mostReadItems = pageData.mostRead?.items;
-
-  // const scrollableOJExperimentVariation = useOptimizelyVariation(
-  //   'oj_scroll',
-  // ) as unknown as string;
-  const variantValue = 'A'; // We would get this value from useOptimizelyVariation (as commented out above)
-  // so just manually switch the hardcoded variant for now while getting this working
-  const experimentVariant: 'A' | 'B' | 'none' = ['A', 'B'].includes(
-    variantValue,
-  )
-    ? (variantValue as 'A' | 'B')
-    : 'none';
-  let dataForOJExperiment;
-  if (experimentVariant === 'A') {
-    dataForOJExperiment = topStories;
-  } else if (experimentVariant === 'B' && mostReadItems) {
-    dataForOJExperiment = mostReadItems;
-  }
-
-  const propsForOJExperiment = {
-    blocks: dataForOJExperiment || [],
-    experimentVariant,
-  };
 
   const isErrorPage = ![200].includes(status) || !status;
   const pageType = pageData?.metadata?.type;
   const reportingPageType = pageType?.replace(/ /g, '');
   let wordCount: wordCountType = 0;
+  let propsForOJExperiment = {};
   if (pageType === 'article') {
     wordCount = pageData?.content?.model?.blocks
       ?.filter(block => block.type === 'text')
@@ -94,6 +71,31 @@ const PageLayoutWrapper = ({
         if (!innerBlocks) return reducer;
         return reducer + innerBlocks.split(' ').length;
       }, 0);
+
+    const topStories = pageData.secondaryColumn?.topStories;
+    const mostReadItems = pageData.mostRead?.items;
+
+    // const scrollableOJExperimentVariation = useOptimizelyVariation(
+    //   'oj_scroll',
+    // ) as unknown as string;
+    const variantValue = 'B'; // We would get this value from useOptimizelyVariation (as commented out above)
+    // so just manually switch the hardcoded variant for now while getting this working
+    const experimentVariant: 'A' | 'B' | 'none' = ['A', 'B'].includes(
+      variantValue,
+    )
+      ? (variantValue as 'A' | 'B')
+      : 'none';
+    let dataForOJExperiment;
+    if (experimentVariant === 'A') {
+      dataForOJExperiment = topStories;
+    } else if (experimentVariant === 'B' && mostReadItems) {
+      dataForOJExperiment = mostReadItems;
+    }
+
+    propsForOJExperiment = {
+      blocks: dataForOJExperiment || [],
+      experimentVariant,
+    };
   }
   const serviceFonts = fontFacesLazy(service);
   const fontJs =
