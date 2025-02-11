@@ -29,7 +29,6 @@ const requestContext: RequestContextProps = {
   platform: 'canonical',
   isUK: false,
   statsDestination: 'statsDestination',
-  previousPath: 'http://www.example.com',
   origin: 'origin',
   canonicalLink: 'https://www.bbc.com/pidgin/51536047',
 };
@@ -392,7 +391,6 @@ describe('ATIAnalytics params', () => {
         requestContext: {
           ...requestContext,
           pageType: ARTICLE_PAGE,
-          previousPath: '',
         },
         serviceContext,
         atiData: articlePageAnalyticsData,
@@ -478,7 +476,6 @@ describe('ATIAnalytics params', () => {
           'Aminat Yusuf: Tips to pass exam - Overall LASU best graduate drop update',
         libraryVersion: 'simorgh',
         platform: 'canonical',
-        previousPath: 'http://www.example.com',
         producerId: 'atiAnalyticsProducerId',
         service: 'pidgin',
         statsDestination: 'statsDestination',
@@ -511,7 +508,6 @@ describe('ATIAnalytics params', () => {
         libraryVersion: 'simorgh',
         nationsProducer: null,
         platform: 'canonical',
-        previousPath: 'http://www.example.com',
         producerId: 'atiAnalyticsProducerId',
         service: 'pidgin',
         statsDestination: 'statsDestination',
@@ -572,7 +568,6 @@ describe('ATIAnalytics params', () => {
         pageTitle:
           '¿Qué es el albur en México y cómo puedes saber si te están "albureando"? - BBC News Mundo',
         platform: 'canonical',
-        previousPath: 'http://www.example.com',
         producerId: 'atiAnalyticsProducerId',
         service: 'pidgin',
         statsDestination: 'statsDestination',
@@ -610,7 +605,6 @@ describe('ATIAnalytics params', () => {
         pageTitle:
           'Río 2016, el antes y el ahora: cómo ha cambiado la ropa deportiva en más de un siglo de juegos olímpicos - BBC News Mundo',
         platform: 'canonical',
-        previousPath: 'http://www.example.com',
         producerId: 'atiAnalyticsProducerId',
         service: 'pidgin',
         statsDestination: 'statsDestination',
@@ -641,7 +635,6 @@ describe('ATIAnalytics params', () => {
         pageIdentifier: 'kyrgyz.page',
         pageTitle: 'pageTitle',
         platform: 'canonical',
-        previousPath: 'http://www.example.com',
         producerId: 'atiAnalyticsProducerId',
         service: 'pidgin',
         statsDestination: 'statsDestination',

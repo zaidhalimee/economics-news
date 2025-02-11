@@ -335,7 +335,7 @@ describe('Chartbeat utilities', () => {
           env: 'live',
           service: 'news',
           origin: 'bbc.com',
-          previousPath: '/previous-path',
+          
           contentType: 'New Article',
         };
 
@@ -365,7 +365,7 @@ describe('Chartbeat utilities', () => {
           env: 'test',
           service: 'news',
           origin: 'test.bbc.com',
-          previousPath: '/previous-path',
+          
         };
 
         const expectedConfig = {
@@ -403,7 +403,7 @@ describe('Chartbeat utilities', () => {
           env: 'live',
           service: 'afrique',
           origin: 'bbc.com',
-          previousPath: '/previous-path',
+          
         };
 
         const expectedConfig = {
@@ -437,7 +437,7 @@ describe('Chartbeat utilities', () => {
           env: 'test',
           service: 'korean',
           origin: 'test.bbc.com',
-          previousPath: '/previous-path',
+          
         };
 
         const expectedConfig = {
@@ -468,7 +468,7 @@ describe('Chartbeat utilities', () => {
           env: 'live',
           service: 'mundo',
           origin: 'bbc.com',
-          previousPath: '/previous-path',
+          
         };
 
         const expectedConfig = {
@@ -500,7 +500,7 @@ describe('Chartbeat utilities', () => {
           env: 'test',
           service: 'mundo',
           origin: 'test.bbc.com',
-          previousPath: '/previous-path',
+          
         };
 
         const expectedConfig = {
@@ -697,7 +697,7 @@ describe('Chartbeat utilities', () => {
         env: 'live',
         service: 'pashto',
         origin: 'bbc.com',
-        previousPath: '/previous-path',
+        
         title: 'OnDemand TV Page Title',
       };
 
@@ -730,7 +730,7 @@ describe('Chartbeat utilities', () => {
         env: 'live',
         service: 'arabic',
         origin: 'bbc.com',
-        previousPath: '/previous-path',
+        
         title: 'Podcast Page Title',
       };
 
@@ -763,7 +763,7 @@ describe('Chartbeat utilities', () => {
         env: 'live',
         service: 'arabic',
         origin: 'bbc.com',
-        previousPath: '/previous-path',
+        
         title: 'Audio Page Title',
       };
 
@@ -795,7 +795,7 @@ describe('Chartbeat utilities', () => {
         env: 'test',
         service: 'pidgin',
         origin: 'test.bbc.com',
-        previousPath: '/previous-path',
+        
       };
 
       const expectedConfig = {
@@ -826,7 +826,7 @@ describe('Chartbeat utilities', () => {
         env: 'live',
         service: 'pidgin',
         origin: 'bbc.com',
-        previousPath: '/previous-path',
+        
       };
 
       const expectedConfig = {
@@ -857,7 +857,7 @@ describe('Chartbeat utilities', () => {
         env: 'test',
         service: 'korean',
         origin: 'test.bbc.com',
-        previousPath: '/previous-path',
+        
       };
 
       const expectedConfig = {
@@ -887,7 +887,7 @@ describe('Chartbeat utilities', () => {
         env: 'test',
         service: 'afrique',
         origin: 'test.bbc.com',
-        previousPath: '/previous-path',
+        
         title: 'This is a Feature Index page title',
       };
 
@@ -911,23 +911,6 @@ describe('Chartbeat utilities', () => {
       );
 
       expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
-    });
-
-    it('should return null for virtualReferrer when there is no previousPath', () => {
-      // @ts-expect-error testing partial data to ensure behaviour is as expected
-      const fixtureData: GetConfigProps = {
-        isAmp: false,
-        platform: 'canonical',
-        pageType: FRONT_PAGE,
-        brandName: 'BBC-News',
-        chartbeatDomain: 'bbc.co.uk',
-        env: 'test',
-        service: 'news',
-        origin: 'test.bbc.com',
-      };
-
-      const chartbeatConfig = getConfig(fixtureData);
-      expect(chartbeatConfig.virtualReferrer).toBeNull();
     });
 
     it('should return null for virtualReferrer when isOnClient is false', () => {

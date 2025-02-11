@@ -176,7 +176,7 @@ export const getHref = platform => {
   return null;
 };
 
-export const getReferrer = (platform, origin, previousPath) => {
+export const getReferrer = platform => {
   if (platform === 'amp') {
     /* On AMP, `\${documentReferrer}` is an amp analytics variable that resolves
        to a `document.referrer` equivalent as the window document is undefined on amp pages.
@@ -185,46 +185,11 @@ export const getReferrer = (platform, origin, previousPath) => {
     return `\${documentReferrer}`;
   }
 
-  if (onClient() && (document.referrer || previousPath)) {
-    const referrer = previousPath
-      ? `${origin}${previousPath}`
-      : document.referrer;
-    return referrer;
+  if (onClient() && document.referrer) {
+    return document.referrer;
   }
 
   return null;
-};
-
-export const getAtUserId = () => {
-  if (!onClient()) return null;
-
-  // Users accessing the site on opera "extreme data saving mode" have the pages rendered by an intermediate service
-  // Attempting to track these users is just tracking that proxy, causing all opera mini visitors to have the same id
-  if (isOperaProxy()) return null;
-
-  const cookieName = 'atuserid';
-  let cookie = Cookie.get(cookieName);
-  const expires = 397; // expires in 13 months
-
-  if (cookie) {
-    try {
-      cookie = JSON.parse(cookie);
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error);
-      cookie = null;
-    }
-  }
-
-  const val = path(['val'], cookie) || uuid();
-
-  Cookie.set(cookieName, JSON.stringify({ val }), {
-    expires,
-    path: '/',
-    secure: true,
-  });
-
-  return val;
 };
 
 export const sanitise = initialString =>

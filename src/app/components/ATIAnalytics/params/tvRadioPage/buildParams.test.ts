@@ -40,7 +40,6 @@ const requestContext: RequestContextProps = {
   platform: 'canonical',
   isUK: false,
   statsDestination: 'statsDestination',
-  previousPath: 'previousPath',
   origin: 'origin',
 };
 

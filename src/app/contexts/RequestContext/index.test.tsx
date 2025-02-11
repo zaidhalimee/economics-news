@@ -56,7 +56,6 @@ const input = {
   service: 'service',
   statusCode: 200,
   pathname: '/current-path',
-  previousPath: '/previous-path',
   variant: 'simp',
   showAdsBasedOnLocation: true,
   mvtExperiments: [{ experimentName: 'foo', variation: 'bar' }],
@@ -80,8 +79,8 @@ const expectedOutput = {
   statsDestination: 'getStatsDestination',
   statsPageIdentifier: 'getStatsPageIdentifier',
   statusCode: 200,
-  previousPath: '/previous-path',
-  canonicalLink: 'canonicalLink',
+
+  anonicalLink: 'canonicalLink',
   ampLink: 'ampLink',
   canonicalUkLink: 'canonicalUkLink',
   ampUkLink: 'ampUkLink',
