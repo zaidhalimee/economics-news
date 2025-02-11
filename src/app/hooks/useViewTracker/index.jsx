@@ -11,6 +11,10 @@ const EVENT_TYPE = 'view';
 const VIEWED_DURATION_MS = 1000;
 const MIN_VIEWED_PERCENT = 0.5;
 
+/**
+ *
+ * @returns {Ref<HTMLElement> | undefined}
+ */
 const useViewTracker = (props = {}) => {
   const componentName = props?.componentName;
   const format = props?.format;
