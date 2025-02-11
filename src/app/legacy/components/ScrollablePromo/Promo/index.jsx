@@ -127,7 +127,9 @@ const Promo = ({ block, experimentVariant, onClick }) => {
         ],
         block,
       );
-      href = pathOr('', ['locators', 'canonicalUrl'], block);
+      href = block.locators
+        ? pathOr('', ['locators', 'canonicalUrl'], block)
+        : `https://www.bbc.com${block.destinationUrl}`;
       isLive = block.isLive;
       break;
     case 'B':
@@ -160,6 +162,7 @@ const Promo = ({ block, experimentVariant, onClick }) => {
       break;
   }
   console.log(
+    'in Promo.index',
     'title',
     title,
     'href',
