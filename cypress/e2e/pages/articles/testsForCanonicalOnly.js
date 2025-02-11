@@ -8,11 +8,7 @@ import { getBlockData, getBlockByType, getVideoEmbedUrl } from './helpers';
 const serviceHasCaption = service => service === 'news';
 
 // For testing features that may differ across services but share a common logic e.g. translated strings.
-export const testsThatFollowSmokeTestConfigForCanonicalOnly = ({
-  service,
-  pageType,
-  variant,
-}) =>
+export default ({ service, pageType, variant = 'default' }) =>
   describe(`Canonical Tests for ${service} ${pageType}`, () => {
     if (appToggles.chartbeatAnalytics.enabled) {
       describe('Chartbeat', () => {
@@ -142,7 +138,7 @@ export const testsThatFollowSmokeTestConfigForCanonicalOnly = ({
         });
       });
       if (service === 'pidgin') {
-        it('should render an iframe with a valid URL when a user clicks play', () => {
+        it('should render a media player with a valid embed URL when a user clicks play', () => {
           cy.window().then(win => {
             const body = win.SIMORGH_DATA.pageData;
             const media = getBlockData('video', body);
