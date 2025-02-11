@@ -242,7 +242,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       <ChartbeatAnalytics
         sectionName={pageData?.relatedContent?.section?.name}
         title={headline}
-        authors={hasByline ? bylineLinkedData.authorName : undefined}
+        {...(hasByline && { authors: bylineLinkedData.authorName })}
       />
       <ComscoreAnalytics />
       <NielsenAnalytics />
