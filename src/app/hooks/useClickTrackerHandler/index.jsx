@@ -1,14 +1,13 @@
-/* eslint-disable import/order */
 /* eslint-disable no-console */
 import { useContext, useCallback, useState } from 'react';
 import { buildATIEventTrackUrl } from '#app/components/ATIAnalytics/atiUrl';
+import { RequestContext } from '#app/contexts/RequestContext';
 import { EventTrackingContext } from '../../contexts/EventTrackingContext';
 import useTrackingToggle from '../useTrackingToggle';
 import OPTIMIZELY_CONFIG from '../../lib/config/optimizely';
 import { sendEventBeacon } from '../../components/ATIAnalytics/beacon/index';
 import { ServiceContext } from '../../contexts/ServiceContext';
 import { isValidClick } from './clickTypes';
-import { RequestContext } from '#app/contexts/RequestContext';
 
 const EVENT_TYPE = 'click';
 export const LITE_ATI_TRACKING = 'data-lite-ati-tracking';

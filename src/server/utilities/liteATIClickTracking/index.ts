@@ -2,7 +2,6 @@ export default () => {
   window.addEventListener('load', () => {
     document.addEventListener('click', (event: MouseEvent) => {
       const targetElement = event.target as HTMLElement;
-      // eslint-disable-next-line no-undef
       if (targetElement?.tagName === 'A') {
         event.stopPropagation();
         event.preventDefault();
