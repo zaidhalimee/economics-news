@@ -85,6 +85,13 @@ const LabelComponent = styled.strong`
         margin-${dir === 'ltr' ? `left` : `right`}: 0;
     }
 `}
+  ${({ experimentVariant }) =>
+    experimentVariant &&
+    `
+    display: flex;
+    align-items: center;
+    height: ${GEL_SPACING_QUAD};
+  `}
 `;
 
 const ScrollablePromo = ({
