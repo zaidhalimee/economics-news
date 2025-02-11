@@ -11,6 +11,7 @@ import VisuallyHiddenText from '../../VisuallyHiddenText';
 import { ServiceContext } from '../../../contexts/ServiceContext';
 import { RequestContext } from '../../../contexts/RequestContext';
 import LiveLabel from '../../LiveLabel';
+import styles from './index.styles';
 
 const CurationPromo = ({
   id,
@@ -62,7 +63,7 @@ const CurationPromo = ({
           )}
         </Promo.Image>
       )}
-      <Promo.Heading css={{ marginTop: '400px' }} as={`h${headingLevel}`}>
+      <Promo.Heading css={styles.Promo} as={`h${headingLevel}`}>
         {isMedia ? (
           <Promo.A href={link} aria-labelledby={id}>
             <span id={id} role="text">
