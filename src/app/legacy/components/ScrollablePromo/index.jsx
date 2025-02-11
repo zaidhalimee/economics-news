@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import {
   GEL_SPACING,
   GEL_SPACING_DBL,
+  GEL_SPACING_QUAD,
 } from '#psammead/gel-foundations/src/spacings';
 
 import { getDoublePica } from '#psammead/gel-foundations/src/typography';
@@ -14,6 +15,7 @@ import tail from 'ramda/src/tail';
 import {
   GEL_GROUP_0_SCREEN_WIDTH_MIN,
   GEL_GROUP_2_SCREEN_WIDTH_MIN,
+  GEL_GROUP_3_SCREEN_WIDTH_MAX,
   GEL_GROUP_4_SCREEN_WIDTH_MIN,
 } from '#psammead/gel-foundations/src/breakpoints';
 import { GridItemMediumNoMargin } from '#components/Grid';
@@ -35,10 +37,26 @@ const PromoWrapper = styled.div`
   }
 `;
 
+const ScrollablePromoContainer = styled.div`
+  background: #f6f6f6;
+  padding: ${GEL_SPACING};
+  display: flex;
+  overflow-x: auto;
+  ${({ experimentVariant }) =>
+    experimentVariant !== 'none' &&
+    `
+    @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MAX}){
+      display: none;
+    }
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+  `}
+`;
+
 const LabelComponent = styled.strong`
-  display: block;
   ${({ script }) => script && getDoublePica(script)};
   ${({ service }) => getSansRegular(service)}
+
   margin-bottom: ${GEL_SPACING_DBL};
   color: ${({ theme }) =>
     theme.isDarkUi ? theme.palette.GREY_2 : theme.palette.SHADOW};
@@ -55,16 +73,28 @@ const LabelComponent = styled.strong`
         margin-${dir === 'ltr' ? `left` : `right`}: 0;
     }
 `}
+  ${({ experimentVariant }) =>
+    experimentVariant &&
+    `
+    display: flex;
+    align-items: center;
+    height: ${GEL_SPACING_QUAD};
+  `}
 `;
 
-const ScrollablePromo = ({ blocks, blockGroupIndex = null }) => {
-  const { script, service, dir, translations } = useContext(ServiceContext);
-
+const ScrollablePromo = ({
+  blocks,
+  blockGroupIndex = null,
+  experimentVariant = 'none',
+}) => {
+  const { script, service, dir, translations, mostRead } =
+    useContext(ServiceContext);
+  console.log('Blocks in scrollable promo:', blocks, blocks.type);
   const eventTrackingData = {
     componentName: `edoj${blockGroupIndex}`,
     format: 'CHD=edoj',
   };
-
+  console.log('experimentVariant:', experimentVariant);
   const viewRef = useViewTracker(eventTrackingData);
   const handleClickTracking = useClickTrackerHandler(eventTrackingData);
 
@@ -72,22 +102,34 @@ const ScrollablePromo = ({ blocks, blockGroupIndex = null }) => {
     return null;
   }
 
-  const title =
-    blocks[0].type === 'title' &&
-    path(
-      ['0', 'model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'text'],
-      blocks,
-    );
-
+  let title;
+  if (experimentVariant === 'A') {
+    // title = `${translations.topStoriesTitle || 'Top Stories'} - `;
+    title = translations.topStoriesTitle || 'Top Stories';
+  } else if (experimentVariant === 'B') {
+    // title = `${mostRead.header || 'Most Read'} - `;
+    title = mostRead.header || 'Most Read';
+  } else {
+    title =
+      blocks[0].type === 'title' &&
+      path(
+        ['0', 'model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'text'],
+        blocks,
+      );
+  }
   const blocksWithoutTitle = blocks[0].type === 'title' ? tail(blocks) : blocks;
 
   const isSingleItem = blocksWithoutTitle.length === 1;
 
-  const ariaLabel = title && idSanitiser(title);
+  const ariaLabel =
+    title &&
+    idSanitiser(`${title}${experimentVariant !== 'none' ? ' scrollable' : ''}`);
 
   const a11yAttributes = {
-    as: 'section',
-    role: 'region',
+    ...(experimentVariant !== 'none' && {
+      as: 'section',
+      role: 'region',
+    }),
     ...(ariaLabel
       ? { 'aria-labelledby': ariaLabel }
       : {
@@ -98,32 +140,46 @@ const ScrollablePromo = ({ blocks, blockGroupIndex = null }) => {
           ),
         }),
   };
-
   return (
-    <GridItemMediumNoMargin {...a11yAttributes}>
-      {title && (
-        <LabelComponent
-          id={ariaLabel}
-          data-testid="eoj-recommendations-heading"
-          script={script}
-          service={service}
-          dir={dir}
-        >
-          {title}
-        </LabelComponent>
-      )}
-      {isSingleItem ? (
-        <PromoWrapper dir={dir} ref={viewRef}>
-          <Promo block={blocksWithoutTitle[0]} onClick={handleClickTracking} />
-        </PromoWrapper>
-      ) : (
-        <PromoList
-          blocks={blocksWithoutTitle}
-          viewTracker={viewRef}
-          onClick={handleClickTracking}
-        />
-      )}
-    </GridItemMediumNoMargin>
+    <ScrollablePromoContainer experimentVariant={experimentVariant}>
+      <GridItemMediumNoMargin {...a11yAttributes}>
+        {title && (
+          <LabelComponent
+            id={ariaLabel}
+            data-testid="eoj-recommendations-heading"
+            script={script}
+            service={service}
+            dir={dir}
+            experimentVariant={experimentVariant}
+          >
+            {title}
+          </LabelComponent>
+        )}
+        {experimentVariant !== 'none' && (
+          <PromoList
+            blocks={blocks}
+            experimentVariant={experimentVariant}
+            viewTracker={viewRef}
+            onClick={handleClickTracking}
+          />
+        )}
+        {experimentVariant === 'none' && isSingleItem && (
+          <PromoWrapper dir={dir} ref={viewRef}>
+            <Promo
+              block={blocksWithoutTitle[0]}
+              onClick={handleClickTracking}
+            />
+          </PromoWrapper>
+        )}
+        {experimentVariant === 'none' && !isSingleItem && (
+          <PromoList
+            blocks={blocksWithoutTitle}
+            viewTracker={viewRef}
+            onClick={handleClickTracking}
+          />
+        )}
+      </GridItemMediumNoMargin>
+    </ScrollablePromoContainer>
   );
 };
 
