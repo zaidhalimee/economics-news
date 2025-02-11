@@ -77,7 +77,6 @@ const PageLayoutWrapper = ({
     experimentVariant,
   };
 
-  console.log('mostReadItems', mostReadItems, 'topStories', topStories);
   const isErrorPage = ![200].includes(status) || !status;
   const pageType = pageData?.metadata?.type;
   const reportingPageType = pageType?.replace(/ /g, '');
