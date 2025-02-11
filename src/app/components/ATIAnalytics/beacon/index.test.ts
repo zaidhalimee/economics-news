@@ -99,6 +99,22 @@ describe('beacon', () => {
           true,
         );
       });
+
+      it('should resolve reverbParams to null when Reverb is disabled for a service', () => {
+        sendEventBeacon({
+          type: 'click',
+          service: 'news',
+          componentName: 'component',
+          pageIdentifier: 'pageIdentifier',
+          detailedPlacement: 'detailedPlacement',
+          useReverb: false,
+        });
+
+        const reverbParams = sendBeaconSpy.mock.calls[0][1];
+
+        expect(sendBeaconSpy).toHaveBeenCalledTimes(1);
+        expect(reverbParams).toBeNull();
+      });
     });
   });
 });

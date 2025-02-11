@@ -12,7 +12,8 @@ const VIEWED_DURATION_MS = 1000;
 const MIN_VIEWED_PERCENT = 0.5;
 
 /**
- * @returns {LegacyRef<T>} A function to observe the element for view tracking.
+ *
+ * @returns {Ref<HTMLElement> | undefined}
  */
 const useViewTracker = (props = {}) => {
   const componentName = props?.componentName;

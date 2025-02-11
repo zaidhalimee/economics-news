@@ -86,13 +86,6 @@ export const service: DefaultServiceConfig = {
         audioPlayer: 'Audio player',
         videoPlayer: 'Video player',
       },
-      articlePage: {
-        jumpToTitle: {
-          variation_1: 'پر جائیں',
-          variation_2: 'بی بی سی نیوز اردو کی مدد سے مزید جانیے',
-          variation_3: 'بی بی سی اردو نیوز سے مزید',
-        },
-      },
       liveExperiencePage: {
         liveLabel: 'لائیو',
         liveCoverage: 'لائیو کوریج',
