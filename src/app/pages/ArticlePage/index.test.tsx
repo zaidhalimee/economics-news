@@ -827,7 +827,7 @@ describe('Article Page', () => {
             timeUpdated: '2018-01-01T14:00:00.000Z',
           },
         },
-        {},
+        undefined,
       );
     });
 
@@ -871,7 +871,7 @@ describe('Article Page', () => {
             timeUpdated: '2018-01-01T14:00:00.000Z',
           },
         },
-        {},
+        undefined,
       );
     });
   });
