@@ -185,16 +185,16 @@ const ArticlePage = () => {
  * Example 5 - NEW - Log 1 click events for Lite site.
  * The new useATIClickTrackerHandler() hook will detect whether a canonical or lite site has been requested, and will return the correct atiTracking method as such:
  * If on a canonical site, a react onClick prop will be returned with a callback containing the necessary ATI logic.
- * If on a lite site, a atiTracking url will be returned.
+ * If on a lite site, an atiTracking url will be returned.
  */
 
 const Promo = () => {
-  const trackingProp = useATIClickTrackerHandler({
+  const atiClickTrackerHandler = useATIClickTrackerHandler({
     componentName: 'promo',
   });
 
   return (
-    <div {...trackingProp}>
+    <div {...atiClickTrackerHandler}>
       <button>Button 1</button>
       <button>Button 2</button>
       <button>Button 3</button>

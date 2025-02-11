@@ -1,6 +1,6 @@
 /* eslint-disable react/no-danger */
 import React, { ReactElement, PropsWithChildren } from 'react';
-import trackingScript from '#src/server/utilities/liteATIClickTracking';
+import liteATIClickTracking from '#src/server/utilities/liteATIClickTracking';
 import { BaseRendererProps } from './types';
 
 interface Props extends BaseRendererProps {
@@ -27,7 +27,7 @@ export default function LitePageRenderer({
         <style dangerouslySetInnerHTML={{ __html: styles }} />
         <script
           dangerouslySetInnerHTML={{
-            __html: `(${trackingScript.toString()})()`,
+            __html: `(${liteATIClickTracking.toString()})()`,
           }}
         />
       </head>

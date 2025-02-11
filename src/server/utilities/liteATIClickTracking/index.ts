@@ -1,4 +1,4 @@
-export default function trackingScript() {
+export default () => {
   window.addEventListener('load', () => {
     document.addEventListener('click', (event: MouseEvent) => {
       const targetElement = event.target as HTMLElement;
@@ -84,7 +84,6 @@ export default function trackingScript() {
           );
         }
 
-        // eslint-disable-next-line no-undef -- This is provided in a helmet script
         window.sendBeaconLite(clientSideAtiURL);
 
         window.location.assign(nextPageUrl);

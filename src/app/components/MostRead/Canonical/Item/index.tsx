@@ -46,14 +46,14 @@ export const MostReadLink = ({
   size,
   eventTrackingData,
 }: PropsWithChildren<MostReadLinkProps>) => {
-  const clickTrackerHandlerProp = useATIClickTrackerHandler(eventTrackingData);
+  const atiClickTrackerHandler = useATIClickTrackerHandler(eventTrackingData);
 
   return (
     <div css={getItemCss({ dir, size })} dir={dir}>
       <a
         css={[styles.link, size === 'default' && styles.defaultLink]}
         href={href}
-        {...clickTrackerHandlerProp}
+        {...atiClickTrackerHandler}
       >
         {title}
       </a>
