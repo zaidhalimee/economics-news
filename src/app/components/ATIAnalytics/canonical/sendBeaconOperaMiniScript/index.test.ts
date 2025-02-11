@@ -38,6 +38,7 @@ describe('sendBeaconOperaMiniScript', () => {
   afterEach(() => {
     windowSpy.mockRestore();
     XMLHttpRequestSpy.mockRestore();
+    getReferrerSpy.mockRestore();
     jest.clearAllMocks();
   });
 
