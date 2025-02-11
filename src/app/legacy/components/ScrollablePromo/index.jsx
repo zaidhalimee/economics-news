@@ -5,7 +5,10 @@ import {
   GEL_SPACING_QUAD,
 } from '#psammead/gel-foundations/src/spacings';
 
-import { getDoublePica } from '#psammead/gel-foundations/src/typography';
+import {
+  getDoublePica,
+  getBrevier,
+} from '#psammead/gel-foundations/src/typography';
 import { getSansRegular } from '#psammead/psammead-styles/src/font-styles';
 import styled from '@emotion/styled';
 import path from 'ramda/src/path';
@@ -54,7 +57,11 @@ const ScrollablePromoContainer = styled.div`
 `;
 
 const LabelComponent = styled.strong`
-  ${({ script }) => script && getDoublePica(script)};
+  ${({ script, experimentVariant }) =>
+    script &&
+    (experimentVariant && experimentVariant !== 'none'
+      ? getBrevier(script)
+      : getDoublePica(script))};
   ${({ service }) => getSansRegular(service)}
 
   margin-bottom: ${GEL_SPACING_DBL};
@@ -73,13 +80,6 @@ const LabelComponent = styled.strong`
         margin-${dir === 'ltr' ? `left` : `right`}: 0;
     }
 `}
-  ${({ experimentVariant }) =>
-    experimentVariant &&
-    `
-    display: flex;
-    align-items: center;
-    height: ${GEL_SPACING_QUAD};
-  `}
 `;
 
 const ScrollablePromo = ({
@@ -89,7 +89,6 @@ const ScrollablePromo = ({
 }) => {
   const { script, service, dir, translations, mostRead } =
     useContext(ServiceContext);
-  // console.log('Blocks in scrollable promo:', blocks, blocks.type);
   const eventTrackingData = {
     componentName: `edoj${blockGroupIndex}`,
     format: 'CHD=edoj',

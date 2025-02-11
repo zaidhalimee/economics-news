@@ -72,6 +72,7 @@ const PromoBox = styled.div`
     width: 12.6875rem;
   }
   ${({ experimentVariant }) =>
+    experimentVariant &&
     experimentVariant !== 'none' &&
     `
       margin-bottom: 0;
