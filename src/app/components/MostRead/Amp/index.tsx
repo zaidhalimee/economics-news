@@ -75,18 +75,11 @@ const AmpMostRead = ({ endpoint, size = 'default' }: AmpMostReadProps) => {
         width="300"
         height="50"
       >
-        <p
-          css={styles.paragraph}
-          // @ts-expect-error - fallback is an AMP specific attribute
-          fallback=""
-        >
+        <p css={styles.paragraph} fallback="">
           {fallbackText}
         </p>
 
-        <template
-          // @ts-expect-error - type is an AMP specific attribute in this context
-          type="amp-mustache"
-        >
+        <template type="amp-mustache">
           <MostReadItemWrapper dir={direction} columnLayout="oneColumn">
             <MostReadRank
               service={service}

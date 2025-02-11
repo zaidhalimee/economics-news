@@ -1,5 +1,3 @@
-import type { JSX } from 'react';
-
 export interface BrandPalette {
   BRAND_BACKGROUND: string;
   BRAND_LOGO: string;

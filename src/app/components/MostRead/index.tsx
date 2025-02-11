@@ -56,7 +56,7 @@ const AmpMostRead = ({
   size: Size;
 }) =>
   mostReadAmpPageTypes.includes(pageType) ? (
-    <MostReadSection {...(className ? { className } : undefined)}>
+    <MostReadSection {...(className && { className })}>
       <MostReadSectionLabel
         mobileDivider={mobileDivider}
         backgroundColor={headingBackgroundColour}

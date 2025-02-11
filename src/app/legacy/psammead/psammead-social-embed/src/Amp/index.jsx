@@ -11,7 +11,7 @@ const Instagram = ({ id }) => (
       />
     </Helmet>
     <amp-instagram
-      data-captioned="true"
+      data-captioned
       data-shortcode={id}
       height="1"
       layout="responsive"
