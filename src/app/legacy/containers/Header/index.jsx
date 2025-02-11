@@ -43,7 +43,7 @@ const Header = ({ brandRef, borderBottom, skipLink, scriptLink, linkId }) => {
   );
 };
 
-const HeaderContainer = () => {
+const HeaderContainer = propsForOJExperiment => {
   const { isAmp, isApp, pageType, isLite } = useContext(RequestContext);
   const { service, script, translations, dir, scriptLink, lang, serviceLang } =
     useContext(ServiceContext);
@@ -101,7 +101,7 @@ const HeaderContainer = () => {
         />
       )}
       {renderLiteSiteCTA && <LiteSiteCta />}
-      <NavigationContainer />
+      <NavigationContainer propsForOJExperiment={propsForOJExperiment} />
     </header>
   );
 };
