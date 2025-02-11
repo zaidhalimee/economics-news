@@ -50,7 +50,7 @@ const renderListItems = (
 
 const NavigationContainer = ({ propsForOJExperiment }) => {
   const { isAmp, isLite } = useContext(RequestContext);
-
+  const { blocks, experimentVariant } = propsForOJExperiment;
   const { script, translations, navigation, service, dir } =
     useContext(ServiceContext);
 
