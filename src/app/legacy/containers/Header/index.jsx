@@ -3,7 +3,7 @@ import SkipLink from '#psammead/psammead-brand/src/SkipLink';
 import { RequestContext } from '#contexts/RequestContext';
 import useOperaMiniDetection from '#hooks/useOperaMiniDetection';
 import ScriptLink from '#app/components/Header/ScriptLink';
-import { ARTICLE_PAGE, HOME_PAGE } from '#app/routes/utils/pageTypes';
+import { ARTICLE_PAGE, HOME_PAGE, TOPIC_PAGE } from '#app/routes/utils/pageTypes';
 import LiteSiteCta from '#app/components/LiteSiteCta';
 import { liteEnabledServices } from '#app/components/LiteSiteCta/liteSiteConfig';
 import { ServiceContext } from '../../../contexts/ServiceContext';
@@ -72,7 +72,7 @@ const HeaderContainer = () => {
 
   if (scriptLink) {
     switch (true) {
-      case service === 'uzbek' && ![ARTICLE_PAGE, HOME_PAGE].includes(pageType):
+      case service === 'uzbek' && ![ARTICLE_PAGE, HOME_PAGE, TOPIC_PAGE].includes(pageType):
         shouldRenderScriptSwitch = false;
         break;
       default:
