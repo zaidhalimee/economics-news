@@ -57,7 +57,7 @@ const RelatedTopics = ({
         data-testid="related-topics"
         aria-labelledby="related-topics"
         role="complementary"
-        {...(className && { className })}
+        {...(className ? { className } : undefined)}
       >
         <StyledSectionLabel
           bar={bar}
