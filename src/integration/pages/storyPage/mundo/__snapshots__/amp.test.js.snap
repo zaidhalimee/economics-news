@@ -117,6 +117,7 @@ exports[`AMP Story Page Analytics ATI 1`] = `
 exports[`AMP Story Page Analytics chartbeat 1`] = `
 {
   "vars": {
+    "authors": "Redacción  ",
     "contentType": "STY",
     "domain": "test.bbc.co.uk",
     "sections": "Mundo, Mundo - STY",
