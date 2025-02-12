@@ -40,7 +40,6 @@ export const buildATIPageTrackPath = ({
   statsDestination,
   timePublished,
   timeUpdated,
-  origin,
   categoryName,
   campaigns,
   nationsProducer,
@@ -48,7 +47,7 @@ export const buildATIPageTrackPath = ({
   experimentVariant,
 }: ATIPageTrackingProps) => {
   const href = getHref(platform);
-  const referrer = getReferrer(platform, origin);
+  const referrer = getReferrer(platform);
   const campaignType = getCampaignType();
 
   // on AMP, variable substitutions are used in the value and they cannot be
@@ -268,7 +267,7 @@ export const buildATIPageTrackPath = ({
       // the ref param should always be the last param because ATI will interpret it as part of the referrer URL
       key: 'ref',
       description: 'referrer url',
-      value: getReferrer(platform, origin),
+      value: getReferrer(platform),
       wrap: false,
       // disable encoding for this parameter as ati does not appear to support
       // decoding of the ref parameter
@@ -431,14 +430,13 @@ export const buildReverbAnalyticsModel = ({
   pageTitle,
   platform,
   producerName,
-  origin,
   nationsProducer,
   statsDestination,
   timePublished,
   timeUpdated,
 }: ATIPageTrackingProps) => {
   const href = getHref(platform);
-  const referrer = getReferrer(platform, origin);
+  const referrer = getReferrer(platform);
 
   const aggregatedCampaigns = (Array.isArray(campaigns) ? campaigns : [])
     .map(({ campaignName }) => campaignName)

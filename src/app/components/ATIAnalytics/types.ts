@@ -140,7 +140,6 @@ export interface ATIPageTrackingProps {
   statsDestination?: string;
   timePublished?: string | null;
   timeUpdated?: string | null;
-  origin?: string;
   categoryName?: string | null;
   campaigns?: { campaignId?: string; campaignName?: string }[] | null;
   nationsProducer?: string | null;
