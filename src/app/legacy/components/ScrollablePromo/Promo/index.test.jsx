@@ -1,12 +1,21 @@
 import React from 'react';
 import { render } from '../../../../components/react-testing-library-with-providers';
-import { PromoSingleBlock, oneLinkWithTimestamp } from '../helpers/fixtureData';
+import {
+  PromoSingleBlock,
+  oneLinkWithTimestamp,
+  topStoriesBlocks,
+  mostReadBlocks,
+} from '../helpers/fixtureData';
 import Promo from '.';
 import { ServiceContextProvider } from '../../../../contexts/ServiceContext';
 
-const ScrollablePromo = ({ block }) => (
+const ScrollablePromo = ({ block, experimentVariant }) => (
   <ServiceContextProvider service="pidgin">
-    <Promo block={block} onClick={() => {}} />
+    <Promo
+      block={block}
+      onClick={() => {}}
+      experimentVariant={experimentVariant}
+    />
   </ServiceContextProvider>
 );
 
@@ -39,5 +48,32 @@ describe('ScrollablePromo', () => {
       <ScrollablePromo block={oneLinkWithTimestamp[0]} />,
     );
     expect(container.getElementsByTagName('time')[0]).toBeInTheDocument();
+  });
+
+  describe('OJ Top Bar Promo', () => {
+    it('it should display Top Stories content when experimentVariant is A', () => {
+      const { container } = render(
+        <ScrollablePromo block={topStoriesBlocks[0]} experimentVariant="A" />,
+      );
+      const expectedHeadline =
+        topStoriesBlocks[0].headlines.promoHeadline.blocks[0].model.blocks[0]
+          .model.text;
+      expect(container).toHaveTextContent(expectedHeadline);
+    });
+
+    it('it should display Most Read content when experimentVariant is B', () => {
+      const { container } = render(
+        <ScrollablePromo block={mostReadBlocks[0]} experimentVariant="B" />,
+      );
+      const expectedHeadline = mostReadBlocks[0].title;
+      expect(container).toHaveTextContent(expectedHeadline);
+    });
+
+    it('it should not display a timestamp when experimentVariant is A or B', () => {
+      const { queryByTestId } = render(
+        <ScrollablePromo block={topStoriesBlocks[0]} experimentVariant="B" />,
+      );
+      expect(queryByTestId('timestamp')).not.toBeInTheDocument();
+    });
   });
 });

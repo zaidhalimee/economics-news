@@ -192,7 +192,10 @@ const Promo = ({ block, experimentVariant, onClick }) => {
         {title}
       </StyledLink>
       {timestamp && !experimentVariant && (
-        <TimeStamp serviceDatetimeLocale={serviceDatetimeLocale}>
+        <TimeStamp
+          serviceDatetimeLocale={serviceDatetimeLocale}
+          data-testid="timestamp"
+        >
           {timestamp}
         </TimeStamp>
       )}
