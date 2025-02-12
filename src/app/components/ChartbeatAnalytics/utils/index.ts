@@ -214,6 +214,7 @@ export interface GetConfigProps {
   mediaPageType?: string;
   categoryName?: string;
   title: string;
+  authors?: string;
   taggings?: MetadataTaggings;
   contentType?: string;
   producer?: string;
@@ -234,6 +235,7 @@ export const getConfig = ({
   sectionName,
   categoryName,
   title,
+  authors,
   taggings,
   contentType,
   producer,
@@ -272,6 +274,7 @@ export const getConfig = ({
     sections,
     uid: chartbeatUID,
     title: analyticsTitle,
+    ...(authors && { authors }),
     virtualReferrer: referrer,
     ...(isAmp && { contentType: analyticsContentType }),
     ...(!isAmp && {

@@ -645,8 +645,8 @@ module.exports = () => ({
             enabled: true,
           },
           local: {
-            paths: [],
-            enabled: false,
+            paths: ['/arabic/topics/cwr9j7nv58nt'],
+            enabled: true,
           },
         },
         smoke: true,
@@ -4106,7 +4106,7 @@ module.exports = () => ({
               '/persian/iran-23231114', // CPS MAP with audio clip
               '/persian/iran/2016/09/160907_tc2_testmap1', // TC2 MAP with video clip
             ],
-            enabled: false,
+            enabled: true,
           },
         },
         smoke: true,
@@ -4271,8 +4271,8 @@ module.exports = () => ({
             enabled: true,
           },
           local: {
-            paths: ['/pidgin/topics/cnq68qvkjp1t'], // DO NOT ENABLE
-            enabled: false,
+            paths: ['/pidgin/topics/c95y35941vrt'],
+            enabled: true,
           },
         },
         smoke: true,
@@ -5088,19 +5088,19 @@ module.exports = () => ({
       topicPage: {
         environments: {
           live: {
-            paths: ['/serbian/lat/topics/c1gd303q6y6t'],
+            paths: ['/serbian/topics/c1gd303q6y6t/lat'],
             enabled: true,
           },
           test: {
-            paths: ['/serbian/lat/topics/c1gd303q6y6t'],
+            paths: ['/serbian/topics/c1gd303q6y6t/lat'],
             enabled: true,
           },
           local: {
-            paths: [''],
-            enabled: false,
+            paths: ['/serbian/topics/c1gd303q6y6t/lat'],
+            enabled: true,
           },
         },
-        smoke: false,
+        smoke: true,
       },
       mediaAssetPage: {
         environments: {
@@ -6328,7 +6328,6 @@ module.exports = () => ({
               '/thai/articles/c442rl3md0eo', // Article
               '/thai', // Front Page
               '/thai/popular/read', // Most Read
-              '/thai/23122810', // CPS MAP
               '/thai/international-23252840', // CPS PGL
               // '', // CPS STY
             ],
@@ -6339,7 +6338,6 @@ module.exports = () => ({
               '/thai/articles/c442rl3md0eo', // Article
               '/thai', // Front Page
               '/thai/popular/read', // Most Read
-              '/thai/23122810', // CPS MAP
               '/thai/thailand-49950038', // CPS PGL
             ],
             enabled: true,
