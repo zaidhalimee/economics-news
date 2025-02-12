@@ -361,6 +361,10 @@ export const service: DefaultServiceConfig = {
         url: '/marathi/topics/cl29j0epz13t',
       },
       {
+        title: 'सोपी गोष्ट',
+        url: '/marathi/topics/cpxrqmrke02t',
+      },
+      {
         title: 'लोकप्रिय',
         url: '/marathi/popular/read',
       },
