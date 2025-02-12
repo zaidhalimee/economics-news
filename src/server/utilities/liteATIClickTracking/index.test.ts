@@ -12,6 +12,8 @@ const dispatchClick = (targetElement: HTMLElement) => {
 };
 
 describe('Click tracking script', () => {
+  const originalWindowLocation = window.location;
+
   beforeAll(() => {
     jest.useFakeTimers().setSystemTime(new Date('2024-11-13T16:30:02.000Z'));
     let mockCookie = '';
@@ -34,8 +36,19 @@ describe('Click tracking script', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     document.cookie = '';
+    while (document.body.firstChild) {
+      document.body.removeChild(document.body.firstChild);
+    }
     window.sendBeaconLite = jest.fn();
     window.dispatchEvent(new Event('load'));
+  });
+
+  afterAll(() => {
+    Object.defineProperty(window, 'location', {
+      value: {
+        ...originalWindowLocation,
+      },
+    });
   });
 
   it('Does not call sendBeacon if the event has no data-ati-tracking parameter, but still redirects', () => {
