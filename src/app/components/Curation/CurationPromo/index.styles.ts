@@ -5,7 +5,7 @@ export default {
     css({
       ...(isLite && {
         [mq.GROUP_2_MAX_WIDTH]: {
-          marginTop: '48px',
+          marginTop: `${spacings.SEXTUPLE}rem`,
         },
       }),
     }),
