@@ -30,7 +30,7 @@ describe('Click tracking script', () => {
     });
     liteATIClickTracking();
   });
-  
+
   beforeEach(() => {
     jest.clearAllMocks();
     document.cookie = '';
@@ -57,7 +57,25 @@ describe('Click tracking script', () => {
     (crypto.randomUUID as jest.Mock).mockReturnValueOnce('randomUniqueId');
     dispatchClick(anchorElement);
     expect(document.cookie).toBe(
-      'atuserid={"val":"randomUniqueId"}; path=/; max-age=397; Secure;',
+      'atuserid=%7B%22val%22%3A%22randomUniqueId%22%7D; path=/; max-age=397; Secure;',
+    );
+  });
+
+  it('Does not overwrite content in atuserid cookie if it already exists', () => {
+    const anchorElement = document.createElement('a');
+    anchorElement.setAttribute(
+      LITE_ATI_TRACKING,
+      'https://logws1363.ati-host.net/?',
+    );
+
+    const oldCookieId = '22ea8f97e5-4c34-4d23-af1d-4d1789206639';
+
+    document.cookie = `atuserid=%7B%22name%22%3A%22atuserid%22%2C%22val%22%3A%${oldCookieId}%22%2C%22options%22%3A%7B%22end%22%3A%222026-03-11T10%3A23%3A55.442Z%22%2C%22path%22%3A%22%2F%22%7D%7D; path=/; max-age=397; Secure;`;
+    (crypto.randomUUID as jest.Mock).mockReturnValueOnce('newCookieId');
+    dispatchClick(anchorElement);
+
+    expect(document.cookie).toBe(
+      `atuserid=%7B%22name%22%3A%22atuserid%22%2C%22val%22%3A%${oldCookieId}%22%2C%22options%22%3A%7B%22end%22%3A%222026-03-11T10%3A23%3A55.442Z%22%2C%22path%22%3A%22%2F%22%7D%7D; path=/; max-age=397; Secure;`,
     );
   });
 

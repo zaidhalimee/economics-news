@@ -26,25 +26,26 @@ export default () => {
           const expires = 397; // expires in 13 months
           const cookiesForPage = `; ${document.cookie}`;
           const atUserIdCookie = cookiesForPage.split(`; ${cookieName}=`);
-          let atUserIdValue = null;
+          let user: { val: null | string } = { val: null };
 
           if (atUserIdCookie.length === 2) {
             const cookieInfo = atUserIdCookie.pop()?.split(';').shift();
 
             if (cookieInfo) {
-              const decodedCookie = decodeURI(cookieInfo);
-              const user = JSON.parse(decodedCookie);
-              atUserIdValue = user.val;
+              const decodedCookie = decodeURIComponent(cookieInfo);
+              user = JSON.parse(decodedCookie);
             }
           }
 
-          if (!atUserIdValue && crypto.randomUUID) {
-            atUserIdValue = crypto.randomUUID();
+          if (!user.val && crypto.randomUUID) {
+            user.val = crypto.randomUUID();
           }
 
-          const stringifiedCookieValue = JSON.stringify({ val: atUserIdValue });
-          if (atUserIdValue) {
-            document.cookie = `${cookieName}=${stringifiedCookieValue}; path=/; max-age=${expires}; Secure;`;
+          const stringifiedCookieValue = JSON.stringify(user);
+          const encodedCookieValue = encodeURIComponent(stringifiedCookieValue);
+
+          if (user.val) {
+            document.cookie = `${cookieName}=${encodedCookieValue}; path=/; max-age=${expires}; Secure;`;
           }
 
           const rValue = [
@@ -71,11 +72,11 @@ export default () => {
             );
           }
 
-          if (atUserIdValue) {
+          if (user.val) {
             clientSideAtiURL = clientSideAtiURL.concat(
               '&',
               'idclient=',
-              atUserIdValue,
+              user.val,
             );
           }
 
