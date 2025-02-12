@@ -40,11 +40,13 @@ describe('Click tracking script', () => {
 
   it('Does not call sendBeacon if the event has no data-ati-tracking parameter, but still redirects', () => {
     const anchorElement = document.createElement('a');
+    anchorElement.href = '/gahuza';
 
     dispatchClick(anchorElement);
 
     expect(window.sendBeaconLite).toHaveBeenCalledTimes(0);
-    expect(window.location.assign).toHaveBeenCalledTimes(1);
+    const nextPageUrl = (window.location.assign as jest.Mock).mock.calls[0][0];
+    expect(nextPageUrl).toContain('/gahuza');
   });
 
   it('Sets a new cookie if there is no atuserid cookie on the user browser', () => {
