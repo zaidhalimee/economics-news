@@ -37,7 +37,7 @@ export default () => {
             }
           }
 
-          if (!user.val && crypto.randomUUID) {
+          if (!user.val && crypto?.randomUUID) {
             user.val = crypto.randomUUID();
           }
 
