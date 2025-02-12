@@ -51,8 +51,7 @@ const styles = {
       maxWidth: `${IMAGE_WIDTH}px`,
       [mq.GROUP_3_MIN_WIDTH]: {
         maxWidth: `${IMAGE_WIDTH_GROUP_3_MIN_WIDTH}px`,
-        bottom: 0,
-        right: 0,
+        insetInlineEnd: 0,
         position: 'absolute',
       },
 
