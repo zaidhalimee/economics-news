@@ -87,10 +87,12 @@ const LabelComponent = styled.strong`
 `}
   ${({ experimentVariant }) =>
     experimentVariant &&
+    experimentVariant !== 'none' &&
     `
     display: flex;
     align-items: center;
     height: ${GEL_SPACING_QUAD};
+    margin-bottom: 0px;
   `}
 `;
 
