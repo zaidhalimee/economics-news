@@ -170,9 +170,9 @@ export default server => {
         process.cwd(),
         'data',
         service,
-        variant,
         'topics',
         id,
+        variant,
       );
       sendDataFile(res, `${dataFilePath}.json`, next);
     })
