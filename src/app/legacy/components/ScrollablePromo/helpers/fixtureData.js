@@ -1415,6 +1415,85 @@ export const mostReadBlocks = [
   },
 ];
 
+export const mostReadBlocksRTL = [
+  {
+    id: 'urn:bbc:optimo:asset:cn853yxv44jo',
+    rank: 1,
+    title:
+      'بين آمال كبيرة وحرية منشودة، كيف ترى السوريات واقعهن تحت الإدارة الجديدة في سوريا؟',
+    href: 'https://www.bbc.com/arabic/articles/cn853yxv44jo',
+    timestamp: '2025-01-07T16:53:04.539Z',
+  },
+  {
+    id: 'urn:bbc:optimo:asset:c15z87x5jgyo',
+    rank: 2,
+    title:
+      '"هذه أعظم هدية تقدمها الولايات المتحدة لإيران في الشرق الأوسط" – نيويورك تايمز',
+    href: 'https://www.bbc.com/arabic/articles/c15z87x5jgyo',
+    timestamp: '2025-02-12T11:51:48.534Z',
+  },
+  {
+    id: 'urn:bbc:optimo:asset:c4gq448lydeo',
+    rank: 3,
+    title: 'كيف نشأ حزب الله اللبناني وما دور حسن نصر الله فيه؟',
+    href: 'https://www.bbc.com/arabic/articles/c4gq448lydeo',
+    timestamp: '2024-09-24T14:33:17.802Z',
+  },
+  {
+    id: 'urn:bbc:optimo:asset:c8rx375k717o',
+    rank: 4,
+    title: '"السيدة زينب" في ريف دمشق: حكاية المقام والمنطقة',
+    href: 'https://www.bbc.com/arabic/articles/c8rx375k717o',
+    timestamp: '2024-11-11T13:49:19.090Z',
+  },
+  {
+    id: 'urn:bbc:optimo:asset:c70kdl05kn6o',
+    rank: 5,
+    title:
+      'مصادر لبي بي سي: قمة عربية خماسية في الرياض قد تعقد الأسبوع المقبل لمناقشة خطة ترامب بشأن غزة',
+    href: 'https://www.bbc.com/arabic/articles/c70kdl05kn6o',
+    timestamp: '2025-02-12T12:57:31.132Z',
+  },
+  {
+    id: 'urn:bbc:optimo:asset:c05lrp3g51mo',
+    rank: 6,
+    title:
+      'حماس تثمّن موقفي الأردن ومصر من "تهجير الفلسطينيين" بعد لقاء ترامب بالعاهل الأردني',
+    href: 'https://www.bbc.com/arabic/articles/c05lrp3g51mo',
+    timestamp: '2025-02-12T10:49:48.291Z',
+  },
+  {
+    id: 'urn:bbc:optimo:asset:crm7rlrkwmjo',
+    rank: 7,
+    title:
+      'كشف هوية محام سعودي عَمِل في سفارة بلاده في واشنطن وارتبط اسمه بانتحار طالبة سعودية عابرة جندرياً',
+    href: 'https://www.bbc.com/arabic/articles/crm7rlrkwmjo',
+    timestamp: '2025-02-11T06:25:10.978Z',
+  },
+  {
+    id: 'urn:bbc:optimo:asset:c2e7m8mv0dko',
+    rank: 8,
+    title: 'هل تنجح المساعي الإسرائيلية لضم الضفة الغربية في 2025؟',
+    href: 'https://www.bbc.com/arabic/articles/c2e7m8mv0dko',
+    timestamp: '2024-11-12T16:32:59.595Z',
+  },
+  {
+    id: 'urn:bbc:optimo:asset:c1e8l62ze7yo',
+    rank: 9,
+    title: 'انتصارات الموساد وإخفاقاته: أبرز عشر عمليات في تاريخه ',
+    href: 'https://www.bbc.com/arabic/articles/c1e8l62ze7yo',
+    timestamp: '2024-09-19T17:16:23.324Z',
+  },
+  {
+    id: 'urn:bbc:optimo:asset:cgj62j9n74yo',
+    rank: 10,
+    title:
+      '"صورة سوريا الحديثة"، و"مُحبة للسلع الفاخرة"، من هي أسماء الأخرس زوجة بشار الأسد؟',
+    href: 'https://www.bbc.com/arabic/articles/cgj62j9n74yo',
+    timestamp: '2024-12-10T03:09:53.831Z',
+  },
+];
+
 export const topStoriesBlocks = [
   {
     locators: {

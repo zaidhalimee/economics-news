@@ -14,6 +14,7 @@ import {
   topStoriesBlocks,
   topStoriesBlocksWithLiveItem,
   mostReadBlocks,
+  mostReadBlocksRTL,
 } from './helpers/fixtureData';
 
 const BackGround = styled.div`
@@ -82,7 +83,9 @@ export const ArabicText = () => (
 );
 
 export const WithTimestamp = (_, { service }) => (
-  <ScrollablePromoComponent data={oneLinkWithTimestamp} service={service} />
+  <BackGround>
+    <ScrollablePromoComponent data={oneLinkWithTimestamp} service={service} />
+  </BackGround>
 );
 
 export const OJTopBarTopStories = (_, { service }) => (
@@ -105,6 +108,14 @@ export const OJTopBarMostRead = (_, { service }) => (
   <ScrollablePromoComponent
     data={mostReadBlocks}
     service={service}
+    experimentVariant={'B'}
+  />
+);
+
+export const OJTopBarMostReadRTL = () => (
+  <ScrollablePromoComponent
+    data={mostReadBlocksRTL}
+    service="arabic"
     experimentVariant={'B'}
   />
 );
