@@ -24,12 +24,15 @@ import { ATIData, PageData } from '../types';
   .fn()
   .mockReturnValue('1970-01-01T00:00:00.000Z');
 
+jest
+  .spyOn(document, 'referrer', 'get')
+  .mockReturnValue('https://www.example.com');
+
 // @ts-expect-error - only partial data required for testing purposes
 const requestContext: RequestContextProps = {
   platform: 'canonical',
   isUK: false,
   statsDestination: 'statsDestination',
-  origin: 'origin',
   canonicalLink: 'https://www.bbc.com/pidgin/51536047',
 };
 
@@ -165,7 +168,7 @@ describe('ATIAnalytics params', () => {
         x3: '[atiAnalyticsAppName]',
         x4: '[pcm]',
         x5: '[http%3A%2F%2Flocalhost%2F]',
-        x6: '[originhttp%3A%2F%2Fwww.example.com]',
+        x6: '[https%3A%2F%2Fwww.example.com]',
         x7: '[article]',
         x8: '[simorgh]',
         x9: '[Aminat%20Yusuf:%20Tips%20to%20pass%20exam%20-%20Overall%20LASU%20best%20graduate%20drop%20update]',
@@ -175,7 +178,7 @@ describe('ATIAnalytics params', () => {
         x13: '[Nigeria~Education~Lagos%20state~Women]',
         x14: '[3d5d5e30-dd50-4041-96d5-c970b20005b9~6942cb29-9d3f-4c9c-9806-0a0578c286d6~d651d520-a675-4911-8832-1596f257000b~e45cb5f8-3c87-4ebd-ac1c-058e9be22862]',
         x17: '[Nigeria~Education~Lagos%20state~Women]',
-        ref: 'originhttp://www.example.com',
+        ref: 'https://www.example.com',
       };
 
       expect(parsedATIURLParams).toEqual(expectedATIURLParams);
@@ -205,7 +208,7 @@ describe('ATIAnalytics params', () => {
         x3: '[atiAnalyticsAppName]',
         x4: '[ha]',
         x5: '[http%3A%2F%2Flocalhost%2F]',
-        x6: '[originhttp%3A%2F%2Fwww.example.com]',
+        x6: '[https%3A%2F%2Fwww.example.com]',
         x7: '[article-sfv]',
         x8: '[simorgh]',
         x9: '[Kalli%20yadda%20ambaliya%20ta%20tagayyara%20wani%20yanki%20na%20Indiya]',
@@ -214,7 +217,7 @@ describe('ATIAnalytics params', () => {
         x13: '[Environment~Narendra+Modi~Nature~India~Severe+weather]',
         x14: '[0f37fb35-7f9e-4e49-b189-9d7f1d6fb11f~103fc7e4-3a8d-491c-9a75-3c37c299d48f~12e69b92-a7ba-4463-84e0-be107b9805d0~5a08f030-710f-4168-acee-67294a90fc75~9b16a6c2-7c16-42b7-bff7-6549579622e8]',
         x17: '[Environment~Narendra+Modi~Nature~India~Severe+weather]',
-        ref: 'originhttp://www.example.com',
+        ref: 'https://www.example.com',
       });
     });
 
@@ -235,6 +238,7 @@ describe('ATIAnalytics params', () => {
         p: 'service.page',
         r: '0x0x24x24',
         re: '1024x768',
+        ref: 'https://www.example.com',
         hl: '00-00-00',
         lng: 'en-US',
         x1: '[urn:bbc:cps:00000000-0000-0000-0000-000000000000]',
@@ -242,6 +246,7 @@ describe('ATIAnalytics params', () => {
         x3: '[atiAnalyticsAppName]',
         x4: '[language]',
         x5: '[http%3A%2F%2Flocalhost%2F]',
+        x6: '[https%3A%2F%2Fwww.example.com]',
         x7: '[index-home]',
         x8: '[simorgh]',
         x9: '[title%20-%20brandName]',
@@ -267,7 +272,7 @@ describe('ATIAnalytics params', () => {
         p: 'media::mundo.media.media_asset.41174775.page',
         r: '0x0x24x24',
         re: '1024x768',
-        ref: 'originhttp://www.example.com',
+        ref: 'https://www.example.com',
         s: '598285',
         s2: 'atiAnalyticsProducerId',
         x1: '[urn:bbc:cps:4d36f80b-8711-0b4e-8da0-ef76ae8ac470]',
@@ -275,7 +280,7 @@ describe('ATIAnalytics params', () => {
         x3: '[atiAnalyticsAppName]',
         x4: '[es]',
         x5: '[http%3A%2F%2Flocalhost%2F]',
-        x6: '[originhttp%3A%2F%2Fwww.example.com]',
+        x6: '[https%3A%2F%2Fwww.example.com]',
         x7: '[article-media-asset]',
         x8: '[simorgh]',
         x9: '[¿Qué%20es%20el%20albur%20en%20México%20y%20cómo%20puedes%20saber%20si%20te%20están%20"albureando"?%20-%20BBC%20News%20Mundo]',
@@ -307,7 +312,7 @@ describe('ATIAnalytics params', () => {
         p: 'sport::mundo.sport.photo_gallery.36935058.page',
         r: '0x0x24x24',
         re: '1024x768',
-        ref: 'originhttp://www.example.com',
+        ref: 'https://www.example.com',
         s: '598285',
         s2: 'atiAnalyticsProducerId',
         x1: '[urn:bbc:cps:curie:asset:08e22e90-7361-cd47-b586-7cb53fc5a012]',
@@ -315,7 +320,7 @@ describe('ATIAnalytics params', () => {
         x3: '[atiAnalyticsAppName]',
         x4: '[es]',
         x5: '[http%3A%2F%2Flocalhost%2F]',
-        x6: '[originhttp%3A%2F%2Fwww.example.com]',
+        x6: '[https%3A%2F%2Fwww.example.com]',
         x7: '[article-photo-gallery]',
         x8: '[simorgh]',
         x9: '[Río%202016,%20el%20antes%20y%20el%20ahora:%20cómo%20ha%20cambiado%20la%20ropa%20deportiva%20en%20más%20de%20un%20siglo%20de%20juegos%20olímpicos%20-%20BBC%20News%20Mundo]',
@@ -347,7 +352,7 @@ describe('ATIAnalytics params', () => {
         p: 'kyrgyz.page',
         r: '0x0x24x24',
         re: '1024x768',
-        ref: 'originhttp://www.example.com',
+        ref: 'https://www.example.com',
         hl: '00-00-00',
         lng: 'en-US',
         x1: '[urn:bbc:tipo:topic:cm7682qz7v1t]',
@@ -355,7 +360,7 @@ describe('ATIAnalytics params', () => {
         x3: '[atiAnalyticsAppName]',
         x4: '[pcm]',
         x5: '[http%3A%2F%2Flocalhost%2F]',
-        x6: '[originhttp%3A%2F%2Fwww.example.com]',
+        x6: '[https%3A%2F%2Fwww.example.com]',
         x7: '[index-home]',
         x8: '[simorgh]',
         x9: '[pageTitle]',
@@ -371,8 +376,8 @@ describe('ATIAnalytics params', () => {
 
       const params = Object.fromEntries(new URLSearchParams(atiUrl));
 
-      expect(params.x6).toBe('[originhttp%3A%2F%2Fwww.example.com]');
-      expect(params.ref).toBe('originhttp://www.example.com');
+      expect(params.x6).toBe('[https%3A%2F%2Fwww.example.com]');
+      expect(params.ref).toBe('https://www.example.com');
     });
 
     it('should have ref parameter as the last parameter, if referrer url exists', () => {
@@ -383,7 +388,7 @@ describe('ATIAnalytics params', () => {
       }) as string;
       const params = atiUrl.split('&');
 
-      expect(params.pop()).toEqual('ref=originhttp://www.example.com');
+      expect(params.pop()).toEqual('ref=https://www.example.com');
     });
 
     it('should not have ref and x6 parameters, if referrer url does not exist', () => {
@@ -470,7 +475,6 @@ describe('ATIAnalytics params', () => {
         ldpThingIds:
           '3d5d5e30-dd50-4041-96d5-c970b20005b9~6942cb29-9d3f-4c9c-9806-0a0578c286d6~d651d520-a675-4911-8832-1596f257000b~e45cb5f8-3c87-4ebd-ac1c-058e9be22862',
         ldpThingLabels: 'Nigeria~Education~Lagos%20state~Women',
-        origin: 'origin',
         pageIdentifier: 'pidgin.articles.crgrx86em6yo.page',
         pageTitle:
           'Aminat Yusuf: Tips to pass exam - Overall LASU best graduate drop update',
@@ -502,7 +506,6 @@ describe('ATIAnalytics params', () => {
         ldpThingIds:
           '0f37fb35-7f9e-4e49-b189-9d7f1d6fb11f~103fc7e4-3a8d-491c-9a75-3c37c299d48f~12e69b92-a7ba-4463-84e0-be107b9805d0~5a08f030-710f-4168-acee-67294a90fc75~9b16a6c2-7c16-42b7-bff7-6549579622e8',
         ldpThingLabels: 'Environment~Narendra+Modi~Nature~India~Severe+weather',
-        origin: 'origin',
         pageIdentifier: 'hausa.articles.c4nrpd0d4nro.page',
         pageTitle: 'Kalli yadda ambaliya ta tagayyara wani yanki na Indiya',
         libraryVersion: 'simorgh',
@@ -563,7 +566,6 @@ describe('ATIAnalytics params', () => {
         ldpThingLabels: 'Politics~Nicaragua~Latin+America',
         libraryVersion: 'simorgh',
         nationsProducer: undefined,
-        origin: 'origin',
         pageIdentifier: 'media::mundo.media.media_asset.41174775.page',
         pageTitle:
           '¿Qué es el albur en México y cómo puedes saber si te están "albureando"? - BBC News Mundo',
@@ -600,7 +602,6 @@ describe('ATIAnalytics params', () => {
         ldpThingLabels: 'Technology',
         libraryVersion: 'simorgh',
         nationsProducer: undefined,
-        origin: 'origin',
         pageIdentifier: 'sport::mundo.sport.photo_gallery.36935058.page',
         pageTitle:
           'Río 2016, el antes y el ahora: cómo ha cambiado la ropa deportiva en más de un siglo de juegos olímpicos - BBC News Mundo',
@@ -631,7 +632,6 @@ describe('ATIAnalytics params', () => {
         ldpThingLabels: undefined,
         libraryVersion: 'simorgh',
         nationsProducer: undefined,
-        origin: 'origin',
         pageIdentifier: 'kyrgyz.page',
         pageTitle: 'pageTitle',
         platform: 'canonical',
