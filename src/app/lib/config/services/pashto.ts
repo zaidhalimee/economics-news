@@ -362,20 +362,16 @@ export const service: DefaultServiceConfig = {
         url: '/pashto/topics/cr50y59q860t',
       },
       {
-        title: 'ويډيوګانې',
-        url: '/pashto/topics/c2m45zyk0mmt',
+        title: 'اقتصاد او سوداګري',
+        url: '/pashto/topics/cy087kqvl1yt',
       },
       {
-        title: 'ځانګړې پاڼې',
-        url: '/pashto/topics/c6pxyz4e0ryt',
+        title: 'ساینس او ټکنالوژي',
+        url: '/pashto/topics/ckgrvled11kt',
       },
       {
-        title: 'کالم',
-        url: '/pashto/topics/cq57nwne9lzt',
-      },
-      {
-        title: 'پر سټلایت خپرونې',
-        url: '/pashto/articles/c4n55eygdn0o',
+        title: 'هنر او ادب',
+        url: '/pashto/topics/c8xqkd91knnt',
       },
       {
         title: 'راډیویي خپرونې',
