@@ -146,12 +146,14 @@ describe('ScrollablePromo', () => {
       const { container } = render(<ScrollablePromo blocks={threeLinks} />);
       expect(container).toMatchSnapshot();
     });
+
     it('it should match a11y snapshot for list with no title', () => {
       const { container } = render(
         <ScrollablePromo blocks={oneLinkWithNoTitle} />,
       );
       expect(container).toMatchSnapshot();
     });
+
     it('it should match snapshot when in dark ui mode', () => {
       const { container } = render(
         <ScrollablePromo blocks={oneLinkWithNoTitle} />,
@@ -162,6 +164,7 @@ describe('ScrollablePromo', () => {
       expect(container).toMatchSnapshot();
     });
   });
+
   describe('OJ Top Bar ScrollablePromo', () => {
     it('it should display Top Stories label when experimentVariant is A', () => {
       const { getByText, queryByText } = render(
@@ -170,6 +173,7 @@ describe('ScrollablePromo', () => {
       expect(getByText('Top Stories')).toBeVisible();
       expect(queryByText('Most read')).toBeNull();
     });
+
     it('it should display Most Read label when experimentVariant is B', () => {
       const { getByText, queryByText } = render(
         <ScrollablePromo blocks={mostReadBlocks} experimentVariant="B" />,
@@ -177,17 +181,41 @@ describe('ScrollablePromo', () => {
       expect(getByText('Most read')).toBeVisible();
       expect(queryByText('Top Stories')).toBeNull();
     });
+
     it('it should display 3 promo items with Top Stories when experimentVariant is A', () => {
       const { getAllByRole } = render(
         <ScrollablePromo blocks={topStoriesBlocks} experimentVariant="A" />,
       );
       expect(getAllByRole('listitem')).toHaveLength(3);
     });
+
     it('it should display 5 promo items with Most Read when experimentVariant is B', () => {
       const { getAllByRole } = render(
         <ScrollablePromo blocks={mostReadBlocks} experimentVariant="B" />,
       );
       expect(getAllByRole('listitem')).toHaveLength(5);
+    });
+
+    it('it should display Top Stories content when experimentVariant is A', () => {
+      const { getAllByRole } = render(
+        <ScrollablePromo blocks={topStoriesBlocks} experimentVariant="A" />,
+      );
+      const expectedFirstHeadline =
+        topStoriesBlocks[0].headlines.promoHeadline.blocks[0].model.blocks[0]
+          .model.text;
+      expect(getAllByRole('listitem')[0]).toHaveTextContent(
+        expectedFirstHeadline,
+      );
+    });
+
+    it('it should display Most Read content when experimentVariant is B', () => {
+      const { getAllByRole } = render(
+        <ScrollablePromo blocks={mostReadBlocks} experimentVariant="B" />,
+      );
+      const expectedFirstHeadline = mostReadBlocks[0].title;
+      expect(getAllByRole('listitem')[0]).toHaveTextContent(
+        expectedFirstHeadline,
+      );
     });
   });
 });
