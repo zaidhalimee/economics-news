@@ -827,7 +827,12 @@ exports[`AMP Home Page messageBanner has an image 1`] = `
 <img
   alt=""
   class="bbc-139onq"
-  src="https://ichef.test.bbci.co.uk/ace/standard/240/cpsdevpb/0af7/test/5a5151c0-a3aa-11ed-9015-6935ab4fa6ca.png"
+  sizes="(max-width: 37.4375rem) 184px, 224px"
+  src="https://ichef.test.bbci.co.uk/ace/standard/224/cpsdevpb/0af7/test/5a5151c0-a3aa-11ed-9015-6935ab4fa6ca.png"
+  srcset="https://ichef.test.bbci.co.uk/ace/standard/184/cpsdevpb/0af7/test/5a5151c0-a3aa-11ed-9015-6935ab4fa6ca.png 184w, 
+                          https://ichef.test.bbci.co.uk/ace/standard/368/cpsdevpb/0af7/test/5a5151c0-a3aa-11ed-9015-6935ab4fa6ca.png 368w, 
+                          https://ichef.test.bbci.co.uk/ace/standard/224/cpsdevpb/0af7/test/5a5151c0-a3aa-11ed-9015-6935ab4fa6ca.png 224w, 
+                          https://ichef.test.bbci.co.uk/ace/standard/448/cpsdevpb/0af7/test/5a5151c0-a3aa-11ed-9015-6935ab4fa6ca.png 448w"
   style="aspect-ratio:16 / 9"
 />
 `;
