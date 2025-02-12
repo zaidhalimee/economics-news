@@ -65,12 +65,13 @@ const reverbLinkClick = async ({ reverbInstance, eventDetails }) => {
     source,
     result,
     isClick,
+    is_background,
   } = eventDetails;
 
   return reverbInstance.userActionEvent(
     eventPublisher,
     componentName,
-    { container, attribute, placement, source, result },
+    { container, attribute, placement, source, result, is_background },
     {},
     {},
     isClick,

@@ -504,13 +504,14 @@ export const buildReverbPageSectionEventModel = ({
   const eventDetails = {
     eventName: type === 'view' ? 'sectionView' : 'sectionClick',
     ...{
-      ...{ eventPublisher: type === 'click' ? 'click' : 'impression' },
+      ...{ eventPublisher: type === 'click' ? 'click' : 'view' },
       componentName,
       container: campaignID,
       attribute: componentName,
       placement: pageIdentifier,
       source: advertiserID,
       result: url,
+      is_background: "true",
       ...{ isClick: type === 'click' ? true : false },
     },
   };
