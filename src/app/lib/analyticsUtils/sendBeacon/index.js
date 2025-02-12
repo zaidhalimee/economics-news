@@ -1,4 +1,3 @@
-import isLive from '../../utilities/isLive';
 import onClient from '../../utilities/onClient';
 import nodeLogger from '../../logger.node';
 import { ATI_LOGGING_ERROR } from '../../logger.const';
@@ -47,7 +46,7 @@ const setReverbPageValues = async ({ pageVars, userVars }) => {
   });
 
   window.bbcuser = {
-    getHashedId: () => [userVars.hashedId],
+    getHashedId: () => null,
     isSignedIn: () => Promise.resolve(userVars.isSignedIn),
   };
 };
@@ -107,7 +106,7 @@ const callReverb = async eventDetails => {
 const sendBeacon = async (url, reverbBeaconConfig) => {
   if (onClient()) {
     try {
-      if (!isLive() && reverbBeaconConfig) {
+      if (reverbBeaconConfig) {
         const {
           params: { page, user },
           eventDetails,

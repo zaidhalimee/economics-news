@@ -36,7 +36,7 @@ describe('Amp Consent Banner Container', () => {
         hideAction: 'tap:brandLink.focus, privacy.hide',
         type: 'privacy',
       },
-      {},
+      undefined,
     );
 
     expect(Banner).toHaveBeenCalledWith(
@@ -48,7 +48,7 @@ describe('Amp Consent Banner Container', () => {
         hideAction: 'tap:brandLink.focus, cookie.hide',
         type: 'cookie',
       },
-      {},
+      undefined,
     );
   });
 

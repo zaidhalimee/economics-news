@@ -1,6 +1,6 @@
 /** @jsx jsx */
 /* @jsxFrag React.Fragment */
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 import useToggle from '#hooks/useToggle';
 import { singleTextBlock } from '#app/models/blocks';
@@ -44,11 +44,6 @@ import {
   Recommendation,
 } from '#app/models/types/optimo';
 import ScrollablePromo from '#components/ScrollablePromo';
-import JumpTo, { JumpToProps, Variation } from '#app/components/JumpTo';
-import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
-import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
-import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
-import OPTIMIZELY_CONFIG from '#app/lib/config/optimizely';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
@@ -120,29 +115,6 @@ const DisclaimerWithPaddingOverride = (props: ComponentToRenderProps) => (
 const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
   podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
-const getJumptoComponent =
-  (
-    optimizelyVariation: Variation | 'off',
-    hasJumpToBlockForExperiment: boolean,
-    showRelatedContent: boolean,
-  ) =>
-  (props: ComponentToRenderProps & JumpToProps) => {
-    if (
-      optimizelyVariation === 'off' ||
-      !optimizelyVariation ||
-      !hasJumpToBlockForExperiment
-    )
-      return null;
-
-    return (
-      <JumpTo
-        {...props}
-        showRelatedContentLink={showRelatedContent}
-        variation={optimizelyVariation}
-      />
-    );
-  };
-
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const { isApp, pageType, service } = useContext(RequestContext);
 
@@ -203,26 +175,9 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     mostRead: mostReadInitialData,
   } = pageData;
 
-  const optimizelyVariation = useOptimizelyVariation(
-    OPTIMIZELY_CONFIG.flagKey,
-  ) as unknown as Variation | 'off';
-
-  const hasJumpToBlockForExperiment = blocks.some(
-    block => block.type === 'jumpTo',
-  );
-
-  const enableOptimizelyEventTracking = Boolean(
-    optimizelyVariation && hasJumpToBlockForExperiment,
-  );
-
-  const showRelatedContent = blocks.some(
-    block => block.type === 'relatedContent',
-  );
-
   const atiData = {
     ...atiAnalytics,
     ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
-    ...(optimizelyVariation && { experimentVariant: optimizelyVariation }),
   };
 
   const componentsToRender = {
@@ -251,11 +206,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     wsoj: getWsojComponent(recommendationsData),
     disclaimer: DisclaimerWithPaddingOverride,
     podcastPromo: getPodcastPromoComponent(podcastPromoEnabled),
-    jumpTo: getJumptoComponent(
-      optimizelyVariation,
-      hasJumpToBlockForExperiment,
-      showRelatedContent,
-    ),
   };
 
   const visuallyHiddenBlock = {
@@ -292,6 +242,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       <ChartbeatAnalytics
         sectionName={pageData?.relatedContent?.section?.name}
         title={headline}
+        {...(hasByline && { authors: bylineLinkedData.authorName })}
       />
       <ComscoreAnalytics />
       <NielsenAnalytics />
@@ -350,14 +301,11 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           )}
           <RelatedContentSection
             content={blocks}
-            sendOptimizelyEvents={enableOptimizelyEventTracking}
+            sendOptimizelyEvents={false}
           />
         </div>
         {!isApp && !isPGL && (
-          <SecondaryColumn
-            pageData={pageData}
-            sendOptimizelyEvents={enableOptimizelyEventTracking}
-          />
+          <SecondaryColumn pageData={pageData} sendOptimizelyEvents={false} />
         )}
       </div>
       {!isApp && !isPGL && (
@@ -368,14 +316,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           size="default"
           headingBackgroundColour={GREY_2}
           mobileDivider={showTopics}
-          sendOptimizelyEvents={enableOptimizelyEventTracking}
+          sendOptimizelyEvents={false}
         />
-      )}
-      {enableOptimizelyEventTracking && (
-        <>
-          <OptimizelyArticleCompleteTracking />
-          <OptimizelyPageViewTracking />
-        </>
       )}
     </div>
   );
