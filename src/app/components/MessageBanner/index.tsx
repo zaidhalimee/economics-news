@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useContext, forwardRef } from 'react';
+import { useContext, forwardRef, ForwardedRef } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 import useViewTracker from '#app/hooks/useViewTracker';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
@@ -32,7 +32,7 @@ const Banner = forwardRef(
       eventTrackingData,
       id = 'message-banner-1',
     }: MessageBannerProps,
-    viewRef,
+    viewRef: ForwardedRef<HTMLDivElement>,
   ) => {
     const { dir } = useContext(ServiceContext);
     const { mq } = useTheme();

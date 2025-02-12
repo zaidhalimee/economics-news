@@ -128,13 +128,13 @@ describe('withContexts HOC', () => {
           expect.objectContaining({
             pageType,
           }),
-          {},
+          undefined,
         );
         expect(serviceContextSpy).toHaveBeenCalledWith(
           expect.objectContaining({
             variant: null,
           }),
-          {},
+          undefined,
         );
       });
     });
@@ -165,13 +165,13 @@ describe('withContexts HOC', () => {
         expect.objectContaining({
           variant: 'trad',
         }),
-        {},
+        undefined,
       );
       expect(requestContextSpy).toHaveBeenCalledWith(
         expect.objectContaining({
           variant: 'trad',
         }),
-        {},
+        undefined,
       );
     });
 
@@ -304,7 +304,7 @@ describe('withContexts HOC', () => {
 
         expect(eventTrackingContextSpy).toHaveBeenCalledWith(
           expect.objectContaining(componentProps),
-          {},
+          undefined,
         );
       },
     );
