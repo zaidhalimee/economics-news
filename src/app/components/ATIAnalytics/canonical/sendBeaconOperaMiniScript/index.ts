@@ -6,9 +6,7 @@ const sendBeaconOperaMiniScript = (atiPageViewUrlString: string) => `
 
       var atiPageViewUrl = "${atiPageViewUrlString}";
       
-      if (document.referrer) {
-        atiPageViewUrl += "&ref=" + document.referrer;
-      }
+      atiPageViewUrl += document.referrer ? "&ref=" + document.referrer : '';
 
       var xhr = new XMLHttpRequest();
       xhr.open("GET", atiPageViewUrl, true);
