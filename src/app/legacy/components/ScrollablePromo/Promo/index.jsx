@@ -76,7 +76,9 @@ const PromoBox = styled.div`
     experimentVariant !== 'none' &&
     `
       margin-bottom: 0;
-      width: 11.5rem;
+      @media (min-width: ${GEL_GROUP_0_SCREEN_WIDTH_MIN}) {
+        width: 11.5rem;
+      }
       @media (min-width: ${GEL_GROUP_1_SCREEN_WIDTH_MIN}) {
         width: 17rem;
       }
