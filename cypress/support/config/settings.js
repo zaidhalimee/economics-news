@@ -7609,14 +7609,6 @@ module.exports = () => ({
       onDemandTV: { environments: undefined, smoke: false },
       topicPage: {
         environments: {
-          live: {
-            paths: ['uzbek/topics/c8y949r98pgt/cyr'],
-            enabled: true,
-          },
-          test: {
-            paths: ['uzbek/topics/c8y949r98pgt/cyr'],
-            enabled: true,
-          },
           local: {
             paths: ['uzbek/topics/c8y949r98pgt/cyr'],
             enabled: true,
@@ -7647,14 +7639,6 @@ module.exports = () => ({
       onDemandTV: { environments: undefined, smoke: false },
       topicPage: {
         environments: {
-          live: {
-            paths: ['uzbek/topics/c8y949r98pgt/lat'],
-            enabled: true,
-          },
-          test: {
-            paths: ['uzbek/topics/c8y949r98pgt/lat'],
-            enabled: true,
-          },
           local: {
             paths: ['uzbek/topics/c8y949r98pgt/lat'],
             enabled: true,
