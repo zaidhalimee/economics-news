@@ -1,5 +1,5 @@
 import { LITE_ATI_TRACKING } from '#app/hooks/useClickTrackerHandler';
-import trackingScript from '.';
+import liteATIClickTracking from '.';
 
 const dispatchClick = (targetElement: HTMLElement) => {
   document.body.appendChild(targetElement);
@@ -13,6 +13,7 @@ const dispatchClick = (targetElement: HTMLElement) => {
 
 describe('Click tracking script', () => {
   beforeAll(() => {
+    jest.useFakeTimers().setSystemTime(new Date('2024-11-13T16:30:02.000Z'));
     let mockCookie = '';
     Object.defineProperty(document, 'cookie', {
       get() {
@@ -27,15 +28,23 @@ describe('Click tracking script', () => {
         assign: jest.fn(),
       },
     });
+    liteATIClickTracking();
   });
+  
   beforeEach(() => {
     jest.clearAllMocks();
-    jest.useFakeTimers().setSystemTime(new Date('2024-11-13T16:30:02.000Z'));
-
-    trackingScript();
     document.cookie = '';
     window.sendBeaconLite = jest.fn();
     window.dispatchEvent(new Event('load'));
+  });
+
+  it('Does not call sendBeacon if the event has no data-ati-tracking parameter, but still redirects', () => {
+    const anchorElement = document.createElement('a');
+
+    dispatchClick(anchorElement);
+
+    expect(window.sendBeaconLite).toHaveBeenCalledTimes(0);
+    expect(window.location.assign).toHaveBeenCalledTimes(1);
   });
 
   it('Sets a new cookie if there is no atuserid cookie on the user browser', () => {
@@ -105,13 +114,5 @@ describe('Click tracking script', () => {
       r: '0x0x24x24',
       re: '4060x1080',
     });
-  });
-
-  it('Does not call sendBeacon if the event has no data-ati-tracking parameter', () => {
-    const anchorElement = document.createElement('a');
-
-    dispatchClick(anchorElement);
-
-    expect(window.sendBeaconLite).toHaveBeenCalledTimes(0);
   });
 });
