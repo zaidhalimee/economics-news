@@ -115,7 +115,7 @@ const CanonicalRadioSchedule = ({
       aria-labelledby="Radio-Schedule"
       data-testid="radio-schedule"
       {...(lang && { lang })}
-      {...(className && { className })}
+      {...(className ? { className } : undefined)}
     >
       <RadioScheduleSectionLabel
         script={script}

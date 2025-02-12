@@ -1,6 +1,6 @@
 declare module '*.md';
 
-declare namespace JSX {
+declare namespace React.JSX {
   interface DivProps extends React.HTMLAttributes<HTMLDivElement> {
     ref?: ForwardedRef<HTMLDivElement> | null;
     placeholder?: string;

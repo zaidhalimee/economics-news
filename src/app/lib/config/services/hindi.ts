@@ -49,16 +49,16 @@ export const service: DefaultServiceConfig = {
     googleSiteVerification: 'D-aEHUiyVaMoUJXjVRbDVkxS0dLTMUZLD3dLPTnWO4Q',
     podcastPromo: {
       title: 'पॉडकास्ट',
-      brandTitle: 'दिनभर: पूरा दिन,पूरी ख़बर (Dinbhar)',
+      brandTitle: 'The Lens: मुकेश शर्मा के साथ',
       brandDescription:
-        'वो राष्ट्रीय और अंतरराष्ट्रीय ख़बरें जो दिनभर सुर्खियां बनीं.',
+        'हफ़्ते की सबसे बड़ी न्यूज़ स्टोरी पर चर्चा: मुकेश शर्मा के साथ.',
       image: {
-        src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p09ds7cb.jpg',
-        alt: 'दिनभर',
+        src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p0kjf0d8.jpg',
+        alt: 'मुकेश शर्मा',
       },
       linkLabel: {
         text: 'दिनभर: पूरा दिन,पूरी ख़बर',
-        href: 'https://www.bbc.com/hindi/podcasts/p09ds7zx',
+        href: 'https://www.bbc.com/hindi/podcasts/p0kjf03y',
       },
       skipLink: {
         text: 'छोड़कर %title% आगे बढ़ें',
@@ -87,13 +87,6 @@ export const service: DefaultServiceConfig = {
         mediaPlayer: 'मीडिया प्लेयर',
         audioPlayer: 'ऑडिया प्लेयर',
         videoPlayer: 'वीडियो प्लेयर',
-      },
-      articlePage: {
-        jumpToTitle: {
-          variation_1: 'इस पर जाएं',
-          variation_2: 'बीबीसी न्यूज़ हिंदी  से और अधिक जानें',
-          variation_3: 'बीबीसी न्यूज़ हिंदी से और ख़बरें पढ़ें',
-        },
       },
       liveExperiencePage: {
         liveLabel: 'लाइव',
