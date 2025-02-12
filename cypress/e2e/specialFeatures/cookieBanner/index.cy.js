@@ -56,6 +56,7 @@ Object.keys(config)
     });
 
     paths
+      .filter(path => path.indexOf('/', 1) !== -1)
       .map(path => `${path}.amp`)
       .forEach(path => {
         if (!urlsToExcludeFromAmpTests.some(url => path.includes(url))) {
