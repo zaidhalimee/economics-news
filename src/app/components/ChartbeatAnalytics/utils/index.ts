@@ -237,7 +237,7 @@ export const getConfig = ({
   producer,
   chapter,
 }: GetConfigProps) => {
-  const referrer = isAmp ? getReferrer(platform) : null;
+  const referrer = getReferrer(platform);
 
   const analyticsTitle = getTitle({
     pageType,

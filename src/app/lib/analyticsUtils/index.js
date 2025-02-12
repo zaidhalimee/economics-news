@@ -3,7 +3,7 @@ import { v4 as uuid } from 'uuid';
 import pathOr from 'ramda/src/pathOr';
 import path from 'ramda/src/path';
 import Url from 'url-parse';
-import onClient from '../utilities/onClient';
+import onClient from '#lib/utilities/onClient';
 import isOperaProxy from '../utilities/isOperaProxy';
 import {
   MEDIUM_CAMPAIGN_IDENTIFIER,
@@ -185,7 +185,7 @@ export const getReferrer = platform => {
     return `\${documentReferrer}`;
   }
 
-  if (onClient() && document.referrer) {
+  if (onClient()) {
     return document.referrer;
   }
 
