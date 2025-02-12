@@ -44,7 +44,9 @@ const urlsToExcludeFromAmpTests = ['_tv', '_radio', '/20'];
 Object.keys(config)
   .filter(service => serviceFilter(service))
   .forEach(service => {
-    const { variant } = config[service];
+    const { variant, serviceName } = config[service];
+    const variantPath = variant === 'default' ? '' : `/${variant}`;
+    const isHomePagePath = path => path === `/${serviceName}${variantPath}`;
 
     const paths = getPaths(service);
     paths.forEach(path => {
@@ -56,7 +58,7 @@ Object.keys(config)
     });
 
     paths
-      .filter(path => path.indexOf('/', 1) !== -1)
+      .filter(path => !isHomePagePath(path, serviceName))
       .map(path => `${path}.amp`)
       .forEach(path => {
         if (!urlsToExcludeFromAmpTests.some(url => path.includes(url))) {
