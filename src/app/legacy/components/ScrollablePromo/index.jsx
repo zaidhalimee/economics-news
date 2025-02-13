@@ -86,7 +86,7 @@ const LabelComponent = styled.strong`
       margin-${dir === 'ltr' ? `left` : `right`}: ${GEL_SPACING_DBL};  
     }
     @media (min-width: ${GEL_GROUP_4_SCREEN_WIDTH_MIN}){
-      margin-${dir === 'ltr' ? `left` : `right`}: 0;
+        margin-${dir === 'ltr' ? `left` : `right`}: 0;
     }
 `}
   ${({ experimentVariant }) =>
@@ -96,9 +96,7 @@ const LabelComponent = styled.strong`
     display: flex;
     align-items: center;
     height: ${GEL_SPACING_QUAD};
-    margin: 0 !important;
-    background: #f6f6f6;
-    padding: ${GEL_SPACING_DBL}
+    margin-bottom: 0px;
   `}
 `;
 
@@ -134,6 +132,7 @@ const ScrollablePromo = ({
         blocks,
       );
   }
+
   const blocksWithoutTitle = blocks[0].type === 'title' ? tail(blocks) : blocks;
 
   const isSingleItem = blocksWithoutTitle.length === 1;
@@ -158,47 +157,45 @@ const ScrollablePromo = ({
         }),
   };
   return (
-    <>
-      {title && (
-        <LabelComponent
-          id={ariaLabel}
-          data-testid="eoj-recommendations-heading"
-          script={script}
-          service={service}
-          dir={dir}
-          experimentVariant={experimentVariant}
-        >
-          {title}
-        </LabelComponent>
-      )}
-      <ScrollablePromoContainer experimentVariant={experimentVariant}>
-        <GridItemMediumNoMargin {...a11yAttributes}>
-          {experimentVariant !== 'none' && (
-            <PromoList
-              blocks={blocks}
-              experimentVariant={experimentVariant}
-              viewTracker={viewRef}
+    <ScrollablePromoContainer experimentVariant={experimentVariant}>
+      <GridItemMediumNoMargin {...a11yAttributes}>
+        {title && (
+          <LabelComponent
+            id={ariaLabel}
+            data-testid="eoj-recommendations-heading"
+            script={script}
+            service={service}
+            dir={dir}
+            experimentVariant={experimentVariant}
+          >
+            {title}
+          </LabelComponent>
+        )}
+        {experimentVariant && (
+          <PromoList
+            blocks={blocks}
+            experimentVariant={experimentVariant}
+            viewTracker={viewRef}
+            onClick={handleClickTracking}
+          />
+        )}
+        {!experimentVariant && isSingleItem && (
+          <PromoWrapper dir={dir} ref={viewRef}>
+            <Promo
+              block={blocksWithoutTitle[0]}
               onClick={handleClickTracking}
             />
-          )}
-          {experimentVariant === 'none' && isSingleItem && (
-            <PromoWrapper dir={dir} ref={viewRef}>
-              <Promo
-                block={blocksWithoutTitle[0]}
-                onClick={handleClickTracking}
-              />
-            </PromoWrapper>
-          )}
-          {experimentVariant === 'none' && !isSingleItem && (
-            <PromoList
-              blocks={blocksWithoutTitle}
-              viewTracker={viewRef}
-              onClick={handleClickTracking}
-            />
-          )}
-        </GridItemMediumNoMargin>
-      </ScrollablePromoContainer>
-    </>
+          </PromoWrapper>
+        )}
+        {!experimentVariant && !isSingleItem && (
+          <PromoList
+            blocks={blocksWithoutTitle}
+            viewTracker={viewRef}
+            onClick={handleClickTracking}
+          />
+        )}
+      </GridItemMediumNoMargin>
+    </ScrollablePromoContainer>
   );
 };
 
