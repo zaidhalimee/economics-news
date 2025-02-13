@@ -16,6 +16,7 @@ export default () => {
             innerWidth,
             innerHeight,
           } = window;
+
           const now = new Date();
           const hours = now.getHours();
           const mins = now.getMinutes();
@@ -48,21 +49,24 @@ export default () => {
             document.cookie = `${cookieName}=${encodedCookieValue}; path=/; max-age=${expires}; Secure;`;
           }
 
-          const rValue = [
+          const screenResolutionColourDepth = [
             width || 0,
             height || 0,
             colorDepth || 0,
             pixelDepth || 0,
           ].join('x');
 
-          const reValue = [innerWidth || 0, innerHeight || 0].join('x');
+          const browserViewportResolution = [
+            innerWidth || 0,
+            innerHeight || 0,
+          ].join('x');
 
-          const hlValue = [hours, mins, secs].join('x');
+          const timestamp = [hours, mins, secs].join('x');
 
           let clientSideAtiURL = atiURL
-            .concat('&', 'r=', rValue)
-            .concat('&', 're=', reValue)
-            .concat('&', 'hl=', hlValue);
+            .concat('&', 'r=', screenResolutionColourDepth)
+            .concat('&', 're=', browserViewportResolution)
+            .concat('&', 'hl=', timestamp);
 
           if (navigator.language) {
             clientSideAtiURL = clientSideAtiURL.concat(
@@ -71,6 +75,8 @@ export default () => {
               navigator.language,
             );
           }
+
+          clientSideAtiURL = clientSideAtiURL.concat('&', 'app_type=', 'lite');
 
           if (user.val) {
             clientSideAtiURL = clientSideAtiURL.concat(

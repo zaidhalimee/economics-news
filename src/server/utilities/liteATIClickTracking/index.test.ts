@@ -166,6 +166,7 @@ describe('Click tracking script', () => {
       lng: 'en-GB',
       r: '0x0x24x24',
       re: '4060x1080',
+      app_type: 'lite',
     });
   });
 });
