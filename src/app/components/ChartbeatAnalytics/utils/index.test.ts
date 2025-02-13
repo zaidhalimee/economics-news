@@ -31,8 +31,6 @@ jest.mock('#lib/utilities/onClient', () =>
   jest.fn().mockImplementation(() => true),
 );
 
-jest.spyOn(document, 'referrer', 'get').mockReturnValue('https://www.bbc.com');
-
 const mockWindowObj = {
   location: {
     pathname: '/',
@@ -387,7 +385,7 @@ describe('Chartbeat utilities', () => {
         type: 'Index',
         uid: 50924,
         useCanonical: true,
-        virtualReferrer: 'https://www.bbc.com',
+        virtualReferrer: null,
       };
 
       const expectedCookieValue = 'foobar';
@@ -424,7 +422,7 @@ describe('Chartbeat utilities', () => {
         type: 'article-media-asset',
         uid: 50924,
         useCanonical: true,
-        virtualReferrer: 'https://www.bbc.com',
+        virtualReferrer: null,
       };
 
       expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
@@ -515,7 +513,7 @@ describe('Chartbeat utilities', () => {
         title: 'STY Page Title',
         uid: 50924,
         useCanonical: true,
-        virtualReferrer: 'https://www.bbc.com',
+        virtualReferrer: null,
       };
 
       expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
@@ -553,7 +551,7 @@ describe('Chartbeat utilities', () => {
           type: 'article-sfv',
           uid: 50924,
           useCanonical: true,
-          virtualReferrer: 'https://www.bbc.com',
+          virtualReferrer: null,
         };
 
         expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
@@ -590,7 +588,7 @@ describe('Chartbeat utilities', () => {
           type: 'article-sfv',
           uid: 50924,
           useCanonical: true,
-          virtualReferrer: 'https://www.bbc.com',
+          virtualReferrer: null,
         };
 
         expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
@@ -615,7 +613,7 @@ describe('Chartbeat utilities', () => {
           type: 'article-sfv',
           uid: 50924,
           useCanonical: true,
-          virtualReferrer: 'https://www.bbc.com',
+          virtualReferrer: null,
         };
 
         expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
@@ -652,7 +650,7 @@ describe('Chartbeat utilities', () => {
           type: 'article-sfv',
           uid: 50924,
           useCanonical: true,
-          virtualReferrer: 'https://www.bbc.com',
+          virtualReferrer: null,
         };
 
         expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
@@ -677,7 +675,7 @@ describe('Chartbeat utilities', () => {
           type: 'New Article',
           uid: 50924,
           useCanonical: true,
-          virtualReferrer: 'https://www.bbc.com',
+          virtualReferrer: null,
         };
 
         expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
@@ -707,7 +705,7 @@ describe('Chartbeat utilities', () => {
         title: 'OnDemand TV Page Title - BBC News Pashto',
         type: 'player-episode',
         uid: 50924,
-        virtualReferrer: 'https://www.bbc.com',
+        virtualReferrer: null,
         useCanonical: true,
         path: '/',
       };
@@ -738,7 +736,7 @@ describe('Chartbeat utilities', () => {
         title: 'Podcast Page Title - BBC News Arabic',
         type: 'player-episode',
         uid: 50924,
-        virtualReferrer: 'https://www.bbc.com',
+        virtualReferrer: null,
         useCanonical: true,
         path: '/',
       };
@@ -769,7 +767,7 @@ describe('Chartbeat utilities', () => {
         title: 'Audio Page Title - BBC News Arabic',
         type: 'player-episode',
         uid: 50924,
-        virtualReferrer: 'https://www.bbc.com',
+        virtualReferrer: null,
         useCanonical: true,
         path: '/',
       };
@@ -800,7 +798,7 @@ describe('Chartbeat utilities', () => {
         title: 'Topics Page Title - BBC News Pidgin',
         uid: 50924,
         useCanonical: true,
-        virtualReferrer: 'https://www.bbc.com',
+        virtualReferrer: null,
       };
 
       expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
@@ -827,7 +825,7 @@ describe('Chartbeat utilities', () => {
         title: 'Topics Page Title - BBC News Pidgin',
         type: 'Topics',
         uid: 50924,
-        virtualReferrer: 'https://www.bbc.com',
+        virtualReferrer: null,
         useCanonical: true,
         path: '/',
       };
@@ -858,7 +856,7 @@ describe('Chartbeat utilities', () => {
         title: 'TOP 뉴스 - BBC News 코리아',
         uid: 50924,
         useCanonical: true,
-        virtualReferrer: 'https://www.bbc.com',
+        virtualReferrer: null,
       };
 
       expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
@@ -887,7 +885,7 @@ describe('Chartbeat utilities', () => {
         type: 'FIX',
         uid: 50924,
         useCanonical: true,
-        virtualReferrer: 'https://www.bbc.com',
+        virtualReferrer: null,
       };
 
       const expectedCookieValue = 'foobar';
@@ -898,9 +896,7 @@ describe('Chartbeat utilities', () => {
       expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
     });
 
-    it('should return null for virtualReferrer when isOnClient is false', () => {
-      (onClient as jest.Mock).mockReturnValueOnce(false);
-
+    it('should return null for virtualReferrer when platform is not AMP', () => {
       // @ts-expect-error testing partial data to ensure behaviour is as expected
       const fixtureData: GetConfigProps = {
         isAmp: false,
