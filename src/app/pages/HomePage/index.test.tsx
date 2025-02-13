@@ -133,8 +133,9 @@ describe('Home Page', () => {
   });
 
   it('should render images with the .webp image extension', () => {
-    const path =
-      homePageData.curations[1].summaries?.[0].imageUrl?.split('{width}')[1].slice(0, -5);
+    const path = homePageData.curations[1].summaries?.[0].imageUrl
+      ?.split('{width}')[1]
+      .slice(0, -5);
 
     const imageURL = `https://ichef.bbci.co.uk/ace/ws/240${path}.webp`;
     const expectedWebpSrcSetURLs = [
