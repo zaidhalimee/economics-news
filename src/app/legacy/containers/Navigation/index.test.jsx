@@ -207,71 +207,42 @@ describe('Navigation Container', () => {
     expect(queryAllByText(mockNavigation[0].title)[0]).toBeVisible();
   });
 
-  it('should correctly render OJ Top Bar when experiment variant is set to A', () => {
-    const propsForOJExperiment = {
-      blocks: topStoriesBlocks,
-      experimentVariant: 'A',
-    };
-    const { container } = render(
-      <Navigation propsForOJExperiment={propsForOJExperiment} />,
-      {
-        bbcOrigin: 'https://www.test.bbc.co.uk',
-        id: 'c0000000000o',
-        isAmp: false,
-        pageType: ARTICLE_PAGE,
-        service: 'news',
-        statusCode: 200,
-        pathname: '/news',
-      },
-    );
-    expect(
-      container.querySelector('[class*="ScrollablePromoContainer"]'),
-    ).toBeInTheDocument();
-  });
-
-  it('should correctly render OJ Top Bar when experiment variant is set to B', () => {
-    const propsForOJExperiment = {
-      blocks: mostReadBlocks,
-      experimentVariant: 'B',
-    };
-    const { container } = render(
-      <Navigation propsForOJExperiment={propsForOJExperiment} />,
-      {
-        bbcOrigin: 'https://www.test.bbc.co.uk',
-        id: 'c0000000000o',
-        isAmp: false,
-        pageType: ARTICLE_PAGE,
-        service: 'news',
-        statusCode: 200,
-        pathname: '/news',
-      },
-    );
-    expect(
-      container.querySelector('[class*="ScrollablePromoContainer"]'),
-    ).toBeInTheDocument();
-  });
-
-  it('should not render the OJ Top Bar when experiment variant is set to none', () => {
-    const propsForOJExperiment = {
-      blocks: mostReadBlocks,
-      experimentVariant: null,
-    };
-    const { container } = render(
-      <Navigation propsForOJExperiment={propsForOJExperiment} />,
-      {
-        bbcOrigin: 'https://www.test.bbc.co.uk',
-        id: 'c0000000000o',
-        isAmp: false,
-        pageType: ARTICLE_PAGE,
-        service: 'news',
-        statusCode: 200,
-        pathname: '/news',
-      },
-    );
-    expect(
-      container.querySelector('[class*="ScrollablePromoContainer"]'),
-    ).not.toBeInTheDocument();
-  });
+  it.each`
+    description                              | blocks              | experimentVariant | shouldRender
+    ${'render Scrollable Promo Top Stories'} | ${topStoriesBlocks} | ${'A'}            | ${true}
+    ${'render Scrollable Promo Most Read'}   | ${mostReadBlocks}   | ${'B'}            | ${true}
+    ${'not render Scrollable Promo'}         | ${mostReadBlocks}   | ${'none'}         | ${false}
+    ${'not render Scrollable Promo'}         | ${mostReadBlocks}   | ${null}           | ${false}
+  `(
+    'should $description when experiment variant is $experimentVariant',
+    ({ blocks, experimentVariant, shouldRender }) => {
+      const propsForOJExperiment = {
+        blocks,
+        experimentVariant,
+      };
+      const { container } = render(
+        <Navigation propsForOJExperiment={propsForOJExperiment} />,
+        {
+          bbcOrigin: 'https://www.test.bbc.co.uk',
+          id: 'c0000000000o',
+          isAmp: false,
+          pageType: ARTICLE_PAGE,
+          service: 'news',
+          statusCode: 200,
+          pathname: '/news',
+        },
+      );
+      if (shouldRender) {
+        expect(
+          container.querySelector('[class*="ScrollablePromoContainer"]'),
+        ).toBeInTheDocument();
+      } else {
+        expect(
+          container.querySelector('[class*="ScrollablePromoContainer"]'),
+        ).not.toBeInTheDocument();
+      }
+    },
+  );
 
   describe('View and click tracking', () => {
     const scrollEventTrackingData = {
