@@ -30,14 +30,16 @@ describe('ScrollablePromo', () => {
 
     it('should render single promo item', () => {
       const { container } = render(<ScrollablePromo blocks={oneLinkOnly} />);
-      expect(container.childElementCount).toEqual(1);
+      const scroller = container.children[1];
+      expect(scroller.childElementCount).toEqual(1);
     });
 
     it('should render single promo item with a title', () => {
       const { container, getByTestId } = render(
         <ScrollablePromo blocks={oneLinkOnly} />,
       );
-      expect(container.childElementCount).toEqual(1);
+      const scroller = container.children[1];
+      expect(scroller.childElementCount).toEqual(1);
       expect(getByTestId('eoj-recommendations-heading')).toBeInTheDocument();
     });
 
