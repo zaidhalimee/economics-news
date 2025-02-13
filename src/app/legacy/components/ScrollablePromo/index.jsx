@@ -60,8 +60,8 @@ const ScrollablePromoContainer = styled.div`
     @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MAX}){
       display: none;
     }
-      width: 100vw;
-      margin-left: calc(-50vw + 50%);
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
   `}
 `;
 
@@ -86,17 +86,23 @@ const LabelComponent = styled.strong`
       margin-${dir === 'ltr' ? `left` : `right`}: ${GEL_SPACING_DBL};  
     }
     @media (min-width: ${GEL_GROUP_4_SCREEN_WIDTH_MIN}){
-        margin-${dir === 'ltr' ? `left` : `right`}: 0;
+      margin-${dir === 'ltr' ? `left` : `right`}: 0;
     }
-`}
+  `}
+
   ${({ experimentVariant }) =>
     experimentVariant &&
     experimentVariant !== 'none' &&
     `
+    @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MAX}){
+      display: none;
+    }
+    margin: 0 !important;
     display: flex;
     align-items: center;
     height: ${GEL_SPACING_QUAD};
-    margin-bottom: 0px;
+    background: #f6f6f6;
+    padding: ${GEL_SPACING_DBL}
   `}
 `;
 
