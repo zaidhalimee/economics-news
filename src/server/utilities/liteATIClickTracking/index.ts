@@ -63,30 +63,19 @@ export default () => {
 
           const timestamp = [hours, mins, secs].join('x');
 
-          let clientSideAtiURL = atiURL
-            .concat('&', 'r=', screenResolutionColourDepth)
-            .concat('&', 're=', browserViewportResolution)
-            .concat('&', 'hl=', timestamp);
+          const params = {
+            r: screenResolutionColourDepth,
+            re: browserViewportResolution,
+            hl: timestamp,
+            ...(navigator.language && { lng: navigator.language }),
+            app_type: 'lite',
+            ...(user.val && { idclient: user.val }),
+          };
 
-          if (navigator.language) {
-            clientSideAtiURL = clientSideAtiURL.concat(
-              '&',
-              'lng=',
-              navigator.language,
-            );
-          }
-
-          clientSideAtiURL = clientSideAtiURL.concat('&', 'app_type=', 'lite');
-
-          if (user.val) {
-            clientSideAtiURL = clientSideAtiURL.concat(
-              '&',
-              'idclient=',
-              user.val,
-            );
-          }
-
-          window.sendBeaconLite(clientSideAtiURL);
+          const paramValues = Object.entries(params)
+            .map(([key, value]) => `${key}=${value}`)
+            .join('&');
+          window.sendBeaconLite(`${atiURL}&${paramValues}`);
         }
 
         window.location.assign(nextPageUrl);
