@@ -154,12 +154,6 @@ export default {
   Component: ComponentWithContext,
   title: 'Pages/Article Page',
   parameters: { layout: 'fullscreen' },
-  argTypes: {
-    experimentStage: {
-      options: [Stages.STAGE_2, Stages.STAGE_3],
-      control: { type: 'radio' },
-    },
-  },
 };
 
 export const ArticlePage = (_: StoryArgs, { service }: StoryProps) => (
@@ -217,6 +211,7 @@ export const ArticlePageWithTranscript = ({ experimentStage }: Props) => (
   <ComponentWithServiceContext
     data={articleDataWithTranscript}
     experimentStage={experimentStage}
+    service="mundo"
   />
 );
 
