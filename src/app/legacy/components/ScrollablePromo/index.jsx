@@ -116,7 +116,7 @@ const LabelComponent = styled.strong`
 const ScrollablePromo = ({
   blocks,
   blockGroupIndex = null,
-  experimentVariant = 'none',
+  experimentVariant = null,
 }) => {
   const { script, service, dir, translations, mostRead } =
     useContext(ServiceContext);
@@ -151,11 +151,10 @@ const ScrollablePromo = ({
   const isSingleItem = blocksWithoutTitle.length === 1;
 
   const ariaLabel =
-    title &&
-    idSanitiser(`${title}${experimentVariant !== 'none' ? ' scrollable' : ''}`);
+    title && idSanitiser(`${title}${experimentVariant ? ' scrollable' : ''}`);
 
   const a11yAttributes = {
-    ...(experimentVariant !== 'none' && {
+    ...(experimentVariant && {
       as: 'section',
       role: 'region',
     }),
