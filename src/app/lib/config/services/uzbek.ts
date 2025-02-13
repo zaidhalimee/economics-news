@@ -333,27 +333,27 @@ const defaultCyrillicConfig = {
     },
     {
       title: 'Ўзбекистон',
-      url: '/uzbek/topics/c8y949r98pgt',
+      url: '/uzbek/topics/c8y949r98pgt/cyr',
     },
     {
       title: 'Минтақа',
-      url: '/uzbek/topics/cwr9j9dz4gpt',
+      url: '/uzbek/topics/cwr9j9dz4gpt/cyr',
     },
     {
       title: 'Дунё',
-      url: '/uzbek/topics/cl8l9mved19t',
+      url: '/uzbek/topics/cl8l9mved19t/cyr',
     },
     {
       title: 'Спорт',
-      url: '/uzbek/topics/cxnykykk1zkt',
+      url: '/uzbek/topics/cxnykykk1zkt/cyr',
     },
     {
       title: 'Илм-Фан',
-      url: '/uzbek/topics/cg7262681krt',
+      url: '/uzbek/topics/cg7262681krt/cyr',
     },
     {
       title: 'Технология',
-      url: '/uzbek/topics/cjgn7n7v3yjt',
+      url: '/uzbek/topics/cjgn7n7v3yjt/cyr',
     },
     {
       title: 'BBC News O‘zbek TV dasturi',
@@ -668,27 +668,27 @@ export const service: UzbekConfig = {
       },
       {
         title: 'O‘zbekiston',
-        url: '/uzbek/topics/c8y949r98pgt',
+        url: '/uzbek/topics/c8y949r98pgt/lat',
       },
       {
         title: 'Mintaqa',
-        url: '/uzbek/topics/cwr9j9dz4gpt',
+        url: '/uzbek/topics/cwr9j9dz4gpt/lat',
       },
       {
         title: 'Dunyo',
-        url: '/uzbek/topics/cl8l9mved19t',
+        url: '/uzbek/topics/cl8l9mved19t/lat',
       },
       {
         title: 'Sport',
-        url: '/uzbek/topics/cxnykykk1zkt',
+        url: '/uzbek/topics/cxnykykk1zkt/lat',
       },
       {
         title: 'Ilm-Fan',
-        url: '/uzbek/topics/cg7262681krt',
+        url: '/uzbek/topics/cg7262681krt/lat',
       },
       {
         title: 'Texnologiya',
-        url: '/uzbek/topics/cjgn7n7v3yjt',
+        url: '/uzbek/topics/cjgn7n7v3yjt/lat',
       },
       {
         title: 'BBC News O‘zbek TV dasturi',
