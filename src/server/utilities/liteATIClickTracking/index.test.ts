@@ -1,6 +1,24 @@
 import { LITE_ATI_TRACKING } from '#app/hooks/useClickTrackerHandler';
 import liteATIClickTracking from '.';
 
+const createAnchor = ({
+  href = '/',
+  hasliteSiteTracking,
+}: {
+  href?: string;
+  hasliteSiteTracking: boolean;
+}) => {
+  const anchorElement = document.createElement('a');
+  anchorElement.href = href;
+  if (hasliteSiteTracking) {
+    anchorElement.setAttribute(
+      LITE_ATI_TRACKING,
+      'https://logws1363.ati-host.net/?',
+    );
+  }
+  return anchorElement;
+};
+
 const dispatchClick = (targetElement: HTMLElement) => {
   document.body.appendChild(targetElement);
   const event = new MouseEvent('click', {
@@ -52,8 +70,10 @@ describe('Click tracking script', () => {
   });
 
   it('Does not call sendBeacon if the event has no data-ati-tracking parameter, but still redirects', () => {
-    const anchorElement = document.createElement('a');
-    anchorElement.href = '/gahuza';
+    const anchorElement = createAnchor({
+      href: '/gahuza',
+      hasliteSiteTracking: false,
+    });
 
     dispatchClick(anchorElement);
 
@@ -62,12 +82,10 @@ describe('Click tracking script', () => {
     expect(nextPageUrl).toContain('/gahuza');
   });
 
-  it('Does not add userId cookie if crypto is invalid, but stil calls sendBeacon', () => {
-    const anchorElement = document.createElement('a');
-    anchorElement.setAttribute(
-      LITE_ATI_TRACKING,
-      'https://logws1363.ati-host.net/?',
-    );
+  it('Does not add userId cookie if crypto is unsupported, but still calls sendBeacon', () => {
+    const anchorElement = createAnchor({
+      hasliteSiteTracking: true,
+    });
 
     // @ts-expect-error Some browsers may not have crypto.
     // eslint-disable-next-line no-global-assign
@@ -80,11 +98,9 @@ describe('Click tracking script', () => {
   });
 
   it('Sets a new cookie if there is no atuserid cookie on the user browser', () => {
-    const anchorElement = document.createElement('a');
-    anchorElement.setAttribute(
-      LITE_ATI_TRACKING,
-      'https://logws1363.ati-host.net/?',
-    );
+    const anchorElement = createAnchor({
+      hasliteSiteTracking: true,
+    });
 
     (crypto.randomUUID as jest.Mock).mockReturnValueOnce('randomUniqueId');
     dispatchClick(anchorElement);
@@ -97,11 +113,9 @@ describe('Click tracking script', () => {
   });
 
   it('Does not overwrite content in atuserid cookie if it already exists', () => {
-    const anchorElement = document.createElement('a');
-    anchorElement.setAttribute(
-      LITE_ATI_TRACKING,
-      'https://logws1363.ati-host.net/?',
-    );
+    const anchorElement = createAnchor({
+      hasliteSiteTracking: true,
+    });
 
     const oldCookieId = '22ea8f97e5-4c34-4d23-af1d-4d1789206639';
     document.cookie = `atuserid=%7B%22name%22%3A%22atuserid%22%2C%22val%22%3A%${oldCookieId}%22%2C%22options%22%3A%7B%22end%22%3A%222026-03-11T10%3A23%3A55.442Z%22%2C%22path%22%3A%22%2F%22%7D%7D; path=/; max-age=397; Secure;`;
@@ -114,11 +128,9 @@ describe('Click tracking script', () => {
   });
 
   it('Reuses the atuserid cookie if there is a atuserid cookie on the user browser', () => {
-    const anchorElement = document.createElement('a');
-    anchorElement.setAttribute(
-      LITE_ATI_TRACKING,
-      'https://logws1363.ati-host.net/?',
-    );
+    const anchorElement = createAnchor({
+      hasliteSiteTracking: true,
+    });
 
     document.cookie =
       'atuserid={"val":"oldCookieId"}; path=/; max-age=397; Secure;';
@@ -130,15 +142,16 @@ describe('Click tracking script', () => {
   });
 
   it('Calls sendBeaconLite() with the correct url', () => {
-    const anchorElement = document.createElement('a');
-    anchorElement.setAttribute(
-      LITE_ATI_TRACKING,
-      'https://logws1363.ati-host.net/?',
-    );
+    const anchorElement = createAnchor({
+      hasliteSiteTracking: true,
+    });
 
     document.cookie =
       'atuserid={"val":"userCookieId"}; path=/; max-age=397; Secure;';
 
+    Object.defineProperty(document, 'referrer', {
+      value: 'https://www.bbc.com',
+    });
     window.screen = {
       width: 100,
       height: 400,
@@ -167,6 +180,7 @@ describe('Click tracking script', () => {
       r: '0x0x24x24',
       re: '4060x1080',
       app_type: 'lite',
+      ref: 'https://www.bbc.com',
     });
   });
 });

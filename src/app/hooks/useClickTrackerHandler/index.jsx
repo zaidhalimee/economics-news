@@ -171,12 +171,12 @@ export const useConstructLiteSiteATIEventTrackUrl = (props = {}) => {
 
 export const useATIClickTrackerHandler = (props = {}) => {
   const { isLite } = useContext(RequestContext);
-  const canonicalHandler = useClickTrackerHandler(props);
+  const clickTrackerHandler = useClickTrackerHandler(props);
   const liteHandler = useConstructLiteSiteATIEventTrackUrl(props);
 
   return isLite
     ? { [LITE_ATI_TRACKING]: liteHandler }
-    : { onClick: canonicalHandler };
+    : { onClick: clickTrackerHandler };
 };
 
 export default useClickTrackerHandler;
