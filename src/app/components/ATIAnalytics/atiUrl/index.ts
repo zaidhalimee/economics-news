@@ -504,7 +504,7 @@ export const buildReverbPageSectionEventModel = ({
   const eventDetails = {
     eventName: type === 'view' ? 'sectionView' : 'sectionClick',
     ...{
-      ...{ eventPublisher: type === 'click' ? 'click' : 'view' },
+      ...{ eventPublisher: type === 'click' ? 'click' : 'impression' },
       componentName,
       container: campaignID,
       attribute: componentName,
