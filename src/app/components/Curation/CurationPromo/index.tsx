@@ -1,5 +1,7 @@
 /* eslint-disable jsx-a11y/aria-role */
-import React, { useContext } from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/react';
+import { useContext } from 'react';
 import moment from 'moment';
 import path from 'ramda/src/path';
 import formatDuration from '#app/lib/utilities/formatDuration';
@@ -9,6 +11,7 @@ import VisuallyHiddenText from '../../VisuallyHiddenText';
 import { ServiceContext } from '../../../contexts/ServiceContext';
 import { RequestContext } from '../../../contexts/RequestContext';
 import LiveLabel from '../../LiveLabel';
+import styles from './index.styles';
 
 const CurationPromo = ({
   id,
@@ -60,7 +63,7 @@ const CurationPromo = ({
           )}
         </Promo.Image>
       )}
-      <Promo.Heading as={`h${headingLevel}`}>
+      <Promo.Heading css={styles.promo} as={`h${headingLevel}`}>
         {isMedia ? (
           <Promo.A href={link} aria-labelledby={id}>
             <span id={id} role="text">
