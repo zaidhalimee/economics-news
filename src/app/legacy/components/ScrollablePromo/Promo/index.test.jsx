@@ -5,6 +5,7 @@ import {
   oneLinkWithTimestamp,
   topStoriesBlocks,
   mostReadBlocks,
+  topStoriesBlocksWithLiveItem,
 } from '../helpers/fixtureData';
 import Promo from '.';
 import { ServiceContextProvider } from '../../../../contexts/ServiceContext';
@@ -74,6 +75,21 @@ describe('ScrollablePromo', () => {
         <ScrollablePromo block={topStoriesBlocks[0]} experimentVariant="B" />,
       );
       expect(queryByTestId('timestamp')).not.toBeInTheDocument();
+    });
+
+    it('it should display a LiveLabel when returning Top Stories', () => {
+      const { container } = render(
+        <ScrollablePromo
+          block={topStoriesBlocksWithLiveItem[1]}
+          experimentVariant="A"
+        />,
+      );
+      expect(
+        container.querySelector('[class*="liveLabelPulse"]'),
+      ).toBeInTheDocument();
+      expect(
+        container.querySelector('[class*="liveLabelText"]'),
+      ).toBeInTheDocument();
     });
   });
 });
