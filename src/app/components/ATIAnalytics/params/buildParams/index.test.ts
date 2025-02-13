@@ -314,6 +314,7 @@ describe('implementation of buildPageATIParams and buildPageATIUrl', () => {
         requestContext: {
           ...requestContext,
           isUK: false,
+          pageType: 'article',
         },
         serviceContext: { ...serviceContext, service: 'hausa', lang: 'ha' },
       });
