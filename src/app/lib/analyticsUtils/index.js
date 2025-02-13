@@ -185,7 +185,7 @@ export const getReferrer = platform => {
     return `\${documentReferrer}`;
   }
 
-  if (onClient()) {
+  if (onClient() && document.referrer) {
     return document.referrer;
   }
 
