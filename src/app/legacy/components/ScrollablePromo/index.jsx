@@ -86,7 +86,7 @@ const LabelComponent = styled.strong`
       margin-${dir === 'ltr' ? `left` : `right`}: ${GEL_SPACING_DBL};  
     }
     @media (min-width: ${GEL_GROUP_4_SCREEN_WIDTH_MIN}){
-        margin-${dir === 'ltr' ? `left` : `right`}: 0;
+      margin-${dir === 'ltr' ? `left` : `right`}: 0;
     }
 `}
   ${({ experimentVariant }) =>
@@ -96,7 +96,9 @@ const LabelComponent = styled.strong`
     display: flex;
     align-items: center;
     height: ${GEL_SPACING_QUAD};
-    margin-bottom: 0px;
+    margin: 0 !important;
+    background: #f6f6f6;
+    padding: ${GEL_SPACING_DBL}
   `}
 `;
 
