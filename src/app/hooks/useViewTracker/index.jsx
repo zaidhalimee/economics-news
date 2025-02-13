@@ -11,6 +11,10 @@ const EVENT_TYPE = 'view';
 const VIEWED_DURATION_MS = 1000;
 const MIN_VIEWED_PERCENT = 0.5;
 
+/**
+ *
+ * @returns {Ref<HTMLElement> | undefined}
+ */
 const useViewTracker = (props = {}) => {
   const componentName = props?.componentName;
   const format = props?.format;
@@ -27,12 +31,16 @@ const useViewTracker = (props = {}) => {
   const { trackingIsEnabled } = useTrackingToggle(componentName);
   const eventTrackingContext = useContext(EventTrackingContext);
 
-  const { pageIdentifier, platform, producerId, statsDestination } =
-    eventTrackingContext;
-
+  const {
+    pageIdentifier,
+    platform,
+    producerId,
+    producerName,
+    statsDestination,
+  } = eventTrackingContext;
   const campaignID = props?.campaignID || eventTrackingContext?.campaignID;
 
-  const { service } = useContext(ServiceContext);
+  const { service, useReverb } = useContext(ServiceContext);
 
   const initObserver = async () => {
     if (typeof window.IntersectionObserver === 'undefined') {
@@ -60,6 +68,7 @@ const useViewTracker = (props = {}) => {
           pageIdentifier,
           platform,
           producerId,
+          producerName,
           service,
           statsDestination,
         ].every(Boolean);
@@ -98,12 +107,14 @@ const useViewTracker = (props = {}) => {
             pageIdentifier,
             platform,
             producerId,
+            producerName,
             service,
             statsDestination,
             type: EVENT_TYPE,
             advertiserID,
             url,
             detailedPlacement,
+            useReverb,
             ...(optimizelyVariation &&
               optimizelyVariation !== 'off' && {
                 experimentVariant: optimizelyVariation,
@@ -131,6 +142,7 @@ const useViewTracker = (props = {}) => {
     pageIdentifier,
     platform,
     producerId,
+    producerName,
     service,
     statsDestination,
     trackingIsEnabled,
@@ -140,6 +152,7 @@ const useViewTracker = (props = {}) => {
     optimizely,
     optimizelyMetricNameOverride,
     detailedPlacement,
+    useReverb,
   ]);
 
   return async element => {

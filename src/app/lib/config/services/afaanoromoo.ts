@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-afaanoromoo',
     atiAnalyticsProducerId: '2',
+    atiAnalyticsProducerName: 'AFAAN_OROMOO',
     chartbeatDomain: 'afaanoromoo.bbc.co.uk',
     brandName: 'BBC News Afaan Oromoo',
     product: 'BBC News',
@@ -232,6 +233,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Sagantaa raadiyoo itti aanu',
         duration: 'Turtii',
         recentEpisodes: 'Sagantaawwan darban',
+        closeVideo: 'Bahi',
       },
       socialEmbed: {
         caption: {
@@ -334,8 +336,24 @@ export const service: DefaultServiceConfig = {
         url: '/afaanoromoo/topics/c2dwqdy81y1t',
       },
       {
+        title: 'Ispoortii',
+        url: '/afaanoromoo/topics/c06gq6440j8t',
+      },
+      {
         title: 'Viidiyoo',
         url: '/afaanoromoo/topics/ck0dg7dpjwwt',
+      },
+      {
+        title: 'Siyaasa',
+        url: '/afaanoromoo/topics/c2dwqdynwwrt',
+      },
+      {
+        title: 'Dubartoota',
+        url: '/afaanoromoo/topics/c8y94yq185dt',
+      },
+      {
+        title: 'Baha Jidduugalaa',
+        url: '/afaanoromoo/topics/c8y94yzd049t',
       },
       {
         title: 'Jajjaboo',

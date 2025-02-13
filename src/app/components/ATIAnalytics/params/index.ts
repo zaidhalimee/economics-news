@@ -21,7 +21,11 @@ import {
   AUDIO_PAGE,
   TV_PAGE,
 } from '../../../routes/utils/pageTypes';
-import { buildPageATIUrl, buildPageATIParams } from './buildParams';
+import {
+  buildPageATIUrl,
+  buildPageATIParams,
+  buildPageReverbParams,
+} from './buildParams';
 import {
   buildIndexPageATIParams,
   buildIndexPageATIUrl,
@@ -32,6 +36,7 @@ import {
   PageData,
   ATIPageTrackingProps,
   ATIConfigurationDetailsProviders,
+  ReverbDetailsProviders,
 } from '../types';
 import { PageTypes } from '../../../models/types/global';
 
@@ -116,7 +121,7 @@ type BuilderFunction = {
 };
 
 type PageTypeHandlers = {
-  [key in PageTypes]: BuilderFunction;
+  [_key in PageTypes]: BuilderFunction;
 };
 
 const isMigrated = (pageType: PageTypes) =>
@@ -154,6 +159,14 @@ export const buildATIUrl = ({
   return null;
 };
 
+export const buildReverbParams = ({
+  requestContext,
+  serviceContext,
+  atiData,
+}: ReverbDetailsProviders) => {
+  return buildPageReverbParams({ atiData, requestContext, serviceContext });
+};
+
 export const buildATIEventTrackingParams = ({
   requestContext,
   serviceContext,
@@ -176,5 +189,3 @@ export const buildATIEventTrackingParams = ({
 
   return buildParams(data as PageData, requestContext, serviceContext);
 };
-
-export default buildATIUrl;

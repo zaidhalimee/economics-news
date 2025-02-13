@@ -1,6 +1,6 @@
 /** @jsx jsx */
 /* @jsxFrag React.Fragment */
-import { forwardRef } from 'react';
+import { ForwardedRef, forwardRef } from 'react';
 import { jsx } from '@emotion/react';
 import useViewTracker from '#app/hooks/useViewTracker';
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
@@ -35,7 +35,7 @@ const Billboard = forwardRef(
       eventTrackingData,
       showLiveLabel,
     }: BillboardProps,
-    viewRef,
+    viewRef: ForwardedRef<HTMLDivElement>,
   ) => {
     const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
 
@@ -53,12 +53,7 @@ const Billboard = forwardRef(
             />
             <div css={styles.textContainer}>
               <Heading level={2} size="paragon" css={styles.heading} id={id}>
-                <a
-                  href={link}
-                  css={styles.link}
-                  className="focusIndicatorDisplayBlock"
-                  onClick={clickTrackerHandler}
-                >
+                <a href={link} css={styles.link} onClick={clickTrackerHandler}>
                   {showLiveLabel ? (
                     <div data-testid="billboard-live-label">
                       <LivePulse
@@ -71,7 +66,7 @@ const Billboard = forwardRef(
                       </LiveText>
                     </div>
                   ) : (
-                    heading
+                    <div>{heading}</div>
                   )}
                 </a>
               </Heading>

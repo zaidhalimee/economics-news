@@ -33,7 +33,7 @@ export const chartbeatUID = 50924;
 export const useCanonical = true;
 export const chartbeatSource = '//static.chartbeat.com/js/chartbeat.js';
 
-const capitalize = (s: string) => s?.charAt(0).toUpperCase() + s?.slice(1);
+const capitalize = (s = '') => `${s?.charAt(0).toUpperCase()}${s?.slice(1)}`;
 
 const buildSectionArr = (service: Services, value: string, type: string) => [
   `${capitalize(service)} - ${value}`,
@@ -214,6 +214,7 @@ export interface GetConfigProps {
   mediaPageType?: string;
   categoryName?: string;
   title: string;
+  authors?: string;
   taggings?: MetadataTaggings;
   contentType?: string;
   producer?: string;
@@ -234,6 +235,7 @@ export const getConfig = ({
   sectionName,
   categoryName,
   title,
+  authors,
   taggings,
   contentType,
   producer,
@@ -272,6 +274,7 @@ export const getConfig = ({
     sections,
     uid: chartbeatUID,
     title: analyticsTitle,
+    ...(authors && { authors }),
     virtualReferrer: referrer,
     ...(isAmp && { contentType: analyticsContentType }),
     ...(!isAmp && {

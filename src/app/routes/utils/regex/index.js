@@ -4,7 +4,6 @@ import {
   getArticleSwRegex,
   getArticleManifestRegex,
   getFrontPageRegex,
-  getTipoHomeRegex,
   getHomePageRegex,
   getSwRegex,
   getManifestRegex,
@@ -37,9 +36,6 @@ export const frontPageDataPath = `${frontPagePath}.json`;
 
 export const frontPageSwPath = getSwRegex(allServices);
 export const frontPageManifestPath = getManifestRegex(allServices);
-
-export const tipoHomePath = getTipoHomeRegex(allServices);
-export const tipoHomeDataPath = `${tipoHomePath}.json`;
 
 export const homePagePath = getHomePageRegex(allServices);
 export const homePageDataPath = `${homePagePath}.json`;

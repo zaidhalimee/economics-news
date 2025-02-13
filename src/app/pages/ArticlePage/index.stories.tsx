@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
+import React, { useMemo } from 'react';
 import ThemeProvider from '#app/components/ThemeProvider';
 import { ToggleContextProvider } from '#contexts/ToggleContext';
 import {
@@ -16,7 +16,6 @@ import articleDataWithPodcastPromo from '#data/russian/articles/c61q94n3rm3o.jso
 import articleDataWithTranscript from '#data/mundo/articles/ce42wzqr2mko.json';
 import articleNewsWithPodcastPromo from '#data/news/articles/crkxdvxzwxk2.json';
 import articleDataWithElectionTag from '#data/mundo/articles/c206j730722o.json';
-import articleDataWithJumpTo from '#data/news/articles/c6v11qzyv8po.json';
 import withPageWrapper from '#containers/PageHandlers/withPageWrapper';
 import withOptimizelyProvider from '#containers/PageHandlers/withOptimizelyProvider';
 import { service as newsConfig } from '#app/lib/config/services/news';
@@ -116,6 +115,11 @@ const ComponentWithServiceContext = ({
   electionBanner = false,
   experimentStage,
 }: Props) => {
+  const memoisedServiceContext = useMemo(
+    () => ({ ...serviceContextMock, service }),
+    [service],
+  );
+
   return (
     <ToggleContextProvider
       toggles={{
@@ -129,7 +133,7 @@ const ComponentWithServiceContext = ({
       {/* Service set to news to enable most read. Article data is in english */}
       <ServiceContext.Provider
         // @ts-expect-error - passing partial service context
-        value={{ ...serviceContextMock, service }}
+        value={memoisedServiceContext}
       >
         <ThemeProvider service={service}>
           <Page
@@ -228,7 +232,3 @@ export const ArticlePageWithElectionBanner = {
     chromatic: { disableSnapshot: true },
   },
 };
-
-export const ArticlePageWithJumpTo = () => (
-  <ComponentWithContext data={articleDataWithJumpTo} service="news" />
-);

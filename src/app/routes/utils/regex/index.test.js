@@ -20,8 +20,7 @@ import {
   podcastEpisodePath,
   recommendationsDataRegex,
   secondaryColumnDataRegexPath,
-  tipoHomeDataPath,
-  tipoHomePath,
+  topicPath,
 } from './index';
 
 import serviceConfig from '../../../lib/config/services/loadableConfig';
@@ -129,46 +128,6 @@ describe('frontPageDataPath', () => {
     '/ukchina/trad.json',
   ];
   shouldNotMatchInvalidRoutes(invalidRoutes, frontPageDataPath);
-});
-
-describe('tipoHomePath', () => {
-  const validRoutes = [
-    '/news/tipohome',
-    '/persian/tipohome',
-    '/news/tipohome.amp',
-    '/persian/tipohome.amp',
-    '/news/simp/tipohome',
-    '/persian/trad/tipohome',
-    '/news/lat/tipohome.amp',
-    '/persian/cyr/tipohome.amp',
-  ];
-  shouldMatchValidRoutes(validRoutes, tipoHomePath);
-
-  const invalidRoutes = [
-    '/news/tipohome/simp',
-    '/news/tipohome/simp.amp',
-    '/tipohome/persian',
-    '/tipohome/persian.amp',
-  ];
-  shouldNotMatchInvalidRoutes(invalidRoutes, tipoHomePath);
-});
-
-describe('tipoHomeDataPath', () => {
-  const validRoutes = [
-    '/news/tipohome.json',
-    '/kyrgyz/tipohome.json',
-    '/news/cyr/tipohome.json',
-    '/persian/trad/tipohome.json',
-  ];
-  shouldMatchValidRoutes(validRoutes, tipoHomeDataPath);
-
-  const invalidRoutes = [
-    '/news/data/tipohome.json',
-    '/iplayer/tipohome.json',
-    '/news/foobar/tipohome.json',
-    '/persian/nontrad/tipohome.json',
-  ];
-  shouldNotMatchInvalidRoutes(invalidRoutes, tipoHomeDataPath);
 });
 
 describe('articleSwPath', () => {
@@ -602,4 +561,27 @@ describe('frontPage -> homePage migration', () => {
 
     shouldNotMatchInvalidRoutes(liveFrontPageRoutes, homePageRegex);
   });
+});
+
+describe('topicPath', () => {
+  const validRoutes = [
+    '/zhongwen/topics/cd6qem06z92t/trad',
+    '/zhongwen/topics/c1ez1k4emn0t/trad',
+    '/serbian/topics/cr50vdy9q6wt/lat',
+    '/serbian/topics/c2lej05e1eqt/lat',
+    '/pidgin/topics/c2dwqd1zr92t',
+  ];
+  shouldMatchValidRoutes(validRoutes, topicPath);
+
+  const invalidRoutes = [
+    '/serbian/lat/topics/c2lej05e1eqt',
+    '/serbian/lat/topics/c2lej05qwesae1eqt',
+    '/zhongwen/c1ez1k4emn0t',
+    '/zhongwen/trad/topics',
+    '/hindi/topic/c5jje4ejkqv',
+    '/mundo/topic/',
+    '/serbian/topic/c5jje4ejkqvo/foobar',
+    '/urdu/topic/c5jje4ejkqvo/.amp',
+  ];
+  shouldNotMatchInvalidRoutes(invalidRoutes, topicPath);
 });
