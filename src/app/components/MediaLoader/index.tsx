@@ -189,10 +189,14 @@ const MediaLoader = ({
   uniqueId,
   forceStage,
 }: Props) => {
+  // TODO - refactor to improve experience on .lite
+  const transcriptBlock = getTranscriptBlock(blocks);
+  const hasTranscript = !!transcriptBlock;
+
   const { lang, translations } = useContext(ServiceContext);
   const { pageIdentifier } = useContext(EventTrackingContext);
   const { enabled: adsEnabled } = useToggle('ads');
-  const stage = useExperimentHook();
+  const stage = useExperimentHook(hasTranscript);
 
   const experimentStage = forceStage ?? stage;
 
@@ -209,10 +213,6 @@ const MediaLoader = ({
   const [showPlaceholder, setShowPlaceholder] = useState(
     !PAGETYPES_IGNORE_PLACEHOLDER.includes(pageType),
   );
-
-  // TODO - refactor to improve experience on .lite
-  const transcriptBlock = getTranscriptBlock(blocks);
-  const hasTranscript = !!transcriptBlock;
 
   if (isLite && !hasTranscript) return null;
 

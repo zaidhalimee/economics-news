@@ -18,6 +18,7 @@ type ExperimentCriteria = Partial<{
   dataSaver: boolean;
   lowPower: boolean;
   noJs: boolean;
+  hasTranscript: boolean;
 }>;
 
 export type Navigator = {
@@ -33,6 +34,7 @@ const determineStage = ({
   dataSaver,
   lowPower,
   noJs,
+  hasTranscript,
 }: ExperimentCriteria) => {
   if (noJs) {
     return Stages.STAGE_1;
@@ -42,14 +44,17 @@ const determineStage = ({
     return Stages.STAGE_3;
   }
 
-  if (service === 'mundo' || dataSaver || isOperaMini || lowPower) {
+  if (
+    (service === 'mundo' || dataSaver || isOperaMini || lowPower) &&
+    hasTranscript
+  ) {
     return Stages.STAGE_2;
   }
 
   return Stages.DEFAULT;
 };
 
-const useExperimentHook = () => {
+const useExperimentHook = (hasTranscript: boolean) => {
   const [lowPower, setLowPower] = useState(false);
   const [dataSaver, setSaveDataMode] = useState(false);
   const [noJs, setNoJs] = useState(true);
@@ -78,6 +83,7 @@ const useExperimentHook = () => {
     dataSaver,
     lowPower,
     noJs,
+    hasTranscript,
   });
 
   return stage;

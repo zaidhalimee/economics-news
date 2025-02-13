@@ -23,6 +23,7 @@ describe('ExperimentContext', () => {
       service: 'afaanoromoo' as Services,
       dataSaver: false,
       batteryLevel: '1',
+      hasTranscript: true,
       expected: Stages.STAGE_3,
     },
     {
@@ -31,6 +32,7 @@ describe('ExperimentContext', () => {
       service: 'mundo' as Services,
       dataSaver: false,
       batteryLevel: '1',
+      hasTranscript: true,
       expected: Stages.STAGE_2,
     },
     {
@@ -39,6 +41,7 @@ describe('ExperimentContext', () => {
       service: 'afaanoromoo' as Services,
       dataSaver: true,
       batteryLevel: '1',
+      hasTranscript: true,
       expected: Stages.STAGE_2,
     },
     {
@@ -47,6 +50,7 @@ describe('ExperimentContext', () => {
       service: 'afaanoromoo' as Services,
       dataSaver: false,
       batteryLevel: '0.2',
+      hasTranscript: true,
       expected: Stages.STAGE_2,
     },
 
@@ -56,11 +60,28 @@ describe('ExperimentContext', () => {
       service: 'afaanoromoo' as Services,
       dataSaver: false,
       batteryLevel: '1',
+      hasTranscript: true,
       expected: Stages.STAGE_2,
+    },
+    {
+      title: 'Returns default stage for Mundo services with no transcript',
+      isOperaMini: true,
+      service: 'mundo' as Services,
+      dataSaver: false,
+      batteryLevel: '1',
+      hasTranscript: false,
+      expected: Stages.DEFAULT,
     },
   ])(
     '$title',
-    async ({ isOperaMini, service, dataSaver, batteryLevel, expected }) => {
+    async ({
+      isOperaMini,
+      service,
+      dataSaver,
+      batteryLevel,
+      hasTranscript,
+      expected,
+    }) => {
       global.navigator.connection = { saveData: dataSaver };
       global.navigator.getBattery = () =>
         Promise.resolve({ level: batteryLevel });
@@ -68,9 +89,12 @@ describe('ExperimentContext', () => {
       jest.spyOn(OperaMiniHookModule, 'default').mockReturnValue(isOperaMini);
 
       const { current } = await act(async () => {
-        const { result } = await renderHook(() => useExperimentHook(), {
-          wrapper: ServiceContextWrapper(service),
-        });
+        const { result } = await renderHook(
+          () => useExperimentHook(hasTranscript),
+          {
+            wrapper: ServiceContextWrapper(service),
+          },
+        );
         return result;
       });
 
