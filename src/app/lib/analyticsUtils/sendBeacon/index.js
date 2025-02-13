@@ -72,8 +72,8 @@ const reverbLinkClick = async ({ reverbInstance, eventDetails }) => {
     eventPublisher,
     componentName,
     { container, attribute, placement, source, result, is_background },
-    {},
-    {},
+    null,
+    null,
     isClick,
   );
 };
