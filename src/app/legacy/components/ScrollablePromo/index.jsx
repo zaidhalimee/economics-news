@@ -66,7 +66,7 @@ const ScrollablePromoContainer = styled.div`
   `}
 `;
 
-const LabelComponent = styled(({ ariaLabel, ...props }) => (
+const LabelComponent = styled(({ ariaLabel, experimentVariant, ...props }) => (
   <strong aria-label={ariaLabel} {...props} />
 ))`
   ${({ script, experimentVariant }) =>
@@ -126,9 +126,15 @@ const ScrollablePromo = ({
     componentName: `edoj${blockGroupIndex}`,
     format: 'CHD=edoj',
   };
+
+  const eventTrackingDataForOJTopBar = {
+    componentName: `OJTopBar`,
+  };
   console.log('experimentVariant:', experimentVariant);
   const viewRef = useViewTracker(eventTrackingData);
-  const handleClickTracking = useClickTrackerHandler(eventTrackingData);
+  const handleClickTracking = useClickTrackerHandler(
+    experimentVariant ? eventTrackingDataForOJTopBar : eventTrackingData,
+  );
 
   if (!blocks || isEmpty(blocks)) {
     return null;
