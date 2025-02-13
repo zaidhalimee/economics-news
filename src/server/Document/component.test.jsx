@@ -8,11 +8,10 @@ import DocumentComponent from './component';
 
 Helmet.canUseDOM = false;
 
-function liteATIClickTracking() {
-  return 'Tracking script placeholder';
-}
 jest.mock('#src/server/utilities/liteATIClickTracking', () =>
-  liteATIClickTracking.toString(),
+  function liteATIClickTracking() {
+    return 'Tracking script placeholder';
+  }.toString(),
 );
 
 describe('Document Component', () => {
