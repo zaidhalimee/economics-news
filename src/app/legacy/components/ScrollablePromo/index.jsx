@@ -66,7 +66,9 @@ const ScrollablePromoContainer = styled.div`
   `}
 `;
 
-const LabelComponent = styled.strong`
+const LabelComponent = styled(({ ariaLabel, ...props }) => (
+  <strong aria-label={ariaLabel} {...props} />
+))`
   ${({ script, experimentVariant }) =>
     script &&
     (experimentVariant && experimentVariant !== 'none'
@@ -151,7 +153,7 @@ const ScrollablePromo = ({
   const isSingleItem = blocksWithoutTitle.length === 1;
 
   const ariaLabel =
-    title && idSanitiser(`${title}${experimentVariant ? ' scrollable' : ''}`);
+    title && idSanitiser(`${title}${experimentVariant ? ' 1' : ' 2'}`);
 
   const a11yAttributes = {
     ...(experimentVariant && {
@@ -168,11 +170,13 @@ const ScrollablePromo = ({
           ),
         }),
   };
+
   return (
     <>
       {title && (
         <LabelComponent
           id={ariaLabel}
+          ariaLabel={ariaLabel}
           data-testid="eoj-recommendations-heading"
           script={script}
           service={service}
