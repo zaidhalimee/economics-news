@@ -19,6 +19,7 @@ import {
   GEL_GROUP_0_SCREEN_WIDTH_MIN,
   GEL_GROUP_2_SCREEN_WIDTH_MIN,
   GEL_GROUP_3_SCREEN_WIDTH_MAX,
+  GEL_GROUP_3_SCREEN_WIDTH_MIN,
   GEL_GROUP_4_SCREEN_WIDTH_MIN,
 } from '#psammead/gel-foundations/src/breakpoints';
 import { GridItemMediumNoMargin } from '#components/Grid';
@@ -97,7 +98,13 @@ const LabelComponent = styled.strong`
     @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MAX}){
       display: none;
     }
-    margin: 0 !important;
+    @media (min-width: ${GEL_GROUP_0_SCREEN_WIDTH_MIN}){
+      margin: 0 -0.2rem;
+    }
+    @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MIN}){
+      margin: 0 -0.8rem;  
+    }
+    margin: 0;
     display: flex;
     align-items: center;
     height: ${GEL_SPACING_QUAD};
