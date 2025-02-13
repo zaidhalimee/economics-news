@@ -79,8 +79,7 @@ const expectedOutput = {
   statsDestination: 'getStatsDestination',
   statsPageIdentifier: 'getStatsPageIdentifier',
   statusCode: 200,
-
-  anonicalLink: 'canonicalLink',
+  canonicalLink: 'canonicalLink',
   ampLink: 'ampLink',
   canonicalUkLink: 'canonicalUkLink',
   ampUkLink: 'ampUkLink',
