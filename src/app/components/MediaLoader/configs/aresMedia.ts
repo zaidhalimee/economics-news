@@ -64,16 +64,6 @@ export default ({
       ORIENTATION_MAPPING[versionsBlock?.types?.[1]]) ??
     ORIENTATION_MAPPING.Original;
 
-  // const orientation = () => {
-  //   if (
-  //     ORIENTATION_MAPPING[versionsBlock?.types?.[0]] === 'portrait' ||
-  //     ORIENTATION_MAPPING[versionsBlock?.types?.[1]] === 'portrait'
-  //   ) {
-  //     return ORIENTATION_MAPPING.Portrait;
-  //   }
-  //   return ORIENTATION_MAPPING.Original;
-  // };
-
   const format = aresMediaMetadata?.format;
 
   const actualFormat = format === 'audio_video' ? 'video' : format;
