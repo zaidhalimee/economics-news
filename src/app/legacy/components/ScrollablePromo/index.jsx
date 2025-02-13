@@ -163,45 +163,47 @@ const ScrollablePromo = ({
         }),
   };
   return (
-    <ScrollablePromoContainer experimentVariant={experimentVariant}>
-      <GridItemMediumNoMargin {...a11yAttributes}>
-        {title && (
-          <LabelComponent
-            id={ariaLabel}
-            data-testid="eoj-recommendations-heading"
-            script={script}
-            service={service}
-            dir={dir}
-            experimentVariant={experimentVariant}
-          >
-            {title}
-          </LabelComponent>
-        )}
-        {experimentVariant && (
-          <PromoList
-            blocks={blocks}
-            experimentVariant={experimentVariant}
-            viewTracker={viewRef}
-            onClick={handleClickTracking}
-          />
-        )}
-        {!experimentVariant && isSingleItem && (
-          <PromoWrapper dir={dir} ref={viewRef}>
-            <Promo
-              block={blocksWithoutTitle[0]}
+    <>
+      {title && (
+        <LabelComponent
+          id={ariaLabel}
+          data-testid="eoj-recommendations-heading"
+          script={script}
+          service={service}
+          dir={dir}
+          experimentVariant={experimentVariant}
+        >
+          {title}
+        </LabelComponent>
+      )}
+      <ScrollablePromoContainer experimentVariant={experimentVariant}>
+        <GridItemMediumNoMargin {...a11yAttributes}>
+          {experimentVariant && (
+            <PromoList
+              blocks={blocks}
+              experimentVariant={experimentVariant}
+              viewTracker={viewRef}
               onClick={handleClickTracking}
             />
-          </PromoWrapper>
-        )}
-        {!experimentVariant && !isSingleItem && (
-          <PromoList
-            blocks={blocksWithoutTitle}
-            viewTracker={viewRef}
-            onClick={handleClickTracking}
-          />
-        )}
-      </GridItemMediumNoMargin>
-    </ScrollablePromoContainer>
+          )}
+          {!experimentVariant && isSingleItem && (
+            <PromoWrapper dir={dir} ref={viewRef}>
+              <Promo
+                block={blocksWithoutTitle[0]}
+                onClick={handleClickTracking}
+              />
+            </PromoWrapper>
+          )}
+          {!experimentVariant && !isSingleItem && (
+            <PromoList
+              blocks={blocksWithoutTitle}
+              viewTracker={viewRef}
+              onClick={handleClickTracking}
+            />
+          )}
+        </GridItemMediumNoMargin>
+      </ScrollablePromoContainer>
+    </>
   );
 };
 
