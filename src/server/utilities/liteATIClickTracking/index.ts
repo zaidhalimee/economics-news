@@ -86,6 +86,14 @@ export default () => {
             );
           }
 
+          if (document.referrer) {
+            clientSideAtiURL = clientSideAtiURL.concat(
+              '&',
+              'ref=',
+              document.referrer,
+            );
+          }
+
           window.sendBeaconLite(clientSideAtiURL);
         }
 
