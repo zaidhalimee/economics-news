@@ -182,7 +182,13 @@ type Props = {
   uniqueId?: string;
 };
 
-const MediaLoader = ({ blocks, className, embedded, uniqueId, forceStage }: Props) => {
+const MediaLoader = ({
+  blocks,
+  className,
+  embedded,
+  uniqueId,
+  forceStage,
+}: Props) => {
   const { lang, translations } = useContext(ServiceContext);
   const { pageIdentifier } = useContext(EventTrackingContext);
   const { enabled: adsEnabled } = useToggle('ads');
