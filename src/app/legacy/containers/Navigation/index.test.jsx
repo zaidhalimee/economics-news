@@ -250,28 +250,28 @@ describe('Navigation Container', () => {
       container.querySelector('[class*="ScrollablePromoContainer"]'),
     ).toBeInTheDocument();
   });
-  // wip test
-  // it('should not render the OJ Top Bar when experiment variant is set to none', () => {
-  //   const propsForOJExperiment = {
-  //     blocks: mostReadBlocks,
-  //     experimentVariant: null,
-  //   };
-  //   const { container } = render(
-  //     <Navigation propsForOJExperiment={propsForOJExperiment} />,
-  //     {
-  //       bbcOrigin: 'https://www.test.bbc.co.uk',
-  //       id: 'c0000000000o',
-  //       isAmp: false,
-  //       pageType: ARTICLE_PAGE,
-  //       service: 'news',
-  //       statusCode: 200,
-  //       pathname: '/news',
-  //     },
-  //   );
-  //   expect(
-  //     container.querySelector('[class*="ScrollablePromoContainer"]'),
-  //   ).not.toBeInTheDocument();
-  // });
+
+  it('should not render the OJ Top Bar when experiment variant is set to none', () => {
+    const propsForOJExperiment = {
+      blocks: mostReadBlocks,
+      experimentVariant: null,
+    };
+    const { container } = render(
+      <Navigation propsForOJExperiment={propsForOJExperiment} />,
+      {
+        bbcOrigin: 'https://www.test.bbc.co.uk',
+        id: 'c0000000000o',
+        isAmp: false,
+        pageType: ARTICLE_PAGE,
+        service: 'news',
+        statusCode: 200,
+        pathname: '/news',
+      },
+    );
+    expect(
+      container.querySelector('[class*="ScrollablePromoContainer"]'),
+    ).not.toBeInTheDocument();
+  });
 
   describe('View and click tracking', () => {
     const scrollEventTrackingData = {
