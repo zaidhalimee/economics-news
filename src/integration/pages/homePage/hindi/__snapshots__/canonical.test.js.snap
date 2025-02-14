@@ -128,8 +128,8 @@ exports[`Canonical Home Page Header Navigation link should match text and url 1`
 
 exports[`Canonical Home Page Header Navigation link should match text and url 2`] = `
 {
-  "text": "दिल्ली विधानसभा चुनाव",
-  "url": "/hindi/topics/c8dqegnm6d9t",
+  "text": "स्पोर्ट्सवुमन ऑफ़ द ईयर",
+  "url": "/hindi/topics/cyz04xpp440t",
 }
 `;
 
