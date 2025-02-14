@@ -35,6 +35,7 @@ import { getMvtExperiments, getMvtVaryHeaders } from './utilities/mvtHeader';
 import getAssetOrigins from './utilities/getAssetOrigins';
 import extractHeaders from './utilities/extractHeaders';
 import addPlatformToRequestChainHeader from './utilities/addPlatformToRequestChainHeader';
+import searchTool, { processInput } from './utilities/searchTool';
 
 const morgan = require('morgan');
 
@@ -192,6 +193,42 @@ const injectReferrerPolicyHeader = (req, res, next) => {
   res.set('Referrer-Policy', 'no-referrer-when-downgrade');
   next();
 };
+
+server.locals.articleIndex = searchTool();
+
+server.get('/search_tool/*', async (req, res) => {
+  try {
+    const { query } = req;
+    const { index, totalRecords } = server.locals.articleIndex;
+    const { results, decodedInput, processingTime } = processInput(
+      index,
+      query.user_query,
+    );
+    // const result = await renderDocument({
+    //   bbcOrigin,
+    //   data,
+    //   isAmp,
+    //   isApp,
+    //   isLite,
+    //   routes,
+    //   service,
+    //   url,
+    //   variant,
+    // });
+
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).send({
+      status: 'Okay',
+      decodedInput,
+      totalRecords,
+      processingTime,
+      results,
+    });
+  } catch (error) {
+    logger.error(SERVER_STATUS_ENDPOINT_ERROR, { error });
+    res.status(500).send('Unable to determine status');
+  }
+});
 
 // Catch all for all routes
 server.get(
