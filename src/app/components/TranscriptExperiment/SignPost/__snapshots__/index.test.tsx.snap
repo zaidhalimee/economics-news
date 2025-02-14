@@ -178,7 +178,7 @@ exports[`Sign Post should render a 'Help reduce your power consumption' message 
       >
         <button
           aria-describedby=":r0:"
-          class="emotion-4"
+          class="focusIndicatorInvert emotion-4"
           type="button"
         >
           <span>

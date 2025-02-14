@@ -40,6 +40,7 @@ const SignPost = ({ title = '' }: Props) => {
             type="button"
             css={[styles.loadVideo]}
             aria-describedby={idRef}
+            className="focusIndicatorInvert"
           >
             <span>
               <SVGs.PlusSvg css={[styles.icon, styles.plusIcon]} />
