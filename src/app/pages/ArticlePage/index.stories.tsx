@@ -22,7 +22,6 @@ import { service as newsConfig } from '#app/lib/config/services/news';
 import latin from '#app/components/ThemeProvider/fontScripts/latin';
 import { Services } from '#app/models/types/global';
 import { StoryArgs, StoryProps } from '#app/models/types/storybook';
-import { Stages } from '#app/hooks/useExperimentHook';
 import ArticlePageComponent from './ArticlePage';
 
 const PageWithOptimizely = withOptimizelyProvider(ArticlePageComponent);
@@ -63,7 +62,6 @@ type Props = {
   service?: Services;
   podcastEnabled?: boolean;
   electionBanner?: boolean;
-  experimentStage?: Stages;
 };
 
 const ComponentWithContext = ({
@@ -113,7 +111,6 @@ const ComponentWithServiceContext = ({
   service = 'news',
   podcastEnabled = false,
   electionBanner = false,
-  experimentStage,
 }: Props) => {
   const memoisedServiceContext = useMemo(
     () => ({ ...serviceContextMock, service }),
@@ -142,7 +139,6 @@ const ComponentWithServiceContext = ({
               secondaryColumn: data.secondaryData,
               mostRead: data.secondaryData.mostRead,
             }}
-            experimentStage={experimentStage}
           />
         </ThemeProvider>
       </ServiceContext.Provider>
@@ -207,11 +203,17 @@ export const ArticlePageWithPodcastNews = () => (
   />
 );
 
-export const ArticlePageWithTranscript = ({ experimentStage }: Props) => (
+export const ArticlePageWithTranscriptStage2 = () => (
   <ComponentWithServiceContext
     data={articleDataWithTranscript}
-    experimentStage={experimentStage}
     service="mundo"
+  />
+);
+
+export const ArticlePageWithTranscriptStage3 = () => (
+  <ComponentWithServiceContext
+    data={articleDataWithTranscript}
+    service="news"
   />
 );
 
