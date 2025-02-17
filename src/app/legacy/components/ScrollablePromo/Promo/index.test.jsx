@@ -52,7 +52,7 @@ describe('ScrollablePromo', () => {
   });
 
   describe('OJ Top Bar Promo', () => {
-    it('it should display Top Stories content when experimentVariant is A', () => {
+    it('should display Top Stories content when experimentVariant is A', () => {
       const { container } = render(
         <ScrollablePromo block={topStoriesBlocks[0]} experimentVariant="A" />,
       );
@@ -62,7 +62,7 @@ describe('ScrollablePromo', () => {
       expect(container).toHaveTextContent(expectedHeadline);
     });
 
-    it('it should display Most Read content when experimentVariant is B', () => {
+    it('should display Most Read content when experimentVariant is B', () => {
       const { container } = render(
         <ScrollablePromo block={mostReadBlocks[0]} experimentVariant="B" />,
       );
@@ -70,14 +70,21 @@ describe('ScrollablePromo', () => {
       expect(container).toHaveTextContent(expectedHeadline);
     });
 
-    it('it should not display a timestamp when experimentVariant is A or B', () => {
+    it('should render a link when on Most Read article headline when experimentVariant is B ', () => {
+      const { queryByRole } = render(
+        <ScrollablePromo block={mostReadBlocks[0]} experimentVariant="B" />,
+      );
+      expect(queryByRole('link')).toBeInTheDocument();
+    });
+
+    it('should not display a timestamp when experimentVariant is A or B', () => {
       const { queryByTestId } = render(
         <ScrollablePromo block={topStoriesBlocks[0]} experimentVariant="B" />,
       );
       expect(queryByTestId('timestamp')).not.toBeInTheDocument();
     });
 
-    it('it should display a LiveLabel when returning Top Stories', () => {
+    it('should display a LiveLabel when returning Top Stories', () => {
       const { container } = render(
         <ScrollablePromo
           block={topStoriesBlocksWithLiveItem[1]}
