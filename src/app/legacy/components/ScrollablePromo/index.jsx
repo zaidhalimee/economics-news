@@ -105,13 +105,13 @@ const LabelComponent = styled(({ ariaLabel, experimentVariant, ...props }) => (
 
     margin: 0rem;
     @media (min-width: ${GEL_GROUP_0_SCREEN_WIDTH_MIN}) {
-      margin: 0rem;
+      margin-left: 0rem;
     }
     @media (min-width: ${GEL_GROUP_2_SCREEN_WIDTH_MIN}) {
-      margin: 0 -0.2rem;
+      margin-left: -0.2rem;
     }
     @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MIN}) {
-      margin: 0 -0.8rem;
+      margin-left: -0.8rem;
     }
 
     @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MAX}){
@@ -168,11 +168,10 @@ const ScrollablePromo = ({
 
   const isSingleItem = blocksWithoutTitle.length === 1;
 
-  const ariaLabel =
-    title && idSanitiser(`${title}${experimentVariant ? ' 1' : ' 2'}`);
+  const ariaLabel = title && idSanitiser(`${title}`);
 
   const a11yAttributes = {
-    ...(experimentVariant && {
+    ...(!experimentVariant && {
       as: 'section',
       role: 'region',
     }),
@@ -187,49 +186,55 @@ const ScrollablePromo = ({
         }),
   };
 
-  return (
+  return experimentVariant ? (
     <>
+      <LabelComponent
+        id={ariaLabel}
+        data-testid="oj-top-bar"
+        script={script}
+        service={service}
+        dir={dir}
+        experimentVariant={experimentVariant}
+      >
+        {title}
+      </LabelComponent>
+      <ScrollablePromoContainer experimentVariant={experimentVariant}>
+        <GridItemMediumNoMargin>
+          <PromoList
+            blocks={blocks}
+            experimentVariant={experimentVariant}
+            viewTracker={viewRef}
+            onClick={handleClickTracking}
+            {...a11yAttributes}
+          />
+        </GridItemMediumNoMargin>
+      </ScrollablePromoContainer>
+    </>
+  ) : (
+    <GridItemMediumNoMargin {...a11yAttributes}>
       {title && (
         <LabelComponent
           id={ariaLabel}
-          ariaLabel={ariaLabel}
           data-testid="eoj-recommendations-heading"
           script={script}
           service={service}
           dir={dir}
-          experimentVariant={experimentVariant}
         >
-          <span>{title}</span>
+          {title}
         </LabelComponent>
       )}
-      <ScrollablePromoContainer experimentVariant={experimentVariant}>
-        <GridItemMediumNoMargin {...a11yAttributes}>
-          {experimentVariant && (
-            <PromoList
-              blocks={blocks}
-              experimentVariant={experimentVariant}
-              viewTracker={viewRef}
-              onClick={handleClickTracking}
-            />
-          )}
-          {!experimentVariant && isSingleItem && (
-            <PromoWrapper dir={dir} ref={viewRef}>
-              <Promo
-                block={blocksWithoutTitle[0]}
-                onClick={handleClickTracking}
-              />
-            </PromoWrapper>
-          )}
-          {!experimentVariant && !isSingleItem && (
-            <PromoList
-              blocks={blocksWithoutTitle}
-              viewTracker={viewRef}
-              onClick={handleClickTracking}
-            />
-          )}
-        </GridItemMediumNoMargin>
-      </ScrollablePromoContainer>
-    </>
+      {isSingleItem ? (
+        <PromoWrapper dir={dir} ref={viewRef}>
+          <Promo block={blocksWithoutTitle[0]} onClick={handleClickTracking} />
+        </PromoWrapper>
+      ) : (
+        <PromoList
+          blocks={blocksWithoutTitle}
+          viewTracker={viewRef}
+          onClick={handleClickTracking}
+        />
+      )}
+    </GridItemMediumNoMargin>
   );
 };
 

@@ -79,7 +79,13 @@ const OperaStyledList = styled.li`
       margin-${dir === 'ltr' ? `left` : `right`}: 0;}`}
 `;
 
-const PromoList = ({ blocks, experimentVariant, viewTracker, onClick }) => {
+const PromoList = ({
+  blocks,
+  experimentVariant,
+  viewTracker,
+  onClick,
+  ...a11yAttributes
+}) => {
   console.log('in promo list', blocks, experimentVariant);
   const { dir } = useContext(ServiceContext);
   const isOperaMini = useOperaMiniDetection();
@@ -94,11 +100,16 @@ const PromoList = ({ blocks, experimentVariant, viewTracker, onClick }) => {
       role="list"
       isOperaMini={isOperaMini}
       ref={viewTracker}
+      {...a11yAttributes}
     >
       {listBlocks.map((block, index) => {
         return (
-          // eslint-disable-next-line react/no-array-index-key
-          <List key={index} dir={dir} experimentVariant={experimentVariant}>
+          <List
+            // eslint-disable-next-line react/no-array-index-key
+            key={index}
+            dir={dir}
+            experimentVariant={experimentVariant}
+          >
             <Promo
               block={block}
               experimentVariant={experimentVariant}
