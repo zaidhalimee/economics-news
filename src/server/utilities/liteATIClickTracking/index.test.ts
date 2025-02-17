@@ -2,15 +2,15 @@ import { LITE_ATI_TRACKING } from '#app/hooks/useClickTrackerHandler';
 import liteATIClickTracking from '.';
 
 const createAnchor = ({
-  href = '/',
-  hasliteSiteTracking,
+  href = '/gahuza',
+  isLite,
 }: {
   href?: string;
-  hasliteSiteTracking: boolean;
+  isLite: boolean;
 }) => {
   const anchorElement = document.createElement('a');
   anchorElement.href = href;
-  if (hasliteSiteTracking) {
+  if (isLite) {
     anchorElement.setAttribute(
       LITE_ATI_TRACKING,
       'https://logws1363.ati-host.net/?',
@@ -72,7 +72,7 @@ describe('Click tracking script', () => {
   it('Does not call sendBeacon if the event has no data-ati-tracking parameter, but still redirects', () => {
     const anchorElement = createAnchor({
       href: '/gahuza',
-      hasliteSiteTracking: false,
+      isLite: false,
     });
 
     dispatchClick(anchorElement);
@@ -84,7 +84,7 @@ describe('Click tracking script', () => {
 
   it('Does not add userId cookie if crypto is unsupported, but still calls sendBeacon', () => {
     const anchorElement = createAnchor({
-      hasliteSiteTracking: true,
+      isLite: true,
     });
 
     // @ts-expect-error Some browsers may not have crypto.
@@ -99,7 +99,7 @@ describe('Click tracking script', () => {
 
   it('Sets a new cookie if there is no atuserid cookie on the user browser', () => {
     const anchorElement = createAnchor({
-      hasliteSiteTracking: true,
+      isLite: true,
     });
 
     (crypto.randomUUID as jest.Mock).mockReturnValueOnce('randomUniqueId');
@@ -114,7 +114,7 @@ describe('Click tracking script', () => {
 
   it('Does not overwrite content in atuserid cookie if it already exists', () => {
     const anchorElement = createAnchor({
-      hasliteSiteTracking: true,
+      isLite: true,
     });
 
     const oldCookieId = 'oldCookieId';
@@ -131,7 +131,7 @@ describe('Click tracking script', () => {
 
   it('Reuses the atuserid cookie if there is a atuserid cookie on the user browser', () => {
     const anchorElement = createAnchor({
-      hasliteSiteTracking: true,
+      isLite: true,
     });
 
     document.cookie =
@@ -145,7 +145,7 @@ describe('Click tracking script', () => {
 
   it('Calls sendBeaconLite() with the correct url', () => {
     const anchorElement = createAnchor({
-      hasliteSiteTracking: true,
+      isLite: true,
     });
 
     document.cookie =

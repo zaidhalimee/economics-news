@@ -17,8 +17,13 @@ const extractTrackingProps = (props = {}) => {
   const eventTrackingContext = useContext(EventTrackingContext);
 
   const { componentName, url, advertiserID, format, detailedPlacement } = props;
-  const { pageIdentifier, platform, producerId, statsDestination } =
-    eventTrackingContext;
+  const {
+    pageIdentifier,
+    platform,
+    producerId,
+    statsDestination,
+    producerName,
+  } = eventTrackingContext;
 
   const campaignID = props?.campaignID || eventTrackingContext?.campaignID;
 
@@ -34,6 +39,7 @@ const extractTrackingProps = (props = {}) => {
     advertiserID,
     url,
     detailedPlacement,
+    producerName,
   };
 };
 
@@ -49,6 +55,7 @@ const useClickTrackerHandler = (props = {}) => {
     advertiserID,
     url,
     detailedPlacement,
+    producerName,
   } = extractTrackingProps(props);
 
   const preventNavigation = props?.preventNavigation;
@@ -57,9 +64,6 @@ const useClickTrackerHandler = (props = {}) => {
 
   const { trackingIsEnabled } = useTrackingToggle(componentName);
   const [clicked, setClicked] = useState(false);
-  const eventTrackingContext = useContext(EventTrackingContext);
-
-  const { producerName } = eventTrackingContext;
 
   const { service, useReverb } = useContext(ServiceContext);
 
@@ -166,8 +170,7 @@ const useClickTrackerHandler = (props = {}) => {
 
 export const useConstructLiteSiteATIEventTrackUrl = (props = {}) => {
   const atiTrackingParams = extractTrackingProps(props);
-  const atiClickTrackingUrl = buildATIEventTrackUrl(atiTrackingParams);
-  return atiClickTrackingUrl;
+  return buildATIEventTrackUrl(atiTrackingParams);
 };
 
 export const useATIClickTrackerHandler = (props = {}) => {
