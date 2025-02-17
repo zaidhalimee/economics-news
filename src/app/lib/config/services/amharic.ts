@@ -45,6 +45,20 @@ export const service: DefaultServiceConfig = {
     frontPageTitle: 'ዜና',
     showAdPlaceholder: false,
     showRelatedTopics: true,
+    podcastPromo: {
+      title: 'ቢቢሲ አማርኛ በዋትስአፕ',
+      brandTitle: 'የቢቢሲ አማርኛ ዋትስአፕ ቻናል',
+      brandDescription:
+        'ዜና፣ ትንታኔ እና ታሪኮችን በቀጥታ በዋትስአፕ ለማግኘት',
+      image: {
+        src: 'https://ichef.bbci.co.uk/images/ic/$recipe//p0krq6vq.png',
+        alt: 'የቢቢሲ አማርኛ ዋትስአፕ ቻናል',
+      },
+      linkLabel: {
+        text: 'ይህን በመጫን የቻናላችን አባል ይሁኑ!',
+        href: 'https://bit.ly/4gsoTyI',
+      },
+    },
     translations: {
       pagination: {
         page: 'ገፁ',
