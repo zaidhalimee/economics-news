@@ -1,8 +1,8 @@
 import {
-  awaitATIComponentView,
+  awaitATIComponentViewEvent,
   interceptATIAnalyticsBeacons,
   COMPONENTS,
-  awaitATIComponentClick,
+  awaitATIComponentClickEvent,
 } from '../helpers';
 
 const { RADIO_SCHEDULE } = COMPONENTS;
@@ -16,7 +16,7 @@ export const assertRadioScheduleComponentView = () => {
       cy.get('[data-testid="radio-schedule"]').scrollIntoView({
         duration: 1000,
       });
-      awaitATIComponentView(RADIO_SCHEDULE);
+      awaitATIComponentViewEvent(RADIO_SCHEDULE);
     });
   });
 };
@@ -34,7 +34,7 @@ export const assertRadioScheduleComponentClick = () => {
       // Click on last item which will be an on-demand episode
       cy.get('[data-e2e="onDemand"]').find('a').first().click({ force: true });
 
-      awaitATIComponentClick(RADIO_SCHEDULE);
+      awaitATIComponentClickEvent(RADIO_SCHEDULE);
 
       // return to previous page
       cy.visit(url);

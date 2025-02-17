@@ -1,8 +1,8 @@
 import {
-  awaitATIComponentView,
+  awaitATIComponentViewEvent,
   interceptATIAnalyticsBeacons,
   COMPONENTS,
-  awaitATIComponentClick,
+  awaitATIComponentClickEvent,
 } from '../helpers';
 
 const { TOP_STORIES } = COMPONENTS;
@@ -14,7 +14,7 @@ export const assertTopStoriesComponentView = () => {
       cy.visit(url);
 
       cy.get('[data-testid="top-stories"]').scrollIntoView({ duration: 1000 });
-      awaitATIComponentView(TOP_STORIES);
+      awaitATIComponentViewEvent(TOP_STORIES);
     });
   });
 };
@@ -30,7 +30,7 @@ export const assertTopStoriesComponentClick = () => {
       // Click on first item
       cy.get('[data-testid="top-stories"]').find('a').first().click();
 
-      awaitATIComponentClick(TOP_STORIES);
+      awaitATIComponentClickEvent(TOP_STORIES);
 
       // return to previous page
       cy.visit(url);

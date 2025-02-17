@@ -1,8 +1,8 @@
 import {
-  awaitATIComponentView,
+  awaitATIComponentViewEvent,
   interceptATIAnalyticsBeacons,
   COMPONENTS,
-  awaitATIComponentClick,
+  awaitATIComponentClickEvent,
 } from '../helpers';
 
 const { RELATED_TOPICS } = COMPONENTS;
@@ -16,7 +16,7 @@ export const assertRelatedTopicsComponentView = () => {
       cy.get('[data-testid="related-topics"]').scrollIntoView({
         duration: 1000,
       });
-      awaitATIComponentView(RELATED_TOPICS);
+      awaitATIComponentViewEvent(RELATED_TOPICS);
     });
   });
 };
@@ -34,7 +34,7 @@ export const assertRelatedTopicsComponentClick = () => {
       // Click on first item
       cy.get('[data-testid="related-topics"]').find('a').first().click();
 
-      awaitATIComponentClick(RELATED_TOPICS);
+      awaitATIComponentClickEvent(RELATED_TOPICS);
 
       // return to previous page
       cy.visit(url);

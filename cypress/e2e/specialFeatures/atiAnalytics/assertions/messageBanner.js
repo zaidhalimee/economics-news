@@ -1,8 +1,8 @@
 import {
-  awaitATIComponentView,
+  awaitATIComponentViewEvent,
   interceptATIAnalyticsBeacons,
   COMPONENTS,
-  awaitATIComponentClick,
+  awaitATIComponentClickEvent,
 } from '../helpers';
 
 const { MESSAGE_BANNER } = COMPONENTS;
@@ -16,7 +16,7 @@ export const assertMessageBannerComponentView = () => {
       cy.get('[data-testid="message-banner-1"]').scrollIntoView({
         duration: 1000,
       });
-      awaitATIComponentView(MESSAGE_BANNER);
+      awaitATIComponentViewEvent(MESSAGE_BANNER);
     });
   });
 };
@@ -34,7 +34,7 @@ export const assertMessageBannerComponentClick = () => {
       // Click on first item
       cy.get('[data-testid="message-banner-1"]').find('a').first().click();
 
-      awaitATIComponentClick(MESSAGE_BANNER);
+      awaitATIComponentClickEvent(MESSAGE_BANNER);
 
       // return to previous page
       cy.visit(url);

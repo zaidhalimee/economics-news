@@ -1,5 +1,5 @@
 import {
-  awaitATIPageView,
+  awaitATIPageViewEvent,
   getATIParamsFromURL,
   interceptATIAnalyticsBeacons,
 } from '../helpers';
@@ -15,7 +15,7 @@ export const assertPageViewBeacon = ({
       interceptATIAnalyticsBeacons();
       cy.visit(url);
 
-      awaitATIPageView().then(({ request }) => {
+      awaitATIPageViewEvent().then(({ request }) => {
         const params = getATIParamsFromURL(request.url);
 
         expect(params.p).to.equal(pageIdentifier);

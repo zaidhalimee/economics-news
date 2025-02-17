@@ -1,8 +1,8 @@
 import {
-  awaitATIComponentView,
+  awaitATIComponentViewEvent,
   interceptATIAnalyticsBeacons,
   COMPONENTS,
-  awaitATIComponentClick,
+  awaitATIComponentClickEvent,
 } from '../helpers';
 
 const { MOST_READ } = COMPONENTS;
@@ -14,7 +14,7 @@ export const assertMostReadComponentView = () => {
       cy.visit(url);
 
       cy.get('[data-e2e="most-read"]').scrollIntoView({ duration: 1000 });
-      awaitATIComponentView(MOST_READ);
+      awaitATIComponentViewEvent(MOST_READ);
     });
   });
 };
@@ -30,7 +30,7 @@ export const assertMostReadComponentClick = () => {
       // Click on first item
       cy.get('[data-e2e="most-read"]').find('a').first().click();
 
-      awaitATIComponentClick(MOST_READ);
+      awaitATIComponentClickEvent(MOST_READ);
 
       // return to previous page
       cy.visit(url);

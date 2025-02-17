@@ -1,8 +1,8 @@
 import {
-  awaitATIComponentView,
+  awaitATIComponentViewEvent,
   interceptATIAnalyticsBeacons,
   COMPONENTS,
-  awaitATIComponentClick,
+  awaitATIComponentClickEvent,
 } from '../helpers';
 
 const { RELATED_CONTENT } = COMPONENTS;
@@ -16,7 +16,7 @@ export const assertRelatedContentComponentView = () => {
       cy.get('[data-e2e="related-content-heading"]').scrollIntoView({
         duration: 1000,
       });
-      awaitATIComponentView(RELATED_CONTENT);
+      awaitATIComponentViewEvent(RELATED_CONTENT);
     });
   });
 };
@@ -34,7 +34,7 @@ export const assertRelatedContentComponentClick = () => {
       // Click on first item
       cy.get('[data-e2e="related-content-heading"]').find('a').first().click();
 
-      awaitATIComponentClick(RELATED_CONTENT);
+      awaitATIComponentClickEvent(RELATED_CONTENT);
 
       // return to previous page
       cy.visit(url);

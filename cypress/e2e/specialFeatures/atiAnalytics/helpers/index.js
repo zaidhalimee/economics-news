@@ -17,6 +17,7 @@ const RADIO_SCHEDULE = 'radio-schedule';
 const MESSAGE_BANNER = 'message-banner';
 const RELATED_CONTENT = 'related-content';
 const RELATED_TOPICS = 'topics';
+const PODCAST_PROMO = 'promo-podcast';
 
 export const COMPONENTS = {
   SCROLLABLE_NAVIGATION,
@@ -28,6 +29,7 @@ export const COMPONENTS = {
   MESSAGE_BANNER,
   RELATED_CONTENT,
   RELATED_TOPICS,
+  PODCAST_PROMO,
 };
 
 export const interceptATIAnalyticsBeacons = () => {
@@ -62,10 +64,10 @@ export const interceptATIAnalyticsBeacons = () => {
   }).as(`${ATI_PAGE_VIEW}`);
 };
 
-export const awaitATIPageView = () => cy.wait(`@${ATI_PAGE_VIEW}`);
+export const awaitATIPageViewEvent = () => cy.wait(`@${ATI_PAGE_VIEW}`);
 
-export const awaitATIComponentView = component =>
+export const awaitATIComponentViewEvent = component =>
   cy.wait(`@${component}-ati-view`);
 
-export const awaitATIComponentClick = component =>
+export const awaitATIComponentClickEvent = component =>
   cy.wait(`@${component}-ati-click`);

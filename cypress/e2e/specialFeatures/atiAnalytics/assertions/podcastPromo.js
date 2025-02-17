@@ -5,22 +5,22 @@ import {
   awaitATIComponentClickEvent,
 } from '../helpers';
 
-const { FEATURES } = COMPONENTS;
+const { PODCAST_PROMO } = COMPONENTS;
 
-export const assertFeaturesAnalysisComponentView = () => {
-  it('should send a view event for the Features & Analysis component', () => {
+export const assertPodcastPromoComponentView = () => {
+  it('should send a view event for the Podcast Promo component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
       cy.visit(url);
 
       cy.get('[data-testid="features"]').scrollIntoView({ duration: 1000 });
-      awaitATIComponentViewEvent(FEATURES);
+      awaitATIComponentViewEvent(PODCAST_PROMO);
     });
   });
 };
 
-export const assertFeaturesAnalysisComponentClick = () => {
-  it.skip('should send a click event for the Features & Analysis component', () => {
+export const assertPodcastPromoComponentClick = () => {
+  it.skip('should send a click event for the Podcast Promo component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
       cy.visit(url);
@@ -30,7 +30,7 @@ export const assertFeaturesAnalysisComponentClick = () => {
       // Click on first item
       cy.get('[data-testid="features"]').find('a').first().click();
 
-      awaitATIComponentClickEvent(FEATURES);
+      awaitATIComponentClickEvent(PODCAST_PROMO);
 
       // return to previous page
       cy.visit(url);

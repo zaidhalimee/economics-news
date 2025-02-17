@@ -26,32 +26,35 @@ import {
   assertRelatedContentComponentClick,
   assertRelatedContentComponentView,
 } from './assertions/relatedContent';
-import { assertRelatedTopicsComponentClick, assertRelatedTopicsComponentView } from './assertions/relatedTopics';
+import {
+  assertRelatedTopicsComponentClick,
+  assertRelatedTopicsComponentView,
+} from './assertions/relatedTopics';
 import {
   assertTopStoriesComponentClick,
   assertTopStoriesComponentView,
 } from './assertions/topStories';
 
 const canonicalTestSuites = [
-  // {
-  //   path: '/gahuza',
-  //   runforEnv: ['local', 'test', 'live'],
-  //   service: 'gahuza',
-  //   pageIdentifier: 'gahuza.page',
-  //   applicationType: 'responsive',
-  //   contentType: 'index-home',
-  //   tests: [
-  //     assertPageViewBeacon,
-  //     assertScrollableNavigationComponentView,
-  //     assertScrollableNavigationComponentClick,
-  //     assertDropdownNavigationComponentView,
-  //     assertDropdownNavigationComponentClick,
-  //     assertMessageBannerComponentView,
-  //     assertMessageBannerComponentClick,
-  //     assertMostReadComponentView,
-  //     assertMostReadComponentClick,
-  //   ],
-  // },
+  {
+    path: '/gahuza',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'gahuza',
+    pageIdentifier: 'gahuza.page',
+    applicationType: 'responsive',
+    contentType: 'index-home',
+    tests: [
+      assertPageViewBeacon,
+      assertScrollableNavigationComponentView,
+      assertScrollableNavigationComponentClick,
+      assertDropdownNavigationComponentView,
+      assertDropdownNavigationComponentClick,
+      assertMessageBannerComponentView,
+      assertMessageBannerComponentClick,
+      assertMostReadComponentView,
+      assertMostReadComponentClick,
+    ],
+  },
   {
     path: '/gahuza/articles/c5y51yxeg53o',
     runforEnv: ['local', 'live'],
@@ -73,19 +76,19 @@ const canonicalTestSuites = [
       assertMostReadComponentClick,
     ],
   },
-  // {
-  //   path: '/afrique/bbc_afrique_radio/liveradio',
-  //   runforEnv: ['local', 'test', 'live'],
-  //   service: 'afrique',
-  //   pageIdentifier: 'afrique.bbc_afrique_radio.liveradio.page',
-  //   applicationType: 'responsive',
-  //   contentType: 'player-live',
-  //   tests: [
-  //     assertPageViewBeacon,
-  //     assertRadioScheduleComponentView,
-  //     assertRadioScheduleComponentClick,
-  //   ],
-  // },
+  {
+    path: '/afrique/bbc_afrique_radio/liveradio',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'afrique',
+    pageIdentifier: 'afrique.bbc_afrique_radio.liveradio.page',
+    applicationType: 'responsive',
+    contentType: 'player-live',
+    tests: [
+      assertPageViewBeacon,
+      assertRadioScheduleComponentView,
+      assertRadioScheduleComponentClick,
+    ],
+  },
 ];
 
 const supportsAmp = ({ contentType }) =>
