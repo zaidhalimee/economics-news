@@ -85,6 +85,7 @@ const PromoBox = styled.div`
       @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MIN}) {
         width: 15.5rem;
       }
+      padding: ${GEL_SPACING};
     `}
 `;
 
