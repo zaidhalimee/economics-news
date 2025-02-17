@@ -8,7 +8,7 @@ import {
 const { SCROLLABLE_NAVIGATION, DROPDOWN_NAVIGATION } = COMPONENTS;
 
 export const assertScrollableNavigationComponentView = () => {
-  it('should send a view beacon for the Scrollable Navigation component', () => {
+  it('should send a view event for the Scrollable Navigation component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
       cy.visit(url);
@@ -22,7 +22,7 @@ export const assertScrollableNavigationComponentView = () => {
 };
 
 export const assertScrollableNavigationComponentClick = () => {
-  it('should send a click beacon for the Scrollable Navigation component', () => {
+  it('should send a click event for the Scrollable Navigation component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
       cy.visit(url);
@@ -44,7 +44,7 @@ export const assertScrollableNavigationComponentClick = () => {
 
 // Assertions for nav bar at smaller breakpoints
 export const assertDropdownNavigationComponentView = () => {
-  it('should send a view beacon for the Dropdown Navigation component', () => {
+  it('should send a view event for the Dropdown Navigation component', () => {
     interceptATIAnalyticsBeacons();
     cy.reload(true);
 
@@ -60,7 +60,7 @@ export const assertDropdownNavigationComponentView = () => {
 };
 
 export const assertDropdownNavigationComponentClick = () => {
-  it('should send a click beacon for the Dropdown Navigation component', () => {
+  it('should send a click event for the Dropdown Navigation component', () => {
     interceptATIAnalyticsBeacons();
     cy.reload(true);
 

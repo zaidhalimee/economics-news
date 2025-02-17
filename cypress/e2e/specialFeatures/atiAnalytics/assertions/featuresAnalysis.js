@@ -8,7 +8,7 @@ import {
 const { FEATURES } = COMPONENTS;
 
 export const assertFeaturesAnalysisComponentView = () => {
-  it('should send a view beacon for the Features & Analysis component', () => {
+  it('should send a view event for the Features & Analysis component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
       cy.visit(url);
@@ -20,7 +20,7 @@ export const assertFeaturesAnalysisComponentView = () => {
 };
 
 export const assertFeaturesAnalysisComponentClick = () => {
-  it('should send a click beacon for the Features & Analysis component', () => {
+  it('should send a click event for the Features & Analysis component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
       cy.visit(url);

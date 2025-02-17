@@ -76,6 +76,7 @@ const liteTestSuites = canonicalTestSuites.map(testSuite => {
     applicationType: 'lite',
     tests: [
       assertPageViewBeacon,
+      // TODO: enable this once https://github.com/bbc/simorgh/pull/12360 has been merged!
       // assertMostReadComponentClick
     ],
   };

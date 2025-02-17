@@ -8,7 +8,7 @@ import {
 const { TOP_STORIES } = COMPONENTS;
 
 export const assertTopStoriesComponentView = () => {
-  it('should send a view beacon for the Top Stories component', () => {
+  it('should send a view event for the Top Stories component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
       cy.visit(url);
@@ -20,7 +20,7 @@ export const assertTopStoriesComponentView = () => {
 };
 
 export const assertTopStoriesComponentClick = () => {
-  it('should send a click beacon for the Top Stories component', () => {
+  it('should send a click event for the Top Stories component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
       cy.visit(url);

@@ -8,7 +8,7 @@ import {
 const { MOST_READ } = COMPONENTS;
 
 export const assertMostReadComponentView = () => {
-  it('should send a view beacon for the Most Read component', () => {
+  it('should send a view event for the Most Read component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
       cy.visit(url);
@@ -20,7 +20,7 @@ export const assertMostReadComponentView = () => {
 };
 
 export const assertMostReadComponentClick = () => {
-  it('should send a click beacon for the Most Read component', () => {
+  it('should send a click event for the Most Read component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
       cy.visit(url);
