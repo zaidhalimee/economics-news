@@ -207,29 +207,35 @@ const ampTestSuites = canonicalTestSuites.filter(supportsAmp).map(testSuite => {
   };
 });
 
-const liteTestSuites = canonicalTestSuites.map(testSuite => {
-  const liteSiteTests = [assertPageViewBeacon];
+// Most Read & On Demand TV pages do not currently support .lite
+const supportsLite = ({ path, contentType }) =>
+  !path.includes('_tv') || contentType !== 'list-datadriven';
 
-  switch (testSuite.contentType) {
-    case 'article':
-      // TODO: enable this once https://github.com/bbc/simorgh/pull/12419 has been merged!
-      // liteSiteTests.push(assertLiteSiteCTAComponentClick);
-      break;
-    case 'index-home':
-      // TODO: enable this once https://github.com/bbc/simorgh/pull/12360 has been merged!
-      // liteSiteTests.push(assertMostReadComponentClick);
-      break;
-    default:
-      break;
-  }
+const liteTestSuites = canonicalTestSuites
+  .filter(supportsLite)
+  .map(testSuite => {
+    const liteSiteTests = [assertPageViewBeacon];
 
-  return {
-    ...testSuite,
-    path: `${testSuite.path}.lite`,
-    applicationType: 'lite',
-    tests: [...liteSiteTests],
-  };
-});
+    switch (testSuite.contentType) {
+      case 'article':
+        // TODO: enable this once https://github.com/bbc/simorgh/pull/12419 has been merged!
+        // liteSiteTests.push(assertLiteSiteCTAComponentClick);
+        break;
+      case 'index-home':
+        // TODO: enable this once https://github.com/bbc/simorgh/pull/12360 has been merged!
+        // liteSiteTests.push(assertMostReadComponentClick);
+        break;
+      default:
+        break;
+    }
+
+    return {
+      ...testSuite,
+      path: `${testSuite.path}.lite`,
+      applicationType: 'lite',
+      tests: [...liteSiteTests],
+    };
+  });
 
 runTestsForPage({
   testSuites: [...canonicalTestSuites, ...ampTestSuites, ...liteTestSuites],
