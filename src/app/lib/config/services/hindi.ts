@@ -437,8 +437,8 @@ export const service: DefaultServiceConfig = {
         url: '/hindi',
       },
       {
-        title: 'दिल्ली विधानसभा चुनाव',
-        url: '/hindi/topics/c8dqegnm6d9t',
+        title: 'स्पोर्ट्सवुमन ऑफ़ द ईयर',
+        url: '/hindi/topics/cyz04xpp440t',
       },
       {
         title: 'भारत',
