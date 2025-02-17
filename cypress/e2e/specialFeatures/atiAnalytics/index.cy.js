@@ -47,7 +47,7 @@ import {
 const canonicalTestSuites = [
   {
     path: '/gahuza',
-    runforEnv: ['local', 'test', 'live'],
+    runforEnv: ['local', 'live'],
     service: 'gahuza',
     pageIdentifier: 'gahuza.page',
     applicationType: 'responsive',
@@ -88,10 +88,10 @@ const canonicalTestSuites = [
     ],
   },
   {
-    path: '/afrique/bbc_afrique_radio/liveradio',
-    runforEnv: ['local', 'test', 'live'],
-    service: 'afrique',
-    pageIdentifier: 'afrique.bbc_afrique_radio.liveradio.page',
+    path: '/hausa/bbc_hausa_radio/liveradio',
+    runforEnv: ['local', 'live'],
+    service: 'hausa',
+    pageIdentifier: 'hausa.bbc_hausa_radio.liveradio.page',
     applicationType: 'responsive',
     contentType: 'player-live',
     tests: [
