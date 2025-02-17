@@ -12,7 +12,8 @@ import { isValidClick } from './clickTypes';
 const EVENT_TYPE = 'click';
 export const LITE_ATI_TRACKING = 'data-lite-ati-tracking';
 
-const useExtractTrackingProps = (props = {}) => {
+const extractTrackingProps = (props = {}) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const eventTrackingContext = useContext(EventTrackingContext);
 
   const { componentName, url, advertiserID, format, detailedPlacement } = props;
@@ -48,7 +49,7 @@ const useClickTrackerHandler = (props = {}) => {
     advertiserID,
     url,
     detailedPlacement,
-  } = useExtractTrackingProps(props);
+  } = extractTrackingProps(props);
 
   const preventNavigation = props?.preventNavigation;
   const optimizely = props?.optimizely;
@@ -164,7 +165,7 @@ const useClickTrackerHandler = (props = {}) => {
 };
 
 export const useConstructLiteSiteATIEventTrackUrl = (props = {}) => {
-  const atiTrackingParams = useExtractTrackingProps(props);
+  const atiTrackingParams = extractTrackingProps(props);
   const atiClickTrackingUrl = buildATIEventTrackUrl(atiTrackingParams);
   return atiClickTrackingUrl;
 };
