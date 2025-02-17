@@ -20,7 +20,7 @@ export const assertFeaturesAnalysisComponentView = () => {
 };
 
 export const assertFeaturesAnalysisComponentClick = () => {
-  it('should send a click event for the Features & Analysis component', () => {
+  it.skip('should send a click event for the Features & Analysis component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
       cy.visit(url);

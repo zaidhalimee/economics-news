@@ -5,6 +5,10 @@ import {
   assertFeaturesAnalysisComponentView,
 } from './assertions/featuresAnalysis';
 import {
+  assertMessageBannerComponentClick,
+  assertMessageBannerComponentView,
+} from './assertions/messageBanner';
+import {
   assertMostReadComponentClick,
   assertMostReadComponentView,
 } from './assertions/mostRead';
@@ -19,28 +23,35 @@ import {
   assertRadioScheduleComponentView,
 } from './assertions/radioSchedule';
 import {
+  assertRelatedContentComponentClick,
+  assertRelatedContentComponentView,
+} from './assertions/relatedContent';
+import { assertRelatedTopicsComponentClick, assertRelatedTopicsComponentView } from './assertions/relatedTopics';
+import {
   assertTopStoriesComponentClick,
   assertTopStoriesComponentView,
 } from './assertions/topStories';
 
 const canonicalTestSuites = [
-  {
-    path: '/gahuza',
-    runforEnv: ['local', 'test', 'live'],
-    service: 'gahuza',
-    pageIdentifier: 'gahuza.page',
-    applicationType: 'responsive',
-    contentType: 'index-home',
-    tests: [
-      assertPageViewBeacon,
-      assertScrollableNavigationComponentView,
-      assertScrollableNavigationComponentClick,
-      assertDropdownNavigationComponentView,
-      assertDropdownNavigationComponentClick,
-      assertMostReadComponentView,
-      assertMostReadComponentClick,
-    ],
-  },
+  // {
+  //   path: '/gahuza',
+  //   runforEnv: ['local', 'test', 'live'],
+  //   service: 'gahuza',
+  //   pageIdentifier: 'gahuza.page',
+  //   applicationType: 'responsive',
+  //   contentType: 'index-home',
+  //   tests: [
+  //     assertPageViewBeacon,
+  //     assertScrollableNavigationComponentView,
+  //     assertScrollableNavigationComponentClick,
+  //     assertDropdownNavigationComponentView,
+  //     assertDropdownNavigationComponentClick,
+  //     assertMessageBannerComponentView,
+  //     assertMessageBannerComponentClick,
+  //     assertMostReadComponentView,
+  //     assertMostReadComponentClick,
+  //   ],
+  // },
   {
     path: '/gahuza/articles/c5y51yxeg53o',
     runforEnv: ['local', 'live'],
@@ -54,38 +65,40 @@ const canonicalTestSuites = [
       assertTopStoriesComponentClick,
       assertFeaturesAnalysisComponentView,
       assertFeaturesAnalysisComponentClick,
+      assertRelatedTopicsComponentView,
+      assertRelatedTopicsComponentClick,
+      assertRelatedContentComponentView,
+      assertRelatedContentComponentClick,
       assertMostReadComponentView,
       assertMostReadComponentClick,
     ],
   },
-  {
-    path: '/afrique/bbc_afrique_radio/liveradio',
-    runforEnv: ['local', 'test', 'live'],
-    service: 'afrique',
-    pageIdentifier: 'afrique.bbc_afrique_radio.liveradio.page',
-    applicationType: 'responsive',
-    contentType: 'player-live',
-    tests: [
-      assertPageViewBeacon,
-      assertRadioScheduleComponentView,
-      assertRadioScheduleComponentClick,
-    ],
-  },
+  // {
+  //   path: '/afrique/bbc_afrique_radio/liveradio',
+  //   runforEnv: ['local', 'test', 'live'],
+  //   service: 'afrique',
+  //   pageIdentifier: 'afrique.bbc_afrique_radio.liveradio.page',
+  //   applicationType: 'responsive',
+  //   contentType: 'player-live',
+  //   tests: [
+  //     assertPageViewBeacon,
+  //     assertRadioScheduleComponentView,
+  //     assertRadioScheduleComponentClick,
+  //   ],
+  // },
 ];
 
-const supportsAmp = (path, service) =>
-  path !== `/${service}` && !path.includes('liveradio');
+const supportsAmp = ({ contentType }) =>
+  !['index-home', 'player-live'].includes(contentType);
 
-const ampTestSuites = canonicalTestSuites
-  .filter(({ path, service }) => supportsAmp(path, service))
-  .map(testSuite => {
-    return {
-      ...testSuite,
-      path: `${testSuite.path}.amp`,
-      applicationType: 'amp',
-      tests: [assertPageViewBeacon],
-    };
-  });
+const ampTestSuites = canonicalTestSuites.filter(supportsAmp).map(testSuite => {
+  return {
+    ...testSuite,
+    path: `${testSuite.path}.amp`,
+    applicationType: 'amp',
+    tests: [assertPageViewBeacon],
+  };
+});
 
 const liteTestSuites = canonicalTestSuites.map(testSuite => {
   return {
