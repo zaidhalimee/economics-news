@@ -20,6 +20,10 @@ import {
   assertScrollableNavigationComponentView,
 } from './assertions/navigation';
 import {
+  assertPodcastLinksComponentClick,
+  assertPodcastLinksComponentView,
+} from './assertions/podcastLinks';
+import {
   assertPodcastPromoComponentClick,
   assertPodcastPromoComponentView,
 } from './assertions/podcastPromo';
@@ -109,6 +113,23 @@ const canonicalTestSuites = [
     contentType: 'player-episode',
     tests: [
       assertPageViewBeacon,
+      assertRecentAudioEpisodesComponentView,
+      assertRecentAudioEpisodesComponentClick,
+      assertRadioScheduleComponentView,
+      assertRadioScheduleComponentClick,
+    ],
+  },
+  {
+    path: '/gahuza/podcasts/p07yh8hb',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'gahuza',
+    pageIdentifier: 'gahuza.bbc_afrique_radio.programmes.p07yh8hb.page',
+    applicationType: 'responsive',
+    contentType: 'player-episode',
+    tests: [
+      assertPageViewBeacon,
+      assertPodcastLinksComponentView,
+      assertPodcastLinksComponentClick,
       assertRecentAudioEpisodesComponentView,
       assertRecentAudioEpisodesComponentClick,
       assertRadioScheduleComponentView,
