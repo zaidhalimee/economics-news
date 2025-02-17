@@ -48,8 +48,7 @@ export const service: DefaultServiceConfig = {
     podcastPromo: {
       title: 'ቢቢሲ አማርኛ በዋትስአፕ',
       brandTitle: 'የቢቢሲ አማርኛ ዋትስአፕ ቻናል',
-      brandDescription:
-        'ዜና፣ ትንታኔ እና ታሪኮችን በቀጥታ በዋትስአፕ ለማግኘት',
+      brandDescription: 'ዜና፣ ትንታኔ እና ታሪኮችን በቀጥታ በዋትስአፕ ለማግኘት',
       image: {
         src: 'https://ichef.bbci.co.uk/images/ic/$recipe//p0krq6vq.png',
         alt: 'የቢቢሲ አማርኛ ዋትስአፕ ቻናል',
