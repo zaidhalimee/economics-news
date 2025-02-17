@@ -3,10 +3,10 @@ import liteATIClickTracking from '.';
 
 const createAnchor = ({
   href = '/gahuza',
-  isLite,
+  isLite = true,
 }: {
   href?: string;
-  isLite: boolean;
+  isLite?: boolean;
 }) => {
   const anchorElement = document.createElement('a');
   anchorElement.href = href;
@@ -83,9 +83,7 @@ describe('Click tracking script', () => {
   });
 
   it('Does not add userId cookie if crypto is unsupported, but still calls sendBeacon', () => {
-    const anchorElement = createAnchor({
-      isLite: true,
-    });
+    const anchorElement = createAnchor({});
 
     // @ts-expect-error Some browsers may not have crypto.
     // eslint-disable-next-line no-global-assign
@@ -98,9 +96,7 @@ describe('Click tracking script', () => {
   });
 
   it('Sets a new cookie if there is no atuserid cookie on the user browser', () => {
-    const anchorElement = createAnchor({
-      isLite: true,
-    });
+    const anchorElement = createAnchor({});
 
     (crypto.randomUUID as jest.Mock).mockReturnValueOnce('randomUniqueId');
     dispatchClick(anchorElement);
@@ -113,9 +109,7 @@ describe('Click tracking script', () => {
   });
 
   it('Does not overwrite content in atuserid cookie if it already exists', () => {
-    const anchorElement = createAnchor({
-      isLite: true,
-    });
+    const anchorElement = createAnchor({});
 
     const oldCookieId = 'oldCookieId';
     document.cookie = `atuserid=%7B%22name%22%3A%22atuserid%22%2C%22val%22%3A%22${oldCookieId}%22%2C%22options%22%3A%7B%22end%22%3A%222026-03-11T10%3A23%3A55.442Z%22%2C%22path%22%3A%22%2F%22%7D%7D; path=/; max-age=397; Secure;`;
@@ -130,9 +124,7 @@ describe('Click tracking script', () => {
   });
 
   it('Reuses the atuserid cookie if there is a atuserid cookie on the user browser', () => {
-    const anchorElement = createAnchor({
-      isLite: true,
-    });
+    const anchorElement = createAnchor({});
 
     document.cookie =
       'atuserid={"val":"oldCookieId"}; path=/; max-age=397; Secure;';
@@ -144,9 +136,7 @@ describe('Click tracking script', () => {
   });
 
   it('Calls sendBeaconLite() with the correct url', () => {
-    const anchorElement = createAnchor({
-      isLite: true,
-    });
+    const anchorElement = createAnchor({});
 
     document.cookie =
       'atuserid={"val":"userCookieId"}; path=/; max-age=397; Secure;';
