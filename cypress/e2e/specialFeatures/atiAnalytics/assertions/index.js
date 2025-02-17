@@ -10,7 +10,7 @@ export const assertPageViewBeacon = ({
   applicationType,
   contentType,
 }) => {
-  it('should send a page view beacon', () => {
+  it(`should send a page view beacon with page identifier = ${pageIdentifier}, application type = ${applicationType} and content type = ${contentType}`, () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
       cy.visit(url);
