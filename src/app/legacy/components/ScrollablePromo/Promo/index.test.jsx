@@ -70,7 +70,14 @@ describe('ScrollablePromo', () => {
       expect(container).toHaveTextContent(expectedHeadline);
     });
 
-    it('should render a link when on Most Read article headline when experimentVariant is B ', () => {
+    it('should render a link on Top Stories article headline when experimentVariant is A ', () => {
+      const { queryByRole } = render(
+        <ScrollablePromo block={topStoriesBlocks[2]} experimentVariant="A" />,
+      );
+      expect(queryByRole('link')).toBeInTheDocument();
+    });
+
+    it('should render a link on Most Read article headline when experimentVariant is B ', () => {
       const { queryByRole } = render(
         <ScrollablePromo block={mostReadBlocks[0]} experimentVariant="B" />,
       );
