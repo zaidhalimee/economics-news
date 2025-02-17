@@ -41,12 +41,12 @@ const StyledList = styled.li`
   display: flex;
   flex-shrink: 0;
 
-  ${({ dir }) =>
+  ${({ dir, experimentVariant }) =>
     `
       @media (min-width: ${GEL_GROUP_0_SCREEN_WIDTH_MIN}){
         margin-${dir === 'ltr' ? 'left' : 'right'}: ${GEL_SPACING};
         &:first-child {
-          margin-${dir === 'ltr' ? 'left' : 'right'}: ${GEL_SPACING};
+          margin-${dir === 'ltr' ? 'left' : 'right'}: ${experimentVariant && experimentVariant !== 'none' ? 0 : GEL_SPACING};
         }
         &:last-child {
           margin-${dir === 'ltr' ? 'right' : 'left'}: ${GEL_SPACING};
@@ -56,7 +56,7 @@ const StyledList = styled.li`
         margin-${dir === 'ltr' ? `left` : `right`}: ${GEL_SPACING_DBL};  
 
         &:first-child {
-          margin-${dir === 'ltr' ? 'left' : 'right'}: ${GEL_SPACING_DBL};
+          margin-${dir === 'ltr' ? 'left' : 'right'}: ${experimentVariant && experimentVariant !== 'none' ? 0 : GEL_SPACING_DBL};
         }
       }
       @media (min-width: ${GEL_GROUP_4_SCREEN_WIDTH_MIN}){
@@ -98,7 +98,7 @@ const PromoList = ({ blocks, experimentVariant, viewTracker, onClick }) => {
       {listBlocks.map((block, index) => {
         return (
           // eslint-disable-next-line react/no-array-index-key
-          <List key={index} dir={dir}>
+          <List key={index} dir={dir} experimentVariant={experimentVariant}>
             <Promo
               block={block}
               experimentVariant={experimentVariant}
