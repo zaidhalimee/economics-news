@@ -19,6 +19,10 @@ import {
   assertScrollableNavigationComponentView,
 } from './assertions/navigation';
 import {
+  assertPodcastPromoComponentClick,
+  assertPodcastPromoComponentView,
+} from './assertions/podcastPromo';
+import {
   assertRadioScheduleComponentClick,
   assertRadioScheduleComponentView,
 } from './assertions/radioSchedule';
@@ -68,6 +72,8 @@ const canonicalTestSuites = [
       assertTopStoriesComponentClick,
       assertFeaturesAnalysisComponentView,
       assertFeaturesAnalysisComponentClick,
+      assertPodcastPromoComponentView,
+      assertPodcastPromoComponentClick,
       assertRelatedTopicsComponentView,
       assertRelatedTopicsComponentClick,
       assertRelatedContentComponentView,
@@ -111,7 +117,7 @@ const liteTestSuites = canonicalTestSuites.map(testSuite => {
     tests: [
       assertPageViewBeacon,
       // TODO: enable this once https://github.com/bbc/simorgh/pull/12360 has been merged!
-      // assertMostReadComponentClick
+      // assertMostReadComponentClick,
     ],
   };
 });
