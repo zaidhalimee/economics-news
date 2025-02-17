@@ -137,7 +137,7 @@ const NavigationContainer = ({ propsForOJExperiment }) => {
       dir={dir}
       script={script}
       service={service}
-      {...(experimentVariant && experimentVariant !== 'none'
+      {...(!isAmp && experimentVariant && experimentVariant !== 'none'
         ? { experimentVariant, blocks }
         : {})}
     />
