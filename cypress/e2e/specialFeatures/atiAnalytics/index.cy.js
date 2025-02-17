@@ -14,6 +14,10 @@ import {
   assertScrollableNavigationComponentClick,
   assertScrollableNavigationComponentView,
 } from './assertions/navigation';
+import {
+  assertTopStoriesComponentClick,
+  assertTopStoriesComponentView,
+} from './assertions/topStories';
 
 const canonicalTestSuites = [
   {
@@ -42,6 +46,8 @@ const canonicalTestSuites = [
     contentType: 'article',
     tests: [
       assertPageViewBeacon,
+      assertTopStoriesComponentView,
+      assertTopStoriesComponentClick,
       assertFeaturesAnalysisComponentView,
       assertFeaturesAnalysisComponentClick,
       assertMostReadComponentView,
@@ -59,7 +65,7 @@ const ampTestSuites = canonicalTestSuites
       ...testSuite,
       path: `${testSuite.path}.amp`,
       applicationType: 'amp',
-      tests: [...testSuite.tests],
+      tests: [assertPageViewBeacon],
     };
   });
 
