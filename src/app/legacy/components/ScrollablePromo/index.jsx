@@ -56,6 +56,10 @@ const ScrollablePromoContainer = styled.div`
     experimentVariant !== 'none' &&
     `
     padding: 0 ${GEL_SPACING} ${GEL_SPACING_DBL};
+    @media (min-width: ${GEL_GROUP_2_SCREEN_WIDTH_MIN}) {
+      padding: 0 ${GEL_SPACING_DBL} ${GEL_SPACING_DBL};
+    }
+    @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MAX}) {
       display: none;
     }
     width: 100vw;
@@ -94,6 +98,12 @@ const LabelComponent = styled(({ ariaLabel, experimentVariant, ...props }) => (
     experimentVariant &&
     experimentVariant !== 'none' &&
     `
+    padding-left: ${GEL_SPACING};
+    @media (min-width: ${GEL_GROUP_2_SCREEN_WIDTH_MIN}) {
+      padding-left: ${GEL_SPACING_DBL};
+    }
+
+
     @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MAX}){
       display: none;
     }
@@ -108,7 +118,6 @@ const LabelComponent = styled(({ ariaLabel, experimentVariant, ...props }) => (
     align-items: center;
     height: ${GEL_SPACING_QUAD};
     background: #f6f6f6;
-    padding: ${GEL_SPACING_DBL}
   `}
 `;
 
