@@ -18,6 +18,7 @@ const MESSAGE_BANNER = 'message-banner';
 const RELATED_CONTENT = 'related-content';
 const RELATED_TOPICS = 'topics';
 const PODCAST_PROMO = 'promo-podcast';
+const LITE_SITE_CTA = 'lite-site-cta';
 
 export const COMPONENTS = {
   SCROLLABLE_NAVIGATION,
@@ -30,6 +31,7 @@ export const COMPONENTS = {
   RELATED_CONTENT,
   RELATED_TOPICS,
   PODCAST_PROMO,
+  LITE_SITE_CTA,
 };
 
 export const interceptATIAnalyticsBeacons = () => {

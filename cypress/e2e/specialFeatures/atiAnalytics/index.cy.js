@@ -4,6 +4,7 @@ import {
   assertFeaturesAnalysisComponentClick,
   assertFeaturesAnalysisComponentView,
 } from './assertions/featuresAnalysis';
+import { assertLiteSiteCTAComponentClick } from './assertions/liteSiteCta';
 import {
   assertMessageBannerComponentClick,
   assertMessageBannerComponentView,
@@ -110,15 +111,26 @@ const ampTestSuites = canonicalTestSuites.filter(supportsAmp).map(testSuite => {
 });
 
 const liteTestSuites = canonicalTestSuites.map(testSuite => {
+  const liteSiteTests = [assertPageViewBeacon];
+
+  switch (testSuite.contentType) {
+    case 'article':
+      // TODO: enable this once https://github.com/bbc/simorgh/pull/12419 has been merged!
+      // liteSiteTests.push(assertLiteSiteCTAComponentClick);
+      break;
+    case 'index-home':
+      // TODO: enable this once https://github.com/bbc/simorgh/pull/12360 has been merged!
+      // liteSiteTests.push(assertMostReadComponentClick);
+      break;
+    default:
+      break;
+  }
+
   return {
     ...testSuite,
     path: `${testSuite.path}.lite`,
     applicationType: 'lite',
-    tests: [
-      assertPageViewBeacon,
-      // TODO: enable this once https://github.com/bbc/simorgh/pull/12360 has been merged!
-      // assertMostReadComponentClick,
-    ],
+    tests: [...liteSiteTests],
   };
 });
 
