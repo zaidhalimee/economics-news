@@ -15,6 +15,10 @@ import {
   assertScrollableNavigationComponentView,
 } from './assertions/navigation';
 import {
+  assertRadioScheduleComponentClick,
+  assertRadioScheduleComponentView,
+} from './assertions/radioSchedule';
+import {
   assertTopStoriesComponentClick,
   assertTopStoriesComponentView,
 } from './assertions/topStories';
@@ -54,12 +58,26 @@ const canonicalTestSuites = [
       assertMostReadComponentClick,
     ],
   },
+  {
+    path: '/afrique/bbc_afrique_radio/liveradio',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'afrique',
+    pageIdentifier: 'afrique.bbc_afrique_radio.liveradio.page',
+    applicationType: 'responsive',
+    contentType: 'player-live',
+    tests: [
+      assertPageViewBeacon,
+      assertRadioScheduleComponentView,
+      assertRadioScheduleComponentClick,
+    ],
+  },
 ];
 
-const isHomePage = (path, service) => path === `/${service}`;
+const supportsAmp = (path, service) =>
+  path !== `/${service}` && !path.includes('liveradio');
 
 const ampTestSuites = canonicalTestSuites
-  .filter(({ path, service }) => !isHomePage(path, service))
+  .filter(({ path, service }) => supportsAmp(path, service))
   .map(testSuite => {
     return {
       ...testSuite,

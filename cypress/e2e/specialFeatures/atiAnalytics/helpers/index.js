@@ -13,6 +13,7 @@ const DROPDOWN_NAVIGATION = 'dropdown-navigation';
 const TOP_STORIES = 'top-stories';
 const FEATURES = 'features';
 const MOST_READ = 'most-read';
+const RADIO_SCHEDULE = 'radio-schedule';
 
 export const COMPONENTS = {
   SCROLLABLE_NAVIGATION,
@@ -20,6 +21,7 @@ export const COMPONENTS = {
   TOP_STORIES,
   FEATURES,
   MOST_READ,
+  RADIO_SCHEDULE,
 };
 
 export const interceptATIAnalyticsBeacons = () => {
@@ -30,7 +32,7 @@ export const interceptATIAnalyticsBeacons = () => {
     cy.intercept({
       url: `${atiUrl}/*`,
       query: {
-        ati: `*[${component}]*`,
+        ati: `*[${component}*]*`,
       },
     }).as(`${component}-ati-view`);
   });
@@ -40,7 +42,7 @@ export const interceptATIAnalyticsBeacons = () => {
     cy.intercept({
       url: `${atiUrl}/*`,
       query: {
-        atc: `*[${component}]*`,
+        atc: `*[${component}*]*`,
       },
     }).as(`${component}-ati-click`);
   });
