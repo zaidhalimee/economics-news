@@ -137,14 +137,8 @@ const ScrollablePromo = ({
     format: 'CHD=edoj',
   };
 
-  const eventTrackingDataForOJTopBar = {
-    componentName: `OJTopBar`,
-  };
-  console.log('experimentVariant:', experimentVariant);
   const viewRef = useViewTracker(eventTrackingData);
-  const handleClickTracking = useClickTrackerHandler(
-    experimentVariant ? eventTrackingDataForOJTopBar : eventTrackingData,
-  );
+  const handleClickTracking = useClickTrackerHandler(eventTrackingData);
 
   if (!blocks || isEmpty(blocks)) {
     return null;
