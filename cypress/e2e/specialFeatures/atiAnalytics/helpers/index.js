@@ -30,8 +30,7 @@ export const interceptATIAnalyticsBeacons = () => {
     cy.intercept({
       url: `${atiUrl}/*`,
       query: {
-        ati: `*\\[${component}\\]*`,
-        type: 'AT',
+        ati: `*[${component}]*`,
       },
     }).as(`${component}-ati-view`);
   });
@@ -41,8 +40,7 @@ export const interceptATIAnalyticsBeacons = () => {
     cy.intercept({
       url: `${atiUrl}/*`,
       query: {
-        atc: `*\\[${component}\\]*`,
-        type: 'AT',
+        atc: `*[${component}]*`,
       },
     }).as(`${component}-ati-click`);
   });
