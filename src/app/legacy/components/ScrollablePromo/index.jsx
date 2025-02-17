@@ -189,7 +189,7 @@ const ScrollablePromo = ({
           dir={dir}
           experimentVariant={experimentVariant}
         >
-          {title}
+          <span>{title}</span>
         </LabelComponent>
       )}
       <ScrollablePromoContainer experimentVariant={experimentVariant}>
