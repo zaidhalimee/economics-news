@@ -103,17 +103,21 @@ const LabelComponent = styled(({ ariaLabel, experimentVariant, ...props }) => (
       padding-left: ${GEL_SPACING_DBL};
     }
 
+    margin: 0rem;
+    @media (min-width: ${GEL_GROUP_0_SCREEN_WIDTH_MIN}) {
+      margin-left: 0rem;
+    }
+    @media (min-width: ${GEL_GROUP_2_SCREEN_WIDTH_MIN}) {
+      margin-left: -0.2rem;
+    }
+    @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MIN}) {
+      margin-left: -0.8rem;
+    }
 
     @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MAX}){
       display: none;
     }
-    @media (min-width: ${GEL_GROUP_0_SCREEN_WIDTH_MIN}){
-      margin: 0 -0.2rem;
-    }
-    @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MIN}){
-      margin: 0 -0.8rem;  
-    }
-    margin: 0;
+
     display: flex;
     align-items: center;
     height: ${GEL_SPACING_QUAD};
