@@ -43,10 +43,7 @@ const PromoWrapper = styled.div`
 
 const ScrollablePromoContainer = styled.div`
   background: #f6f6f6;
-  padding: ${({ experimentVariant }) =>
-    experimentVariant && experimentVariant !== 'none'
-      ? `0 ${GEL_SPACING} ${GEL_SPACING_DBL}`
-      : GEL_SPACING};
+  padding: ${GEL_SPACING};
   display: flex;
   overflow-x: auto;
   -ms-overflow-style: none;
@@ -58,7 +55,7 @@ const ScrollablePromoContainer = styled.div`
     experimentVariant &&
     experimentVariant !== 'none' &&
     `
-    @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MAX}){
+    padding: 0 ${GEL_SPACING} ${GEL_SPACING_DBL};
       display: none;
     }
     width: 100vw;
