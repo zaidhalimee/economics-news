@@ -4,6 +4,10 @@ import {
   assertFeaturesAnalysisComponentClick,
   assertFeaturesAnalysisComponentView,
 } from './assertions/featuresAnalysis';
+import {
+  assertLatestMediaComponentClick,
+  assertLatestMediaComponentView,
+} from './assertions/latestMedia';
 // import { assertLiteSiteCTAComponentClick } from './assertions/liteSiteCta';
 import {
   assertMessageBannerComponentClick,
@@ -123,7 +127,7 @@ const canonicalTestSuites = [
     path: '/gahuza/podcasts/p07yh8hb',
     runforEnv: ['local', 'test', 'live'],
     service: 'gahuza',
-    pageIdentifier: 'gahuza.bbc_afrique_radio.programmes.p07yh8hb.page',
+    pageIdentifier: 'gahuza.bbc_gahuza_radio.podcasts.programmes.p07yh8hb.page',
     applicationType: 'responsive',
     contentType: 'player-episode',
     tests: [
@@ -132,9 +136,62 @@ const canonicalTestSuites = [
       assertPodcastLinksComponentClick,
       assertRecentAudioEpisodesComponentView,
       assertRecentAudioEpisodesComponentClick,
-      assertRadioScheduleComponentView,
-      assertRadioScheduleComponentClick,
     ],
+  },
+  {
+    path: '/gahuza/podcasts/p07yh8hb/p094vs2n',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'gahuza',
+    pageIdentifier: 'gahuza.bbc_gahuza_radio.podcasts.p094vs2n.page',
+    applicationType: 'responsive',
+    contentType: 'player-episode',
+    tests: [
+      assertPageViewBeacon,
+      assertPodcastLinksComponentView,
+      assertPodcastLinksComponentClick,
+      assertRecentAudioEpisodesComponentView,
+      assertRecentAudioEpisodesComponentClick,
+    ],
+  },
+  {
+    path: '/gahuza/popular/read',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'gahuza',
+    pageIdentifier: 'gahuza.popular.read.page',
+    applicationType: 'responsive',
+    contentType: 'list-datadriven',
+    tests: [assertPageViewBeacon],
+  },
+  {
+    path: '/hausa/articles/cw43vy8zdjvo',
+    runforEnv: ['local', 'live'],
+    service: 'hausa',
+    pageIdentifier: 'hausa.articles.cw43vy8zdjvo.page',
+    applicationType: 'responsive',
+    contentType: 'article-sfv',
+    tests: [
+      assertPageViewBeacon,
+      assertLatestMediaComponentView,
+      assertLatestMediaComponentClick,
+    ],
+  },
+  {
+    path: '/afrique/bbc_afrique_tv/tv_programmes/w13xttmz',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'afrique',
+    pageIdentifier: 'afrique.bbc_afrique_tv.tv_programmes.w13xttmz.page',
+    applicationType: 'responsive',
+    contentType: 'player-episode',
+    tests: [assertPageViewBeacon],
+  },
+  {
+    path: '/afrique/bbc_afrique_tv/tv/w3ct05mp',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'afrique',
+    pageIdentifier: 'afrique.bbc_afrique_tv.tv.w3ct05mp.page',
+    applicationType: 'responsive',
+    contentType: 'player-episode',
+    tests: [assertPageViewBeacon],
   },
 ];
 
