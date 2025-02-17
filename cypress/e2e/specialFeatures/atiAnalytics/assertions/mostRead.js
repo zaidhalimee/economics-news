@@ -14,6 +14,7 @@ export const assertMostReadComponentView = () => {
       cy.visit(url);
 
       cy.get('[data-e2e="most-read"]').scrollIntoView({ duration: 1000 });
+
       awaitATIComponentViewEvent(MOST_READ);
     });
   });

@@ -14,6 +14,7 @@ export const assertTopStoriesComponentView = () => {
       cy.visit(url);
 
       cy.get('[data-testid="top-stories"]').scrollIntoView({ duration: 1000 });
+
       awaitATIComponentViewEvent(TOP_STORIES);
     });
   });

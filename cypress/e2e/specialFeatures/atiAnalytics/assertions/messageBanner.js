@@ -16,6 +16,7 @@ export const assertMessageBannerComponentView = () => {
       cy.get('[data-testid="message-banner-1"]').scrollIntoView({
         duration: 1000,
       });
+
       awaitATIComponentViewEvent(MESSAGE_BANNER);
     });
   });

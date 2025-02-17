@@ -16,6 +16,7 @@ export const assertRadioScheduleComponentView = () => {
       cy.get('[data-testid="radio-schedule"]').scrollIntoView({
         duration: 1000,
       });
+
       awaitATIComponentViewEvent(RADIO_SCHEDULE);
     });
   });

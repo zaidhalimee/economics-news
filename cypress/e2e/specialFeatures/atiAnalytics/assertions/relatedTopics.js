@@ -16,6 +16,7 @@ export const assertRelatedTopicsComponentView = () => {
       cy.get('[data-testid="related-topics"]').scrollIntoView({
         duration: 1000,
       });
+
       awaitATIComponentViewEvent(RELATED_TOPICS);
     });
   });

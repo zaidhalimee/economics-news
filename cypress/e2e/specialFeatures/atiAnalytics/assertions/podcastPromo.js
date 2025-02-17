@@ -16,6 +16,7 @@ export const assertPodcastPromoComponentView = () => {
       cy.get('[data-e2e="podcast-promo"]').scrollIntoView({
         duration: 1000,
       });
+
       awaitATIComponentViewEvent(PODCAST_PROMO);
     });
   });

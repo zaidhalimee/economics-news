@@ -14,6 +14,7 @@ export const assertFeaturesAnalysisComponentView = () => {
       cy.visit(url);
 
       cy.get('[data-testid="features"]').scrollIntoView({ duration: 1000 });
+
       awaitATIComponentViewEvent(FEATURES);
     });
   });

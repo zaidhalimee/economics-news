@@ -16,6 +16,7 @@ export const assertRecentAudioEpisodesComponentView = () => {
       cy.get('[data-e2e="recent-episodes-list"]').scrollIntoView({
         duration: 1000,
       });
+
       awaitATIComponentViewEvent(RECENT_AUDIO_EPISODES);
     });
   });

@@ -16,6 +16,7 @@ export const assertRelatedContentComponentView = () => {
       cy.get('[data-e2e="related-content-heading"]').scrollIntoView({
         duration: 1000,
       });
+
       awaitATIComponentViewEvent(RELATED_CONTENT);
     });
   });
