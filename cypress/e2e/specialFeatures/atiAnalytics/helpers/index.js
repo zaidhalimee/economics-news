@@ -19,6 +19,7 @@ const RELATED_CONTENT = 'related-content';
 const RELATED_TOPICS = 'topics';
 const PODCAST_PROMO = 'promo-podcast';
 const LITE_SITE_CTA = 'lite-site-cta';
+const RECENT_AUDIO_EPISODES = 'episodes-audio';
 
 export const COMPONENTS = {
   SCROLLABLE_NAVIGATION,
@@ -32,6 +33,7 @@ export const COMPONENTS = {
   RELATED_TOPICS,
   PODCAST_PROMO,
   LITE_SITE_CTA,
+  RECENT_AUDIO_EPISODES,
 };
 
 export const interceptATIAnalyticsBeacons = () => {

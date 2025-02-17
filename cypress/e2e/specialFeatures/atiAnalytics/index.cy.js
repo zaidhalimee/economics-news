@@ -4,7 +4,7 @@ import {
   assertFeaturesAnalysisComponentClick,
   assertFeaturesAnalysisComponentView,
 } from './assertions/featuresAnalysis';
-import { assertLiteSiteCTAComponentClick } from './assertions/liteSiteCta';
+// import { assertLiteSiteCTAComponentClick } from './assertions/liteSiteCta';
 import {
   assertMessageBannerComponentClick,
   assertMessageBannerComponentView,
@@ -27,6 +27,10 @@ import {
   assertRadioScheduleComponentClick,
   assertRadioScheduleComponentView,
 } from './assertions/radioSchedule';
+import {
+  assertRecentAudioEpisodesComponentClick,
+  assertRecentAudioEpisodesComponentView,
+} from './assertions/recentAudioEpisodes';
 import {
   assertRelatedContentComponentClick,
   assertRelatedContentComponentView,
@@ -96,10 +100,25 @@ const canonicalTestSuites = [
       assertRadioScheduleComponentClick,
     ],
   },
+  {
+    path: '/afrique/bbc_afrique_radio/programmes/p030s6dq',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'afrique',
+    pageIdentifier: 'afrique.bbc_afrique_radio.programmes.p030s6dq.page',
+    applicationType: 'responsive',
+    contentType: 'player-episode',
+    tests: [
+      assertPageViewBeacon,
+      assertRecentAudioEpisodesComponentView,
+      assertRecentAudioEpisodesComponentClick,
+      assertRadioScheduleComponentView,
+      assertRadioScheduleComponentClick,
+    ],
+  },
 ];
 
 const supportsAmp = ({ contentType }) =>
-  !['index-home', 'player-live'].includes(contentType);
+  !['index-home', 'player-live', 'player-episode'].includes(contentType);
 
 const ampTestSuites = canonicalTestSuites.filter(supportsAmp).map(testSuite => {
   return {
