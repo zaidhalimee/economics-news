@@ -23,7 +23,7 @@ describe('Amp AdSlot', () => {
 
     it('should correctly render a mpu AdSlot', () => {
       const { container } = render(
-        <AdSlot service="mundo" slotType="mpu" pageType="FIX" />,
+        <AdSlot service="mundo" slotType="mpu" pageType="article" />,
         { service: 'mundo' },
       );
       expect(container).toMatchSnapshot();
