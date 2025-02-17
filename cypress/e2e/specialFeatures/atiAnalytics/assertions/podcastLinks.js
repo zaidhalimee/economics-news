@@ -13,7 +13,7 @@ export const assertPodcastLinksComponentView = () => {
       interceptATIAnalyticsBeacons();
       cy.visit(url);
 
-      cy.get('[data-e2e="podcast-external-links"]').scrollIntoView({
+      cy.get('[data-e2e="podcast-links"]').scrollIntoView({
         duration: 1000,
       });
 
@@ -28,12 +28,12 @@ export const assertPodcastLinksComponentClick = () => {
       interceptATIAnalyticsBeacons();
       cy.visit(url);
 
-      cy.get('[data-e2e="podcast-external-links"]').scrollIntoView({
+      cy.get('[data-e2e="podcast-links"]').scrollIntoView({
         duration: 1000,
       });
 
       // Click on the RSS link
-      cy.get('[data-e2e="podcast-external-links"]')
+      cy.get('[data-e2e="podcast-links"]')
         .contains('RSS')
         .click({ force: true });
 
