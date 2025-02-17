@@ -8,7 +8,7 @@ import {
   assertLatestMediaComponentClick,
   assertLatestMediaComponentView,
 } from './assertions/latestMedia';
-// import { assertLiteSiteCTAComponentClick } from './assertions/liteSiteCta';
+import { assertLiteSiteCTAComponentClick } from './assertions/liteSiteCta';
 import {
   assertMessageBannerComponentClick,
   assertMessageBannerComponentView,
@@ -209,7 +209,7 @@ const ampTestSuites = canonicalTestSuites.filter(supportsAmp).map(testSuite => {
 
 // Most Read & On Demand TV pages do not currently support .lite
 const supportsLite = ({ path, contentType }) =>
-  !path.includes('_tv') || contentType !== 'list-datadriven';
+  !path.includes('_tv') && contentType !== 'list-datadriven';
 
 const liteTestSuites = canonicalTestSuites
   .filter(supportsLite)
@@ -218,12 +218,12 @@ const liteTestSuites = canonicalTestSuites
 
     switch (testSuite.contentType) {
       case 'article':
-        // TODO: enable this once https://github.com/bbc/simorgh/pull/12419 has been merged!
-        // liteSiteTests.push(assertLiteSiteCTAComponentClick);
+        liteSiteTests.push(
+          ...[assertLiteSiteCTAComponentClick, assertMostReadComponentClick],
+        );
         break;
       case 'index-home':
-        // TODO: enable this once https://github.com/bbc/simorgh/pull/12360 has been merged!
-        // liteSiteTests.push(assertMostReadComponentClick);
+        liteSiteTests.push(assertMostReadComponentClick);
         break;
       default:
         break;
