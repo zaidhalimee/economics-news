@@ -345,6 +345,10 @@ export const service: DefaultServiceConfig = {
         url: '/marathi',
       },
       {
+        title: 'स्पोर्ट्सवूमन ऑफ द इयर',
+        url: '/marathi/topics/cyz04xy5dqlt',
+      },
+      {
         title: 'महाराष्ट्र',
         url: '/marathi/topics/c5qvpxvv7y3t',
       },
