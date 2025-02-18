@@ -57,10 +57,7 @@ const ScrollablePromoContainer = styled.div`
     experimentVariant !== 'none' &&
     `
     padding: 0 ${GEL_SPACING} ${GEL_SPACING_DBL};
-    
-    @media (min-width: ${GEL_GROUP_0_SCREEN_WIDTH_MIN}) {
       margin: 0rem;
-    }
 
     @media (min-width: ${GEL_GROUP_2_SCREEN_WIDTH_MIN}) {
       padding: 0 ${GEL_SPACING_DBL} ${GEL_SPACING_DBL};
