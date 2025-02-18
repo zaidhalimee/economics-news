@@ -27,19 +27,17 @@ const StyledLink = styled(Link)`
   ${({ script }) => script && getPica(script)}
   ${({ service }) => service && getSerifBold(service)}
   width: 100%;
-  overflow-wrap: break-word;
-  text-overflow: ellipsis;
   text-decoration: none;
 
   overflow-x: hidden;
   overflow-y: hidden;
-  display: -webkit-box;
+
   ${({ experimentVariant }) =>
-    experimentVariant === 'none' &&
+    !experimentVariant &&
     ` -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
     `}
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
 
   &:hover,
   &:focus {
@@ -73,6 +71,7 @@ const PromoBox = styled.div`
     experimentVariant &&
     experimentVariant !== 'none' &&
     `
+      display: block;
       margin-bottom: 0;
       @media (min-width: ${GEL_GROUP_0_SCREEN_WIDTH_MIN}) {
         width: 11.5rem;
@@ -163,17 +162,6 @@ const Promo = ({ block, experimentVariant, onClick }) => {
       );
       break;
   }
-  console.log(
-    'in Promo.index',
-    'title',
-    title,
-    'href',
-    href,
-    'timestamp',
-    timestamp,
-    'isLive',
-    isLive,
-  );
 
   const isOperaMini = useOperaMiniDetection();
 
@@ -186,6 +174,7 @@ const Promo = ({ block, experimentVariant, onClick }) => {
         service={service}
         script={script}
         onClick={onClick}
+        experimentVariant={experimentVariant}
       >
         {isLive && <LiveLabel />}
         {title}
