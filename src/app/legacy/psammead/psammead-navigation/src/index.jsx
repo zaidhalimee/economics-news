@@ -223,14 +223,6 @@ const StyledNav = styled.nav`
       }
     `}
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-  }
-
   ${StyledListItem} {
     ${({ dir }) => `
       &::after {
