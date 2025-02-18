@@ -26,6 +26,7 @@ import { GridItemMediumNoMargin } from '#components/Grid';
 import useViewTracker from '#hooks/useViewTracker';
 import useClickTrackerHandler from '#hooks/useClickTrackerHandler';
 import idSanitiser from '#lib/utilities/idSanitiser';
+import { GREY_2 } from '#app/components/ThemeProvider/palette';
 import { ServiceContext } from '../../../contexts/ServiceContext';
 import Promo from './Promo';
 import PromoList from './PromoList';
@@ -42,7 +43,7 @@ const PromoWrapper = styled.div`
 `;
 
 const ScrollablePromoContainer = styled.div`
-  background: #f6f6f6;
+  background: ${GREY_2};
   padding: ${GEL_SPACING};
   display: flex;
   overflow-x: auto;
@@ -62,18 +63,8 @@ const ScrollablePromoContainer = styled.div`
     @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MAX}) {
       display: none;
     }
-
-    margin: 0rem;
-    @media (min-width: ${GEL_GROUP_0_SCREEN_WIDTH_MIN}) {
-      margin: 0rem;
-    }
-    @media (min-width: ${GEL_GROUP_2_SCREEN_WIDTH_MIN}) {
-      margin: 0 -0.2rem;
-    }
-    @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MIN}) {
-      margin: 0 -0.8rem;
-    }
     width: 100vw;
+    margin-left: calc(-50vw + 50%);
   `}
 `;
 
@@ -108,20 +99,20 @@ const LabelComponent = styled(({ ariaLabel, experimentVariant, ...props }) => (
     experimentVariant &&
     experimentVariant !== 'none' &&
     `
-    padding: 0 ${GEL_SPACING};
+    padding-left: ${GEL_SPACING};
     @media (min-width: ${GEL_GROUP_2_SCREEN_WIDTH_MIN}) {
-      padding: 0 ${GEL_SPACING_DBL};
+      padding-left: ${GEL_SPACING_DBL};
     }
 
     margin: 0rem;
     @media (min-width: ${GEL_GROUP_0_SCREEN_WIDTH_MIN}) {
-      margin: 0rem;
+      margin-left: 0rem;
     }
     @media (min-width: ${GEL_GROUP_2_SCREEN_WIDTH_MIN}) {
-      margin: 0 -0.2rem;
+      margin-left: -0.2rem;
     }
     @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MIN}) {
-      margin: 0 -0.8rem;
+      margin-left: -0.8rem;
     }
 
     @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MAX}){
@@ -131,7 +122,7 @@ const LabelComponent = styled(({ ariaLabel, experimentVariant, ...props }) => (
     display: flex;
     align-items: center;
     height: ${GEL_SPACING_QUAD};
-    background: #f6f6f6;
+    background: ${GREY_2} ;
   `}
 `;
 
@@ -200,7 +191,7 @@ const ScrollablePromo = ({
         dir={dir}
         experimentVariant={experimentVariant}
       >
-        <span>{title}</span>
+        {title}
       </LabelComponent>
       <ScrollablePromoContainer experimentVariant={experimentVariant}>
         <GridItemMediumNoMargin>
