@@ -10,6 +10,7 @@ import { RequestContext } from '#contexts/RequestContext';
 import { ServiceContext } from '../../../contexts/ServiceContext';
 import Canonical from './index.canonical';
 import Amp from './index.amp';
+import isLiveEnv from '../../../lib/utilities/isLive';
 
 const renderListItems = (
   Li,
@@ -51,15 +52,6 @@ const renderListItems = (
 const NavigationContainer = ({ propsForOJExperiment }) => {
   const { isAmp, isLite } = useContext(RequestContext);
   const { blocks, experimentVariant } = propsForOJExperiment || {};
-  console.log(
-    'in Navigation.index',
-    'propsForOJExperiment',
-    propsForOJExperiment,
-    'blocks',
-    blocks,
-    'experimentVariant',
-    experimentVariant,
-  );
   const { script, translations, navigation, service, dir } =
     useContext(ServiceContext);
 
@@ -137,7 +129,10 @@ const NavigationContainer = ({ propsForOJExperiment }) => {
       dir={dir}
       script={script}
       service={service}
-      {...(!isAmp && experimentVariant && experimentVariant !== 'none'
+      {...(!isAmp &&
+      !isLiveEnv() &&
+      experimentVariant &&
+      experimentVariant !== 'none'
         ? { experimentVariant, blocks }
         : {})}
     />
