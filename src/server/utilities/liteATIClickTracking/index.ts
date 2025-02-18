@@ -1,14 +1,26 @@
 export default () => {
   window.addEventListener('load', () => {
     document.addEventListener('click', (event: MouseEvent) => {
-      const targetElement = event.target as HTMLElement;
+      let targetElement;
+      const clickedElement = event.target as HTMLElement;
+      let currentElement = clickedElement;
+      for (
+        ;
+        currentElement;
+        currentElement = currentElement.parentElement as HTMLElement
+      ) {
+        if (currentElement.tagName === 'A') {
+          targetElement = currentElement;
+          break;
+        }
+      }
       if (targetElement?.tagName === 'A') {
         event.stopPropagation();
         event.preventDefault();
 
         const atiURL = targetElement.getAttribute('data-lite-ati-tracking');
-        const currentAnchorElement = event.target as HTMLAnchorElement;
-        const nextPageUrl = currentAnchorElement?.href;
+        const anchorElement = targetElement as HTMLAnchorElement;
+        const nextPageUrl = anchorElement?.href;
 
         if (atiURL) {
           const {
