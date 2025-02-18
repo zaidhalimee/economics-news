@@ -40,6 +40,10 @@ import {
   assertRecentAudioEpisodesComponentView,
 } from './assertions/recentAudioEpisodes';
 import {
+  assertRecommendationsComponentClick,
+  assertRecommendationsComponentView,
+} from './assertions/recommendations';
+import {
   assertRelatedContentComponentClick,
   assertRelatedContentComponentView,
 } from './assertions/relatedContent';
@@ -47,6 +51,10 @@ import {
   assertRelatedTopicsComponentClick,
   assertRelatedTopicsComponentView,
 } from './assertions/relatedTopics';
+import {
+  assertScrollablePromoComponentClick,
+  assertScrollablePromoComponentView,
+} from './assertions/scrollablePromo';
 import {
   assertTopStoriesComponentClick,
   assertTopStoriesComponentView,
@@ -74,7 +82,7 @@ const canonicalTestSuites = [
   },
   {
     path: '/gahuza/articles/c5y51yxeg53o',
-    runforEnv: ['local', 'live'],
+    runforEnv: ['local'],
     service: 'gahuza',
     pageIdentifier: 'gahuza.articles.c5y51yxeg53o.page',
     applicationType: 'responsive',
@@ -87,6 +95,33 @@ const canonicalTestSuites = [
       assertFeaturesAnalysisComponentClick,
       assertPodcastPromoComponentView,
       assertPodcastPromoComponentClick,
+      assertRelatedTopicsComponentView,
+      assertRelatedTopicsComponentClick,
+      assertRelatedContentComponentView,
+      assertRelatedContentComponentClick,
+      assertMostReadComponentView,
+      assertMostReadComponentClick,
+    ],
+  },
+  {
+    path: '/hindi/articles/c9w59wnx27ro',
+    runforEnv: ['live'],
+    service: 'hindi',
+    pageIdentifier: 'hindi.articles.c9w59wnx27ro.page',
+    applicationType: 'responsive',
+    contentType: 'article',
+    tests: [
+      assertPageViewBeacon,
+      assertTopStoriesComponentView,
+      assertTopStoriesComponentClick,
+      assertFeaturesAnalysisComponentView,
+      assertFeaturesAnalysisComponentClick,
+      assertRecommendationsComponentView,
+      assertRecommendationsComponentClick,
+      assertPodcastPromoComponentView,
+      assertPodcastPromoComponentClick,
+      assertScrollablePromoComponentView,
+      assertScrollablePromoComponentClick,
       assertRelatedTopicsComponentView,
       assertRelatedTopicsComponentClick,
       assertRelatedContentComponentView,
@@ -209,7 +244,7 @@ const ampTestSuites = canonicalTestSuites.filter(supportsAmp).map(testSuite => {
 
 // Most Read & On Demand TV pages do not currently support .lite
 const supportsLite = ({ path, contentType }) =>
-  !path.includes('_tv') || contentType !== 'list-datadriven';
+  !path.includes('_tv') && contentType !== 'list-datadriven';
 
 const liteTestSuites = canonicalTestSuites
   .filter(supportsLite)

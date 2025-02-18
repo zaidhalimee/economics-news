@@ -22,6 +22,8 @@ const LITE_SITE_CTA = 'lite-site-cta';
 const RECENT_AUDIO_EPISODES = 'episodes-audio';
 const PODCAST_LINKS = 'third-party';
 const LATEST_MEDIA = 'latest';
+const RECOMMENDATIONS = 'wsoj';
+const SCROLLABLE_PROMO = 'edoj';
 
 export const COMPONENTS = {
   SCROLLABLE_NAVIGATION,
@@ -38,6 +40,8 @@ export const COMPONENTS = {
   RECENT_AUDIO_EPISODES,
   PODCAST_LINKS,
   LATEST_MEDIA,
+  RECOMMENDATIONS,
+  SCROLLABLE_PROMO,
 };
 
 export const interceptATIAnalyticsBeacons = () => {

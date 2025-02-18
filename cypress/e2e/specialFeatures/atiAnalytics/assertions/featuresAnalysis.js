@@ -31,7 +31,6 @@ export const assertFeaturesAnalysisComponentClick = () => {
       // Click on first item
       cy.get('[data-testid="features"]')
         .find('a')
-        .not('[aria-hidden="true"]')
         .first()
         .click({ force: true });
 
