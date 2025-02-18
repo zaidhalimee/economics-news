@@ -63,8 +63,17 @@ const ScrollablePromoContainer = styled.div`
     @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MAX}) {
       display: none;
     }
+
+    @media (min-width: ${GEL_GROUP_0_SCREEN_WIDTH_MIN}) {
+      margin: 0rem;
+    }
+    @media (min-width: ${GEL_GROUP_2_SCREEN_WIDTH_MIN}) {
+      margin: 0 -0.2rem;
+    }
+    @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MIN}) {
+      margin: 0 -0.8rem;
+    }
     width: 100vw;
-    margin-left: calc(-50vw + 50%);
   `}
 `;
 
@@ -99,20 +108,19 @@ const LabelComponent = styled(({ ariaLabel, experimentVariant, ...props }) => (
     experimentVariant &&
     experimentVariant !== 'none' &&
     `
-    padding-left: ${GEL_SPACING};
+    padding: 0 ${GEL_SPACING};
     @media (min-width: ${GEL_GROUP_2_SCREEN_WIDTH_MIN}) {
-      padding-left: ${GEL_SPACING_DBL};
+      padding: 0 ${GEL_SPACING_DBL};
     }
 
-    margin: 0rem;
     @media (min-width: ${GEL_GROUP_0_SCREEN_WIDTH_MIN}) {
-      margin-left: 0rem;
+      margin: 0rem;
     }
     @media (min-width: ${GEL_GROUP_2_SCREEN_WIDTH_MIN}) {
-      margin-left: -0.2rem;
+      margin: 0 -0.2rem;
     }
     @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MIN}) {
-      margin-left: -0.8rem;
+      margin: 0 -0.8rem;
     }
 
     @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MAX}){
