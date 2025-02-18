@@ -228,6 +228,26 @@ const canonicalTestSuites = [
     contentType: 'player-episode',
     tests: [assertPageViewBeacon],
   },
+  // Pages with Reverb
+  {
+    path: '/pidgin',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'pidgin',
+    pageIdentifier: 'pidgin.page',
+    applicationType: 'responsive',
+    contentType: 'index-home',
+    tests: [
+      assertPageViewBeacon,
+      assertScrollableNavigationComponentView,
+      assertScrollableNavigationComponentClick,
+      assertDropdownNavigationComponentView,
+      assertDropdownNavigationComponentClick,
+      assertMessageBannerComponentView,
+      assertMessageBannerComponentClick,
+      assertMostReadComponentView,
+      assertMostReadComponentClick,
+    ],
+  },
 ];
 
 const supportsAmp = ({ contentType }) =>
