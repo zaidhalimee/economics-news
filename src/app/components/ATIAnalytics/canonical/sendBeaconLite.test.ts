@@ -29,7 +29,7 @@ describe('sendBeaconLite', () => {
     expect(XMLHttpRequestMock.open).toHaveBeenCalledWith(
       'GET',
       'https://foobar.com',
-      false,
+      true,
     );
   });
 });

@@ -3,17 +3,16 @@ export default () => {
     document.addEventListener('click', (event: MouseEvent) => {
       let targetElement;
       const clickedElement = event.target as HTMLElement;
+
       let currentElement = clickedElement;
-      for (
-        ;
-        currentElement;
-        currentElement = currentElement.parentElement as HTMLElement
-      ) {
+      while (currentElement) {
         if (currentElement.tagName === 'A') {
           targetElement = currentElement;
           break;
         }
+        currentElement = currentElement.parentElement as HTMLElement;
       }
+
       if (targetElement?.tagName === 'A') {
         event.stopPropagation();
         event.preventDefault();

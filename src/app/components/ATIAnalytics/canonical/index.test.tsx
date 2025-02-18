@@ -49,7 +49,7 @@ describe('Canonical ATI Analytics', () => {
     expect(helmet.scriptTags[0].innerHTML).toEqual(`
     function sendBeaconLite (atiPageViewUrlString) {
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", atiPageViewUrlString, false);
+        xhr.open("GET", atiPageViewUrlString, true);
         xhr.withCredentials = true;
         xhr.send();
     }
