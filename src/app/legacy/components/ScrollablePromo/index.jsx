@@ -85,7 +85,7 @@ const LabelComponent = styled(({ ariaLabel, experimentVariant, ...props }) => (
       ? getBrevier(script)
       : getDoublePica(script))};
   ${({ service }) => getSansRegular(service)}
-
+  display: inline-block;
   margin-bottom: ${GEL_SPACING_DBL};
   color: ${({ theme }) =>
     theme.isDarkUi ? theme.palette.GREY_2 : theme.palette.SHADOW};
