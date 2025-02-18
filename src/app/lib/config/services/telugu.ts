@@ -335,6 +335,10 @@ export const service: DefaultServiceConfig = {
         url: '/telugu',
       },
       {
+        title: 'స్పోర్ట్స్ ఉమన్ ఆఫ్ ది ఇయర్',
+        url: '/telugu/topics/cwn2w9p72k8t',
+      },
+      {
         title: 'వీడియో',
         url: '/telugu/topics/cl29j0e3e2dt',
       },

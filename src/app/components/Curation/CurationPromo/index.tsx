@@ -57,13 +57,13 @@ const CurationPromo = ({
           isAmp={isAmp}
         >
           {isMedia && (
-            <Promo.MediaIcon type={type}>
+            <Promo.MediaIcon css={styles.promo} type={type}>
               {showDuration ? mediaDuration : ''}
             </Promo.MediaIcon>
           )}
         </Promo.Image>
       )}
-      <Promo.Heading css={styles.promo} as={`h${headingLevel}`}>
+      <Promo.Heading as={`h${headingLevel}`}>
         {isMedia ? (
           <Promo.A href={link} aria-labelledby={id}>
             <span id={id} role="text">
