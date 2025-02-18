@@ -33,9 +33,7 @@ export const assertPodcastLinksComponentClick = () => {
       });
 
       // Click on the RSS link
-      cy.get('[data-e2e="podcast-links"]')
-        .contains('RSS')
-        .click({ force: true });
+      cy.get('[data-e2e="podcast-links"]').contains('RSS').click();
 
       awaitATIComponentClickEvent(PODCAST_LINKS);
 

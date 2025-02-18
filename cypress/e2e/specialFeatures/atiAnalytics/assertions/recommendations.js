@@ -33,10 +33,7 @@ export const assertRecommendationsComponentClick = () => {
       });
 
       // Click on last item
-      cy.get('[data-e2e="recommendations-heading"]')
-        .find('a')
-        .last()
-        .click({ force: true });
+      cy.get('[data-e2e="recommendations-heading"]').find('a').last().click();
 
       awaitATIComponentClickEvent(RECOMMENDATIONS);
 

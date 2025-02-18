@@ -33,10 +33,7 @@ export const assertRecentAudioEpisodesComponentClick = () => {
       });
 
       // Click on first item
-      cy.get('[data-e2e="recent-episodes-list"]')
-        .find('a')
-        .first()
-        .click({ force: true });
+      cy.get('[data-e2e="recent-episodes-list"]').find('a').first().click();
 
       awaitATIComponentClickEvent(RECENT_AUDIO_EPISODES);
 

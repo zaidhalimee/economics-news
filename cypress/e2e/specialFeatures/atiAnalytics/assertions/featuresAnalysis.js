@@ -29,10 +29,7 @@ export const assertFeaturesAnalysisComponentClick = () => {
       cy.get('[data-testid="features"]').scrollIntoView({ duration: 1000 });
 
       // Click on first item
-      cy.get('[data-testid="features"]')
-        .find('a')
-        .first()
-        .click({ force: true });
+      cy.get('[data-testid="features"]').find('a').first().click();
 
       awaitATIComponentClickEvent(FEATURES);
 

@@ -33,7 +33,7 @@ export const assertRadioScheduleComponentClick = () => {
       });
 
       // Click on last item which will be an on-demand episode
-      cy.get('[data-e2e="onDemand"]').find('a').first().click({ force: true });
+      cy.get('[data-e2e="onDemand"]').find('a').first().click();
 
       awaitATIComponentClickEvent(RADIO_SCHEDULE);
 
