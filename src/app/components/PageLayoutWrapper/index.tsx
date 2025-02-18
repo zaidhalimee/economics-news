@@ -74,12 +74,18 @@ const PageLayoutWrapper = ({
 
     const topStories = pageData.secondaryColumn?.topStories;
     const mostReadItems = pageData.mostRead?.items;
+    const servicesForVariantA = ['pidgin', 'hindi', 'urdu'];
+    const servicesForVariantB = ['mundo', 'burmese', 'arabic'];
 
-    // const scrollableOJExperimentVariation = useOptimizelyVariation(
-    //   'oj_scroll',
-    // ) as unknown as string;
-    const variantValue = 'B'; // We would get this value from useOptimizelyVariation (as commented out above)
-    // so just manually switch the hardcoded variant for now while getting this working
+    let variantValue;
+
+    if (servicesForVariantA.includes(service)) {
+      variantValue = 'A';
+    } else if (servicesForVariantB.includes(service)) {
+      variantValue = 'B';
+    } else {
+      variantValue = 'none';
+    }
     const experimentVariant: 'A' | 'B' | 'none' = ['A', 'B'].includes(
       variantValue,
     )
