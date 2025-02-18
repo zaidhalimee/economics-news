@@ -97,7 +97,7 @@ export const Test = {
   tags: ['!dev'],
 };
 
-export const Lite = {
+export const TestLite = {
   render: (_: StoryArgs, { variant }: StoryProps) => (
     <Component service="gahuza" variant={variant} isLite />
   ),
@@ -107,6 +107,7 @@ export const Lite = {
       viewports: [
         599, // Group 2
         899, // Group 3
+        1280, // Group 6
       ],
     },
   },
