@@ -416,6 +416,10 @@ export const service: DefaultServiceConfig = {
         url: '/tamil',
       },
       {
+        title: 'சிறந்த இந்திய விளையாட்டு வீராங்கனை',
+        url: '/tamil/topics/cn5wl72ryv4t',
+      },
+      {
         title: 'உலகம்',
         url: '/tamil/topics/c40379e2n2zt',
       },

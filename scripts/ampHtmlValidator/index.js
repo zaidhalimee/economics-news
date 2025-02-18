@@ -60,10 +60,8 @@ const runValidator = async () => {
     .flat()
     .filter(url => !excludedUrls.includes(url));
 
-  // include kyrgyz homepage in amp validator tests
   const urlsToValidate = [
     ...urls,
-    '/kyrgyz',
     '/mundo/articles/ce42wzqr2mko',
     '/news/articles/cn7k01xp8kxo',
     '/persian/articles/cej3lzd5e0go',

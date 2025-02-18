@@ -96,7 +96,7 @@ export const getHomePageRegex = services => {
     homePages = services.filter(service => homePageServices.includes(service));
   }
   const homePageServiceRegex = getServiceRegex(homePages);
-  return `/:service(${homePageServiceRegex}):variant(${variantRegex})?:amp(${ampRegex})?:lite(${liteRegex})?`;
+  return `/:service(${homePageServiceRegex}):variant(${variantRegex})?:lite(${liteRegex})?`;
 };
 
 export const getSwRegex = services => {
