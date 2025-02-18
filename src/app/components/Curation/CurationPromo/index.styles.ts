@@ -9,4 +9,10 @@ export default {
         },
       }),
     }),
+  image: ({ isLite }: Theme) =>
+    css({
+      ...(isLite && {
+        position: 'relative',
+      }),
+    }),
 };

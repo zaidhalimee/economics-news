@@ -13,10 +13,6 @@ const styles = {
             width: '100%',
             paddingInlineStart: 0,
           },
-
-          '[class*="ChildWrapper" i]': {
-            position: 'relative',
-          },
         },
       }),
     }),
