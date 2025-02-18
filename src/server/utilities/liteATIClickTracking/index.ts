@@ -88,6 +88,7 @@ export default () => {
           const paramValues = Object.keys(params)
             .map(key => `${key}=${params[key]}`)
             .join('&');
+
           window.sendBeaconLite(`${atiURL}&${paramValues}`);
         }
 
