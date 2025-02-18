@@ -105,9 +105,9 @@ export const TestLite = {
   parameters: {
     chromatic: {
       viewports: [
+        399, // Group 1
         599, // Group 2
         899, // Group 3
-        1280, // Group 6
       ],
     },
   },
