@@ -36,9 +36,7 @@ const StyledLink = styled(Link)`
   display: -webkit-box;
   ${({ experimentVariant }) =>
     experimentVariant === 'none' &&
-    ` overflow-wrap: break-word;
-      text-overflow: ellipsis;
-      -webkit-line-clamp: 4;
+    ` -webkit-line-clamp: 4;
     `}
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;

@@ -12,7 +12,9 @@ import { RequestContext } from '#app/contexts/RequestContext';
 import ScrollablePromo from '#components/ScrollablePromo';
 
 const ScrollableWrapper = styled.div`
-  position: relative;
+  &::after {
+    position: relative;
+  }
 `;
 const Divider = styled.div`
   content: '';
