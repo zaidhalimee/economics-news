@@ -98,9 +98,9 @@ const LabelComponent = styled(({ ariaLabel, experimentVariant, ...props }) => (
     experimentVariant &&
     experimentVariant !== 'none' &&
     `
-    padding-left: ${GEL_SPACING};
+    padding: 0 ${GEL_SPACING};
     @media (min-width: ${GEL_GROUP_2_SCREEN_WIDTH_MIN}) {
-      padding-left: ${GEL_SPACING_DBL};
+      padding: 0 ${GEL_SPACING_DBL};
     }
 
     margin: 0rem;
@@ -190,7 +190,7 @@ const ScrollablePromo = ({
         dir={dir}
         experimentVariant={experimentVariant}
       >
-        {title}
+        <span>{title}</span>
       </LabelComponent>
       <ScrollablePromoContainer experimentVariant={experimentVariant}>
         <GridItemMediumNoMargin>
