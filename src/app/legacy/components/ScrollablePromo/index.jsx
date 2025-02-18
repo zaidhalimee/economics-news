@@ -57,22 +57,24 @@ const ScrollablePromoContainer = styled.div`
     experimentVariant !== 'none' &&
     `
     padding: 0 ${GEL_SPACING} ${GEL_SPACING_DBL};
+    
+    @media (min-width: ${GEL_GROUP_0_SCREEN_WIDTH_MIN}) {
+      margin: 0rem;
+    }
+
     @media (min-width: ${GEL_GROUP_2_SCREEN_WIDTH_MIN}) {
       padding: 0 ${GEL_SPACING_DBL} ${GEL_SPACING_DBL};
+      margin: 0 -0.2rem;
     }
+    
+    @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MIN}) {
+      margin: 0 -0.8rem;
+    }
+    
     @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MAX}) {
       display: none;
     }
 
-    @media (min-width: ${GEL_GROUP_0_SCREEN_WIDTH_MIN}) {
-      margin: 0rem;
-    }
-    @media (min-width: ${GEL_GROUP_2_SCREEN_WIDTH_MIN}) {
-      margin: 0 -0.2rem;
-    }
-    @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MIN}) {
-      margin: 0 -0.8rem;
-    }
     width: 100vw;
   `}
 `;
@@ -109,16 +111,16 @@ const LabelComponent = styled(({ ariaLabel, experimentVariant, ...props }) => (
     experimentVariant !== 'none' &&
     `
     padding: 0 ${GEL_SPACING};
-    @media (min-width: ${GEL_GROUP_2_SCREEN_WIDTH_MIN}) {
-      padding: 0 ${GEL_SPACING_DBL};
-    }
 
     @media (min-width: ${GEL_GROUP_0_SCREEN_WIDTH_MIN}) {
       margin: 0rem;
     }
+
     @media (min-width: ${GEL_GROUP_2_SCREEN_WIDTH_MIN}) {
+      padding: 0 ${GEL_SPACING_DBL};
       margin: 0 -0.2rem;
     }
+
     @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MIN}) {
       margin: 0 -0.8rem;
     }
