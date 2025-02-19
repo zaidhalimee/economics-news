@@ -17,10 +17,7 @@ import SkipLinkWrapper from '#components/SkipLinkWrapper';
 import useToggle from '#hooks/useToggle';
 import { GridItemMediumNoMargin } from '#components/Grid';
 
-import {
-  getWsojTitle,
-  TEST_VARIATION,
-} from '#app/pages/ArticlePage/recommendationsExperiment';
+import { getWsojTitle } from '#app/pages/ArticlePage/recommendationsExperiment';
 import { ServiceContext } from '../../../contexts/ServiceContext';
 import RecommendationsPromoList from './RecommendationsPromoList';
 import RecommendationsPromo from './RecommendationsPromo';
@@ -76,14 +73,11 @@ const CpsRecommendations = ({ items }) => {
   const title = getWsojTitle({
     translations,
     mostReadTitle,
-    variation: TEST_VARIATION,
   });
 
   const { text, endTextVisuallyHidden } = path(['skipLink'], recommendations);
 
-  const terms = {
-    '%title%': title,
-  };
+  const terms = { '%title%': title };
 
   const isSinglePromo = items.length === 1;
 
