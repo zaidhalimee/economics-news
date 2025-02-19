@@ -3,10 +3,14 @@ import { singleTextBlock } from '#app/models/blocks';
 import { OptimoBlock, Recommendation } from '#app/models/types/optimo';
 import { Translations } from '#app/models/types/translations';
 
-export type Variation = 'wsoj' | 'most_read' | 'related_content' | undefined;
+export type Variation =
+  | 'wsoj'
+  | 'wsoj_most_read'
+  | 'wsoj_related_content'
+  | undefined;
 
 // TODO: Get this from Optimizely
-export const TEST_VARIATION: Variation = 'related_content';
+export const TEST_VARIATION: Variation = 'wsoj_related_content';
 
 type GetWsojTitleProps = {
   mostReadTitle: string;
@@ -22,9 +26,9 @@ export const getWsojTitle = ({
   switch (variation) {
     case 'wsoj':
       return translations.recommendationTitle || 'Recommended stories';
-    case 'most_read':
+    case 'wsoj_most_read':
       return mostReadTitle || 'Most read';
-    case 'related_content':
+    case 'wsoj_related_content':
       return translations.relatedContent || 'Related content';
     default:
       return translations.recommendationTitle || 'Recommended stories';
@@ -48,7 +52,7 @@ export const transformRecsData = ({
 
   if (variation === 'wsoj') return wsojRecs;
 
-  if (variation === 'related_content') {
+  if (variation === 'wsoj_related_content') {
     const relatedContentBlock = pageBlocks.find(
       block => block.type === 'relatedContent',
     );
@@ -91,7 +95,7 @@ export const transformRecsData = ({
     return transformedRelatedContentItems;
   }
 
-  if (variation === 'most_read') {
+  if (variation === 'wsoj_most_read') {
     const mostReadItems = mostRead?.items?.slice(0, 4);
 
     const transformedMostReadItems = mostReadItems?.map(item => {

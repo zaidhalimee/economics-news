@@ -1,10 +1,15 @@
 import { getHeadline, getUrl } from '#lib/utilities/getStoryPromoInfo';
 import { getEnvConfig } from '#app/lib/utilities/getEnvConfig';
 
-export default ({ item, index, optimizely } = {}) => {
+export default ({
+  item,
+  index,
+  optimizely,
+  optimizelyMetricNameOverride,
+} = {}) => {
   const block = {
     componentName: 'wsoj',
-    ...(optimizely && { optimizely }),
+    ...(optimizely && { optimizely, optimizelyMetricNameOverride }),
   };
   const headline = getHeadline(item);
   const url = getUrl(item);

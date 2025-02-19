@@ -5,13 +5,20 @@ import {
 } from '#psammead/psammead-story-promo-list/src';
 import useViewTracker from '#hooks/useViewTracker';
 import { OptimizelyContext } from '@optimizely/react-sdk';
+import { TEST_VARIATION } from '#app/pages/ArticlePage/recommendationsExperiment';
 import Grid from '../../../components/Grid';
 import RecommendationsPromo from '../RecommendationsPromo';
 import getEventTrackingData from './getEventTrackingData';
 
 const RecommendationsPromoListItem = forwardRef(
   ({ item, index, optimizely }, forwardedRef) => {
-    const eventTrackingData = getEventTrackingData({ item, index, optimizely });
+    const eventTrackingData = getEventTrackingData({
+      item,
+      index,
+      optimizely,
+      // TODO: Get this from Optimizely
+      optimizelyMetricNameOverride: TEST_VARIATION,
+    });
 
     const linkViewEventTracker = useViewTracker(eventTrackingData.link);
     const elementRefCallback = element => {
@@ -46,7 +53,11 @@ const RecommendationsPromoListItem = forwardRef(
 
 const RecommendationsPromoList = ({ promoItems }) => {
   const { optimizely } = useContext(OptimizelyContext);
-  const eventTrackingData = getEventTrackingData({ optimizely });
+  const eventTrackingData = getEventTrackingData({
+    optimizely,
+    // TODO: Get this from Optimizely
+    optimizelyMetricNameOverride: TEST_VARIATION,
+  });
   const blockViewEventTracker = useViewTracker(eventTrackingData.block);
 
   return (
@@ -63,7 +74,6 @@ const RecommendationsPromoList = ({ promoItems }) => {
       enableGelGutters
     >
       {promoItems.map((item, index) => (
-        // 004_brasil_recommendations_experiment
         <RecommendationsPromoListItem
           key={item.id}
           ref={blockViewEventTracker}
