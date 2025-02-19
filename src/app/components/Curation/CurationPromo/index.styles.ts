@@ -1,7 +1,15 @@
 import { css, Theme } from '@emotion/react';
 
 export default {
-  promo: ({ isLite, spacings, mq }: Theme) =>
+  promo: ({ isLite }: Theme) =>
+    css({
+      ...(isLite && {
+        '.promo-image': {
+          display: 'none',
+        },
+      }),
+    }),
+  icon: ({ isLite, spacings, mq }: Theme) =>
     css({
       ...(isLite && {
         [mq.GROUP_2_MAX_WIDTH]: {
@@ -9,10 +17,8 @@ export default {
         },
       }),
     }),
-  image: ({ isLite }: Theme) =>
+  image: () =>
     css({
-      ...(isLite && {
-        position: 'relative',
-      }),
+      position: 'relative',
     }),
 };
