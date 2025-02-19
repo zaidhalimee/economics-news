@@ -80,16 +80,6 @@ export default {
         'modern.shared-3333.js',
       ];
     }
-    if (pageType === 'FeatureIdxPage') {
-      return [
-        'modern.FeatureIdxPage-31ecd969.31473c35.js',
-        'modern.commons-1111.js',
-        'modern.commons-2222.js',
-        'modern.1111-lib-1111.js',
-        'modern.3333-lib-2222.js',
-        'modern.shared-1111.js',
-      ];
-    }
 
     throw Error(`page type ${pageType} not mocked`);
   },

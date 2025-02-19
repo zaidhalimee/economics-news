@@ -4,7 +4,6 @@ import {
   ARTICLE_PAGE,
   FRONT_PAGE,
   MOST_READ_PAGE,
-  FEATURE_INDEX_PAGE,
   MEDIA_ASSET_PAGE,
   PHOTO_GALLERY_PAGE,
   STORY_PAGE,
@@ -72,11 +71,6 @@ describe('Chartbeat utilities', () => {
         pageType: MEDIA_ARTICLE_PAGE,
         expectedDefaultType: 'article-sfv',
         expectedShortType: 'article-sfv',
-      },
-      {
-        pageType: FEATURE_INDEX_PAGE,
-        expectedDefaultType: FEATURE_INDEX_PAGE,
-        expectedShortType: FEATURE_INDEX_PAGE,
       },
       {
         pageType: MEDIA_ASSET_PAGE,
@@ -291,15 +285,14 @@ describe('Chartbeat utilities', () => {
 
   describe('Chartbeat Title', () => {
     test.each`
-      pageType              | title                         | brandName            | expected
-      ${FRONT_PAGE}         | ${'Front Page Title'}         | ${'BBC News Pidgin'} | ${'Front Page Title - BBC News Pidgin'}
-      ${FEATURE_INDEX_PAGE} | ${'Feature Index Page Title'} | ${'BBC News Pidgin'} | ${'Feature Index Page Title - BBC News Pidgin'}
-      ${MOST_READ_PAGE}     | ${'Most Read Page Title'}     | ${'BBC News Pidgin'} | ${'Most Read Page Title - BBC News Pidgin'}
-      ${TOPIC_PAGE}         | ${'Topic Page Title'}         | ${'BBC News Pidgin'} | ${'Topic Page Title - BBC News Pidgin'}
-      ${LIVE_PAGE}          | ${'Live Page Title'}          | ${'BBC News Pidgin'} | ${'Live Page Title - BBC News Pidgin'}
-      ${AUDIO_PAGE}         | ${'Audio Page Title'}         | ${'BBC News Pidgin'} | ${'Audio Page Title - BBC News Pidgin'}
-      ${TV_PAGE}            | ${'TV Page Title'}            | ${'BBC News Pidgin'} | ${'TV Page Title - BBC News Pidgin'}
-      ${'index'}            | ${'index Page Title'}         | ${'BBC News Pidgin'} | ${'index Page Title - BBC News Pidgin'}
+      pageType          | title                     | brandName            | expected
+      ${FRONT_PAGE}     | ${'Front Page Title'}     | ${'BBC News Pidgin'} | ${'Front Page Title - BBC News Pidgin'}
+      ${MOST_READ_PAGE} | ${'Most Read Page Title'} | ${'BBC News Pidgin'} | ${'Most Read Page Title - BBC News Pidgin'}
+      ${TOPIC_PAGE}     | ${'Topic Page Title'}     | ${'BBC News Pidgin'} | ${'Topic Page Title - BBC News Pidgin'}
+      ${LIVE_PAGE}      | ${'Live Page Title'}      | ${'BBC News Pidgin'} | ${'Live Page Title - BBC News Pidgin'}
+      ${AUDIO_PAGE}     | ${'Audio Page Title'}     | ${'BBC News Pidgin'} | ${'Audio Page Title - BBC News Pidgin'}
+      ${TV_PAGE}        | ${'TV Page Title'}        | ${'BBC News Pidgin'} | ${'TV Page Title - BBC News Pidgin'}
+      ${'index'}        | ${'index Page Title'}     | ${'BBC News Pidgin'} | ${'index Page Title - BBC News Pidgin'}
     `(
       'should return correct title when pageType is $pageType and brandName is $brandName',
       ({ pageType, title, brandName, expected }) => {
