@@ -12,13 +12,17 @@ const assertATIPageViewEventParamsExist = ({
   expect(params).to.have.property('s'); // destination
   expect(params).to.have.property('s2'); // producer
   expect(params).to.have.property('p'); // page identifier
-  expect(params).to.have.property('x1'); // content ID
+
   expect(params).to.have.property('x2'); // application type
   expect(params).to.have.property('x3'); // application name
   expect(params).to.have.property('x4'); // language
   expect(params).to.have.property('x7'); // content type
   expect(params).to.have.property('x8'); // library version
   expect(params).to.have.property('x9'); // page title
+
+  if (contentType !== 'list-datadriven') {
+    expect(params).to.have.property('x1'); // content ID
+  }
 
   if (['responsive', 'amp'].includes(applicationType)) {
     expect(params).to.have.property('r'); // screen resolution & colour depth
