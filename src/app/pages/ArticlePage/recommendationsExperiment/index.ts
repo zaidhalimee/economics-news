@@ -7,7 +7,7 @@ export type OptimizelyVariation =
   | 'wsoj'
   | 'wsoj_most_read'
   | 'wsoj_related_content'
-  | undefined;
+  | 'off';
 
 type GetWsojTitleProps = {
   mostReadTitle: string;
@@ -109,6 +109,8 @@ export const transformRecsData = ({
 
     return transformedMostReadItems;
   }
+
+  if (variation === 'off') return [];
 
   return [];
 };
