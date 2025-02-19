@@ -6,7 +6,6 @@ import {
   GEL_GROUP_3_SCREEN_WIDTH_MIN,
   GEL_GROUP_4_SCREEN_WIDTH_MIN,
 } from '#psammead/gel-foundations/src/breakpoints';
-import pathOr from 'ramda/src/pathOr';
 import path from 'ramda/src/path';
 import {
   GEL_SPACING,
@@ -18,6 +17,10 @@ import SkipLinkWrapper from '#components/SkipLinkWrapper';
 import useToggle from '#hooks/useToggle';
 import { GridItemMediumNoMargin } from '#components/Grid';
 
+import {
+  getWsojTitle,
+  TEST_VARIATION,
+} from '#app/pages/ArticlePage/recommendationsExperiment';
 import { ServiceContext } from '../../../contexts/ServiceContext';
 import RecommendationsPromoList from './RecommendationsPromoList';
 import RecommendationsPromo from './RecommendationsPromo';
@@ -46,8 +49,14 @@ const LabelComponent = styled(SectionLabel)`
 `;
 
 const CpsRecommendations = ({ items }) => {
-  const { recommendations, translations, script, service, dir } =
-    useContext(ServiceContext);
+  const {
+    recommendations,
+    translations,
+    mostRead: { header: mostReadTitle },
+    script,
+    service,
+    dir,
+  } = useContext(ServiceContext);
   const { enabled } = useToggle('cpsRecommendations');
 
   const labelId = 'recommendations-heading';
@@ -63,10 +72,11 @@ const CpsRecommendations = ({ items }) => {
   const { hasStoryRecommendations } = recommendations;
 
   if (!hasStoryRecommendations || !enabled || !items.length) return null;
-
-  const titlePath = ['Recommended stories', ['recommendationTitle']];
-
-  const title = pathOr(...titlePath, translations);
+  const title = getWsojTitle({
+    translations,
+    mostReadTitle,
+    variation: TEST_VARIATION,
+  });
 
   const { text, endTextVisuallyHidden } = path(['skipLink'], recommendations);
 

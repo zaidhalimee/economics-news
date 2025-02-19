@@ -1,14 +1,41 @@
 import { MostReadData } from '#app/components/MostRead/types';
 import { singleTextBlock } from '#app/models/blocks';
 import { OptimoBlock, Recommendation } from '#app/models/types/optimo';
+import { Translations } from '#app/models/types/translations';
 
-export type Variation = 'wsoj' | 'most_read' | 'related_content';
+export type Variation = 'wsoj' | 'most_read' | 'related_content' | undefined;
+
+// TODO: Get this from Optimizely
+export const TEST_VARIATION: Variation = 'related_content';
+
+type GetWsojTitleProps = {
+  mostReadTitle: string;
+  translations: Translations;
+  variation?: Variation;
+};
+
+export const getWsojTitle = ({
+  mostReadTitle,
+  translations,
+  variation,
+}: GetWsojTitleProps) => {
+  switch (variation) {
+    case 'wsoj':
+      return translations.recommendationTitle || 'Recommended stories';
+    case 'most_read':
+      return mostReadTitle || 'Most read';
+    case 'related_content':
+      return translations.relatedContent || 'Related content';
+    default:
+      return translations.recommendationTitle || 'Recommended stories';
+  }
+};
 
 type TransformRecsDataProps = {
   wsojRecs: Recommendation[];
   mostRead: MostReadData;
   pageBlocks: OptimoBlock[];
-  variation: Variation;
+  variation?: Variation;
 };
 
 export const transformRecsData = ({
@@ -18,6 +45,7 @@ export const transformRecsData = ({
   variation,
 }: TransformRecsDataProps) => {
   if (!variation) return wsojRecs;
+
   if (variation === 'wsoj') return wsojRecs;
 
   if (variation === 'related_content') {

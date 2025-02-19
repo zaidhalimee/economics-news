@@ -64,7 +64,7 @@ import Disclaimer from '../../components/Disclaimer';
 import SecondaryColumn from './SecondaryColumn';
 import styles from './ArticlePage.styles';
 import { ComponentToRenderProps, TimeStampProps } from './types';
-import { transformRecsData } from './recommendationsExperiment';
+import { TEST_VARIATION, transformRecsData } from './recommendationsExperiment';
 
 const getImageComponent =
   (preloadLeadImageToggle: boolean) => (props: ComponentToRenderProps) => (
@@ -168,7 +168,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     wsojRecs: recommendationsData,
     mostRead: mostReadInitialData,
     pageBlocks: blocks,
-    variation: 'related_content',
+    // TODO: Get this from Optimizely
+    variation: TEST_VARIATION,
   });
 
   const isPGL = pageData?.metadata?.type === PHOTO_GALLERY_PAGE;
