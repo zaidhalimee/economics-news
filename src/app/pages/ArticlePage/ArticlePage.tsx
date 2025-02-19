@@ -3,7 +3,7 @@
 import { useContext } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 import useToggle from '#hooks/useToggle';
-import { singleTextBlock } from '#app/models/blocks';
+import { singleParagraphBlock, singleTextBlock } from '#app/models/blocks';
 import ArticleMetadata from '#containers/ArticleMetadata';
 import { RequestContext } from '#contexts/RequestContext';
 import headings from '#containers/Headings';
@@ -116,45 +116,79 @@ const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
 type TransformRecsDataProps = {
   wsojRecs: Recommendation[];
   mostRead: MostReadData;
-  relatedContent: OptimoBlock[];
+  pageBlocks: OptimoBlock[];
   variation: 'wsoj' | 'mostRead' | 'relatedContent';
 };
 
 const transformRecsData = ({
   wsojRecs,
   mostRead,
-  relatedContent,
+  pageBlocks,
   variation,
 }: TransformRecsDataProps) => {
-  console.log({ wsojRecs });
   if (variation === 'wsoj') return wsojRecs;
 
   if (variation === 'relatedContent') {
-    const relatedContentBlock = relatedContent.find(
+    const relatedContentBlock = pageBlocks.find(
       block => block.type === 'relatedContent',
     );
 
     if (!relatedContentBlock) return null;
 
-    const relatedContentItems = relatedContentBlock?.model?.blocks;
+    const relatedContentItems = relatedContentBlock?.model?.blocks?.slice(0, 4);
 
-    const transformedRelateContentItems = relatedContentItems?.map(
+    const transformedRelatedContentItems = relatedContentItems?.map(
       (item: OptimoBlock) => {
         const itemBlocks = item?.model?.blocks;
 
-        const imageBlock = itemBlocks?.find(block => block.type === 'image');
+        const imageBlock = itemBlocks?.find(
+          (block: OptimoBlock) => block.type === 'image',
+        );
+        const textBlock = itemBlocks?.find(
+          (block: OptimoBlock) => block.type === 'text',
+        );
+        const canonicalUrl =
+          textBlock?.model?.blocks?.[0]?.model?.blocks?.[0]?.model?.locator;
+
+        return {
+          headlines: {
+            promoHeadline: {
+              blocks: textBlock?.model?.blocks,
+            },
+          },
+          images: {
+            defaultPromoImage: {
+              blocks: imageBlock?.model?.blocks,
+            },
+          },
+          locators: { canonicalUrl },
+        };
       },
     );
 
-    console.log({ relatedContentBlock });
-
-    return null;
+    return transformedRelatedContentItems;
   }
 
   if (variation === 'mostRead') {
-    console.log({ mostRead });
+    const mostReadItems = mostRead?.items?.slice(0, 4);
 
-    return null;
+    const transformedMostReadItems = mostReadItems?.map(item => {
+      return {
+        headlines: {
+          promoHeadline: {
+            blocks: [singleTextBlock(item.title)],
+          },
+        },
+        images: {
+          defaultPromoImage: {
+            blocks: [],
+          },
+        },
+        locators: { canonicalUrl: item?.href },
+      };
+    });
+
+    return transformedMostReadItems;
   }
 
   return null;
@@ -215,8 +249,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const transformedRecsData = transformRecsData({
     wsojRecs: recommendationsData,
     mostRead: mostReadInitialData,
-    relatedContent: blocks,
-    variation: 'relatedContent',
+    pageBlocks: blocks,
+    variation: 'mostRead',
   });
 
   const isPGL = pageData?.metadata?.type === PHOTO_GALLERY_PAGE;
@@ -254,7 +288,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     group: gist,
     links: ScrollablePromo,
     mpu: getMpuComponent(allowAdvertising),
-    wsoj: getWsojComponent(recommendationsData),
+    wsoj: getWsojComponent(transformedRecsData),
     disclaimer: DisclaimerWithPaddingOverride,
     podcastPromo: getPodcastPromoComponent(podcastPromoEnabled),
   };
