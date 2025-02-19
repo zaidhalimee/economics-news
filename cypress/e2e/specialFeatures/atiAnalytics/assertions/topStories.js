@@ -1,13 +1,12 @@
-import {
-  awaitATIComponentViewEvent,
-  interceptATIAnalyticsBeacons,
-  COMPONENTS,
-  awaitATIComponentClickEvent,
-} from '../helpers';
+import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { TOP_STORIES } = COMPONENTS;
 
-export const assertTopStoriesComponentView = () => {
+export const assertTopStoriesComponentView = ({
+  pageIdentifier,
+  contentType,
+}) => {
   it('should send a view event for the Top Stories component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
@@ -15,23 +14,36 @@ export const assertTopStoriesComponentView = () => {
 
       cy.get('[data-testid="top-stories"]').scrollIntoView({ duration: 1000 });
 
-      awaitATIComponentViewEvent(TOP_STORIES);
+      assertATIComponentViewEvent({
+        component: TOP_STORIES,
+        pageIdentifier,
+        contentType,
+      });
     });
   });
 };
 
-export const assertTopStoriesComponentClick = () => {
+export const assertTopStoriesComponentClick = ({
+  pageIdentifier,
+  contentType,
+}) => {
   it('should send a click event for the Top Stories component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
       cy.visit(url);
 
-      cy.get('[data-testid="top-stories"]').scrollIntoView({ duration: 1000 });
+      cy.get('[data-testid="top-stories"]').scrollIntoView({
+        duration: 1000,
+      });
 
       // Click on first item
       cy.get('[data-testid="top-stories"]').find('a').first().click();
 
-      awaitATIComponentClickEvent(TOP_STORIES);
+      assertATIComponentClickEvent({
+        component: TOP_STORIES,
+        pageIdentifier,
+        contentType,
+      });
 
       // return to previous page
       cy.visit(url);

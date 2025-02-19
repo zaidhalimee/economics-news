@@ -1,13 +1,13 @@
 import envs from '../../../../support/config/envs';
 
-// eslint-disable-next-line import/prefer-default-export
 export const getATIParamsFromURL = atiAnalyticsURL => {
   const url = new URL(atiAnalyticsURL);
 
   return Object.fromEntries(new URLSearchParams(url.search));
 };
 
-const ATI_PAGE_VIEW = 'ati-page-view';
+export const ATI_PAGE_VIEW = 'ati-page-view';
+
 const SCROLLABLE_NAVIGATION = 'scrollable-navigation';
 const DROPDOWN_NAVIGATION = 'dropdown-navigation';
 const TOP_STORIES = 'top-stories';
@@ -75,11 +75,3 @@ export const interceptATIAnalyticsBeacons = () => {
     },
   }).as(`${ATI_PAGE_VIEW}`);
 };
-
-export const awaitATIPageViewEvent = () => cy.wait(`@${ATI_PAGE_VIEW}`);
-
-export const awaitATIComponentViewEvent = component =>
-  cy.wait(`@${component}-ati-view`);
-
-export const awaitATIComponentClickEvent = component =>
-  cy.wait(`@${component}-ati-click`);

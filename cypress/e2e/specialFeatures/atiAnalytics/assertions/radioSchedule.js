@@ -1,13 +1,12 @@
-import {
-  awaitATIComponentViewEvent,
-  interceptATIAnalyticsBeacons,
-  COMPONENTS,
-  awaitATIComponentClickEvent,
-} from '../helpers';
+import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { RADIO_SCHEDULE } = COMPONENTS;
 
-export const assertRadioScheduleComponentView = () => {
+export const assertRadioScheduleComponentView = ({
+  pageIdentifier,
+  contentType,
+}) => {
   it('should send a view event for the Radio Schedule component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
@@ -17,12 +16,19 @@ export const assertRadioScheduleComponentView = () => {
         duration: 1000,
       });
 
-      awaitATIComponentViewEvent(RADIO_SCHEDULE);
+      assertATIComponentViewEvent({
+        component: RADIO_SCHEDULE,
+        pageIdentifier,
+        contentType,
+      });
     });
   });
 };
 
-export const assertRadioScheduleComponentClick = () => {
+export const assertRadioScheduleComponentClick = ({
+  pageIdentifier,
+  contentType,
+}) => {
   it('should send a click event for the Radio Schedule component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
@@ -35,7 +41,11 @@ export const assertRadioScheduleComponentClick = () => {
       // Click on last item which will be an on-demand episode
       cy.get('[data-e2e="onDemand"]').find('a').first().click({ force: true });
 
-      awaitATIComponentClickEvent(RADIO_SCHEDULE);
+      assertATIComponentClickEvent({
+        component: RADIO_SCHEDULE,
+        pageIdentifier,
+        contentType,
+      });
 
       // return to previous page
       cy.visit(url);

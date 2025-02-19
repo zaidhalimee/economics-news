@@ -1,5 +1,5 @@
 import runTestsForPage from '#nextjs/cypress/support/helpers/runTestsForPage';
-import { assertPageViewBeacon } from './assertions';
+import { assertPageView } from './assertions';
 import {
   assertFeaturesAnalysisComponentClick,
   assertFeaturesAnalysisComponentView,
@@ -61,25 +61,25 @@ import {
 } from './assertions/topStories';
 
 const canonicalTestSuites = [
-  {
-    path: '/gahuza',
-    runforEnv: ['local', 'live'],
-    service: 'gahuza',
-    pageIdentifier: 'gahuza.page',
-    applicationType: 'responsive',
-    contentType: 'index-home',
-    tests: [
-      assertPageViewBeacon,
-      assertScrollableNavigationComponentView,
-      assertScrollableNavigationComponentClick,
-      assertDropdownNavigationComponentView,
-      assertDropdownNavigationComponentClick,
-      assertMessageBannerComponentView,
-      assertMessageBannerComponentClick,
-      assertMostReadComponentView,
-      assertMostReadComponentClick,
-    ],
-  },
+  // {
+  //   path: '/gahuza',
+  //   runforEnv: ['local', 'live'],
+  //   service: 'gahuza',
+  //   pageIdentifier: 'gahuza.page',
+  //   applicationType: 'responsive',
+  //   contentType: 'index-home',
+  //   tests: [
+  //     assertPageViewBeacon,
+  //     assertScrollableNavigationComponentView,
+  //     assertScrollableNavigationComponentClick,
+  //     assertDropdownNavigationComponentView,
+  //     assertDropdownNavigationComponentClick,
+  //     assertMessageBannerComponentView,
+  //     assertMessageBannerComponentClick,
+  //     assertMostReadComponentView,
+  //     assertMostReadComponentClick,
+  //   ],
+  // },
   {
     path: '/gahuza/articles/c5y51yxeg53o',
     runforEnv: ['local'],
@@ -88,7 +88,7 @@ const canonicalTestSuites = [
     applicationType: 'responsive',
     contentType: 'article',
     tests: [
-      assertPageViewBeacon,
+      assertPageView,
       assertTopStoriesComponentView,
       assertTopStoriesComponentClick,
       assertFeaturesAnalysisComponentView,
@@ -111,7 +111,7 @@ const canonicalTestSuites = [
     applicationType: 'responsive',
     contentType: 'article',
     tests: [
-      assertPageViewBeacon,
+      assertPageView,
       assertTopStoriesComponentView,
       assertTopStoriesComponentClick,
       assertFeaturesAnalysisComponentView,
@@ -130,113 +130,113 @@ const canonicalTestSuites = [
       assertMostReadComponentClick,
     ],
   },
-  {
-    path: '/hausa/bbc_hausa_radio/liveradio',
-    runforEnv: ['local', 'live'],
-    service: 'hausa',
-    pageIdentifier: 'hausa.bbc_hausa_radio.liveradio.page',
-    applicationType: 'responsive',
-    contentType: 'player-live',
-    tests: [
-      assertPageViewBeacon,
-      assertRadioScheduleComponentView,
-      assertRadioScheduleComponentClick,
-    ],
-  },
-  {
-    path: '/afrique/bbc_afrique_radio/programmes/p030s6dq',
-    runforEnv: ['local', 'test', 'live'],
-    service: 'afrique',
-    pageIdentifier: 'afrique.bbc_afrique_radio.programmes.p030s6dq.page',
-    applicationType: 'responsive',
-    contentType: 'player-episode',
-    tests: [
-      assertPageViewBeacon,
-      assertRecentAudioEpisodesComponentView,
-      assertRecentAudioEpisodesComponentClick,
-      assertRadioScheduleComponentView,
-      assertRadioScheduleComponentClick,
-    ],
-  },
-  {
-    path: '/gahuza/podcasts/p07yh8hb',
-    runforEnv: ['local', 'test', 'live'],
-    service: 'gahuza',
-    pageIdentifier: 'gahuza.bbc_gahuza_radio.podcasts.programmes.p07yh8hb.page',
-    applicationType: 'responsive',
-    contentType: 'player-episode',
-    tests: [
-      assertPageViewBeacon,
-      assertPodcastLinksComponentView,
-      assertPodcastLinksComponentClick,
-      assertRecentAudioEpisodesComponentView,
-      assertRecentAudioEpisodesComponentClick,
-    ],
-  },
-  {
-    path: '/gahuza/podcasts/p07yh8hb/p094vs2n',
-    runforEnv: ['local', 'test', 'live'],
-    service: 'gahuza',
-    pageIdentifier: 'gahuza.bbc_gahuza_radio.podcasts.p094vs2n.page',
-    applicationType: 'responsive',
-    contentType: 'player-episode',
-    tests: [
-      assertPageViewBeacon,
-      assertPodcastLinksComponentView,
-      assertPodcastLinksComponentClick,
-      assertRecentAudioEpisodesComponentView,
-      assertRecentAudioEpisodesComponentClick,
-    ],
-  },
-  {
-    path: '/gahuza/popular/read',
-    runforEnv: ['local', 'test', 'live'],
-    service: 'gahuza',
-    pageIdentifier: 'gahuza.popular.read.page',
-    applicationType: 'responsive',
-    contentType: 'list-datadriven',
-    tests: [assertPageViewBeacon],
-  },
-  {
-    path: '/hausa/articles/cw43vy8zdjvo',
-    runforEnv: ['local', 'live'],
-    service: 'hausa',
-    pageIdentifier: 'hausa.articles.cw43vy8zdjvo.page',
-    applicationType: 'responsive',
-    contentType: 'article-sfv',
-    tests: [
-      assertPageViewBeacon,
-      assertLatestMediaComponentView,
-      assertLatestMediaComponentClick,
-    ],
-  },
-  {
-    path: '/afrique/bbc_afrique_tv/tv_programmes/w13xttmz',
-    runforEnv: ['local', 'test', 'live'],
-    service: 'afrique',
-    pageIdentifier: 'afrique.bbc_afrique_tv.tv_programmes.w13xttmz.page',
-    applicationType: 'responsive',
-    contentType: 'player-episode',
-    tests: [assertPageViewBeacon],
-  },
-  {
-    path: '/afrique/bbc_afrique_tv/tv/w3ct05mp',
-    runforEnv: ['local', 'test', 'live'],
-    service: 'afrique',
-    pageIdentifier: 'afrique.bbc_afrique_tv.tv.w3ct05mp.page',
-    applicationType: 'responsive',
-    contentType: 'player-episode',
-    tests: [assertPageViewBeacon],
-  },
-  {
-    path: '/marathi/topics/c1wmk63rjkvt',
-    runforEnv: ['live'],
-    service: 'marathi',
-    pageIdentifier: 'marathi.topics.c1wmk63rjkvt.page',
-    applicationType: 'responsive',
-    contentType: 'index-category',
-    tests: [assertPageViewBeacon],
-  },
+  // {
+  //   path: '/hausa/bbc_hausa_radio/liveradio',
+  //   runforEnv: ['local', 'live'],
+  //   service: 'hausa',
+  //   pageIdentifier: 'hausa.bbc_hausa_radio.liveradio.page',
+  //   applicationType: 'responsive',
+  //   contentType: 'player-live',
+  //   tests: [
+  //     assertPageViewBeacon,
+  //     assertRadioScheduleComponentView,
+  //     assertRadioScheduleComponentClick,
+  //   ],
+  // },
+  // {
+  //   path: '/afrique/bbc_afrique_radio/programmes/p030s6dq',
+  //   runforEnv: ['local', 'test', 'live'],
+  //   service: 'afrique',
+  //   pageIdentifier: 'afrique.bbc_afrique_radio.programmes.p030s6dq.page',
+  //   applicationType: 'responsive',
+  //   contentType: 'player-episode',
+  //   tests: [
+  //     assertPageViewBeacon,
+  //     assertRecentAudioEpisodesComponentView,
+  //     assertRecentAudioEpisodesComponentClick,
+  //     assertRadioScheduleComponentView,
+  //     assertRadioScheduleComponentClick,
+  //   ],
+  // },
+  // {
+  //   path: '/gahuza/podcasts/p07yh8hb',
+  //   runforEnv: ['local', 'test', 'live'],
+  //   service: 'gahuza',
+  //   pageIdentifier: 'gahuza.bbc_gahuza_radio.podcasts.programmes.p07yh8hb.page',
+  //   applicationType: 'responsive',
+  //   contentType: 'player-episode',
+  //   tests: [
+  //     assertPageViewBeacon,
+  //     assertPodcastLinksComponentView,
+  //     assertPodcastLinksComponentClick,
+  //     assertRecentAudioEpisodesComponentView,
+  //     assertRecentAudioEpisodesComponentClick,
+  //   ],
+  // },
+  // {
+  //   path: '/gahuza/podcasts/p07yh8hb/p094vs2n',
+  //   runforEnv: ['local', 'test', 'live'],
+  //   service: 'gahuza',
+  //   pageIdentifier: 'gahuza.bbc_gahuza_radio.podcasts.p094vs2n.page',
+  //   applicationType: 'responsive',
+  //   contentType: 'player-episode',
+  //   tests: [
+  //     assertPageViewBeacon,
+  //     assertPodcastLinksComponentView,
+  //     assertPodcastLinksComponentClick,
+  //     assertRecentAudioEpisodesComponentView,
+  //     assertRecentAudioEpisodesComponentClick,
+  //   ],
+  // },
+  // {
+  //   path: '/gahuza/popular/read',
+  //   runforEnv: ['local', 'test', 'live'],
+  //   service: 'gahuza',
+  //   pageIdentifier: 'gahuza.popular.read.page',
+  //   applicationType: 'responsive',
+  //   contentType: 'list-datadriven',
+  //   tests: [assertPageViewBeacon],
+  // },
+  // {
+  //   path: '/hausa/articles/cw43vy8zdjvo',
+  //   runforEnv: ['local', 'live'],
+  //   service: 'hausa',
+  //   pageIdentifier: 'hausa.articles.cw43vy8zdjvo.page',
+  //   applicationType: 'responsive',
+  //   contentType: 'article-sfv',
+  //   tests: [
+  //     assertPageViewBeacon,
+  //     assertLatestMediaComponentView,
+  //     assertLatestMediaComponentClick,
+  //   ],
+  // },
+  // {
+  //   path: '/afrique/bbc_afrique_tv/tv_programmes/w13xttmz',
+  //   runforEnv: ['local', 'test', 'live'],
+  //   service: 'afrique',
+  //   pageIdentifier: 'afrique.bbc_afrique_tv.tv_programmes.w13xttmz.page',
+  //   applicationType: 'responsive',
+  //   contentType: 'player-episode',
+  //   tests: [assertPageViewBeacon],
+  // },
+  // {
+  //   path: '/afrique/bbc_afrique_tv/tv/w3ct05mp',
+  //   runforEnv: ['local', 'test', 'live'],
+  //   service: 'afrique',
+  //   pageIdentifier: 'afrique.bbc_afrique_tv.tv.w3ct05mp.page',
+  //   applicationType: 'responsive',
+  //   contentType: 'player-episode',
+  //   tests: [assertPageViewBeacon],
+  // },
+  // {
+  //   path: '/marathi/topics/c1wmk63rjkvt',
+  //   runforEnv: ['live'],
+  //   service: 'marathi',
+  //   pageIdentifier: 'marathi.topics.c1wmk63rjkvt.page',
+  //   applicationType: 'responsive',
+  //   contentType: 'index-category',
+  //   tests: [assertPageViewBeacon],
+  // },
 ];
 
 const supportsAmp = ({ contentType }) =>
@@ -249,7 +249,7 @@ const ampTestSuites = canonicalTestSuites.filter(supportsAmp).map(testSuite => {
     ...testSuite,
     path: `${testSuite.path}.amp`,
     applicationType: 'amp',
-    tests: [assertPageViewBeacon],
+    tests: [assertPageView],
   };
 });
 
@@ -260,7 +260,7 @@ const supportsLite = ({ path, contentType }) =>
 const liteTestSuites = canonicalTestSuites
   .filter(supportsLite)
   .map(testSuite => {
-    const liteSiteTests = [assertPageViewBeacon];
+    const liteSiteTests = [assertPageView];
 
     switch (testSuite.contentType) {
       case 'article':

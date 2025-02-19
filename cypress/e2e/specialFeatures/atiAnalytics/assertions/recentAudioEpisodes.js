@@ -1,13 +1,12 @@
-import {
-  awaitATIComponentViewEvent,
-  interceptATIAnalyticsBeacons,
-  COMPONENTS,
-  awaitATIComponentClickEvent,
-} from '../helpers';
+import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { RECENT_AUDIO_EPISODES } = COMPONENTS;
 
-export const assertRecentAudioEpisodesComponentView = () => {
+export const assertRecentAudioEpisodesComponentView = ({
+  pageIdentifier,
+  contentType,
+}) => {
   it('should send a view event for the Recent Audio Episodes component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
@@ -17,12 +16,19 @@ export const assertRecentAudioEpisodesComponentView = () => {
         duration: 1000,
       });
 
-      awaitATIComponentViewEvent(RECENT_AUDIO_EPISODES);
+      assertATIComponentViewEvent({
+        component: RECENT_AUDIO_EPISODES,
+        pageIdentifier,
+        contentType,
+      });
     });
   });
 };
 
-export const assertRecentAudioEpisodesComponentClick = () => {
+export const assertRecentAudioEpisodesComponentClick = ({
+  pageIdentifier,
+  contentType,
+}) => {
   it('should send a click event for the Recent Audio Episodes component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
@@ -38,7 +44,11 @@ export const assertRecentAudioEpisodesComponentClick = () => {
         .first()
         .click({ force: true });
 
-      awaitATIComponentClickEvent(RECENT_AUDIO_EPISODES);
+      assertATIComponentClickEvent({
+        component: RECENT_AUDIO_EPISODES,
+        pageIdentifier,
+        contentType,
+      });
 
       // return to previous page
       cy.visit(url);

@@ -1,13 +1,12 @@
-import {
-  awaitATIComponentViewEvent,
-  interceptATIAnalyticsBeacons,
-  COMPONENTS,
-  awaitATIComponentClickEvent,
-} from '../helpers';
+import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { RELATED_CONTENT } = COMPONENTS;
 
-export const assertRelatedContentComponentView = () => {
+export const assertRelatedContentComponentView = ({
+  pageIdentifier,
+  contentType,
+}) => {
   it('should send a view event for the Related Content component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
@@ -17,12 +16,19 @@ export const assertRelatedContentComponentView = () => {
         duration: 1000,
       });
 
-      awaitATIComponentViewEvent(RELATED_CONTENT);
+      assertATIComponentViewEvent({
+        component: RELATED_CONTENT,
+        pageIdentifier,
+        contentType,
+      });
     });
   });
 };
 
-export const assertRelatedContentComponentClick = () => {
+export const assertRelatedContentComponentClick = ({
+  pageIdentifier,
+  contentType,
+}) => {
   it('should send a click event for the Related Content component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
@@ -35,7 +41,11 @@ export const assertRelatedContentComponentClick = () => {
       // Click on first item
       cy.get('[data-e2e="related-content-heading"]').find('a').first().click();
 
-      awaitATIComponentClickEvent(RELATED_CONTENT);
+      assertATIComponentClickEvent({
+        component: RELATED_CONTENT,
+        pageIdentifier,
+        contentType,
+      });
 
       // return to previous page
       cy.visit(url);
