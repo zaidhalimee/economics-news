@@ -3,19 +3,19 @@ import { singleTextBlock } from '#app/models/blocks';
 import { OptimoBlock, Recommendation } from '#app/models/types/optimo';
 import { Translations } from '#app/models/types/translations';
 
-export type Variation =
+export type OptimizelyVariation =
   | 'wsoj'
   | 'wsoj_most_read'
   | 'wsoj_related_content'
   | undefined;
 
 // TODO: Get this from Optimizely
-export const TEST_VARIATION: Variation = undefined;
+export const TEST_VARIATION: OptimizelyVariation = undefined;
 
 type GetWsojTitleProps = {
   mostReadTitle: string;
   translations: Translations;
-  variation?: Variation;
+  variation?: OptimizelyVariation;
 };
 
 export const getWsojTitle = ({
@@ -39,7 +39,7 @@ type TransformRecsDataProps = {
   wsojRecs: Recommendation[];
   mostRead: MostReadData;
   pageBlocks: OptimoBlock[];
-  variation?: Variation;
+  variation?: OptimizelyVariation;
 };
 
 export const transformRecsData = ({
@@ -113,5 +113,5 @@ export const transformRecsData = ({
     return transformedMostReadItems;
   }
 
-  return null;
+  return [];
 };
