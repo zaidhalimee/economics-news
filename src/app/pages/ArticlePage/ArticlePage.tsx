@@ -35,11 +35,13 @@ import CpsRecommendations from '#containers/CpsRecommendations';
 import InlinePodcastPromo from '#containers/PodcastPromo/Inline';
 import {
   Article,
+  OptimoBlock,
   OptimoBylineBlock,
   OptimoBylineContributorBlock,
   Recommendation,
 } from '#app/models/types/optimo';
 import ScrollablePromo from '#components/ScrollablePromo';
+import { MostReadData } from '#app/components/MostRead/types';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
@@ -111,6 +113,53 @@ const DisclaimerWithPaddingOverride = (props: ComponentToRenderProps) => (
 const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
   podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
+type TransformRecsDataProps = {
+  wsojRecs: Recommendation[];
+  mostRead: MostReadData;
+  relatedContent: OptimoBlock[];
+  variation: 'wsoj' | 'mostRead' | 'relatedContent';
+};
+
+const transformRecsData = ({
+  wsojRecs,
+  mostRead,
+  relatedContent,
+  variation,
+}: TransformRecsDataProps) => {
+  console.log({ wsojRecs });
+  if (variation === 'wsoj') return wsojRecs;
+
+  if (variation === 'relatedContent') {
+    const relatedContentBlock = relatedContent.find(
+      block => block.type === 'relatedContent',
+    );
+
+    if (!relatedContentBlock) return null;
+
+    const relatedContentItems = relatedContentBlock?.model?.blocks;
+
+    const transformedRelateContentItems = relatedContentItems?.map(
+      (item: OptimoBlock) => {
+        const itemBlocks = item?.model?.blocks;
+
+        const imageBlock = itemBlocks?.find(block => block.type === 'image');
+      },
+    );
+
+    console.log({ relatedContentBlock });
+
+    return null;
+  }
+
+  if (variation === 'mostRead') {
+    console.log({ mostRead });
+
+    return null;
+  }
+
+  return null;
+};
+
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const { isApp } = useContext(RequestContext);
 
@@ -129,6 +178,11 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const allowAdvertising = pageData?.metadata?.allowAdvertising ?? false;
   const adcampaign = pageData?.metadata?.adCampaignKeyword;
+
+  const {
+    metadata: { atiAnalytics },
+    mostRead: mostReadInitialData,
+  } = pageData;
 
   const { enabled: podcastPromoEnabled } = useToggle('podcastPromo');
   const headline = getHeadline(pageData) ?? '';
@@ -158,17 +212,19 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const recommendationsData = pageData?.recommendations ?? [];
 
+  const transformedRecsData = transformRecsData({
+    wsojRecs: recommendationsData,
+    mostRead: mostReadInitialData,
+    relatedContent: blocks,
+    variation: 'relatedContent',
+  });
+
   const isPGL = pageData?.metadata?.type === PHOTO_GALLERY_PAGE;
   const isSTY = pageData?.metadata?.type === STORY_PAGE;
   const isCPS = isPGL || isSTY;
   const isTC2Asset = pageData?.metadata?.analyticsLabels?.contentId
     ?.split(':')
     ?.includes('topcat');
-
-  const {
-    metadata: { atiAnalytics },
-    mostRead: mostReadInitialData,
-  } = pageData;
 
   const atiData = {
     ...atiAnalytics,
