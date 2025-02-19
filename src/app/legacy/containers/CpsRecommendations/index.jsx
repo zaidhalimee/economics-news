@@ -48,7 +48,7 @@ const LabelComponent = styled(SectionLabel)`
 const CpsRecommendations = ({ items }) => {
   const {
     recommendations,
-    translations,
+    translations: { relatedContent, recommendationTitle },
     mostRead: { header: mostReadTitle },
     script,
     service,
@@ -71,8 +71,9 @@ const CpsRecommendations = ({ items }) => {
   if (!hasStoryRecommendations || !enabled || !items.length) return null;
 
   const title = getWsojTitle({
-    translations,
     mostReadTitle,
+    relatedContentTitle: relatedContent,
+    recommendationsTitle: recommendationTitle,
   });
 
   const { text, endTextVisuallyHidden } = path(['skipLink'], recommendations);

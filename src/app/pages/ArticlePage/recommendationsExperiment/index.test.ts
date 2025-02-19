@@ -1,7 +1,7 @@
 import afriqueArticle from '#data/afrique/articles/c7yn6nznljdo.json';
 import wsojRecs from '#data/mundo/recommendations/index.json';
 
-import { transformRecsData } from '.';
+import { transformRecsData, getWsojTitle } from '.';
 
 const { mostRead } = afriqueArticle.data.secondaryData;
 const pageBlocks = afriqueArticle.data.article.content.model.blocks;
@@ -83,5 +83,51 @@ describe('transformRecsData', () => {
     });
 
     expect(result).toEqual([]);
+  });
+});
+
+describe('getWsojTitle', () => {
+  it('should return the correct title for wsoj', () => {
+    const result = getWsojTitle({
+      mostReadTitle: 'Most Read',
+      relatedContentTitle: 'Related Content',
+      recommendationsTitle: 'Recommended stories',
+      variation: 'wsoj',
+    });
+
+    expect(result).toEqual('Recommended stories');
+  });
+
+  it('should return the correct title for wsoj_most_read', () => {
+    const result = getWsojTitle({
+      mostReadTitle: 'Most Read',
+      relatedContentTitle: 'Related Content',
+      recommendationsTitle: 'Recommended stories',
+      variation: 'wsoj_most_read',
+    });
+
+    expect(result).toEqual('Most Read');
+  });
+
+  it('should return the correct title for wsoj_related_content', () => {
+    const result = getWsojTitle({
+      mostReadTitle: 'Most Read',
+      relatedContentTitle: 'Related Content',
+      recommendationsTitle: 'Recommended stories',
+      variation: 'wsoj_related_content',
+    });
+
+    expect(result).toEqual('Related Content');
+  });
+
+  it('should return the default title if variation is not defined', () => {
+    const result = getWsojTitle({
+      mostReadTitle: 'Most Read',
+      relatedContentTitle: 'Related Content',
+      recommendationsTitle: 'Recommended stories',
+      variation: undefined,
+    });
+
+    expect(result).toEqual('Recommended stories');
   });
 });
