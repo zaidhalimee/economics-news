@@ -88,13 +88,6 @@ export const service: DefaultServiceConfig = {
         audioPlayer: 'ऑडिया प्लेयर',
         videoPlayer: 'वीडियो प्लेयर',
       },
-      articlePage: {
-        jumpToTitle: {
-          variation_1: 'इस पर जाएं',
-          variation_2: 'बीबीसी न्यूज़ हिंदी  से और अधिक जानें',
-          variation_3: 'बीबीसी न्यूज़ हिंदी से और ख़बरें पढ़ें',
-        },
-      },
       liveExperiencePage: {
         liveLabel: 'लाइव',
         liveCoverage: 'लाइव कवरेज',
@@ -444,8 +437,8 @@ export const service: DefaultServiceConfig = {
         url: '/hindi',
       },
       {
-        title: 'दिल्ली विधानसभा चुनाव',
-        url: '/hindi/topics/c8dqegnm6d9t',
+        title: 'स्पोर्ट्सवुमन ऑफ़ द ईयर',
+        url: '/hindi/topics/cyz04xpp440t',
       },
       {
         title: 'भारत',

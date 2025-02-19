@@ -32,7 +32,7 @@ Object.keys(config)
             pageType,
             path,
             variant,
-            scriptLinkVariant,
+            otherVariant: scriptLinkVariant,
           });
         });
         paths

@@ -5,23 +5,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/afaanoromoo/articles/ce3nlgrelv1o'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/afaanoromoo/articles/c4g19kgl85ko'],
-            enabled: true,
-          },
-          local: {
-            paths: ['/afaanoromoo/articles/c4g19kgl85ko'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -201,23 +184,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/afrique/articles/cx80n852v6mo'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/afrique/articles/cz216x22106o'],
-            enabled: true,
-          },
-          local: {
-            paths: ['/afrique/articles/cz216x22106o'],
-            enabled: true,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -424,23 +390,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/amharic/articles/c0lgxqknqkdo'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/amharic/articles/czqverekrldo'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/amharic/articles/czqverekrldo'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -618,23 +567,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/arabic/articles/c8j91j2ljppo'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/arabic/articles/c1er5mjnznzo'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/arabic/articles/c1er5mjnznzo'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -713,8 +645,8 @@ module.exports = () => ({
             enabled: true,
           },
           local: {
-            paths: [],
-            enabled: false,
+            paths: ['/arabic/topics/cwr9j7nv58nt'],
+            enabled: true,
           },
         },
         smoke: true,
@@ -841,23 +773,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/azeri/articles/cv0lm08kngmo'],
-            enabled: true,
-          },
-          test: {
-            paths: ['/azeri/articles/c5k08pqnzexo'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/azeri/articles/c5k08pqnzexo'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -1002,23 +917,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/bengali/articles/cv90149zq1eo'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/bengali/articles/c6p3yp5zzmeo'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/bengali/articles/c6p3yp5zzmeo'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -1201,23 +1099,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/burmese/articles/c41px3vd4nxo'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/burmese/articles/cn0exdy1jzvo'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/burmese/articles/cn0exdy1jzvo'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -1432,23 +1313,6 @@ module.exports = () => ({
     isWorldService: false,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: [],
-            enabled: false,
-          },
-          test: {
-            paths: [],
-            enabled: false,
-          },
-          local: {
-            paths: ['/cymrufyw/erthyglau/c06p32z9x2mo'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -1507,23 +1371,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/gahuza/articles/cryd02nzn81o'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/gahuza/articles/cey23zx8wx8o'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/gahuza/articles/c5y51yxeg53o'],
-            enabled: true,
-          },
-        },
-        smoke: true,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -1714,23 +1561,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/gujarati/articles/c2rnxj48elwo'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/gujarati/articles/cr5el5kw591o'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/gujarati/articles/cr5el5kw591o'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -1897,23 +1727,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/hausa/articles/c41rj1z261zo'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/hausa/articles/c2nr6xqmnewo'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/hausa/articles/c2nr6xqmnewo'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -2127,23 +1940,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/hindi/articles/cd80y3ezl8go'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/hindi/articles/c0469479x9xo'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/hindi/articles/c0469479x9xo'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -2356,23 +2152,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/igbo/articles/c0jgdy9d841o'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/igbo/articles/cr1lw620ygjo'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/igbo/articles/cr1lw620ygjo'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -2512,23 +2291,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/indonesia/articles/cvd36dly8zdo'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/indonesia/articles/c0q2zq8pzvzo'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/indonesia/articles/c0q2zq8pzvzo'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -2720,23 +2482,6 @@ module.exports = () => ({
     isWorldService: false,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/japanese/articles/cj4m7n5nrd8o'],
-            enabled: true,
-          },
-          test: {
-            paths: ['/japanese/articles/cdd6p3r9g7jo'],
-            enabled: true,
-          },
-          local: {
-            paths: ['/japanese/articles/cdd6p3r9g7jo'],
-            enabled: true,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -2875,23 +2620,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/korean/articles/crym1243d97o'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/korean/articles/c3mn1lvz65xo'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/korean/articles/c3mn1lvz65xo'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -3068,27 +2796,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: [
-              '/kyrgyz/articles/c414v42gy75o',
-              '/kyrgyz/articles/c41knv20gk7o',
-              '/kyrgyz/articles/cpgx4k72wv4o',
-            ],
-            enabled: true,
-          },
-          test: {
-            paths: ['/kyrgyz/articles/c3xd4xg3rm9o'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/kyrgyz/articles/c3xd4xg3rm9o'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -3310,23 +3017,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/marathi/articles/cvjxwvn04yjo'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/marathi/articles/cp47g4myxz7o'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/marathi/articles/cp47g4myxz7o'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -3510,23 +3200,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/mundo/articles/ce7p1pw7165o'],
-            enabled: true,
-          },
-          test: {
-            paths: ['/mundo/articles/ce42wzqr2mko'],
-            enabled: true,
-          },
-          local: {
-            paths: ['/mundo/articles/ce42wzqr2mko'],
-            enabled: true,
-          },
-        },
-        smoke: true,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -3692,23 +3365,6 @@ module.exports = () => ({
     isWorldService: false,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: [],
-            enabled: false,
-          },
-          test: {
-            paths: [],
-            enabled: false,
-          },
-          local: {
-            paths: ['/naidheachdan/sgeulachdan/c18q7nedn2ko'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -3767,23 +3423,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/nepali/articles/c16ljg1v008o'],
-            enabled: true,
-          },
-          test: {
-            paths: ['/nepali/articles/cl90j9m3mn6o'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/nepali/articles/cl90j9m3mn6o'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -3974,23 +3613,6 @@ module.exports = () => ({
     isWorldService: false,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/news/articles/cj7xrxz0e8zo'],
-            enabled: true,
-          },
-          test: {
-            paths: ['/news/articles/cn7k01xp8kxo'],
-            enabled: true,
-          },
-          local: {
-            paths: ['/news/articles/cn7k01xp8kxo'],
-            enabled: true,
-          },
-        },
-        smoke: true,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -4069,7 +3691,6 @@ module.exports = () => ({
     font: undefined,
     variant: 'default',
     pageTypes: {
-      articles: { environments: undefined, smoke: false },
       errorPage404: { environments: undefined, smoke: false },
       frontPage: { environments: undefined, smoke: false },
       liveRadio: { environments: undefined, smoke: false },
@@ -4127,23 +3748,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/pashto/articles/c70970g2251o'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/pashto/articles/cyjmdl92z3ro'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/pashto/articles/cyjmdl92z3ro'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -4388,26 +3992,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: [
-              '/persian/articles/crgxnrdl1xvo',
-              '/persian/articles/cld9872jgyjo',
-            ],
-            enabled: true,
-          },
-          test: {
-            paths: ['/persian/articles/cej3lzd5e0go'],
-            enabled: true,
-          },
-          local: {
-            paths: ['/persian/articles/cej3lzd5e0go'],
-            enabled: true,
-          },
-        },
-        smoke: true,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -4522,7 +4106,7 @@ module.exports = () => ({
               '/persian/iran-23231114', // CPS MAP with audio clip
               '/persian/iran/2016/09/160907_tc2_testmap1', // TC2 MAP with video clip
             ],
-            enabled: false,
+            enabled: true,
           },
         },
         smoke: true,
@@ -4655,29 +4239,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: [
-              '/pidgin/articles/cgwk9w4zlg8o',
-              '/pidgin/articles/cw8qv1d11l9o',
-            ],
-            enabled: true,
-          },
-          test: {
-            paths: [
-              '/pidgin/articles/cwl08rd38l6o',
-              '/pidgin/articles/crrrkxz2k0ko',
-            ],
-            enabled: true,
-          },
-          local: {
-            paths: ['/pidgin/articles/cwl08rd38l6o'],
-            enabled: true,
-          },
-        },
-        smoke: true,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -4710,8 +4271,8 @@ module.exports = () => ({
             enabled: true,
           },
           local: {
-            paths: ['/pidgin/topics/cnq68qvkjp1t'], // DO NOT ENABLE
-            enabled: false,
+            paths: ['/pidgin/topics/c95y35941vrt'],
+            enabled: true,
           },
         },
         smoke: true,
@@ -4829,23 +4390,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/portuguese/articles/cpg5prg95lmo'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/portuguese/articles/cd61pm8gzmpo'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/portuguese/articles/cd61pm8gzmpo'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -5014,23 +4558,6 @@ module.exports = () => ({
     font: undefined,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/punjabi/articles/c39p51156lyo'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/punjabi/articles/c0l79lr39qyo'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/punjabi/articles/c0l79lr39qyo'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -5170,23 +4697,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/russian/articles/c6ygxgl53w9o'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/russian/articles/ck7pz7re3zgo'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/russian/articles/ck7pz7re3zgo'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -5353,23 +4863,6 @@ module.exports = () => ({
     isWorldService: false,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/scotland/articles/cm49v4x1r9lo'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/scotland/articles/czwj5l0n210o'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/scotland/articles/czwj5l0n210o'],
-            enabled: true,
-          },
-        },
-        smoke: true,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -5428,23 +4921,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'cyr',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: [],
-            enabled: false,
-          },
-          test: {
-            paths: ['/serbian/cyr/23279016'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/serbian/articles/c805k05kr73o/cyr'],
-            enabled: true,
-          },
-        },
-        smoke: true,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -5585,23 +5061,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'lat',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: [],
-            enabled: false,
-          },
-          test: {
-            paths: [],
-            enabled: false,
-          },
-          local: {
-            paths: ['/serbian/articles/c805k05kr73o/lat'],
-            enabled: true,
-          },
-        },
-        smoke: true,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -5629,19 +5088,19 @@ module.exports = () => ({
       topicPage: {
         environments: {
           live: {
-            paths: ['/serbian/lat/topics/c1gd303q6y6t'],
+            paths: ['/serbian/topics/c1gd303q6y6t/lat'],
             enabled: true,
           },
           test: {
-            paths: ['/serbian/lat/topics/c1gd303q6y6t'],
+            paths: ['/serbian/topics/c1gd303q6y6t/lat'],
             enabled: true,
           },
           local: {
-            paths: [''],
-            enabled: false,
+            paths: ['/serbian/topics/c1gd303q6y6t/lat'],
+            enabled: true,
           },
         },
-        smoke: false,
+        smoke: true,
       },
       mediaAssetPage: {
         environments: {
@@ -5758,23 +5217,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/sinhala/articles/cldr38jnwd2o'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/sinhala/articles/c45w255zlexo'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/sinhala/articles/c45w255zlexo'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -5917,23 +5359,6 @@ module.exports = () => ({
     font: undefined,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/somali/articles/c8z79d4mzrlo'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/somali/articles/cgn6emk3jm8o'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/somali/articles/cgn6emk3jm8o'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -6139,7 +5564,6 @@ module.exports = () => ({
     font: undefined,
     variant: 'default',
     pageTypes: {
-      articles: { environments: undefined, smoke: false },
       errorPage404: { environments: undefined, smoke: false },
       frontPage: { environments: undefined, smoke: false },
       liveRadio: { environments: undefined, smoke: false },
@@ -6198,23 +5622,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/swahili/articles/cw794z3gpd5o'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/swahili/articles/czjqge2jwn2o'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/swahili/articles/czjqge2jwn2o'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -6421,23 +5828,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/tamil/articles/cvr4752gr13o'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/tamil/articles/cwl08ll3me8o'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/tamil/articles/cwl08ll3me8o'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -6644,23 +6034,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/telugu/articles/c1x76pey3x3o'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/telugu/articles/cq0y4008d4vo'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/telugu/articles/cq0y4008d4vo'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -6824,23 +6197,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/thai/articles/czx7w3zyme1o'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/thai/articles/c442rl3md0eo'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/thai/articles/c442rl3md0eo'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -6972,7 +6328,6 @@ module.exports = () => ({
               '/thai/articles/c442rl3md0eo', // Article
               '/thai', // Front Page
               '/thai/popular/read', // Most Read
-              '/thai/23122810', // CPS MAP
               '/thai/international-23252840', // CPS PGL
               // '', // CPS STY
             ],
@@ -6983,7 +6338,6 @@ module.exports = () => ({
               '/thai/articles/c442rl3md0eo', // Article
               '/thai', // Front Page
               '/thai/popular/read', // Most Read
-              '/thai/23122810', // CPS MAP
               '/thai/thailand-49950038', // CPS PGL
             ],
             enabled: true,
@@ -6999,23 +6353,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/tigrinya/articles/c3vq38ve33xo'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/tigrinya/articles/ck62z3rjwdeo'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/tigrinya/articles/ck62z3rjwdeo'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -7193,23 +6530,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/turkce/articles/cpgzpzjl3pdo'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/turkce/articles/c8q1ze59n25o'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/turkce/articles/c8q1ze59n25o'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -7354,23 +6674,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'simp',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: [],
-            enabled: false,
-          },
-          test: {
-            paths: [],
-            enabled: false,
-          },
-          local: {
-            paths: ['/ukchina/articles/c0e8weny66ko/simp'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -7515,23 +6818,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'trad',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: [],
-            enabled: false,
-          },
-          test: {
-            paths: [],
-            enabled: false,
-          },
-          local: {
-            paths: ['/ukchina/articles/c0e8weny66ko/trad'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -7676,7 +6962,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: { environments: undefined, smoke: false },
       frontPage: { environments: undefined, smoke: false },
       liveRadio: { environments: undefined, smoke: false },
       errorPage404: { environments: undefined, smoke: false },
@@ -7731,23 +7016,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/ukrainian/articles/c8zv0eed9gko'],
-            enabled: true,
-          },
-          test: {
-            paths: ['/ukrainian/articles/cp4l2mrejvdo'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/ukrainian/articles/cp4l2mrejvdo'],
-            enabled: true,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -7918,23 +7186,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/urdu/articles/c4qg7qq63y6o'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/urdu/articles/cwgq7rzv172o'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/urdu/articles/cwgq7rzv172o'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -8141,23 +7392,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: [],
-            enabled: false,
-          },
-          test: {
-            paths: [],
-            enabled: false,
-          },
-          local: {
-            paths: ['/uzbek/articles/cxj3rjxm6r0o'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -8368,29 +7602,28 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'cyr',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: [],
-            enabled: false,
-          },
-          test: {
-            paths: [],
-            enabled: false,
-          },
-          local: {
-            paths: ['/uzbek/articles/cxj3rjxm6r0o/cyr'],
-            enabled: true,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: { environments: undefined, smoke: false },
       frontPage: { environments: undefined, smoke: false },
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
-      topicPage: { environments: undefined, smoke: false },
+      topicPage: {
+        environments: {
+          live: {
+            paths: ['/uzbek/topics/c8y949r98pgt/cyr'],
+            enabled: false,
+          },
+          test: {
+            paths: ['/uzbek/topics/c8y949r98pgt/cyr'],
+            enabled: false,
+          },
+          local: {
+            paths: ['/uzbek/topics/c8y949r98pgt/cyr'],
+            enabled: true,
+          },
+        },
+        smoke: true,
+      },
       mediaAssetPage: { environments: undefined, smoke: false },
       photoGalleryPage: { environments: undefined, smoke: false },
       storyPage: { environments: undefined, smoke: false },
@@ -8407,29 +7640,28 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'lat',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: [],
-            enabled: false,
-          },
-          test: {
-            paths: [],
-            enabled: false,
-          },
-          local: {
-            paths: ['/uzbek/articles/cxj3rjxm6r0o/lat'],
-            enabled: true,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: { environments: undefined, smoke: false },
       frontPage: { environments: undefined, smoke: false },
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
-      topicPage: { environments: undefined, smoke: false },
+      topicPage: {
+        environments: {
+          live: {
+            paths: ['/uzbek/topics/c8y949r98pgt/lat'],
+            enabled: false,
+          },
+          test: {
+            paths: ['/uzbek/topics/c8y949r98pgt/lat'],
+            enabled: false,
+          },
+          local: {
+            paths: ['/uzbek/topics/c8y949r98pgt/lat'],
+            enabled: true,
+          },
+        },
+        smoke: true,
+      },
       mediaAssetPage: { environments: undefined, smoke: false },
       photoGalleryPage: { environments: undefined, smoke: false },
       storyPage: { environments: undefined, smoke: false },
@@ -8446,23 +7678,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/vietnamese/articles/cpgqngyexq7o'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/vietnamese/articles/c3y59g5zm19o'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/vietnamese/articles/c3y59g5zm19o'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -8607,23 +7822,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: ['/yoruba/articles/cg7qz71en35o'],
-            enabled: false,
-          },
-          test: {
-            paths: ['/yoruba/articles/clw06m0nj8qo'],
-            enabled: false,
-          },
-          local: {
-            paths: ['/yoruba/articles/clw06m0nj8qo'],
-            enabled: false,
-          },
-        },
-        smoke: false,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -8763,23 +7961,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'simp',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: [],
-            enabled: false,
-          },
-          test: {
-            paths: [],
-            enabled: false,
-          },
-          local: {
-            paths: ['/zhongwen/articles/c3xd4x9prgyo/simp'],
-            enabled: true,
-          },
-        },
-        smoke: true,
-      },
       errorPage404: {
         environments: {
           live: {
@@ -8957,23 +8138,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'trad',
     pageTypes: {
-      articles: {
-        environments: {
-          live: {
-            paths: [],
-            enabled: false,
-          },
-          test: {
-            paths: [],
-            enabled: false,
-          },
-          local: {
-            paths: ['/zhongwen/articles/c3xd4x9prgyo/trad'],
-            enabled: true,
-          },
-        },
-        smoke: true,
-      },
       errorPage404: {
         environments: {
           live: {

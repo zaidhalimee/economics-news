@@ -90,18 +90,13 @@ export const getFrontPageRegex = services => {
   return `/:service(${serviceRegex}):variant(${variantRegex})?:amp(${ampRegex})?:lite(${liteRegex})?`;
 };
 
-export const getTipoHomeRegex = services => {
-  const serviceRegex = getServiceRegex(services);
-  return `/:service(${serviceRegex}):variant(${variantRegex})?/tipohome:amp(${ampRegex})?:lite(${liteRegex})?`;
-};
-
 export const getHomePageRegex = services => {
   let homePages = services;
   if (isLive()) {
     homePages = services.filter(service => homePageServices.includes(service));
   }
   const homePageServiceRegex = getServiceRegex(homePages);
-  return `/:service(${homePageServiceRegex}):variant(${variantRegex})?:amp(${ampRegex})?:lite(${liteRegex})?`;
+  return `/:service(${homePageServiceRegex}):variant(${variantRegex})?:lite(${liteRegex})?`;
 };
 
 export const getSwRegex = services => {
