@@ -44,16 +44,34 @@ export const COMPONENTS = {
   SCROLLABLE_PROMO,
 };
 
-export const interceptATIAnalyticsBeacons = () => {
+export const interceptATIAnalyticsBeacons = ({
+  useReverb = false,
+  applicationType,
+  pageIdentifier = '',
+}) => {
   const atiUrl = new URL(envs.atiUrl).origin;
 
   // Page View (only fires once per page visit)
-  cy.intercept({
-    url: `${atiUrl}/*`,
-    query: {
-      x8: /\[(simorgh|reverb-3.9.2)\]/,
+  cy.intercept(
+    {
+      url: `${atiUrl}/*`,
+      query: {
+        ...(useReverb && applicationType === 'responsive'
+          ? {
+              library_version: 'reverb-3.9.2',
+              p: pageIdentifier,
+              language: /^(?:(?!null).)*$/,
+            }
+          : {
+              x8: '[simorgh]',
+              p: pageIdentifier,
+            }),
+      },
     },
-  }).as(`${ATI_PAGE_VIEW}`);
+    request => {
+      request.reply({ statusCode: 200 });
+    },
+  ).as(`${ATI_PAGE_VIEW}`);
 
   // Component Views
   Object.values(COMPONENTS).forEach(component => {
@@ -62,19 +80,29 @@ export const interceptATIAnalyticsBeacons = () => {
       'g',
     );
 
-    cy.intercept({
-      url: `${atiUrl}/*`,
-      query: {
-        ati: viewClickEventRegex,
+    cy.intercept(
+      {
+        url: `${atiUrl}/*`,
+        query: {
+          ati: viewClickEventRegex,
+        },
       },
-    }).as(`${component}-ati-view`);
+      request => {
+        request.reply({ statusCode: 200 });
+      },
+    ).as(`${component}-ati-view`);
 
     // Component Clicks
-    cy.intercept({
-      url: `${atiUrl}/*`,
-      query: {
-        atc: viewClickEventRegex,
+    cy.intercept(
+      {
+        url: `${atiUrl}/*`,
+        query: {
+          atc: viewClickEventRegex,
+        },
       },
-    }).as(`${component}-ati-click`);
+      request => {
+        request.reply({ statusCode: 200 });
+      },
+    ).as(`${component}-ati-click`);
   });
 };

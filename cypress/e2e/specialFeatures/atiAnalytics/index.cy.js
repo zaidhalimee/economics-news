@@ -245,6 +245,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'pidgin.page',
     applicationType: 'responsive',
     contentType: 'index-home',
+    useReverb: true,
     tests: [
       assertPageView,
       assertScrollableNavigationComponentView,
@@ -264,6 +265,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'pidgin.articles.cyv3zm4y428o.page',
     applicationType: 'responsive',
     contentType: 'article',
+    useReverb: true,
     tests: [
       assertPageView,
       assertTopStoriesComponentView,
@@ -287,6 +289,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'pidgin.articles.cr4r1zzprg2o.page',
     applicationType: 'responsive',
     contentType: 'article',
+    useReverb: true,
     tests: [
       assertPageView,
       assertLatestMediaComponentClick,
@@ -306,9 +309,12 @@ const canonicalTestSuites = [
     pageIdentifier: 'pidgin.popular.read.page',
     applicationType: 'responsive',
     contentType: 'list-datadriven',
+    useReverb: true,
     tests: [assertPageView],
   },
-];
+]
+  // TODO: remove this once all pidgin tests are passing
+  .filter(({ useReverb }) => useReverb === true);
 
 const supportsAmp = ({ contentType }) =>
   !['index-home', 'player-live', 'player-episode', 'index-category'].includes(

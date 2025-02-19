@@ -6,19 +6,27 @@ const { SCROLLABLE_NAVIGATION, DROPDOWN_NAVIGATION } = COMPONENTS;
 export const assertScrollableNavigationComponentView = ({
   pageIdentifier,
   contentType,
+  useReverb,
+  applicationType,
 }) => {
   it('should send a view event for the Scrollable Navigation component', () => {
     cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
+      interceptATIAnalyticsBeacons({
+        useReverb,
+        applicationType,
+        pageIdentifier,
+      });
       cy.visit(url);
 
       cy.get('[data-e2e="scrollable-nav"]').scrollIntoView({
-        duration: 1000,
+        duration: 5000,
       });
+
       assertATIComponentViewEvent({
         component: SCROLLABLE_NAVIGATION,
         pageIdentifier,
         contentType,
+        useReverb,
       });
     });
   });
@@ -27,14 +35,20 @@ export const assertScrollableNavigationComponentView = ({
 export const assertScrollableNavigationComponentClick = ({
   pageIdentifier,
   contentType,
+  useReverb,
+  applicationType,
 }) => {
   it('should send a click event for the Scrollable Navigation component', () => {
     cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
+      interceptATIAnalyticsBeacons({
+        useReverb,
+        applicationType,
+        pageIdentifier,
+      });
       cy.visit(url);
 
       cy.get('[data-e2e="scrollable-nav"]').scrollIntoView({
-        duration: 1000,
+        duration: 5000,
       });
 
       // Click on first item & return to the original url
@@ -44,6 +58,7 @@ export const assertScrollableNavigationComponentClick = ({
         component: SCROLLABLE_NAVIGATION,
         pageIdentifier,
         contentType,
+        useReverb,
       });
 
       // return to previous page
@@ -56,10 +71,16 @@ export const assertScrollableNavigationComponentClick = ({
 export const assertDropdownNavigationComponentView = ({
   pageIdentifier,
   contentType,
+  useReverb,
+  applicationType,
 }) => {
   it('should send a view event for the Dropdown Navigation component', () => {
     cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
+      interceptATIAnalyticsBeacons({
+        useReverb,
+        applicationType,
+        pageIdentifier,
+      });
       cy.visit(url);
 
       cy.viewport(320, 480);
@@ -69,6 +90,7 @@ export const assertDropdownNavigationComponentView = ({
         component: DROPDOWN_NAVIGATION,
         pageIdentifier,
         contentType,
+        useReverb,
       });
     });
   });
@@ -77,10 +99,16 @@ export const assertDropdownNavigationComponentView = ({
 export const assertDropdownNavigationComponentClick = ({
   pageIdentifier,
   contentType,
+  useReverb,
+  applicationType,
 }) => {
   it('should send a click event for the Dropdown Navigation component', () => {
     cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
+      interceptATIAnalyticsBeacons({
+        useReverb,
+        applicationType,
+        pageIdentifier,
+      });
       cy.visit(url);
 
       cy.viewport(320, 480);
@@ -93,6 +121,7 @@ export const assertDropdownNavigationComponentClick = ({
         component: DROPDOWN_NAVIGATION,
         pageIdentifier,
         contentType,
+        useReverb,
       });
 
       // Return to previous page
