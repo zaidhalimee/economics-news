@@ -1,14 +1,25 @@
 export default () => {
   window.addEventListener('load', () => {
     document.addEventListener('click', (event: MouseEvent) => {
-      const targetElement = event.target as HTMLElement;
+      let targetElement;
+      const clickedElement = event.target as HTMLElement;
+
+      let currentElement = clickedElement;
+      while (currentElement) {
+        if (currentElement.tagName === 'A') {
+          targetElement = currentElement;
+          break;
+        }
+        currentElement = currentElement.parentElement as HTMLElement;
+      }
+
       if (targetElement?.tagName === 'A') {
         event.stopPropagation();
         event.preventDefault();
 
         const atiURL = targetElement.getAttribute('data-lite-ati-tracking');
-        const currentAnchorElement = event.target as HTMLAnchorElement;
-        const nextPageUrl = currentAnchorElement?.href;
+        const anchorElement = targetElement as HTMLAnchorElement;
+        const nextPageUrl = anchorElement?.href;
 
         if (atiURL) {
           const {
@@ -76,6 +87,7 @@ export default () => {
           const paramValues = Object.keys(params)
             .map(key => `${key}=${params[key]}`)
             .join('&');
+
           window.sendBeaconLite(`${atiURL}&${paramValues}`);
         }
 
