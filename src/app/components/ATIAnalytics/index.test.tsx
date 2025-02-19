@@ -1,7 +1,6 @@
 /* eslint-disable no-template-curly-in-string */
 import React from 'react';
 import { articleDataNews } from '#pages/ArticlePage/fixtureData';
-import { data as fixData } from '#data/afrique/cpsAssets/48465371.json';
 import styUkrainianAssetData from '#data/ukrainian/cpsAssets/news-53561143.json';
 import styUkrainianInRussianAssetData from '#data/ukrainian/cpsAssets/features-russian-53477115.json';
 import * as analyticsUtils from '#lib/analyticsUtils';
@@ -1032,109 +1031,6 @@ describe('ATI Analytics Container', () => {
         x14: '[0239ab33-1cfc-4f5d-babb-a8159711af3e~e7539dc8-5cfb-413a-b4fe-0ad77bc665aa]',
         x16: '[Amuse me]',
         x17: '[News]',
-      });
-    });
-  });
-  describe('pageType=FIX', () => {
-    it('should call CanonicalATIAnalytics when platform is canonical', () => {
-      const mockCanonical = jest.fn().mockReturnValue('canonical-return-value');
-      // @ts-expect-error - we need to mock these functions to ensure tests are deterministic
-      canonical.default = mockCanonical;
-
-      const {
-        metadata: { atiAnalytics },
-      } = fixAssetData;
-
-      const atiData = {
-        ...atiAnalytics,
-        pageTitle: `${atiAnalytics.pageTitle} - BBC News Afrique`,
-      };
-
-      render(<ATIAnalytics atiData={atiData} />, {
-        ...defaultRenderProps,
-        atiData: atiAnalytics,
-        isAmp: false,
-        pageData: fixAssetData,
-        pageType: FEATURE_INDEX_PAGE,
-        service: 'afrique',
-      });
-
-      const { pageviewParams } = mockCanonical.mock.calls[0][0];
-
-      const parsedATIParams = Object.fromEntries(
-        new URLSearchParams(pageviewParams),
-      );
-
-      expect(parsedATIParams).toEqual({
-        s: '598343',
-        s2: '3',
-        p: 'afrique.feature_index.48465371.page',
-        r: '0x0x24x24',
-        re: '1024x768',
-        hl: '00-00-00',
-        lng: 'en-US',
-        x1: '[urn:bbc:cps:447a95b6-1c9f-e544-bf60-e23452e7fa71]',
-        x2: '[responsive]',
-        x3: '[news-afrique]',
-        x4: '[fr]',
-        x5: '[http%3A%2F%2Flocalhost%2F]',
-        x7: '[index-section]',
-        x8: '[simorgh]',
-        x9: '[Tout%20savoir%20sur%20la%20CAN%202019%20-%20BBC%20News%20Afrique]',
-        x11: '[2019-05-30T14:23:38.000Z]',
-        x12: '[2019-07-19T12:46:18.000Z]',
-      });
-    });
-
-    it('should call AmpATIAnalytics when platform is Amp', () => {
-      const mockAmp = jest.fn().mockReturnValue('amp-return-value');
-      // @ts-expect-error - we need to mock these functions to ensure tests are deterministic
-      amp.default = mockAmp;
-
-      const {
-        metadata: { atiAnalytics },
-      } = fixAssetData;
-
-      const atiData = {
-        ...atiAnalytics,
-        pageTitle: `${atiAnalytics.pageTitle} - BBC News Afrique`,
-      };
-
-      render(<ATIAnalytics atiData={atiData} />, {
-        ...defaultRenderProps,
-        atiData: atiAnalytics,
-        isAmp: true,
-        pageData: fixAssetData,
-        pageType: FEATURE_INDEX_PAGE,
-        service: 'afrique',
-      });
-
-      const { pageviewParams } = mockAmp.mock.calls[0][0];
-
-      const parsedATIParams = Object.fromEntries(
-        new URLSearchParams(pageviewParams),
-      );
-
-      expect(parsedATIParams).toEqual({
-        s: '598343',
-        s2: '3',
-        p: 'afrique.feature_index.48465371.page',
-        r: '${screenWidth}x${screenHeight}x${screenColorDepth}',
-        re: '${availableScreenWidth}x${availableScreenHeight}',
-        hl: '00-00-00',
-        lng: '${browserLanguage}',
-        x1: '[urn:bbc:cps:447a95b6-1c9f-e544-bf60-e23452e7fa71]',
-        x2: '[amp]',
-        x3: '[news-afrique]',
-        x4: '[fr]',
-        x5: '[${sourceUrl}]',
-        x6: '[${documentReferrer}]',
-        x7: '[index-section]',
-        x8: '[simorgh]',
-        x9: '[Tout%20savoir%20sur%20la%20CAN%202019%20-%20BBC%20News%20Afrique]',
-        x11: '[2019-05-30T14:23:38.000Z]',
-        x12: '[2019-07-19T12:46:18.000Z]',
-        ref: '${documentReferrer}',
       });
     });
   });

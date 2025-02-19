@@ -84,7 +84,6 @@ const pageTypes = {
   ],
   onDemandTV: ['/iframe'],
   mediaAssetPage: [...mediaEmbedErrorsToSuppress, '/iframe'],
-  featureIndexPage: [],
   topicPage: [],
 };
 

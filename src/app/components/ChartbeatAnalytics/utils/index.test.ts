@@ -877,42 +877,6 @@ describe('Chartbeat utilities', () => {
       expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
     });
 
-    it('should return config for canonical pages when page type is FIX and env is not live', () => {
-      const fixtureData: GetConfigProps = {
-        isAmp: false,
-        platform: 'canonical',
-        pageType: FEATURE_INDEX_PAGE,
-        brandName: 'BBC-Afique',
-        chartbeatDomain: 'bbc.co.uk',
-        env: 'test',
-        service: 'afrique',
-        origin: 'test.bbc.com',
-        previousPath: '/previous-path',
-        title: 'This is a Feature Index page title',
-      };
-
-      const expectedConfig = {
-        domain: 'test.bbc.co.uk',
-        idSync: {
-          bbc_hid: 'foobar',
-        },
-        path: '/',
-        sections: 'Afrique, Afrique - FIX',
-        title: 'This is a Feature Index page title - BBC-Afique',
-        type: 'FIX',
-        uid: 50924,
-        useCanonical: true,
-        virtualReferrer: 'test.bbc.com/previous-path',
-      };
-
-      const expectedCookieValue = 'foobar';
-      (jest.spyOn(Cookie, 'get') as jest.Mock).mockImplementation(
-        () => expectedCookieValue,
-      );
-
-      expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
-    });
-
     it('should return null for virtualReferrer when there is no previousPath', () => {
       // @ts-expect-error testing partial data to ensure behaviour is as expected
       const fixtureData: GetConfigProps = {

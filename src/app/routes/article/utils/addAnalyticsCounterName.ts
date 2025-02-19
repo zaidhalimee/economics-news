@@ -5,7 +5,7 @@ import { Article } from '#app/models/types/optimo';
 const hasCounterName = hasPath(['metadata', 'analyticsLabels', 'counterName']);
 
 const transformer = (pageData: Article) => {
-  if (pageData?.metadata?.type !== 'FIX') return pageData;
+  if (pageData?.metadata?.type) return pageData;
   if (hasCounterName(pageData)) return pageData;
 
   const id = pageData?.metadata?.id;
