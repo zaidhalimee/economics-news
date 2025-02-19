@@ -47,26 +47,6 @@ export const COMPONENTS = {
 export const interceptATIAnalyticsBeacons = () => {
   const atiUrl = new URL(envs.atiUrl).origin;
 
-  // Component Views
-  Object.values(COMPONENTS).forEach(component => {
-    cy.intercept({
-      url: `${atiUrl}/*`,
-      query: {
-        ati: `*${component}*`,
-      },
-    }).as(`${component}-ati-view`);
-  });
-
-  // Component Clicks
-  Object.values(COMPONENTS).forEach(component => {
-    cy.intercept({
-      url: `${atiUrl}/*`,
-      query: {
-        atc: `*${component}*`,
-      },
-    }).as(`${component}-ati-click`);
-  });
-
   // Page View (only fires once per page visit)
   cy.intercept({
     url: `${atiUrl}/*`,
@@ -74,4 +54,27 @@ export const interceptATIAnalyticsBeacons = () => {
       x8: '[simorgh]',
     },
   }).as(`${ATI_PAGE_VIEW}`);
+
+  // Component Views
+  Object.values(COMPONENTS).forEach(component => {
+    const viewClickEventRegex = new RegExp(
+      `PUB-\\[.*?\\]-\\[${component}.*?\\]-\\[.*?\\]-\\[.*?\\]-\\[.*?\\]-\\[.*?\\]-\\[.*?\\]-\\[.*?\\]`,
+      'g',
+    );
+
+    cy.intercept({
+      url: `${atiUrl}/*`,
+      query: {
+        ati: viewClickEventRegex,
+      },
+    }).as(`${component}-ati-view`);
+
+    // Component Clicks
+    cy.intercept({
+      url: `${atiUrl}/*`,
+      query: {
+        atc: viewClickEventRegex,
+      },
+    }).as(`${component}-ati-click`);
+  });
 };
