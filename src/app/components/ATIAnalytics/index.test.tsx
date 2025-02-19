@@ -17,7 +17,6 @@ import { render } from '../react-testing-library-with-providers';
 import {
   ARTICLE_PAGE,
   FRONT_PAGE,
-  FEATURE_INDEX_PAGE,
   MEDIA_ASSET_PAGE,
   PHOTO_GALLERY_PAGE,
   STORY_PAGE,
@@ -27,8 +26,6 @@ import {
 import ATIAnalytics from '.';
 import * as amp from './amp';
 import * as canonical from './canonical';
-
-const { article: fixAssetData } = fixData;
 
 (analyticsUtils.getAtUserId as jest.Mock) = jest.fn();
 (analyticsUtils.getCurrentTime as jest.Mock) = jest
