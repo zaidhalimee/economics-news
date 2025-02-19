@@ -9,9 +9,6 @@ export type OptimizelyVariation =
   | 'wsoj_related_content'
   | undefined;
 
-// TODO: Get this from Optimizely
-export const TEST_VARIATION: OptimizelyVariation = undefined;
-
 type GetWsojTitleProps = {
   mostReadTitle: string;
   translations: Translations;
