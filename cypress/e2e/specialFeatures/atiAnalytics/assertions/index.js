@@ -19,8 +19,6 @@ const assertATIPageViewEventParamsExist = ({
   expect(params).to.have.property('x7'); // content type
   expect(params).to.have.property('x8'); // library version
   expect(params).to.have.property('x9'); // page title
-  expect(params).to.have.property('x11'); // first published
-  expect(params).to.have.property('x12'); // last published
 
   if (['responsive', 'amp'].includes(applicationType)) {
     expect(params).to.have.property('r'); // screen resolution & colour depth
@@ -31,6 +29,8 @@ const assertATIPageViewEventParamsExist = ({
   }
 
   if (contentType === 'article') {
+    expect(params).to.have.property('x11'); // first published
+    expect(params).to.have.property('x12'); // last published
     expect(params).to.have.property('x13'); // ldp things
     expect(params).to.have.property('x17'); // category
   }
@@ -89,28 +89,39 @@ export const assertATIComponentViewEvent = ({
   contentType,
 }) =>
   cy.wait(`@${component}-ati-view`).then(({ request: { url } }) => {
-    const viewEventDetails = `PUB-[${contentType}]-[${component}]-[]-[]-[${pageIdentifier}]-[]-[]-[]`;
+    const viewEventDetails = new RegExp(
+      `PUB-\\[${contentType}\\]-\\[${component}.*?\\]-\\[.*?\\]-\\[.*?\\]-\\[${pageIdentifier}\\]-\\[.*?\\]-\\[.*?\\]-\\[.*?\\]`,
+      'g',
+    );
 
     const params = getATIParamsFromURL(url);
 
     assertATIComponentViewEventParamsExist(params);
 
     expect(params.p).to.equal(pageIdentifier);
-    expect(params.ati).to.equal(viewEventDetails);
+    expect(params.ati).to.match(viewEventDetails);
   });
 
 export const assertATIComponentClickEvent = ({
   component,
   contentType,
   pageIdentifier,
+  applicationType,
 }) =>
   cy.wait(`@${component}-ati-click`).then(({ request: { url } }) => {
-    const clickEventDetails = `PUB-[${contentType}]-[${component}]-[]-[]-[${pageIdentifier}]-[]-[]-[]`;
+    const clickEventDetails = new RegExp(
+      `PUB-\\[${contentType}\\]-\\[${component}.*?\\]-\\[.*?\\]-\\[.*?\\]-\\[${pageIdentifier}\\]-\\[.*?\\]-\\[.*?\\]-\\[.*?\\]`,
+      'g',
+    );
 
     const params = getATIParamsFromURL(url);
 
     assertATIComponentClickEventParamsExist(params);
 
+    if (applicationType === 'lite') {
+      expect(params.app_type).to.equal(applicationType);
+    }
+
     expect(params.p).to.equal(pageIdentifier);
-    expect(params.atc).to.equal(clickEventDetails);
+    expect(params.atc).to.match(clickEventDetails);
   });

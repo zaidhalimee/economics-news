@@ -25,6 +25,7 @@ export const assertLiteSiteCTAComponentClick = ({
         pageIdentifier,
         contentType,
       });
+
       // return to previous page
       cy.visit(url);
     });
