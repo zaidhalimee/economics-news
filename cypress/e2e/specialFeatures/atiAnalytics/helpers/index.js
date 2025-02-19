@@ -71,7 +71,7 @@ export const interceptATIAnalyticsBeacons = () => {
   cy.intercept({
     url: `${atiUrl}/*`,
     query: {
-      x8: '[simorgh]',
+      x8: /\[(simorgh|reverb-3.9.2)\]/,
     },
   }).as(`${ATI_PAGE_VIEW}`);
 };
