@@ -70,4 +70,15 @@ describe('transformRecsData', () => {
       expect(item.locators).toHaveProperty('canonicalUrl');
     });
   });
+
+  it('should return an empty array if variation is off', () => {
+    const result = transformRecsData({
+      wsojRecs,
+      mostRead: afriqueArticle.data.secondaryData.mostRead,
+      pageBlocks: afriqueArticle.data.article.content.model.blocks,
+      variation: 'off',
+    });
+
+    expect(result).toEqual([]);
+  });
 });
