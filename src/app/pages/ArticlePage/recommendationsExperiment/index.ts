@@ -10,7 +10,7 @@ export type Variation =
   | undefined;
 
 // TODO: Get this from Optimizely
-export const TEST_VARIATION: Variation = 'wsoj_related_content';
+export const TEST_VARIATION: Variation = undefined;
 
 type GetWsojTitleProps = {
   mostReadTitle: string;
