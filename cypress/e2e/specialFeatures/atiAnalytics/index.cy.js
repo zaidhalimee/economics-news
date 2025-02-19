@@ -246,7 +246,7 @@ const canonicalTestSuites = [
     applicationType: 'responsive',
     contentType: 'index-home',
     tests: [
-      assertPageViewBeacon,
+      assertPageView,
       assertScrollableNavigationComponentView,
       assertScrollableNavigationComponentClick,
       assertDropdownNavigationComponentView,
@@ -265,7 +265,7 @@ const canonicalTestSuites = [
     applicationType: 'responsive',
     contentType: 'article',
     tests: [
-      assertPageViewBeacon,
+      assertPageView,
       assertTopStoriesComponentView,
       assertTopStoriesComponentClick,
       assertFeaturesAnalysisComponentView,
@@ -288,7 +288,7 @@ const canonicalTestSuites = [
     applicationType: 'responsive',
     contentType: 'article',
     tests: [
-      assertPageViewBeacon,
+      assertPageView,
       assertLatestMediaComponentClick,
       assertLatestMediaComponentView,
       assertScrollablePromoComponentClick,
@@ -306,7 +306,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'pidgin.popular.read.page',
     applicationType: 'responsive',
     contentType: 'list-datadriven',
-    tests: [assertPageViewBeacon],
+    tests: [assertPageView],
   },
 ];
 
