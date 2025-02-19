@@ -3,7 +3,7 @@
 import { useContext } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 import useToggle from '#hooks/useToggle';
-import { singleParagraphBlock, singleTextBlock } from '#app/models/blocks';
+import { singleTextBlock } from '#app/models/blocks';
 import ArticleMetadata from '#containers/ArticleMetadata';
 import { RequestContext } from '#contexts/RequestContext';
 import headings from '#containers/Headings';
@@ -113,11 +113,13 @@ const DisclaimerWithPaddingOverride = (props: ComponentToRenderProps) => (
 const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
   podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
+export type Variation = 'wsoj' | 'mostRead' | 'relatedContent';
+
 type TransformRecsDataProps = {
   wsojRecs: Recommendation[];
   mostRead: MostReadData;
   pageBlocks: OptimoBlock[];
-  variation: 'wsoj' | 'mostRead' | 'relatedContent';
+  variation: Variation;
 };
 
 const transformRecsData = ({
@@ -135,10 +137,12 @@ const transformRecsData = ({
 
     if (!relatedContentBlock) return null;
 
+    // @ts-expect-error - nested block structure
     const relatedContentItems = relatedContentBlock?.model?.blocks?.slice(0, 4);
 
     const transformedRelatedContentItems = relatedContentItems?.map(
       (item: OptimoBlock) => {
+        // @ts-expect-error - nested block structure
         const itemBlocks = item?.model?.blocks;
 
         const imageBlock = itemBlocks?.find(
