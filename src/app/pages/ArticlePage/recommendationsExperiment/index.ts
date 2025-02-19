@@ -10,7 +10,7 @@ export type OptimizelyVariation =
   | 'off';
 
 // TODO: Get this from Optimizely
-export const TEST_VARIATION: OptimizelyVariation = undefined;
+export const TEST_VARIATION: OptimizelyVariation = 'off';
 
 type GetWsojTitleProps = {
   mostReadTitle: string;
