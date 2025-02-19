@@ -17,6 +17,7 @@ export const transformRecsData = ({
   pageBlocks,
   variation,
 }: TransformRecsDataProps) => {
+  if (!variation) return wsojRecs;
   if (variation === 'wsoj') return wsojRecs;
 
   if (variation === 'related_content') {
