@@ -9,15 +9,16 @@ import {
 } from '../../../components/react-testing-library-with-providers';
 import { service as pidginServiceConfig } from '../../../lib/config/services/pidgin';
 import HeaderContainer from './index';
-import { AUDIO_PAGE } from '../../../routes/utils/pageTypes';
 
 const {
+  AUDIO_PAGE,
   INDEX_PAGE,
   ARTICLE_PAGE,
   FRONT_PAGE,
   LIVE_RADIO_PAGE,
   MEDIA_ASSET_PAGE,
   HOME_PAGE,
+  TOPIC_PAGE,
   TV_PAGE,
 } = PAGE_TYPES;
 
@@ -157,7 +158,7 @@ describe(`Header`, () => {
 
     describe('when service is uzbek', () => {
       describe.each(['cyr', 'lat'])('and variant is %s', variant => {
-        const supportedUzbekPageTypes = [ARTICLE_PAGE, HOME_PAGE];
+        const supportedUzbekPageTypes = [ARTICLE_PAGE, HOME_PAGE, TOPIC_PAGE];
         const unsupportedUzbekPageTypes = Object.values(PAGE_TYPES).filter(
           pageType => !supportedUzbekPageTypes.includes(pageType),
         );

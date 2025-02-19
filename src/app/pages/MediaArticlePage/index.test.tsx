@@ -181,18 +181,4 @@ describe('MediaArticlePage', () => {
     expect(src).toEqual(imageURL);
     expect(srcset).toEqual(expectedSrcSetURLs);
   });
-
-  const services = ['serbian', 'uzbek', 'zhongwen'] satisfies Services[];
-
-  services.forEach(service => {
-    it(`should not render a relatedTopics onward journey for a ${service} optimo article`, async () => {
-      const { queryByTestId } = render(
-        <Context service={service as Services}>
-          <MediaArticlePage pageData={pidginPageData as unknown as Article} />
-        </Context>,
-      );
-      const relatedTopics = queryByTestId('related-topics');
-      expect(relatedTopics).toBeNull();
-    });
-  });
 });

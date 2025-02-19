@@ -220,14 +220,14 @@ export const buildATIPageTrackPath = ({
       ? [
           {
             key: 'mv_test',
-            description: 'JumpTo Onward Journeys experiment',
-            value: `JumpTo Onward Journeys experiment`,
+            description: '',
+            value: '',
             wrap: false,
             disableEncoding: true,
           },
           {
             key: 'mv_creation',
-            description: 'JumpTo Onward Journeys variant',
+            description: '',
             value: `${experimentVariant}`,
             wrap: false,
             disableEncoding: true,
@@ -372,14 +372,14 @@ export const buildATIEventTrackUrl = ({
       ? [
           {
             key: 'mv_test',
-            description: 'JumpTo Onward Journeys experiment',
-            value: `JumpTo Onward Journeys experiment`,
+            description: '',
+            value: '',
             wrap: false,
             disableEncoding: true,
           },
           {
             key: 'mv_creation',
-            description: 'JumpTo Onward Journeys variant',
+            description: '',
             value: `${experimentVariant}`,
             wrap: false,
             disableEncoding: true,
