@@ -3,12 +3,15 @@ import wsojRecs from '#data/mundo/recommendations/index.json';
 
 import { transformRecsData } from '.';
 
+const { mostRead } = afriqueArticle.data.secondaryData;
+const pageBlocks = afriqueArticle.data.article.content.model.blocks;
+
 describe('transformRecsData', () => {
   it('should return wsojRecs if variation is not defined', () => {
     const result = transformRecsData({
       wsojRecs,
-      mostRead: afriqueArticle.data.secondaryData.mostRead,
-      pageBlocks: afriqueArticle.data.article.content.model.blocks,
+      mostRead,
+      pageBlocks,
       variation: undefined,
     });
 
@@ -18,8 +21,8 @@ describe('transformRecsData', () => {
   it('should return wsojRecs if variation is wsoj', () => {
     const result = transformRecsData({
       wsojRecs,
-      mostRead: afriqueArticle.data.secondaryData.mostRead,
-      pageBlocks: afriqueArticle.data.article.content.model.blocks,
+      mostRead,
+      pageBlocks,
       variation: 'wsoj',
     });
 
@@ -29,8 +32,8 @@ describe('transformRecsData', () => {
   it('should return transformed MostReadData if variation is wsoj_most_read', () => {
     const result = transformRecsData({
       wsojRecs,
-      mostRead: afriqueArticle.data.secondaryData.mostRead,
-      pageBlocks: afriqueArticle.data.article.content.model.blocks,
+      mostRead,
+      pageBlocks,
       variation: 'wsoj_most_read',
     });
 
@@ -51,8 +54,8 @@ describe('transformRecsData', () => {
   it('should return transfored RelatedContentData if variation is wsoj_related_content', () => {
     const result = transformRecsData({
       wsojRecs,
-      mostRead: afriqueArticle.data.secondaryData.mostRead,
-      pageBlocks: afriqueArticle.data.article.content.model.blocks,
+      mostRead,
+      pageBlocks,
       variation: 'wsoj_related_content',
     });
 
@@ -74,8 +77,8 @@ describe('transformRecsData', () => {
   it('should return an empty array if variation is off', () => {
     const result = transformRecsData({
       wsojRecs,
-      mostRead: afriqueArticle.data.secondaryData.mostRead,
-      pageBlocks: afriqueArticle.data.article.content.model.blocks,
+      mostRead,
+      pageBlocks,
       variation: 'off',
     });
 
