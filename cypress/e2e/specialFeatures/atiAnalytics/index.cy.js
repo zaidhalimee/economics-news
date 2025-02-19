@@ -8,7 +8,7 @@ import {
   assertLatestMediaComponentClick,
   assertLatestMediaComponentView,
 } from './assertions/latestMedia';
-// import { assertLiteSiteCTAComponentClick } from './assertions/liteSiteCta';
+import { assertLiteSiteCTAComponentClick } from './assertions/liteSiteCta';
 import {
   assertMessageBannerComponentClick,
   assertMessageBannerComponentView,
@@ -264,12 +264,10 @@ const liteTestSuites = canonicalTestSuites
 
     switch (testSuite.contentType) {
       case 'article':
-        // TODO: enable this once https://github.com/bbc/simorgh/pull/12419 has been merged!
-        // liteSiteTests.push(assertLiteSiteCTAComponentClick);
+        liteSiteTests.push(assertLiteSiteCTAComponentClick);
         break;
       case 'index-home':
-        // TODO: enable this once https://github.com/bbc/simorgh/pull/12360 has been merged!
-        // liteSiteTests.push(assertMostReadComponentClick);
+        liteSiteTests.push(assertMostReadComponentClick);
         break;
       default:
         break;
