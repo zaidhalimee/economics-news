@@ -183,11 +183,7 @@ const transformRecsData = ({
             blocks: [singleTextBlock(item.title)],
           },
         },
-        images: {
-          defaultPromoImage: {
-            blocks: [],
-          },
-        },
+        images: item?.images,
         locators: { canonicalUrl: item?.href },
       };
     });
