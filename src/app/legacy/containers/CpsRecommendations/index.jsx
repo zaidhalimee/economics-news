@@ -72,6 +72,7 @@ const CpsRecommendations = ({ items }) => {
   const { hasStoryRecommendations } = recommendations;
 
   if (!hasStoryRecommendations || !enabled || !items.length) return null;
+
   const title = getWsojTitle({
     translations,
     mostReadTitle,
