@@ -1,15 +1,15 @@
 import { getHeadline, getUrl } from '#lib/utilities/getStoryPromoInfo';
 import { getEnvConfig } from '#app/lib/utilities/getEnvConfig';
+import OPTIMIZELY_CONFIG from '#app/lib/config/optimizely';
 
-export default ({
-  item,
-  index,
-  optimizely,
-  optimizelyMetricNameOverride,
-} = {}) => {
+export default ({ item, index, optimizely } = {}) => {
   const block = {
     componentName: 'wsoj',
-    ...(optimizely && { optimizely, optimizelyMetricNameOverride }),
+    ...(optimizely && {
+      optimizely,
+      optimizelyMetricNameOverride:
+        optimizely?.getVariation(OPTIMIZELY_CONFIG.ruleKey) || null,
+    }),
   };
   const headline = getHeadline(item);
   const url = getUrl(item);
@@ -22,7 +22,11 @@ export default ({
       advertiserID,
       url: `${getEnvConfig().SIMORGH_BASE_URL}${url}`,
       format: `CHD=promo::${index + 1}`,
-      ...(optimizely && { optimizely }),
+      ...(optimizely && {
+        optimizely,
+        optimizelyMetricNameOverride:
+          optimizely?.getVariation(OPTIMIZELY_CONFIG.ruleKey) || null,
+      }),
     };
 
     return {
