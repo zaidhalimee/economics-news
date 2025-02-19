@@ -18,6 +18,8 @@ import useToggle from '#hooks/useToggle';
 import { GridItemMediumNoMargin } from '#components/Grid';
 
 import { getWsojTitle } from '#app/pages/ArticlePage/recommendationsExperiment';
+import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
+import OPTIMIZELY_CONFIG from '#app/lib/config/optimizely';
 import { ServiceContext } from '../../../contexts/ServiceContext';
 import RecommendationsPromoList from './RecommendationsPromoList';
 import RecommendationsPromo from './RecommendationsPromo';
@@ -56,6 +58,10 @@ const CpsRecommendations = ({ items }) => {
   } = useContext(ServiceContext);
   const { enabled } = useToggle('cpsRecommendations');
 
+  const OPTIMIZELY_VARIATION = useOptimizelyVariation(
+    OPTIMIZELY_CONFIG.flagKey,
+  );
+
   const labelId = 'recommendations-heading';
   const a11yAttributes = {
     as: 'section',
@@ -73,6 +79,7 @@ const CpsRecommendations = ({ items }) => {
   const title = getWsojTitle({
     translations,
     mostReadTitle,
+    variation: OPTIMIZELY_VARIATION,
   });
 
   const { text, endTextVisuallyHidden } = path(['skipLink'], recommendations);
