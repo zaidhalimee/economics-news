@@ -1,13 +1,12 @@
-import {
-  awaitATIComponentViewEvent,
-  interceptATIAnalyticsBeacons,
-  COMPONENTS,
-  awaitATIComponentClickEvent,
-} from '../helpers';
+import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { FEATURES } = COMPONENTS;
 
-export const assertFeaturesAnalysisComponentView = () => {
+export const assertFeaturesAnalysisComponentView = ({
+  pageIdentifier,
+  contentType,
+}) => {
   it('should send a view event for the Features & Analysis component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
@@ -15,12 +14,19 @@ export const assertFeaturesAnalysisComponentView = () => {
 
       cy.get('[data-testid="features"]').scrollIntoView({ duration: 1000 });
 
-      awaitATIComponentViewEvent(FEATURES);
+      assertATIComponentViewEvent({
+        component: FEATURES,
+        pageIdentifier,
+        contentType,
+      });
     });
   });
 };
 
-export const assertFeaturesAnalysisComponentClick = () => {
+export const assertFeaturesAnalysisComponentClick = ({
+  pageIdentifier,
+  contentType,
+}) => {
   it.skip('should send a click event for the Features & Analysis component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
@@ -31,11 +37,14 @@ export const assertFeaturesAnalysisComponentClick = () => {
       // Click on first item
       cy.get('[data-testid="features"]')
         .find('a')
-        .not('[aria-hidden="true"]')
         .first()
         .click({ force: true });
 
-      awaitATIComponentClickEvent(FEATURES);
+      assertATIComponentClickEvent({
+        component: FEATURES,
+        pageIdentifier,
+        contentType,
+      });
 
       // return to previous page
       cy.visit(url);

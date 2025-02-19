@@ -1,13 +1,12 @@
-import {
-  awaitATIComponentViewEvent,
-  interceptATIAnalyticsBeacons,
-  COMPONENTS,
-  awaitATIComponentClickEvent,
-} from '../helpers';
+import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { PODCAST_PROMO } = COMPONENTS;
 
-export const assertPodcastPromoComponentView = () => {
+export const assertPodcastPromoComponentView = ({
+  pageIdentifier,
+  contentType,
+}) => {
   it('should send a view event for the Podcast Promo component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
@@ -17,12 +16,19 @@ export const assertPodcastPromoComponentView = () => {
         duration: 1000,
       });
 
-      awaitATIComponentViewEvent(PODCAST_PROMO);
+      assertATIComponentViewEvent({
+        component: PODCAST_PROMO,
+        pageIdentifier,
+        contentType,
+      });
     });
   });
 };
 
-export const assertPodcastPromoComponentClick = () => {
+export const assertPodcastPromoComponentClick = ({
+  pageIdentifier,
+  contentType,
+}) => {
   it('should send a click event for the Podcast Promo component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
@@ -38,7 +44,11 @@ export const assertPodcastPromoComponentClick = () => {
         .last()
         .click({ force: true });
 
-      awaitATIComponentClickEvent(PODCAST_PROMO);
+      assertATIComponentClickEvent({
+        component: PODCAST_PROMO,
+        pageIdentifier,
+        contentType,
+      });
 
       // return to previous page
       cy.visit(url);

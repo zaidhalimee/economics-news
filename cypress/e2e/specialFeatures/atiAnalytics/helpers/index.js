@@ -1,13 +1,13 @@
 import envs from '../../../../support/config/envs';
 
-// eslint-disable-next-line import/prefer-default-export
 export const getATIParamsFromURL = atiAnalyticsURL => {
   const url = new URL(atiAnalyticsURL);
 
   return Object.fromEntries(new URLSearchParams(url.search));
 };
 
-const ATI_PAGE_VIEW = 'ati-page-view';
+export const ATI_PAGE_VIEW = 'ati-page-view';
+
 const SCROLLABLE_NAVIGATION = 'scrollable-navigation';
 const DROPDOWN_NAVIGATION = 'dropdown-navigation';
 const TOP_STORIES = 'top-stories';
@@ -47,26 +47,6 @@ export const COMPONENTS = {
 export const interceptATIAnalyticsBeacons = () => {
   const atiUrl = new URL(envs.atiUrl).origin;
 
-  // Component Views
-  Object.values(COMPONENTS).forEach(component => {
-    cy.intercept({
-      url: `${atiUrl}/*`,
-      query: {
-        ati: `*${component}*`,
-      },
-    }).as(`${component}-ati-view`);
-  });
-
-  // Component Clicks
-  Object.values(COMPONENTS).forEach(component => {
-    cy.intercept({
-      url: `${atiUrl}/*`,
-      query: {
-        atc: `*${component}*`,
-      },
-    }).as(`${component}-ati-click`);
-  });
-
   // Page View (only fires once per page visit)
   cy.intercept({
     url: `${atiUrl}/*`,
@@ -74,12 +54,27 @@ export const interceptATIAnalyticsBeacons = () => {
       x8: /\[(simorgh|reverb-3.9.2)\]/,
     },
   }).as(`${ATI_PAGE_VIEW}`);
+
+  // Component Views
+  Object.values(COMPONENTS).forEach(component => {
+    const viewClickEventRegex = new RegExp(
+      `PUB-\\[.*?\\]-\\[${component}.*?\\]-\\[.*?\\]-\\[.*?\\]-\\[.*?\\]-\\[.*?\\]-\\[.*?\\]-\\[.*?\\]`,
+      'g',
+    );
+
+    cy.intercept({
+      url: `${atiUrl}/*`,
+      query: {
+        ati: viewClickEventRegex,
+      },
+    }).as(`${component}-ati-view`);
+
+    // Component Clicks
+    cy.intercept({
+      url: `${atiUrl}/*`,
+      query: {
+        atc: viewClickEventRegex,
+      },
+    }).as(`${component}-ati-click`);
+  });
 };
-
-export const awaitATIPageViewEvent = () => cy.wait(`@${ATI_PAGE_VIEW}`);
-
-export const awaitATIComponentViewEvent = component =>
-  cy.wait(`@${component}-ati-view`);
-
-export const awaitATIComponentClickEvent = component =>
-  cy.wait(`@${component}-ati-click`);

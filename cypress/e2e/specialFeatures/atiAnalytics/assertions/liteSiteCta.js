@@ -1,13 +1,13 @@
-import {
-  awaitATIComponentClickEvent,
-  COMPONENTS,
-  interceptATIAnalyticsBeacons,
-} from '../helpers';
+import { COMPONENTS, interceptATIAnalyticsBeacons } from '../helpers';
+import { assertATIComponentClickEvent } from '.';
 
 const { LITE_SITE_CTA } = COMPONENTS;
 
 // eslint-disable-next-line import/prefer-default-export
-export const assertLiteSiteCTAComponentClick = () => {
+export const assertLiteSiteCTAComponentClick = ({
+  pageIdentifier,
+  contentType,
+}) => {
   it('should send a click event for the Lite Site CTA component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
@@ -20,7 +20,11 @@ export const assertLiteSiteCTAComponentClick = () => {
       // Click on first item
       cy.get('[data-e2e="to-main-site"]').find('a').first().click();
 
-      awaitATIComponentClickEvent(LITE_SITE_CTA);
+      assertATIComponentClickEvent({
+        component: LITE_SITE_CTA,
+        pageIdentifier,
+        contentType,
+      });
 
       // return to previous page
       cy.visit(url);

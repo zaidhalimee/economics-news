@@ -1,5 +1,5 @@
 import runTestsForPage from '#nextjs/cypress/support/helpers/runTestsForPage';
-import { assertPageViewBeacon } from './assertions';
+import { assertPageView } from './assertions';
 import {
   assertFeaturesAnalysisComponentClick,
   assertFeaturesAnalysisComponentView,
@@ -8,7 +8,7 @@ import {
   assertLatestMediaComponentClick,
   assertLatestMediaComponentView,
 } from './assertions/latestMedia';
-// import { assertLiteSiteCTAComponentClick } from './assertions/liteSiteCta';
+import { assertLiteSiteCTAComponentClick } from './assertions/liteSiteCta';
 import {
   assertMessageBannerComponentClick,
   assertMessageBannerComponentView,
@@ -69,7 +69,7 @@ const canonicalTestSuites = [
     applicationType: 'responsive',
     contentType: 'index-home',
     tests: [
-      assertPageViewBeacon,
+      assertPageView,
       assertScrollableNavigationComponentView,
       assertScrollableNavigationComponentClick,
       assertDropdownNavigationComponentView,
@@ -88,7 +88,7 @@ const canonicalTestSuites = [
     applicationType: 'responsive',
     contentType: 'article',
     tests: [
-      assertPageViewBeacon,
+      assertPageView,
       assertTopStoriesComponentView,
       assertTopStoriesComponentClick,
       assertFeaturesAnalysisComponentView,
@@ -111,7 +111,7 @@ const canonicalTestSuites = [
     applicationType: 'responsive',
     contentType: 'article',
     tests: [
-      assertPageViewBeacon,
+      assertPageView,
       assertTopStoriesComponentView,
       assertTopStoriesComponentClick,
       assertFeaturesAnalysisComponentView,
@@ -138,7 +138,7 @@ const canonicalTestSuites = [
     applicationType: 'responsive',
     contentType: 'player-live',
     tests: [
-      assertPageViewBeacon,
+      assertPageView,
       assertRadioScheduleComponentView,
       assertRadioScheduleComponentClick,
     ],
@@ -151,7 +151,7 @@ const canonicalTestSuites = [
     applicationType: 'responsive',
     contentType: 'player-episode',
     tests: [
-      assertPageViewBeacon,
+      assertPageView,
       assertRecentAudioEpisodesComponentView,
       assertRecentAudioEpisodesComponentClick,
       assertRadioScheduleComponentView,
@@ -166,7 +166,7 @@ const canonicalTestSuites = [
     applicationType: 'responsive',
     contentType: 'player-episode',
     tests: [
-      assertPageViewBeacon,
+      assertPageView,
       assertPodcastLinksComponentView,
       assertPodcastLinksComponentClick,
       assertRecentAudioEpisodesComponentView,
@@ -181,7 +181,7 @@ const canonicalTestSuites = [
     applicationType: 'responsive',
     contentType: 'player-episode',
     tests: [
-      assertPageViewBeacon,
+      assertPageView,
       assertPodcastLinksComponentView,
       assertPodcastLinksComponentClick,
       assertRecentAudioEpisodesComponentView,
@@ -195,7 +195,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'gahuza.popular.read.page',
     applicationType: 'responsive',
     contentType: 'list-datadriven',
-    tests: [assertPageViewBeacon],
+    tests: [assertPageView],
   },
   {
     path: '/hausa/articles/cw43vy8zdjvo',
@@ -205,7 +205,7 @@ const canonicalTestSuites = [
     applicationType: 'responsive',
     contentType: 'article-sfv',
     tests: [
-      assertPageViewBeacon,
+      assertPageView,
       assertLatestMediaComponentView,
       assertLatestMediaComponentClick,
     ],
@@ -217,7 +217,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'afrique.bbc_afrique_tv.tv_programmes.w13xttmz.page',
     applicationType: 'responsive',
     contentType: 'player-episode',
-    tests: [assertPageViewBeacon],
+    tests: [assertPageView],
   },
   {
     path: '/afrique/bbc_afrique_tv/tv/w3ct05mp',
@@ -226,7 +226,16 @@ const canonicalTestSuites = [
     pageIdentifier: 'afrique.bbc_afrique_tv.tv.w3ct05mp.page',
     applicationType: 'responsive',
     contentType: 'player-episode',
-    tests: [assertPageViewBeacon],
+    tests: [assertPageView],
+  },
+  {
+    path: '/marathi/topics/c1wmk63rjkvt',
+    runforEnv: ['live'],
+    service: 'marathi',
+    pageIdentifier: 'marathi.topics.c1wmk63rjkvt.page',
+    applicationType: 'responsive',
+    contentType: 'index-category',
+    tests: [assertPageView],
   },
   // Pages with Reverb
   {
@@ -302,14 +311,16 @@ const canonicalTestSuites = [
 ];
 
 const supportsAmp = ({ contentType }) =>
-  !['index-home', 'player-live', 'player-episode'].includes(contentType);
+  !['index-home', 'player-live', 'player-episode', 'index-category'].includes(
+    contentType,
+  );
 
 const ampTestSuites = canonicalTestSuites.filter(supportsAmp).map(testSuite => {
   return {
     ...testSuite,
     path: `${testSuite.path}.amp`,
     applicationType: 'amp',
-    tests: [assertPageViewBeacon],
+    tests: [assertPageView],
   };
 });
 
@@ -320,16 +331,14 @@ const supportsLite = ({ path, contentType }) =>
 const liteTestSuites = canonicalTestSuites
   .filter(supportsLite)
   .map(testSuite => {
-    const liteSiteTests = [assertPageViewBeacon];
+    const liteSiteTests = [assertPageView];
 
     switch (testSuite.contentType) {
       case 'article':
-        // TODO: enable this once https://github.com/bbc/simorgh/pull/12419 has been merged!
-        // liteSiteTests.push(assertLiteSiteCTAComponentClick);
+        liteSiteTests.push(assertLiteSiteCTAComponentClick);
         break;
       case 'index-home':
-        // TODO: enable this once https://github.com/bbc/simorgh/pull/12360 has been merged!
-        // liteSiteTests.push(assertMostReadComponentClick);
+        liteSiteTests.push(assertMostReadComponentClick);
         break;
       default:
         break;
