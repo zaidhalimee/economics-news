@@ -11,13 +11,10 @@ export type OptimizelyVariation =
   | 'off';
 
 type GetWsojTitleProps = {
-  mostReadTitle?: string;
-  relatedContentTitle?: string;
-  recommendationsTitle?: string;
   variation?: OptimizelyVariation;
 };
 
-export const useWsojTitle = ({ variation }: GetWsojTitleProps) => {
+export const useWsojTitle = ({ variation }: GetWsojTitleProps = {}) => {
   const {
     translations: {
       relatedContent = 'Related content',
