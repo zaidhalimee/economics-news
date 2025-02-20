@@ -206,7 +206,6 @@ const ScrollablePromo = ({
             blocks={blocks}
             experimentVariant={experimentVariant}
             viewTracker={viewRef}
-            onClick={handleClickTracking}
             {...a11yAttributes}
           />
         </GridItemMediumNoMargin>
