@@ -16,20 +16,20 @@ type GetWsojTitleProps = {
 };
 
 export const getWsojTitle = ({
-  mostReadTitle,
-  relatedContentTitle,
-  recommendationsTitle,
+  mostReadTitle = 'Most read',
+  relatedContentTitle = 'Related content',
+  recommendationsTitle = 'Recommended stories',
   variation,
 }: GetWsojTitleProps) => {
   switch (variation) {
     case 'wsoj':
-      return recommendationsTitle || 'Recommended stories';
+      return recommendationsTitle;
     case 'wsoj_most_read':
-      return mostReadTitle || 'Most read';
+      return mostReadTitle;
     case 'wsoj_related_content':
-      return relatedContentTitle || 'Related content';
+      return relatedContentTitle;
     default:
-      return recommendationsTitle || 'Recommended stories';
+      return recommendationsTitle;
   }
 };
 

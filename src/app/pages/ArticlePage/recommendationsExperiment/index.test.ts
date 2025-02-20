@@ -88,45 +88,25 @@ describe('transformRecsData', () => {
 
 describe('getWsojTitle', () => {
   it('should return the correct title for wsoj', () => {
-    const result = getWsojTitle({
-      mostReadTitle: 'Most Read',
-      relatedContentTitle: 'Related Content',
-      recommendationsTitle: 'Recommended stories',
-      variation: 'wsoj',
-    });
+    const result = getWsojTitle({ variation: 'wsoj' });
 
     expect(result).toEqual('Recommended stories');
   });
 
   it('should return the correct title for wsoj_most_read', () => {
-    const result = getWsojTitle({
-      mostReadTitle: 'Most Read',
-      relatedContentTitle: 'Related Content',
-      recommendationsTitle: 'Recommended stories',
-      variation: 'wsoj_most_read',
-    });
+    const result = getWsojTitle({ variation: 'wsoj_most_read' });
 
-    expect(result).toEqual('Most Read');
+    expect(result).toEqual('Most read');
   });
 
   it('should return the correct title for wsoj_related_content', () => {
-    const result = getWsojTitle({
-      mostReadTitle: 'Most Read',
-      relatedContentTitle: 'Related Content',
-      recommendationsTitle: 'Recommended stories',
-      variation: 'wsoj_related_content',
-    });
+    const result = getWsojTitle({ variation: 'wsoj_related_content' });
 
-    expect(result).toEqual('Related Content');
+    expect(result).toEqual('Related content');
   });
 
   it('should return the default title if variation is not defined', () => {
-    const result = getWsojTitle({
-      mostReadTitle: 'Most Read',
-      relatedContentTitle: 'Related Content',
-      recommendationsTitle: 'Recommended stories',
-      variation: undefined,
-    });
+    const result = getWsojTitle({ variation: undefined });
 
     expect(result).toEqual('Recommended stories');
   });
