@@ -8,6 +8,7 @@ import {
 } from '#app/lib/utilities/getEnvConfig';
 import serialiseForScript from '#app/lib/utilities/serialiseForScript';
 import { BaseRendererProps } from './types';
+import ReverbTemplate from './ReverbTemplate';
 
 interface Props extends BaseRendererProps {
   data: Record<string, unknown>;
@@ -38,6 +39,7 @@ export default function CanonicalRenderer({
   return (
     <html lang="en-GB" className={NO_JS_CLASSNAME} {...htmlAttrs}>
       <head>
+        <ReverbTemplate />
         <script
           dangerouslySetInnerHTML={{
             __html: `
