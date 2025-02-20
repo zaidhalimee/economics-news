@@ -1,7 +1,6 @@
 import { MostReadData } from '#app/components/MostRead/types';
 import { singleTextBlock } from '#app/models/blocks';
 import { OptimoBlock, Recommendation } from '#app/models/types/optimo';
-import { Translations } from '#app/models/types/translations';
 
 export type OptimizelyVariation =
   | 'wsoj'
@@ -10,25 +9,27 @@ export type OptimizelyVariation =
   | 'off';
 
 type GetWsojTitleProps = {
-  mostReadTitle: string;
-  translations: Translations;
+  mostReadTitle?: string;
+  relatedContentTitle?: string;
+  recommendationsTitle?: string;
   variation?: OptimizelyVariation;
 };
 
 export const getWsojTitle = ({
-  mostReadTitle,
-  translations,
+  mostReadTitle = 'Most read',
+  relatedContentTitle = 'Related content',
+  recommendationsTitle = 'Recommended stories',
   variation,
 }: GetWsojTitleProps) => {
   switch (variation) {
     case 'wsoj':
-      return translations.recommendationTitle || 'Recommended stories';
+      return recommendationsTitle;
     case 'wsoj_most_read':
-      return mostReadTitle || 'Most read';
+      return mostReadTitle;
     case 'wsoj_related_content':
-      return translations.relatedContent || 'Related content';
+      return relatedContentTitle;
     default:
-      return translations.recommendationTitle || 'Recommended stories';
+      return recommendationsTitle;
   }
 };
 
