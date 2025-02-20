@@ -115,14 +115,14 @@ exports[`Document Component should render APP version correctly 1`] = `
     />
     <script>
       
-          window.__reverb = {};
-          window.__reverb.__reverbLoadedPromise = new Promise((resolve, reject) =&gt; {
-            window.__reverb.__resolveReverbLoaded = resolve;
-            window.__reverb.__rejectReverbLoaded = reject;
-          });
-          window.__reverb.__reverbTimeout = setTimeout(() =&gt; {
-            window.__reverb.__rejectReverbLoaded();
-          }, 5000);
+            window.__reverb = {};
+            window.__reverb.__reverbLoadedPromise = new Promise((resolve, reject) =&gt; {
+              window.__reverb.__resolveReverbLoaded = resolve;
+              window.__reverb.__rejectReverbLoaded = reject;
+            });
+            window.__reverb.__reverbTimeout = setTimeout(() =&gt; {
+              window.__reverb.__rejectReverbLoaded();
+            }, 5000);
     </script>
     <style
       data-emotion-css="7prgni-StyledLink"
@@ -259,14 +259,14 @@ exports[`Document Component should render correctly 1`] = `
     />
     <script>
       
-          window.__reverb = {};
-          window.__reverb.__reverbLoadedPromise = new Promise((resolve, reject) =&gt; {
-            window.__reverb.__resolveReverbLoaded = resolve;
-            window.__reverb.__rejectReverbLoaded = reject;
-          });
-          window.__reverb.__reverbTimeout = setTimeout(() =&gt; {
-            window.__reverb.__rejectReverbLoaded();
-          }, 5000);
+            window.__reverb = {};
+            window.__reverb.__reverbLoadedPromise = new Promise((resolve, reject) =&gt; {
+              window.__reverb.__resolveReverbLoaded = resolve;
+              window.__reverb.__rejectReverbLoaded = reject;
+            });
+            window.__reverb.__reverbTimeout = setTimeout(() =&gt; {
+              window.__reverb.__rejectReverbLoaded();
+            }, 5000);
     </script>
     <style
       data-emotion-css="7prgni-StyledLink"
