@@ -305,7 +305,7 @@ const canonicalTestSuites = [
     path: '/pidgin/articles/cw0x29n2pvqo',
     runforEnv: ['local', 'live'],
     service: 'pidgin',
-    pageIdentifier: 'pidgin.articles.cr4r1zzprg2o.page',
+    pageIdentifier: 'pidgin.articles.cw0x29n2pvqo.page',
     applicationType: 'responsive',
     contentType: 'article-sfv',
     useReverb: true,
