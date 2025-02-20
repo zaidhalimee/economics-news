@@ -11,7 +11,6 @@ const assertATIPageViewEventParamsExist = ({
 }) => {
   expect(params).to.have.property('s'); // destination
   expect(params).to.have.property('p'); // page identifier
-
   expect(params).to.have.property('x2'); // application type
   expect(params).to.have.property('x3'); // application name
   expect(params).to.have.property('x4'); // language
@@ -19,16 +18,16 @@ const assertATIPageViewEventParamsExist = ({
   expect(params).to.have.property('x8'); // library version
   expect(params).to.have.property('x9'); // page title
 
-  if (contentType !== 'list-datadriven') {
-    expect(params).to.have.property('x1'); // content ID
-  }
-
   if (['responsive', 'amp'].includes(applicationType)) {
     expect(params).to.have.property('r'); // screen resolution & colour depth
     expect(params).to.have.property('re'); // browser/viewport resolution
     expect(params).to.have.property('hl'); // timestamp
     expect(params).to.have.property('lng'); // device language
     expect(params).to.have.property('x5'); // url
+  }
+
+  if (contentType !== 'list-datadriven') {
+    expect(params).to.have.property('x1'); // content ID
   }
 
   if (contentType === 'article') {
@@ -103,7 +102,7 @@ export const assertPageView = ({
   });
 };
 
-const getViewClickEventRegex = ({ contentType, component, pageIdentifier }) =>
+const getViewClickDetailsRegex = ({ contentType, component, pageIdentifier }) =>
   new RegExp(
     `PUB-\\[${contentType}.*?\\]-\\[${component}.*?\\]-\\[.*?\\]-\\[.*?\\]-\\[${pageIdentifier}\\]-\\[.*?\\]-\\[.*?\\]-\\[.*?\\]`,
     'g',
@@ -121,7 +120,7 @@ export const assertATIComponentViewEvent = ({
 
     expect(params.p).to.equal(pageIdentifier);
     expect(params.ati).to.match(
-      getViewClickEventRegex({
+      getViewClickDetailsRegex({
         contentType,
         component,
         pageIdentifier,
@@ -160,7 +159,7 @@ export const assertATIComponentClickEvent = ({
     }
 
     expect(params.atc).to.match(
-      getViewClickEventRegex({
+      getViewClickDetailsRegex({
         contentType,
         pageIdentifier,
         component,

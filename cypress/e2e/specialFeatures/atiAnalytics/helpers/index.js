@@ -51,28 +51,6 @@ export const interceptATIAnalyticsBeacons = ({
 }) => {
   const atiUrl = new URL(envs.atiUrl).origin;
 
-  // Page View (only fires once per page visit)
-  cy.intercept(
-    {
-      url: `${atiUrl}/*`,
-      query: {
-        ...(useReverb && applicationType === 'responsive'
-          ? {
-              library_version: 'reverb-3.9.2',
-              p: pageIdentifier,
-              language: /^(?:(?!null).)*$/,
-            }
-          : {
-              x8: '[simorgh]',
-              p: pageIdentifier,
-            }),
-      },
-    },
-    request => {
-      request.reply({ statusCode: 200 });
-    },
-  ).as(`${ATI_PAGE_VIEW}`);
-
   // Component Views
   Object.values(COMPONENTS).forEach(component => {
     const viewClickEventRegex = new RegExp(
@@ -103,6 +81,29 @@ export const interceptATIAnalyticsBeacons = ({
       request => {
         request.reply({ statusCode: 200 });
       },
-    ).as(`${component}-ati-click`);
-  });
+      ).as(`${component}-ati-click`);
+
+
+    // Page View (only fires once per page visit)
+    cy.intercept(
+      {
+        url: `${atiUrl}/*`,
+        query: {
+          ...(useReverb && applicationType === 'responsive'
+            ? {
+                library_version: 'reverb-3.9.2',
+                p: pageIdentifier,
+                language: /^(?:(?!null).)*$/,
+              }
+            : {
+                x8: '[simorgh]',
+                p: pageIdentifier,
+              }),
+        },
+      },
+      request => {
+        request.reply({ statusCode: 200 });
+      },
+    ).as(`${ATI_PAGE_VIEW}`);
+    });
 };
