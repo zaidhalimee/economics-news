@@ -51,8 +51,8 @@ const MediaIcon = ({
     <Wrapper
       script={script}
       service={service}
-      className={className}
       aria-hidden="true"
+      className={className}
     >
       {mediaIcons[type]}
       {formatChildren(children)}
