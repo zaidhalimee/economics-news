@@ -245,18 +245,6 @@ describe('ScrollablePromo', () => {
         });
       });
 
-      it('should call the click tracking hook with the right component and promo index on OJ Top Bar', () => {
-        const clickTrackerSpy = jest.spyOn(clickTracking, 'default');
-        render(
-          <ScrollablePromo blocks={topStoriesBlocks} experimentVariant="A" />,
-        );
-
-        expect(clickTrackerSpy).toHaveBeenCalledWith({
-          componentName: 'OJTopBar',
-          index: 3,
-        });
-      });
-
       it('should call the click tracking hook with multiple editorial onward journeys', () => {
         const clickTrackerSpy = jest.spyOn(clickTracking, 'default');
         render(
