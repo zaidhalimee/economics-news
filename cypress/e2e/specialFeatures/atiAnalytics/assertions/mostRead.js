@@ -7,15 +7,10 @@ export const assertMostReadComponentView = ({
   pageIdentifier,
   contentType,
   useReverb,
-  applicationType,
 }) => {
   it('should send a view event for the Most Read component', () => {
     cy.url().then(url => {
-      interceptATIAnalyticsBeacons({
-        useReverb,
-        applicationType,
-        pageIdentifier,
-      });
+      interceptATIAnalyticsBeacons();
       cy.visit(url);
 
       cy.get('[data-e2e="most-read"]').scrollIntoView({ duration: 1000 });
@@ -34,15 +29,10 @@ export const assertMostReadComponentClick = ({
   pageIdentifier,
   contentType,
   useReverb,
-  applicationType,
 }) => {
   it('should send a click event for the Most Read component', () => {
     cy.url().then(url => {
-      interceptATIAnalyticsBeacons({
-        useReverb,
-        applicationType,
-        pageIdentifier,
-      });
+      interceptATIAnalyticsBeacons();
       cy.visit(url);
 
       cy.get('[data-e2e="most-read"]').scrollIntoView({ duration: 1000 });

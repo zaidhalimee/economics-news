@@ -44,17 +44,13 @@ export const COMPONENTS = {
   SCROLLABLE_PROMO,
 };
 
-export const interceptATIAnalyticsBeacons = ({
-  useReverb = false,
-  applicationType,
-  pageIdentifier = '',
-}) => {
+export const interceptATIAnalyticsBeacons = () => {
   const atiUrl = new URL(envs.atiUrl).origin;
 
   // Component Views
   Object.values(COMPONENTS).forEach(component => {
     const viewClickEventRegex = new RegExp(
-      `PUB-\\[.*?\\]-\\[${component}.*?\\]-\\[.*?\\]-\\[.*?\\]-\\[.*?\\]-\\[.*?\\]-\\[.*?\\]-\\[.*?\\]`,
+      `PUB-\\[?.*?\\]?-\\[?${component}.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?`,
       'g',
     );
 
@@ -88,16 +84,7 @@ export const interceptATIAnalyticsBeacons = ({
       {
         url: `${atiUrl}/*`,
         query: {
-          ...(useReverb && applicationType === 'responsive'
-            ? {
-                library_version: 'reverb-3.9.2',
-                p: pageIdentifier,
-                language: /^(?:(?!null).)*$/,
-              }
-            : {
-                x8: '[simorgh]',
-                p: pageIdentifier,
-              }),
+          x8: /simorgh/,
         },
       },
       request => {

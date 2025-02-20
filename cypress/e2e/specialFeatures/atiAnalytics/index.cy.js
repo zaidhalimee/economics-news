@@ -312,9 +312,7 @@ const canonicalTestSuites = [
     useReverb: true,
     tests: [assertPageView],
   },
-]
-  // TODO: remove this once all pidgin tests are passing
-  .filter(({ useReverb }) => useReverb === true);
+];
 
 const supportsAmp = ({ contentType }) =>
   !['index-home', 'player-live', 'player-episode', 'index-category'].includes(

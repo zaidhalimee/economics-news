@@ -68,11 +68,10 @@ export const assertPageView = ({
   applicationType,
   contentType,
   service,
-  useReverb,
 }) => {
   it(`should send a page view event with service = ${service}, page identifier = ${pageIdentifier}, application type = ${applicationType} and content type = ${contentType}`, () => {
     cy.url().then(url => {
-      interceptATIAnalyticsBeacons({ useReverb, applicationType });
+      interceptATIAnalyticsBeacons();
       cy.visit(url);
 
       cy.wait(`@${ATI_PAGE_VIEW}`).then(({ request }) => {
@@ -104,7 +103,7 @@ export const assertPageView = ({
 
 const getViewClickDetailsRegex = ({ contentType, component, pageIdentifier }) =>
   new RegExp(
-    `PUB-\\[${contentType}.*?\\]-\\[${component}.*?\\]-\\[.*?\\]-\\[.*?\\]-\\[${pageIdentifier}\\]-\\[.*?\\]-\\[.*?\\]-\\[.*?\\]`,
+    `PUB-\\[?${contentType}.*?\\]?-\\[?${component}.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?${pageIdentifier}\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?`,
     'g',
   );
 
@@ -113,21 +112,24 @@ export const assertATIComponentViewEvent = ({
   pageIdentifier,
   contentType,
 }) =>
-  cy.wait(`@${component}-ati-view`).then(({ request: { url } }) => {
-    const params = getATIParamsFromURL(url);
+  cy
+    .wait(`@${component}-ati-view`)
+    .its('request.url')
+    .then(url => {
+      const params = getATIParamsFromURL(url);
 
-    assertATIComponentViewEventParamsExist(params);
+      assertATIComponentViewEventParamsExist(params);
 
-    expect(params.p).to.equal(pageIdentifier);
-    expect(params.ati).to.match(
-      getViewClickDetailsRegex({
-        contentType,
-        component,
-        pageIdentifier,
-      }),
-      'params.ati (publisher impression)',
-    );
-  });
+      expect(params.p).to.equal(pageIdentifier);
+      expect(params.ati).to.match(
+        getViewClickDetailsRegex({
+          contentType,
+          component,
+          pageIdentifier,
+        }),
+        'params.ati (publisher impression)',
+      );
+    });
 
 export const assertATIComponentClickEvent = ({
   component,
@@ -136,34 +138,37 @@ export const assertATIComponentClickEvent = ({
   applicationType,
   useReverb,
 }) =>
-  cy.wait(`@${component}-ati-click`).then(({ request: { url } }) => {
-    const params = getATIParamsFromURL(url);
+  cy
+    .wait(`@${component}-ati-click`)
+    .its('request.url')
+    .then(url => {
+      const params = getATIParamsFromURL(url);
 
-    assertATIComponentClickEventParamsExist({
-      params,
-      useReverb,
-      applicationType,
-    });
+      assertATIComponentClickEventParamsExist({
+        params,
+        useReverb,
+        applicationType,
+      });
 
-    if (applicationType === 'lite') {
-      expect(params.app_type).to.equal(applicationType, 'params.app_type');
-    }
+      if (applicationType === 'lite') {
+        expect(params.app_type).to.equal(applicationType, 'params.app_type');
+      }
 
-    if (useReverb) {
-      expect(params.patc).to.equal(
-        pageIdentifier,
-        'params.patc (page identifier)',
+      if (useReverb) {
+        expect(params.patc).to.equal(
+          pageIdentifier,
+          'params.patc (page identifier)',
+        );
+      } else {
+        expect(params.p).to.equal(pageIdentifier, 'params.p (page identifier)');
+      }
+
+      expect(params.atc).to.match(
+        getViewClickDetailsRegex({
+          contentType,
+          pageIdentifier,
+          component,
+        }),
+        'params.atc (publisher click)',
       );
-    } else {
-      expect(params.p).to.equal(pageIdentifier, 'params.p (page identifier)');
-    }
-
-    expect(params.atc).to.match(
-      getViewClickDetailsRegex({
-        contentType,
-        pageIdentifier,
-        component,
-      }),
-      'params.atc (publisher click)',
-    );
-  });
+    });

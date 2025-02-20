@@ -7,19 +7,14 @@ export const assertScrollableNavigationComponentView = ({
   pageIdentifier,
   contentType,
   useReverb,
-  applicationType,
 }) => {
   it('should send a view event for the Scrollable Navigation component', () => {
     cy.url().then(url => {
-      interceptATIAnalyticsBeacons({
-        useReverb,
-        applicationType,
-        pageIdentifier,
-      });
+      interceptATIAnalyticsBeacons();
       cy.visit(url);
 
       cy.get('[data-e2e="scrollable-nav"]').scrollIntoView({
-        duration: 5000,
+        duration: 1000,
       });
 
       assertATIComponentViewEvent({
@@ -36,19 +31,14 @@ export const assertScrollableNavigationComponentClick = ({
   pageIdentifier,
   contentType,
   useReverb,
-  applicationType,
 }) => {
   it('should send a click event for the Scrollable Navigation component', () => {
     cy.url().then(url => {
-      interceptATIAnalyticsBeacons({
-        useReverb,
-        applicationType,
-        pageIdentifier,
-      });
+      interceptATIAnalyticsBeacons();
       cy.visit(url);
 
       cy.get('[data-e2e="scrollable-nav"]').scrollIntoView({
-        duration: 5000,
+        duration: 1000,
       });
 
       // Click on first item & return to the original url
@@ -72,15 +62,10 @@ export const assertDropdownNavigationComponentView = ({
   pageIdentifier,
   contentType,
   useReverb,
-  applicationType,
 }) => {
   it('should send a view event for the Dropdown Navigation component', () => {
     cy.url().then(url => {
-      interceptATIAnalyticsBeacons({
-        useReverb,
-        applicationType,
-        pageIdentifier,
-      });
+      interceptATIAnalyticsBeacons();
       cy.visit(url);
 
       cy.viewport(320, 480);
@@ -100,15 +85,10 @@ export const assertDropdownNavigationComponentClick = ({
   pageIdentifier,
   contentType,
   useReverb,
-  applicationType,
 }) => {
   it('should send a click event for the Dropdown Navigation component', () => {
     cy.url().then(url => {
-      interceptATIAnalyticsBeacons({
-        useReverb,
-        applicationType,
-        pageIdentifier,
-      });
+      interceptATIAnalyticsBeacons();
       cy.visit(url);
 
       cy.viewport(320, 480);

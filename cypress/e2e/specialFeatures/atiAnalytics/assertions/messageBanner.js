@@ -7,15 +7,10 @@ export const assertMessageBannerComponentView = ({
   pageIdentifier,
   contentType,
   useReverb,
-  applicationType,
 }) => {
   it('should send a view event for the Message Banner component', () => {
     cy.url().then(url => {
-      interceptATIAnalyticsBeacons({
-        useReverb,
-        applicationType,
-        pageIdentifier,
-      });
+      interceptATIAnalyticsBeacons();
       cy.visit(url);
 
       cy.get('[data-testid="message-banner-1"]').scrollIntoView({
@@ -36,15 +31,10 @@ export const assertMessageBannerComponentClick = ({
   pageIdentifier,
   contentType,
   useReverb,
-  applicationType,
 }) => {
   it('should send a click event for the Message Banner component', () => {
     cy.url().then(url => {
-      interceptATIAnalyticsBeacons({
-        useReverb,
-        applicationType,
-        pageIdentifier,
-      });
+      interceptATIAnalyticsBeacons();
       cy.visit(url);
 
       cy.get('[data-testid="message-banner-1"]').scrollIntoView({
