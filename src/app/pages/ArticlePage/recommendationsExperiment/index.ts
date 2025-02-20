@@ -1,6 +1,8 @@
 import { MostReadData } from '#app/components/MostRead/types';
+import { ServiceContext } from '#app/contexts/ServiceContext';
 import { singleTextBlock } from '#app/models/blocks';
 import { OptimoBlock, Recommendation } from '#app/models/types/optimo';
+import { useContext } from 'react';
 
 export type OptimizelyVariation =
   | 'wsoj'
@@ -15,21 +17,24 @@ type GetWsojTitleProps = {
   variation?: OptimizelyVariation;
 };
 
-export const getWsojTitle = ({
-  mostReadTitle = 'Most read',
-  relatedContentTitle = 'Related content',
-  recommendationsTitle = 'Recommended stories',
-  variation,
-}: GetWsojTitleProps) => {
+export const useWsojTitle = ({ variation }: GetWsojTitleProps) => {
+  const {
+    translations: {
+      relatedContent = 'Related content',
+      recommendationTitle = 'Recommended stories',
+    } = {},
+    mostRead: { header: mostReadTitle = 'Most read' } = {},
+  } = useContext(ServiceContext);
+
   switch (variation) {
     case 'wsoj':
-      return recommendationsTitle;
+      return recommendationTitle;
     case 'wsoj_most_read':
       return mostReadTitle;
     case 'wsoj_related_content':
-      return relatedContentTitle;
+      return relatedContent;
     default:
-      return recommendationsTitle;
+      return recommendationTitle;
   }
 };
 
