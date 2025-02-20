@@ -6,6 +6,7 @@ const { FEATURES } = COMPONENTS;
 export const assertFeaturesAnalysisComponentView = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a view event for the Features & Analysis component', () => {
     cy.url().then(url => {
@@ -18,6 +19,7 @@ export const assertFeaturesAnalysisComponentView = ({
         component: FEATURES,
         pageIdentifier,
         contentType,
+        useReverb,
       });
     });
   });
@@ -26,6 +28,7 @@ export const assertFeaturesAnalysisComponentView = ({
 export const assertFeaturesAnalysisComponentClick = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it.skip('should send a click event for the Features & Analysis component', () => {
     cy.url().then(url => {
@@ -44,6 +47,7 @@ export const assertFeaturesAnalysisComponentClick = ({
         component: FEATURES,
         pageIdentifier,
         contentType,
+        useReverb,
       });
 
       // return to previous page

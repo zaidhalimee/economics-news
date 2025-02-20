@@ -24,6 +24,7 @@ const PODCAST_LINKS = 'third-party';
 const LATEST_MEDIA = 'latest';
 const RECOMMENDATIONS = 'wsoj';
 const SCROLLABLE_PROMO = 'edoj';
+const BILLBOARD = 'billboard';
 
 export const COMPONENTS = {
   SCROLLABLE_NAVIGATION,
@@ -42,6 +43,7 @@ export const COMPONENTS = {
   LATEST_MEDIA,
   RECOMMENDATIONS,
   SCROLLABLE_PROMO,
+  BILLBOARD,
 };
 
 export const interceptATIAnalyticsBeacons = () => {

@@ -46,11 +46,7 @@ const assertATIComponentViewEventParamsExist = params => {
   expect(params.type).to.equal('AT', 'params.type');
 };
 
-const assertATIComponentClickEventParamsExist = ({
-  params,
-  useReverb,
-  applicationType,
-}) => {
+const assertATIComponentClickEventParamsExist = ({ params, useReverb }) => {
   expect(params).to.have.property('s'); // destination
   expect(params).to.have.property('atc'); // click event
   expect(params).to.have.property('type');

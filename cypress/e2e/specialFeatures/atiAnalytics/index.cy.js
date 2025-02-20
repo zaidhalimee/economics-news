@@ -1,5 +1,10 @@
+import { liteEnabledServices } from '#app/components/LiteSiteCta/liteSiteConfig';
 import runTestsForPage from '#nextjs/cypress/support/helpers/runTestsForPage';
 import { assertPageView } from './assertions';
+import {
+  assertBillboardComponentClick,
+  assertBillboardComponentView,
+} from './assertions/billboard';
 import {
   assertFeaturesAnalysisComponentClick,
   assertFeaturesAnalysisComponentView,
@@ -124,8 +129,6 @@ const canonicalTestSuites = [
       assertScrollablePromoComponentClick,
       assertRelatedTopicsComponentView,
       assertRelatedTopicsComponentClick,
-      assertRelatedContentComponentView,
-      assertRelatedContentComponentClick,
       assertMostReadComponentView,
       assertMostReadComponentClick,
     ],
@@ -240,7 +243,7 @@ const canonicalTestSuites = [
   // Pages with Reverb
   {
     path: '/pidgin',
-    runforEnv: ['local', 'test', 'live'],
+    runforEnv: ['local', 'live'],
     service: 'pidgin',
     pageIdentifier: 'pidgin.page',
     applicationType: 'responsive',
@@ -258,6 +261,21 @@ const canonicalTestSuites = [
       assertMostReadComponentClick,
     ],
   },
+  {
+    path: '/pidgin',
+    runforEnv: ['test'],
+    service: 'pidgin',
+    pageIdentifier: 'pidgin.page',
+    applicationType: 'responsive',
+    contentType: 'index-home',
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertBillboardComponentView,
+      assertBillboardComponentClick,
+    ],
+  },
+  // Article
   {
     path: '/pidgin/articles/cyv3zm4y428o',
     runforEnv: ['live'],
@@ -282,20 +300,19 @@ const canonicalTestSuites = [
       assertMostReadComponentClick,
     ],
   },
+  // Media Article
   {
-    path: '/pidgin/articles/cr4r1zzprg2o',
-    runforEnv: ['live'],
+    path: '/pidgin/articles/cw0x29n2pvqo',
+    runforEnv: ['local', 'live'],
     service: 'pidgin',
     pageIdentifier: 'pidgin.articles.cr4r1zzprg2o.page',
     applicationType: 'responsive',
-    contentType: 'article',
+    contentType: 'article-sfv',
     useReverb: true,
     tests: [
       assertPageView,
       assertLatestMediaComponentClick,
       assertLatestMediaComponentView,
-      assertScrollablePromoComponentClick,
-      assertScrollablePromoComponentView,
       assertRelatedTopicsComponentView,
       assertRelatedTopicsComponentClick,
       assertRelatedContentComponentView,
@@ -329,8 +346,10 @@ const ampTestSuites = canonicalTestSuites.filter(supportsAmp).map(testSuite => {
 });
 
 // Most Read & On Demand TV pages do not currently support .lite
-const supportsLite = ({ path, contentType }) =>
-  !path.includes('_tv') && contentType !== 'list-datadriven';
+const supportsLite = ({ path, contentType, service }) =>
+  liteEnabledServices.includes(service) &&
+  !path.includes('_tv') &&
+  contentType !== 'list-datadriven';
 
 const liteTestSuites = canonicalTestSuites
   .filter(supportsLite)

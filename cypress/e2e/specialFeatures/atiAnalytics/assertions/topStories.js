@@ -6,6 +6,7 @@ const { TOP_STORIES } = COMPONENTS;
 export const assertTopStoriesComponentView = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a view event for the Top Stories component', () => {
     cy.url().then(url => {
@@ -18,6 +19,7 @@ export const assertTopStoriesComponentView = ({
         component: TOP_STORIES,
         pageIdentifier,
         contentType,
+        useReverb,
       });
     });
   });
@@ -26,6 +28,7 @@ export const assertTopStoriesComponentView = ({
 export const assertTopStoriesComponentClick = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a click event for the Top Stories component', () => {
     cy.url().then(url => {
@@ -43,6 +46,7 @@ export const assertTopStoriesComponentClick = ({
         component: TOP_STORIES,
         pageIdentifier,
         contentType,
+        useReverb,
       });
 
       // return to previous page
