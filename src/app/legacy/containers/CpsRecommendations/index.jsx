@@ -53,7 +53,7 @@ const CpsRecommendations = ({ items }) => {
     palette: { GREY_2 },
   } = useTheme();
 
-  const title = useWsojTitle({ variation: undefined });
+  const title = useWsojTitle();
 
   const labelId = 'recommendations-heading';
   const a11yAttributes = {
