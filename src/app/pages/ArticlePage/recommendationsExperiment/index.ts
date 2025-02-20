@@ -17,7 +17,7 @@ type GetWsojTitleProps = {
   variation?: OptimizelyVariation;
 };
 
-export const useWsojTitle = ({ variation }: GetWsojTitleProps) => {
+export const useWsojTitle = ({ variation }: GetWsojTitleProps = {}) => {
   const {
     translations: {
       relatedContent = 'Related content',
