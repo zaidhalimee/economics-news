@@ -93,18 +93,6 @@ exports[`Document Component should render APP version correctly 1`] = `
       async=""
       src="https://mybbc-analytics.files.bbci.co.uk/reverb-client-js/reverb-3.9.2.js"
     />
-    <script>
-      
-            window.__reverb = {};
-            window.__reverb.__reverbLoadedPromise = new Promise((resolve, reject) =&gt; {
-              window.__reverb.__resolveReverbLoaded = resolve;
-              window.__reverb.__rejectReverbLoaded = reject;
-            });
-
-            window.__reverb.__reverbTimeout = setTimeout(() =&gt; {
-              window.__reverb.__rejectReverbLoaded();
-            }, 5000);
-    </script>
     <script
       async=""
       src="https://mybbc-analytics.files.bbci.co.uk/reverb-client-js/reverb-3.9.2.js"
@@ -257,18 +245,6 @@ exports[`Document Component should render correctly 1`] = `
       async=""
       src="https://mybbc-analytics.files.bbci.co.uk/reverb-client-js/reverb-3.9.2.js"
     />
-    <script>
-      
-            window.__reverb = {};
-            window.__reverb.__reverbLoadedPromise = new Promise((resolve, reject) =&gt; {
-              window.__reverb.__resolveReverbLoaded = resolve;
-              window.__reverb.__rejectReverbLoaded = reject;
-            });
-
-            window.__reverb.__reverbTimeout = setTimeout(() =&gt; {
-              window.__reverb.__rejectReverbLoaded();
-            }, 5000);
-    </script>
     <script
       async=""
       src="https://mybbc-analytics.files.bbci.co.uk/reverb-client-js/reverb-3.9.2.js"
