@@ -1,7 +1,8 @@
+import { renderHook } from '@testing-library/react';
 import afriqueArticle from '#data/afrique/articles/c7yn6nznljdo.json';
 import wsojRecs from '#data/mundo/recommendations/index.json';
 
-import { transformRecsData, getWsojTitle } from '.';
+import { transformRecsData, useWsojTitle } from '.';
 
 const { mostRead } = afriqueArticle.data.secondaryData;
 const pageBlocks = afriqueArticle.data.article.content.model.blocks;
@@ -86,28 +87,36 @@ describe('transformRecsData', () => {
   });
 });
 
-describe('getWsojTitle', () => {
+describe('useWsojTitle', () => {
   it('should return the correct title for wsoj', () => {
-    const result = getWsojTitle({ variation: 'wsoj' });
+    const {
+      result: { current },
+    } = renderHook(() => useWsojTitle({ variation: 'wsoj' }));
 
-    expect(result).toEqual('Recommended stories');
+    expect(current).toEqual('Recommended stories');
   });
 
   it('should return the correct title for wsoj_most_read', () => {
-    const result = getWsojTitle({ variation: 'wsoj_most_read' });
+    const {
+      result: { current },
+    } = renderHook(() => useWsojTitle({ variation: 'wsoj_most_read' }));
 
-    expect(result).toEqual('Most read');
+    expect(current).toEqual('Most read');
   });
 
   it('should return the correct title for wsoj_related_content', () => {
-    const result = getWsojTitle({ variation: 'wsoj_related_content' });
+    const {
+      result: { current },
+    } = renderHook(() => useWsojTitle({ variation: 'wsoj_related_content' }));
 
-    expect(result).toEqual('Related content');
+    expect(current).toEqual('Related content');
   });
 
   it('should return the default title if variation is not defined', () => {
-    const result = getWsojTitle({ variation: undefined });
+    const {
+      result: { current },
+    } = renderHook(() => useWsojTitle({ variation: undefined }));
 
-    expect(result).toEqual('Recommended stories');
+    expect(current).toEqual('Recommended stories');
   });
 });
