@@ -56,7 +56,7 @@ const assertATIComponentClickEventParamsExist = ({
   expect(params).to.have.property('type');
   expect(params.type).to.equal('AT', 'params.type');
 
-  if (applicationType !== 'lite' && useReverb) {
+  if (useReverb) {
     expect(params).to.have.property('patc'); // page identifier
   } else {
     expect(params).to.have.property('p'); // page identifier
@@ -120,7 +120,7 @@ export const assertATIComponentViewEvent = ({
 
       assertATIComponentViewEventParamsExist(params);
 
-      expect(params.p).to.equal(pageIdentifier);
+      expect(params.p).to.equal(pageIdentifier, 'params.p (page identifier)');
       expect(params.ati).to.match(
         getViewClickDetailsRegex({
           contentType,
