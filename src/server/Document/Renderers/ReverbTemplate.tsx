@@ -1,4 +1,7 @@
 import React from 'react';
+import {
+  getEnvConfig,
+} from '#app/lib/utilities/getEnvConfig';
 
 const ReverbTemplate = () => {
   return (
@@ -6,20 +9,17 @@ const ReverbTemplate = () => {
       <script
         dangerouslySetInnerHTML={{
           __html: `
-          window.__reverb = {};
-          window.__reverb.__reverbLoadedPromise = new Promise((resolve, reject) => {
-            window.__reverb.__resolveReverbLoaded = resolve;
-            window.__reverb.__rejectReverbLoaded = reject;
-          });
-          window.__reverb.__reverbTimeout = setTimeout(() => {
-            window.__reverb.__rejectReverbLoaded();
-          }, 5000);`,
+            window.__reverb = {};
+            window.__reverb.__reverbLoadedPromise = new Promise((resolve, reject) => {
+              window.__reverb.__resolveReverbLoaded = resolve;
+              window.__reverb.__rejectReverbLoaded = reject;
+            });
+            window.__reverb.__reverbTimeout = setTimeout(() => {
+              window.__reverb.__rejectReverbLoaded();
+            }, 5000);`,
         }}
       />
-      <script
-        async
-        src="https://mybbc-analytics.files.bbci.co.uk/reverb-client-js/reverb-3.9.2.js"
-      />
+      <script async src={`${getEnvConfig().SIMORGH_REVERB_SOURCE}`} />
     </>
   );
 };
