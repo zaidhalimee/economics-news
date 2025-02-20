@@ -18,8 +18,6 @@ import useToggle from '#hooks/useToggle';
 import { GridItemMediumNoMargin } from '#components/Grid';
 
 import { useWsojTitle } from '#app/pages/ArticlePage/recommendationsExperiment';
-import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
-import OPTIMIZELY_CONFIG from '#app/lib/config/optimizely';
 import { ServiceContext } from '../../../contexts/ServiceContext';
 import RecommendationsPromoList from './RecommendationsPromoList';
 import RecommendationsPromo from './RecommendationsPromo';
@@ -51,15 +49,11 @@ const CpsRecommendations = ({ items }) => {
   const { recommendations, script, service, dir } = useContext(ServiceContext);
   const { enabled } = useToggle('cpsRecommendations');
 
-  const OPTIMIZELY_VARIATION = useOptimizelyVariation(
-    OPTIMIZELY_CONFIG.flagKey,
-  );
-
   const {
     palette: { GREY_2 },
   } = useTheme();
 
-  const title = useWsojTitle({ variation: OPTIMIZELY_VARIATION });
+  const title = useWsojTitle({ variation: undefined });
 
   const labelId = 'recommendations-heading';
   const a11yAttributes = {
