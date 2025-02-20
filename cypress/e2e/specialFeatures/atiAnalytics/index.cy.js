@@ -352,6 +352,7 @@ const liteTestSuites = canonicalTestSuites
       ...testSuite,
       path: `${testSuite.path}.lite`,
       applicationType: 'lite',
+      useReverb: false,
       tests: [...liteSiteTests],
     };
   });
