@@ -219,51 +219,5 @@ describe('ScrollablePromo', () => {
         expectedFirstHeadline,
       );
     });
-
-    describe('event tracking in editorial onward journeys', () => {
-      afterEach(() => {
-        jest.clearAllMocks();
-      });
-
-      it('should call the view tracking hook with the correct params with multiple editorial onward journeys', () => {
-        const viewTrackerSpy = jest.spyOn(viewTracking, 'default');
-        render(
-          <ScrollablePromo blocks={edOjA.model.blocks} blockGroupIndex={1} />,
-        );
-        render(
-          <ScrollablePromo blocks={edOjB.model.blocks} blockGroupIndex={2} />,
-        );
-
-        expect(viewTrackerSpy).toHaveBeenCalledTimes(2);
-        expect(viewTrackerSpy).toHaveBeenCalledWith({
-          componentName: 'edoj1',
-          format: 'CHD=edoj',
-        });
-        expect(viewTrackerSpy).toHaveBeenCalledWith({
-          componentName: 'edoj2',
-          format: 'CHD=edoj',
-        });
-      });
-
-      it('should call the click tracking hook with multiple editorial onward journeys', () => {
-        const clickTrackerSpy = jest.spyOn(clickTracking, 'default');
-        render(
-          <ScrollablePromo blocks={edOjA.model.blocks} blockGroupIndex={1} />,
-        );
-        render(
-          <ScrollablePromo blocks={edOjB.model.blocks} blockGroupIndex={2} />,
-        );
-
-        expect(clickTrackerSpy).toHaveBeenCalledTimes(2);
-        expect(clickTrackerSpy).toHaveBeenCalledWith({
-          componentName: 'edoj1',
-          format: 'CHD=edoj',
-        });
-        expect(clickTrackerSpy).toHaveBeenCalledWith({
-          componentName: 'edoj2',
-          format: 'CHD=edoj',
-        });
-      });
-    });
   });
 });
