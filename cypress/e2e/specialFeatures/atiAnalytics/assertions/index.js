@@ -106,21 +106,24 @@ export const assertATIComponentViewEvent = ({
   pageIdentifier,
   contentType,
 }) =>
-  cy.wait(`@${component}-ati-view`).then(({ request: { url } }) => {
-    const params = getATIParamsFromURL(url);
+  cy
+    .wait(`@${component}-ati-view`)
+    .its('request.url')
+    .then(url => {
+      const params = getATIParamsFromURL(url);
 
-    assertATIComponentViewEventParamsExist(params);
+      assertATIComponentViewEventParamsExist(params);
 
-    expect(params.p).to.equal(pageIdentifier);
-    expect(params.ati).to.match(
-      getViewClickDetailsRegex({
-        contentType,
-        component,
-        pageIdentifier,
-      }),
-      'params.ati (publisher impression)',
-    );
-  });
+      expect(params.p).to.equal(pageIdentifier);
+      expect(params.ati).to.match(
+        getViewClickDetailsRegex({
+          contentType,
+          component,
+          pageIdentifier,
+        }),
+        'params.ati (publisher impression)',
+      );
+    });
 
 export const assertATIComponentClickEvent = ({
   component,
@@ -128,23 +131,26 @@ export const assertATIComponentClickEvent = ({
   pageIdentifier,
   applicationType,
 }) =>
-  cy.wait(`@${component}-ati-click`).then(({ request: { url } }) => {
-    const params = getATIParamsFromURL(url);
+  cy
+    .wait(`@${component}-ati-click`)
+    .its('request.url')
+    .then(url => {
+      const params = getATIParamsFromURL(url);
 
-    assertATIComponentClickEventParamsExist(params);
+      assertATIComponentClickEventParamsExist(params);
 
-    if (applicationType === 'lite') {
-      expect(params.app_type).to.equal(applicationType, 'params.app_type');
-    }
+      if (applicationType === 'lite') {
+        expect(params.app_type).to.equal(applicationType, 'params.app_type');
+      }
 
-    expect(params.p).to.equal(pageIdentifier, 'params.p (page identifier)');
+      expect(params.p).to.equal(pageIdentifier, 'params.p (page identifier)');
 
-    expect(params.atc).to.match(
-      getViewClickDetailsRegex({
-        contentType,
-        pageIdentifier,
-        component,
-      }),
-      'params.atc (publisher click)',
-    );
-  });
+      expect(params.atc).to.match(
+        getViewClickDetailsRegex({
+          contentType,
+          pageIdentifier,
+          component,
+        }),
+        'params.atc (publisher click)',
+      );
+    });
