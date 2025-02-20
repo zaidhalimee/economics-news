@@ -47,14 +47,6 @@ export const COMPONENTS = {
 export const interceptATIAnalyticsBeacons = () => {
   const atiUrl = new URL(envs.atiUrl).origin;
 
-  // Page View (only fires once per page visit)
-  cy.intercept({
-    url: `${atiUrl}/*`,
-    query: {
-      x8: '[simorgh]',
-    },
-  }).as(`${ATI_PAGE_VIEW}`);
-
   // Component Views
   Object.values(COMPONENTS).forEach(component => {
     const viewClickEventRegex = new RegExp(
@@ -76,5 +68,13 @@ export const interceptATIAnalyticsBeacons = () => {
         atc: viewClickEventRegex,
       },
     }).as(`${component}-ati-click`);
+
+    // Page View (only fires once per page visit)
+    cy.intercept({
+      url: `${atiUrl}/*`,
+      query: {
+        x8: '[simorgh]',
+      },
+    }).as(`${ATI_PAGE_VIEW}`);
   });
 };
