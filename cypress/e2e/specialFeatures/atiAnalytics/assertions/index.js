@@ -114,7 +114,7 @@ export const assertATIComponentViewEvent = ({
 
       assertATIComponentViewEventParamsExist(params);
 
-      expect(params.p).to.equal(pageIdentifier);
+      expect(params.p).to.equal(pageIdentifier, 'params.p (page identifier)');
       expect(params.ati).to.match(
         getViewClickDetailsRegex({
           contentType,
