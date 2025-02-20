@@ -112,27 +112,36 @@ const Promo = ({ block, experimentVariant, onClick }) => {
   let timestamp;
   let isLive;
   switch (experimentVariant) {
-    case 'A':
-      title = pathOr(
-        block.headline || '',
-        [
-          'headlines',
-          'promoHeadline',
-          'blocks',
-          '0',
-          'model',
-          'blocks',
-          '0',
-          'model',
-          'text',
-        ],
-        block,
-      );
-      href = block.locators
-        ? pathOr('', ['locators', 'canonicalUrl'], block)
-        : `https://www.bbc.com${block.destinationUrl}`;
+    case 'A': {
+      const overtypedHeadline = block?.headlines?.overtyped ?? '';
+      const mainHeadline = block?.headlines?.headline ?? '';
+      const headlineBlockText =
+        block?.headlines?.promoHeadline?.blocks?.[0]?.model?.blocks?.[0]?.model
+          ?.text ?? '';
+      const name = block?.name ?? '';
+
+      title =
+        overtypedHeadline ||
+        mainHeadline ||
+        headlineBlockText ||
+        name ||
+        block.headline ||
+        '';
+
+      const canonicalUrl = block?.locators?.canonicalUrl ?? '';
+      const assetUri = block?.locators?.assetUri ?? '';
+      const uri = block?.uri ?? '';
+
+      href =
+        canonicalUrl ||
+        assetUri ||
+        uri ||
+        (block.destinationUrl
+          ? `https://www.bbc.com${block.destinationUrl}`
+          : '');
       isLive = block.isLive;
       break;
+    }
     case 'B':
       title = block.title;
       href = block.href;
