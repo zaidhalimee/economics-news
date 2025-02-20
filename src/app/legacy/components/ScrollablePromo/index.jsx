@@ -130,6 +130,7 @@ const LabelComponent = styled(({ ariaLabel, experimentVariant, ...props }) => (
     align-items: center;
     height: ${GEL_SPACING_QUAD};
     background: ${GREY_2} ;
+    width: 100vw;
   `}
 `;
 
