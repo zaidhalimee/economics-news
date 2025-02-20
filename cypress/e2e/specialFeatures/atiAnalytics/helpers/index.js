@@ -54,27 +54,36 @@ export const interceptATIAnalyticsBeacons = () => {
       'g',
     );
 
-    cy.intercept({
-      url: `${atiUrl}/*`,
-      query: {
-        ati: viewClickEventRegex,
+    cy.intercept(
+      {
+        url: `${atiUrl}/*`,
+        query: {
+          ati: viewClickEventRegex,
+        },
       },
-    }).as(`${component}-ati-view`);
+      request => request.reply({ statusCode: 200 }),
+    ).as(`${component}-ati-view`);
 
     // Component Clicks
-    cy.intercept({
-      url: `${atiUrl}/*`,
-      query: {
-        atc: viewClickEventRegex,
+    cy.intercept(
+      {
+        url: `${atiUrl}/*`,
+        query: {
+          atc: viewClickEventRegex,
+        },
       },
-    }).as(`${component}-ati-click`);
+      request => request.reply({ statusCode: 200 }),
+    ).as(`${component}-ati-click`);
+  });
 
-    // Page View (only fires once per page visit)
-    cy.intercept({
+  // Page View (only fires once per page visit)
+  cy.intercept(
+    {
       url: `${atiUrl}/*`,
       query: {
         x8: '[simorgh]',
       },
-    }).as(`${ATI_PAGE_VIEW}`);
-  });
+    },
+    request => request.reply({ statusCode: 200 }),
+  ).as(`${ATI_PAGE_VIEW}`);
 };
