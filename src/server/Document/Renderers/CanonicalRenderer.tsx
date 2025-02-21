@@ -40,8 +40,6 @@ export default function CanonicalRenderer({
     <html lang="en-GB" className={NO_JS_CLASSNAME} {...htmlAttrs}>
       <head>
         <ReverbTemplate />
-        <script async src={`${getEnvConfig().SIMORGH_REVERB_SOURCE}`} />
-
         {isApp && <meta name="robots" content="noindex" />}
         {title}
         {helmetMetaTags}
