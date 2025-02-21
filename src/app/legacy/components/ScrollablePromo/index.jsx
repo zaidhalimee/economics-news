@@ -171,7 +171,7 @@ const ScrollablePromo = ({
 
   const isSingleItem = blocksWithoutTitle.length === 1;
 
-  const ariaLabel = title && idSanitiser(`${title}`);
+  const ariaLabel = title && idSanitiser(title);
 
   const a11yAttributes = {
     ...(!experimentVariant && {
