@@ -196,7 +196,7 @@ const injectReferrerPolicyHeader = (req, res, next) => {
 
 server.locals.articleIndex = searchTool();
 
-server.get('/search_tool/*', async (req, res) => {
+server.get('/search_me/results/*', async (req, res) => {
   try {
     const { query } = req;
     const { index, totalRecords } = server.locals.articleIndex;
@@ -204,17 +204,6 @@ server.get('/search_tool/*', async (req, res) => {
       index,
       query.user_query,
     );
-    // const result = await renderDocument({
-    //   bbcOrigin,
-    //   data,
-    //   isAmp,
-    //   isApp,
-    //   isLite,
-    //   routes,
-    //   service,
-    //   url,
-    //   variant,
-    // });
 
     res.setHeader('Content-Type', 'application/json');
     res.status(200).send({

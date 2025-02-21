@@ -99,6 +99,10 @@ export const getHomePageRegex = services => {
   return `/:service(${homePageServiceRegex}):variant(${variantRegex})?:lite(${liteRegex})?`;
 };
 
+export const getSearchRegex = () => {
+  return `/news/search_me`;
+};
+
 export const getSwRegex = services => {
   const serviceRegex = getServiceRegex(services);
   return `/:service(${serviceRegex})/sw.js`;

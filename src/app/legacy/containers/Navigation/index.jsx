@@ -24,7 +24,7 @@ const renderListItems = (
   isLite,
 ) =>
   navigation.reduce((listAcc, item, index) => {
-    const { title, url, hideOnLiteSite } = item;
+    const { title, url, hideOnLiteSite, newLink } = item;
     const active = index === activeIndex;
 
     if (hideOnLiteSite && isLite) return listAcc;

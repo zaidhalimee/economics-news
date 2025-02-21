@@ -5,6 +5,7 @@ export const MediaArticlePage = loadable(() => import('./MediaArticlePage'));
 export const ErrorPage = loadable(() => import('./ErrorPage'));
 export const FrontPage = loadable(() => import('./FrontPage'));
 export const HomePage = loadable(() => import('./HomePage'));
+export const SearchPage = loadable(() => import('./SearchPage'));
 export const MostReadPage = loadable(() => import('./MostReadPage'));
 export const LiveRadioPage = loadable(() => import('./LiveRadioPage'));
 export const OnDemandAudioPage = loadable(() => import('./OnDemandAudioPage'));

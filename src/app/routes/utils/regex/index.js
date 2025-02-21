@@ -21,6 +21,7 @@ import {
   getSecondaryColumnDataRegex,
   getRecommendationsDataRegex,
   getAfricaEyeTVPageRegex,
+  getSearchRegex,
 } from './utils';
 
 const allServices = Object.keys(services);
@@ -39,6 +40,9 @@ export const frontPageManifestPath = getManifestRegex(allServices);
 
 export const homePagePath = getHomePageRegex(allServices);
 export const homePageDataPath = `${homePagePath}.json`;
+
+export const searchPagePath = getSearchRegex();
+export const searchPageDataPath = `${searchPagePath}.json`;
 
 export const cpsAssetPagePath = getCpsAssetRegex(allServices);
 export const cpsAssetPageDataPath = `${cpsAssetPagePath}.json`;

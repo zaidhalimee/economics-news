@@ -99,6 +99,7 @@ export type ServiceConfig = {
   navigation?: {
     title: string;
     url: string;
+    newLink?: boolean;
     hideOnLiteSite?: boolean;
   }[];
   scriptLink?: {

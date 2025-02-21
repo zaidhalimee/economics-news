@@ -273,6 +273,11 @@ export const service: DefaultServiceConfig = {
         url: '/news',
       },
       {
+        title: 'Search',
+        url: '/news/search_me',
+        newLink: true,
+      },
+      {
         title: 'UK',
         url: '/news/uk',
       },
