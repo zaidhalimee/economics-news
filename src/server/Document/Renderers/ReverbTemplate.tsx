@@ -1,5 +1,5 @@
 import React from 'react';
-import {getEnvConfig} from '#app/lib/utilities/getEnvConfig';
+import { getEnvConfig } from '#app/lib/utilities/getEnvConfig';
 
 const ReverbTemplate = () => {
   return (
