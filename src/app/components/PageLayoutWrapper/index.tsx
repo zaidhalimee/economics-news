@@ -141,7 +141,8 @@ const PageLayoutWrapper = ({
                 let wrappedStorageKey = 'ws_bbc_wrapped';
                 let wrappedContents = {};
                 let topicsStorageKey = 'ws_bbc_topics';
-                let topicsContents = localStorage.getItem(topicsStorageKey) || {};
+                let topicsContents = localStorage.getItem(topicsStorageKey) || "{}";
+                topicsContents = JSON.parse(topicsContents);
                 wrappedContents[wrappedYear] = {
                     'byMonth': {},
                     'pageTypeCounts': {},
