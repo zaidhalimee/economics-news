@@ -60,69 +60,75 @@ describe('useConsentBanners', () => {
       expect(fetch).not.toHaveBeenCalled();
     });
 
-    it('sets PRIVACY_COOKIE and returns showPrivacyBanner=TRUE when PRIVACY_COOKIE is 0', () => {
-      Cookies.set(PRIVACY_COOKIE, '0');
-      cookieSetterSpy.mockClear();
-      const { result } = renderHook(() => useConsentBanners());
+    it.each([
+      {
+        title:
+          'sets PRIVACY_COOKIE and returns showPrivacyBanner=TRUE when PRIVACY_COOKIE is 0',
+        privacyToggleEnabled: true,
+        initialPrivacyCookie: '0',
+        expectedShowPrivacyBanner: true,
+      },
+      {
+        title:
+          'sets PRIVACY_COOKIE and returns showPrivacyBanner=TRUE when PRIVACY_COOKIE is 1',
+        privacyToggleEnabled: true,
+        initialPrivacyCookie: '1',
+        expectedShowPrivacyBanner: true,
+      },
+      {
+        title:
+          'sets PRIVACY_COOKIE and returns showPrivacyBanner=TRUE when PRIVACY_COOKIE is null',
+        privacyToggleEnabled: true,
+        initialPrivacyCookie: null,
+        expectedShowPrivacyBanner: true,
+      },
+      {
+        title:
+          'does NOT set PRIVACY_COOKIE and returns showPrivacyBanner=FALSE when pivacyToggle is false',
+        privacyToggleEnabled: false,
+        initialPrivacyCookie: null,
+        expectedShowPrivacyBanner: false,
+      },
+    ])(
+      '$title',
+      ({
+        initialPrivacyCookie,
+        expectedShowPrivacyBanner,
+        privacyToggleEnabled,
+      }) => {
+        Cookies.set(PRIVACY_COOKIE, initialPrivacyCookie);
+        cookieSetterSpy.mockClear();
+        const { result } = renderHook(() =>
+          useConsentBanners(true, true, privacyToggleEnabled),
+        );
 
-      expect(cookieSetterSpy).toHaveBeenCalledWith(
-        PRIVACY_COOKIE,
-        DEFAULT_PRIVACY_COOKIE,
-        {
-          expires: 365,
-          domain: '.bbc.com',
-          sameSite: 'None',
-          secure: true,
-        },
-      );
-      expect(result.current.showPrivacyBanner).toBe(true);
-      expect(fetch).not.toHaveBeenCalled();
-    });
+        if (privacyToggleEnabled) {
+          expect(cookieSetterSpy).toHaveBeenCalledWith(
+            PRIVACY_COOKIE,
+            DEFAULT_PRIVACY_COOKIE,
+            {
+              expires: 365,
+              domain: '.bbc.com',
+              sameSite: 'None',
+              secure: true,
+            },
+          );
+        }
 
-    it('sets PRIVACY_COOKIE and returns showPrivacyBanner=TRUE when PRIVACY_COOKIE is 1', () => {
-      Cookies.set(PRIVACY_COOKIE, '1');
-      cookieSetterSpy.mockClear();
-      const { result } = renderHook(() => useConsentBanners());
+        expect(result.current.showPrivacyBanner).toBe(
+          expectedShowPrivacyBanner,
+        );
 
-      expect(cookieSetterSpy).toHaveBeenCalledWith(
-        PRIVACY_COOKIE,
-        DEFAULT_PRIVACY_COOKIE,
-        {
-          expires: 365,
-          domain: '.bbc.com',
-          sameSite: 'None',
-          secure: true,
-        },
-      );
-      expect(result.current.showPrivacyBanner).toBe(true);
-      expect(fetch).not.toHaveBeenCalled();
-    });
-
-    it('sets PRIVACY_COOKIE and returns showPrivacyBanner=TRUE when cookie is null', () => {
-      Cookies.set(PRIVACY_COOKIE, null);
-      cookieSetterSpy.mockClear();
-      const { result } = renderHook(() => useConsentBanners());
-
-      expect(cookieSetterSpy).toHaveBeenCalledWith(
-        PRIVACY_COOKIE,
-        DEFAULT_PRIVACY_COOKIE,
-        {
-          expires: 365,
-          domain: '.bbc.com',
-          sameSite: 'None',
-          secure: true,
-        },
-      );
-      expect(result.current.showPrivacyBanner).toBe(true);
-      expect(fetch).not.toHaveBeenCalled();
-    });
+        expect(fetch).not.toHaveBeenCalled();
+      },
+    );
 
     it('sets PRIVACY_COOKIE without domain restrictions', () => {
       global.window.location = new URL('https://www.bbc.co.uk');
       Cookies.set(PRIVACY_COOKIE, null);
       cookieSetterSpy.mockClear();
 
-      renderHook(() => useConsentBanners());
+      renderHook(() => useConsentBanners(true, true, true));
 
       expect(cookieSetterSpy).toHaveBeenCalledWith(
         PRIVACY_COOKIE,
@@ -142,7 +148,9 @@ describe('useConsentBanners', () => {
         Cookies.set(EXPLICIT_COOKIE, value);
         cookieSetterSpy.mockClear();
 
-        const { result } = renderHook(() => useConsentBanners());
+        const { result } = renderHook(() =>
+          useConsentBanners(true, true, true),
+        );
 
         expect(cookieSetterSpy).toHaveBeenCalledTimes(0);
         expect(result.current.showCookieBanner).toBe(false);
@@ -192,12 +200,31 @@ describe('useConsentBanners', () => {
       expect(fetch).not.toHaveBeenCalled();
     });
 
-    it('should return showCookieBanner=TRUE when EXPLICIT_COOKIE is 0 and sets POLICY_COOKIE when cookie is null', () => {
+    it('should return showCookieBanner=TRUE when EXPLICIT_COOKIE is 0 and sets POLICY_COOKIE when cookie is null, when privacyToggle is set to true', () => {
       Cookies.set(EXPLICIT_COOKIE, '0');
       Cookies.set(POLICY_COOKIE, null);
       cookieSetterSpy.mockClear();
 
-      const { result } = renderHook(() => useConsentBanners());
+      const { result } = renderHook(() => useConsentBanners(true, true, true));
+
+      expect(cookieSetterSpy).toHaveBeenCalledTimes(1);
+      expect(cookieSetterSpy).toHaveBeenCalledWith(POLICY_COOKIE, '000', {
+        expires: 365,
+        domain: '.bbc.com',
+        sameSite: 'None',
+        secure: true,
+      });
+      expect(result.current.showCookieBanner).toBe(true);
+      expect(result.current.showPrivacyBanner).toBe(false);
+      expect(fetch).not.toHaveBeenCalled();
+    });
+
+    it('should return showCookieBanner=TRUE when EXPLICIT_COOKIE is 0 and sets POLICY_COOKIE when cookie is null, when privacyToggle is set to true', () => {
+      Cookies.set(EXPLICIT_COOKIE, '0');
+      Cookies.set(POLICY_COOKIE, null);
+      cookieSetterSpy.mockClear();
+
+      const { result } = renderHook(() => useConsentBanners(true, true, false));
 
       expect(cookieSetterSpy).toHaveBeenCalledTimes(1);
       expect(cookieSetterSpy).toHaveBeenCalledWith(POLICY_COOKIE, '000', {
