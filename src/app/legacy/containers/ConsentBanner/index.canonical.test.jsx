@@ -74,7 +74,7 @@ describe('Canonical Consent Banner', () => {
     expect(cookieBannerHeadingEl).not.toBeInTheDocument();
   });
 
-  it('should render only the cookie banner when EXPLICIT_COOKIE is 0 and PRIVACY_COOKIE is set and the privacyToggle is set to true', async () => {
+  it('should render only the cookie banner when EXPLICIT_COOKIE is 0 and PRIVACY_COOKIE is set', async () => {
     Cookies.set(EXPLICIT_COOKIE, '0');
     Cookies.set(PRIVACY_COOKIE, DEFAULT_PRIVACY_COOKIE);
 
