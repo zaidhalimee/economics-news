@@ -511,7 +511,6 @@ export const buildReverbPageSectionEventModel = ({
       placement: pageIdentifier,
       source: advertiserID,
       result: url,
-      is_background: "true",
       ...{ isClick: type === 'click' ? true : false },
     },
   };
