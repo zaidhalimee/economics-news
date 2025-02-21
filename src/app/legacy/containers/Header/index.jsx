@@ -85,7 +85,6 @@ const HeaderContainer = ({ propsForOJExperiment }) => {
         break;
     }
   }
-  console.log('in Header.index', propsForOJExperiment);
   const renderLiteSiteCTA = isLite && liteEnabledServices.includes(service);
 
   if (isApp) return null;
