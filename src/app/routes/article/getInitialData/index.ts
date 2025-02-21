@@ -1,4 +1,3 @@
-import pipe from 'ramda/src/pipe';
 import nodeLogger from '#lib/logger.node';
 import { Services, Toggles, Variants } from '#models/types/global';
 import getOnwardsPageData from '#app/routes/article/utils/getOnwardsData';
@@ -26,7 +25,7 @@ type Props = {
 };
 
 const transformPageData = (toggles?: Toggles) =>
-  pipe(augmentWithDisclaimer({ toggles, positionFromTimestamp: 0 }));
+  augmentWithDisclaimer({ toggles, positionFromTimestamp: 0 });
 
 export default async ({
   service,

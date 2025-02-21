@@ -1,3 +1,4 @@
+// This file can be removed when the UKChina Decommission is complete
 import pathOr from 'ramda/src/pathOr';
 import { FRONT_PAGE, HOME_PAGE } from '#app/routes/utils/pageTypes';
 
