@@ -3,35 +3,35 @@
     "article": {
       "metadata": {
         "atiAnalytics": {
-          "categoryName": "Film~Kannywood~Music",
-          "contentId": "urn:bbc:optimo:asset:cw43vy8zdjvo",
+          "categoryName": "Nigeria~Ramadan~Woman",
+          "contentId": "urn:bbc:optimo:asset:c4nvy27mervo",
           "contentType": "article-sfv",
           "language": "ha",
-          "ldpThingIds": "2611f753-ece7-47ea-9782-f912bc1e4088~2c1768f1-4f46-4cad-8b85-38ceb898dfe3~de648736-7268-454c-a7b1-dbff416f2865",
-          "ldpThingLabels": "Film~Kannywood~Music",
+          "ldpThingIds": "3d5d5e30-dd50-4041-96d5-c970b20005b9~60654568-0b87-4dcd-99d9-b9f80630d2c5~e45cb5f8-3c87-4ebd-ac1c-058e9be22862",
+          "ldpThingLabels": "Nigeria~Ramadan~Woman",
           "nationsProducer": null,
-          "pageIdentifier": "hausa.articles.cw43vy8zdjvo.page",
-          "pageTitle": "...Daga Bakin Mai Ita tare da Sa'a ta fim din Labarina\n",
-          "timePublished": "2023-02-23T04:26:43.402Z",
-          "timeUpdated": "2023-02-23T04:26:43.402Z"
+          "pageIdentifier": "hausa.articles.c4nvy27mervo.page",
+          "pageTitle": "Girke-girken Ramadan: Yadda ake yin \"cilantro soup\" ",
+          "timePublished": "2023-04-10T18:04:00.460Z",
+          "timeUpdated": "2023-04-10T18:04:00.460Z"
         },
-        "id": "urn:bbc:ares::article:cw43vy8zdjvo",
+        "id": "urn:bbc:ares::article:c4nvy27mervo",
         "locators": {
-          "optimoUrn": "urn:bbc:optimo:asset:cw43vy8zdjvo",
-          "canonicalUrl": "https://www.bbc.com/hausa/articles/cw43vy8zdjvo"
+          "optimoUrn": "urn:bbc:optimo:asset:c4nvy27mervo",
+          "canonicalUrl": "https://www.bbc.com/hausa/articles/c4nvy27mervo"
         },
         "type": "article",
         "createdBy": "Hausa",
         "language": "ha",
-        "firstPublished": 1677126403402,
-        "lastPublished": 1677126403402,
+        "firstPublished": 1681149840460,
+        "lastPublished": 1681149840460,
         "analyticsLabels": {
-          "ldp_tags": "Film~Kannywood~Music",
-          "page": "hausa.articles.cw43vy8zdjvo.page",
+          "ldp_tags": "Nigeria~Ramadan~Woman",
+          "page": "hausa.articles.c4nvy27mervo.page",
           "irisKeyword": null,
-          "audience_motivation": "Divert me",
-          "ldp_ids": "2611f753-ece7-47ea-9782-f912bc1e4088~2c1768f1-4f46-4cad-8b85-38ceb898dfe3~de648736-7268-454c-a7b1-dbff416f2865",
-          "contentId": "urn:bbc:optimo:asset:cw43vy8zdjvo",
+          "audience_motivation": "Help me learn",
+          "ldp_ids": "3d5d5e30-dd50-4041-96d5-c970b20005b9~60654568-0b87-4dcd-99d9-b9f80630d2c5~e45cb5f8-3c87-4ebd-ac1c-058e9be22862",
+          "contentId": "urn:bbc:optimo:asset:c4nvy27mervo",
           "producer": "Hausa"
         },
         "passport": {
@@ -39,20 +39,20 @@
           "home": "http://www.bbc.co.uk/ontologies/passport/home/Hausa",
           "taggings": [
             {
-              "predicate": "http://www.bbc.co.uk/ontologies/audience/motivation",
-              "value": "http://www.bbc.co.uk/things/e1deed1e-0cab-4965-8e92-897b195f7a47#id"
-            },
-            {
-              "predicate": "http://www.bbc.co.uk/ontologies/creativework/about",
-              "value": "http://www.bbc.co.uk/things/de648736-7268-454c-a7b1-dbff416f2865#id"
-            },
-            {
               "predicate": "http://www.bbc.co.uk/ontologies/bbc/editorialSensitivity",
               "value": "http://www.bbc.co.uk/things/c6979033-cb72-4d07-9897-adc348a4332e#id"
             },
             {
               "predicate": "http://www.bbc.co.uk/ontologies/creativework/about",
-              "value": "http://www.bbc.co.uk/things/2611f753-ece7-47ea-9782-f912bc1e4088#id"
+              "value": "http://www.bbc.co.uk/things/60654568-0b87-4dcd-99d9-b9f80630d2c5#id"
+            },
+            {
+              "predicate": "http://www.bbc.co.uk/ontologies/bbc/assetType",
+              "value": "http://www.bbc.co.uk/things/310b90d4-4ece-4866-8061-78d51e3ae044#id"
+            },
+            {
+              "predicate": "http://www.bbc.co.uk/ontologies/creativework/about",
+              "value": "http://www.bbc.co.uk/things/3d5d5e30-dd50-4041-96d5-c970b20005b9#id"
             },
             {
               "predicate": "http://www.bbc.co.uk/ontologies/bbc/infoClass",
@@ -60,64 +60,26 @@
             },
             {
               "predicate": "http://www.bbc.co.uk/ontologies/creativework/about",
-              "value": "http://www.bbc.co.uk/things/2c1768f1-4f46-4cad-8b85-38ceb898dfe3#id"
+              "value": "http://www.bbc.co.uk/things/e45cb5f8-3c87-4ebd-ac1c-058e9be22862#id"
             },
             {
               "predicate": "http://www.bbc.co.uk/ontologies/bbc/primaryMediaType",
               "value": "http://www.bbc.co.uk/things/ffc98bca-8cff-4ee6-9beb-a6ff6ef3ef9f#id"
+            },
+            {
+              "predicate": "http://www.bbc.co.uk/ontologies/creativework/format",
+              "value": "http://www.bbc.co.uk/things/46c0517d-9927-4d1a-9954-8c63a3f7a888#id"
+            },
+            {
+              "predicate": "http://www.bbc.co.uk/ontologies/audience/motivation",
+              "value": "http://www.bbc.co.uk/things/b1a660eb-ef14-4645-b4cd-d7bd939ce443#id"
             }
           ],
           "predicates": {
-            "about": [
+            "assetType": [
               {
-                "value": "http://www.bbc.co.uk/things/2611f753-ece7-47ea-9782-f912bc1e4088#id",
-                "thingLabel": "Fim",
-                "thingUri": "http://www.bbc.co.uk/things/2611f753-ece7-47ea-9782-f912bc1e4088#id",
-                "thingId": "2611f753-ece7-47ea-9782-f912bc1e4088",
-                "thingType": [
-                  "tagging:AmbiguousTerm",
-                  "tagging:Format",
-                  "tagging:TagConcept",
-                  "core:Theme",
-                  "core:Thing"
-                ],
-                "thingSameAs": [
-                  "http://www.wikidata.org/entity/Q11424",
-                  "http://dbpedia.org/resource/Film"
-                ],
-                "thingEnglishLabel": "Film",
-                "type": "about"
-              },
-              {
-                "value": "http://www.bbc.co.uk/things/2c1768f1-4f46-4cad-8b85-38ceb898dfe3#id",
-                "thingLabel": "Kannywood",
-                "thingUri": "http://www.bbc.co.uk/things/2c1768f1-4f46-4cad-8b85-38ceb898dfe3#id",
-                "thingId": "2c1768f1-4f46-4cad-8b85-38ceb898dfe3",
-                "thingType": ["core:Thing", "tagging:TagConcept", "core:Theme"],
-                "thingSameAs": [
-                  "http://dbpedia.org/resource/Cinema_of_Northern_Nigeria"
-                ],
-                "thingEnglishLabel": "Kannywood",
-                "type": "about"
-              },
-              {
-                "value": "http://www.bbc.co.uk/things/de648736-7268-454c-a7b1-dbff416f2865#id",
-                "thingLabel": "Kade-kade",
-                "thingUri": "http://www.bbc.co.uk/things/de648736-7268-454c-a7b1-dbff416f2865#id",
-                "thingId": "de648736-7268-454c-a7b1-dbff416f2865",
-                "thingType": [
-                  "tagging:Genre",
-                  "tagging:TagConcept",
-                  "tagging:AmbiguousTerm",
-                  "core:Thing",
-                  "core:Theme"
-                ],
-                "thingSameAs": [
-                  "http://www.wikidata.org/entity/Q638",
-                  "http://dbpedia.org/resource/Music"
-                ],
-                "thingEnglishLabel": "Music",
-                "type": "about"
+                "value": "http://www.bbc.co.uk/things/310b90d4-4ece-4866-8061-78d51e3ae044#id",
+                "type": "assetType"
               }
             ],
             "primaryMediaType": [
@@ -132,10 +94,65 @@
                 "type": "infoClass"
               }
             ],
+            "formats": [
+              {
+                "value": "http://www.bbc.co.uk/things/46c0517d-9927-4d1a-9954-8c63a3f7a888#id",
+                "thingLabel": "News report",
+                "thingUri": "http://www.bbc.co.uk/things/46c0517d-9927-4d1a-9954-8c63a3f7a888#id",
+                "thingId": "46c0517d-9927-4d1a-9954-8c63a3f7a888",
+                "thingType": ["tagging:TagConcept", "tagging:Format"],
+                "thingSameAs": [],
+                "thingEnglishLabel": "Report",
+                "thingPreferredLabel": "Report",
+                "thingLabelLanguage": "ha",
+                "type": "formats"
+              }
+            ],
             "editorialSensitivity": [
               {
                 "value": "http://www.bbc.co.uk/things/c6979033-cb72-4d07-9897-adc348a4332e#id",
                 "type": "editorialSensitivity"
+              }
+            ],
+            "about": [
+              {
+                "value": "http://www.bbc.co.uk/things/3d5d5e30-dd50-4041-96d5-c970b20005b9#id",
+                "thingLabel": "Najeriya",
+                "thingUri": "http://www.bbc.co.uk/things/3d5d5e30-dd50-4041-96d5-c970b20005b9#id",
+                "thingId": "3d5d5e30-dd50-4041-96d5-c970b20005b9",
+                "thingType": ["tagging:TagConcept", "core:Place", "core:Thing"],
+                "thingSameAs": [
+                  "http://www.wikidata.org/entity/Q1033",
+                  "http://sws.geonames.org/2328926/"
+                ],
+                "thingEnglishLabel": "Nigeria",
+                "type": "about"
+              },
+              {
+                "value": "http://www.bbc.co.uk/things/60654568-0b87-4dcd-99d9-b9f80630d2c5#id",
+                "thingLabel": " Ramadan",
+                "thingUri": "http://www.bbc.co.uk/things/60654568-0b87-4dcd-99d9-b9f80630d2c5#id",
+                "thingId": "60654568-0b87-4dcd-99d9-b9f80630d2c5",
+                "thingType": ["core:Thing", "tagging:TagConcept", "core:Event"],
+                "thingSameAs": [
+                  "http://www.wikidata.org/entity/Q41662",
+                  "http://dbpedia.org/resource/Ramadan"
+                ],
+                "thingEnglishLabel": "Ramadan",
+                "type": "about"
+              },
+              {
+                "value": "http://www.bbc.co.uk/things/e45cb5f8-3c87-4ebd-ac1c-058e9be22862#id",
+                "thingLabel": "Mata",
+                "thingUri": "http://www.bbc.co.uk/things/e45cb5f8-3c87-4ebd-ac1c-058e9be22862#id",
+                "thingId": "e45cb5f8-3c87-4ebd-ac1c-058e9be22862",
+                "thingType": ["core:Thing", "tagging:TagConcept", "core:Theme"],
+                "thingSameAs": [
+                  "http://dbpedia.org/resource/Woman",
+                  "http://www.wikidata.org/entity/Q467"
+                ],
+                "thingEnglishLabel": "Woman",
+                "type": "about"
               }
             ]
           }
@@ -143,78 +160,67 @@
         "tags": {
           "about": [
             {
-              "thingLabel": "Fim",
-              "thingUri": "http://www.bbc.co.uk/things/2611f753-ece7-47ea-9782-f912bc1e4088#id",
-              "thingId": "2611f753-ece7-47ea-9782-f912bc1e4088",
-              "thingType": [
-                "tagging:AmbiguousTerm",
-                "tagging:Format",
-                "tagging:TagConcept",
-                "core:Theme",
-                "core:Thing"
-              ],
+              "thingLabel": "Najeriya",
+              "thingUri": "http://www.bbc.co.uk/things/3d5d5e30-dd50-4041-96d5-c970b20005b9#id",
+              "thingId": "3d5d5e30-dd50-4041-96d5-c970b20005b9",
+              "thingType": ["tagging:TagConcept", "core:Place", "core:Thing"],
               "thingSameAs": [
-                "http://www.wikidata.org/entity/Q11424",
-                "http://dbpedia.org/resource/Film"
+                "http://www.wikidata.org/entity/Q1033",
+                "http://sws.geonames.org/2328926/"
               ],
-              "topicName": "Fim",
-              "topicId": "c7zp510kj4gt",
+              "topicName": "Najeriya",
+              "topicId": "c340qrd0njgt",
               "curationList": [
                 {
-                  "curationId": "dff3dfb0-df82-45b4-ae24-ecfc606790d2",
+                  "curationId": "48cacb5f-809f-4e91-bf40-1bff710e4db3",
                   "curationType": "vivo-stream"
                 }
               ],
-              "thingEnglishLabel": "Film",
+              "thingEnglishLabel": "Nigeria",
               "thingLabelLanguage": "ha",
-              "thingPreferredLabel": "Film"
+              "thingPreferredLabel": "Nigeria"
             },
             {
-              "thingLabel": "Kannywood",
-              "thingUri": "http://www.bbc.co.uk/things/2c1768f1-4f46-4cad-8b85-38ceb898dfe3#id",
-              "thingId": "2c1768f1-4f46-4cad-8b85-38ceb898dfe3",
+              "thingLabel": " Ramadan",
+              "thingUri": "http://www.bbc.co.uk/things/60654568-0b87-4dcd-99d9-b9f80630d2c5#id",
+              "thingId": "60654568-0b87-4dcd-99d9-b9f80630d2c5",
+              "thingType": ["core:Thing", "tagging:TagConcept", "core:Event"],
+              "thingSameAs": [
+                "http://www.wikidata.org/entity/Q41662",
+                "http://dbpedia.org/resource/Ramadan"
+              ],
+              "topicName": " Ramadan",
+              "topicId": "c5qvpxkyj2qt",
+              "curationList": [
+                {
+                  "curationId": "c4efd4ba-77dd-433a-a4cc-d2104a0b6300",
+                  "curationType": "vivo-stream"
+                }
+              ],
+              "thingEnglishLabel": "Ramadan",
+              "thingLabelLanguage": "ha",
+              "thingPreferredLabel": "Ramadan"
+            },
+            {
+              "thingLabel": "Mata",
+              "thingUri": "http://www.bbc.co.uk/things/e45cb5f8-3c87-4ebd-ac1c-058e9be22862#id",
+              "thingId": "e45cb5f8-3c87-4ebd-ac1c-058e9be22862",
               "thingType": ["core:Thing", "tagging:TagConcept", "core:Theme"],
               "thingSameAs": [
-                "http://dbpedia.org/resource/Cinema_of_Northern_Nigeria"
+                "http://dbpedia.org/resource/Woman",
+                "http://www.wikidata.org/entity/Q467"
               ],
-              "topicName": "Kannywood",
-              "topicId": "c1gdq2vk3x8t",
+              "topicName": "Mata",
+              "topicId": "cnq68kdjkxdt",
               "curationList": [
                 {
-                  "curationId": "587bfa7b-492c-4271-9e6b-8c4afaf8497b",
+                  "curationId": "2d508aa4-a247-4dca-a4d4-5b9d03c117a7",
                   "curationType": "vivo-stream"
                 }
               ],
-              "thingEnglishLabel": "Kannywood",
+              "thingEnglishLabel": "Woman",
               "thingLabelLanguage": "ha",
-              "thingPreferredLabel": "Kannywood"
-            },
-            {
-              "thingLabel": "Kade-kade",
-              "thingUri": "http://www.bbc.co.uk/things/de648736-7268-454c-a7b1-dbff416f2865#id",
-              "thingId": "de648736-7268-454c-a7b1-dbff416f2865",
-              "thingType": [
-                "tagging:Genre",
-                "tagging:TagConcept",
-                "tagging:AmbiguousTerm",
-                "core:Thing",
-                "core:Theme"
-              ],
-              "thingSameAs": [
-                "http://www.wikidata.org/entity/Q638",
-                "http://dbpedia.org/resource/Music"
-              ],
-              "topicName": "Kade-kade",
-              "topicId": "c1gdq2vd98yt",
-              "curationList": [
-                {
-                  "curationId": "f6c02650-dfac-4a93-8835-a16f3c846673",
-                  "curationType": "vivo-stream"
-                }
-              ],
-              "thingEnglishLabel": "Music",
-              "thingLabelLanguage": "ha",
-              "thingPreferredLabel": "Music"
+              "thingPreferredLabel": "Woman"
             }
           ]
         },
@@ -233,76 +239,64 @@
         ],
         "topics": [
           {
-            "topicName": "Kade-kade",
-            "topicId": "c1gdq2vd98yt",
+            "topicName": "Najeriya",
+            "topicId": "c340qrd0njgt",
             "subjectList": [
               {
-                "subjectId": "http://www.bbc.co.uk/things/de648736-7268-454c-a7b1-dbff416f2865#id",
+                "subjectId": "http://www.bbc.co.uk/things/3d5d5e30-dd50-4041-96d5-c970b20005b9#id",
                 "subjectType": "tag"
               }
             ],
             "curationList": [
               {
-                "curationId": "f6c02650-dfac-4a93-8835-a16f3c846673",
+                "curationId": "48cacb5f-809f-4e91-bf40-1bff710e4db3",
                 "curationType": "vivo-stream",
                 "visualProminence": "NORMAL"
               }
             ],
-            "types": [
-              "tagging:Genre",
-              "tagging:TagConcept",
-              "tagging:AmbiguousTerm",
-              "core:Thing",
-              "core:Theme"
-            ],
+            "types": ["tagging:TagConcept", "core:Place", "core:Thing"],
             "home": "http://www.bbc.co.uk/ontologies/passport/home/Hausa",
-            "topicUrl": "/hausa/topics/c1gdq2vd98yt"
+            "topicUrl": "/hausa/topics/c340qrd0njgt"
           },
           {
-            "topicName": "Kannywood",
-            "topicId": "c1gdq2vk3x8t",
+            "topicName": " Ramadan",
+            "topicId": "c5qvpxkyj2qt",
             "subjectList": [
               {
-                "subjectId": "http://www.bbc.co.uk/things/2c1768f1-4f46-4cad-8b85-38ceb898dfe3#id",
+                "subjectId": "http://www.bbc.co.uk/things/60654568-0b87-4dcd-99d9-b9f80630d2c5#id",
                 "subjectType": "tag"
               }
             ],
             "curationList": [
               {
-                "curationId": "587bfa7b-492c-4271-9e6b-8c4afaf8497b",
+                "curationId": "c4efd4ba-77dd-433a-a4cc-d2104a0b6300",
+                "curationType": "vivo-stream",
+                "visualProminence": "NORMAL"
+              }
+            ],
+            "types": ["tagging:TagConcept", "core:Thing", "core:Event"],
+            "home": "http://www.bbc.co.uk/ontologies/passport/home/Hausa",
+            "topicUrl": "/hausa/topics/c5qvpxkyj2qt"
+          },
+          {
+            "topicName": "Mata",
+            "topicId": "cnq68kdjkxdt",
+            "subjectList": [
+              {
+                "subjectId": "http://www.bbc.co.uk/things/e45cb5f8-3c87-4ebd-ac1c-058e9be22862#id",
+                "subjectType": "tag"
+              }
+            ],
+            "curationList": [
+              {
+                "curationId": "2d508aa4-a247-4dca-a4d4-5b9d03c117a7",
                 "curationType": "vivo-stream",
                 "visualProminence": "NORMAL"
               }
             ],
             "types": ["core:Thing", "tagging:TagConcept", "core:Theme"],
             "home": "http://www.bbc.co.uk/ontologies/passport/home/Hausa",
-            "topicUrl": "/hausa/topics/c1gdq2vk3x8t"
-          },
-          {
-            "topicName": "Fim",
-            "topicId": "c7zp510kj4gt",
-            "subjectList": [
-              {
-                "subjectId": "http://www.bbc.co.uk/things/2611f753-ece7-47ea-9782-f912bc1e4088#id",
-                "subjectType": "tag"
-              }
-            ],
-            "curationList": [
-              {
-                "curationId": "dff3dfb0-df82-45b4-ae24-ecfc606790d2",
-                "curationType": "vivo-stream",
-                "visualProminence": "NORMAL"
-              }
-            ],
-            "types": [
-              "tagging:AmbiguousTerm",
-              "tagging:Format",
-              "tagging:TagConcept",
-              "core:Theme",
-              "core:Thing"
-            ],
-            "home": "http://www.bbc.co.uk/ontologies/passport/home/Hausa",
-            "topicUrl": "/hausa/topics/c7zp510kj4gt"
+            "topicUrl": "/hausa/topics/cnq68kdjkxdt"
           }
         ],
         "consumableAsSFV": true,
@@ -315,26 +309,26 @@
         "model": {
           "blocks": [
             {
-              "id": "c9bd3e53",
+              "id": "1f5cea6d",
               "type": "visuallyHiddenHeadline",
               "model": {
                 "blocks": [
                   {
-                    "id": "896d4aaf",
+                    "id": "24aa1619",
                     "type": "text",
                     "model": {
                       "blocks": [
                         {
-                          "id": "600748a3",
+                          "id": "8b7440b8",
                           "type": "paragraph",
                           "model": {
-                            "text": "...Daga Bakin Mai Ita tare da Sa'a ta fim din Labarina",
+                            "text": "Girke-girken Ramadan: Yadda ake yin \"cilantro soup\" ",
                             "blocks": [
                               {
-                                "id": "e53675f9",
+                                "id": "75ca9be0",
                                 "type": "fragment",
                                 "model": {
-                                  "text": "...Daga Bakin Mai Ita tare da Sa'a ta fim din Labarina",
+                                  "text": "Girke-girken Ramadan: Yadda ake yin \"cilantro soup\" ",
                                   "attributes": []
                                 },
                                 "position": [1, 1, 1, 1]
@@ -352,32 +346,32 @@
               "position": [1]
             },
             {
-              "id": "4321b19c",
+              "id": "5a5ee9a4",
               "type": "video",
               "model": {
-                "locator": "urn:bbc:pips:pid:p0f4ss9v",
+                "locator": "urn:bbc:pips:pid:p0ffwhlb",
                 "blocks": [
                   {
-                    "id": "1622bc39",
+                    "id": "24e866cf",
                     "type": "caption",
                     "model": {
                       "blocks": [
                         {
-                          "id": "a87de0ec",
+                          "id": "7fd3a079",
                           "type": "text",
                           "model": {
                             "blocks": [
                               {
-                                "id": "4502aa87",
+                                "id": "de36eb63",
                                 "type": "paragraph",
                                 "model": {
-                                  "text": "Taɓa alamar lasifikar da ke sama domin kallo",
+                                  "text": "Danna lasifikar da ke sama domin kallon bidiyon",
                                   "blocks": [
                                     {
-                                      "id": "9eaeae95",
+                                      "id": "24c9171e",
                                       "type": "fragment",
                                       "model": {
-                                        "text": "Taɓa alamar lasifikar da ke sama domin kallo",
+                                        "text": "Danna lasifikar da ke sama domin kallon bidiyon",
                                         "attributes": []
                                       },
                                       "position": [2, 1, 1, 1, 1]
@@ -395,84 +389,84 @@
                     "position": [2, 1]
                   },
                   {
-                    "id": "f4e5d53e",
+                    "id": "95ce921a",
                     "type": "aresMedia",
                     "model": {
                       "blocks": [
                         {
-                          "id": "8f7bea82",
-                          "blockId": "urn:bbc:ares::clip:p0f4ss9v",
+                          "id": "347c7da6",
+                          "blockId": "urn:bbc:ares::clip:p0ffwhlb",
                           "type": "aresMediaMetadata",
                           "model": {
-                            "id": "p0f4ss9v",
+                            "id": "p0ffwhlb",
                             "subType": "clip",
                             "format": "video",
-                            "title": "Daga Bakin Mai Ita tare da Ummi Gayu - Sa'a a fim din Labarina",
+                            "title": "Girke-girken Ramadan: Yadda ake yin \"cilantro soup\" tare da Maamah Kanti.",
                             "synopses": {
-                              "short": "Daga Bakin Mai Ita tare da Ummi Gayu - Sa'a a fim din Labarina",
-                              "long": "Daga Bakin Mai Ita tare da Ummi Gayu - Sa'a a fim din Labarina",
-                              "medium": "Daga Bakin Mai Ita tare da Ummi Gayu - Sa'a a fim din Labarina"
+                              "short": "Girke-girken Ramadan: Yadda ake yin \"cilantro soup\" tare da Maamah Kanti.",
+                              "medium": "Girke-girken Ramadan: Yadda ake yin \"cilantro soup\" tare da Maamah Kanti."
                             },
-                            "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p0f4ssr4.jpg",
+                            "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p0ffwhzl.jpg",
                             "embedding": true,
                             "advertising": true,
-                            "caption": "Daga Bakin Mai Ita tare da Ummi Gayu - Sa'a a fim din Labarina",
                             "versions": [
                               {
-                                "versionId": "p0f4ss9z",
+                                "versionId": "p0ffwhlg",
                                 "types": ["Original"],
-                                "duration": 382,
-                                "durationISO8601": "PT6M22S",
+                                "duration": 73,
+                                "durationISO8601": "PT1M13S",
                                 "warnings": {},
                                 "availableTerritories": {
                                   "uk": true,
                                   "nonUk": true
                                 },
-                                "availableFrom": 1677095270000
+                                "availableFrom": 1681145392000
                               }
                             ],
-                            "syndication": { "destinations": [] },
+                            "syndication": {
+                              "destinations": []
+                            },
                             "smpKind": "programme"
                           },
                           "position": [2, 2, 1]
                         },
                         {
-                          "id": "5a6df58c",
+                          "id": "244dc88e",
                           "type": "image",
                           "model": {
                             "blocks": [
                               {
-                                "id": "9175a898",
+                                "id": "8d3f897a",
                                 "type": "rawImage",
                                 "model": {
-                                  "width": 806,
-                                  "height": 453,
-                                  "locator": "ichef.bbci.co.uk/images/ic/$widthxn/p0f4ssr4.jpg",
+                                  "width": 1920,
+                                  "height": 1080,
+                                  "locator": "ichef.bbci.co.uk/images/ic/$widthxn/p0ffwhzl.jpg",
                                   "originCode": "mpv"
                                 },
                                 "position": [2, 2, 2, 1]
                               },
                               {
-                                "id": "8968e49a",
+                                "id": "42416ca3",
                                 "type": "altText",
                                 "model": {
                                   "blocks": [
                                     {
-                                      "id": "29db1ac6",
+                                      "id": "e09f44b6",
                                       "type": "text",
                                       "model": {
                                         "blocks": [
                                           {
-                                            "id": "5c96694a",
+                                            "id": "72174082",
                                             "type": "paragraph",
                                             "model": {
-                                              "text": "Daga Bakin Mai Ita tare da Ummi Gayu - Sa'a a fim din Labarina",
+                                              "text": "Keyframe #4",
                                               "blocks": [
                                                 {
-                                                  "id": "c822c269",
+                                                  "id": "966d2981",
                                                   "type": "fragment",
                                                   "model": {
-                                                    "text": "Daga Bakin Mai Ita tare da Ummi Gayu - Sa'a a fim din Labarina",
+                                                    "text": "Keyframe #4",
                                                     "attributes": []
                                                   },
                                                   "position": [
@@ -504,26 +498,26 @@
               "position": [2]
             },
             {
-              "id": "005a0a00",
+              "id": "0ad33bb2",
               "type": "fauxHeadline",
               "model": {
                 "blocks": [
                   {
-                    "id": "8935696a",
+                    "id": "d9fda773",
                     "type": "text",
                     "model": {
                       "blocks": [
                         {
-                          "id": "383ba864",
+                          "id": "1138f9f5",
                           "type": "paragraph",
                           "model": {
-                            "text": "...Daga Bakin Mai Ita tare da Sa'a ta fim din Labarina",
+                            "text": "Girke-girken Ramadan: Yadda ake yin \"cilantro soup\" ",
                             "blocks": [
                               {
-                                "id": "c2ef2ff7",
+                                "id": "2c6e77c6",
                                 "type": "fragment",
                                 "model": {
-                                  "text": "...Daga Bakin Mai Ita tare da Sa'a ta fim din Labarina",
+                                  "text": "Girke-girken Ramadan: Yadda ake yin \"cilantro soup\" ",
                                   "attributes": []
                                 },
                                 "position": [3, 1, 1, 1]
@@ -541,30 +535,30 @@
               "position": [3]
             },
             {
-              "id": "159cc5c7",
+              "id": "f07aee1a",
               "type": "timestamp",
               "model": {
-                "firstPublished": 1677126403402,
-                "lastPublished": 1677126403402
+                "firstPublished": 1681149840460,
+                "lastPublished": 1681149840460
               },
               "position": [4]
             },
             {
-              "id": "478269f6",
+              "id": "6f5db595",
               "type": "text",
               "model": {
                 "blocks": [
                   {
-                    "id": "60f78e5a",
+                    "id": "9554526e",
                     "type": "paragraph",
                     "model": {
-                      "text": "...Daga Bakin Mai Ita shiri ne na BBC Hausa da ke kawo muku hira da fitattun taurari da mawaƙan fina-finan Hausa da sauran masu ruwa da tsaki a Kannywood kan abubuwan da suka shafi rayuwarsu.",
+                      "text": "Wannan wani shiri ne da BBC Hausa take kawo muku kullum a watan azumi, don bai wa mata damar gwangwaje basirarsu ta girki. ",
                       "blocks": [
                         {
-                          "id": "57213af2",
+                          "id": "fb0e498c",
                           "type": "fragment",
                           "model": {
-                            "text": "...Daga Bakin Mai Ita shiri ne na BBC Hausa da ke kawo muku hira da fitattun taurari da mawaƙan fina-finan Hausa da sauran masu ruwa da tsaki a Kannywood kan abubuwan da suka shafi rayuwarsu.",
+                            "text": "Wannan wani shiri ne da BBC Hausa take kawo muku kullum a watan azumi, don bai wa mata damar gwangwaje basirarsu ta girki. ",
                             "attributes": []
                           },
                           "position": [5, 1, 1]
@@ -574,16 +568,16 @@
                     "position": [5, 1]
                   },
                   {
-                    "id": "ffab842d",
+                    "id": "d17d594b",
                     "type": "paragraph",
                     "model": {
-                      "text": "A wannan kashi na 137, mun tattauna da Ummulkhairi Usman ko Ummi Gayu wadda aka fi sani da Sa'a a fim ɗin Labarina.",
+                      "text": "A yau, za ku kalli bidiyon Maamah Kanti wadda ta nuna mana yadda ake yin cilantro soup. ",
                       "blocks": [
                         {
-                          "id": "1f927083",
+                          "id": "a2e21a19",
                           "type": "fragment",
                           "model": {
-                            "text": "A wannan kashi na 137, mun tattauna da Ummulkhairi Usman ko Ummi Gayu wadda aka fi sani da Sa'a a fim ɗin Labarina.",
+                            "text": "A yau, za ku kalli bidiyon Maamah Kanti wadda ta nuna mana yadda ake yin cilantro soup. ",
                             "attributes": []
                           },
                           "position": [5, 2, 1]
@@ -591,34 +585,17 @@
                       ]
                     },
                     "position": [5, 2]
-                  },
-                  {
-                    "id": "9e787a38",
-                    "type": "paragraph",
-                    "model": {
-                      "text": "Tauraruwar ta amsa wasu tambayoyin da za ku so ji.",
-                      "blocks": [
-                        {
-                          "id": "3d42e4bf",
-                          "type": "fragment",
-                          "model": {
-                            "text": "Tauraruwar ta amsa wasu tambayoyin da za ku so ji.",
-                            "attributes": []
-                          },
-                          "position": [5, 3, 1]
-                        }
-                      ]
-                    },
-                    "position": [5, 3]
                   }
                 ]
               },
               "position": [5]
             },
             {
-              "id": "390a3eda",
+              "id": "dba136af",
               "type": "wsoj",
-              "model": { "type": "recommendations" },
+              "model": {
+                "type": "recommendations"
+              },
               "position": [6]
             }
           ]
@@ -626,7 +603,7 @@
       },
       "promo": {
         "headlines": {
-          "seoHeadline": "...Daga Bakin Mai Ita tare da Sa'a ta fim din Labarina\n",
+          "seoHeadline": "Girke-girken Ramadan: Yadda ake yin \"cilantro soup\" ",
           "promoHeadline": {
             "blocks": [
               {
@@ -636,12 +613,12 @@
                     {
                       "type": "paragraph",
                       "model": {
-                        "text": "...Daga Bakin Mai Ita tare da Sa'a ta fim din Labarina",
+                        "text": "Girke-girken Ramadan: Yadda ake yin \"cilantro soup\" ",
                         "blocks": [
                           {
                             "type": "fragment",
                             "model": {
-                              "text": "...Daga Bakin Mai Ita tare da Sa'a ta fim din Labarina",
+                              "text": "Girke-girken Ramadan: Yadda ake yin \"cilantro soup\" ",
                               "attributes": []
                             }
                           }
@@ -663,12 +640,12 @@
                   {
                     "type": "paragraph",
                     "model": {
-                      "text": "...Daga Bakin Mai Ita tare da Ummi Gayu - Sa'a ta fim din Labarina",
+                      "text": "Wannan wani shiri ne da BBC Hausa take kawo muku kullum a watan azumi, don bai wa mata damar gwangwaje basirarsu ta girki. ",
                       "blocks": [
                         {
                           "type": "fragment",
                           "model": {
-                            "text": "...Daga Bakin Mai Ita tare da Ummi Gayu - Sa'a ta fim din Labarina",
+                            "text": "Wannan wani shiri ne da BBC Hausa take kawo muku kullum a watan azumi, don bai wa mata damar gwangwaje basirarsu ta girki. ",
                             "attributes": []
                           }
                         }
@@ -686,7 +663,7 @@
             {
               "type": "video",
               "model": {
-                "locator": "urn:bbc:pips:pid:p0f4ss9v",
+                "locator": "urn:bbc:pips:pid:p0ffwhlb",
                 "blocks": [
                   {
                     "type": "caption",
@@ -699,12 +676,12 @@
                               {
                                 "type": "paragraph",
                                 "model": {
-                                  "text": "Taɓa alamar lasifikar da ke sama domin kallo",
+                                  "text": "Danna lasifikar da ke sama domin kallon bidiyon",
                                   "blocks": [
                                     {
                                       "type": "fragment",
                                       "model": {
-                                        "text": "Taɓa alamar lasifikar da ke sama domin kallo",
+                                        "text": "Danna lasifikar da ke sama domin kallon bidiyon",
                                         "attributes": []
                                       }
                                     }
@@ -722,37 +699,37 @@
                     "model": {
                       "blocks": [
                         {
-                          "blockId": "urn:bbc:ares::clip:p0f4ss9v",
+                          "blockId": "urn:bbc:ares::clip:p0ffwhlb",
                           "type": "aresMediaMetadata",
                           "model": {
-                            "id": "p0f4ss9v",
+                            "id": "p0ffwhlb",
                             "subType": "clip",
                             "format": "video",
-                            "title": "Daga Bakin Mai Ita tare da Ummi Gayu - Sa'a a fim din Labarina",
+                            "title": "Girke-girken Ramadan: Yadda ake yin \"cilantro soup\" tare da Maamah Kanti.",
                             "synopses": {
-                              "short": "Daga Bakin Mai Ita tare da Ummi Gayu - Sa'a a fim din Labarina",
-                              "long": "Daga Bakin Mai Ita tare da Ummi Gayu - Sa'a a fim din Labarina",
-                              "medium": "Daga Bakin Mai Ita tare da Ummi Gayu - Sa'a a fim din Labarina"
+                              "short": "Girke-girken Ramadan: Yadda ake yin \"cilantro soup\" tare da Maamah Kanti.",
+                              "medium": "Girke-girken Ramadan: Yadda ake yin \"cilantro soup\" tare da Maamah Kanti."
                             },
-                            "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p0f4ssr4.jpg",
+                            "imageUrl": "ichef.bbci.co.uk/images/ic/$recipe/p0ffwhzl.jpg",
                             "embedding": true,
                             "advertising": true,
-                            "caption": "Daga Bakin Mai Ita tare da Ummi Gayu - Sa'a a fim din Labarina",
                             "versions": [
                               {
-                                "versionId": "p0f4ss9z",
+                                "versionId": "p0ffwhlg",
                                 "types": ["Original"],
-                                "duration": 382,
-                                "durationISO8601": "PT6M22S",
+                                "duration": 73,
+                                "durationISO8601": "PT1M13S",
                                 "warnings": {},
                                 "availableTerritories": {
                                   "uk": true,
                                   "nonUk": true
                                 },
-                                "availableFrom": 1677095270000
+                                "availableFrom": 1681145392000
                               }
                             ],
-                            "syndication": { "destinations": [] },
+                            "syndication": {
+                              "destinations": []
+                            },
                             "smpKind": "programme"
                           }
                         },
@@ -763,9 +740,9 @@
                               {
                                 "type": "rawImage",
                                 "model": {
-                                  "width": 806,
-                                  "height": 453,
-                                  "locator": "ichef.bbci.co.uk/images/ic/$widthxn/p0f4ssr4.jpg",
+                                  "width": 1920,
+                                  "height": 1080,
+                                  "locator": "ichef.bbci.co.uk/images/ic/$widthxn/p0ffwhzl.jpg",
                                   "originCode": "mpv"
                                 }
                               },
@@ -780,12 +757,12 @@
                                           {
                                             "type": "paragraph",
                                             "model": {
-                                              "text": "Daga Bakin Mai Ita tare da Ummi Gayu - Sa'a a fim din Labarina",
+                                              "text": "Keyframe #4",
                                               "blocks": [
                                                 {
                                                   "type": "fragment",
                                                   "model": {
-                                                    "text": "Daga Bakin Mai Ita tare da Ummi Gayu - Sa'a a fim din Labarina",
+                                                    "text": "Keyframe #4",
                                                     "attributes": []
                                                   }
                                                 }
