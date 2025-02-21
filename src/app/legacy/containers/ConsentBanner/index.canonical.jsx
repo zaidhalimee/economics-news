@@ -9,7 +9,7 @@ import { RequestContext } from '../../../contexts/RequestContext';
 const Canonical = ({ onDismissFocusRef = null }) => {
   const { updateCookiePolicy } = useContext(UserContext);
   const { isUK, showCookieBannerBasedOnCountry } = useContext(RequestContext);
-  const { enabled } = useToggle('privacyPolicy');
+  const { enabled: privacyPolicyToggle } = useToggle('privacyPolicy');
 
   const {
     showPrivacyBanner,
@@ -17,11 +17,15 @@ const Canonical = ({ onDismissFocusRef = null }) => {
     handlePrivacyBannerAccepted,
     handleCookieBannerAccepted,
     handleCookieBannerRejected,
-  } = useConsentBanners(isUK, showCookieBannerBasedOnCountry);
+  } = useConsentBanners(
+    isUK,
+    showCookieBannerBasedOnCountry,
+    privacyPolicyToggle,
+  );
 
   return (
     <>
-      {showPrivacyBanner && enabled && (
+      {showPrivacyBanner && (
         <Banner type="privacy" onAccept={handlePrivacyBannerAccepted} />
       )}
       {showCookieBanner && (

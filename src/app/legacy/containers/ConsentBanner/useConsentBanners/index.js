@@ -114,6 +114,7 @@ const setUserDidDismissCookieBanner = (isUK, expires = null) =>
 const useConsentBanner = (
   isUK = false,
   showCookieBannerBasedOnCountry = true,
+  privacyPolicyToggle = false,
 ) => {
   const [{ showPrivacyBanner, showCookieBanner }, dispatch] = useReducer(
     bannerReducer,
@@ -135,7 +136,8 @@ const useConsentBanner = (
       !userHasExplicitCookie && showCookieBannerBasedOnCountry;
     const shouldShowPrivacyBanner =
       (!userHasPrivacyCookie || userHasLegacyPrivacyCookie) &&
-      showCookieBannerBasedOnCountry;
+      showCookieBannerBasedOnCountry &&
+      privacyPolicyToggle;
 
     if (shouldShowPrivacyBanner) {
       dispatch(SHOW_PRIVACY_BANNER);
