@@ -488,6 +488,54 @@ describe('buildSettings', () => {
       expect(result?.orientation).toEqual('portrait');
     });
 
+    it('Should process an AresMedia block with portrait video as the orientation when type is editorial and portrait', () => {
+      const myFixture = [
+        {
+          ...aresMediaBlock,
+          model: {
+            blocks: [
+              {
+                ...buildAresMediaPlayerBlock({
+                  types: ['Editorial', 'Portrait'],
+                }),
+              },
+            ],
+          },
+        },
+      ] as unknown as MediaBlock[];
+
+      const result = buildSettings({
+        ...baseSettings,
+        blocks: myFixture,
+      });
+
+      expect(result?.orientation).toEqual('portrait');
+    });
+
+    it('Should process an AresMedia block with landscape video as the orientation when type is editorial', () => {
+      const myFixture = [
+        {
+          ...aresMediaBlock,
+          model: {
+            blocks: [
+              {
+                ...buildAresMediaPlayerBlock({
+                  types: ['Editorial'],
+                }),
+              },
+            ],
+          },
+        },
+      ] as unknown as MediaBlock[];
+
+      const result = buildSettings({
+        ...baseSettings,
+        blocks: myFixture,
+      });
+
+      expect(result?.orientation).toEqual('landscape');
+    });
+
     it('Should process an AresMedia block with landscape video as the orientation if nothing exists in types', () => {
       const myFixture = [
         {
