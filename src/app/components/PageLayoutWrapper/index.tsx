@@ -168,6 +168,8 @@ const PageLayoutWrapper = ({
                 let wrappedMonth = wrappedPageTimeStart.getMonth() + 1;
                 let wrappedStorageKey = 'ws_bbc_wrapped';
                 let wrappedContents = {};
+                let topicsStorageKey = 'ws_bbc_topics';
+                let topicsContents = localStorage.getItem(topicsStorageKey) || {};
                 wrappedContents[wrappedYear] = {
                     'byMonth': {},
                     'pageTypeCounts': {},
@@ -193,7 +195,18 @@ const PageLayoutWrapper = ({
                   pageData?.metadata?.topics,
                 )};
                 if (wrappedTopics) {
-                    wrappedTopics.forEach(({ topicName }) => {
+                    wrappedTopics.forEach(({ topicName, topicId }) => {
+                        if (!topicsContents.${service}) topicsContents.${service} = {};
+                        if (topicsContents.${service}[topicName]) {
+                            topicsContents.${service}[topicName].count++;
+                        }
+                        else {
+                            topicsContents.${service}[topicName] = {
+                                'count': 1,
+                                'id': topicId,
+                                'path': "/${service}/topics/" + topicId
+                            };
+                        }
                         wrappedContentsShortcut.topicCounts[topicName] = wrappedContentsShortcut.topicCounts[topicName] ? wrappedContentsShortcut.topicCounts[topicName] + 1 : 1;
                     });
                 }
@@ -213,6 +226,7 @@ const PageLayoutWrapper = ({
                 wrappedContentsShortcut.pageTypeCounts.${reportingPageType} = wrappedContentsShortcut.pageTypeCounts.${reportingPageType} ? wrappedContentsShortcut.pageTypeCounts.${reportingPageType} + 1 : 1;
                 wrappedContentsShortcut.byMonth[wrappedMonth] = wrappedContentsShortcut.byMonth[wrappedMonth] ? wrappedContentsShortcut.byMonth[wrappedMonth] + 1 : 1;
                 wrappedContents[wrappedYear] = wrappedContentsShortcut;
+                localStorage.setItem(topicsStorageKey, JSON.stringify(topicsContents));
     `;
 
   return (
