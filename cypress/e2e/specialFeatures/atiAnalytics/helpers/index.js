@@ -80,18 +80,18 @@ export const interceptATIAnalyticsBeacons = () => {
         request.reply({ statusCode: 200 });
       },
     ).as(`${component}-ati-click`);
-
-    // Page View (only fires once per page visit)
-    cy.intercept(
-      {
-        url: `${atiUrl}/*`,
-        query: {
-          x8: /simorgh/,
-        },
-      },
-      request => {
-        request.reply({ statusCode: 200 });
-      },
-    ).as(`${ATI_PAGE_VIEW}`);
   });
+
+  // Page View (only fires once per page visit)
+  cy.intercept(
+    {
+      url: `${atiUrl}/*`,
+      query: {
+        x8: /simorgh/,
+      },
+    },
+    request => {
+      request.reply({ statusCode: 200 });
+    },
+  ).as(`${ATI_PAGE_VIEW}`);
 };
