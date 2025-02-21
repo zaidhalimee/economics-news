@@ -119,7 +119,7 @@ describe('Charbeats Analytics Container', () => {
       {
         chartbeatConfig: expectedConfig,
       },
-      {},
+      undefined,
     );
     expect(testUtils.getConfig).toHaveBeenCalledTimes(1);
     expect(container.firstChild).not.toBeNull();

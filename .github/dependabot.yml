@@ -23,15 +23,6 @@ updates:
       - dependency-name: 'react-router'
       # https://jira.dev.bbc.co.uk/browse/NEWSWORLDSERVICE-2099: Delete path-to-regexp dependency
       - dependency-name: 'path-to-regexp'
-      # https://jira.dev.bbc.co.uk/browse/NEWSWORLDSERVICE-2187: Latest major version of react has breaking changes
-      - dependency-name: 'react'
-        update-types: ['version-update:semver-major']
-      - dependency-name: 'react-dom'
-        update-types: ['version-update:semver-major']
-      - dependency-name: '@types/react'
-        update-types: ['version-update:semver-major']
-      - dependency-name: '@types/react-dom'
-        update-types: ['version-update:semver-major']
     labels:
       - 'dependencies'
     groups:
@@ -47,10 +38,8 @@ updates:
           - '@emotion/*'
       next:
         patterns:
-          - '@next/*'
           - 'next'
           - 'next-*'
-          - '@img-sharp-*'
       loadable-minor-patch:
         patterns:
           - '@loadable/*'
@@ -64,7 +53,6 @@ updates:
         patterns:
           - '@storybook/*'
           - 'storybook'
-          - '@esbuild/*'
       webpack-minor-patch:
         patterns:
           - 'webpack'
