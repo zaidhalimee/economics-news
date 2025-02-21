@@ -69,7 +69,6 @@ const PromoBox = styled.div`
   }
   ${({ experimentVariant }) =>
     experimentVariant &&
-    experimentVariant !== 'none' &&
     `
       display: block;
       margin-bottom: 0;
