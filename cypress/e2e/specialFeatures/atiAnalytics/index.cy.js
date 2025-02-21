@@ -1,3 +1,4 @@
+import { liteEnabledServices } from '#app/components/LiteSiteCta/liteSiteConfig';
 import runTestsForPage from '#nextjs/cypress/support/helpers/runTestsForPage';
 import { assertPageView } from './assertions';
 import {
@@ -124,8 +125,6 @@ const canonicalTestSuites = [
       assertScrollablePromoComponentClick,
       assertRelatedTopicsComponentView,
       assertRelatedTopicsComponentClick,
-      assertRelatedContentComponentView,
-      assertRelatedContentComponentClick,
       assertMostReadComponentView,
       assertMostReadComponentClick,
     ],
@@ -254,8 +253,10 @@ const ampTestSuites = canonicalTestSuites.filter(supportsAmp).map(testSuite => {
 });
 
 // Most Read & On Demand TV pages do not currently support .lite
-const supportsLite = ({ path, contentType }) =>
-  !path.includes('_tv') && contentType !== 'list-datadriven';
+const supportsLite = ({ path, contentType, service }) =>
+  liteEnabledServices.includes(service) &&
+  !path.includes('_tv') &&
+  contentType !== 'list-datadriven';
 
 const liteTestSuites = canonicalTestSuites
   .filter(supportsLite)
