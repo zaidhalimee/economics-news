@@ -73,7 +73,7 @@ const PageLayoutWrapper = ({
 
     const topStories = pageData.secondaryColumn?.topStories;
     const mostReadItems = pageData.mostRead?.items;
-    const servicesForVariantA = ['pidgin', 'hindi', 'urdu', 'uzbek'];
+    const servicesForVariantA = ['pidgin', 'hindi', 'urdu', 'uzbek', 'hausa'];
     const servicesForVariantB = ['mundo', 'burmese', 'arabic'];
 
     let variantValue;

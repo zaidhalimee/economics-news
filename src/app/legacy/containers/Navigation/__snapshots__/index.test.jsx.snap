@@ -12,15 +12,6 @@ exports[`Navigation Container should correctly render amp navigation 1`] = `
   }
 }
 
-.emotion-0::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  border-bottom: 0.0625rem solid #E6E8EA;
-}
-
 .emotion-0 .emotion-68::after {
   left: 0;
 }
@@ -851,15 +842,6 @@ exports[`Navigation Container should correctly render amp navigation on non-home
   }
 }
 
-.emotion-0::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  border-bottom: 0.0625rem solid #E6E8EA;
-}
-
 .emotion-0 .emotion-65::after {
   left: 0;
 }
@@ -1589,15 +1571,6 @@ exports[`Navigation Container should correctly render amp navigation on non-navi
   }
 }
 
-.emotion-0::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  border-bottom: 0.0625rem solid #E6E8EA;
-}
-
 .emotion-0 .emotion-65::after {
   left: 0;
 }
@@ -2321,15 +2294,6 @@ exports[`Navigation Container should correctly render canonical navigation 1`] =
   background-color: #FFFFFF;
 }
 
-.emotion-0::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  border-bottom: 0.0625rem solid #E6E8EA;
-}
-
 .emotion-0 .emotion-16::after {
   left: 0;
 }
@@ -2655,7 +2619,16 @@ exports[`Navigation Container should correctly render canonical navigation 1`] =
   border: 0.1875rem solid #000000;
 }
 
-.emotion-62 {
+.emotion-62::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-bottom: 0.0625rem solid #E6E8EA;
+}
+
+.emotion-64 {
   background-color: #FFFFFF;
   clear: both;
   overflow: hidden;
@@ -2667,37 +2640,37 @@ exports[`Navigation Container should correctly render canonical navigation 1`] =
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-62 {
+  .emotion-64 {
     display: none;
     visibility: hidden;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .emotion-62 {
+  .emotion-64 {
     -webkit-transition: none;
     transition: none;
   }
 }
 
-.emotion-64 {
+.emotion-66 {
   list-style-type: none;
   margin: 0;
   padding: 0 0.5rem;
   border-bottom: 0.0625rem solid #E6E8EA;
 }
 
-.emotion-66 {
+.emotion-68 {
   padding: 0.75rem 0;
   border-bottom: 0.0625rem solid #E6E8EA;
 }
 
-.emotion-66:last-child {
+.emotion-68:last-child {
   padding-bottom: 0.25rem;
   border: 0;
 }
 
-.emotion-68 {
+.emotion-70 {
   font-size: 0.9375rem;
   line-height: 1.25rem;
   font-family: ReithSans,Helvetica,Arial,sans-serif;
@@ -2711,27 +2684,27 @@ exports[`Navigation Container should correctly render canonical navigation 1`] =
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-68 {
+  .emotion-70 {
     font-size: 1rem;
     line-height: 1.25rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-68 {
+  .emotion-70 {
     font-size: 1rem;
     line-height: 1.25rem;
   }
 }
 
-.emotion-68:hover,
-.emotion-68:focus {
+.emotion-70:hover,
+.emotion-70:focus {
   -webkit-text-decoration: underline;
   text-decoration: underline;
   text-decoration-color: #B80000;
 }
 
-.emotion-70 {
+.emotion-72 {
   border-left: 0.25rem solid #B80000;
   padding-left: 0.5rem;
 }
@@ -2927,27 +2900,30 @@ exports[`Navigation Container should correctly render canonical navigation 1`] =
             </li>
           </ul>
         </div>
+        <div
+          class="emotion-62 emotion-63"
+        />
       </div>
       <div
-        class="emotion-62 emotion-63"
+        class="emotion-64 emotion-65"
         data-e2e="dropdown-nav"
         height="0"
       >
         <ul
-          class="emotion-64 emotion-65"
+          class="emotion-66 emotion-67"
           role="list"
         >
           <li
-            class="emotion-66 emotion-67"
+            class="emotion-68 emotion-69"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-home"
-              class="emotion-68 emotion-69"
+              class="emotion-70 emotion-71"
               href="/news"
             >
               <span
-                class="emotion-70 emotion-71"
+                class="emotion-72 emotion-73"
                 dir="ltr"
                 id="dropdownNavigation-home"
                 role="text"
@@ -2962,12 +2938,12 @@ exports[`Navigation Container should correctly render canonical navigation 1`] =
             </a>
           </li>
           <li
-            class="emotion-66 emotion-67"
+            class="emotion-68 emotion-69"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-uk"
-              class="emotion-68 emotion-69"
+              class="emotion-70 emotion-71"
               href="/news/uk"
             >
               <span
@@ -2978,12 +2954,12 @@ exports[`Navigation Container should correctly render canonical navigation 1`] =
             </a>
           </li>
           <li
-            class="emotion-66 emotion-67"
+            class="emotion-68 emotion-69"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-world"
-              class="emotion-68 emotion-69"
+              class="emotion-70 emotion-71"
               href="/news/world"
             >
               <span
@@ -2994,12 +2970,12 @@ exports[`Navigation Container should correctly render canonical navigation 1`] =
             </a>
           </li>
           <li
-            class="emotion-66 emotion-67"
+            class="emotion-68 emotion-69"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-business"
-              class="emotion-68 emotion-69"
+              class="emotion-70 emotion-71"
               href="/news/business"
             >
               <span
@@ -3010,12 +2986,12 @@ exports[`Navigation Container should correctly render canonical navigation 1`] =
             </a>
           </li>
           <li
-            class="emotion-66 emotion-67"
+            class="emotion-68 emotion-69"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-politics"
-              class="emotion-68 emotion-69"
+              class="emotion-70 emotion-71"
               href="/news/politics"
             >
               <span
@@ -3026,12 +3002,12 @@ exports[`Navigation Container should correctly render canonical navigation 1`] =
             </a>
           </li>
           <li
-            class="emotion-66 emotion-67"
+            class="emotion-68 emotion-69"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-tech"
-              class="emotion-68 emotion-69"
+              class="emotion-70 emotion-71"
               href="/news/technology"
             >
               <span
@@ -3042,12 +3018,12 @@ exports[`Navigation Container should correctly render canonical navigation 1`] =
             </a>
           </li>
           <li
-            class="emotion-66 emotion-67"
+            class="emotion-68 emotion-69"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-science"
-              class="emotion-68 emotion-69"
+              class="emotion-70 emotion-71"
               href="/news/science_and_environment"
             >
               <span
@@ -3058,12 +3034,12 @@ exports[`Navigation Container should correctly render canonical navigation 1`] =
             </a>
           </li>
           <li
-            class="emotion-66 emotion-67"
+            class="emotion-68 emotion-69"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-health"
-              class="emotion-68 emotion-69"
+              class="emotion-70 emotion-71"
               href="/news/health"
             >
               <span
@@ -3074,12 +3050,12 @@ exports[`Navigation Container should correctly render canonical navigation 1`] =
             </a>
           </li>
           <li
-            class="emotion-66 emotion-67"
+            class="emotion-68 emotion-69"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-family-&-education"
-              class="emotion-68 emotion-69"
+              class="emotion-70 emotion-71"
               href="/news/education"
             >
               <span
@@ -3090,12 +3066,12 @@ exports[`Navigation Container should correctly render canonical navigation 1`] =
             </a>
           </li>
           <li
-            class="emotion-66 emotion-67"
+            class="emotion-68 emotion-69"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-entertainment-&-arts"
-              class="emotion-68 emotion-69"
+              class="emotion-70 emotion-71"
               href="/news/entertainment_and_arts"
             >
               <span
@@ -3106,12 +3082,12 @@ exports[`Navigation Container should correctly render canonical navigation 1`] =
             </a>
           </li>
           <li
-            class="emotion-66 emotion-67"
+            class="emotion-68 emotion-69"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-stories"
-              class="emotion-68 emotion-69"
+              class="emotion-70 emotion-71"
               href="/news/stories"
             >
               <span
@@ -3134,15 +3110,6 @@ exports[`Navigation Container should correctly render canonical navigation on no
   background-color: #FFFFFF;
 }
 
-.emotion-0::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  border-bottom: 0.0625rem solid #E6E8EA;
-}
-
 .emotion-0 .emotion-16::after {
   left: 0;
 }
@@ -3392,7 +3359,16 @@ exports[`Navigation Container should correctly render canonical navigation on no
   border: 0.1875rem solid #000000;
 }
 
-.emotion-59 {
+.emotion-59::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-bottom: 0.0625rem solid #E6E8EA;
+}
+
+.emotion-61 {
   background-color: #FFFFFF;
   clear: both;
   overflow: hidden;
@@ -3404,37 +3380,37 @@ exports[`Navigation Container should correctly render canonical navigation on no
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-59 {
+  .emotion-61 {
     display: none;
     visibility: hidden;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .emotion-59 {
+  .emotion-61 {
     -webkit-transition: none;
     transition: none;
   }
 }
 
-.emotion-61 {
+.emotion-63 {
   list-style-type: none;
   margin: 0;
   padding: 0 0.5rem;
   border-bottom: 0.0625rem solid #E6E8EA;
 }
 
-.emotion-63 {
+.emotion-65 {
   padding: 0.75rem 0;
   border-bottom: 0.0625rem solid #E6E8EA;
 }
 
-.emotion-63:last-child {
+.emotion-65:last-child {
   padding-bottom: 0.25rem;
   border: 0;
 }
 
-.emotion-65 {
+.emotion-67 {
   font-size: 0.9375rem;
   line-height: 1.25rem;
   font-family: ReithSans,Helvetica,Arial,sans-serif;
@@ -3448,21 +3424,21 @@ exports[`Navigation Container should correctly render canonical navigation on no
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-65 {
+  .emotion-67 {
     font-size: 1rem;
     line-height: 1.25rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-65 {
+  .emotion-67 {
     font-size: 1rem;
     line-height: 1.25rem;
   }
 }
 
-.emotion-65:hover,
-.emotion-65:focus {
+.emotion-67:hover,
+.emotion-67:focus {
   -webkit-text-decoration: underline;
   text-decoration: underline;
   text-decoration-color: #B80000;
@@ -3647,23 +3623,26 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </li>
           </ul>
         </div>
+        <div
+          class="emotion-59 emotion-60"
+        />
       </div>
       <div
-        class="emotion-59 emotion-60"
+        class="emotion-61 emotion-62"
         data-e2e="dropdown-nav"
         height="0"
       >
         <ul
-          class="emotion-61 emotion-62"
+          class="emotion-63 emotion-64"
           role="list"
         >
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-home"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news"
             >
               <span
@@ -3674,12 +3653,12 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </a>
           </li>
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-uk"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news/uk"
             >
               <span
@@ -3690,12 +3669,12 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </a>
           </li>
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-world"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news/world"
             >
               <span
@@ -3706,12 +3685,12 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </a>
           </li>
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-business"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news/business"
             >
               <span
@@ -3722,12 +3701,12 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </a>
           </li>
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-politics"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news/politics"
             >
               <span
@@ -3738,12 +3717,12 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </a>
           </li>
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-tech"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news/technology"
             >
               <span
@@ -3754,12 +3733,12 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </a>
           </li>
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-science"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news/science_and_environment"
             >
               <span
@@ -3770,12 +3749,12 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </a>
           </li>
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-health"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news/health"
             >
               <span
@@ -3786,12 +3765,12 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </a>
           </li>
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-family-&-education"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news/education"
             >
               <span
@@ -3802,12 +3781,12 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </a>
           </li>
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-entertainment-&-arts"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news/entertainment_and_arts"
             >
               <span
@@ -3818,12 +3797,12 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </a>
           </li>
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-stories"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news/stories"
             >
               <span
@@ -3846,15 +3825,6 @@ exports[`Navigation Container should correctly render canonical navigation on no
   background-color: #FFFFFF;
 }
 
-.emotion-0::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  border-bottom: 0.0625rem solid #E6E8EA;
-}
-
 .emotion-0 .emotion-16::after {
   left: 0;
 }
@@ -4104,7 +4074,16 @@ exports[`Navigation Container should correctly render canonical navigation on no
   border: 0.1875rem solid #000000;
 }
 
-.emotion-59 {
+.emotion-59::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-bottom: 0.0625rem solid #E6E8EA;
+}
+
+.emotion-61 {
   background-color: #FFFFFF;
   clear: both;
   overflow: hidden;
@@ -4116,37 +4095,37 @@ exports[`Navigation Container should correctly render canonical navigation on no
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-59 {
+  .emotion-61 {
     display: none;
     visibility: hidden;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .emotion-59 {
+  .emotion-61 {
     -webkit-transition: none;
     transition: none;
   }
 }
 
-.emotion-61 {
+.emotion-63 {
   list-style-type: none;
   margin: 0;
   padding: 0 0.5rem;
   border-bottom: 0.0625rem solid #E6E8EA;
 }
 
-.emotion-63 {
+.emotion-65 {
   padding: 0.75rem 0;
   border-bottom: 0.0625rem solid #E6E8EA;
 }
 
-.emotion-63:last-child {
+.emotion-65:last-child {
   padding-bottom: 0.25rem;
   border: 0;
 }
 
-.emotion-65 {
+.emotion-67 {
   font-size: 0.9375rem;
   line-height: 1.25rem;
   font-family: ReithSans,Helvetica,Arial,sans-serif;
@@ -4160,21 +4139,21 @@ exports[`Navigation Container should correctly render canonical navigation on no
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-65 {
+  .emotion-67 {
     font-size: 1rem;
     line-height: 1.25rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-65 {
+  .emotion-67 {
     font-size: 1rem;
     line-height: 1.25rem;
   }
 }
 
-.emotion-65:hover,
-.emotion-65:focus {
+.emotion-67:hover,
+.emotion-67:focus {
   -webkit-text-decoration: underline;
   text-decoration: underline;
   text-decoration-color: #B80000;
@@ -4359,23 +4338,26 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </li>
           </ul>
         </div>
+        <div
+          class="emotion-59 emotion-60"
+        />
       </div>
       <div
-        class="emotion-59 emotion-60"
+        class="emotion-61 emotion-62"
         data-e2e="dropdown-nav"
         height="0"
       >
         <ul
-          class="emotion-61 emotion-62"
+          class="emotion-63 emotion-64"
           role="list"
         >
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-home"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news"
             >
               <span
@@ -4386,12 +4368,12 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </a>
           </li>
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-uk"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news/uk"
             >
               <span
@@ -4402,12 +4384,12 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </a>
           </li>
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-world"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news/world"
             >
               <span
@@ -4418,12 +4400,12 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </a>
           </li>
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-business"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news/business"
             >
               <span
@@ -4434,12 +4416,12 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </a>
           </li>
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-politics"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news/politics"
             >
               <span
@@ -4450,12 +4432,12 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </a>
           </li>
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-tech"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news/technology"
             >
               <span
@@ -4466,12 +4448,12 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </a>
           </li>
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-science"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news/science_and_environment"
             >
               <span
@@ -4482,12 +4464,12 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </a>
           </li>
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-health"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news/health"
             >
               <span
@@ -4498,12 +4480,12 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </a>
           </li>
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-family-&-education"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news/education"
             >
               <span
@@ -4514,12 +4496,12 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </a>
           </li>
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-entertainment-&-arts"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news/entertainment_and_arts"
             >
               <span
@@ -4530,12 +4512,12 @@ exports[`Navigation Container should correctly render canonical navigation on no
             </a>
           </li>
           <li
-            class="emotion-63 emotion-64"
+            class="emotion-65 emotion-66"
             role="listitem"
           >
             <a
               aria-labelledby="dropdownNavigation-stories"
-              class="emotion-65 emotion-66"
+              class="emotion-67 emotion-68"
               href="/news/stories"
             >
               <span

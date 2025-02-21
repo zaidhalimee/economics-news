@@ -86,7 +86,6 @@ const PromoList = ({
   onClick,
   ...a11yAttributes
 }) => {
-  console.log('in promo list', blocks, experimentVariant);
   const { dir } = useContext(ServiceContext);
   const isOperaMini = useOperaMiniDetection();
   const listBlocks =

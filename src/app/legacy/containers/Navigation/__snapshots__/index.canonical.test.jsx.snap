@@ -6,15 +6,6 @@ exports[`Canonical Navigation snapshots should correctly render Canonical naviga
   background-color: #FFFFFF;
 }
 
-.emotion-0::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  border-bottom: 0.0625rem solid #E6E8EA;
-}
-
 .emotion-0 .e11sm0on2::after {
   left: 0;
 }
@@ -160,7 +151,16 @@ exports[`Canonical Navigation snapshots should correctly render Canonical naviga
   }
 }
 
-.emotion-13 {
+.emotion-13::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-bottom: 0.0625rem solid #E6E8EA;
+}
+
+.emotion-15 {
   background-color: #FFFFFF;
   clear: both;
   overflow: hidden;
@@ -172,14 +172,14 @@ exports[`Canonical Navigation snapshots should correctly render Canonical naviga
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-13 {
+  .emotion-15 {
     display: none;
     visibility: hidden;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .emotion-13 {
+  .emotion-15 {
     -webkit-transition: none;
     transition: none;
   }
@@ -234,9 +234,12 @@ exports[`Canonical Navigation snapshots should correctly render Canonical naviga
             </li>
           </ul>
         </div>
+        <div
+          class="emotion-13 emotion-14"
+        />
       </div>
       <div
-        class="emotion-13 emotion-14"
+        class="emotion-15 emotion-16"
         data-e2e="dropdown-nav"
         height="0"
       >
