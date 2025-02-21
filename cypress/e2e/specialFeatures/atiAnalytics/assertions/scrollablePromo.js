@@ -12,7 +12,7 @@ export const assertScrollablePromoComponentView = ({
       interceptATIAnalyticsBeacons();
       cy.visit(url);
 
-      cy.get('[data-e2e="scrollable-promos"]').scrollIntoView({
+      cy.get('[data-e2e="scrollable-promos"]').first().scrollIntoView({
         duration: 1000,
       });
 
@@ -34,7 +34,7 @@ export const assertScrollablePromoComponentClick = ({
       interceptATIAnalyticsBeacons();
       cy.visit(url);
 
-      cy.get('[data-e2e="scrollable-promos"]').scrollIntoView({
+      cy.get('[data-e2e="scrollable-promos"]').first().scrollIntoView({
         duration: 1000,
       });
 
