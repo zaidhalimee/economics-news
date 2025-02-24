@@ -32,6 +32,9 @@ const Divider = styled.div`
     width: calc(100% + 0.8rem);
     border-bottom: 0.0625rem solid ${props => props.theme.palette.GREY_3};
   }
+  @media (min-width: 1008px) {
+    display: none;
+  }
 `;
 const CanonicalNavigationContainer = ({
   script,
