@@ -10,17 +10,26 @@ import { GEL_GROUP_2_SCREEN_WIDTH_MAX } from '#psammead/gel-foundations/src/brea
 import useMediaQuery from '#hooks/useMediaQuery';
 import { RequestContext } from '#app/contexts/RequestContext';
 import ScrollablePromo from '#components/ScrollablePromo';
+import isLiveEnv from '../../../lib/utilities/isLive';
 
 const ScrollableWrapper = styled.div`
   position: relative;
 `;
 const Divider = styled.div`
+  position: absolute;
+  width: calc(100vw - 0.8rem);
+  left: 0;
+  @media (min-width: 1041px) {
+    width: calc(100vw + 0.8rem);
+    left: calc(-1 * (100vw - 1014px) / 2);
+  }
   &::after {
     content: '';
     position: absolute;
     bottom: 0;
     right: 0;
-    left: 0;
+    left: -0.8rem;
+    width: calc(100% + 0.8rem);
     border-bottom: 0.0625rem solid ${props => props.theme.palette.GREY_3};
   }
 `;
@@ -31,8 +40,8 @@ const CanonicalNavigationContainer = ({
   menuAnnouncedText,
   scrollableListItems,
   dropdownListItems,
-  experimentVariant,
   blocks,
+  experimentVariant,
 }) => {
   const { isLite } = useContext(RequestContext);
   const [isOpen, setIsOpen] = useState(false);
@@ -42,7 +51,6 @@ const CanonicalNavigationContainer = ({
       setIsOpen(false);
     }
   });
-
   return (
     <Navigation script={script} service={service} dir={dir} isOpen={isOpen}>
       <ScrollableWrapper>
@@ -60,10 +68,15 @@ const CanonicalNavigationContainer = ({
             {scrollableListItems}
           </ScrollableNavigation>
         )}
-        <Divider />
       </ScrollableWrapper>
       <CanonicalDropdown isOpen={isOpen}>{dropdownListItems}</CanonicalDropdown>
-      <ScrollablePromo blocks={blocks} experimentVariant={experimentVariant} />
+      <Divider />
+      {!isLiveEnv() && experimentVariant && experimentVariant !== 'none' && (
+        <ScrollablePromo
+          blocks={blocks}
+          experimentVariant={experimentVariant}
+        />
+      )}
     </Navigation>
   );
 };
