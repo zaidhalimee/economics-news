@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import styled from '@emotion/styled';
 import path from 'ramda/src/path';
-import pathOr from 'ramda/src/pathOr';
 import { getPica } from '#psammead/gel-foundations/src/typography';
 import { getSerifBold } from '#psammead/psammead-styles/src/font-styles';
 import { Link } from '#psammead/psammead-story-promo/src';
@@ -146,28 +145,25 @@ const Promo = ({ block, experimentVariant, onClick }) => {
       href = block.href;
       break;
     default:
-      textBlock = filterForBlockType(
-        pathOr({}, ['model', 'blocks'], block),
-        'text',
-      );
+      textBlock = filterForBlockType(block?.model?.blocks || {}, 'text');
       aresLinkBlock = filterForBlockType(
-        pathOr({}, ['model', 'blocks'], block),
+        block?.model?.blocks || {},
         'aresLink',
       );
       timestamp = path(
         ['model', 'blocks', '0', 'model', 'timestamp'],
         aresLinkBlock,
       );
-      href = pathOr(
-        '',
-        ['model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'locator'],
-        textBlock,
-      );
-      title = pathOr(
-        '',
-        ['model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'text'],
-        textBlock,
-      );
+      href =
+        path(
+          ['model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'locator'],
+          textBlock,
+        ) || '';
+      title =
+        path(
+          ['model', 'blocks', '0', 'model', 'blocks', '0', 'model', 'text'],
+          textBlock,
+        ) || '';
       break;
   }
 
