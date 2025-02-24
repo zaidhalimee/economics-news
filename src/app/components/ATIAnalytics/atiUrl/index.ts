@@ -510,7 +510,7 @@ export const buildReverbPageSectionEventModel = ({
       placement: pageIdentifier,
       source: advertiserID,
       result: url,
-      ...{ isClick: type === 'click' ? true : false },
+      ...{ isClick: type === 'click' },
     },
   };
 

@@ -64,6 +64,8 @@ const reverbLinkClick = async ({ reverbInstance, eventDetails }) => {
     placement,
     source,
     result,
+    anchorElement,
+    originalEvent,
     isClick,
   } = eventDetails;
 
@@ -71,8 +73,8 @@ const reverbLinkClick = async ({ reverbInstance, eventDetails }) => {
     eventPublisher,
     componentName,
     { container, attribute, placement, source, result },
-    null,
-    null,
+    anchorElement,
+    originalEvent,
     isClick,
   );
 };
