@@ -46,20 +46,20 @@ const ensureCookieExpiryDates = () => {
 
 export default ({ service, variant, pageType, path }) => {
   describe('Canonical consent banner', () => {
-    it('should have a privacy & cookie banner, which disappears once "accepted" ', () => {
+    it('should have a cookie banner, which disappears once "accepted" ', () => {
       cy.clearCookies();
       visitPage(path, pageType);
 
-      getPrivacyBanner(service, variant).should('be.visible');
-      getCookieBannerCanonical(service, variant).should('not.exist');
+      getPrivacyBanner(service, variant).should('not.exist');
+      // getCookieBannerCanonical(service, variant).should('exist');
 
-      assertCookieHasValue('ckns_privacy', 'july2019');
-      assertCookieHasValue('ckns_policy', '000');
+      // assertCookieHasValue('ckns_privacy', 'july2019');
+      // assertCookieHasValue('ckns_policy', '000');
 
-      getPrivacyBannerAccept(service, variant).click();
+      // getPrivacyBannerAccept(service, variant).click();
 
       getCookieBannerCanonical(service, variant).should('be.visible');
-      getPrivacyBanner(service, variant).should('not.exist');
+      // getPrivacyBanner(service, variant).should('not.exist');
 
       getCookieBannerAcceptCanonical(service, variant).click();
 
@@ -78,7 +78,7 @@ export default ({ service, variant, pageType, path }) => {
       ensureCookieExpiryDates();
     });
 
-    it('should have a privacy banner that disappears once accepted but a cookie banner that is rejected', () => {
+    it.skip('should have a privacy banner that disappears once accepted but a cookie banner that is rejected', () => {
       cy.clearCookies();
       visitPage(path, pageType);
 

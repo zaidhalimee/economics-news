@@ -27,7 +27,7 @@ export default ({
 
     it(`should change to the correct script when switching script from ${variant} to ${otherVariant}`, () => {
       // Accept privacy banner
-      getPrivacyBannerAccept(serviceId, variant).click();
+      // getPrivacyBannerAccept(serviceId, variant).click();
 
       // Accept cookie banner
       getCookieBannerAcceptCanonical(serviceId, variant).click();

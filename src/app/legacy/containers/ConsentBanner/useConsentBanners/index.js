@@ -121,6 +121,8 @@ const useConsentBanner = (
     initialState,
   );
 
+  console.log('first');
+
   useEffect(() => {
     const privacyCookie = Cookie.get(PRIVACY_COOKIE);
     const explicitCookie = Cookie.get(EXPLICIT_COOKIE);
@@ -138,13 +140,16 @@ const useConsentBanner = (
       (!userHasPrivacyCookie || userHasLegacyPrivacyCookie) &&
       showCookieBannerBasedOnCountry &&
       privacyPolicyToggle;
-
+    console.log('second');
     if (shouldShowPrivacyBanner) {
+      console.log('third');
       dispatch(SHOW_PRIVACY_BANNER);
       setUserDidSeePrivacyBanner();
     } else if (shouldShowCookieBanner) {
+      cconsole.log('fourth');
       dispatch(SHOW_COOKIE_BANNER);
     } else if (!showCookieBannerBasedOnCountry) {
+      console.log('fifth');
       setUserDidDismissCookieBanner(isUK, 1);
       if (!userHasPolicyCookie) setUserDidAcceptPolicy();
       setUserDidSeePrivacyBanner(1);
