@@ -76,14 +76,32 @@ const ScrollablePromoContainer = styled.div`
   `}
 `;
 
-const LabelComponent = styled(({ ariaLabel, experimentVariant, ...props }) => (
+const LabelComponent = styled.strong`
+  display: block;
+  ${({ script }) => script && getDoublePica(script)};
+  ${({ service }) => getSansRegular(service)}
+  margin-bottom: ${GEL_SPACING_DBL};
+  color: ${({ theme }) =>
+    theme.isDarkUi ? theme.palette.GREY_2 : theme.palette.SHADOW};
+
+  ${({ dir }) =>
+    `
+    @media (min-width: ${GEL_GROUP_0_SCREEN_WIDTH_MIN}){
+      margin-${dir === 'ltr' ? 'left' : 'right'}: ${GEL_SPACING};
+    }
+    @media (min-width: ${GEL_GROUP_2_SCREEN_WIDTH_MIN}){
+      margin-${dir === 'ltr' ? `left` : `right`}: ${GEL_SPACING_DBL};  
+    }
+    @media (min-width: ${GEL_GROUP_4_SCREEN_WIDTH_MIN}){
+        margin-${dir === 'ltr' ? `left` : `right`}: 0;
+    }
+`}
+`;
+
+const LabelComponentOJTopBar = styled(({ ariaLabel, ...props }) => (
   <strong aria-label={ariaLabel} {...props} />
 ))`
-  ${({ script, experimentVariant }) =>
-    script &&
-    (experimentVariant && experimentVariant !== 'none'
-      ? getBrevier(script)
-      : getDoublePica(script))};
+  ${({ script }) => script && getBrevier(script)};
   ${({ service }) => getSansRegular(service)}
   display: inline-block;
   margin-bottom: ${GEL_SPACING_DBL};
@@ -103,35 +121,30 @@ const LabelComponent = styled(({ ariaLabel, experimentVariant, ...props }) => (
     }
   `}
 
-  ${({ experimentVariant }) =>
-    experimentVariant &&
-    experimentVariant !== 'none' &&
-    `
-    padding: 0 ${GEL_SPACING};
+  padding: 0 ${GEL_SPACING};
 
-    @media (min-width: ${GEL_GROUP_0_SCREEN_WIDTH_MIN}) {
-      margin: 0rem;
-    }
+  @media (min-width: ${GEL_GROUP_0_SCREEN_WIDTH_MIN}) {
+    margin: 0rem;
+  }
 
-    @media (min-width: ${GEL_GROUP_2_SCREEN_WIDTH_MIN}) {
-      padding: 0 ${GEL_SPACING_DBL};
-      margin: 0 -0.2rem;
-    }
+  @media (min-width: ${GEL_GROUP_2_SCREEN_WIDTH_MIN}) {
+    padding: 0 ${GEL_SPACING_DBL};
+    margin: 0 -0.2rem;
+  }
 
-    @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MIN}) {
-      margin: 0 -0.8rem;
-    }
+  @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MIN}) {
+    margin: 0 -0.8rem;
+  }
 
-    @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MAX}){
-      display: none;
-    }
+  @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MAX}) {
+    display: none;
+  }
 
-    display: flex;
-    align-items: center;
-    height: ${GEL_SPACING_QUAD};
-    background: ${GREY_2} ;
-    width: 100vw;
-  `}
+  display: flex;
+  align-items: center;
+  height: ${GEL_SPACING_QUAD};
+  background: ${GREY_2};
+  width: 100vw;
 `;
 
 const ScrollablePromo = ({
@@ -191,16 +204,15 @@ const ScrollablePromo = ({
 
   return experimentVariant ? (
     <>
-      <LabelComponent
+      <LabelComponentOJTopBar
         id={ariaLabel}
         data-testid="oj-top-bar"
         script={script}
         service={service}
         dir={dir}
-        experimentVariant={experimentVariant}
       >
         {title}
-      </LabelComponent>
+      </LabelComponentOJTopBar>
       <ScrollablePromoContainer experimentVariant={experimentVariant}>
         <GridItemMediumNoMargin>
           <PromoList
