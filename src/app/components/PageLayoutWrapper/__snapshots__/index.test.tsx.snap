@@ -498,6 +498,17 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
   background-color: #FFFFFF;
 }
 
+@media (min-width: 62.9375rem) {
+  .emotion-29::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 0.0625rem solid #E6E8EA;
+  }
+}
+
 .emotion-29 .emotion-45::after {
   left: 0;
 }
@@ -736,16 +747,7 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
   border: 0.1875rem solid #000000;
 }
 
-.emotion-88::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  border-bottom: 0.0625rem solid #E6E8EA;
-}
-
-.emotion-90 {
+.emotion-88 {
   background-color: #FFFFFF;
   clear: both;
   overflow: hidden;
@@ -757,37 +759,37 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-90 {
+  .emotion-88 {
     display: none;
     visibility: hidden;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .emotion-90 {
+  .emotion-88 {
     -webkit-transition: none;
     transition: none;
   }
 }
 
-.emotion-92 {
+.emotion-90 {
   list-style-type: none;
   margin: 0;
   padding: 0 0.5rem;
   border-bottom: 0.0625rem solid #E6E8EA;
 }
 
-.emotion-94 {
+.emotion-92 {
   padding: 0.75rem 0;
   border-bottom: 0.0625rem solid #E6E8EA;
 }
 
-.emotion-94:last-child {
+.emotion-92:last-child {
   padding-bottom: 0.25rem;
   border: 0;
 }
 
-.emotion-96 {
+.emotion-94 {
   font-size: 0.9375rem;
   line-height: 1.25rem;
   font-family: ReithSans,Helvetica,Arial,sans-serif;
@@ -801,24 +803,53 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
-  .emotion-96 {
+  .emotion-94 {
     font-size: 1rem;
     line-height: 1.25rem;
   }
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-96 {
+  .emotion-94 {
     font-size: 1rem;
     line-height: 1.25rem;
   }
 }
 
-.emotion-96:hover,
-.emotion-96:focus {
+.emotion-94:hover,
+.emotion-94:focus {
   -webkit-text-decoration: underline;
   text-decoration: underline;
   text-decoration-color: #B80000;
+}
+
+.emotion-136 {
+  position: absolute;
+  width: calc(100vw - 0.8rem);
+  left: 0;
+}
+
+@media (min-width: 1041px) {
+  .emotion-136 {
+    width: calc(100vw + 0.8rem);
+    left: calc(-1 * (100vw - 1014px) / 2);
+  }
+}
+
+.emotion-136::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: -0.8rem;
+  width: calc(100% + 0.8rem);
+  border-bottom: 0.0625rem solid #E6E8EA;
+}
+
+@media (min-width: 1008px) {
+  .emotion-136 {
+    display: none;
+  }
 }
 
 .emotion-138 {
@@ -1374,26 +1405,23 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
                 </li>
               </ul>
             </div>
-            <div
-              class="emotion-88 emotion-89"
-            />
           </div>
           <div
-            class="emotion-90 emotion-91"
+            class="emotion-88 emotion-89"
             data-e2e="dropdown-nav"
             height="0"
           >
             <ul
-              class="emotion-92 emotion-93"
+              class="emotion-90 emotion-91"
               role="list"
             >
               <li
-                class="emotion-94 emotion-95"
+                class="emotion-92 emotion-93"
                 role="listitem"
               >
                 <a
                   aria-labelledby="dropdownNavigation-home"
-                  class="emotion-96 emotion-97"
+                  class="emotion-94 emotion-95"
                   href="/news"
                 >
                   <span
@@ -1404,12 +1432,12 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
                 </a>
               </li>
               <li
-                class="emotion-94 emotion-95"
+                class="emotion-92 emotion-93"
                 role="listitem"
               >
                 <a
                   aria-labelledby="dropdownNavigation-uk"
-                  class="emotion-96 emotion-97"
+                  class="emotion-94 emotion-95"
                   href="/news/uk"
                 >
                   <span
@@ -1420,12 +1448,12 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
                 </a>
               </li>
               <li
-                class="emotion-94 emotion-95"
+                class="emotion-92 emotion-93"
                 role="listitem"
               >
                 <a
                   aria-labelledby="dropdownNavigation-world"
-                  class="emotion-96 emotion-97"
+                  class="emotion-94 emotion-95"
                   href="/news/world"
                 >
                   <span
@@ -1436,12 +1464,12 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
                 </a>
               </li>
               <li
-                class="emotion-94 emotion-95"
+                class="emotion-92 emotion-93"
                 role="listitem"
               >
                 <a
                   aria-labelledby="dropdownNavigation-business"
-                  class="emotion-96 emotion-97"
+                  class="emotion-94 emotion-95"
                   href="/news/business"
                 >
                   <span
@@ -1452,12 +1480,12 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
                 </a>
               </li>
               <li
-                class="emotion-94 emotion-95"
+                class="emotion-92 emotion-93"
                 role="listitem"
               >
                 <a
                   aria-labelledby="dropdownNavigation-politics"
-                  class="emotion-96 emotion-97"
+                  class="emotion-94 emotion-95"
                   href="/news/politics"
                 >
                   <span
@@ -1468,12 +1496,12 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
                 </a>
               </li>
               <li
-                class="emotion-94 emotion-95"
+                class="emotion-92 emotion-93"
                 role="listitem"
               >
                 <a
                   aria-labelledby="dropdownNavigation-tech"
-                  class="emotion-96 emotion-97"
+                  class="emotion-94 emotion-95"
                   href="/news/technology"
                 >
                   <span
@@ -1484,12 +1512,12 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
                 </a>
               </li>
               <li
-                class="emotion-94 emotion-95"
+                class="emotion-92 emotion-93"
                 role="listitem"
               >
                 <a
                   aria-labelledby="dropdownNavigation-science"
-                  class="emotion-96 emotion-97"
+                  class="emotion-94 emotion-95"
                   href="/news/science_and_environment"
                 >
                   <span
@@ -1500,12 +1528,12 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
                 </a>
               </li>
               <li
-                class="emotion-94 emotion-95"
+                class="emotion-92 emotion-93"
                 role="listitem"
               >
                 <a
                   aria-labelledby="dropdownNavigation-health"
-                  class="emotion-96 emotion-97"
+                  class="emotion-94 emotion-95"
                   href="/news/health"
                 >
                   <span
@@ -1516,12 +1544,12 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
                 </a>
               </li>
               <li
-                class="emotion-94 emotion-95"
+                class="emotion-92 emotion-93"
                 role="listitem"
               >
                 <a
                   aria-labelledby="dropdownNavigation-family-&-education"
-                  class="emotion-96 emotion-97"
+                  class="emotion-94 emotion-95"
                   href="/news/education"
                 >
                   <span
@@ -1532,12 +1560,12 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
                 </a>
               </li>
               <li
-                class="emotion-94 emotion-95"
+                class="emotion-92 emotion-93"
                 role="listitem"
               >
                 <a
                   aria-labelledby="dropdownNavigation-entertainment-&-arts"
-                  class="emotion-96 emotion-97"
+                  class="emotion-94 emotion-95"
                   href="/news/entertainment_and_arts"
                 >
                   <span
@@ -1548,12 +1576,12 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
                 </a>
               </li>
               <li
-                class="emotion-94 emotion-95"
+                class="emotion-92 emotion-93"
                 role="listitem"
               >
                 <a
                   aria-labelledby="dropdownNavigation-stories"
-                  class="emotion-96 emotion-97"
+                  class="emotion-94 emotion-95"
                   href="/news/stories"
                 >
                   <span
@@ -1565,6 +1593,9 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
               </li>
             </ul>
           </div>
+          <div
+            class="emotion-136 emotion-137"
+          />
         </div>
       </nav>
     </header>

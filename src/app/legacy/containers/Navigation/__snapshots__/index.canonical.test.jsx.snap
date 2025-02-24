@@ -6,6 +6,17 @@ exports[`Canonical Navigation snapshots should correctly render Canonical naviga
   background-color: #FFFFFF;
 }
 
+@media (min-width: 62.9375rem) {
+  .emotion-0::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 0.0625rem solid #E6E8EA;
+  }
+}
+
 .emotion-0 .e11sm0on2::after {
   left: 0;
 }
@@ -151,16 +162,7 @@ exports[`Canonical Navigation snapshots should correctly render Canonical naviga
   }
 }
 
-.emotion-13::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  border-bottom: 0.0625rem solid #E6E8EA;
-}
-
-.emotion-15 {
+.emotion-13 {
   background-color: #FFFFFF;
   clear: both;
   overflow: hidden;
@@ -172,16 +174,45 @@ exports[`Canonical Navigation snapshots should correctly render Canonical naviga
 }
 
 @media (min-width: 37.5rem) {
-  .emotion-15 {
+  .emotion-13 {
     display: none;
     visibility: hidden;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .emotion-15 {
+  .emotion-13 {
     -webkit-transition: none;
     transition: none;
+  }
+}
+
+.emotion-15 {
+  position: absolute;
+  width: calc(100vw - 0.8rem);
+  left: 0;
+}
+
+@media (min-width: 1041px) {
+  .emotion-15 {
+    width: calc(100vw + 0.8rem);
+    left: calc(-1 * (100vw - 1014px) / 2);
+  }
+}
+
+.emotion-15::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: -0.8rem;
+  width: calc(100% + 0.8rem);
+  border-bottom: 0.0625rem solid #E6E8EA;
+}
+
+@media (min-width: 1008px) {
+  .emotion-15 {
+    display: none;
   }
 }
 
@@ -234,12 +265,9 @@ exports[`Canonical Navigation snapshots should correctly render Canonical naviga
             </li>
           </ul>
         </div>
-        <div
-          class="emotion-13 emotion-14"
-        />
       </div>
       <div
-        class="emotion-15 emotion-16"
+        class="emotion-13 emotion-14"
         data-e2e="dropdown-nav"
         height="0"
       >
@@ -251,6 +279,9 @@ exports[`Canonical Navigation snapshots should correctly render Canonical naviga
           </li>
         </ul>
       </div>
+      <div
+        class="emotion-15 emotion-16"
+      />
     </div>
   </nav>
 </div>
