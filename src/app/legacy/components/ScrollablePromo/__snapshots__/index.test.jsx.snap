@@ -94,12 +94,12 @@ exports[`ScrollablePromo Mid Page ScrollablePromo it should match a11y snapshot 
 }
 
 .emotion-2 {
+  display: block;
   font-size: 1.125rem;
   line-height: 1.375rem;
   font-family: ReithSans,Helvetica,Arial,sans-serif;
   font-weight: 400;
   font-style: normal;
-  display: inline-block;
   margin-bottom: 1rem;
   color: #3F3F42;
 }
@@ -307,8 +307,6 @@ exports[`ScrollablePromo Mid Page ScrollablePromo it should match a11y snapshot 
       data-testid="eoj-recommendations-heading"
       dir="ltr"
       id="Show-all-links-no-images"
-      script="[object Object]"
-      service="news"
     >
       Show all links (no images)
     </strong>
@@ -692,12 +690,12 @@ exports[`ScrollablePromo Mid Page ScrollablePromo it should match a11y snapshot 
 }
 
 .emotion-2 {
+  display: block;
   font-size: 1.125rem;
   line-height: 1.375rem;
   font-family: ReithSans,Helvetica,Arial,sans-serif;
   font-weight: 400;
   font-style: normal;
-  display: inline-block;
   margin-bottom: 1rem;
   color: #3F3F42;
 }
@@ -858,8 +856,6 @@ exports[`ScrollablePromo Mid Page ScrollablePromo it should match a11y snapshot 
       data-testid="eoj-recommendations-heading"
       dir="ltr"
       id="Single-link"
-      script="[object Object]"
-      service="news"
     >
       Single link
     </strong>
