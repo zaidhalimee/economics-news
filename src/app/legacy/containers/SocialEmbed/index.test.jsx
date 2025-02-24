@@ -27,7 +27,7 @@ describe('SocialEmbedContainer', () => {
       const { container, unmount } = render(
         <SocialEmbedContainer
           blocks={[twitterBlock]}
-          source="https://twitter.com/BBCNews/status/1384138850478346243?s=20"
+          source="https://x.com/BBCNews/status/1384138850478346243?s=20"
         />,
         { service: 'news', isAmp: false, pageType: ARTICLE_PAGE },
       );
@@ -38,13 +38,13 @@ describe('SocialEmbedContainer', () => {
       expect(container.firstChild).toMatchSnapshot();
       expect(
         document.querySelector(
-          'head script[src="https://platform.twitter.com/widgets.js"]',
+          'head script[src="https://platform.x.com/widgets.js"]',
         ),
       ).toBeTruthy();
       unmount();
       expect(
         document.querySelector(
-          'head script[src="https://platform.twitter.com/widgets.js"]',
+          'head script[src="https://platform.x.com/widgets.js"]',
         ),
       ).toBeFalsy();
     });
@@ -174,7 +174,7 @@ describe('SocialEmbedContainer', () => {
       render(
         <SocialEmbedContainer
           blocks={[twitterBlock]}
-          source="https://twitter.com/BBCNews/status/1384138850478346243?s=20"
+          source="https://x.com/BBCNews/status/1384138850478346243?s=20"
         />,
         { service: 'news', isAmp: false, pageType: ARTICLE_PAGE },
       );
@@ -198,11 +198,11 @@ describe('SocialEmbedContainer', () => {
                       oembed: {
                         version: '1.0',
                         author_name: 'BBC News (UK)',
-                        author_url: 'https://twitter.com/BBCNews',
+                        author_url: 'https://x.com/BBCNews',
                         provider_name: 'Twitter',
-                        provider_url: 'https://twitter.com',
-                        url: 'https://twitter.com/BBCNews/status/1384138850478346243',
-                        html: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Greta Thunberg says meeting fellow climate campaigner Sir David Attenborough was &quot;indescribable&quot; <a href="https://t.co/xz93WmAdfR">https://t.co/xz93WmAdfR</a></p>&mdash; BBC News (UK) (@BBCNews) <a href="https://twitter.com/BBCNews/status/1384138850478346243?ref_src=twsrc%5Etfw">April 19, 2021</a></blockquote>\n',
+                        provider_url: 'https://x.com',
+                        url: 'https://x.com/BBCNews/status/1384138850478346243',
+                        html: '<blockquote class="x-tweet"><p lang="en" dir="ltr">Greta Thunberg says meeting fellow climate campaigner Sir David Attenborough was &quot;indescribable&quot; <a href="https://t.co/xz93WmAdfR">https://t.co/xz93WmAdfR</a></p>&mdash; BBC News (UK) (@BBCNews) <a href="https://x.com/BBCNews/status/1384138850478346243?ref_src=twsrc%5Etfw">April 19, 2021</a></blockquote>\n',
                         width: 550,
                       },
                     },
@@ -211,13 +211,13 @@ describe('SocialEmbedContainer', () => {
               },
             },
           ]}
-          source="https://twitter.com/BBCNews/status/1384138850478346243?s=20"
+          source="https://x.com/BBCNews/status/1384138850478346243?s=20"
         />,
         { service: 'news', isAmp: false, pageType: ARTICLE_PAGE },
       );
 
       expect(
-        screen.queryByText('End of Twitter content, 1'),
+        screen.queryByText('End of X content, 1'),
       ).not.toBeInTheDocument();
       expect(screen.queryByText('End of Twitter content')).toBeInTheDocument();
     });
@@ -228,7 +228,7 @@ describe('SocialEmbedContainer', () => {
       const { container } = render(
         <SocialEmbedContainer
           blocks={[twitterBlock]}
-          source="https://twitter.com/BBCNews/status/1384138850478346243?s=20"
+          source="https://x.com/BBCNews/status/1384138850478346243?s=20"
         />,
         { service: 'news', isAmp: false, pageType: ARTICLE_PAGE },
       );
