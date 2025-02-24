@@ -213,7 +213,7 @@ const ScrollablePromo = ({
       </ScrollablePromoContainer>
     </>
   ) : (
-    <GridItemMediumNoMargin {...a11yAttributes}>
+    <GridItemMediumNoMargin {...a11yAttributes} data-e2e="scrollable-promos">
       {title && (
         <LabelComponent
           id={ariaLabel}

@@ -298,6 +298,7 @@ exports[`ScrollablePromo Mid Page ScrollablePromo it should match a11y snapshot 
   <section
     aria-labelledby="Show-all-links-no-images"
     class="emotion-0 emotion-1"
+    data-e2e="scrollable-promos"
     dir="ltr"
     role="region"
   >
@@ -574,6 +575,7 @@ exports[`ScrollablePromo Mid Page ScrollablePromo it should match a11y snapshot 
   <section
     aria-label="Related content"
     class="emotion-0 emotion-1"
+    data-e2e="scrollable-promos"
     dir="ltr"
     role="region"
   >
@@ -847,6 +849,7 @@ exports[`ScrollablePromo Mid Page ScrollablePromo it should match a11y snapshot 
   <section
     aria-labelledby="Single-link"
     class="emotion-0 emotion-1"
+    data-e2e="scrollable-promos"
     dir="ltr"
     role="region"
   >
@@ -1087,6 +1090,7 @@ exports[`ScrollablePromo Mid Page ScrollablePromo it should match snapshot when 
   <section
     aria-label="Related content"
     class="emotion-0 emotion-1"
+    data-e2e="scrollable-promos"
     dir="ltr"
     role="region"
   >
