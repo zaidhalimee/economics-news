@@ -216,9 +216,7 @@ describe('SocialEmbedContainer', () => {
         { service: 'news', isAmp: false, pageType: ARTICLE_PAGE },
       );
 
-      expect(
-        screen.queryByText('End of X content, 1'),
-      ).not.toBeInTheDocument();
+      expect(screen.queryByText('End of X content, 1')).not.toBeInTheDocument();
       expect(screen.queryByText('End of Twitter content')).toBeInTheDocument();
     });
   });

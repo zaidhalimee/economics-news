@@ -97,10 +97,7 @@ describe('Embed Consent Banner - Content', () => {
 
   it('should render a X consent banner with correct content for Mundo service', () => {
     render(
-      <ConsentBanner
-        provider="x"
-        clickHandler={mockCanonicalClickHandler}
-      />,
+      <ConsentBanner provider="x" clickHandler={mockCanonicalClickHandler} />,
       {
         service: 'mundo',
       },
@@ -192,10 +189,7 @@ describe('Embed Consent Banner - Content', () => {
       );
 
       render(
-        <ConsentBanner
-          provider="x"
-          clickHandler={mockCanonicalClickHandler}
-        />,
+        <ConsentBanner provider="x" clickHandler={mockCanonicalClickHandler} />,
         {
           service: 'mundo',
         },
