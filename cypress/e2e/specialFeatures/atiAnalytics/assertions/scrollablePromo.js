@@ -39,7 +39,7 @@ export const assertScrollablePromoComponentClick = ({
       });
 
       // Click on first item
-      cy.get('[data-e2e="scrollable-promos"]').first().find('a').click();
+      cy.get('[data-e2e="scrollable-promos"]').find('a').first().click();
 
       assertATIComponentClickEvent({
         component: SCROLLABLE_PROMO,
