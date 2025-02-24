@@ -48,7 +48,6 @@ const CanonicalNavigationContainer = ({
 }) => {
   const { isLite } = useContext(RequestContext);
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isLiveEnv(), 'xxx');
   useMediaQuery(`(max-width: ${GEL_GROUP_2_SCREEN_WIDTH_MAX})`, event => {
     if (!event.matches) {
       setIsOpen(false);
