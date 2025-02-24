@@ -389,7 +389,6 @@ describe('Reverb', () => {
         name: 'mundo.page',
         producer: 'MUNDO',
         additionalProperties: {
-          ati: 'PUB-[1234]-[top-stories]-[]-[format]-[mundo.page]-[]-[advertiserID]-[http://localhost]',
           type: 'AT',
         },
       };
@@ -399,12 +398,21 @@ describe('Reverb', () => {
       );
     });
 
-    it('should return the correct eventName for the Reverb page section view event model', () => {
+    it('should return the correct event details for the Reverb page section view event model', () => {
       const reverbPageSectionViewEventModel =
         buildReverbPageSectionEventModel(input);
 
       expect(reverbPageSectionViewEventModel.eventDetails).toEqual({
         eventName: 'sectionView',
+        eventPublisher: 'impression',
+        componentName: 'top-stories',
+        container: '1234',
+        attribute: 'top-stories',
+        metadata: 'format',
+        placement: 'mundo.page',
+        source: 'advertiserID',
+        result: 'http://localhost',
+        isClick: false,
       });
     });
 
@@ -419,7 +427,6 @@ describe('Reverb', () => {
         name: 'mundo.page',
         producer: 'MUNDO',
         additionalProperties: {
-          atc: 'PUB-[1234]-[top-stories]-[]-[format]-[mundo.page]-[]-[advertiserID]-[http://localhost]',
           type: 'AT',
         },
       };
@@ -437,8 +444,15 @@ describe('Reverb', () => {
 
       expect(reverbPageSectionViewEventModel.eventDetails).toEqual({
         eventName: 'sectionClick',
+        eventPublisher: 'click',
         componentName: 'top-stories',
         container: '1234',
+        attribute: 'top-stories',
+        metadata: 'format',
+        placement: 'mundo.page',
+        source: 'advertiserID',
+        result: 'http://localhost',
+        isClick: true,
       });
     });
 
