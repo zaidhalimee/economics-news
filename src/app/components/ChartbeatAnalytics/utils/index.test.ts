@@ -2,7 +2,6 @@ import Cookie from 'js-cookie';
 import onClient from '../../../lib/utilities/onClient';
 import {
   ARTICLE_PAGE,
-  FRONT_PAGE,
   MOST_READ_PAGE,
   FEATURE_INDEX_PAGE,
   MEDIA_ASSET_PAGE,
@@ -292,7 +291,6 @@ describe('Chartbeat utilities', () => {
   describe('Chartbeat Title', () => {
     test.each`
       pageType              | title                         | brandName            | expected
-      ${FRONT_PAGE}         | ${'Front Page Title'}         | ${'BBC News Pidgin'} | ${'Front Page Title - BBC News Pidgin'}
       ${FEATURE_INDEX_PAGE} | ${'Feature Index Page Title'} | ${'BBC News Pidgin'} | ${'Feature Index Page Title - BBC News Pidgin'}
       ${MOST_READ_PAGE}     | ${'Most Read Page Title'}     | ${'BBC News Pidgin'} | ${'Most Read Page Title - BBC News Pidgin'}
       ${TOPIC_PAGE}         | ${'Topic Page Title'}         | ${'BBC News Pidgin'} | ${'Topic Page Title - BBC News Pidgin'}
@@ -350,42 +348,6 @@ describe('Chartbeat utilities', () => {
           uid: 50924,
           virtualReferrer: `\${documentReferrer}`,
         };
-
-        expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
-      });
-
-      it('should return config for canonical pages when page type is frontPage and env is not live', () => {
-        const fixtureData: GetConfigProps = {
-          isAmp: false,
-          platform: 'canonical',
-          pageType: FRONT_PAGE,
-          title: 'This is an index page title',
-          brandName: 'BBC-News',
-          chartbeatDomain: 'bbc.co.uk',
-          env: 'test',
-          service: 'news',
-          origin: 'test.bbc.com',
-          previousPath: '/previous-path',
-        };
-
-        const expectedConfig = {
-          domain: 'test.bbc.co.uk',
-          idSync: {
-            bbc_hid: 'foobar',
-          },
-          path: '/',
-          sections: 'News, News - IDX',
-          title: 'This is an index page title - BBC-News',
-          type: 'Index',
-          uid: 50924,
-          useCanonical: true,
-          virtualReferrer: 'test.bbc.com/previous-path',
-        };
-
-        const expectedCookieValue = 'foobar';
-        (jest.spyOn(Cookie, 'get') as jest.Mock).mockImplementation(
-          () => expectedCookieValue,
-        );
 
         expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
       });
@@ -918,7 +880,7 @@ describe('Chartbeat utilities', () => {
       const fixtureData: GetConfigProps = {
         isAmp: false,
         platform: 'canonical',
-        pageType: FRONT_PAGE,
+        pageType: ARTICLE_PAGE,
         brandName: 'BBC-News',
         chartbeatDomain: 'bbc.co.uk',
         env: 'test',
@@ -937,7 +899,7 @@ describe('Chartbeat utilities', () => {
       const fixtureData: GetConfigProps = {
         isAmp: false,
         platform: 'canonical',
-        pageType: FRONT_PAGE,
+        pageType: ARTICLE_PAGE,
         brandName: 'BBC-News',
         chartbeatDomain: 'bbc.co.uk',
         env: 'test',
