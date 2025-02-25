@@ -279,6 +279,7 @@ describe('buildATIEventTrackUrl', () => {
       'hl=getCurrentTime',
       'lng=getDeviceLanguage',
       'atc=PUB-[campaignID]-[component]-[variant_1]-[format]-[pageIdentifier]-[detailedPlacement]-[]-[url]',
+      'mv_test=Data driven OJs experiment',
       'mv_creation=variant_1',
       'type=AT',
     ]);
