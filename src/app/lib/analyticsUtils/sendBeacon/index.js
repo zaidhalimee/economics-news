@@ -55,7 +55,7 @@ const reverbPageViews = async ({ reverbInstance }) => {
   reverbInstance.viewEvent();
 };
 
-const reverbLinkClick = async ({ reverbInstance, eventDetails }) => {
+const reverbComponentTracking = async ({ reverbInstance, eventDetails }) => {
   const {
     eventPublisher,
     componentName,
@@ -81,8 +81,8 @@ const reverbLinkClick = async ({ reverbInstance, eventDetails }) => {
 
 const reverbHandlers = {
   pageView: reverbPageViews,
-  sectionView: reverbLinkClick,
-  sectionClick: reverbLinkClick,
+  sectionView: reverbComponentTracking,
+  sectionClick: reverbComponentTracking,
 };
 
 const callReverb = async eventDetails => {
