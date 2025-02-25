@@ -6,7 +6,7 @@ import {
   clickPromoLinkOnHomePage,
 } from '../utilities/scriptSwitchingJourneyActions';
 import {
-  getPrivacyBannerAccept,
+  // getPrivacyBannerAccept,
   getCookieBannerAcceptCanonical,
 } from '../utilities/cookiePrivacyBanner';
 
