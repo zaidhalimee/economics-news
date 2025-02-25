@@ -40,8 +40,7 @@ export const service: DefaultServiceConfig = {
     podcastPromo: {
       title: 'WhatsApp',
       brandTitle: 'Èyí ni ìkànnì Whatsapp wa',
-      brandDescription:
-        'Àjáàbalẹ̀ ìròyìn BBC News Yorùbá lórí WhatsApp rẹ',
+      brandDescription: 'Àjáàbalẹ̀ ìròyìn BBC News Yorùbá lórí WhatsApp rẹ',
       image: {
         src: 'https://ichef.bbc.co.uk/images/ic/$recipe/p0kthb9n.jpg',
         alt: 'BBC News Yorùbá ti wà lórí WhatsApp',
