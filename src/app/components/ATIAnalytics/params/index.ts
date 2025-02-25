@@ -25,10 +25,6 @@ import {
   buildPageATIParams,
   buildPageReverbParams,
 } from './buildParams';
-import {
-  buildIndexPageATIParams,
-  buildIndexPageATIUrl,
-} from './frontPage/buildParams';
 import { RequestContextProps } from '../../../contexts/RequestContext';
 import { ServiceConfig } from '../../../models/types/serviceConfig';
 import {

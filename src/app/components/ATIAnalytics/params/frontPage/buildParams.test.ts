@@ -43,20 +43,6 @@ const validURLParams = {
   statsDestination: requestContext.statsDestination,
 };
 
-const frontPage = {
-  metadata: {
-    analyticsLabels: {
-      counterName: 'service.page',
-    },
-    locators: {
-      curie:
-        'http://www.bbc.co.uk/asset/00000000-0000-0000-0000-000000000000/desktop/domestic',
-    },
-    language: 'language',
-    title: 'title',
-  },
-};
-
 const fixPage = {
   metadata: {
     analyticsLabels: {
