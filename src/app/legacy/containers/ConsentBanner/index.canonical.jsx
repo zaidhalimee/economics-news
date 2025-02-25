@@ -10,7 +10,6 @@ const Canonical = ({ onDismissFocusRef = null }) => {
   const { updateCookiePolicy } = useContext(UserContext);
   const { isUK, showCookieBannerBasedOnCountry } = useContext(RequestContext);
   const { enabled: privacyPolicyToggle } = useToggle('privacyPolicy');
-  console.log('yooooo')
 
   const {
     showPrivacyBanner,
