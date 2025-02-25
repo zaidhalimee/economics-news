@@ -138,6 +138,7 @@ const useConsentBanner = (
       (!userHasPrivacyCookie || userHasLegacyPrivacyCookie) &&
       showCookieBannerBasedOnCountry &&
       privacyPolicyToggle;
+
     if (shouldShowPrivacyBanner) {
       dispatch(SHOW_PRIVACY_BANNER);
       setUserDidSeePrivacyBanner();
@@ -146,7 +147,7 @@ const useConsentBanner = (
     } else if (!showCookieBannerBasedOnCountry) {
       setUserDidDismissCookieBanner(isUK, 1);
       if (!userHasPolicyCookie) setUserDidAcceptPolicy();
-      setUserDidSeePrivacyBanner(1);
+      if (privacyPolicyToggle) setUserDidSeePrivacyBanner(1);
     }
 
     if (!userHasPolicyCookie) {
