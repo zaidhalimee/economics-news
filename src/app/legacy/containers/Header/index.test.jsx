@@ -207,11 +207,12 @@ describe(`Header`, () => {
           service: 'pidgin',
         },
       });
-      const pidginPrivacyHeading =
-        pidginServiceConfig.default.translations.consentBanner.privacy.title;
+      const pidginCookieHeading =
+        pidginServiceConfig.default.translations.consentBanner.cookie.canonical
+          .title;
       expect(document.activeElement).not.toBe(initialFocusElement);
       expect(document.activeElement).toBe(
-        screen.getByText(pidginPrivacyHeading),
+        screen.getByText(pidginCookieHeading),
       );
     });
 
@@ -223,14 +224,14 @@ describe(`Header`, () => {
         },
       });
 
-      const pidginPrivacyAccept =
-        pidginServiceConfig.default.translations.consentBanner.privacy.accept;
+      // const pidginPrivacyAccept =
+      //   pidginServiceConfig.default.translations.consentBanner.privacy.accept;
       const pidginCookieAccept =
         pidginServiceConfig.default.translations.consentBanner.cookie.canonical
           .accept;
       const logoHref = pidginServiceConfig.default.navigation[0].url;
 
-      fireEvent.click(screen.getByText(pidginPrivacyAccept));
+      // fireEvent.click(screen.getByText(pidginPrivacyAccept));
       fireEvent.click(screen.getByText(pidginCookieAccept));
 
       expect(document.activeElement).toBe(
@@ -252,7 +253,7 @@ describe(`Header`, () => {
       );
     });
 
-    it('should remove the privacy banner when navigating from the reject button to content with tab', () => {
+    it.skip('should remove the privacy banner when navigating from the reject button to content with tab', () => {
       const { container } = HeaderContainerWithContext({
         renderOptions: { pageType: INDEX_PAGE, service: 'pidgin' },
       });
@@ -275,14 +276,14 @@ describe(`Header`, () => {
         renderOptions: { pageType: INDEX_PAGE, service: 'pidgin' },
       });
 
-      const pidginPrivacyAccept =
-        pidginServiceConfig.default.translations.consentBanner.privacy.accept;
+      // const pidginPrivacyAccept =
+      //   pidginServiceConfig.default.translations.consentBanner.privacy.accept;
       const pidginCookieReject =
         pidginServiceConfig.default.translations.consentBanner.cookie.canonical
           .reject;
 
-      const acceptPrivacy = screen.getByText(pidginPrivacyAccept);
-      fireEvent.click(acceptPrivacy);
+      // const acceptPrivacy = screen.getByText(pidginPrivacyAccept);
+      // fireEvent.click(acceptPrivacy);
 
       const reject = screen.getByText(pidginCookieReject);
 

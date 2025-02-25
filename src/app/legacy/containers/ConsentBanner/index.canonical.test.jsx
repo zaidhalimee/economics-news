@@ -125,7 +125,7 @@ describe('Canonical Consent Banner', () => {
   });
 
   it('should render no banners when both are dismissed', async () => {
-    renderFixture();
+    renderFixture({ privacyToggleEnabled: true });
 
     const okButtonEl = screen.queryByText('OK');
 

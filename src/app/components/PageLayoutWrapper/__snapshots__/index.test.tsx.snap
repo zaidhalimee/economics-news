@@ -1104,13 +1104,20 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
                 dir="ltr"
                 tabindex="-1"
               >
-                We've updated our Privacy and Cookies Policy
+                Let us know you agree to cookies
               </h2>
               <p
                 class="emotion-9 emotion-10"
                 dir="ltr"
               >
-                We've made some important changes to our Privacy and Cookies Policy and we want you to know what this means for you and your data.
+                We use 
+                <a
+                  class="focusIndicatorReducedWidth"
+                  href="https://www.bbc.co.uk/usingthebbc/cookies/what-do-i-need-to-know-about-cookies/"
+                >
+                  cookies
+                </a>
+                 to give you the best online experience. Please let us know if you agree to all of these cookies.
               </p>
               <ul
                 class="emotion-11 emotion-12"
@@ -1122,10 +1129,10 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
                   dir="ltr"
                 >
                   <button
-                    data-terms-banner="accept"
+                    data-cookie-banner="accept"
                     type="button"
                   >
-                    OK
+                    Yes, I agree
                   </button>
                 </li>
                 <li
@@ -1134,10 +1141,10 @@ exports[`PageLayoutWrapper should render default page wrapper with children 1`] 
                 >
                   <span>
                     <a
-                      data-terms-banner="reject"
-                      href="https://www.bbc.co.uk/usingthebbc/privacy-policy/"
+                      data-cookie-banner="reject"
+                      href="https://www.bbc.co.uk/usingthebbc/cookies/how-can-i-change-my-bbc-cookie-settings/"
                     >
-                      Find out what's changed
+                      No, take me to settings
                     </a>
                   </span>
                 </li>
