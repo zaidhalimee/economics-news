@@ -73,7 +73,7 @@ describe('sendBeacon', () => {
         placement: 'pageIdentifier',
         source: 'advertiserID',
         result: 'http://localhost',
-        isClick: false,          
+        isClick: false,
       },
     };
 
@@ -82,7 +82,7 @@ describe('sendBeacon', () => {
         page: 'page',
         user: '1234-5678',
       },
-      eventDetails: {          
+      eventDetails: {
         eventName: 'sectionClick',
         eventPublisher: 'click',
         componentName: 'scrollable-navigation',
@@ -92,7 +92,7 @@ describe('sendBeacon', () => {
         placement: 'pageIdentifier',
         source: 'advertiserID',
         result: 'http://localhost',
-        isClick: true,    
+        isClick: true,
       },
     };
 
