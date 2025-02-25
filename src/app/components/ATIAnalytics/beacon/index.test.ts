@@ -89,7 +89,7 @@ describe('beacon', () => {
             attribute: 'component',
             placement: 'pageIdentifier',
             source: 'advertiserID',
-            result: 'http://localhost'
+            result: 'http://localhost',
           },
           undefined,
           undefined,
@@ -124,7 +124,7 @@ describe('beacon', () => {
             attribute: 'component',
             placement: 'pageIdentifier',
             source: 'advertiserID',
-            result: 'http://localhost'
+            result: 'http://localhost',
           },
           undefined,
           undefined,
