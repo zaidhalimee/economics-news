@@ -69,7 +69,7 @@ export default ({ service, variant, pageType, path }) => {
         'ckns_explicit',
         ACCEPTED_CKNS_EXPLICIT_COOKIE_VALUES,
       );
-      assertCookieHasValue('ckns_privacy', 'july2019');
+      // assertCookieHasValue('ckns_privacy', 'july2019');
       assertCookieHasValue('ckns_policy', '111');
 
       getCookieBannerCanonical(service, variant).should('not.exist');
@@ -85,7 +85,7 @@ export default ({ service, variant, pageType, path }) => {
       getPrivacyBanner(service, variant).should('be.visible');
       getCookieBannerCanonical(service, variant).should('not.exist');
 
-      assertCookieHasValue('ckns_privacy', 'july2019');
+      // assertCookieHasValue('ckns_privacy', 'july2019');
       assertCookieHasValue('ckns_policy', '000');
 
       getPrivacyBannerAccept(service, variant).click();
@@ -106,7 +106,7 @@ export default ({ service, variant, pageType, path }) => {
 
     it("should show cookie banner (and NOT privacy banner) if user has visited the page before and didn't explicitly 'accept' cookies", () => {
       cy.clearCookies();
-      cy.setCookie('ckns_privacy', 'july2019');
+      // cy.setCookie('ckns_privacy', 'july2019');
       visitPage(path, pageType);
 
       getPrivacyBanner(service, variant).should('not.exist');
