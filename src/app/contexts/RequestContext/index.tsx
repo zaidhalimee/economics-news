@@ -8,7 +8,6 @@ import {
   MvtExperiment,
 } from '#app/models/types/global';
 import getStatsDestination from './getStatsDestination';
-import getStatsPageIdentifier from './getStatsPageIdentifier';
 import getOriginContext from './getOriginContext';
 import getEnv from './getEnv';
 import getMetaUrls from './getMetaUrls';
@@ -38,7 +37,6 @@ export type RequestContextProps = {
   showAdsBasedOnLocation: boolean;
   showCookieBannerBasedOnCountry: boolean;
   statsDestination: string;
-  statsPageIdentifier: string | null;
   statusCode: number | null;
   timeOnServer: number | null;
   variant: Variants | null;
@@ -113,11 +111,6 @@ export const RequestContextProvider = ({
     env,
     service,
   });
-  const statsPageIdentifier = getStatsPageIdentifier({
-    pageType,
-    service,
-    id,
-  });
 
   const value = useMemo(
     () => ({
@@ -133,7 +126,6 @@ export const RequestContextProvider = ({
       isNextJs,
       platform,
       statsDestination,
-      statsPageIdentifier,
       statusCode,
       previousPath,
       variant,
@@ -164,7 +156,6 @@ export const RequestContextProvider = ({
       showAdsBasedOnLocation,
       showCookieBannerBasedOnCountry,
       statsDestination,
-      statsPageIdentifier,
       statusCode,
       timeOnServer,
       variant,
