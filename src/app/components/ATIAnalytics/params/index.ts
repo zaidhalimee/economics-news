@@ -4,7 +4,6 @@ import {
   MEDIA_ASSET_PAGE,
   CORRESPONDENT_STORY_PAGE,
   ARTICLE_PAGE,
-  FRONT_PAGE,
   TOPIC_PAGE,
   MEDIA_ARTICLE_PAGE,
   FEATURE_INDEX_PAGE,
@@ -67,7 +66,6 @@ const pageTypeUrlBuilders = {
   [ARTICLE_PAGE]: noOp,
   [MEDIA_ARTICLE_PAGE]: noOp,
   [STORY_PAGE]: noOp,
-  [FRONT_PAGE]: buildIndexPageATIUrl,
   [MOST_READ_PAGE]: noOp,
   [FEATURE_INDEX_PAGE]: noOp,
   [TOPIC_PAGE]: noOp,
@@ -90,7 +88,6 @@ const pageTypeUrlBuilders = {
 const pageTypeParamBuilders = {
   [ARTICLE_PAGE]: noOp,
   [MEDIA_ARTICLE_PAGE]: noOp,
-  [FRONT_PAGE]: buildIndexPageATIParams,
   [MOST_READ_PAGE]: noOp,
   [FEATURE_INDEX_PAGE]: noOp,
   [TOPIC_PAGE]: noOp,
