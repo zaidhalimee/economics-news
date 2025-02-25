@@ -281,10 +281,6 @@ export const service: DefaultServiceConfig = {
         url: '/punjabi',
       },
       {
-        title: 'ਸਪੋਰਟਸ ਵੂਮੈਨ ਆਫ਼ ਦਿ ਈਅਰ',
-        url: '/punjabi/topics/cwn2w9ydx2xt',
-      },
-      {
         title: 'ਵੀਡੀਓ',
         url: '/punjabi/topics/cx12qmz6jm4t',
       },
