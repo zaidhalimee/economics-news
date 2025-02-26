@@ -501,17 +501,15 @@ export const buildReverbPageSectionEventModel = ({
 }: ATIEventTrackingProps) => {
   const eventDetails = {
     eventName: type === 'view' ? 'sectionView' : 'sectionClick',
-    ...{
-      ...{ eventPublisher: type === 'click' ? 'click' : 'impression' },
-      componentName,
-      container: campaignID,
-      attribute: componentName,
-      metadata: format,
-      placement: pageIdentifier,
-      source: advertiserID,
-      result: url,
-      ...{ isClick: type === 'click' },
-    },
+    eventPublisher: type === 'click' ? 'click' : 'impression',
+    componentName,
+    container: campaignID,
+    attribute: componentName,
+    metadata: format,
+    placement: pageIdentifier,
+    source: advertiserID,
+    result: url,
+    isClick: type === 'click',
   };
 
   return {
