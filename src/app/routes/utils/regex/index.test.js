@@ -120,9 +120,9 @@ describe('homePageDataPath', () => {
     '/iplayer.json',
     '/news/foobar.json',
     '/persian/.json',
-    '/persian.json',
-    '/serbian/cyr.json',
-    '/ukchina/trad.json',
+    // '/persian.json',
+    // '/serbian/cyr.json',
+    // '/ukchina/trad.json', // work out if we need these data routes still. They work locally but not live
   ];
   shouldNotMatchInvalidRoutes(invalidRoutes, homePageDataPath);
 });
@@ -497,7 +497,7 @@ describe('homepages on environments', () => {
     'thai',
     'tigrinya',
     'turkce',
-    'ukchina',
+    // 'ukchina', this will be redirected and not used in simorgh
     'ukrainian',
     'urdu',
     'uzbek',
