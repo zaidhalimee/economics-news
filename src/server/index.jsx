@@ -24,8 +24,8 @@ import renderDocument from './Document';
 import {
   articleManifestPath,
   articleSwPath,
-  frontPageManifestPath,
-  frontPageSwPath,
+  homePageManifestPath,
+  homePageSwPath,
 } from '../app/routes/utils/regex';
 import sendCustomMetric from './utilities/customMetrics';
 import { NON_200_RESPONSE } from './utilities/customMetrics/metrics.const';
@@ -110,7 +110,7 @@ server
  * Application env routes
  */
 server
-  .get([articleSwPath, frontPageSwPath], (req, res) => {
+  .get([articleSwPath, homePageSwPath], (req, res) => {
     const swPath = `${__dirname}/public/sw.js`;
     res.set(
       `Cache-Control`,
@@ -124,7 +124,7 @@ server
     });
   })
   .get(
-    [articleManifestPath, frontPageManifestPath],
+    [articleManifestPath, homePageManifestPath],
     async ({ params }, res) => {
       const { service } = params;
       const manifestPath = `${__dirname}/public/${service}/manifest.json`;

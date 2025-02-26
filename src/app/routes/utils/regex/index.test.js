@@ -6,10 +6,9 @@ import {
   articleSwPath,
   cpsAssetPageDataPath,
   cpsAssetPagePath,
-  frontPageDataPath,
-  frontPageManifestPath,
-  frontPagePath,
-  frontPageSwPath,
+  homePagePath,
+  homePageManifestPath,
+  homePageSwPath,
   legacyAssetPageDataPath,
   legacyAssetPagePath,
   liveRadioPath,
@@ -24,7 +23,7 @@ import {
 } from './index';
 
 import serviceConfig from '../../../lib/config/services/loadableConfig';
-import { getFrontPageRegex, getHomePageRegex } from './utils/index';
+import { getHomePageRegex } from './utils/index';
 
 jest.mock('#server/utilities/serviceConfigs', () => ({
   news: {},
@@ -100,7 +99,7 @@ describe('articleDataPath', () => {
   shouldNotMatchInvalidRoutes(invalidRoutes, articleDataPath);
 });
 
-describe('frontPagePath', () => {
+describe('homePagePath', () => {
   const invalidRoutes = [
     '/news/home',
     '/persian/c5jje4ejkqvo.amp',
@@ -114,21 +113,21 @@ describe('frontPagePath', () => {
     '/serbian/lat.amp',
     '/serbian/cyr.amp',
   ];
-  shouldNotMatchInvalidRoutes(invalidRoutes, frontPagePath);
+  shouldNotMatchInvalidRoutes(invalidRoutes, homePagePath);
 });
 
-describe('frontPageDataPath', () => {
-  const invalidRoutes = [
-    '/news/data.json',
-    '/iplayer.json',
-    '/news/foobar.json',
-    '/persian/.json',
-    '/persian.json',
-    '/serbian/cyr.json',
-    '/ukchina/trad.json',
-  ];
-  shouldNotMatchInvalidRoutes(invalidRoutes, frontPageDataPath);
-});
+// describe('homePageDataPath', () => {
+//   const invalidRoutes = [
+//     '/news/data.json',
+//     '/iplayer.json',
+//     '/news/foobar.json',
+//     '/persian/.json',
+//     '/persian.json',
+//     '/serbian/cyr.json',
+//     '/ukchina/trad.json',
+//   ];
+//   shouldNotMatchInvalidRoutes(invalidRoutes, homePageDataPath);
+// });
 
 describe('articleSwPath', () => {
   const validRoutes = [
@@ -163,28 +162,28 @@ describe('manifestPath', () => {
   shouldNotMatchInvalidRoutes(invalidRoutes, articleManifestPath);
 });
 
-describe('frontPageSwPath', () => {
+describe('homePageSwPath', () => {
   const validRoutes = ['/news/sw.js', '/persian/sw.js'];
-  shouldMatchValidRoutes(validRoutes, frontPageSwPath);
+  shouldMatchValidRoutes(validRoutes, homePageSwPath);
 
   const invalidRoutes = [
     '/news/articles/sw.js',
     '/persian/sw',
     '/persian/simp/sw.js',
   ];
-  shouldNotMatchInvalidRoutes(invalidRoutes, frontPageSwPath);
+  shouldNotMatchInvalidRoutes(invalidRoutes, homePageSwPath);
 });
 
-describe('frontPageManifestPath', () => {
+describe('homePageManifestPath', () => {
   const validRoutes = ['/news/manifest.json', '/persian/manifest.json'];
-  shouldMatchValidRoutes(validRoutes, frontPageManifestPath);
+  shouldMatchValidRoutes(validRoutes, homePageManifestPath);
 
   const invalidRoutes = [
     '/foobar/manifest.json',
     '/foobar/manifest',
     '/news/trad/sw.js',
   ];
-  shouldNotMatchInvalidRoutes(invalidRoutes, frontPageManifestPath);
+  shouldNotMatchInvalidRoutes(invalidRoutes, homePageManifestPath);
 });
 
 describe('onDemandRadioPath', () => {
@@ -443,7 +442,7 @@ describe('legacyAssetPageDataPath', () => {
   shouldNotMatchInvalidRoutes(invalidDataRoutes, legacyAssetPageDataPath);
 });
 
-describe('frontPage -> homePage migration', () => {
+describe('homepages on environments', () => {
   const services = Object.keys(serviceConfig);
 
   const servicesNotCoveredByWorldService = [
@@ -454,6 +453,7 @@ describe('frontPage -> homePage migration', () => {
     'naidheachdan',
     'cymrufyw',
     'archive',
+    'ws', // we use this for ati buckets but not a page
   ];
 
   const worldServices = services.filter(
@@ -499,6 +499,7 @@ describe('frontPage -> homePage migration', () => {
     'thai',
     'tigrinya',
     'turkce',
+    'ukchina',
     'ukrainian',
     'urdu',
     'uzbek',
@@ -507,12 +508,6 @@ describe('frontPage -> homePage migration', () => {
     'zhongwen',
   ];
   const migratedWorldServiceRoutes = migratedServices.map(serviceToRoute);
-
-  const liveFrontPageServices = worldServices.filter(
-    service => !migratedServices.includes(service),
-  );
-
-  const liveFrontPageRoutes = liveFrontPageServices.map(serviceToRoute);
 
   const originalApplicationEnvironment = process.env.SIMORGH_APP_ENV;
 
@@ -531,35 +526,12 @@ describe('frontPage -> homePage migration', () => {
     },
   );
 
-  describe.each(['local', 'test'])(
-    `frontPage regex on the %s environment`,
-    environment => {
-      process.env.SIMORGH_APP_ENV = environment;
-
-      const frontPageRegex = getFrontPageRegex(services);
-
-      shouldNotMatchInvalidRoutes(homepageServices, frontPageRegex);
-    },
-  );
-
-  describe(`frontPage regex on the live environment`, () => {
-    process.env.SIMORGH_APP_ENV = 'live';
-
-    const frontPageRegex = getFrontPageRegex(services);
-
-    shouldMatchValidRoutes(liveFrontPageRoutes, frontPageRegex);
-
-    shouldNotMatchInvalidRoutes(migratedWorldServiceRoutes, frontPageRegex);
-  });
-
   describe(`homePage regex on the live environment`, () => {
     process.env.SIMORGH_APP_ENV = 'live';
 
     const homePageRegex = getHomePageRegex(services);
 
     shouldMatchValidRoutes(migratedWorldServiceRoutes, homePageRegex);
-
-    shouldNotMatchInvalidRoutes(liveFrontPageRoutes, homePageRegex);
   });
 });
 

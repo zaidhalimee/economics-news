@@ -30,9 +30,8 @@ export const articleDataPath = `${articlePath}.json`;
 export const articleSwPath = getArticleSwRegex(allServices);
 export const articleManifestPath = getArticleManifestRegex(allServices);
 
-export const frontPageSwPath = getSwRegex(allServices);
-export const frontPageManifestPath = getManifestRegex(allServices);
-
+export const homePageSwPath = getSwRegex(allServices);
+export const homePageManifestPath = getManifestRegex(allServices);
 export const homePagePath = getHomePageRegex(allServices);
 export const homePageDataPath = `${homePagePath}.json`;
 
