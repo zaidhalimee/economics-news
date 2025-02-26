@@ -231,7 +231,7 @@ describe('bundleSize', () => {
         // silence error
       }
       expect(global.console.error).toHaveBeenCalledWith(
-        "Bundle size for service1 FrontPage is too small at 357 kB. Please update thresholds in './scripts/bundleSize/bundleSizeConfig.js'",
+        "Bundle size for service1 HomePage is too small at 357 kB. Please update thresholds in './scripts/bundleSize/bundleSizeConfig.js'",
       );
     });
   });
