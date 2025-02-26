@@ -64,6 +64,7 @@ import Disclaimer from '../../components/Disclaimer';
 import SecondaryColumn from './SecondaryColumn';
 import styles from './ArticlePage.styles';
 import { ComponentToRenderProps, TimeStampProps } from './types';
+import { transformRecsData } from './recommendationsExperiment';
 
 const getImageComponent =
   (preloadLeadImageToggle: boolean) => (props: ComponentToRenderProps) => (
@@ -130,6 +131,11 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const allowAdvertising = pageData?.metadata?.allowAdvertising ?? false;
   const adcampaign = pageData?.metadata?.adCampaignKeyword;
 
+  const {
+    metadata: { atiAnalytics },
+    mostRead: mostReadInitialData,
+  } = pageData;
+
   const { enabled: podcastPromoEnabled } = useToggle('podcastPromo');
   const headline = getHeadline(pageData) ?? '';
   const description = getSummary(pageData) || getHeadline(pageData);
@@ -158,17 +164,18 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const recommendationsData = pageData?.recommendations ?? [];
 
+  const transformedRecsData = transformRecsData({
+    wsojRecs: recommendationsData,
+    mostRead: mostReadInitialData,
+    pageBlocks: blocks,
+  });
+
   const isPGL = pageData?.metadata?.type === PHOTO_GALLERY_PAGE;
   const isSTY = pageData?.metadata?.type === STORY_PAGE;
   const isCPS = isPGL || isSTY;
   const isTC2Asset = pageData?.metadata?.analyticsLabels?.contentId
     ?.split(':')
     ?.includes('topcat');
-
-  const {
-    metadata: { atiAnalytics },
-    mostRead: mostReadInitialData,
-  } = pageData;
 
   const atiData = {
     ...atiAnalytics,
@@ -198,7 +205,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     group: gist,
     links: ScrollablePromo,
     mpu: getMpuComponent(allowAdvertising),
-    wsoj: getWsojComponent(recommendationsData),
+    wsoj: getWsojComponent(transformedRecsData),
     disclaimer: DisclaimerWithPaddingOverride,
     podcastPromo: getPodcastPromoComponent(podcastPromoEnabled),
   };
