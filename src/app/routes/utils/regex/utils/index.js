@@ -76,27 +76,9 @@ const homePageServices = [
   'yoruba',
   'zhongwen',
 ];
-
-export const getFrontPageRegex = services => {
-  let frontPages = services;
-  if (isLive()) {
-    frontPages = services.filter(
-      service => !homePageServices.includes(service),
-    );
-  } else {
-    frontPages = [];
-  }
-  const serviceRegex = getServiceRegex(frontPages);
-  return `/:service(${serviceRegex}):variant(${variantRegex})?:amp(${ampRegex})?:lite(${liteRegex})?`;
-};
-
 export const getHomePageRegex = services => {
-  let homePages = services;
-  if (isLive()) {
-    homePages = services.filter(service => homePageServices.includes(service));
-  }
-  const homePageServiceRegex = getServiceRegex(homePages);
-  return `/:service(${homePageServiceRegex}):variant(${variantRegex})?:lite(${liteRegex})?`;
+  const serviceRegex = getServiceRegex(services);
+  return `/:service(${serviceRegex}):variant(${variantRegex})?:amp(${ampRegex})?:lite(${liteRegex})?`;
 };
 
 export const getSwRegex = services => {
