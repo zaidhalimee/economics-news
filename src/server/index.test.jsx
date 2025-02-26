@@ -10,7 +10,7 @@ import {
   SERVER_SIDE_RENDER_REQUEST_RECEIVED,
   SERVER_SIDE_REQUEST_FAILED,
 } from '#lib/logger.const';
-import { FRONT_PAGE, LIVE_RADIO_PAGE } from '#app/routes/utils/pageTypes';
+import { HOME_PAGE, LIVE_RADIO_PAGE } from '#app/routes/utils/pageTypes';
 import Document from './Document/component';
 import routes from '../app/routes';
 import * as renderDocument from './Document';
@@ -174,7 +174,7 @@ const assertNon200ResponseCustomMetrics = ({
   });
 };
 
-const testFrontPages = ({ platform, service, variant, queryString = '' }) => {
+const testHomePages = ({ platform, service, variant, queryString = '' }) => {
   const isAmp = platform === 'amp';
   const isApp = platform === 'app';
   const extension =
@@ -186,7 +186,7 @@ const testFrontPages = ({ platform, service, variant, queryString = '' }) => {
     variant ? `/${variant}` : ''
   }${extension}${queryString}`;
 
-  describe(`Front Page: ${serviceURL}`, () => {
+  describe(`Home Page: ${serviceURL}`, () => {
     const successDataResponse = {
       isAmp,
       data: { some: 'data' },
@@ -228,7 +228,7 @@ const testFrontPages = ({ platform, service, variant, queryString = '' }) => {
       });
 
       describe('404 status code', () => {
-        const pageType = 'Front Page';
+        const pageType = 'Home Page';
         beforeEach(() => {
           mockRouteProps({
             service,
@@ -257,7 +257,7 @@ const testFrontPages = ({ platform, service, variant, queryString = '' }) => {
     });
 
     describe('Unknown error within the data fetch, react router or its dependencies', () => {
-      const pageType = FRONT_PAGE;
+      const pageType = HOME_PAGE;
       beforeEach(() => {
         mockRouteProps({
           service,
@@ -1240,31 +1240,31 @@ describe('Server', () => {
     });
   });
 
-  testFrontPages({ platform: 'canonical', service: 'igbo' });
-  testFrontPages({
+  testHomePages({ platform: 'canonical', service: 'igbo' });
+  testHomePages({
     platform: 'canonical',
     service: 'igbo',
     queryString: QUERY_STRING,
   });
-  testFrontPages({ platform: 'amp', service: 'igbo' });
-  testFrontPages({
+  testHomePages({ platform: 'amp', service: 'igbo' });
+  testHomePages({
     platform: 'amp',
     service: 'igbo',
     queryString: QUERY_STRING,
   });
-  testFrontPages({
+  testHomePages({
     platform: 'canonical',
     service: 'ukchina',
     variant: 'simp',
   });
-  testFrontPages({
+  testHomePages({
     platform: 'canonical',
     service: 'ukchina',
     variant: 'simp',
     queryString: QUERY_STRING,
   });
-  testFrontPages({ platform: 'amp', service: 'serbian', variant: 'lat' });
-  testFrontPages({
+  testHomePages({ platform: 'amp', service: 'serbian', variant: 'lat' });
+  testHomePages({
     platform: 'amp',
     service: 'serbian',
     variant: 'lat',
