@@ -1,6 +1,6 @@
 import React from 'react';
 import { RequestContextProvider } from '#contexts/RequestContext';
-import { FRONT_PAGE } from '#app/routes/utils/pageTypes';
+import { HOME_PAGE } from '#app/routes/utils/pageTypes';
 import BulletinContainer from '.';
 import ampDecorator from '../../../../../.storybook/helpers/ampDecorator';
 import {
@@ -23,7 +23,7 @@ const Component = ({ isAmp = false, service, item }) => (
     bbcOrigin="https://www.test.bbc.co.uk"
     isAmp={isAmp}
     pathname="/pathname"
-    pageType={FRONT_PAGE}
+    pageType={HOME_PAGE}
     service={service}
   >
     <BulletinContainer item={item} />
