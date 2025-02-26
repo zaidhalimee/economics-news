@@ -12,7 +12,6 @@ import Cookie from 'js-cookie';
 import isOperaProxy from '#app/lib/utilities/isOperaProxy';
 import { ServiceContext } from '../../../../contexts/ServiceContext';
 
-// 004_brasil_recommendations_experiment
 const isCypress = onClient() && window.Cypress;
 
 if (isLive() || isCypress) {

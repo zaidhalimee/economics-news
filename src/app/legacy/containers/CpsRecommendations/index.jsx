@@ -6,7 +6,6 @@ import {
   GEL_GROUP_3_SCREEN_WIDTH_MIN,
   GEL_GROUP_4_SCREEN_WIDTH_MIN,
 } from '#psammead/gel-foundations/src/breakpoints';
-import pathOr from 'ramda/src/pathOr';
 import path from 'ramda/src/path';
 import {
   GEL_SPACING,
@@ -18,6 +17,7 @@ import SkipLinkWrapper from '#components/SkipLinkWrapper';
 import useToggle from '#hooks/useToggle';
 import { GridItemMediumNoMargin } from '#components/Grid';
 
+import { useWsojTitle } from '#app/pages/ArticlePage/recommendationsExperiment';
 import { ServiceContext } from '../../../contexts/ServiceContext';
 import RecommendationsPromoList from './RecommendationsPromoList';
 import RecommendationsPromo from './RecommendationsPromo';
@@ -46,9 +46,14 @@ const LabelComponent = styled(SectionLabel)`
 `;
 
 const CpsRecommendations = ({ items }) => {
-  const { recommendations, translations, script, service, dir } =
-    useContext(ServiceContext);
+  const { recommendations, script, service, dir } = useContext(ServiceContext);
   const { enabled } = useToggle('cpsRecommendations');
+
+  const {
+    palette: { GREY_2 },
+  } = useTheme();
+
+  const title = useWsojTitle();
 
   const labelId = 'recommendations-heading';
   const a11yAttributes = {
@@ -56,23 +61,14 @@ const CpsRecommendations = ({ items }) => {
     role: 'region',
     'aria-labelledby': labelId,
   };
-  const {
-    palette: { GREY_2 },
-  } = useTheme();
 
   const { hasStoryRecommendations } = recommendations;
 
   if (!hasStoryRecommendations || !enabled || !items.length) return null;
 
-  const titlePath = ['Recommended stories', ['recommendationTitle']];
-
-  const title = pathOr(...titlePath, translations);
-
   const { text, endTextVisuallyHidden } = path(['skipLink'], recommendations);
 
-  const terms = {
-    '%title%': title,
-  };
+  const terms = { '%title%': title };
 
   const isSinglePromo = items.length === 1;
 

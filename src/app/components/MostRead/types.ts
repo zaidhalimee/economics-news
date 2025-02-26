@@ -1,3 +1,4 @@
+import { OptimoBlock } from '#app/models/types/optimo';
 import { Services, Direction } from '../../models/types/global';
 
 export type Size = 'default' | 'small';
@@ -84,5 +85,8 @@ export interface MostReadData {
     href: string;
     title: string;
     timestamp: number | string;
+    images?: {
+      defaultPromoImage: OptimoBlock[];
+    };
   }[];
 }
