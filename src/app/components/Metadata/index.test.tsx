@@ -699,7 +699,7 @@ describe('Metadata', () => {
     });
   });
 
-  it('should render the default service twitter handle for a Front Page asset', async () => {
+  it('should render the default service twitter handle for a Home Page asset', async () => {
     render(
       <MetadataWithContext
         service="serbian"
