@@ -7,6 +7,7 @@ import {
   cpsAssetPageDataPath,
   cpsAssetPagePath,
   homePagePath,
+  homePageDataPath,
   homePageManifestPath,
   homePageSwPath,
   legacyAssetPageDataPath,
@@ -106,28 +107,25 @@ describe('homePagePath', () => {
     '/iplayer',
     '/news/foobar',
     '/news/foobar.amp',
-    '/kyrgyz',
     '/kyrgyz.amp',
-    '/ukchina/simp',
-    '/ukchina/trad',
     '/serbian/lat.amp',
     '/serbian/cyr.amp',
   ];
   shouldNotMatchInvalidRoutes(invalidRoutes, homePagePath);
 });
 
-// describe('homePageDataPath', () => {
-//   const invalidRoutes = [
-//     '/news/data.json',
-//     '/iplayer.json',
-//     '/news/foobar.json',
-//     '/persian/.json',
-//     '/persian.json',
-//     '/serbian/cyr.json',
-//     '/ukchina/trad.json',
-//   ];
-//   shouldNotMatchInvalidRoutes(invalidRoutes, homePageDataPath);
-// });
+describe('homePageDataPath', () => {
+  const invalidRoutes = [
+    '/news/data.json',
+    '/iplayer.json',
+    '/news/foobar.json',
+    '/persian/.json',
+    '/persian.json',
+    '/serbian/cyr.json',
+    '/ukchina/trad.json',
+  ];
+  shouldNotMatchInvalidRoutes(invalidRoutes, homePageDataPath);
+});
 
 describe('articleSwPath', () => {
   const validRoutes = [
