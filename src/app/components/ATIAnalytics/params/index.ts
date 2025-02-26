@@ -20,6 +20,7 @@ import {
   LIVE_RADIO_PAGE,
   AUDIO_PAGE,
   TV_PAGE,
+  MY_BBC,
 } from '../../../routes/utils/pageTypes';
 import {
   buildPageATIUrl,
@@ -57,6 +58,7 @@ const MIGRATED_PAGE_TYPES: PageTypes[] = [
   LIVE_RADIO_PAGE,
   AUDIO_PAGE,
   TV_PAGE,
+  MY_BBC,
 ];
 
 const noOp = () => {
@@ -85,6 +87,7 @@ const pageTypeUrlBuilders = {
   [LIVE_RADIO_PAGE]: noOp,
   [AUDIO_PAGE]: noOp,
   [TV_PAGE]: noOp,
+  [MY_BBC]: noOp,
 };
 
 const pageTypeParamBuilders = {
@@ -109,6 +112,7 @@ const pageTypeParamBuilders = {
   [LIVE_RADIO_PAGE]: noOp,
   [AUDIO_PAGE]: noOp,
   [TV_PAGE]: noOp,
+  [MY_BBC]: noOp,
 };
 
 type BuilderFunction = {
