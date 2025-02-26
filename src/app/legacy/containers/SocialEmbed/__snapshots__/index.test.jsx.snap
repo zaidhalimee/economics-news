@@ -382,7 +382,7 @@ exports[`SocialEmbedContainer AMP should match snapshot 1`] = `
         href="#end-of-twitter-content-1"
       >
         <span>
-          Skip Twitter content, 1
+          Skip X content, 1
         </span>
       </a>
       <div
@@ -441,7 +441,7 @@ exports[`SocialEmbedContainer AMP should match snapshot 1`] = `
         id="end-of-twitter-content-1"
         tabindex="-1"
       >
-        End of Twitter content, 1
+        End of X content, 1
       </p>
     </div>
     <noscript />
@@ -1824,7 +1824,7 @@ exports[`SocialEmbedContainer Canonical should render a Twitter block and unmoun
         href="#end-of-twitter-content-1"
       >
         <span>
-          Skip Twitter content, 1
+          Skip X content, 1
         </span>
       </a>
       <div
@@ -1869,7 +1869,7 @@ exports[`SocialEmbedContainer Canonical should render a Twitter block and unmoun
         id="end-of-twitter-content-1"
         tabindex="-1"
       >
-        End of Twitter content, 1
+        End of X content, 1
       </p>
     </div>
     <noscript />
