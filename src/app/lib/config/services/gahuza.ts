@@ -371,6 +371,10 @@ export const service: DefaultServiceConfig = {
         url: '/gahuza/topics/c9dvd93jjkkt',
       },
       {
+        title: 'Ubuzima',
+        url: '/gahuza/topics/cnq68qp4kxjt',
+      },
+      {
         title: 'Imikino',
         url: '/gahuza/topics/c5qvpq0jzy7t',
       },
