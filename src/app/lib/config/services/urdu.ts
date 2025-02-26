@@ -42,7 +42,7 @@ export const service: DefaultServiceConfig = {
     script: arabic,
     manifestPath: '/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle:
+    homePageTitle:
       'خبریں، تازہ خبریں، بریکنگ نیو | News, latest news, breaking news',
     showAdPlaceholder: true,
     showRelatedTopics: true,

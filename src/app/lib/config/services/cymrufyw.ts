@@ -39,7 +39,7 @@ export const service: DefaultServiceConfig = {
     isTrustProjectParticipant: true,
     script: latinWithDiacritics,
     manifestPath: '/articles/manifest.json',
-    frontPageTitle: 'Newyddion a mwy',
+    homePageTitle: 'Newyddion a mwy',
     showAdPlaceholder: false,
     showRelatedTopics: true,
     translations: {

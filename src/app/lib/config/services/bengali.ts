@@ -42,7 +42,7 @@ export const service: DefaultServiceConfig = {
     script: bengali,
     manifestPath: '/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle:
+    homePageTitle:
       'খবর, সর্বশেষ খবর, ব্রেকিং নিউজ | News, latest news, breaking news',
     showAdPlaceholder: true,
     showRelatedTopics: true,

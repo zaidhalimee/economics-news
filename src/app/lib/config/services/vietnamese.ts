@@ -44,7 +44,7 @@ export const service: DefaultServiceConfig = {
     script: latinWithDiacritics,
     manifestPath: '/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Tin chính',
+    homePageTitle: 'Tin chính',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {

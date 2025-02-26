@@ -44,7 +44,7 @@ export const service: DefaultServiceConfig = {
     script: latin,
     manifestPath: '/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Àbáwọlé',
+    homePageTitle: 'Àbáwọlé',
     translations: {
       pagination: {
         previousPage: 'Ìṣájú',

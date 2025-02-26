@@ -43,7 +43,7 @@ export const service: DefaultServiceConfig = {
     script: latinWithDiacritics,
     manifestPath: '/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Accueil',
+    homePageTitle: 'Accueil',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {

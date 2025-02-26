@@ -349,7 +349,7 @@ export const service: DefaultServiceConfig = {
     script: cyrillic,
     manifestPath: '/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Главная',
+    homePageTitle: 'Главная',
     iTunesAppId: 504278066,
     showAdPlaceholder: true,
     showRelatedTopics: true,

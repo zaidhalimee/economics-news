@@ -36,7 +36,7 @@ export const service: DefaultServiceConfig = {
     script: latin,
     manifestPath: '/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Ogbako',
+    homePageTitle: 'Ogbako',
     noBylinesPolicy:
       'https://www.bbc.com/igbo/institutional-48529074#authorexpertise',
     publishingPrinciples: 'https://www.bbc.com/igbo/institutional-48529074',

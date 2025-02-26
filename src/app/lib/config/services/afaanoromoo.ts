@@ -44,7 +44,7 @@ export const service: DefaultServiceConfig = {
     script: latin,
     manifestPath: '/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Oduu',
+    homePageTitle: 'Oduu',
     showAdPlaceholder: false,
     showRelatedTopics: true,
     translations: {

@@ -36,7 +36,7 @@ export const service: DefaultServiceConfig = {
     isTrustProjectParticipant: false,
     script: latin,
     manifestPath: '/articles/manifest.json',
-    frontPageTitle: 'Home',
+    homePageTitle: 'Home',
     showAdPlaceholder: false,
     showRelatedTopics: false,
     translations: {

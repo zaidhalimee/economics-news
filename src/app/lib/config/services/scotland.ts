@@ -39,7 +39,7 @@ export const service: DefaultServiceConfig = {
     script: latin,
     manifestPath: '/articles/manifest.json',
     swPath: '/articles/sw.js',
-    frontPageTitle: 'Home',
+    homePageTitle: 'Home',
     passportHomes: ['BBCScotland'],
     showAdPlaceholder: false,
     showRelatedTopics: true,

@@ -42,7 +42,7 @@ export const service: DefaultServiceConfig = {
     script: burmese,
     manifestPath: '/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle:
+    homePageTitle:
       'ဘီဘီစီ မြန်မာ | အထူးသတင်း | နောက်ဆုံးရ သတင်း | နောက်ဆုံးရခေါင်းစဉ် သတင်း |မြန်မာသတင်း',
     showAdPlaceholder: false,
     showRelatedTopics: true,

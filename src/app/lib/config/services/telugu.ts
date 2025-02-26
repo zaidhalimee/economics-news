@@ -42,7 +42,7 @@ export const service: DefaultServiceConfig = {
     script: devanagari,
     manifestPath: '/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'వార్తలు',
+    homePageTitle: 'వార్తలు',
     showAdPlaceholder: false,
     showRelatedTopics: true,
     translations: {

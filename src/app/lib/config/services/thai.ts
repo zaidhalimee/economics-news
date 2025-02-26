@@ -42,7 +42,7 @@ export const service: DefaultServiceConfig = {
     script: thai,
     manifestPath: '/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'ข่าว ข่าววันนี้ ข่าวล่าสุด วีดีโอ',
+    homePageTitle: 'ข่าว ข่าววันนี้ ข่าวล่าสุด วีดีโอ',
     showAdPlaceholder: false,
     showRelatedTopics: true,
     translations: {

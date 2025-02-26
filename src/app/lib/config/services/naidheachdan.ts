@@ -39,7 +39,7 @@ export const service: DefaultServiceConfig = {
     isTrustProjectParticipant: true,
     script: latinWithDiacritics,
     manifestPath: '/articles/manifest.json',
-    frontPageTitle: 'Dachaigh',
+    homePageTitle: 'Dachaigh',
     showAdPlaceholder: false,
     showRelatedTopics: true,
     translations: {
