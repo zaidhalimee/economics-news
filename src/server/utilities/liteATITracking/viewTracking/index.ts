@@ -5,7 +5,7 @@ export default () => {
         const { target } = entry;
         const atiURL = target.getAttribute('data-lite-ati-view-tracking');
         setTimeout(() => {
-          window.processClientAndSend(atiURL as string);
+          window.processClientDeviceAndSendLite(atiURL as string);
           observer.unobserve(target);
         }, 1000);
       }

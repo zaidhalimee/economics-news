@@ -61,8 +61,8 @@ const SingleTopicTagItem = styled.div`
 `;
 
 export const TopicTag = forwardRef(
-  ({ name, link, onClick = null, liteViewTrack = null }, ref) => (
-    <a href={link} onClick={onClick} ref={ref} {...liteViewTrack}>
+  ({ name, link, onClick = null, liteViewTracker = null }, ref) => (
+    <a href={link} onClick={onClick} ref={ref} {...liteViewTracker}>
       {name}
     </a>
   ),

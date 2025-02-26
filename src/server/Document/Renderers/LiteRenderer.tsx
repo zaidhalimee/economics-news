@@ -1,6 +1,6 @@
 /* eslint-disable react/no-danger */
 import React, { ReactElement, PropsWithChildren } from 'react';
-import processClientAndSend from '#src/server/utilities/liteATITracking';
+import processClientDeviceAndSendLite from '#src/server/utilities/liteATITracking';
 import clickTracking from '#src/server/utilities/liteATITracking/clickTracking/index';
 import viewTracking from '#src/server/utilities/liteATITracking/viewTracking';
 import { BaseRendererProps } from './types';
@@ -11,7 +11,7 @@ interface Props extends BaseRendererProps {
 
 const trackingScripts = () => `
   window.addEventListener('load', function (){
-    (${processClientAndSend.toString()})();
+    (${processClientDeviceAndSendLite.toString()})();
     (${clickTracking.toString()})();
     (${viewTracking.toString()})();
   });

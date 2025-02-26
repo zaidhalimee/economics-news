@@ -9,10 +9,10 @@ describe('View tracking script', () => {
     while (document.body.firstChild) {
       document.body.removeChild(document.body.firstChild);
     }
-    window.processClientAndSend = jest.fn();
+    window.processClientDeviceAndSendLite = jest.fn();
   });
 
-  it('Calls processClientAndSend() when the IntersectionObserver marks it as intersecting.', () => {
+  it('Calls processClientDeviceAndSendLite() when the IntersectionObserver marks it as intersecting.', () => {
     const anchorElement = document.createElement('a');
     anchorElement.setAttribute(
       LITE_ATI_VIEW_TRACKING,
@@ -28,8 +28,8 @@ describe('View tracking script', () => {
     document.dispatchEvent(new Event('triggerMockObserver'));
     jest.runAllTimers();
 
-    expect(window.processClientAndSend as jest.Mock).toHaveBeenCalledWith(
-      'https://logws1363.ati-host.net/?',
-    );
+    expect(
+      window.processClientDeviceAndSendLite as jest.Mock,
+    ).toHaveBeenCalledWith('https://logws1363.ati-host.net/?');
   });
 });

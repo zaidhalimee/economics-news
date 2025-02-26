@@ -1,5 +1,5 @@
 export default () => {
-  window.processClientAndSend = atiURL => {
+  window.processClientDeviceAndSendLite = atiURL => {
     if (atiURL) {
       const {
         screen: { width, height, colorDepth, pixelDepth },

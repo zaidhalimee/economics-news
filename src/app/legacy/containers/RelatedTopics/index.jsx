@@ -82,7 +82,7 @@ const RelatedTopics = ({
               link={getTopicPageUrl(topics[0].topicId)}
               onClick={clickTrackerHandler}
               ref={viewRef}
-              liteViewTrack={liteViewTrack}
+              liteViewTracker={liteViewTrack}
               key={topics[0].topicId}
             />
           ) : (
@@ -92,7 +92,7 @@ const RelatedTopics = ({
                 link={getTopicPageUrl(topicId)}
                 onClick={clickTrackerHandler}
                 ref={viewRef}
-                liteViewTrack={liteViewTrack}
+                liteViewTracker={liteViewTrack}
                 key={topicId}
               />
             ))
