@@ -8,7 +8,7 @@ export type Direction = 'rtl' | 'ltr';
 
 export type SocialEmbedProviders =
   | 'facebook'
-  | 'x'
+  | 'twitter'
   | 'instagram'
   | 'youtube'
   | 'tiktok';

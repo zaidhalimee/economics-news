@@ -97,7 +97,10 @@ describe('Embed Consent Banner - Content', () => {
 
   it('should render a X consent banner with correct content for Mundo service', () => {
     render(
-      <ConsentBanner provider="x" clickHandler={mockCanonicalClickHandler} />,
+      <ConsentBanner
+        provider="twitter"
+        clickHandler={mockCanonicalClickHandler}
+      />,
       {
         service: 'mundo',
       },
@@ -189,7 +192,10 @@ describe('Embed Consent Banner - Content', () => {
       );
 
       render(
-        <ConsentBanner provider="x" clickHandler={mockCanonicalClickHandler} />,
+        <ConsentBanner
+          provider="twitter"
+          clickHandler={mockCanonicalClickHandler}
+        />,
         {
           service: 'mundo',
         },
@@ -218,7 +224,7 @@ describe('Embed Consent Banner - Content', () => {
       });
 
       expect(viewTrackerSpy).toHaveBeenCalledWith({
-        componentName: 'social-consent-banner-x',
+        componentName: 'social-consent-banner-twitter',
       });
     });
 

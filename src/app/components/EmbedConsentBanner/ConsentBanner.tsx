@@ -29,14 +29,14 @@ const BANNER_URLS: BannerUrls = {
     tiktok: 'https://www.tiktok.com/legal/cookie-policy',
     facebook: 'https://www.facebook.com/privacy/policies/cookies',
     instagram: 'https://privacycenter.instagram.com/policies/cookies/',
-    x: 'https://help.twitter.com/en/rules-and-policies/twitter-cookies',
+    twitter: 'https://help.twitter.com/en/rules-and-policies/twitter-cookies',
   },
   privacyUrl: {
     youtube: 'https://policies.google.com/privacy',
     tiktok: 'https://www.tiktok.com/legal/privacy-policy',
     facebook: 'https://www.facebook.com/privacy/policy/',
     instagram: 'https://privacycenter.instagram.com/policy',
-    x: 'https://twitter.com/en/privacy',
+    twitter: 'https://twitter.com/en/privacy',
   },
 };
 
@@ -52,7 +52,7 @@ const getProviderName = (provider: ConsentBannerProviders) => {
     tiktok: 'TikTok',
     facebook: 'Facebook',
     instagram: 'Instagram',
-    x: 'X',
+    twitter: 'X',
   }[provider];
 };
 
