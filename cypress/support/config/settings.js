@@ -3003,7 +3003,6 @@ module.exports = () => ({
             paths: [
               '/mundo/articles/ce7p1pw7165o',
               '/mundo',
-              '/mundo/noticias-internacional-53826365',
               '/mundo/popular/read',
               '/mundo/media-52123665',
             ],
@@ -3022,7 +3021,6 @@ module.exports = () => ({
             paths: [
               '/mundo/articles/ce42wzqr2mko',
               '/mundo',
-              '/mundo/noticias-internacional-53826365',
               '/mundo/popular/read',
               '/mundo/media-23283126',
             ],
