@@ -10,7 +10,6 @@ import useToggle from '../../hooks/useToggle';
 import {
   ARTICLE_PAGE,
   MOST_READ_PAGE,
-  FEATURE_INDEX_PAGE,
   MEDIA_ASSET_PAGE,
   STORY_PAGE,
   PHOTO_GALLERY_PAGE,
@@ -58,7 +57,6 @@ const getCampaignID = (pageType: CampaignPageTypes) => {
     [ARTICLE_PAGE]: 'article',
     [MEDIA_ARTICLE_PAGE]: 'article-sfv',
     [MOST_READ_PAGE]: 'list-datadriven-read',
-    [FEATURE_INDEX_PAGE]: 'index-section-fix',
     [MEDIA_ASSET_PAGE]: 'article-media-asset',
     [STORY_PAGE]: 'article-sty',
     [PHOTO_GALLERY_PAGE]: 'article-photo-gallery',
