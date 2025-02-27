@@ -331,10 +331,6 @@ export const service: DefaultServiceConfig = {
         url: '/gujarati',
       },
       {
-        title: 'સ્પૉર્ટ્સવુમન ઑફ ધ યર',
-        url: '/gujarati/topics/cp2n8m7glkgt',
-      },
-      {
         title: 'ગુજરાત',
         url: '/gujarati/topics/cz74kjn4j5wt',
       },
