@@ -42,7 +42,7 @@ const AmpConsentWrapper = styled.div`
 `;
 
 const Amp = () => {
-  const { enabled } = useToggle('privacyPolicy');
+  const { enabled, value } = useToggle('privacyPolicy');
   return (
     <AmpConsentWrapper>
       <AmpGeo />
