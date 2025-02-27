@@ -144,7 +144,7 @@ const useConsentBanner = (
       privacyPolicyToggle &&
       (!userHasPrivacyCookie ||
         userHasLegacyPrivacyCookie ||
-        policyCookie !== privacyPolicyValue) &&
+        privacyCookie !== privacyPolicyValue) &&
       showCookieBannerBasedOnCountry;
 
     if (shouldShowPrivacyBanner) {
