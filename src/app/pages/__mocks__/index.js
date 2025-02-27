@@ -10,4 +10,3 @@ export { default as LiveRadioPage } from '../LiveRadioPage';
 export { default as OnDemandAudioPage } from '../OnDemandAudioPage';
 export { default as OnDemandTvPage } from '../OnDemandTvPage';
 export { default as TopicPage } from '../TopicPage';
-export { default as FeatureIdxPage } from '../FeatureIdxPage';
