@@ -42,14 +42,14 @@ const AmpConsentWrapper = styled.div`
 `;
 
 const Amp = () => {
-  const { enabled, value } = useToggle('privacyPolicy');
+  const { enabled: privacyToggle } = useToggle('privacyPolicy');
   return (
     <AmpConsentWrapper>
       <AmpGeo />
       <amp-consent id="consent" layout="nodisplay">
         {jsonInlinedScript(ampConsentData)}
         <div id="consent-prompt">
-          {enabled && (
+          {privacyToggle && (
             <Banner
               type="privacy"
               acceptAction="tap:cookie.show, privacy.hide, AMP.setState({ isManagingSettings: false }), dataCollectionHeading.focus"

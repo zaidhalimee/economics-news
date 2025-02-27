@@ -80,13 +80,13 @@ const setPolicyCookie = ({ policy, explicit, expires = null }) => {
 
 const setUserDidSeePrivacyBanner = ({
   expires = null,
-  privacyPolicyValue = PRIVACY_COOKIE_DEFAULT_VALUE,
+  privacyToggleValue = PRIVACY_COOKIE_DEFAULT_VALUE,
 }) => {
   // prevent setting cookies on Chromatic so that snapshots are consistent
   if (!isChromatic()) {
     setCookie({
       name: PRIVACY_COOKIE,
-      value: privacyPolicyValue,
+      value: privacyToggleValue,
       sameSite: SAME_SITE_VALUE,
       ...(expires && { expires }),
     });
@@ -119,7 +119,7 @@ const useConsentBanner = (
   isUK = false,
   showCookieBannerBasedOnCountry = true,
 ) => {
-  const { enabled: privacyPolicyToggle, value: privacyPolicyValue } =
+  const { enabled: privacyToggle, value: privacyToggleValue } =
     useToggle('privacyPolicy');
 
   const [{ showPrivacyBanner, showCookieBanner }, dispatch] = useReducer(
@@ -141,33 +141,28 @@ const useConsentBanner = (
     const shouldShowCookieBanner =
       !userHasExplicitCookie && showCookieBannerBasedOnCountry;
     const shouldShowPrivacyBanner =
-      privacyPolicyToggle &&
+      privacyToggle &&
       (!userHasPrivacyCookie ||
         userHasLegacyPrivacyCookie ||
-        privacyCookie !== privacyPolicyValue) &&
+        privacyCookie !== privacyToggleValue) &&
       showCookieBannerBasedOnCountry;
 
     if (shouldShowPrivacyBanner) {
       dispatch(SHOW_PRIVACY_BANNER);
-      setUserDidSeePrivacyBanner({ privacyPolicyValue });
+      setUserDidSeePrivacyBanner({ privacyToggleValue });
     } else if (shouldShowCookieBanner) {
       dispatch(SHOW_COOKIE_BANNER);
     } else if (!showCookieBannerBasedOnCountry) {
       setUserDidDismissCookieBanner(isUK, 1);
       if (!userHasPolicyCookie) setUserDidAcceptPolicy();
-      if (privacyPolicyToggle)
-        setUserDidSeePrivacyBanner({ expires: 1, privacyPolicyValue });
+      if (privacyToggle)
+        setUserDidSeePrivacyBanner({ expires: 1, privacyToggleValue });
     }
 
     if (!userHasPolicyCookie) {
       setDefaultPolicy();
     }
-  }, [
-    isUK,
-    showCookieBannerBasedOnCountry,
-    privacyPolicyToggle,
-    privacyPolicyValue,
-  ]);
+  }, [isUK, showCookieBannerBasedOnCountry, privacyToggle, privacyToggleValue]);
 
   const handlePrivacyBannerAccepted = () => {
     dispatch(SHOW_COOKIE_BANNER);
