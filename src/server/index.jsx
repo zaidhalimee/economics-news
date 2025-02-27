@@ -202,7 +202,7 @@ server.get('/search_me/results/*', async (req, res) => {
     const { index, totalRecords } = server.locals.articleIndex;
     const { results, decodedInput, processingTime } = processInput(
       index,
-      query.user_query,
+      query.search_query,
     );
 
     res.setHeader('Content-Type', 'application/json');
