@@ -37,6 +37,19 @@ export const service: DefaultServiceConfig = {
     twitterSite: '@BBCNews', // to be updated
     showAdPlaceholder: false,
     showRelatedTopics: true,
+    podcastPromo: {
+      title: 'WhatsApp',
+      brandTitle: 'Èyí ni ìkànnì Whatsapp wa',
+      brandDescription: 'Àjáàbalẹ̀ ìròyìn BBC News Yorùbá lórí WhatsApp rẹ',
+      image: {
+        src: 'https://ichef.bbc.co.uk/images/ic/$recipe/p0kthb9n.jpg',
+        alt: 'BBC News Yorùbá ti wà lórí WhatsApp',
+      },
+      linkLabel: {
+        text: 'Darapọ̀ mọ́ wa nibì',
+        href: 'https://bit.ly/3Xgfl35',
+      },
+    },
     noBylinesPolicy:
       'https://www.bbc.com/yoruba/institutional-48528718#authorexpertise',
     publishingPrinciples: 'https://www.bbc.com/yoruba/institutional-48528718',

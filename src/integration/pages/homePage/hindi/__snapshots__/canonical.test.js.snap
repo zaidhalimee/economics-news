@@ -128,22 +128,22 @@ exports[`Canonical Home Page Header Navigation link should match text and url 1`
 
 exports[`Canonical Home Page Header Navigation link should match text and url 2`] = `
 {
-  "text": "स्पोर्ट्सवुमन ऑफ़ द ईयर",
-  "url": "/hindi/topics/cyz04xpp440t",
-}
-`;
-
-exports[`Canonical Home Page Header Navigation link should match text and url 3`] = `
-{
   "text": "भारत",
   "url": "/hindi/topics/ckdxnkz7607t",
 }
 `;
 
-exports[`Canonical Home Page Header Navigation link should match text and url 4`] = `
+exports[`Canonical Home Page Header Navigation link should match text and url 3`] = `
 {
   "text": "विदेश",
   "url": "/hindi/topics/c9wpm0en87xt",
+}
+`;
+
+exports[`Canonical Home Page Header Navigation link should match text and url 4`] = `
+{
+  "text": "हेल्थ",
+  "url": "/hindi/topics/cr50ykdx5wqt",
 }
 `;
 
