@@ -319,46 +319,6 @@ exports[`LinkedData should correctly render linked data for articles with byline
 }
 `;
 
-exports[`LinkedData should correctly render linked data for front pages 1`] = `
-{
-  "@context": "http://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "image": {
-        "@type": "ImageObject",
-        "height": 576,
-        "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/news/images/metadata/poster-1024x576.png",
-        "width": 1024,
-      },
-      "inLanguage": {
-        "@type": "Language",
-        "alternateName": "en-GB",
-        "name": "English",
-      },
-      "mainEntityOfPage": {
-        "@id": "https://www.test.bbc.com/pathname",
-        "@type": "WebPage",
-        "name": "Home - BBC News",
-      },
-      "publisher": {
-        "@type": "NewsMediaOrganization",
-        "logo": {
-          "@type": "ImageObject",
-          "height": 16,
-          "url": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/news/images/metadata/publisher-nx16.png",
-          "width": 103,
-        },
-        "name": "BBC News",
-        "publishingPrinciples": "https://www.bbc.com/news/help-41670342",
-      },
-      "thumbnailUrl": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/news/images/metadata/poster-1024x576.png",
-      "url": "https://www.test.bbc.com/pathname",
-    },
-  ],
-}
-`;
-
 exports[`LinkedData should correctly render linked data for home pages 1`] = `
 {
   "@context": "http://schema.org",
