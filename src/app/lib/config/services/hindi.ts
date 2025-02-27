@@ -437,16 +437,16 @@ export const service: DefaultServiceConfig = {
         url: '/hindi',
       },
       {
-        title: 'स्पोर्ट्सवुमन ऑफ़ द ईयर',
-        url: '/hindi/topics/cyz04xpp440t',
-      },
-      {
         title: 'भारत',
         url: '/hindi/topics/ckdxnkz7607t',
       },
       {
         title: 'विदेश',
         url: '/hindi/topics/c9wpm0en87xt',
+      },
+      {
+        title: 'हेल्थ',
+        url: '/hindi/topics/cr50ykdx5wqt',
       },
       {
         title: 'मनोरंजन',
