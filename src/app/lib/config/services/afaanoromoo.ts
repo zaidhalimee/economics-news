@@ -48,6 +48,20 @@ export const service: DefaultServiceConfig = {
     frontPageTitle: 'Oduu',
     showAdPlaceholder: false,
     showRelatedTopics: true,
+    podcastPromo: {
+      title: 'WhatsApp',
+      brandTitle: 'Chaanaalii WhatsApp BBC Afaan Oromoo',
+      brandDescription:
+        'Oduu, xiinxalaafi odeessa adda addaa kallattiin argachuuf',
+      image: {
+        src: 'https://ichef.bbc.co.uk/images/ic/$recipe/p0kthbd3.png',
+        alt: 'BBC News Afaan Oromo WhatsApp irrati argadhaa',
+      },
+      linkLabel: {
+        text: 'Asiin seenaa',
+        href: 'https://bit.ly/4hIe50g',
+      },
+    },
     translations: {
       pagination: {
         previousPage: 'Kan duraa',
