@@ -3013,7 +3013,6 @@ module.exports = () => ({
             paths: [
               '/mundo/articles/ce42wzqr2mko',
               '/mundo',
-              '/mundo/noticias-internacional-23055705',
               '/mundo/popular/read',
               '/mundo/media-23283126',
             ],
