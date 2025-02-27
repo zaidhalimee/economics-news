@@ -91,7 +91,7 @@ describe('getInitialData', () => {
 
         expect(actual.status).toEqual(502);
         expect(actual.error).toEqual(
-          `invalid json response body at  reason: Unexpected token 'd', "dataIsNotAsExpected" is not valid JSON`,
+          'invalid json response body at  reason: Unexpected token d in JSON at position 0',
         );
       });
     });
