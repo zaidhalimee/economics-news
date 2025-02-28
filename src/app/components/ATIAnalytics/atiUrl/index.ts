@@ -517,9 +517,9 @@ export const buildReverbPageSectionEventModel = ({
       page: {
         destination: statsDestination,
         name: pageIdentifier,
-        producer: producerName,
         additionalProperties: {
           type: 'AT',
+          s2: producerName,
         },
       },
       user: {
