@@ -24,10 +24,10 @@ export default {
         ...(isEmbedded && { margin: '0' }),
         ...(!isEmbedded && { margin: `0 0 ${spacings.TRIPLE}rem 0` }),
       }),
-  experimentVideo: ({ palette }: Theme) =>
+  experimentVideo: ({ palette, isDarkUi }: Theme) =>
     css({
       '&:has(details)': {
-        backgroundColor: palette.WHITE,
+        backgroundColor: isDarkUi ? palette.GREY_7 : palette.WHITE,
       },
     }),
   experimentCaption: ({ mq, spacings }: Theme) =>
