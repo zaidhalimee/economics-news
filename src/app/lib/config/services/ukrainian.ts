@@ -49,7 +49,7 @@ const baseServiceConfig = {
     brandTitle: 'BBC Україна тепер у WhatsApp',
     brandDescription: 'Головне про Україну та світ - у нашому WhatsApp-каналі',
     image: {
-      src: 'https://ichef.bbc.co.uk/images/ic/$recipe/p0kv11pb.png',
+      src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p0kv11pb.png',
       alt: 'BBC News Україна підписуйтеся на наш WhatsApp',
     },
     linkLabel: {
