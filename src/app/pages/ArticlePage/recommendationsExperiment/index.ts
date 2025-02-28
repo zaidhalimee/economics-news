@@ -61,7 +61,7 @@ export const transformRecsData = ({
       block => block.type === 'relatedContent',
     );
 
-    if (!relatedContentBlock) return null;
+    if (!relatedContentBlock) return [];
 
     // @ts-expect-error - nested block structure
     const relatedContentItems = relatedContentBlock?.model?.blocks?.slice(0, 4);
@@ -96,7 +96,7 @@ export const transformRecsData = ({
       },
     );
 
-    return transformedRelatedContentItems;
+    return transformedRelatedContentItems || [];
   }
 
   if (variation === 'wsoj_most_read') {
@@ -114,7 +114,7 @@ export const transformRecsData = ({
       };
     });
 
-    return transformedMostReadItems;
+    return transformedMostReadItems || [];
   }
 
   return [];
