@@ -8,6 +8,12 @@ import DocumentComponent from './component';
 
 Helmet.canUseDOM = false;
 
+jest.mock('#src/server/utilities/liteATIClickTracking', () =>
+  function liteATIClickTracking() {
+    return 'Tracking script placeholder';
+  }.toString(),
+);
+
 describe('Document Component', () => {
   const originalProcessEnv = process.env;
 

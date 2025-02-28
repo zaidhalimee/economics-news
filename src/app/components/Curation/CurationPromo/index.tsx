@@ -26,7 +26,7 @@ const CurationPromo = ({
   headingLevel = 2,
   isLive,
 }: Summary) => {
-  const { isAmp } = useContext(RequestContext);
+  const { isAmp, isLite } = useContext(RequestContext);
   const { translations } = useContext(ServiceContext);
 
   const audioTranslation = path(['media', 'audio'], translations);
@@ -48,22 +48,23 @@ const CurationPromo = ({
     (type === 'photogallery' && `${photoGalleryTranslation}, `);
 
   return (
-    <Promo>
+    <Promo css={styles.promo} className="">
       {imageUrl && (
         <Promo.Image
           src={imageUrl}
           alt={imageAlt}
           lazyLoad={lazy}
           isAmp={isAmp}
+          {...(isLite && { css: styles.image })}
         >
           {isMedia && (
-            <Promo.MediaIcon type={type}>
+            <Promo.MediaIcon css={styles.icon} type={type}>
               {showDuration ? mediaDuration : ''}
             </Promo.MediaIcon>
           )}
         </Promo.Image>
       )}
-      <Promo.Heading css={styles.promo} as={`h${headingLevel}`}>
+      <Promo.Heading as={`h${headingLevel}`}>
         {isMedia ? (
           <Promo.A href={link} aria-labelledby={id}>
             <span id={id} role="text">

@@ -16,6 +16,8 @@ global.MessagePort = MessagePort;
 
 window.require = jest.fn();
 
+global.crypto.randomUUID = jest.fn();
+
 /*
  * Mock to avoid async behaviour in tests
  */

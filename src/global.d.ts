@@ -19,6 +19,7 @@ declare global {
       bootstrap: () => void;
       cmd: { push: () => void };
     };
+    sendBeaconLite: (url: string, data?: BodyInit | null) => boolean;
   }
 
   interface Navigator {

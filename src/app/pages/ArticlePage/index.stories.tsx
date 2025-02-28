@@ -187,6 +187,22 @@ export const ArticlePageWithPodcastPromo = () => (
   />
 );
 
+export const ArticlePageWithTopStoriesPidgin = () => (
+  <ComponentWithContext
+    data={articleDataWithPodcastPromo}
+    service="pidgin"
+    podcastEnabled
+  />
+);
+
+export const ArticlePageWithMostReadMundo = () => (
+  <ComponentWithContext
+    data={articleDataWithPodcastPromo}
+    service="mundo"
+    podcastEnabled
+  />
+);
+
 export const ArticlePageWithPodcastPromoRightToLeft = () => (
   <ComponentWithContext
     data={articleDataWithPodcastPromo}
