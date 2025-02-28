@@ -8,6 +8,7 @@ export type OptimizelyVariation =
   | 'wsoj'
   | 'wsoj_most_read'
   | 'wsoj_related_content'
+  | 'wsoj_off'
   | 'off';
 
 type GetWsojTitleProps = {
@@ -48,7 +49,10 @@ export const transformRecsData = ({
   pageBlocks,
   variation,
 }: TransformRecsDataProps) => {
-  if (!variation) return wsojRecs;
+  // Optimizely will return null initially and then 'off' for users who are not in the experiment
+  if (!variation || variation === 'off') return wsojRecs;
+
+  if (variation === 'wsoj_off') return [];
 
   if (variation === 'wsoj') return wsojRecs;
 
@@ -112,8 +116,6 @@ export const transformRecsData = ({
 
     return transformedMostReadItems;
   }
-
-  if (variation === 'off') return [];
 
   return [];
 };
