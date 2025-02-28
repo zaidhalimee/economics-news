@@ -81,7 +81,7 @@ export const interceptATIAnalyticsBeacons = () => {
     {
       url: `${atiUrl}/*`,
       query: {
-        x8: '[simorgh]',
+        x8: 'simorgh',
       },
     },
     request => request.reply({ statusCode: 200 }),
