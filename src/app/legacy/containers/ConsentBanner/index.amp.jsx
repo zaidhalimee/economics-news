@@ -64,7 +64,7 @@ const Amp = () => {
             rejectAction="tap:brandLink.focus, consent.reject"
             hideAction="tap:brandLink.focus, cookie.hide"
             promptId="cookie"
-            {...(enabled && { hidden: true })}
+            {...(privacyToggle && { hidden: true })}
           />
         </div>
       </amp-consent>
