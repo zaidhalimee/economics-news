@@ -22,7 +22,9 @@ const PRIVACY_BANNER_TEXT =
   "We've made some important changes to our Privacy and Cookies Policy and we want you to know what this means for you and your data.";
 const COOKIE_BANNER_TEXT = 'Let us know you agree to cookies';
 
-const renderFixture = ({ privacyToggleEnabled = false } = {}) =>
+const renderFixture = (
+  privacyPolicy = { enabled: true, value: DEFAULT_PRIVACY_COOKIE },
+) =>
   render(
     <RequestContextProvider
       bbcOrigin="https://www.test.bbc.co.uk"
@@ -34,9 +36,7 @@ const renderFixture = ({ privacyToggleEnabled = false } = {}) =>
       pathname="/pathname"
     >
       <ServiceContextProvider service="news">
-        <ToggleContextProvider
-          toggles={{ privacyPolicy: { enabled: privacyToggleEnabled } }}
-        >
+        <ToggleContextProvider toggles={{ privacyPolicy }}>
           <UserContextProvider>
             <ConsentBanner />
           </UserContextProvider>
@@ -52,8 +52,8 @@ beforeEach(() => {
 });
 
 describe('Canonical Consent Banner', () => {
-  it('should render only the privacy banner when no cookies are set and the privacyToggle is set to true', () => {
-    renderFixture({ privacyToggleEnabled: true });
+  it('should render only the privacy banner when no cookies are set', () => {
+    renderFixture();
 
     const privacyBannerHeadingEl = screen.queryByText(PRIVACY_BANNER_TEXT);
     const cookieBannerHeadingEl = screen.queryByText(COOKIE_BANNER_TEXT);
@@ -62,10 +62,10 @@ describe('Canonical Consent Banner', () => {
     expect(cookieBannerHeadingEl).not.toBeInTheDocument();
   });
 
-  it('should render only the privacy banner when PRIVACY_COOKIE is 0 and the privacyToggle is set to true', () => {
+  it('should render only the privacy banner when PRIVACY_COOKIE is 0', () => {
     Cookies.set(PRIVACY_COOKIE, '0');
 
-    renderFixture({ privacyToggleEnabled: true });
+    renderFixture();
 
     const privacyBannerHeadingEl = screen.queryByText(PRIVACY_BANNER_TEXT);
     const cookieBannerHeadingEl = screen.queryByText(COOKIE_BANNER_TEXT);
@@ -78,17 +78,7 @@ describe('Canonical Consent Banner', () => {
     Cookies.set(EXPLICIT_COOKIE, '0');
     Cookies.set(PRIVACY_COOKIE, DEFAULT_PRIVACY_COOKIE);
 
-    renderFixture({ privacyToggleEnabled: true });
-
-    const cookieBannerHeadingEl = screen.queryByText(COOKIE_BANNER_TEXT);
-    const privacyBannerHeadingEl = screen.queryByText(PRIVACY_BANNER_TEXT);
-
-    expect(cookieBannerHeadingEl).toBeInTheDocument();
-    expect(privacyBannerHeadingEl).not.toBeInTheDocument();
-  });
-
-  it('should render only the cookie banner when the privacyToggle is set to false', async () => {
-    renderFixture({ privacyToggleEnabled: false });
+    renderFixture();
 
     const cookieBannerHeadingEl = screen.queryByText(COOKIE_BANNER_TEXT);
     const privacyBannerHeadingEl = screen.queryByText(PRIVACY_BANNER_TEXT);
@@ -111,7 +101,7 @@ describe('Canonical Consent Banner', () => {
   });
 
   it('should render only the cookie banner when the privacy banner is dismissed', async () => {
-    renderFixture({ privacyToggleEnabled: true });
+    renderFixture();
 
     const okButtonEl = screen.queryByText('OK');
 
@@ -124,8 +114,18 @@ describe('Canonical Consent Banner', () => {
     expect(privacyBannerHeadingEl).not.toBeInTheDocument();
   });
 
+  it('should render only the cookie banner when the privacyPolicyToggle is set to false', async () => {
+    renderFixture({ enabled: false, value: undefined });
+
+    const cookieBannerHeadingEl = screen.queryByText(COOKIE_BANNER_TEXT);
+    const privacyBannerHeadingEl = screen.queryByText(PRIVACY_BANNER_TEXT);
+
+    expect(cookieBannerHeadingEl).toBeInTheDocument();
+    expect(privacyBannerHeadingEl).not.toBeInTheDocument();
+  });
+
   it('should render no banners when both are dismissed', async () => {
-    renderFixture({ privacyToggleEnabled: true });
+    renderFixture();
 
     const okButtonEl = screen.queryByText('OK');
 

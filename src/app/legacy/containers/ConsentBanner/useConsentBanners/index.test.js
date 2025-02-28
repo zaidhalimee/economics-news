@@ -4,7 +4,7 @@ import {
   act,
 } from '#app/components/react-testing-library-with-providers';
 import Cookies from 'js-cookie';
-
+import useToggle from '#hooks/useToggle';
 import useConsentBanners from '.';
 
 const PRIVACY_COOKIE = 'ckns_privacy';
@@ -14,6 +14,7 @@ const DEFAULT_PRIVACY_COOKIE = 'july2019';
 const DEFAULT_EXPLICIT_COOKIE = '1';
 const DEFAULT_POLICY_COOKIE = '111';
 
+jest.mock('#hooks/useToggle');
 const cookieSetterSpy = jest.spyOn(Cookies, 'set');
 
 beforeAll(() => {
@@ -40,95 +41,121 @@ describe('useConsentBanners', () => {
     jest.clearAllMocks();
   });
 
+  afterAll(() => {
+    jest.restoreAllMocks();
+  });
+
   describe('on initial mount', () => {
-    it('should return showPrivacyBanner=FALSE when PRIVACY_COOKIE is current policy value', () => {
+    it('should return showPrivacyBanner=FALSE when privacyToggle is enabled and PRIVACY_COOKIE is equal to the privacyToggleValue', () => {
       Cookies.set(PRIVACY_COOKIE, DEFAULT_PRIVACY_COOKIE);
       cookieSetterSpy.mockClear();
-
+      useToggle.mockReturnValue({
+        enabled: true,
+        value: DEFAULT_PRIVACY_COOKIE,
+      });
       const { result } = renderHook(() => useConsentBanners());
-
       expect(result.current.showPrivacyBanner).toBe(false);
       expect(fetch).not.toHaveBeenCalled();
     });
 
-    it('should return showPrivacyBanner=FALSE when PRIVACY_COOKIE is anythingelse', () => {
+    it('should return showPrivacyBanner=TRUE  when privacyToggle is enabled and PRIVACY_COOKIE is different to the privacyToggleValue', () => {
       Cookies.set(PRIVACY_COOKIE, 'anythingelse');
       cookieSetterSpy.mockClear();
+      useToggle.mockReturnValue({
+        enabled: true,
+        value: DEFAULT_PRIVACY_COOKIE,
+      });
       const { result } = renderHook(() => useConsentBanners());
-
-      expect(result.current.showPrivacyBanner).toBe(false);
+      expect(result.current.showPrivacyBanner).toBe(true);
       expect(fetch).not.toHaveBeenCalled();
     });
 
-    it.each([
-      {
-        title:
-          'sets PRIVACY_COOKIE and returns showPrivacyBanner=TRUE when PRIVACY_COOKIE is 0',
-        privacyToggleEnabled: true,
-        initialPrivacyCookie: '0',
-        expectedShowPrivacyBanner: true,
-      },
-      {
-        title:
-          'sets PRIVACY_COOKIE and returns showPrivacyBanner=TRUE when PRIVACY_COOKIE is 1',
-        privacyToggleEnabled: true,
-        initialPrivacyCookie: '1',
-        expectedShowPrivacyBanner: true,
-      },
-      {
-        title:
-          'sets PRIVACY_COOKIE and returns showPrivacyBanner=TRUE when PRIVACY_COOKIE is null',
-        privacyToggleEnabled: true,
-        initialPrivacyCookie: null,
-        expectedShowPrivacyBanner: true,
-      },
-      {
-        title:
-          'does NOT set PRIVACY_COOKIE and returns showPrivacyBanner=FALSE when pivacyToggle is false',
-        privacyToggleEnabled: false,
-        initialPrivacyCookie: null,
-        expectedShowPrivacyBanner: false,
-      },
-    ])(
-      '$title',
-      ({
-        initialPrivacyCookie,
-        expectedShowPrivacyBanner,
-        privacyToggleEnabled,
-      }) => {
-        Cookies.set(PRIVACY_COOKIE, initialPrivacyCookie);
-        cookieSetterSpy.mockClear();
-        const { result } = renderHook(() =>
-          useConsentBanners(true, true, privacyToggleEnabled),
-        );
+    it('sets PRIVACY_COOKIE and returns showPrivacyBanner=TRUE when PRIVACY_COOKIE is 0 and the privacyToggleValue is set to july2019', () => {
+      Cookies.set(PRIVACY_COOKIE, '0');
+      cookieSetterSpy.mockClear();
 
-        if (privacyToggleEnabled) {
-          expect(cookieSetterSpy).toHaveBeenCalledWith(
-            PRIVACY_COOKIE,
-            DEFAULT_PRIVACY_COOKIE,
-            {
-              expires: 365,
-              domain: '.bbc.com',
-              sameSite: 'None',
-              secure: true,
-            },
-          );
-        }
+      useToggle.mockReturnValue({
+        enabled: true,
+        value: DEFAULT_PRIVACY_COOKIE,
+      });
 
-        expect(result.current.showPrivacyBanner).toBe(
-          expectedShowPrivacyBanner,
-        );
+      const { result } = renderHook(() => useConsentBanners());
 
-        expect(fetch).not.toHaveBeenCalled();
-      },
-    );
+      expect(cookieSetterSpy).toHaveBeenCalledWith(
+        PRIVACY_COOKIE,
+        DEFAULT_PRIVACY_COOKIE,
+        {
+          expires: 365,
+          domain: '.bbc.com',
+          sameSite: 'None',
+          secure: true,
+        },
+      );
+      expect(result.current.showPrivacyBanner).toBe(true);
+      expect(fetch).not.toHaveBeenCalled();
+    });
+
+    it('sets PRIVACY_COOKIE and returns showPrivacyBanner=TRUE when PRIVACY_COOKIE is 1 and the privacyToggleValue is set to july2019', () => {
+      Cookies.set(PRIVACY_COOKIE, '1');
+      cookieSetterSpy.mockClear();
+
+      useToggle.mockReturnValue({
+        enabled: true,
+        value: DEFAULT_PRIVACY_COOKIE,
+      });
+
+      const { result } = renderHook(() => useConsentBanners());
+
+      expect(cookieSetterSpy).toHaveBeenCalledWith(
+        PRIVACY_COOKIE,
+        DEFAULT_PRIVACY_COOKIE,
+        {
+          expires: 365,
+          domain: '.bbc.com',
+          sameSite: 'None',
+          secure: true,
+        },
+      );
+      expect(result.current.showPrivacyBanner).toBe(true);
+      expect(fetch).not.toHaveBeenCalled();
+    });
+
+    it('sets PRIVACY_COOKIE and returns showPrivacyBanner=TRUE when cookie is null and the privacyToggleValue is set to july2019', () => {
+      Cookies.set(PRIVACY_COOKIE, null);
+      cookieSetterSpy.mockClear();
+
+      useToggle.mockReturnValue({
+        enabled: true,
+        value: DEFAULT_PRIVACY_COOKIE,
+      });
+
+      const { result } = renderHook(() => useConsentBanners());
+
+      expect(cookieSetterSpy).toHaveBeenCalledWith(
+        PRIVACY_COOKIE,
+        DEFAULT_PRIVACY_COOKIE,
+        {
+          expires: 365,
+          domain: '.bbc.com',
+          sameSite: 'None',
+          secure: true,
+        },
+      );
+      expect(result.current.showPrivacyBanner).toBe(true);
+      expect(fetch).not.toHaveBeenCalled();
+    });
 
     it('sets PRIVACY_COOKIE without domain restrictions', () => {
       global.window.location = new URL('https://www.bbc.co.uk');
       Cookies.set(PRIVACY_COOKIE, null);
       cookieSetterSpy.mockClear();
 
-      renderHook(() => useConsentBanners(true, true, true));
+      useToggle.mockReturnValue({
+        enabled: true,
+        value: DEFAULT_PRIVACY_COOKIE,
+      });
+
+      renderHook(() => useConsentBanners());
 
       expect(cookieSetterSpy).toHaveBeenCalledWith(
         PRIVACY_COOKIE,
@@ -148,9 +175,12 @@ describe('useConsentBanners', () => {
         Cookies.set(EXPLICIT_COOKIE, value);
         cookieSetterSpy.mockClear();
 
-        const { result } = renderHook(() =>
-          useConsentBanners(true, true, true),
-        );
+        useToggle.mockReturnValue({
+          enabled: true,
+          value: DEFAULT_PRIVACY_COOKIE,
+        });
+
+        const { result } = renderHook(() => useConsentBanners());
 
         expect(cookieSetterSpy).toHaveBeenCalledTimes(0);
         expect(result.current.showCookieBanner).toBe(false);
@@ -163,6 +193,11 @@ describe('useConsentBanners', () => {
       Cookies.set(PRIVACY_COOKIE, DEFAULT_PRIVACY_COOKIE);
       cookieSetterSpy.mockClear();
 
+      useToggle.mockReturnValue({
+        enabled: true,
+        value: DEFAULT_PRIVACY_COOKIE,
+      });
+
       const { result } = renderHook(() => useConsentBanners());
 
       expect(cookieSetterSpy).toHaveBeenCalledTimes(0);
@@ -174,6 +209,11 @@ describe('useConsentBanners', () => {
     it('sets POLICY_COOKIE when it is not set', () => {
       Cookies.remove(POLICY_COOKIE);
       cookieSetterSpy.mockClear();
+
+      useToggle.mockReturnValue({
+        enabled: true,
+        value: DEFAULT_PRIVACY_COOKIE,
+      });
 
       renderHook(() => useConsentBanners());
 
@@ -190,6 +230,11 @@ describe('useConsentBanners', () => {
     it('does not set POLICY_COOKIE when its already set', () => {
       cookieSetterSpy.mockClear();
 
+      useToggle.mockReturnValue({
+        enabled: true,
+        value: DEFAULT_PRIVACY_COOKIE,
+      });
+
       renderHook(() => useConsentBanners());
 
       expect(cookieSetterSpy).not.toHaveBeenCalledWith(
@@ -200,31 +245,17 @@ describe('useConsentBanners', () => {
       expect(fetch).not.toHaveBeenCalled();
     });
 
-    it('should return showCookieBanner=TRUE when EXPLICIT_COOKIE is 0 and sets POLICY_COOKIE when cookie is null, when privacyToggle is set to true', () => {
+    it('should return showCookieBanner=TRUE when EXPLICIT_COOKIE is 0 and sets POLICY_COOKIE when cookie is null', () => {
       Cookies.set(EXPLICIT_COOKIE, '0');
       Cookies.set(POLICY_COOKIE, null);
       cookieSetterSpy.mockClear();
 
-      const { result } = renderHook(() => useConsentBanners(true, true, true));
-
-      expect(cookieSetterSpy).toHaveBeenCalledTimes(1);
-      expect(cookieSetterSpy).toHaveBeenCalledWith(POLICY_COOKIE, '000', {
-        expires: 365,
-        domain: '.bbc.com',
-        sameSite: 'None',
-        secure: true,
+      useToggle.mockReturnValue({
+        enabled: true,
+        value: DEFAULT_PRIVACY_COOKIE,
       });
-      expect(result.current.showCookieBanner).toBe(true);
-      expect(result.current.showPrivacyBanner).toBe(false);
-      expect(fetch).not.toHaveBeenCalled();
-    });
 
-    it('should return showCookieBanner=TRUE when EXPLICIT_COOKIE is 0 and sets POLICY_COOKIE when cookie is null, when privacyToggle is set to true', () => {
-      Cookies.set(EXPLICIT_COOKIE, '0');
-      Cookies.set(POLICY_COOKIE, null);
-      cookieSetterSpy.mockClear();
-
-      const { result } = renderHook(() => useConsentBanners(true, true, false));
+      const { result } = renderHook(() => useConsentBanners());
 
       expect(cookieSetterSpy).toHaveBeenCalledTimes(1);
       expect(cookieSetterSpy).toHaveBeenCalledWith(POLICY_COOKIE, '000', {
@@ -244,6 +275,11 @@ describe('useConsentBanners', () => {
       Cookies.set(POLICY_COOKIE, null);
       cookieSetterSpy.mockClear();
 
+      useToggle.mockReturnValue({
+        enabled: true,
+        value: DEFAULT_PRIVACY_COOKIE,
+      });
+
       renderHook(() => useConsentBanners());
 
       expect(cookieSetterSpy).toHaveBeenCalledWith(POLICY_COOKIE, '000', {
@@ -257,8 +293,13 @@ describe('useConsentBanners', () => {
   });
 
   describe('handlePrivacyBannerAccepted', () => {
-    it('should return showPrivacyBanner=FALSE when handlePrivacyBannerAccepted is triggered', () => {
+    it('should return showPrivacyBanner=FALSE when handlePrivacyBannerAccepted is triggered and privacyToggle is enabled', () => {
       cookieSetterSpy.mockClear();
+
+      useToggle.mockReturnValue({
+        enabled: true,
+        value: DEFAULT_PRIVACY_COOKIE,
+      });
 
       const { result } = renderHook(() => useConsentBanners());
 
@@ -276,6 +317,11 @@ describe('useConsentBanners', () => {
   describe('handleCookieBannerAccepted', () => {
     it('should return showCookieBanner=FALSE and showPrivacyBanner=FALSE, sets EXPLICIT_COOKIE to 1 and sets POLICY_COOKIE to 111 when handleCookieBannerAccepted is triggered', () => {
       cookieSetterSpy.mockClear();
+
+      useToggle.mockReturnValue({
+        enabled: true,
+        value: DEFAULT_PRIVACY_COOKIE,
+      });
 
       const { result } = renderHook(() => useConsentBanners());
 
@@ -299,6 +345,11 @@ describe('useConsentBanners', () => {
     it('should set EXPLICIT_COOKIE to 1 for requests made within the UK', () => {
       cookieSetterSpy.mockClear();
 
+      useToggle.mockReturnValue({
+        enabled: true,
+        value: DEFAULT_PRIVACY_COOKIE,
+      });
+
       const { result } = renderHook(() => useConsentBanners(true));
 
       act(() => {
@@ -316,6 +367,11 @@ describe('useConsentBanners', () => {
     it('should set EXPLICIT_COOKIE to 2 for requests made outside the UK', () => {
       cookieSetterSpy.mockClear();
 
+      useToggle.mockReturnValue({
+        enabled: true,
+        value: DEFAULT_PRIVACY_COOKIE,
+      });
+
       const { result } = renderHook(() => useConsentBanners(false));
 
       act(() => {
@@ -332,8 +388,13 @@ describe('useConsentBanners', () => {
   });
 
   describe('handleCookieBannerRejected', () => {
-    it('should return showCookieBanner=FALSE and showPrivacyBanner=FALSE, sets EXPLICIT_COOKIE to 1 and does not set POLICY_COOKIE when handleCookieBannerRejected is triggered', () => {
+    it('should return showCookieBanner=FALSE and showPrivacyBanner=FALSE, sets EXPLICIT_COOKIE to 1 and does not set POLICY_COOKIE when handleCookieBannerRejected is triggered ', () => {
       cookieSetterSpy.mockClear();
+
+      useToggle.mockReturnValue({
+        enabled: true,
+        value: DEFAULT_PRIVACY_COOKIE,
+      });
 
       const { result } = renderHook(() => useConsentBanners());
 
@@ -355,6 +416,11 @@ describe('useConsentBanners', () => {
     it('should set EXPLICIT_COOKIE to 1 for requests made within the UK', () => {
       cookieSetterSpy.mockClear();
 
+      useToggle.mockReturnValue({
+        enabled: true,
+        value: DEFAULT_PRIVACY_COOKIE,
+      });
+
       const { result } = renderHook(() => useConsentBanners(true));
 
       act(() => {
@@ -371,6 +437,11 @@ describe('useConsentBanners', () => {
 
     it('should set EXPLICIT_COOKIE to 2 for requests made outside the UK', () => {
       cookieSetterSpy.mockClear();
+
+      useToggle.mockReturnValue({
+        enabled: true,
+        value: DEFAULT_PRIVACY_COOKIE,
+      });
 
       const { result } = renderHook(() => useConsentBanners(false));
 
