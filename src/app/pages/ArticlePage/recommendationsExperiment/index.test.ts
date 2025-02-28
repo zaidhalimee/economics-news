@@ -75,7 +75,18 @@ describe('transformRecsData', () => {
     });
   });
 
-  it('should return an empty array if variation is off', () => {
+  it('should return an empty array if variation is wsoj_off', () => {
+    const result = transformRecsData({
+      wsojRecs,
+      mostRead,
+      pageBlocks,
+      variation: 'wsoj_off',
+    });
+
+    expect(result).toEqual([]);
+  });
+
+  it('should return wsojRecs array user is not in variation or variation is off', () => {
     const result = transformRecsData({
       wsojRecs,
       mostRead,
@@ -83,7 +94,7 @@ describe('transformRecsData', () => {
       variation: 'off',
     });
 
-    expect(result).toEqual([]);
+    expect(result).toEqual(wsojRecs);
   });
 });
 
