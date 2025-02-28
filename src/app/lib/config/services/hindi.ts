@@ -50,7 +50,7 @@ export const service: DefaultServiceConfig = {
     podcastPromo: {
       title: 'पॉडकास्ट',
       brandTitle: 'दुनिया जहान',
-      brandDescription: 
+      brandDescription:
         'दुनिया जहान: अंतरराष्ट्रीय विषयों की गहन पड़ताल करता कार्यक्रम.',
       image: {
         src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p09krv89.jpg',
