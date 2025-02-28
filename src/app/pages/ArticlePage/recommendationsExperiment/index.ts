@@ -50,18 +50,18 @@ export const transformRecsData = ({
   variation,
 }: TransformRecsDataProps) => {
   // Optimizely will return null initially and then 'off' for users who are not in the experiment
-  if (!variation || variation === 'off') return wsojRecs;
+  if (!variation || variation === 'off') return wsojRecs || [];
 
   if (variation === 'wsoj_off') return [];
 
-  if (variation === 'wsoj') return wsojRecs;
+  if (variation === 'wsoj') return wsojRecs || [];
 
   if (variation === 'wsoj_related_content') {
     const relatedContentBlock = pageBlocks.find(
       block => block.type === 'relatedContent',
     );
 
-    if (!relatedContentBlock) return null;
+    if (!relatedContentBlock) return [];
 
     // @ts-expect-error - nested block structure
     const relatedContentItems = relatedContentBlock?.model?.blocks?.slice(0, 4);
@@ -96,7 +96,7 @@ export const transformRecsData = ({
       },
     );
 
-    return transformedRelatedContentItems;
+    return transformedRelatedContentItems || [];
   }
 
   if (variation === 'wsoj_most_read') {
@@ -114,7 +114,7 @@ export const transformRecsData = ({
       };
     });
 
-    return transformedMostReadItems;
+    return transformedMostReadItems || [];
   }
 
   return [];
