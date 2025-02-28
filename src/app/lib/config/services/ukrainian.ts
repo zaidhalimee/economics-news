@@ -45,16 +45,16 @@ const baseServiceConfig = {
   showAdPlaceholder: true,
   showRelatedTopics: true,
   podcastPromo: {
-    title: 'подкаст',
-    brandTitle: 'Що це було',
-    brandDescription: 'Головна історія тижня, яку пояснюють наші журналісти',
+    title: 'WhatsApp',
+    brandTitle: 'BBC Україна тепер у WhatsApp',
+    brandDescription: 'Головне про Україну та світ - у нашому WhatsApp-каналі',
     image: {
-      src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p09jrvvq.jpg',
-      alt: 'Що це було',
+      src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p0kv11pb.png',
+      alt: 'BBC News Україна підписуйтеся на наш WhatsApp',
     },
     linkLabel: {
-      text: 'Випуски',
-      href: 'https://www.bbc.com/ukrainian/podcasts/p09jsy3h',
+      text: 'Клікніть тут, щоб підписатися',
+      href: 'https://www.whatsapp.com/channel/0029Vau5deM0QeaqQRTPVs2e',
     },
     skipLink: {
       text: 'Пропустити %title% і продовжити',
