@@ -35,5 +35,3 @@ declare namespace React.JSX {
     'amp-iframe': AmpIframeProps;
   }
 }
-
-declare module 'intersection-observer';
