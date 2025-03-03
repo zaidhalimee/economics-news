@@ -29,7 +29,7 @@ const BANNER_URLS: BannerUrls = {
     tiktok: 'https://www.tiktok.com/legal/cookie-policy',
     facebook: 'https://www.facebook.com/privacy/policies/cookies',
     instagram: 'https://privacycenter.instagram.com/policies/cookies/',
-    twitter: 'https://help.twitter.com/en/rules-and-policies/twitter-cookies',
+    twitter: 'https://help.x.com/en/rules-and-policies/x-cookiess',
   },
   privacyUrl: {
     youtube: 'https://policies.google.com/privacy',
