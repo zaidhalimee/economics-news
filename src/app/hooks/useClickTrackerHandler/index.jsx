@@ -181,7 +181,7 @@ export const useATIClickTrackerHandler = (props = {}) => {
   const clickTrackerHandler = useClickTrackerHandler(props);
   const liteHandler = useConstructLiteSiteATIEventTrackUrl({
     props,
-    evnetType: CLICK_EVENT,
+    eventType: CLICK_EVENT,
   });
 
   return isLite
