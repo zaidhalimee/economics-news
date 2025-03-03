@@ -135,7 +135,7 @@ describe('Chartbeat utilities', () => {
 
   interface SectionFixtures {
     service: Services;
-    pageType: PageTypes | 'index';
+    pageType: PageTypes;
     sectionName?: string;
     categoryName?: string;
     mediaPageType?: string;
@@ -155,15 +155,6 @@ describe('Chartbeat utilities', () => {
         description: 'should add chapter and producer to article type',
         expected:
           'News, News - ART, News - wales, News - wales - ART, News - election 2017, News - election 2017 - ART',
-      },
-      {
-        service: 'news',
-        producer: 'business',
-        chapter: 'market data',
-        pageType: 'index',
-        description: 'should add chapter and producer to index type',
-        expected:
-          'News, News - IDX, News - business, News - business - IDX, News - market data, News - market data - IDX',
       },
       {
         service: 'persian',
@@ -266,7 +257,6 @@ describe('Chartbeat utilities', () => {
           expect(
             buildSections({
               service,
-              // @ts-expect-error allows testing of pageType = index
               pageType,
               // @ts-expect-error allows testing of null producer
               producer,
@@ -290,7 +280,6 @@ describe('Chartbeat utilities', () => {
       ${LIVE_PAGE}      | ${'Live Page Title'}      | ${'BBC News Pidgin'} | ${'Live Page Title - BBC News Pidgin'}
       ${AUDIO_PAGE}     | ${'Audio Page Title'}     | ${'BBC News Pidgin'} | ${'Audio Page Title - BBC News Pidgin'}
       ${TV_PAGE}        | ${'TV Page Title'}        | ${'BBC News Pidgin'} | ${'TV Page Title - BBC News Pidgin'}
-      ${'index'}        | ${'index Page Title'}     | ${'BBC News Pidgin'} | ${'index Page Title - BBC News Pidgin'}
     `(
       'should return correct title when pageType is $pageType and brandName is $brandName',
       ({ pageType, title, brandName, expected }) => {

@@ -45,10 +45,8 @@ const buildSectionItem = (service: Services | string, type: string) => [
 export const getSylphidCookie = () =>
   onClient() ? Cookie.get(ID_COOKIE) : null;
 
-export const getType = (pageType: PageTypes | 'index', shorthand = false) => {
+export const getType = (pageType: PageTypes, shorthand = false) => {
   switch (pageType) {
-    case 'index':
-      return shorthand ? 'IDX' : 'Index';
     case ARTICLE_PAGE:
       return shorthand ? 'ART' : 'New Article';
     case MEDIA_ARTICLE_PAGE:
