@@ -497,7 +497,6 @@ describe('homepages on environments', () => {
     'thai',
     'tigrinya',
     'turkce',
-    // 'ukchina', this will be redirected and not used in simorgh
     'ukrainian',
     'urdu',
     'uzbek',
