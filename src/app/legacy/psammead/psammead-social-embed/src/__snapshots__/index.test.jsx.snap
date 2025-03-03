@@ -976,7 +976,7 @@ exports[`AmpSocialEmbed should render correctly for Twitter 1`] = `
       href="#skip-twitter-content"
     >
       <span>
-        Skip Twitter content
+        Skip X content
       </span>
     </a>
     <div
@@ -988,13 +988,13 @@ exports[`AmpSocialEmbed should render correctly for Twitter 1`] = `
         class="emotion-5"
         data-testid="banner-heading"
       >
-        Allow Twitter content?
+        Allow X content?
       </strong>
       <p
         class="emotion-6"
         data-testid="banner-body"
       >
-        This article contains content provided by Twitter.  We ask for your permission before anything is loaded, as they may be using cookies and other technologies.  You may want to read Twitter 
+        This article contains content provided by X.  We ask for your permission before anything is loaded, as they may be using cookies and other technologies.  You may want to read X 
         <a
           aria-label="cookie policy, external"
           class="focusIndicatorReducedWidth"
@@ -1037,7 +1037,7 @@ exports[`AmpSocialEmbed should render correctly for Twitter 1`] = `
       id="skip-twitter-content"
       tabindex="-1"
     >
-      End of Twitter content
+      End of X content
     </p>
   </div>
 </div>
@@ -1767,7 +1767,7 @@ exports[`CanonicalSocialEmbed Twitter should render correctly for Twitter 1`] = 
     href="#skip-twitter-content"
   >
     <span>
-      Skip Twitter content
+      Skip X content
     </span>
   </a>
   <div
@@ -1797,7 +1797,7 @@ exports[`CanonicalSocialEmbed Twitter should render correctly for Twitter 1`] = 
     id="skip-twitter-content"
     tabindex="-1"
   >
-    End of Twitter content
+    End of X content
   </p>
 </div>
 `;
@@ -2283,7 +2283,7 @@ exports[`CanonicalSocialEmbed should render a notice when there is no oEmbed res
       href="#skip-twitter-content"
     >
       <span>
-        Skip Twitter content
+        Skip X content
       </span>
     </a>
     <div
@@ -2295,10 +2295,10 @@ exports[`CanonicalSocialEmbed should render a notice when there is no oEmbed res
         Sorry but we're having trouble displaying this content
       </p>
       <a
-        aria-label="View content on Twitter, external"
+        aria-label="View content on X, external"
         href="embed-url"
       >
-        View content on Twitter
+        View content on X
       </a>
       <small>
         Warning: BBC is not responsible for third party content
@@ -2309,7 +2309,7 @@ exports[`CanonicalSocialEmbed should render a notice when there is no oEmbed res
       id="skip-twitter-content"
       tabindex="-1"
     >
-      End of Twitter content
+      End of X content
     </p>
   </div>
   <noscript />
