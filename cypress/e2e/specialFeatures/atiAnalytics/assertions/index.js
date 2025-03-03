@@ -38,12 +38,15 @@ const assertATIPageViewEventParamsExist = ({
   }
 };
 
-const assertATIComponentViewEventParamsExist = params => {
+const assertATIComponentViewEventParamsExist = ({ params, useReverb }) => {
   expect(params).to.have.property('s'); // destination
-  expect(params).to.have.property('p'); // page identifier
   expect(params).to.have.property('ati'); // view event
   expect(params).to.have.property('type');
   expect(params.type).to.equal('AT', 'params.type');
+
+  if (!useReverb) {
+    expect(params).to.have.property('p'); // page identifier
+  }
 };
 
 const assertATIComponentClickEventParamsExist = ({ params, useReverb }) => {
@@ -107,6 +110,7 @@ export const assertATIComponentViewEvent = ({
   component,
   pageIdentifier,
   contentType,
+  useReverb,
 }) =>
   cy
     .wait(`@${component}-ati-view`)
@@ -114,9 +118,12 @@ export const assertATIComponentViewEvent = ({
     .then(url => {
       const params = getATIParamsFromURL(url);
 
-      assertATIComponentViewEventParamsExist(params);
+      assertATIComponentViewEventParamsExist({ params, useReverb });
 
-      expect(params.p).to.equal(pageIdentifier, 'params.p (page identifier)');
+      if (!useReverb) {
+        expect(params.p).to.equal(pageIdentifier, 'params.p (page identifier)');
+      }
+
       expect(params.ati).to.match(
         getViewClickDetailsRegex({
           contentType,
