@@ -10,6 +10,7 @@ import 'core-js/es/object/assign';
 
 // Needed by Opera Mini Extreme Mode (we think!)
 import 'core-js/es/weak-map';
+import 'intersection-observer';
 
 // IE10
 import getRandomValues from 'polyfill-crypto.getrandomvalues';

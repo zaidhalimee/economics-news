@@ -1,15 +1,10 @@
-export default async () => {
-  if (typeof window.IntersectionObserver === 'undefined') {
-    console.log('OBSERVER POLYFILL ME OUT!!!!');
-    // Polyfill IntersectionObserver, e.g. for IE11
-    await import('intersection-observer');
-  }
-
+export default () => {
   const options = { threshold: 0.5 };
   const observer = new IntersectionObserver(entries => {
-    console.log('CHECK ME OUT!!!!');
+    console.log('INTERSECTION OBSERVER LOADED');
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        console.log('IS INTERSECTING');
         const { target } = entry;
         const atiURL = target.getAttribute('data-lite-ati-view-tracking');
         setTimeout(() => {
