@@ -1,6 +1,6 @@
 /** @jsx jsx */
 /* @jsxFrag React.Fragment */
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 import useToggle from '#hooks/useToggle';
 import { singleTextBlock } from '#app/models/blocks';
@@ -40,6 +40,10 @@ import {
   Recommendation,
 } from '#app/models/types/optimo';
 import ScrollablePromo from '#components/ScrollablePromo';
+import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
+import OPTIMIZELY_CONFIG from '#app/lib/config/optimizely';
+import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
+import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
@@ -64,6 +68,10 @@ import Disclaimer from '../../components/Disclaimer';
 import SecondaryColumn from './SecondaryColumn';
 import styles from './ArticlePage.styles';
 import { ComponentToRenderProps, TimeStampProps } from './types';
+import {
+  transformRecsData,
+  OptimizelyVariation,
+} from './recommendationsExperiment';
 
 const getImageComponent =
   (preloadLeadImageToggle: boolean) => (props: ComponentToRenderProps) => (
@@ -127,8 +135,17 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     palette: { GREY_2, WHITE },
   } = useTheme();
 
+  const OPTIMIZELY_VARIATION = useOptimizelyVariation(
+    OPTIMIZELY_CONFIG.flagKey,
+  ) as unknown as OptimizelyVariation;
+
   const allowAdvertising = pageData?.metadata?.allowAdvertising ?? false;
   const adcampaign = pageData?.metadata?.adCampaignKeyword;
+
+  const {
+    metadata: { atiAnalytics },
+    mostRead: mostReadInitialData,
+  } = pageData;
 
   const { enabled: podcastPromoEnabled } = useToggle('podcastPromo');
   const headline = getHeadline(pageData) ?? '';
@@ -158,6 +175,13 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const recommendationsData = pageData?.recommendations ?? [];
 
+  const transformedRecsData = transformRecsData({
+    wsojRecs: recommendationsData,
+    mostRead: mostReadInitialData,
+    pageBlocks: blocks,
+    variation: OPTIMIZELY_VARIATION,
+  });
+
   const isPGL = pageData?.metadata?.type === PHOTO_GALLERY_PAGE;
   const isSTY = pageData?.metadata?.type === STORY_PAGE;
   const isCPS = isPGL || isSTY;
@@ -165,14 +189,10 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     ?.split(':')
     ?.includes('topcat');
 
-  const {
-    metadata: { atiAnalytics },
-    mostRead: mostReadInitialData,
-  } = pageData;
-
   const atiData = {
     ...atiAnalytics,
     ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
+    ...(OPTIMIZELY_VARIATION && { experimentVariant: OPTIMIZELY_VARIATION }),
   };
 
   const componentsToRender = {
@@ -198,7 +218,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     group: gist,
     links: ScrollablePromo,
     mpu: getMpuComponent(allowAdvertising),
-    wsoj: getWsojComponent(recommendationsData),
+    wsoj: getWsojComponent(transformedRecsData),
     disclaimer: DisclaimerWithPaddingOverride,
     podcastPromo: getPodcastPromoComponent(podcastPromoEnabled),
   };
@@ -311,6 +331,12 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           mobileDivider={showTopics}
           sendOptimizelyEvents={false}
         />
+      )}
+      {OPTIMIZELY_VARIATION && (
+        <>
+          <OptimizelyArticleCompleteTracking />
+          <OptimizelyPageViewTracking />
+        </>
       )}
     </div>
   );

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ScrollablePromo it should match a11y snapshot for list 1`] = `
+exports[`ScrollablePromo Mid Page ScrollablePromo it should match a11y snapshot for list 1`] = `
 @media (max-width: 14.9375rem) {
   .emotion-0 {
     margin-left: 0%;
@@ -204,6 +204,7 @@ exports[`ScrollablePromo it should match a11y snapshot for list 1`] = `
   background-color: #FFFFFF;
   padding: 1rem;
   margin-bottom: 1.5rem;
+  height: auto;
 }
 
 @media (min-width: 0rem) {
@@ -237,15 +238,13 @@ exports[`ScrollablePromo it should match a11y snapshot for list 1`] = `
   font-weight: 700;
   font-style: normal;
   width: 100%;
-  overflow-wrap: break-word;
-  text-overflow: ellipsis;
   -webkit-text-decoration: none;
   text-decoration: none;
   overflow-x: hidden;
   overflow-y: hidden;
-  display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
+  display: -webkit-box;
   color: #202224;
 }
 
@@ -366,7 +365,7 @@ exports[`ScrollablePromo it should match a11y snapshot for list 1`] = `
 </div>
 `;
 
-exports[`ScrollablePromo it should match a11y snapshot for list with no title 1`] = `
+exports[`ScrollablePromo Mid Page ScrollablePromo it should match a11y snapshot for list with no title 1`] = `
 @media (max-width: 14.9375rem) {
   .emotion-0 {
     margin-left: 0%;
@@ -480,6 +479,7 @@ exports[`ScrollablePromo it should match a11y snapshot for list with no title 1`
   background-color: #FFFFFF;
   padding: 1rem;
   margin-bottom: 1.5rem;
+  height: auto;
 }
 
 @media (min-width: 0rem) {
@@ -513,15 +513,13 @@ exports[`ScrollablePromo it should match a11y snapshot for list with no title 1`
   font-weight: 700;
   font-style: normal;
   width: 100%;
-  overflow-wrap: break-word;
-  text-overflow: ellipsis;
   -webkit-text-decoration: none;
   text-decoration: none;
   overflow-x: hidden;
   overflow-y: hidden;
-  display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
+  display: -webkit-box;
   color: #202224;
 }
 
@@ -598,7 +596,7 @@ exports[`ScrollablePromo it should match a11y snapshot for list with no title 1`
 </div>
 `;
 
-exports[`ScrollablePromo it should match a11y snapshot for single card 1`] = `
+exports[`ScrollablePromo Mid Page ScrollablePromo it should match a11y snapshot for single card 1`] = `
 @media (max-width: 14.9375rem) {
   .emotion-0 {
     margin-left: 0%;
@@ -755,6 +753,7 @@ exports[`ScrollablePromo it should match a11y snapshot for single card 1`] = `
   background-color: #FFFFFF;
   padding: 1rem;
   margin-bottom: 1.5rem;
+  height: auto;
 }
 
 @media (min-width: 0rem) {
@@ -788,15 +787,13 @@ exports[`ScrollablePromo it should match a11y snapshot for single card 1`] = `
   font-weight: 700;
   font-style: normal;
   width: 100%;
-  overflow-wrap: break-word;
-  text-overflow: ellipsis;
   -webkit-text-decoration: none;
   text-decoration: none;
   overflow-x: hidden;
   overflow-y: hidden;
-  display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
+  display: -webkit-box;
   color: #202224;
 }
 
@@ -881,7 +878,7 @@ exports[`ScrollablePromo it should match a11y snapshot for single card 1`] = `
 </div>
 `;
 
-exports[`ScrollablePromo it should match snapshot when in dark ui mode 1`] = `
+exports[`ScrollablePromo Mid Page ScrollablePromo it should match snapshot when in dark ui mode 1`] = `
 @media (max-width: 14.9375rem) {
   .emotion-0 {
     margin-left: 0%;
@@ -995,6 +992,7 @@ exports[`ScrollablePromo it should match snapshot when in dark ui mode 1`] = `
   background-color: #E6E8EA;
   padding: 1rem;
   margin-bottom: 1.5rem;
+  height: auto;
 }
 
 @media (min-width: 0rem) {
@@ -1028,15 +1026,13 @@ exports[`ScrollablePromo it should match snapshot when in dark ui mode 1`] = `
   font-weight: 700;
   font-style: normal;
   width: 100%;
-  overflow-wrap: break-word;
-  text-overflow: ellipsis;
   -webkit-text-decoration: none;
   text-decoration: none;
   overflow-x: hidden;
   overflow-y: hidden;
-  display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
+  display: -webkit-box;
   color: #141414;
 }
 

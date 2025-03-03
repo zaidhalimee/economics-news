@@ -483,13 +483,15 @@ exports[`Header Snapshots should render correctly for WS TV page 1`] = `
   background-color: #FFFFFF;
 }
 
-.emotion-28::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  border-bottom: 0.0625rem solid #E6E8EA;
+@media (min-width: 62.9375rem) {
+  .emotion-28::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 0.0625rem solid #E6E8EA;
+  }
 }
 
 .emotion-28 .emotion-44::after {
@@ -804,6 +806,35 @@ exports[`Header Snapshots should render correctly for WS TV page 1`] = `
   -webkit-text-decoration: underline;
   text-decoration: underline;
   text-decoration-color: #B80000;
+}
+
+.emotion-135 {
+  position: absolute;
+  width: calc(100vw - 0.8rem);
+  left: 0;
+}
+
+@media (min-width: 1041px) {
+  .emotion-135 {
+    width: calc(100vw + 0.8rem);
+    left: calc(-1 * (100vw - 1014px) / 2);
+  }
+}
+
+.emotion-135::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: -0.8rem;
+  width: calc(100% + 0.8rem);
+  border-bottom: 0.0625rem solid #E6E8EA;
+}
+
+@media (min-width: 1008px) {
+  .emotion-135 {
+    display: none;
+  }
 }
 
 <header
@@ -1284,6 +1315,9 @@ exports[`Header Snapshots should render correctly for WS TV page 1`] = `
           </li>
         </ul>
       </div>
+      <div
+        class="emotion-135 emotion-136"
+      />
     </div>
   </nav>
 </header>
@@ -1772,13 +1806,15 @@ exports[`Header Snapshots should render correctly for WS frontpage 1`] = `
   background-color: #FFFFFF;
 }
 
-.emotion-28::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  border-bottom: 0.0625rem solid #E6E8EA;
+@media (min-width: 62.9375rem) {
+  .emotion-28::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 0.0625rem solid #E6E8EA;
+  }
 }
 
 .emotion-28 .emotion-44::after {
@@ -2093,6 +2129,35 @@ exports[`Header Snapshots should render correctly for WS frontpage 1`] = `
   -webkit-text-decoration: underline;
   text-decoration: underline;
   text-decoration-color: #B80000;
+}
+
+.emotion-135 {
+  position: absolute;
+  width: calc(100vw - 0.8rem);
+  left: 0;
+}
+
+@media (min-width: 1041px) {
+  .emotion-135 {
+    width: calc(100vw + 0.8rem);
+    left: calc(-1 * (100vw - 1014px) / 2);
+  }
+}
+
+.emotion-135::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: -0.8rem;
+  width: calc(100% + 0.8rem);
+  border-bottom: 0.0625rem solid #E6E8EA;
+}
+
+@media (min-width: 1008px) {
+  .emotion-135 {
+    display: none;
+  }
 }
 
 <header
@@ -2573,6 +2638,9 @@ exports[`Header Snapshots should render correctly for WS frontpage 1`] = `
           </li>
         </ul>
       </div>
+      <div
+        class="emotion-135 emotion-136"
+      />
     </div>
   </nav>
 </header>
@@ -3061,13 +3129,15 @@ exports[`Header Snapshots should render correctly for WS on demand audio page 1`
   background-color: #FFFFFF;
 }
 
-.emotion-28::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  border-bottom: 0.0625rem solid #E6E8EA;
+@media (min-width: 62.9375rem) {
+  .emotion-28::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 0.0625rem solid #E6E8EA;
+  }
 }
 
 .emotion-28 .emotion-44::after {
@@ -3382,6 +3452,35 @@ exports[`Header Snapshots should render correctly for WS on demand audio page 1`
   -webkit-text-decoration: underline;
   text-decoration: underline;
   text-decoration-color: #B80000;
+}
+
+.emotion-135 {
+  position: absolute;
+  width: calc(100vw - 0.8rem);
+  left: 0;
+}
+
+@media (min-width: 1041px) {
+  .emotion-135 {
+    width: calc(100vw + 0.8rem);
+    left: calc(-1 * (100vw - 1014px) / 2);
+  }
+}
+
+.emotion-135::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: -0.8rem;
+  width: calc(100% + 0.8rem);
+  border-bottom: 0.0625rem solid #E6E8EA;
+}
+
+@media (min-width: 1008px) {
+  .emotion-135 {
+    display: none;
+  }
 }
 
 <header
@@ -3862,6 +3961,9 @@ exports[`Header Snapshots should render correctly for WS on demand audio page 1`
           </li>
         </ul>
       </div>
+      <div
+        class="emotion-135 emotion-136"
+      />
     </div>
   </nav>
 </header>
@@ -4350,13 +4452,15 @@ exports[`Header Snapshots should render correctly for WS radio page 1`] = `
   background-color: #FFFFFF;
 }
 
-.emotion-28::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  border-bottom: 0.0625rem solid #E6E8EA;
+@media (min-width: 62.9375rem) {
+  .emotion-28::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 0.0625rem solid #E6E8EA;
+  }
 }
 
 .emotion-28 .emotion-44::after {
@@ -4671,6 +4775,35 @@ exports[`Header Snapshots should render correctly for WS radio page 1`] = `
   -webkit-text-decoration: underline;
   text-decoration: underline;
   text-decoration-color: #B80000;
+}
+
+.emotion-135 {
+  position: absolute;
+  width: calc(100vw - 0.8rem);
+  left: 0;
+}
+
+@media (min-width: 1041px) {
+  .emotion-135 {
+    width: calc(100vw + 0.8rem);
+    left: calc(-1 * (100vw - 1014px) / 2);
+  }
+}
+
+.emotion-135::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: -0.8rem;
+  width: calc(100% + 0.8rem);
+  border-bottom: 0.0625rem solid #E6E8EA;
+}
+
+@media (min-width: 1008px) {
+  .emotion-135 {
+    display: none;
+  }
 }
 
 <header
@@ -5151,6 +5284,9 @@ exports[`Header Snapshots should render correctly for WS radio page 1`] = `
           </li>
         </ul>
       </div>
+      <div
+        class="emotion-135 emotion-136"
+      />
     </div>
   </nav>
 </header>
@@ -5639,13 +5775,15 @@ exports[`Header Snapshots should render correctly for news article 1`] = `
   background-color: #FFFFFF;
 }
 
-.emotion-28::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  border-bottom: 0.0625rem solid #E6E8EA;
+@media (min-width: 62.9375rem) {
+  .emotion-28::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 0.0625rem solid #E6E8EA;
+  }
 }
 
 .emotion-28 .emotion-44::after {
@@ -5960,6 +6098,35 @@ exports[`Header Snapshots should render correctly for news article 1`] = `
   -webkit-text-decoration: underline;
   text-decoration: underline;
   text-decoration-color: #B80000;
+}
+
+.emotion-135 {
+  position: absolute;
+  width: calc(100vw - 0.8rem);
+  left: 0;
+}
+
+@media (min-width: 1041px) {
+  .emotion-135 {
+    width: calc(100vw + 0.8rem);
+    left: calc(-1 * (100vw - 1014px) / 2);
+  }
+}
+
+.emotion-135::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: -0.8rem;
+  width: calc(100% + 0.8rem);
+  border-bottom: 0.0625rem solid #E6E8EA;
+}
+
+@media (min-width: 1008px) {
+  .emotion-135 {
+    display: none;
+  }
 }
 
 <header
@@ -6440,6 +6607,9 @@ exports[`Header Snapshots should render correctly for news article 1`] = `
           </li>
         </ul>
       </div>
+      <div
+        class="emotion-135 emotion-136"
+      />
     </div>
   </nav>
 </header>
