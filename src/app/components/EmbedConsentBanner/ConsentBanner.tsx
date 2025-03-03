@@ -36,7 +36,7 @@ const BANNER_URLS: BannerUrls = {
     tiktok: 'https://www.tiktok.com/legal/privacy-policy',
     facebook: 'https://www.facebook.com/privacy/policy/',
     instagram: 'https://privacycenter.instagram.com/policy',
-    twitter: 'https://twitter.com/en/privacy',
+    twitter: 'https://x.com/en/privacy',
   },
 };
 
