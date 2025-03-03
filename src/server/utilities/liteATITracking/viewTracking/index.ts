@@ -5,6 +5,7 @@ export default async () => {
     await import('intersection-observer');
   }
 
+  const options = { threshold: 0.5 };
   const observer = new IntersectionObserver(entries => {
     console.log('CHECK ME OUT!!!!');
     entries.forEach(entry => {
@@ -17,7 +18,7 @@ export default async () => {
         }, 1000);
       }
     });
-  });
+  }, options);
 
   const targets = document.querySelectorAll('[data-lite-ati-view-tracking]');
   targets.forEach(target => observer.observe(target));

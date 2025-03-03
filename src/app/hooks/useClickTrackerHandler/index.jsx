@@ -9,7 +9,7 @@ import { sendEventBeacon } from '../../components/ATIAnalytics/beacon/index';
 import { ServiceContext } from '../../contexts/ServiceContext';
 import { isValidClick } from './clickTypes';
 
-const EVENT_TYPE = 'click';
+const CLICK_EVENT = 'click';
 export const LITE_ATI_TRACKING = 'data-lite-ati-tracking';
 
 const extractTrackingProps = (props = {}, eventType = null) => {
@@ -115,7 +115,7 @@ const useClickTrackerHandler = (props = {}) => {
 
           try {
             await sendEventBeacon({
-              type: EVENT_TYPE,
+              type: CLICK_EVENT,
               campaignID,
               componentName,
               format,
@@ -168,10 +168,10 @@ const useClickTrackerHandler = (props = {}) => {
   );
 };
 
-export const useConstructLiteSiteATIEventTrackUrl = (
+export const useConstructLiteSiteATIEventTrackUrl = ({
   props = {},
   eventType = null,
-) => {
+}) => {
   const atiTrackingParams = extractTrackingProps(props, eventType);
   return buildATIEventTrackUrl(atiTrackingParams);
 };
@@ -179,7 +179,10 @@ export const useConstructLiteSiteATIEventTrackUrl = (
 export const useATIClickTrackerHandler = (props = {}) => {
   const { isLite } = useContext(RequestContext);
   const clickTrackerHandler = useClickTrackerHandler(props);
-  const liteHandler = useConstructLiteSiteATIEventTrackUrl(props, EVENT_TYPE);
+  const liteHandler = useConstructLiteSiteATIEventTrackUrl({
+    props,
+    evnetType: CLICK_EVENT,
+  });
 
   return isLite
     ? { [LITE_ATI_TRACKING]: liteHandler }

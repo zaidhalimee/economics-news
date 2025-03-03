@@ -9,7 +9,7 @@ import OPTIMIZELY_CONFIG from '../../lib/config/optimizely';
 import { ServiceContext } from '../../contexts/ServiceContext';
 import { useConstructLiteSiteATIEventTrackUrl } from '../useClickTrackerHandler';
 
-const EVENT_TYPE = 'view';
+const VIEW_EVENT = 'view';
 const VIEWED_DURATION_MS = 1000;
 const MIN_VIEWED_PERCENT = 0.5;
 export const LITE_ATI_VIEW_TRACKING = 'data-lite-ati-view-tracking';
@@ -113,7 +113,7 @@ const useViewTracker = (props = {}) => {
             producerName,
             service,
             statsDestination,
-            type: EVENT_TYPE,
+            type: VIEW_EVENT,
             advertiserID,
             url,
             detailedPlacement,
@@ -172,7 +172,10 @@ const useViewTracker = (props = {}) => {
 
 export const useLiteViewTracker = (props = {}) => {
   const { isLite } = useContext(RequestContext);
-  const liteHandler = useConstructLiteSiteATIEventTrackUrl(props, EVENT_TYPE);
+  const liteHandler = useConstructLiteSiteATIEventTrackUrl({
+    props,
+    eventType: VIEW_EVENT,
+  });
 
   return isLite ? { [LITE_ATI_VIEW_TRACKING]: liteHandler } : null;
 };

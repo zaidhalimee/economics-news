@@ -1,7 +1,7 @@
 /* eslint-disable react/no-danger */
 import React, { ReactElement, PropsWithChildren } from 'react';
 import processClientDeviceAndSendLite from '#src/server/utilities/liteATITracking';
-import clickTracking from '#src/server/utilities/liteATITracking/clickTracking/index';
+import clickTracking from '#src/server/utilities/liteATITracking/clickTracking';
 import viewTracking from '#src/server/utilities/liteATITracking/viewTracking';
 import { BaseRendererProps } from './types';
 
