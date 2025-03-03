@@ -120,9 +120,6 @@ describe('homePageDataPath', () => {
     '/iplayer.json',
     '/news/foobar.json',
     '/persian/.json',
-    // '/persian.json',
-    // '/serbian/cyr.json',
-    // '/ukchina/trad.json', // work out if we need these data routes still. They work locally but not live
   ];
   shouldNotMatchInvalidRoutes(invalidRoutes, homePageDataPath);
 });
