@@ -87,11 +87,6 @@ describe('Related Topics', () => {
     });
 
     it('should construct the correct topics href given a topic id without a variant', () => {
-      const topic = {
-        topicName: 'foo',
-        topicId: 'bar',
-      };
-
       const { getByText } = render(
         <WithContexts service="pidgin">
           <RelatedTopics topics={[topic]} />
@@ -105,11 +100,6 @@ describe('Related Topics', () => {
     });
 
     it('should construct the correct topics href given a topic id when service=cymrufyw', () => {
-      const topic = {
-        topicName: 'foo',
-        topicId: 'bar',
-      };
-
       const { getByText } = render(
         <WithContexts service="cymrufyw">
           <RelatedTopics topics={[topic]} />
