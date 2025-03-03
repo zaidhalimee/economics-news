@@ -9,6 +9,11 @@ import { RECOMMENDATIONS_MISSING_DATA } from '../../../lib/logger.const';
 
 import CpsRecommendations from '.';
 
+jest.mock('#app/hooks/useOptimizelyVariation', () => ({
+  __esModule: true,
+  default: jest.fn(),
+}));
+
 describe('Recommendations - Error Boundary', () => {
   it('should render recommendations when recommendation data is valid', () => {
     suppressPropWarnings(['optimizely', 'null']);

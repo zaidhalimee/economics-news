@@ -2,9 +2,13 @@ import processClientDeviceAndSendLite from '.';
 
 describe('processClientDeviceAndSendLite script', () => {
   const originalWindowLocation = window.location;
+  const testSystemTime = new Date('2024-11-13T16:30:02.000Z');
+  const testHour = testSystemTime.getHours();
+  const testMinute = testSystemTime.getMinutes();
+  const testSecond = testSystemTime.getSeconds();
 
   beforeAll(() => {
-    jest.useFakeTimers().setSystemTime(new Date('2024-11-13T16:30:02.000Z'));
+    jest.useFakeTimers().setSystemTime(testSystemTime);
     let mockCookie = '';
     Object.defineProperty(document, 'cookie', {
       get() {
@@ -114,7 +118,7 @@ describe('processClientDeviceAndSendLite script', () => {
     const parsedATIParams = Object.fromEntries(new URLSearchParams(callParam));
     expect(parsedATIParams).toMatchObject({
       idclient: 'userCookieId',
-      hl: '16x30x2',
+      hl: `${testHour}x${testMinute}x${testSecond}`,
       lng: 'en-GB',
       r: '0x0x24x24',
       re: '4060x1080',
