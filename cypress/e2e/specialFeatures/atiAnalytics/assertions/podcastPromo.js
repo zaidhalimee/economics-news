@@ -6,6 +6,7 @@ const { PODCAST_PROMO } = COMPONENTS;
 export const assertPodcastPromoComponentView = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a view event for the Podcast Promo component', () => {
     cy.url().then(url => {
@@ -20,6 +21,7 @@ export const assertPodcastPromoComponentView = ({
         component: PODCAST_PROMO,
         pageIdentifier,
         contentType,
+        useReverb,
       });
     });
   });
@@ -28,6 +30,7 @@ export const assertPodcastPromoComponentView = ({
 export const assertPodcastPromoComponentClick = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a click event for the Podcast Promo component', () => {
     cy.url().then(url => {
@@ -48,6 +51,7 @@ export const assertPodcastPromoComponentClick = ({
         component: PODCAST_PROMO,
         pageIdentifier,
         contentType,
+        useReverb,
       });
 
       // return to previous page

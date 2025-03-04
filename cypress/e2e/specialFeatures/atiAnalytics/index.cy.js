@@ -73,6 +73,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'gahuza.page',
     applicationType: 'responsive',
     contentType: 'index-home',
+    useReverb: true,
     tests: [
       assertPageView,
       assertScrollableNavigationComponentView,
@@ -92,6 +93,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'gahuza.articles.c5y51yxeg53o.page',
     applicationType: 'responsive',
     contentType: 'article',
+    useReverb: true,
     tests: [
       assertPageView,
       assertTopStoriesComponentView,
@@ -153,6 +155,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'afrique.bbc_afrique_radio.programmes.p030s6dq.page',
     applicationType: 'responsive',
     contentType: 'player-episode',
+    useReverb: true,
     tests: [
       assertPageView,
       assertRecentAudioEpisodesComponentView,
@@ -168,6 +171,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'gahuza.bbc_gahuza_radio.podcasts.programmes.p07yh8hb.page',
     applicationType: 'responsive',
     contentType: 'player-episode',
+    useReverb: true,
     tests: [
       assertPageView,
       assertPodcastLinksComponentView,
@@ -183,6 +187,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'gahuza.bbc_gahuza_radio.podcasts.p094vs2n.page',
     applicationType: 'responsive',
     contentType: 'player-episode',
+    useReverb: true,
     tests: [
       assertPageView,
       assertPodcastLinksComponentView,
@@ -198,6 +203,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'gahuza.popular.read.page',
     applicationType: 'responsive',
     contentType: 'list-datadriven',
+    useReverb: true,
     tests: [assertPageView],
   },
   {
@@ -220,6 +226,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'afrique.bbc_afrique_tv.tv_programmes.w13xttmz.page',
     applicationType: 'responsive',
     contentType: 'player-episode',
+    useReverb: true,
     tests: [assertPageView],
   },
   {
@@ -229,6 +236,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'afrique.bbc_afrique_tv.tv.w3ct05mp.page',
     applicationType: 'responsive',
     contentType: 'player-episode',
+    useReverb: true,
     tests: [assertPageView],
   },
   {
