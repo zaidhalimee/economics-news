@@ -1,16 +1,20 @@
 export default () => {
+  const myConsole = document.getElementById('DEV_CONSOLE');
   const MIN_VIEWED_PERCENT = 0.5;
   const VIEWED_DURATION_MS = 1000;
 
   const options = { threshold: [MIN_VIEWED_PERCENT] };
 
   const observer = new IntersectionObserver(entries => {
+    myConsole!.innerHTML += `INTERSECTION OBSERVER LOADED: ${entries.length} <br>`;
     console.log('INTERSECTION OBSERVER LOADED', entries.length);
     for (let i = 0; i < entries.length; i += 1) {
       const entry = entries[i];
       console.log('ENTRY', entry.isIntersecting, entry.intersectionRatio);
+      myConsole!.innerHTML += `ENTRY: ${entry.isIntersecting} ${entry.intersectionRatio}<br>`;
       if (entry.isIntersecting) {
         console.log('IS INTERSECTING');
+        myConsole!.innerHTML += `IS INTERSECTING: <br>`;
         const { target } = entry;
         const atiURL = target.getAttribute('data-lite-ati-view-tracking');
 
@@ -21,6 +25,8 @@ export default () => {
         }
 
         console.log('SENDING INTERSECTION');
+        myConsole!.innerHTML += `SENDING INTERSECTION ${atiURL} <br>`;
+
         window.processClientDeviceAndSendLite(atiURL as string);
         observer.unobserve(target);
       }
