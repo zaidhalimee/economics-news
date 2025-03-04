@@ -6,6 +6,7 @@ const { LATEST_MEDIA } = COMPONENTS;
 export const assertLatestMediaComponentView = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a view event for the Latest Media component', () => {
     cy.url().then(url => {
@@ -18,6 +19,7 @@ export const assertLatestMediaComponentView = ({
         component: LATEST_MEDIA,
         pageIdentifier,
         contentType,
+        useReverb,
       });
     });
   });
@@ -26,6 +28,7 @@ export const assertLatestMediaComponentView = ({
 export const assertLatestMediaComponentClick = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a click event for the Latest Media component', () => {
     cy.url().then(url => {
@@ -43,6 +46,7 @@ export const assertLatestMediaComponentClick = ({
         component: LATEST_MEDIA,
         pageIdentifier,
         contentType,
+        useReverb,
       });
 
       // return to previous page
