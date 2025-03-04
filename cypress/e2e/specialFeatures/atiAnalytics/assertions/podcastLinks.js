@@ -6,6 +6,7 @@ const { PODCAST_LINKS } = COMPONENTS;
 export const assertPodcastLinksComponentView = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a view event for the Podcast Links component', () => {
     cy.url().then(url => {
@@ -20,6 +21,7 @@ export const assertPodcastLinksComponentView = ({
         component: PODCAST_LINKS,
         pageIdentifier,
         contentType,
+        useReverb,
       });
     });
   });
@@ -28,6 +30,7 @@ export const assertPodcastLinksComponentView = ({
 export const assertPodcastLinksComponentClick = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a click event for the Podcast Links component', () => {
     cy.url().then(url => {
@@ -47,6 +50,7 @@ export const assertPodcastLinksComponentClick = ({
         component: PODCAST_LINKS,
         pageIdentifier,
         contentType,
+        useReverb,
       });
 
       // return to previous page

@@ -6,6 +6,7 @@ const { RECOMMENDATIONS } = COMPONENTS;
 export const assertRecommendationsComponentView = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a view event for the Recommendations component', () => {
     cy.url().then(url => {
@@ -20,6 +21,7 @@ export const assertRecommendationsComponentView = ({
         component: RECOMMENDATIONS,
         pageIdentifier,
         contentType,
+        useReverb,
       });
     });
   });
@@ -28,6 +30,7 @@ export const assertRecommendationsComponentView = ({
 export const assertRecommendationsComponentClick = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a click event for the Recommendations component', () => {
     cy.url().then(url => {
@@ -48,6 +51,7 @@ export const assertRecommendationsComponentClick = ({
         component: RECOMMENDATIONS,
         pageIdentifier,
         contentType,
+        useReverb,
       });
 
       // return to previous page
