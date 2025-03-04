@@ -5,9 +5,10 @@ export default () => {
   const options = { threshold: MIN_VIEWED_PERCENT };
 
   const observer = new IntersectionObserver(entries => {
-    console.log('INTERSECTION OBSERVER LOADED');
+    console.log('INTERSECTION OBSERVER LOADED', entries.length);
     for (let i = 0; i < entries.length; i += 1) {
       const entry = entries[i];
+      console.log('ENTRY', entry);
       if (entry.isIntersecting) {
         console.log('IS INTERSECTING');
         const { target } = entry;
@@ -27,6 +28,7 @@ export default () => {
   }, options);
 
   const targets = document.querySelectorAll('[data-lite-ati-view-tracking]');
+  console.log('TARGETS', targets.length);
   for (let i = 0; i < targets.length; i += 1) {
     observer.observe(targets[i]);
   }
