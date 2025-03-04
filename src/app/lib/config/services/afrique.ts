@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-afrique',
     atiAnalyticsProducerId: '3',
     atiAnalyticsProducerName: 'AFRIQUE',
+    useReverb: true,
     chartbeatDomain: 'afrique.bbc.co.uk',
     brandName: 'BBC News Afrique',
     product: 'BBC News',
