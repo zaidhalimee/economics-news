@@ -440,24 +440,7 @@ describe('legacyAssetPageDataPath', () => {
 describe('homepages on environments', () => {
   const services = Object.keys(serviceConfig);
 
-  const servicesNotCoveredByWorldService = [
-    'sport',
-    'scotland',
-    'newsround',
-    'news',
-    'naidheachdan',
-    'cymrufyw',
-    'archive',
-    'ws', // we use this for ati buckets but not a page
-  ];
-
-  const worldServices = services.filter(
-    service => !servicesNotCoveredByWorldService.includes(service),
-  );
-
   const serviceToRoute = service => `/${service}`;
-
-  const homepageServices = worldServices.map(serviceToRoute);
 
   const migratedServices = [
     'afaanoromoo',
@@ -509,19 +492,8 @@ describe('homepages on environments', () => {
     process.env.SIMORGH_APP_ENV = originalApplicationEnvironment;
   });
 
-  describe.each(['local', 'test'])(
-    `homePage regex on the %s environment`,
-    environment => {
-      process.env.SIMORGH_APP_ENV = environment;
-
-      const homePageRegex = getHomePageRegex(services);
-
-      shouldMatchValidRoutes(homepageServices, homePageRegex);
-    },
-  );
-
-  describe(`homePage regex on the live environment`, () => {
-    process.env.SIMORGH_APP_ENV = 'live';
+  describe(`homePage regex on the local environment`, () => {
+    process.env.SIMORGH_APP_ENV = 'local';
 
     const homePageRegex = getHomePageRegex(services);
 
