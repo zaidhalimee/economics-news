@@ -10,6 +10,8 @@ import 'core-js/es/object/assign';
 
 // Needed by Opera Mini Extreme Mode (we think!)
 import 'core-js/es/weak-map';
+
+// Needed for lite site view tracking on legacy browsers
 import 'intersection-observer';
 
 // IE10

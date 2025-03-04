@@ -1,5 +1,8 @@
 export default () => {
-  const options = { threshold: 0.5 };
+  const MIN_VIEWED_PERCENT = 0.5;
+  const VIEWED_DURATION_MS = 1000;
+
+  const options = { threshold: MIN_VIEWED_PERCENT };
   const observer = new IntersectionObserver(entries => {
     console.log('INTERSECTION OBSERVER LOADED');
     entries.forEach(entry => {
@@ -10,7 +13,7 @@ export default () => {
         setTimeout(() => {
           window.processClientDeviceAndSendLite(atiURL as string);
           observer.unobserve(target);
-        }, 1000);
+        }, VIEWED_DURATION_MS);
       }
     });
   }, options);

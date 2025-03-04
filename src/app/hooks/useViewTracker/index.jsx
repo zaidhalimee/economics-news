@@ -46,10 +46,6 @@ const useViewTracker = (props = {}) => {
   const { service, useReverb } = useContext(ServiceContext);
 
   const initObserver = async () => {
-    if (typeof window.IntersectionObserver === 'undefined') {
-      // Polyfill IntersectionObserver, e.g. for IE11
-      await import('intersection-observer');
-    }
     const callback = changes => {
       const someElementsAreInView = changes.some(prop('isIntersecting'));
 
