@@ -56,7 +56,7 @@ const CanonicalBannerWithContext = React.forwardRef(
         toggleState: { ...defaultToggleState, ...(toggleStateOverride || {}) },
         toggleDispatch: mockToggleDispatch,
       }),
-      [],
+      [toggleStateOverride],
     );
     return (
       <>
