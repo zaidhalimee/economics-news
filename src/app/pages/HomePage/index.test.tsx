@@ -29,6 +29,14 @@ const afriqueHomePageData = {
   },
 };
 
+const pidginHomePageData = {
+  ...pidginHomePageDataFixture,
+  metadata: {
+    ...pidginHomePageDataFixture.metadata,
+    type: 'home',
+  },
+};
+
 describe('Home Page', () => {
   suppressPropWarnings(['children', 'string', 'MediaIcon']);
 
@@ -51,14 +59,11 @@ describe('Home Page', () => {
   });
 
   it('should have h2s for curation heading levels and h3 for summary heading levels', () => {
-    const { container } = render(
-      <HomePage pageData={pidginHomePageDataFixture} />,
-      {
-        service: 'pidgin',
-      },
-    );
-    expect(container.querySelectorAll('h2').length).toBe(5);
-    expect(container.querySelectorAll('h3').length).toBe(27);
+    const { container } = render(<HomePage pageData={pidginHomePageData} />, {
+      service: 'pidgin',
+    });
+    expect(container.querySelectorAll('h2').length).toBe(8);
+    expect(container.querySelectorAll('h3').length).toBe(36);
   });
 
   it('should apply provided margin size to the main element', () => {
