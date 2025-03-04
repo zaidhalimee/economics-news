@@ -6,6 +6,7 @@ const { RADIO_SCHEDULE } = COMPONENTS;
 export const assertRadioScheduleComponentView = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a view event for the Radio Schedule component', () => {
     cy.url().then(url => {
@@ -20,6 +21,7 @@ export const assertRadioScheduleComponentView = ({
         component: RADIO_SCHEDULE,
         pageIdentifier,
         contentType,
+        useReverb,
       });
     });
   });
@@ -28,6 +30,7 @@ export const assertRadioScheduleComponentView = ({
 export const assertRadioScheduleComponentClick = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a click event for the Radio Schedule component', () => {
     cy.url().then(url => {
@@ -45,6 +48,7 @@ export const assertRadioScheduleComponentClick = ({
         component: RADIO_SCHEDULE,
         pageIdentifier,
         contentType,
+        useReverb,
       });
 
       // return to previous page

@@ -95,7 +95,7 @@ describe('canonical', () => {
     expect(document.activeElement).toBe(getByText(pidginPrivacyHeading));
   });
 
-  it('should focus on canonical consent cookie banner heading on mount on canonical', () => {
+  it('should focus on canonical consent cookie banner heading on mount on canonical when privacy policy toggle is disabled', () => {
     const { getByText } = render(
       <CanonicalBannerWithContext
         serviceConfig={pidginServiceConfig}

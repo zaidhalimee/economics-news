@@ -6,6 +6,7 @@ const { RELATED_TOPICS } = COMPONENTS;
 export const assertRelatedTopicsComponentView = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a view event for the Related Topics component', () => {
     cy.url().then(url => {
@@ -20,6 +21,7 @@ export const assertRelatedTopicsComponentView = ({
         component: RELATED_TOPICS,
         pageIdentifier,
         contentType,
+        useReverb,
       });
     });
   });
@@ -28,6 +30,7 @@ export const assertRelatedTopicsComponentView = ({
 export const assertRelatedTopicsComponentClick = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a click event for the Related Topics component', () => {
     cy.url().then(url => {
@@ -45,6 +48,7 @@ export const assertRelatedTopicsComponentClick = ({
         component: RELATED_TOPICS,
         pageIdentifier,
         contentType,
+        useReverb,
       });
 
       // return to previous page
