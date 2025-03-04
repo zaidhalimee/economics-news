@@ -35,7 +35,7 @@ export default function LitePageRenderer({
         {helmetLinkTags}
         {helmetScriptTags}
         <style dangerouslySetInnerHTML={{ __html: styles }} />
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver" />
+        <script src="https://polyfill-fastly.io/v3/polyfill.min.js?features=IntersectionObserver" />
         <script
           dangerouslySetInnerHTML={{
             __html: `${trackingScripts()}`,

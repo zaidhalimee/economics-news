@@ -1,0 +1,8 @@
+cloudwatch-agent-el8-aarch64
+https://repository.api.bbci.co.uk/cloudwatch-agent-el8-aarch64/revisions/stable
+
+cosmos-el8
+https://repository.api.bbci.co.uk/cosmos-el8-aarch64/revisions/stable
+
+epel-el8-aarch64
+https://mirrors.fedoraproject.org/metalink?repo=epel-8&arch=aarch64
