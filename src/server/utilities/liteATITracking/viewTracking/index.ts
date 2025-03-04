@@ -11,6 +11,7 @@ export default () => {
         const { target } = entry;
         const atiURL = target.getAttribute('data-lite-ati-view-tracking');
         setTimeout(() => {
+          console.log('SENDING INTERSECTION');
           window.processClientDeviceAndSendLite(atiURL as string);
           observer.unobserve(target);
         }, VIEWED_DURATION_MS);

@@ -1,6 +1,8 @@
 export default () => {
   window.processClientDeviceAndSendLite = atiURL => {
+    console.log('CHECK POINT', atiURL);
     if (atiURL) {
+      console.log('CHECK POINT 2', atiURL);
       const {
         screen: { width, height, colorDepth, pixelDepth },
         innerWidth,
@@ -67,6 +69,7 @@ export default () => {
         .map(key => `${key}=${params[key]}`)
         .join('&');
 
+      console.log('CHECK POINT 3', `${atiURL}&${paramValues}`);
       window.sendBeaconLite(`${atiURL}&${paramValues}`);
     }
   };
