@@ -2,6 +2,10 @@ import { liteEnabledServices } from '#app/components/LiteSiteCta/liteSiteConfig'
 import runTestsForPage from '#nextjs/cypress/support/helpers/runTestsForPage';
 import { assertPageView } from './assertions';
 import {
+  assertBillboardComponentClick,
+  assertBillboardComponentView,
+} from './assertions/billboard';
+import {
   assertFeaturesAnalysisComponentClick,
   assertFeaturesAnalysisComponentView,
 } from './assertions/featuresAnalysis';
@@ -236,6 +240,95 @@ const canonicalTestSuites = [
     contentType: 'index-category',
     tests: [assertPageView],
   },
+  // Pages with Reverb
+  {
+    path: '/pidgin',
+    runforEnv: ['local', 'live'],
+    service: 'pidgin',
+    pageIdentifier: 'pidgin.page',
+    applicationType: 'responsive',
+    contentType: 'index-home',
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertScrollableNavigationComponentView,
+      assertScrollableNavigationComponentClick,
+      assertDropdownNavigationComponentView,
+      assertDropdownNavigationComponentClick,
+      assertMessageBannerComponentView,
+      assertMessageBannerComponentClick,
+      assertMostReadComponentView,
+      assertMostReadComponentClick,
+    ],
+  },
+  {
+    path: '/pidgin',
+    runforEnv: ['test'],
+    service: 'pidgin',
+    pageIdentifier: 'pidgin.page',
+    applicationType: 'responsive',
+    contentType: 'index-home',
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertBillboardComponentView,
+      assertBillboardComponentClick,
+    ],
+  },
+  // Article
+  {
+    path: '/pidgin/articles/cyv3zm4y428o',
+    runforEnv: ['live'],
+    service: 'pidgin',
+    pageIdentifier: 'pidgin.articles.cyv3zm4y428o.page',
+    applicationType: 'responsive',
+    contentType: 'article',
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertTopStoriesComponentView,
+      assertTopStoriesComponentClick,
+      assertFeaturesAnalysisComponentView,
+      assertFeaturesAnalysisComponentClick,
+      assertScrollablePromoComponentClick,
+      assertScrollablePromoComponentView,
+      assertRelatedTopicsComponentView,
+      assertRelatedTopicsComponentClick,
+      assertRelatedContentComponentView,
+      assertRelatedContentComponentClick,
+      assertMostReadComponentView,
+      assertMostReadComponentClick,
+    ],
+  },
+  // Media Article
+  {
+    path: '/pidgin/articles/cw0x29n2pvqo',
+    runforEnv: ['local', 'live'],
+    service: 'pidgin',
+    pageIdentifier: 'pidgin.articles.cw0x29n2pvqo.page',
+    applicationType: 'responsive',
+    contentType: 'article-sfv',
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertLatestMediaComponentClick,
+      assertLatestMediaComponentView,
+      assertRelatedTopicsComponentView,
+      assertRelatedTopicsComponentClick,
+      assertRelatedContentComponentView,
+      assertRelatedContentComponentClick,
+    ],
+  },
+  {
+    path: '/pidgin/popular/read',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'pidgin',
+    pageIdentifier: 'pidgin.popular.read.page',
+    applicationType: 'responsive',
+    contentType: 'list-datadriven',
+    useReverb: true,
+    tests: [assertPageView],
+  },
 ];
 
 const supportsAmp = ({ contentType }) =>
@@ -278,6 +371,7 @@ const liteTestSuites = canonicalTestSuites
       ...testSuite,
       path: `${testSuite.path}.lite`,
       applicationType: 'lite',
+      useReverb: false,
       tests: [...liteSiteTests],
     };
   });
