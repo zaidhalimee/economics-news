@@ -6,6 +6,7 @@ const { RECENT_AUDIO_EPISODES } = COMPONENTS;
 export const assertRecentAudioEpisodesComponentView = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a view event for the Recent Audio Episodes component', () => {
     cy.url().then(url => {
@@ -20,6 +21,7 @@ export const assertRecentAudioEpisodesComponentView = ({
         component: RECENT_AUDIO_EPISODES,
         pageIdentifier,
         contentType,
+        useReverb,
       });
     });
   });
@@ -28,6 +30,7 @@ export const assertRecentAudioEpisodesComponentView = ({
 export const assertRecentAudioEpisodesComponentClick = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a click event for the Recent Audio Episodes component', () => {
     cy.url().then(url => {
@@ -48,6 +51,7 @@ export const assertRecentAudioEpisodesComponentClick = ({
         component: RECENT_AUDIO_EPISODES,
         pageIdentifier,
         contentType,
+        useReverb,
       });
 
       // return to previous page
