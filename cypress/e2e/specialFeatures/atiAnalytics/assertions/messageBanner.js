@@ -6,6 +6,7 @@ const { MESSAGE_BANNER } = COMPONENTS;
 export const assertMessageBannerComponentView = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a view event for the Message Banner component', () => {
     cy.url().then(url => {
@@ -20,6 +21,7 @@ export const assertMessageBannerComponentView = ({
         component: MESSAGE_BANNER,
         pageIdentifier,
         contentType,
+        useReverb,
       });
     });
   });
@@ -28,6 +30,7 @@ export const assertMessageBannerComponentView = ({
 export const assertMessageBannerComponentClick = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a click event for the Message Banner component', () => {
     cy.url().then(url => {
@@ -45,6 +48,7 @@ export const assertMessageBannerComponentClick = ({
         component: MESSAGE_BANNER,
         pageIdentifier,
         contentType,
+        useReverb,
       });
 
       // return to previous page
