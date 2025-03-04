@@ -27,7 +27,19 @@ export default () => {
     }
   }, options);
 
-  const targets = document.querySelectorAll('[data-lite-ati-view-tracking]');
+  // const targets = document.querySelectorAll('[data-lite-ati-view-tracking]');
+  const targets = [];
+  const allElements = document.getElementsByTagName('*');
+  for (let i = 0; i < allElements.length; i += 1) {
+    const element = allElements[i];
+    const hasLiteViewTrackerUrl = element.getAttribute(
+      'data-lite-ati-view-tracking',
+    );
+    if (hasLiteViewTrackerUrl) {
+      targets.push(element);
+    }
+  }
+
   console.log('TARGETS', targets.length);
   for (let i = 0; i < targets.length; i += 1) {
     observer.observe(targets[i]);
