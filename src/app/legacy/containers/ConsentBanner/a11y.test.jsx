@@ -16,6 +16,10 @@ const defaultToggleState = {
   chartbeatAnalytics: {
     enabled: false,
   },
+  privacyPolicy: {
+    enabled: true,
+    value: 'july2019',
+  },
 };
 const mockToggleDispatch = jest.fn();
 
@@ -46,10 +50,10 @@ const AmpBannerWithContext = ({ service, serviceConfig, variant }) => {
 };
 
 const CanonicalBannerWithContext = React.forwardRef(
-  ({ serviceConfig, variant }, ref) => {
+  ({ serviceConfig, variant, toggleStateOverride }, ref) => {
     const toggleContextValue = useMemo(
       () => ({
-        toggleState: defaultToggleState,
+        toggleState: { ...defaultToggleState, ...(toggleStateOverride || {}) },
         toggleDispatch: mockToggleDispatch,
       }),
       [],
@@ -77,11 +81,30 @@ describe('canonical', () => {
       Cookies.remove(cookieName);
     });
   });
-  it('should focus on canonical consent banner heading on mount on canonical', () => {
+
+  it('should focus on canonical consent privacy banner heading on mount on canonical', () => {
     const { getByText } = render(
       <CanonicalBannerWithContext
         serviceConfig={pidginServiceConfig}
         variant="default"
+      />,
+    );
+    const pidginPrivacyHeading =
+      pidginServiceConfig.default.translations.consentBanner.privacy.title;
+
+    expect(document.activeElement).toBe(getByText(pidginPrivacyHeading));
+  });
+
+  it('should focus on canonical consent cookie banner heading on mount on canonical', () => {
+    const { getByText } = render(
+      <CanonicalBannerWithContext
+        serviceConfig={pidginServiceConfig}
+        variant="default"
+        toggleStateOverride={{
+          privacyPolicy: {
+            enabled: false,
+          },
+        }}
       />,
     );
     const pidginCookieHeading =
@@ -91,7 +114,7 @@ describe('canonical', () => {
     expect(document.activeElement).toBe(getByText(pidginCookieHeading));
   });
 
-  it.skip('should focus on the link within the referenced element after cookie accept on canonical', () => {
+  it('should focus on the link within the referenced element after cookie accept on canonical', () => {
     const onDismissFocusRef = createRef(null);
     const { getByText } = render(
       <CanonicalBannerWithContext
