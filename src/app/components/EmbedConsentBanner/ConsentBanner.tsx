@@ -52,7 +52,7 @@ const getProviderName = (provider: ConsentBannerProviders) => {
     tiktok: 'TikTok',
     facebook: 'Facebook',
     instagram: 'Instagram',
-    twitter: 'Twitter',
+    twitter: 'X',
   }[provider];
 };
 
