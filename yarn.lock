@@ -10718,10 +10718,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jalaali-js@npm:1.2.7":
-  version: 1.2.7
-  resolution: "jalaali-js@npm:1.2.7"
-  checksum: 10/79984ed1ae53d718175693fd86452bf4e9339a3e0100dcf72f5ffcc48937d5e0af5a8760b0157614b361143f67c41d4e3c00fc810b3ec93d54d7f5eaa6eec256
+"jalaali-js@npm:1.2.8":
+  version: 1.2.8
+  resolution: "jalaali-js@npm:1.2.8"
+  checksum: 10/e722bb89977d5111b3e2fd5cc80e8c7b5894b14aadfce7c2e087619c1b57edd31c1db4e906ee3c5eb1924351bd597a159e499daf912f0cda649e1facbe785670
   languageName: node
   linkType: hard
 
@@ -14790,7 +14790,7 @@ __metadata:
     husky: "npm:9.1.7"
     inspectpack: "npm:4.7.1"
     intersection-observer: "npm:0.12.2"
-    jalaali-js: "npm:1.2.7"
+    jalaali-js: "npm:1.2.8"
     jest: "npm:29.7.0"
     jest-environment-jsdom: "npm:29.7.0"
     jest-fetch-mock: "npm:3.0.3"
