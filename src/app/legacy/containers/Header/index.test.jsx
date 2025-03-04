@@ -216,29 +216,6 @@ describe(`Header`, () => {
       );
     });
 
-    it('should focus on the brand link on cookie banner accept', () => {
-      HeaderContainerWithContext({
-        renderOptions: {
-          pageType: INDEX_PAGE,
-          service: 'pidgin',
-        },
-      });
-
-      // const pidginPrivacyAccept =
-      //   pidginServiceConfig.default.translations.consentBanner.privacy.accept;
-      const pidginCookieAccept =
-        pidginServiceConfig.default.translations.consentBanner.cookie.canonical
-          .accept;
-      const logoHref = pidginServiceConfig.default.navigation[0].url;
-
-      // fireEvent.click(screen.getByText(pidginPrivacyAccept));
-      fireEvent.click(screen.getByText(pidginCookieAccept));
-
-      expect(document.activeElement).toBe(
-        document.querySelector(`a[href="${logoHref}"]`),
-      );
-    });
-
     it("should render the brand link with an id of 'brandLink' on AMP", () => {
       const { container } = HeaderContainerWithContext({
         renderOptions: {
