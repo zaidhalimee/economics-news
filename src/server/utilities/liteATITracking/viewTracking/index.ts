@@ -2,13 +2,13 @@ export default () => {
   const MIN_VIEWED_PERCENT = 0.5;
   const VIEWED_DURATION_MS = 1000;
 
-  const options = { threshold: MIN_VIEWED_PERCENT };
+  const options = { threshold: [MIN_VIEWED_PERCENT] };
 
   const observer = new IntersectionObserver(entries => {
     console.log('INTERSECTION OBSERVER LOADED', entries.length);
     for (let i = 0; i < entries.length; i += 1) {
       const entry = entries[i];
-      console.log('ENTRY', entry);
+      console.log('ENTRY', entry.isIntersecting, entry.intersectionRatio);
       if (entry.isIntersecting) {
         console.log('IS INTERSECTING');
         const { target } = entry;
