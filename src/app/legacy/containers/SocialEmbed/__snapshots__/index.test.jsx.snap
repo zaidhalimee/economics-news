@@ -382,7 +382,7 @@ exports[`SocialEmbedContainer AMP should match snapshot 1`] = `
         href="#end-of-twitter-content-1"
       >
         <span>
-          Skip Twitter content, 1
+          Skip X content, 1
         </span>
       </a>
       <div
@@ -397,17 +397,17 @@ exports[`SocialEmbedContainer AMP should match snapshot 1`] = `
             class="emotion-11"
             data-testid="banner-heading"
           >
-            Allow Twitter content?
+            Allow X content?
           </strong>
           <p
             class="emotion-12"
             data-testid="banner-body"
           >
-            This article contains content provided by Twitter.  We ask for your permission before anything is loaded, as they may be using cookies and other technologies.  You may want to read Twitter 
+            This article contains content provided by X.  We ask for your permission before anything is loaded, as they may be using cookies and other technologies.  You may want to read X 
             <a
               aria-label="cookie policy, external"
               class="focusIndicatorReducedWidth"
-              href="https://help.twitter.com/en/rules-and-policies/twitter-cookies"
+              href="https://help.x.com/en/rules-and-policies/x-cookies"
             >
               cookie policy
             </a>
@@ -415,7 +415,7 @@ exports[`SocialEmbedContainer AMP should match snapshot 1`] = `
             <a
               aria-label="privacy policy, external"
               class="focusIndicatorReducedWidth"
-              href="https://twitter.com/en/privacy"
+              href="https://x.com/en/privacy"
             >
               privacy policy
             </a>
@@ -441,7 +441,7 @@ exports[`SocialEmbedContainer AMP should match snapshot 1`] = `
         id="end-of-twitter-content-1"
         tabindex="-1"
       >
-        End of Twitter content, 1
+        End of X content, 1
       </p>
     </div>
     <noscript />
@@ -1824,7 +1824,7 @@ exports[`SocialEmbedContainer Canonical should render a Twitter block and unmoun
         href="#end-of-twitter-content-1"
       >
         <span>
-          Skip Twitter content, 1
+          Skip X content, 1
         </span>
       </a>
       <div
@@ -1869,7 +1869,7 @@ exports[`SocialEmbedContainer Canonical should render a Twitter block and unmoun
         id="end-of-twitter-content-1"
         tabindex="-1"
       >
-        End of Twitter content, 1
+        End of X content, 1
       </p>
     </div>
     <noscript />
