@@ -407,7 +407,7 @@ exports[`SocialEmbedContainer AMP should match snapshot 1`] = `
             <a
               aria-label="cookie policy, external"
               class="focusIndicatorReducedWidth"
-              href="https://help.twitter.com/en/rules-and-policies/twitter-cookies"
+              href="https://help.x.com/en/rules-and-policies/x-cookies"
             >
               cookie policy
             </a>
@@ -415,7 +415,7 @@ exports[`SocialEmbedContainer AMP should match snapshot 1`] = `
             <a
               aria-label="privacy policy, external"
               class="focusIndicatorReducedWidth"
-              href="https://twitter.com/en/privacy"
+              href="https://x.com/en/privacy"
             >
               privacy policy
             </a>

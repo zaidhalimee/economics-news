@@ -6,6 +6,7 @@ const { MOST_READ } = COMPONENTS;
 export const assertMostReadComponentView = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a view event for the Most Read component', () => {
     cy.url().then(url => {
@@ -18,6 +19,7 @@ export const assertMostReadComponentView = ({
         component: MOST_READ,
         pageIdentifier,
         contentType,
+        useReverb,
       });
     });
   });
@@ -26,6 +28,7 @@ export const assertMostReadComponentView = ({
 export const assertMostReadComponentClick = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a click event for the Most Read component', () => {
     cy.url().then(url => {
@@ -41,6 +44,7 @@ export const assertMostReadComponentClick = ({
         component: MOST_READ,
         pageIdentifier,
         contentType,
+        useReverb,
       });
 
       // return to previous page
