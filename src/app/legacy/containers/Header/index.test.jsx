@@ -234,14 +234,9 @@ describe(`Header`, () => {
         renderOptions: { pageType: INDEX_PAGE, service: 'pidgin' },
       });
 
-      // const pidginPrivacyAccept =
-      //   pidginServiceConfig.default.translations.consentBanner.privacy.accept;
       const pidginCookieReject =
         pidginServiceConfig.default.translations.consentBanner.cookie.canonical
           .reject;
-
-      // const acceptPrivacy = screen.getByText(pidginPrivacyAccept);
-      // fireEvent.click(acceptPrivacy);
 
       const reject = screen.getByText(pidginCookieReject);
 
