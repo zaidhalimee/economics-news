@@ -240,10 +240,11 @@ describe('Article Page', () => {
   beforeEach(() => {
     cy.intercept(
       {
-        method: 'GET',
-        pathname: `*/datafiles/${getOptimizelyKey()}.json`,
+        url: `https://cdn.optimizely.com/datafiles/${getOptimizelyKey()}.json`,
       },
-      { statusCode: 404 },
+      request => {
+        request.reply({ statusCode: 404 });
+      },
     ).as('disable-optimizely');
   });
 
