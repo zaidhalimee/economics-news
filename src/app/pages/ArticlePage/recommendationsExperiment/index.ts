@@ -105,12 +105,20 @@ export const transformRecsData = ({
     const transformedMostReadItems = mostReadItems?.map(item => {
       return {
         headlines: {
+          // headline is only used in CPS content
+          headline: item.title,
           promoHeadline: {
             blocks: [singleTextBlock(item.title)],
           },
         },
         images: item?.images,
-        locators: { canonicalUrl: item?.href },
+        locators: {
+          // assetUri is only used in CPS content
+          assetUri: item?.href,
+          canonicalUrl: item?.href,
+        },
+        // indexImage is only used in CPS content
+        ...(item?.indexImage && { indexImage: item.indexImage }),
       };
     });
 

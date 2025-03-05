@@ -28,7 +28,11 @@ const withOptimizelyProvider = Component => {
   return props => {
     const { service } = useContext(ServiceContext);
     const isStoryBook = process.env.STORYBOOK;
-    const disableOptimizely = isStoryBook;
+    const isInCypress = process.env.CYPRESS;
+    const disableOptimizely = isStoryBook || isInCypress;
+
+    if (disableOptimizely) return <Component {...props} />;
+
     let mobile;
 
     const getUserId = () => {
