@@ -97,7 +97,7 @@ export const getCookieBannerRejectInManageSettings = (service, variant) =>
         .amp.reject,
     );
 
-export const checkShouldSkipBannerTest = ({ isPrivacyTests, testContext }) => {
+export const shouldRunBannerTest = ({ isPrivacyTests, testContext }) => {
   cy.get('@toggles').then(toggles => {
     const privacyPolicyEnabled = toggles?.privacyPolicy?.enabled;
     if (isPrivacyTests && !privacyPolicyEnabled) {

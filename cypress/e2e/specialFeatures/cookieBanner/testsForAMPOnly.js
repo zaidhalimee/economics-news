@@ -7,7 +7,7 @@ import {
   getCookieBannerManageSettingsButton,
   getCookieBannerAcceptInManageSettings,
   getCookieBannerRejectInManageSettings,
-  checkShouldSkipBannerTest,
+  shouldRunBannerTest,
 } from '../utilities/cookiePrivacyBanner';
 import visitPage from '../../../support/helpers/visitPage';
 
@@ -23,7 +23,7 @@ export default ({ service, variant, pageType, path }) => {
       beforeEach(() => cy.fixture(`toggles/${service}.json`).as('toggles'));
 
       it('should have a privacy & cookie banner, which disappears once "accepted" ', function test() {
-        checkShouldSkipBannerTest({ isPrivacyTests: true, testContext: this });
+        shouldRunBannerTest({ isPrivacyTests: true, testContext: this });
         getPrivacyBanner(service, variant).should('be.visible');
 
         getCookieBannerAmp(service, variant).should('not.be.visible');
@@ -40,7 +40,7 @@ export default ({ service, variant, pageType, path }) => {
       });
 
       it('should show privacy banner if cookie banner isnt accepted, on reload', function test() {
-        checkShouldSkipBannerTest({ isPrivacyTests: true, testContext: this });
+        shouldRunBannerTest({ isPrivacyTests: true, testContext: this });
         getPrivacyBannerAccept(service, variant).click();
 
         visitPage(path, pageType);
@@ -50,7 +50,7 @@ export default ({ service, variant, pageType, path }) => {
       });
 
       it('should not show privacy & cookie banners once both accepted, on reload', function test() {
-        checkShouldSkipBannerTest({ isPrivacyTests: true, testContext: this });
+        shouldRunBannerTest({ isPrivacyTests: true, testContext: this });
         getPrivacyBannerAccept(service, variant).click();
         getCookieBannerAcceptAmp(service, variant).click();
 
@@ -61,7 +61,7 @@ export default ({ service, variant, pageType, path }) => {
       });
 
       it('should go to manage settings banner once manage settings button is clicked, and when accept button is clicked the banners no longer show', function test() {
-        checkShouldSkipBannerTest({ isPrivacyTests: true, testContext: this });
+        shouldRunBannerTest({ isPrivacyTests: true, testContext: this });
         getPrivacyBanner(service, variant).should('be.visible');
         getCookieBannerAmp(service, variant).should('not.be.visible');
 
@@ -79,7 +79,7 @@ export default ({ service, variant, pageType, path }) => {
       });
 
       it('should go to manage settings banner once manage settings button is clicked, and when reject button is clicked the banners no longer show', function test() {
-        checkShouldSkipBannerTest({ isPrivacyTests: true, testContext: this });
+        shouldRunBannerTest({ isPrivacyTests: true, testContext: this });
         getPrivacyBanner(service, variant).should('be.visible');
         getCookieBannerAmp(service, variant).should('not.be.visible');
 
@@ -97,7 +97,7 @@ export default ({ service, variant, pageType, path }) => {
       });
 
       it('should show privacy banner once you reload the page on the Manage settings expanded view without clicking Accept or Reject buttons', function test() {
-        checkShouldSkipBannerTest({ isPrivacyTests: true, testContext: this });
+        shouldRunBannerTest({ isPrivacyTests: true, testContext: this });
         getPrivacyBanner(service, variant).should('be.visible');
         getCookieBannerAmp(service, variant).should('not.be.visible');
 
@@ -111,7 +111,7 @@ export default ({ service, variant, pageType, path }) => {
       });
 
       it('should show the manage cookie settings banner when the cookie settings button in the footer is clicked', function test() {
-        checkShouldSkipBannerTest({ isPrivacyTests: true, testContext: this });
+        shouldRunBannerTest({ isPrivacyTests: true, testContext: this });
         getPrivacyBannerAccept(service, variant).click();
         getCookieBannerAcceptAmp(service, variant).click();
 
@@ -122,7 +122,7 @@ export default ({ service, variant, pageType, path }) => {
       });
 
       it('should have a cookie banner, which disappears once "accepted" ', function test() {
-        checkShouldSkipBannerTest({ isPrivacyTests: false, testContext: this });
+        shouldRunBannerTest({ isPrivacyTests: false, testContext: this });
         getCookieBannerAmp(service, variant).should('be.visible');
 
         getCookieBannerAcceptAmp(service, variant).click();
@@ -132,7 +132,7 @@ export default ({ service, variant, pageType, path }) => {
       });
 
       it('should not show privacy & cookie banners once both accepted, on reload', function test() {
-        checkShouldSkipBannerTest({ isPrivacyTests: false, testContext: this });
+        shouldRunBannerTest({ isPrivacyTests: false, testContext: this });
         getCookieBannerAcceptAmp(service, variant).click();
 
         visitPage(path, pageType);
@@ -142,7 +142,7 @@ export default ({ service, variant, pageType, path }) => {
       });
 
       it('should go to manage settings banner once manage settings button is clicked, and when accept button is clicked the banners no longer show', function test() {
-        checkShouldSkipBannerTest({ isPrivacyTests: false, testContext: this });
+        shouldRunBannerTest({ isPrivacyTests: false, testContext: this });
         getCookieBannerAmp(service, variant).should('be.visible');
 
         getCookieBannerManageSettingsButton(service, variant).click();
@@ -158,7 +158,7 @@ export default ({ service, variant, pageType, path }) => {
       });
 
       it('should go to manage settings banner once manage settings button is clicked, and when reject button is clicked the banners no longer show', function test() {
-        checkShouldSkipBannerTest({ isPrivacyTests: false, testContext: this });
+        shouldRunBannerTest({ isPrivacyTests: false, testContext: this });
         getCookieBannerAmp(service, variant).should('be.visible');
 
         getCookieBannerManageSettingsButton(service, variant).click();
@@ -174,7 +174,7 @@ export default ({ service, variant, pageType, path }) => {
       });
 
       it('should show cookie banner once you reload the page on the Manage settings expanded view without clicking Accept or Reject buttons', function test() {
-        checkShouldSkipBannerTest({ isPrivacyTests: false, testContext: this });
+        shouldRunBannerTest({ isPrivacyTests: false, testContext: this });
         getCookieBannerAmp(service, variant).should('be.visible');
 
         getCookieBannerManageSettingsButton(service, variant).click();
@@ -186,7 +186,7 @@ export default ({ service, variant, pageType, path }) => {
       });
 
       it('should show the manage cookie settings banner when the cookie settings button in the footer is clicked', function test() {
-        checkShouldSkipBannerTest({ isPrivacyTests: false, testContext: this });
+        shouldRunBannerTest({ isPrivacyTests: false, testContext: this });
         getCookieBannerAcceptAmp(service, variant).click();
 
         cy.get('[data-testid="amp-cookie-settings-button"]').click();

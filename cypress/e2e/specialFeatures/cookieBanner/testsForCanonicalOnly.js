@@ -5,7 +5,7 @@ import {
   getCookieBannerRejectCanonical,
   getPrivacyBanner,
   getPrivacyBannerAccept,
-  checkShouldSkipBannerTest,
+  shouldRunBannerTest,
 } from '../utilities/cookiePrivacyBanner';
 import visitPage from '../../../support/helpers/visitPage';
 
@@ -51,7 +51,7 @@ export default ({ service, variant, pageType, path }) => {
     beforeEach(() => cy.fixture(`toggles/${service}.json`).as('toggles'));
 
     it('should have a privacy & cookie banner, which disappears once "accepted" ', function test() {
-      checkShouldSkipBannerTest({ isPrivacyTests: true, testContext: this });
+      shouldRunBannerTest({ isPrivacyTests: true, testContext: this });
       cy.clearCookies();
       visitPage(path, pageType);
 
@@ -84,7 +84,7 @@ export default ({ service, variant, pageType, path }) => {
     });
 
     it('should have a privacy banner that disappears once accepted but a cookie banner that is rejected', function test() {
-      checkShouldSkipBannerTest({ isPrivacyTests: true, testContext: this });
+      shouldRunBannerTest({ isPrivacyTests: true, testContext: this });
       cy.clearCookies();
       visitPage(path, pageType);
 
@@ -111,7 +111,7 @@ export default ({ service, variant, pageType, path }) => {
     });
 
     it("should show cookie banner (and NOT privacy banner) if user has visited the page before and didn't explicitly 'accept' cookies", function test() {
-      checkShouldSkipBannerTest({ isPrivacyTests: true, testContext: this });
+      shouldRunBannerTest({ isPrivacyTests: true, testContext: this });
       cy.clearCookies();
       cy.setCookie('ckns_privacy', 'july2019');
       visitPage(path, pageType);
@@ -121,7 +121,7 @@ export default ({ service, variant, pageType, path }) => {
     });
 
     it("should not override the user's default cookie policy", function test() {
-      checkShouldSkipBannerTest({ isPrivacyTests: true, testContext: this });
+      shouldRunBannerTest({ isPrivacyTests: true, testContext: this });
       cy.clearCookies();
       cy.setCookie('ckns_policy', 'made_up_value');
       visitPage(path, pageType);
@@ -130,7 +130,7 @@ export default ({ service, variant, pageType, path }) => {
     });
 
     it('should have a cookie banner, which disappears once "accepted" ', function test() {
-      checkShouldSkipBannerTest({ isPrivacyTests: false, testContext: this });
+      shouldRunBannerTest({ isPrivacyTests: false, testContext: this });
       cy.clearCookies();
       visitPage(path, pageType);
 
@@ -155,7 +155,7 @@ export default ({ service, variant, pageType, path }) => {
     });
 
     it("should show cookie banner (and NOT privacy banner) if user has visited the page before and didn't explicitly 'accept' cookies", function test() {
-      checkShouldSkipBannerTest({ isPrivacyTests: false, testContext: this });
+      shouldRunBannerTest({ isPrivacyTests: false, testContext: this });
       cy.clearCookies();
       visitPage(path, pageType);
 
@@ -164,7 +164,7 @@ export default ({ service, variant, pageType, path }) => {
     });
 
     it("should not override the user's default cookie policy", function test() {
-      checkShouldSkipBannerTest({ isPrivacyTests: false, testContext: this });
+      shouldRunBannerTest({ isPrivacyTests: false, testContext: this });
       cy.clearCookies();
       cy.setCookie('ckns_policy', 'made_up_value');
       visitPage(path, pageType);
