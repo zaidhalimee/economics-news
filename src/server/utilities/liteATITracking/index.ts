@@ -1,8 +1,6 @@
 export default () => {
   window.processClientDeviceAndSendLite = atiURL => {
-    console.log('CHECK POINT', atiURL);
     if (atiURL) {
-      console.log('CHECK POINT 2', atiURL);
       const {
         screen: { width, height, colorDepth, pixelDepth },
         innerWidth,
@@ -65,14 +63,10 @@ export default () => {
         ...(document.referrer && { ref: document.referrer }),
       };
 
-      const formattedParams = [];
-      const keys = Object.keys(params);
-      for (let i = 0; i < keys.length; i += 1) {
-        const key = keys[i];
-        formattedParams.push(`${key}=${params[key]}`);
-      }
-      const paramValues = formattedParams.join('&');
-      console.log('CHECK POINT 3', `${atiURL}&${paramValues}`);
+      const paramValues = Object.keys(params)
+        .map(key => `${key}=${params[key]}`)
+        .join('&');
+
       window.sendBeaconLite(`${atiURL}&${paramValues}`);
     }
   };
