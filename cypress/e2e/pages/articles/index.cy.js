@@ -7,6 +7,7 @@ import canonicalAndAmpArticleTests from './tests';
 import ampArticleTests from './testsForAMPOnly';
 import canonicalArticleTests from './testsForCanonicalOnly';
 import liteArticleTests from './testsForLiteOnly';
+import getOptimizelyKey from '../../../support/helpers/getOptimizelyKey';
 
 const canonicalTests = [
   testsForAllPages,
@@ -234,6 +235,14 @@ const liteTestSuites = canonicalTestSuites
       tests: [liteArticleTests],
     };
   });
+
+cy.intercept(
+  {
+    method: 'GET',
+    pathname: `/datafiles/${getOptimizelyKey()}.json`,
+  },
+  { statusCode: 404 },
+);
 
 runTestsForPage({
   pageType: 'articles',
