@@ -42,10 +42,7 @@ export default function LitePageRenderer({
           }}
         />
       </head>
-      <body>
-        <div id="DEV_CONSOLE">HELLO WORLD CONSOLE:</div>
-        {bodyContent}
-      </body>
+      <body>{bodyContent}</body>
     </html>
   );
 }
