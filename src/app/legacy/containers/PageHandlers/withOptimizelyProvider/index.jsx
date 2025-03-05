@@ -30,6 +30,9 @@ const withOptimizelyProvider = Component => {
     const isStoryBook = process.env.STORYBOOK;
     const isInCypress = process.env.CYPRESS;
     const disableOptimizely = isStoryBook || isInCypress;
+
+    if (disableOptimizely) return <Component {...props} />;
+
     let mobile;
 
     const getUserId = () => {
