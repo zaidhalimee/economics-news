@@ -230,24 +230,6 @@ describe(`Header`, () => {
       );
     });
 
-    it.skip('should remove the privacy banner when navigating from the reject button to content with tab', () => {
-      const { container } = HeaderContainerWithContext({
-        renderOptions: { pageType: INDEX_PAGE, service: 'pidgin' },
-      });
-
-      const pidginPrivacyReject =
-        pidginServiceConfig.default.translations.consentBanner.privacy.reject;
-
-      const reject = screen.getByText(pidginPrivacyReject);
-      fireEvent.focus(reject);
-
-      expect(container).toContainElement(reject);
-
-      userEvent.tab().then(() => {
-        expect(container).not.toContainElement(reject);
-      });
-    });
-
     it('should remove the cookie banner when navigating from the reject button to content with tab', () => {
       const { container } = HeaderContainerWithContext({
         renderOptions: { pageType: INDEX_PAGE, service: 'pidgin' },
