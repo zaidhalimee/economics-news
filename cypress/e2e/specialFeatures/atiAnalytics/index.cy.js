@@ -117,6 +117,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'hindi.articles.c9w59wnx27ro.page',
     applicationType: 'responsive',
     contentType: 'article',
+    useReverb: true,
     tests: [
       assertPageView,
       assertTopStoriesComponentView,
