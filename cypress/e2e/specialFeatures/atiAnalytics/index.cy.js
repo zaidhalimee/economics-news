@@ -284,6 +284,26 @@ const canonicalTestSuites = [
       assertBillboardComponentClick,
     ],
   },
+  {
+    path: '/persian',
+    runforEnv: ['test'],
+    service: 'persian',
+    pageIdentifier: 'persian.page',
+    applicationType: 'responsive',
+    contentType: 'index-home',
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertScrollableNavigationComponentView,
+      assertScrollableNavigationComponentClick,
+      assertDropdownNavigationComponentView,
+      assertDropdownNavigationComponentClick,
+      assertMessageBannerComponentView,
+      assertMessageBannerComponentClick,
+      assertMostReadComponentView,
+      assertMostReadComponentClick,
+    ],
+  },
   // Article
   {
     path: '/pidgin/articles/cyv3zm4y428o',
