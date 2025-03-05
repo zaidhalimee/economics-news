@@ -236,15 +236,19 @@ const liteTestSuites = canonicalTestSuites
     };
   });
 
-cy.intercept(
-  {
-    method: 'GET',
-    pathname: `/datafiles/${getOptimizelyKey()}.json`,
-  },
-  { statusCode: 404 },
-);
+describe('Article Page', () => {
+  beforeEach(() => {
+    cy.intercept(
+      {
+        method: 'GET',
+        pathname: `*/datafiles/${getOptimizelyKey()}.json`,
+      },
+      { statusCode: 404 },
+    ).as('disable-optimizely');
+  });
 
-runTestsForPage({
-  pageType: 'articles',
-  testSuites: [...canonicalTestSuites, ...ampTestSuites, ...liteTestSuites],
+  runTestsForPage({
+    pageType: 'articles',
+    testSuites: [...canonicalTestSuites, ...ampTestSuites, ...liteTestSuites],
+  });
 });
