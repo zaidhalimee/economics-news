@@ -963,6 +963,7 @@ describe('ATI Analytics Container', () => {
       const serviceContextProps: ServiceConfig = {
         atiAnalyticsAppName: 'atiAnalyticsAppName',
         atiAnalyticsProducerId: 'atiAnalyticsProducerId',
+        atiAnalyticsProducerName: 'atiAnalyticsProducerName',
         service: 'pidgin',
         brandName: 'brandName',
         lang: 'pcm',
@@ -991,13 +992,14 @@ describe('ATI Analytics Container', () => {
         contentType: 'article',
         destination: 'WS_NEWS_LANGUAGES_TEST',
         name: 'news.articles.c0000000001o.page',
+        producer: 'atiAnalyticsProducerName',
         additionalProperties: {
           app_name: 'atiAnalyticsAppName',
           app_type: 'responsive',
           content_language: 'en-gb',
           product_platform: null,
           referrer_url: null,
-          x5: 'http%253A%252F%252Flocalhost%252F',
+          x5: 'http%3A%2F%2Flocalhost%2F',
           x8: 'simorgh',
           x9: 'Article%20Headline%20for%20SEO',
           x10: null,
