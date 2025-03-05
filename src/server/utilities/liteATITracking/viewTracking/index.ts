@@ -1,53 +1,21 @@
 export default () => {
-  const myConsole = document.getElementById('DEV_CONSOLE');
   const MIN_VIEWED_PERCENT = 0.5;
   const VIEWED_DURATION_MS = 1000;
 
-  const options = { threshold: [MIN_VIEWED_PERCENT] };
-
+  const options = { threshold: MIN_VIEWED_PERCENT };
   const observer = new IntersectionObserver(entries => {
-    myConsole!.innerHTML += `INTERSECTION OBSERVER LOADED: ${entries.length} <br>`;
-    console.log('INTERSECTION OBSERVER LOADED', entries.length);
-    for (let i = 0; i < entries.length; i += 1) {
-      const entry = entries[i];
-      console.log('ENTRY', entry.isIntersecting, entry.intersectionRatio);
-      myConsole!.innerHTML += `ENTRY: ${entry.isIntersecting} ${entry.intersectionRatio}<br>`;
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
-        console.log('IS INTERSECTING');
-        myConsole!.innerHTML += `IS INTERSECTING: <br>`;
         const { target } = entry;
         const atiURL = target.getAttribute('data-lite-ati-view-tracking');
-
-        const startTime = new Date().getTime();
-        let currTime = startTime;
-        while (currTime - startTime < VIEWED_DURATION_MS) {
-          currTime = new Date().getTime();
-        }
-
-        console.log('SENDING INTERSECTION');
-        myConsole!.innerHTML += `SENDING INTERSECTION ${atiURL} <br>`;
-
-        window.processClientDeviceAndSendLite(atiURL as string);
-        observer.unobserve(target);
+        setTimeout(() => {
+          window.processClientDeviceAndSendLite(atiURL as string);
+          observer.unobserve(target);
+        }, VIEWED_DURATION_MS);
       }
-    }
+    });
   }, options);
 
-  // const targets = document.querySelectorAll('[data-lite-ati-view-tracking]');
-  const targets = [];
-  const allElements = document.getElementsByTagName('*');
-  for (let i = 0; i < allElements.length; i += 1) {
-    const element = allElements[i];
-    const hasLiteViewTrackerUrl = element.getAttribute(
-      'data-lite-ati-view-tracking',
-    );
-    if (hasLiteViewTrackerUrl) {
-      targets.push(element);
-    }
-  }
-
-  console.log('TARGETS', targets.length);
-  for (let i = 0; i < targets.length; i += 1) {
-    observer.observe(targets[i]);
-  }
+  const targets = document.querySelectorAll('[data-lite-ati-view-tracking]');
+  targets.forEach(target => observer.observe(target));
 };
