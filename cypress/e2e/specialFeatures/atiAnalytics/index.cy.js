@@ -266,6 +266,7 @@ const liteTestSuites = canonicalTestSuites
     switch (testSuite.contentType) {
       case 'article':
         liteSiteTests.push(assertLiteSiteCTAComponentClick);
+        liteSiteTests.push(assertRelatedTopicsComponentView);
         break;
       case 'index-home':
         liteSiteTests.push(assertMostReadComponentClick);
