@@ -4,19 +4,9 @@ import shouldSmokeTest from './index';
 const PAGE_TYPE = 'frontPage';
 const SERVICE = 'korean';
 
-global.Cypress = {
-  env: jest.fn(),
-};
-
-jest.mock('../../config/services', () => ({
-  [SERVICE]: {
-    pageTypes: {
-      [PAGE_TYPE]: {
-        smoke: true,
-      },
-    },
-  },
-}));
+afterAll(() => {
+  global.Cypress = jest.fn();
+});
 
 it('should return smoke value from config when env variable is true', () => {
   global.Cypress.env = jest.fn().mockReturnValue(true);

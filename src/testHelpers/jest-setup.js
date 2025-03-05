@@ -23,6 +23,10 @@ global.crypto.randomUUID = jest.fn();
  */
 jest.mock('#contexts/ServiceContext');
 
+global.Cypress = {
+  env: jest.fn(),
+};
+
 window.matchMedia = jest.fn().mockImplementation(query => {
   return {
     matches: true,
@@ -32,7 +36,9 @@ window.matchMedia = jest.fn().mockImplementation(query => {
   };
 });
 
-process.env.SIMORGH_OPTIMIZELY_SDK_KEY = '12345';
+// Mock RequireJS globally and let individual tests mock it as needed
+window.require = jest.fn();
+
 process.env.SIMORGH_PUBLIC_STATIC_ASSETS_ORIGIN = 'http://localhost:7080';
 process.env.SIMORGH_PUBLIC_STATIC_ASSETS_PATH = '/';
 process.env.SIMORGH_ASSETS_MANIFEST_PATH = path.resolve(
