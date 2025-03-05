@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-igbo',
     atiAnalyticsProducerId: '53',
     atiAnalyticsProducerName: 'IGBO',
+    useReverb: true,
     chartbeatDomain: 'igbo.bbc.co.uk',
     brandName: 'BBC News Ìgbò',
     product: 'BBC News',

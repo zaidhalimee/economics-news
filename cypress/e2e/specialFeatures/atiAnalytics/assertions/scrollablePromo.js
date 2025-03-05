@@ -6,6 +6,7 @@ const { SCROLLABLE_PROMO } = COMPONENTS;
 export const assertScrollablePromoComponentView = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a view event for the Scrollable Promo component', () => {
     cy.url().then(url => {
@@ -20,6 +21,7 @@ export const assertScrollablePromoComponentView = ({
         component: SCROLLABLE_PROMO,
         pageIdentifier,
         contentType,
+        useReverb,
       });
     });
   });
@@ -28,6 +30,7 @@ export const assertScrollablePromoComponentView = ({
 export const assertScrollablePromoComponentClick = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
   it('should send a click event for the Scrollable Promo component', () => {
     cy.url().then(url => {
@@ -45,6 +48,7 @@ export const assertScrollablePromoComponentClick = ({
         component: SCROLLABLE_PROMO,
         pageIdentifier,
         contentType,
+        useReverb,
       });
 
       // return to previous page
