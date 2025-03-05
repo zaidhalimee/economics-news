@@ -2,6 +2,10 @@ import { liteEnabledServices } from '#app/components/LiteSiteCta/liteSiteConfig'
 import runTestsForPage from '#nextjs/cypress/support/helpers/runTestsForPage';
 import { assertPageView } from './assertions';
 import {
+  assertBillboardComponentClick,
+  assertBillboardComponentView,
+} from './assertions/billboard';
+import {
   assertFeaturesAnalysisComponentClick,
   assertFeaturesAnalysisComponentView,
 } from './assertions/featuresAnalysis';
@@ -69,6 +73,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'gahuza.page',
     applicationType: 'responsive',
     contentType: 'index-home',
+    useReverb: true,
     tests: [
       assertPageView,
       assertScrollableNavigationComponentView,
@@ -88,6 +93,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'gahuza.articles.c5y51yxeg53o.page',
     applicationType: 'responsive',
     contentType: 'article',
+    useReverb: true,
     tests: [
       assertPageView,
       assertTopStoriesComponentView,
@@ -149,6 +155,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'afrique.bbc_afrique_radio.programmes.p030s6dq.page',
     applicationType: 'responsive',
     contentType: 'player-episode',
+    useReverb: true,
     tests: [
       assertPageView,
       assertRecentAudioEpisodesComponentView,
@@ -164,6 +171,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'gahuza.bbc_gahuza_radio.podcasts.programmes.p07yh8hb.page',
     applicationType: 'responsive',
     contentType: 'player-episode',
+    useReverb: true,
     tests: [
       assertPageView,
       assertPodcastLinksComponentView,
@@ -179,6 +187,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'gahuza.bbc_gahuza_radio.podcasts.p094vs2n.page',
     applicationType: 'responsive',
     contentType: 'player-episode',
+    useReverb: true,
     tests: [
       assertPageView,
       assertPodcastLinksComponentView,
@@ -194,6 +203,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'gahuza.popular.read.page',
     applicationType: 'responsive',
     contentType: 'list-datadriven',
+    useReverb: true,
     tests: [assertPageView],
   },
   {
@@ -216,6 +226,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'afrique.bbc_afrique_tv.tv_programmes.w13xttmz.page',
     applicationType: 'responsive',
     contentType: 'player-episode',
+    useReverb: true,
     tests: [assertPageView],
   },
   {
@@ -225,6 +236,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'afrique.bbc_afrique_tv.tv.w3ct05mp.page',
     applicationType: 'responsive',
     contentType: 'player-episode',
+    useReverb: true,
     tests: [assertPageView],
   },
   {
@@ -234,6 +246,95 @@ const canonicalTestSuites = [
     pageIdentifier: 'marathi.topics.c1wmk63rjkvt.page',
     applicationType: 'responsive',
     contentType: 'index-category',
+    tests: [assertPageView],
+  },
+  // Pages with Reverb
+  {
+    path: '/pidgin',
+    runforEnv: ['local', 'live'],
+    service: 'pidgin',
+    pageIdentifier: 'pidgin.page',
+    applicationType: 'responsive',
+    contentType: 'index-home',
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertScrollableNavigationComponentView,
+      assertScrollableNavigationComponentClick,
+      assertDropdownNavigationComponentView,
+      assertDropdownNavigationComponentClick,
+      assertMessageBannerComponentView,
+      assertMessageBannerComponentClick,
+      assertMostReadComponentView,
+      assertMostReadComponentClick,
+    ],
+  },
+  {
+    path: '/pidgin',
+    runforEnv: ['test'],
+    service: 'pidgin',
+    pageIdentifier: 'pidgin.page',
+    applicationType: 'responsive',
+    contentType: 'index-home',
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertBillboardComponentView,
+      assertBillboardComponentClick,
+    ],
+  },
+  // Article
+  {
+    path: '/pidgin/articles/cyv3zm4y428o',
+    runforEnv: ['live'],
+    service: 'pidgin',
+    pageIdentifier: 'pidgin.articles.cyv3zm4y428o.page',
+    applicationType: 'responsive',
+    contentType: 'article',
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertTopStoriesComponentView,
+      assertTopStoriesComponentClick,
+      assertFeaturesAnalysisComponentView,
+      assertFeaturesAnalysisComponentClick,
+      assertScrollablePromoComponentClick,
+      assertScrollablePromoComponentView,
+      assertRelatedTopicsComponentView,
+      assertRelatedTopicsComponentClick,
+      assertRelatedContentComponentView,
+      assertRelatedContentComponentClick,
+      assertMostReadComponentView,
+      assertMostReadComponentClick,
+    ],
+  },
+  // Media Article
+  {
+    path: '/pidgin/articles/cw0x29n2pvqo',
+    runforEnv: ['local', 'live'],
+    service: 'pidgin',
+    pageIdentifier: 'pidgin.articles.cw0x29n2pvqo.page',
+    applicationType: 'responsive',
+    contentType: 'article-sfv',
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertLatestMediaComponentClick,
+      assertLatestMediaComponentView,
+      assertRelatedTopicsComponentView,
+      assertRelatedTopicsComponentClick,
+      assertRelatedContentComponentView,
+      assertRelatedContentComponentClick,
+    ],
+  },
+  {
+    path: '/pidgin/popular/read',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'pidgin',
+    pageIdentifier: 'pidgin.popular.read.page',
+    applicationType: 'responsive',
+    contentType: 'list-datadriven',
+    useReverb: true,
     tests: [assertPageView],
   },
 ];
@@ -279,6 +380,7 @@ const liteTestSuites = canonicalTestSuites
       ...testSuite,
       path: `${testSuite.path}.lite`,
       applicationType: 'lite',
+      useReverb: false,
       tests: [...liteSiteTests],
     };
   });
