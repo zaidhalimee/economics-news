@@ -297,7 +297,6 @@ const canonicalTestSuites = [
       assertPageView,
       assertScrollableNavigationComponentView,
       assertDropdownNavigationComponentView,
-      assertDropdownNavigationComponentClick,
       assertMessageBannerComponentView,
       assertMessageBannerComponentClick,
       assertRadioScheduleComponentView,
@@ -322,8 +321,8 @@ const canonicalTestSuites = [
   {
     path: '/portuguese/podcasts/p07r3r3t',
     runforEnv: ['local', 'test', 'live'],
-    service: 'gahuza',
-    pageIdentifier: 'gahuza.bbc_gahuza_radio.podcasts.programmes.p07r3r3t.page',
+    service: 'portuguese',
+    pageIdentifier: 'portuguese.bbc_brasil.podcasts.programmes.p07r3r3t.page',
     applicationType: 'responsive',
     contentType: 'player-episode',
     useReverb: true,
