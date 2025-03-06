@@ -90,14 +90,18 @@ describe('Click tracking script', () => {
   it('Does not add userId cookie if crypto is unsupported, but still calls sendBeacon', () => {
     const anchorElement = createAnchor({});
 
-    // @ts-expect-error Some browsers may not have crypto.
-    // eslint-disable-next-line no-global-assign
-    crypto = undefined;
+    const originalWindowCrypto = window.crypto;
+    Object.defineProperty(window, 'crypto', {
+      writable: true,
+      value: undefined,
+    });
     dispatchClick(anchorElement);
 
     const callParam = (window.sendBeaconLite as jest.Mock).mock.calls[0][0];
     const parsedATIParams = Object.fromEntries(new URLSearchParams(callParam));
     expect(parsedATIParams.idclient).toBeUndefined();
+
+    window.crypto = originalWindowCrypto;
   });
 
   it('Sets a new cookie if there is no atuserid cookie on the user browser', () => {
