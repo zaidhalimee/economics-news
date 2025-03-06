@@ -3,11 +3,18 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 /* eslint-disable no-restricted-globals */
-const version = 'v0.2.0';
+const version = 'v0.2.1';
 const cacheName = 'simorghCache_v1';
 
+const service = self.location.replace(/https:\/\/www(\.test)?\.bbc\.(co.uk|com)/, '').split('/')[0];
+const has_offline_page_functionality = false;
+const OFFLINE_PAGE = `/${service}/offline`;
+
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(cacheName));
+  event.waitUntil(async () => {
+  	const cache = caches.open(cacheName);
+  	if (has_offline_page_functionality) await cache.add(OFFLINE_PAGE);
+  });
 });
 
 const fetchEventHandler = async event => {
@@ -39,15 +46,31 @@ const fetchEventHandler = async event => {
       event.request.url,
     )
   ) {
-    const cache = await caches.open(cacheName);
-    let response = await cache.match(event.request);
-
-    if (!response) {
-      response = await fetch(event.request.url);
-      cache.put(event.request, response.clone());
-    }
-
-    event.respondWith(response);
+	event.respondWith(caches.open(cacheName).then(cache => {
+      return cache.match(event.request).then(cachedResponse => {
+        return cachedResponse || fetch(event.request.url).then((fetchedResponse) => {
+          cache.put(event.request, fetchedResponse.clone());
+          return fetchedResponse;
+        });
+      });
+    }));
+  } else if (has_offline_page_functionality && event.request.mode === "navigate") {
+  	event.respondWith(
+      (async () => {
+      	try {
+      	  const preloadResponse = await event.preloadResponse;
+          if (preloadResponse) {
+            return preloadResponse;
+          }
+          const networkResponse = await fetch(event.request);
+          return networkResponse;
+      	} catch (error) {
+      	  const cache = await caches.open(cacheName);
+          const cachedResponse = await cache.match(OFFLINE_PAGE);
+          return cachedResponse;
+      	}
+      })
+    );
   }
   return;
 };
