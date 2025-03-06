@@ -210,6 +210,10 @@ const MetadataContainer = ({
       <meta name="twitter:image:src" content={metaImage} />
       <meta name="twitter:site" content={twitterSite} />
       <meta name="twitter:title" content={socialTitle} />
+
+      <meta name="twitter:label1" content="Reading Time" />
+      <meta name="twitter:data1" content="7 mins 🕑" />
+
       {!isAmp && (
         <meta
           httpEquiv="onion-location"
