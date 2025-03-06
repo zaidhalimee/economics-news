@@ -283,6 +283,22 @@ const canonicalTestSuites = [
       assertBillboardComponentClick,
     ],
   },
+  {
+    path: 'serbian/topics/c5wzvzzz5vrt/cyr',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'serbian',
+    pageIdentifier: 'serbian.topics.c5wzvzzz5vrt.page',
+    applicationType: 'responsive',
+    contentType: 'index-category',
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertPodcastLinksComponentView,
+      assertPodcastLinksComponentClick,
+      assertRecentAudioEpisodesComponentView,
+      assertRecentAudioEpisodesComponentClick,
+    ],
+  },
   // Article
   {
     path: '/pidgin/articles/cyv3zm4y428o',
