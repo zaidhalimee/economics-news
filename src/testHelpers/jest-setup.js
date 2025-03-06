@@ -2,7 +2,7 @@ import fetch from 'jest-fetch-mock';
 import path from 'path';
 import { TextEncoder, TextDecoder } from 'util';
 import { ReadableStream } from 'node:stream/web';
-import { MessagePort } from 'node:worker_threads';
+import { MessageChannel, MessagePort } from 'node:worker_threads';
 
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
@@ -11,6 +11,7 @@ global.AbortSignal = {
   timeout: jest.fn(),
 };
 global.ReadableStream = ReadableStream;
+global.MessageChannel = MessageChannel;
 global.MessagePort = MessagePort;
 
 Object.defineProperty(global, 'crypto', {
@@ -19,6 +20,8 @@ Object.defineProperty(global, 'crypto', {
     getRandomValues: jest.fn(),
   },
 });
+
+global.crypto.randomUUID = jest.fn();
 
 /*
  * Mock to avoid async behaviour in tests

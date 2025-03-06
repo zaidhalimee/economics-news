@@ -8,7 +8,6 @@ import {
   ARTICLE_PAGE,
   FRONT_PAGE,
   MOST_READ_PAGE,
-  FEATURE_INDEX_PAGE,
   MEDIA_ASSET_PAGE,
   PHOTO_GALLERY_PAGE,
   STORY_PAGE,
@@ -69,8 +68,6 @@ export const getType = (pageType: PageTypes | 'index', shorthand = false) => {
       return STORY_PAGE;
     case PHOTO_GALLERY_PAGE:
       return PHOTO_GALLERY_PAGE;
-    case FEATURE_INDEX_PAGE:
-      return FEATURE_INDEX_PAGE;
     case TOPIC_PAGE:
       return 'Topics';
     case LIVE_PAGE:
@@ -182,7 +179,6 @@ interface GetTitleProps {
 export const getTitle = ({ pageType, title, brandName }: GetTitleProps) => {
   switch (pageType) {
     case FRONT_PAGE:
-    case FEATURE_INDEX_PAGE:
     case MOST_READ_PAGE:
     case TOPIC_PAGE:
     case LIVE_PAGE:
@@ -214,6 +210,7 @@ export interface GetConfigProps {
   mediaPageType?: string;
   categoryName?: string;
   title: string;
+  authors?: string;
   taggings?: MetadataTaggings;
   contentType?: string;
   producer?: string;
@@ -234,6 +231,7 @@ export const getConfig = ({
   sectionName,
   categoryName,
   title,
+  authors,
   taggings,
   contentType,
   producer,
@@ -272,6 +270,7 @@ export const getConfig = ({
     sections,
     uid: chartbeatUID,
     title: analyticsTitle,
+    ...(authors && { authors }),
     virtualReferrer: referrer,
     ...(isAmp && { contentType: analyticsContentType }),
     ...(!isAmp && {

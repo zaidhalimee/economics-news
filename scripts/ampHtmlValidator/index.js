@@ -6,12 +6,10 @@ const environment = 'local';
 const isSmoke = true;
 const baseUrl = 'http://localhost:7080';
 const pageTypes = [
-  'articles',
   'photoGalleryPage',
   'mostReadPage',
   'mediaAssetPage',
   'storyPage',
-  'featureIndexPage',
 ];
 
 // list of urls we have decided are acceptable to fail amp validation
@@ -61,8 +59,14 @@ const runValidator = async () => {
     .flat()
     .filter(url => !excludedUrls.includes(url));
 
-  // include kyrgyz homepage in amp validator tests
-  const urlsToValidate = [...urls, '/kyrgyz'];
+  const urlsToValidate = [
+    ...urls,
+    '/mundo/articles/ce42wzqr2mko',
+    '/news/articles/cn7k01xp8kxo',
+    '/persian/articles/cej3lzd5e0go',
+    '/serbian/articles/c805k05kr73o/cyr',
+    '/serbian/articles/c805k05kr73o/lat',
+  ];
 
   return Promise.all(
     urlsToValidate.map(url => validate({ validator, url })),

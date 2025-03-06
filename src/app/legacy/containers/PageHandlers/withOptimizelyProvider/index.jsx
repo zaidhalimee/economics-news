@@ -12,7 +12,6 @@ import Cookie from 'js-cookie';
 import isOperaProxy from '#app/lib/utilities/isOperaProxy';
 import { ServiceContext } from '../../../../contexts/ServiceContext';
 
-// 004_brasil_recommendations_experiment
 const isCypress = onClient() && window.Cypress;
 
 if (isLive() || isCypress) {
@@ -29,7 +28,10 @@ const withOptimizelyProvider = Component => {
   return props => {
     const { service } = useContext(ServiceContext);
     const isStoryBook = process.env.STORYBOOK;
-    const disableOptimizely = isStoryBook;
+    const disableOptimizely = isStoryBook || isCypress;
+
+    if (disableOptimizely) return <Component {...props} />;
+
     let mobile;
 
     const getUserId = () => {

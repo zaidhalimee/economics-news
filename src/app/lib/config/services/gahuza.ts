@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-gahuza',
     atiAnalyticsProducerId: '40',
     atiAnalyticsProducerName: 'GAHUZA',
+    useReverb: true,
     chartbeatDomain: 'gahuza.bbc.co.uk',
     brandName: 'BBC News Gahuza',
     product: 'BBC News',
@@ -46,16 +47,16 @@ export const service: DefaultServiceConfig = {
     showAdPlaceholder: true,
     showRelatedTopics: true,
     podcastPromo: {
-      title: 'Podcast',
-      brandTitle: 'Ikiganiro cy’abagore',
-      brandDescription: 'Ikiganiro cy’abagore kuri BBC Gahuzamiryango',
+      title: 'Whatsapp',
+      brandTitle: 'WhatsApp channel ya BBC Gahuza ',
+      brandDescription: 'Amakuru ya BBC Gahuza ako kanya kuri WhatsApp yawe',
       image: {
-        src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p082wkdq.jpg',
-        alt: 'Ikiganiro cy’abagore',
+        src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p0kqymfd.png',
+        alt: 'BBC Gahuza WhatsApp',
       },
       linkLabel: {
-        text: 'Inkurikirane',
-        href: 'https://www.bbc.com/gahuza/podcasts/p07yjlmf',
+        text: 'Kanda hano ujyeho',
+        href: 'https://www.whatsapp.com/channel/0029VataD35JuyADtKHXNk0N',
       },
     },
     translations: {
@@ -369,6 +370,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Mpuzamahanga',
         url: '/gahuza/topics/c9dvd93jjkkt',
+      },
+      {
+        title: 'Ubuzima',
+        url: '/gahuza/topics/cnq68qp4kxjt',
       },
       {
         title: 'Imikino',

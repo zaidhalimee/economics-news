@@ -15,7 +15,6 @@ import articleDataWithSingleRelatedContent from '#data/afrique/articles/cz216x22
 import articleDataWithPodcastPromo from '#data/russian/articles/c61q94n3rm3o.json';
 import articleNewsWithPodcastPromo from '#data/news/articles/crkxdvxzwxk2.json';
 import articleDataWithElectionTag from '#data/mundo/articles/c206j730722o.json';
-import articleDataWithJumpTo from '#data/news/articles/c6v11qzyv8po.json';
 import withPageWrapper from '#containers/PageHandlers/withPageWrapper';
 import withOptimizelyProvider from '#containers/PageHandlers/withOptimizelyProvider';
 import { service as newsConfig } from '#app/lib/config/services/news';
@@ -187,6 +186,22 @@ export const ArticlePageWithPodcastPromo = () => (
   />
 );
 
+export const ArticlePageWithTopStoriesPidgin = () => (
+  <ComponentWithContext
+    data={articleDataWithPodcastPromo}
+    service="pidgin"
+    podcastEnabled
+  />
+);
+
+export const ArticlePageWithMostReadMundo = () => (
+  <ComponentWithContext
+    data={articleDataWithPodcastPromo}
+    service="mundo"
+    podcastEnabled
+  />
+);
+
 export const ArticlePageWithPodcastPromoRightToLeft = () => (
   <ComponentWithContext
     data={articleDataWithPodcastPromo}
@@ -215,7 +230,3 @@ export const ArticlePageWithElectionBanner = {
     chromatic: { disableSnapshot: true },
   },
 };
-
-export const ArticlePageWithJumpTo = () => (
-  <ComponentWithContext data={articleDataWithJumpTo} service="news" />
-);

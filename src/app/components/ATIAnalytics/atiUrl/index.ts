@@ -220,14 +220,14 @@ export const buildATIPageTrackPath = ({
       ? [
           {
             key: 'mv_test',
-            description: 'JumpTo Onward Journeys experiment',
-            value: `JumpTo Onward Journeys experiment`,
+            description: 'Data driven OJs experiment',
+            value: 'Data driven OJs experiment',
             wrap: false,
             disableEncoding: true,
           },
           {
             key: 'mv_creation',
-            description: 'JumpTo Onward Journeys variant',
+            description: 'Data driven OJs variant',
             value: `${experimentVariant}`,
             wrap: false,
             disableEncoding: true,
@@ -372,14 +372,14 @@ export const buildATIEventTrackUrl = ({
       ? [
           {
             key: 'mv_test',
-            description: 'JumpTo Onward Journeys experiment',
-            value: `JumpTo Onward Journeys experiment`,
+            description: 'Data driven OJs experiment',
+            value: 'Data driven OJs experiment',
             wrap: false,
             disableEncoding: true,
           },
           {
             key: 'mv_creation',
-            description: 'JumpTo Onward Journeys variant',
+            description: 'Data driven OJs variant',
             value: `${experimentVariant}`,
             wrap: false,
             disableEncoding: true,
@@ -463,9 +463,8 @@ export const buildReverbAnalyticsModel = ({
           app_type: getAppType(platform),
           content_language: language,
           product_platform: onOnionTld() ? 'tor-bbc' : null,
-          referrer_url:
-            referrer && encodeURIComponent(encodeURIComponent(referrer)),
-          x5: href && encodeURIComponent(encodeURIComponent(href)),
+          referrer_url: referrer,
+          x5: href && encodeURIComponent(href),
           x8: libraryVersion,
           x9: sanitise(pageTitle),
           x10: nationsProducer && nationsProducer,
@@ -479,7 +478,6 @@ export const buildReverbAnalyticsModel = ({
         },
       },
       user: {
-        hashedId: getAtUserId(),
         isSignedIn: false,
       },
     },
@@ -500,14 +498,17 @@ export const buildReverbPageSectionEventModel = ({
   advertiserID,
   url,
 }: ATIEventTrackingProps) => {
-  const eventPublisher = type === 'view' ? 'ati' : 'atc';
-
   const eventDetails = {
     eventName: type === 'view' ? 'sectionView' : 'sectionClick',
-    ...(type === 'click' && {
-      componentName,
-      container: campaignID,
-    }),
+    eventPublisher: type === 'click' ? 'click' : 'impression',
+    componentName,
+    container: campaignID,
+    attribute: componentName,
+    metadata: format,
+    placement: pageIdentifier,
+    source: advertiserID,
+    result: url,
+    isClick: type === 'click',
   };
 
   return {
@@ -517,19 +518,10 @@ export const buildReverbPageSectionEventModel = ({
         name: pageIdentifier,
         producer: producerName,
         additionalProperties: {
-          [eventPublisher]: getEventInfo({
-            campaignID,
-            componentName,
-            format,
-            pageIdentifier,
-            advertiserID,
-            url,
-          }),
           type: 'AT',
         },
       },
       user: {
-        hashedId: getAtUserId(),
         isSignedIn: false,
       },
     },

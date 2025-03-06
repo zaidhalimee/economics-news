@@ -66,7 +66,7 @@ describe('UserContext', () => {
       {
         config: null,
       },
-      {},
+      undefined,
     );
   });
   describe('ckns_mvt cookie', () => {

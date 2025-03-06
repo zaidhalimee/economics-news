@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-afaanoromoo',
     atiAnalyticsProducerId: '2',
     atiAnalyticsProducerName: 'AFAAN_OROMOO',
+    useReverb: true,
     chartbeatDomain: 'afaanoromoo.bbc.co.uk',
     brandName: 'BBC News Afaan Oromoo',
     product: 'BBC News',
@@ -47,6 +48,20 @@ export const service: DefaultServiceConfig = {
     frontPageTitle: 'Oduu',
     showAdPlaceholder: false,
     showRelatedTopics: true,
+    podcastPromo: {
+      title: 'WhatsApp',
+      brandTitle: 'Chaanaalii WhatsApp BBC Afaan Oromoo',
+      brandDescription:
+        'Oduu, xiinxalaafi odeessa adda addaa kallattiin argachuuf',
+      image: {
+        src: 'https://ichef.bbc.co.uk/images/ic/$recipe/p0kthbd3.png',
+        alt: 'BBC News Afaan Oromo WhatsApp irrati argadhaa',
+      },
+      linkLabel: {
+        text: 'Asiin seenaa',
+        href: 'https://bit.ly/4hIe50g',
+      },
+    },
     translations: {
       pagination: {
         previousPage: 'Kan duraa',
@@ -336,8 +351,24 @@ export const service: DefaultServiceConfig = {
         url: '/afaanoromoo/topics/c2dwqdy81y1t',
       },
       {
+        title: 'Ispoortii',
+        url: '/afaanoromoo/topics/c06gq6440j8t',
+      },
+      {
         title: 'Viidiyoo',
         url: '/afaanoromoo/topics/ck0dg7dpjwwt',
+      },
+      {
+        title: 'Siyaasa',
+        url: '/afaanoromoo/topics/c2dwqdynwwrt',
+      },
+      {
+        title: 'Dubartoota',
+        url: '/afaanoromoo/topics/c8y94yq185dt',
+      },
+      {
+        title: 'Baha Jidduugalaa',
+        url: '/afaanoromoo/topics/c8y94yzd049t',
       },
       {
         title: 'Jajjaboo',

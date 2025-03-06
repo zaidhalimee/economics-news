@@ -49,16 +49,16 @@ export const service: DefaultServiceConfig = {
     googleSiteVerification: 'D-aEHUiyVaMoUJXjVRbDVkxS0dLTMUZLD3dLPTnWO4Q',
     podcastPromo: {
       title: 'पॉडकास्ट',
-      brandTitle: 'The Lens: मुकेश शर्मा के साथ',
+      brandTitle: 'दुनिया जहान',
       brandDescription:
-        'हफ़्ते की सबसे बड़ी न्यूज़ स्टोरी पर चर्चा: मुकेश शर्मा के साथ.',
+        'दुनिया जहान: अंतरराष्ट्रीय विषयों की गहन पड़ताल करता कार्यक्रम.',
       image: {
-        src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p0kjf0d8.jpg',
+        src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p09krv89.jpg',
         alt: 'मुकेश शर्मा',
       },
       linkLabel: {
         text: 'दिनभर: पूरा दिन,पूरी ख़बर',
-        href: 'https://www.bbc.com/hindi/podcasts/p0kjf03y',
+        href: 'https://www.bbc.com/hindi/podcasts/p05525mc',
       },
       skipLink: {
         text: 'छोड़कर %title% आगे बढ़ें',
@@ -87,13 +87,6 @@ export const service: DefaultServiceConfig = {
         mediaPlayer: 'मीडिया प्लेयर',
         audioPlayer: 'ऑडिया प्लेयर',
         videoPlayer: 'वीडियो प्लेयर',
-      },
-      articlePage: {
-        jumpToTitle: {
-          variation_1: 'इस पर जाएं',
-          variation_2: 'बीबीसी न्यूज़ हिंदी  से और अधिक जानें',
-          variation_3: 'बीबीसी न्यूज़ हिंदी से और ख़बरें पढ़ें',
-        },
       },
       liveExperiencePage: {
         liveLabel: 'लाइव',
@@ -444,16 +437,16 @@ export const service: DefaultServiceConfig = {
         url: '/hindi',
       },
       {
-        title: 'दिल्ली विधानसभा चुनाव',
-        url: '/hindi/topics/c8dqegnm6d9t',
-      },
-      {
         title: 'भारत',
         url: '/hindi/topics/ckdxnkz7607t',
       },
       {
         title: 'विदेश',
         url: '/hindi/topics/c9wpm0en87xt',
+      },
+      {
+        title: 'हेल्थ',
+        url: '/hindi/topics/cr50ykdx5wqt',
       },
       {
         title: 'मनोरंजन',
