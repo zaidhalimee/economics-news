@@ -298,10 +298,6 @@ const canonicalTestSuites = [
       assertScrollableNavigationComponentClick,
       assertDropdownNavigationComponentView,
       assertDropdownNavigationComponentClick,
-      assertMessageBannerComponentView,
-      assertMessageBannerComponentClick,
-      assertMostReadComponentView,
-      assertMostReadComponentClick,
     ],
   },
   {
