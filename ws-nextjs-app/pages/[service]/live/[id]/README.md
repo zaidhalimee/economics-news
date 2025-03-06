@@ -6,8 +6,8 @@ Live pages provide live media streams and posts updated in real time.
 
 ## BFF Response
 
-A sample BFF response for a given Live page can be found here:
-[BFF Send Response](https://fabl.api.bbci.co.uk/playground?env=production&module=simorgh-bff&params=id%3Dc7p765ynk9qt%3Btrue%2Cservice%3Dpidgin%3Btrue%2CpageType%3Dlive%3Btrue&context=ctx-service-env%3Dtest)
+BFF details for Live pages can be found here:
+[BFF Live Response](https://github.com/bbc/fabl-modules/tree/main/modules/application/simorgh-bff#live)
 
 ## How routes are handled
 
@@ -75,8 +75,7 @@ Component file structure
     	                ├── Stream
     	                ├── LivePageLayout
 
-
-The LivePageLayout propagates respective parts of BFF data to the Header, KeyPoints, Stream and Pagination components.
+The LivePageLayout propagates respective parts of BFF data to the `Header`, `KeyPoints`, `Stream` and `Pagination` components.
 
 ### Stream component
 
@@ -87,7 +86,7 @@ The stream component takes in the following properties:
     	contributors:  string  |  null;
     }
 
-The stream component will process streamContent and populate its body with a series of posts. Posts can currently support the following content types: paragraph, unorderedList, orderedList, image, video and social.
+The `Stream` component will process `streamContent` and populate its body with a series of `Posts`. `Posts` can currently support the following content types: `paragraph`, `unorderedList`, `orderedList`, `image`, `video` and `social`.
 
 ### Header component
 
