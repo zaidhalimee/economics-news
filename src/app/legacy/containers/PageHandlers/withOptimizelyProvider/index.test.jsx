@@ -38,7 +38,13 @@ const TestComponent = () => {
   );
 };
 
-describe.skip('withOptimizelyProvider HOC', () => {
+jest.mock('./isCypress', () => jest.fn().mockImplementation(() => false));
+
+describe('withOptimizelyProvider HOC', () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('should enrich the component with the Optimizely API', () => {
     const optimizelyProviderRenderSpy = jest.spyOn(
       optimizelyReactSdk.OptimizelyProvider.prototype,
