@@ -285,12 +285,12 @@ const canonicalTestSuites = [
     ],
   },
   {
-    path: '/persian',
+    path: '/persian/topics/crezq2dg9zwt',
     runforEnv: ['local', 'test'],
     service: 'persian',
     pageIdentifier: 'persian.page',
     applicationType: 'responsive',
-    contentType: 'index-home',
+    contentType: 'index-category',
     useReverb: true,
     tests: [
       assertPageView,
@@ -306,7 +306,7 @@ const canonicalTestSuites = [
     service: 'indonesia',
     pageIdentifier: 'indonesia.page',
     applicationType: 'responsive',
-    contentType: 'index-category',
+    contentType: 'index-home',
     useReverb: true,
     tests: [
       assertPageView,
