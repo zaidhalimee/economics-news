@@ -21,7 +21,7 @@ const baseServiceConfig = {
   twitterCreator: '@bbcuzbek',
   twitterSite: '@bbcuzbek',
   isTrustProjectParticipant: true,
-  manifestPath: '/manifest.json',
+  manifestPath: '/uzbek/manifest.json',
   swPath: '/sw.js',
   radioSchedule: {
     hasRadioSchedule: false,

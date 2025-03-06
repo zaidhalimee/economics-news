@@ -41,7 +41,7 @@ export const service: DefaultServiceConfig = {
       'https://www.bbc.com/indonesia/institutional-49283175',
     isTrustProjectParticipant: true,
     script: latin,
-    manifestPath: '/manifest.json',
+    manifestPath: '/indonesia/manifest.json',
     swPath: '/sw.js',
     frontPageTitle: 'Berita',
     showAdPlaceholder: true,

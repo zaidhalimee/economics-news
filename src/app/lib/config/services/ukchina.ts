@@ -27,7 +27,7 @@ const baseServiceConfig = {
   twitterSite: '@BBCChina',
   isTrustProjectParticipant: true,
   script: noAscendersOrDescenders,
-  manifestPath: '/manifest.json',
+  manifestPath: '/ukchina/manifest.json',
   swPath: '/sw.js',
   showAdPlaceholder: true,
   showRelatedTopics: true,

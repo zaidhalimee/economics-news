@@ -40,7 +40,7 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/punjabi/institutional-49282853',
     isTrustProjectParticipant: true,
     script: gurmukhi,
-    manifestPath: '/manifest.json',
+    manifestPath: '/punjabi/manifest.json',
     swPath: '/sw.js',
     frontPageTitle: 'ਨਿਊਜ਼',
     showAdPlaceholder: false,

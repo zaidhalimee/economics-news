@@ -40,7 +40,7 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/sinhala/institutional-50288553',
     isTrustProjectParticipant: true,
     script: sinhalese,
-    manifestPath: '/manifest.json',
+    manifestPath: '/sinhala/manifest.json',
     swPath: '/sw.js',
     frontPageTitle: 'මුල් පිටුව',
     showAdPlaceholder: true,
