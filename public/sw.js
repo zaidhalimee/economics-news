@@ -12,7 +12,7 @@ const OFFLINE_PAGE = `/${service}/offline`;
 
 self.addEventListener('install', event => {
   event.waitUntil(async () => {
-  	const cache = caches.open(cacheName);
+  	const cache = await caches.open(cacheName);
   	if (has_offline_page_functionality) await cache.add(OFFLINE_PAGE);
   });
 });
@@ -46,14 +46,20 @@ const fetchEventHandler = async event => {
       event.request.url,
     )
   ) {
-	event.respondWith(caches.open(cacheName).then(cache => {
-      return cache.match(event.request).then(cachedResponse => {
-        return cachedResponse || fetch(event.request.url).then((fetchedResponse) => {
-          cache.put(event.request, fetchedResponse.clone());
-          return fetchedResponse;
-        });
-      });
-    }));
+    const cache = await caches.open(cacheName);
+    let response = await cache.match(event.request);
+
+    event.respondWith(
+      (async () => {
+          if (!response) {
+            response = await fetch(event.request.url);
+            cache.put(event.request, response.clone());
+          }
+          return response;
+      })(),
+    );
+
+    event.respondWith(response);
   } else if (has_offline_page_functionality && event.request.mode === "navigate") {
   	event.respondWith(
       (async () => {
