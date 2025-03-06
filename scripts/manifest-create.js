@@ -2,8 +2,8 @@ const fs = require('fs');
 const services = ["afaanoromoo", "afrique", "amharic", "arabic", "archive", "azeri", "bengali", "burmese", "cymrufyw", "gahuza", "gujarati", "hausa", "hindi", "igbo", "indonesia", "japanese", "korean", "kyrgyz", "marathi", "mundo", "naidheachdan", "nepali", "news", "newsround", "pashto", "persian", "pidgin", "portuguese", "punjabi", "russian", "scotland", "serbian", "sinhala", "somali", "sport", "swahili", "tamil", "telugu", "thai", "tigrinya", "turkce", "ukchina", "ukrainian", "urdu", "uzbek", "vietnamese", "yoruba", "zhongwen"];
 
 const IMAGE_VERSION = '1';
-const COPY_IMAGES_ACROSS = true;
-const NEW_IMAGES_FOLDER_LOCATION = '/Users/coxt13/Downloads/WSAppletouchiconsV2';
+const COPY_IMAGES_ACROSS = false;
+const NEW_IMAGES_FOLDER_LOCATION = '/absolute/path/to/your/new/images';
 
 const servicesWithoutLite = ["archive", "cymrufyw", "naidheachdan", "news", "newsround", "scotland", "sport"];
 
@@ -11,6 +11,7 @@ services.forEach(service => {
     const mainfestPath = `../public/${service}/manifest.json`;
     const currentManifest = JSON.parse(fs.readFileSync(mainfestPath, 'utf-8'));
     currentManifest.start_url = `https://www.bbc.com/${service}`;
+    currentManifest.short_name = currentManifest.short_name.replace(' News', '');
     if (!servicesWithoutLite.includes(service)) currentManifest.shortcuts = [
         {
           "name": "Lite Site",

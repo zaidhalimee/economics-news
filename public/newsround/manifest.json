@@ -1,6 +1,6 @@
 {
   "name": "CBBC Newsround",
-  "short_name": "CBBC Newsround",
+  "short_name": "CBBCround",
   "Scope": "/newsround/",
   "background_color": "#6C22D6",
   "display": "standalone",

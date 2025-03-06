@@ -1,6 +1,6 @@
 {
   "name": "BBC News",
-  "short_name": "BBC News",
+  "short_name": "BBC",
   "Scope": "/news/",
   "background_color": "#b80000",
   "display": "standalone",

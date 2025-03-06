@@ -1,6 +1,6 @@
 {
   "name": "BBC News Afrique",
-  "short_name": "BBC News Afrique",
+  "short_name": "BBC Afrique",
   "Scope": "/afrique/",
   "background_color": "#b80000",
   "display": "standalone",

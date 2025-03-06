@@ -1,6 +1,6 @@
 {
   "name": "BBC News हिंदी",
-  "short_name": "BBC News हिंदी",
+  "short_name": "BBC हिंदी",
   "Scope": "/hindi/",
   "background_color": "#b80000",
   "display": "standalone",
