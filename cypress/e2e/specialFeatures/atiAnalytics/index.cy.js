@@ -304,6 +304,22 @@ const canonicalTestSuites = [
       assertMostReadComponentClick,
     ],
   },
+  {
+    path: '/indonesia',
+    runforEnv: ['live'],
+    service: 'indoenesia',
+    pageIdentifier: 'indonesia.page',
+    applicationType: 'responsive',
+    contentType: 'index-category',
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertScrollableNavigationComponentView,
+      assertScrollableNavigationComponentClick,
+      assertDropdownNavigationComponentView,
+      assertDropdownNavigationComponentClick,
+    ],
+  },
   // Article
   {
     path: '/pidgin/articles/cyv3zm4y428o',
