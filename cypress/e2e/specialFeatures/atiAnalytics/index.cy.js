@@ -334,6 +334,16 @@ const canonicalTestSuites = [
       assertRecentAudioEpisodesComponentClick,
     ],
   },
+  {
+    path: '/tamil/bbc_tamil_tv/tv_programmes/w13xttmz',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'tamil',
+    pageIdentifier: 'tamil.bbc_tamil_tv.tv_programmes.w13xttmz.page',
+    applicationType: 'responsive',
+    contentType: 'player-episode',
+    useReverb: true,
+    tests: [assertPageView],
+  },
   // Article
   {
     path: '/pidgin/articles/cyv3zm4y428o',
