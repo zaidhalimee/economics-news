@@ -2,7 +2,7 @@
 
 The MediaLoader takes data from the BFF and converts it into a BUMP settings object.
 
-BUMP (BBC Universal Media Player) is a javascript module that embeds videos into a webpage. It's the BBC's alternative to the standard <video> interface in HTML5. BUMP is better because it automatically takes into account factors such as the client's device (are they on mobile or PC?) and the client's connection (are they on 3G or WIFI?) and provides the best fitting embedded media player (EMP) for each user.
+BUMP (BBC Universal Media Player) is a javascript module that embeds videos into a webpage. It's the BBC's alternative to the standard <video> interface in HTML5. BUMP is better because it takes into account the client's device (are they on mobile or PC?) and the client's connection (are they on 3G or WIFI?) and provides the best fitting embedded media player (EMP) for each user.
 
 ## Try it out
 
