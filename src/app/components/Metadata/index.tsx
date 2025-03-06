@@ -211,8 +211,10 @@ const MetadataContainer = ({
       <meta name="twitter:site" content={twitterSite} />
       <meta name="twitter:title" content={socialTitle} />
 
-      <meta name="twitter:label1" content="Reading Time" />
-      <meta name="twitter:data1" content="7 mins 🕑" />
+      {/* @ts-expect-error value is a valid attribute */}
+      <meta name="twitter:label1" value="Reading Time" />
+      {/* @ts-expect-error value is a valid attribute */}
+      <meta name="twitter:data1" value="7 mins 🕑" />
 
       {!isAmp && (
         <meta
