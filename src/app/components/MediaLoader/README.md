@@ -91,8 +91,6 @@ In the Next.js app we have `reactStrictMode: true`. This causes lifecycle hooks 
 
 ## Component Structure
 
-Component file structure
-
     ├── MediaLoader
     	├── configs
     		├── aresMedia.ts
