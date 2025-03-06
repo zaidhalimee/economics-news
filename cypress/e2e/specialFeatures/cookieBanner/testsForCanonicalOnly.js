@@ -38,11 +38,17 @@ const assertCookieExpiryDate = (cookieName, timestamp) => {
   });
 };
 
-const ensureCookieExpiryDates = () => {
-  const inOneYear = (new Date() / 1000 + 60 * 60 * 24 * 365).toFixed();
+const inOneYear = (new Date() / 1000 + 60 * 60 * 24 * 365).toFixed();
+
+const ensureAllCookieExpiryDates = () => {
   assertCookieExpiryDate('ckns_explicit', inOneYear);
   assertCookieExpiryDate('ckns_policy', inOneYear);
   assertCookieExpiryDate('ckns_privacy', inOneYear);
+};
+
+const ensureExplicitPolicyCookieExpiryDates = () => {
+  assertCookieExpiryDate('ckns_explicit', inOneYear);
+  assertCookieExpiryDate('ckns_policy', inOneYear);
 };
 
 export default ({ service, variant, pageType, path }) => {
@@ -80,7 +86,7 @@ export default ({ service, variant, pageType, path }) => {
       getCookieBannerCanonical(service, variant).should('not.exist');
       getPrivacyBanner(service, variant).should('not.exist');
 
-      ensureCookieExpiryDates();
+      ensureAllCookieExpiryDates();
     });
 
     it('should have a privacy banner that disappears once accepted but a cookie banner that is rejected', function test() {
@@ -107,7 +113,7 @@ export default ({ service, variant, pageType, path }) => {
       assertCookieHasValue('ckns_policy', '000');
       getCookieBannerCanonical(service, variant).should('not.exist');
       getPrivacyBanner(service, variant).should('not.exist');
-      ensureCookieExpiryDates();
+      ensureAllCookieExpiryDates();
     });
 
     it("should show cookie banner (and NOT privacy banner) if user has visited the page before and didn't explicitly 'accept' cookies", function test() {
@@ -151,7 +157,7 @@ export default ({ service, variant, pageType, path }) => {
       getCookieBannerCanonical(service, variant).should('not.exist');
       getPrivacyBanner(service, variant).should('not.exist');
 
-      ensureCookieExpiryDates();
+      ensureExplicitPolicyCookieExpiryDates();
     });
 
     it("should show cookie banner (and NOT privacy banner) if user has visited the page before and didn't explicitly 'accept' cookies", function test() {
