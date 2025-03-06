@@ -286,7 +286,7 @@ const canonicalTestSuites = [
   },
   {
     path: '/persian',
-    runforEnv: ['test'],
+    runforEnv: ['local', 'test'],
     service: 'persian',
     pageIdentifier: 'persian.page',
     applicationType: 'responsive',
@@ -306,8 +306,8 @@ const canonicalTestSuites = [
   },
   {
     path: '/indonesia',
-    runforEnv: ['live'],
-    service: 'indoenesia',
+    runforEnv: ['local', 'live'],
+    service: 'indonesia',
     pageIdentifier: 'indonesia.page',
     applicationType: 'responsive',
     contentType: 'index-category',
