@@ -14,11 +14,6 @@ fs.writeFileSync(
   serviceWorkerCode,
 );
 
-Object.defineProperty(self, 'location', {
-    writable: true,
-    value: { assign: jest.fn() }
-  });
-
 describe('Service Worker', () => {
   const originalFetch = global.fetch;
   const fetchSpy = jest.spyOn(global, 'fetch');
@@ -27,10 +22,6 @@ describe('Service Worker', () => {
   afterEach(() => {
     jest.resetAllMocks();
     global.fetch = originalFetch;
-  });
-  beforeEach(() => {
-    jest.resetAllMocks();
-    global.self.location = 'https://www.bbc.com/mundo/articles/c2343244t';
   });
 
   describe('webp', () => {
@@ -161,7 +152,6 @@ describe('Service Worker', () => {
       global.caches = {
         open: () => Promise.resolve(serviceWorkerCache),
       };
-      global.self.location = 'https://www.bbc.com/mundo/articles/c2343244t';
     });
 
     describe('when url is not cacheable', () => {
@@ -176,9 +166,7 @@ describe('Service Worker', () => {
           ({ fetchEventHandler } = await import('./service-worker-test'));
 
           const event = {
-            request: new Request(assetUrl, {
-              mode: 'same-origin',
-            }),
+            request: new Request(assetUrl),
             respondWith: jest.fn(),
           };
 
@@ -217,7 +205,7 @@ describe('Service Worker', () => {
 
           expect(event.respondWith).toHaveBeenCalled();
 
-          const [response] = event.respondWith.mock.calls[1];
+          const [response] = event.respondWith.mock.calls[0];
           const responseBody = response.body.toString();
 
           expect(responseBody).toBe(`${assetUrl}-cached`);
@@ -245,9 +233,7 @@ describe('Service Worker', () => {
         ({ fetchEventHandler } = await import('./service-worker-test'));
 
         const event = {
-          request: new Request(assetUrl, {
-            mode: 'same-origin',
-          }),
+          request: new Request(assetUrl),
           respondWith: jest.fn(),
         };
 
