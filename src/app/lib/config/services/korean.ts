@@ -79,10 +79,6 @@ export const service: DefaultServiceConfig = {
         instructions: '오늘의 뉴스를 다운받아 보실 수 있습니다',
         title: '파일 다운로드',
       },
-      pwa: {
-        instructions: '인터넷 연결이 없습니다',
-        title: '오프라인',
-      },
       gist: '요약',
       error: {
         404: {

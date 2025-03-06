@@ -101,12 +101,6 @@ export const service: DefaultServiceConfig = {
         instructions: 'You can download and view today’s news.',
         title: 'File Download',
       },
-      pwa: {
-        instructions: 'اتصال به اینترنت وجود ندارد',
-        title: 'آفلاین',
-        mirror: 'https://cnknfcjjewrmvljs.h53auu9xg71c.lol/persian',
-        mirrorCTA: 'پیوند آینه ای',
-      },
       gist: 'خلاصه',
       error: {
         404: {
