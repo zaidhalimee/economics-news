@@ -23,7 +23,7 @@ describe('ManifestContainer', () => {
     const { href, rel } = linkTags[0];
 
     expect(linkTags).toHaveLength(1);
-    expect(href).toEqual('/news/manifest.json');
+    expect(href).toEqual('/manifest.json');
     expect(rel).toEqual('manifest');
 
     wrapper.unmount();
