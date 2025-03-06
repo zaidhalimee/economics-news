@@ -494,7 +494,7 @@ describe('analyticsUtils', () => {
     });
 
     it('should return the AT user id', () => {
-      Cookie.set('atuserid', '{ "val": "some-random-uuid" }');
+      Cookie.set('atuserid', '{ "val": "some-random-uuid" }', { secure: true });
       cookieSetterSpy.mockClear();
       const atUserId = getAtUserId();
 
@@ -502,7 +502,7 @@ describe('analyticsUtils', () => {
     });
 
     it('should store the existing AT user id as a stringified JSON value in cookies again so that we update the cookie expiration date', () => {
-      Cookie.set('atuserid', '{ "val": "some-random-uuid" }');
+      Cookie.set('atuserid', '{ "val": "some-random-uuid" }', { secure: true });
       cookieSetterSpy.mockClear();
       const atUserId = getAtUserId();
       const [[cookieName, cookieValue, cookieOptions]] =
