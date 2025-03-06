@@ -45,3 +45,4 @@ process.env.SIMORGH_ASSETS_MANIFEST_PATH = path.resolve(
   __dirname,
   '../server/assets/fixture.json',
 );
+process.env.SIMORGH_OPTIMIZELY_SDK_KEY = 'LptPKDnHyAFu9V12s5xCz';

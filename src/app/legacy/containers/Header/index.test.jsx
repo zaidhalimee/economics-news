@@ -5,7 +5,6 @@ import Cookies from 'js-cookie';
 import {
   render,
   screen,
-  fireEvent,
 } from '../../../components/react-testing-library-with-providers';
 import { service as pidginServiceConfig } from '../../../lib/config/services/pidgin';
 import HeaderContainer from './index';
@@ -196,34 +195,12 @@ describe(`Header`, () => {
           service: 'pidgin',
         },
       });
-      const pidginPrivacyHeading =
-        pidginServiceConfig.default.translations.consentBanner.privacy.title;
+      const pidginCookieHeading =
+        pidginServiceConfig.default.translations.consentBanner.cookie.canonical
+          .title;
       expect(document.activeElement).not.toBe(initialFocusElement);
       expect(document.activeElement).toBe(
-        screen.getByText(pidginPrivacyHeading),
-      );
-    });
-
-    it('should focus on the brand link on cookie banner accept', () => {
-      HeaderContainerWithContext({
-        renderOptions: {
-          pageType: INDEX_PAGE,
-          service: 'pidgin',
-        },
-      });
-
-      const pidginPrivacyAccept =
-        pidginServiceConfig.default.translations.consentBanner.privacy.accept;
-      const pidginCookieAccept =
-        pidginServiceConfig.default.translations.consentBanner.cookie.canonical
-          .accept;
-      const logoHref = pidginServiceConfig.default.navigation[0].url;
-
-      fireEvent.click(screen.getByText(pidginPrivacyAccept));
-      fireEvent.click(screen.getByText(pidginCookieAccept));
-
-      expect(document.activeElement).toBe(
-        document.querySelector(`a[href="${logoHref}"]`),
+        screen.getByText(pidginCookieHeading),
       );
     });
 
@@ -241,37 +218,14 @@ describe(`Header`, () => {
       );
     });
 
-    it('should remove the privacy banner when navigating from the reject button to content with tab', () => {
-      const { container } = HeaderContainerWithContext({
-        renderOptions: { pageType: INDEX_PAGE, service: 'pidgin' },
-      });
-
-      const pidginPrivacyReject =
-        pidginServiceConfig.default.translations.consentBanner.privacy.reject;
-
-      const reject = screen.getByText(pidginPrivacyReject);
-      fireEvent.focus(reject);
-
-      expect(container).toContainElement(reject);
-
-      userEvent.tab().then(() => {
-        expect(container).not.toContainElement(reject);
-      });
-    });
-
     it('should remove the cookie banner when navigating from the reject button to content with tab', () => {
       const { container } = HeaderContainerWithContext({
         renderOptions: { pageType: INDEX_PAGE, service: 'pidgin' },
       });
 
-      const pidginPrivacyAccept =
-        pidginServiceConfig.default.translations.consentBanner.privacy.accept;
       const pidginCookieReject =
         pidginServiceConfig.default.translations.consentBanner.cookie.canonical
           .reject;
-
-      const acceptPrivacy = screen.getByText(pidginPrivacyAccept);
-      fireEvent.click(acceptPrivacy);
 
       const reject = screen.getByText(pidginCookieReject);
 
