@@ -15,9 +15,9 @@ fs.writeFileSync(
 );
 
 Object.defineProperty(self, 'location', {
-    writable: true,
-    value: { assign: jest.fn() }
-  });
+  writable: true,
+  value: { assign: jest.fn() },
+});
 
 describe('Service Worker', () => {
   const originalFetch = global.fetch;
@@ -30,6 +30,7 @@ describe('Service Worker', () => {
   });
   beforeEach(() => {
     jest.resetAllMocks();
+    /* eslint-disable-next-line no-restricted-globals */
     global.self.location = 'https://www.bbc.com/mundo/articles/c2343244t';
   });
 
@@ -161,6 +162,7 @@ describe('Service Worker', () => {
       global.caches = {
         open: () => Promise.resolve(serviceWorkerCache),
       };
+      /* eslint-disable-next-line no-restricted-globals */
       global.self.location = 'https://www.bbc.com/mundo/articles/c2343244t';
     });
 
