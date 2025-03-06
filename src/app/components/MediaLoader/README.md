@@ -6,7 +6,7 @@ BUMP (BBC Universal Media Player) is a javascript module that embeds videos into
 
 ## Try it out
 
-Below is a bare bones example of how BUMP is used. All we need to get a video working is to provide BUMP with a valid settings object as outlined below.
+Below is a bare-bones example of how BUMP is used. To get a video working we provide BUMP with a valid settings object as outlined below.
 
 - Cookbook provides us with a list of settings available: [Cook book link](https://cookbook.tools.bbc.co.uk/iplayer/customise)
 - The BUMP documentation provides us with a full list of settings: [Confluence](https://confluence.dev.bbc.co.uk/display/mp/SMP+Settings+Object)
