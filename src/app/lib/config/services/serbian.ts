@@ -12,6 +12,7 @@ const baseServiceConfig = {
   atiAnalyticsAppName: 'news-serbian',
   atiAnalyticsProducerId: '81',
   atiAnalyticsProducerName: 'SERBIAN',
+  useReverb: true,
   chartbeatDomain: 'serbian.bbc.co.uk',
   product: 'BBC News',
   defaultImage: 'https://news.files.bbci.co.uk/ws/img/logos/og/serbian.png',

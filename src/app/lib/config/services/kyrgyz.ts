@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-kyrgyz',
     atiAnalyticsProducerId: '58',
     atiAnalyticsProducerName: 'KYRGYZ',
+    useReverb: true,
     chartbeatDomain: 'kyrgyz.bbc.co.uk',
     brandName: 'BBC News Кыргыз Кызматы',
     product: 'BBC News',
