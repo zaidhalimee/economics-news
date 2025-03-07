@@ -82,7 +82,7 @@ export const service: DefaultServiceConfig = {
           'Ibindi vyerekeye ingene urwo rubuga rugutwara uburyo (ama mega) buke',
         informationPageLink: 'https://www.bbc.com/gahuza/articles/cn7y7pvem0vo',
         dataSaving: 'Ahagusaba uburyo (ama mega) buke',
-        dataSavingVersion: 'Nyandiko gusa',
+        articleDataSavingLinkText: 'Nyandiko gusa',
       },
       mediaAssetPage: {
         mediaPlayer: 'Ibikinwa',
