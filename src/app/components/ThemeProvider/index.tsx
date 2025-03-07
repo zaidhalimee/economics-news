@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-import defaultServiceVariants from '#app/lib/config/services/defaultServiceVariants';
+import defaultServiceVariants from '../../lib/config/services/defaultServiceVariants';
 import { Services, Variants } from '../../models/types/global';
 import themes from './themes/loadableConfig';
 import fallBackTheme from './themes/news';
