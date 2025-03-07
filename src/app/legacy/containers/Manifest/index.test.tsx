@@ -6,7 +6,7 @@ import ManifestContainer from '.';
 
 const contextStub = {
   manifestPath: '/manifest.json',
-  service: 'news',
+  service: 'pidgin',
 };
 
 const mountManifest = context =>
