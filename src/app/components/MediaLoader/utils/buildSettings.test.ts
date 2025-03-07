@@ -1011,7 +1011,7 @@ describe('buildSettings', () => {
           autoplay: false,
           appName: 'news-afrique',
           counterName: 'afrique.bbc_afrique_radio.w172zn0kxd65h3g.page',
-          superResponsive: true,
+          superResponsive: false,
           statsObject: {
             destination: 'WS_NEWS_LANGUAGES',
             producer: 'AFRIQUE',
