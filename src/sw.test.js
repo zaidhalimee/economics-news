@@ -14,6 +14,7 @@ fs.writeFileSync(
   serviceWorkerCode,
 );
 
+/* eslint-disable-next-line no-restricted-globals */
 Object.defineProperty(self, 'location', {
   writable: true,
   value: { assign: jest.fn() },
