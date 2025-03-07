@@ -348,6 +348,7 @@ const ampTestSuites = canonicalTestSuites.filter(supportsAmp).map(testSuite => {
   return {
     ...testSuite,
     path: `${testSuite.path}.amp`,
+    useReverb: false,
     applicationType: 'amp',
     tests: [assertPageView],
   };
