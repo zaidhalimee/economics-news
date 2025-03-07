@@ -6,6 +6,8 @@ exports[`PodcastExternalLinks Should render external links 1`] = `
   border-bottom: 0.0625rem #BABABA solid;
   margin: 0;
   padding: 0;
+  position: relative;
+  z-index: 2;
   margin-bottom: 0.5rem;
 }
 

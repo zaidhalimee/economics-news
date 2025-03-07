@@ -54,6 +54,8 @@ export default {
     css({
       backgroundColor: palette.WHITE,
       height: '165px',
+      zIndex: '1',
+      position: 'relative',
     }),
 
   standardMediaContainer: ({ palette }: Theme) =>

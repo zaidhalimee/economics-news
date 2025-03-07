@@ -38,6 +38,8 @@ const Wrapper = styled.aside`
   border-bottom: 0.0625rem ${props => props.theme.palette.CLOUD_LIGHT} solid;
   margin: 0;
   padding: 0;
+  position: relative;
+  z-index: 2;
   margin-bottom: ${GEL_SPACING};
   @media (min-width: ${GEL_GROUP_4_SCREEN_WIDTH_MIN}) {
     margin-bottom: ${GEL_SPACING_DBL};
