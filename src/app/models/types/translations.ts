@@ -25,6 +25,7 @@ export interface Translations {
     informationPage: string;
     informationPageLink: string;
     dataSaving: string;
+    dataSavingVersion: string;
   };
   mediaAssetPage: {
     mediaPlayer: string;
