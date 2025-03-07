@@ -36,6 +36,7 @@ const getManifestServices = services => {
     'newsround',
     'cymrufyw',
     'naidheachdan',
+    'archive',
   ];
 
   return services.filter(service => !publicServices.includes(service));
