@@ -1,41 +1,11 @@
-import { LITE_ATI_TRACKING } from '#app/hooks/useClickTrackerHandler';
-import liteATIClickTracking from '.';
+import processClientDeviceAndSendLite from '.';
 
-const createAnchor = ({
-  href = '/gahuza',
-  isLite = true,
-}: {
-  href?: string;
-  isLite?: boolean;
-}) => {
-  const anchorElement = document.createElement('a');
-  anchorElement.href = href;
-  if (isLite) {
-    anchorElement.setAttribute(
-      LITE_ATI_TRACKING,
-      'https://logws1363.ati-host.net/?',
-    );
-  }
-  return anchorElement;
-};
-
-const dispatchClick = (targetElement: HTMLElement) => {
-  document.body.appendChild(targetElement);
-  const event = new MouseEvent('click', {
-    view: window,
-    bubbles: true,
-    cancelable: true,
-  });
-  targetElement.dispatchEvent(event);
-};
-
-const testSystemTime = new Date('2024-11-13T16:30:02.000Z');
-const testHour = testSystemTime.getHours();
-const testMinute = testSystemTime.getMinutes();
-const testSecond = testSystemTime.getSeconds();
-
-describe('Click tracking script', () => {
+describe('processClientDeviceAndSendLite script', () => {
   const originalWindowLocation = window.location;
+  const testSystemTime = new Date('2024-11-13T16:30:02.000Z');
+  const testHour = testSystemTime.getHours();
+  const testMinute = testSystemTime.getMinutes();
+  const testSecond = testSystemTime.getSeconds();
 
   beforeAll(() => {
     jest.useFakeTimers().setSystemTime(testSystemTime);
@@ -48,12 +18,7 @@ describe('Click tracking script', () => {
         mockCookie = cookieValue;
       },
     });
-    Object.defineProperty(window, 'location', {
-      value: {
-        assign: jest.fn(),
-      },
-    });
-    liteATIClickTracking();
+    processClientDeviceAndSendLite();
   });
 
   beforeEach(() => {
@@ -63,7 +28,6 @@ describe('Click tracking script', () => {
       document.body.removeChild(document.body.firstChild);
     }
     window.sendBeaconLite = jest.fn();
-    window.dispatchEvent(new Event('load'));
   });
 
   afterAll(() => {
@@ -74,37 +38,25 @@ describe('Click tracking script', () => {
     });
   });
 
-  it('Does not call sendBeacon if the event has no data-ati-tracking parameter, but still redirects', () => {
-    const anchorElement = createAnchor({
-      href: '/gahuza',
-      isLite: false,
-    });
-
-    dispatchClick(anchorElement);
-
+  it('Does not call sendBeacon if the event has no data-ati-tracking parameter', () => {
+    window.processClientDeviceAndSendLite('');
     expect(window.sendBeaconLite).toHaveBeenCalledTimes(0);
-    const nextPageUrl = (window.location.assign as jest.Mock).mock.calls[0][0];
-    expect(nextPageUrl).toContain('/gahuza');
   });
 
   it('Does not add userId cookie if crypto is unsupported, but still calls sendBeacon', () => {
-    const anchorElement = createAnchor({});
-
     // @ts-expect-error Some browsers may not have crypto.
     // eslint-disable-next-line no-global-assign
     crypto = undefined;
-    dispatchClick(anchorElement);
-
+    window.processClientDeviceAndSendLite('https://logws1363.ati-host.net/?');
     const callParam = (window.sendBeaconLite as jest.Mock).mock.calls[0][0];
     const parsedATIParams = Object.fromEntries(new URLSearchParams(callParam));
     expect(parsedATIParams.idclient).toBeUndefined();
   });
 
   it('Sets a new cookie if there is no atuserid cookie on the user browser', () => {
-    const anchorElement = createAnchor({});
-
     (crypto.randomUUID as jest.Mock).mockReturnValueOnce('randomUniqueId');
-    dispatchClick(anchorElement);
+
+    window.processClientDeviceAndSendLite('https://logws1363.ati-host.net/?');
 
     const callParam = (window.sendBeaconLite as jest.Mock).mock.calls[0][0];
     expect(document.cookie).toBe(
@@ -114,12 +66,10 @@ describe('Click tracking script', () => {
   });
 
   it('Does not overwrite content in atuserid cookie if it already exists', () => {
-    const anchorElement = createAnchor({});
-
     const oldCookieId = 'oldCookieId';
     document.cookie = `atuserid=%7B%22name%22%3A%22atuserid%22%2C%22val%22%3A%22${oldCookieId}%22%2C%22options%22%3A%7B%22end%22%3A%222026-03-11T10%3A23%3A55.442Z%22%2C%22path%22%3A%22%2F%22%7D%7D; path=/; max-age=397; Secure;`;
     (crypto.randomUUID as jest.Mock).mockReturnValueOnce('newCookieId');
-    dispatchClick(anchorElement);
+    window.processClientDeviceAndSendLite('https://logws1363.ati-host.net/?');
 
     const callParam = (window.sendBeaconLite as jest.Mock).mock.calls[0][0];
     expect(document.cookie).toBe(
@@ -129,20 +79,16 @@ describe('Click tracking script', () => {
   });
 
   it('Reuses the atuserid cookie if there is a atuserid cookie on the user browser', () => {
-    const anchorElement = createAnchor({});
-
     document.cookie =
       'atuserid={"val":"oldCookieId"}; path=/; max-age=397; Secure;';
     (crypto.randomUUID as jest.Mock).mockReturnValueOnce('newCookieId');
-    dispatchClick(anchorElement);
+    window.processClientDeviceAndSendLite('https://logws1363.ati-host.net/?');
 
     const callParam = (window.sendBeaconLite as jest.Mock).mock.calls[0][0];
     expect(callParam).toContain('idclient=oldCookieId');
   });
 
   it('Calls sendBeaconLite() with the correct url', () => {
-    const anchorElement = createAnchor({});
-
     document.cookie =
       'atuserid={"val":"userCookieId"}; path=/; max-age=397; Secure;';
 
@@ -166,7 +112,7 @@ describe('Click tracking script', () => {
       },
     });
 
-    dispatchClick(anchorElement);
+    window.processClientDeviceAndSendLite('https://logws1363.ati-host.net/?');
 
     const callParam = (window.sendBeaconLite as jest.Mock).mock.calls[0][0];
     const parsedATIParams = Object.fromEntries(new URLSearchParams(callParam));
