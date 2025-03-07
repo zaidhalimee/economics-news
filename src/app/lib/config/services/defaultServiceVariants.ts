@@ -5,10 +5,10 @@ import { Variants } from '#app/models/types/global';
 
 // NB These routes do not exist on live. They are for dev and testing purposes.
 const defaultServiceVariants: { [index: string]: Variants } = {
-  serbian: 'cyr',
+  serbian: 'lat',
   ukchina: 'simp',
-  uzbek: 'lat',
-  zhongwen: 'simp',
+  uzbek: 'cyr',
+  zhongwen: 'trad',
 };
 
 export default defaultServiceVariants;
