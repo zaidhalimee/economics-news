@@ -335,7 +335,7 @@ const canonicalTestSuites = [
     ],
   },
   {
-    path: '/tamil/bbc_tamil_tv/tv_programmes/w13xttmz',
+    path: '/tamil/bbc_tamil_tv/tv_programmes/w13xttmy',
     runforEnv: ['local', 'test', 'live'],
     service: 'tamil',
     pageIdentifier: 'tamil.bbc_tamil_tv.tv_programmes.w13xttmy.page',
