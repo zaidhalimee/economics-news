@@ -6286,8 +6286,8 @@ module.exports = () => ({
             enabled: true,
           },
           local: {
-            paths: [],
-            enabled: false,
+            paths: ['/ukrainian/topics/c61k92vrqz6t'],
+            enabled: true,
           },
         },
         smoke: false,
