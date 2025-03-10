@@ -115,4 +115,8 @@ export default {
             paddingLeft: 0,
           },
         }),
+        liteCtaChevron: ({ spacings }: Theme) =>
+          css({
+            paddingLeft: `${spacings.HALF}rem`,
+          }),
 };
