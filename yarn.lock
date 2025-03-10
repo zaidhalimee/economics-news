@@ -1938,9 +1938,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cypress/request@npm:^3.0.6":
-  version: 3.0.7
-  resolution: "@cypress/request@npm:3.0.7"
+"@cypress/request@npm:^3.0.7":
+  version: 3.0.8
+  resolution: "@cypress/request@npm:3.0.8"
   dependencies:
     aws-sign2: "npm:~0.7.0"
     aws4: "npm:^1.8.0"
@@ -1955,12 +1955,12 @@ __metadata:
     json-stringify-safe: "npm:~5.0.1"
     mime-types: "npm:~2.1.19"
     performance-now: "npm:^2.1.0"
-    qs: "npm:6.13.1"
+    qs: "npm:6.14.0"
     safe-buffer: "npm:^5.1.2"
     tough-cookie: "npm:^5.0.0"
     tunnel-agent: "npm:^0.6.0"
     uuid: "npm:^8.3.2"
-  checksum: 10/fdd674caaa0942c8bb9bc90d862932dfccae6a7d63bacb13850b11668274c382356f5649d9264948015727b2362012b3c0c5105a67e107196d8b8c3b3d673fec
+  checksum: 10/f4ee26acfed457ea017192028ff08d533052c8bae7639d8701831e691e6cd0d7d44284902feb49aa62a90c8014cf66dc2c3efc1712ad7b76e47e06f335c69981
   languageName: node
   linkType: hard
 
@@ -2281,7 +2281,14 @@ __metadata:
 "@esbuild/darwin-arm64@npm:0.25.0":
   version: 0.25.0
   resolution: "@esbuild/darwin-arm64@npm:0.25.0"
-  checksum: 10/d82d5f8b724a77ee7d65b7d47159930015135c7fb0fc7dc3ad056203bb97a1a933f516fd91f0213420a80c0a9ddfec954c952c554edf00629d9bc964313a3836
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@esbuild/darwin-arm64@npm:0.25.1":
+  version: 0.25.1
+  resolution: "@esbuild/darwin-arm64@npm:0.25.1"
+  checksum: 10/34c125754c2103eb497937df842eadf32acd2bc074de0918db43f51913688651003457e8d837cb2aea371db47aefa162a73bcbed7529efb3fce41e162236ea9c
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
@@ -2289,7 +2296,14 @@ __metadata:
 "@esbuild/darwin-x64@npm:0.25.0":
   version: 0.25.0
   resolution: "@esbuild/darwin-x64@npm:0.25.0"
-  checksum: 10/ae029503666bfa48c6cbcbc991ac9d841e1f03f056f71782b78e57ac4083022eb505deab330651ee05deab76688cf3139bdbea84caea6491fcaf5caa2b912946
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@esbuild/darwin-x64@npm:0.25.1":
+  version: 0.25.1
+  resolution: "@esbuild/darwin-x64@npm:0.25.1"
+  checksum: 10/0920b1622909f001028fa9c8978edd53ee3ec3cb6321a50f0b20ce67d5d82ed55a4acdb459800a4fe374bd70b953b51366026756d169a26982bbc3f1a7131f16
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
@@ -2311,7 +2325,14 @@ __metadata:
 "@esbuild/linux-arm64@npm:0.25.0":
   version: 0.25.0
   resolution: "@esbuild/linux-arm64@npm:0.25.0"
-  checksum: 10/1dbf78595fed87287eccde8fb9a5e35d448ab3b7cd84c03fdfa47c250701a62160d7aa45b4de9ca5e11039975680829644529636bbe254e1627836c5227efca2
+  conditions: os=linux & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@esbuild/linux-arm64@npm:0.25.1":
+  version: 0.25.1
+  resolution: "@esbuild/linux-arm64@npm:0.25.1"
+  checksum: 10/202515560459ecb05044e0ae6079c0fbecbe863f35dfa5d2adc2f9e830a543ed6412aa277a79fd1e94d33c499ca5b5984bdc25124268950d8f95375f76999810
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
@@ -2368,7 +2389,14 @@ __metadata:
 "@esbuild/linux-x64@npm:0.25.0":
   version: 0.25.0
   resolution: "@esbuild/linux-x64@npm:0.25.0"
-  checksum: 10/22f6bfbb856653ee8cff0a93ce63947fd3bd4565c8bc7e9d437845fc4b44a2b3954b5e412b4aa4b63e62977beca12e0214b2607c7bc8c4ce359bd10118755df4
+  conditions: os=linux & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@esbuild/linux-x64@npm:0.25.1":
+  version: 0.25.1
+  resolution: "@esbuild/linux-x64@npm:0.25.1"
+  checksum: 10/c73b51929e1dc770b8eb25c93551c6f6808858623647266b49a9aacbbf0b68ecffa6cb54bebd5b8c14c498a42a7631081033de6be4a35ff049dfda37e52fda3f
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
@@ -2411,7 +2439,14 @@ __metadata:
 "@esbuild/win32-arm64@npm:0.25.0":
   version: 0.25.0
   resolution: "@esbuild/win32-arm64@npm:0.25.0"
-  checksum: 10/47bd8e32c90da8472515ddc625e6284cf745b1b9eeecf16e2e699b94b3d11c2d773b16944c8de33d857a8e59426601063a3df04433cb670ed3e8421def07d96b
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@esbuild/win32-arm64@npm:0.25.1":
+  version: 0.25.1
+  resolution: "@esbuild/win32-arm64@npm:0.25.1"
+  checksum: 10/be20428d1e4bdd2a3e77e30127f8fb24fe073f7317b9aa3474d8a59a6e832bb93c323128a8f10841ba2d3838d7d8f8bb2bebf90ef196087f766d5a32f81c642d
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
@@ -2426,7 +2461,14 @@ __metadata:
 "@esbuild/win32-x64@npm:0.25.0":
   version: 0.25.0
   resolution: "@esbuild/win32-x64@npm:0.25.0"
-  checksum: 10/ce021c1bb895345ee30f363d89e1f3631040fb44d2e27e614b65dc697090c30c5b66b80aa9d6e5e3b3153010b37e523d6ef34c7b4f2248192b1b4bdd30701b3f
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@esbuild/win32-x64@npm:0.25.1":
+  version: 0.25.1
+  resolution: "@esbuild/win32-x64@npm:0.25.1"
+  checksum: 10/51a470813dd92d7ca58bfd30a2d94d7ce7a363f750df8164f359ffe28caa270d36ffae3aa8407eddfa5b214d173ada1a121ccf19c5d21fc36092634b9e5fea17
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -5547,13 +5589,13 @@ __metadata:
   linkType: hard
 
 "axios@npm:^1.7.9":
-  version: 1.7.9
-  resolution: "axios@npm:1.7.9"
+  version: 1.8.2
+  resolution: "axios@npm:1.8.2"
   dependencies:
     follow-redirects: "npm:^1.15.6"
     form-data: "npm:^4.0.0"
     proxy-from-env: "npm:^1.1.0"
-  checksum: 10/b7a5f660ea53ba9c2a745bf5ad77ad8bf4f1338e13ccc3f9f09f810267d6c638c03dac88b55dae8dc98b79c57d2d6835be651d58d2af97c174f43d289a9fd007
+  checksum: 10/d4328758128d0602cc809a8e7627622cb7839b379eae5e4d6b9d603dd4d5fb89159985630243ec107cf5c675cd8825dba737a319dff9499f3b7688d9a69ec9ed
   languageName: node
   linkType: hard
 
@@ -6256,7 +6298,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ci-info@npm:^4.0.0":
+"ci-info@npm:^4.1.0":
   version: 4.1.0
   resolution: "ci-info@npm:4.1.0"
   checksum: 10/546628efd04e37da3182a58b6995a3313deb86ec7c8112e22ffb644317a61296b89bbfa128219e5bfcce43d9613a434ed89907ed8e752db947f7291e0405125f
@@ -6988,11 +7030,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:14.0.2":
-  version: 14.0.2
-  resolution: "cypress@npm:14.0.2"
+"cypress@npm:14.1.0":
+  version: 14.1.0
+  resolution: "cypress@npm:14.1.0"
   dependencies:
-    "@cypress/request": "npm:^3.0.6"
+    "@cypress/request": "npm:^3.0.7"
     "@cypress/xvfb": "npm:^1.2.4"
     "@types/sinonjs__fake-timers": "npm:8.1.1"
     "@types/sizzle": "npm:^2.3.2"
@@ -7003,7 +7045,7 @@ __metadata:
     cachedir: "npm:^2.3.0"
     chalk: "npm:^4.1.0"
     check-more-types: "npm:^2.24.0"
-    ci-info: "npm:^4.0.0"
+    ci-info: "npm:^4.1.0"
     cli-cursor: "npm:^3.1.0"
     cli-table3: "npm:~0.6.1"
     commander: "npm:^6.2.1"
@@ -7037,7 +7079,7 @@ __metadata:
     yauzl: "npm:^2.10.0"
   bin:
     cypress: bin/cypress
-  checksum: 10/1adb4dd7559c8e483815fa682a8e02115e654e3dd6cd006cd0c7ea97c88acb4dcbe5feaa8a5d8b67e034883c208cd3d5c18f6e8df50a38e1d8dd1449ce7fd889
+  checksum: 10/35b7081f00c2e3ba8c757c571d9cb7650e7e64a9294717c4ba8ad35af337be855584946cc517b6a91fa2cd3b8d947bb4e883f7c0fe393727513ea3ec9c99d170
   languageName: node
   linkType: hard
 
@@ -13572,7 +13614,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qs@npm:6.13.1, qs@npm:^6.11.0, qs@npm:^6.11.2":
+"qs@npm:6.14.0":
+  version: 6.14.0
+  resolution: "qs@npm:6.14.0"
+  dependencies:
+    side-channel: "npm:^1.1.0"
+  checksum: 10/a60e49bbd51c935a8a4759e7505677b122e23bf392d6535b8fc31c1e447acba2c901235ecb192764013cd2781723dc1f61978b5fdd93cc31d7043d31cdc01974
+  languageName: node
+  linkType: hard
+
+"qs@npm:^6.11.0, qs@npm:^6.11.2":
   version: 6.13.1
   resolution: "qs@npm:6.13.1"
   dependencies:
@@ -14378,6 +14429,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"semver@npm:^7.7.1":
+  version: 7.7.1
+  resolution: "semver@npm:7.7.1"
+  bin:
+    semver: bin/semver.js
+  checksum: 10/4cfa1eb91ef3751e20fc52e47a935a0118d56d6f15a837ab814da0c150778ba2ca4f1a4d9068b33070ea4273629e615066664c2cfcd7c272caf7a8a0f6518b2c
+  languageName: node
+  linkType: hard
+
 "send@npm:0.19.0":
   version: 0.19.0
   resolution: "send@npm:0.19.0"
@@ -14663,7 +14723,7 @@ __metadata:
     "@testing-library/jest-dom": "npm:6.6.3"
     "@testing-library/react": "npm:16.2.0"
     babel-plugin-transform-rename-import: "npm:2.3.0"
-    cypress: "npm:14.0.2"
+    cypress: "npm:14.1.0"
     cypress-axe: "npm:^1.6.0"
     cypress-terminal-report: "npm:7.1.0"
     jest: "npm:^29.7.0"
@@ -14700,12 +14760,12 @@ __metadata:
     "@emotion/react": "npm:11.14.0"
     "@emotion/server": "npm:11.11.0"
     "@emotion/styled": "npm:11.14.0"
-    "@esbuild/darwin-arm64": "npm:0.25.0"
-    "@esbuild/darwin-x64": "npm:0.25.0"
-    "@esbuild/linux-arm64": "npm:0.25.0"
-    "@esbuild/linux-x64": "npm:0.25.0"
-    "@esbuild/win32-arm64": "npm:0.25.0"
-    "@esbuild/win32-x64": "npm:0.25.0"
+    "@esbuild/darwin-arm64": "npm:0.25.1"
+    "@esbuild/darwin-x64": "npm:0.25.1"
+    "@esbuild/linux-arm64": "npm:0.25.1"
+    "@esbuild/linux-x64": "npm:0.25.1"
+    "@esbuild/win32-arm64": "npm:0.25.1"
+    "@esbuild/win32-x64": "npm:0.25.1"
     "@loadable/babel-plugin": "npm:5.16.1"
     "@loadable/component": "npm:5.16.4"
     "@loadable/server": "npm:5.16.5"
@@ -14764,7 +14824,7 @@ __metadata:
     copy-webpack-plugin: "npm:13.0.0"
     core-js: "npm:3.41.0"
     crypto: "npm:1.0.1"
-    cypress: "npm:14.0.2"
+    cypress: "npm:14.1.0"
     cypress-axe: "npm:1.6.0"
     cypress-multi-reporters: "npm:2.0.5"
     cypress-terminal-report: "npm:7.1.0"
@@ -14824,7 +14884,7 @@ __metadata:
     supertest: "npm:7.0.0"
     terser-webpack-plugin: "npm:5.3.14"
     timemachine: "npm:0.3.2"
-    ts-jest: "npm:29.2.5"
+    ts-jest: "npm:29.2.6"
     ts-loader: "npm:9.5.2"
     typescript: "npm:5.8.2"
     undici: "npm:7.4.0"
@@ -15804,9 +15864,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:29.2.5":
-  version: 29.2.5
-  resolution: "ts-jest@npm:29.2.5"
+"ts-jest@npm:29.2.6":
+  version: 29.2.6
+  resolution: "ts-jest@npm:29.2.6"
   dependencies:
     bs-logger: "npm:^0.2.6"
     ejs: "npm:^3.1.10"
@@ -15815,7 +15875,7 @@ __metadata:
     json5: "npm:^2.2.3"
     lodash.memoize: "npm:^4.1.2"
     make-error: "npm:^1.3.6"
-    semver: "npm:^7.6.3"
+    semver: "npm:^7.7.1"
     yargs-parser: "npm:^21.1.1"
   peerDependencies:
     "@babel/core": ">=7.0.0-beta.0 <8"
@@ -15837,7 +15897,7 @@ __metadata:
       optional: true
   bin:
     ts-jest: cli.js
-  checksum: 10/f89e562816861ec4510840a6b439be6145f688b999679328de8080dc8e66481325fc5879519b662163e33b7578f35243071c38beb761af34e5fe58e3e326a958
+  checksum: 10/9cb6804266be7c9384cecace346f65d2ab5a685d252c5275b53b5958f6545951328a5c4d48c49c5f92d1e04187ca31e348e5a3540d20cb365c33d1eb89371e22
   languageName: node
   linkType: hard
 
