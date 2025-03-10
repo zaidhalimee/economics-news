@@ -248,8 +248,8 @@ const MediaArticlePage = ({ pageData }: { pageData: Article }) => {
         title={headline}
         author={articleAuthor}
         twitterHandle={articleAuthorTwitterHandle}
-        firstPublished={firstPublished}
-        lastPublished={lastPublished}
+        firstPublished={!isLiveMedia && firstPublished}
+        lastPublished={!isLiveMedia && lastPublished}
         section={getArticleSection(pageData)}
         aboutTags={aboutTags}
         mentionsTags={getMentions(pageData)}
