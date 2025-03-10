@@ -290,6 +290,11 @@ const canonicalTestSuites = [
     runforEnv: ['local', 'test'],
     service: 'persian',
     pageIdentifier: 'persian.topics.crezq2dg9zwt.page',
+    applicationType: 'responsive',
+    contentType: 'index-category',
+    useReverb: true,
+    tests: [
+      assertPageView,
       assertScrollableNavigationComponentView,
       assertDropdownNavigationComponentView,
       assertMessageBannerComponentView,
