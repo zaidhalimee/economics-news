@@ -6,7 +6,7 @@ import useToggle from '#hooks/useToggle';
 import { singleTextBlock } from '#app/models/blocks';
 import ArticleMetadata from '#containers/ArticleMetadata';
 import { RequestContext } from '#contexts/RequestContext';
-import headings from '#containers/Headings';
+import Headings from '#containers/Headings';
 import visuallyHiddenHeadline from '#containers/VisuallyHiddenHeadline';
 import gist from '#containers/Gist';
 import text from '#containers/Text';
@@ -121,8 +121,18 @@ const DisclaimerWithPaddingOverride = (props: ComponentToRenderProps) => (
 const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
   podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
+const getHeadlineComponent =(pathname: string, isLite: boolean)=>(props: ComponentToRenderProps)=>{
+  console.log(props);
+  return(
+    <>
+    <Headings {...props} />
+    {!isLite && (<CallToActionLink href={`${pathname}.lite`}> Data-saving Version <RightChevron /></CallToActionLink>)}
+    </>
+  );
+}
+
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
-  const { isApp, pathname } = useContext(RequestContext);
+  const { isApp, pathname, isLite } = useContext(RequestContext);
 
   console.log(pathname);
 
@@ -201,8 +211,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const componentsToRender = {
     visuallyHiddenHeadline,
-    headline: headings,
-    subheadline: headings,
+    headline: getHeadlineComponent(pathname, isLite),
+    subheadline: Headings,
     audio: MediaLoader,
     video: MediaLoader,
     text,
@@ -255,7 +265,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   return (
     <div css={styles.pageWrapper}>
-    <CallToActionLink href={`${pathname}.lite`}> Data-saving Version <RightChevron /></CallToActionLink>
       <ATIAnalytics atiData={atiData} />
       <ChartbeatAnalytics
         sectionName={pageData?.relatedContent?.section?.name}
