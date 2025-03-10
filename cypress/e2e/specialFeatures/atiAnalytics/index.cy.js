@@ -319,12 +319,12 @@ const canonicalTestSuites = [
     ],
   },
   {
-    path: '/portuguese/podcasts/p07r3r3t',
+    path: '/korean',
     runforEnv: ['local', 'test', 'live'],
-    service: 'portuguese',
-    pageIdentifier: 'portuguese.bbc_brasil.podcasts.programmes.p07r3r3t.page',
+    service: 'korean',
+    pageIdentifier: 'korean.page"',
     applicationType: 'responsive',
-    contentType: 'player-episode',
+    contentType: 'index-home',
     useReverb: true,
     tests: [
       assertPageView,
@@ -335,12 +335,12 @@ const canonicalTestSuites = [
     ],
   },
   {
-    path: 'serbian/topics/c5wzvzzz5vrt/cyr',
+    path: '/portuguese/podcasts/p07r3r3t',
     runforEnv: ['local', 'test', 'live'],
-    service: 'serbian',
-    pageIdentifier: 'serbian.topics.c5wzvzzz5vrt.page',
+    service: 'portuguese',
+    pageIdentifier: 'portuguese.bbc_brasil.podcasts.programmes.p07r3r3t.page',
     applicationType: 'responsive',
-    contentType: 'index-category',
+    contentType: 'player-episode',
     useReverb: true,
     tests: [
       assertPageView,
