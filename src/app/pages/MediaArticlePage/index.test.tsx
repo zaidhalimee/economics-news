@@ -194,29 +194,29 @@ describe('MediaArticlePage', () => {
       meta => meta.name === 'article:modified_time',
     );
 
-    const publishedTime = helmetContent.find(
-      meta => meta.name === 'article:published_time',
-    );
+   const publishedTime = helmetContent.find(
+     meta => meta.name === 'article:published_time',
+   );
 
     expect(modifiedTime).toEqual({
       name: 'article:modified_time',
       content: '2023-01-17T14:15:57.894Z',
     });
 
-    expect(publishedTime).toEqual({
-      name: 'article:published_time',
-      content: '2023-01-17T14:03:06.410Z',
-    });
+   expect(publishedTime).toEqual({
+     name: 'article:published_time',
+     content: '2023-01-17T14:03:06.410Z',
+   });
   });
 
   it('should NOT render article:modified_time and article:published_time for media pages with a live stream', async () => {
-    render(
-      <Context service="arabic">
-        <MediaArticlePage
-          pageData={arabicLiveTvPageData as unknown as Article}
-        />
-      </Context>,
-    );
+   render(
+     <Context service="arabic">
+       <MediaArticlePage
+         pageData={arabicLiveTvPageData as unknown as Article}
+       />
+     </Context>,
+   );
 
     const helmetContent = Helmet.peek()?.metaTags;
     const modifiedTime = helmetContent.find(
