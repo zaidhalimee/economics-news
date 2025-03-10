@@ -3,10 +3,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 /* eslint-disable no-restricted-globals */
-const version = 'v0.2.1';
+const version = 'v0.2.1a';
 const cacheName = 'simorghCache_v1';
 
-const service = self.location.replace(/https:\/\/www(\.test)?\.bbc\.(co.uk|com)/, '').split('/')[0];
+const service = self.location.pathname.split('/')[1];
 const has_offline_page_functionality = false;
 const OFFLINE_PAGE = `/${service}/offline`;
 
@@ -46,11 +46,10 @@ const fetchEventHandler = async event => {
       event.request.url,
     )
   ) {
-    const cache = await caches.open(cacheName);
-    let response = await cache.match(event.request);
-
     event.respondWith(
       (async () => {
+      	  const cache = await caches.open(cacheName);
+          let response = await cache.match(event.request);
           if (!response) {
             response = await fetch(event.request.url);
             cache.put(event.request, response.clone());
@@ -58,8 +57,6 @@ const fetchEventHandler = async event => {
           return response;
       })(),
     );
-
-    event.respondWith(response);
   } else if (has_offline_page_functionality && event.request.mode === "navigate") {
   	event.respondWith(
       (async () => {
