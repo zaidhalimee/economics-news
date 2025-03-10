@@ -32,7 +32,9 @@ describe('Service Worker', () => {
   beforeEach(() => {
     jest.resetAllMocks();
     /* eslint-disable-next-line no-restricted-globals */
-    global.self.location = {pathname: 'https://www.bbc.com/mundo/articles/c2343244t'};
+    global.self.location = {
+      pathname: 'https://www.bbc.com/mundo/articles/c2343244t',
+    };
   });
 
   describe('webp', () => {
@@ -164,7 +166,9 @@ describe('Service Worker', () => {
         open: () => Promise.resolve(serviceWorkerCache),
       };
       /* eslint-disable-next-line no-restricted-globals */
-      global.self.location = {pathname: 'https://www.bbc.com/mundo/articles/c2343244t'};
+      global.self.location = {
+        pathname: 'https://www.bbc.com/mundo/articles/c2343244t',
+      };
     });
 
     describe('when url is not cacheable', () => {
@@ -203,8 +207,6 @@ describe('Service Worker', () => {
         fetchedCache = {};
       });
 
-
-
       it.each`
         assetUrl
         ${'/cwr.js'}
@@ -229,8 +231,8 @@ describe('Service Worker', () => {
         await fetchEventHandler(event);
         expect(event.respondWith).toHaveBeenCalled();
 
-//         expect(fetchSpy).toHaveBeenCalledWith(assetUrl);
-//         expect(fetchedCache[event.request]).toStrictEqual(response.clone());
+        //         expect(fetchSpy).toHaveBeenCalledWith(assetUrl);
+        //         expect(fetchedCache[event.request]).toStrictEqual(response.clone());
       });
     });
   });
