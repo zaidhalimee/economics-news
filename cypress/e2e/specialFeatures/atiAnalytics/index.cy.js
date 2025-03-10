@@ -117,6 +117,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'hindi.articles.c9w59wnx27ro.page',
     applicationType: 'responsive',
     contentType: 'article',
+    useReverb: true,
     tests: [
       assertPageView,
       assertTopStoriesComponentView,
@@ -246,6 +247,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'marathi.topics.c1wmk63rjkvt.page',
     applicationType: 'responsive',
     contentType: 'index-category',
+    useReverb: true,
     tests: [assertPageView],
   },
   // Pages with Reverb
@@ -284,12 +286,40 @@ const canonicalTestSuites = [
     ],
   },
   {
-    path: 'serbian/topics/c5wzvzzz5vrt/cyr',
-    runforEnv: ['local', 'test', 'live'],
-    service: 'serbian',
-    pageIdentifier: 'serbian.topics.c5wzvzzz5vrt.page',
+    path: '/persian/topics/crezq2dg9zwt',
+    runforEnv: ['local', 'test'],
+    service: 'persian',
+    pageIdentifier: 'persian.topics.crezq2dg9zwt.page',
+      assertScrollableNavigationComponentView,
+      assertDropdownNavigationComponentView,
+      assertMessageBannerComponentView,
+      assertMessageBannerComponentClick,
+      assertRadioScheduleComponentView,
+    ],
+  },
+  {
+    path: '/indonesia',
+    runforEnv: ['local', 'live'],
+    service: 'indonesia',
+    pageIdentifier: 'indonesia.page',
     applicationType: 'responsive',
-    contentType: 'index-category',
+    contentType: 'index-home',
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertScrollableNavigationComponentView,
+      assertScrollableNavigationComponentClick,
+      assertDropdownNavigationComponentView,
+      assertDropdownNavigationComponentClick,
+    ],
+  },
+  {
+    path: '/portuguese/podcasts/p07r3r3t',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'portuguese',
+    pageIdentifier: 'portuguese.bbc_brasil.podcasts.programmes.p07r3r3t.page',
+    applicationType: 'responsive',
+    contentType: 'player-episode',
     useReverb: true,
     tests: [
       assertPageView,
@@ -298,6 +328,16 @@ const canonicalTestSuites = [
       assertRecentAudioEpisodesComponentView,
       assertRecentAudioEpisodesComponentClick,
     ],
+  },
+  {
+    path: '/tamil/bbc_tamil_tv/tv_programmes/w13xttmy',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'tamil',
+    pageIdentifier: 'tamil.bbc_tamil_tv.tv_programmes.w13xttmy.page',
+    applicationType: 'responsive',
+    contentType: 'player-episode',
+    useReverb: true,
+    tests: [assertPageView],
   },
   // Article
   {
@@ -364,6 +404,7 @@ const ampTestSuites = canonicalTestSuites.filter(supportsAmp).map(testSuite => {
   return {
     ...testSuite,
     path: `${testSuite.path}.amp`,
+    useReverb: false,
     applicationType: 'amp',
     tests: [assertPageView],
   };
@@ -383,6 +424,7 @@ const liteTestSuites = canonicalTestSuites
     switch (testSuite.contentType) {
       case 'article':
         liteSiteTests.push(assertLiteSiteCTAComponentClick);
+        liteSiteTests.push(assertRelatedTopicsComponentView);
         break;
       case 'index-home':
         liteSiteTests.push(assertMostReadComponentClick);
