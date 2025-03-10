@@ -99,4 +99,20 @@ export default {
         padding: `${spacings.DOUBLE}rem`,
       },
     }),
+    liteCtaContainer: ({ spacings }: Theme) =>
+      css({
+        marginBottom: `${spacings.TRIPLE}rem`,
+      }),
+      liteCTA: ({ spacings, mq }: Theme) =>
+        css({
+          display: 'inline-block',
+          paddingLeft: `${spacings.FULL}rem`,
+
+          [mq.GROUP_2_MIN_WIDTH]: {
+            paddingLeft: `${spacings.DOUBLE}rem`,
+          },
+          [mq.GROUP_4_MIN_WIDTH]: {
+            paddingLeft: 0,
+          },
+        }),
 };

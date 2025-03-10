@@ -126,7 +126,7 @@ const getHeadlineComponent =(pathname: string, isLite: boolean)=>(props: Compone
   return(
     <>
     <Headings {...props} />
-    {!isLite && (<CallToActionLink href={`${pathname}.lite`}> Data-saving Version <RightChevron /></CallToActionLink>)}
+    {!isLite && (<div css={styles.liteCtaContainer}><CallToActionLink href={`${pathname}.lite`} css={styles.liteCTA}> Data-saving Version <RightChevron /></CallToActionLink></div>)}
     </>
   );
 }
