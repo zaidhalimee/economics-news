@@ -2281,7 +2281,14 @@ __metadata:
 "@esbuild/darwin-arm64@npm:0.25.0":
   version: 0.25.0
   resolution: "@esbuild/darwin-arm64@npm:0.25.0"
-  checksum: 10/d82d5f8b724a77ee7d65b7d47159930015135c7fb0fc7dc3ad056203bb97a1a933f516fd91f0213420a80c0a9ddfec954c952c554edf00629d9bc964313a3836
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@esbuild/darwin-arm64@npm:0.25.1":
+  version: 0.25.1
+  resolution: "@esbuild/darwin-arm64@npm:0.25.1"
+  checksum: 10/34c125754c2103eb497937df842eadf32acd2bc074de0918db43f51913688651003457e8d837cb2aea371db47aefa162a73bcbed7529efb3fce41e162236ea9c
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
@@ -2289,7 +2296,14 @@ __metadata:
 "@esbuild/darwin-x64@npm:0.25.0":
   version: 0.25.0
   resolution: "@esbuild/darwin-x64@npm:0.25.0"
-  checksum: 10/ae029503666bfa48c6cbcbc991ac9d841e1f03f056f71782b78e57ac4083022eb505deab330651ee05deab76688cf3139bdbea84caea6491fcaf5caa2b912946
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@esbuild/darwin-x64@npm:0.25.1":
+  version: 0.25.1
+  resolution: "@esbuild/darwin-x64@npm:0.25.1"
+  checksum: 10/0920b1622909f001028fa9c8978edd53ee3ec3cb6321a50f0b20ce67d5d82ed55a4acdb459800a4fe374bd70b953b51366026756d169a26982bbc3f1a7131f16
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
@@ -2311,7 +2325,14 @@ __metadata:
 "@esbuild/linux-arm64@npm:0.25.0":
   version: 0.25.0
   resolution: "@esbuild/linux-arm64@npm:0.25.0"
-  checksum: 10/1dbf78595fed87287eccde8fb9a5e35d448ab3b7cd84c03fdfa47c250701a62160d7aa45b4de9ca5e11039975680829644529636bbe254e1627836c5227efca2
+  conditions: os=linux & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@esbuild/linux-arm64@npm:0.25.1":
+  version: 0.25.1
+  resolution: "@esbuild/linux-arm64@npm:0.25.1"
+  checksum: 10/202515560459ecb05044e0ae6079c0fbecbe863f35dfa5d2adc2f9e830a543ed6412aa277a79fd1e94d33c499ca5b5984bdc25124268950d8f95375f76999810
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
@@ -2368,7 +2389,14 @@ __metadata:
 "@esbuild/linux-x64@npm:0.25.0":
   version: 0.25.0
   resolution: "@esbuild/linux-x64@npm:0.25.0"
-  checksum: 10/22f6bfbb856653ee8cff0a93ce63947fd3bd4565c8bc7e9d437845fc4b44a2b3954b5e412b4aa4b63e62977beca12e0214b2607c7bc8c4ce359bd10118755df4
+  conditions: os=linux & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@esbuild/linux-x64@npm:0.25.1":
+  version: 0.25.1
+  resolution: "@esbuild/linux-x64@npm:0.25.1"
+  checksum: 10/c73b51929e1dc770b8eb25c93551c6f6808858623647266b49a9aacbbf0b68ecffa6cb54bebd5b8c14c498a42a7631081033de6be4a35ff049dfda37e52fda3f
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
@@ -2411,7 +2439,14 @@ __metadata:
 "@esbuild/win32-arm64@npm:0.25.0":
   version: 0.25.0
   resolution: "@esbuild/win32-arm64@npm:0.25.0"
-  checksum: 10/47bd8e32c90da8472515ddc625e6284cf745b1b9eeecf16e2e699b94b3d11c2d773b16944c8de33d857a8e59426601063a3df04433cb670ed3e8421def07d96b
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@esbuild/win32-arm64@npm:0.25.1":
+  version: 0.25.1
+  resolution: "@esbuild/win32-arm64@npm:0.25.1"
+  checksum: 10/be20428d1e4bdd2a3e77e30127f8fb24fe073f7317b9aa3474d8a59a6e832bb93c323128a8f10841ba2d3838d7d8f8bb2bebf90ef196087f766d5a32f81c642d
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
@@ -2426,7 +2461,14 @@ __metadata:
 "@esbuild/win32-x64@npm:0.25.0":
   version: 0.25.0
   resolution: "@esbuild/win32-x64@npm:0.25.0"
-  checksum: 10/ce021c1bb895345ee30f363d89e1f3631040fb44d2e27e614b65dc697090c30c5b66b80aa9d6e5e3b3153010b37e523d6ef34c7b4f2248192b1b4bdd30701b3f
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@esbuild/win32-x64@npm:0.25.1":
+  version: 0.25.1
+  resolution: "@esbuild/win32-x64@npm:0.25.1"
+  checksum: 10/51a470813dd92d7ca58bfd30a2d94d7ce7a363f750df8164f359ffe28caa270d36ffae3aa8407eddfa5b214d173ada1a121ccf19c5d21fc36092634b9e5fea17
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -14700,12 +14742,12 @@ __metadata:
     "@emotion/react": "npm:11.14.0"
     "@emotion/server": "npm:11.11.0"
     "@emotion/styled": "npm:11.14.0"
-    "@esbuild/darwin-arm64": "npm:0.25.0"
-    "@esbuild/darwin-x64": "npm:0.25.0"
-    "@esbuild/linux-arm64": "npm:0.25.0"
-    "@esbuild/linux-x64": "npm:0.25.0"
-    "@esbuild/win32-arm64": "npm:0.25.0"
-    "@esbuild/win32-x64": "npm:0.25.0"
+    "@esbuild/darwin-arm64": "npm:0.25.1"
+    "@esbuild/darwin-x64": "npm:0.25.1"
+    "@esbuild/linux-arm64": "npm:0.25.1"
+    "@esbuild/linux-x64": "npm:0.25.1"
+    "@esbuild/win32-arm64": "npm:0.25.1"
+    "@esbuild/win32-x64": "npm:0.25.1"
     "@loadable/babel-plugin": "npm:5.16.1"
     "@loadable/component": "npm:5.16.4"
     "@loadable/server": "npm:5.16.5"
