@@ -122,7 +122,9 @@ const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
   podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
-  const { isApp } = useContext(RequestContext);
+  const { isApp, pathname } = useContext(RequestContext);
+
+  console.log(pathname);
 
   const {
     articleAuthor,
@@ -253,7 +255,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   return (
     <div css={styles.pageWrapper}>
-    <CallToActionLink href='foo'> Data-saving Version </CallToActionLink>
+    <CallToActionLink href={`${pathname}.lite`}> Data-saving Version <RightChevron /></CallToActionLink>
       <ATIAnalytics atiData={atiData} />
       <ChartbeatAnalytics
         sectionName={pageData?.relatedContent?.section?.name}
