@@ -88,5 +88,12 @@ export interface MostReadData {
     images?: {
       defaultPromoImage: OptimoBlock[];
     };
+    indexImage?: {
+      width: number;
+      height: number;
+      altText: string;
+      originCode: string;
+      locator: string;
+    };
   }[];
 }

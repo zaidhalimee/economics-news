@@ -8,6 +8,8 @@ export const getATIParamsFromURL = atiAnalyticsURL => {
 
 export const ATI_PAGE_VIEW = 'ati-page-view';
 
+export const ATI_PAGE_VIEW_REVERB = 'ati-page-view-reverb';
+
 const SCROLLABLE_NAVIGATION = 'scrollable-navigation';
 const DROPDOWN_NAVIGATION = 'dropdown-navigation';
 const TOP_STORIES = 'top-stories';
@@ -24,6 +26,7 @@ const PODCAST_LINKS = 'third-party';
 const LATEST_MEDIA = 'latest';
 const RECOMMENDATIONS = 'wsoj';
 const SCROLLABLE_PROMO = 'edoj';
+const BILLBOARD = 'billboard';
 
 export const COMPONENTS = {
   SCROLLABLE_NAVIGATION,
@@ -42,6 +45,7 @@ export const COMPONENTS = {
   LATEST_MEDIA,
   RECOMMENDATIONS,
   SCROLLABLE_PROMO,
+  BILLBOARD,
 };
 
 export const interceptATIAnalyticsBeacons = () => {
@@ -50,7 +54,7 @@ export const interceptATIAnalyticsBeacons = () => {
   // Component Views
   Object.values(COMPONENTS).forEach(component => {
     const viewClickEventRegex = new RegExp(
-      `PUB-\\[.*?\\]-\\[${component}.*?\\]-\\[.*?\\]-\\[.*?\\]-\\[.*?\\]-\\[.*?\\]-\\[.*?\\]-\\[.*?\\]`,
+      `PUB-\\[?.*?\\]?-\\[?${component}.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?`,
       'g',
     );
 
@@ -61,7 +65,9 @@ export const interceptATIAnalyticsBeacons = () => {
           ati: viewClickEventRegex,
         },
       },
-      request => request.reply({ statusCode: 200 }),
+      request => {
+        request.reply({ statusCode: 200 });
+      },
     ).as(`${component}-ati-view`);
 
     // Component Clicks
@@ -72,11 +78,13 @@ export const interceptATIAnalyticsBeacons = () => {
           atc: viewClickEventRegex,
         },
       },
-      request => request.reply({ statusCode: 200 }),
+      request => {
+        request.reply({ statusCode: 200 });
+      },
     ).as(`${component}-ati-click`);
   });
 
-  // Page View (only fires once per page visit)
+  // NOT REVERB - Page View (only fires once per page visit)
   cy.intercept(
     {
       url: `${atiUrl}/*`,
@@ -84,6 +92,21 @@ export const interceptATIAnalyticsBeacons = () => {
         x8: '[simorgh]',
       },
     },
-    request => request.reply({ statusCode: 200 }),
+    request => {
+      request.reply({ statusCode: 200 });
+    },
   ).as(`${ATI_PAGE_VIEW}`);
+
+  // REVERB - Page View (only fires once per page visit)
+  cy.intercept(
+    {
+      url: `${atiUrl}/*`,
+      query: {
+        x8: 'simorgh',
+      },
+    },
+    request => {
+      request.reply({ statusCode: 200 });
+    },
+  ).as(`${ATI_PAGE_VIEW_REVERB}`);
 };
