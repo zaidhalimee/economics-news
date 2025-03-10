@@ -36,6 +36,23 @@ window.matchMedia = jest.fn().mockImplementation(query => {
   };
 });
 
+global.IntersectionObserver = class IntersectionObserver {
+  constructor(callback, options) {
+    this.callback = callback;
+    this.options = options;
+    this.entries = [];
+    this.observe = jest
+      .fn()
+      .mockImplementation(entry => this.entries.push(entry));
+    this.unobserve = jest.fn();
+    this.disconnect = jest.fn();
+
+    document.addEventListener('triggerMockObserver', () => {
+      this.callback(this.entries);
+    });
+  }
+};
+
 // Mock RequireJS globally and let individual tests mock it as needed
 window.require = jest.fn();
 

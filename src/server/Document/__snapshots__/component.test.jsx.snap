@@ -205,9 +205,19 @@ exports[`Document Component should render LITE version correctly 1`] = `
       .css-7prgni-StyledLink{display:inline-block;}
     </style>
     <script>
-      (function liteATIClickTracking() {
+      
+  window.addEventListener('load', function (){
+    (function liteATIClickTracking() {
     return 'Tracking script placeholder';
-  })()
+  })();
+    (function liteATIClickTracking() {
+    return 'Click script placeholder';
+  })();
+    (function liteATIClickTracking() {
+    return 'View script placeholder';
+  })();
+  });
+
     </script>
   </head>
   <body>
