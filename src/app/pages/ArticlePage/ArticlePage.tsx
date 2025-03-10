@@ -252,13 +252,13 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   return (
     <div css={styles.pageWrapper}>
+    <CallToActionLink href='.lite'> Data-saving Version </CallToActionLink>
       <ATIAnalytics atiData={atiData} />
       <ChartbeatAnalytics
         sectionName={pageData?.relatedContent?.section?.name}
         title={headline}
         {...(hasByline && { authors: bylineLinkedData.authorName })}
       />
-      <h2>cta here</h2>
       <ComscoreAnalytics />
       <NielsenAnalytics />
       <ArticleMetadata
@@ -300,6 +300,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       <div css={styles.grid}>
         <div css={!isPGL ? styles.primaryColumn : styles.pglColumn}>
           <main css={styles.mainContent} role="main">
+ 
             <Blocks
               blocks={articleBlocks}
               componentsToRender={componentsToRender}
