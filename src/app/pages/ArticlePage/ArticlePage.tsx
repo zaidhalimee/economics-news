@@ -65,6 +65,7 @@ import {
 import { ServiceContext } from '../../contexts/ServiceContext';
 import RelatedContentSection from '../../components/RelatedContentSection';
 import Disclaimer from '../../components/Disclaimer';
+import CallToActionLink from '#app/components/CallToActionLink';
 import SecondaryColumn from './SecondaryColumn';
 import styles from './ArticlePage.styles';
 import { ComponentToRenderProps, TimeStampProps } from './types';
@@ -257,6 +258,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
         title={headline}
         {...(hasByline && { authors: bylineLinkedData.authorName })}
       />
+      <h2>cta here</h2>
       <ComscoreAnalytics />
       <NielsenAnalytics />
       <ArticleMetadata
