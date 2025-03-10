@@ -928,7 +928,6 @@ describe('buildSettings', () => {
           appType: 'responsive',
           autoplay: false,
           counterName: 'hausa.bbc_hausa_radio.liveradio.page',
-          superResponsive: true,
           playlistObject: {
             items: [
               {
@@ -966,6 +965,7 @@ describe('buildSettings', () => {
               enabled: true,
             },
           },
+          superResponsive: false,
         },
         mediaType: 'liveRadio',
         showAds: false,
