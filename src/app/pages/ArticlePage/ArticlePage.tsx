@@ -122,6 +122,10 @@ const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
   podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
 const getHeadlineComponent =(pathname: string, isLite: boolean)=>(props: ComponentToRenderProps)=>{
+  const { enabled: showCTA } = useToggle('liteSiteCTA');
+
+
+
   return(
     <>
     <Headings {...props} />
