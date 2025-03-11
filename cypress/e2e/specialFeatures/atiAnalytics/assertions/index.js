@@ -74,11 +74,18 @@ export const assertPageView = ({
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
       cy.visit(url);
+
+      console.log('url in assertPageView just after cy.visit', url);
       const atiPageViewAlias = useReverb ? ATI_PAGE_VIEW_REVERB : ATI_PAGE_VIEW;
 
       cy.wait(`@${atiPageViewAlias}`).then(({ request }) => {
         const params = getATIParamsFromURL(request.url);
-
+        console.log(
+          'p param from getATIParamsFromUrl',
+          params.p,
+          'for URL',
+          request.url,
+        );
         assertATIPageViewEventParamsExist({
           params,
           contentType,
