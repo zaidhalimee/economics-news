@@ -122,7 +122,6 @@ const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
   podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
 const getHeadlineComponent =(pathname: string, isLite: boolean)=>(props: ComponentToRenderProps)=>{
-  console.log(props);
   return(
     <>
     <Headings {...props} />
