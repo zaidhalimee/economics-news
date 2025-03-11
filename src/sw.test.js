@@ -197,6 +197,44 @@ describe('Service Worker', () => {
       );
     });
 
+    describe('when cache contains asset', () => {
+      it.each`
+        assetUrl
+        ${'/cwr.js'}
+        ${'reith.woff2'}
+        ${'modern.frosted_promo.32caa641.js'}
+        ${'modern.frosted_promo.js'}
+        ${'http://localhost:7080/modern.frosted_promo.js'}
+        ${'https://static.files.bbci.co.uk/ws/simorgh-assets/public/static/js/modern.frosted_promo.32caa641.js'}
+        ${'/moment-lib.dfdb34b8.js'}
+        ${'/moment-lib.js'}
+        ${'http://localhost:7080/moment-lib.js'}
+        ${'https://static.files.bbci.co.uk/ws/simorgh-assets/public/static/js/modern.../moment-lib.dfdb34b8.js'}
+      `(
+        `should return a cached response for $assetUrl`,
+        async ({ assetUrl }) => {
+          ({ fetchEventHandler } = await import('./service-worker-test'));
+
+          const event = {
+            request: new Request(assetUrl),
+            respondWith: jest.fn(),
+          };
+
+          await fetchEventHandler(event);
+
+          expect(event.respondWith).toHaveBeenCalled();
+
+          const [eventResponse] = event.respondWith.mock.calls[0];
+
+          const response = await Promise.resolve(eventResponse);
+
+          const responseBody = response.body?.toString();
+
+          expect(responseBody).toBe(`${assetUrl}-cached`);
+        },
+      );
+    });
+
     describe('when cache does not contain asset', () => {
       beforeEach(() => {
         // set up global cache
