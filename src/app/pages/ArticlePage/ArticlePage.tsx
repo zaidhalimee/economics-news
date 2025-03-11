@@ -72,6 +72,7 @@ import {
   transformRecsData,
   OptimizelyVariation,
 } from './recommendationsExperiment';
+import ReadMoreButton from './ReadMoreButton';
 
 const getImageComponent =
   (preloadLeadImageToggle: boolean) => (props: ComponentToRenderProps) => (
@@ -310,13 +311,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
               componentsToRender={componentsToRender}
             />
             {!readMore && (
-              <button
-                css={styles.readMoreButton}
-                type="button"
-                onClick={() => setReadMore(true)}
-              >
-                Show More
-              </button>
+              <ReadMoreButton setReadMore={() => setReadMore(true)} />
             )}
           </main>
           {showTopics && (

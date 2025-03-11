@@ -56,12 +56,6 @@ export default {
         },
       },
     }),
-  readMoreButton: () =>
-    css({
-      [`.${NO_JS_CLASSNAME} &`]: {
-        display: 'none',
-      },
-    }),
   adContainer: ({ spacings }: Theme) =>
     css({
       marginBottom: `${spacings.TRIPLE}rem`,
