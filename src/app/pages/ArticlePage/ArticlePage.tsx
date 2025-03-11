@@ -122,12 +122,14 @@ const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
   podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
 const getHeadlineComponent =
-  (getHeadlineComponentProps) => (props: ComponentToRenderProps) => {
+  ({ pathname, isLite, translations }: getHeadlineComponentProps) => (props: ComponentToRenderProps) => {
     const { enabled: showCTA } = useToggle('liteSiteCTA');
-    const { articleDataSavingLinkText } = translations.liteSite;
+
+    const articleDataSavingLinkText = translations?.liteSite?.articleDataSavingLinkText ?? "Data-saving Version";
+    
 
     console.log(showCTA);
-    console.log(translations.liteSite.articleDataSavingLinkText);
+    console.log(translations);
     console.log(articleDataSavingLinkText);
 
     return (
@@ -136,8 +138,7 @@ const getHeadlineComponent =
         {!isLite && showCTA && (
           <div css={styles.liteCtaContainer}>
             <CallToActionLink href={`${pathname}.lite`} css={styles.liteCTA}>
-              {' '}{articleDataSavingLinkText}
-              Data-saving Version <RightChevron css={styles.liteCtaChevron} />
+              {articleDataSavingLinkText}<RightChevron css={styles.liteCtaChevron} />
             </CallToActionLink>
           </div>
         )}
@@ -226,7 +227,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const componentsToRender = {
     visuallyHiddenHeadline,
-    headline: getHeadlineComponent(pathname, isLite, translations),
+    headline: getHeadlineComponent({pathname, isLite, translations}),
     subheadline: Headings,
     audio: MediaLoader,
     video: MediaLoader,
