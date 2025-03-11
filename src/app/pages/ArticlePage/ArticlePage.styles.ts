@@ -59,6 +59,7 @@ export default {
         },
       },
     }),
+  hideRelatedTopics: () => css({ display: 'none' }),
   adContainer: ({ spacings }: Theme) =>
     css({
       marginBottom: `${spacings.TRIPLE}rem`,

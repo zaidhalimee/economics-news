@@ -316,7 +316,10 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           </main>
           {showTopics && (
             <RelatedTopics
-              css={styles.relatedTopics}
+              css={[
+                styles.relatedTopics,
+                !readMore && styles.hideRelatedTopics,
+              ]}
               topics={topics}
               mobileDivider={false}
               backgroundColour={GREY_2}
