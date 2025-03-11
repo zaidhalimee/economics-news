@@ -124,12 +124,14 @@ const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
 const getHeadlineComponent =(pathname: string, isLite: boolean)=>(props: ComponentToRenderProps)=>{
   const { enabled: showCTA } = useToggle('liteSiteCTA');
 
+  console.log(showCTA);
+
 
 
   return(
     <>
     <Headings {...props} />
-    {!isLite && (<div css={styles.liteCtaContainer}><CallToActionLink href={`${pathname}.lite`} css={styles.liteCTA}> Data-saving Version<RightChevron css={styles.liteCtaChevron}/></CallToActionLink></div>)}
+    {!isLite && showCTA && (<div css={styles.liteCtaContainer}><CallToActionLink href={`${pathname}.lite`} css={styles.liteCTA}> Data-saving Version<RightChevron css={styles.liteCtaChevron}/></CallToActionLink></div>)}
     </>
   );
 }
