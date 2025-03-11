@@ -12,8 +12,8 @@ const OFFLINE_PAGE = `/${service}/offline`;
 
 self.addEventListener('install', event => {
   event.waitUntil(async () => {
-  	const cache = await caches.open(cacheName);
-  	if (has_offline_page_functionality) await cache.add(OFFLINE_PAGE);
+    const cache = await caches.open(cacheName);
+    if (has_offline_page_functionality) await cache.add(OFFLINE_PAGE);
   });
 });
 
@@ -48,32 +48,33 @@ const fetchEventHandler = async event => {
   ) {
     event.respondWith(
       (async () => {
-      	  const cache = await caches.open(cacheName);
-          let response = await cache.match(event.request);
-          if (!response) {
-            response = await fetch(event.request.url);
-            cache.put(event.request, response.clone());
-          }
-          return response;
+        const cache = await caches.open(cacheName);
+        let response = await cache.match(event.request);
+        if (!response) {
+          response = await fetch(event.request.url);
+          cache.put(event.request, response.clone());
+        }
+        return response;
       })(),
     );
-  } else if (has_offline_page_functionality && event.request.mode === "navigate") {
-  	event.respondWith(
-      (async () => {
-      	try {
-      	  const preloadResponse = await event.preloadResponse;
-          if (preloadResponse) {
-            return preloadResponse;
-          }
-          const networkResponse = await fetch(event.request);
-          return networkResponse;
-      	} catch (error) {
-      	  const cache = await caches.open(cacheName);
-          const cachedResponse = await cache.match(OFFLINE_PAGE);
-          return cachedResponse;
-      	}
-      })
-    );
+  } else if (
+    has_offline_page_functionality &&
+    event.request.mode === 'navigate'
+  ) {
+    event.respondWith(async () => {
+      try {
+        const preloadResponse = await event.preloadResponse;
+        if (preloadResponse) {
+          return preloadResponse;
+        }
+        const networkResponse = await fetch(event.request);
+        return networkResponse;
+      } catch (error) {
+        const cache = await caches.open(cacheName);
+        const cachedResponse = await cache.match(OFFLINE_PAGE);
+        return cachedResponse;
+      }
+    });
   }
   return;
 };
