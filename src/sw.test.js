@@ -2,6 +2,7 @@
 /* eslint-disable import/first */
 import fs from 'fs';
 import { join, resolve } from 'path';
+import fetchMock from 'jest-fetch-mock';
 
 const serviceWorker = fs.readFileSync(join(__dirname, '..', 'public/sw.js'));
 
@@ -21,20 +22,18 @@ Object.defineProperty(self, 'location', {
 });
 
 describe('Service Worker', () => {
-  const originalFetch = global.fetch;
-  const fetchSpy = jest.spyOn(global, 'fetch');
   let fetchEventHandler;
 
-  afterEach(() => {
-    jest.resetAllMocks();
-    global.fetch = originalFetch;
-  });
   beforeEach(() => {
-    jest.resetAllMocks();
     /* eslint-disable-next-line no-restricted-globals */
     global.self.location = {
       pathname: 'https://www.bbc.com/mundo/articles/c2343244t',
     };
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
+    fetchMock.resetMocks();
   });
 
   describe('webp', () => {
@@ -82,7 +81,7 @@ describe('Service Worker', () => {
           await fetchEventHandler(event);
 
           expect(event.respondWith).toHaveBeenCalled();
-          expect(fetchSpy).toHaveBeenCalledWith(expectedUrl, {
+          expect(fetchMock).toHaveBeenCalledWith(expectedUrl, {
             mode: 'no-cors',
           });
         },
@@ -140,7 +139,7 @@ describe('Service Worker', () => {
         await fetchEventHandler(event);
 
         expect(event.respondWith).not.toHaveBeenCalled();
-        expect(fetchSpy).not.toHaveBeenCalled();
+        expect(fetchMock).not.toHaveBeenCalled();
       });
     });
   });
@@ -191,7 +190,7 @@ describe('Service Worker', () => {
 
           await fetchEventHandler(event);
 
-          expect(global.fetch).not.toHaveBeenCalled();
+          expect(fetchMock).not.toHaveBeenCalled();
           expect(event.respondWith).not.toHaveBeenCalled();
         },
       );
@@ -260,17 +259,19 @@ describe('Service Worker', () => {
           }),
           respondWith: jest.fn(),
         };
-        event.respondWith = jest.fn();
 
-        const response = new Response(assetUrl);
-        global.fetch.mockImplementationOnce(() => response);
-        console.log('response', response);
+        const mockResponse = new Response(assetUrl);
+        fetchMock.mockImplementationOnce(() => mockResponse);
 
         await fetchEventHandler(event);
+
         expect(event.respondWith).toHaveBeenCalled();
 
-        //         expect(fetchSpy).toHaveBeenCalledWith(assetUrl);
-        //         expect(fetchedCache[event.request]).toStrictEqual(response.clone());
+        const [eventResponse] = event.respondWith.mock.calls[0];
+        const response = await Promise.resolve(eventResponse);
+
+        expect(fetchMock).toHaveBeenCalledWith(assetUrl);
+        expect(fetchedCache[event.request]).toStrictEqual(mockResponse.clone());
       });
     });
   });
