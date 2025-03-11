@@ -268,7 +268,7 @@ describe('Service Worker', () => {
         expect(event.respondWith).toHaveBeenCalled();
 
         const [eventResponse] = event.respondWith.mock.calls[0];
-        const response = await Promise.resolve(eventResponse);
+        await Promise.resolve(eventResponse);
 
         expect(fetchMock).toHaveBeenCalledWith(assetUrl);
         expect(fetchedCache[event.request]).toStrictEqual(mockResponse.clone());
