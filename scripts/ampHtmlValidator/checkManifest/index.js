@@ -57,6 +57,6 @@ export default async () => {
         `⚠️ The live manifest file for ${service} AMP articles does not match the local manifest file. Please update the manifestPath in src/app/lib/config/services/${service}.ts`,
       );
     });
-    process.exit(1);
+    process.exitCode = 1;
   }
 };
