@@ -228,6 +228,7 @@ export const service: DefaultServiceConfig = {
         },
         listen: 'వినండి',
         watch: 'చూడండి',
+        watchMoments: 'షార్ట్ వీడియో చూడండి',
         listenLive: 'లైవ్ వినండి',
         liveLabel: 'లైవ్',
         nextLabel: 'NEXT',
