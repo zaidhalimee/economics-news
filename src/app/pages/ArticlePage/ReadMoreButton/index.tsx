@@ -4,12 +4,16 @@ import { jsx } from '@emotion/react';
 import styles from './index.styles';
 
 type Props = {
-  setReadMore: MouseEventHandler<HTMLButtonElement>;
+  setShowAllContent: MouseEventHandler<HTMLButtonElement>;
 };
 
-const ReadMoreButton = ({ setReadMore }: Props) => {
+const ReadMoreButton = ({ setShowAllContent }: Props) => {
   return (
-    <button css={styles.readMoreButton} type="button" onClick={setReadMore}>
+    <button
+      css={styles.readMoreButton}
+      type="button"
+      onClick={setShowAllContent}
+    >
       Read More
     </button>
   );

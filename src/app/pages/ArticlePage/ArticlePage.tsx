@@ -121,8 +121,8 @@ const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
   podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
-  const [readMore, setReadMore] = useState(false);
-  const { isApp } = useContext(RequestContext);
+  const [showAllContent, setShowAllContent] = useState(false);
+  const { isLite, isAmp, isApp } = useContext(RequestContext);
 
   const {
     articleAuthor,
@@ -251,6 +251,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const showTopics = Boolean(showRelatedTopics && topics.length > 0);
 
+  const enableReadMoreExperiment = !isAmp && !isLite && !isApp; // add check for is in experiment
+
   return (
     <div css={styles.pageWrapper}>
       <ATIAnalytics atiData={atiData} />
@@ -302,7 +304,9 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           <main
             css={[
               styles.mainContent,
-              !readMore && styles.readMoreContentHidden,
+              ...(enableReadMoreExperiment
+                ? [!showAllContent && styles.readMoreContentHidden]
+                : []),
             ]}
             role="main"
           >
@@ -310,15 +314,19 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
               blocks={articleBlocks}
               componentsToRender={componentsToRender}
             />
-            {!readMore && (
-              <ReadMoreButton setReadMore={() => setReadMore(true)} />
+            {enableReadMoreExperiment && !showAllContent && (
+              <ReadMoreButton
+                setShowAllContent={() => setShowAllContent(true)}
+              />
             )}
           </main>
           {showTopics && (
             <RelatedTopics
               css={[
                 styles.relatedTopics,
-                !readMore && styles.hideRelatedTopics,
+                ...(enableReadMoreExperiment
+                  ? [!showAllContent && styles.hideRelatedTopics]
+                  : []),
               ]}
               topics={topics}
               mobileDivider={false}
