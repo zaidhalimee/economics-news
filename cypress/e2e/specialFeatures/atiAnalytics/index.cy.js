@@ -248,6 +248,7 @@ const canonicalTestSuites = [
     applicationType: 'responsive',
     contentType: 'index-category',
     useReverb: true,
+    componentTrackingContentType: 'topic-page',
     tests: [assertPageView],
   },
   // Pages with Reverb
