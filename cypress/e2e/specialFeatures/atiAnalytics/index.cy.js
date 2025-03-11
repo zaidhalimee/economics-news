@@ -293,14 +293,14 @@ const canonicalTestSuites = [
     pageIdentifier: 'persian.topics.crezq2dg9zwt.page',
     applicationType: 'responsive',
     contentType: 'index-category',
+    componentTrackingContentType: 'topic-page',
     useReverb: true,
     tests: [
       assertPageView,
       assertScrollableNavigationComponentView,
+      assertScrollableNavigationComponentClick,
       assertDropdownNavigationComponentView,
-      assertMessageBannerComponentView,
-      assertMessageBannerComponentClick,
-      assertRadioScheduleComponentView,
+      assertDropdownNavigationComponentClick,
     ],
   },
   {
