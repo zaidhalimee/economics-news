@@ -122,10 +122,11 @@ const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
   podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
 const getHeadlineComponent =
-  (pathname: string, isLite: boolean) => (props: ComponentToRenderProps) => {
+  (pathname: string, isLite: boolean, translations:{}) => (props: ComponentToRenderProps) => {
     const { enabled: showCTA } = useToggle('liteSiteCTA');
 
     console.log(showCTA);
+    console.log(translations);
 
     return (
       <>
@@ -148,6 +149,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   console.log(pathname);
 
   const {
+    translations,
     articleAuthor,
     isTrustProjectParticipant,
     showRelatedTopics,
@@ -222,7 +224,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const componentsToRender = {
     visuallyHiddenHeadline,
-    headline: getHeadlineComponent(pathname, isLite),
+    headline: getHeadlineComponent(pathname, isLite, translations),
     subheadline: Headings,
     audio: MediaLoader,
     video: MediaLoader,
