@@ -6,6 +6,7 @@ const { SCROLLABLE_NAVIGATION, DROPDOWN_NAVIGATION } = COMPONENTS;
 export const assertScrollableNavigationComponentView = ({
   pageIdentifier,
   contentType,
+  componentTrackingContentType,
   useReverb,
 }) => {
   it('should send a view event for the Scrollable Navigation component', () => {
@@ -20,7 +21,7 @@ export const assertScrollableNavigationComponentView = ({
       assertATIComponentViewEvent({
         component: SCROLLABLE_NAVIGATION,
         pageIdentifier,
-        contentType,
+        contentType: componentTrackingContentType || contentType,
         useReverb,
       });
     });
@@ -30,6 +31,7 @@ export const assertScrollableNavigationComponentView = ({
 export const assertScrollableNavigationComponentClick = ({
   pageIdentifier,
   contentType,
+  componentTrackingContentType,
   useReverb,
 }) => {
   it('should send a click event for the Scrollable Navigation component', () => {
@@ -47,7 +49,7 @@ export const assertScrollableNavigationComponentClick = ({
       assertATIComponentClickEvent({
         component: SCROLLABLE_NAVIGATION,
         pageIdentifier,
-        contentType,
+        contentType: componentTrackingContentType || contentType,
         useReverb,
       });
 
@@ -61,6 +63,7 @@ export const assertScrollableNavigationComponentClick = ({
 export const assertDropdownNavigationComponentView = ({
   pageIdentifier,
   contentType,
+  componentTrackingContentType,
   useReverb,
 }) => {
   it('should send a view event for the Dropdown Navigation component', () => {
@@ -74,7 +77,7 @@ export const assertDropdownNavigationComponentView = ({
       assertATIComponentViewEvent({
         component: DROPDOWN_NAVIGATION,
         pageIdentifier,
-        contentType,
+        contentType: componentTrackingContentType || contentType,
         useReverb,
       });
     });
@@ -84,6 +87,7 @@ export const assertDropdownNavigationComponentView = ({
 export const assertDropdownNavigationComponentClick = ({
   pageIdentifier,
   contentType,
+  componentTrackingContentType,
   useReverb,
 }) => {
   it('should send a click event for the Dropdown Navigation component', () => {
@@ -100,7 +104,7 @@ export const assertDropdownNavigationComponentClick = ({
       assertATIComponentClickEvent({
         component: DROPDOWN_NAVIGATION,
         pageIdentifier,
-        contentType,
+        contentType: componentTrackingContentType || contentType,
         useReverb,
       });
 
