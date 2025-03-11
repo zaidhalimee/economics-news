@@ -48,6 +48,9 @@ export default {
     }),
   readMoreContentHidden: () =>
     css({
+      // Hide all elements after the 7th child, except for the 'read more' button
+      // This is a bit rudimentary, as its not guaranteed that the content up to and after the 7th child
+      // will be paragraphs
       '> *:nth-child(n + 7):not(button)': {
         display: 'none',
 

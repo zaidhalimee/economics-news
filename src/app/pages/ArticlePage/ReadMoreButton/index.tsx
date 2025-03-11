@@ -10,7 +10,7 @@ type Props = {
 const ReadMoreButton = ({ setReadMore }: Props) => {
   return (
     <button css={styles.readMoreButton} type="button" onClick={setReadMore}>
-      Show More
+      Read More
     </button>
   );
 };
