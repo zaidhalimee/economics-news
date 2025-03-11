@@ -1,3 +1,4 @@
+import NO_JS_CLASSNAME from '#app/lib/noJs.const';
 import { css, Theme } from '@emotion/react';
 import pixelsToRem from '../../utilities/pixelsToRem';
 
@@ -44,6 +45,22 @@ export default {
   mainContent: ({ spacings }: Theme) =>
     css({
       paddingBottom: `${spacings.TRIPLE}rem`,
+    }),
+  readMoreContentHidden: () =>
+    css({
+      '> *:nth-child(n + 7):not(button)': {
+        display: 'none',
+
+        [`.${NO_JS_CLASSNAME} &`]: {
+          display: 'unset',
+        },
+      },
+    }),
+  readMoreButton: () =>
+    css({
+      [`.${NO_JS_CLASSNAME} &`]: {
+        display: 'none',
+      },
     }),
   adContainer: ({ spacings }: Theme) =>
     css({

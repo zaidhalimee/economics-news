@@ -1,6 +1,6 @@
 /** @jsx jsx */
 /* @jsxFrag React.Fragment */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 import useToggle from '#hooks/useToggle';
 import { singleTextBlock } from '#app/models/blocks';
@@ -120,6 +120,7 @@ const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
   podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
+  const [readMore, setReadMore] = useState(false);
   const { isApp } = useContext(RequestContext);
 
   const {
@@ -297,11 +298,26 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       <ElectionBanner aboutTags={aboutTags} taggings={taggings} />
       <div css={styles.grid}>
         <div css={!isPGL ? styles.primaryColumn : styles.pglColumn}>
-          <main css={styles.mainContent} role="main">
+          <main
+            css={[
+              styles.mainContent,
+              !readMore && styles.readMoreContentHidden,
+            ]}
+            role="main"
+          >
             <Blocks
               blocks={articleBlocks}
               componentsToRender={componentsToRender}
             />
+            {!readMore && (
+              <button
+                css={styles.readMoreButton}
+                type="button"
+                onClick={() => setReadMore(true)}
+              >
+                Show More
+              </button>
+            )}
           </main>
           {showTopics && (
             <RelatedTopics
