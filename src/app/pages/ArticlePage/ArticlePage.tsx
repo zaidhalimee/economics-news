@@ -122,11 +122,13 @@ const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
   podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
 const getHeadlineComponent =
-  (pathname: string, isLite: boolean, translations:{}) => (props: ComponentToRenderProps) => {
+  (pathname: string, isLite: boolean, translations: any) => (props: ComponentToRenderProps) => {
     const { enabled: showCTA } = useToggle('liteSiteCTA');
+    const { articleDataSavingLinkText } = translations.liteSite;
 
     console.log(showCTA);
-    console.log(translations);
+    console.log(translations.liteSite.articleDataSavingLinkText);
+    console.log(articleDataSavingLinkText);
 
     return (
       <>
@@ -134,7 +136,7 @@ const getHeadlineComponent =
         {!isLite && showCTA && (
           <div css={styles.liteCtaContainer}>
             <CallToActionLink href={`${pathname}.lite`} css={styles.liteCTA}>
-              {' '}
+              {' '}{articleDataSavingLinkText}
               Data-saving Version <RightChevron css={styles.liteCtaChevron} />
             </CallToActionLink>
           </div>
