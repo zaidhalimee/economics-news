@@ -254,6 +254,7 @@ export const service: DefaultServiceConfig = {
         },
         listen: 'सुनिए',
         watch: 'देखिए',
+        watchMoments: 'शॉर्ट वीडियो देखिए',
         listenLive: 'लाइव सुनें',
         listenNext: 'इसके बाद सुनिए',
         liveLabel: 'लाइव',
