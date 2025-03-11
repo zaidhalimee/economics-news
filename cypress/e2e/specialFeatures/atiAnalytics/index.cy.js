@@ -246,6 +246,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'marathi.topics.c1wmk63rjkvt.page',
     applicationType: 'responsive',
     contentType: 'index-category',
+    componentTrackingContentType: 'topic-page',
     tests: [assertPageView],
   },
   // Pages with Reverb
