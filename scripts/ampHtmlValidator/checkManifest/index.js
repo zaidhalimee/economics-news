@@ -6,13 +6,11 @@ const getManifestFile = async url => {
 
   const html = await response.text();
 
-  const { document } = new JSDOM(html).window;
+  const {
+    window: { document },
+  } = new JSDOM(html);
 
-  const manifestFile = document
-    .querySelector('link[rel="manifest"]')
-    .getAttribute('href');
-
-  return manifestFile;
+  return document.querySelector('link[rel="manifest"]').getAttribute('href');
 };
 
 export default async () => {
@@ -32,7 +30,7 @@ export default async () => {
       );
 
       const localManifestFile = await getManifestFile(
-        `http://localhost:7080/${url}`,
+        `http://localhost:7080/${url}?renderer_env=live`,
       );
 
       const result = liveManifestFile === localManifestFile ? '✅' : '❌';
