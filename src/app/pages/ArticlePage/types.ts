@@ -8,3 +8,9 @@ export type TimeStampProps = {
   firstPublished: number;
   lastPublished: number;
 };
+
+export type getHeadlineComponentProps = {
+  pathname: string; 
+  isLite: boolean;
+  translations: {},
+};

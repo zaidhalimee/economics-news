@@ -69,7 +69,7 @@ import CallToActionLink from '#app/components/CallToActionLink';
 import { RightChevron } from '#app/components/icons';
 import SecondaryColumn from './SecondaryColumn';
 import styles from './ArticlePage.styles';
-import { ComponentToRenderProps, TimeStampProps } from './types';
+import { ComponentToRenderProps, TimeStampProps, getHeadlineComponentProps } from './types';
 import {
   transformRecsData,
   OptimizelyVariation,
@@ -122,7 +122,7 @@ const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
   podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
 const getHeadlineComponent =
-  (pathname: string, isLite: boolean, translations: any) => (props: ComponentToRenderProps) => {
+  (getHeadlineComponentProps) => (props: ComponentToRenderProps) => {
     const { enabled: showCTA } = useToggle('liteSiteCTA');
     const { articleDataSavingLinkText } = translations.liteSite;
 
