@@ -11,10 +11,11 @@ import { getEnvConfig } from '#app/lib/utilities/getEnvConfig';
 import Cookie from 'js-cookie';
 import isOperaProxy from '#app/lib/utilities/isOperaProxy';
 import { ServiceContext } from '../../../../contexts/ServiceContext';
+import isCypress from './isCypress';
 
-const isCypress = onClient() && window.Cypress;
+const isInCypress = isCypress();
 
-if (isLive() || isCypress) {
+if (isLive() || isInCypress) {
   setLogger(null);
 }
 
@@ -28,7 +29,6 @@ const withOptimizelyProvider = Component => {
   return props => {
     const { service } = useContext(ServiceContext);
     const isStoryBook = process.env.STORYBOOK;
-    const isInCypress = process.env.CYPRESS;
     const disableOptimizely = isStoryBook || isInCypress;
 
     if (disableOptimizely) return <Component {...props} />;
