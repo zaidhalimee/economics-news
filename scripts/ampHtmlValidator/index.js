@@ -1,6 +1,7 @@
-const { default: checkManifest } = require('./checkManifest');
-const { runValidator } = require('./validator');
+/* eslint-disable import/extensions */
+import checkManifest from './checkManifest/index.js';
+import { runValidator } from './validator/index.js';
 
 runValidator();
 
-checkManifest();
+await checkManifest();
