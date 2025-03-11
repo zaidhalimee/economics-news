@@ -305,7 +305,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
             css={[
               styles.mainContent,
               ...(enableReadMoreExperiment
-                ? [!showAllContent && styles.readMoreContentHidden]
+                ? [!showAllContent && styles.contentHidden]
                 : []),
             ]}
             role="main"
@@ -314,8 +314,9 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
               blocks={articleBlocks}
               componentsToRender={componentsToRender}
             />
-            {enableReadMoreExperiment && !showAllContent && (
+            {enableReadMoreExperiment && (
               <ReadMoreButton
+                showAllContent={showAllContent}
                 setShowAllContent={() => setShowAllContent(true)}
               />
             )}

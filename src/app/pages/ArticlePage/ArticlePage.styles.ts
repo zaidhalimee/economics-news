@@ -46,7 +46,7 @@ export default {
     css({
       paddingBottom: `${spacings.TRIPLE}rem`,
     }),
-  readMoreContentHidden: () =>
+  contentHidden: () =>
     css({
       // Hide all elements after the 7th child, except for the 'read more' button
       // This is a bit rudimentary, as its not guaranteed that the content up to and after the 7th child
@@ -59,7 +59,10 @@ export default {
         },
       },
     }),
-  hideRelatedTopics: () => css({ display: 'none' }),
+  hideRelatedTopics: () =>
+    css({
+      display: 'none',
+    }),
   adContainer: ({ spacings }: Theme) =>
     css({
       marginBottom: `${spacings.TRIPLE}rem`,
