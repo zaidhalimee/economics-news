@@ -29,7 +29,7 @@ export const getArticleSwRegex = services => {
   return `/:service(${serviceRegex})/:local(${articleLocalRegex})/sw.js`;
 };
 
-const getManifestServices = services => {
+const getWorldServices = services => {
   const publicServices = [
     'news',
     'sport',
@@ -43,7 +43,7 @@ const getManifestServices = services => {
 };
 
 export const getArticleManifestRegex = services => {
-  const serviceRegex = getServiceRegex(getManifestServices(services));
+  const serviceRegex = getServiceRegex(getWorldServices(services));
   return `/:service(${serviceRegex})/:local(${articleLocalRegex})/manifest.json`;
 };
 
@@ -118,7 +118,7 @@ export const getSwRegex = services => {
 };
 
 export const getManifestRegex = services => {
-  const serviceRegex = getServiceRegex(getManifestServices(services));
+  const serviceRegex = getServiceRegex(getWorldServices(services));
   return `/:service(${serviceRegex})/manifest.json`;
 };
 
