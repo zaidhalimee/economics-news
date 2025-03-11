@@ -121,20 +121,26 @@ const DisclaimerWithPaddingOverride = (props: ComponentToRenderProps) => (
 const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
   podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
-const getHeadlineComponent =(pathname: string, isLite: boolean)=>(props: ComponentToRenderProps)=>{
-  const { enabled: showCTA } = useToggle('liteSiteCTA');
+const getHeadlineComponent =
+  (pathname: string, isLite: boolean) => (props: ComponentToRenderProps) => {
+    const { enabled: showCTA } = useToggle('liteSiteCTA');
 
-  console.log(showCTA);
+    console.log(showCTA);
 
-
-
-  return(
-    <>
-    <Headings {...props} />
-    {!isLite && showCTA && (<div css={styles.liteCtaContainer}><CallToActionLink href={`${pathname}.lite`} css={styles.liteCTA}> Data-saving Version<RightChevron css={styles.liteCtaChevron}/></CallToActionLink></div>)}
-    </>
-  );
-}
+    return (
+      <>
+        <Headings {...props} />
+        {!isLite && showCTA && (
+          <div css={styles.liteCtaContainer}>
+            <CallToActionLink href={`${pathname}.lite`} css={styles.liteCTA}>
+              {' '}
+              Data-saving Version <RightChevron css={styles.liteCtaChevron} />
+            </CallToActionLink>
+          </div>
+        )}
+      </>
+    );
+  };
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const { isApp, pathname, isLite } = useContext(RequestContext);
