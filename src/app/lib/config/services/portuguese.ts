@@ -240,6 +240,7 @@ export const service: DefaultServiceConfig = {
         video: 'Vídeo',
         listen: 'Listen',
         watch: 'Assista',
+        watchMoments: 'Assista',
         listenLive: 'Ouça ao vivo',
         listenNext: 'Ouça o próximo',
         liveLabel: 'AO VIVO',
@@ -452,8 +453,8 @@ export const service: DefaultServiceConfig = {
         url: '/portuguese/topics/c9y2j35dn2zt',
       },
       {
-        title: 'BBC Lê',
-        url: '/portuguese/topics/cxndrr1qgllt',
+        title: 'Podcasts',
+        url: '/portuguese/topics/cx2ggnx4j72t',
       },
     ],
   },

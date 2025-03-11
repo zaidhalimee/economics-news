@@ -262,6 +262,19 @@ export const service: DefaultServiceConfig = {
       },
       topStoriesTitle: 'Digər xəbərlər',
       featuresAnalysisTitle: 'Bunları da oxuyun',
+      ugc: {
+        // Optional
+        optional: 'vacib deyil',
+
+        // File upload
+        fileUploadButton: 'Faylı seçin',
+
+        // Submit button
+        submitButton: 'Göndərin',
+
+        // Form Screen
+        dataPolicyHeading: 'Bizim informasiya siyasə timiz',
+      },
     },
     mostRead: {
       header: 'Ən çox oxunan',
