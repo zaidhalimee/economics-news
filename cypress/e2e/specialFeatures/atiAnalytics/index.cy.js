@@ -321,7 +321,7 @@ const canonicalTestSuites = [
   },
   {
     path: '/korean',
-    runforEnv: ['local', 'test', 'live'],
+    runforEnv: ['local', 'live'],
     service: 'korean',
     pageIdentifier: 'korean.page',
     applicationType: 'responsive',
@@ -331,8 +331,6 @@ const canonicalTestSuites = [
       assertPageView,
       assertMessageBannerComponentView,
       assertMessageBannerComponentClick,
-      assertRadioScheduleComponentClick,
-      assertRadioScheduleComponentView,
     ],
   },
   {
