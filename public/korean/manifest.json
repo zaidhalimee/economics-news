@@ -53,12 +53,12 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "https://www.bbc.com/korean",
+  "start_url": "/korean",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "https://www.bbc.com/korean.lite"
+      "url": "/korean.lite"
     }
   ]
 }

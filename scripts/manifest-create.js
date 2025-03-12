@@ -10,7 +10,7 @@ const servicesWithoutLite = ["archive", "cymrufyw", "naidheachdan", "news", "new
 services.forEach(service => {
     const mainfestPath = `../public/${service}/manifest.json`;
     const currentManifest = JSON.parse(fs.readFileSync(mainfestPath, 'utf-8'));
-    currentManifest.start_url = `https://www.bbc.com/${service}`;
+    currentManifest.start_url = `/${service}`;
     currentManifest.short_name = currentManifest.short_name.replace(' News', '');
     if (!servicesWithoutLite.includes(service)) currentManifest.shortcuts = [
         {

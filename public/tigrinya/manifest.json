@@ -53,12 +53,12 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "https://www.bbc.com/tigrinya",
+  "start_url": "/tigrinya",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "https://www.bbc.com/tigrinya.lite"
+      "url": "/tigrinya.lite"
     }
   ]
 }

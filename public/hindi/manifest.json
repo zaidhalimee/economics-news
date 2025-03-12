@@ -60,12 +60,12 @@
       "id": "uk.co.bbc.hindi"
     }
   ],
-  "start_url": "https://www.bbc.com/hindi",
+  "start_url": "/hindi",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "https://www.bbc.com/hindi.lite"
+      "url": "/hindi.lite"
     }
   ]
 }

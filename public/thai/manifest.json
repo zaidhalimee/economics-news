@@ -53,12 +53,12 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "https://www.bbc.com/thai",
+  "start_url": "/thai",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "https://www.bbc.com/thai.lite"
+      "url": "/thai.lite"
     }
   ]
 }

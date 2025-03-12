@@ -60,12 +60,12 @@
       "id": "uk.co.bbc.russian"
     }
   ],
-  "start_url": "https://www.bbc.com/russian",
+  "start_url": "/russian",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "https://www.bbc.com/russian.lite"
+      "url": "/russian.lite"
     }
   ]
 }

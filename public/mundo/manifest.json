@@ -60,12 +60,12 @@
       "id": "uk.co.bbc.mundo"
     }
   ],
-  "start_url": "https://www.bbc.com/mundo",
+  "start_url": "/mundo",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "https://www.bbc.com/mundo.lite"
+      "url": "/mundo.lite"
     }
   ]
 }

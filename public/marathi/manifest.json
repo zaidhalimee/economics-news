@@ -53,12 +53,12 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "https://www.bbc.com/marathi",
+  "start_url": "/marathi",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "https://www.bbc.com/marathi.lite"
+      "url": "/marathi.lite"
     }
   ]
 }

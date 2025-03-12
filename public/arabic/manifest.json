@@ -60,12 +60,12 @@
       "id": "uk.co.bbc.arabic"
     }
   ],
-  "start_url": "https://www.bbc.com/arabic",
+  "start_url": "/arabic",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "https://www.bbc.com/arabic.lite"
+      "url": "/arabic.lite"
     }
   ]
 }

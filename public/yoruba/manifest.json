@@ -53,12 +53,12 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "https://www.bbc.com/yoruba",
+  "start_url": "/yoruba",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "https://www.bbc.com/yoruba.lite"
+      "url": "/yoruba.lite"
     }
   ]
 }

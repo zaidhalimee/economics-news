@@ -53,5 +53,5 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "https://www.bbc.com/newsround"
+  "start_url": "/newsround"
 }

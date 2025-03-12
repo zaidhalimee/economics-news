@@ -53,12 +53,12 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "https://www.bbc.com/gujarati",
+  "start_url": "/gujarati",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "https://www.bbc.com/gujarati.lite"
+      "url": "/gujarati.lite"
     }
   ]
 }

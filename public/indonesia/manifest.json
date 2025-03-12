@@ -53,12 +53,12 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "https://www.bbc.com/indonesia",
+  "start_url": "/indonesia",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "https://www.bbc.com/indonesia.lite"
+      "url": "/indonesia.lite"
     }
   ]
 }

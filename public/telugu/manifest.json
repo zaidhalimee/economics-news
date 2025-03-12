@@ -53,12 +53,12 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "https://www.bbc.com/telugu",
+  "start_url": "/telugu",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "https://www.bbc.com/telugu.lite"
+      "url": "/telugu.lite"
     }
   ]
 }

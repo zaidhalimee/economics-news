@@ -53,12 +53,12 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "https://www.bbc.com/pashto",
+  "start_url": "/pashto",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "https://www.bbc.com/pashto.lite"
+      "url": "/pashto.lite"
     }
   ]
 }

@@ -53,12 +53,12 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "https://www.bbc.com/azeri",
+  "start_url": "/azeri",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "https://www.bbc.com/azeri.lite"
+      "url": "/azeri.lite"
     }
   ]
 }
