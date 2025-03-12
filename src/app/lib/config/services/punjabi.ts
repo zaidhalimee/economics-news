@@ -220,6 +220,7 @@ export const service: DefaultServiceConfig = {
         video: 'ਵੀਡੀਓ',
         listen: 'ਸੁਣੋ',
         watch: 'ਦੇਖੋ',
+        watchMoments: 'ਸ਼ਾਰਟ ਵੀਡੀਓ ਦੇਖੋ',
         listenLive: 'live ਸੁਣੋ',
         liveLabel: 'LIVE',
         nextLabel: 'NEXT',
