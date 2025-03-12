@@ -9,31 +9,53 @@
           {
             "type": "article",
             "isLive": false,
-            "title": "Суриянинг темир хоними Асмо Асад ким?",
+            "title": "Sobiq hokim o‘rinbosari: Pora olmasdan ishlashning iloji yo‘q, bosim katta - video",
+            "firstPublished": "2024-11-14T09:42:19.730Z",
+            "lastPublished": "2024-11-14T09:42:19.730Z",
+            "link": "https://www.bbc.com/uzbek/articles/c7xe5yl1xeno/lat",
+            "imageUrl": "https://ichef.bbci.co.uk/ace/ws/{width}/cpsdevpb/9a27/test/75c6f8e0-a0df-11ef-b4f6-4568dfb1f4fc.jpg.webp",
+            "imageAlt": "alt text",
+            "id": "c7xe5yl1xeno"
+          },
+          {
+            "type": "article",
+            "isLive": false,
+            "title": "Sobiq hokim o‘rinbosari: Pora olmasdan ishlashning iloji yo‘q, bosim katta - video",
+            "firstPublished": "2024-11-14T09:28:01.884Z",
+            "lastPublished": "2024-11-14T09:28:01.884Z",
+            "link": "https://www.bbc.com/uzbek/articles/c50qe4q221jo/lat",
+            "imageUrl": "https://ichef.bbci.co.uk/ace/ws/{width}/cpsdevpb/9a27/test/75c6f8e0-a0df-11ef-b4f6-4568dfb1f4fc.jpg.webp",
+            "imageAlt": "alt text",
+            "id": "c50qe4q221jo"
+          },
+          {
+            "type": "article",
+            "isLive": false,
+            "title": "Suriyaning temir xonimi Asmo Asad kim?",
             "firstPublished": "2024-07-30T16:58:46.760Z",
             "lastPublished": "2024-07-30T16:58:46.760Z",
-            "link": "https://www.bbc.com/uzbek/articles/cve6ql6nr9do",
+            "link": "https://www.bbc.com/uzbek/articles/cve6ql6nr9do/lat",
             "imageUrl": "https://ichef.bbci.co.uk/ace/ws/{width}/cpsdevpb/8e45/test/ee2a18b0-4e93-11ef-ae89-b10ee2354b32.jpg.webp",
-            "imageAlt": "Россиянинг Яқин Шарқдаги асосий иттифоқчиси Сурия 13 йиллик урушдан кейин вайронага айланган. Ундан нима қолган бўлса",
+            "imageAlt": "Rossiyaning Yaqin Sharqdagi asosiy ittifoqchisi Suriya 13 yillik urushdan keyin vayronaga aylangan. Undan nima qolgan bo‘lsa",
             "id": "cve6ql6nr9do"
           },
           {
             "type": "article",
             "isLive": false,
-            "title": "Сўз сизга: Ўзбекистон аҳолиси 37 миллиондан ошди деб мақтанамиз, лекин миллионлар ишсиз ё мардикор",
+            "title": "So‘z sizga: O‘zbekiston aholisi 37 milliondan oshdi deb maqtanamiz, lekin millionlar ishsiz yo mardikor",
             "firstPublished": "2024-09-16T15:46:52.239Z",
             "lastPublished": "2024-09-16T15:46:52.239Z",
-            "link": "https://www.bbc.com/uzbek/articles/cl066728v0zo",
+            "link": "https://www.bbc.com/uzbek/articles/cl066728v0zo/lat",
             "imageUrl": "https://ichef.bbci.co.uk/ace/ws/{width}/cpsprodpb/36D1/production/_127933041__63970643_bbc-news-world-service-logo-nc.png.webp",
             "id": "cl066728v0zo"
           },
           {
             "type": "article",
             "isLive": false,
-            "title": "Борис Николаевич Ельцин",
+            "title": "Boris Nikolaevich Eltsin",
             "firstPublished": "2024-10-07T09:52:06.034Z",
             "lastPublished": "2024-10-07T09:58:27.823Z",
-            "link": "https://www.bbc.com/uzbek/articles/c6328w94722o/cyr",
+            "link": "https://www.bbc.com/uzbek/articles/c6328w94722o/lat",
             "imageUrl": "https://ichef.bbci.co.uk/ace/ws/{width}/cpsprodpb/36D1/production/_127933041__63970643_bbc-news-world-service-logo-nc.png.webp",
             "id": "c6328w94722o"
           }
@@ -46,6 +68,119 @@
         "title": "Top Stories",
         "visualProminence": "HIGH",
         "visualStyle": "COLLECTION"
+      },
+      {
+        "summaries": [
+          {
+            "type": "link",
+            "isLive": false,
+            "title": "https://www.bbc.com/uzbek/bbc_uzbek_tv/tv_programmes/w13xttqv?limit=4",
+            "firstPublished": "",
+            "lastPublished": "",
+            "link": "https://www.bbc.com/uzbek/bbc_uzbek_tv/tv_programmes/w13xttqv?limit=4",
+            "imageUrl": "https://ichef.bbci.co.uk/ace/ws/{width}/cpsprodpb/36D1/production/_127933041__63970643_bbc-news-world-service-logo-nc.png.webp",
+            "id": "https%3A%2F%2Fwww.bbc.com%2Fuzbek%2Fbbc_uzbek_tv%2Ftv_programmes%2Fw13xttqv%3Flimit%3D4"
+          }
+        ],
+        "activePage": 1,
+        "pageCount": 1,
+        "curationId": "urn:bbc:tipo:list:a29b3990-e12e-43ae-ab0b-9f20b1a12bb5",
+        "curationType": "tipo-curation",
+        "position": 1,
+        "title": "BBC ЎЗБEК ТВ ДАСТУРИ",
+        "visualProminence": "NORMAL",
+        "visualStyle": "BANNER"
+      },
+      {
+        "summaries": [
+          {
+            "type": "article",
+            "isLive": false,
+            "title": "Sobiq hokim o‘rinbosari: Pora olmasdan ishlashning iloji yo‘q, bosim katta - video",
+            "firstPublished": "2024-11-14T10:54:51.408Z",
+            "lastPublished": "2024-11-14T10:54:51.408Z",
+            "link": "https://www.bbc.com/uzbek/articles/c50zxrpwvelo/lat",
+            "imageUrl": "https://ichef.bbci.co.uk/ace/ws/{width}/cpsdevpb/9a27/test/75c6f8e0-a0df-11ef-b4f6-4568dfb1f4fc.jpg.webp",
+            "imageAlt": "alt text",
+            "id": "c50zxrpwvelo"
+          },
+          {
+            "type": "article",
+            "isLive": false,
+            "title": "Sobiq hokim o‘rinbosari: Pora olmasdan ishlashning iloji yo‘q, bosim katta - video",
+            "firstPublished": "2024-11-14T10:54:27.936Z",
+            "lastPublished": "2024-11-14T10:54:27.936Z",
+            "link": "https://www.bbc.com/uzbek/articles/cm3ewj43qj7o/lat",
+            "imageUrl": "https://ichef.bbci.co.uk/ace/ws/{width}/cpsdevpb/9a27/test/75c6f8e0-a0df-11ef-b4f6-4568dfb1f4fc.jpg.webp",
+            "imageAlt": "alt text",
+            "id": "cm3ewj43qj7o"
+          },
+          {
+            "type": "article",
+            "isLive": false,
+            "title": "Sobiq hokim o‘rinbosari: Pora olmasdan ishlashning iloji yo‘q, bosim katta - video",
+            "firstPublished": "2024-11-14T10:53:50.223Z",
+            "lastPublished": "2024-11-14T10:53:50.223Z",
+            "link": "https://www.bbc.com/uzbek/articles/cpwn70xj7pwo/lat",
+            "imageUrl": "https://ichef.bbci.co.uk/ace/ws/{width}/cpsdevpb/9a27/test/75c6f8e0-a0df-11ef-b4f6-4568dfb1f4fc.jpg.webp",
+            "imageAlt": "alt text",
+            "id": "cpwn70xj7pwo"
+          },
+          {
+            "type": "article",
+            "isLive": false,
+            "title": "Sobiq hokim o‘rinbosari: Pora olmasdan ishlashning iloji yo‘q, bosim katta - video",
+            "firstPublished": "2024-11-14T10:52:59.422Z",
+            "lastPublished": "2024-11-14T10:52:59.422Z",
+            "link": "https://www.bbc.com/uzbek/articles/cney290n6x1o/lat",
+            "imageUrl": "https://ichef.bbci.co.uk/ace/ws/{width}/cpsdevpb/9a27/test/75c6f8e0-a0df-11ef-b4f6-4568dfb1f4fc.jpg.webp",
+            "imageAlt": "alt text",
+            "id": "cney290n6x1o"
+          },
+          {
+            "type": "video",
+            "isLive": false,
+            "title": "Sobiq hokim o‘rinbosari: Pora olmasdan ishlashning iloji yo‘q, bosim katta - video",
+            "firstPublished": "2024-11-14T10:52:01.995Z",
+            "lastPublished": "2024-11-14T10:52:01.995Z",
+            "link": "https://www.bbc.com/uzbek/articles/c49nd614k9lo/lat",
+            "imageUrl": "https://ichef.bbci.co.uk/ace/ws/{width}/cpsdevpb/9a27/test/75c6f8e0-a0df-11ef-b4f6-4568dfb1f4fc.jpg.webp",
+            "imageAlt": "alt text",
+            "id": "c49nd614k9lo"
+          }
+        ],
+        "activePage": 1,
+        "pageCount": 1,
+        "curationId": "urn:bbc:tipo:list:3e015259-0a58-44a8-b94b-e5cdd44dac67",
+        "curationType": "tipo-curation",
+        "position": 2,
+        "title": "Мултимедиа ва бошқа мақолалар",
+        "visualProminence": "HIGH",
+        "visualStyle": "COLLECTION"
+      },
+      {
+        "curationId": "urn:bbc:onward-journeys:most:read?=site=News",
+        "curationType": "most-popular",
+        "position": 3,
+        "title": "енг машхур",
+        "visualProminence": "NORMAL",
+        "visualStyle": "RANKED",
+        "link": "https://www.bbc.com/uzbek/lat/popular/read",
+        "mostRead": {
+          "generated": "2025-03-12T12:57:57.06Z",
+          "lastRecordTimeStamp": "2021-05-04T11:53:00Z",
+          "firstRecordTimeStamp": "2021-05-04T09:53:00Z",
+          "items": [
+            {
+              "id": "urn:bbc:optimo:asset:c1xxnxw40emo",
+              "rank": 1,
+              "title": "Transliterated Promo Check",
+              "href": "https://www.bbc.com/uzbek/articles/c1xxnxw40emo",
+              "timestamp": "2024-06-04T11:27:08.057Z",
+              "images": {}
+            }
+          ]
+        }
       }
     ],
     "metadata": {
