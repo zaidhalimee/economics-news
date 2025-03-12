@@ -1,4 +1,4 @@
-export const assertServiceWorker = () => {
+export default () => {
   describe('Service Worker', () => {
     it('is available', () => {
       cy.window(win => {

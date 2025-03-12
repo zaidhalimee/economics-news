@@ -1,5 +1,5 @@
 import runTestsForPage from '#nextjs/cypress/support/helpers/runTestsForPage';
-import { assertServiceWorker } from './assertions';
+import assertServiceWorker from './assertions';
 
 const testSuites = [
   {
