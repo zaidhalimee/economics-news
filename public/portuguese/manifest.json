@@ -1,7 +1,7 @@
 {
   "name": "BBC News Brasil",
   "short_name": "BBC Brasil",
-  "Scope": "/portuguese/",
+  "scope": "/portuguese/",
   "background_color": "#b80000",
   "display": "standalone",
   "theme_color": "#b80000",
@@ -58,8 +58,14 @@
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "/portuguese.lite"
+      "url": "/portuguese.lite",
+      "icons": [
+        {
+          "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/portuguese/images/icons/icon-96x96.png?v=1",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
-  ],
-  "scope": "/portuguese"
+  ]
 }

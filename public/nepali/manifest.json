@@ -1,7 +1,7 @@
 {
   "name": "BBC News नेपाली",
   "short_name": "BBC नेपाली",
-  "Scope": "/nepali/",
+  "scope": "/nepali/",
   "background_color": "#b80000",
   "display": "standalone",
   "theme_color": "#b80000",
@@ -58,8 +58,14 @@
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "/nepali.lite"
+      "url": "/nepali.lite",
+      "icons": [
+        {
+          "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/nepali/images/icons/icon-96x96.png?v=1",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
-  ],
-  "scope": "/nepali"
+  ]
 }

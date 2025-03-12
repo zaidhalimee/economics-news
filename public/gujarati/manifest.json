@@ -1,7 +1,7 @@
 {
   "name": "BBC News ગુજરાતી",
   "short_name": "BBC ગુજરાતી",
-  "Scope": "/gujarati/",
+  "scope": "/gujarati/",
   "background_color": "#b80000",
   "display": "standalone",
   "theme_color": "#b80000",
@@ -58,8 +58,14 @@
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "/gujarati.lite"
+      "url": "/gujarati.lite",
+      "icons": [
+        {
+          "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/gujarati/images/icons/icon-96x96.png?v=1",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
-  ],
-  "scope": "/gujarati"
+  ]
 }

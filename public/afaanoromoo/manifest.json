@@ -1,7 +1,7 @@
 {
   "name": "BBC News Afaan Oromoo",
   "short_name": "BBC Afaan Oromoo",
-  "Scope": "/afaanoromoo/",
+  "scope": "/afaanoromoo/",
   "background_color": "#b80000",
   "display": "standalone",
   "theme_color": "#b80000",
@@ -58,8 +58,14 @@
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "/afaanoromoo.lite"
+      "url": "/afaanoromoo.lite",
+      "icons": [
+        {
+          "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/afaanoromoo/images/icons/icon-96x96.png?v=1",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
-  ],
-  "scope": "/afaanoromoo"
+  ]
 }

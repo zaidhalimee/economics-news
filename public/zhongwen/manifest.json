@@ -1,7 +1,7 @@
 {
   "name": "BBC News 中文",
   "short_name": "BBC 中文",
-  "Scope": "/zhongwen/",
+  "scope": "/zhongwen/",
   "background_color": "#b80000",
   "display": "standalone",
   "theme_color": "#b80000",
@@ -58,8 +58,14 @@
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "/zhongwen.lite"
+      "url": "/zhongwen.lite",
+      "icons": [
+        {
+          "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/zhongwen/images/icons/icon-96x96.png?v=1",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
-  ],
-  "scope": "/zhongwen"
+  ]
 }

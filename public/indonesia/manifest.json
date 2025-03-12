@@ -1,7 +1,7 @@
 {
   "name": "BBC News Indonesia",
   "short_name": "BBC Indonesia",
-  "Scope": "/indonesia/",
+  "scope": "/indonesia/",
   "background_color": "#b80000",
   "display": "standalone",
   "theme_color": "#b80000",
@@ -58,8 +58,14 @@
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "/indonesia.lite"
+      "url": "/indonesia.lite",
+      "icons": [
+        {
+          "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/indonesia/images/icons/icon-96x96.png?v=1",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
-  ],
-  "scope": "/indonesia"
+  ]
 }

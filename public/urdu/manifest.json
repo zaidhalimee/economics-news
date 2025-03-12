@@ -1,7 +1,7 @@
 {
   "name": "BBC News اردو",
   "short_name": "BBC اردو",
-  "Scope": "/urdu/",
+  "scope": "/urdu/",
   "background_color": "#b80000",
   "display": "standalone",
   "theme_color": "#b80000",
@@ -58,8 +58,14 @@
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "/urdu.lite"
+      "url": "/urdu.lite",
+      "icons": [
+        {
+          "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/urdu/images/icons/icon-96x96.png?v=1",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
-  ],
-  "scope": "/urdu"
+  ]
 }

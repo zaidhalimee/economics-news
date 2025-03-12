@@ -1,7 +1,7 @@
 {
   "name": "BBC News தமிழ்",
   "short_name": "BBC தமிழ்",
-  "Scope": "/tamil/",
+  "scope": "/tamil/",
   "background_color": "#b80000",
   "display": "standalone",
   "theme_color": "#b80000",
@@ -58,8 +58,14 @@
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "/tamil.lite"
+      "url": "/tamil.lite",
+      "icons": [
+        {
+          "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/tamil/images/icons/icon-96x96.png?v=1",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
-  ],
-  "scope": "/tamil"
+  ]
 }

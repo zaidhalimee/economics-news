@@ -1,7 +1,7 @@
 {
   "name": "BBC News عربي",
   "short_name": "BBC عربي",
-  "Scope": "/arabic/",
+  "scope": "/arabic/",
   "background_color": "#b80000",
   "display": "standalone",
   "theme_color": "#b80000",
@@ -65,8 +65,14 @@
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "/arabic.lite"
+      "url": "/arabic.lite",
+      "icons": [
+        {
+          "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/arabic/images/icons/icon-96x96.png?v=1",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
-  ],
-  "scope": "/arabic"
+  ]
 }

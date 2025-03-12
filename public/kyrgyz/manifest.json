@@ -1,7 +1,7 @@
 {
   "name": "BBC News Кыргыз КызMATы",
   "short_name": "BBC Кыргыз КызMATы",
-  "Scope": "/kyrgyz/",
+  "scope": "/kyrgyz/",
   "background_color": "#b80000",
   "display": "standalone",
   "theme_color": "#b80000",
@@ -58,8 +58,14 @@
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "/kyrgyz.lite"
+      "url": "/kyrgyz.lite",
+      "icons": [
+        {
+          "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/kyrgyz/images/icons/icon-96x96.png?v=1",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
-  ],
-  "scope": "/kyrgyz"
+  ]
 }

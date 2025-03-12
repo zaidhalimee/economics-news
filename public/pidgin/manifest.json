@@ -1,7 +1,7 @@
 {
   "name": "BBC News Pidgin",
   "short_name": "BBC Pidgin",
-  "Scope": "/pidgin/",
+  "scope": "/pidgin/",
   "background_color": "#b80000",
   "display": "standalone",
   "theme_color": "#b80000",
@@ -64,14 +64,8 @@
           "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/pidgin/images/icons/icon-96x96.png?v=1",
           "sizes": "96x96",
           "type": "image/png"
-        },
-        {
-          "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/pidgin/images/icons/icon-192x192.png?v=1",
-          "sizes": "192x192",
-          "type": "image/png"
         }
       ]
     }
-  ],
-  "scope": "/pidgin"
+  ]
 }
