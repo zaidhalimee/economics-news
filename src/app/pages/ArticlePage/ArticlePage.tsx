@@ -126,10 +126,9 @@ const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
   podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
 const getHeadlineComponent =
-  ({ pathname, isLite, translations }: getHeadlineComponentProps) =>
+  ({ pathname, isLite, dir, translations }: getHeadlineComponentProps) =>
   (props: ComponentToRenderProps) => {
     const { enabled: showCTA } = useToggle('liteSiteCTA');
-    const { dir } = useContext(ServiceContext);
     const isRtl = dir === 'rtl';
 
     const articleDataSavingLinkText =
@@ -167,6 +166,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     isTrustProjectParticipant,
     showRelatedTopics,
     brandName,
+    dir,
   } = useContext(ServiceContext);
 
   const { enabled: preloadLeadImageToggle } = useToggle('preloadLeadImage');
@@ -237,7 +237,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const componentsToRender = {
     visuallyHiddenHeadline,
-    headline: getHeadlineComponent({ pathname, isLite, translations }),
+    headline: getHeadlineComponent({ pathname, isLite, dir, translations }),
     subheadline: Headings,
     audio: MediaLoader,
     video: MediaLoader,
