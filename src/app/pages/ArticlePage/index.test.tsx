@@ -70,6 +70,7 @@ type Props = {
   adsToggledOn?: boolean;
   mostReadToggledOn?: boolean;
   showAdsBasedOnLocation?: boolean;
+  liteSiteCTA?: boolean;
   isApp?: boolean;
   promo?: boolean | null;
   isAmp?: boolean;
@@ -82,6 +83,7 @@ const Context = ({
   adsToggledOn = false,
   mostReadToggledOn = true,
   showAdsBasedOnLocation = false,
+  liteSiteCTA = false,
   isApp = false,
   promo = null,
   isAmp = false,
@@ -91,6 +93,7 @@ const Context = ({
     ...input,
     service,
     showAdsBasedOnLocation,
+    liteSiteCTA,
     isApp,
     isAmp,
     id,
@@ -141,6 +144,22 @@ afterAll(() => {
 });
 
 describe('Article Page', () => {
+  it('should render liteCTA when liteSiteCTA toggle is true', () => {
+   render(
+        <ArticlePage
+          pageData={{
+            ...articleDataPersian,
+            mostRead: persianMostReadData,
+          }}
+        />,
+      { service: 'gahuza', toggles: { liteSiteCTA: {enabled: true} }},
+    );
+
+    const liteCTA = screen.queryByRole('link', {name: /Nyandiko gusa/i})
+
+    expect(liteCTA).toBeInTheDocument();
+    
+  });
   it('should use headline for meta description if summary does not exist', async () => {
     const articleDataNewsWithSummary = mergeDeepLeft(
       {
@@ -322,7 +341,7 @@ describe('Article Page', () => {
 
   it('should render a rtl article (persian) with most read correctly', async () => {
     const { container } = render(
-      <Context service="persian">
+      <Context>
         <ArticlePage
           pageData={{
             ...articleDataPersian,
