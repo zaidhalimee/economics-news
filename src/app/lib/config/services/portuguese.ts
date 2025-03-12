@@ -239,6 +239,7 @@ export const service: DefaultServiceConfig = {
         video: 'Vídeo',
         listen: 'Listen',
         watch: 'Assista',
+        watchMoments: 'Assista',
         listenLive: 'Ouça ao vivo',
         listenNext: 'Ouça o próximo',
         liveLabel: 'AO VIVO',

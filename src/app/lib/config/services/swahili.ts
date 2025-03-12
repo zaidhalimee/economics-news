@@ -231,6 +231,7 @@ export const service: DefaultServiceConfig = {
         },
         listen: 'Sikiliza',
         watch: 'Tazama',
+        watchMoments: 'Tazama hapa',
         liveLabel: 'Moja kwa moja',
         nextLabel: 'MBELE',
         previousRadioShow: 'Kipindi kilichopita cha redio',
