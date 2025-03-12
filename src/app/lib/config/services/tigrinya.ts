@@ -45,6 +45,23 @@ export const service: DefaultServiceConfig = {
     frontPageTitle: 'ዜና',
     showAdPlaceholder: false,
     showRelatedTopics: true,
+    podcastPromo: {
+      title: 'መወዓውዒ ዋትስኣፕ ቻነል',
+      brandTitle: 'ዋትስኣፕ ቻነል ቢቢሲ ትግርኛ',
+      brandDescription: 'ዜና፡ ትንታነን ታሪኻትን ብቐጥታ ኣብ ዋትስኣፕ ንምርካብ',
+      image: {
+        src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p0kxgny2.png',
+        alt: 'ቢቢሲ ትግርኛ ኣብ ዋትስኣፕ ቻነል',
+      },
+      linkLabel: {
+        text: 'ነዚ መላግቦ ብምጥዋቕ ኣባል ቻነልና ኵኑ!',
+        href: 'https://www.whatsapp.com/channel/0029VasPgatEVccGCsD4B42n',
+      },
+      skipLink: {
+        text: 'መወዓውዒ ስገሮ፣ ንባብካ ቀጽል',
+        endTextVisuallyHidden: 'መዛዘሚ መወዓውዒ ዋትስኣፕ ቻነል',
+      },
+    },
     translations: {
       pagination: {
         previousPage: 'ናይ ሕሉፍ',
