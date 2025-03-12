@@ -3,20 +3,26 @@ const clickFirstLink = () => {
 };
 
 const clickFirstMapLink = () => {
-  cy.get('[data-e2e="media-indicator"]').then($styledMediaIndicators => {
-    if ($styledMediaIndicators.length > 0) {
-      cy.get('[data-e2e="media-indicator"]')
-        .first()
-        .parentsUntil('[data-testid="topic-promos"]')
-        .first()
-        .within(() => {
-          clickFirstLink();
-        });
-    } else {
+  cy.get('body').then($bodyElement => {
+    if (
+      $bodyElement.find('[data-e2e="media-icon"]').length >
+      0
+    ){
+      cy.get('[data-e2e="media-icon"]')
+      .first()
+      .parentsUntil('[data-testid="topic-promos"]')
+      .first()
+      .within(() => {
+        clickFirstLink();
+      });
+
+    }
+    else {
       // If a MAP item isn't found on the home page, click the first promo item.
       clickFirstLink();
     }
-  });
+  })
+
 };
 
 export const clickScriptSwitcher = variant => {
@@ -31,13 +37,13 @@ export const clickHomePageLink = (product, variant) => {
 };
 
 export const clickPromoLinkOnHomePage = pageType => {
-  cy.get('[data-testid="topic-promos"]').first().within(() => {
     // If it is a MAP test, find first MAP within a StoryPromoLi item and click it
     if (pageType === 'mediaAssetPage') {
       clickFirstMapLink();
     } else {
-      // If it isn't a MAP page being tested, click the first promo item
-      clickFirstLink();
+      cy.get('[data-testid="topic-promos"]').first().within(() => {
+        // If it isn't a MAP page being tested, click the first promo item
+        clickFirstLink();
+      });
     }
-  });
 };

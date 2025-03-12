@@ -22,12 +22,12 @@ export default ({
     // This test suite is being skipped due to flakey failing within our build pipeline. Being investigated here https://github.com/bbc/simorgh/issues/6399
     beforeEach(() => {
       // cy.clearCookies();
-      // ToDO: ask if testing the cookie banner is important in this context - seems to be causing a lot of the flakiness
-      cy.setCookie('ckns_explicit', '1')
+      // ToDO: check if testing the cookie banner is important in this context - seems to be causing a lot of the flakiness
+     // cy.setCookie('ckns_explicit', '1')
       visitPage(path, pageType);
     });
 
-    beforeEach(() => cy.fixture(`toggles/${serviceId}.json`).as('toggles'));
+   // beforeEach(() => cy.fixture(`toggles/${serviceId}.json`).as('toggles'));
 
 
     it(`should change to the correct script when switching script from ${variant} to ${otherVariant}`, () => {
