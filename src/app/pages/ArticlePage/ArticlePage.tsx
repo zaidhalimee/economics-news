@@ -147,7 +147,11 @@ const getHeadlineComponent =
           <div css={styles.liteCtaContainer}>
             <CallToActionLink href={`${pathname}.lite`} css={styles.liteCTA}>
               {articleDataSavingLinkText}
-              <RightChevron css={styles.liteCtaChevron} />
+              {isRtl ? (
+                <LeftChevron css={styles.liteCtaChevron} />
+              ) : (
+                <RightChevron css={styles.liteCtaChevron} />
+              )}
             </CallToActionLink>
           </div>
         )}
