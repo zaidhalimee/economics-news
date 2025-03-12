@@ -60,5 +60,6 @@
       "short_name": "Lite",
       "url": "/zhongwen.lite"
     }
-  ]
+  ],
+  "scope": "/zhongwen"
 }

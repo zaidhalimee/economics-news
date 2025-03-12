@@ -53,5 +53,6 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "/archive"
+  "start_url": "/archive",
+  "scope": "/archive"
 }

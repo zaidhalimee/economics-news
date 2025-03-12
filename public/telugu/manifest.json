@@ -60,5 +60,6 @@
       "short_name": "Lite",
       "url": "/telugu.lite"
     }
-  ]
+  ],
+  "scope": "/telugu"
 }

@@ -19,6 +19,8 @@ services.forEach(service => {
           "url": `${currentManifest.start_url}.lite`
         }
     ];
+    currentManifest.scope = `/${service}`;
+    currentManifest.display = 'standalone';
     currentManifest.icons = currentManifest.icons.map(icon => {
         icon.src = `${icon.src.split('?')[0]}?v=${IMAGE_VERSION}`;
         return icon;

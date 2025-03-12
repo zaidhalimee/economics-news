@@ -67,5 +67,6 @@
       "short_name": "Lite",
       "url": "/russian.lite"
     }
-  ]
+  ],
+  "scope": "/russian"
 }

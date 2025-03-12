@@ -53,5 +53,6 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "/naidheachdan"
+  "start_url": "/naidheachdan",
+  "scope": "/naidheachdan"
 }

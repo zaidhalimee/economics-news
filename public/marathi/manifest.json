@@ -60,5 +60,6 @@
       "short_name": "Lite",
       "url": "/marathi.lite"
     }
-  ]
+  ],
+  "scope": "/marathi"
 }

@@ -53,5 +53,6 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "/sport"
+  "start_url": "/sport",
+  "scope": "/sport"
 }

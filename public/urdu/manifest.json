@@ -60,5 +60,6 @@
       "short_name": "Lite",
       "url": "/urdu.lite"
     }
-  ]
+  ],
+  "scope": "/urdu"
 }

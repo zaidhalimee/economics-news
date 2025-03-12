@@ -53,5 +53,6 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "/scotland"
+  "start_url": "/scotland",
+  "scope": "/scotland"
 }

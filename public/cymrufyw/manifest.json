@@ -53,5 +53,6 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "/cymrufyw"
+  "start_url": "/cymrufyw",
+  "scope": "/cymrufyw"
 }
