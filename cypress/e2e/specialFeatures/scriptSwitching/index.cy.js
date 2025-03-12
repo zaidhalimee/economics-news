@@ -17,11 +17,13 @@ Object.keys(config)
     const { scriptLink } = appConfig[serviceName][variant];
     const scriptLinkVariant = scriptLink && scriptLink.variant;
 
+
     Object.keys(config[serviceId].pageTypes)
       .filter(
         pageType =>
           serviceHasPageType(serviceId, pageType) &&
-          !pageType.includes('error'),
+          pageType !== 'onDemandAudio' &&
+          !pageType.includes('error')
       )
       .forEach(pageType => {
         const paths = getPaths(serviceId, pageType);
