@@ -66,7 +66,7 @@ import { ServiceContext } from '../../contexts/ServiceContext';
 import RelatedContentSection from '../../components/RelatedContentSection';
 import Disclaimer from '../../components/Disclaimer';
 import CallToActionLink from '#app/components/CallToActionLink';
-import { RightChevron } from '#app/components/icons';
+import { RightChevron, LeftChevron } from '#app/components/icons';
 import SecondaryColumn from './SecondaryColumn';
 import styles from './ArticlePage.styles';
 import { ComponentToRenderProps, TimeStampProps, getHeadlineComponentProps } from './types';
