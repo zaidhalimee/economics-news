@@ -70,7 +70,6 @@ type Props = {
   adsToggledOn?: boolean;
   mostReadToggledOn?: boolean;
   showAdsBasedOnLocation?: boolean;
-  liteSiteCTA?: boolean;
   isApp?: boolean;
   promo?: boolean | null;
   isAmp?: boolean;
@@ -82,8 +81,6 @@ const Context = ({
   children,
   adsToggledOn = false,
   mostReadToggledOn = true,
-  showAdsBasedOnLocation = false,
-  liteSiteCTA = false,
   isApp = false,
   promo = null,
   isAmp = false,
@@ -93,7 +90,6 @@ const Context = ({
     ...input,
     service,
     showAdsBasedOnLocation,
-    liteSiteCTA,
     isApp,
     isAmp,
     id,
