@@ -124,13 +124,17 @@ const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
 const getHeadlineComponent =
   ({ pathname, isLite, translations }: getHeadlineComponentProps) => (props: ComponentToRenderProps) => {
     const { enabled: showCTA } = useToggle('liteSiteCTA');
+    const { dir } = useContext(ServiceContext);
+    const isRtl = dir === 'rtl';
 
-    const articleDataSavingLinkText = translations?.liteSite?.articleDataSavingLinkText ?? "Data-saving Version";
-    
+    const articleDataSavingLinkText =
+      translations?.liteSite?.articleDataSavingLinkText ??
+      'Data-saving Version';
 
     console.log(showCTA);
     console.log(translations);
     console.log(articleDataSavingLinkText);
+    console.log(isRtl);
 
     return (
       <>
@@ -228,7 +232,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const componentsToRender = {
     visuallyHiddenHeadline,
-    headline: getHeadlineComponent({pathname, isLite, translations}),
+    headline: getHeadlineComponent({ pathname, isLite, translations }),
     subheadline: Headings,
     audio: MediaLoader,
     video: MediaLoader,
