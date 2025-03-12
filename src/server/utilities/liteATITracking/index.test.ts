@@ -50,9 +50,6 @@ describe('processClientDeviceAndSendLite script', () => {
       value: undefined,
     });
 
-    // @ts-expect-error Some browsers may not have crypto.
-    // eslint-disable-next-line no-global-assign
-    crypto = undefined;
     window.processClientDeviceAndSendLite('https://logws1363.ati-host.net/?');
     const callParam = (window.sendBeaconLite as jest.Mock).mock.calls[0][0];
     const parsedATIParams = Object.fromEntries(new URLSearchParams(callParam));
