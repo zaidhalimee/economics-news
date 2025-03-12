@@ -8,6 +8,12 @@ const testSuites = [
     service: 'pidgin',
     tests: [assertServiceWorker],
   },
+  {
+    path: '/pidgin/articles/czje40pxkypo?renderer_env=live',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'pidgin',
+    tests: [assertServiceWorker],
+  },
 ];
 
 runTestsForPage({ testSuites });
