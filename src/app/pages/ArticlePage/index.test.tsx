@@ -333,7 +333,7 @@ describe('Article Page', () => {
 
   it('should render a rtl article (persian) with most read correctly', async () => {
     const { container } = render(
-      <Context>
+      <Context service="persian">
         <ArticlePage
           pageData={{
             ...articleDataPersian,
