@@ -236,6 +236,7 @@ export const service: DefaultServiceConfig = {
         },
         listen: 'கேட்க',
         watch: 'பார்க்க',
+        watchMoments: 'ஷார்ட் வீடியோ',
         listenLive: 'நேரலையை கேட்க',
         liveLabel: 'நேரலை',
         nextLabel: 'NEXT',
