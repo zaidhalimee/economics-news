@@ -81,6 +81,7 @@ const Context = ({
   children,
   adsToggledOn = false,
   mostReadToggledOn = true,
+  showAdsBasedOnLocation = false,
   isApp = false,
   promo = null,
   isAmp = false,
