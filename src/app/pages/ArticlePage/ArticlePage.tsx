@@ -44,6 +44,8 @@ import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
 import OPTIMIZELY_CONFIG from '#app/lib/config/optimizely';
 import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
 import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
+import CallToActionLink from '#app/components/CallToActionLink';
+import { RightChevron, LeftChevron } from '#app/components/icons';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
@@ -65,11 +67,13 @@ import {
 import { ServiceContext } from '../../contexts/ServiceContext';
 import RelatedContentSection from '../../components/RelatedContentSection';
 import Disclaimer from '../../components/Disclaimer';
-import CallToActionLink from '#app/components/CallToActionLink';
-import { RightChevron, LeftChevron } from '#app/components/icons';
 import SecondaryColumn from './SecondaryColumn';
 import styles from './ArticlePage.styles';
-import { ComponentToRenderProps, TimeStampProps, getHeadlineComponentProps } from './types';
+import {
+  ComponentToRenderProps,
+  TimeStampProps,
+  getHeadlineComponentProps,
+} from './types';
 import {
   transformRecsData,
   OptimizelyVariation,
@@ -122,7 +126,8 @@ const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
   podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
 const getHeadlineComponent =
-  ({ pathname, isLite, translations }: getHeadlineComponentProps) => (props: ComponentToRenderProps) => {
+  ({ pathname, isLite, translations }: getHeadlineComponentProps) =>
+  (props: ComponentToRenderProps) => {
     const { enabled: showCTA } = useToggle('liteSiteCTA');
     const { dir } = useContext(ServiceContext);
     const isRtl = dir === 'rtl';
