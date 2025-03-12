@@ -6285,10 +6285,7 @@ module.exports = () => ({
             paths: ['/ukrainian/topics/c61k92vrqz6t'], // ukrainian in russian
             enabled: true,
           },
-          local: {
-            paths: [],
-            enabled: false,
-          },
+          local: { paths: [], enabled: false },
         },
         smoke: false,
       },

@@ -611,8 +611,11 @@ describe('Lite Site - Click tracking', () => {
     const { result } = renderHook(
       () =>
         useConstructLiteSiteATIEventTrackUrl({
-          ...defaultProps,
-          campaignID: 'custom-campaign',
+          props: {
+            ...defaultProps,
+            campaignID: 'custom-campaign',
+          },
+          eventType: 'click',
         }),
       {
         wrapper,

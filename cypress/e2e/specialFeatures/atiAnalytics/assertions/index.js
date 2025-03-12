@@ -1,5 +1,6 @@
 import {
   ATI_PAGE_VIEW,
+  ATI_PAGE_VIEW_REVERB,
   getATIParamsFromURL,
   interceptATIAnalyticsBeacons,
 } from '../helpers';
@@ -63,6 +64,7 @@ const assertATIComponentClickEventParamsExist = ({ params, useReverb }) => {
 };
 
 export const assertPageView = ({
+  useReverb,
   pageIdentifier,
   applicationType,
   contentType,
@@ -73,9 +75,28 @@ export const assertPageView = ({
       interceptATIAnalyticsBeacons();
       cy.visit(url);
 
-      cy.wait(`@${ATI_PAGE_VIEW}`).then(({ request }) => {
-        const params = getATIParamsFromURL(request.url);
+      console.log(
+        'url in assertPageView just after cy.visit in assertPageView',
+        url,
+      );
+      cy.log('url in assertPageView just after cy.visit assertPageView', url);
+      const atiPageViewAlias = useReverb ? ATI_PAGE_VIEW_REVERB : ATI_PAGE_VIEW;
 
+      cy.wait(`@${atiPageViewAlias}`).then(({ request }) => {
+        const params = getATIParamsFromURL(request.url);
+        console.log(
+          'p param from getATIParamsFromUrl assertPageView',
+          params.p,
+          'for URL',
+          request.url,
+        );
+
+        cy.log(
+          'p param from getATIParamsFromUrl assertPageView',
+          params.p,
+          'for URL',
+          request.url,
+        );
         assertATIPageViewEventParamsExist({
           params,
           contentType,

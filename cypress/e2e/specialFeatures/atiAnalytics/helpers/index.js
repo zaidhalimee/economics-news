@@ -3,10 +3,21 @@ import envs from '../../../../support/config/envs';
 export const getATIParamsFromURL = atiAnalyticsURL => {
   const url = new URL(atiAnalyticsURL);
 
-  return Object.fromEntries(new URLSearchParams(url.search));
+  const objectFromEntries = Object.fromEntries(new URLSearchParams(url.search));
+  console.log(
+    'objectFromEntries p value in getATIParamsFromURL',
+    objectFromEntries.p,
+  );
+  cy.log(
+    'objectFromEntries p value in getATIParamsFromURL',
+    objectFromEntries.p,
+  );
+  return objectFromEntries;
 };
 
 export const ATI_PAGE_VIEW = 'ati-page-view';
+
+export const ATI_PAGE_VIEW_REVERB = 'ati-page-view-reverb';
 
 const SCROLLABLE_NAVIGATION = 'scrollable-navigation';
 const DROPDOWN_NAVIGATION = 'dropdown-navigation';
@@ -82,16 +93,29 @@ export const interceptATIAnalyticsBeacons = () => {
     ).as(`${component}-ati-click`);
   });
 
-  // Page View (only fires once per page visit)
+  // NOT REVERB - Page View (only fires once per page visit)
   cy.intercept(
     {
       url: `${atiUrl}/*`,
       query: {
-        x8: /simorgh/,
+        x8: '[simorgh]',
       },
     },
     request => {
       request.reply({ statusCode: 200 });
     },
   ).as(`${ATI_PAGE_VIEW}`);
+
+  // REVERB - Page View (only fires once per page visit)
+  cy.intercept(
+    {
+      url: `${atiUrl}/*`,
+      query: {
+        x8: 'simorgh',
+      },
+    },
+    request => {
+      request.reply({ statusCode: 200 });
+    },
+  ).as(`${ATI_PAGE_VIEW_REVERB}`);
 };

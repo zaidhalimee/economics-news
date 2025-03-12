@@ -234,6 +234,7 @@ export const service: DefaultServiceConfig = {
         },
         listen: 'ऐका',
         watch: 'पाहा',
+        watchMoments: 'शॉर्ट व्हीडिओ पाहा',
         liveLabel: 'LIVE',
         nextLabel: 'पुढचे',
         listenLive: 'ऐका',
