@@ -138,7 +138,8 @@ const getHeadlineComponent =
         {!isLite && showCTA && (
           <div css={styles.liteCtaContainer}>
             <CallToActionLink href={`${pathname}.lite`} css={styles.liteCTA}>
-              {articleDataSavingLinkText}<RightChevron css={styles.liteCtaChevron} />
+              {articleDataSavingLinkText}
+              <RightChevron css={styles.liteCtaChevron} />
             </CallToActionLink>
           </div>
         )}
