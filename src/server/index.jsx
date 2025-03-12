@@ -133,7 +133,7 @@ server
       const manifestPath = `${__dirname}/public${serviceConfigs[service][variant].manifestPath}`;
       res.set(
         'Cache-Control',
-        'public, stale-if-error=1209600, stale-while-revalidate=1209600, max-age=604800',
+        'public, stale-if-error=172800, stale-while-revalidate=172800, max-age=86400',
       );
       res.sendFile(manifestPath, {}, error => {
         if (error) {
