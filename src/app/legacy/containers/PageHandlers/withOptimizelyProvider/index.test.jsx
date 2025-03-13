@@ -39,6 +39,7 @@ const TestComponent = () => {
 };
 
 jest.mock('./isCypress', () => jest.fn().mockImplementation(() => false));
+jest.mock('@optimizely/react-sdk');
 
 describe('withOptimizelyProvider HOC', () => {
   afterEach(() => {
