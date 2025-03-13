@@ -1,9 +1,5 @@
 import addIdsToItems from '.';
 
-jest.mock('uuid', () => ({
-  v4: () => 'mockId',
-}));
-
 const fixtureA = {
   content: {
     model: {
@@ -47,6 +43,10 @@ const fixtureC = {
     },
   },
 };
+
+jest.mock('#app/lib/utilities/getUUID', () =>
+  jest.fn().mockImplementation(() => 'mockId'),
+);
 
 describe('addIdsToItems rule', () => {
   it('should add ids to all items without ids', () => {

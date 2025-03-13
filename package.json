@@ -10,7 +10,6 @@
   ],
   "resolutions": {
     "@optimizely/js-sdk-utils": "0.4.0",
-    "uuid": "3.4.0",
     "winston@3.8.2": "patch:winston@npm:3.8.2#.yarn/patches/winston-npm-3.8.2-2035e9cac4.patch",
     "cookie": "0.7.1",
     "react-is": "19.0.0"
@@ -128,17 +127,16 @@
     "react-router-dom": "5.3.4",
     "undici": "7.4.0",
     "url-parse": "1.5.10",
-    "uuid": "8.3.2",
     "winston": "patch:winston@3.8.2#./patches/winston-file-descriptor.patch"
   },
   "devDependencies": {
-    "@babel/core": "7.26.9",
-    "@babel/eslint-parser": "7.26.8",
+    "@babel/core": "7.26.10",
+    "@babel/eslint-parser": "7.26.10",
     "@babel/plugin-proposal-export-default-from": "7.25.9",
     "@babel/plugin-proposal-object-rest-spread": "7.20.7",
     "@babel/plugin-proposal-throw-expressions": "7.25.9",
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
-    "@babel/plugin-transform-runtime": "7.26.9",
+    "@babel/plugin-transform-runtime": "7.26.10",
     "@babel/polyfill": "7.12.1",
     "@babel/preset-env": "7.26.9",
     "@babel/preset-react": "7.26.3",
@@ -186,7 +184,6 @@
     "@types/react-router-dom": "5.3.3",
     "@types/testing-library__react": "10.2.0",
     "@types/url-parse": "^1.4.8",
-    "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "8.26.1",
     "amphtml-validator": "1.0.38",
