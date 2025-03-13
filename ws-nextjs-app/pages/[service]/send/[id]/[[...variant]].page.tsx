@@ -4,8 +4,8 @@ import PageDataParams from '#models/types/pageDataParams';
 import { UGC_PAGE } from '#app/routes/utils/pageTypes';
 import isLitePath from '#app/routes/utils/isLitePath';
 import isAppPath from '#app/routes/utils/isAppPath';
+import extractHeaders from 'simorgh/src/server/utilities/extractHeaders/extractHeaders';
 import getPageData from '../../../../utilities/pageRequests/getPageData';
-import extractHeaders from '../../../../../src/server/utilities/extractHeaders';
 
 const UGCPageLayout = dynamic(() => import('./UGCPageLayout'));
 

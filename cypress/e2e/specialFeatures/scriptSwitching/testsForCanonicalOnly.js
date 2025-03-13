@@ -7,7 +7,6 @@ import {
 } from '../utilities/scriptSwitchingJourneyActions';
 
 export default ({
-  serviceId,
   serviceName,
   pageType,
   path,

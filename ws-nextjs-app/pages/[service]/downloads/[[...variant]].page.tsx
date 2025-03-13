@@ -5,9 +5,8 @@ import logResponseTime from '#server/utilities/logResponseTime';
 
 import PageDataParams from '#app/models/types/pageDataParams';
 import getToggles from '#app/lib/utilities/getToggles/withCache';
+import extractHeaders from 'simorgh/src/server/utilities/extractHeaders/extractHeaders';
 import dataFetch from './dataFetch';
-
-import extractHeaders from '../../../../src/server/utilities/extractHeaders';
 
 const downloadsPageLayout = dynamic(() => import('./downloadsPageLayout'));
 

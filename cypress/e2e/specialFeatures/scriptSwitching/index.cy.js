@@ -22,7 +22,7 @@ Object.keys(config)
         pageType =>
           serviceHasPageType(serviceId, pageType) &&
           pageType !== 'onDemandAudio' &&
-          !pageType.includes('error'),
+          !pageType.includes('error')
       )
       .forEach(pageType => {
         const paths = getPaths(serviceId, pageType);
