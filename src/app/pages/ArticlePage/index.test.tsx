@@ -141,16 +141,31 @@ afterAll(() => {
 });
 
 describe('Article Page', () => {
-  it('should render liteCTA when liteSiteCTA toggle is true', () => {
-    render(<ArticlePage pageData={articleDataPersian} />, {
-      service: 'gahuza',
-      toggles: { liteSiteCTA: { enabled: true } },
-    });
+  it.each([
+    { title: 'should show the CTA on non Lite Site pages, when the toggle is enabled',
+      isLite: false, liteSiteCTA: true, expected: true },
+    { title: 'should not show the CTA on non Lite Site pages, when the toggle is false',
+      isLite: false, liteSiteCTA: false, expected: false },
+    { title: 'should not show the CTA on Lite Site pages, regardless of the toggle',
+      isLite: true, liteSiteCTA: true, expected: false },
+  ])(
+    '$title',
+    ({ isLite, liteSiteCTA, expected }) => {
+      render(<ArticlePage pageData={articleDataPersian} />, {
+        service: 'gahuza',
+        isLite,
+        toggles: { liteSiteCTA: { enabled: liteSiteCTA } },
+      });
 
-    const liteCTA = screen.queryByRole('link', { name: /Nyandiko gusa/i });
+      const liteCTA = screen.queryByRole('link', { name: /Nyandiko gusa/i });
 
-    expect(liteCTA).toBeInTheDocument();
-  });
+      if (expected) {
+        expect(liteCTA).toBeInTheDocument();
+      } else {
+        expect(liteCTA).not.toBeInTheDocument();
+      }
+    },
+  );
 
   it('should use headline for meta description if summary does not exist', async () => {
     const articleDataNewsWithSummary = mergeDeepLeft(
