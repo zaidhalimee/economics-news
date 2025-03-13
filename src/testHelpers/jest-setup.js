@@ -14,7 +14,12 @@ global.ReadableStream = ReadableStream;
 global.MessageChannel = MessageChannel;
 global.MessagePort = MessagePort;
 
-window.require = jest.fn();
+Object.defineProperty(global, 'crypto', {
+  value: {
+    randomUUID: jest.fn(),
+    getRandomValues: jest.fn(),
+  },
+});
 
 global.crypto.randomUUID = jest.fn();
 
