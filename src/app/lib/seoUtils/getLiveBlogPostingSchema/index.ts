@@ -45,7 +45,7 @@ export default ({
         '@type': 'BlogPosting',
         headline:
           // @ts-expect-error - deeply nested
-          headlineBlock?.model.blocks[0].model.blocks[0].model.text ?? null,
+          headlineBlock?.model.blocks[0]?.model.blocks[0]?.model.text ?? null,
         publisher: {
           '@type': 'Organization',
           name: brandName,
