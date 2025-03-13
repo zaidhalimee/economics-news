@@ -143,6 +143,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'hausa.bbc_hausa_radio.liveradio.page',
     applicationType: 'responsive',
     contentType: 'player-live',
+    useReverb: true,
     tests: [
       assertPageView,
       assertRadioScheduleComponentView,
@@ -214,6 +215,7 @@ const canonicalTestSuites = [
     pageIdentifier: 'hausa.articles.cw43vy8zdjvo.page',
     applicationType: 'responsive',
     contentType: 'article-sfv',
+    useReverb: true,
     tests: [
       assertPageView,
       assertLatestMediaComponentView,
