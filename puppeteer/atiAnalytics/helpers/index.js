@@ -1,4 +1,4 @@
-import envs from '../../../../support/config/envs';
+// import envs from '../../../../support/config/envs';
 
 export const getATIParamsFromURL = atiAnalyticsURL => {
   const url = new URL(atiAnalyticsURL);
