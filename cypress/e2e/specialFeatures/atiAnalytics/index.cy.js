@@ -253,6 +253,34 @@ const canonicalTestSuites = [
   },
   // Pages with Reverb
   {
+    path: '/pashto',
+    runforEnv: ['local', 'live'],
+    service: 'pashto',
+    pageIdentifier: 'pashto.page',
+    applicationType: 'responsive',
+    contentType: 'index-home',
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertRadioScheduleComponentView,
+      assertRadioScheduleComponentClick,
+    ],
+  },
+  {
+    path: '/persian',
+    runforEnv: ['test', 'live'],
+    service: 'persian',
+    pageIdentifier: 'persian.page',
+    applicationType: 'responsive',
+    contentType: 'index-home',
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertTopStoriesComponentView,
+      assertTopStoriesComponentClick,
+    ],
+  },
+  {
     path: '/pidgin',
     runforEnv: ['local', 'live'],
     service: 'pidgin',
@@ -320,10 +348,10 @@ const canonicalTestSuites = [
     ],
   },
   {
-    path: '/korean',
-    runforEnv: ['local', 'live'],
-    service: 'korean',
-    pageIdentifier: 'korean.page',
+    path: '/kyrgyz',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'kyrgyz',
+    pageIdentifier: 'kyrgyz.page',
     applicationType: 'responsive',
     contentType: 'index-home',
     useReverb: true,
@@ -331,6 +359,8 @@ const canonicalTestSuites = [
       assertPageView,
       assertMessageBannerComponentView,
       assertMessageBannerComponentClick,
+      assertMostReadComponentView,
+      assertMostReadComponentClick,
     ],
   },
   {
@@ -358,6 +388,20 @@ const canonicalTestSuites = [
     contentType: 'player-episode',
     useReverb: true,
     tests: [assertPageView],
+  },
+  {
+    path: '/serbian/lat',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'serbian',
+    pageIdentifier: 'serbianlat.page',
+    applicationType: 'responsive',
+    contentType: 'index-home',
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertMostReadComponentView,
+      assertMostReadComponentClick,
+    ],
   },
   // Article
   {
