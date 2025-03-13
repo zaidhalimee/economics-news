@@ -53,15 +53,9 @@ const FrontPageWithContext = ({
   </BrowserRouter>
 );
 
-jest.mock('uuid', () => {
-  let x = 1;
-  return {
-    v4: () => {
-      x += 1;
-      return `mockid${x}`;
-    },
-  };
-});
+jest.mock('#app/lib/utilities/getUUID', () =>
+  jest.fn().mockImplementation(() => 'mockId'),
+);
 
 jest.mock('../../components/ChartbeatAnalytics', () => {
   return () => <div>chartbeat</div>;

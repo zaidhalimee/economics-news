@@ -1,12 +1,12 @@
-import { v4 as uuid } from 'uuid';
 import lensPath from 'ramda/src/lensPath';
 import view from 'ramda/src/view';
 import set from 'ramda/src/set';
+import getUUID from '#app/lib/utilities/getUUID';
 
 const addIdsToItem =
   ({ lens, customKeyName, recursive }) =>
   item => {
-    const [shortId] = uuid().split('-');
+    const [shortId] = getUUID().split('-');
     const newItem = { [customKeyName || 'id']: shortId, ...item };
 
     if (recursive) {
