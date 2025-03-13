@@ -6,8 +6,6 @@ import {
   PHOTO_GALLERY_PAGE,
   MEDIA_ARTICLE_PAGE,
   HOME_PAGE,
-  ERROR_PAGE,
-  LIVE_PAGE,
 } from '../../../routes/utils/pageTypes';
 import { buildATIUrl, buildATIEventTrackingParams } from '.';
 import * as buildPageATIFunctionImports from './buildParams';

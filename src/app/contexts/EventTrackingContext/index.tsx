@@ -86,7 +86,7 @@ const getCampaignID = (pageType: CampaignPageTypes) => {
 const NO_TRACKING_PROPS = {};
 
 type EventTrackingProviderProps = {
-  atiData: ATIData;
+  atiData?: ATIData;
 };
 
 export const EventTrackingContextProvider = ({

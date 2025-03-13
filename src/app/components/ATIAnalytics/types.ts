@@ -147,6 +147,5 @@ export interface ATIPageTrackingProps {
 }
 
 export interface ATIProps {
-  data?: PageData;
   atiData?: ATIData;
 }
