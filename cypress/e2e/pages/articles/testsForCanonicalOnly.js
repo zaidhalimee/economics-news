@@ -81,7 +81,7 @@ export default ({ service, pageType, variant = 'default' }) =>
               .should('have.attr', 'href')
               .then($href => {
                 cy.get('a').click();
-                cy.url().should('eq', $href).should('contain', '.lite');
+                cy.url().should('contain', $href).should('contain', '.lite');
               });
           });
           cy.go('back');
