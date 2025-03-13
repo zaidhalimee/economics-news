@@ -43,7 +43,7 @@ export default ({
 
       // // Finding a link to click on the home page
       clickPromoLinkOnHomePage(pageType);
-      
+
       cy.log(
         `Asserting script switch button, url and document lang has persisted for other variant: ${otherVariant}`,
       );
