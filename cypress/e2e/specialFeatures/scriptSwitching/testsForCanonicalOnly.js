@@ -6,13 +6,7 @@ import {
   clickPromoLinkOnHomePage,
 } from '../utilities/scriptSwitchingJourneyActions';
 
-export default ({
-  serviceName,
-  pageType,
-  path,
-  variant,
-  otherVariant,
-}) => {
+export default ({ serviceName, pageType, path, variant, otherVariant }) => {
   describe(`Script Switching - ${serviceName} - ${pageType} - ${path}`, () => {
     beforeEach(() => {
       visitPage(path, pageType);
