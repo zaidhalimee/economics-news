@@ -8,7 +8,6 @@ import {
   ARTICLE_PAGE,
   FRONT_PAGE,
   MOST_READ_PAGE,
-  FEATURE_INDEX_PAGE,
   MEDIA_ASSET_PAGE,
   PHOTO_GALLERY_PAGE,
   STORY_PAGE,
@@ -69,8 +68,6 @@ export const getType = (pageType: PageTypes | 'index', shorthand = false) => {
       return STORY_PAGE;
     case PHOTO_GALLERY_PAGE:
       return PHOTO_GALLERY_PAGE;
-    case FEATURE_INDEX_PAGE:
-      return FEATURE_INDEX_PAGE;
     case TOPIC_PAGE:
       return 'Topics';
     case LIVE_PAGE:
@@ -182,7 +179,6 @@ interface GetTitleProps {
 export const getTitle = ({ pageType, title, brandName }: GetTitleProps) => {
   switch (pageType) {
     case FRONT_PAGE:
-    case FEATURE_INDEX_PAGE:
     case MOST_READ_PAGE:
     case TOPIC_PAGE:
     case LIVE_PAGE:

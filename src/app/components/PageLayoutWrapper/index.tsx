@@ -7,6 +7,7 @@ import { Helmet } from 'react-helmet';
 
 import GlobalStyles from '#psammead/psammead-styles/src/global-styles';
 import { PageTypes } from '#app/models/types/global';
+import { TopStoryItem } from '../../pages/ArticlePage/PagePromoSections/TopStoriesSection/types';
 import WebVitals from '../../legacy/containers/WebVitals';
 import HeaderContainer from '../../legacy/containers/Header';
 import FooterContainer from '../../legacy/containers/Footer';
@@ -15,8 +16,8 @@ import ServiceWorker from '../ServiceWorker';
 import { ServiceContext } from '../../contexts/ServiceContext';
 import { RequestContext } from '../../contexts/RequestContext';
 import fontFacesLazy from '../ThemeProvider/fontFacesLazy';
-
 import styles from './index.styles';
+import { OptimoMostReadRecord, CPSMostReadRecord } from '../MostRead/types';
 
 type ModelType = {
   blocks?: [
@@ -33,15 +34,11 @@ type Props = {
   pageData: {
     metadata: {
       type: PageTypes;
-      topics?: [
-        {
-          topicName: string;
-        },
-      ];
+      topics?: { topicName: string }[];
     };
-    content?: {
-      model?: ModelType;
-    };
+    content?: { model?: ModelType };
+    secondaryColumn?: { topStories: TopStoryItem[] };
+    mostRead?: { items: (OptimoMostReadRecord | CPSMostReadRecord)[] };
   };
   status: number;
 };
@@ -60,6 +57,7 @@ const PageLayoutWrapper = ({
   const pageType = pageData?.metadata?.type;
   const reportingPageType = pageType?.replace(/ /g, '');
   let wordCount: wordCountType = 0;
+  let propsForOJExperiment = {};
   if (pageType === 'article') {
     wordCount = pageData?.content?.model?.blocks
       ?.filter(block => block.type === 'text')
@@ -73,6 +71,37 @@ const PageLayoutWrapper = ({
         if (!innerBlocks) return reducer;
         return reducer + innerBlocks.split(' ').length;
       }, 0);
+
+    const topStories = pageData.secondaryColumn?.topStories;
+    const mostReadItems = pageData.mostRead?.items;
+    const servicesForVariantA = ['pidgin', 'hindi', 'urdu', 'uzbek', 'hausa'];
+    const servicesForVariantB = ['mundo', 'burmese', 'arabic'];
+
+    let variantValue;
+
+    if (servicesForVariantA.includes(service)) {
+      variantValue = 'A';
+    } else if (servicesForVariantB.includes(service)) {
+      variantValue = 'B';
+    } else {
+      variantValue = 'none';
+    }
+    const experimentVariant: 'A' | 'B' | 'none' = ['A', 'B'].includes(
+      variantValue,
+    )
+      ? (variantValue as 'A' | 'B')
+      : 'none';
+    let dataForOJExperiment;
+    if (experimentVariant === 'A') {
+      dataForOJExperiment = topStories;
+    } else if (experimentVariant === 'B' && mostReadItems) {
+      dataForOJExperiment = mostReadItems;
+    }
+
+    propsForOJExperiment = {
+      blocks: dataForOJExperiment || [],
+      experimentVariant,
+    };
   }
   const serviceFonts = fontFacesLazy(service);
   const fontJs =
@@ -140,6 +169,9 @@ const PageLayoutWrapper = ({
                 let wrappedMonth = wrappedPageTimeStart.getMonth() + 1;
                 let wrappedStorageKey = 'ws_bbc_wrapped';
                 let wrappedContents = {};
+                let topicsStorageKey = 'ws_bbc_topics';
+                let topicsContents = localStorage.getItem(topicsStorageKey) || "{}";
+                topicsContents = JSON.parse(topicsContents);
                 wrappedContents[wrappedYear] = {
                     'byMonth': {},
                     'pageTypeCounts': {},
@@ -165,7 +197,18 @@ const PageLayoutWrapper = ({
                   pageData?.metadata?.topics,
                 )};
                 if (wrappedTopics) {
-                    wrappedTopics.forEach(({ topicName }) => {
+                    wrappedTopics.forEach(({ topicName, topicId }) => {
+                        if (!topicsContents.${service}) topicsContents.${service} = {};
+                        if (topicsContents.${service}[topicName]) {
+                            topicsContents.${service}[topicName].count++;
+                        }
+                        else {
+                            topicsContents.${service}[topicName] = {
+                                'count': 1,
+                                'id': topicId,
+                                'path': "/${service}/topics/" + topicId
+                            };
+                        }
                         wrappedContentsShortcut.topicCounts[topicName] = wrappedContentsShortcut.topicCounts[topicName] ? wrappedContentsShortcut.topicCounts[topicName] + 1 : 1;
                     });
                 }
@@ -185,6 +228,7 @@ const PageLayoutWrapper = ({
                 wrappedContentsShortcut.pageTypeCounts.${reportingPageType} = wrappedContentsShortcut.pageTypeCounts.${reportingPageType} ? wrappedContentsShortcut.pageTypeCounts.${reportingPageType} + 1 : 1;
                 wrappedContentsShortcut.byMonth[wrappedMonth] = wrappedContentsShortcut.byMonth[wrappedMonth] ? wrappedContentsShortcut.byMonth[wrappedMonth] + 1 : 1;
                 wrappedContents[wrappedYear] = wrappedContentsShortcut;
+                localStorage.setItem(topicsStorageKey, JSON.stringify(topicsContents));
     `;
 
   return (
@@ -202,7 +246,7 @@ const PageLayoutWrapper = ({
       {!isErrorPage && <WebVitals pageType={pageType} />}
       <GlobalStyles />
       <div id="main-wrapper" css={styles.wrapper}>
-        <HeaderContainer />
+        <HeaderContainer propsForOJExperiment={propsForOJExperiment} />
         <div css={styles.content}>{children}</div>
         <FooterContainer />
       </div>

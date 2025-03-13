@@ -120,7 +120,6 @@ exports[`Document Component should render APP version correctly 1`] = `
               window.__reverb.__resolveReverbLoaded = resolve;
               window.__reverb.__rejectReverbLoaded = reject;
             });
-
             window.__reverb.__reverbTimeout = setTimeout(() =&gt; {
               window.__reverb.__rejectReverbLoaded();
             }, 5000);
@@ -205,6 +204,21 @@ exports[`Document Component should render LITE version correctly 1`] = `
     <style>
       .css-7prgni-StyledLink{display:inline-block;}
     </style>
+    <script>
+      
+  window.addEventListener('load', function (){
+    (function liteATIClickTracking() {
+    return 'Tracking script placeholder';
+  })();
+    (function liteATIClickTracking() {
+    return 'Click script placeholder';
+  })();
+    (function liteATIClickTracking() {
+    return 'View script placeholder';
+  })();
+  });
+
+    </script>
   </head>
   <body>
     <div>
@@ -260,7 +274,6 @@ exports[`Document Component should render correctly 1`] = `
               window.__reverb.__resolveReverbLoaded = resolve;
               window.__reverb.__rejectReverbLoaded = reject;
             });
-
             window.__reverb.__reverbTimeout = setTimeout(() =&gt; {
               window.__reverb.__rejectReverbLoaded();
             }, 5000);
