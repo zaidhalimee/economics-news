@@ -137,7 +137,7 @@ const getHeadlineComponent =
       <>
         <Headings {...props} />
         {!isLite && showCTA && (
-          <div css={styles.liteCtaContainer}>
+          <div css={styles.liteCtaContainer} data-e2e="to-lite-site">
             <CallToActionLinkWithChevron
               href={`${pathname}.lite`}
               css={styles.liteCTA}
