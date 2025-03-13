@@ -11,58 +11,73 @@ const ROOT_DIR = path.resolve();
 const symbolRegex =
   /\.|,|!|@|#|%|\^|&|\*|\(|\)|-|_|=|\+|\[|\]|\{|\}|;|:|'|"|<|>|\/|\?|\\|\||`|~|\n/g;
 
-export function searchV2(index, target) {
+function binarySearch(words, target) {
+  let start = 0;
+  let end = words.length;
+
+  while (start <= end) {
+    const midpoint = Math.floor((start + end) / 2);
+
+    if (words[midpoint] === target) {
+      return midpoint;
+    }
+    if (target < words[midpoint]) {
+      end = midpoint - 1;
+    } else {
+      start = midpoint + 1;
+    }
+  }
+
+  return -1;
+}
+
+export function searchV2(articleList, target) {
   const formattedText = target
     .toLowerCase()
     .replace(commonWords, '')
     .replace(symbolRegex, '');
+
   const wordArray = formattedText.split(' ');
-  const results = {};
-  for (let i = 0; i < wordArray.length; i += 1) {
-    const word = wordArray[i];
-    const matches = index.get(word);
-    if (matches) {
-      for (let j = 0; j < matches.length; j += 1) {
-        const { id, count } = matches[j];
-        if (results[id]) {
-          results[id].wordsMatched += 1;
-          results[id].totalCount += count;
-        } else {
-          results[id] = {
-            wordsMatched: 1,
-            totalCount: count,
-            url: `https://www.bbc.co.uk/news/articles/${id}`,
-          };
-        }
+
+  const matches = [];
+
+  for (let i = 0; i < articleList.length; i += 1) {
+    const { words, counts, url } = articleList[i];
+
+    let wordMatchCount = 0;
+    let totalMatchValue = 0;
+
+    for (let j = 0; j < wordArray.length; j += 1) {
+      const hit = binarySearch(words, wordArray[j]);
+      // const hit = words.indexOf(target);
+      if (hit >= 0) {
+        wordMatchCount += 1;
+        totalMatchValue += counts[hit];
       }
     }
+
+    if (wordMatchCount > 0) {
+      matches.push({
+        wordMatchCount,
+        totalMatchValue,
+        url,
+      });
+    }
   }
-  const sortedArray = Object.values(results).sort((a, b) => {
-    const matchCount = b.wordsMatched - a.wordsMatched;
+
+  const sortedArray = matches.sort((a, b) => {
+    const matchCount = b.wordMatchCount - a.wordMatchCount;
     if (matchCount === 0) {
-      return b.totalCount - a.totalCount;
+      return b.totalMatchValue - a.totalMatchValue;
     }
     return matchCount;
   });
+
   return sortedArray.slice(0, 1);
 }
 
-function addPath(map, slugs) {
-  let root = map;
-  slugs.forEach((slug, index) => {
-    if (!root.has(slug)) {
-      if (index === slugs.length - 1) {
-        root.set(slug, []);
-      } else {
-        root.set(slug, new Map());
-      }
-    }
-    root = root.get(slug);
-  });
-}
-
 function loadIndexV2() {
-  const dataDir = path.join(ROOT_DIR, 'OUTPUT_2');
+  const dataDir = path.join(ROOT_DIR, 'OUTPUT_3');
 
   const yearList = fs.readdirSync(dataDir);
   const index = new Map();
@@ -71,39 +86,27 @@ function loadIndexV2() {
 
   for (let i = 0; i < yearList.length; i += 1) {
     const year = yearList[i];
-    if (yearRegex.test(year)) {
-      const readPath = path.join(ROOT_DIR, 'OUTPUT_2', year, 'News');
+    if (yearRegex.test(year) && parseInt(year, 10) === 2010) {
+      const readPath = path.join(ROOT_DIR, 'OUTPUT_3', year, 'News');
       const content = fs.readdirSync(readPath);
       const indexForYear = new Map();
       let totalRecordsForYear = 0;
-
       for (let j = 0; j < content.length; j += 1) {
         const article = content[j];
         const month = article.split('-')[1];
 
         const file = fs.readFileSync(path.join(readPath, article), 'utf8');
-        const { words, counts } = JSON.parse(file);
+        const parsed = JSON.parse(file);
 
-        for (let k = 0; k < words.length; k += 1) {
-          const word = words[k];
-          const id = article;
-          addPath(indexForYear, [month, word]);
-
-          try {
-            indexForYear.get(month).get(word).push({ id, count: counts[k] });
-          } catch (error) {
-            logger.error(
-              'Error on initialising',
-              year,
-              month,
-              word,
-              indexForYear.get(month).get(word),
-            );
-          }
+        if (indexForYear.has(month)) {
+          indexForYear.get(month).push(parsed);
+        } else {
+          indexForYear.set(month, [parsed]);
         }
 
         totalRecordsForYear += 1;
       }
+
       index.set(year, indexForYear);
       totalRecords += totalRecordsForYear;
       logger.info(`Initialised ${year}, ${totalRecordsForYear} records.`);
