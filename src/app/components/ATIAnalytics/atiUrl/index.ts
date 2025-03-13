@@ -489,14 +489,14 @@ export const buildReverbPageSectionEventModel = ({
   statsDestination,
   componentName,
   campaignID,
-  format,
+  // format,
   type,
-  advertiserID,
+  // advertiserID,
   url,
 }: ATIEventTrackingProps) => {
   // const eventDetails = {
   //   eventName: type === 'view' ? 'sectionView' : 'sectionClick',
-  //   eventPublisher: 'viewability',
+  //   eventPublisher: type === 'click' ? 'click' : 'impression',
   //   componentName,
   //   container: campaignID,
   //   attribute: componentName,
@@ -507,9 +507,20 @@ export const buildReverbPageSectionEventModel = ({
   //   isClick: type === 'click',
   // };
 
-  const viewabilityEventDetails = {
-    item: {},
-    group: {},
+  const eventDetails = {
+    eventName: type === 'view' ? 'sectionView' : 'sectionClick',
+    item: {
+      name: componentName,
+      link: url,
+    },
+    group: {
+      name: campaignID,
+    },
+    event: {
+      category: 'viewability',
+      action: type === 'click' ? 'select' : 'view',
+    },
+    isClick: type === 'click',
   };
 
   return {
@@ -526,6 +537,6 @@ export const buildReverbPageSectionEventModel = ({
         isSignedIn: false,
       },
     },
-    eventDetails: viewabilityEventDetails,
+    eventDetails,
   };
 };
