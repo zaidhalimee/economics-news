@@ -13,7 +13,7 @@ import { NON_200_RESPONSE } from '#server/utilities/customMetrics/metrics.const'
 import isLitePath from '#app/routes/utils/isLitePath';
 import PageDataParams from '#app/models/types/pageDataParams';
 
-import extractHeaders from 'simorgh/src/server/utilities/extractHeaders/extractHeaders';
+import extractHeaders from '../../../../../src/server/utilities/extractHeaders';
 import isValidPageNumber from '../../../../utilities/pageQueryValidator';
 import getPageData from '../../../../utilities/pageRequests/getPageData';
 
