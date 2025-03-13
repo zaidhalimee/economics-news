@@ -228,6 +228,7 @@ export const service: DefaultServiceConfig = {
         },
         listen: 'સાંભળો',
         watch: 'જુઓ',
+        watchMoments: 'વીડિયો જુઓ',
         liveLabel: 'LIVE',
         nextLabel: 'NEXT',
         previousRadioShow: 'આ પહેલાંનો રેડિયો શો',
