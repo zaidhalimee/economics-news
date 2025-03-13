@@ -62,6 +62,22 @@ const renderRouter = props =>
     );
   });
 
+jest.mock('@optimizely/react-sdk', () => ({
+  ...jest.requireActual('@optimizely/react-sdk'),
+  setLogger: jest.fn(),
+  createInstance: jest.fn(),
+}));
+jest.mock('#app/legacy/containers/OptimizelyArticleCompleteTracking');
+jest.mock('#app/legacy/containers/OptimizelyPageViewTracking');
+jest.mock('#app/hooks/useOptimizelyVariation', () => ({
+  __esModule: true,
+  default: jest.fn(),
+}));
+jest.mock('#app/hooks/useOptimizelyMvtVariation', () => ({
+  __esModule: true,
+  default: jest.fn(),
+}));
+
 describe('Routes', () => {
   beforeEach(() => {
     jest.setTimeout(10000);
