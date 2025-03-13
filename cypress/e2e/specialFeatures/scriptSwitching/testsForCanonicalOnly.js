@@ -18,7 +18,7 @@ export default ({ serviceName, pageType, path, variant, otherVariant }) => {
       );
       allVariantAssertions(serviceName, variant);
 
-      // // Clicks script switcher
+      // Clicks script switcher
       clickScriptSwitcher(otherVariant);
 
       cy.log(
@@ -26,7 +26,7 @@ export default ({ serviceName, pageType, path, variant, otherVariant }) => {
       );
       allVariantAssertions(serviceName, otherVariant);
 
-      // // Navigate to home page by clicking link in the banner
+      // Navigate to home page by clicking link in the banner
       clickHomePageLink(serviceName, otherVariant);
 
       cy.log(
@@ -34,7 +34,7 @@ export default ({ serviceName, pageType, path, variant, otherVariant }) => {
       );
       allVariantAssertions(serviceName, otherVariant);
 
-      // // Finding a link to click on the home page
+      // Finding a link to click on the home page
       clickPromoLinkOnHomePage(pageType);
 
       cy.log(
@@ -42,7 +42,7 @@ export default ({ serviceName, pageType, path, variant, otherVariant }) => {
       );
       allVariantAssertions(serviceName, otherVariant);
 
-      // // Clicks script switcher to original variant
+      // Clicks script switcher to original variant
       clickScriptSwitcher(variant);
 
       cy.log(

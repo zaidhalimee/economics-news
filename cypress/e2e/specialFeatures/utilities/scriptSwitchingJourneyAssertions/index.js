@@ -1,14 +1,12 @@
 import appConfig from '../../../../../src/server/utilities/serviceConfigs/index';
 
 const assertScriptSwitchButton = (product, variantValue) => {
-  const scriptToSwitchTo = appConfig[product][variantValue].scriptLink.variant;
-  const scriptToSwitchToText = appConfig[product][variantValue].scriptLink.text;
-
-  // seems like there are more than one banner sometimes?
-  cy.contains(scriptToSwitchToText, { matchCase: false });
-  // cy.get('header[role="banner"]').first().within(() => {
-  //   cy.get(`a[data-variant="${scriptToSwitchTo}"]`).should('exist');
-  // });
+const scriptToSwitchToText = appConfig[product][variantValue].scriptLink.text;
+const scriptToSwitchTo = appConfig[product][variantValue].scriptLink.variant;
+cy.contains(scriptToSwitchToText, {matchCase: false})
+  cy.get('header[role="banner"]').first().within(() => {
+    cy.get(`a[data-variant="${scriptToSwitchTo}"]`).should('exist');
+  });
 };
 
 const assertURLContains = (serviceName, variantValue) => {

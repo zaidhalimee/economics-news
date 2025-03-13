@@ -22,8 +22,6 @@ const clickFirstMapLink = () => {
 export const clickScriptSwitcher = variant => {
   cy.get(`a[data-variant="${variant}"]`).click();
 };
-
-// ToDo: double check this method is not used elsewhere
 export const clickHomePageLink = (product, variant) => {
   cy.get('header[role="banner"]').within(() => {
     cy.get(
@@ -33,7 +31,7 @@ export const clickHomePageLink = (product, variant) => {
 };
 
 export const clickPromoLinkOnHomePage = pageType => {
-  // If it is a MAP test, find first MAP within a StoryPromoLi item and click it
+  // If it is a MAP test, find first MAP on the homepage and click it
   if (pageType === 'mediaAssetPage') {
     clickFirstMapLink();
   } else {
