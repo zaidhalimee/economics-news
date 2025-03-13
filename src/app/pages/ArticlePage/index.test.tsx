@@ -152,6 +152,17 @@ describe('Article Page', () => {
     expect(liteCTA).toBeInTheDocument();
   });
 
+  it('should not render liteCTA when liteSiteCTA toggle is false', () => {
+    render(<ArticlePage pageData={articleDataPersian} />, {
+      service: 'gahuza',
+      toggles: { liteSiteCTA: { enabled: false } },
+    });
+
+    const liteCTA = screen.queryByRole('link', { name: /Nyandiko gusa/i });
+
+    expect(liteCTA).not.toBeInTheDocument();
+  });
+
   it('should use headline for meta description if summary does not exist', async () => {
     const articleDataNewsWithSummary = mergeDeepLeft(
       {
