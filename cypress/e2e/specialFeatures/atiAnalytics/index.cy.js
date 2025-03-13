@@ -253,6 +253,20 @@ const canonicalTestSuites = [
   },
   // Pages with Reverb
   {
+    path: '/nepali',
+    runforEnv: ['test'],
+    service: 'nepali',
+    pageIdentifier: 'nepali.page',
+    applicationType: 'responsive',
+    contentType: 'index-home',
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertBillboardComponentView,
+      assertBillboardComponentClick,
+    ],
+  },
+  {
     path: '/pashto',
     runforEnv: ['local', 'live'],
     service: 'pashto',
