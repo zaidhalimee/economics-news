@@ -1,4 +1,6 @@
 export default () => {
+  const SERVICE_WORKER_CACHE = 'simorghCache_v1';
+
   describe('Service Worker', () => {
     it('is available', () => {
       cy.window(win => {
@@ -9,13 +11,13 @@ export default () => {
     describe('Caching', () => {
       it('initialises a simorgh cache', async () => {
         const keys = await caches.keys();
-        expect(keys, 'Cache.keys').to.contain('simorghCache_v1');
+        expect(keys, 'caches.keys()').to.contain('simorghCache_v1');
       });
 
       it('simorgh cache is not empty', async () => {
-        caches.open('simorghCache_v1').then(simorghCache =>
+        caches.open(SERVICE_WORKER_CACHE).then(simorghCache =>
           simorghCache.keys().then(keys => {
-            expect(keys, 'simorgh cache keys').not.to.be.empty;
+            expect(keys, `${SERVICE_WORKER_CACHE}.keys()`).not.to.be.empty;
           }),
         );
       });
@@ -23,7 +25,7 @@ export default () => {
       const cacheableItems = ['cwr.js', 'woff2', 'moment-lib', 'frosted_promo'];
 
       it(`simorgh cache contains cached responses for cacheable items - ${JSON.stringify(cacheableItems)}`, () => {
-        caches.open('simorghCache_v1').then(simorghCache =>
+        caches.open(SERVICE_WORKER_CACHE).then(simorghCache =>
           simorghCache.keys().then(keys => {
             cacheableItems.forEach(cachedItem => {
               const matchingItems = keys
@@ -37,7 +39,7 @@ export default () => {
       });
 
       it(`simorgh cache contains only known cacheable items - ${JSON.stringify(cacheableItems)}`, () => {
-        caches.open('simorghCache_v1').then(simorghCache =>
+        caches.open(SERVICE_WORKER_CACHE).then(simorghCache =>
           simorghCache.keys().then(keys => {
             const matchingCachedItems = [];
 
