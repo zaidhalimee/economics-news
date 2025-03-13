@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-portuguese',
     atiAnalyticsProducerId: '33',
     atiAnalyticsProducerName: 'BRASIL',
+    useReverb: true,
     chartbeatDomain: 'brasil.bbc.co.uk', // this is meant to be different to the service name
     brandName: 'BBC News Brasil',
     product: 'BBC News',
@@ -239,6 +240,7 @@ export const service: DefaultServiceConfig = {
         video: 'Vídeo',
         listen: 'Listen',
         watch: 'Assista',
+        watchMoments: 'Assista',
         listenLive: 'Ouça ao vivo',
         listenNext: 'Ouça o próximo',
         liveLabel: 'AO VIVO',
