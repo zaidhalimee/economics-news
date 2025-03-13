@@ -133,10 +133,6 @@ const getHeadlineComponent =
       translations?.liteSite?.articleDataSavingLinkText ??
       'Data-saving Version';
 
-    console.log(showCTA);
-    console.log(translations);
-    console.log(articleDataSavingLinkText);
-
     return (
       <>
         <Headings {...props} />
@@ -157,8 +153,6 @@ const getHeadlineComponent =
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const { isApp, pathname, isLite } = useContext(RequestContext);
-
-  console.log(pathname);
 
   const {
     translations,

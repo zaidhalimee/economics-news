@@ -1,7 +1,8 @@
 import { OptimoBlock } from '#app/models/types/optimo';
 
 export type ComponentToRenderProps = {
-  blocks: OptimoBlock[];
+  type: string, 
+  blocks?: OptimoBlock[];
 };
 
 export type TimeStampProps = {
