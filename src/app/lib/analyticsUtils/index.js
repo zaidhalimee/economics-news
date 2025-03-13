@@ -1,10 +1,10 @@
 import Cookie from 'js-cookie';
-import { v4 as uuid } from 'uuid';
 import pathOr from 'ramda/src/pathOr';
 import path from 'ramda/src/path';
 import Url from 'url-parse';
 import onClient from '#lib/utilities/onClient';
-import isOperaProxy from '../utilities/isOperaProxy';
+import getUUID from '#lib/utilities/getUUID';
+import isOperaProxy from '#lib/utilities/isOperaProxy';
 import {
   MEDIUM_CAMPAIGN_IDENTIFIER,
   XTOR_CAMPAIGN_IDENTIFIER,
@@ -213,7 +213,7 @@ export const getAtUserId = () => {
     }
   }
 
-  const val = path(['val'], cookie) || uuid();
+  const val = path(['val'], cookie) || getUUID();
 
   Cookie.set(cookieName, JSON.stringify({ val }), {
     expires,
