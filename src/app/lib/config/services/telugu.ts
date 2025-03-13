@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-telugu',
     atiAnalyticsProducerId: '89',
     atiAnalyticsProducerName: 'TELUGU',
+    useReverb: true,
     chartbeatDomain: 'telugu.bbc.co.uk',
     brandName: 'BBC News తెలుగు',
     product: 'BBC News',

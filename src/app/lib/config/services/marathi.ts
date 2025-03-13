@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-marathi',
     atiAnalyticsProducerId: '59',
     atiAnalyticsProducerName: 'MARATHI',
+    useReverb: true,
     chartbeatDomain: 'marathi.bbc.co.uk',
     brandName: 'BBC News मराठी',
     product: 'BBC News',
