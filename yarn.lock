@@ -1709,12 +1709,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:7.26.9":
-  version: 7.26.9
-  resolution: "@babel/runtime@npm:7.26.9"
+"@babel/runtime@npm:7.26.10, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.18, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.8.4":
+  version: 7.26.10
+  resolution: "@babel/runtime@npm:7.26.10"
   dependencies:
     regenerator-runtime: "npm:^0.14.0"
-  checksum: 10/08edd07d774eafbf157fdc8450ed6ddd22416fdd8e2a53e4a00349daba1b502c03ab7f7ad3ad3a7c46b9a24d99b5697591d0f852ee2f84642082ef7dda90b83d
+  checksum: 10/9d7ff8e96abe3791047c1138789c742411e3ef19c4d7ca18ce916f83cec92c06ec5dc64401759f6dd1e377cf8a01bbd2c62e033eb7550f435cf6579768d0d4a5
   languageName: node
   linkType: hard
 
@@ -3122,71 +3122,71 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/env@npm:15.1.6":
-  version: 15.1.6
-  resolution: "@next/env@npm:15.1.6"
-  checksum: 10/c3a05fc217906df99ff13096f7c3647967a3c56bb5a3c2f070ffde2cba183d6c1375fba99f6c16913cb323b76750bfe4641968adf381b08ac7a0016f01bd89b9
+"@next/env@npm:15.2.2":
+  version: 15.2.2
+  resolution: "@next/env@npm:15.2.2"
+  checksum: 10/ad579724859dab7c280e191b6a92df813587546690e65b91824bd177743c39463bb204a2e0250c11d211c39afbf416f9bb130985efab9aaadffb4d5e6e0ee4ab
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-arm64@npm:15.1.6":
-  version: 15.1.6
-  resolution: "@next/swc-darwin-arm64@npm:15.1.6"
-  checksum: 10/ce669333fefe1228a6f4eb522b686ed072fe702fff2bcfb604bc56baafcf4dbdb7653a728d96fda9db8c58164901ae447dd5edfa6c3b347048727166ae778e5e
+"@next/swc-darwin-arm64@npm:15.2.2":
+  version: 15.2.2
+  resolution: "@next/swc-darwin-arm64@npm:15.2.2"
+  checksum: 10/bc2ad39edc45b149a5e0f8e0021765fc0548917920eb1e99f5d6188b5101cbdbb5b03b18a233e920815de4a2b9e7437e363f0fb69dc26973fd8ef0c4d3cbf76f
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-x64@npm:15.1.6":
-  version: 15.1.6
-  resolution: "@next/swc-darwin-x64@npm:15.1.6"
-  checksum: 10/6369b4b3b251a8dac8983b7fcdd091f58a2c1971145a03e39a476f835f51d1ab0fea6cce61b245c719fdd16253c4c2df57f1929e8d5e213e43d841801baadb02
+"@next/swc-darwin-x64@npm:15.2.2":
+  version: 15.2.2
+  resolution: "@next/swc-darwin-x64@npm:15.2.2"
+  checksum: 10/4d804fbbe604bd5efda27f6927e016a656259de99680a457d5bb0569da8dd27e2197260209b220c175a67d600db1f7e857e0c7c2f898f6cee9b3d64b07d823ed
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-gnu@npm:15.1.6":
-  version: 15.1.6
-  resolution: "@next/swc-linux-arm64-gnu@npm:15.1.6"
-  checksum: 10/6371f0a0dd9047acbb48edaf22abca0c57be077965a538452cc2d24a74b8c334221dbac1d4dd45a211f277909fc4f38f401d6064b86f3f7784b7745edeba211a
+"@next/swc-linux-arm64-gnu@npm:15.2.2":
+  version: 15.2.2
+  resolution: "@next/swc-linux-arm64-gnu@npm:15.2.2"
+  checksum: 10/85597112e610ea3a5b0cb3e4ef2e3a5a8f462352d62dd0eec3302a5d71948452263a275012155a02474012405a2756140751b7ce0205e8abd2e3253d35f76a11
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-musl@npm:15.1.6":
-  version: 15.1.6
-  resolution: "@next/swc-linux-arm64-musl@npm:15.1.6"
+"@next/swc-linux-arm64-musl@npm:15.2.2":
+  version: 15.2.2
+  resolution: "@next/swc-linux-arm64-musl@npm:15.2.2"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-gnu@npm:15.1.6":
-  version: 15.1.6
-  resolution: "@next/swc-linux-x64-gnu@npm:15.1.6"
-  checksum: 10/cae8a538430d79dd4beac23f0f75c9990d3ee785948e4f0aa465d9d387caf83cf726bdc85b76c308768e9dc4553bd640cc279a0875317302b298eb96d373e869
+"@next/swc-linux-x64-gnu@npm:15.2.2":
+  version: 15.2.2
+  resolution: "@next/swc-linux-x64-gnu@npm:15.2.2"
+  checksum: 10/a0ddbbb3a7cf3a5207a3eac77101cbc724a2e12e70a71010e1ebc8daf2fb63a36eb27568ae40a31db88c188355146111325bfb6577c5433bbf8d9b776ce63bad
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-musl@npm:15.1.6":
-  version: 15.1.6
-  resolution: "@next/swc-linux-x64-musl@npm:15.1.6"
+"@next/swc-linux-x64-musl@npm:15.2.2":
+  version: 15.2.2
+  resolution: "@next/swc-linux-x64-musl@npm:15.2.2"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-win32-arm64-msvc@npm:15.1.6":
-  version: 15.1.6
-  resolution: "@next/swc-win32-arm64-msvc@npm:15.1.6"
-  checksum: 10/8efc5a8219f62a04cf138c9f883ded704d088ecfee52be2852352e9ee4fd85ca2d09ef98eb3883fab6dc57ee8d427c6316bdc3d7822e66f81555f08affcb940f
+"@next/swc-win32-arm64-msvc@npm:15.2.2":
+  version: 15.2.2
+  resolution: "@next/swc-win32-arm64-msvc@npm:15.2.2"
+  checksum: 10/6654cd0d6ba00bffcc10cf101554cf605b17946bf3bd321acbfb9e624b66f504913d162d3d3d969751573c599d363a6a1394a4216788c36c119778101c912418
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-win32-x64-msvc@npm:15.1.6":
-  version: 15.1.6
-  resolution: "@next/swc-win32-x64-msvc@npm:15.1.6"
-  checksum: 10/f07087a86c704178d12818ecd65b7dd12170c8e8f329fe3a76b5539c30369225eb365dda4a3a5f12abbc5f19a9e2c647a9d6bca79b3de2f3175ec080b8a8f7a5
+"@next/swc-win32-x64-msvc@npm:15.2.2":
+  version: 15.2.2
+  resolution: "@next/swc-win32-x64-msvc@npm:15.2.2"
+  checksum: 10/09700f98aa329b78ed2108f7f00348cf7c0e25ae402d56e67ce03a337a27611d6b14875863c4213b8b4131e41c2a84cde7cdf490d5f1147ffa0deccbc2da36b1
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -12438,19 +12438,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:15.1.6":
-  version: 15.1.6
-  resolution: "next@npm:15.1.6"
+"next@npm:15.2.2":
+  version: 15.2.2
+  resolution: "next@npm:15.2.2"
   dependencies:
-    "@next/env": "npm:15.1.6"
-    "@next/swc-darwin-arm64": "npm:15.1.6"
-    "@next/swc-darwin-x64": "npm:15.1.6"
-    "@next/swc-linux-arm64-gnu": "npm:15.1.6"
-    "@next/swc-linux-arm64-musl": "npm:15.1.6"
-    "@next/swc-linux-x64-gnu": "npm:15.1.6"
-    "@next/swc-linux-x64-musl": "npm:15.1.6"
-    "@next/swc-win32-arm64-msvc": "npm:15.1.6"
-    "@next/swc-win32-x64-msvc": "npm:15.1.6"
+    "@next/env": "npm:15.2.2"
+    "@next/swc-darwin-arm64": "npm:15.2.2"
+    "@next/swc-darwin-x64": "npm:15.2.2"
+    "@next/swc-linux-arm64-gnu": "npm:15.2.2"
+    "@next/swc-linux-arm64-musl": "npm:15.2.2"
+    "@next/swc-linux-x64-gnu": "npm:15.2.2"
+    "@next/swc-linux-x64-musl": "npm:15.2.2"
+    "@next/swc-win32-arm64-msvc": "npm:15.2.2"
+    "@next/swc-win32-x64-msvc": "npm:15.2.2"
     "@swc/counter": "npm:0.1.3"
     "@swc/helpers": "npm:0.5.15"
     busboy: "npm:1.6.0"
@@ -12495,7 +12495,7 @@ __metadata:
       optional: true
   bin:
     next: dist/bin/next
-  checksum: 10/145fd878d99e3c93408d2571a2acc4c4542220162f8aa0495d494a5f9b38e919815eba71d15735ad2ca253404395fb03c728e28590c2aeb39133581f93da192c
+  checksum: 10/d08ac7dc9503ad6944c5fe322f6dd958960bc1c41c8f7d360d53d93c3c9408008906294d2b9a5e143ad8db54b23a1fc9fb2db7b0b5e45e352006952c402f2a82
   languageName: node
   linkType: hard
 
@@ -14718,6 +14718,12 @@ __metadata:
     "@emotion/jest": "npm:^11.11.0"
     "@jest/environment": "npm:^29.7.0"
     "@jest/types": "npm:^29.6.3"
+    "@next/swc-darwin-arm64": "npm:15.2.2"
+    "@next/swc-darwin-x64": "npm:15.2.2"
+    "@next/swc-linux-arm64-gnu": "npm:15.2.2"
+    "@next/swc-linux-x64-gnu": "npm:15.2.2"
+    "@next/swc-win32-arm64-msvc": "npm:15.2.2"
+    "@next/swc-win32-x64-msvc": "npm:15.2.2"
     "@testing-library/jest-dom": "npm:6.6.3"
     "@testing-library/react": "npm:16.2.0"
     babel-plugin-transform-rename-import: "npm:2.3.0"
@@ -14726,7 +14732,7 @@ __metadata:
     cypress-terminal-report: "npm:7.1.0"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
-    next: "npm:15.1.6"
+    next: "npm:15.2.2"
     next-test-api-route-handler: "npm:4.0.15"
     npm-run-all2: "npm:7.0.2"
     ts-node: "npm:^10.9.2"
@@ -14748,7 +14754,7 @@ __metadata:
     "@babel/preset-env": "npm:7.26.9"
     "@babel/preset-react": "npm:7.26.3"
     "@babel/preset-typescript": "npm:7.26.0"
-    "@babel/runtime": "npm:7.26.9"
+    "@babel/runtime": "npm:7.26.10"
     "@bbc/web-vitals": "npm:2.5.3"
     "@cypress/webpack-preprocessor": "npm:6.0.2"
     "@emotion/babel-plugin": "npm:11.13.5"
@@ -14768,12 +14774,6 @@ __metadata:
     "@loadable/component": "npm:5.16.4"
     "@loadable/server": "npm:5.16.5"
     "@loadable/webpack-plugin": "npm:5.15.2"
-    "@next/swc-darwin-arm64": "npm:15.1.6"
-    "@next/swc-darwin-x64": "npm:15.1.6"
-    "@next/swc-linux-arm64-gnu": "npm:15.1.6"
-    "@next/swc-linux-x64-gnu": "npm:15.1.6"
-    "@next/swc-win32-arm64-msvc": "npm:15.1.6"
-    "@next/swc-win32-x64-msvc": "npm:15.1.6"
     "@optimizely/react-sdk": "npm:3.2.3"
     "@storybook/addon-a11y": "npm:8.6.4"
     "@storybook/addon-backgrounds": "npm:8.6.4"
