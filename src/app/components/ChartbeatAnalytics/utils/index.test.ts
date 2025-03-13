@@ -25,12 +25,23 @@ import {
 } from '.';
 import { PageTypes, Services } from '../../../models/types/global';
 
-let isOnClient = false;
+jest.mock('#lib/utilities/onClient', () =>
+  jest.fn().mockImplementation(() => true),
+);
 
-jest.mock('../../../lib/utilities/onClient', () => jest.fn());
-(onClient as jest.Mock).mockImplementation(() => isOnClient);
+const mockWindowObj = {
+  location: {
+    pathname: '/',
+  },
+} as Window & typeof globalThis;
+
+jest.spyOn(window, 'window', 'get').mockImplementation(() => mockWindowObj);
 
 describe('Chartbeat utilities', () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('should return the correct chartbeat UID', () => {
     expect(chartbeatUID).toBe(50924);
   });
@@ -41,17 +52,16 @@ describe('Chartbeat utilities', () => {
 
   describe('Chartbeat ID Cookie', () => {
     it('should return null when onClient is false', () => {
+      (onClient as jest.Mock).mockReturnValueOnce(false);
       expect(getSylphidCookie()).toBeFalsy();
     });
 
     it('should return null when ID cookie does not exist', () => {
-      isOnClient = true;
       expect(getSylphidCookie()).toBeFalsy();
     });
 
     it('should return the contents of the ID cookie when a value is present', () => {
       const expectedCookieValue = 'foobar';
-      isOnClient = true;
       (jest.spyOn(Cookie, 'get') as jest.Mock).mockImplementation(
         () => expectedCookieValue,
       );
@@ -301,169 +311,158 @@ describe('Chartbeat utilities', () => {
         expect(getTitle({ pageType, title })).toBe(expected);
       },
     );
+  });
 
-    describe('Chartbeat Config', () => {
-      isOnClient = true;
-      it('should return config for amp pages when page type is article and env is live', () => {
-        const fixtureData: GetConfigProps = {
-          isAmp: true,
-          platform: 'amp',
-          pageType: ARTICLE_PAGE,
-          title: 'This is an article title',
-          brandName: '',
-          chartbeatDomain: 'bbc.co.uk',
-          env: 'live',
-          service: 'news',
-          origin: 'bbc.com',
-          previousPath: '/previous-path',
-          contentType: 'New Article',
-        };
+  describe('Chartbeat Config', () => {
+    it('should return config for amp pages when page type is article and env is live', () => {
+      const fixtureData: GetConfigProps = {
+        isAmp: true,
+        platform: 'amp',
+        pageType: ARTICLE_PAGE,
+        title: 'This is an article title',
+        brandName: '',
+        chartbeatDomain: 'bbc.co.uk',
+        env: 'live',
+        service: 'news',
+        contentType: 'New Article',
+      };
 
-        const expectedConfig = {
-          contentType: 'New Article',
-          domain: 'bbc.co.uk',
-          idSync: {
-            bbc_hid: 'foobar',
-          },
-          sections: 'News, News - ART',
-          title: 'This is an article title',
-          uid: 50924,
-          virtualReferrer: `\${documentReferrer}`,
-        };
+      const expectedConfig = {
+        contentType: 'New Article',
+        domain: 'bbc.co.uk',
+        idSync: {
+          bbc_hid: 'foobar',
+        },
+        sections: 'News, News - ART',
+        title: 'This is an article title',
+        uid: 50924,
+        virtualReferrer: `\${documentReferrer}`,
+      };
 
-        expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
-      });
+      expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
+    });
 
-      it('should return config for canonical pages when page type is MAP and env is live', () => {
-        const fixtureData: GetConfigProps = {
-          isAmp: false,
-          platform: 'canonical',
-          pageType: MEDIA_ASSET_PAGE,
-          sectionName: 'Media',
-          categoryName: 'News',
-          title: 'MAP Page Title',
-          brandName: '',
-          chartbeatDomain: 'afrique.bbc.co.uk',
-          env: 'live',
-          service: 'afrique',
-          origin: 'bbc.com',
-          previousPath: '/previous-path',
-        };
+    it('should return config for canonical pages when page type is MAP and env is live', () => {
+      const fixtureData: GetConfigProps = {
+        isAmp: false,
+        platform: 'canonical',
+        pageType: MEDIA_ASSET_PAGE,
+        sectionName: 'Media',
+        categoryName: 'News',
+        title: 'MAP Page Title',
+        brandName: '',
+        chartbeatDomain: 'afrique.bbc.co.uk',
+        env: 'live',
+        service: 'afrique',
+      };
 
-        const expectedConfig = {
-          domain: 'afrique.bbc.co.uk',
-          idSync: {
-            bbc_hid: 'foobar',
-          },
-          path: '/',
-          sections:
-            'Afrique, Afrique - Media, Afrique - MAP, Afrique - Media - MAP, Afrique - News-category',
-          title: 'MAP Page Title',
-          type: 'article-media-asset',
-          uid: 50924,
-          useCanonical: true,
-          virtualReferrer: 'bbc.com/previous-path',
-        };
+      const expectedConfig = {
+        domain: 'afrique.bbc.co.uk',
+        idSync: {
+          bbc_hid: 'foobar',
+        },
+        path: '/',
+        sections:
+          'Afrique, Afrique - Media, Afrique - MAP, Afrique - Media - MAP, Afrique - News-category',
+        title: 'MAP Page Title',
+        type: 'article-media-asset',
+        uid: 50924,
+        useCanonical: true,
+        virtualReferrer: null,
+      };
 
-        expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
-      });
+      expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
+    });
 
-      it('should return config for amp pages when page type is media (live radio) and env is not live', () => {
-        const fixtureData: GetConfigProps = {
-          isAmp: true,
-          platform: 'amp',
-          pageType: LIVE_RADIO_PAGE,
-          mediaPageType: 'Radio',
-          contentType: 'player-live',
-          title: 'Live Radio Page Title',
-          brandName: 'BBC News Korean',
-          chartbeatDomain: 'korean.bbc.co.uk',
-          env: 'test',
-          service: 'korean',
-          origin: 'test.bbc.com',
-          previousPath: '/previous-path',
-        };
+    it('should return config for amp pages when page type is media (live radio) and env is not live', () => {
+      const fixtureData: GetConfigProps = {
+        isAmp: true,
+        platform: 'amp',
+        pageType: LIVE_RADIO_PAGE,
+        mediaPageType: 'Radio',
+        contentType: 'player-live',
+        title: 'Live Radio Page Title',
+        brandName: 'BBC News Korean',
+        chartbeatDomain: 'korean.bbc.co.uk',
+        env: 'test',
+        service: 'korean',
+      };
 
-        const expectedConfig = {
-          domain: 'test.bbc.co.uk',
-          idSync: {
-            bbc_hid: 'foobar',
-          },
-          sections: 'Korean, Korean - Radio',
-          title: 'Live Radio Page Title - BBC News Korean',
-          contentType: 'player-live',
-          uid: 50924,
-          virtualReferrer: `\${documentReferrer}`,
-        };
+      const expectedConfig = {
+        domain: 'test.bbc.co.uk',
+        idSync: {
+          bbc_hid: 'foobar',
+        },
+        sections: 'Korean, Korean - Radio',
+        title: 'Live Radio Page Title - BBC News Korean',
+        contentType: 'player-live',
+        uid: 50924,
+        virtualReferrer: `\${documentReferrer}`,
+      };
 
-        expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
-      });
+      expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
+    });
 
-      it('should return config for amp pages when page type is STY and env is live', () => {
-        const fixtureData: GetConfigProps = {
-          isAmp: true,
-          platform: 'amp',
-          pageType: STORY_PAGE,
-          brandName: 'BBC News Mundo',
-          title: 'STY Page Title',
-          sectionName: STORY_PAGE,
-          categoryName: 'mundo',
-          chartbeatDomain: 'mundo.bbc.co.uk',
-          env: 'live',
-          service: 'mundo',
-          origin: 'bbc.com',
-          previousPath: '/previous-path',
-        };
+    it('should return config for amp pages when page type is STY and env is live', () => {
+      const fixtureData: GetConfigProps = {
+        isAmp: true,
+        platform: 'amp',
+        pageType: STORY_PAGE,
+        brandName: 'BBC News Mundo',
+        title: 'STY Page Title',
+        sectionName: STORY_PAGE,
+        categoryName: 'mundo',
+        chartbeatDomain: 'mundo.bbc.co.uk',
+        env: 'live',
+        service: 'mundo',
+      };
 
-        const expectedConfig = {
-          contentType: STORY_PAGE,
-          domain: 'mundo.bbc.co.uk',
-          idSync: {
-            bbc_hid: 'foobar',
-          },
-          sections:
-            'Mundo, Mundo - STY, Mundo - STY, Mundo - STY - STY, Mundo - mundo-category',
-          title: 'STY Page Title',
-          uid: 50924,
-          virtualReferrer: `\${documentReferrer}`,
-        };
+      const expectedConfig = {
+        contentType: STORY_PAGE,
+        domain: 'mundo.bbc.co.uk',
+        idSync: {
+          bbc_hid: 'foobar',
+        },
+        sections:
+          'Mundo, Mundo - STY, Mundo - STY, Mundo - STY - STY, Mundo - mundo-category',
+        title: 'STY Page Title',
+        uid: 50924,
+        virtualReferrer: `\${documentReferrer}`,
+      };
 
-        expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
-      });
+      expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
+    });
 
-      it('should return config for canonical pages when page type is STY and env is not live', () => {
-        const fixtureData: GetConfigProps = {
-          isAmp: false,
-          platform: 'canonical',
-          pageType: STORY_PAGE,
-          sectionName: STORY_PAGE,
-          title: 'STY Page Title',
-          categoryName: 'mundo',
-          brandName: 'BBC News Mundo',
-          chartbeatDomain: 'mundo.bbc.co.uk',
-          env: 'test',
-          service: 'mundo',
-          origin: 'test.bbc.com',
-          previousPath: '/previous-path',
-        };
+    it('should return config for canonical pages when page type is STY and env is not live', () => {
+      const fixtureData: GetConfigProps = {
+        isAmp: false,
+        platform: 'canonical',
+        pageType: STORY_PAGE,
+        sectionName: STORY_PAGE,
+        title: 'STY Page Title',
+        categoryName: 'mundo',
+        brandName: 'BBC News Mundo',
+        chartbeatDomain: 'mundo.bbc.co.uk',
+        env: 'test',
+        service: 'mundo',
+      };
 
-        const expectedConfig = {
-          domain: 'test.bbc.co.uk',
-          idSync: {
-            bbc_hid: 'foobar',
-          },
-          path: '/',
-          sections:
-            'Mundo, Mundo - STY, Mundo - STY, Mundo - STY - STY, Mundo - mundo-category',
-          type: STORY_PAGE,
-          title: 'STY Page Title',
-          uid: 50924,
-          useCanonical: true,
-          virtualReferrer: 'test.bbc.com/previous-path',
-        };
+      const expectedConfig = {
+        domain: 'test.bbc.co.uk',
+        idSync: {
+          bbc_hid: 'foobar',
+        },
+        path: '/',
+        sections:
+          'Mundo, Mundo - STY, Mundo - STY, Mundo - STY - STY, Mundo - mundo-category',
+        type: STORY_PAGE,
+        title: 'STY Page Title',
+        uid: 50924,
+        useCanonical: true,
+        virtualReferrer: null,
+      };
 
-        expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
-      });
+      expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
     });
 
     describe('Chartbeat Media Article Page - article-sfv', () => {
@@ -640,8 +639,6 @@ describe('Chartbeat utilities', () => {
         contentType: 'player-episode',
         env: 'live',
         service: 'pashto',
-        origin: 'bbc.com',
-        previousPath: '/previous-path',
         title: 'OnDemand TV Page Title',
       };
 
@@ -654,7 +651,7 @@ describe('Chartbeat utilities', () => {
         title: 'OnDemand TV Page Title - BBC News Pashto',
         type: 'player-episode',
         uid: 50924,
-        virtualReferrer: 'bbc.com/previous-path',
+        virtualReferrer: null,
         useCanonical: true,
         path: '/',
       };
@@ -673,8 +670,6 @@ describe('Chartbeat utilities', () => {
         contentType: 'player-episode',
         env: 'live',
         service: 'arabic',
-        origin: 'bbc.com',
-        previousPath: '/previous-path',
         title: 'Podcast Page Title',
       };
 
@@ -687,7 +682,7 @@ describe('Chartbeat utilities', () => {
         title: 'Podcast Page Title - BBC News Arabic',
         type: 'player-episode',
         uid: 50924,
-        virtualReferrer: 'bbc.com/previous-path',
+        virtualReferrer: null,
         useCanonical: true,
         path: '/',
       };
@@ -706,8 +701,6 @@ describe('Chartbeat utilities', () => {
         contentType: 'player-episode',
         env: 'live',
         service: 'arabic',
-        origin: 'bbc.com',
-        previousPath: '/previous-path',
         title: 'Audio Page Title',
       };
 
@@ -720,7 +713,7 @@ describe('Chartbeat utilities', () => {
         title: 'Audio Page Title - BBC News Arabic',
         type: 'player-episode',
         uid: 50924,
-        virtualReferrer: 'bbc.com/previous-path',
+        virtualReferrer: null,
         useCanonical: true,
         path: '/',
       };
@@ -738,8 +731,6 @@ describe('Chartbeat utilities', () => {
         brandName: 'BBC News Pidgin',
         env: 'test',
         service: 'pidgin',
-        origin: 'test.bbc.com',
-        previousPath: '/previous-path',
       };
 
       const expectedConfig = {
@@ -753,7 +744,7 @@ describe('Chartbeat utilities', () => {
         title: 'Topics Page Title - BBC News Pidgin',
         uid: 50924,
         useCanonical: true,
-        virtualReferrer: 'test.bbc.com/previous-path',
+        virtualReferrer: null,
       };
 
       expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
@@ -769,8 +760,6 @@ describe('Chartbeat utilities', () => {
         chartbeatDomain: 'pidgin.bbc.co.uk',
         env: 'live',
         service: 'pidgin',
-        origin: 'bbc.com',
-        previousPath: '/previous-path',
       };
 
       const expectedConfig = {
@@ -782,7 +771,7 @@ describe('Chartbeat utilities', () => {
         title: 'Topics Page Title - BBC News Pidgin',
         type: 'Topics',
         uid: 50924,
-        virtualReferrer: 'bbc.com/previous-path',
+        virtualReferrer: null,
         useCanonical: true,
         path: '/',
       };
@@ -800,8 +789,6 @@ describe('Chartbeat utilities', () => {
         chartbeatDomain: 'korean.bbc.co.uk',
         env: 'test',
         service: 'korean',
-        origin: 'test.bbc.com',
-        previousPath: '/previous-path',
       };
 
       const expectedConfig = {
@@ -815,13 +802,13 @@ describe('Chartbeat utilities', () => {
         title: 'TOP 뉴스 - BBC News 코리아',
         uid: 50924,
         useCanonical: true,
-        virtualReferrer: 'test.bbc.com/previous-path',
+        virtualReferrer: null,
       };
 
       expect(getConfig(fixtureData)).toStrictEqual(expectedConfig);
     });
 
-    it('should return null for virtualReferrer when there is no previousPath', () => {
+    it('should return null for virtualReferrer when platform is not AMP', () => {
       // @ts-expect-error testing partial data to ensure behaviour is as expected
       const fixtureData: GetConfigProps = {
         isAmp: false,
@@ -831,26 +818,6 @@ describe('Chartbeat utilities', () => {
         chartbeatDomain: 'bbc.co.uk',
         env: 'test',
         service: 'news',
-        origin: 'test.bbc.com',
-      };
-
-      const chartbeatConfig = getConfig(fixtureData);
-      expect(chartbeatConfig.virtualReferrer).toBeNull();
-    });
-
-    it('should return null for virtualReferrer when isOnClient is false', () => {
-      isOnClient = false;
-
-      // @ts-expect-error testing partial data to ensure behaviour is as expected
-      const fixtureData: GetConfigProps = {
-        isAmp: false,
-        platform: 'canonical',
-        pageType: ARTICLE_PAGE,
-        brandName: 'BBC-News',
-        chartbeatDomain: 'bbc.co.uk',
-        env: 'test',
-        service: 'news',
-        origin: 'test.bbc.com',
       };
 
       const chartbeatConfig = getConfig(fixtureData);

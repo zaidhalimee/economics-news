@@ -32,7 +32,6 @@ export type RequestContextProps = {
   derivedPageType: string | null;
   pathname: string;
   platform: Platforms;
-  previousPath: string | null;
   service: Services;
   showAdsBasedOnLocation: boolean;
   showCookieBannerBasedOnCountry: boolean;
@@ -56,7 +55,6 @@ type RequestProviderProps = {
   isNextJs?: boolean;
   pageType: PageTypes;
   pathname: string;
-  previousPath?: string | null;
   service: Services;
   showAdsBasedOnLocation?: boolean;
   showCookieBannerBasedOnCountry?: boolean;
@@ -79,7 +77,6 @@ export const RequestContextProvider = ({
   mvtExperiments = null,
   pageType,
   pathname,
-  previousPath = null,
   service,
   showAdsBasedOnLocation = false,
   showCookieBannerBasedOnCountry = true,
@@ -127,7 +124,6 @@ export const RequestContextProvider = ({
       platform,
       statsDestination,
       statusCode,
-      previousPath,
       variant,
       timeOnServer,
       showAdsBasedOnLocation,
@@ -151,7 +147,6 @@ export const RequestContextProvider = ({
       pageType,
       pathname,
       platform,
-      previousPath,
       service,
       showAdsBasedOnLocation,
       showCookieBannerBasedOnCountry,
