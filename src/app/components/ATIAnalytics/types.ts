@@ -89,8 +89,7 @@ export interface ATIDataWithContexts {
 export interface ATIConfigurationDetailsProviders {
   requestContext: RequestContextProps;
   serviceContext: ServiceConfig;
-  data?: PageData;
-  atiData?: ATIData;
+  atiData: ATIData;
 }
 
 export interface ReverbDetailsProviders {
