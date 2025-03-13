@@ -44,8 +44,7 @@ import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
 import OPTIMIZELY_CONFIG from '#app/lib/config/optimizely';
 import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
 import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
-import CallToActionLink from '#app/components/CallToActionLink';
-import { RightChevron, LeftChevron } from '#app/components/icons';
+import CallToActionLinkWithChevron from '#app/components/CallToActionLinkWithChevron';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
@@ -126,10 +125,9 @@ const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
   podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
 const getHeadlineComponent =
-  ({ pathname, isLite, dir, translations }: getHeadlineComponentProps) =>
+  ({ pathname, isLite, translations }: getHeadlineComponentProps) =>
   (props: ComponentToRenderProps) => {
     const { enabled: showCTA } = useToggle('liteSiteCTA');
-    const isRtl = dir === 'rtl';
 
     const articleDataSavingLinkText =
       translations?.liteSite?.articleDataSavingLinkText ??
@@ -138,21 +136,19 @@ const getHeadlineComponent =
     console.log(showCTA);
     console.log(translations);
     console.log(articleDataSavingLinkText);
-    console.log(isRtl);
 
     return (
       <>
         <Headings {...props} />
         {!isLite && showCTA && (
           <div css={styles.liteCtaContainer}>
-            <CallToActionLink href={`${pathname}.lite`} css={styles.liteCTA}>
+            <CallToActionLinkWithChevron
+              href={`${pathname}.lite`}
+              css={styles.liteCTA}
+              chevronStyles={styles.liteCtaChevron}
+            >
               {articleDataSavingLinkText}
-              {isRtl ? (
-                <LeftChevron css={styles.liteCtaChevron} />
-              ) : (
-                <RightChevron css={styles.liteCtaChevron} />
-              )}
-            </CallToActionLink>
+            </CallToActionLinkWithChevron>
           </div>
         )}
       </>
@@ -170,7 +166,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     isTrustProjectParticipant,
     showRelatedTopics,
     brandName,
-    dir,
   } = useContext(ServiceContext);
 
   const { enabled: preloadLeadImageToggle } = useToggle('preloadLeadImage');
@@ -241,7 +236,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const componentsToRender = {
     visuallyHiddenHeadline,
-    headline: getHeadlineComponent({ pathname, isLite, dir, translations }),
+    headline: getHeadlineComponent({ pathname, isLite, translations }),
     subheadline: Headings,
     audio: MediaLoader,
     video: MediaLoader,

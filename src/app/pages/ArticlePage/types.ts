@@ -10,9 +10,8 @@ export type TimeStampProps = {
 };
 
 export type getHeadlineComponentProps = {
-  pathname: string; 
+  pathname: string;
   isLite: boolean;
-  dir: string;
   translations?: {
     liteSite?: {
       articleDataSavingLinkText?: string;

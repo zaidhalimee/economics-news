@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useContext, forwardRef, ForwardedRef } from 'react';
+import { forwardRef, ForwardedRef } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 import useViewTracker from '#app/hooks/useViewTracker';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
@@ -7,9 +7,7 @@ import Paragraph from '../Paragraph';
 import Heading from '../Heading';
 import Image from '../Image';
 import styles from './index.styles';
-import { LeftChevron, RightChevron } from '../icons';
-import { ServiceContext } from '../../contexts/ServiceContext';
-import CallToActionLink from '../CallToActionLink';
+import CallToActionLinkWithChevron from '../CallToActionLinkWithChevron';
 
 interface MessageBannerProps {
   heading: string;
@@ -34,9 +32,7 @@ const Banner = forwardRef(
     }: MessageBannerProps,
     viewRef: ForwardedRef<HTMLDivElement>,
   ) => {
-    const { dir } = useContext(ServiceContext);
     const { mq } = useTheme();
-    const isRtl = dir === 'rtl';
 
     const IMAGE_SRC_SMALL_2X_UPSCALE_WIDTH = styles.IMAGE_WIDTH * 2;
     const IMAGE_SRC_LARGE_2X_UPSCALE_WIDTH =
@@ -67,19 +63,15 @@ const Banner = forwardRef(
             </Paragraph>
           </div>
           <div css={styles.flex}>
-            <CallToActionLink
+            <CallToActionLinkWithChevron
               href={link}
               css={styles.callToActionLink}
               className="focusIndicatorInvert"
               eventTrackingData={eventTrackingData}
+              chevronStyles={styles.chevron}
             >
               {linkText}
-              {isRtl ? (
-                <LeftChevron css={styles.chevron} />
-              ) : (
-                <RightChevron css={styles.chevron} />
-              )}
-            </CallToActionLink>
+            </CallToActionLinkWithChevron>
             {image && (
               <div css={styles.image}>
                 <Image
