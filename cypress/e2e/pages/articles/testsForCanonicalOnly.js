@@ -73,7 +73,7 @@ export default ({ service, pageType, variant = 'default' }) =>
       });
     }
 
-    if (liteEnabledServices(service)) {
+    if (liteEnabledServices.includes(service)) {
       describe('Canonical Lite Site CTA', () => {
         it('should have a lite site CTA', () => {
           cy.get('[data-e2e="to-lite-site"]').within(() => {
