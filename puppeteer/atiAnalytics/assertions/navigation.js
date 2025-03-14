@@ -1,4 +1,10 @@
-import { COMPONENTS, scrollIntoView, click } from '../helpers';
+import {
+  COMPONENTS,
+  scrollIntoView,
+  click,
+  wait,
+  ONE_SECOND,
+} from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 import context from '../../context';
 
@@ -55,6 +61,7 @@ export const assertDropdownNavigationComponentView = ({
     await click('nav button');
 
     await scrollIntoView('[data-e2e="dropdown-nav"]');
+    await wait(ONE_SECOND);
 
     assertATIComponentViewEvent({
       component: DROPDOWN_NAVIGATION,

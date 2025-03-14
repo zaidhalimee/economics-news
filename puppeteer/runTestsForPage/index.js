@@ -2,7 +2,6 @@ import puppeteer from 'puppeteer';
 import context from '../context';
 
 export default ({ testSuites, onPageRequest }) => {
-  const TIMEOUT = 60000;
   describe('', () => {
     beforeAll(async () => {
       context.browser = await puppeteer.launch({
@@ -46,7 +45,7 @@ export default ({ testSuites, onPageRequest }) => {
               sourceScheme: 'NonSecure',
             });
 
-            context.page.setDefaultNavigationTimeout(TIMEOUT);
+            context.page.setDefaultNavigationTimeout(context.TIMEOUT);
             context.page.on('request', onPageRequest);
 
             await context.page.goto(`${baseUrl}${path}`, {
