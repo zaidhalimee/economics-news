@@ -1,18 +1,7 @@
-// import envs from '../../../../support/config/envs';
-
 export const getATIParamsFromURL = atiAnalyticsURL => {
   const url = new URL(atiAnalyticsURL);
 
-  const objectFromEntries = Object.fromEntries(new URLSearchParams(url.search));
-  console.log(
-    'objectFromEntries p value in getATIParamsFromURL',
-    objectFromEntries.p,
-  );
-  cy.log(
-    'objectFromEntries p value in getATIParamsFromURL',
-    objectFromEntries.p,
-  );
-  return objectFromEntries;
+  return Object.fromEntries(new URLSearchParams(url.search));
 };
 
 export const ATI_PAGE_VIEW = 'ati-page-view';
@@ -118,4 +107,55 @@ export const interceptATIAnalyticsBeacons = () => {
       request.reply({ statusCode: 200 });
     },
   ).as(`${ATI_PAGE_VIEW_REVERB}`);
+};
+
+export const onPageRequest = request => {
+  const url = new URL(request.url());
+  const { hostname, href } = url;
+
+  const environment = process.env.SIMORGH_APP_ENV;
+
+  const ATI_URLS = {
+    local: 'logws1363.ati-host.net',
+    test: 'logws1363.ati-host.net',
+    live: 'a1.api.bbc.co.uk',
+  };
+
+  if (hostname === ATI_URLS[environment]) {
+    if (!global.analyticsRequests) {
+      global.analyticsRequests = {};
+    }
+
+    const params = getATIParamsFromURL(href);
+
+    const { x8: libraryVersion, atc: clickEvent, ati: viewEvent } = params;
+
+    if (libraryVersion === '[simorgh]') {
+      global.analyticsRequests[ATI_PAGE_VIEW] = params;
+    }
+    if (libraryVersion === 'simorgh') {
+      global.analyticsRequests[ATI_PAGE_VIEW_REVERB] = params;
+    }
+
+    Object.values(COMPONENTS).forEach(component => {
+      const viewClickEventRegex = new RegExp(
+        `PUB-\\[?.*?\\]?-\\[?${component}.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?`,
+        'g',
+      );
+
+      //Component Views
+      if (viewEvent?.match(viewClickEventRegex)) {
+        global.analyticsRequests[`${component}-ati-view`] = params;
+      }
+
+      //Component Clicks
+      if (clickEvent?.match(viewClickEventRegex)) {
+        global.analyticsRequests[`${component}-ati-click`] = params;
+      }
+    });
+
+    console.log({
+      analyticsRequests: global.analyticsRequests,
+    });
+  }
 };

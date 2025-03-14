@@ -10,56 +10,56 @@ const assertATIPageViewEventParamsExist = ({
   contentType,
   applicationType,
 }) => {
-  expect(params).to.have.property('s'); // destination
-  expect(params).to.have.property('p'); // page identifier
-  expect(params).to.have.property('x2'); // application type
-  expect(params).to.have.property('x3'); // application name
-  expect(params).to.have.property('x4'); // language
-  expect(params).to.have.property('x7'); // content type
-  expect(params).to.have.property('x8'); // library version
-  expect(params).to.have.property('x9'); // page title
+  expect(params).toHaveProperty('s'); // destination
+  expect(params).toHaveProperty('p'); // page identifier
+  expect(params).toHaveProperty('x2'); // application type
+  expect(params).toHaveProperty('x3'); // application name
+  expect(params).toHaveProperty('x4'); // language
+  expect(params).toHaveProperty('x7'); // content type
+  expect(params).toHaveProperty('x8'); // library version
+  expect(params).toHaveProperty('x9'); // page title
 
   if (['responsive', 'amp'].includes(applicationType)) {
-    expect(params).to.have.property('r'); // screen resolution & colour depth
-    expect(params).to.have.property('re'); // browser/viewport resolution
-    expect(params).to.have.property('hl'); // timestamp
-    expect(params).to.have.property('lng'); // device language
-    expect(params).to.have.property('x5'); // url
+    expect(params).toHaveProperty('r'); // screen resolution & colour depth
+    expect(params).toHaveProperty('re'); // browser/viewport resolution
+    expect(params).toHaveProperty('hl'); // timestamp
+    expect(params).toHaveProperty('lng'); // device language
+    expect(params).toHaveProperty('x5'); // url
   }
 
   if (contentType !== 'list-datadriven') {
-    expect(params).to.have.property('x1'); // content ID
+    expect(params).toHaveProperty('x1'); // content ID
   }
 
   if (contentType === 'article') {
-    expect(params).to.have.property('x11'); // first published
-    expect(params).to.have.property('x12'); // last published
-    expect(params).to.have.property('x13'); // ldp things
-    expect(params).to.have.property('x17'); // category
+    expect(params).toHaveProperty('x11'); // first published
+    expect(params).toHaveProperty('x12'); // last published
+    expect(params).toHaveProperty('x13'); // ldp things
+    expect(params).toHaveProperty('x17'); // category
   }
 };
 
 const assertATIComponentViewEventParamsExist = ({ params, useReverb }) => {
-  expect(params).to.have.property('s'); // destination
-  expect(params).to.have.property('ati'); // view event
-  expect(params).to.have.property('type');
-  expect(params.type).to.equal('AT', 'params.type');
+  expect(params).toHaveProperty('s'); // destination
+  expect(params).toHaveProperty('ati'); // view event
+  expect(params).toHaveProperty('type');
+  expect(params.type).toBe('AT', 'params.type');
 
   if (!useReverb) {
-    expect(params).to.have.property('p'); // page identifier
+    expect(params).toHaveProperty('p'); // page identifier
   }
 };
 
 const assertATIComponentClickEventParamsExist = ({ params, useReverb }) => {
-  expect(params).to.have.property('s'); // destination
-  expect(params).to.have.property('atc'); // click event
-  expect(params).to.have.property('type');
-  expect(params.type).to.equal('AT', 'params.type');
+  expect(params).toHaveProperty('s'); // destination
+  expect(params).toHaveProperty('atc'); // click event
+  expect(params).toHaveProperty('type');
+  expect(params.type).toBe('AT', 'params.type');
 
   if (useReverb) {
-    expect(params).to.have.property('patc'); // page identifier
+    expect(params).toHaveProperty('patc'); // page identifier
   } else {
-    expect(params).to.have.property('p'); // page identifier
+    expect(params).toHaveProperty('p'); // page identifier
   }
 };
 
@@ -69,59 +69,25 @@ export const assertPageView = ({
   applicationType,
   contentType,
   service,
-  page,
-  requests,
 }) => {
   it(`should send a page view event with service = ${service}, page identifier = ${pageIdentifier}, application type = ${applicationType} and content type = ${contentType}`, () => {
-    console.log({ requests });
+    const atiPageViewAlias = useReverb ? ATI_PAGE_VIEW_REVERB : ATI_PAGE_VIEW;
 
-    // cy.url().then(url => {
-    //   interceptATIAnalyticsBeacons();
-    //   cy.visit(url);
+    const params = global.analyticsRequests[atiPageViewAlias];
 
-    //   console.log(
-    //     'url in assertPageView just after cy.visit in assertPageView',
-    //     url,
-    //   );
-    //   cy.log('url in assertPageView just after cy.visit assertPageView', url);
-    //   const atiPageViewAlias = useReverb ? ATI_PAGE_VIEW_REVERB : ATI_PAGE_VIEW;
+    assertATIPageViewEventParamsExist({
+      params,
+      contentType,
+      applicationType,
+    });
 
-    //   cy.wait(`@${atiPageViewAlias}`).then(({ request }) => {
-    //     const params = getATIParamsFromURL(request.url);
-    //     console.log(
-    //       'p param from getATIParamsFromUrl assertPageView',
-    //       params.p,
-    //       'for URL',
-    //       request.url,
-    //     );
-
-    //     cy.log(
-    //       'p param from getATIParamsFromUrl assertPageView',
-    //       params.p,
-    //       'for URL',
-    //       request.url,
-    //     );
-    //     assertATIPageViewEventParamsExist({
-    //       params,
-    //       contentType,
-    //       applicationType,
-    //     });
-
-    //     expect(params.p).to.equal(pageIdentifier, 'params.p (page identifier)');
-    //     expect(params.x2).to.equal(
-    //       `[${applicationType}]`,
-    //       'params.x2 (application type)',
-    //     );
-    //     expect(params.x3).to.equal(
-    //       `[news-${service}]`,
-    //       'params.x3 (application name)',
-    //     );
-    //     expect(params.x7).to.equal(
-    //       `[${contentType}]`,
-    //       'params.x7 (content type)',
-    //     );
-    //   });
-    // });
+    expect(params.p).toBe(pageIdentifier, 'params.p (page identifier)');
+    expect(params.x2).toBe(
+      `[${applicationType}]`,
+      'params.x2 (application type)',
+    );
+    expect(params.x3).toBe(`[news-${service}]`, 'params.x3 (application name)');
+    expect(params.x7).toBe(`[${contentType}]`, 'params.x7 (content type)');
   });
 };
 
@@ -146,7 +112,7 @@ export const assertATIComponentViewEvent = ({
       assertATIComponentViewEventParamsExist({ params, useReverb });
 
       if (!useReverb) {
-        expect(params.p).to.equal(pageIdentifier, 'params.p (page identifier)');
+        expect(params.p).toBe(pageIdentifier, 'params.p (page identifier)');
       }
 
       expect(params.ati).to.match(
@@ -179,16 +145,16 @@ export const assertATIComponentClickEvent = ({
       });
 
       if (applicationType === 'lite') {
-        expect(params.app_type).to.equal(applicationType, 'params.app_type');
+        expect(params.app_type).toBe(applicationType, 'params.app_type');
       }
 
       if (useReverb) {
-        expect(params.patc).to.equal(
+        expect(params.patc).toBe(
           pageIdentifier,
           'params.patc (page identifier)',
         );
       } else {
-        expect(params.p).to.equal(pageIdentifier, 'params.p (page identifier)');
+        expect(params.p).toBe(pageIdentifier, 'params.p (page identifier)');
       }
 
       expect(params.atc).to.match(

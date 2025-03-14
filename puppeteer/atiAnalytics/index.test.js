@@ -64,16 +64,36 @@ import {
   assertTopStoriesComponentClick,
   assertTopStoriesComponentView,
 } from './assertions/topStories';
+import { onPageRequest } from './helpers';
 
 const canonicalTestSuites = [
   {
     path: '/gahuza',
-    runforEnv: ['local', 'live'],
+    runforEnv: ['local', 'test', 'live'],
     service: 'gahuza',
     pageIdentifier: 'gahuza.page',
     applicationType: 'responsive',
     contentType: 'index-home',
     useReverb: true,
+    tests: [
+      assertPageView,
+      // assertScrollableNavigationComponentView,
+      // assertScrollableNavigationComponentClick,
+      // assertDropdownNavigationComponentView,
+      // assertDropdownNavigationComponentClick,
+      // assertMessageBannerComponentView,
+      // assertMessageBannerComponentClick,
+      // assertMostReadComponentView,
+      // assertMostReadComponentClick,
+    ],
+  },
+  {
+    path: '/hausa',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'hausa',
+    pageIdentifier: 'hausa.page',
+    applicationType: 'responsive',
+    contentType: 'index-home',
     tests: [
       assertPageView,
       // assertScrollableNavigationComponentView,
@@ -449,7 +469,12 @@ const liteTestSuites = canonicalTestSuites
   });
 
 describe('ATI Analytics', () => {
+  afterEach(() => {
+    global.analyticsRequests = [];
+  });
+
   runTestsForPage({
-    testSuites: [...canonicalTestSuites, ampTestSuites, liteTestSuites],
+    testSuites: [...canonicalTestSuites],
+    onPageRequest,
   });
 });
