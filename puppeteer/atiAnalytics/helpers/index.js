@@ -123,14 +123,19 @@ const getComponent = async componentId => {
 export const wait = milliseconds =>
   new Promise(resolve => setTimeout(resolve, milliseconds));
 
-export const ONE_AND_A_HALF_SECONDS = 1500;
+export const ONE_SECOND = 1500;
 
 export const scrollIntoView = async componentId => {
   const component = await getComponent(componentId);
 
   if (component) {
     await component.scrollIntoView();
-    await wait(ONE_AND_A_HALF_SECONDS);
+    /**
+     * Dwell on the component for over 1 second, to ensure that the view event is triggered
+     * See https://github.com/bbc/simorgh/blob/3dfd622f7af53a23d674d2a96043065c3aac77e6/src/app/hooks/useViewTracker/index.jsx#L131
+     *  */
+
+    await wait(1.5 * ONE_SECOND);
   }
 };
 
