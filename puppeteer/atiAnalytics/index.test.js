@@ -459,7 +459,9 @@ const testSuites = [
 jest.setTimeout(context.TIMEOUT); // overriding the default jest timeout of 5000
 
 describe('ATI Analytics', () => {
-  context.analyticsRequests = {};
+  beforeAll(() => {
+    context.analyticsRequests = {};
+  });
 
   afterEach(() => {
     context.analyticsRequests = {};

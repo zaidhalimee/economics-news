@@ -113,14 +113,6 @@ export const onPageRequest = request => {
         context.analyticsRequests[testName][`${component}-ati-click`] = params;
       }
     });
-
-    console.log(
-      '\n',
-      // Log the test where is has originated from
-      testName,
-      '\nanalyticsRequests:',
-      JSON.stringify(context.analyticsRequests, null, 2),
-    );
   }
 };
 
