@@ -15,7 +15,7 @@ analyticsRequests: ${JSON.stringify(context.analyticsRequests, null, 2)}
 
 const getParams = eventName => {
   const testName = getCurrentTestName();
-  const params = context.analyticsRequests[testName][eventName];
+  const params = context.analyticsRequests[testName]?.[eventName];
 
   if (params) {
     return params;
