@@ -113,6 +113,9 @@ export const onPageRequest = request => {
         context.analyticsRequests[testName][`${component}-ati-click`] = params;
       }
     });
+
+    console.log(`
+analyticsRequests: ${JSON.stringify(context.analyticsRequests, null, 2)}`);
   }
 };
 
