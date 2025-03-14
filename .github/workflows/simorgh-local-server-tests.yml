@@ -60,4 +60,6 @@ jobs:
       #   run: yarn lighthouse
 
       - name: Run Puppeteer Tests
-        run: yarn test:puppeteer:local
+        run: |
+          npx puppeteer browsers install chrome
+          yarn test:puppeteer:local
