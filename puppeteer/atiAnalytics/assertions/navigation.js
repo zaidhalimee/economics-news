@@ -4,6 +4,7 @@ import {
   scrollIntoView,
 } from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
+import context from '../../context';
 
 const { SCROLLABLE_NAVIGATION, DROPDOWN_NAVIGATION } = COMPONENTS;
 
@@ -31,27 +32,16 @@ export const assertScrollableNavigationComponentClick = ({
   componentTrackingContentType,
   useReverb,
 }) => {
-  it('should send a click event for the Scrollable Navigation component', () => {
-    cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
-      cy.visit(url);
+  it('should send a click event for the Scrollable Navigation component', async () => {
+    await scrollIntoView('[data-e2e="scrollable-nav"]');
 
-      cy.get('[data-e2e="scrollable-nav"]').scrollIntoView({
-        duration: 1000,
-      });
+    await context.page.click('[data-e2e="scrollable-nav"] a');
 
-      // Click on first item & return to the original url
-      cy.get('[data-e2e="scrollable-nav"]').find('a').last().click();
-
-      assertATIComponentClickEvent({
-        component: SCROLLABLE_NAVIGATION,
-        pageIdentifier,
-        contentType: componentTrackingContentType || contentType,
-        useReverb,
-      });
-
-      // return to previous page
-      cy.visit(url);
+    assertATIComponentClickEvent({
+      component: SCROLLABLE_NAVIGATION,
+      pageIdentifier,
+      contentType: componentTrackingContentType || contentType,
+      useReverb,
     });
   });
 };

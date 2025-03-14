@@ -1,4 +1,4 @@
-import scope from '../../scope';
+import context from '../../context';
 
 export const getATIParamsFromURL = atiAnalyticsURL => {
   const url = new URL(atiAnalyticsURL);
@@ -122,8 +122,8 @@ export const onPageRequest = request => {
   };
 
   if (hostname === ATI_URLS[environment]) {
-    if (!scope.analyticsRequests) {
-      scope.analyticsRequests = {};
+    if (!context.analyticsRequests) {
+      context.analyticsRequests = {};
     }
 
     const params = getATIParamsFromURL(href);
@@ -131,7 +131,7 @@ export const onPageRequest = request => {
     const { x8: libraryVersion, atc: clickEvent, ati: viewEvent } = params;
 
     if (libraryVersion?.includes('simorgh')) {
-      scope.analyticsRequests[ATI_PAGE_VIEW] = params;
+      context.analyticsRequests[ATI_PAGE_VIEW] = params;
     }
 
     Object.values(COMPONENTS).forEach(component => {
@@ -142,38 +142,28 @@ export const onPageRequest = request => {
 
       //Component Views
       if (viewEvent?.match(viewClickEventRegex)) {
-        scope.analyticsRequests[`${component}-ati-view`] = params;
+        context.analyticsRequests[`${component}-ati-view`] = params;
       }
 
       //Component Clicks
       if (clickEvent?.match(viewClickEventRegex)) {
-        scope.analyticsRequests[`${component}-ati-click`] = params;
+        context.analyticsRequests[`${component}-ati-click`] = params;
       }
     });
 
     console.log({
-      analyticsRequests: scope.analyticsRequests,
+      analyticsRequests: context.analyticsRequests,
     });
   }
 };
 
 export const scrollIntoView = async componentId => {
-  // await scope.page.waitForSelector('[data-e2e="scrollable-nav"]');
-
-  // const component = await scope.page.evaluate(componentId => {
-  //   const element = document.querySelector('[data-e2e="scrollable-nav"]');
-
-  //   console.log({ element });
-  // }, componentId);
-
-  await scope.page.waitForSelector(componentId);
-  const count = await scope.page.$eval(componentId, el => el.length);
-
-  const component = await scope.page.$(componentId);
-
-  console.log({ component, count, scrollIntoView: component.scrollIntoView });
+  const component = await context.page.$(componentId);
 
   if (component) {
-    await component.scrollIntoView();
+    await component.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    });
   }
 };

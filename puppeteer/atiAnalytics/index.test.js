@@ -1,6 +1,6 @@
 import { liteEnabledServices } from '#app/components/LiteSiteCta/liteSiteConfig';
 import runTestsForPage from '../runTestsForPage';
-import scope from '../scope';
+import context from '../context';
 import { assertPageView } from './assertions';
 import {
   assertBillboardComponentClick,
@@ -79,7 +79,7 @@ const canonicalTestSuites = [
     tests: [
       assertPageView,
       assertScrollableNavigationComponentView,
-      // assertScrollableNavigationComponentClick,
+      assertScrollableNavigationComponentClick,
       // assertDropdownNavigationComponentView,
       // assertDropdownNavigationComponentClick,
       // assertMessageBannerComponentView,
@@ -452,7 +452,7 @@ const liteTestSuites = canonicalTestSuites
 
 describe('ATI Analytics', () => {
   afterEach(() => {
-    scope.analyticsRequests = [];
+    context.analyticsRequests = [];
   });
 
   runTestsForPage({

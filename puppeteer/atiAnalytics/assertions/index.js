@@ -1,4 +1,4 @@
-import scope from '../../scope';
+import context from '../../context';
 import { ATI_PAGE_VIEW } from '../helpers';
 
 const assertATIPageViewEventParamsExist = ({
@@ -66,7 +66,7 @@ export const assertPageView = ({
   service,
 }) => {
   it(`should send a page view event with service = ${service}, page identifier = ${pageIdentifier}, application type = ${applicationType} and content type = ${contentType}`, () => {
-    const params = scope.analyticsRequests[ATI_PAGE_VIEW];
+    const params = context.analyticsRequests[ATI_PAGE_VIEW];
 
     assertATIPageViewEventParamsExist({
       params,
@@ -93,7 +93,7 @@ export const assertATIComponentViewEvent = ({
   contentType,
   useReverb,
 }) => {
-  const params = scope.analyticsRequests[`${component}-ati-view`];
+  const params = context.analyticsRequests[`${component}-ati-view`];
 
   assertATIComponentViewEventParamsExist({ params, useReverb });
 
@@ -101,7 +101,7 @@ export const assertATIComponentViewEvent = ({
     expect(params.p).toBe(pageIdentifier);
   }
 
-  expect(params.ati).to.match(
+  expect(params.ati).toMatch(
     getViewClickDetailsRegex({
       contentType,
       component,
@@ -118,7 +118,7 @@ export const assertATIComponentClickEvent = ({
   applicationType,
   useReverb,
 }) => {
-  const params = scope.analyticsRequests[`${component}-ati-click`];
+  const params = context.analyticsRequests[`${component}-ati-click`];
 
   assertATIComponentClickEventParamsExist({
     params,
@@ -136,7 +136,7 @@ export const assertATIComponentClickEvent = ({
     expect(params.p).toBe(pageIdentifier);
   }
 
-  expect(params.atc).to.match(
+  expect(params.atc).toMatch(
     getViewClickDetailsRegex({
       contentType,
       pageIdentifier,
