@@ -17,6 +17,7 @@ jobs:
       LOG_LEVEL: 'error'
       BFF_PATH: 'https://web-cdn.test.api.bbci.co.uk/fd/simorgh-bff'
       LIGHTHOUSE_BUILD: true
+      DISPLAY: ':99.0'
 
     steps:
       - uses: actions/checkout@v4
