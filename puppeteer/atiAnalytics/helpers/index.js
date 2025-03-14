@@ -163,6 +163,7 @@ export const onPageRequest = request => {
     });
 
     console.log(
+      '\n',
       // Log the test where is has originated from
       expect.getState().currentTestName || 'Test Name Unknown',
       '\nanalyticsRequests:',
@@ -183,6 +184,8 @@ export const scrollIntoView = async componentId => {
       behavior: 'smooth',
       block: 'center',
     });
+
+    await context.page.hover(componentId);
   }
 };
 

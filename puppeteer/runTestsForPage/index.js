@@ -3,7 +3,7 @@ import context from '../context';
 
 export default ({ testSuites, onPageRequest }) => {
   const TIMEOUT = 60000;
-  describe('Tests', () => {
+  describe('', () => {
     beforeAll(async () => {
       context.browser = await puppeteer.launch({
         args: ['--no-sandbox'],
