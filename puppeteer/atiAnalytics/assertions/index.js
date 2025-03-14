@@ -13,7 +13,7 @@ analyticsRequests: ${JSON.stringify(context.analyticsRequests, null, 2)}
 `);
 };
 
-const getParams = eventName => {
+const getEventParams = eventName => {
   const testName = getCurrentTestName();
   const params = context.analyticsRequests[testName]?.[eventName];
 
@@ -118,7 +118,7 @@ export const assertATIComponentViewEvent = ({
   contentType,
   useReverb,
 }) => {
-  const params = getParams(`${component}-ati-view`);
+  const params = getEventParams(`${component}-ati-view`);
 
   assertATIComponentViewEventParamsExist({ params, useReverb });
 
@@ -143,7 +143,7 @@ export const assertATIComponentClickEvent = ({
   applicationType,
   useReverb,
 }) => {
-  const params = getParams(`${component}-ati-click`);
+  const params = getEventParams(`${component}-ati-click`);
 
   assertATIComponentClickEventParamsExist({
     params,
