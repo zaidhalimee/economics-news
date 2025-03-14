@@ -1,5 +1,6 @@
 import { liteEnabledServices } from '#app/components/LiteSiteCta/liteSiteConfig';
 import runTestsForPage from '../runTestsForPage';
+import scope from '../scope';
 import { assertPageView } from './assertions';
 import {
   assertBillboardComponentClick,
@@ -77,26 +78,7 @@ const canonicalTestSuites = [
     useReverb: true,
     tests: [
       assertPageView,
-      // assertScrollableNavigationComponentView,
-      // assertScrollableNavigationComponentClick,
-      // assertDropdownNavigationComponentView,
-      // assertDropdownNavigationComponentClick,
-      // assertMessageBannerComponentView,
-      // assertMessageBannerComponentClick,
-      // assertMostReadComponentView,
-      // assertMostReadComponentClick,
-    ],
-  },
-  {
-    path: '/hausa',
-    runforEnv: ['local', 'test', 'live'],
-    service: 'hausa',
-    pageIdentifier: 'hausa.page',
-    applicationType: 'responsive',
-    contentType: 'index-home',
-    tests: [
-      assertPageView,
-      // assertScrollableNavigationComponentView,
+      assertScrollableNavigationComponentView,
       // assertScrollableNavigationComponentClick,
       // assertDropdownNavigationComponentView,
       // assertDropdownNavigationComponentClick,
@@ -470,7 +452,7 @@ const liteTestSuites = canonicalTestSuites
 
 describe('ATI Analytics', () => {
   afterEach(() => {
-    global.analyticsRequests = [];
+    scope.analyticsRequests = [];
   });
 
   runTestsForPage({

@@ -1,9 +1,5 @@
-import {
-  ATI_PAGE_VIEW,
-  ATI_PAGE_VIEW_REVERB,
-  getATIParamsFromURL,
-  interceptATIAnalyticsBeacons,
-} from '../helpers';
+import scope from '../../scope';
+import { ATI_PAGE_VIEW } from '../helpers';
 
 const assertATIPageViewEventParamsExist = ({
   params,
@@ -70,7 +66,7 @@ export const assertPageView = ({
   service,
 }) => {
   it(`should send a page view event with service = ${service}, page identifier = ${pageIdentifier}, application type = ${applicationType} and content type = ${contentType}`, () => {
-    const params = global.analyticsRequests[ATI_PAGE_VIEW];
+    const params = scope.analyticsRequests[ATI_PAGE_VIEW];
 
     assertATIPageViewEventParamsExist({
       params,
@@ -96,28 +92,24 @@ export const assertATIComponentViewEvent = ({
   pageIdentifier,
   contentType,
   useReverb,
-}) =>
-  cy
-    .wait(`@${component}-ati-view`)
-    .its('request.url')
-    .then(url => {
-      const params = getATIParamsFromURL(url);
+}) => {
+  const params = scope.analyticsRequests[`${component}-ati-view`];
 
-      assertATIComponentViewEventParamsExist({ params, useReverb });
+  assertATIComponentViewEventParamsExist({ params, useReverb });
 
-      if (!useReverb) {
-        expect(params.p).toBe(pageIdentifier);
-      }
+  if (!useReverb) {
+    expect(params.p).toBe(pageIdentifier);
+  }
 
-      expect(params.ati).to.match(
-        getViewClickDetailsRegex({
-          contentType,
-          component,
-          pageIdentifier,
-        }),
-        'publisher impression (view event)',
-      );
-    });
+  expect(params.ati).to.match(
+    getViewClickDetailsRegex({
+      contentType,
+      component,
+      pageIdentifier,
+    }),
+    'publisher impression (view event)',
+  );
+};
 
 export const assertATIComponentClickEvent = ({
   component,
@@ -125,35 +117,31 @@ export const assertATIComponentClickEvent = ({
   pageIdentifier,
   applicationType,
   useReverb,
-}) =>
-  cy
-    .wait(`@${component}-ati-click`)
-    .its('request.url')
-    .then(url => {
-      const params = getATIParamsFromURL(url);
+}) => {
+  const params = scope.analyticsRequests[`${component}-ati-click`];
 
-      assertATIComponentClickEventParamsExist({
-        params,
-        useReverb,
-        applicationType,
-      });
+  assertATIComponentClickEventParamsExist({
+    params,
+    useReverb,
+    applicationType,
+  });
 
-      if (applicationType === 'lite') {
-        expect(params.app_type).toBe(applicationType);
-      }
+  if (applicationType === 'lite') {
+    expect(params.app_type).toBe(applicationType);
+  }
 
-      if (useReverb) {
-        expect(params.patc).toBe(pageIdentifier, 'reverb page identifier');
-      } else {
-        expect(params.p).toBe(pageIdentifier);
-      }
+  if (useReverb) {
+    expect(params.patc).toBe(pageIdentifier, 'reverb page identifier');
+  } else {
+    expect(params.p).toBe(pageIdentifier);
+  }
 
-      expect(params.atc).to.match(
-        getViewClickDetailsRegex({
-          contentType,
-          pageIdentifier,
-          component,
-        }),
-        'publisher click (click event)',
-      );
-    });
+  expect(params.atc).to.match(
+    getViewClickDetailsRegex({
+      contentType,
+      pageIdentifier,
+      component,
+    }),
+    'publisher click (click event)',
+  );
+};

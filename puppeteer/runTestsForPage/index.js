@@ -1,20 +1,19 @@
 import puppeteer from 'puppeteer';
+import scope from '../scope';
 
 export default ({ testSuites, onPageRequest }) => {
   const TIMEOUT = 60000;
-
   describe('Tests', () => {
-    let browser;
-    let page;
-
     beforeAll(async () => {
-      browser = await puppeteer.launch({
+      scope.browser = await puppeteer.launch({
         args: ['--no-sandbox'],
       });
     });
 
     afterAll(async () => {
-      await browser.close();
+      await scope.browser.close();
+      delete scope.browser;
+      delete scope.page;
     });
 
     testSuites.forEach(testData => {
@@ -32,16 +31,18 @@ export default ({ testSuites, onPageRequest }) => {
       if (runforEnv.includes(environment)) {
         describe(`${baseUrl}${path}`, () => {
           beforeAll(async () => {
-            page = await browser.newPage();
-            page.setDefaultNavigationTimeout(TIMEOUT);
-            page.on('request', onPageRequest);
+            scope.page = await scope.browser.newPage();
+            scope.page.setDefaultNavigationTimeout(TIMEOUT);
+            scope.page.on('request', onPageRequest);
 
-            await page.goto(`${baseUrl}${path}`, {
+            await scope.page.goto(`${baseUrl}${path}`, {
               waitUntil: 'networkidle2',
             });
           });
 
-          tests.forEach(test => test({ path, ...params }));
+          tests.forEach(test => {
+            test({ path, ...params });
+          });
         });
       }
     });

@@ -1,3 +1,5 @@
+import scope from '../../scope';
+
 export const getATIParamsFromURL = atiAnalyticsURL => {
   const url = new URL(atiAnalyticsURL);
 
@@ -120,8 +122,8 @@ export const onPageRequest = request => {
   };
 
   if (hostname === ATI_URLS[environment]) {
-    if (!global.analyticsRequests) {
-      global.analyticsRequests = {};
+    if (!scope.analyticsRequests) {
+      scope.analyticsRequests = {};
     }
 
     const params = getATIParamsFromURL(href);
@@ -129,7 +131,7 @@ export const onPageRequest = request => {
     const { x8: libraryVersion, atc: clickEvent, ati: viewEvent } = params;
 
     if (libraryVersion?.includes('simorgh')) {
-      global.analyticsRequests[ATI_PAGE_VIEW] = params;
+      scope.analyticsRequests[ATI_PAGE_VIEW] = params;
     }
 
     Object.values(COMPONENTS).forEach(component => {
@@ -140,17 +142,38 @@ export const onPageRequest = request => {
 
       //Component Views
       if (viewEvent?.match(viewClickEventRegex)) {
-        global.analyticsRequests[`${component}-ati-view`] = params;
+        scope.analyticsRequests[`${component}-ati-view`] = params;
       }
 
       //Component Clicks
       if (clickEvent?.match(viewClickEventRegex)) {
-        global.analyticsRequests[`${component}-ati-click`] = params;
+        scope.analyticsRequests[`${component}-ati-click`] = params;
       }
     });
 
     console.log({
-      analyticsRequests: global.analyticsRequests,
+      analyticsRequests: scope.analyticsRequests,
     });
+  }
+};
+
+export const scrollIntoView = async componentId => {
+  // await scope.page.waitForSelector('[data-e2e="scrollable-nav"]');
+
+  // const component = await scope.page.evaluate(componentId => {
+  //   const element = document.querySelector('[data-e2e="scrollable-nav"]');
+
+  //   console.log({ element });
+  // }, componentId);
+
+  await scope.page.waitForSelector(componentId);
+  const count = await scope.page.$eval(componentId, el => el.length);
+
+  const component = await scope.page.$(componentId);
+
+  console.log({ component, count, scrollIntoView: component.scrollIntoView });
+
+  if (component) {
+    await component.scrollIntoView();
   }
 };

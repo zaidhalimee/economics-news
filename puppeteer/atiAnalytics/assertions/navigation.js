@@ -1,4 +1,8 @@
-import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import {
+  interceptATIAnalyticsBeacons,
+  COMPONENTS,
+  scrollIntoView,
+} from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { SCROLLABLE_NAVIGATION, DROPDOWN_NAVIGATION } = COMPONENTS;
@@ -9,21 +13,14 @@ export const assertScrollableNavigationComponentView = ({
   componentTrackingContentType,
   useReverb,
 }) => {
-  it('should send a view event for the Scrollable Navigation component', () => {
-    cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
-      cy.visit(url);
+  it('should send a view event for the Scrollable Navigation component', async () => {
+    await scrollIntoView('[data-e2e="scrollable-nav"]');
 
-      cy.get('[data-e2e="scrollable-nav"]').scrollIntoView({
-        duration: 1000,
-      });
-
-      assertATIComponentViewEvent({
-        component: SCROLLABLE_NAVIGATION,
-        pageIdentifier,
-        contentType: componentTrackingContentType || contentType,
-        useReverb,
-      });
+    assertATIComponentViewEvent({
+      component: SCROLLABLE_NAVIGATION,
+      pageIdentifier,
+      contentType: componentTrackingContentType || contentType,
+      useReverb,
     });
   });
 };
