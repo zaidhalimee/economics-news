@@ -60,4 +60,4 @@ jobs:
       #   run: yarn lighthouse
 
       - name: Run Puppeteer Tests
-        run: yarn test:puppeteer
+        run: yarn test:puppeteer:local
