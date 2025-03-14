@@ -118,10 +118,7 @@ export default defineConfig({
         on,
         onMessage: {
           async openTab(browser: PuppeteerBrowser, url: string) {
-            // In this message handler, we utilize the Puppeteer API to interact with the browser, creating a new tab and getting its content
-            // This will create a new tab within the Cypress-launched browser
             global.page = await browser.newPage();
-
             await global.page.goto(url);
           },
         },
