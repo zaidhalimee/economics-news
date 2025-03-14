@@ -6,7 +6,7 @@ export default ({ testSuites, onPageRequest }) => {
     beforeAll(async () => {
       context.browser = await puppeteer.launch({
         args: ['--no-sandbox'],
-        headless: 'shell',
+        // headless: false,
       });
     });
 
