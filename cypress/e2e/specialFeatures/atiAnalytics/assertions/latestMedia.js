@@ -1,4 +1,8 @@
-import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import {
+  interceptATIAnalyticsBeacons,
+  COMPONENTS,
+  visitPageInNewTab,
+} from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { LATEST_MEDIA } = COMPONENTS;
@@ -11,7 +15,7 @@ export const assertLatestMediaComponentView = ({
   it('should send a view event for the Latest Media component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
-      cy.visit(url);
+      visitPageInNewTab(url);
 
       cy.get('[data-testid="latest-media"]').scrollIntoView({ duration: 1000 });
 
@@ -33,7 +37,7 @@ export const assertLatestMediaComponentClick = ({
   it('should send a click event for the Latest Media component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
-      cy.visit(url);
+      visitPageInNewTab(url);
 
       cy.get('[data-testid="latest-media"]').scrollIntoView({
         duration: 1000,
@@ -50,7 +54,7 @@ export const assertLatestMediaComponentClick = ({
       });
 
       // return to previous page
-      cy.visit(url);
+      visitPageInNewTab(url);
     });
   });
 };

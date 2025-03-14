@@ -1,4 +1,8 @@
-import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import {
+  interceptATIAnalyticsBeacons,
+  COMPONENTS,
+  visitPageInNewTab,
+} from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { SCROLLABLE_NAVIGATION, DROPDOWN_NAVIGATION } = COMPONENTS;
@@ -12,7 +16,7 @@ export const assertScrollableNavigationComponentView = ({
   it('should send a view event for the Scrollable Navigation component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
-      cy.visit(url);
+      visitPageInNewTab(url);
 
       cy.get('[data-e2e="scrollable-nav"]').scrollIntoView({
         duration: 1000,
@@ -37,7 +41,7 @@ export const assertScrollableNavigationComponentClick = ({
   it('should send a click event for the Scrollable Navigation component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
-      cy.visit(url);
+      visitPageInNewTab(url);
 
       cy.get('[data-e2e="scrollable-nav"]').scrollIntoView({
         duration: 1000,
@@ -54,7 +58,7 @@ export const assertScrollableNavigationComponentClick = ({
       });
 
       // return to previous page
-      cy.visit(url);
+      visitPageInNewTab(url);
     });
   });
 };
@@ -69,7 +73,7 @@ export const assertDropdownNavigationComponentView = ({
   it('should send a view event for the Dropdown Navigation component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
-      cy.visit(url);
+      visitPageInNewTab(url);
 
       cy.viewport(320, 480);
       cy.get('nav button').click();
@@ -93,7 +97,7 @@ export const assertDropdownNavigationComponentClick = ({
   it('should send a click event for the Dropdown Navigation component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
-      cy.visit(url);
+      visitPageInNewTab(url);
 
       cy.viewport(320, 480);
       cy.get('nav button').click();
@@ -109,7 +113,7 @@ export const assertDropdownNavigationComponentClick = ({
       });
 
       // Return to previous page
-      cy.visit(url);
+      visitPageInNewTab(url);
     });
   });
 };

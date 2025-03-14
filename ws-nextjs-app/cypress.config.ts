@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { defineConfig } from 'cypress';
+import { setup, Browser as PuppeteerBrowser } from '@cypress/puppeteer';
 
 export default defineConfig({
   // Consider moving 'retries' to a per-test level once we have more tests
@@ -34,7 +35,20 @@ export default defineConfig({
         on,
         logPrinterOptions,
       );
+      setup({
+        on,
+        onMessage: {
+          async createTabAndGetContent(browser: PuppeteerBrowser, url: string) {
+            // In this message handler, we utilize the Puppeteer API to interact with the browser, creating a new tab and getting its content
 
+            // This will create a new tab within the Cypress-launched browser
+            const page = await browser.newPage();
+
+            // Text comes from the test invocation of `cy.puppeteer()`
+            await page.goto(url);
+          },
+        },
+      });
       return config;
     },
     env: {

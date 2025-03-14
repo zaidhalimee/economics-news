@@ -1,4 +1,8 @@
-import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import {
+  interceptATIAnalyticsBeacons,
+  COMPONENTS,
+  visitPageInNewTab,
+} from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { BILLBOARD } = COMPONENTS;
@@ -11,7 +15,7 @@ export const assertBillboardComponentView = ({
   it('should send a view event for the Billboard component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
-      cy.visit(url);
+      visitPageInNewTab(url);
 
       cy.get('[data-testid="billboard-1"]').scrollIntoView({
         duration: 1000,
@@ -35,7 +39,7 @@ export const assertBillboardComponentClick = ({
   it('should send a click event for the Billboard component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
-      cy.visit(url);
+      visitPageInNewTab(url);
 
       cy.get('[data-testid="billboard-1"]').scrollIntoView({
         duration: 1000,
@@ -52,7 +56,7 @@ export const assertBillboardComponentClick = ({
       });
 
       // return to previous page
-      cy.visit(url);
+      visitPageInNewTab(url);
     });
   });
 };

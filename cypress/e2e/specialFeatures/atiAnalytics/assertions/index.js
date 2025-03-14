@@ -3,6 +3,7 @@ import {
   ATI_PAGE_VIEW_REVERB,
   getATIParamsFromURL,
   interceptATIAnalyticsBeacons,
+  visitPageInNewTab,
 } from '../helpers';
 
 const assertATIPageViewEventParamsExist = ({
@@ -73,7 +74,7 @@ export const assertPageView = ({
   it(`should send a page view event with service = ${service}, page identifier = ${pageIdentifier}, application type = ${applicationType} and content type = ${contentType}`, () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
-      cy.visit(url);
+      visitPageInNewTab(url);
 
       console.log(
         'url in assertPageView just after cy.visit in assertPageView',

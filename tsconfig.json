@@ -21,6 +21,7 @@
     "noUnusedParameters": true,
     "incremental": true,
     "noFallthroughCasesInSwitch": true,
+    "types": ["cypress", "@cypress/puppeteer/support"],
     "paths": {
       "#app/*": ["src/app/*"],
       "#src/*": ["src/*"],

@@ -1,4 +1,8 @@
-import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import {
+  interceptATIAnalyticsBeacons,
+  COMPONENTS,
+  visitPageInNewTab,
+} from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { TOP_STORIES } = COMPONENTS;
@@ -11,7 +15,7 @@ export const assertTopStoriesComponentView = ({
   it('should send a view event for the Top Stories component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
-      cy.visit(url);
+      visitPageInNewTab(url);
 
       cy.get('[data-testid="top-stories"]').scrollIntoView({ duration: 1000 });
 
@@ -33,7 +37,7 @@ export const assertTopStoriesComponentClick = ({
   it('should send a click event for the Top Stories component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
-      cy.visit(url);
+      visitPageInNewTab(url);
 
       cy.get('[data-testid="top-stories"]').scrollIntoView({
         duration: 1000,
@@ -50,7 +54,7 @@ export const assertTopStoriesComponentClick = ({
       });
 
       // return to previous page
-      cy.visit(url);
+      visitPageInNewTab(url);
     });
   });
 };

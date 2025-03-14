@@ -1,4 +1,5 @@
 import 'cypress-axe';
+import '@cypress/puppeteer/support';
 
 import './commands';
 

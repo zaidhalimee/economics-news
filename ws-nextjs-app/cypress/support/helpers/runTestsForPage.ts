@@ -6,6 +6,10 @@ export default ({ pageType, testSuites }) => {
       describe(`${Cypress.config().baseUrl}${path}`, () => {
         before(() => {
           cy.visit(path);
+          cy.puppeteer(
+            'createTabAndGetContent',
+            `${Cypress.config().baseUrl}${path}`,
+          );
         });
         tests.forEach(test => test({ path, pageType, ...params }));
       });

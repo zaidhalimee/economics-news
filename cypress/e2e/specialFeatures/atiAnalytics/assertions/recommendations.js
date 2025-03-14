@@ -1,4 +1,8 @@
-import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import {
+  interceptATIAnalyticsBeacons,
+  COMPONENTS,
+  visitPageInNewTab,
+} from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { RECOMMENDATIONS } = COMPONENTS;
@@ -11,7 +15,7 @@ export const assertRecommendationsComponentView = ({
   it('should send a view event for the Recommendations component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
-      cy.visit(url);
+      visitPageInNewTab(url);
 
       cy.get('[data-e2e="recommendations-heading"]').scrollIntoView({
         duration: 1000,
@@ -35,7 +39,7 @@ export const assertRecommendationsComponentClick = ({
   it('should send a click event for the Recommendations component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
-      cy.visit(url);
+      visitPageInNewTab(url);
 
       cy.get('[data-e2e="recommendations-heading"]').scrollIntoView({
         duration: 1000,
@@ -55,7 +59,7 @@ export const assertRecommendationsComponentClick = ({
       });
 
       // return to previous page
-      cy.visit(url);
+      visitPageInNewTab(url);
     });
   });
 };

@@ -1,4 +1,8 @@
-import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import {
+  interceptATIAnalyticsBeacons,
+  COMPONENTS,
+  visitPageInNewTab,
+} from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { SCROLLABLE_PROMO } = COMPONENTS;
@@ -11,7 +15,7 @@ export const assertScrollablePromoComponentView = ({
   it('should send a view event for the Scrollable Promo component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
-      cy.visit(url);
+      visitPageInNewTab(url);
 
       cy.get('[data-e2e="scrollable-promos"]').first().scrollIntoView({
         duration: 1000,
@@ -35,7 +39,7 @@ export const assertScrollablePromoComponentClick = ({
   it('should send a click event for the Scrollable Promo component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
-      cy.visit(url);
+      visitPageInNewTab(url);
 
       cy.get('[data-e2e="scrollable-promos"]').first().scrollIntoView({
         duration: 1000,
@@ -52,7 +56,7 @@ export const assertScrollablePromoComponentClick = ({
       });
 
       // return to previous page
-      cy.visit(url);
+      visitPageInNewTab(url);
     });
   });
 };

@@ -1,4 +1,8 @@
-import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import {
+  interceptATIAnalyticsBeacons,
+  COMPONENTS,
+  visitPageInNewTab,
+} from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { RADIO_SCHEDULE } = COMPONENTS;
@@ -11,7 +15,7 @@ export const assertRadioScheduleComponentView = ({
   it('should send a view event for the Radio Schedule component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
-      cy.visit(url);
+      visitPageInNewTab(url);
 
       cy.get('[data-testid="radio-schedule"]').scrollIntoView({
         duration: 1000,
@@ -35,7 +39,7 @@ export const assertRadioScheduleComponentClick = ({
   it('should send a click event for the Radio Schedule component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
-      cy.visit(url);
+      visitPageInNewTab(url);
 
       cy.get('[data-testid="radio-schedule"]').scrollIntoView({
         duration: 1000,
@@ -52,7 +56,7 @@ export const assertRadioScheduleComponentClick = ({
       });
 
       // return to previous page
-      cy.visit(url);
+      visitPageInNewTab(url);
     });
   });
 };

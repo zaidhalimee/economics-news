@@ -1,4 +1,8 @@
-import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import {
+  interceptATIAnalyticsBeacons,
+  COMPONENTS,
+  visitPageInNewTab,
+} from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { PODCAST_LINKS } = COMPONENTS;
@@ -11,7 +15,7 @@ export const assertPodcastLinksComponentView = ({
   it('should send a view event for the Podcast Links component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
-      cy.visit(url);
+      visitPageInNewTab(url);
 
       cy.get('[data-e2e="podcast-links"]').scrollIntoView({
         duration: 1000,
@@ -35,7 +39,7 @@ export const assertPodcastLinksComponentClick = ({
   it('should send a click event for the Podcast Links component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
-      cy.visit(url);
+      visitPageInNewTab(url);
 
       cy.get('[data-e2e="podcast-links"]').scrollIntoView({
         duration: 1000,
@@ -52,7 +56,7 @@ export const assertPodcastLinksComponentClick = ({
       });
 
       // return to previous page
-      cy.visit(url);
+      visitPageInNewTab(url);
     });
   });
 };

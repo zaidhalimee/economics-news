@@ -142,6 +142,7 @@
     "@babel/preset-react": "7.26.3",
     "@babel/preset-typescript": "7.26.0",
     "@babel/runtime": "7.26.10",
+    "@cypress/puppeteer": "0.1.5",
     "@cypress/webpack-preprocessor": "6.0.2",
     "@emotion/babel-plugin": "11.13.5",
     "@emotion/babel-preset-css-prop": "11.12.0",
