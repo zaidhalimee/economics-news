@@ -1,5 +1,17 @@
 import puppeteer from 'puppeteer';
 import scope from '../scope';
+import * as ChromeLauncher from 'chrome-launcher';
+import util from 'node:util';
+
+const exec = util.promisify(require('node:child_process').exec);
+
+const getWebSocketDebuggerUrl = async ({ port }) => {
+  const { stdout } = await exec(
+    `curl -H "Accept: application/json" http://localhost:${port}/json/version`,
+  );
+  const { webSocketDebuggerUrl } = JSON.parse(stdout);
+  scope.webSocketDebuggerUrl = webSocketDebuggerUrl;
+};
 
 export default ({ testSuites, onPageRequest }) => {
   const TIMEOUT = 60000;
