@@ -40,8 +40,6 @@ const requestContext: RequestContextProps = {
   platform: 'canonical',
   isUK: false,
   statsDestination: 'statsDestination',
-  previousPath: 'previousPath',
-  origin: 'origin',
 };
 
 // @ts-expect-error - only partial data required for testing purposes

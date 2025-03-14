@@ -10,6 +10,10 @@ import { TopRow, LeadingRow, RegularRow } from '.';
 
 jest.mock('../../../components/ThemeProvider');
 
+jest.mock('#app/lib/utilities/getUUID', () =>
+  jest.fn().mockImplementation(() => 'mockId'),
+);
+
 const ImageRow = props => <RegularRow displayImages {...props} />;
 const NoImageRow = props => <RegularRow {...props} />;
 
@@ -37,6 +41,10 @@ const getRow = (Type, service, dir, number) => (
 );
 
 describe('FrontPageStoryRows Container - snapshots', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   shouldMatchSnapshot('TopRow', getRow(TopRow, 'news', 'ltr', 1));
   shouldMatchSnapshot('LeadingRow', getRow(LeadingRow, 'news', 'ltr', 2));
   shouldMatchSnapshot(
