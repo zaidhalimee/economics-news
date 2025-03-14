@@ -59,7 +59,6 @@ export const COMPONENTS = {
 
 export const visitPageInNewTab = url => {
   cy.visit(url, { failOnStatusCode: false });
-  cy.puppeteer('createTabAndGetContent', url);
 };
 
 export const interceptATIAnalyticsBeacons = () => {
