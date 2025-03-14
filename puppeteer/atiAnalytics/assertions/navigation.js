@@ -1,4 +1,4 @@
-import { COMPONENTS, scrollIntoView, reloadPage, click } from '../helpers';
+import { COMPONENTS, scrollIntoView, click } from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 import context from '../../context';
 
@@ -52,7 +52,6 @@ export const assertDropdownNavigationComponentView = ({
 }) => {
   it('should send a view event for the Dropdown Navigation component', async () => {
     await context.page.setViewport({ width: 320, height: 480 });
-
     await click('nav button');
 
     await scrollIntoView('[data-e2e="dropdown-nav"]');
@@ -76,11 +75,7 @@ export const assertDropdownNavigationComponentClick = ({
     await context.page.setViewport({ width: 320, height: 480 });
 
     await click('nav button');
-
     await scrollIntoView('[data-e2e="dropdown-nav"]');
-
-    //Open burger menu
-    await click('[data-e2e="dropdown-nav"] a');
 
     // Click last link
     await click('[data-e2e="dropdown-nav"] > ul > li:last-of-type > a');

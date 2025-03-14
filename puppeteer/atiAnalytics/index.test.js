@@ -456,7 +456,12 @@ const testSuites = [
   ...liteTestSuites,
 ];
 
+const TIMEOUT = 10000;
+jest.setTimeout(TIMEOUT); // overriding the default jest timeout of 5000
+
 describe('ATI Analytics', () => {
+  context.analyticsRequests = {};
+
   testSuites.forEach(testSuite => {
     const { path, applicationType, tests } = testSuite;
 

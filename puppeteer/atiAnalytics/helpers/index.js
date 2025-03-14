@@ -123,10 +123,6 @@ export const onPageRequest = request => {
   };
 
   if (hostname === ATI_URLS[environment]) {
-    if (!context.analyticsRequests) {
-      context.analyticsRequests = {};
-    }
-
     const initiator = request.initiator();
 
     const { url: fromUrl } = initiator;
@@ -176,16 +172,17 @@ const getComponent = async componentId => {
   return await context.page.$(componentId);
 };
 
+export const wait = milliseconds =>
+  new Promise(resolve => setTimeout(resolve, milliseconds));
+
+export const ONE_SECOND = 1000;
+
 export const scrollIntoView = async componentId => {
   const component = await getComponent(componentId);
 
   if (component) {
-    await component.scrollIntoView({
-      behavior: 'smooth',
-      block: 'center',
-    });
-
-    await context.page.hover(componentId);
+    await component.scrollIntoView();
+    await wait(ONE_SECOND);
   }
 };
 
@@ -202,12 +199,5 @@ export const goBack = async () => {
 };
 
 export const click = async componentId => {
-  return await context.page.click(componentId);
-};
-
-export const clickAndWaitForNavigation = async componentId => {
-  await Promise.all([
-    context.page.waitForNavigation(),
-    context.page.click(componentId),
-  ]);
+  await context.page.click(componentId);
 };

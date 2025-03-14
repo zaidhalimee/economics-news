@@ -33,12 +33,27 @@ export default ({ testSuites, onPageRequest }) => {
         describe(`${baseUrl}${path}`, () => {
           beforeAll(async () => {
             context.page = await context.browser.newPage();
+
+            await context.browser.setCookie({
+              name: 'ckns_explicit',
+              value: '1',
+              domain: new URL(baseUrl).hostname,
+              path: '/',
+              sameParty: false,
+              expires: -1,
+              httpOnly: false,
+              secure: false,
+              sourceScheme: 'NonSecure',
+            });
+
             context.page.setDefaultNavigationTimeout(TIMEOUT);
             context.page.on('request', onPageRequest);
 
             await context.page.goto(`${baseUrl}${path}`, {
               waitUntil: 'networkidle2',
             });
+
+            await context.page.set;
           });
 
           tests.forEach(test => {
