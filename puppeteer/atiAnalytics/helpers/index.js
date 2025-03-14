@@ -157,8 +157,12 @@ export const onPageRequest = request => {
   }
 };
 
+const getComponent = async componentId => {
+  return await context.page.$(componentId);
+};
+
 export const scrollIntoView = async componentId => {
-  const component = await context.page.$(componentId);
+  const component = await getComponent(componentId);
 
   if (component) {
     await component.scrollIntoView({
@@ -166,4 +170,14 @@ export const scrollIntoView = async componentId => {
       block: 'center',
     });
   }
+};
+
+export const reloadPage = async () => {
+  await context.page.reload({
+    waitUntil: 'networkidle2',
+  });
+};
+
+export const click = async componentId => {
+  await context.page.click(componentId);
 };

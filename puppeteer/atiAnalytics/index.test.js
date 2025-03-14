@@ -80,7 +80,7 @@ const canonicalTestSuites = [
       assertPageView,
       assertScrollableNavigationComponentView,
       assertScrollableNavigationComponentClick,
-      // assertDropdownNavigationComponentView,
+      assertDropdownNavigationComponentView,
       // assertDropdownNavigationComponentClick,
       // assertMessageBannerComponentView,
       // assertMessageBannerComponentClick,
@@ -431,11 +431,11 @@ const liteTestSuites = canonicalTestSuites
 
     switch (testSuite.contentType) {
       case 'article':
-        liteSiteTests.push(assertLiteSiteCTAComponentClick);
-        liteSiteTests.push(assertRelatedTopicsComponentView);
+        // liteSiteTests.push(assertLiteSiteCTAComponentClick);
+        // liteSiteTests.push(assertRelatedTopicsComponentView);
         break;
       case 'index-home':
-        liteSiteTests.push(assertMostReadComponentClick);
+        // liteSiteTests.push(assertMostReadComponentClick);
         break;
       default:
         break;
@@ -456,7 +456,7 @@ describe('ATI Analytics', () => {
   });
 
   runTestsForPage({
-    testSuites: [...canonicalTestSuites],
+    testSuites: [...canonicalTestSuites, ...ampTestSuites, ...liteTestSuites],
     onPageRequest,
   });
 });

@@ -2,6 +2,8 @@ import {
   interceptATIAnalyticsBeacons,
   COMPONENTS,
   scrollIntoView,
+  reloadPage,
+  click,
 } from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 import context from '../../context';
@@ -15,7 +17,8 @@ export const assertScrollableNavigationComponentView = ({
   useReverb,
 }) => {
   it('should send a view event for the Scrollable Navigation component', async () => {
-    await scrollIntoView('[data-e2e="scrollable-nav"]');
+    await reloadPage();
+    await context.page.focus('[data-e2e="scrollable-nav"]');
 
     assertATIComponentViewEvent({
       component: SCROLLABLE_NAVIGATION,
@@ -33,9 +36,10 @@ export const assertScrollableNavigationComponentClick = ({
   useReverb,
 }) => {
   it('should send a click event for the Scrollable Navigation component', async () => {
+    await reloadPage();
     await scrollIntoView('[data-e2e="scrollable-nav"]');
 
-    await context.page.click('[data-e2e="scrollable-nav"] a');
+    await click('[data-e2e="scrollable-nav"] a');
 
     assertATIComponentClickEvent({
       component: SCROLLABLE_NAVIGATION,
@@ -53,20 +57,17 @@ export const assertDropdownNavigationComponentView = ({
   componentTrackingContentType,
   useReverb,
 }) => {
-  it('should send a view event for the Dropdown Navigation component', () => {
-    cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
-      cy.visit(url);
+  it('should send a view event for the Dropdown Navigation component', async () => {
+    await reloadPage();
+    await context.page.setViewport({ width: 320, height: 480 });
 
-      cy.viewport(320, 480);
-      cy.get('nav button').click();
+    await click('nav button');
 
-      assertATIComponentViewEvent({
-        component: DROPDOWN_NAVIGATION,
-        pageIdentifier,
-        contentType: componentTrackingContentType || contentType,
-        useReverb,
-      });
+    assertATIComponentViewEvent({
+      component: DROPDOWN_NAVIGATION,
+      pageIdentifier,
+      contentType: componentTrackingContentType || contentType,
+      useReverb,
     });
   });
 };
