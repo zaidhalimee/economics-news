@@ -9,7 +9,7 @@ const getPageViewParams = () => {
   }
   throw new Error(`Unable to find a request for ${eventName}
 
-analyticsRequests (all): ${JSON.stringify(context.analyticsRequests, null, 2)}
+analyticsRequests: ${JSON.stringify(context.analyticsRequests, null, 2)}
 `);
 };
 
@@ -22,9 +22,7 @@ const getParams = eventName => {
   }
   throw new Error(`Unable to find a request for ${eventName}
 
-analyticsRequests (${testName}): ${JSON.stringify(context.analyticsRequests[testName], null, 2)}
-
-analyticsRequests (all): ${JSON.stringify(context.analyticsRequests[testName], null, 2)}
+analyticsRequests: ${JSON.stringify(context.analyticsRequests, null, 2)}
 `);
 };
 

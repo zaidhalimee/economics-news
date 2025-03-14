@@ -123,14 +123,14 @@ const getComponent = async componentId => {
 export const wait = milliseconds =>
   new Promise(resolve => setTimeout(resolve, milliseconds));
 
-export const ONE_SECOND = 1000;
+export const ONE_AND_A_HALF_SECONDS = 1500;
 
 export const scrollIntoView = async componentId => {
   const component = await getComponent(componentId);
 
   if (component) {
     await component.scrollIntoView();
-    await wait(ONE_SECOND);
+    await wait(ONE_AND_A_HALF_SECONDS);
   }
 };
 

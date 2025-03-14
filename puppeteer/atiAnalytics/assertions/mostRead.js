@@ -1,4 +1,4 @@
-import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import { click, COMPONENTS, scrollIntoView } from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { MOST_READ } = COMPONENTS;
@@ -8,19 +8,14 @@ export const assertMostReadComponentView = ({
   contentType,
   useReverb,
 }) => {
-  it('should send a view event for the Most Read component', () => {
-    cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
-      cy.visit(url);
+  it('should send a view event for the Most Read component', async () => {
+    await scrollIntoView('[data-e2e="most-read"]');
 
-      cy.get('[data-e2e="most-read"]').scrollIntoView({ duration: 1000 });
-
-      assertATIComponentViewEvent({
-        component: MOST_READ,
-        pageIdentifier,
-        contentType,
-        useReverb,
-      });
+    assertATIComponentViewEvent({
+      component: MOST_READ,
+      pageIdentifier,
+      contentType,
+      useReverb,
     });
   });
 };
@@ -30,25 +25,16 @@ export const assertMostReadComponentClick = ({
   contentType,
   useReverb,
 }) => {
-  it('should send a click event for the Most Read component', () => {
-    cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
-      cy.visit(url);
+  it('should send a click event for the Most Read component', async () => {
+    await scrollIntoView('[data-e2e="most-read"]');
 
-      cy.get('[data-e2e="most-read"]').scrollIntoView({ duration: 1000 });
+    await click('[data-e2e="most-read"] a');
 
-      // Click on first item
-      cy.get('[data-e2e="most-read"]').find('a').first().click();
-
-      assertATIComponentClickEvent({
-        component: MOST_READ,
-        pageIdentifier,
-        contentType,
-        useReverb,
-      });
-
-      // return to previous page
-      cy.visit(url);
+    assertATIComponentClickEvent({
+      component: MOST_READ,
+      pageIdentifier,
+      contentType,
+      useReverb,
     });
   });
 };
