@@ -6,8 +6,6 @@ export const getATIParamsFromURL = atiAnalyticsURL => {
 
 export const ATI_PAGE_VIEW = 'ati-page-view';
 
-export const ATI_PAGE_VIEW_REVERB = 'ati-page-view-reverb';
-
 const SCROLLABLE_NAVIGATION = 'scrollable-navigation';
 const DROPDOWN_NAVIGATION = 'dropdown-navigation';
 const TOP_STORIES = 'top-stories';
@@ -130,11 +128,8 @@ export const onPageRequest = request => {
 
     const { x8: libraryVersion, atc: clickEvent, ati: viewEvent } = params;
 
-    if (libraryVersion === '[simorgh]') {
+    if (libraryVersion?.includes('simorgh')) {
       global.analyticsRequests[ATI_PAGE_VIEW] = params;
-    }
-    if (libraryVersion === 'simorgh') {
-      global.analyticsRequests[ATI_PAGE_VIEW_REVERB] = params;
     }
 
     Object.values(COMPONENTS).forEach(component => {

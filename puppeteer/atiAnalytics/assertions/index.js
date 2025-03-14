@@ -64,16 +64,13 @@ const assertATIComponentClickEventParamsExist = ({ params, useReverb }) => {
 };
 
 export const assertPageView = ({
-  useReverb,
   pageIdentifier,
   applicationType,
   contentType,
   service,
 }) => {
   it(`should send a page view event with service = ${service}, page identifier = ${pageIdentifier}, application type = ${applicationType} and content type = ${contentType}`, () => {
-    const atiPageViewAlias = useReverb ? ATI_PAGE_VIEW_REVERB : ATI_PAGE_VIEW;
-
-    const params = global.analyticsRequests[atiPageViewAlias];
+    const params = global.analyticsRequests[ATI_PAGE_VIEW];
 
     assertATIPageViewEventParamsExist({
       params,
@@ -81,13 +78,10 @@ export const assertPageView = ({
       applicationType,
     });
 
-    expect(params.p).toBe(pageIdentifier, 'params.p (page identifier)');
-    expect(params.x2).toBe(
-      `[${applicationType}]`,
-      'params.x2 (application type)',
-    );
-    expect(params.x3).toBe(`[news-${service}]`, 'params.x3 (application name)');
-    expect(params.x7).toBe(`[${contentType}]`, 'params.x7 (content type)');
+    expect(params.p).toBe(pageIdentifier);
+    expect(params.x2).toBe(`[${applicationType}]`);
+    expect(params.x3).toBe(`[news-${service}]`, 'application name');
+    expect(params.x7).toBe(`[${contentType}]`);
   });
 };
 
@@ -112,7 +106,7 @@ export const assertATIComponentViewEvent = ({
       assertATIComponentViewEventParamsExist({ params, useReverb });
 
       if (!useReverb) {
-        expect(params.p).toBe(pageIdentifier, 'params.p (page identifier)');
+        expect(params.p).toBe(pageIdentifier);
       }
 
       expect(params.ati).to.match(
@@ -121,7 +115,7 @@ export const assertATIComponentViewEvent = ({
           component,
           pageIdentifier,
         }),
-        'params.ati (publisher impression)',
+        'publisher impression (view event)',
       );
     });
 
@@ -145,16 +139,13 @@ export const assertATIComponentClickEvent = ({
       });
 
       if (applicationType === 'lite') {
-        expect(params.app_type).toBe(applicationType, 'params.app_type');
+        expect(params.app_type).toBe(applicationType);
       }
 
       if (useReverb) {
-        expect(params.patc).toBe(
-          pageIdentifier,
-          'params.patc (page identifier)',
-        );
+        expect(params.patc).toBe(pageIdentifier, 'reverb page identifier');
       } else {
-        expect(params.p).toBe(pageIdentifier, 'params.p (page identifier)');
+        expect(params.p).toBe(pageIdentifier);
       }
 
       expect(params.atc).to.match(
@@ -163,6 +154,6 @@ export const assertATIComponentClickEvent = ({
           pageIdentifier,
           component,
         }),
-        'params.atc (publisher click)',
+        'publisher click (click event)',
       );
     });
