@@ -2,7 +2,7 @@ import puppeteer from 'puppeteer';
 import context from '../context';
 
 export default ({ testSuites, onPageRequest }) => {
-  describe('', () => {
+  describe('Tests', () => {
     beforeAll(async () => {
       context.browser = await puppeteer.launch({
         args: ['--no-sandbox'],
