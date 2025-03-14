@@ -6,7 +6,7 @@ export default ({ testSuites, onPageRequest }) => {
     beforeAll(async () => {
       context.browser = await puppeteer.launch({
         args: ['--no-sandbox'],
-        headless: false,
+        // headless: false,
       });
     });
 
@@ -33,6 +33,7 @@ export default ({ testSuites, onPageRequest }) => {
           beforeAll(async () => {
             context.page = await context.browser.newPage();
 
+            // Disable cookie banner
             await context.browser.setCookie({
               name: 'ckns_explicit',
               value: '1',
@@ -51,8 +52,6 @@ export default ({ testSuites, onPageRequest }) => {
             await context.page.goto(`${baseUrl}${path}`, {
               waitUntil: 'networkidle2',
             });
-
-            await context.page.set;
           });
 
           tests.forEach(test => {
