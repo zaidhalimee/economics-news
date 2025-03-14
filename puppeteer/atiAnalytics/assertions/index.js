@@ -1,15 +1,31 @@
 import context from '../../context';
-import { ATI_PAGE_VIEW } from '../helpers';
+import { ATI_PAGE_VIEW, getCurrentTestName } from '../helpers';
 
-const getParams = eventName => {
-  const params = context.analyticsRequests[eventName];
+const getPageViewParams = () => {
+  const params = context.analyticsRequests[ATI_PAGE_VIEW];
 
   if (params) {
     return params;
   }
   throw new Error(`Unable to find a request for ${eventName}
 
-analyticsRequests: ${JSON.stringify(context.analyticsRequests, null, 2)}`);
+analyticsRequests (all): ${JSON.stringify(context.analyticsRequests, null, 2)}
+`);
+};
+
+const getParams = eventName => {
+  const testName = getCurrentTestName();
+  const params = context.analyticsRequests[testName][eventName];
+
+  if (params) {
+    return params;
+  }
+  throw new Error(`Unable to find a request for ${eventName}
+
+analyticsRequests (${testName}): ${JSON.stringify(context.analyticsRequests[testName], null, 2)}
+
+analyticsRequests (all): ${JSON.stringify(context.analyticsRequests[testName], null, 2)}
+`);
 };
 
 const assertATIPageViewEventParamsExist = ({
@@ -77,7 +93,7 @@ export const assertPageView = ({
   service,
 }) => {
   it(`should send a page view event with service = ${service}, page identifier = ${pageIdentifier}, application type = ${applicationType} and content type = ${contentType}`, () => {
-    const params = getParams(ATI_PAGE_VIEW);
+    const params = getPageViewParams();
 
     assertATIPageViewEventParamsExist({
       params,

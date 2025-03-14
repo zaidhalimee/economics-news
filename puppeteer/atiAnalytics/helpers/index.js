@@ -46,70 +46,26 @@ export const COMPONENTS = {
   BILLBOARD,
 };
 
-export const interceptATIAnalyticsBeacons = () => {
-  const atiUrl = new URL(envs.atiUrl).origin;
+export const getCurrentTestName = () =>
+  expect.getState().currentTestName || ATI_PAGE_VIEW;
 
-  // Component Views
-  Object.values(COMPONENTS).forEach(component => {
-    const viewClickEventRegex = new RegExp(
-      `PUB-\\[?.*?\\]?-\\[?${component}.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?`,
-      'g',
-    );
+const initialiseAnalyticsRequests = () => {
+  const testName = getCurrentTestName();
 
-    cy.intercept(
-      {
-        url: `${atiUrl}/*`,
-        query: {
-          ati: viewClickEventRegex,
-        },
-      },
-      request => {
-        request.reply({ statusCode: 200 });
-      },
-    ).as(`${component}-ati-view`);
+  if (!context.analyticsRequests[testName]) {
+    context.analyticsRequests[testName] = {};
+  }
 
-    // Component Clicks
-    cy.intercept(
-      {
-        url: `${atiUrl}/*`,
-        query: {
-          atc: viewClickEventRegex,
-        },
-      },
-      request => {
-        request.reply({ statusCode: 200 });
-      },
-    ).as(`${component}-ati-click`);
-  });
-
-  // NOT REVERB - Page View (only fires once per page visit)
-  cy.intercept(
-    {
-      url: `${atiUrl}/*`,
-      query: {
-        x8: '[simorgh]',
-      },
-    },
-    request => {
-      request.reply({ statusCode: 200 });
-    },
-  ).as(`${ATI_PAGE_VIEW}`);
-
-  // REVERB - Page View (only fires once per page visit)
-  cy.intercept(
-    {
-      url: `${atiUrl}/*`,
-      query: {
-        x8: 'simorgh',
-      },
-    },
-    request => {
-      request.reply({ statusCode: 200 });
-    },
-  ).as(`${ATI_PAGE_VIEW_REVERB}`);
+  if (!context.analyticsRequests[ATI_PAGE_VIEW]) {
+    context.analyticsRequests[ATI_PAGE_VIEW] = {};
+  }
 };
 
 export const onPageRequest = request => {
+  initialiseAnalyticsRequests();
+
+  const testName = getCurrentTestName();
+
   const url = new URL(request.url());
 
   const { hostname, href } = url;
@@ -149,19 +105,19 @@ export const onPageRequest = request => {
 
       //Component Views
       if (viewEvent?.match(viewClickEventRegex)) {
-        context.analyticsRequests[`${component}-ati-view`] = params;
+        context.analyticsRequests[testName][`${component}-ati-view`] = params;
       }
 
       //Component Clicks
       if (clickEvent?.match(viewClickEventRegex)) {
-        context.analyticsRequests[`${component}-ati-click`] = params;
+        context.analyticsRequests[testName][`${component}-ati-click`] = params;
       }
     });
 
     console.log(
       '\n',
       // Log the test where is has originated from
-      expect.getState().currentTestName || 'Test Name Unknown',
+      testName,
       '\nanalyticsRequests:',
       JSON.stringify(context.analyticsRequests, null, 2),
     );

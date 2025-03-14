@@ -465,12 +465,12 @@ describe('ATI Analytics', () => {
     context.analyticsRequests = {};
   });
 
-  testSuites.forEach(testSuite => {
-    const { tests } = testSuite;
+  testSuites.forEach(testData => {
+    const { tests } = testData;
 
     tests.forEach(test => {
       runTestsForPage({
-        testSuites: [{ ...testSuite, tests: [test] }],
+        testSuites: [{ ...testData, tests: [test] }],
         onPageRequest,
       });
     });
