@@ -81,7 +81,7 @@ const canonicalTestSuites = [
       assertScrollableNavigationComponentView,
       assertScrollableNavigationComponentClick,
       assertDropdownNavigationComponentView,
-      // assertDropdownNavigationComponentClick,
+      assertDropdownNavigationComponentClick,
       // assertMessageBannerComponentView,
       // assertMessageBannerComponentClick,
       // assertMostReadComponentView,
@@ -450,13 +450,22 @@ const liteTestSuites = canonicalTestSuites
     };
   });
 
-describe('ATI Analytics', () => {
-  afterEach(() => {
-    context.analyticsRequests = [];
-  });
+const testSuites = [
+  ...canonicalTestSuites,
+  ...ampTestSuites,
+  ...liteTestSuites,
+];
 
-  runTestsForPage({
-    testSuites: [...canonicalTestSuites, ...ampTestSuites, ...liteTestSuites],
-    onPageRequest,
+describe('ATI Analytics', () => {
+  testSuites.forEach(testSuite => {
+    const { path, applicationType, tests } = testSuite;
+
+    describe(`${applicationType} - ${path}`, () => {
+      tests.forEach(test => {
+        const testData = { ...testSuite };
+        testData.tests = [test];
+        runTestsForPage({ testSuites: [testData], onPageRequest });
+      });
+    });
   });
 });

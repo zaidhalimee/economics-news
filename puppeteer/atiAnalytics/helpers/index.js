@@ -111,6 +111,7 @@ export const interceptATIAnalyticsBeacons = () => {
 
 export const onPageRequest = request => {
   const url = new URL(request.url());
+
   const { hostname, href } = url;
 
   const environment = process.env.SIMORGH_APP_ENV;
@@ -126,7 +127,17 @@ export const onPageRequest = request => {
       context.analyticsRequests = {};
     }
 
-    const params = getATIParamsFromURL(href);
+    const initiator = request.initiator();
+
+    const { url: fromUrl } = initiator;
+
+    const params = {
+      ...getATIParamsFromURL(href),
+      additionalInfo: {
+        fromUrl,
+        resourceType: request.resourceType(),
+      },
+    };
 
     const { x8: libraryVersion, atc: clickEvent, ati: viewEvent } = params;
 
@@ -151,9 +162,12 @@ export const onPageRequest = request => {
       }
     });
 
-    console.log({
-      analyticsRequests: context.analyticsRequests,
-    });
+    console.log(
+      // Log the test where is has originated from
+      expect.getState().currentTestName || 'Test Name Unknown',
+      '\nanalyticsRequests:',
+      JSON.stringify(context.analyticsRequests, null, 2),
+    );
   }
 };
 
@@ -178,6 +192,19 @@ export const reloadPage = async () => {
   });
 };
 
+export const goBack = async () => {
+  await context.page.goBack({
+    waitUntil: 'networkidle2',
+  });
+};
+
 export const click = async componentId => {
-  await context.page.click(componentId);
+  return await context.page.click(componentId);
+};
+
+export const clickAndWaitForNavigation = async componentId => {
+  await Promise.all([
+    context.page.waitForNavigation(),
+    context.page.click(componentId),
+  ]);
 };

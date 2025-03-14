@@ -1,6 +1,17 @@
 import context from '../../context';
 import { ATI_PAGE_VIEW } from '../helpers';
 
+const getParams = eventName => {
+  const params = context.analyticsRequests[eventName];
+
+  if (params) {
+    return params;
+  }
+  throw new Error(`Unable to find a request for ${eventName}
+
+analyticsRequests: ${JSON.stringify(context.analyticsRequests, null, 2)}`);
+};
+
 const assertATIPageViewEventParamsExist = ({
   params,
   contentType,
@@ -66,7 +77,7 @@ export const assertPageView = ({
   service,
 }) => {
   it(`should send a page view event with service = ${service}, page identifier = ${pageIdentifier}, application type = ${applicationType} and content type = ${contentType}`, () => {
-    const params = context.analyticsRequests[ATI_PAGE_VIEW];
+    const params = getParams(ATI_PAGE_VIEW);
 
     assertATIPageViewEventParamsExist({
       params,
@@ -93,7 +104,7 @@ export const assertATIComponentViewEvent = ({
   contentType,
   useReverb,
 }) => {
-  const params = context.analyticsRequests[`${component}-ati-view`];
+  const params = getParams(`${component}-ati-view`);
 
   assertATIComponentViewEventParamsExist({ params, useReverb });
 
@@ -118,7 +129,7 @@ export const assertATIComponentClickEvent = ({
   applicationType,
   useReverb,
 }) => {
-  const params = context.analyticsRequests[`${component}-ati-click`];
+  const params = getParams(`${component}-ati-click`);
 
   assertATIComponentClickEventParamsExist({
     params,

@@ -1,10 +1,4 @@
-import {
-  COMPONENTS,
-  scrollIntoView,
-  reloadPage,
-  click,
-  goBack,
-} from '../helpers';
+import { COMPONENTS, scrollIntoView, reloadPage, click } from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 import context from '../../context';
 
@@ -17,8 +11,7 @@ export const assertScrollableNavigationComponentView = ({
   useReverb,
 }) => {
   it('should send a view event for the Scrollable Navigation component', async () => {
-    await reloadPage();
-    await context.page.focus('[data-e2e="scrollable-nav"]');
+    await scrollIntoView('[data-e2e="scrollable-nav"]');
 
     assertATIComponentViewEvent({
       component: SCROLLABLE_NAVIGATION,
@@ -79,6 +72,7 @@ export const assertDropdownNavigationComponentClick = ({
 }) => {
   it('should send a click event for the Dropdown Navigation component', async () => {
     await context.page.setViewport({ width: 320, height: 480 });
+    await reloadPage();
 
     await click('nav button');
 
