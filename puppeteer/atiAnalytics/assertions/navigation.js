@@ -1,9 +1,9 @@
 import {
-  interceptATIAnalyticsBeacons,
   COMPONENTS,
   scrollIntoView,
   reloadPage,
   click,
+  goBack,
 } from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 import context from '../../context';
@@ -36,10 +36,10 @@ export const assertScrollableNavigationComponentClick = ({
   useReverb,
 }) => {
   it('should send a click event for the Scrollable Navigation component', async () => {
-    await reloadPage();
     await scrollIntoView('[data-e2e="scrollable-nav"]');
 
-    await click('[data-e2e="scrollable-nav"] a');
+    // Click last item in the scrollable nav
+    await click('[data-e2e="scrollable-nav"] > ul > li:last-of-type > a');
 
     assertATIComponentClickEvent({
       component: SCROLLABLE_NAVIGATION,
@@ -58,7 +58,6 @@ export const assertDropdownNavigationComponentView = ({
   useReverb,
 }) => {
   it('should send a view event for the Dropdown Navigation component', async () => {
-    await reloadPage();
     await context.page.setViewport({ width: 320, height: 480 });
 
     await click('nav button');
@@ -78,26 +77,18 @@ export const assertDropdownNavigationComponentClick = ({
   componentTrackingContentType,
   useReverb,
 }) => {
-  it('should send a click event for the Dropdown Navigation component', () => {
-    cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
-      cy.visit(url);
+  it('should send a click event for the Dropdown Navigation component', async () => {
+    await context.page.setViewport({ width: 320, height: 480 });
 
-      cy.viewport(320, 480);
-      cy.get('nav button').click();
+    await click('nav button');
 
-      // Click on first item, then return to the original page
-      cy.get('[data-e2e="dropdown-nav"]').find('a').first().click();
+    await click('[data-e2e="dropdown-nav"] a');
 
-      assertATIComponentClickEvent({
-        component: DROPDOWN_NAVIGATION,
-        pageIdentifier,
-        contentType: componentTrackingContentType || contentType,
-        useReverb,
-      });
-
-      // Return to previous page
-      cy.visit(url);
+    assertATIComponentClickEvent({
+      component: DROPDOWN_NAVIGATION,
+      pageIdentifier,
+      contentType: componentTrackingContentType || contentType,
+      useReverb,
     });
   });
 };
