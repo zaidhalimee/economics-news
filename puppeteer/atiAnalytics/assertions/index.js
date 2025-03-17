@@ -71,6 +71,7 @@ const assertATIComponentClickEventParamsExist = ({ params, useReverb }) => {
 
   if (useReverb) {
     expect(params).toHaveProperty('patc'); // page identifier
+    expect(params).toHaveProperty('s2atc'); // level 2 site / producer
   } else {
     expect(params).toHaveProperty('p'); // page identifier
   }
