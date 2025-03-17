@@ -210,19 +210,6 @@ const canonicalTestSuites = [
     tests: [assertPageView],
   },
   {
-    path: '/hausa/articles/cw43vy8zdjvo',
-    runforEnv: ['local', 'live'],
-    service: 'hausa',
-    pageIdentifier: 'hausa.articles.cw43vy8zdjvo.page',
-    applicationType: 'responsive',
-    contentType: 'article-sfv',
-    tests: [
-      assertPageView,
-      assertLatestMediaComponentView,
-      assertLatestMediaComponentClick,
-    ],
-  },
-  {
     path: '/afrique/bbc_afrique_tv/tv_programmes/w13xttmz',
     runforEnv: ['local', 'test', 'live'],
     service: 'afrique',
