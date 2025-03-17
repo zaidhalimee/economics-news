@@ -1,7 +1,26 @@
+import onClient from '#app/lib/utilities/onClient';
+import isLive from '#app/lib/utilities/isLive';
 import filterForBlockType from '#app/lib/utilities/blockHandlers';
 import { BuildConfigProps, PlayerConfig } from '../types';
 import configForMediaBlockType from '../configs';
-import isTestRequested from './isTestRequested';
+
+const isTestRequested = () => {
+  if (isLive()) {
+    return false;
+  }
+
+  if (onClient()) {
+    const testLiterals = window.location.hostname.match(/localhost|test/g);
+    const isTest = testLiterals && testLiterals.length > 0;
+
+    const queryParams = new URLSearchParams(window.location.search);
+    const isRenderEnvTest = queryParams.get('renderer_env') === 'test';
+
+    return isTest && isRenderEnvTest;
+  }
+
+  return false;
+};
 
 const buildSettings = ({
   id,

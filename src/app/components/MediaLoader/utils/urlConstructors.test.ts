@@ -6,8 +6,6 @@ import { getAmpIframeUrl, getExternalEmbedUrl } from './urlConstructors';
   For Syndicated routes, it would be something like /serbian/cyr/av-embeds/srbija-68707945 or /ws/av-embeds/articles/cd1rmn075d1o/p0jd37n8/ig
 */
 
-jest.mock('./isTestRequested', () => jest.fn().mockImplementation(() => true));
-
 const ampIframeTestCases = [
   {
     description: 'should build an AMP iframe URL for the page',
