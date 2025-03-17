@@ -48,6 +48,14 @@ export const COMPONENTS = {
   BILLBOARD,
 };
 
+const logRequest = ({ requestType, params, rest }) =>
+  console.log('Request handled', {
+    test: expect.getState().currentTestName,
+    requestType,
+    params,
+    ...rest,
+  });
+
 export const onPageRequest = request => {
   if (!context.page.__analyticsRequests) {
     context.page.__analyticsRequests = [];
@@ -75,6 +83,8 @@ export const onPageRequest = request => {
         requestType: ATI_PAGE_VIEW,
         params,
       });
+
+      logRequest({ requestType: ATI_PAGE_VIEW, params });
     }
 
     Object.values(COMPONENTS).forEach(component => {
@@ -83,21 +93,33 @@ export const onPageRequest = request => {
         'g',
       );
 
+      let requestType;
+
       // Component Views
       if (viewEvent?.match(viewClickEventRegex)) {
+        requestType = `${component}-ati-view`;
         context.page.__analyticsRequests.push({
-          requestType: `${component}-ati-view`,
+          requestType,
           params,
         });
+
+        logRequest({ requestType, params });
       }
 
       // Component Clicks
       if (clickEvent?.match(viewClickEventRegex)) {
+        requestType = `${component}-ati-click`;
         context.page.__analyticsRequests.push({
-          requestType: `${component}-ati-click`,
+          requestType,
           params,
         });
+        logRequest({ requestType, params });
       }
+    });
+  } else {
+    console.log('Request ignored', {
+      test: expect.getState().currentTestName,
+      url: href,
     });
   }
 };
