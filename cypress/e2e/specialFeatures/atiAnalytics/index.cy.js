@@ -313,20 +313,6 @@ const canonicalTestSuites = [
     ],
   },
   {
-    path: '/persian',
-    runforEnv: ['test', 'live'],
-    service: 'persian',
-    pageIdentifier: 'persian.page',
-    applicationType: 'responsive',
-    contentType: 'index-home',
-    useReverb: true,
-    tests: [
-      assertPageView,
-      assertTopStoriesComponentView,
-      assertTopStoriesComponentClick,
-    ],
-  },
-  {
     path: '/persian/topics/crezq2dg9zwt',
     runforEnv: ['local', 'test'],
     service: 'persian',
