@@ -30,6 +30,7 @@ import { Services } from '#app/models/types/global';
 
 import { Article } from '#app/models/types/optimo';
 import * as clickTracking from '#app/hooks/useClickTrackerHandler';
+import * as viewTracking from '#app/hooks/useViewTracker';
 import {
   render,
   screen,
@@ -180,9 +181,10 @@ describe('Article Page', () => {
     }
   });
 
-  it('should apply tracking data on lite site cta link', () => {
+  it('should apply click and view tracking data on lite site cta link', () => {
     const eventTrackingData = { componentName: 'canonical-lite-cta' };
     const clickTrackerSpy = jest.spyOn(clickTracking, 'default');
+    const viewTrackerSpy = jest.spyOn(viewTracking, 'default');
 
     render(<ArticlePage pageData={articleDataPersian} />, {
       service: 'gahuza',
@@ -191,6 +193,7 @@ describe('Article Page', () => {
     });
 
     expect(clickTrackerSpy).toHaveBeenCalledWith(eventTrackingData);
+    expect(viewTrackerSpy).toHaveBeenCalledWith(eventTrackingData);
   });
 
   it('should use headline for meta description if summary does not exist', async () => {

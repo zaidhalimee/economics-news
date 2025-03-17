@@ -77,6 +77,7 @@ import {
   transformRecsData,
   OptimizelyVariation,
 } from './recommendationsExperiment';
+import useViewTracker from '#app/hooks/useViewTracker';
 
 const getImageComponent =
   (preloadLeadImageToggle: boolean) => (props: ComponentToRenderProps) => (
@@ -127,9 +128,9 @@ const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
 const getHeadlineComponent =
   ({ pathname, isLite, translations }: getHeadlineComponentProps) =>
   (props: ComponentToRenderProps) => {
+    const eventTrackingData = { componentName: 'canonical-lite-cta' };
     const { enabled: showCTA } = useToggle('liteSiteCTA');
-
-    
+    const viewRef = useViewTracker(eventTrackingData);
 
     const articleDataSavingLinkText =
       translations?.liteSite?.articleDataSavingLinkText ??
@@ -139,9 +140,13 @@ const getHeadlineComponent =
       <>
         <Headings {...props} />
         {!isLite && showCTA && (
-          <div css={styles.liteCtaContainer} data-e2e="to-lite-site">
+          <div
+            css={styles.liteCtaContainer}
+            ref={viewRef}
+            data-e2e="to-lite-site"
+          >
             <CallToActionLinkWithChevron
-              eventTrackingData={{ componentName: 'canonical-lite-cta' }}
+              eventTrackingData={eventTrackingData}
               href={`${pathname}.lite`}
               css={styles.liteCTA}
               chevronStyles={styles.liteCtaChevron}
