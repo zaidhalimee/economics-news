@@ -1,9 +1,4 @@
-import {
-  interceptATIAnalyticsBeacons,
-  COMPONENTS,
-  scrollIntoView,
-  click,
-} from '../helpers';
+import { COMPONENTS, scrollIntoView, click } from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { BILLBOARD } = COMPONENTS;
