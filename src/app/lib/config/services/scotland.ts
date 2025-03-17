@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'scotland',
     atiAnalyticsProducerId: '79',
     atiAnalyticsProducerName: 'SCOTLAND',
+    useReverb: true,
     chartbeatDomain: 'bbc.co.uk',
     brandName: 'BBC Scotland',
     product: 'BBC Scotland',
