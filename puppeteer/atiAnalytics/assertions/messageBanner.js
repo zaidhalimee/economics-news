@@ -1,4 +1,4 @@
-import { COMPONENTS, scrollIntoView } from '../helpers';
+import { click, COMPONENTS, scrollIntoView } from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { MESSAGE_BANNER } = COMPONENTS;
@@ -28,7 +28,7 @@ export const assertMessageBannerComponentClick = ({
   it('should send a click event for the Message Banner component', async () => {
     await scrollIntoView('[data-testid="message-banner-1"]');
 
-    await scrollIntoView('[data-testid="message-banner-1"] a');
+    await click('[data-testid="message-banner-1"] a');
 
     assertATIComponentClickEvent({
       component: MESSAGE_BANNER,
