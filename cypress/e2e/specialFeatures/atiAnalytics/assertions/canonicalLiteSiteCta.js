@@ -1,14 +1,36 @@
 import { COMPONENTS, interceptATIAnalyticsBeacons } from '../helpers';
-import { assertATIComponentClickEvent } from '.';
+import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
-const { LITE_SITE_CTA } = COMPONENTS;
+const { CANONICAL_LITE_CTA } = COMPONENTS;
 
-// eslint-disable-next-line import/prefer-default-export
+export const assertCanonicalToLiteSiteCTAComponentView = ({
+  pageIdentifier,
+  contentType,
+  useReverb,
+}) => {
+  it('should send a view event for the Canonical to Lite Site CTA component', () => {
+    cy.url().then(url => {
+      interceptATIAnalyticsBeacons();
+      cy.visit(url);
+
+      cy.get('[data-e2e="to-lite-site"]').scrollIntoView({ duration: 1000 });
+
+      assertATIComponentViewEvent({
+        component: CANONICAL_LITE_CTA,
+        pageIdentifier,
+        contentType,
+        useReverb,
+      });
+    });
+  });
+};
+
 export const assertCanonicalToLiteSiteCTAComponentClick = ({
   pageIdentifier,
   contentType,
+  useReverb,
 }) => {
-  it('should send a click event for the Lite Site CTA component', () => {
+  it('should send a click event for the Canonical to Lite Site CTA component', () => {
     cy.url().then(url => {
       interceptATIAnalyticsBeacons();
       cy.visit(url);
@@ -21,9 +43,10 @@ export const assertCanonicalToLiteSiteCTAComponentClick = ({
       cy.get('[data-e2e="to-lite-site"]').find('a').first().click();
 
       assertATIComponentClickEvent({
-        component: LITE_SITE_CTA,
+        component: CANONICAL_LITE_CTA,
         pageIdentifier,
         contentType,
+        useReverb,
       });
 
       // return to previous page
