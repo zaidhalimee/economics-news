@@ -65,7 +65,6 @@ export default ({
         });
 
         after(async () => {
-          await context.page.close();
           await context.browser.close();
         });
 
