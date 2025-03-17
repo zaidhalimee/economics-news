@@ -22,7 +22,7 @@ export default ({
   visitPageBeforeEachTest = false,
 }) => {
   describe('Puppeteer Tests', () => {
-    const environment = process.env.SIMORGH_APP_ENV;
+    const environment = process.env.PUPPETEER_APP_ENV;
     const baseUrl = BASE_URL[environment];
     const testSuitesForEnvironment = testSuites.filter(({ runforEnv }) =>
       runforEnv.includes(environment),

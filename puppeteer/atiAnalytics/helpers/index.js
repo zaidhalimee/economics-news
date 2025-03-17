@@ -63,7 +63,7 @@ export const onPageRequest = request => {
 
   const { hostname, href } = new URL(request.url());
 
-  const environment = process.env.SIMORGH_APP_ENV;
+  const environment = process.env.PUPPETEER_APP_ENV;
 
   const ATI_HOSTNAMES = {
     local: 'logws1363.ati-host.net',
