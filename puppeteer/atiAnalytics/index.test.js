@@ -116,7 +116,7 @@ const canonicalTestSuites = [
     path: '/portuguese/articles/cdxqgl55wgeo',
     runforEnv: ['live'],
     service: 'portuguese',
-    pageIdentifier: 'hindi.articles.cdxqgl55wgeo.page',
+    pageIdentifier: 'portuguese.articles.cdxqgl55wgeo.page',
     applicationType: 'responsive',
     contentType: 'article',
     useReverb: true,
