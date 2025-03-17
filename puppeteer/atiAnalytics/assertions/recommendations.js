@@ -1,4 +1,4 @@
-import { COMPONENTS, scrollIntoView } from '../helpers';
+import { click, COMPONENTS, scrollIntoView } from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { RECOMMENDATIONS } = COMPONENTS;
@@ -28,7 +28,7 @@ export const assertRecommendationsComponentClick = ({
   it('should send a click event for the Recommendations component', async () => {
     await scrollIntoView('[data-e2e="recommendations-heading"]');
 
-    await scrollIntoView('[data-e2e="recommendations-heading"] a');
+    await click('[data-e2e="recommendations-heading"] a');
 
     assertATIComponentClickEvent({
       component: RECOMMENDATIONS,

@@ -1,4 +1,4 @@
-import { COMPONENTS, scrollIntoView } from '../helpers';
+import { click, COMPONENTS, scrollIntoView } from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { RADIO_SCHEDULE } = COMPONENTS;
@@ -29,7 +29,7 @@ export const assertRadioScheduleComponentClick = ({
     await scrollIntoView('[data-e2e="radio-schedule"]');
 
     // Click on an on-demand episode
-    await scrollIntoView('[data-e2e="radio-schedule"] [data-e2e="onDemand"] a');
+    await click('[data-e2e="radio-schedule"] [data-e2e="onDemand"] a');
 
     assertATIComponentClickEvent({
       component: RADIO_SCHEDULE,
