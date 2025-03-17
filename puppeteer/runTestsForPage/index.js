@@ -1,64 +1,78 @@
 import puppeteer from 'puppeteer';
 import context from '../context';
 
-export default ({ testSuites, onPageRequest }) => {
+const BASE_URL = {
+  local: 'http://localhost:7080',
+  test: 'https://www.test.bbc.com',
+  live: 'https://www.bbc.com',
+};
+
+export default ({
+  testSuites,
+  onPageRequest,
+  visitPageBeforeEachTest = false,
+}) => {
   describe('Puppeteer Tests', () => {
-    beforeAll(async () => {
-      context.browser = await puppeteer.launch({
-        args: ['--no-sandbox'],
-        // headless: false,
-      });
-    });
+    const environment = process.env.SIMORGH_APP_ENV;
+    const baseUrl = BASE_URL[environment];
+    const testSuitesForEnvironment = testSuites.filter(({ runforEnv }) =>
+      runforEnv.includes(environment),
+    );
 
-    afterAll(async () => {
-      await context.browser.close();
-      delete context.browser;
-      delete context.page;
-    });
+    testSuitesForEnvironment.forEach(testData => {
+      const { path, tests, ...params } = testData;
 
-    testSuites.forEach(testData => {
-      const { path, tests, runforEnv, ...params } = testData;
-
-      const BASE_URL = {
-        local: 'http://localhost:7080',
-        test: 'https://www.test.bbc.com',
-        live: 'https://www.bbc.com',
-      };
-
-      const environment = process.env.SIMORGH_APP_ENV;
-      const baseUrl = BASE_URL[environment];
-
-      if (runforEnv.includes(environment)) {
-        describe(`${baseUrl}${path}`, () => {
-          beforeAll(async () => {
-            context.page = await context.browser.newPage();
-
-            // Disable cookie banner
-            await context.browser.setCookie({
-              name: 'ckns_explicit',
-              value: '1',
-              domain: new URL(baseUrl).hostname,
-              path: '/',
-              sameParty: false,
-              expires: -1,
-              httpOnly: false,
-              secure: false,
-              sourceScheme: 'NonSecure',
-            });
-
-            context.page.setDefaultNavigationTimeout(context.TIMEOUT);
-            context.page.on('request', onPageRequest);
-
-            await context.page.goto(`${baseUrl}${path}`, {
-              waitUntil: 'networkidle2',
-            });
-          });
-
-          tests.forEach(test => {
-            test({ path, ...params });
-          });
+      const testsToRun = tests;
+      if (visitPageBeforeEachTest) {
+        tests.map(test => {
+          return { ...testData, tests: [test] };
         });
       }
+
+      const url = `${baseUrl}${path}`;
+
+      describe(url, () => {
+        const before = visitPageBeforeEachTest ? beforeEach : beforeAll;
+
+        const after = visitPageBeforeEachTest ? afterEach : afterAll;
+
+        before(async () => {
+          context.browser = await puppeteer.launch({
+            args: ['--no-sandbox'],
+            headless: false,
+          });
+
+          // Disable cookie banner
+          await context.browser.setCookie({
+            name: 'ckns_explicit',
+            value: '1',
+            domain: new URL(baseUrl).hostname,
+            path: '/',
+            sameParty: false,
+            expires: -1,
+            httpOnly: false,
+            secure: false,
+            sourceScheme: 'NonSecure',
+          });
+
+          context.page = await context.browser.newPage();
+          context.page.setDefaultNavigationTimeout(context.TIMEOUT);
+          context.page.on('request', onPageRequest);
+
+          await context.page.goto(url, {
+            waitUntil: 'networkidle2',
+          });
+        });
+
+        after(async () => {
+          await context.page.close();
+          await context.browser.close();
+        });
+
+        testsToRun.forEach(test => {
+          test({ path, ...params });
+        });
+      });
     });
   });
 };

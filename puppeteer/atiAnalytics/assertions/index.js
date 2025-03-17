@@ -1,29 +1,20 @@
+/* eslint-disable no-underscore-dangle */
 import context from '../../context';
-import { ATI_PAGE_VIEW, getCurrentTestName } from '../helpers';
+import { ATI_PAGE_VIEW } from '../helpers';
 
-const getPageViewParams = () => {
-  const params = context.analyticsRequests[ATI_PAGE_VIEW];
+const getParams = type => {
+  const matchingRequests = context.page.__analyticsRequests.filter(
+    ({ requestType }) => requestType === type,
+  );
 
-  if (params) {
-    return params;
-  }
-  throw new Error(`Unable to find a request for ${eventName}
+  if (!matchingRequests || matchingRequests.length === 0) {
+    throw new Error(`Unable to find a request for ${type}
 
-analyticsRequests: ${JSON.stringify(context.analyticsRequests, null, 2)}
+analyticsRequests: ${JSON.stringify(matchingRequests, null, 2)}
 `);
-};
-
-const getEventParams = eventName => {
-  const testName = getCurrentTestName();
-  const params = context.analyticsRequests[testName]?.[eventName];
-
-  if (params) {
-    return params;
+  } else {
+    return matchingRequests.pop().params;
   }
-  throw new Error(`Unable to find a request for ${eventName}
-
-analyticsRequests: ${JSON.stringify(context.analyticsRequests, null, 2)}
-`);
 };
 
 const assertATIPageViewEventParamsExist = ({
@@ -91,7 +82,7 @@ export const assertPageView = ({
   service,
 }) => {
   it(`should send a page view event with service = ${service}, page identifier = ${pageIdentifier}, application type = ${applicationType} and content type = ${contentType}`, () => {
-    const params = getPageViewParams();
+    const params = getParams(ATI_PAGE_VIEW);
 
     assertATIPageViewEventParamsExist({
       params,
@@ -118,7 +109,7 @@ export const assertATIComponentViewEvent = ({
   contentType,
   useReverb,
 }) => {
-  const params = getEventParams(`${component}-ati-view`);
+  const params = getParams(`${component}-ati-view`);
 
   assertATIComponentViewEventParamsExist({ params, useReverb });
 
@@ -143,7 +134,7 @@ export const assertATIComponentClickEvent = ({
   applicationType,
   useReverb,
 }) => {
-  const params = getEventParams(`${component}-ati-click`);
+  const params = getParams(`${component}-ati-click`);
 
   assertATIComponentClickEventParamsExist({
     params,

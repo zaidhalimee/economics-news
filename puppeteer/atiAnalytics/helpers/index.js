@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-console */
 import context from '../../context';
 
 export const getATIParamsFromURL = atiAnalyticsURL => {
@@ -46,25 +48,10 @@ export const COMPONENTS = {
   BILLBOARD,
 };
 
-export const getCurrentTestName = () =>
-  expect.getState().currentTestName || ATI_PAGE_VIEW;
-
-const initialiseAnalyticsRequests = () => {
-  const testName = getCurrentTestName();
-
-  if (!context.analyticsRequests[testName]) {
-    context.analyticsRequests[testName] = {};
-  }
-
-  if (!context.analyticsRequests[ATI_PAGE_VIEW]) {
-    context.analyticsRequests[ATI_PAGE_VIEW] = {};
-  }
-};
-
 export const onPageRequest = request => {
-  initialiseAnalyticsRequests();
-
-  const testName = getCurrentTestName();
+  if (!context.page.__analyticsRequests) {
+    context.page.__analyticsRequests = [];
+  }
 
   const url = new URL(request.url());
 
@@ -79,22 +66,15 @@ export const onPageRequest = request => {
   };
 
   if (hostname === ATI_URLS[environment]) {
-    const initiator = request.initiator();
-
-    const { url: fromUrl } = initiator;
-
-    const params = {
-      ...getATIParamsFromURL(href),
-      additionalInfo: {
-        fromUrl,
-        resourceType: request.resourceType(),
-      },
-    };
+    const params = getATIParamsFromURL(href);
 
     const { x8: libraryVersion, atc: clickEvent, ati: viewEvent } = params;
 
     if (libraryVersion?.includes('simorgh')) {
-      context.analyticsRequests[ATI_PAGE_VIEW] = params;
+      context.page.__analyticsRequests.push({
+        requestType: ATI_PAGE_VIEW,
+        params,
+      });
     }
 
     Object.values(COMPONENTS).forEach(component => {
@@ -103,33 +83,33 @@ export const onPageRequest = request => {
         'g',
       );
 
-      //Component Views
+      // Component Views
       if (viewEvent?.match(viewClickEventRegex)) {
-        context.analyticsRequests[testName][`${component}-ati-view`] = params;
+        context.page.__analyticsRequests.push({
+          requestType: `${component}-ati-view`,
+          params,
+        });
       }
 
-      //Component Clicks
+      // Component Clicks
       if (clickEvent?.match(viewClickEventRegex)) {
-        context.analyticsRequests[testName][`${component}-ati-click`] = params;
+        context.page.__analyticsRequests.push({
+          requestType: `${component}-ati-click`,
+          params,
+        });
       }
     });
-
-    console.log(`
-analyticsRequests: ${JSON.stringify(context.analyticsRequests, null, 2)}`);
   }
 };
 
-const getComponent = async componentId => {
-  return await context.page.$(componentId);
-};
-
 export const wait = milliseconds =>
+  // eslint-disable-next-line no-promise-executor-return
   new Promise(resolve => setTimeout(resolve, milliseconds));
 
-export const ONE_SECOND = 1500;
+export const ONE_SECOND = 1000;
 
 export const scrollIntoView = async componentId => {
-  const component = await getComponent(componentId);
+  const component = await context.page.$(componentId);
 
   if (component) {
     await component.scrollIntoView();
