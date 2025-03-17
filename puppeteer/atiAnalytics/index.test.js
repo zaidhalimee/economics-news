@@ -396,6 +396,20 @@ const canonicalTestSuites = [
     ],
   },
   {
+    path: '/swahili',
+    runforEnv: ['local'],
+    service: 'swahili',
+    pageIdentifier: 'swahili.page',
+    applicationType: 'responsive',
+    contentType: 'index-home',
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertRadioScheduleComponentView,
+      assertRadioScheduleComponentClick,
+    ],
+  },
+  {
     path: '/tamil/bbc_tamil_tv/tv_programmes/w13xttmy',
     runforEnv: ['local', 'test', 'live'],
     service: 'tamil',
@@ -404,6 +418,39 @@ const canonicalTestSuites = [
     contentType: 'player-episode',
     useReverb: true,
     tests: [assertPageView],
+  },
+  {
+    path: 'ukrainian/podcasts/p09jsy3h',
+    runforEnv: ['test', 'live'],
+    service: 'ukrainian',
+    pageIdentifier:
+      'ukrainian.bbc_ukrainian_audio.podcasts.programmes.p09jsy3h.page',
+    applicationType: 'responsive',
+    contentType: 'player-episode',
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertPodcastLinksComponentView,
+      assertPodcastLinksComponentClick,
+      assertRecentAudioEpisodesComponentView,
+      assertRecentAudioEpisodesComponentClick,
+    ],
+  },
+  {
+    path: '/uzbek/cyr',
+    runforEnv: ['test', 'live'],
+    service: 'uzbek',
+    pageIdentifier: 'uzbekcyr.page',
+    applicationType: 'responsive',
+    contentType: 'index-home',
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertMessageBannerComponentView,
+      assertMessageBannerComponentClick,
+      assertMostReadComponentView,
+      assertMostReadComponentClick,
+    ],
   },
   // Article
   {
