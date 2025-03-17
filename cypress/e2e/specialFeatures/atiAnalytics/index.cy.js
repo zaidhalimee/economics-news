@@ -138,7 +138,7 @@ const canonicalTestSuites = [
   },
   {
     path: '/hausa/bbc_hausa_radio/liveradio',
-    runforEnv: ['local', 'test', 'live'],
+    runforEnv: ['local', 'live'],
     service: 'hausa',
     pageIdentifier: 'hausa.bbc_hausa_radio.liveradio.page',
     applicationType: 'responsive',
