@@ -210,6 +210,19 @@ const canonicalTestSuites = [
     tests: [assertPageView],
   },
   {
+    path: '/hausa/articles/cw43vy8zdjvo',
+    runforEnv: ['local', 'live'],
+    service: 'hausa',
+    pageIdentifier: 'hausa.articles.cw43vy8zdjvo.page',
+    applicationType: 'responsive',
+    contentType: 'article-sfv',
+    tests: [
+      assertPageView,
+      assertLatestMediaComponentView,
+      assertLatestMediaComponentClick,
+    ],
+  },
+  {
     path: '/afrique/bbc_afrique_tv/tv_programmes/w13xttmz',
     runforEnv: ['local', 'test', 'live'],
     service: 'afrique',
@@ -495,6 +508,12 @@ const canonicalTestSuites = [
   },
 ];
 
+const getPath = ({ path, suffix }) => {
+  const { pathname, search } = new URL(path, 'https://www.bbc.com');
+
+  return `${pathname}${suffix}${search}`;
+};
+
 const supportsAmp = ({ contentType }) =>
   !['index-home', 'player-live', 'player-episode', 'index-category'].includes(
     contentType,
@@ -503,7 +522,7 @@ const supportsAmp = ({ contentType }) =>
 const ampTestSuites = canonicalTestSuites.filter(supportsAmp).map(testSuite => {
   return {
     ...testSuite,
-    path: `${testSuite.path}.amp`,
+    path: getPath({ path: testSuite.path, suffix: '.amp' }),
     useReverb: false,
     applicationType: 'amp',
     tests: [assertPageView],
@@ -535,7 +554,7 @@ const liteTestSuites = canonicalTestSuites
 
     return {
       ...testSuite,
-      path: `${testSuite.path}.lite`,
+      path: getPath({ path: testSuite.path, suffix: '.lite' }),
       applicationType: 'lite',
       useReverb: false,
       tests: [...liteSiteTests],
