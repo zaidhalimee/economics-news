@@ -14,7 +14,7 @@ const SearchPage = () => {
         name="viewport"
         content="width=device-width, initial-scale=1, minimum-scale=1"
       />
-      <form css={styles.container} action="/search_me/results/" method="get">
+      <form css={styles.container} action="/news/search/results/" method="get">
         <Text as="label" htmlFor={forId}>
           What is your query?
         </Text>

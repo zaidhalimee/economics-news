@@ -100,7 +100,11 @@ export const getHomePageRegex = services => {
 };
 
 export const getSearchRegex = () => {
-  return `/news/search_me`;
+  return `/news/search`;
+};
+
+export const getSearchResultsRegex = () => {
+  return `/news/search/results`;
 };
 
 export const getSwRegex = services => {

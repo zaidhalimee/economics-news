@@ -196,28 +196,54 @@ const injectReferrerPolicyHeader = (req, res, next) => {
 
 server.locals.articleIndex = searchTool();
 
-server.get('/search_me/results/*', async (req, res) => {
-  try {
-    const { query } = req;
-    const { index, totalRecords } = server.locals.articleIndex;
-    const { results, decodedInput, processingTime } = processInput(
-      index,
-      query.search_query,
-    );
+server.get(
+  '/:service/search/results/*',
+  async ({ url, query, headers, path: urlPath }, res) => {
+    try {
+      const {
+        service,
+        isAmp,
+        isApp,
+        isLite: isLiteRouteSuffix,
+        route: { pageType },
+        variant,
+      } = getRouteProps(urlPath);
+      console.log('CHECK', service, pageType);
+      const { query } = req;
+      const { index, totalRecords } = server.locals.articleIndex;
+      const { results, decodedInput, processingTime } = processInput(
+        index,
+        query.search_query,
+      );
 
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).send({
-      status: 'Okay',
-      decodedInput,
-      totalRecords,
-      processingTime,
-      results,
-    });
-  } catch (error) {
-    logger.error(SERVER_STATUS_ENDPOINT_ERROR, { error });
-    res.status(500).send('Unable to determine status');
-  }
-});
+      const result = await renderDocument({
+        bbcOrigin,
+        data,
+        isAmp,
+        isApp,
+        isLite,
+        routes,
+        service,
+        url,
+        variant,
+      });
+
+      console.log('CHECK', result);
+
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).send({
+        status: 'Okay',
+        decodedInput,
+        totalRecords,
+        processingTime,
+        results,
+      });
+    } catch (error) {
+      logger.error(SERVER_STATUS_ENDPOINT_ERROR, { error });
+      res.status(500).send('Unable to determine status');
+    }
+  },
+);
 
 // Catch all for all routes
 server.get(
