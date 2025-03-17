@@ -1,5 +1,5 @@
-import isLive from '#app/lib/utilities/isLive';
 import parseAvRoute from '#app/routes/utils/parseAvRoute';
+import isTestRequested from './isTestRequested';
 
 const LIVE_BASE_URL = 'https://www.bbc.com';
 const TEST_BASE_URL = 'https://www.test.bbc.com';
@@ -18,7 +18,7 @@ export const getAmpIframeUrl = ({ id, versionID, lang }: FuncProps) => {
 
   const { platform, service, variant, assetId } = parseAvRoute(id);
 
-  const ampBaseUrl = isLive() ? LIVE_AMP_URL : TEST_AMP_URL;
+  const ampBaseUrl = isTestRequested() ? TEST_AMP_URL : LIVE_AMP_URL;
 
   if (platform === 'cps') {
     return `${ampBaseUrl}/ws/av-embeds/cps/${service}${variant ? `/${variant}` : ''}/${assetId}${versionID ? `/${versionID}` : ''}${lang ? `/${lang}` : ''}/amp`;
@@ -36,7 +36,7 @@ export const getExternalEmbedUrl = ({ id, versionID, lang }: FuncProps) => {
 
   const { platform, service, variant, assetId } = parseAvRoute(id);
 
-  const baseUrl = isLive() ? LIVE_BASE_URL : TEST_BASE_URL;
+  const baseUrl = isTestRequested() ? TEST_BASE_URL : LIVE_BASE_URL;
 
   if (platform === 'cps') {
     return `${baseUrl}/${service}${variant ? `/${variant}` : ''}/av-embeds/${assetId}${versionID ? `/vpid/${versionID}` : ''}`;

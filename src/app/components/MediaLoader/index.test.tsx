@@ -22,6 +22,10 @@ jest.mock('react', () => ({
 
 jest.mock('#app/hooks/useLocation');
 
+jest.mock('./utils/isTestRequested', () =>
+  jest.fn().mockImplementation(() => true),
+);
+
 describe('MediaLoader', () => {
   beforeEach(() => {
     jest.restoreAllMocks();
@@ -280,6 +284,10 @@ describe('MediaLoader', () => {
   });
 
   describe('AMP', () => {
+    jest.mock('./utils/isTestRequested', () =>
+      jest.fn().mockImplementation(() => true),
+    );
+
     it('should render the AMP version of the media player', async () => {
       let container;
 

@@ -13,7 +13,6 @@ import { service as hindiServiceConfig } from '#app/lib/config/services/hindi';
 import { service as afriqueServiceConfig } from '#app/lib/config/services/afrique';
 import { service as mundoServiceConfig } from '#app/lib/config/services/mundo';
 import { service as arabicServiceConfig } from '#app/lib/config/services/arabic';
-import isLive from '#app/lib/utilities/isLive';
 import buildSettings from './buildSettings';
 import {
   aresMediaBlocks,
@@ -29,6 +28,9 @@ import {
   MediaBlock,
   PlaceholderConfig,
 } from '../types';
+import isTestRequested from './isTestRequested';
+
+jest.mock('./isTestRequested', () => jest.fn().mockImplementation(() => false));
 
 jest.mock('#app/lib/utilities/isLive', () =>
   jest.fn().mockImplementation(() => true),
@@ -810,7 +812,7 @@ describe('buildSettings', () => {
 
   describe('mediator', () => {
     it('should not be set on live environment', () => {
-      (isLive as jest.Mock).mockImplementationOnce(() => true);
+      (isTestRequested as jest.Mock).mockImplementationOnce(() => false);
 
       const result = buildSettings({
         ...baseSettings,
@@ -821,84 +823,17 @@ describe('buildSettings', () => {
       expect(result?.playerConfig).not.toHaveProperty('mediator');
     });
 
-    describe('on non-live environment', () => {
-      beforeEach(() => {
-        (isLive as jest.Mock).mockImplementationOnce(() => false);
+    it('should be set if requesting media from test environment', () => {
+      (isTestRequested as jest.Mock).mockImplementationOnce(() => true);
+
+      const result = buildSettings({
+        ...baseSettings,
+        blocks: clipMediaBlocks as MediaBlock[],
+        pageType: 'live',
       });
 
-      describe('should be set', () => {
-        it.each`
-          hostname                           | rendererEnv | reason
-          ${'http://localhost.bbc.com:7080'} | ${'test'}   | ${'host is local and renderer_env is test'}
-          ${'http://www.test.bbc.com'}       | ${'test'}   | ${'host is test and renderer_env is test'}
-          ${'http://test.bbc.com'}           | ${'test'}   | ${'host is test and renderer_env is test'}
-        `(
-          'when hostname is $hostname and renderer_env is $rendererEnv because $reason',
-          ({ hostname, rendererEnv }) => {
-            const mockWindowObj = {
-              location: {
-                hostname,
-                ...(rendererEnv && {
-                  search: {
-                    renderer_env: rendererEnv,
-                  },
-                }),
-              },
-            } as Window & typeof globalThis;
-
-            jest
-              .spyOn(window, 'window', 'get')
-              .mockImplementation(() => mockWindowObj);
-
-            const result = buildSettings({
-              ...baseSettings,
-              blocks: clipMediaBlocks as MediaBlock[],
-              pageType: 'live',
-            });
-
-            expect(result?.playerConfig).toHaveProperty('mediator', {
-              host: 'open.test.bbc.co.uk',
-            });
-          },
-        );
-      });
-
-      describe('should not be set', () => {
-        it.each`
-          hostname                           | rendererEnv | reason
-          ${'http://localhost.bbc.com:7080'} | ${'live'}   | ${'host is local and renderer_env is live'}
-          ${'http://localhost.bbc.com:7080'} | ${null}     | ${'host is local and renderer_env is not set, therefore defaulted to live'}
-          ${'https://test.bbc.com'}          | ${'live'}   | ${'host is test and renderer_env is live'}
-          ${'https://test.bbc.com'}          | ${null}     | ${'host is local and renderer_env is not set, therefore defaulted to live'}
-          ${'https://www.test.bbc.com'}      | ${'live'}   | ${'host is test and renderer_env is live'}
-          ${'https://www.test.bbc.com'}      | ${null}     | ${'host is local and renderer_env is not set, therefore defaulted to live'}
-        `(
-          'when hostname is $hostname and renderer_env is $rendererEnv because $reason',
-          ({ hostname, rendererEnv }) => {
-            const mockWindowObj = {
-              location: {
-                hostname,
-                ...(rendererEnv && {
-                  search: {
-                    renderer_env: rendererEnv,
-                  },
-                }),
-              },
-            } as Window & typeof globalThis;
-
-            jest
-              .spyOn(window, 'window', 'get')
-              .mockImplementation(() => mockWindowObj);
-
-            const result = buildSettings({
-              ...baseSettings,
-              blocks: clipMediaBlocks as MediaBlock[],
-              pageType: 'live',
-            });
-
-            expect(result?.playerConfig).not.toHaveProperty('mediator');
-          },
-        );
+      expect(result?.playerConfig).toHaveProperty('mediator', {
+        host: 'open.test.bbc.co.uk',
       });
     });
   });
