@@ -60,6 +60,8 @@ export const assertDropdownNavigationComponentView = ({
     await click('nav button');
 
     await scrollIntoView('[data-e2e="dropdown-nav"]');
+
+    // Dwell on the dropdown nav for longer to ensure that the view component event is fired
     await wait(ONE_SECOND);
 
     assertATIComponentViewEvent({
