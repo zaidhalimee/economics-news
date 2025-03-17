@@ -9,13 +9,11 @@ const BASE_URL = {
 };
 
 const onFailedRequest = request => {
-  const info = {
+  console.log('Request failed:', {
     url: request.url(),
     test: expect.getState().currentTestName,
     errorText: request.failure().errorText,
-  };
-
-  console.log(`Request failed: ${JSON.stringify(info, null, 2)}`);
+  });
 };
 
 export default ({
