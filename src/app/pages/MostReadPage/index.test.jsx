@@ -1,6 +1,6 @@
 import React from 'react';
 import { act } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router';
 import { RequestContextProvider } from '#contexts/RequestContext';
 import { data as pidginMostReadData } from '#data/pidgin/mostRead/index.json';
 import { ToggleContextProvider } from '#contexts/ToggleContext';

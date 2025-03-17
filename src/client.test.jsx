@@ -8,7 +8,7 @@ import '#testHelpers/loggerMock';
 
 jest.mock('react-dom/client');
 
-jest.mock('react-router-dom');
+jest.mock('react-router');
 
 jest.mock('./app/legacy/containers/App');
 

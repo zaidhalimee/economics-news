@@ -1,5 +1,5 @@
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router';
 import { StoryArgs, StoryProps } from '#app/models/types/storybook';
 import ThemeProvider from '#app/components/ThemeProvider';
 import { PageTypes, Services } from '#app/models/types/global';

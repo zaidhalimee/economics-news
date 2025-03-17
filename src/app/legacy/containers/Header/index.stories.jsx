@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderContainer from '.';
 import { ToggleContextProvider } from '../../../contexts/ToggleContext';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router';
 
 const Component = () => (
   <ToggleContextProvider

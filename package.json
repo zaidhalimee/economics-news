@@ -123,8 +123,8 @@
     "react-dom": "19.0.0",
     "react-helmet": "6.1.0",
     "react-lazyload": "3.2.1",
+    "react-router": "5.3.4",
     "react-router-config": "5.1.1",
-    "react-router-dom": "5.3.4",
     "undici": "7.5.0",
     "url-parse": "1.5.10",
     "winston": "patch:winston@3.8.2#./patches/winston-file-descriptor.patch"
@@ -181,7 +181,6 @@
     "@types/react-dom": "19.0.4",
     "@types/react-helmet": "6.1.11",
     "@types/react-lazyload": "^3.2.0",
-    "@types/react-router-dom": "5.3.3",
     "@types/testing-library__react": "10.2.0",
     "@types/url-parse": "^1.4.8",
     "@typescript-eslint/eslint-plugin": "5.62.0",

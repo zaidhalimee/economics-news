@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router';
 import WithTimeMachine from '#testHelpers/withTimeMachine';
 import { data as urduData } from '#data/urdu/frontpage';
 import { data as newsData } from '#data/news/frontpage';
