@@ -39,7 +39,7 @@ export default ({
         before(async () => {
           context.browser = await puppeteer.launch({
             args: ['--no-sandbox'],
-            headless: false,
+            // headless: false,
           });
 
           // Disable cookie banner
