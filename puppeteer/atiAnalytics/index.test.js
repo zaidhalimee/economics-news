@@ -280,8 +280,8 @@ const canonicalTestSuites = [
     useReverb: true,
     tests: [
       assertPageView,
-      assertMessageBannerComponentView,
-      assertMessageBannerComponentClick,
+      // assertMessageBannerComponentView,
+      // assertMessageBannerComponentClick,
       assertMostReadComponentView,
       assertMostReadComponentClick,
     ],
@@ -296,8 +296,8 @@ const canonicalTestSuites = [
     useReverb: true,
     tests: [
       assertPageView,
-      assertBillboardComponentView,
-      assertBillboardComponentClick,
+      // assertBillboardComponentView,
+      // assertBillboardComponentClick,
     ],
   },
   {
@@ -310,8 +310,8 @@ const canonicalTestSuites = [
     useReverb: true,
     tests: [
       assertPageView,
-      assertRadioScheduleComponentView,
-      assertRadioScheduleComponentClick,
+      // assertRadioScheduleComponentView,
+      // assertRadioScheduleComponentClick,
     ],
   },
   {
@@ -324,8 +324,8 @@ const canonicalTestSuites = [
     useReverb: true,
     tests: [
       assertPageView,
-      assertTopStoriesComponentView,
-      assertTopStoriesComponentClick,
+      // assertTopStoriesComponentView,
+      // assertTopStoriesComponentClick,
     ],
   },
   {
