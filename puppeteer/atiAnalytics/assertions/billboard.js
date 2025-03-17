@@ -1,4 +1,9 @@
-import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import {
+  interceptATIAnalyticsBeacons,
+  COMPONENTS,
+  scrollIntoView,
+  click,
+} from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { BILLBOARD } = COMPONENTS;
@@ -8,21 +13,14 @@ export const assertBillboardComponentView = ({
   contentType,
   useReverb,
 }) => {
-  it('should send a view event for the Billboard component', () => {
-    cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
-      cy.visit(url);
+  it('should send a view event for the Billboard component', async () => {
+    await scrollIntoView('[data-testid="billboard-1"]');
 
-      cy.get('[data-testid="billboard-1"]').scrollIntoView({
-        duration: 1000,
-      });
-
-      assertATIComponentViewEvent({
-        component: BILLBOARD,
-        pageIdentifier,
-        contentType,
-        useReverb,
-      });
+    assertATIComponentViewEvent({
+      component: BILLBOARD,
+      pageIdentifier,
+      contentType,
+      useReverb,
     });
   });
 };
@@ -32,27 +30,16 @@ export const assertBillboardComponentClick = ({
   contentType,
   useReverb,
 }) => {
-  it('should send a click event for the Billboard component', () => {
-    cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
-      cy.visit(url);
+  it('should send a click event for the Billboard component', async () => {
+    await scrollIntoView('[data-testid="billboard-1"]');
 
-      cy.get('[data-testid="billboard-1"]').scrollIntoView({
-        duration: 1000,
-      });
+    await click('[data-testid="billboard-1"] a');
 
-      // Click on first item
-      cy.get('[data-testid="billboard-1"]').find('a').first().click();
-
-      assertATIComponentClickEvent({
-        component: BILLBOARD,
-        pageIdentifier,
-        contentType,
-        useReverb,
-      });
-
-      // return to previous page
-      cy.visit(url);
+    assertATIComponentClickEvent({
+      component: BILLBOARD,
+      pageIdentifier,
+      contentType,
+      useReverb,
     });
   });
 };
