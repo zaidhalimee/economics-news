@@ -1,12 +1,15 @@
 import appConfig from '../../../../../src/server/utilities/serviceConfigs/index';
 
 const assertScriptSwitchButton = (product, variantValue) => {
-const scriptToSwitchToText = appConfig[product][variantValue].scriptLink.text;
-const scriptToSwitchTo = appConfig[product][variantValue].scriptLink.variant;
-cy.contains(scriptToSwitchToText, {matchCase: false})
-  cy.get('header[role="banner"]').first().within(() => {
-    cy.get(`a[data-variant="${scriptToSwitchTo}"]`).should('exist');
-  });
+  const scriptToSwitchToText = appConfig[product][variantValue].scriptLink.text;
+  const scriptToSwitchTo = appConfig[product][variantValue].scriptLink.variant;
+
+  cy.contains(scriptToSwitchToText, { matchCase: false });
+  cy.get('header[role="banner"]')
+    .first()
+    .within(() => {
+      cy.get(`a[data-variant="${scriptToSwitchTo}"]`).should('exist');
+    });
 };
 
 const assertURLContains = (serviceName, variantValue) => {
