@@ -8,12 +8,13 @@ const getParams = type => {
   );
 
   if (!matchingRequests || matchingRequests.length === 0) {
-    throw new Error(`Unable to find a request for ${type}
+    throw new Error(`Unable to find a matching request for ${type}
 
-analyticsRequests: ${JSON.stringify(matchingRequests, null, 2)}
+      ${JSON.stringify(matchingRequests, null, 2)}
 `);
   } else {
-    return matchingRequests.pop().params;
+    const { params } = matchingRequests.pop();
+    return params;
   }
 };
 
