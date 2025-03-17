@@ -24,9 +24,7 @@ export default ({
 
       let testsToRun = tests;
       if (visitPageBeforeEachTest) {
-        testsToRun = tests.map(test => {
-          return { ...testData, tests: [test] };
-        });
+        testsToRun = tests.map(test => test);
       }
 
       const url = `${baseUrl}${path}`;
