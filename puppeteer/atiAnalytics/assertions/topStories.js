@@ -1,4 +1,4 @@
-import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import { COMPONENTS, scrollIntoView, click } from '../helpers';
 import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { TOP_STORIES } = COMPONENTS;
@@ -8,19 +8,14 @@ export const assertTopStoriesComponentView = ({
   contentType,
   useReverb,
 }) => {
-  it('should send a view event for the Top Stories component', () => {
-    cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
-      cy.visit(url);
+  it('should send a view event for the Top Stories component', async () => {
+    await scrollIntoView('[data-testid="top-stories"]');
 
-      cy.get('[data-testid="top-stories"]').scrollIntoView({ duration: 1000 });
-
-      assertATIComponentViewEvent({
-        component: TOP_STORIES,
-        pageIdentifier,
-        contentType,
-        useReverb,
-      });
+    assertATIComponentViewEvent({
+      component: TOP_STORIES,
+      pageIdentifier,
+      contentType,
+      useReverb,
     });
   });
 };
@@ -30,27 +25,16 @@ export const assertTopStoriesComponentClick = ({
   contentType,
   useReverb,
 }) => {
-  it('should send a click event for the Top Stories component', () => {
-    cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
-      cy.visit(url);
+  it('should send a click event for the Top Stories component', async () => {
+    await scrollIntoView('[data-testid="top-stories"]');
 
-      cy.get('[data-testid="top-stories"]').scrollIntoView({
-        duration: 1000,
-      });
+    await click('[data-testid="top-stories"] a');
 
-      // Click on first item
-      cy.get('[data-testid="top-stories"]').find('a').first().click();
-
-      assertATIComponentClickEvent({
-        component: TOP_STORIES,
-        pageIdentifier,
-        contentType,
-        useReverb,
-      });
-
-      // return to previous page
-      cy.visit(url);
+    assertATIComponentClickEvent({
+      component: TOP_STORIES,
+      pageIdentifier,
+      contentType,
+      useReverb,
     });
   });
 };
