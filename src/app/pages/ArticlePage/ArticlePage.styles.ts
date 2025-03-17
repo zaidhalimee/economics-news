@@ -117,6 +117,9 @@ export default {
     }),
   liteCtaChevron: ({ spacings }: Theme) =>
     css({
-      marginInlineStart: `${spacings.HALF}rem`,
+      width: `${pixelsToRem(14)}rem`,
+      height: `${pixelsToRem(14)}rem`,
+      marginInlineStart: `${spacings.FULL}rem`,
+      verticalAlign: 'middle',
     }),
 };

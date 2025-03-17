@@ -18,9 +18,7 @@ export default {
   link: ({ spacings }: Theme) =>
     css({
       textDecoration: 'none',
-
       padding: `${spacings.FULL}rem 0 ${spacings.FULL}rem`,
-
       '&:focus, &:hover': {
         textDecoration: 'none',
       },

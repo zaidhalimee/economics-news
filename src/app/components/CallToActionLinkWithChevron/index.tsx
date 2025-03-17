@@ -16,8 +16,7 @@ const CallToActionLinkWithChevron = ({
   download = false,
   chevronStyles,
 }: PropsWithChildren<
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  CallToActionLinkProps & { chevronStyles?: (theme: Theme) => SerializedStyles }
+  CallToActionLinkProps & { chevronStyles?: (_: Theme) => SerializedStyles }
 >) => {
   const { dir } = useContext(ServiceContext);
   const isRtl = dir === 'rtl';
