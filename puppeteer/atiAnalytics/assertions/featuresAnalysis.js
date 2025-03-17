@@ -28,7 +28,6 @@ export const assertFeaturesAnalysisComponentClick = ({
   it('should send a click event for the Features & Analysis component', async () => {
     await scrollIntoView('[data-testid="features"]');
 
-    // Click on first item
     await click('[data-testid="features"] a');
 
     assertATIComponentClickEvent({
