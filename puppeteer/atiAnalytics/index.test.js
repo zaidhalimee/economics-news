@@ -82,8 +82,8 @@ const canonicalTestSuites = [
       assertScrollableNavigationComponentClick,
       assertDropdownNavigationComponentView,
       assertDropdownNavigationComponentClick,
-      // assertMessageBannerComponentView,
-      // assertMessageBannerComponentClick,
+      assertMessageBannerComponentView,
+      assertMessageBannerComponentClick,
       assertMostReadComponentView,
       assertMostReadComponentClick,
     ],
@@ -98,16 +98,16 @@ const canonicalTestSuites = [
     useReverb: true,
     tests: [
       assertPageView,
-      // assertTopStoriesComponentView,
-      // assertTopStoriesComponentClick,
-      // assertFeaturesAnalysisComponentView,
-      // assertFeaturesAnalysisComponentClick,
-      // assertPodcastPromoComponentView,
-      // assertPodcastPromoComponentClick,
-      // assertRelatedTopicsComponentView,
-      // assertRelatedTopicsComponentClick,
-      // assertRelatedContentComponentView,
-      // assertRelatedContentComponentClick,
+      assertTopStoriesComponentView,
+      assertTopStoriesComponentClick,
+      assertFeaturesAnalysisComponentView,
+      assertFeaturesAnalysisComponentClick,
+      assertPodcastPromoComponentView,
+      assertPodcastPromoComponentClick,
+      assertRelatedTopicsComponentView,
+      assertRelatedTopicsComponentClick,
+      assertRelatedContentComponentView,
+      assertRelatedContentComponentClick,
       assertMostReadComponentView,
       assertMostReadComponentClick,
     ],
@@ -122,18 +122,18 @@ const canonicalTestSuites = [
     useReverb: true,
     tests: [
       assertPageView,
-      // assertTopStoriesComponentView,
-      // assertTopStoriesComponentClick,
-      // assertFeaturesAnalysisComponentView,
-      // assertFeaturesAnalysisComponentClick,
-      // assertRecommendationsComponentView,
-      // assertRecommendationsComponentClick,
-      // assertPodcastPromoComponentView,
-      // assertPodcastPromoComponentClick,
-      // assertScrollablePromoComponentView,
-      // assertScrollablePromoComponentClick,
-      // assertRelatedTopicsComponentView,
-      // assertRelatedTopicsComponentClick,
+      assertTopStoriesComponentView,
+      assertTopStoriesComponentClick,
+      assertFeaturesAnalysisComponentView,
+      assertFeaturesAnalysisComponentClick,
+      assertRecommendationsComponentView,
+      assertRecommendationsComponentClick,
+      assertPodcastPromoComponentView,
+      assertPodcastPromoComponentClick,
+      assertScrollablePromoComponentView,
+      assertScrollablePromoComponentClick,
+      assertRelatedTopicsComponentView,
+      assertRelatedTopicsComponentClick,
       assertMostReadComponentView,
       assertMostReadComponentClick,
     ],
@@ -147,8 +147,8 @@ const canonicalTestSuites = [
     contentType: 'player-live',
     tests: [
       assertPageView,
-      // assertRadioScheduleComponentView,
-      // assertRadioScheduleComponentClick,
+      assertRadioScheduleComponentView,
+      assertRadioScheduleComponentClick,
     ],
   },
   {
@@ -161,10 +161,10 @@ const canonicalTestSuites = [
     useReverb: true,
     tests: [
       assertPageView,
-      // assertRecentAudioEpisodesComponentView,
-      // assertRecentAudioEpisodesComponentClick,
-      // assertRadioScheduleComponentView,
-      // assertRadioScheduleComponentClick,
+      assertRecentAudioEpisodesComponentView,
+      assertRecentAudioEpisodesComponentClick,
+      assertRadioScheduleComponentView,
+      assertRadioScheduleComponentClick,
     ],
   },
   {
@@ -177,10 +177,10 @@ const canonicalTestSuites = [
     useReverb: true,
     tests: [
       assertPageView,
-      // assertPodcastLinksComponentView,
-      // assertPodcastLinksComponentClick,
-      // assertRecentAudioEpisodesComponentView,
-      // assertRecentAudioEpisodesComponentClick,
+      assertPodcastLinksComponentView,
+      assertPodcastLinksComponentClick,
+      assertRecentAudioEpisodesComponentView,
+      assertRecentAudioEpisodesComponentClick,
     ],
   },
   {
@@ -193,10 +193,10 @@ const canonicalTestSuites = [
     useReverb: true,
     tests: [
       assertPageView,
-      // assertPodcastLinksComponentView,
-      // assertPodcastLinksComponentClick,
-      // assertRecentAudioEpisodesComponentView,
-      // assertRecentAudioEpisodesComponentClick,
+      assertPodcastLinksComponentView,
+      assertPodcastLinksComponentClick,
+      assertRecentAudioEpisodesComponentView,
+      assertRecentAudioEpisodesComponentClick,
     ],
   },
   {
@@ -218,8 +218,8 @@ const canonicalTestSuites = [
     contentType: 'article-sfv',
     tests: [
       assertPageView,
-      // assertLatestMediaComponentView,
-      // assertLatestMediaComponentClick,
+      assertLatestMediaComponentView,
+      assertLatestMediaComponentClick,
     ],
   },
   {
@@ -280,8 +280,8 @@ const canonicalTestSuites = [
     useReverb: true,
     tests: [
       assertPageView,
-      // assertMessageBannerComponentView,
-      // assertMessageBannerComponentClick,
+      assertMessageBannerComponentView,
+      assertMessageBannerComponentClick,
       assertMostReadComponentView,
       assertMostReadComponentClick,
     ],
@@ -296,8 +296,8 @@ const canonicalTestSuites = [
     useReverb: true,
     tests: [
       assertPageView,
-      // assertBillboardComponentView,
-      // assertBillboardComponentClick,
+      assertBillboardComponentView,
+      assertBillboardComponentClick,
     ],
   },
   {
@@ -310,8 +310,8 @@ const canonicalTestSuites = [
     useReverb: true,
     tests: [
       assertPageView,
-      // assertRadioScheduleComponentView,
-      // assertRadioScheduleComponentClick,
+      assertRadioScheduleComponentView,
+      assertRadioScheduleComponentClick,
     ],
   },
   {
@@ -324,8 +324,8 @@ const canonicalTestSuites = [
     useReverb: true,
     tests: [
       assertPageView,
-      // assertTopStoriesComponentView,
-      // assertTopStoriesComponentClick,
+      assertTopStoriesComponentView,
+      assertTopStoriesComponentClick,
     ],
   },
   {
@@ -359,8 +359,8 @@ const canonicalTestSuites = [
       assertScrollableNavigationComponentClick,
       assertDropdownNavigationComponentView,
       assertDropdownNavigationComponentClick,
-      // assertMessageBannerComponentView,
-      // assertMessageBannerComponentClick,
+      assertMessageBannerComponentView,
+      assertMessageBannerComponentClick,
       assertMostReadComponentView,
       assertMostReadComponentClick,
     ],
@@ -375,8 +375,8 @@ const canonicalTestSuites = [
     useReverb: true,
     tests: [
       assertPageView,
-      // assertBillboardComponentView,
-      // assertBillboardComponentClick,
+      assertBillboardComponentView,
+      assertBillboardComponentClick,
     ],
   },
   {
@@ -389,10 +389,10 @@ const canonicalTestSuites = [
     useReverb: true,
     tests: [
       assertPageView,
-      // assertPodcastLinksComponentView,
-      // assertPodcastLinksComponentClick,
-      // assertRecentAudioEpisodesComponentView,
-      // assertRecentAudioEpisodesComponentClick,
+      assertPodcastLinksComponentView,
+      assertPodcastLinksComponentClick,
+      assertRecentAudioEpisodesComponentView,
+      assertRecentAudioEpisodesComponentClick,
     ],
   },
   {
@@ -430,16 +430,16 @@ const canonicalTestSuites = [
     useReverb: true,
     tests: [
       assertPageView,
-      // assertTopStoriesComponentView,
-      // assertTopStoriesComponentClick,
-      // assertFeaturesAnalysisComponentView,
-      // assertFeaturesAnalysisComponentClick,
-      // assertScrollablePromoComponentClick,
-      // assertScrollablePromoComponentView,
-      // assertRelatedTopicsComponentView,
-      // assertRelatedTopicsComponentClick,
-      // assertRelatedContentComponentView,
-      // assertRelatedContentComponentClick,
+      assertTopStoriesComponentView,
+      assertTopStoriesComponentClick,
+      assertFeaturesAnalysisComponentView,
+      assertFeaturesAnalysisComponentClick,
+      assertScrollablePromoComponentClick,
+      assertScrollablePromoComponentView,
+      assertRelatedTopicsComponentView,
+      assertRelatedTopicsComponentClick,
+      assertRelatedContentComponentView,
+      assertRelatedContentComponentClick,
       assertMostReadComponentView,
       assertMostReadComponentClick,
     ],
@@ -455,12 +455,12 @@ const canonicalTestSuites = [
     useReverb: true,
     tests: [
       assertPageView,
-      //   assertLatestMediaComponentClick,
-      //   assertLatestMediaComponentView,
-      //   assertRelatedTopicsComponentView,
-      //   assertRelatedTopicsComponentClick,
-      //   assertRelatedContentComponentView,
-      //   assertRelatedContentComponentClick,
+      assertLatestMediaComponentClick,
+      assertLatestMediaComponentView,
+      assertRelatedTopicsComponentView,
+      assertRelatedTopicsComponentClick,
+      assertRelatedContentComponentView,
+      assertRelatedContentComponentClick,
     ],
   },
   {
@@ -503,11 +503,11 @@ const liteTestSuites = canonicalTestSuites
 
     switch (testSuite.contentType) {
       case 'article':
-        // liteSiteTests.push(assertLiteSiteCTAComponentClick);
-        // liteSiteTests.push(assertRelatedTopicsComponentView);
+        liteSiteTests.push(assertLiteSiteCTAComponentClick);
+        liteSiteTests.push(assertRelatedTopicsComponentView);
         break;
       case 'index-home':
-        // liteSiteTests.push(assertMostReadComponentClick);
+        liteSiteTests.push(assertMostReadComponentClick);
         break;
       default:
         break;
