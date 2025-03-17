@@ -37,8 +37,7 @@ export const assertScrollableNavigationComponentClick = ({
   it('should send a click event for the Scrollable Navigation component', async () => {
     await scrollIntoView('[data-e2e="scrollable-nav"]');
 
-    // Click last item in the scrollable nav
-    await click('[data-e2e="scrollable-nav"] > ul > li:last-of-type > a');
+    await click('[data-e2e="scrollable-nav"] a');
 
     assertATIComponentClickEvent({
       component: SCROLLABLE_NAVIGATION,
@@ -84,8 +83,7 @@ export const assertDropdownNavigationComponentClick = ({
     await click('nav button');
     await scrollIntoView('[data-e2e="dropdown-nav"]');
 
-    // Click last link
-    await click('[data-e2e="dropdown-nav"] > ul > li:last-of-type > a');
+    await click('[data-e2e="dropdown-nav"] a');
 
     assertATIComponentClickEvent({
       component: DROPDOWN_NAVIGATION,
