@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import puppeteer from 'puppeteer';
 import context from '../context';
 
@@ -7,9 +8,19 @@ const BASE_URL = {
   live: 'https://www.bbc.com',
 };
 
+const onFailedRequest = request => {
+  const info = {
+    url: request.url(),
+    test: expect.getState().currentTestName,
+    errorText: request.failure().errorText,
+  };
+
+  console.log(`Request failed ${JSON.stringify(info)}`);
+};
+
 export default ({
   testSuites,
-  onPageRequest,
+  onPageRequest = () => {},
   visitPageBeforeEachTest = false,
 }) => {
   describe('Puppeteer Tests', () => {
@@ -56,6 +67,7 @@ export default ({
           context.page = await context.browser.newPage();
           context.page.setDefaultNavigationTimeout(context.TIMEOUT);
           context.page.on('request', onPageRequest);
+          context.page.on('requestfailed', onFailedRequest);
 
           await context.page.goto(url, {
             waitUntil: 'networkidle2',
