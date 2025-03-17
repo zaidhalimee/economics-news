@@ -49,7 +49,7 @@ export const COMPONENTS = {
 };
 
 const logRequest = ({ requestType, params, rest }) =>
-  console.log('Request handled', {
+  console.debug('Request handled:', {
     test: expect.getState().currentTestName,
     requestType,
     params,
@@ -113,11 +113,6 @@ export const onPageRequest = request => {
         });
         logRequest({ requestType, params });
       }
-    });
-  } else {
-    console.log('Request ignored', {
-      test: expect.getState().currentTestName,
-      url: href,
     });
   }
 };

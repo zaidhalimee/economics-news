@@ -15,7 +15,7 @@ const onFailedRequest = request => {
     errorText: request.failure().errorText,
   };
 
-  console.log(`Request failed ${JSON.stringify(info, null, 2)}`);
+  console.log(`Request failed: ${JSON.stringify(info, null, 2)}`);
 };
 
 export default ({
