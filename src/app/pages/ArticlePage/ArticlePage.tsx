@@ -45,6 +45,7 @@ import OPTIMIZELY_CONFIG from '#app/lib/config/optimizely';
 import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
 import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
 import CallToActionLinkWithChevron from '#app/components/CallToActionLinkWithChevron';
+import useViewTracker from '#app/hooks/useViewTracker';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
@@ -77,7 +78,6 @@ import {
   transformRecsData,
   OptimizelyVariation,
 } from './recommendationsExperiment';
-import useViewTracker from '#app/hooks/useViewTracker';
 
 const getImageComponent =
   (preloadLeadImageToggle: boolean) => (props: ComponentToRenderProps) => (

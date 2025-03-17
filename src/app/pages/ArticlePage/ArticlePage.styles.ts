@@ -106,17 +106,17 @@ export default {
   liteCTA: ({ spacings, mq }: Theme) =>
     css({
       display: 'inline-block',
-      paddingLeft: `${spacings.FULL}rem`,
+      marginInlineStart: `${spacings.FULL}rem`,
 
       [mq.GROUP_2_MIN_WIDTH]: {
-        paddingLeft: `${spacings.DOUBLE}rem`,
+        marginInlineStart: `${spacings.DOUBLE}rem`,
       },
       [mq.GROUP_4_MIN_WIDTH]: {
-        paddingLeft: 0,
+        marginInlineStart: 0,
       },
     }),
   liteCtaChevron: ({ spacings }: Theme) =>
     css({
-      marginLeft: `${spacings.HALF}rem`,
+      marginInlineStart: `${spacings.HALF}rem`,
     }),
 };

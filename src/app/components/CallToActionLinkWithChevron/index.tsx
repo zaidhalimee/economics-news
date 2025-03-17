@@ -5,6 +5,8 @@ import { ServiceContext } from '#app/contexts/ServiceContext';
 import { CallToActionLinkProps } from '../CallToActionLink/types';
 import { LeftChevron, RightChevron } from '../icons';
 import CallToActionLink from '../CallToActionLink';
+import Text from '../Text';
+import styles from './index.styles';
 
 const CallToActionLinkWithChevron = ({
   href,
@@ -26,8 +28,11 @@ const CallToActionLinkWithChevron = ({
       className={className}
       eventTrackingData={eventTrackingData}
       download={download}
+      css={styles.link}
     >
-      {children}
+      <Text fontVariant="sansBold" css={styles.linkText}>
+        {children}
+      </Text>
       {isRtl ? (
         <LeftChevron css={chevronStyles} />
       ) : (
