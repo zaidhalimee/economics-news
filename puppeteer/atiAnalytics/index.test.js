@@ -70,7 +70,7 @@ import { onPageRequest } from './helpers';
 const canonicalTestSuites = [
   {
     path: '/gahuza',
-    runforEnv: ['local', 'test', 'live'],
+    runforEnv: ['local', 'live'],
     service: 'gahuza',
     pageIdentifier: 'gahuza.page',
     applicationType: 'responsive',

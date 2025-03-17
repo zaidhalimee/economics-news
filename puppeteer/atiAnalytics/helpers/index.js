@@ -61,19 +61,17 @@ export const onPageRequest = request => {
     context.page.__analyticsRequests = [];
   }
 
-  const url = new URL(request.url());
-
-  const { hostname, href } = url;
+  const { hostname, href } = new URL(request.url());
 
   const environment = process.env.SIMORGH_APP_ENV;
 
-  const ATI_URLS = {
+  const ATI_HOSTNAMES = {
     local: 'logws1363.ati-host.net',
     test: 'logws1363.ati-host.net',
     live: 'a1.api.bbc.co.uk',
   };
 
-  if (hostname === ATI_URLS[environment]) {
+  if (hostname === ATI_HOSTNAMES[environment]) {
     const params = getATIParamsFromURL(href);
 
     const { x8: libraryVersion, atc: clickEvent, ati: viewEvent } = params;

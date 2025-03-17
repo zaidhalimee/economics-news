@@ -22,9 +22,9 @@ export default ({
     testSuitesForEnvironment.forEach(testData => {
       const { path, tests, ...params } = testData;
 
-      const testsToRun = tests;
+      let testsToRun = tests;
       if (visitPageBeforeEachTest) {
-        tests.map(test => {
+        testsToRun = tests.map(test => {
           return { ...testData, tests: [test] };
         });
       }
