@@ -32,7 +32,7 @@ const getServiceBundleRegex = service => {
   }
 };
 
-describe.skip('Js bundle requests', () => {
+describe('Js bundle requests', () => {
   beforeAll(async () => {
     browser = await puppeteer.launch({
       args: ['--no-sandbox'],
