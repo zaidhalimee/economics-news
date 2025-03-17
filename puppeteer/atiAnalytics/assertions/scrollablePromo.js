@@ -8,10 +8,8 @@ export const assertScrollablePromoComponentView = ({
   contentType,
   useReverb,
 }) => {
-  it('should send a view event for the Scrollable Promo component', () => {
-    cy.get('[data-e2e="scrollable-promos"]').first().scrollIntoView({
-      duration: 1000,
-    });
+  it('should send a view event for the Scrollable Promo component', async () => {
+    await scrollIntoView('[data-e2e="scrollable-promos"]');
 
     assertATIComponentViewEvent({
       component: SCROLLABLE_PROMO,
