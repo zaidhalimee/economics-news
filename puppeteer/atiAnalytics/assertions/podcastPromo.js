@@ -28,7 +28,6 @@ export const assertPodcastPromoComponentClick = ({
   it('should send a click event for the Podcast Promo component', async () => {
     await scrollIntoView('[data-e2e="podcast-promo"]');
 
-    // Click on first item
     await scrollIntoView('[data-e2e="podcast-promo"] a');
 
     assertATIComponentClickEvent({

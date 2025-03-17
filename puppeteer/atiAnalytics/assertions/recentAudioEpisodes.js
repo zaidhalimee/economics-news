@@ -28,7 +28,6 @@ export const assertRecentAudioEpisodesComponentClick = ({
   it('should send a click event for the Recent Audio Episodes component', async () => {
     await scrollIntoView('[data-e2e="recent-episodes-list"]');
 
-    // Click on first item
     await click('[data-e2e="recent-episodes-list"] a');
 
     assertATIComponentClickEvent({

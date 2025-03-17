@@ -28,7 +28,6 @@ export const assertLatestMediaComponentClick = ({
   it('should send a click event for the Latest Media component', async () => {
     await scrollIntoView('[data-testid="latest-media"]');
 
-    // Click on first item
     await click('[data-testid="latest-media"] a');
 
     assertATIComponentClickEvent({

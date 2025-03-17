@@ -28,7 +28,6 @@ export const assertMessageBannerComponentClick = ({
   it('should send a click event for the Message Banner component', async () => {
     await scrollIntoView('[data-testid="message-banner-1"]');
 
-    // Click on first item
     await scrollIntoView('[data-testid="message-banner-1"] a');
 
     assertATIComponentClickEvent({
