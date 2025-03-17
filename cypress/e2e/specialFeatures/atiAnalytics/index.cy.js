@@ -420,7 +420,7 @@ const canonicalTestSuites = [
     tests: [assertPageView],
   },
   {
-    path: 'ukrainian/podcasts/p09jsy3h',
+    path: '/ukrainian/podcasts/p09jsy3h',
     runforEnv: ['test', 'live'],
     service: 'ukrainian',
     pageIdentifier:
