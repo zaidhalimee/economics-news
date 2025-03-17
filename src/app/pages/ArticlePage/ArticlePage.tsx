@@ -129,6 +129,8 @@ const getHeadlineComponent =
   (props: ComponentToRenderProps) => {
     const { enabled: showCTA } = useToggle('liteSiteCTA');
 
+    
+
     const articleDataSavingLinkText =
       translations?.liteSite?.articleDataSavingLinkText ??
       'Data-saving Version';
@@ -139,6 +141,7 @@ const getHeadlineComponent =
         {!isLite && showCTA && (
           <div css={styles.liteCtaContainer} data-e2e="to-lite-site">
             <CallToActionLinkWithChevron
+              eventTrackingData={{ componentName: 'canonical-lite-cta' }}
               href={`${pathname}.lite`}
               css={styles.liteCTA}
               chevronStyles={styles.liteCtaChevron}

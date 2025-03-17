@@ -29,6 +29,7 @@ import { suppressPropWarnings } from '#app/legacy/psammead/psammead-test-helpers
 import { Services } from '#app/models/types/global';
 
 import { Article } from '#app/models/types/optimo';
+import * as clickTracking from '#app/hooks/useClickTrackerHandler';
 import {
   render,
   screen,
@@ -177,6 +178,19 @@ describe('Article Page', () => {
     } else {
       expect(liteCTA).not.toBeInTheDocument();
     }
+  });
+
+  it('should apply tracking data on lite site cta link', () => {
+    const eventTrackingData = { componentName: 'canonical-lite-cta' };
+    const clickTrackerSpy = jest.spyOn(clickTracking, 'default');
+
+    render(<ArticlePage pageData={articleDataPersian} />, {
+      service: 'gahuza',
+      isLite: false,
+      toggles: { liteSiteCTA: { enabled: true } },
+    });
+
+    expect(clickTrackerSpy).toHaveBeenCalledWith(eventTrackingData);
   });
 
   it('should use headline for meta description if summary does not exist', async () => {
