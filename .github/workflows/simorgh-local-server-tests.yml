@@ -52,12 +52,11 @@ jobs:
         working-directory: ./ws-nextjs-app
         run: PORT=7081 nohup node build/standalone/ws-nextjs-app/server.js &
 
-      # TEMP: fail faster on CI
-      # - name: Run AMP Validator
-      #   run: yarn amp:validate
+      - name: Run AMP Validator
+        run: yarn amp:validate
 
-      # - name: Run Lighthouse
-      #   run: yarn lighthouse
+      - name: Run Lighthouse
+        run: yarn lighthouse
 
       - name: Run Puppeteer Tests
         run: |
