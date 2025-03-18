@@ -149,7 +149,6 @@ const getHeadlineComponent =
               eventTrackingData={eventTrackingData}
               href={`${pathname}.lite`}
               css={styles.liteCTA}
-              chevronStyles={styles.liteCtaChevron}
             >
               {articleDataSavingLinkText}
             </CallToActionLinkWithChevron>

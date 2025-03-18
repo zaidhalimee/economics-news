@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { PropsWithChildren, useContext } from 'react';
-import { jsx, SerializedStyles, Theme } from '@emotion/react';
+import { jsx } from '@emotion/react';
 import { ServiceContext } from '#app/contexts/ServiceContext';
 import { CallToActionLinkProps } from '../CallToActionLink/types';
 import { LeftChevron, RightChevron } from '../icons';
@@ -14,10 +14,7 @@ const CallToActionLinkWithChevron = ({
   children,
   eventTrackingData,
   download = false,
-  chevronStyles,
-}: PropsWithChildren<
-  CallToActionLinkProps & { chevronStyles?: (_: Theme) => SerializedStyles }
->) => {
+}: PropsWithChildren<CallToActionLinkProps>) => {
   const { dir } = useContext(ServiceContext);
   const isRtl = dir === 'rtl';
 
@@ -33,9 +30,9 @@ const CallToActionLinkWithChevron = ({
         {children}
       </Text>
       {isRtl ? (
-        <LeftChevron css={chevronStyles} />
+        <LeftChevron css={styles.chevron} />
       ) : (
-        <RightChevron css={chevronStyles} />
+        <RightChevron css={styles.chevron} />
       )}
     </CallToActionLink>
   );
