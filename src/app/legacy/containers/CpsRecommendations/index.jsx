@@ -6,6 +6,7 @@ import {
   GEL_GROUP_3_SCREEN_WIDTH_MIN,
   GEL_GROUP_4_SCREEN_WIDTH_MIN,
 } from '#psammead/gel-foundations/src/breakpoints';
+import pathOr from 'ramda/src/pathOr';
 import path from 'ramda/src/path';
 import {
   GEL_SPACING,
