@@ -41,7 +41,7 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/turkce/kurumsal-50221017',
     isTrustProjectParticipant: true,
     script: latinWithDiacritics,
-    manifestPath: '/manifest.json',
+    manifestPath: '/turkce/manifest.json',
     swPath: '/sw.js',
     frontPageTitle: 'Haberler',
     showAdPlaceholder: true,

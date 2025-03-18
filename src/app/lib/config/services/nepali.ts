@@ -41,7 +41,7 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/nepali/institutional-50318130',
     isTrustProjectParticipant: true,
     script: devanagari,
-    manifestPath: '/manifest.json',
+    manifestPath: '/nepali/manifest.json',
     swPath: '/sw.js',
     frontPageTitle: 'मुख पृष्ठ',
     showAdPlaceholder: true,

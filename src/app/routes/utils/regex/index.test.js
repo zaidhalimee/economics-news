@@ -147,16 +147,24 @@ describe('articleSwPath', () => {
   shouldNotMatchInvalidRoutes(invalidRoutes, articleSwPath);
 });
 
-describe('manifestPath', () => {
+describe('articleManifestPath', () => {
   const validRoutes = [
-    '/news/articles/manifest.json',
     '/persian/articles/manifest.json',
-    '/naidheachdan/sgeulachdan/manifest.json',
+    '/serbian/articles/manifest.json',
   ];
   shouldMatchValidRoutes(validRoutes, articleManifestPath);
 
   const invalidRoutes = [
+    '/news/articles/manifest.json',
+    '/sport/articles/manifest.json',
+    '/naidheachdan/sgeulachdan/manifest.json',
+    '/cymrufyw/erthyglau/manifest.json',
+    '/newsround/articles/manifest.json',
     '/news/manifest.json',
+    '/sport/manifest.json',
+    '/naidheachdan/manifest.json',
+    '/cymrufyw/manifest.json',
+    '/newsround/manifest.json',
     '/persian/articles/manifest',
     '/news/simp/sw.js',
   ];
@@ -176,10 +184,15 @@ describe('frontPageSwPath', () => {
 });
 
 describe('frontPageManifestPath', () => {
-  const validRoutes = ['/news/manifest.json', '/persian/manifest.json'];
+  const validRoutes = ['/persian/manifest.json', '/serbian/manifest.json'];
   shouldMatchValidRoutes(validRoutes, frontPageManifestPath);
 
   const invalidRoutes = [
+    '/news/manifest.json',
+    '/sport/manifest.json',
+    '/naidheachdan/manifest.json',
+    '/cymrufyw/manifest.json',
+    '/newsround/manifest.json',
     '/foobar/manifest.json',
     '/foobar/manifest',
     '/news/trad/sw.js',
