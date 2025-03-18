@@ -203,8 +203,6 @@ export interface GetConfigProps {
   brandName: string;
   env: Environments;
   service: Services;
-  origin: string;
-  previousPath: string | null;
   chartbeatDomain: string;
   sectionName?: string;
   mediaPageType?: string;
@@ -224,8 +222,6 @@ export const getConfig = ({
   brandName,
   env,
   service,
-  origin,
-  previousPath,
   chartbeatDomain,
   mediaPageType,
   sectionName,
@@ -237,8 +233,7 @@ export const getConfig = ({
   producer,
   chapter,
 }: GetConfigProps) => {
-  const referrer =
-    previousPath || isAmp ? getReferrer(platform, origin, previousPath) : null;
+  const referrer = isAmp ? getReferrer(platform) : null;
 
   const analyticsTitle = getTitle({
     pageType,
