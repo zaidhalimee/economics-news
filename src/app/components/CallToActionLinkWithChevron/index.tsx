@@ -13,7 +13,6 @@ const CallToActionLinkWithChevron = ({
   className,
   children,
   eventTrackingData,
-  download = false,
 }: PropsWithChildren<CallToActionLinkProps>) => {
   const { dir } = useContext(ServiceContext);
   const isRtl = dir === 'rtl';
@@ -23,7 +22,6 @@ const CallToActionLinkWithChevron = ({
       href={href}
       className={className}
       eventTrackingData={eventTrackingData}
-      download={download}
       css={styles.link}
     >
       <Text size="brevier" fontVariant="sansBold" css={styles.linkText}>
