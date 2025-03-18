@@ -23,6 +23,13 @@ export default ({
 }) => {
   describe('Puppeteer Tests', () => {
     const environment = process.env.PUPPETEER_APP_ENV || 'local';
+    const headless = process.env.PUPPETEER_HEADLESS
+      ? process.env.PUPPETEER_HEADLESS === 'true'
+      : true;
+    console.log({
+      PUPPETEER_HEADLESS: process.env.PUPPETEER_HEADLESS,
+      headless,
+    });
     const baseUrl = BASE_URL[environment];
     const testSuitesForEnvironment = testSuites.filter(({ runforEnv }) =>
       runforEnv.includes(environment),
@@ -46,7 +53,7 @@ export default ({
         before(async () => {
           context.browser = await puppeteer.launch({
             args: ['--no-sandbox'],
-            // headless: false,
+            headless,
           });
 
           // Disable cookie banner
