@@ -4,6 +4,7 @@ import pixelsToRem from '../../utilities/pixelsToRem';
 export default {
   linkText: ({ palette }: Theme) =>
     css({
+      color: 'inherit',
       borderBottom: `${pixelsToRem(1)}rem solid ${palette.GREY_10}`,
       textDecoration: 'none',
       'a:visited &': {
@@ -15,8 +16,9 @@ export default {
         color: palette.POSTBOX,
       },
     }),
-  link: () =>
+  link: ({ palette }: Theme) =>
     css({
+      color: palette.GREY_10,
       textDecoration: 'none',
       padding: `${pixelsToRem(12)}rem 0 ${pixelsToRem(12)}rem`,
       '&:focus, &:hover': {
