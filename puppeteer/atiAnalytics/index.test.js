@@ -514,6 +514,12 @@ const canonicalTestSuites = [
   },
 ];
 
+const getPath = ({ path, suffix }) => {
+  const { pathname, search } = new URL(path, 'https://www.bbc.com');
+
+  return `${pathname}${suffix}${search}`;
+};
+
 const supportsAmp = ({ contentType }) =>
   !['index-home', 'player-live', 'player-episode', 'index-category'].includes(
     contentType,
