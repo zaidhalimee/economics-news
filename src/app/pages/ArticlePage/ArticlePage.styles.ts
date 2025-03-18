@@ -99,9 +99,12 @@ export default {
         padding: `${spacings.DOUBLE}rem`,
       },
     }),
-  liteCtaContainer: ({ spacings }: Theme) =>
+  liteCtaContainer: ({ mq }: Theme) =>
     css({
-      marginBottom: `${spacings.TRIPLE}rem`,
+      marginBottom: `${pixelsToRem(20)}rem`,
+      [mq.GROUP_3_MIN_WIDTH]: {
+        marginBottom: `${pixelsToRem(28)}rem`,
+      },
     }),
   liteCTA: ({ spacings, mq }: Theme) =>
     css({
@@ -113,6 +116,13 @@ export default {
       },
       [mq.GROUP_4_MIN_WIDTH]: {
         marginInlineStart: 0,
+      },
+    }),
+  headlineWithLiteSiteCTA: ({ spacings, mq }: Theme) =>
+    css({
+      paddingBottom: `${spacings.HALF}rem`,
+      [mq.GROUP_3_MIN_WIDTH]: {
+        paddingBottom: `${pixelsToRem(12)}rem`,
       },
     }),
 };

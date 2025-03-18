@@ -15,10 +15,10 @@ export default {
         color: palette.POSTBOX,
       },
     }),
-  link: ({ spacings }: Theme) =>
+  link: () =>
     css({
       textDecoration: 'none',
-      padding: `${spacings.FULL}rem 0 ${spacings.FULL}rem`,
+      padding: `${pixelsToRem(12)}rem 0 ${pixelsToRem(12)}rem`,
       '&:focus, &:hover': {
         textDecoration: 'none',
       },

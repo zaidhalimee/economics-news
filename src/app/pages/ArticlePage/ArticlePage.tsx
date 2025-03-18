@@ -136,10 +136,18 @@ const getHeadlineComponent =
       translations?.liteSite?.articleDataSavingLinkText ??
       'Data-saving Version';
 
+    const showLiteCTAOnCanonical: boolean = !isLite && showCTA;
+
     return (
       <>
-        <Headings {...props} />
-        {!isLite && showCTA && (
+        <Headings
+          {...props}
+          className="removeBottomPadding"
+          {...(showLiteCTAOnCanonical && {
+            css: styles.headlineWithLiteSiteCTA,
+          })}
+        />
+        {showLiteCTAOnCanonical && (
           <div
             css={styles.liteCtaContainer}
             ref={viewRef}
