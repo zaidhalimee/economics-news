@@ -35,9 +35,10 @@ export const assertLoadsExpectedBundles = ({ service }) => {
   });
 };
 
-export const assertLoadsModernBundles = () => {
-  it('loads at least 1 modern service bundle', ({ service }) => {
+export const assertLoadsModernBundles = ({ service }) => {
+  it('loads at least 1 modern service bundle', () => {
     const serviceRegex = getServiceBundleRegex(service);
+
     const serviceMatches = context.page.__requests.filter(url =>
       url.match(
         new RegExp(`(\\/static\\/js\\/modern.${serviceRegex}.+?.js)`, 'g'),
