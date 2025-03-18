@@ -141,8 +141,8 @@ const getHeadlineComponent =
     return (
       <>
         <Headings
+          className="article-heading"
           {...props}
-          className="removeBottomPadding"
           {...(showLiteCTAOnCanonical && {
             css: styles.headlineWithLiteSiteCTA,
           })}
