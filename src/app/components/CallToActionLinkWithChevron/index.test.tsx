@@ -5,7 +5,7 @@ import CallToActionLinkWithChevron from '.';
 describe('Call To Action Link With Chevron', () => {
   it('should render children as link text', () => {
     render(
-      <CallToActionLinkWithChevron href="https://www.bbc.com/send/u94753086">
+      <CallToActionLinkWithChevron href="https://www.bbc.com/ws/languages">
         My Link Text
       </CallToActionLinkWithChevron>,
     );
