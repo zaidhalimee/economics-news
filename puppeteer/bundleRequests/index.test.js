@@ -12,9 +12,7 @@ import context from '../context';
 
 global.Cypress = { env: () => 'local' };
 
-const TIMEOUT = 60000;
-
-jest.setTimeout(TIMEOUT); // overriding the default jest timeout
+jest.setTimeout(context.TIMEOUT); // overriding the default jest timeout
 
 const onPageRequest = request => {
   if (!context.page.__requests) {
