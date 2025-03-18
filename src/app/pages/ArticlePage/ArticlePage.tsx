@@ -199,7 +199,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     group: gist,
     links: ScrollablePromo,
     mpu: getMpuComponent(allowAdvertising),
-    wsoj: getWsojComponent(transformedRecsData),
+    wsoj: getWsojComponent(recommendationsData),
     disclaimer: DisclaimerWithPaddingOverride,
     podcastPromo: getPodcastPromoComponent(podcastPromoEnabled),
   };
