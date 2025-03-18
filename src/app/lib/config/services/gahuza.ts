@@ -41,7 +41,7 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/gahuza/institutional-49283343',
     isTrustProjectParticipant: true,
     script: latin,
-    manifestPath: '/manifest.json',
+    manifestPath: '/gahuza/manifest.json',
     swPath: '/sw.js',
     homePageTitle: "Urupapuro rw'itangiriro",
     showAdPlaceholder: true,

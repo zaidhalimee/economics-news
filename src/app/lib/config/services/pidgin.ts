@@ -35,7 +35,7 @@ export const service: DefaultServiceConfig = {
     defaultCaptionOffscreenText: 'Wetin we call am, ',
     imageCopyrightOffscreenText: 'Wia dis foto come from, ',
     script: latin,
-    manifestPath: '/manifest.json',
+    manifestPath: '/pidgin/manifest.json',
     swPath: '/sw.js',
     homePageTitle: 'Domot',
     noBylinesPolicy:

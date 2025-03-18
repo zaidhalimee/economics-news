@@ -348,7 +348,7 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/russian/institutional-50098149',
     isTrustProjectParticipant: true,
     script: cyrillic,
-    manifestPath: '/manifest.json',
+    manifestPath: '/russian/manifest.json',
     swPath: '/sw.js',
     homePageTitle: 'Главная',
     iTunesAppId: 504278066,

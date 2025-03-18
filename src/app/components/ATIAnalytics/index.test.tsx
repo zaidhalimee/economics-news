@@ -1029,7 +1029,6 @@ describe('ATI Analytics Container', () => {
         isAmp: false,
         pageData: articleDataNews,
         pageType: ARTICLE_PAGE,
-        service: 'hausa', // this is a temporary fix for this unit test failing as this service will have reverb enabled in the last batch
         isUK: true,
       });
 
