@@ -974,12 +974,21 @@ describe('Server', () => {
   });
 
   describe('Manifest json', () => {
-    it('should serve a file for valid service paths', async () => {
-      await makeRequest('/news/articles/manifest.json');
-      expect(sendFileSpy.mock.calls[0][0]).toEqual(
-        path.join(__dirname, '/public/news/manifest.json'),
-      );
-    });
+    it.each`
+      manifestPath                         | expectedManifestFile
+      ${'/pidgin/articles/manifest.json'}  | ${'/pidgin/manifest.json'}
+      ${'/pidgin/manifest.json'}           | ${'/pidgin/manifest.json'}
+      ${'/serbian/articles/manifest.json'} | ${'/serbian/manifest.json'}
+      ${'/serbian/manifest.json'}          | ${'/serbian/manifest.json'}
+    `(
+      'should serve a file for $manifestPath',
+      async ({ manifestPath, expectedManifestFile }) => {
+        await makeRequest(manifestPath);
+        expect(sendFileSpy.mock.calls[0][0]).toEqual(
+          path.join(__dirname, `/public/${expectedManifestFile}`),
+        );
+      },
+    );
 
     it('should not serve a manifest file for non-existing services', async () => {
       const { statusCode } = await makeRequest('/some-service/manifest.json');
@@ -987,10 +996,10 @@ describe('Server', () => {
       expect(statusCode).toEqual(500);
     });
 
-    it('should serve a response cache control of 7 days', async () => {
-      const { header } = await makeRequest('/news/articles/manifest.json');
+    it('should serve a response cache control of 1 day', async () => {
+      const { header } = await makeRequest('/pidgin/articles/manifest.json');
       expect(header['cache-control']).toBe(
-        'public, stale-if-error=1209600, stale-while-revalidate=1209600, max-age=604800',
+        'public, stale-if-error=172800, stale-while-revalidate=172800, max-age=86400',
       );
     });
   });

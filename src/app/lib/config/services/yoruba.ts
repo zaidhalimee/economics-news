@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-yoruba',
     atiAnalyticsProducerId: '107',
     atiAnalyticsProducerName: 'YORUBA',
+    useReverb: true,
     chartbeatDomain: 'yoruba.bbc.co.uk',
     brandName: 'BBC News Yorùbá',
     product: 'BBC News',
@@ -55,7 +56,7 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/yoruba/institutional-48528718',
     isTrustProjectParticipant: true,
     script: latin,
-    manifestPath: '/manifest.json',
+    manifestPath: '/yoruba/manifest.json',
     swPath: '/sw.js',
     frontPageTitle: 'Àbáwọlé',
     translations: {
