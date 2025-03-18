@@ -88,7 +88,7 @@ const reverbComponentTracking = async ({ reverbInstance, eventDetails }) => {
   } = eventDetails;
 
   return reverbInstance.userActionEvent(
-    'viewability',
+    eventPublisher,
     '',
     { item, group, event },
     anchorElement,
