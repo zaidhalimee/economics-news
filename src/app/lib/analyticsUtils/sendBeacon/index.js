@@ -79,6 +79,7 @@ const reverbComponentTracking = async ({ reverbInstance, eventDetails }) => {
   // );
 
   const {
+    eventPublisher,
     item,
     group,
     event,
