@@ -145,27 +145,27 @@ afterAll(() => {
 describe('Article Page', () => {
   it.each([
     {
-      title:
+      testScenario:
         'should show the CTA on non Lite Site pages, when the toggle is enabled',
       isLite: false,
       toggleEnabled: true,
       shouldBeDisplayed: true,
     },
     {
-      title:
+      testScenario:
         'should not show the CTA on non Lite Site pages, when the toggle is false',
       isLite: false,
       toggleEnabled: false,
       shouldBeDisplayed: false,
     },
     {
-      title:
+      testScenario:
         'should not show the CTA on Lite Site pages, regardless of the toggle',
       isLite: true,
       toggleEnabled: true,
       shouldBeDisplayed: false,
     },
-  ])('$title', ({ isLite, toggleEnabled, shouldBeDisplayed }) => {
+  ])('$testScenario', ({ isLite, toggleEnabled, shouldBeDisplayed }) => {
     render(<ArticlePage pageData={articleDataPersian} />, {
       service: 'gahuza',
       isLite,
@@ -853,7 +853,7 @@ describe('Article Page', () => {
       expect(queryByTestId('most-read')).not.toBeInTheDocument();
     });
 
-    it('should add brandname to page title in atiAnalytics', async () => {
+    it('should add brandname to page testScenario in atiAnalytics', async () => {
       (ATIAnalytics as jest.Mock).mockImplementation(() => <div />);
 
       render(
@@ -897,7 +897,7 @@ describe('Article Page', () => {
     });
   });
   describe('when rendering an STY page', () => {
-    it('should add brandname to page title in atiAnalytics', async () => {
+    it('should add brandname to page testScenario in atiAnalytics', async () => {
       (ATIAnalytics as jest.Mock).mockImplementation(() => <div />);
 
       render(
