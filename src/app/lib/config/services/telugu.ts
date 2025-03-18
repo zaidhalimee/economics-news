@@ -41,7 +41,7 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/telugu/institutional-50420343',
     isTrustProjectParticipant: true,
     script: devanagari,
-    manifestPath: '/manifest.json',
+    manifestPath: '/telugu/manifest.json',
     swPath: '/sw.js',
     frontPageTitle: 'వార్తలు',
     showAdPlaceholder: false,

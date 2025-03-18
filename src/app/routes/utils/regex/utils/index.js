@@ -29,8 +29,21 @@ export const getArticleSwRegex = services => {
   return `/:service(${serviceRegex})/:local(${articleLocalRegex})/sw.js`;
 };
 
+const getWorldServices = services => {
+  const publicServices = [
+    'news',
+    'sport',
+    'newsround',
+    'cymrufyw',
+    'naidheachdan',
+    'archive',
+  ];
+
+  return services.filter(service => !publicServices.includes(service));
+};
+
 export const getArticleManifestRegex = services => {
-  const serviceRegex = getServiceRegex(services);
+  const serviceRegex = getServiceRegex(getWorldServices(services));
   return `/:service(${serviceRegex})/:local(${articleLocalRegex})/manifest.json`;
 };
 
@@ -105,7 +118,7 @@ export const getSwRegex = services => {
 };
 
 export const getManifestRegex = services => {
-  const serviceRegex = getServiceRegex(services);
+  const serviceRegex = getServiceRegex(getWorldServices(services));
   return `/:service(${serviceRegex})/manifest.json`;
 };
 

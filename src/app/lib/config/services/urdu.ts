@@ -41,7 +41,7 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/urdu/institutional-49282935',
     isTrustProjectParticipant: true,
     script: arabic,
-    manifestPath: '/manifest.json',
+    manifestPath: '/urdu/manifest.json',
     swPath: '/sw.js',
     frontPageTitle:
       'خبریں، تازہ خبریں، بریکنگ نیو | News, latest news, breaking news',
