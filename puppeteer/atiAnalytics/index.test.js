@@ -67,6 +67,13 @@ import {
 } from './assertions/topStories';
 import { onPageRequest } from './helpers';
 
+const useLiveData = testCase => {
+  return {
+    ...testCase,
+    path: `${testCase.path}?renderer_env=live`,
+  };
+};
+
 const canonicalTestSuites = [
   {
     path: '/gahuza',
@@ -493,7 +500,7 @@ const canonicalTestSuites = [
     useReverb: true,
     tests: [assertPageView],
   },
-];
+].map(useLiveData);
 
 const getPath = ({ path, suffix }) => {
   const { pathname, search } = new URL(path, 'https://www.bbc.com');
