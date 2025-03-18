@@ -4,9 +4,11 @@
  */
 
 import canonicalLiteSiteCTA from '../canonicalLiteSiteCTA';
+import runCanonicalTests from '../canonicalTests';
 
 describe('Canonical', () => {
   describe(pageType, () => {
     canonicalLiteSiteCTA('/gahuza/articles/c5y51yxeg53o');
+    runCanonicalTests(service);
   });
 });
