@@ -149,7 +149,7 @@ const getHeadlineComponent =
         />
         {showLiteCTAOnCanonical && (
           <div
-            css={styles.liteCtaContainer}
+            css={styles.liteCTAContainer}
             ref={viewRef}
             data-e2e="to-lite-site"
           >

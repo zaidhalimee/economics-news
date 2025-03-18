@@ -99,7 +99,7 @@ export default {
         padding: `${spacings.DOUBLE}rem`,
       },
     }),
-  liteCtaContainer: ({ mq }: Theme) =>
+  liteCTAContainer: ({ mq }: Theme) =>
     css({
       marginBottom: `${pixelsToRem(20)}rem`,
       [mq.GROUP_3_MIN_WIDTH]: {
