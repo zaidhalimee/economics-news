@@ -1,6 +1,6 @@
 import runTestsForPage from '#nextjs/cypress/support/helpers/runTestsForPage';
 import { HOME_PAGE } from '../../../../src/app/routes/utils/pageTypes';
-import assertions from './assertions';
+import assertScriptSwitch from './assertions';
 
 const testSuites = [
   {
@@ -10,7 +10,7 @@ const testSuites = [
     otherVariant: 'lat',
     pageType: HOME_PAGE,
     runforEnv: ['local', 'test', 'live'],
-    tests: [assertions],
+    tests: [assertScriptSwitch],
   },
   {
     path: '/serbian/lat',
@@ -19,7 +19,7 @@ const testSuites = [
     otherVariant: 'cyr',
     pageType: HOME_PAGE,
     runforEnv: ['local', 'test', 'live'],
-    tests: [assertions],
+    tests: [assertScriptSwitch],
   },
 ];
 
