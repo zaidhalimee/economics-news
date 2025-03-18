@@ -164,12 +164,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const recommendationsData = pageData?.recommendations ?? [];
 
-  const transformedRecsData = transformRecsData({
-    wsojRecs: recommendationsData,
-    mostRead: mostReadInitialData,
-    pageBlocks: blocks,
-  });
-
   const isPGL = pageData?.metadata?.type === PHOTO_GALLERY_PAGE;
   const isSTY = pageData?.metadata?.type === STORY_PAGE;
   const isCPS = isPGL || isSTY;
