@@ -61,6 +61,7 @@ const liteIntegrationTests = {
 
 const puppeteerTests = {
   preset: 'ts-jest',
+  setupFiles: ['./puppeteer/jest-setup.js'],
   setupFilesAfterEnv: ['./src/testHelpers/setupTests.js'],
   moduleNameMapper: jestDirAlias,
   transform: {
