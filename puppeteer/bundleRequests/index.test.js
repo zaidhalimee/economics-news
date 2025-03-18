@@ -1,13 +1,13 @@
 // eslint-disable-next-line import/no-unresolved
 import puppeteer from 'puppeteer';
 import { localBaseUrl } from '#testHelpers/config';
-import shouldSmokeTest from '../cypress/support/helpers/shouldSmokeTest';
-import serviceHasPageType from '../cypress/support/helpers/serviceHasPageType';
-import getPaths from '../cypress/support/helpers/getPaths';
+import shouldSmokeTest from '../../cypress/support/helpers/shouldSmokeTest';
+import serviceHasPageType from '../../cypress/support/helpers/serviceHasPageType';
+import getPaths from '../../cypress/support/helpers/getPaths';
 
 global.Cypress = { env: () => 'local' };
 
-const config = require('../cypress/support/config/services');
+const config = require('../../cypress/support/config/services');
 
 let browser;
 let page;
