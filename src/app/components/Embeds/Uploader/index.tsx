@@ -1,8 +1,11 @@
 /** @jsx jsx */
+import { useContext } from 'react';
 import path from 'ramda/src/path';
 import pathOr from 'ramda/src/pathOr';
 import { jsx } from '@emotion/react';
-import CallToActionLinkWithChevron from '#app/components/CallToActionLinkWithChevron';
+import { ServiceContext } from '../../../contexts/ServiceContext';
+import { LeftChevron, RightChevron } from '../../icons';
+import CallToActionLink from '../../CallToActionLink';
 import Paragraph from '../../Paragraph';
 import Text from '../../Text';
 import styles from './index.styles';
@@ -20,6 +23,9 @@ type UploaderBlock = {
 };
 
 const Uploader = ({ blocks }: UploaderProps) => {
+  const { dir } = useContext(ServiceContext);
+  const isRtl = dir === 'rtl';
+
   if (!blocks || !blocks.length) return null;
 
   const type = path([0, 'type'], blocks); // aresUploader
@@ -93,13 +99,14 @@ const Uploader = ({ blocks }: UploaderProps) => {
         </Text>
         <Paragraph css={styles.text}>{text}</Paragraph>
         <div css={styles.linkContainer}>
-          <CallToActionLinkWithChevron
-            href={linkAddress}
-            chevronStyles={styles.chevron}
-            css={styles.callToActionLink}
-          >
+          <CallToActionLink href={linkAddress} css={styles.callToActionLink}>
             {linkText}
-          </CallToActionLinkWithChevron>
+            {isRtl ? (
+              <LeftChevron css={styles.chevron} />
+            ) : (
+              <RightChevron css={styles.chevron} />
+            )}
+          </CallToActionLink>
         </div>
       </div>
     </section>
