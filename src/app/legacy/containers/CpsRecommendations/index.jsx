@@ -17,7 +17,6 @@ import SkipLinkWrapper from '#components/SkipLinkWrapper';
 import useToggle from '#hooks/useToggle';
 import { GridItemMediumNoMargin } from '#components/Grid';
 
-import { useWsojTitle } from '#app/pages/ArticlePage/recommendationsExperiment';
 import { ServiceContext } from '../../../contexts/ServiceContext';
 import RecommendationsPromoList from './RecommendationsPromoList';
 import RecommendationsPromo from './RecommendationsPromo';
