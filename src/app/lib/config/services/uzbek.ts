@@ -12,6 +12,7 @@ const baseServiceConfig = {
   atiAnalyticsAppName: 'news-uzbek',
   atiAnalyticsProducerId: '96',
   atiAnalyticsProducerName: 'UZBEK',
+  useReverb: true,
   chartbeatDomain: 'uzbek.bbc.co.uk',
   product: 'BBC News',
   defaultImage: 'https://news.files.bbci.co.uk/ws/img/logos/og/uzbek.png',
@@ -21,7 +22,7 @@ const baseServiceConfig = {
   twitterCreator: '@bbcuzbek',
   twitterSite: '@bbcuzbek',
   isTrustProjectParticipant: true,
-  manifestPath: '/manifest.json',
+  manifestPath: '/uzbek/manifest.json',
   swPath: '/sw.js',
   radioSchedule: {
     hasRadioSchedule: false,
