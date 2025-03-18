@@ -18,6 +18,7 @@ import {
 } from '#lib/logger.const';
 import getToggles from '#app/lib/utilities/getToggles/withCache';
 import { BAD_REQUEST, INTERNAL_SERVER_ERROR, OK } from '#lib/statusCodes.const';
+import defaultServiceVariants from '#app/lib/config/services/defaultServiceVariants';
 import injectCspHeader from './utilities/cspHeader';
 import logResponseTime from './utilities/logResponseTime';
 import renderDocument from './Document';
@@ -35,6 +36,7 @@ import { getMvtExperiments, getMvtVaryHeaders } from './utilities/mvtHeader';
 import getAssetOrigins from './utilities/getAssetOrigins';
 import extractHeaders from './utilities/extractHeaders';
 import addPlatformToRequestChainHeader from './utilities/addPlatformToRequestChainHeader';
+import serviceConfigs from './utilities/serviceConfigs';
 
 const morgan = require('morgan');
 
@@ -127,10 +129,11 @@ server
     [articleManifestPath, frontPageManifestPath],
     async ({ params }, res) => {
       const { service } = params;
-      const manifestPath = `${__dirname}/public/${service}/manifest.json`;
+      const variant = defaultServiceVariants[service] || 'default';
+      const manifestPath = `${__dirname}/public${serviceConfigs[service][variant].manifestPath}`;
       res.set(
         'Cache-Control',
-        'public, stale-if-error=1209600, stale-while-revalidate=1209600, max-age=604800',
+        'public, stale-if-error=172800, stale-while-revalidate=172800, max-age=86400',
       );
       res.sendFile(manifestPath, {}, error => {
         if (error) {

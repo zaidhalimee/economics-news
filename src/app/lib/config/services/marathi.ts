@@ -41,7 +41,7 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/marathi/institutional-50418391',
     isTrustProjectParticipant: true,
     script: devanagari,
-    manifestPath: '/manifest.json',
+    manifestPath: '/marathi/manifest.json',
     swPath: '/sw.js',
     frontPageTitle: 'बातम्या',
     showAdPlaceholder: false,

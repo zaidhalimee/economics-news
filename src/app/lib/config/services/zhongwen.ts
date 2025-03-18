@@ -28,7 +28,7 @@ const baseServiceConfig = {
   twitterSite: '@bbcchinese',
   isTrustProjectParticipant: true,
   script: noAscendersOrDescenders,
-  manifestPath: '/manifest.json',
+  manifestPath: '/zhongwen/manifest.json',
   swPath: '/sw.js',
   radioSchedule: {
     hasRadioSchedule: false,
