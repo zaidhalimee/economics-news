@@ -44,8 +44,6 @@ import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
 import OPTIMIZELY_CONFIG from '#app/lib/config/optimizely';
 import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
 import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
-import CallToActionLinkWithChevron from '#app/components/CallToActionLinkWithChevron';
-import useViewTracker from '#app/hooks/useViewTracker';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
@@ -69,15 +67,12 @@ import RelatedContentSection from '../../components/RelatedContentSection';
 import Disclaimer from '../../components/Disclaimer';
 import SecondaryColumn from './SecondaryColumn';
 import styles from './ArticlePage.styles';
-import {
-  ComponentToRenderProps,
-  TimeStampProps,
-  HeadlineComponentProps,
-} from './types';
+import { ComponentToRenderProps, TimeStampProps } from './types';
 import {
   transformRecsData,
   OptimizelyVariation,
 } from './recommendationsExperiment';
+import ArticleHeadline from './ArticleHeadline';
 
 const getImageComponent =
   (preloadLeadImageToggle: boolean) => (props: ComponentToRenderProps) => (
@@ -125,52 +120,14 @@ const DisclaimerWithPaddingOverride = (props: ComponentToRenderProps) => (
 const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
   podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
-const getHeadlineComponent =
-  ({ pathname, isLite, translations }: HeadlineComponentProps) =>
-  (props: ComponentToRenderProps) => {
-    const eventTrackingData = { componentName: 'canonical-lite-cta' };
-    const { enabled: showCTA } = useToggle('liteSiteCTA');
-    const viewRef = useViewTracker(eventTrackingData);
-
-    const articleDataSavingLinkText =
-      translations?.liteSite?.articleDataSavingLinkText ??
-      'Data-saving Version';
-
-    const showLiteCTAOnCanonical: boolean = !isLite && showCTA;
-
-    return (
-      <>
-        <Headings
-          className="article-heading"
-          {...props}
-          {...(showLiteCTAOnCanonical && {
-            css: styles.headlineWithLiteSiteCTA,
-          })}
-        />
-        {showLiteCTAOnCanonical && (
-          <div
-            css={styles.liteCTAContainer}
-            ref={viewRef}
-            data-e2e="to-lite-site"
-          >
-            <CallToActionLinkWithChevron
-              eventTrackingData={eventTrackingData}
-              href={`${pathname}.lite`}
-              css={styles.liteCTA}
-            >
-              {articleDataSavingLinkText}
-            </CallToActionLinkWithChevron>
-          </div>
-        )}
-      </>
-    );
-  };
+const getHeadlineComponent = (props: ComponentToRenderProps) => (
+  <ArticleHeadline {...props} />
+);
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
-  const { isApp, pathname, isLite } = useContext(RequestContext);
+  const { isApp } = useContext(RequestContext);
 
   const {
-    translations,
     articleAuthor,
     isTrustProjectParticipant,
     showRelatedTopics,
@@ -245,7 +202,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const componentsToRender = {
     visuallyHiddenHeadline,
-    headline: getHeadlineComponent({ pathname, isLite, translations }),
+    headline: getHeadlineComponent,
     subheadline: Headings,
     audio: MediaLoader,
     video: MediaLoader,
