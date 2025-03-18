@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-sinhala',
     atiAnalyticsProducerId: '82',
     atiAnalyticsProducerName: 'SINHALA',
+    useReverb: true,
     chartbeatDomain: 'sinhala.bbc.co.uk',
     brandName: 'BBC News සිංහල',
     product: 'BBC News',
