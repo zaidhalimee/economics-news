@@ -37,7 +37,6 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: null,
     isTrustProjectParticipant: false,
     script: latin,
-    manifestPath: '/articles/manifest.json',
     swPath: '/articles/sw.js',
     frontPageTitle: 'Home',
     showAdPlaceholder: false,

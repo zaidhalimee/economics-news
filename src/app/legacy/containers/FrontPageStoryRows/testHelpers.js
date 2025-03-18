@@ -1,8 +1,8 @@
 import pathOr from 'ramda/src/pathOr';
 import take from 'ramda/src/take';
-import { v4 as uuid } from 'uuid';
 import { data as serbianFrontPageData } from '#data/serbian/frontpage/lat';
 import { data as urduFrontPageData } from '#data/urdu/frontpage';
+import getUUID from '#app/lib/utilities/getUUID';
 
 const { article: fixture } = serbianFrontPageData;
 const { article: rtlFixture } = urduFrontPageData;
@@ -13,7 +13,10 @@ const getPromoFixtures = dir =>
   pathOr(null, ['content', 'groups'], getFixtureData(dir))
     .flatMap(group => pathOr(null, ['items'], group))
     .filter(item => pathOr(null, ['assetTypeCode'], item) === 'PRO')
-    .map(item => ({ id: uuid(), ...item }));
+    .map((item, index) => ({
+      id: `${getUUID()}-${item.timestamp || new Date().getTime()}-${index}`,
+      ...item,
+    }));
 
 const getNumberPromoFixtures = (dir, number = 1) => {
   const promoFixtures = getPromoFixtures(dir);
@@ -27,7 +30,6 @@ const getNumberPromoFixtures = (dir, number = 1) => {
         ...promo,
         name: `${promo.name} ${i + 1}`,
         summary: `${promo.summary} ${i + 1}`,
-        id: uuid(),
       });
       i += 1;
     }

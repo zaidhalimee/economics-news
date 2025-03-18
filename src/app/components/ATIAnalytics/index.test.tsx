@@ -1112,7 +1112,6 @@ describe('ATI Analytics Container', () => {
         isAmp: false,
         pageData: articleDataNews,
         pageType: ARTICLE_PAGE,
-        service: 'mundo',
         isUK: true,
       });
 

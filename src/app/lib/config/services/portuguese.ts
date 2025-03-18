@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-portuguese',
     atiAnalyticsProducerId: '33',
     atiAnalyticsProducerName: 'BRASIL',
+    useReverb: true,
     chartbeatDomain: 'brasil.bbc.co.uk', // this is meant to be different to the service name
     brandName: 'BBC News Brasil',
     product: 'BBC News',
@@ -42,7 +43,7 @@ export const service: DefaultServiceConfig = {
       'https://www.bbc.com/portuguese/institutional-50054434',
     isTrustProjectParticipant: true,
     script: latinWithDiacritics,
-    manifestPath: '/manifest.json',
+    manifestPath: '/portuguese/manifest.json',
     swPath: '/sw.js',
     frontPageTitle: 'Notícias, vídeos, análise e contexto em português',
     passportHomes: ['brasil'],
