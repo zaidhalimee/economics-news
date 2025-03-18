@@ -12,6 +12,7 @@ const baseServiceConfig = {
   atiAnalyticsAppName: 'news-ukchina',
   atiAnalyticsProducerId: '93',
   atiAnalyticsProducerName: 'UK_CHINA',
+  useReverb: true,
   chartbeatDomain: 'ukchina.bbc.co.uk',
   brandName: 'BBC 英伦网',
   product: 'BBC',
