@@ -554,4 +554,5 @@ const liteTestSuites = canonicalTestSuites
 
 runTestsForPage({
   testSuites: [...canonicalTestSuites, ...ampTestSuites, ...liteTestSuites],
+  testIsolation: true,
 });
