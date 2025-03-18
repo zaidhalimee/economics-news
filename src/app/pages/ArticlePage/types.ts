@@ -1,4 +1,5 @@
 import { OptimoBlock } from '#app/models/types/optimo';
+import { Translations } from '#app/models/types/translations';
 
 export type Block = Omit<OptimoBlock, 'model'> & {
   model: { blocks: OptimoBlock[] };
@@ -14,12 +15,8 @@ export type TimeStampProps = {
   lastPublished: number;
 };
 
-export type getHeadlineComponentProps = {
+export type HeadlineComponentProps = {
   pathname: string;
   isLite: boolean;
-  translations?: {
-    liteSite?: {
-      articleDataSavingLinkText?: string;
-    };
-  };
+  translations?: Translations;
 };

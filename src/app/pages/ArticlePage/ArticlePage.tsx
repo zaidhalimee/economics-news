@@ -72,7 +72,7 @@ import styles from './ArticlePage.styles';
 import {
   ComponentToRenderProps,
   TimeStampProps,
-  getHeadlineComponentProps,
+  HeadlineComponentProps,
 } from './types';
 import {
   transformRecsData,
@@ -126,7 +126,7 @@ const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
   podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
 const getHeadlineComponent =
-  ({ pathname, isLite, translations }: getHeadlineComponentProps) =>
+  ({ pathname, isLite, translations }: HeadlineComponentProps) =>
   (props: ComponentToRenderProps) => {
     const eventTrackingData = { componentName: 'canonical-lite-cta' };
     const { enabled: showCTA } = useToggle('liteSiteCTA');

@@ -148,33 +148,33 @@ describe('Article Page', () => {
       title:
         'should show the CTA on non Lite Site pages, when the toggle is enabled',
       isLite: false,
-      liteSiteCTA: true,
-      expected: true,
+      toggleEnabled: true,
+      shouldBeDisplayed: true,
     },
     {
       title:
         'should not show the CTA on non Lite Site pages, when the toggle is false',
       isLite: false,
-      liteSiteCTA: false,
-      expected: false,
+      toggleEnabled: false,
+      shouldBeDisplayed: false,
     },
     {
       title:
         'should not show the CTA on Lite Site pages, regardless of the toggle',
       isLite: true,
-      liteSiteCTA: true,
-      expected: false,
+      toggleEnabled: true,
+      shouldBeDisplayed: false,
     },
-  ])('$title', ({ isLite, liteSiteCTA, expected }) => {
+  ])('$title', ({ isLite, toggleEnabled, shouldBeDisplayed }) => {
     render(<ArticlePage pageData={articleDataPersian} />, {
       service: 'gahuza',
       isLite,
-      toggles: { liteSiteCTA: { enabled: liteSiteCTA } },
+      toggles: { toggleEnabled: { enabled: toggleEnabled } },
     });
 
     const liteCTA = screen.queryByRole('link', { name: /Nyandiko gusa/i });
 
-    if (expected) {
+    if (shouldBeDisplayed) {
       expect(liteCTA).toBeInTheDocument();
     } else {
       expect(liteCTA).not.toBeInTheDocument();
@@ -189,7 +189,7 @@ describe('Article Page', () => {
     render(<ArticlePage pageData={articleDataPersian} />, {
       service: 'gahuza',
       isLite: false,
-      toggles: { liteSiteCTA: { enabled: true } },
+      toggles: { toggleEnabled: { enabled: true } },
     });
 
     expect(clickTrackerSpy).toHaveBeenCalledWith(eventTrackingData);
