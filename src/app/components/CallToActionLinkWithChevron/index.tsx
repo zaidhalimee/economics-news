@@ -26,7 +26,7 @@ const CallToActionLinkWithChevron = ({
       download={download}
       css={styles.link}
     >
-      <Text fontVariant="sansBold" css={styles.linkText}>
+      <Text size="brevier" fontVariant="sansBold" css={styles.linkText}>
         {children}
       </Text>
       {isRtl ? (
