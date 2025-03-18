@@ -1,3 +1,5 @@
+import { MEDIA_ASSET_PAGE } from '../../../../../src/app/routes/utils/pageTypes';
+
 const clickFirstLink = () => {
   cy.get('a').first().click();
 };
@@ -32,7 +34,7 @@ export const clickHomePageLink = (product, variant) => {
 
 export const clickPromoLinkOnHomePage = pageType => {
   // If it is a MAP test, find first MAP on the homepage and click it
-  if (pageType === 'mediaAssetPage') {
+  if (pageType === MEDIA_ASSET_PAGE) {
     clickFirstMapLink();
   } else {
     cy.get('[data-testid="topic-promos"]')

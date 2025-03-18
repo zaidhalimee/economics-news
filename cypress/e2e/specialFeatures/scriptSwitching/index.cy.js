@@ -1,49 +1,28 @@
-import config from '../../../support/config/services';
-import appConfig from '../../../../src/server/utilities/serviceConfigs';
-import getPaths from '../../../support/helpers/getPaths';
-import serviceHasPageType from '../../../support/helpers/serviceHasPageType';
-import testsForCanonicalOnly from './testsForCanonicalOnly';
-import testsForAMPOnly from './testsForAMPOnly';
+import runTestsForPage from '#nextjs/cypress/support/helpers/runTestsForPage';
+import { HOME_PAGE } from '../../../../src/app/routes/utils/pageTypes';
+import assertions from './assertions';
 
-const hasVariant = serviceName => {
-  return config[serviceName] && config[serviceName].variant !== 'default';
-};
+const testSuites = [
+  {
+    path: '/serbian/cyr',
+    service: 'serbian',
+    variant: 'cyr',
+    otherVariant: 'lat',
+    pageType: HOME_PAGE,
+    runforEnv: ['local', 'test', 'live'],
+    tests: [assertions],
+  },
+  {
+    path: '/serbian/lat',
+    service: 'serbian',
+    variant: 'lat',
+    otherVariant: 'cyr',
+    pageType: HOME_PAGE,
+    runforEnv: ['local', 'test', 'live'],
+    tests: [assertions],
+  },
+];
 
-Object.keys(config)
-  .filter(hasVariant)
-  .forEach(serviceId => {
-    const { variant } = config[serviceId];
-    const serviceName = config[serviceId].name;
-    const { scriptLink } = appConfig[serviceName][variant];
-    const scriptLinkVariant = scriptLink && scriptLink.variant;
-
-    Object.keys(config[serviceId].pageTypes)
-      .filter(
-        pageType =>
-          serviceHasPageType(serviceId, pageType) &&
-          pageType !== 'onDemandAudio' &&
-          !pageType.includes('error'),
-      )
-      .forEach(pageType => {
-        const paths = getPaths(serviceId, pageType);
-        paths.forEach(path => {
-          testsForCanonicalOnly({
-            serviceId,
-            serviceName,
-            pageType,
-            path,
-            variant,
-            otherVariant: scriptLinkVariant,
-          });
-        });
-        paths
-          .map(path => `${path}.amp`)
-          .forEach(path => {
-            testsForAMPOnly({
-              serviceName,
-              pageType,
-              path,
-            });
-          });
-      });
-  });
+runTestsForPage({
+  testSuites,
+});

@@ -7,6 +7,7 @@ export default ({ pageType, testSuites }) => {
         before(() => {
           cy.visit(path);
         });
+
         tests.forEach(test => test({ path, pageType, ...params }));
       });
     }
