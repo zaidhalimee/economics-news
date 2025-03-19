@@ -138,7 +138,7 @@ export default ({
       return (
         <RadioSchedule
           initialData={radioSchedule}
-          toggleName="frontPageRadioSchedule"
+          toggleName="homePageRadioSchedule"
         />
       );
     case EMBED:

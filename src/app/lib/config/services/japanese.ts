@@ -42,9 +42,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/japanese/help-49677253',
     isTrustProjectParticipant: true,
     script: noAscendersOrDescenders,
-    manifestPath: '/manifest.json',
+    manifestPath: '/japanese/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: '最新ニュース',
+    homePageTitle: '最新ニュース',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {

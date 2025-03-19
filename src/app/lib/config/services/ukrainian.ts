@@ -40,9 +40,9 @@ const baseServiceConfig = {
   publishingPrinciples: 'https://www.bbc.com/ukrainian/institutional-50170368',
   isTrustProjectParticipant: true,
   script: cyrillic,
-  manifestPath: '/manifest.json',
+  manifestPath: '/ukrainian/manifest.json',
   swPath: '/sw.js',
-  frontPageTitle: 'Новини',
+  homePageTitle: 'Новини',
   showAdPlaceholder: true,
   showRelatedTopics: true,
   podcastPromo: {

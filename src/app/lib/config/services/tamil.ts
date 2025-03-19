@@ -41,9 +41,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/tamil/institutional-50288575',
     isTrustProjectParticipant: true,
     script: tamil,
-    manifestPath: '/manifest.json',
+    manifestPath: '/tamil/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'முகப்பு',
+    homePageTitle: 'முகப்பு',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {

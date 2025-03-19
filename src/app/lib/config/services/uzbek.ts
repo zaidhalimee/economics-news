@@ -22,7 +22,7 @@ const baseServiceConfig = {
   twitterCreator: '@bbcuzbek',
   twitterSite: '@bbcuzbek',
   isTrustProjectParticipant: true,
-  manifestPath: '/manifest.json',
+  manifestPath: '/uzbek/manifest.json',
   swPath: '/sw.js',
   radioSchedule: {
     hasRadioSchedule: false,
@@ -44,7 +44,7 @@ const defaultCyrillicConfig = {
   brandName: "BBC News O'zbek",
   datetimeLocale: `uz`,
   externalLinkText: ', ташқи',
-  frontPageTitle: 'Бош саҳифа',
+  homePageTitle: 'Бош саҳифа',
   lang: `uz-Cyrl`,
   locale: `uz-UZ`,
   // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405
@@ -380,7 +380,7 @@ export const service: UzbekConfig = {
     brandName: "BBC News O'zbek",
     datetimeLocale: `uz-latn`,
     externalLinkText: ', tashqi',
-    frontPageTitle: 'Bosh sahifa',
+    homePageTitle: 'Bosh sahifa',
     lang: `uz-Cyrl`,
     locale: `uz-UZ`,
     // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405

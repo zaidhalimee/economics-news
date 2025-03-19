@@ -41,9 +41,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/hausa/game-da-mu-49283501',
     isTrustProjectParticipant: true,
     script: latin,
-    manifestPath: '/manifest.json',
+    manifestPath: '/hausa/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Labaran Duniya',
+    homePageTitle: 'Labaran Duniya',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     podcastPromo: {

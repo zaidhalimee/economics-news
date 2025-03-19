@@ -43,9 +43,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/persian/institutional-49283091',
     isTrustProjectParticipant: true,
     script: arabic,
-    manifestPath: '/manifest.json',
+    manifestPath: '/persian/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'صفحه اول',
+    homePageTitle: 'صفحه اول',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     podcastPromo: {
