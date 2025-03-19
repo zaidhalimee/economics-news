@@ -19,6 +19,7 @@ export default {
   link: ({ palette }: Theme) =>
     css({
       color: palette.GREY_10,
+      display: 'inline-block',
       textDecoration: 'none',
       padding: `${pixelsToRem(12)}rem 0 ${pixelsToRem(12)}rem`,
       '&:focus, &:hover': {
