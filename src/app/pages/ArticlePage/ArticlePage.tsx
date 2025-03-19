@@ -1,9 +1,12 @@
 /** @jsx jsx */
 /* @jsxFrag React.Fragment */
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 import useToggle from '#hooks/useToggle';
 import { singleTextBlock } from '#app/models/blocks';
+import useOptimizelyMvtVariation from '#app/hooks/useOptimizelyMvtVariation';
+import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
+import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
 import ArticleMetadata from '#containers/ArticleMetadata';
 import { RequestContext } from '#contexts/RequestContext';
 import headings from '#containers/Headings';
@@ -127,6 +130,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     palette: { GREY_2, WHITE },
   } = useTheme();
 
+  const experimentVariant = useOptimizelyMvtVariation('');
+
   const allowAdvertising = pageData?.metadata?.allowAdvertising ?? false;
   const adcampaign = pageData?.metadata?.adCampaignKeyword;
 
@@ -173,6 +178,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const atiData = {
     ...atiAnalytics,
     ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
+    ...(experimentVariant && { experimentVariant }),
   };
 
   const componentsToRender = {
@@ -311,6 +317,12 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           mobileDivider={showTopics}
           sendOptimizelyEvents={false}
         />
+      )}
+      {experimentVariant && (
+        <>
+          <OptimizelyArticleCompleteTracking />
+          <OptimizelyPageViewTracking />
+        </>
       )}
     </div>
   );
