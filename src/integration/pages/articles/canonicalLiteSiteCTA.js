@@ -1,8 +1,11 @@
-export default pathname => {
+export default () => {
   describe('canonical Lite Site CTA', () => {
-    it('should have an inline link', () => {
-      const liteSiteCTA = document.querySelector(`a[href="${pathname}.lite"]`);
+    const liteSiteCTA = document.querySelector("[data-e2e='to-lite-site']");
+    it('should be in the document', () => {
       expect(liteSiteCTA).toBeInTheDocument();
+    });
+    it('should match snapshot', () => {
+      expect(liteSiteCTA).toMatchSnapshot();
     });
   });
 };
