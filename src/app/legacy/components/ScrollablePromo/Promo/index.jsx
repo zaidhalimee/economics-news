@@ -21,6 +21,7 @@ import useOperaMiniDetection from '#hooks/useOperaMiniDetection';
 import PromoTimestamp from '#components/Promo/timestamp';
 import LiveLabel from '../../../../components/LiveLabel';
 import { ServiceContext } from '../../../../contexts/ServiceContext';
+import useOptimizelyMvtVariation from '#app/hooks/useOptimizelyMvtVariation';
 
 const StyledLink = styled(Link)`
   ${({ script }) => script && getPica(script)}
@@ -100,6 +101,8 @@ const TimeStamp = styled(PromoTimestamp)`
   margin-top: ${GEL_SPACING};
   color: ${({ theme }) => theme.isDarkUi && theme.palette.GREY_6};
 `;
+
+const variation = useOptimizelyMvtVariation('');
 
 const Promo = ({ block, experimentVariant, onClick }) => {
   const { script, service, serviceDatetimeLocale } = useContext(ServiceContext);
