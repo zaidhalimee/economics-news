@@ -43,7 +43,7 @@ export const service: DefaultServiceConfig = {
     script: latin,
     manifestPath: '/hausa/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Labaran Duniya',
+    homePageTitle: 'Labaran Duniya',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     podcastPromo: {

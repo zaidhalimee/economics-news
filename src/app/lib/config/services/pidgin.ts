@@ -37,7 +37,7 @@ export const service: DefaultServiceConfig = {
     script: latin,
     manifestPath: '/pidgin/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Domot',
+    homePageTitle: 'Domot',
     noBylinesPolicy:
       'https://www.bbc.com/pidgin/institutional-48528766#authorexpertise',
     publishingPrinciples: 'https://www.bbc.com/pidgin/institutional-48528766',
