@@ -44,9 +44,6 @@ export default {
         'a:visited &': {
           fill: 'visitedText',
         },
-        'a:active &': {
-          fill: 'activeText',
-        },
       },
     }),
 };
