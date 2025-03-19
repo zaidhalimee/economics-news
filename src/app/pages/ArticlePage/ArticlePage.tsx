@@ -66,6 +66,7 @@ import styles from './ArticlePage.styles';
 import { ComponentToRenderProps, TimeStampProps } from './types';
 import ArticleHeadline from './ArticleHeadline';
 
+
 const getImageComponent =
   (preloadLeadImageToggle: boolean) => (props: ComponentToRenderProps) => (
     <ImageWithCaption
