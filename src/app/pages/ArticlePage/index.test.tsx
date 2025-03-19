@@ -853,7 +853,7 @@ describe('Article Page', () => {
       expect(queryByTestId('most-read')).not.toBeInTheDocument();
     });
 
-    it('should add brandname to page testScenario in atiAnalytics', async () => {
+    it('should add brandname to page title in atiAnalytics', async () => {
       (ATIAnalytics as jest.Mock).mockImplementation(() => <div />);
 
       render(
@@ -897,7 +897,7 @@ describe('Article Page', () => {
     });
   });
   describe('when rendering an STY page', () => {
-    it('should add brandname to page testScenario in atiAnalytics', async () => {
+    it('should add brandname to page title in atiAnalytics', async () => {
       (ATIAnalytics as jest.Mock).mockImplementation(() => <div />);
 
       render(
