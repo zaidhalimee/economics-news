@@ -43,7 +43,7 @@ export const service: DefaultServiceConfig = {
     script: cyrillic,
     manifestPath: '/kyrgyz/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Кабарлар, акыркы мүнөттөгү кабарлар, талдоо, видео',
+    homePageTitle: 'Кабарлар, акыркы мүнөттөгү кабарлар, талдоо, видео',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {

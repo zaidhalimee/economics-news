@@ -4,7 +4,6 @@ import {
   MEDIA_ASSET_PAGE,
   CORRESPONDENT_STORY_PAGE,
   ARTICLE_PAGE,
-  FRONT_PAGE,
   TOPIC_PAGE,
   MEDIA_ARTICLE_PAGE,
   MOST_READ_PAGE,
@@ -25,10 +24,6 @@ import {
   buildPageATIParams,
   buildPageReverbParams,
 } from './buildParams';
-import {
-  buildIndexPageATIParams,
-  buildIndexPageATIUrl,
-} from './frontPage/buildParams';
 import { RequestContextProps } from '../../../contexts/RequestContext';
 import { ServiceConfig } from '../../../models/types/serviceConfig';
 import {
@@ -65,7 +60,6 @@ const pageTypeUrlBuilders = {
   [ARTICLE_PAGE]: noOp,
   [MEDIA_ARTICLE_PAGE]: noOp,
   [STORY_PAGE]: noOp,
-  [FRONT_PAGE]: buildIndexPageATIUrl,
   [MOST_READ_PAGE]: noOp,
   [TOPIC_PAGE]: noOp,
   [MEDIA_ASSET_PAGE]: noOp,
@@ -87,7 +81,6 @@ const pageTypeUrlBuilders = {
 const pageTypeParamBuilders = {
   [ARTICLE_PAGE]: noOp,
   [MEDIA_ARTICLE_PAGE]: noOp,
-  [FRONT_PAGE]: buildIndexPageATIParams,
   [MOST_READ_PAGE]: noOp,
   [TOPIC_PAGE]: noOp,
   [MEDIA_ASSET_PAGE]: noOp,
