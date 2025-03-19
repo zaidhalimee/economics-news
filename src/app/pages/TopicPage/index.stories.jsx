@@ -1,5 +1,5 @@
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router';
 
 import { ToggleContextProvider } from '#contexts/ToggleContext';
 import { ServiceContextProvider } from '../../contexts/ServiceContext';
@@ -71,7 +71,6 @@ export default {
 export const Example = (_, { service, variant }) => (
   <Component service={service} variant={variant} />
 );
-
 
 export const PersianAfghanistan = () => (
   <Component service="persian" fixture={persianAfghanistan} />

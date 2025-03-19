@@ -4,7 +4,7 @@ import Url from 'url-parse';
 import { HOME_PAGE } from '#app/routes/utils/pageTypes';
 import { Curation } from '#app/models/types/curationData';
 import { Services } from '#app/models/types/global';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router';
 import { StoryArgs, StoryProps } from '../../models/types/storybook';
 import HomePage from '.';
 

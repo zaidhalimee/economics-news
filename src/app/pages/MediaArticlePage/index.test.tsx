@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router';
 import { render, waitFor, screen } from '@testing-library/react';
 import { FetchMock } from 'jest-fetch-mock';
 import { Article } from '#app/models/types/optimo';

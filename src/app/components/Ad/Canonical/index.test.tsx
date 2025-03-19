@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router';
 import { RequestContext, RequestContextProps } from '#contexts/RequestContext';
 import isLive from '#lib/utilities/isLive';
 import { render } from '../../react-testing-library-with-providers';
