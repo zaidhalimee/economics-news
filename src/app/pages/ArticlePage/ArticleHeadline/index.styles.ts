@@ -21,7 +21,7 @@ export default {
         marginInlineStart: 0,
       },
     }),
-  headlineWithLiteSiteCTA: ({ spacings, mq }: Theme) =>
+  headlineStylesOverride: ({ spacings, mq }: Theme) =>
     css({
       paddingBottom: `${spacings.HALF}rem`,
       [mq.GROUP_3_MIN_WIDTH]: {
