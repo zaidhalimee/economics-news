@@ -62,10 +62,11 @@ services.forEach(service => {
     {
       name: 'Lite Site',
       short_name: 'Lite',
-      url: `${currentManifest.start_url}.lite`,
+      url: `${currentManifest.start_url}.lite?at_medium=PWA&at_campaign=PWA`,
       icons: currentManifest.icons.filter(({ sizes }) => sizes === '96x96'),
     },
   ];
+  currentManifest.start_url = `/${service}?at_medium=PWA&at_campaign=PWA`;
 
   if (COPY_IMAGES_ACROSS) {
     const iconsPathStem = `../public/${service}/images/icons/`;

@@ -53,12 +53,12 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "/serbian",
+  "start_url": "/serbian?at_medium=PWA&at_campaign=PWA",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "/serbian.lite",
+      "url": "/serbian.lite?at_medium=PWA&at_campaign=PWA",
       "icons": [
         {
           "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/serbian/images/icons/icon-96x96.png?v=1",

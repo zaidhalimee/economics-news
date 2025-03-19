@@ -53,12 +53,12 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "/japanese",
+  "start_url": "/japanese?at_medium=PWA&at_campaign=PWA",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "/japanese.lite",
+      "url": "/japanese.lite?at_medium=PWA&at_campaign=PWA",
       "icons": [
         {
           "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/japanese/images/icons/icon-96x96.png?v=1",

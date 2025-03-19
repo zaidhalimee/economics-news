@@ -53,12 +53,12 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "/punjabi",
+  "start_url": "/punjabi?at_medium=PWA&at_campaign=PWA",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "/punjabi.lite",
+      "url": "/punjabi.lite?at_medium=PWA&at_campaign=PWA",
       "icons": [
         {
           "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/punjabi/images/icons/icon-96x96.png?v=1",

@@ -60,12 +60,12 @@
       "id": "uk.co.bbc.arabic"
     }
   ],
-  "start_url": "/arabic",
+  "start_url": "/arabic?at_medium=PWA&at_campaign=PWA",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "/arabic.lite",
+      "url": "/arabic.lite?at_medium=PWA&at_campaign=PWA",
       "icons": [
         {
           "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/arabic/images/icons/icon-96x96.png?v=1",

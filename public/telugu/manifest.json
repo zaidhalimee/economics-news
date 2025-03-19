@@ -53,12 +53,12 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "/telugu",
+  "start_url": "/telugu?at_medium=PWA&at_campaign=PWA",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "/telugu.lite",
+      "url": "/telugu.lite?at_medium=PWA&at_campaign=PWA",
       "icons": [
         {
           "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/telugu/images/icons/icon-96x96.png?v=1",

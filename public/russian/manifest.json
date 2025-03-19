@@ -60,12 +60,12 @@
       "id": "uk.co.bbc.russian"
     }
   ],
-  "start_url": "/russian",
+  "start_url": "/russian?at_medium=PWA&at_campaign=PWA",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "/russian.lite",
+      "url": "/russian.lite?at_medium=PWA&at_campaign=PWA",
       "icons": [
         {
           "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/russian/images/icons/icon-96x96.png?v=1",

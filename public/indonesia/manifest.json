@@ -53,12 +53,12 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "/indonesia",
+  "start_url": "/indonesia?at_medium=PWA&at_campaign=PWA",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "/indonesia.lite",
+      "url": "/indonesia.lite?at_medium=PWA&at_campaign=PWA",
       "icons": [
         {
           "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/indonesia/images/icons/icon-96x96.png?v=1",

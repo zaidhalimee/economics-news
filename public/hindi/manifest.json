@@ -60,12 +60,12 @@
       "id": "uk.co.bbc.hindi"
     }
   ],
-  "start_url": "/hindi",
+  "start_url": "/hindi?at_medium=PWA&at_campaign=PWA",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "/hindi.lite",
+      "url": "/hindi.lite?at_medium=PWA&at_campaign=PWA",
       "icons": [
         {
           "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/hindi/images/icons/icon-96x96.png?v=1",

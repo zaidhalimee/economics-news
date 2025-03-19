@@ -53,12 +53,12 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "/somali",
+  "start_url": "/somali?at_medium=PWA&at_campaign=PWA",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "/somali.lite",
+      "url": "/somali.lite?at_medium=PWA&at_campaign=PWA",
       "icons": [
         {
           "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/somali/images/icons/icon-96x96.png?v=1",

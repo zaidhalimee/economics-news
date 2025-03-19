@@ -53,12 +53,12 @@
     }
   ],
   "splash_pages": null,
-  "start_url": "/swahili",
+  "start_url": "/swahili?at_medium=PWA&at_campaign=PWA",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "/swahili.lite",
+      "url": "/swahili.lite?at_medium=PWA&at_campaign=PWA",
       "icons": [
         {
           "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/swahili/images/icons/icon-96x96.png?v=1",

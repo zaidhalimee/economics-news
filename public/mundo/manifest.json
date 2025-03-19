@@ -60,12 +60,12 @@
       "id": "uk.co.bbc.mundo"
     }
   ],
-  "start_url": "/mundo",
+  "start_url": "/mundo?at_medium=PWA&at_campaign=PWA",
   "shortcuts": [
     {
       "name": "Lite Site",
       "short_name": "Lite",
-      "url": "/mundo.lite",
+      "url": "/mundo.lite?at_medium=PWA&at_campaign=PWA",
       "icons": [
         {
           "src": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/mundo/images/icons/icon-96x96.png?v=1",
