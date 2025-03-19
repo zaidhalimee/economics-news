@@ -76,7 +76,7 @@ export type ServiceConfig = {
   script: object;
   manifestPath?: string;
   swPath?: string;
-  frontPageTitle: string;
+  homePageTitle: string;
   passportHomes?: string[];
   iTunesAppId?: number;
   showAdPlaceholder: boolean;
