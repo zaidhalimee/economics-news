@@ -169,7 +169,7 @@ describe('Article Page', () => {
     render(<ArticlePage pageData={articleDataPersian} />, {
       service: 'gahuza',
       isLite,
-      toggles: { toggleEnabled: { enabled: toggleEnabled } },
+      toggles: { liteSiteCTA: { enabled: toggleEnabled } },
     });
 
     const liteCTA = screen.queryByRole('link', { name: /Nyandiko gusa/i });
@@ -189,7 +189,7 @@ describe('Article Page', () => {
     render(<ArticlePage pageData={articleDataPersian} />, {
       service: 'gahuza',
       isLite: false,
-      toggles: { toggleEnabled: { enabled: true } },
+      toggles: { liteSiteCTA: { enabled: true } },
     });
 
     expect(clickTrackerSpy).toHaveBeenCalledWith(eventTrackingData);
