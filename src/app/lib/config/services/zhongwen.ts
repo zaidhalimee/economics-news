@@ -60,7 +60,7 @@ export const service: ZhongwenConfig = {
   simp: {
     ...baseServiceConfig,
     externalLinkText: ', 外部',
-    homePageTitle: '主页',
+    frontPageTitle: '主页',
     lang: `zh-hans`,
     locale: `zh-hans`,
     // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405
@@ -373,7 +373,7 @@ export const service: ZhongwenConfig = {
     isoLang: 'zh-Hant',
     datetimeLocale: 'zh-tw',
     externalLinkText: ', 外部',
-    homePageTitle: '主頁',
+    frontPageTitle: '主頁',
     defaultCaptionOffscreenText: '說明文字，',
     audioCaptionOffscreenText: '音频加注文字，',
     videoCaptionOffscreenText: '音頻加註文字，',

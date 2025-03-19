@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import { render } from '@testing-library/react';
-import { HOME_PAGE } from '#app/routes/utils/pageTypes';
+import { FRONT_PAGE } from '#app/routes/utils/pageTypes';
 import * as getStatsDestination from './getStatsDestination';
+import * as getStatsPageIdentifier from './getStatsPageIdentifier';
 import * as getOriginContext from './getOriginContext';
 import * as getEnv from './getEnv';
 import * as getMetaUrls from './getMetaUrls';
@@ -23,12 +24,16 @@ jest.mock('react', () => {
 });
 
 jest.mock('./getStatsDestination');
+jest.mock('./getStatsPageIdentifier');
 jest.mock('./getOriginContext');
 jest.mock('./getEnv');
 jest.mock('./getMetaUrls');
 
 (getStatsDestination.default as jest.Mock).mockReturnValue(
   'getStatsDestination',
+);
+(getStatsPageIdentifier.default as jest.Mock).mockReturnValue(
+  'getStatsPageIdentifier',
 );
 (getOriginContext.default as jest.Mock).mockReturnValue({
   origin: 'origin',
@@ -47,7 +52,7 @@ const input = {
   bbcOrigin: 'bbcOrigin',
   id: 'id',
   isAmp: true,
-  pageType: HOME_PAGE,
+  pageType: FRONT_PAGE,
   service: 'service',
   statusCode: 200,
   pathname: '/current-path',
@@ -72,6 +77,7 @@ const expectedOutput = {
   variant: 'simp',
   timeOnServer: null,
   statsDestination: 'getStatsDestination',
+  statsPageIdentifier: 'getStatsPageIdentifier',
   statusCode: 200,
   canonicalLink: 'canonicalLink',
   ampLink: 'ampLink',
@@ -101,6 +107,12 @@ describe('RequestContext', () => {
     expect(getStatsDestination.default).toHaveBeenCalledWith({
       env: 'getEnv',
       isUK: true,
+      service: 'service',
+    });
+
+    expect(getStatsPageIdentifier.default).toHaveBeenCalledWith({
+      id: 'id',
+      pageType: 'frontPage',
       service: 'service',
     });
 

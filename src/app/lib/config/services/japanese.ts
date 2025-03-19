@@ -44,7 +44,7 @@ export const service: DefaultServiceConfig = {
     script: noAscendersOrDescenders,
     manifestPath: '/japanese/manifest.json',
     swPath: '/sw.js',
-    homePageTitle: '最新ニュース',
+    frontPageTitle: '最新ニュース',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {

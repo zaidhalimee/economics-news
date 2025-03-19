@@ -45,7 +45,7 @@ export const service: DefaultServiceConfig = {
     script: latinWithDiacritics,
     manifestPath: '/portuguese/manifest.json',
     swPath: '/sw.js',
-    homePageTitle: 'Notícias, vídeos, análise e contexto em português',
+    frontPageTitle: 'Notícias, vídeos, análise e contexto em português',
     passportHomes: ['brasil'],
     showAdPlaceholder: true,
     showRelatedTopics: true,

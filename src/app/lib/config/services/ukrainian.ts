@@ -42,7 +42,7 @@ const baseServiceConfig = {
   script: cyrillic,
   manifestPath: '/ukrainian/manifest.json',
   swPath: '/sw.js',
-  homePageTitle: 'Новини',
+  frontPageTitle: 'Новини',
   showAdPlaceholder: true,
   showRelatedTopics: true,
   podcastPromo: {

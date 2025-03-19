@@ -3,6 +3,7 @@ import {
   TOPIC_PAGE,
   ARTICLE_PAGE,
   HOME_PAGE,
+  FRONT_PAGE,
   MOST_READ_PAGE,
 } from '#app/routes/utils/pageTypes';
 import routes from './index';
@@ -18,6 +19,7 @@ const pageTypesToSkip = [
   TOPIC_PAGE,
   ARTICLE_PAGE,
   HOME_PAGE,
+  FRONT_PAGE,
   MOST_READ_PAGE,
 ];
 

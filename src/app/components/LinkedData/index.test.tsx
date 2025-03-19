@@ -62,7 +62,7 @@ describe('LinkedData', () => {
     seoTitle: 'BBC News Radio',
   };
 
-  const propsForHomepage = {
+  const propsForFrontpage = {
     type: 'WebPage',
     seoTitle: 'Home - BBC News',
   };
@@ -153,10 +153,10 @@ describe('LinkedData', () => {
     expect(getLinkedDataOutput()).toMatchSnapshot();
   });
 
-  it('should correctly render linked data for home pages', () => {
+  it('should correctly render linked data for front pages', () => {
     render(
       <Context>
-        <LinkedData {...propsForHomepage} />
+        <LinkedData {...propsForFrontpage} />
       </Context>,
     );
 

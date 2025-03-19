@@ -44,7 +44,7 @@ export const service: DefaultServiceConfig = {
     script: latin,
     manifestPath: '/indonesia/manifest.json',
     swPath: '/sw.js',
-    homePageTitle: 'Berita',
+    frontPageTitle: 'Berita',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     googleSiteVerification: 'D-aEHUiyVaMoUJXjVRbDVkxS0dLTMUZLD3dLPTnWO4Q',

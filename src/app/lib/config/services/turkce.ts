@@ -43,7 +43,7 @@ export const service: DefaultServiceConfig = {
     script: latinWithDiacritics,
     manifestPath: '/turkce/manifest.json',
     swPath: '/sw.js',
-    homePageTitle: 'Haberler',
+    frontPageTitle: 'Haberler',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {

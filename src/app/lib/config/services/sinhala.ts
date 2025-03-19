@@ -43,7 +43,7 @@ export const service: DefaultServiceConfig = {
     script: sinhalese,
     manifestPath: '/sinhala/manifest.json',
     swPath: '/sw.js',
-    homePageTitle: 'මුල් පිටුව',
+    frontPageTitle: 'මුල් පිටුව',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {

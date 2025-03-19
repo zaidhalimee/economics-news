@@ -40,7 +40,7 @@ export const service: DefaultServiceConfig = {
     script: latinWithDiacritics,
     manifestPath:
       'https://static.files.bbci.co.uk/core/manifest.1ccdbcfd4cc3bf889128a50903c2b22c81758637.json',
-    homePageTitle: 'Newyddion a mwy',
+    frontPageTitle: 'Newyddion a mwy',
     showAdPlaceholder: false,
     showRelatedTopics: true,
     translations: {

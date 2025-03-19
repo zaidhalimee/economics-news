@@ -43,7 +43,7 @@ export const service: DefaultServiceConfig = {
     script: devanagari,
     manifestPath: '/nepali/manifest.json',
     swPath: '/sw.js',
-    homePageTitle: 'मुख पृष्ठ',
+    frontPageTitle: 'मुख पृष्ठ',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {

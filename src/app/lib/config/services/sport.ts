@@ -37,7 +37,7 @@ export const service: DefaultServiceConfig = {
     script: latin,
     manifestPath:
       'https://static.files.bbci.co.uk/core/manifest.1ccdbcfd4cc3bf889128a50903c2b22c81758637.json',
-    homePageTitle: 'Home',
+    frontPageTitle: 'Home',
     showAdPlaceholder: false,
     showRelatedTopics: false,
     translations: {

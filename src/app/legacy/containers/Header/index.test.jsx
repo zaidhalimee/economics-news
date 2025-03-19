@@ -13,6 +13,7 @@ const {
   AUDIO_PAGE,
   INDEX_PAGE,
   ARTICLE_PAGE,
+  FRONT_PAGE,
   LIVE_RADIO_PAGE,
   MEDIA_ASSET_PAGE,
   HOME_PAGE,
@@ -53,6 +54,16 @@ describe(`Header`, () => {
         renderOptions: {
           pageType: ARTICLE_PAGE,
           service: 'news',
+        },
+      });
+
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('should render correctly for WS frontpage', () => {
+      const { container } = HeaderContainerWithContext({
+        renderOptions: {
+          pageType: FRONT_PAGE,
         },
       });
 
@@ -112,7 +123,7 @@ describe(`Header`, () => {
     it('should render a Brand with a Skip to content link, linking to #content', () => {
       HeaderContainerWithContext({
         renderOptions: {
-          pageType: HOME_PAGE,
+          pageType: FRONT_PAGE,
         },
       });
 
@@ -125,7 +136,7 @@ describe(`Header`, () => {
     it('should not render script link for a service without variants', () => {
       HeaderContainerWithContext({
         renderOptions: {
-          pageType: HOME_PAGE,
+          pageType: FRONT_PAGE,
           service: 'pidgin',
         },
       });
@@ -135,7 +146,7 @@ describe(`Header`, () => {
     it('should render script link for a service with variants', () => {
       const { container } = HeaderContainerWithContext({
         renderOptions: {
-          pageType: HOME_PAGE,
+          pageType: FRONT_PAGE,
           service: 'serbian',
           variant: 'cyr',
         },

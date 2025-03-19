@@ -40,7 +40,7 @@ const HomePage = ({ pageData }: HomePageProps) => {
     translations,
     product,
     serviceLocalizedName,
-    homePageTitle,
+    frontPageTitle,
     lang,
     brandName,
   } = useContext(ServiceContext);
@@ -56,7 +56,7 @@ const HomePage = ({ pageData }: HomePageProps) => {
     <>
       <ChartbeatAnalytics title={title} />
       <MetadataContainer
-        title={homePageTitle}
+        title={frontPageTitle}
         lang={lang}
         description={description}
         openGraphType="website"

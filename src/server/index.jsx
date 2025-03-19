@@ -25,8 +25,8 @@ import renderDocument from './Document';
 import {
   articleManifestPath,
   articleSwPath,
-  homePageManifestPath,
-  homePageSwPath,
+  frontPageManifestPath,
+  frontPageSwPath,
 } from '../app/routes/utils/regex';
 import sendCustomMetric from './utilities/customMetrics';
 import { NON_200_RESPONSE } from './utilities/customMetrics/metrics.const';
@@ -112,7 +112,7 @@ server
  * Application env routes
  */
 server
-  .get([articleSwPath, homePageSwPath], (req, res) => {
+  .get([articleSwPath, frontPageSwPath], (req, res) => {
     const swPath = `${__dirname}/public/sw.js`;
     res.set(
       `Cache-Control`,
@@ -125,21 +125,24 @@ server
       }
     });
   })
-  .get([articleManifestPath, homePageManifestPath], async ({ params }, res) => {
-    const { service } = params;
-    const variant = defaultServiceVariants[service] || 'default';
-    const manifestPath = `${__dirname}/public${serviceConfigs[service][variant].manifestPath}`;
-    res.set(
-      'Cache-Control',
-      'public, stale-if-error=172800, stale-while-revalidate=172800, max-age=86400',
-    );
-    res.sendFile(manifestPath, {}, error => {
-      if (error) {
-        logger.error(MANIFEST_SENDFILE_ERROR, { error });
-        res.status(500).send('Unable to find manifest.');
-      }
-    });
-  });
+  .get(
+    [articleManifestPath, frontPageManifestPath],
+    async ({ params }, res) => {
+      const { service } = params;
+      const variant = defaultServiceVariants[service] || 'default';
+      const manifestPath = `${__dirname}/public${serviceConfigs[service][variant].manifestPath}`;
+      res.set(
+        'Cache-Control',
+        'public, stale-if-error=172800, stale-while-revalidate=172800, max-age=86400',
+      );
+      res.sendFile(manifestPath, {}, error => {
+        if (error) {
+          logger.error(MANIFEST_SENDFILE_ERROR, { error });
+          res.status(500).send('Unable to find manifest.');
+        }
+      });
+    },
+  );
 
 // Set Up Local Server
 if (process.env.SIMORGH_APP_ENV === 'local') {

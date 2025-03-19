@@ -17,7 +17,7 @@ import articlePageJson from '#data/persian/articles/c4vlle3q337o.json';
 import sportArticlePageJson from '#data/sport/judo/articles/cj80n66ddnko.json';
 import mediaAssetPageJson from '#data/yoruba/cpsAssets/media-23256797.json';
 
-import { ERROR_PAGE, HOME_PAGE } from '#app/routes/utils/pageTypes';
+import { ERROR_PAGE, FRONT_PAGE } from '#app/routes/utils/pageTypes';
 import * as fetchDataFromBFF from '#app/routes/utils/fetchDataFromBFF';
 import gahuzaOnDemandAudio from '#data/gahuza/bbc_gahuza_radio/p02pcb5c.json';
 // eslint-disable-next-line import/order
@@ -364,7 +364,7 @@ describe('Routes', () => {
       });
       await renderRouter({
         pathname,
-        pageType: HOME_PAGE,
+        pageType: FRONT_PAGE,
         service: 'afrique',
         error: {
           message: error,

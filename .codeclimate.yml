@@ -18,3 +18,4 @@ exclude_patterns:
   - 'scripts/lighthouseBudget.js'
   - 'scripts/dependencyCheck.js'
   - 'scripts/simorghPages.js'
+  - 'scripts/simorghLaunchDates.js'

@@ -74,7 +74,7 @@ exports[`Toggles Config when application environment is local should contain cor
   "eventTracking": {
     "enabled": true,
   },
-  "homePageRadioSchedule": {
+  "frontPageRadioSchedule": {
     "enabled": true,
   },
   "include": {

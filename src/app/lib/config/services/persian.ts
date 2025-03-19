@@ -45,7 +45,7 @@ export const service: DefaultServiceConfig = {
     script: arabic,
     manifestPath: '/persian/manifest.json',
     swPath: '/sw.js',
-    homePageTitle: 'صفحه اول',
+    frontPageTitle: 'صفحه اول',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     podcastPromo: {

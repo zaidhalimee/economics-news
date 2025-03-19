@@ -43,7 +43,7 @@ export const service: DefaultServiceConfig = {
     script: latin,
     manifestPath: '/gahuza/manifest.json',
     swPath: '/sw.js',
-    homePageTitle: "Urupapuro rw'itangiriro",
+    frontPageTitle: "Urupapuro rw'itangiriro",
     showAdPlaceholder: true,
     showRelatedTopics: true,
     podcastPromo: {

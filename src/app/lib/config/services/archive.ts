@@ -38,7 +38,7 @@ export const service: DefaultServiceConfig = {
     isTrustProjectParticipant: false,
     script: latin,
     swPath: '/articles/sw.js',
-    homePageTitle: 'Home',
+    frontPageTitle: 'Home',
     showAdPlaceholder: false,
     showRelatedTopics: true,
     translations: {

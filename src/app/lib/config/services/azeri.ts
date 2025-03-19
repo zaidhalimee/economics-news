@@ -43,7 +43,7 @@ export const service: DefaultServiceConfig = {
     script: latinWithDiacritics,
     manifestPath: '/azeri/manifest.json',
     swPath: '/sw.js',
-    homePageTitle: 'Xəbərlər, Qaynar Xəbərlər, Analiz, Video',
+    frontPageTitle: 'Xəbərlər, Qaynar Xəbərlər, Analiz, Video',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {

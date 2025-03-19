@@ -9,6 +9,7 @@ import ChartbeatAnalytics from '.';
 import * as testUtils from './utils';
 import * as amp from './amp';
 import { localBaseUrl } from '../../../testHelpers/config';
+import { data as frontPageData } from '../../../../data/news/frontpage/index.json';
 import { PageTypes, Platforms } from '../../models/types/global';
 
 const defaultToggleState = {
@@ -107,7 +108,10 @@ describe('Charbeats Analytics Container', () => {
         origin="bbc.com"
         toggleState={toggleState}
       >
-        <ChartbeatAnalytics title="Home" sectionName="Home" />
+        <ChartbeatAnalytics
+          title={frontPageData?.article?.metadata?.title}
+          sectionName={frontPageData?.article?.relatedContent?.section?.name}
+        />
       </ContextWrap>,
     );
     expect(mockAmp).toHaveBeenCalledTimes(1);
@@ -135,7 +139,10 @@ describe('Charbeats Analytics Container', () => {
         origin="bbc.com"
         toggleState={toggleState}
       >
-        <ChartbeatAnalytics title="Home" sectionName="Home" />
+        <ChartbeatAnalytics
+          title={frontPageData?.article?.metadata?.title}
+          sectionName={frontPageData?.article?.relatedContent?.section?.name}
+        />
       </ContextWrap>,
     );
 
@@ -150,7 +157,10 @@ describe('Charbeats Analytics Container', () => {
         pageType={ARTICLE_PAGE}
         origin={localBaseUrl}
       >
-        <ChartbeatAnalytics title="Home" sectionName="Home" />
+        <ChartbeatAnalytics
+          title={frontPageData?.article?.metadata?.title}
+          sectionName={frontPageData?.article?.relatedContent?.section?.name}
+        />
       </ContextWrap>,
     );
 
@@ -193,7 +203,10 @@ describe('Charbeats Analytics Container', () => {
         origin="test.bbc.com"
         toggleState={toggleState}
       >
-        <ChartbeatAnalytics title="Home" sectionName="Home" />
+        <ChartbeatAnalytics
+          title={frontPageData?.article?.metadata?.title}
+          sectionName={frontPageData?.article?.relatedContent?.section?.name}
+        />
       </ContextWrap>,
     );
 

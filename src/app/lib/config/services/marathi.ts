@@ -43,7 +43,7 @@ export const service: DefaultServiceConfig = {
     script: devanagari,
     manifestPath: '/marathi/manifest.json',
     swPath: '/sw.js',
-    homePageTitle: 'बातम्या',
+    frontPageTitle: 'बातम्या',
     showAdPlaceholder: false,
     showRelatedTopics: true,
     podcastPromo: {

@@ -43,7 +43,7 @@ const getOptionParams = ({
     ads: {
       enabled: adsToggledOn,
     },
-    homePageRadioSchedule: {
+    frontPageRadioSchedule: {
       enabled: true,
     },
   },

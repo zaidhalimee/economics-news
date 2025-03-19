@@ -43,7 +43,7 @@ export const service: DefaultServiceConfig = {
     script: tamil,
     manifestPath: '/tamil/manifest.json',
     swPath: '/sw.js',
-    homePageTitle: 'முகப்பு',
+    frontPageTitle: 'முகப்பு',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {
