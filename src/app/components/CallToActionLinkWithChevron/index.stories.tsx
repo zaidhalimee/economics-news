@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 
 import { SerializedStyles } from '@emotion/react';
-import CallToActionLink from '.';
+import CallToActionLinkWithChevron from '.';
 import { CallToActionLinkProps } from '../CallToActionLink/types';
 
 const Component = ({
@@ -9,7 +9,11 @@ const Component = ({
   children,
 }: PropsWithChildren<
   CallToActionLinkProps & { chevronStyles?: () => SerializedStyles }
->) => <CallToActionLink href={href}>{children}</CallToActionLink>;
+>) => (
+  <CallToActionLinkWithChevron href={href}>
+    {children}
+  </CallToActionLinkWithChevron>
+);
 
 export default {
   title: 'Components/Call To Action Link With Chevron',
@@ -17,5 +21,9 @@ export default {
 };
 
 export const Example = () => {
-  return <Component href="www.bbc.com/afrique">Call To Action</Component>;
+  return (
+    <Component href="https://www.bbc.com/ws/languages">
+      Call To Action
+    </Component>
+  );
 };
