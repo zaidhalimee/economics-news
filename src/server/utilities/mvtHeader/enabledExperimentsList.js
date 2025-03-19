@@ -9,7 +9,7 @@ Add enabled experiments objects inside this array in this format:
 */
 const enabledExperimentList = [
   {
-    name: '',
+    name: 'top_bar_oj_experiment',
     services: ['gujarati', 'hindi', 'marathi', 'tamil', 'telugu', 'urdu'],
     pageTypes: ['article'],
   },
