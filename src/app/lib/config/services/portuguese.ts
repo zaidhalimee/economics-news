@@ -43,7 +43,7 @@ export const service: DefaultServiceConfig = {
       'https://www.bbc.com/portuguese/institutional-50054434',
     isTrustProjectParticipant: true,
     script: latinWithDiacritics,
-    manifestPath: '/manifest.json',
+    manifestPath: '/portuguese/manifest.json',
     swPath: '/sw.js',
     homePageTitle: 'Notícias, vídeos, análise e contexto em português',
     passportHomes: ['brasil'],

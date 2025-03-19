@@ -41,7 +41,7 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/arabic/institutional-49283069',
     isTrustProjectParticipant: true,
     script: arabic,
-    manifestPath: '/manifest.json',
+    manifestPath: '/arabic/manifest.json',
     swPath: '/sw.js',
     homePageTitle: 'الرئيسية',
     iTunesAppId: 558497376,

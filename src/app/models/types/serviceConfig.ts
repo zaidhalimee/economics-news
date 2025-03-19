@@ -74,7 +74,7 @@ export type ServiceConfig = {
   publishingPrinciples?: string | null;
   isTrustProjectParticipant: boolean;
   script: object;
-  manifestPath: string;
+  manifestPath?: string;
   swPath?: string;
   homePageTitle: string;
   passportHomes?: string[];

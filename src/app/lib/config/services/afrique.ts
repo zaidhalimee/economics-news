@@ -42,7 +42,7 @@ export const service: DefaultServiceConfig = {
       'https://www.bbc.com/afrique/institutionelles-49283281',
     isTrustProjectParticipant: true,
     script: latinWithDiacritics,
-    manifestPath: '/manifest.json',
+    manifestPath: '/afrique/manifest.json',
     swPath: '/sw.js',
     homePageTitle: 'Accueil',
     showAdPlaceholder: true,

@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-turkce',
     atiAnalyticsProducerId: '92',
     atiAnalyticsProducerName: 'TURKISH',
+    useReverb: true,
     chartbeatDomain: 'turkish.bbc.co.uk', // this is meant to be different to the service name
     brandName: 'BBC News Türkçe',
     product: 'BBC News',
@@ -40,7 +41,7 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/turkce/kurumsal-50221017',
     isTrustProjectParticipant: true,
     script: latinWithDiacritics,
-    manifestPath: '/manifest.json',
+    manifestPath: '/turkce/manifest.json',
     swPath: '/sw.js',
     homePageTitle: 'Haberler',
     showAdPlaceholder: true,

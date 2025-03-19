@@ -41,7 +41,7 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/mundo/institucional-51359666',
     isTrustProjectParticipant: true,
     script: latinWithDiacritics,
-    manifestPath: '/manifest.json',
+    manifestPath: '/mundo/manifest.json',
     swPath: '/sw.js',
     homePageTitle: 'Noticias',
     iTunesAppId: 515255747,

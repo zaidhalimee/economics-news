@@ -14,6 +14,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-urdu',
     atiAnalyticsProducerId: '95',
     atiAnalyticsProducerName: 'URDU',
+    useReverb: true,
     chartbeatDomain: 'urdu.bbc.co.uk',
     brandName: 'BBC News اردو',
     defaultImage: 'https://news.files.bbci.co.uk/ws/img/logos/og/urdu.png',
@@ -40,7 +41,7 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/urdu/institutional-49282935',
     isTrustProjectParticipant: true,
     script: arabic,
-    manifestPath: '/manifest.json',
+    manifestPath: '/urdu/manifest.json',
     swPath: '/sw.js',
     homePageTitle:
       'خبریں، تازہ خبریں، بریکنگ نیو | News, latest news, breaking news',
