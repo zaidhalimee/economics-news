@@ -19,7 +19,7 @@ const ArticleHeadline = (props: ComponentToRenderProps) => {
   const viewRef = useViewTracker(eventTrackingData);
 
   const articleDataSavingLinkText =
-    translations?.liteSite?.articleDataSavingLinkText ?? 'Data-saving Version';
+    translations?.liteSite?.articleDataSavingLinkText ?? 'Data saving version';
 
   const showLiteCTAOnCanonical: boolean = !isLite && showCTA;
 

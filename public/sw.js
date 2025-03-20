@@ -3,17 +3,17 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 /* eslint-disable no-restricted-globals */
-const version = 'v0.2.1a';
+const version = 'v0.2.2';
 const cacheName = 'simorghCache_v1';
 
 const service = self.location.pathname.split('/')[1];
-const has_offline_page_functionality = false;
+const hasOfflinePageFunctionality = false;
 const OFFLINE_PAGE = `/${service}/offline`;
 
 self.addEventListener('install', event => {
   event.waitUntil(async () => {
     const cache = await caches.open(cacheName);
-    if (has_offline_page_functionality) await cache.add(OFFLINE_PAGE);
+    if (hasOfflinePageFunctionality) await cache.add(OFFLINE_PAGE);
   });
 });
 
@@ -42,6 +42,7 @@ const fetchEventHandler = async event => {
       );
     }
   } else if (
+    self.location.hostname !== 'localhost' &&
     /((\/cwr\.js$)|(\.woff2$)|(modern\.frosted_promo+.*?\.js$)|(\/moment-lib+.*?\.js$))/.test(
       event.request.url,
     )
@@ -57,10 +58,7 @@ const fetchEventHandler = async event => {
         return response;
       })(),
     );
-  } else if (
-    has_offline_page_functionality &&
-    event.request.mode === 'navigate'
-  ) {
+  } else if (hasOfflinePageFunctionality && event.request.mode === 'navigate') {
     event.respondWith(async () => {
       try {
         const preloadResponse = await event.preloadResponse;
