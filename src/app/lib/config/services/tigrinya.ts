@@ -43,7 +43,7 @@ export const service: DefaultServiceConfig = {
     script: noAscendersOrDescenders,
     manifestPath: '/tigrinya/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'ዜና',
+    homePageTitle: 'ዜና',
     showAdPlaceholder: false,
     showRelatedTopics: true,
     podcastPromo: {

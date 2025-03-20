@@ -43,7 +43,7 @@ export const service: DefaultServiceConfig = {
     script: gurmukhi,
     manifestPath: '/punjabi/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'ਨਿਊਜ਼',
+    homePageTitle: 'ਨਿਊਜ਼',
     showAdPlaceholder: false,
     showRelatedTopics: true,
     translations: {
