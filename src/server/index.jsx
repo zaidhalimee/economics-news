@@ -200,16 +200,12 @@ server.get(
   '/:service/search/results/*',
   async ({ url, query, headers, path: urlPath }, res) => {
     try {
-      const {
-        service,
-        isAmp,
-        isApp,
-        isLite: isLiteRouteSuffix,
-        route: { pageType },
-        variant,
-      } = getRouteProps(urlPath);
-      console.log('CHECK', service, pageType);
-      const { query } = req;
+      const { service, isAmp, isApp, isLite, variant } = getRouteProps(urlPath);
+
+      const data = {
+        path: urlPath,
+      };
+      const bbcOrigin = headers['bbc-origin'];
       const { index, totalRecords } = server.locals.articleIndex;
       const { results, decodedInput, processingTime } = processInput(
         index,
@@ -228,19 +224,10 @@ server.get(
         variant,
       });
 
-      console.log('CHECK', result);
-
-      res.setHeader('Content-Type', 'application/json');
-      res.status(200).send({
-        status: 'Okay',
-        decodedInput,
-        totalRecords,
-        processingTime,
-        results,
-      });
+      res.status(200).send(result.html);
     } catch (error) {
       logger.error(SERVER_STATUS_ENDPOINT_ERROR, { error });
-      res.status(500).send('Unable to determine status');
+      res.status(500).send('Search Endpoint Error');
     }
   },
 );
