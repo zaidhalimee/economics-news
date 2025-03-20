@@ -237,18 +237,24 @@ export const ArticlePageWithElectionBanner = {
   },
 };
 
-export const ArticlePageWithLiteSiteCTA = () => (
-  <ComponentWithServiceContext
-    data={articleDataGahuza}
-    service="gahuza"
+export const ArticlePageWithLiteSiteCTA = (
+  _: StoryArgs,
+  { service }: StoryProps,
+) => (
+  <ComponentWithContext
+    data={articleData}
+    service={service}
     liteSiteCTAEnabled
   />
 );
 
-export const ArticlePageWithLiteSiteCTARightToLeft = () => (
-  <ComponentWithContext
-    data={articleDataGahuza}
-    service="arabic"
-    liteSiteCTAEnabled
-  />
-);
+export const TestArticlePageWithLiteSiteCTA = {
+  render: () => (
+    <ComponentWithServiceContext
+      data={articleDataGahuza}
+      service="gahuza"
+      liteSiteCTAEnabled
+    />
+  ),
+  tags: ['!dev'],
+};
