@@ -308,9 +308,9 @@ describe('Service Worker', () => {
     });
 
     it(`version number should match file content`, async () => {
-      const swFile = serviceWorker.toString();
-
-      const hash = createHash('md5').update(swFile).digest('hex');
+      const hash = createHash('md5')
+        .update(serviceWorker.toString())
+        .digest('hex');
 
       // On failure: increment the version number in ../public/sw.js & update values in CURRENT_VERSION
       expect(CURRENT_VERSION.fileContentHash).toBe(hash);
