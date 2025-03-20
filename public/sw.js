@@ -18,7 +18,6 @@ self.addEventListener('install', event => {
 });
 
 const fetchEventHandler = async event => {
-  if (self.location.hostname === 'localhost') return;
   if (
     /^https:\/\/ichef(\.test)?\.bbci\.co\.uk\/(news|images|ace\/(standard|ws))\/.+.webp$/.test(
       event.request.url,
@@ -43,6 +42,7 @@ const fetchEventHandler = async event => {
       );
     }
   } else if (
+    self.location.hostname !== 'localhost' &&
     /((\/cwr\.js$)|(\.woff2$)|(modern\.frosted_promo+.*?\.js$)|(\/moment-lib+.*?\.js$))/.test(
       event.request.url,
     )
