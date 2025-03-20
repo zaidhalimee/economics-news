@@ -3,7 +3,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 /* eslint-disable no-restricted-globals */
-const version = 'v0.2.1a';
+const version = 'v0.2.1c';
 const cacheName = 'simorghCache_v1';
 
 const service = self.location.pathname.split('/')[1];
@@ -18,6 +18,7 @@ self.addEventListener('install', event => {
 });
 
 const fetchEventHandler = async event => {
+  if (self.location.hostname === 'localhost') return;
   if (
     /^https:\/\/ichef(\.test)?\.bbci\.co\.uk\/(news|images|ace\/(standard|ws))\/.+.webp$/.test(
       event.request.url,
