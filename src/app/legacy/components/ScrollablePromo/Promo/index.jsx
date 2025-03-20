@@ -110,6 +110,11 @@ const Promo = ({ block, experimentVariant, onClick }) => {
   let aresLinkBlock;
   let timestamp;
   let isLive;
+
+  const variation = useOptimizelyMvtVariation('top_bar_oj_experiment');
+
+  if (variation === 'off') return null;
+
   switch (experimentVariant) {
     case 'A': {
       const overtypedHeadline = block?.headlines?.overtyped ?? '';
@@ -171,10 +176,6 @@ const Promo = ({ block, experimentVariant, onClick }) => {
   const isOperaMini = useOperaMiniDetection();
 
   const WrapperPromoBox = isOperaMini ? OperaPromoBox : PromoBox;
-
-  const variation = useOptimizelyMvtVariation('top_bar_oj_experiment');
-
-  if (variation === 'off') return null;
 
   return (
     <WrapperPromoBox experimentVariant={experimentVariant}>
