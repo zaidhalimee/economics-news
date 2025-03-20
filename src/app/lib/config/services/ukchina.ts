@@ -12,6 +12,7 @@ const baseServiceConfig = {
   atiAnalyticsAppName: 'news-ukchina',
   atiAnalyticsProducerId: '93',
   atiAnalyticsProducerName: 'UK_CHINA',
+  useReverb: true,
   chartbeatDomain: 'ukchina.bbc.co.uk',
   brandName: 'BBC 英伦网',
   product: 'BBC',
@@ -27,7 +28,7 @@ const baseServiceConfig = {
   twitterSite: '@BBCChina',
   isTrustProjectParticipant: true,
   script: noAscendersOrDescenders,
-  manifestPath: '/manifest.json',
+  manifestPath: '/ukchina/manifest.json',
   swPath: '/sw.js',
   showAdPlaceholder: true,
   showRelatedTopics: true,
@@ -38,7 +39,7 @@ export const service: ChineseConfig = {
   simp: {
     ...baseServiceConfig,
     externalLinkText: ', 外部',
-    frontPageTitle: '主页',
+    homePageTitle: '主页',
     lang: `zh-hans`,
     locale: `zh-hans`,
     // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405
@@ -310,7 +311,7 @@ export const service: ChineseConfig = {
     // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405
     isoLang: 'zh-Hant',
     externalLinkText: ', 外部',
-    frontPageTitle: '主頁',
+    homePageTitle: '主頁',
     defaultCaptionOffscreenText: '說明文字, ',
     audioCaptionOffscreenText: '音頻加註文字，',
     videoCaptionOffscreenText: '視頻加註文字，',

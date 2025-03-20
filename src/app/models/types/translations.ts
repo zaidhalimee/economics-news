@@ -31,6 +31,7 @@ export interface Translations {
     loadMedia?: string;
     loadEmbed?: string;
     loadMediaMessage?: string;
+    articleDataSavingLinkText: string;
   };
   mediaAssetPage: {
     mediaPlayer: string;

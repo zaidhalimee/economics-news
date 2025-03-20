@@ -18,7 +18,7 @@ export default ({
   variant,
   otherVariant,
 }) => {
-  describe.skip(`Script Switching - ${serviceId} - ${pageType} - ${path}`, () => {
+  describe.skip(`Script Switching - ${serviceName} - ${pageType} - ${path}`, () => {
     // This test suite is being skipped due to flakey failing within our build pipeline. Being investigated here https://github.com/bbc/simorgh/issues/6399
     beforeEach(() => {
       cy.clearCookies();
@@ -26,8 +26,11 @@ export default ({
     });
 
     it(`should change to the correct script when switching script from ${variant} to ${otherVariant}`, () => {
-      // Accept privacy banner
-      getPrivacyBannerAccept(serviceId, variant).click();
+      cy.get('@toggles').then(toggles => {
+        // Accept privacy banner
+        if (toggles?.privacyPolicy?.enabled)
+          getPrivacyBannerAccept(serviceId, variant).click();
+      });
 
       // Accept cookie banner
       getCookieBannerAcceptCanonical(serviceId, variant).click();

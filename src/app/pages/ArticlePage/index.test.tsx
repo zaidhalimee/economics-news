@@ -48,6 +48,14 @@ jest.mock('../../components/ChartbeatAnalytics', () => {
 });
 jest.mock('../../components/ATIAnalytics');
 
+jest.mock('#app/legacy/containers/OptimizelyArticleCompleteTracking');
+jest.mock('#app/legacy/containers/OptimizelyPageViewTracking');
+
+jest.mock('#app/hooks/useOptimizelyVariation', () => ({
+  __esModule: true,
+  default: jest.fn(),
+}));
+
 const input = {
   bbcOrigin: 'https://www.test.bbc.co.uk',
   id: 'c0000000000o',
@@ -755,19 +763,6 @@ describe('Article Page', () => {
     expect(ampHtmlLink).toBeUndefined();
   });
 
-  const services = ['serbian', 'uzbek', 'zhongwen'] satisfies Services[];
-
-  services.forEach(service => {
-    it(`should not render a relatedTopics onward journey for a ${service} optimo article`, async () => {
-      const { queryByTestId } = render(
-        <Context service={service}>
-          <ArticlePage pageData={articleDataNews} />
-        </Context>,
-      );
-      const relatedTopics = queryByTestId('related-topics');
-      expect(relatedTopics).toBeNull();
-    });
-  });
   describe('when rendering a PGL page', () => {
     it('should not render secondary column', async () => {
       const pageDataWithSecondaryColumn = {

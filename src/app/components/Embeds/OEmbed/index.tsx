@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 /** @jsx jsx */
 import { jsx, Theme } from '@emotion/react';
-import { useContext } from 'react';
+import { memo, useContext } from 'react';
 import pathOr from 'ramda/src/pathOr';
 import LiteMediaLoader from '#app/components/LiteComponents/LiteMediaLoader';
 import { RequestContext } from '../../../contexts/RequestContext';
@@ -75,4 +75,4 @@ const OEmbedLoader = ({ oembed, embeddableContent }: OEmbedProps) => {
   return <EmbedHtml embeddableContent={html || embeddableContent} />;
 };
 
-export default OEmbedLoader;
+export default memo(OEmbedLoader);

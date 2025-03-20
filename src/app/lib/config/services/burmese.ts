@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-burmese',
     atiAnalyticsProducerId: '35',
     atiAnalyticsProducerName: 'BURMESE',
+    useReverb: true,
     chartbeatDomain: 'burmese.bbc.co.uk',
     brandName: 'BBC News မြန်မာ',
     product: 'BBC News',
@@ -40,9 +41,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/burmese/institutional-51387206',
     isTrustProjectParticipant: true,
     script: burmese,
-    manifestPath: '/manifest.json',
+    manifestPath: '/burmese/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle:
+    homePageTitle:
       'ဘီဘီစီ မြန်မာ | အထူးသတင်း | နောက်ဆုံးရ သတင်း | နောက်ဆုံးရခေါင်းစဉ် သတင်း |မြန်မာသတင်း',
     showAdPlaceholder: false,
     showRelatedTopics: true,

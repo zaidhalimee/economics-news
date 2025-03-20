@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-marathi',
     atiAnalyticsProducerId: '59',
     atiAnalyticsProducerName: 'MARATHI',
+    useReverb: true,
     chartbeatDomain: 'marathi.bbc.co.uk',
     brandName: 'BBC News मराठी',
     product: 'BBC News',
@@ -40,9 +41,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/marathi/institutional-50418391',
     isTrustProjectParticipant: true,
     script: devanagari,
-    manifestPath: '/manifest.json',
+    manifestPath: '/marathi/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'बातम्या',
+    homePageTitle: 'बातम्या',
     showAdPlaceholder: false,
     showRelatedTopics: true,
     podcastPromo: {
@@ -234,6 +235,7 @@ export const service: DefaultServiceConfig = {
         },
         listen: 'ऐका',
         watch: 'पाहा',
+        watchMoments: 'शॉर्ट व्हीडिओ पाहा',
         liveLabel: 'LIVE',
         nextLabel: 'पुढचे',
         listenLive: 'ऐका',
@@ -359,6 +361,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'व्हीडिओ',
         url: '/marathi/topics/cl29j0epz13t',
+      },
+      {
+        title: 'सोपी गोष्ट',
+        url: '/marathi/topics/cpxrqmrke02t',
       },
       {
         title: 'लोकप्रिय',
