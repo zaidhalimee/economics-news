@@ -7,14 +7,9 @@ const version = 'v0.2.1a';
 const cacheName = 'simorghCache_v1';
 
 const service = self.location.pathname.split('/')[1];
-const has_offline_page_functionality = false;
-const OFFLINE_PAGE = `/${service}/offline`;
 
 self.addEventListener('install', event => {
-  event.waitUntil(async () => {
-    const cache = await caches.open(cacheName);
-    if (has_offline_page_functionality) await cache.add(OFFLINE_PAGE);
-  });
+  event.waitUntil(caches.open(cacheName));
 });
 
 const fetchEventHandler = async event => {
@@ -46,35 +41,15 @@ const fetchEventHandler = async event => {
       event.request.url,
     )
   ) {
-    event.respondWith(
-      (async () => {
-        const cache = await caches.open(cacheName);
-        let response = await cache.match(event.request);
-        if (!response) {
-          response = await fetch(event.request.url);
-          cache.put(event.request, response.clone());
-        }
-        return response;
-      })(),
-    );
-  } else if (
-    has_offline_page_functionality &&
-    event.request.mode === 'navigate'
-  ) {
-    event.respondWith(async () => {
-      try {
-        const preloadResponse = await event.preloadResponse;
-        if (preloadResponse) {
-          return preloadResponse;
-        }
-        const networkResponse = await fetch(event.request);
-        return networkResponse;
-      } catch (error) {
-        const cache = await caches.open(cacheName);
-        const cachedResponse = await cache.match(OFFLINE_PAGE);
-        return cachedResponse;
-      }
-    });
+    const cache = await caches.open(cacheName);
+    let response = await cache.match(event.request);
+
+    if (!response) {
+      response = await fetch(event.request.url);
+      cache.put(event.request, response.clone());
+    }
+
+    event.respondWith(response);
   }
   return;
 };
