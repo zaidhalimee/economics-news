@@ -312,7 +312,7 @@ describe('Service Worker', () => {
 
       const hash = createHash('md5').update(swFile).digest('hex');
 
-      // On failure: increment the version number in ../../public/sw.js & update values in CURRENT_VERSION
+      // On failure: increment the version number in ../public/sw.js & update values in CURRENT_VERSION
       expect(CURRENT_VERSION.fileContentHash).toBe(hash);
     });
   });
