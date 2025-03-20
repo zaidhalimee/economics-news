@@ -102,8 +102,6 @@ const TimeStamp = styled(PromoTimestamp)`
   color: ${({ theme }) => theme.isDarkUi && theme.palette.GREY_6};
 `;
 
-const variation = useOptimizelyMvtVariation('top_bar_oj_experiment');
-
 const Promo = ({ block, experimentVariant, onClick }) => {
   const { script, service, serviceDatetimeLocale } = useContext(ServiceContext);
   let title;
@@ -173,6 +171,8 @@ const Promo = ({ block, experimentVariant, onClick }) => {
   const isOperaMini = useOperaMiniDetection();
 
   const WrapperPromoBox = isOperaMini ? OperaPromoBox : PromoBox;
+
+  const variation = useOptimizelyMvtVariation('top_bar_oj_experiment');
 
   if (variation === 'off') return null;
 
