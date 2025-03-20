@@ -16,12 +16,12 @@ import {
   GEL_GROUP_3_SCREEN_WIDTH_MIN,
   GEL_GROUP_4_SCREEN_WIDTH_MIN,
 } from '#psammead/gel-foundations/src/breakpoints';
+import useOptimizelyMvtVariation from '#app/hooks/useOptimizelyMvtVariation';
 import filterForBlockType from '#lib/utilities/blockHandlers';
 import useOperaMiniDetection from '#hooks/useOperaMiniDetection';
 import PromoTimestamp from '#components/Promo/timestamp';
 import LiveLabel from '../../../../components/LiveLabel';
 import { ServiceContext } from '../../../../contexts/ServiceContext';
-import useOptimizelyMvtVariation from '#app/hooks/useOptimizelyMvtVariation';
 
 const StyledLink = styled(Link)`
   ${({ script }) => script && getPica(script)}
