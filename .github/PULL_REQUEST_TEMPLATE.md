@@ -32,8 +32,8 @@ Testing
 
 |  | Local | Test | Preview | Live |
 | -- | :--: | :--: | :--: | :--: | 
-| Manual Testing Required?  | | | |
-| Testing complete | | | |
+| Manual Testing required? ✅ | | | |
+| Manual Testing complete? ✅ | | | |
 
 
 ## Additional Testing Steps
