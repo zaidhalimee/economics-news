@@ -197,6 +197,40 @@ const testSuites = [
     runforEnv: ['local', 'test', 'live'],
     tests: [assertScriptSwitch],
   },
+  // MAP Serbian
+  {
+    path: '/serbian/cyr/23279016',
+    service: 'serbian',
+    variant: 'cyr',
+    otherVariant: 'lat',
+    runforEnv: ['local', 'test', 'live'],
+    tests: [assertScriptSwitch],
+  },
+  {
+    path: '/serbian/lat/23279016',
+    service: 'serbian',
+    variant: 'lat',
+    otherVariant: 'cyr',
+    runforEnv: ['local', 'test', 'live'],
+    tests: [assertScriptSwitch],
+  },
+  // MAP Zhongwen
+  {
+    path: '/zhongwen/simp/uk-23283128',
+    service: 'zhongwen',
+    variant: 'simp',
+    otherVariant: 'trad',
+    runforEnv: ['local', 'test', 'live'],
+    tests: [assertScriptSwitch],
+  },
+  {
+    path: '/zhongwen/trad/uk-23283128',
+    service: 'zhongwen',
+    variant: 'trad',
+    otherVariant: 'simp',
+    runforEnv: ['local', 'test', 'live'],
+    tests: [assertScriptSwitch],
+  },
 ];
 
 runTestsForPage({
