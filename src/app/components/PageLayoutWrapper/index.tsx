@@ -18,6 +18,7 @@ import { RequestContext } from '../../contexts/RequestContext';
 import fontFacesLazy from '../ThemeProvider/fontFacesLazy';
 import styles from './index.styles';
 import { OptimoMostReadRecord, CPSMostReadRecord } from '../MostRead/types';
+import useOptimizelyMvtVariation from '#app/hooks/useOptimizelyMvtVariation';
 
 type ModelType = {
   blocks?: [
@@ -74,23 +75,11 @@ const PageLayoutWrapper = ({
 
     const topStories = pageData.secondaryColumn?.topStories;
     const mostReadItems = pageData.mostRead?.items;
-    const servicesForVariantA = ['pidgin', 'hindi', 'urdu', 'uzbek', 'hausa'];
-    const servicesForVariantB = ['mundo', 'burmese', 'arabic'];
 
-    let variantValue;
+    const experimentVariant = useOptimizelyMvtVariation(
+      'top_bar_oj_experiment',
+    );
 
-    if (servicesForVariantA.includes(service)) {
-      variantValue = 'A';
-    } else if (servicesForVariantB.includes(service)) {
-      variantValue = 'B';
-    } else {
-      variantValue = 'none';
-    }
-    const experimentVariant: 'A' | 'B' | 'none' = ['A', 'B'].includes(
-      variantValue,
-    )
-      ? (variantValue as 'A' | 'B')
-      : 'none';
     let dataForOJExperiment;
     if (experimentVariant === 'A') {
       dataForOJExperiment = topStories;

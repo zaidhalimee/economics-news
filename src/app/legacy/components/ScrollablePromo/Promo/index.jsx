@@ -16,7 +16,6 @@ import {
   GEL_GROUP_3_SCREEN_WIDTH_MIN,
   GEL_GROUP_4_SCREEN_WIDTH_MIN,
 } from '#psammead/gel-foundations/src/breakpoints';
-import useOptimizelyMvtVariation from '#app/hooks/useOptimizelyMvtVariation';
 import filterForBlockType from '#lib/utilities/blockHandlers';
 import useOperaMiniDetection from '#hooks/useOperaMiniDetection';
 import PromoTimestamp from '#components/Promo/timestamp';
@@ -110,10 +109,6 @@ const Promo = ({ block, experimentVariant, onClick }) => {
   let aresLinkBlock;
   let timestamp;
   let isLive;
-
-  const variation = useOptimizelyMvtVariation('top_bar_oj_experiment');
-
-  if (variation === 'off') return null;
 
   switch (experimentVariant) {
     case 'A': {
