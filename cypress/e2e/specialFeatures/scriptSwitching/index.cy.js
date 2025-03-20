@@ -5,7 +5,7 @@ import assertScriptSwitch from './assertions';
 const testSuites = [
   // Home pages Serbian
   {
-    path: '/serbian/cyr',
+    path: '/serbian/cyr?renderer_env=live',
     service: 'serbian',
     variant: 'cyr',
     otherVariant: 'lat',
@@ -14,7 +14,7 @@ const testSuites = [
     tests: [assertScriptSwitch],
   },
   {
-    path: '/serbian/lat',
+    path: '/serbian/lat?renderer_env=live',
     service: 'serbian',
     variant: 'lat',
     otherVariant: 'cyr',
@@ -24,7 +24,7 @@ const testSuites = [
   },
   // Home pages Uzbek
   {
-    path: '/uzbek/cyr',
+    path: '/uzbek/cyr?renderer_env=live',
     service: 'uzbek',
     variant: 'cyr',
     otherVariant: 'lat',
@@ -33,7 +33,7 @@ const testSuites = [
     tests: [assertScriptSwitch],
   },
   {
-    path: '/uzbek/lat',
+    path: '/uzbek/lat?renderer_env=live',
     service: 'uzbek',
     variant: 'lat',
     otherVariant: 'cyr',
@@ -43,7 +43,7 @@ const testSuites = [
   },
   // Home pages zhongwen
   {
-    path: '/zhongwen/simp',
+    path: '/zhongwen/simp?renderer_env=live',
     service: 'zhongwen',
     variant: 'simp',
     otherVariant: 'trad',
@@ -52,7 +52,7 @@ const testSuites = [
     tests: [assertScriptSwitch],
   },
   {
-    path: '/zhongwen/trad',
+    path: '/zhongwen/trad?renderer_env=live',
     service: 'zhongwen',
     variant: 'trad',
     otherVariant: 'simp',
@@ -62,59 +62,58 @@ const testSuites = [
   },
   // Articles pages Serbian
   {
-    path: '/serbian/articles/c805k05kr73o/cyr',
+    path: '/serbian/articles/cx2g6k2k4xxo/cyr?renderer_env=live',
     service: 'serbian',
     variant: 'cyr',
     otherVariant: 'lat',
-    runforEnv: ['local'],
-    tests: [assertScriptSwitch],
-  },
-  {
-    path: '/serbian/articles/c805k05kr73o/lat',
-    service: 'serbian',
-    variant: 'lat',
-    otherVariant: 'cyr',
-    runforEnv: ['local'],
-    tests: [assertScriptSwitch],
-  },
-  // Articles pages Uzbek
-  {
-    path: '/uzbek/articles/cxj3rjxm6r0o/simp',
-    service: 'uzbek',
-    variant: 'simp',
-    otherVariant: 'trad',
     runforEnv: ['local', 'test', 'live'],
     tests: [assertScriptSwitch],
   },
   {
-    path: '/uzbek/articles/cxj3rjxm6r0o/trad',
+    path: '/serbian/articles/cx2g6k2k4xxo/lat?renderer_env=live',
+    service: 'serbian',
+    variant: 'lat',
+    otherVariant: 'cyr',
+    runforEnv: ['local', 'test', 'live'],
+    tests: [assertScriptSwitch],
+  },
+  // Articles pages Uzbek
+  {
+    path: '/uzbek/articles/ce347g8zqd0o/cyr?renderer_env=live',
     service: 'uzbek',
-    variant: 'trad',
-    otherVariant: 'simp',
+    variant: 'cyr',
+    otherVariant: 'lat',
+    runforEnv: ['local', 'test', 'live'],
+    tests: [assertScriptSwitch],
+  },
+  {
+    path: '/uzbek/articles/ce347g8zqd0o/lat?renderer_env=live',
+    service: 'uzbek',
+    variant: 'lat',
+    otherVariant: 'cyr',
     runforEnv: ['local', 'test', 'live'],
     tests: [assertScriptSwitch],
   },
   // Articles pages Zhongwen
   {
-    path: '/zhongwen/articles/c3xd4x9prgyo/trad',
+    path: '/zhongwen/articles/cy4lej5ep15o/trad?renderer_env=live',
     service: 'zhongwen',
     variant: 'trad',
     otherVariant: 'simp',
-    runforEnv: ['local'],
+    runforEnv: ['local', 'test', 'live'],
     tests: [assertScriptSwitch],
   },
   {
-    path: '/zhongwen/articles/c3xd4x9prgyo/simp',
+    path: '/zhongwen/articles/cy4lej5ep15o/simp?renderer_env=live',
     service: 'zhongwen',
     variant: 'simp',
     otherVariant: 'trad',
-    runforEnv: ['local'],
+    runforEnv: ['local', 'test', 'live'],
     tests: [assertScriptSwitch],
   },
-
   // Topic pages Serbian
   {
-    path: '/serbian/topics/c5wzvzzz5vrt/cyr',
+    path: '/serbian/topics/c06g871g3knt/cyr?renderer_env=live',
     service: 'serbian',
     variant: 'cyr',
     otherVariant: 'lat',
@@ -122,7 +121,7 @@ const testSuites = [
     tests: [assertScriptSwitch],
   },
   {
-    path: '/serbian/topics/c5wzvzzz5vrt/lat',
+    path: '/serbian/topics/c06g871g3knt/lat?renderer_env=live',
     service: 'serbian',
     variant: 'lat',
     otherVariant: 'cyr',
@@ -131,7 +130,7 @@ const testSuites = [
   },
   // Topic pages Uzbek
   {
-    path: '/uzbek/topics/c8y949r98pgt/cyr',
+    path: '/uzbek/topics/cg72626n7yyt/cyr?renderer_env=live',
     service: 'uzbek',
     variant: 'cyr',
     otherVariant: 'lat',
@@ -139,7 +138,7 @@ const testSuites = [
     tests: [assertScriptSwitch],
   },
   {
-    path: '/uzbek/topics/c8y949r98pgt/lat',
+    path: '/uzbek/topics/cg72626n7yyt/lat?renderer_env=live',
     service: 'uzbek',
     variant: 'lat',
     otherVariant: 'cyr',
@@ -148,7 +147,7 @@ const testSuites = [
   },
   // Topic pages Zhongwen
   {
-    path: '/zhongwen/topics/c83plve5vmjt/simp',
+    path: '/zhongwen/topics/cjnz1d612jzt/simp?renderer_env=live',
     service: 'zhongwen',
     variant: 'simp',
     otherVariant: 'trad',
@@ -156,7 +155,7 @@ const testSuites = [
     tests: [assertScriptSwitch],
   },
   {
-    path: '/zhongwen/topics/c83plve5vmjt/trad',
+    path: '/zhongwen/topics/cjnz1d612jzt/trad?renderer_env=live',
     service: 'zhongwen',
     variant: 'trad',
     otherVariant: 'simp',
@@ -165,7 +164,7 @@ const testSuites = [
   },
   // Most Read Serbian
   {
-    path: '/serbian/cyr/popular/read',
+    path: '/serbian/cyr/popular/read?renderer_env=live',
     service: 'serbian',
     variant: 'cyr',
     otherVariant: 'lat',
@@ -173,7 +172,7 @@ const testSuites = [
     tests: [assertScriptSwitch],
   },
   {
-    path: '/serbian/lat/popular/read',
+    path: '/serbian/lat/popular/read?renderer_env=live',
     service: 'serbian',
     variant: 'lat',
     otherVariant: 'cyr',
@@ -182,7 +181,7 @@ const testSuites = [
   },
   // Most Read zhongwen
   {
-    path: '/zhongwen/simp/popular/read',
+    path: '/zhongwen/simp/popular/read?renderer_env=live',
     service: 'zhongwen',
     variant: 'simp',
     otherVariant: 'trad',
@@ -190,7 +189,7 @@ const testSuites = [
     tests: [assertScriptSwitch],
   },
   {
-    path: '/zhongwen/trad/popular/read',
+    path: '/zhongwen/trad/popular/read?renderer_env=live',
     service: 'zhongwen',
     variant: 'trad',
     otherVariant: 'simp',
@@ -212,14 +211,6 @@ const testSuites = [
     variant: 'cyr',
     otherVariant: 'lat',
     runforEnv: ['live'],
-    tests: [assertScriptSwitch],
-  },
-  {
-    path: '/serbian/lat/23279016',
-    service: 'serbian',
-    variant: 'lat',
-    otherVariant: 'cyr',
-    runforEnv: ['local', 'test'],
     tests: [assertScriptSwitch],
   },
   {
