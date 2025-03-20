@@ -7,6 +7,7 @@ import { Helmet } from 'react-helmet';
 
 import GlobalStyles from '#psammead/psammead-styles/src/global-styles';
 import { PageTypes } from '#app/models/types/global';
+import useOptimizelyMvtVariation from '#app/hooks/useOptimizelyMvtVariation';
 import { TopStoryItem } from '../../pages/ArticlePage/PagePromoSections/TopStoriesSection/types';
 import WebVitals from '../../legacy/containers/WebVitals';
 import HeaderContainer from '../../legacy/containers/Header';
@@ -18,7 +19,6 @@ import { RequestContext } from '../../contexts/RequestContext';
 import fontFacesLazy from '../ThemeProvider/fontFacesLazy';
 import styles from './index.styles';
 import { OptimoMostReadRecord, CPSMostReadRecord } from '../MostRead/types';
-import useOptimizelyMvtVariation from '#app/hooks/useOptimizelyMvtVariation';
 
 type ModelType = {
   blocks?: [
