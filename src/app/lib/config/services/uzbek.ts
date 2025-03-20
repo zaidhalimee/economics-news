@@ -44,8 +44,8 @@ const defaultCyrillicConfig = {
   brandName: "BBC News O'zbek",
   datetimeLocale: `uz`,
   externalLinkText: ', ташқи',
-  frontPageTitle: 'Бош саҳифа',
-  lang: `uz-cyrl`,
+  homePageTitle: 'Бош саҳифа',
+  lang: `uz-Cyrl`,
   locale: `uz-UZ`,
   // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405
   isoLang: 'uz',
@@ -380,8 +380,8 @@ export const service: UzbekConfig = {
     brandName: "BBC News O'zbek",
     datetimeLocale: `uz-latn`,
     externalLinkText: ', tashqi',
-    frontPageTitle: 'Bosh sahifa',
-    lang: `uz-latn`,
+    homePageTitle: 'Bosh sahifa',
+    lang: `uz-Cyrl`,
     locale: `uz-UZ`,
     // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405
     isoLang: 'uz',

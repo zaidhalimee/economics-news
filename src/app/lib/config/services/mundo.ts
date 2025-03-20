@@ -43,7 +43,7 @@ export const service: DefaultServiceConfig = {
     script: latinWithDiacritics,
     manifestPath: '/mundo/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Noticias',
+    homePageTitle: 'Noticias',
     iTunesAppId: 515255747,
     showAdPlaceholder: true,
     showRelatedTopics: true,

@@ -43,7 +43,7 @@ export const service: DefaultServiceConfig = {
     script: latin,
     manifestPath: '/swahili/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Swahili',
+    homePageTitle: 'Swahili',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {
