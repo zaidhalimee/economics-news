@@ -4,10 +4,8 @@ import {
   MEDIA_ASSET_PAGE,
   CORRESPONDENT_STORY_PAGE,
   ARTICLE_PAGE,
-  FRONT_PAGE,
   TOPIC_PAGE,
   MEDIA_ARTICLE_PAGE,
-  FEATURE_INDEX_PAGE,
   MOST_READ_PAGE,
   PHOTO_GALLERY_PAGE,
   ERROR_PAGE,
@@ -26,10 +24,6 @@ import {
   buildPageATIParams,
   buildPageReverbParams,
 } from './buildParams';
-import {
-  buildIndexPageATIParams,
-  buildIndexPageATIUrl,
-} from './frontPage/buildParams';
 import { RequestContextProps } from '../../../contexts/RequestContext';
 import { ServiceConfig } from '../../../models/types/serviceConfig';
 import {
@@ -50,7 +44,6 @@ const MIGRATED_PAGE_TYPES: PageTypes[] = [
   PHOTO_GALLERY_PAGE,
   MEDIA_ASSET_PAGE,
   CORRESPONDENT_STORY_PAGE,
-  FEATURE_INDEX_PAGE,
   LIVE_PAGE,
   STATIC_PAGE,
   DOWNLOADS_PAGE,
@@ -67,9 +60,7 @@ const pageTypeUrlBuilders = {
   [ARTICLE_PAGE]: noOp,
   [MEDIA_ARTICLE_PAGE]: noOp,
   [STORY_PAGE]: noOp,
-  [FRONT_PAGE]: buildIndexPageATIUrl,
   [MOST_READ_PAGE]: noOp,
-  [FEATURE_INDEX_PAGE]: noOp,
   [TOPIC_PAGE]: noOp,
   [MEDIA_ASSET_PAGE]: noOp,
   [PHOTO_GALLERY_PAGE]: noOp,
@@ -90,9 +81,7 @@ const pageTypeUrlBuilders = {
 const pageTypeParamBuilders = {
   [ARTICLE_PAGE]: noOp,
   [MEDIA_ARTICLE_PAGE]: noOp,
-  [FRONT_PAGE]: buildIndexPageATIParams,
   [MOST_READ_PAGE]: noOp,
-  [FEATURE_INDEX_PAGE]: noOp,
   [TOPIC_PAGE]: noOp,
   [MEDIA_ASSET_PAGE]: noOp,
   [PHOTO_GALLERY_PAGE]: noOp,

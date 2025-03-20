@@ -4,7 +4,6 @@ import expressStaticGzip from 'express-static-gzip';
 import {
   articleDataPath,
   cpsAssetPageDataPath,
-  frontPageDataPath,
   homePageDataPath,
   legacyAssetPageDataPath,
   mostReadDataRegexPath,
@@ -59,17 +58,6 @@ export default server => {
         pageType: 'articles',
         service,
         id,
-        variant,
-      });
-
-      sendDataFile(res, dataFilePath, next);
-    })
-    .get(frontPageDataPath, async ({ params }, res, next) => {
-      const { service, variant } = params;
-
-      const dataFilePath = constructDataFilePath({
-        pageType: 'frontpage',
-        service,
         variant,
       });
 
@@ -170,9 +158,9 @@ export default server => {
         process.cwd(),
         'data',
         service,
-        variant,
         'topics',
         id,
+        variant,
       );
       sendDataFile(res, `${dataFilePath}.json`, next);
     })
