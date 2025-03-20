@@ -45,7 +45,7 @@ const defaultCyrillicConfig = {
   datetimeLocale: `uz`,
   externalLinkText: ', ташқи',
   homePageTitle: 'Бош саҳифа',
-  lang: `uz-Cyrl`,
+  lang: `uz-cyrl`,
   locale: `uz-UZ`,
   // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405
   isoLang: 'uz',
@@ -381,7 +381,7 @@ export const service: UzbekConfig = {
     datetimeLocale: `uz-latn`,
     externalLinkText: ', tashqi',
     homePageTitle: 'Bosh sahifa',
-    lang: `uz-Cyrl`,
+    lang: `uz-latn`,
     locale: `uz-UZ`,
     // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405
     isoLang: 'uz',
