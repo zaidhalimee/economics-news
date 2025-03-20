@@ -15,13 +15,13 @@ describe('Call To Action Link With Chevron', () => {
 
   it('should render a link with the correct href', () => {
     render(
-      <CallToActionLinkWithChevron href="https://www.bbc.com/send/u94753086">
+      <CallToActionLinkWithChevron href="https://www.bbc.com/ws/languages">
         My Link Text
       </CallToActionLinkWithChevron>,
     );
     const link = screen.getByRole('link');
     expect(link.getAttribute('href')).toEqual(
-      'https://www.bbc.com/send/u94753086',
+      'https://www.bbc.com/ws/languages',
     );
   });
 });
