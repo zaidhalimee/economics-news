@@ -24,18 +24,21 @@ jest.mock('#app/lib/utilities/isLocal', () =>
 
 describe('Service Worker', () => {
   const originalNavigator = global.navigator;
+  const originalNodeEnv = process.env.NODE_ENV;
 
   afterEach(() => {
     jest.resetAllMocks();
 
     global.navigator ??= originalNavigator;
+    process.env.NODE_ENV = originalNodeEnv;
   });
 
   describe('Canonical', () => {
-    it('is registered when swPath, serviceWorker have values and onClient is true', () => {
+    it('is registered when swPath, serviceWorker have values, onClient is true and node environment is production', () => {
       // @ts-expect-error need to override the navigator.serviceWorker for testing purposes
       global.navigator.serviceWorker = mockServiceWorker;
       (onClient as jest.Mock).mockImplementationOnce(() => true);
+      process.env.NODE_ENV = 'production';
 
       render(
         // @ts-expect-error only require a subset of properties on service context for testing purposes
@@ -50,21 +53,27 @@ describe('Service Worker', () => {
 
     describe('is not registered', () => {
       it.each`
-        swPath                | serviceWorker        | isOnClient
-        ${undefined}          | ${undefined}         | ${true}
-        ${undefined}          | ${undefined}         | ${false}
-        ${undefined}          | ${mockServiceWorker} | ${true}
-        ${undefined}          | ${mockServiceWorker} | ${false}
-        ${contextStub.swPath} | ${mockServiceWorker} | ${false}
+        swPath                | serviceWorker        | isOnClient | nodeEnvironment
+        ${undefined}          | ${undefined}         | ${true}    | ${'development'}
+        ${undefined}          | ${undefined}         | ${true}    | ${'production'}
+        ${undefined}          | ${undefined}         | ${false}   | ${'development'}
+        ${undefined}          | ${undefined}         | ${false}   | ${'production'}
+        ${undefined}          | ${mockServiceWorker} | ${true}    | ${'development'}
+        ${undefined}          | ${mockServiceWorker} | ${true}    | ${'production'}
+        ${undefined}          | ${mockServiceWorker} | ${false}   | ${'development'}
+        ${undefined}          | ${mockServiceWorker} | ${false}   | ${'production'}
+        ${contextStub.swPath} | ${mockServiceWorker} | ${false}   | ${'development'}
+        ${contextStub.swPath} | ${mockServiceWorker} | ${false}   | ${'production'}
       `(
-        'when swPath is $swPath, serviceWorker is $serviceWorker and isOnClient is $isOnClient',
-        ({ swPath, serviceWorker, isOnClient }) => {
+        'when swPath is $swPath, serviceWorker is $serviceWorker, isOnClient is $isOnClient and node environment is $nodeEnvironment',
+        ({ swPath, serviceWorker, isOnClient, nodeEnvironment }) => {
           if (serviceWorker) {
             // @ts-expect-error need to override the navigator.serviceWorker for testing purposes
             global.navigator.serviceWorker = serviceWorker;
           }
 
           (onClient as jest.Mock).mockImplementationOnce(() => isOnClient);
+          process.env.NODE_ENV = nodeEnvironment;
 
           render(
             // @ts-expect-error only require a subset of properties on service context for testing purposes

@@ -38,16 +38,20 @@ const AmpServiceWorker = ({
 export default () => {
   const { swPath, service } = useContext(ServiceContext);
   const { isAmp, canonicalLink } = useContext(RequestContext);
+  const nodeEnvironment = process.env.NODE_ENV;
   const swSrc = `${getEnvConfig().SIMORGH_BASE_URL}/${service}${swPath}`;
 
   useEffect(() => {
     const shouldInstallServiceWorker =
-      swPath && onClient() && 'serviceWorker' in navigator;
+      swPath &&
+      onClient() &&
+      'serviceWorker' in navigator &&
+      nodeEnvironment === 'production';
 
     if (shouldInstallServiceWorker) {
       navigator.serviceWorker.register(`/${service}${swPath}`);
     }
-  }, [swPath, service]);
+  }, [swPath, service, nodeEnvironment]);
 
   return !isLocal() && isAmp && swPath ? (
     <>
