@@ -55,7 +55,7 @@ const ScrollablePromoContainer = styled.div`
   }
   ${({ experimentVariant }) =>
     experimentVariant &&
-    experimentVariant !== 'none' &&
+    experimentVariant !== 'off' &&
     `
     padding: 0 ${GEL_SPACING} ${GEL_SPACING_DBL};
     margin: 0rem;
@@ -170,9 +170,9 @@ const ScrollablePromo = ({
   }
 
   let title;
-  if (experimentVariant === 'A') {
+  if (experimentVariant === 'top_bar_top_stories') {
     title = translations.topStoriesTitle || 'Top Stories';
-  } else if (experimentVariant === 'B') {
+  } else if (experimentVariant === 'top_bar_most_read') {
     title = mostRead.header || 'Most Read';
   } else {
     title =
