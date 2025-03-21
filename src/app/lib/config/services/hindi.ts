@@ -472,7 +472,7 @@ export const service: DefaultServiceConfig = {
       },
       {
         title: 'पॉडकास्ट',
-        url: '/hindi/institutional-61824775',
+        url: '/hindi/topics/cv22x3pmrvmt',
       },
     ],
   },
