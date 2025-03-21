@@ -59,6 +59,7 @@ const PageLayoutWrapper = ({
   const reportingPageType = pageType?.replace(/ /g, '');
   let wordCount: wordCountType = 0;
   let propsForOJExperiment = {};
+  const experimentVariant = useOptimizelyMvtVariation('top_bar_oj_experiment');
   if (pageType === 'article') {
     wordCount = pageData?.content?.model?.blocks
       ?.filter(block => block.type === 'text')
@@ -75,10 +76,6 @@ const PageLayoutWrapper = ({
 
     const topStories = pageData.secondaryColumn?.topStories;
     const mostReadItems = pageData.mostRead?.items;
-
-    const experimentVariant = useOptimizelyMvtVariation(
-      'top_bar_oj_experiment',
-    );
 
     let dataForOJExperiment;
     if (experimentVariant === 'A') {
