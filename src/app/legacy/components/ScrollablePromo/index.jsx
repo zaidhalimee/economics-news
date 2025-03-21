@@ -30,6 +30,7 @@ import { GREY_2 } from '#app/components/ThemeProvider/palette';
 import { ServiceContext } from '../../../contexts/ServiceContext';
 import Promo from './Promo';
 import PromoList from './PromoList';
+import { OptimizelyContext } from '@optimizely/react-sdk';
 
 const PromoWrapper = styled.div`
   ${({ dir }) => `margin-${dir === 'ltr' ? 'left' : 'right'}: ${GEL_SPACING};`}
@@ -154,9 +155,11 @@ const ScrollablePromo = ({
 }) => {
   const { script, service, dir, translations, mostRead } =
     useContext(ServiceContext);
+  const { optimizely } = useContext(OptimizelyContext);
   const eventTrackingData = {
     componentName: `edoj${blockGroupIndex}`,
     format: 'CHD=edoj',
+    ...(optimizely && { optimizely }),
   };
 
   const viewRef = useViewTracker(eventTrackingData);

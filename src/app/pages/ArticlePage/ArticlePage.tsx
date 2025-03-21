@@ -131,6 +131,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   } = useTheme();
 
   const experimentVariant = useOptimizelyMvtVariation('top_bar_oj_experiment');
+  const isInExperiment = experimentVariant && experimentVariant !== 'off';
 
   const allowAdvertising = pageData?.metadata?.allowAdvertising ?? false;
   const adcampaign = pageData?.metadata?.adCampaignKeyword;
@@ -178,7 +179,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const atiData = {
     ...atiAnalytics,
     ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
-    ...(experimentVariant && { experimentVariant }),
+    ...(isInExperiment && { experimentVariant }),
   };
 
   const componentsToRender = {
@@ -318,7 +319,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           sendOptimizelyEvents={false}
         />
       )}
-      {experimentVariant && (
+      {isInExperiment && (
         <>
           <OptimizelyArticleCompleteTracking />
           <OptimizelyPageViewTracking />
