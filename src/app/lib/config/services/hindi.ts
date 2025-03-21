@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-hindi',
     atiAnalyticsProducerId: '52',
     atiAnalyticsProducerName: 'HINDI',
+    useReverb: true,
     chartbeatDomain: 'hindi.bbc.co.uk',
     brandName: 'BBC News हिंदी',
     product: 'BBC News',
@@ -40,9 +41,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/hindi/institutional-50223932',
     isTrustProjectParticipant: true,
     script: devanagari,
-    manifestPath: '/manifest.json',
+    manifestPath: '/hindi/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle:
+    homePageTitle:
       'ब्रेकिंग न्यूज़ समाचार, ताजा खबर | News, latest news, breaking news',
     showAdPlaceholder: true,
     showRelatedTopics: true,
@@ -253,6 +254,7 @@ export const service: DefaultServiceConfig = {
         },
         listen: 'सुनिए',
         watch: 'देखिए',
+        watchMoments: 'शॉर्ट वीडियो देखिए',
         listenLive: 'लाइव सुनें',
         listenNext: 'इसके बाद सुनिए',
         liveLabel: 'लाइव',
