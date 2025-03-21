@@ -34,10 +34,16 @@ Developer Checklist
 Testing
 ======
 
-|  | Local | Test | Preview | Live |
-| -- | :--: | :--: | :--: | :--: | 
-| Manual Testing required? ✅ | | | |
-| Manual Testing complete? ✅ | | | |
+- [ ] Manual Testing Required (tick all that apply)
+  - [ ] Local (JIRA Labels: `Ready-For-Test, Local`)
+  - [ ] Test (JIRA Labels: `Ready-For-Test, Test`)
+  - [ ] Preview (JIRA Labels: `Ready-For-Test, Preview`)
+  - [ ] Live (JIRA Labels: `Ready-For-Test, Live`)
+- [ ] Manual Testing Complete (tick all that apply)
+  - [ ] Local
+  - [ ] Test
+  - [ ] Preview
+  - [ ] Live
 
 
 ## Additional Testing Steps
