@@ -92,7 +92,7 @@ export const OJTopBarTopStories = (_, { service }) => (
   <ScrollablePromoComponent
     data={topStoriesBlocks}
     service={service}
-    experimentVariant={'A'}
+    experimentVariant="top_bar_top_stories"
   />
 );
 
