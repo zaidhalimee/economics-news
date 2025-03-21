@@ -34,12 +34,12 @@ Developer Checklist
 Testing
 ======
 
-- [ ] Manual Testing Required (tick all that apply)
-  - [ ] Local (JIRA Labels: `Ready-For-Test, Local`)
-  - [ ] Test (JIRA Labels: `Ready-For-Test, Test`)
-  - [ ] Preview (JIRA Labels: `Ready-For-Test, Preview`)
-  - [ ] Live (JIRA Labels: `Ready-For-Test, Live`)
-- [ ] Manual Testing Complete (tick all that apply)
+- [ ] Manual Testing required?
+  - [ ] Local (`Ready-For-Test, Local`)
+  - [ ] Test  (`Ready-For-Test, Test`)
+  - [ ] Preview (`Ready-For-Test, Preview`)
+  - [ ] Live (`Ready-For-Test, Live`)
+- [ ] Manual Testing complete?
   - [ ] Local
   - [ ] Test
   - [ ] Preview
