@@ -32,7 +32,7 @@ Testing
 
 |  | Local | Test | Preview | Live |
 | -- | :--: | :--: | :--: | :--: | 
-| JIRA Labels | Ready-For-Test, Local | Ready-For-Test, Test | Ready-For-Test, Preview | Ready-For-Test, Live |
+| JIRA Labels | `Ready-For-Test, Local` | `Ready-For-Test, Test` | `Ready-For-Test, Preview` | `Ready-For-Test, Live` |
 | Manual Testing required? ✅ | | | |
 | Manual Testing complete? ✅ | | | |
 
