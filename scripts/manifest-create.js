@@ -51,6 +51,7 @@ services.forEach(service => {
   const manifestPath = `../public/${service}/manifest.json`;
   const currentManifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
   currentManifest.start_url = `/${service}`;
+  currentManifest.scope = `/${service}`;
   currentManifest.id = currentManifest.start_url;
   currentManifest.short_name = currentManifest.short_name.replace(' News', '');
   currentManifest.display = 'standalone';
