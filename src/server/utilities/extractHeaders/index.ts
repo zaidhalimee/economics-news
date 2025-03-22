@@ -28,8 +28,6 @@ const extractHeaders = (headers: IncomingHttpHeaders) => {
     isUK,
     showAdsBasedOnLocation: headers['bbc-adverts'] === 'true' || false,
     showCookieBannerBasedOnCountry,
-    Downlink: headers['downlink'] || 100000,
-    DeviceMemory: headers['device-memory'] || 8,
   };
 };
 
