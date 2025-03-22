@@ -244,7 +244,8 @@ exports[`Canonical Home Page Page content First item in the first curation is th
 <img
   alt="Koren, grane i lišće."
   class="bbc-139onq"
-  loading="lazy"
+  fetchpriority="high"
+  loading="eager"
   src="https://ichef.bbci.co.uk/ace/ws/240/cpsdevpb/8e80/test/de02d740-4e90-11ef-ae89-b10ee2354b32.jpg.webp"
   style="aspect-ratio:16 / 9"
 />
