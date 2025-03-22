@@ -50,7 +50,7 @@ const fetchEventHandler = async event => {
     }
   } else if (
     (
-      event.request.url.indexOf('https://static.files.bbci.co.uk/') !== -1 &&
+      event.request.url.indexOf('https://static.files.bbci.co.uk/') === 0 &&
       /((\.woff2$)|(modern\.frosted_promo+.*?\.js$)|(\/moment-lib+.*?\.js$)|(\/images\/icons\/icon-.*?\.png$))/.test(
         event.request.url,
       )
