@@ -6,6 +6,7 @@ import useToggle from '#hooks/useToggle';
 import { singleTextBlock } from '#app/models/blocks';
 import ArticleMetadata from '#containers/ArticleMetadata';
 import { RequestContext } from '#contexts/RequestContext';
+import onClient from '#lib/utilities/onClient';
 import headings from '#containers/Headings';
 import visuallyHiddenHeadline from '#containers/VisuallyHiddenHeadline';
 import gist from '#containers/Gist';
@@ -119,6 +120,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     isTrustProjectParticipant,
     showRelatedTopics,
     brandName,
+    isoLang,
+    locale,
   } = useContext(ServiceContext);
 
   const { enabled: preloadLeadImageToggle } = useToggle('preloadLeadImage');
@@ -228,6 +231,54 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const promoImage = promoImageRawBlock?.model?.locator;
 
   const showTopics = Boolean(showRelatedTopics && topics.length > 0);
+  
+  const speak = () => {
+    if (onClient()) {
+        const synth = window.speechSynthesis;
+        const main = window.document.querySelector('main')
+        const utterThis = new SpeechSynthesisUtterance(main.innerText);
+        console.log('isoLang', isoLang);
+        const voiceIndex = () => {
+            switch (isoLang) {
+                case 'es':
+                    return 9;
+                break;
+                case 'fr':
+                    return 15;
+                break;
+                default: 
+                    return 0;
+                break;
+            }
+        };
+        const voiceLocale = () => {
+            if (locale.length === 5) return locale;
+            return `${isoLang}-${isoLang.toUpperCase()}`;
+        }
+
+        let allVoices = synth.getVoices();// this needs to be called after SpeechSynthesisUtterance
+        const voicesForLang = allVoices.filter(voice => voice.localService === true && voice.lang.indexOf(`${isoLang}-`) === 0);
+        console.log('voicesForLang', voicesForLang);
+
+        if (voicesForLang.length) utterThis.voice = voicesForLang[voiceIndex(isoLang)];
+        utterThis.lang = voiceLocale();
+        console.log('voicesForLang[voiceIndex]', voicesForLang[voiceIndex(isoLang)]);
+        utterThis.onend = function (event) {
+          console.log("SpeechSynthesisUtterance.onend");
+        };
+
+        utterThis.onerror = function (event) {
+          console.error("SpeechSynthesisUtterance.onerror");
+        };
+    
+        synth.speak(utterThis);
+    }
+  }
+//     useEffect(() => {
+//         if (onClient()) {
+//         
+//         }
+//     });
 
   return (
     <div css={styles.pageWrapper}>
@@ -278,6 +329,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       <div css={styles.grid}>
         <div css={!isPGL ? styles.primaryColumn : styles.pglColumn}>
           <main css={styles.mainContent} role="main">
+            <button onClick={speak}>🔊</button>
             <Blocks
               blocks={articleBlocks}
               componentsToRender={componentsToRender}
