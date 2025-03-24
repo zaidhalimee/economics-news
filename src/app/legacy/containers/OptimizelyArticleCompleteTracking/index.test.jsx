@@ -15,6 +15,7 @@ const optimizely = {
   onReady: jest.fn(() => Promise.resolve()),
   track: jest.fn(),
   setUser: jest.fn(() => Promise.resolve()),
+  getVariation: jest.fn(),
 };
 
 const observers = new Map();
@@ -77,6 +78,7 @@ beforeEach(() => {
   jest.useFakeTimers();
   console.error = jest.fn();
   global.IntersectionObserver = IntersectionObserver;
+  optimizely.getVariation.mockReturnValue('variation_1');
 });
 
 afterEach(() => {
@@ -129,6 +131,7 @@ describe('Optimizely Page Complete tracking', () => {
   });
 
   it('should not send tracking event when element is in view, but not in experiment variation', async () => {
+    optimizely.getVariation.mockReturnValue(null);
     useOptimizelyVariation.mockReturnValue(null);
 
     const { container } = render(

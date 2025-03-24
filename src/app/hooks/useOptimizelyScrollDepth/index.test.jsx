@@ -8,15 +8,13 @@ import {
 import { OptimizelyProvider } from '@optimizely/react-sdk';
 import { RequestContextProvider } from '#contexts/RequestContext';
 import { ARTICLE_PAGE } from '#app/routes/utils/pageTypes';
-import useOptimizelyVariation from '#hooks/useOptimizelyVariation';
 import useOptimizelyScrollDepth from '.';
-
-jest.mock('#hooks/useOptimizelyVariation', () => jest.fn());
 
 const optimizelyMock = {
   onReady: jest.fn(() => Promise.resolve()),
   setUser: jest.fn(() => Promise.resolve()),
   track: jest.fn(),
+  getVariation: jest.fn(),
 };
 
 const wrapper = ({
@@ -43,6 +41,7 @@ describe('useOptimizelyScrollDepth', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
+    optimizelyMock.getVariation.mockReturnValue('variationKey');
   });
 
   afterEach(() => {
@@ -50,7 +49,7 @@ describe('useOptimizelyScrollDepth', () => {
   });
 
   it('should call add event listener with scroll', () => {
-    renderHook(() => useOptimizelyScrollDepth());
+    renderHook(() => useOptimizelyScrollDepth(), { wrapper });
 
     expect(addEventListenerSpy).toHaveBeenCalledWith(
       'scroll',
@@ -60,7 +59,7 @@ describe('useOptimizelyScrollDepth', () => {
   });
 
   it('should call remove event listener with scroll', () => {
-    renderHook(() => useOptimizelyScrollDepth());
+    renderHook(() => useOptimizelyScrollDepth(), { wrapper });
 
     cleanup();
     expect(removeEventListenerSpy).toHaveBeenCalledWith(
@@ -86,7 +85,7 @@ describe('useOptimizelyScrollDepth', () => {
   });
 
   it('should not call Optimizely track function for users not in an experiment', async () => {
-    useOptimizelyVariation.mockReturnValue(null);
+    optimizelyMock.getVariation.mockReturnValue(null);
 
     const { result } = renderHook(() => useOptimizelyScrollDepth(), {
       wrapper,
