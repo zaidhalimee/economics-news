@@ -2,6 +2,12 @@ import * as pipe from 'ramda/src/pipe';
 import WithContexts from '#app/legacy/containers/PageHandlers/withContexts';
 import applyBasicPageHandlers from './applyBasicPageHandlers';
 
+jest.mock('@optimizely/react-sdk', () => ({
+  ...jest.requireActual('@optimizely/react-sdk'),
+  setLogger: jest.fn(),
+  createInstance: jest.fn(),
+}));
+
 jest.mock('ramda/src/pipe', () => {
   const originalModule = jest.requireActual('ramda/src/pipe');
 
