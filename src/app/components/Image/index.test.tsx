@@ -232,6 +232,7 @@ describe('Image - Canonical', () => {
       >
         <img
           alt="Test image alt text"
+          loading="eager"
           src="/test-image-500.jpg.webp"
           srcset="/test-image-200.jpg.webp 200w, /test-image-500.jpg.webp 500w"
         />
