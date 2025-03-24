@@ -160,6 +160,8 @@ const ScrollablePromo = ({
   const eventTrackingData = {
     componentName: `edoj${blockGroupIndex}`,
     format: 'CHD=edoj',
+    // We want to check for experimentVariant here as ScrollablePromo is used in within the Article body as well.
+    // We only want to track Optimizely events for the Top Bar use case.
     ...(optimizely && experimentVariant && { optimizely }),
   };
 
