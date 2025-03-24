@@ -132,7 +132,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   } = useTheme();
 
   const experimentVariant = useOptimizelyMvtVariation(
-    OPTIMIZELY_CONFIG.flagKey,
+    OPTIMIZELY_CONFIG.ruleKey,
   );
   const isInExperiment = experimentVariant && experimentVariant !== 'off';
 
