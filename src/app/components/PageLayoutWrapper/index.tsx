@@ -9,6 +9,7 @@ import GlobalStyles from '#psammead/psammead-styles/src/global-styles';
 import { PageTypes } from '#app/models/types/global';
 import useOptimizelyMvtVariation from '#app/hooks/useOptimizelyMvtVariation';
 import OPTIMIZELY_CONFIG from '#app/lib/config/optimizely';
+import withOptimizelyProvider from '#app/legacy/containers/PageHandlers/withOptimizelyProvider';
 import { TopStoryItem } from '../../pages/ArticlePage/PagePromoSections/TopStoriesSection/types';
 import WebVitals from '../../legacy/containers/WebVitals';
 import HeaderContainer from '../../legacy/containers/Header';
@@ -243,4 +244,4 @@ const PageLayoutWrapper = ({
   );
 };
 
-export default PageLayoutWrapper;
+export default withOptimizelyProvider(PageLayoutWrapper);
