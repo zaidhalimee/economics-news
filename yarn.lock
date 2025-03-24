@@ -3143,71 +3143,71 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/env@npm:15.2.2":
-  version: 15.2.2
-  resolution: "@next/env@npm:15.2.2"
-  checksum: 10/ad579724859dab7c280e191b6a92df813587546690e65b91824bd177743c39463bb204a2e0250c11d211c39afbf416f9bb130985efab9aaadffb4d5e6e0ee4ab
+"@next/env@npm:15.2.3":
+  version: 15.2.3
+  resolution: "@next/env@npm:15.2.3"
+  checksum: 10/976f9e85b7e4e1b4bce16c06c4528a1febfce3ae20e7935440900bc4befd650257bf5a71c94b6c9391e251c6ee6080c868c759c1becaacddd25b280751013b2c
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-arm64@npm:15.2.2":
-  version: 15.2.2
-  resolution: "@next/swc-darwin-arm64@npm:15.2.2"
-  checksum: 10/bc2ad39edc45b149a5e0f8e0021765fc0548917920eb1e99f5d6188b5101cbdbb5b03b18a233e920815de4a2b9e7437e363f0fb69dc26973fd8ef0c4d3cbf76f
+"@next/swc-darwin-arm64@npm:15.2.3":
+  version: 15.2.3
+  resolution: "@next/swc-darwin-arm64@npm:15.2.3"
+  checksum: 10/514138e5c0e248717ce222bb3123d48b6bfd8fe71bc135a5684e393d8e29c0c1f6ed2fc07f746eb2f159a03113996744bcabfd426deaba41a151bc375c034153
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-x64@npm:15.2.2":
-  version: 15.2.2
-  resolution: "@next/swc-darwin-x64@npm:15.2.2"
-  checksum: 10/4d804fbbe604bd5efda27f6927e016a656259de99680a457d5bb0569da8dd27e2197260209b220c175a67d600db1f7e857e0c7c2f898f6cee9b3d64b07d823ed
+"@next/swc-darwin-x64@npm:15.2.3":
+  version: 15.2.3
+  resolution: "@next/swc-darwin-x64@npm:15.2.3"
+  checksum: 10/6785557e3249c7ec5b532a092d1c647de51f5e6fc6f10b7cf5eb979dada43f956bd63e879d7bb2612791097db191d898fda7ab9c276837ed78b274233f5adc29
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-gnu@npm:15.2.2":
-  version: 15.2.2
-  resolution: "@next/swc-linux-arm64-gnu@npm:15.2.2"
-  checksum: 10/85597112e610ea3a5b0cb3e4ef2e3a5a8f462352d62dd0eec3302a5d71948452263a275012155a02474012405a2756140751b7ce0205e8abd2e3253d35f76a11
+"@next/swc-linux-arm64-gnu@npm:15.2.3":
+  version: 15.2.3
+  resolution: "@next/swc-linux-arm64-gnu@npm:15.2.3"
+  checksum: 10/3cd9357aeb4dc67fdd22bdf98025adb59326a132863b1ada1df8e85bc98dc500e88193ba4e0e1d80f89f650b333a0404b4109d75e6a12e564086eb07d922cdf2
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-musl@npm:15.2.2":
-  version: 15.2.2
-  resolution: "@next/swc-linux-arm64-musl@npm:15.2.2"
+"@next/swc-linux-arm64-musl@npm:15.2.3":
+  version: 15.2.3
+  resolution: "@next/swc-linux-arm64-musl@npm:15.2.3"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-gnu@npm:15.2.2":
-  version: 15.2.2
-  resolution: "@next/swc-linux-x64-gnu@npm:15.2.2"
-  checksum: 10/a0ddbbb3a7cf3a5207a3eac77101cbc724a2e12e70a71010e1ebc8daf2fb63a36eb27568ae40a31db88c188355146111325bfb6577c5433bbf8d9b776ce63bad
+"@next/swc-linux-x64-gnu@npm:15.2.3":
+  version: 15.2.3
+  resolution: "@next/swc-linux-x64-gnu@npm:15.2.3"
+  checksum: 10/c3731263a6a22f72266894fee22785e6eca1bad99bd58dee8fe32d33c9aaac92cef368904a0a26674b1bf8ffdb5d15e9f60c8b940152f0facf83b5051b3314d6
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-musl@npm:15.2.2":
-  version: 15.2.2
-  resolution: "@next/swc-linux-x64-musl@npm:15.2.2"
+"@next/swc-linux-x64-musl@npm:15.2.3":
+  version: 15.2.3
+  resolution: "@next/swc-linux-x64-musl@npm:15.2.3"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-win32-arm64-msvc@npm:15.2.2":
-  version: 15.2.2
-  resolution: "@next/swc-win32-arm64-msvc@npm:15.2.2"
-  checksum: 10/6654cd0d6ba00bffcc10cf101554cf605b17946bf3bd321acbfb9e624b66f504913d162d3d3d969751573c599d363a6a1394a4216788c36c119778101c912418
+"@next/swc-win32-arm64-msvc@npm:15.2.3":
+  version: 15.2.3
+  resolution: "@next/swc-win32-arm64-msvc@npm:15.2.3"
+  checksum: 10/d4c08536320a57087eec987ddc1322dc8975c5fd26f32df773b86bc06a9c1f86de6178f79828ffe9b7ed85779bfc85933bbc42435ab823044614c883d2f8b2db
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-win32-x64-msvc@npm:15.2.2":
-  version: 15.2.2
-  resolution: "@next/swc-win32-x64-msvc@npm:15.2.2"
-  checksum: 10/09700f98aa329b78ed2108f7f00348cf7c0e25ae402d56e67ce03a337a27611d6b14875863c4213b8b4131e41c2a84cde7cdf490d5f1147ffa0deccbc2da36b1
+"@next/swc-win32-x64-msvc@npm:15.2.3":
+  version: 15.2.3
+  resolution: "@next/swc-win32-x64-msvc@npm:15.2.3"
+  checksum: 10/c390b11a6e7835aa27c228addeb756c5239a1aa486c62291fd8db53b1be64ab6b24079ace56677eb59b01dd141694872a9231ed9fb08d4f17692e96e4c76a472
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -12460,19 +12460,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:15.2.2":
-  version: 15.2.2
-  resolution: "next@npm:15.2.2"
+"next@npm:15.2.3":
+  version: 15.2.3
+  resolution: "next@npm:15.2.3"
   dependencies:
-    "@next/env": "npm:15.2.2"
-    "@next/swc-darwin-arm64": "npm:15.2.2"
-    "@next/swc-darwin-x64": "npm:15.2.2"
-    "@next/swc-linux-arm64-gnu": "npm:15.2.2"
-    "@next/swc-linux-arm64-musl": "npm:15.2.2"
-    "@next/swc-linux-x64-gnu": "npm:15.2.2"
-    "@next/swc-linux-x64-musl": "npm:15.2.2"
-    "@next/swc-win32-arm64-msvc": "npm:15.2.2"
-    "@next/swc-win32-x64-msvc": "npm:15.2.2"
+    "@next/env": "npm:15.2.3"
+    "@next/swc-darwin-arm64": "npm:15.2.3"
+    "@next/swc-darwin-x64": "npm:15.2.3"
+    "@next/swc-linux-arm64-gnu": "npm:15.2.3"
+    "@next/swc-linux-arm64-musl": "npm:15.2.3"
+    "@next/swc-linux-x64-gnu": "npm:15.2.3"
+    "@next/swc-linux-x64-musl": "npm:15.2.3"
+    "@next/swc-win32-arm64-msvc": "npm:15.2.3"
+    "@next/swc-win32-x64-msvc": "npm:15.2.3"
     "@swc/counter": "npm:0.1.3"
     "@swc/helpers": "npm:0.5.15"
     busboy: "npm:1.6.0"
@@ -12517,7 +12517,7 @@ __metadata:
       optional: true
   bin:
     next: dist/bin/next
-  checksum: 10/d08ac7dc9503ad6944c5fe322f6dd958960bc1c41c8f7d360d53d93c3c9408008906294d2b9a5e143ad8db54b23a1fc9fb2db7b0b5e45e352006952c402f2a82
+  checksum: 10/91714227d09ad1a41340bfa10a2ad212fa372d5d6255dd14cc47cccb4795a04c8ac08a8b10998d2d7bf90eeca46668091d4a0398ec11224310fd96a484bca867
   languageName: node
   linkType: hard
 
@@ -14749,12 +14749,12 @@ __metadata:
     "@emotion/jest": "npm:^11.11.0"
     "@jest/environment": "npm:^29.7.0"
     "@jest/types": "npm:^29.6.3"
-    "@next/swc-darwin-arm64": "npm:15.2.2"
-    "@next/swc-darwin-x64": "npm:15.2.2"
-    "@next/swc-linux-arm64-gnu": "npm:15.2.2"
-    "@next/swc-linux-x64-gnu": "npm:15.2.2"
-    "@next/swc-win32-arm64-msvc": "npm:15.2.2"
-    "@next/swc-win32-x64-msvc": "npm:15.2.2"
+    "@next/swc-darwin-arm64": "npm:15.2.3"
+    "@next/swc-darwin-x64": "npm:15.2.3"
+    "@next/swc-linux-arm64-gnu": "npm:15.2.3"
+    "@next/swc-linux-x64-gnu": "npm:15.2.3"
+    "@next/swc-win32-arm64-msvc": "npm:15.2.3"
+    "@next/swc-win32-x64-msvc": "npm:15.2.3"
     "@testing-library/jest-dom": "npm:6.6.3"
     "@testing-library/react": "npm:16.2.0"
     babel-plugin-transform-rename-import: "npm:2.3.0"
@@ -14763,7 +14763,7 @@ __metadata:
     cypress-terminal-report: "npm:7.1.0"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
-    next: "npm:15.2.2"
+    next: "npm:15.2.3"
     next-test-api-route-handler: "npm:4.0.15"
     npm-run-all2: "npm:7.0.2"
     ts-node: "npm:^10.9.2"
