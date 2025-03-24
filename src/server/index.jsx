@@ -244,7 +244,8 @@ server.get(
         isAmp,
       });
 
-      const { isUK, showCookieBannerBasedOnCountry, Downlink, DeviceMemory } = extractHeaders(headers);
+      const { isUK, showCookieBannerBasedOnCountry, ECT, DeviceMemory } =
+        extractHeaders(headers);
 
       data.toggles = toggles;
       data.path = urlPath;
@@ -252,7 +253,8 @@ server.get(
       data.showAdsBasedOnLocation = headers['bbc-adverts'] === 'true';
       data.showCookieBannerBasedOnCountry = showCookieBannerBasedOnCountry;
       data.isUK = isUK;
-      data.isLite = isLite || Downlink < 2 || DeviceMemory < 1;
+      data.isLite =
+        isLite || ['slow-2g', '2g', '3g'].includes(ECT) || DeviceMemory < 1;
 
       let { status } = data;
       // Set derivedPageType based on returned page data
@@ -340,7 +342,7 @@ server.get(
           'onion-location',
           `https://www.bbcweb3hytmzhn5d532owbu6oqadra5z3ar726vq5kgwwn6aucdccrad.onion${urlPath}`,
         );
-        const clientHints = 'Downlink,Device-Memory';
+        const clientHints = 'ECT,Device-Memory';
         res.set('accept-ch', clientHints);
 
         const allVaryHeaders = ['X-Country', ...clientHints.split(',')];

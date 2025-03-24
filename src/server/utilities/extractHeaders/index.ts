@@ -28,7 +28,7 @@ const extractHeaders = (headers: IncomingHttpHeaders) => {
     isUK,
     showAdsBasedOnLocation: headers['bbc-adverts'] === 'true' || false,
     showCookieBannerBasedOnCountry,
-    Downlink: headers['downlink'] || 100000,
+    ECT: headers.ect || '3g',
     DeviceMemory: headers['device-memory'] || 8,
   };
 };
