@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { exec } from 'node:child_process';
 
-const litePageSizeValidator = () => {
+const litePageSizeValidator = async () => {
   const urlsToCheck = [
     '/hindi',
     '/mundo/articles/cddylv9g8z0o',
@@ -14,19 +14,21 @@ const litePageSizeValidator = () => {
     '/korean/topics/cnwng7v0e54t',
   ];
 
-  const testResults = urlsToCheck.map(async url => {
-    const pageSize = exec(
-      `curl -sI --compressed http://localhost:7080${url}.lite?renderer_env=live | grep -i content-length | awk '{print $2/1024}'`,
-    );
+  const testResults = await Promise.all(
+    urlsToCheck.map(async url => {
+      const pageSize = exec(
+        `curl -sI --compressed http://localhost:7080${url}.lite?renderer_env=live | grep -i content-length | awk '{print $2/1024}'`,
+      );
 
-    const result = pageSize > 100 ? '❌' : '✅';
+      const result = pageSize > 100 ? '❌' : '✅';
 
-    return {
-      url,
-      pageSize,
-      result,
-    };
-  });
+      return {
+        url,
+        pageSize,
+        result,
+      };
+    }),
+  );
 
   console.table(testResults);
   const failures = testResults.filter(({ result }) => result === '❌');
