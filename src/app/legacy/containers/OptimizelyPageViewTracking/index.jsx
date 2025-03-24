@@ -18,8 +18,8 @@ const OptimizelyPageViewTracking = () => {
   useOptimizelyScrollDepth();
 
   useEffect(() => {
-    if (sendPageViewEvent && optimizely) {
-      optimizely.onReady().then(() => {
+    if (sendPageViewEvent) {
+      optimizely?.onReady().then(() => {
         optimizely.track('page_views');
         setPageViewSent(true);
       });
