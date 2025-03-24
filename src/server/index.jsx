@@ -200,18 +200,27 @@ server.get(
   '/:service/search/results/*',
   async ({ url, query, headers, path: urlPath }, res) => {
     try {
-      const { service, isAmp, isApp, isLite, variant } = getRouteProps(urlPath);
+      const {
+        service,
+        isAmp,
+        isApp,
+        isLite,
+        variant,
+        route: {  pageType },
+      } = getRouteProps(urlPath);
 
       const data = {
         path: urlPath,
+        pageType
       };
+
       const bbcOrigin = headers['bbc-origin'];
       const { index, totalRecords } = server.locals.articleIndex;
       const { results, decodedInput, processingTime } = processInput(
         index,
         query.search_query,
       );
-
+    
       const result = await renderDocument({
         bbcOrigin,
         data,

@@ -43,10 +43,8 @@ export const homePagePath = getHomePageRegex(allServices);
 export const homePageDataPath = `${homePagePath}.json`;
 
 export const searchPagePath = getSearchRegex();
-export const searchPageDataPath = `${searchPagePath}.json`;
 
 export const searchPageResultsPath = getSearchResultsRegex();
-export const searchPageResultsDataPath = `${searchPageResultsPath}.json`;
 
 export const cpsAssetPagePath = getCpsAssetRegex(allServices);
 export const cpsAssetPageDataPath = `${cpsAssetPagePath}.json`;

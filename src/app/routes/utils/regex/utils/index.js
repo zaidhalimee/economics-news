@@ -104,7 +104,7 @@ export const getSearchRegex = () => {
 };
 
 export const getSearchResultsRegex = () => {
-  return `/news/search/results`;
+  return `/news/search/results/index.html`;
 };
 
 export const getSwRegex = services => {

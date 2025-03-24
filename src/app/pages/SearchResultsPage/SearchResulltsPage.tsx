@@ -3,10 +3,9 @@
 import React from 'react';
 import { jsx } from '@emotion/react';
 import Text from '#app/components/Text';
-import styles from './index.styles';
 
 const SearchResultsPage = () => {
-
+console.log("CHECJ")
   return (
     <>
       <meta
