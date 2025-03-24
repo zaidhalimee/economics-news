@@ -103,10 +103,10 @@ describe('extractHeader', () => {
 
   it(`sets DeviceMemory when 'device-memory' header is set`, () => {
     const actual = extractHeaders({
-      'device-memory': 4,
+      'device-memory': '4',
     });
     expect(actual).toStrictEqual({
-      DeviceMemory: 4,
+      DeviceMemory: '4',
       ECT: '4g',
       bbcOrigin: null,
       isUK: null,
