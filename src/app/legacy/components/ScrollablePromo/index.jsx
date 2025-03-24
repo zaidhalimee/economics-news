@@ -156,10 +156,11 @@ const ScrollablePromo = ({
   const { script, service, dir, translations, mostRead } =
     useContext(ServiceContext);
   const { optimizely } = useContext(OptimizelyContext);
+
   const eventTrackingData = {
     componentName: `edoj${blockGroupIndex}`,
     format: 'CHD=edoj',
-    ...(optimizely && { optimizely }),
+    ...(optimizely && experimentVariant && { optimizely }),
   };
 
   const viewRef = useViewTracker(eventTrackingData);
@@ -222,6 +223,7 @@ const ScrollablePromo = ({
             blocks={blocks}
             experimentVariant={experimentVariant}
             viewTracker={viewRef}
+            onClick={handleClickTracking}
             {...a11yAttributes}
           />
         </GridItemMediumNoMargin>
