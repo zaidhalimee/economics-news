@@ -16,7 +16,7 @@ const WithData = Component => {
       pageType,
       passportHomes,
     );
-
+    
     if (hasRequestSucceeded) {
       return <Component pageData={pageData} {...props} />;
     }

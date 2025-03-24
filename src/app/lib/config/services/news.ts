@@ -274,7 +274,7 @@ export const service: DefaultServiceConfig = {
       },
       {
         title: 'Search',
-        url: '/news/search_me',
+        url: '/news/search',
         newLink: true,
       },
       {

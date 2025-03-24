@@ -206,13 +206,9 @@ server.get(
         isApp,
         isLite,
         variant,
-        route: {  pageType },
+        route: { pageType, getInitialData },
       } = getRouteProps(urlPath);
 
-      const data = {
-        path: urlPath,
-        pageType
-      };
 
       const bbcOrigin = headers['bbc-origin'];
       const { index, totalRecords } = server.locals.articleIndex;
@@ -220,7 +216,11 @@ server.get(
         index,
         query.search_query,
       );
-    
+
+      const data = await getInitialData({ decodedInput, results });
+      data.path = urlPath;
+      data.pageType = pageType;
+
       const result = await renderDocument({
         bbcOrigin,
         data,

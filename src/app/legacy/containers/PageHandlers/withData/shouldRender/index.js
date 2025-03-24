@@ -54,6 +54,7 @@ const shouldRender = (
     const isValidRequest = isValidService && isValidArticle();
     statusCode = isValidRequest ? status : NOT_FOUND;
   }
+
   const hasRequestSucceeded = hasDataAnd200Status && statusCode !== NOT_FOUND;
 
   return {

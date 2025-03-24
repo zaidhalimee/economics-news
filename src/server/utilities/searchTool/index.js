@@ -42,7 +42,7 @@ export function searchV2(articleList, target) {
   const matches = [];
 
   for (let i = 0; i < articleList.length; i += 1) {
-    const { words, counts, url } = articleList[i];
+    const { words, counts, url, thumbnail, headline } = articleList[i];
 
     let wordMatchCount = 0;
     let totalMatchValue = 0;
@@ -61,6 +61,8 @@ export function searchV2(articleList, target) {
         wordMatchCount,
         totalMatchValue,
         url,
+        thumbnail,
+        headline,
       });
     }
   }
