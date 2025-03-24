@@ -4,6 +4,7 @@ import withPageWrapper from '#containers/PageHandlers/withPageWrapper';
 import withError from '#containers/PageHandlers/withError';
 import withData from '#containers/PageHandlers/withData';
 import withHashChangeHandler from '#containers/PageHandlers/withHashChangeHandler';
+import withOptimizelyProvider from '#containers/PageHandlers/withOptimizelyProvider';
 
 export default (
   component,
@@ -13,6 +14,7 @@ export default (
     withData,
     withError,
     withPageWrapper,
+    withOptimizelyProvider,
     handlerBeforeContexts,
     withContexts,
     withHashChangeHandler,

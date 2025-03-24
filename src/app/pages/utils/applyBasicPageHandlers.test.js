@@ -34,8 +34,8 @@ describe('applyBasicPageHandlers', () => {
     });
 
     const args = pipeMock.mock.calls[0];
-    const beforeContextsFunctionArg = args[3];
-    const WithContextsFunctionArg = args[4];
+    const beforeContextsFunctionArg = args[4];
+    const WithContextsFunctionArg = args[5];
 
     expect(beforeContextsFunctionArg).toEqual(mockBeforeContextsFunction);
     expect(WithContextsFunctionArg).toEqual(WithContexts);
