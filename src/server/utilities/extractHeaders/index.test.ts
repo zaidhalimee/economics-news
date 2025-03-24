@@ -117,7 +117,7 @@ describe('extractHeader', () => {
 
   it(`sets ECT when 'ECT' header is set`, () => {
     const actual = extractHeaders({
-      ECT: '2g',
+      ect: '2g',
     });
     expect(actual).toStrictEqual({
       DeviceMemory: 8,
