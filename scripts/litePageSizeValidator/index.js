@@ -13,7 +13,7 @@ const litePageSizeValidator = async () => {
     },
     {
       path: '/arabic/media-53135426',
-      pageType: 'Media Asset with Live Stream',
+      pageType: 'CPS Media Article with Live Stream',
     },
     { path: '/marathi/popular/read', pageType: 'Most Read' },
     {
