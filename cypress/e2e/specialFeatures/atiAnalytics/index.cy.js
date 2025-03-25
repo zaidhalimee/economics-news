@@ -15,6 +15,10 @@ import {
 } from './assertions/latestMedia';
 import { assertLiteSiteCTAComponentClick } from './assertions/liteSiteCta';
 import {
+  assertCanonicalToLiteSiteCTAComponentClick,
+  assertCanonicalToLiteSiteCTAComponentView,
+} from './assertions/canonicalLiteSiteCta';
+import {
   assertMessageBannerComponentClick,
   assertMessageBannerComponentView,
 } from './assertions/messageBanner';
@@ -144,6 +148,8 @@ const canonicalTestSuites = [
       assertRelatedContentComponentClick,
       assertMostReadComponentView,
       assertMostReadComponentClick,
+      assertCanonicalToLiteSiteCTAComponentView,
+      assertCanonicalToLiteSiteCTAComponentClick,
     ],
   },
   {
