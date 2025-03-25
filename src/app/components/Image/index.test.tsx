@@ -210,6 +210,7 @@ describe('Image - Canonical', () => {
 >
   <img
     alt="Test image alt text"
+    loading="eager"
     src="/test-image-500.jpg"
   />
 </div>
