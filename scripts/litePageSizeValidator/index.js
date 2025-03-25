@@ -80,7 +80,7 @@ const litePageSizeValidator = async () => {
     });
   };
 
-  const convertToBytes = sizeInKb => {
+  const convertToKb = sizeInKb => {
     return parseFloat((sizeInKb.trim() / 1024).toFixed(2));
   };
 
@@ -94,8 +94,8 @@ const litePageSizeValidator = async () => {
         getPageSizeInBytes(liveUrl),
       ]);
 
-      const localSizeKb = convertToBytes(localPageSize);
-      const liveSizeKb = convertToBytes(livePageSize);
+      const localSizeKb = convertToKb(localPageSize);
+      const liveSizeKb = convertToKb(livePageSize);
       const result = localSizeKb > MAX_PAGE_SIZE_KB ? '❌' : '✅';
 
       return {
