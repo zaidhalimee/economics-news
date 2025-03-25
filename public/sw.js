@@ -17,6 +17,41 @@ self.addEventListener('install', event => {
   });
 });
 
+self.addEventListener('periodicsync', event => {
+  if (event.tag === 'get-latest-news') {
+    event.waitUntil(showNotification());
+  }
+});
+
+async function showNotification() {
+  const title = "What's happened this week on BBC Mundo";
+  const options = {
+    body: 'Check out these stories',
+    actions: [
+      {
+        action: 'story-1',
+        type: 'button',
+        title:
+          '"Llené de cicatrices a mis 6 hijos al utilizar cremas para aclarar sus pieles": la epidemia de "decoloración" que llevó a Nigeria a declarar el estado de emergencia',
+      },
+      {
+        action: 'story-2',
+        type: 'button',
+        title:
+          'El gabinete de Defensa de Trump compartió sus planes de atacar Yemen con un periodista en un chat grupal sin darse cuenta',
+      },
+      {
+        action: 'story-3',
+        type: 'button',
+        title:
+          '"Sobreviviendo a lo imposible": la fotógrafa mexicana que muestra los desafíos diarios que enfrentan los cubanos por el colapso económico de su país',
+      },
+    ],
+  };
+
+  self.registration.showNotification(title, options);
+}
+
 const fetchEventHandler = async event => {
   if (
     /^https:\/\/ichef(\.test)?\.bbci\.co\.uk\/(news|images|ace\/(standard|ws))\/.+.webp$/.test(

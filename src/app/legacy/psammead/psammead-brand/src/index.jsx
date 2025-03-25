@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import {
   GEL_GROUP_0_SCREEN_WIDTH_MAX,
@@ -191,6 +191,19 @@ const Brand = forwardRef((props, ref) => {
     ...rest
   } = props;
 
+  const [followButtonState, setFollowButtonState] = useState('default');
+
+  useEffect(() => {
+    navigator.serviceWorker.ready.then((registration) => {
+      setFollowButtonState(Notification.permission);
+    });
+  }, []);
+
+  async function askPermission() {
+    const result = await Notification.requestPermission();
+    setFollowButtonState(result);
+  }
+
   return (
     <Banner
       svgHeight={svgHeight}
@@ -215,6 +228,10 @@ const Brand = forwardRef((props, ref) => {
           <StyledBrand {...props} />
         )}
         {skipLink}
+        { followButtonState === 'default' && <div>
+        <button onClick={askPermission}>Follow {props.serviceLocalisedName}</button>
+        </div>}
+        { followButtonState === 'granted' && <div>Following {props.serviceLocalisedName}</div> }
         {scriptLink && <div>{scriptLink}</div>}
       </SvgWrapper>
     </Banner>

@@ -41,12 +41,36 @@ export default () => {
   const swSrc = `${getEnvConfig().SIMORGH_BASE_URL}/${service}${swPath}`;
 
   useEffect(() => {
-    const shouldInstallServiceWorker =
-      swPath && onClient() && 'serviceWorker' in navigator;
+    const registerServiceWorker = async () => {
+      const shouldInstallServiceWorker =
+        swPath && onClient() && 'serviceWorker' in navigator;
 
-    if (shouldInstallServiceWorker) {
-      navigator.serviceWorker.register(`/${service}${swPath}`);
-    }
+      if (shouldInstallServiceWorker) {
+        try {
+          const registration = await navigator.serviceWorker.register(`/${service}${swPath}`);
+
+          // Type assertion to inform TypeScript about periodicSync
+          const periodicSyncRegistration = registration as ServiceWorkerRegistration & {
+            periodicSync?: {
+              register: (tag: string, options: { minInterval: number }) => Promise<void>;
+            };
+          };
+
+          if (periodicSyncRegistration.periodicSync) {
+            await periodicSyncRegistration.periodicSync.register("get-latest-news", {
+              minInterval: 1 * 60 * 1000,
+            });
+            console.warn('Periodic Sync registered successfully.');
+          } else {
+            console.warn('Periodic Sync is not supported in this browser.');
+          }
+        } catch (error) {
+          console.error('Service Worker registration failed:', error);
+        }
+      }
+    };
+
+    registerServiceWorker();
   }, [swPath, service]);
 
   return !isLocal() && isAmp && swPath ? (
