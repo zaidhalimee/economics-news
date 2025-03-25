@@ -51,7 +51,6 @@ const litePageSizeValidator = async () => {
     { path: '/nepali/news-50627370', pageType: 'CPS Photo Gallery (PGL)' },
     { path: '/arabic/sports-54278377', pageType: 'CPS Story (STY)' },
     { path: '/korean/topics/cnwng7v0e54t', pageType: 'Topic' },
-
     {
       path: '/urdu/live/c04z6x46l0vt',
       pageType: 'Live',
