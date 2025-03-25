@@ -1,5 +1,3 @@
-import isLive from '#app/lib/utilities/isLive';
-
 const idRegex = 'c[a-zA-Z0-9]{10}o';
 const ampRegex = '.amp';
 const appRegex = '.app';
@@ -47,68 +45,8 @@ export const getArticleManifestRegex = services => {
   return `/:service(${serviceRegex})/:local(${articleLocalRegex})/manifest.json`;
 };
 
-const homePageServices = [
-  'afaanoromoo',
-  'afrique',
-  'amharic',
-  'arabic',
-  'azeri',
-  'bengali',
-  'burmese',
-  'gahuza',
-  'gujarati',
-  'hausa',
-  'hindi',
-  'igbo',
-  'indonesia',
-  'japanese',
-  'kyrgyz',
-  'korean',
-  'marathi',
-  'mundo',
-  'nepali',
-  'pashto',
-  'persian',
-  'pidgin',
-  'portuguese',
-  'punjabi',
-  'russian',
-  'serbian',
-  'sinhala',
-  'somali',
-  'swahili',
-  'tamil',
-  'telugu',
-  'thai',
-  'tigrinya',
-  'turkce',
-  'ukrainian',
-  'urdu',
-  'uzbek',
-  'vietnamese',
-  'yoruba',
-  'zhongwen',
-];
-
-export const getFrontPageRegex = services => {
-  let frontPages = services;
-  if (isLive()) {
-    frontPages = services.filter(
-      service => !homePageServices.includes(service),
-    );
-  } else {
-    frontPages = [];
-  }
-  const serviceRegex = getServiceRegex(frontPages);
-  return `/:service(${serviceRegex}):variant(${variantRegex})?:amp(${ampRegex})?:lite(${liteRegex})?`;
-};
-
 export const getHomePageRegex = services => {
-  let homePages = services;
-  if (isLive()) {
-    homePages = services.filter(service => homePageServices.includes(service));
-  }
-  const homePageServiceRegex = getServiceRegex(homePages);
+  const homePageServiceRegex = getServiceRegex(services);
   return `/:service(${homePageServiceRegex}):variant(${variantRegex})?:lite(${liteRegex})?`;
 };
 

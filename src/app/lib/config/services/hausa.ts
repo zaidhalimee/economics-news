@@ -43,7 +43,7 @@ export const service: DefaultServiceConfig = {
     script: latin,
     manifestPath: '/hausa/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Labaran Duniya',
+    homePageTitle: 'Labaran Duniya',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     podcastPromo: {
@@ -428,7 +428,7 @@ export const service: DefaultServiceConfig = {
       },
       {
         title: 'Cikakkun Rahotanni',
-        url: '/hausa/52140979',
+        url: '/hausa/topics/cnl7wd77wj2t',
       },
       {
         title: 'Bidiyo',
@@ -436,7 +436,7 @@ export const service: DefaultServiceConfig = {
       },
       {
         title: 'Shirye-shirye na Musamman',
-        url: '/hausa/shirye-shirye-na-musamman-54712348',
+        url: '/hausa/topics/cnl7wd9pddlt',
       },
       {
         title: 'Shirye-shiryen rediyo',

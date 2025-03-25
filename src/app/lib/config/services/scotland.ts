@@ -39,7 +39,7 @@ export const service: DefaultServiceConfig = {
     isTrustProjectParticipant: false,
     script: latin,
     swPath: '/articles/sw.js',
-    frontPageTitle: 'Home',
+    homePageTitle: 'Home',
     passportHomes: ['BBCScotland'],
     showAdPlaceholder: false,
     showRelatedTopics: true,
