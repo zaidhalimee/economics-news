@@ -953,7 +953,7 @@ describe('Server', () => {
 
   describe('Service workers', () => {
     it('should serve a file for existing service workers', async () => {
-      await makeRequest('/news/articles/sw.js');
+      await makeRequest('/gahuza/articles/sw.js');
       expect(sendFileSpy.mock.calls[0][0]).toEqual(
         path.join(__dirname, '/public/sw.js'),
       );

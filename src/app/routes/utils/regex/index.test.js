@@ -125,18 +125,16 @@ describe('homePageDataPath', () => {
 });
 
 describe('articleSwPath', () => {
-  const validRoutes = [
-    '/news/articles/sw.js',
-    '/persian/articles/sw.js',
-    '/cymrufyw/erthyglau/sw.js',
-  ];
+  const validRoutes = ['/gahuza/articles/sw.js', '/persian/articles/sw.js'];
   shouldMatchValidRoutes(validRoutes, articleSwPath);
 
   const invalidRoutes = [
     '/news/sw.js',
+    '/news/articles/sw.js',
     '/persian/articles/sw',
     '/news/trad/sw.js',
     '/cymrufyw/sw.js',
+    '/cymrufyw/erthyglau/sw.js',
   ];
   shouldNotMatchInvalidRoutes(invalidRoutes, articleSwPath);
 });
@@ -166,10 +164,11 @@ describe('articleManifestPath', () => {
 });
 
 describe('homePageSwPath', () => {
-  const validRoutes = ['/news/sw.js', '/persian/sw.js'];
+  const validRoutes = ['/gahuza/sw.js', '/persian/sw.js'];
   shouldMatchValidRoutes(validRoutes, homePageSwPath);
 
   const invalidRoutes = [
+    '/news/sw.js',
     '/news/articles/sw.js',
     '/persian/sw',
     '/persian/simp/sw.js',
