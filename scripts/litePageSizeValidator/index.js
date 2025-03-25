@@ -13,7 +13,7 @@ const litePageSizeValidator = async () => {
     },
     {
       path: '/arabic/media-53135426',
-      pageType: 'Media Asset with Live Stream',
+      pageType: 'CPS Media Article with Live Stream',
     },
     { path: '/marathi/popular/read', pageType: 'Most Read' },
     {
@@ -51,7 +51,6 @@ const litePageSizeValidator = async () => {
     { path: '/nepali/news-50627370', pageType: 'CPS Photo Gallery (PGL)' },
     { path: '/arabic/sports-54278377', pageType: 'CPS Story (STY)' },
     { path: '/korean/topics/cnwng7v0e54t', pageType: 'Topic' },
-
     {
       path: '/urdu/live/c04z6x46l0vt',
       pageType: 'Live',
@@ -98,18 +97,19 @@ const litePageSizeValidator = async () => {
       const liveSizeKb = convertToKb(livePageSize);
       const result = localSizeKb > MAX_PAGE_SIZE_KB ? '❌' : '✅';
 
+      console.log({ localUrl, localSizeKb, liveUrl, liveSizeKb });
+
       return {
         pageType,
-        liveUrl,
+        path,
         liveSizeKb,
-        localUrl,
         localSizeKb,
         result,
       };
     }),
   );
 
-  console.table(testResults);
+  console.table(testResults.sort((a, b) => a.localSizeKb - b.localSizeKb));
 
   const failures = testResults.filter(({ result }) => result === '❌');
 
