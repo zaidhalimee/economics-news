@@ -1,19 +1,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { render, act, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import CanonicalChartbeatAnalytics from '.';
 import { CanonicalChartbeatConfig } from '../types';
 
 describe('CanonicalChartbeatAnalytics', () => {
-  // @ts-expect-error chartbeat requires pSUPERFLY object on global window
-  global.pSUPERFLY = {
-    virtualPage: jest.fn(),
-  };
-
   afterEach(jest.clearAllMocks);
 
-  // @ts-expect-error partial data for testing purposes
-  const pageAConfig: CanonicalChartbeatConfig = {
+  const pageConfig: CanonicalChartbeatConfig = {
     domain: 'test-domain',
     sections: 'section1 section2',
     virtualReferrer: null,
@@ -22,6 +16,7 @@ describe('CanonicalChartbeatAnalytics', () => {
     uid: 123,
   };
 
+<<<<<<< HEAD
   const pageBConfig = {
     chartbeatConfig: {
       domain: 'test-domain',
@@ -49,15 +44,18 @@ describe('CanonicalChartbeatAnalytics', () => {
     },
   };
 
+=======
+>>>>>>> origin/lite-chartbeat-initial-impl
   it('should return the helmet wrapper with the script snippet', () => {
     render(
       <CanonicalChartbeatAnalytics
-        chartbeatConfig={pageAConfig}
+        chartbeatConfig={pageConfig}
         chartbeatSource="//chartbeat.js"
       />,
     );
     expect(Helmet.peek().scriptTags).toMatchSnapshot();
   });
+<<<<<<< HEAD
 
   it('should not re-render helment wrapper when config changes to Page B', async () => {
     const { rerender } = render(
@@ -176,4 +174,6 @@ describe('CanonicalChartbeatAnalytics', () => {
     expect(secondCall.virtualReferrer).toEqual('/page-B');
     expect(thirdCall.virtualReferrer).toEqual('/page-A');
   });
+=======
+>>>>>>> origin/lite-chartbeat-initial-impl
 });

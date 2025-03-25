@@ -6,7 +6,6 @@ import * as isOperaProxy from '#app/lib/utilities/isOperaProxy';
 import setCookie from '#app/lib/utilities/setCookie';
 import { UserContext, UserContextProvider } from '.';
 import { getCookiePolicy, personalisationEnabled } from './cookies';
-import * as chartbeat from './Chartbeat';
 
 jest.mock('react', () => {
   const original = jest.requireActual('react');
@@ -20,12 +19,6 @@ jest.mock('./cookies', () => ({
   getCookiePolicy: jest.fn(),
   personalisationEnabled: jest.fn(),
 }));
-
-jest.mock('./Chartbeat');
-
-const mockChartbeat = (chartbeat.default as jest.Mock).mockReturnValue(
-  'chartbeat',
-);
 
 const DummyComponent = () => {
   useContext(UserContext);
@@ -49,7 +42,7 @@ describe('UserContext', () => {
     jest.clearAllMocks();
   });
 
-  it('should provide cookie values, state function and render chartbeat', () => {
+  it('should provide cookie values and state function', () => {
     render(<DummyComponentWithContext />);
 
     expect(personalisationEnabled).toHaveBeenCalledWith('111');
@@ -59,8 +52,8 @@ describe('UserContext', () => {
       cookiePolicy: '111',
       personalisationEnabled: true,
       updateCookiePolicy: expect.any(Function),
-      sendCanonicalChartbeatBeacon: expect.any(Function),
     });
+<<<<<<< HEAD
     expect(mockChartbeat).toHaveBeenCalledTimes(1);
     expect(mockChartbeat).toHaveBeenCalledWith(
       {
@@ -68,6 +61,8 @@ describe('UserContext', () => {
       },
       undefined,
     );
+=======
+>>>>>>> origin/lite-chartbeat-initial-impl
   });
   describe('ckns_mvt cookie', () => {
     const cookieSetterSpy = jest.spyOn(Cookie, 'set');
