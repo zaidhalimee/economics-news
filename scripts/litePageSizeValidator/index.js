@@ -97,7 +97,7 @@ const litePageSizeValidator = async () => {
       const liveSizeKb = convertToKb(livePageSize);
       const result = localSizeKb > MAX_PAGE_SIZE_KB ? '❌' : '✅';
 
-      console.log({ localUrl, localPageSize, liveUrl, livePageSize });
+      console.log({ localUrl, localSizeKb, liveUrl, liveSizeKb });
 
       return {
         pageType,
