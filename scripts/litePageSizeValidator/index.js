@@ -97,18 +97,19 @@ const litePageSizeValidator = async () => {
       const liveSizeKb = convertToKb(livePageSize);
       const result = localSizeKb > MAX_PAGE_SIZE_KB ? '❌' : '✅';
 
+      console.log({ localUrl, localPageSize, liveUrl, livePageSize });
+
       return {
         pageType,
-        liveUrl,
+        path,
         liveSizeKb,
-        localUrl,
         localSizeKb,
         result,
       };
     }),
   );
 
-  console.table(testResults);
+  console.table(testResults.sort((a, b) => a.localSizeKb - b.localSizeKb));
 
   const failures = testResults.filter(({ result }) => result === '❌');
 
