@@ -15,11 +15,17 @@ const SearchPage = () => {
         content="width=device-width, initial-scale=1, minimum-scale=1"
       />
       <form css={styles.container} action="/news/search/results/" method="get">
-        <Text as="label" htmlFor={forId}>
+        <Text as="label" css={styles.title} htmlFor={forId}>
           What is your query?
         </Text>
-        <input type="text" id={forId} name="search_query" />
-        <button type="submit">🔎</button>
+        <div css={styles.inputs}>
+          <input
+            type="text"
+            id={forId}
+            name="search_query"
+          />
+          <button type="submit">🔎</button>
+        </div>
       </form>
     </>
   );

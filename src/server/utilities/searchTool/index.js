@@ -88,7 +88,7 @@ function loadIndexV2() {
 
   for (let i = 0; i < yearList.length; i += 1) {
     const year = yearList[i];
-    if (yearRegex.test(year) && parseInt(year, 10) === 2010) {
+    if (yearRegex.test(year)) {
       const readPath = path.join(ROOT_DIR, 'OUTPUT_3', year, 'News');
       const content = fs.readdirSync(readPath);
       const indexForYear = new Map();

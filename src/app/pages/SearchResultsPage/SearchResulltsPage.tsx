@@ -10,7 +10,6 @@ import {
 } from '#app/models/types/search';
 import styles from './index.styles';
 import Heading from '#app/components/Heading';
-import InlineLink from '#app/components/InlineLink';
 import Image from '#app/components/Image';
 
 const monthMap: Record<string, string> = {
@@ -39,16 +38,23 @@ const Month = ({
     results[0];
 
   return (
-    <div>
-      <Heading level={4}>{monthMap[month]}</Heading>
-      <InlineLink text={headline} to={url} />
-      <Text>
-        Est. Rel: {wordMatchCount} - {totalMatchValue}
-      </Text>
-      <Image
-        alt={''}
-        src={`https://ichef.bbci.co.uk/ace/ws/660/cpsprodpb/${thumbnail}`}
-      />
+    <div css={styles.month}>
+      <div css={styles.details}>
+        <Text css={styles.link}>{monthMap[month]}</Text>
+        <Text css={styles.link}>
+          <a href={url}>{headline}</a>
+        </Text>
+        <Text>
+          Est. Rel: {wordMatchCount} - {totalMatchValue}
+        </Text>
+      </div>
+      <div>
+        <Image
+          css={styles.image}
+          alt={''}
+          src={`https://ichef.bbci.co.uk/ace/ws/660/cpsprodpb/${thumbnail}`}
+        />
+      </div>
     </div>
   );
 };
@@ -56,7 +62,7 @@ const Month = ({
 const Year = ({ year, results }: { year: string; results: YearResult }) => {
   const months = Object.keys(results);
   return (
-    <div>
+    <div css={styles.year}>
       <Heading level={3}>{year}</Heading>
       {months.map(month => (
         <Month month={month} results={results[month]} />
