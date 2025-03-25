@@ -46,7 +46,7 @@ const litePageSizeValidator = async () => {
       pageType: 'media article',
     },
     { path: '/nepali/news-50627370', pageType: 'CPS Photo Gallery (PGL)' },
-    { path: '/arabic/sports-54278377', pageType: 'story' },
+    { path: '/arabic/sports-54278377', pageType: 'CPS Story (STY)' },
     { path: '/korean/topics/cnwng7v0e54t', pageType: 'topic' },
 
     {
