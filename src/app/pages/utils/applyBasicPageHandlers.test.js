@@ -2,12 +2,6 @@ import * as pipe from 'ramda/src/pipe';
 import WithContexts from '#app/legacy/containers/PageHandlers/withContexts';
 import applyBasicPageHandlers from './applyBasicPageHandlers';
 
-jest.mock('@optimizely/react-sdk', () => ({
-  ...jest.requireActual('@optimizely/react-sdk'),
-  setLogger: jest.fn(),
-  createInstance: jest.fn(),
-}));
-
 jest.mock('ramda/src/pipe', () => {
   const originalModule = jest.requireActual('ramda/src/pipe');
 
@@ -34,8 +28,8 @@ describe('applyBasicPageHandlers', () => {
     });
 
     const args = pipeMock.mock.calls[0];
-    const beforeContextsFunctionArg = args[4];
-    const WithContextsFunctionArg = args[5];
+    const beforeContextsFunctionArg = args[3];
+    const WithContextsFunctionArg = args[4];
 
     expect(beforeContextsFunctionArg).toEqual(mockBeforeContextsFunction);
     expect(WithContextsFunctionArg).toEqual(WithContexts);
