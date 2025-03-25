@@ -6,7 +6,7 @@ const MAX_PAGE_SIZE_KB = 100;
 const litePageSizeValidator = async () => {
   const urlsToCheck = [
     { path: '/hindi', pageType: 'Home' },
-    { path: '/mundo/articles/cddylv9g8z0o', pageType: 'article' },
+    { path: '/mundo/articles/cddylv9g8z0o', pageType: 'Optimo Article' },
     {
       path: '/nepali/bbc_nepali_radio/liveradio',
       pageType: 'Live Radio',
@@ -42,7 +42,11 @@ const litePageSizeValidator = async () => {
     },
     {
       path: '/tigrinya/news-51249937',
-      pageType: 'Media Article',
+      pageType: 'CPS Media Article',
+    },
+    {
+      path: '/hausa/articles/clm3n4pdeymo',
+      pageType: 'Optimo Media Article',
     },
     { path: '/nepali/news-50627370', pageType: 'CPS Photo Gallery (PGL)' },
     { path: '/arabic/sports-54278377', pageType: 'CPS Story (STY)' },
@@ -67,7 +71,7 @@ const litePageSizeValidator = async () => {
     },
   ];
 
-  const execPromise = url => {
+  const getPageSizeInBytes = url => {
     const command = `curl -s ${url} | gzip | wc -c`;
     return new Promise(resolve => {
       exec(command, (err, stdout) => {
@@ -86,8 +90,8 @@ const litePageSizeValidator = async () => {
       const liveUrl = `https://www.bbc.com${path}.lite?renderer_env=live`;
 
       const [localPageSize, livePageSize] = await Promise.all([
-        execPromise(localUrl),
-        execPromise(liveUrl),
+        getPageSizeInBytes(localUrl),
+        getPageSizeInBytes(liveUrl),
       ]);
 
       const localSizeKb = convertToBytes(localPageSize);
@@ -96,9 +100,10 @@ const litePageSizeValidator = async () => {
 
       return {
         pageType,
-        path,
-        localSizeKb,
+        liveUrl,
         liveSizeKb,
+        localUrl,
+        localSizeKb,
         result,
       };
     }),
