@@ -8,6 +8,8 @@ import useToggle from '#hooks/useToggle';
 import CallToActionLinkWithChevron from '#app/components/CallToActionLinkWithChevron';
 import { ServiceContext } from '#contexts/ServiceContext';
 import Headings from '#containers/Headings';
+import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
+import OPTIMIZELY_CONFIG from '#lib/config/optimizely';
 import { ComponentToRenderProps } from '../types';
 import styles from './index.styles';
 
@@ -17,9 +19,21 @@ const ArticleHeadline = (props: ComponentToRenderProps) => {
   const eventTrackingData = { componentName: 'canonical-lite-cta' };
   const { enabled: showCTA } = useToggle('liteSiteCTA');
   const viewRef = useViewTracker(eventTrackingData);
+  const titleVariation = useOptimizelyVariation(
+    OPTIMIZELY_CONFIG.flagKey,
+    true,
+  );
 
-  const articleDataSavingLinkText =
+  let articleDataSavingLinkText =
     translations?.liteSite?.articleDataSavingLinkText ?? 'Data saving version';
+
+  const titleExperimentVariations = translations.liteSite?.experiment;
+
+  if (titleExperimentVariations && titleVariation != null) {
+    articleDataSavingLinkText =
+      titleExperimentVariations[titleVariation as unknown as string] ??
+      articleDataSavingLinkText;
+  }
 
   const showLiteCTAOnCanonical: boolean = !isLite && showCTA;
 
@@ -33,19 +47,31 @@ const ArticleHeadline = (props: ComponentToRenderProps) => {
         })}
       />
       {showLiteCTAOnCanonical && (
-        <div
-          css={styles.liteCTAContainer}
-          ref={viewRef}
-          data-e2e="to-lite-site"
-        >
-          <CallToActionLinkWithChevron
-            eventTrackingData={eventTrackingData}
-            href={`${pathname}.lite`}
-            css={styles.liteCTA}
+        <>
+          <div
+            css={[
+              styles.loadingContainer,
+              titleVariation && styles.displayNone,
+            ]}
+            data-e2e="to-lite-site-loading"
+          />
+          <div
+            css={[
+              styles.liteCTAContainer,
+              !titleVariation && styles.displayNone,
+            ]}
+            ref={viewRef}
+            data-e2e="to-lite-site"
           >
-            {articleDataSavingLinkText}
-          </CallToActionLinkWithChevron>
-        </div>
+            <CallToActionLinkWithChevron
+              eventTrackingData={eventTrackingData}
+              href={`${pathname}.lite`}
+              css={styles.liteCTA}
+            >
+              {articleDataSavingLinkText}
+            </CallToActionLinkWithChevron>
+          </div>
+        </>
       )}
     </>
   );
