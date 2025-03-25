@@ -11,6 +11,7 @@ import { ARTICLE_PAGE } from '#app/routes/utils/pageTypes';
 import articleData from '#data/news/articles/c0g992jmmkko.json';
 import articleDataBurmese from '#data/burmese/articles/cn0exdy1jzvo.json';
 import articleDataGahuza from '#data/gahuza/articles/c5y51yxeg53o.json';
+import articleDataArabic from '#data/arabic/articles/cn0m90verwvo.json';
 import articleDataWithRelatedContent from '#data/afrique/articles/c7yn6nznljdo.json';
 import articleDataWithSingleRelatedContent from '#data/afrique/articles/cz216x22106o.json';
 import articleDataWithPodcastPromo from '#data/russian/articles/c61q94n3rm3o.json';
@@ -252,7 +253,7 @@ export const ArticlePageWithLiteSiteCTA = {
 
 export const TestArticlePageWithLiteSiteCTA = {
   render: () => (
-    <ComponentWithServiceContext
+    <ComponentWithContext
       data={articleDataGahuza}
       service="gahuza"
       liteSiteCTAEnabled
@@ -263,8 +264,8 @@ export const TestArticlePageWithLiteSiteCTA = {
 
 export const TestArticlePageWithLiteSiteCTARightToLeft = {
   render: () => (
-    <ComponentWithServiceContext
-      data={articleDataGahuza}
+    <ComponentWithContext
+      data={articleDataArabic}
       service="arabic"
       liteSiteCTAEnabled
     />
