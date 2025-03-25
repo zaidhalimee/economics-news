@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { exec } from 'node:child_process';
+const { exec } = require('child_process');
 
 const litePageSizeValidator = async () => {
   const urlsToCheck = [
@@ -14,12 +14,19 @@ const litePageSizeValidator = async () => {
     '/korean/topics/cnwng7v0e54t',
   ];
 
+  const execPromise = command => {
+    return new Promise(resolve => {
+      exec(command, (err, stdout) => {
+        resolve(stdout);
+      });
+    });
+  };
+
   const testResults = await Promise.all(
     urlsToCheck.map(async url => {
-      const pageSize = exec(
-        `curl -sI --compressed http://localhost:7080${url}.lite?renderer_env=live | grep -i content-length | awk '{print $2/1024}'`,
-      );
+      const command = `curl -sI --compressed http://localhost:7080${url}.lite?renderer_env=live | grep -i content-length | awk '{print $2/1024}'`;
 
+      const pageSize = await execPromise(command);
       const result = pageSize > 100 ? '❌' : '✅';
 
       return {
@@ -31,12 +38,13 @@ const litePageSizeValidator = async () => {
   );
 
   console.table(testResults);
+
   const failures = testResults.filter(({ result }) => result === '❌');
 
   if (failures.length > 0) {
     failures.forEach(({ url }) => {
       console.error(
-        `⚠️ The page size for ${url}.lite is larger than the maximum allowed 100kB `,
+        `⚠️ The page size for ${url}.lite is larger than the maximum allowed 100kB`,
       );
     });
     process.exitCode = 1;
