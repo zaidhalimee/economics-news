@@ -9,7 +9,7 @@ Add enabled experiments objects inside this array in this format:
 */
 const enabledExperimentList = [
   {
-    name: 'newswb_ws_topbarojs_experiment',
+    name: 'newswb_ws_topbarojs',
     services: [
       'gujarati',
       'hindi',
