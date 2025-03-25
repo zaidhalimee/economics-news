@@ -76,6 +76,10 @@ const litePageSizeValidator = async () => {
     });
   };
 
+  const convertToBytes = sizeInKb => {
+    return parseFloat((sizeInKb.trim() / 1024).toFixed(2));
+  };
+
   const testResults = await Promise.all(
     urlsToCheck.map(async ({ path, pageType, nextjs }) => {
       const localUrl = `http://localhost:${nextjs ? 7081 : 7080}${path}.lite?renderer_env=live`;
@@ -86,8 +90,8 @@ const litePageSizeValidator = async () => {
         execPromise(liveUrl),
       ]);
 
-      const localSizeKb = parseFloat(localPageSize.trim() / 1024).toFixed(2);
-      const liveSizeKb = parseFloat(livePageSize.trim() / 1024).toFixed(2);
+      const localSizeKb = convertToBytes(localPageSize);
+      const liveSizeKb = convertToBytes(livePageSize);
       const result = localSizeKb > MAX_PAGE_SIZE_KB ? '❌' : '✅';
 
       return {
