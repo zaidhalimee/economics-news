@@ -11,7 +11,7 @@ const litePageSizeValidator = async () => {
       path: '/nepali/bbc_nepali_radio/liveradio',
       pageType: 'live radio',
     },
-    { path: '/arabic/media-53135426', pageType: 'media asset' },
+    { path: '/arabic/media-53135426', pageType: 'media asset with live stream' },
     { path: '/marathi/popular/read', pageType: 'most read' },
     {
       path: '/gahuza/bbc_gahuza_radio/programmes/p0340x2m',
