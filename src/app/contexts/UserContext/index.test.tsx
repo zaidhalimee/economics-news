@@ -53,16 +53,6 @@ describe('UserContext', () => {
       personalisationEnabled: true,
       updateCookiePolicy: expect.any(Function),
     });
-<<<<<<< HEAD
-    expect(mockChartbeat).toHaveBeenCalledTimes(1);
-    expect(mockChartbeat).toHaveBeenCalledWith(
-      {
-        config: null,
-      },
-      undefined,
-    );
-=======
->>>>>>> origin/lite-chartbeat-initial-impl
   });
   describe('ckns_mvt cookie', () => {
     const cookieSetterSpy = jest.spyOn(Cookie, 'set');

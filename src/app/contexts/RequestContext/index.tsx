@@ -29,6 +29,7 @@ export type RequestContextProps = {
   mvtExperiments?: MvtExperiment[] | null;
   origin: string;
   pageType: PageTypes;
+  previousPath: string;
   derivedPageType: string | null;
   pathname: string;
   platform: Platforms;
