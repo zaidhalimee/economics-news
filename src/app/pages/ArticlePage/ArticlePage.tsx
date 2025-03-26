@@ -129,6 +129,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     isTrustProjectParticipant,
     showRelatedTopics,
     brandName,
+    service,
   } = useContext(ServiceContext);
 
   const { enabled: preloadLeadImageToggle } = useToggle('preloadLeadImage');
@@ -253,6 +254,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const enableReadMoreExperiment = !isAmp && !isLite && !isApp; // add check for is in experiment
 
+  const readMoreButtonVariation = service === 'pidgin' ? 'A' : 'B';
+
   return (
     <div css={styles.pageWrapper}>
       <ATIAnalytics atiData={atiData} />
@@ -318,6 +321,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
               <ReadMoreButton
                 showAllContent={showAllContent}
                 setShowAllContent={() => setShowAllContent(true)}
+                variation={readMoreButtonVariation}
               />
             )}
           </main>
