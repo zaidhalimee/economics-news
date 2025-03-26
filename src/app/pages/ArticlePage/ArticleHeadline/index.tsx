@@ -10,13 +10,16 @@ import { ServiceContext } from '#contexts/ServiceContext';
 import Headings from '#containers/Headings';
 import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
 import OPTIMIZELY_CONFIG from '#lib/config/optimizely';
+import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
+import { OptimizelyContext } from '@optimizely/react-sdk';
 import { ComponentToRenderProps } from '../types';
 import styles from './index.styles';
 
 const ArticleHeadline = (props: ComponentToRenderProps) => {
   const { pathname, isLite } = useContext(RequestContext);
   const { translations } = useContext(ServiceContext);
-  const eventTrackingData = { componentName: 'canonical-lite-cta' };
+  const { optimizely } = useContext(OptimizelyContext);
+  const eventTrackingData = { componentName: 'canonical-lite-cta', optimizely };
   const { enabled: showCTA } = useToggle('liteSiteCTA');
   const viewRef = useViewTracker(eventTrackingData);
   const titleVariation = useOptimizelyVariation(
@@ -71,6 +74,7 @@ const ArticleHeadline = (props: ComponentToRenderProps) => {
             >
               {articleDataSavingLinkText}
             </CallToActionLinkWithChevron>
+            <OptimizelyPageViewTracking />
           </div>
         </>
       )}
