@@ -33,13 +33,13 @@ export default {
       display: 'block',
       width: 'calc(100% - 2rem)',
       padding: `${spacings.DOUBLE}rem 0`,
-      margin: `${spacings.TRIPLE}rem ${spacings.DOUBLE}rem 0 ${spacings.DOUBLE}rem`,
+      margin: `${spacings.TRIPLE}rem ${spacings.DOUBLE}rem -0.5rem ${spacings.DOUBLE}rem`,
       backgroundColor: '#F6F6F6',
       color: '#141414',
       textAlign: 'left',
       border: 'none',
       borderBottom: '1px solid #B0B2B4',
-      paddingBottom: `calc(${spacings.DOUBLE}rem + 0.5rem)`, // Add extra space above the border
+      paddingBottom: `calc(${spacings.DOUBLE}rem + 0.5rem)`,
 
       '&:hover, &:focus': {
         textDecoration: 'underline 2px',
