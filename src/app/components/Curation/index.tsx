@@ -15,7 +15,7 @@ import MessageBanner from '../MessageBanner';
 import MostRead from '../MostRead';
 import { GHOST } from '../ThemeProvider/palette';
 import Embed from '../Embeds/OEmbed';
-import Billboard from '../Billboard';
+import Billboard from './Billboard';
 import styles from './index.styles';
 
 const {

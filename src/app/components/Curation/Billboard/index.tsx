@@ -5,12 +5,12 @@ import { jsx } from '@emotion/react';
 import useViewTracker from '#app/hooks/useViewTracker';
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
-import Heading from '../Heading';
-import MaskedImage from '../MaskedImage';
+import Heading from '../../Heading';
+import MaskedImage from '../../MaskedImage';
 import styles from './index.styles';
-import Text from '../Text';
-import LivePulse from '../LivePulse';
-import LiveText from '../LiveText';
+import Text from '../../Text';
+import LivePulse from '../../LivePulse';
+import LiveText from '../../LiveText';
 
 interface BillboardProps {
   heading: string;
