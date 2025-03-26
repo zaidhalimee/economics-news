@@ -9660,10 +9660,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"helmet@npm:8.0.0":
-  version: 8.0.0
-  resolution: "helmet@npm:8.0.0"
-  checksum: 10/cf30579d1dbd095e301458265fb6b3446d1ee0598c99b5e946afda8a72c035a6a7ebf2176168d5ca2541e6e522a88fb58d06f0eeec4ab378646960de9aea6584
+"helmet@npm:8.1.0":
+  version: 8.1.0
+  resolution: "helmet@npm:8.1.0"
+  checksum: 10/262e678d340bb102158f4e6ba1469a7cda1643329a50863f8fe704d5b60d9ebe6ea1e7793ed51224ae464f197dedf2fe8035df278c042e32ebc95b237fa41ad0
   languageName: node
   linkType: hard
 
@@ -14873,7 +14873,7 @@ __metadata:
     express: "npm:4.21.2"
     express-static-gzip: "npm:2.2.0"
     glob: "npm:11.0.1"
-    helmet: "npm:8.0.0"
+    helmet: "npm:8.1.0"
     helmet-csp: "npm:4.0.0"
     husky: "npm:9.1.7"
     inspectpack: "npm:4.7.1"
@@ -14909,7 +14909,7 @@ __metadata:
     storybook: "npm:8.6.8"
     stream-browserify: "npm:3.0.0"
     strip-ansi: "npm:7.1.0"
-    supertest: "npm:7.0.0"
+    supertest: "npm:7.1.0"
     terser-webpack-plugin: "npm:5.3.14"
     timemachine: "npm:0.3.2"
     ts-jest: "npm:29.2.6"
@@ -15495,13 +15495,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"supertest@npm:7.0.0":
-  version: 7.0.0
-  resolution: "supertest@npm:7.0.0"
+"supertest@npm:7.1.0":
+  version: 7.1.0
+  resolution: "supertest@npm:7.1.0"
   dependencies:
     methods: "npm:^1.1.2"
     superagent: "npm:^9.0.1"
-  checksum: 10/73bf2a37e13856a1b3e6a37b9df5cec8e506aa0360a5f5ecd989d1f4b0edf168883e306012e81e371d5252c17d4c7bef4ba30633dbf3877cbf52fc7af51cca9b
+  checksum: 10/20069f739a44821dfa4f7f397b9086ef31a358366331138f97945eedb2e231796e7c55b032125d3bd12f9839f089fbb809893dbc0f98edc57e12333b9f42b726
   languageName: node
   linkType: hard
 
