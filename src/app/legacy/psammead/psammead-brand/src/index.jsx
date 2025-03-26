@@ -194,7 +194,7 @@ const Brand = forwardRef((props, ref) => {
   const [followButtonState, setFollowButtonState] = useState('default');
 
   useEffect(() => {
-    navigator.serviceWorker.ready.then((registration) => {
+    navigator.serviceWorker.ready.then(registration => {
       setFollowButtonState(Notification.permission);
     });
   }, []);
@@ -228,10 +228,16 @@ const Brand = forwardRef((props, ref) => {
           <StyledBrand {...props} />
         )}
         {skipLink}
-        { followButtonState === 'default' && <div>
-        <button onClick={askPermission}>Follow {props.serviceLocalisedName}</button>
-        </div>}
-        { followButtonState === 'granted' && <div>Following {props.serviceLocalisedName}</div> }
+        {followButtonState === 'default' && (
+          <div>
+            <button onClick={askPermission}>
+              Follow {props.serviceLocalisedName}
+            </button>
+          </div>
+        )}
+        {followButtonState === 'granted' && (
+          <div>Following {props.serviceLocalisedName}</div>
+        )}
         {scriptLink && <div>{scriptLink}</div>}
       </SvgWrapper>
     </Banner>

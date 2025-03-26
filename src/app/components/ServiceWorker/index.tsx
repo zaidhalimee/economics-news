@@ -47,19 +47,28 @@ export default () => {
 
       if (shouldInstallServiceWorker) {
         try {
-          const registration = await navigator.serviceWorker.register(`/${service}${swPath}`);
+          const registration = await navigator.serviceWorker.register(
+            `/${service}${swPath}`,
+          );
 
           // Type assertion to inform TypeScript about periodicSync
-          const periodicSyncRegistration = registration as ServiceWorkerRegistration & {
-            periodicSync?: {
-              register: (tag: string, options: { minInterval: number }) => Promise<void>;
+          const periodicSyncRegistration =
+            registration as ServiceWorkerRegistration & {
+              periodicSync?: {
+                register: (
+                  tag: string,
+                  options: { minInterval: number },
+                ) => Promise<void>;
+              };
             };
-          };
 
           if (periodicSyncRegistration.periodicSync) {
-            await periodicSyncRegistration.periodicSync.register("get-latest-news", {
-              minInterval: 1 * 60 * 1000,
-            });
+            await periodicSyncRegistration.periodicSync.register(
+              'get-latest-news',
+              {
+                minInterval: 1 * 60 * 1000,
+              },
+            );
             console.warn('Periodic Sync registered successfully.');
           } else {
             console.warn('Periodic Sync is not supported in this browser.');
