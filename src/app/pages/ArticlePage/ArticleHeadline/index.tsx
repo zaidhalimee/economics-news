@@ -51,6 +51,7 @@ const ArticleHeadline = (props: ComponentToRenderProps) => {
           <div
             css={[
               styles.loadingContainer,
+              styles.liteCTAContainer,
               titleVariation && styles.displayNone,
             ]}
             data-e2e="to-lite-site-loading"
