@@ -194,7 +194,7 @@ const Brand = forwardRef((props, ref) => {
   const [followButtonState, setFollowButtonState] = useState('default');
 
   useEffect(() => {
-    navigator.serviceWorker.ready.then(registration => {
+    navigator.serviceWorker.ready.then(() => {
       setFollowButtonState(Notification.permission);
     });
   }, []);
@@ -230,7 +230,7 @@ const Brand = forwardRef((props, ref) => {
         {skipLink}
         {followButtonState === 'default' && (
           <div>
-            <button onClick={askPermission}>
+            <button type="button" onClick={askPermission}>
               Follow {props.serviceLocalisedName}
             </button>
           </div>
