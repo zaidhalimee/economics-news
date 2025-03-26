@@ -11,7 +11,7 @@ export default {
       display: 'block',
       width: 'calc(100% - 2rem)',
       padding: `${spacings.DOUBLE}rem 0`,
-      margin: `auto ${spacings.DOUBLE}rem`,
+      margin: `auto ${spacings.DOUBLE}rem 0.5rem`,
       backgroundColor: '#141414',
       color: '#FFFFFF',
       border: 'none',
