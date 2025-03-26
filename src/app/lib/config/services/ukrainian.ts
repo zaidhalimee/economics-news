@@ -17,6 +17,7 @@ const baseServiceConfig = {
   atiAnalyticsAppName: 'news-ukrainian',
   atiAnalyticsProducerId: '94',
   atiAnalyticsProducerName: 'UKRAINIAN',
+  useReverb: true,
   chartbeatDomain: 'ukrainian.bbc.co.uk',
   brandName: 'BBC News Україна',
   product: 'BBC News',
@@ -39,9 +40,9 @@ const baseServiceConfig = {
   publishingPrinciples: 'https://www.bbc.com/ukrainian/institutional-50170368',
   isTrustProjectParticipant: true,
   script: cyrillic,
-  manifestPath: '/manifest.json',
+  manifestPath: '/ukrainian/manifest.json',
   swPath: '/sw.js',
-  frontPageTitle: 'Новини',
+  homePageTitle: 'Новини',
   showAdPlaceholder: true,
   showRelatedTopics: true,
   podcastPromo: {
@@ -343,11 +344,11 @@ const baseServiceConfig = {
     },
     {
       title: 'Історії',
-      url: '/ukrainian/53725237',
+      url: '/ukrainian/topics/czrxg3vzy44t',
     },
     {
       title: 'Відео',
-      url: '/ukrainian/55425840',
+      url: '/ukrainian/topics/c44vmzqkzqqt',
     },
     {
       title: 'Книга року BBC',
