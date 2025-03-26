@@ -23,7 +23,12 @@ const ReadMoreButton = ({
     variation === 'A' ? styles.readMoreButtonA : styles.readMoreButtonB;
   console.log('buttonStyle', buttonStyle);
   return (
-    <button css={buttonStyle} type="button" onClick={setShowAllContent}>
+    <button
+      css={buttonStyle}
+      type="button"
+      onClick={setShowAllContent}
+      data-testid="read-more-button"
+    >
       {variation === 'B' && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
