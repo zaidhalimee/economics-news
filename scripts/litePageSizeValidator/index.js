@@ -115,7 +115,7 @@ const litePageSizeValidator = async () => {
           ? '❌'
           : '✅';
 
-      console.table({ localUrl, localPageSize, liveUrl, livePageSize });
+      console.log({ localUrl, localSizeKb, liveUrl, liveSizeKb });
 
       return {
         pageType,
