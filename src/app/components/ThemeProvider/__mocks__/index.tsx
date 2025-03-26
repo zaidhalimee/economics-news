@@ -29,6 +29,7 @@ import newsround from '../themes/newsround';
 import pashto from '../themes/pashto';
 import persian from '../themes/persian';
 import pidgin from '../themes/pidgin';
+import polish from '../themes/polish';
 import portuguese from '../themes/portuguese';
 import punjabi from '../themes/punjabi';
 import russian from '../themes/russian';
@@ -87,6 +88,7 @@ const themeProviders: ThemeProvider = {
   pashto,
   persian,
   pidgin,
+  polish,
   portuguese,
   punjabi,
   russian,
