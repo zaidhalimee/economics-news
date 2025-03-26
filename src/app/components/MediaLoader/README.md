@@ -113,12 +113,12 @@ The MediaLoader component takes in a video block from the BFF and converts it in
 The following sources that our configs folder currently support are:
 |Source|Description |
 |--|--|
-| aresMedia | |
-| audio | For podcasts. |
-| clipMedia | |
-| legacyMedia | |
-| liveMedia | For live content provided through Silver (**SI**mple **L**ive **V**ideo s**ER**vice): [More information](https://confluence.dev.bbc.co.uk/display/LiveSchedule/Silver+-+Simple+Live+Video+Service) |
-| liveRadio | |
-| tv | |
+| aresMedia | For video content typically embedded on ArticlePage.|
+| audio | For audio content typically embedded on PodcastPage and OnDemandAudioPage pages.|
+| clipMedia | For video content typically embedded on Tipo curated pages, such as Live pages.|
+| legacyMedia | For videos content typically embedded on TC2 pages, such as MediaArticlePage pages.|
+| liveMedia | For live video content typically embedded on the header for the Live pages.|
+| liveRadio | For live audio content typically embedded on the LiveRadioPage pages.|
+| tv | For video content typically embedded on OnDemandTvPage pages.|
 
 **Important: The media loader will not play live videos on the test environment and vice-versa.**
