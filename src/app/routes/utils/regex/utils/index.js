@@ -38,12 +38,12 @@ const getWorldServices = services => {
 
 export const getArticleSwRegex = services => {
   const serviceRegex = getServiceRegex(getWorldServices(services));
-  return `/:service(${serviceRegex})/:local(${articleLocalRegex})/sw.js`;
+  return `/:service(${serviceRegex})/articles/sw.js`;
 };
 
 export const getArticleManifestRegex = services => {
   const serviceRegex = getServiceRegex(getWorldServices(services));
-  return `/:service(${serviceRegex})/:local(${articleLocalRegex})/manifest.json`;
+  return `/:service(${serviceRegex})/articles/manifest.json`;
 };
 
 export const getHomePageRegex = services => {

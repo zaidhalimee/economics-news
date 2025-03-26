@@ -134,7 +134,12 @@ describe('articleSwPath', () => {
     '/persian/articles/sw',
     '/news/trad/sw.js',
     '/cymrufyw/sw.js',
+    '/sport/articles/sw.js',
+    '/newsround/articles/sw.js',
     '/cymrufyw/erthyglau/sw.js',
+    '/naidheachdan/sgeulachdan/sw.js',
+    '/archive/articles/sw.js',
+    '/scotland/articles/sw.js',
   ];
   shouldNotMatchInvalidRoutes(invalidRoutes, articleSwPath);
 });
