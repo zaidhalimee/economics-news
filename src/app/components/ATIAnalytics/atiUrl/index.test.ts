@@ -320,9 +320,7 @@ describe('Reverb', () => {
       pageIdentifier: 'pageIdentifier',
       pageTitle: 'pageTitle',
       platform: 'canonical' as Platforms,
-      previousPath: '',
       producerName: 'producerName',
-      origin: 'http://localhost',
       nationsProducer: '',
       statsDestination: 'statsDestination',
       timePublished: 'timePublished',
@@ -357,10 +355,10 @@ describe('Reverb', () => {
           x18: 'isLocServeCookieSet',
         },
       };
-      const userParans = { isSignedIn: false };
+      const userParams = { isSignedIn: false };
 
       expect(reverbAnalyticsModel.params.page).toEqual(pageParams);
-      expect(reverbAnalyticsModel.params.user).toEqual(userParans);
+      expect(reverbAnalyticsModel.params.user).toEqual(userParams);
 
       expect(reverbAnalyticsModel.eventDetails).toEqual({
         eventName: 'pageView',

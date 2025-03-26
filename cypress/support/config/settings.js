@@ -22,7 +22,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: {
         environments: {
           live: {
@@ -183,7 +183,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: {
         environments: {
           live: {
@@ -371,7 +371,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: {
         environments: {
           live: {
@@ -530,7 +530,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: {
         environments: {
           live: {
@@ -718,7 +718,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
@@ -844,7 +844,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: {
         environments: {
           live: {
@@ -1008,7 +1008,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: {
         environments: {
           live: {
@@ -1204,7 +1204,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
@@ -1257,7 +1257,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: {
         environments: {
           live: {
@@ -1429,7 +1429,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: {
         environments: undefined,
@@ -1577,7 +1577,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: {
         environments: {
           live: {
@@ -1772,7 +1772,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: {
         environments: {
           live: {
@@ -1966,7 +1966,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
@@ -2087,7 +2087,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: {
         environments: {
           live: {
@@ -2261,7 +2261,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
@@ -2382,7 +2382,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: {
         environments: {
           live: {
@@ -2541,7 +2541,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: {
         environments: {
           live: {
@@ -2745,7 +2745,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: {
         environments: {
@@ -2910,7 +2910,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
@@ -3054,7 +3054,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
@@ -3107,7 +3107,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: {
         environments: {
           live: {
@@ -3279,7 +3279,7 @@ module.exports = () => ({
         },
         smoke: true,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
@@ -3337,7 +3337,7 @@ module.exports = () => ({
     variant: 'default',
     pageTypes: {
       errorPage404: { environments: undefined, smoke: false },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
@@ -3406,7 +3406,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: {
         environments: {
           live: {
@@ -3558,7 +3558,7 @@ module.exports = () => ({
           live: {
             paths: [
               // '/pashto/articles/c70970g2251o', // Article
-              // '/pashto', // Front Page
+              // '/pashto', // Home Page
               '/pashto/bbc_pashto_radio/liveradio', // Live Radio
               // '/pashto/arts-and-literature-46787030', // CPS MAP
               '/pashto/multimedia/2016/08/160827_gn_southafrica_female_farmer', // TC2 MAP
@@ -3574,7 +3574,7 @@ module.exports = () => ({
           test: {
             paths: [
               // '/pashto/articles/cyjmdl92z3ro', // Article
-              // '/pashto', // Front Page
+              // '/pashto', // Home Page
               '/pashto/bbc_pashto_radio/liveradio', // Live Radio
               // '/pashto/media-23257523', // CPS MAP
               '/pashto/world/2016/09/160921_tc2_testmap1?renderer_env=test', // TC2 MAP
@@ -3591,7 +3591,7 @@ module.exports = () => ({
           local: {
             paths: [
               // '/pashto/articles/c70970g2251o', // Article
-              // '/pashto', // Front Page
+              // '/pashto', // Home Page
               '/pashto/bbc_pashto_radio/liveradio', // Live Radio
               // '/pashto/media-23257523', // CPS MAP
               '/pashto/world/2016/09/160921_tc2_testmap1', // TC2 MAP
@@ -3633,7 +3633,7 @@ module.exports = () => ({
         },
         smoke: true,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: {
         environments: {
           live: {
@@ -3807,7 +3807,7 @@ module.exports = () => ({
           test: {
             paths: [
               // '/persian/articles/cej3lzd5e0go', // Article
-              // '/persian', // Front Page
+              // '/persian', // Home Page
               // '/persian/popular/read', // Most Read
               // '/persian/iran-23231114', // CPS MAP
               // '/persian/iran/2016/09/160907_tc2_testmap1?renderer_env=test', // TC2 MAP
@@ -3821,7 +3821,7 @@ module.exports = () => ({
           local: {
             paths: [
               // '/persian/articles/cej3lzd5e0go', // Article
-              // '/persian', // Front Page
+              // '/persian', // Home Page
               // '/persian/popular/read', // Most Read
               // '/persian/iran-23231114', // CPS MAP
               // '/persian/iran/2016/09/160907_tc2_testmap1', // TC2 MAP
@@ -3862,7 +3862,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
@@ -3995,7 +3995,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: {
         environments: {
@@ -4145,7 +4145,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
@@ -4266,7 +4266,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: {
         environments: {
@@ -4414,7 +4414,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
@@ -4466,10 +4466,6 @@ module.exports = () => ({
           },
         },
         smoke: true,
-      },
-      frontPage: {
-        environments: undefined,
-        smoke: false,
       },
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
@@ -4587,10 +4583,6 @@ module.exports = () => ({
             enabled: true,
           },
         },
-        smoke: true,
-      },
-      frontPage: {
-        environments: undefined,
         smoke: true,
       },
       liveRadio: { environments: undefined, smoke: false },
@@ -4727,7 +4719,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
@@ -4851,7 +4843,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: {
         environments: {
           live: {
@@ -5022,7 +5014,7 @@ module.exports = () => ({
     variant: 'default',
     pageTypes: {
       errorPage404: { environments: undefined, smoke: false },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
@@ -5091,7 +5083,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: {
         environments: {
           live: {
@@ -5279,7 +5271,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: {
         environments: {
           live: {
@@ -5467,7 +5459,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: {
@@ -5612,7 +5604,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
@@ -5696,7 +5688,7 @@ module.exports = () => ({
           live: {
             paths: [
               '/thai/articles/czx7w3zyme1o', // Article
-              '/thai', // Front Page
+              '/thai', // Home Page
               '/thai/popular/read', // Most Read
               '/thai/international-51285795', // CPS MAP with video clip
               '/thai/thailand-49950038', // CPS PGL
@@ -5706,7 +5698,7 @@ module.exports = () => ({
           test: {
             paths: [
               '/thai/articles/c442rl3md0eo', // Article
-              '/thai', // Front Page
+              '/thai', // Home Page
               '/thai/popular/read', // Most Read
               '/thai/international-23252840', // CPS PGL
               // '', // CPS STY
@@ -5716,7 +5708,7 @@ module.exports = () => ({
           local: {
             paths: [
               '/thai/articles/c442rl3md0eo', // Article
-              '/thai', // Front Page
+              '/thai', // Home Page
               '/thai/popular/read', // Most Read
               '/thai/thailand-49950038', // CPS PGL
             ],
@@ -5750,7 +5742,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: {
         environments: {
           live: {
@@ -5909,7 +5901,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
@@ -6035,7 +6027,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
@@ -6161,7 +6153,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
@@ -6270,7 +6262,6 @@ module.exports = () => ({
     isWorldService: true,
     variant: 'default',
     pageTypes: {
-      frontPage: { environments: undefined, smoke: false },
       liveRadio: { environments: undefined, smoke: false },
       errorPage404: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
@@ -6285,10 +6276,7 @@ module.exports = () => ({
             paths: ['/ukrainian/topics/c61k92vrqz6t'], // ukrainian in russian
             enabled: true,
           },
-          local: {
-            paths: [],
-            enabled: false,
-          },
+          local: { paths: [], enabled: false },
         },
         smoke: false,
       },
@@ -6340,7 +6328,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: {
@@ -6493,7 +6481,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: {
         environments: {
           live: {
@@ -6681,7 +6669,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: {
         environments: {
           live: {
@@ -6857,7 +6845,7 @@ module.exports = () => ({
     variant: 'cyr',
     pageTypes: {
       errorPage404: { environments: undefined, smoke: false },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
@@ -6894,7 +6882,7 @@ module.exports = () => ({
     variant: 'lat',
     pageTypes: {
       errorPage404: { environments: undefined, smoke: false },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
@@ -6947,7 +6935,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
@@ -7073,7 +7061,7 @@ module.exports = () => ({
         },
         smoke: false,
       },
-      frontPage: { environments: undefined, smoke: false },
+
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: { environments: undefined, smoke: false },
       onDemandTV: { environments: undefined, smoke: false },
@@ -7193,10 +7181,6 @@ module.exports = () => ({
           },
         },
         smoke: true,
-      },
-      frontPage: {
-        environments: undefined,
-        smoke: false,
       },
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: {
@@ -7352,10 +7336,6 @@ module.exports = () => ({
           },
         },
         smoke: true,
-      },
-      frontPage: {
-        environments: undefined,
-        smoke: false,
       },
       liveRadio: { environments: undefined, smoke: false },
       onDemandAudio: {

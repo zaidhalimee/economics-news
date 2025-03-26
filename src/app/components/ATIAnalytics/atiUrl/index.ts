@@ -40,8 +40,6 @@ export const buildATIPageTrackPath = ({
   statsDestination,
   timePublished,
   timeUpdated,
-  origin,
-  previousPath,
   categoryName,
   campaigns,
   nationsProducer,
@@ -49,7 +47,7 @@ export const buildATIPageTrackPath = ({
   experimentVariant,
 }: ATIPageTrackingProps) => {
   const href = getHref(platform);
-  const referrer = getReferrer(platform, origin, previousPath);
+  const referrer = getReferrer(platform);
   const campaignType = getCampaignType();
 
   // on AMP, variable substitutions are used in the value and they cannot be
@@ -269,7 +267,7 @@ export const buildATIPageTrackPath = ({
       // the ref param should always be the last param because ATI will interpret it as part of the referrer URL
       key: 'ref',
       description: 'referrer url',
-      value: getReferrer(platform, origin, previousPath),
+      value: getReferrer(platform),
       wrap: false,
       // disable encoding for this parameter as ati does not appear to support
       // decoding of the ref parameter
@@ -431,16 +429,14 @@ export const buildReverbAnalyticsModel = ({
   pageIdentifier,
   pageTitle,
   platform,
-  previousPath,
   producerName,
-  origin,
   nationsProducer,
   statsDestination,
   timePublished,
   timeUpdated,
 }: ATIPageTrackingProps) => {
   const href = getHref(platform);
-  const referrer = getReferrer(platform, origin, previousPath);
+  const referrer = getReferrer(platform);
 
   const aggregatedCampaigns = (Array.isArray(campaigns) ? campaigns : [])
     .map(({ campaignName }) => campaignName)
@@ -463,9 +459,8 @@ export const buildReverbAnalyticsModel = ({
           app_type: getAppType(platform),
           content_language: language,
           product_platform: onOnionTld() ? 'tor-bbc' : null,
-          referrer_url:
-            referrer && encodeURIComponent(encodeURIComponent(referrer)),
-          x5: href && encodeURIComponent(encodeURIComponent(href)),
+          referrer_url: referrer,
+          x5: href && encodeURIComponent(href),
           x8: libraryVersion,
           x9: sanitise(pageTitle),
           x10: nationsProducer && nationsProducer,
