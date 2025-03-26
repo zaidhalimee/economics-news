@@ -13,10 +13,10 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-portuguese',
     atiAnalyticsProducerId: '33',
     atiAnalyticsProducerName: 'polska',
-    chartbeatDomain: 'polish.bbc.co.uk', // this is meant to be different to the service name
+    chartbeatDomain: 'polska.bbc.co.uk', // this is meant to be different to the service name
     brandName: 'BBC News Polska',
     product: 'BBC News',
-    serviceLocalizedName: 'Brasil',
+    serviceLocalizedName: 'Polska',
     defaultImage:
       'https://news.files.bbci.co.uk/include/articles/public/portuguese/images/metadata/poster-1024x576.png',
     defaultImageAltText: 'BBC News Polska',
@@ -31,21 +31,21 @@ export const service: DefaultServiceConfig = {
     // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405
     isoLang: 'pl',
     datetimeLocale: `pl-pl`,
-    service: 'polish',
+    service: 'polska',
     serviceName: 'News Polska',
-    languageName: 'Polish',
+    languageName: 'Polska',
     twitterCreator: '@bbcpolish',
     twitterSite: '@bbcpolish',
     noBylinesPolicy:
-      'https://www.bbc.com/polish/articles/c23423423t#authorexpertise',
+      'https://www.bbc.com/polska/articles/c23423423t#authorexpertise',
     publishingPrinciples:
-      'https://www.bbc.com/polish/articles/c23423423t',
+      'https://www.bbc.com/polska/articles/c23423423t',
     isTrustProjectParticipant: true,
     script: latinWithDiacritics,
     manifestPath: '/manifest.json',
     swPath: '/sw.js',
     frontPageTitle: 'Wiadomości, filmy, analizy i kontekst w języku portugalskim',
-    passportHomes: ['polish'],
+    passportHomes: ['polska'],
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {
@@ -95,7 +95,7 @@ export const service: DefaultServiceConfig = {
           callToActionFirst: 'Albo spróbuj otworzyć',
           callToActionLinkText: 'Strona główna BBC News Polska',
           callToActionLast: '',
-          callToActionLinkUrl: 'https://www.bbc.com/polish',
+          callToActionLinkUrl: 'https://www.bbc.com/polska',
         },
         500: {
           statusCode: '500',
@@ -109,7 +109,7 @@ export const service: DefaultServiceConfig = {
           callToActionFirst: 'Albo spróbuj otworzyć',
           callToActionLinkText: 'Strona główna BBC News Polska',
           callToActionLast: '',
-          callToActionLinkUrl: 'https://www.bbc.com/polish',
+          callToActionLinkUrl: 'https://www.bbc.com/polska',
         },
       },
       consentBanner: {
@@ -183,19 +183,19 @@ export const service: DefaultServiceConfig = {
             },
           },
           canonical: {
-            title: 'Diga-nos se concorda com o uso de cookies',
+            title: 'Powiedz nam, czy zgadzasz się na używanie przez nas plików cookie',
             description: {
               uk: {
-                first: 'Nós usamos ',
+                first: 'Używamy ',
                 linkText: 'cookies',
-                last: ' para lhe proporcionar a melhor experiência online. Diga-nos se concorda com o uso de todos estes tipos de cookies.',
+                last: ' aby zapewnić Ci najlepsze doświadczenia online. Prosimy o poinformowanie nas, czy wyrażasz zgodę na używanie wszystkich tych typów plików cookie.',
                 linkUrl:
                   'https://www.bbc.co.uk/usingthebbc/cookies/what-do-i-need-to-know-about-cookies/',
               },
               international: {
-                first: 'Nós usamos ',
+                first: 'Używamy ',
                 linkText: 'cookies',
-                last: ' para lhe proporcionar a melhor experiência online. Diga-nos se concorda com o uso de todos estes tipos de cookies.',
+                last: ' aby zapewnić Ci najlepsze doświadczenia online. Prosimy o wyrażenie zgody na wykorzystanie wszystkich typów plików cookie.',
                 linkUrl:
                   'https://www.bbc.com/usingthebbc/cookies/what-do-i-need-to-know-about-cookies/',
               },
@@ -361,15 +361,15 @@ export const service: DefaultServiceConfig = {
       },
       links: [
         {
-          href: 'https://www.bbc.com/polish/institutional-36202448',
+          href: 'https://www.bbc.com/polska/institutional-36202448',
           text: 'Termos de Uso',
         },
         {
-          href: 'https://www.bbc.com/polish/institutional-36202452',
+          href: 'https://www.bbc.com/polska/institutional-36202452',
           text: 'Sobre a BBC',
         },
         {
-          href: 'https://www.bbc.com/polish/institutional-36202454',
+          href: 'https://www.bbc.com/polska/institutional-36202454',
           text: 'Política de privacidade',
         },
         {
@@ -377,7 +377,7 @@ export const service: DefaultServiceConfig = {
           text: 'Cookies',
         },
         {
-          href: 'https://www.bbc.co.uk/polish/send/u50853599',
+          href: 'https://www.bbc.co.uk/polska/send/u50853599',
           text: 'Contate a BBC',
         },
         {
@@ -398,39 +398,39 @@ export const service: DefaultServiceConfig = {
     navigation: [
       {
         title: 'Notícias',
-        url: '/polish',
+        url: '/polska',
       },
       {
         title: 'Brasil',
-        url: '/polish/topics/cz74k717pw5t',
+        url: '/polska/topics/cz74k717pw5t',
       },
       {
         title: 'Internacional',
-        url: '/polish/topics/cmdm4ynm24kt',
+        url: '/polska/topics/cmdm4ynm24kt',
       },
       {
         title: 'Economia',
-        url: '/polish/topics/cvjp2jr0k9rt',
+        url: '/polska/topics/cvjp2jr0k9rt',
       },
       {
         title: 'Saúde',
-        url: '/polish/topics/c340q430z4vt',
+        url: '/polska/topics/c340q430z4vt',
       },
       {
         title: 'Ciência',
-        url: '/polish/topics/cr50y580rjxt',
+        url: '/polska/topics/cr50y580rjxt',
       },
       {
         title: 'Tecnologia',
-        url: '/polish/topics/c404v027pd4t',
+        url: '/polska/topics/c404v027pd4t',
       },
       {
         title: 'Vídeos',
-        url: '/polish/topics/c9y2j35dn2zt',
+        url: '/polska/topics/c9y2j35dn2zt',
       },
       {
         title: 'BBC Lê',
-        url: '/polish/topics/cxndrr1qgllt',
+        url: '/polska/topics/cxndrr1qgllt',
       },
     ],
   },

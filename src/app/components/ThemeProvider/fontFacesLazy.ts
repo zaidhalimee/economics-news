@@ -215,7 +215,7 @@ export default (service: string) => {
     case 'news':
     case 'newsround':
     case 'mundo':
-    case 'polish':
+    case 'polska':
     case 'portuguese':
     case 'russian':
     case 'sport':

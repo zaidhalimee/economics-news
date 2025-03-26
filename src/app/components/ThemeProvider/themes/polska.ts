@@ -10,7 +10,7 @@ import reithFontVariants from '../fontVariants/reith';
 import withThemeProvider from '../withThemeProvider';
 import brandSVG from '../chameleonLogos/portuguese';
 
-const polishTheme = {
+const polskaTheme = {
   palette: {
     BRAND_BACKGROUND: POSTBOX,
     BRAND_LOGO: WHITE,
@@ -31,4 +31,4 @@ const polishTheme = {
   brandSVG,
 };
 
-export default withThemeProvider(polishTheme);
+export default withThemeProvider(polskaTheme);
