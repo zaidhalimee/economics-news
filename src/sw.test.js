@@ -3,11 +3,12 @@
 import fs from 'fs';
 import { join, resolve } from 'path';
 import fetchMock from 'jest-fetch-mock';
+import { createHash } from 'crypto';
 
 const serviceWorker = fs.readFileSync(join(__dirname, '..', 'public/sw.js'));
 
 const serviceWorkerCode = `${serviceWorker.toString()}
-export { fetchEventHandler };
+export { fetchEventHandler, version };
 `;
 
 fs.writeFileSync(
@@ -291,6 +292,28 @@ describe('Service Worker', () => {
         expect(fetchMock).toHaveBeenCalledWith(assetUrl);
         expect(fetchedCache[event.request]).toStrictEqual(mockResponse.clone());
       });
+    });
+  });
+
+  describe('version', () => {
+    const CURRENT_VERSION = {
+      number: 'v0.2.2',
+      fileContentHash: '3526df1507b20c47700339c8d7eb6c83',
+    };
+
+    it(`version number should be ${CURRENT_VERSION.number}`, async () => {
+      const { version } = await import('./service-worker-test');
+
+      expect(CURRENT_VERSION.number).toBe(version);
+    });
+
+    it(`version number should match file content`, async () => {
+      const hash = createHash('md5')
+        .update(serviceWorker.toString())
+        .digest('hex');
+
+      // On failure: increment the version number in ../public/sw.js & update values in CURRENT_VERSION
+      expect(CURRENT_VERSION.fileContentHash).toBe(hash);
     });
   });
 });
