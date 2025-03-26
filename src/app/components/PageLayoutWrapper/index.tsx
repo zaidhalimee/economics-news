@@ -61,7 +61,7 @@ const PageLayoutWrapper = ({
   let wordCount: wordCountType = 0;
   let propsForOJExperiment = {};
   const experimentVariant = useOptimizelyMvtVariation(
-    OPTIMIZELY_CONFIG.flagKey,
+    OPTIMIZELY_CONFIG.ruleKey,
   );
   if (pageType === 'article') {
     wordCount = pageData?.content?.model?.blocks
