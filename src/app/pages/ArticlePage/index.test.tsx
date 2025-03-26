@@ -31,6 +31,7 @@ import { Services } from '#app/models/types/global';
 import { Article } from '#app/models/types/optimo';
 import * as clickTracking from '#app/hooks/useClickTrackerHandler';
 import * as viewTracking from '#app/hooks/useViewTracker';
+import * as useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
 import {
   render,
   screen,
@@ -57,6 +58,8 @@ jest.mock('#app/hooks/useOptimizelyVariation', () => ({
   __esModule: true,
   default: jest.fn(),
 }));
+
+const useDecisionSpy = jest.spyOn(useOptimizelyVariation, 'default');
 
 const input = {
   bbcOrigin: 'https://www.test.bbc.co.uk',
@@ -166,6 +169,8 @@ describe('Article Page', () => {
       shouldBeDisplayed: false,
     },
   ])('$testScenario', ({ isLite, toggleEnabled, shouldBeDisplayed }) => {
+    useDecisionSpy.mockReturnValueOnce('off' as unknown as true);
+
     render(<ArticlePage pageData={articleDataPersian} />, {
       service: 'gahuza',
       isLite,
