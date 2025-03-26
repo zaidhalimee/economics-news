@@ -115,7 +115,7 @@ const litePageSizeValidator = async () => {
           ? '❌'
           : '✅';
 
-      console.log({ localUrl, localSizeKb, liveUrl, liveSizeKb });
+      console.table({ localUrl, localSizeKb, liveUrl, liveSizeKb });
 
       return {
         pageType,
@@ -135,7 +135,7 @@ const litePageSizeValidator = async () => {
     failures.forEach(({ path, localSizeKb }) => {
       const error =
         typeof localSizeKb !== 'number'
-          ? `⚠️ Reqyesting ${path}.litePage returned a non-200 status code`
+          ? `⚠️ Requesting ${path}.litePage returned a non-200 status code`
           : `⚠️ The page size for ${path}.lite is larger than the maximum allowed ${MAX_PAGE_SIZE_KB}`;
       console.error(error);
     });
