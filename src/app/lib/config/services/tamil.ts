@@ -430,6 +430,14 @@ export const service: DefaultServiceConfig = {
         url: '/tamil/topics/cz74k7p3qw7t',
       },
       {
+        title: 'உடல்நலம்',
+        url: '/tamil/topics/cyx5kxzdn9dt',
+      },
+      {
+        title: 'வரலாறு',
+        url: '/tamil/topics/cxnyknvykxjt',
+      },
+      {
         title: 'விளையாட்டு',
         url: '/tamil/topics/cdr56rv4qwdt',
       },
