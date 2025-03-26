@@ -38,6 +38,8 @@ export default {
       color: '#141414',
       textAlign: 'left',
       border: 'none',
+      borderBottom: '1px solid #B0B2B4', // Add the border-bottom
+      paddingBottom: `calc(${spacings.DOUBLE}rem + 0.5rem)`, // Add extra space above the border
 
       '&:hover, &:focus': {
         textDecoration: 'underline 2px',
