@@ -68,10 +68,6 @@ import Disclaimer from '../../components/Disclaimer';
 import SecondaryColumn from './SecondaryColumn';
 import styles from './ArticlePage.styles';
 import { ComponentToRenderProps, TimeStampProps } from './types';
-import {
-  transformRecsData,
-  OptimizelyVariation,
-} from './recommendationsExperiment';
 import ReadMoreButton from './ReadMoreButton';
 import ArticleHeadline from './ArticleHeadline';
 
