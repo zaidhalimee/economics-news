@@ -71,10 +71,18 @@ const litePageSizeValidator = async () => {
   ];
 
   const getPageSizeInBytes = url => {
-    const command = `curl -s ${url} | gzip | wc -c`;
+    const checkStatus = `curl -s -w "%{http_code}" -o /dev/null ${url}`;
+    const getSize = `curl -s ${url} | gzip | wc -c`;
     return new Promise(resolve => {
-      exec(command, (err, stdout) => {
-        resolve(stdout);
+      exec(checkStatus, (err, stdout) => {
+        const statusCode = stdout;
+        if (statusCode !== '200') {
+          resolve({ statusCode, sizeInBytes: null });
+        } else {
+          exec(getSize, (sizeErr, sizeInBytes) => {
+            resolve({ statusCode, sizeInBytes });
+          });
+        }
       });
     });
   };
@@ -87,17 +95,27 @@ const litePageSizeValidator = async () => {
     urlsToCheck.map(async ({ path, pageType, nextjs }) => {
       const localUrl = `http://localhost:${nextjs ? 7081 : 7080}${path}.lite?renderer_env=live`;
       const liveUrl = `https://www.bbc.com${path}.lite?renderer_env=live`;
-
-      const [localPageSize, livePageSize] = await Promise.all([
+      const [
+        { statusCode: localStatusCode, sizeInBytes: localPageSize },
+        { statusCode: liveStatusCode, sizeInBytes: livePageSize },
+      ] = await Promise.all([
         getPageSizeInBytes(localUrl),
         getPageSizeInBytes(liveUrl),
       ]);
 
-      const localSizeKb = convertToKb(localPageSize);
-      const liveSizeKb = convertToKb(livePageSize);
-      const result = localSizeKb > MAX_PAGE_SIZE_KB ? '❌' : '✅';
+      const localSizeKb = localPageSize
+        ? convertToKb(localPageSize)
+        : `⚠️ Page returned ${localStatusCode} status code ⚠️ `;
+      const liveSizeKb = livePageSize
+        ? convertToKb(livePageSize)
+        : `⚠️ Page returned ${liveStatusCode} status code ⚠️ `;
 
-      console.log({ localUrl, localPageSize, liveUrl, livePageSize });
+      const result =
+        localSizeKb > MAX_PAGE_SIZE_KB || localStatusCode !== '200'
+          ? '❌'
+          : '✅';
+
+      console.table({ localUrl, localPageSize, liveUrl, livePageSize });
 
       return {
         pageType,
@@ -109,15 +127,17 @@ const litePageSizeValidator = async () => {
     }),
   );
 
-  console.table(testResults.sort((a, b) => a.localSizeKb - b.localSizeKb));
+  console.table(testResults.sort((a, b) => b.localSizeKb - a.localSizeKb));
 
   const failures = testResults.filter(({ result }) => result === '❌');
 
   if (failures.length > 0) {
-    failures.forEach(({ url }) => {
-      console.error(
-        `⚠️ The page size for ${url}.lite is larger than the maximum allowed ${MAX_PAGE_SIZE_KB}`,
-      );
+    failures.forEach(({ path, localSizeKb }) => {
+      const error =
+        typeof localSizeKb !== 'number'
+          ? `⚠️ Reqyesting ${path}.litePage returned a non-200 status code`
+          : `⚠️ The page size for ${path}.lite is larger than the maximum allowed ${MAX_PAGE_SIZE_KB}`;
+      console.error(error);
     });
     process.exitCode = 1;
   }
