@@ -33,14 +33,6 @@ const litePageSizeValidator = async () => {
       pageType: 'Podcast - Episode',
     },
     {
-      path: '/gujarati/bbc_gujarati_tv/tv_programmes/w13xttqr',
-      pageType: 'On Demand TV - Brand',
-    },
-    {
-      path: '/hausa/bbc_hausa_tv/tv/w172yjj7rfhxp1p',
-      pageType: 'On Demand TV - Episode',
-    },
-    {
       path: '/tigrinya/news-51249937',
       pageType: 'CPS Media Article',
     },
@@ -54,18 +46,6 @@ const litePageSizeValidator = async () => {
     {
       path: '/urdu/live/c04z6x46l0vt',
       pageType: 'Live',
-      nextjs: true,
-    },
-
-    {
-      path: '/mundo/send/u50853489',
-      pageType: 'Uploader',
-      nextjs: true,
-    },
-
-    {
-      path: '/ws/languages',
-      pageType: 'Languages',
       nextjs: true,
     },
   ];
