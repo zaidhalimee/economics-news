@@ -4,7 +4,7 @@ import {
   render,
 } from '#app/components/react-testing-library-with-providers';
 import SuccessScreen from '.';
-import * as FormContext from '..';
+import * as FormManager from '..';
 import { ContextProps } from '..';
 
 jest.mock('next/router', () => ({
@@ -36,7 +36,7 @@ describe('SuccessScreen', () => {
   });
 
   it('Should have a submissionID', async () => {
-    jest.spyOn(FormContext, 'useFormContext').mockImplementationOnce(
+    jest.spyOn(FormManager, 'useFormContext').mockImplementationOnce(
       () =>
         ({
           submissionID: 'TestSubmissionID',
@@ -45,13 +45,13 @@ describe('SuccessScreen', () => {
 
     const { container } = await act(() => {
       return render(
-        <FormContext.FormManager fields={[]}>
+        <FormManager.default fields={[]}>
           <SuccessScreen
             title={MOCK_TITLE}
             replyEmailAddress={MOCK_EMAIL}
             retentionPeriod={MOCK_RETENTION_PERIOD}
           />
-        </FormContext.FormManager>,
+        </FormManager.default>,
       );
     });
 
