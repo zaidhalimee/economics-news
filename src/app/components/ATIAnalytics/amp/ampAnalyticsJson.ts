@@ -3,6 +3,7 @@
 /* eslint-disable prefer-template */
 
 import { ATIAnalyticsProps } from '../types';
+const { testReverbUrlGenerator } = require('@bbc/test_reverb_url_helper');
 
 const ampAnalyticsJson = ({ baseUrl, pageviewParams }: ATIAnalyticsProps) => ({
   transport: {
@@ -12,9 +13,16 @@ const ampAnalyticsJson = ({ baseUrl, pageviewParams }: ATIAnalyticsProps) => ({
   },
   requests: {
     base: baseUrl,
-    pageview: '${base}' + pageviewParams,
+    // invoke reverb helper
+    pageview:
+      '${base}' + pageviewParams + testReverbUrlGenerator.getHelloWorld(),
   },
-  triggers: { trackPageview: { on: 'visible', request: 'pageview' } },
+  triggers: {
+    trackPageview: {
+      on: 'visible',
+      request: 'pageview',
+    },
+  },
 });
 
 export default ampAnalyticsJson;

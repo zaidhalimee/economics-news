@@ -8,12 +8,18 @@ import { ATIAnalyticsProps } from '../types';
 import sendBeaconOperaMiniScript from './sendBeaconOperaMiniScript';
 import sendBeaconLite from './sendBeaconLite';
 
+// import the Reverb test helper
+const { testReverbUrlGenerator } = require('@bbc/test_reverb_url_helper');
+
 const getNoJsATIPageViewUrl = (atiPageViewUrl: string) =>
   atiPageViewUrl.includes('x8=[simorgh]')
     ? atiPageViewUrl.replace('x8=[simorgh]', 'x8=[simorgh-nojs]')
     : `${atiPageViewUrl}&x8=[simorgh-nojs]`;
 
 const renderNoScriptTrackingPixel = (atiPageViewUrl: string) => {
+  // helper invocation
+  console.log('reverb says:', testReverbUrlGenerator.getHelloWorld());
+
   return (
     <noscript>
       <img
@@ -60,7 +66,6 @@ const CanonicalATIAnalytics = ({
     getEnvConfig().SIMORGH_ATI_BASE_URL + pageviewParams;
 
   const [reverbBeaconConfig] = useState(reverbParams);
-
   const [atiPageViewUrl] = useState(atiPageViewUrlString);
 
   useEffect(() => {

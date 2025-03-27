@@ -95,6 +95,7 @@
   },
   "homepage": "https://github.com/bbc/simorgh#readme",
   "dependencies": {
+    "@bbc/test_reverb_url_helper": "https://mybbc-analytics.test.files.bbci.co.uk/reverb-url-helper/bbc-test_reverb_url_helper-1.6.0.tgz",
     "@bbc/web-vitals": "2.5.3",
     "@emotion/cache": "11.14.0",
     "@emotion/react": "11.14.0",
