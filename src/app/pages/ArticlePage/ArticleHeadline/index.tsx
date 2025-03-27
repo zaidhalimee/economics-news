@@ -24,6 +24,7 @@ const ArticleHeadline = (props: ComponentToRenderProps) => {
   const viewRef = useViewTracker(eventTrackingData);
   const titleVariation = useOptimizelyVariation(
     OPTIMIZELY_CONFIG.flagKey,
+    {},
     true,
   );
 
