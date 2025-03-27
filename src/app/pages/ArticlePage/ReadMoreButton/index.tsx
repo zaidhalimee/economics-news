@@ -21,10 +21,11 @@ const ReadMoreButton = ({
   // Display variations of button based on variation
   const buttonStyle =
     variation === 'A' ? styles.readMoreButtonA : styles.readMoreButtonB;
+  const hideButtonStyle = styles.hideButtonOnDesktop;
   console.log('buttonStyle', buttonStyle);
   return (
     <button
-      css={buttonStyle}
+      css={[buttonStyle, hideButtonStyle]}
       type="button"
       onClick={setShowAllContent}
       data-testid="read-more-button"
