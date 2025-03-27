@@ -10,7 +10,6 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  padding: 0;
 }
 
 @media (min-width: 63rem) {
@@ -1125,7 +1124,6 @@ exports[`Article Page should render a news article correctly 1`] = `
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  padding: 0;
 }
 
 @media (min-width: 63rem) {
@@ -2768,7 +2766,6 @@ exports[`Article Page should render a news article with headline in the middle c
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  padding: 0;
 }
 
 @media (min-width: 63rem) {
@@ -3147,7 +3144,6 @@ exports[`Article Page should render a news article without headline correctly 1`
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  padding: 0;
 }
 
 @media (min-width: 63rem) {
@@ -3368,7 +3364,6 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  padding: 0;
 }
 
 @media (min-width: 63rem) {
