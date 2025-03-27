@@ -4,7 +4,7 @@ import pixelsToRem from '../../../../src/app/utilities/pixelsToRem';
 export default {
   grid: ({ mq, gridWidths, spacings }: Theme) =>
     css({
-      maxWidth: `${pixelsToRem(gridWidths[1008])}rem`,
+      maxWidth: `${pixelsToRem(gridWidths[1280])}rem`,
       margin: '0 auto',
       display: 'grid',
       gridTemplateColumns: 'repeat(12, 1fr)',
