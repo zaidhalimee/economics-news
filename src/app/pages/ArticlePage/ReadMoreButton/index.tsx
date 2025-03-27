@@ -40,11 +40,12 @@ const ReadMoreButton = ({
             marginLeft: '0',
             verticalAlign: 'middle',
           }}
+          aria-hidden="true"
         >
           <path d="M26.7 12.6 16 23.2 5.3 12.6V8.8h21.4z" />
         </svg>
       )}
-      Read More
+      Continue reading
     </button>
   );
 };
