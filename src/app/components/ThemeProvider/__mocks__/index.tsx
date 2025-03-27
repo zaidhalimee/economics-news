@@ -1,6 +1,6 @@
 import React from 'react';
+import defaultServiceVariants from '#app/lib/config/services/defaultServiceVariants';
 import { StoryProps } from '../../../models/types/storybook';
-import defaultServiceVariants from '../defaultServiceVariants';
 
 import afaanoromoo from '../themes/afaanoromoo';
 import afrique from '../themes/afrique';

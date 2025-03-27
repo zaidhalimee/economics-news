@@ -29,6 +29,8 @@ import { suppressPropWarnings } from '#app/legacy/psammead/psammead-test-helpers
 import { Services } from '#app/models/types/global';
 
 import { Article } from '#app/models/types/optimo';
+import * as clickTracking from '#app/hooks/useClickTrackerHandler';
+import * as viewTracking from '#app/hooks/useViewTracker';
 import {
   render,
   screen,
@@ -47,6 +49,14 @@ jest.mock('../../components/ChartbeatAnalytics', () => {
   return ChartbeatAnalytics;
 });
 jest.mock('../../components/ATIAnalytics');
+
+jest.mock('#app/legacy/containers/OptimizelyArticleCompleteTracking');
+jest.mock('#app/legacy/containers/OptimizelyPageViewTracking');
+
+jest.mock('#app/hooks/useOptimizelyVariation', () => ({
+  __esModule: true,
+  default: jest.fn(),
+}));
 
 const input = {
   bbcOrigin: 'https://www.test.bbc.co.uk',
@@ -133,6 +143,59 @@ afterAll(() => {
 });
 
 describe('Article Page', () => {
+  it.each([
+    {
+      testScenario:
+        'should show the CTA on non Lite Site pages, when the toggle is enabled',
+      isLite: false,
+      toggleEnabled: true,
+      shouldBeDisplayed: true,
+    },
+    {
+      testScenario:
+        'should not show the CTA on non Lite Site pages, when the toggle is false',
+      isLite: false,
+      toggleEnabled: false,
+      shouldBeDisplayed: false,
+    },
+    {
+      testScenario:
+        'should not show the CTA on Lite Site pages, regardless of the toggle',
+      isLite: true,
+      toggleEnabled: true,
+      shouldBeDisplayed: false,
+    },
+  ])('$testScenario', ({ isLite, toggleEnabled, shouldBeDisplayed }) => {
+    render(<ArticlePage pageData={articleDataPersian} />, {
+      service: 'gahuza',
+      isLite,
+      toggles: { liteSiteCTA: { enabled: toggleEnabled } },
+    });
+
+    const liteCTA = screen.queryByRole('link', { name: /Nyandiko gusa/i });
+
+    if (shouldBeDisplayed) {
+      expect(liteCTA).toBeInTheDocument();
+    } else {
+      expect(liteCTA).not.toBeInTheDocument();
+    }
+  });
+
+  it('should apply click and view tracking data on lite site cta link', () => {
+    const eventTrackingData = { componentName: 'canonical-lite-cta' };
+    const clickTrackerSpy = jest.spyOn(clickTracking, 'default');
+    const viewTrackerSpy = jest.spyOn(viewTracking, 'default');
+
+    render(<ArticlePage pageData={articleDataPersian} />, {
+      service: 'gahuza',
+      isLite: false,
+      toggles: { liteSiteCTA: { enabled: true } },
+    });
+
+    expect(clickTrackerSpy).toHaveBeenCalledWith(eventTrackingData);
+    expect(viewTrackerSpy).toHaveBeenCalledWith(eventTrackingData);
+  });
+
   it('should use headline for meta description if summary does not exist', async () => {
     const articleDataNewsWithSummary = mergeDeepLeft(
       {

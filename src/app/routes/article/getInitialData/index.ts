@@ -1,8 +1,6 @@
-import pipe from 'ramda/src/pipe';
 import nodeLogger from '#lib/logger.node';
 import { Services, Toggles, Variants } from '#models/types/global';
 import getOnwardsPageData from '#app/routes/article/utils/getOnwardsData';
-import addAnalyticsCounterName from '#app/routes/article/utils/addAnalyticsCounterName';
 import augmentWithDisclaimer from '#app/routes/article/utils/augmentWithDisclaimer';
 import {
   advertisingAllowed,
@@ -27,10 +25,7 @@ type Props = {
 };
 
 const transformPageData = (toggles?: Toggles) =>
-  pipe(
-    addAnalyticsCounterName,
-    augmentWithDisclaimer({ toggles, positionFromTimestamp: 0 }),
-  );
+  augmentWithDisclaimer({ toggles, positionFromTimestamp: 0 });
 
 export default async ({
   service,

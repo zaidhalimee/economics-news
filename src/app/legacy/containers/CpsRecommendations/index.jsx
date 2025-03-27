@@ -17,7 +17,6 @@ import SkipLinkWrapper from '#components/SkipLinkWrapper';
 import useToggle from '#hooks/useToggle';
 import { GridItemMediumNoMargin } from '#components/Grid';
 
-import { useWsojTitle } from '#app/pages/ArticlePage/recommendationsExperiment';
 import { ServiceContext } from '../../../contexts/ServiceContext';
 import RecommendationsPromoList from './RecommendationsPromoList';
 import RecommendationsPromo from './RecommendationsPromo';
@@ -46,14 +45,13 @@ const LabelComponent = styled(SectionLabel)`
 `;
 
 const CpsRecommendations = ({ items }) => {
-  const { recommendations, script, service, dir } = useContext(ServiceContext);
+  const { recommendations, translations, script, service, dir } =
+    useContext(ServiceContext);
   const { enabled } = useToggle('cpsRecommendations');
 
   const {
     palette: { GREY_2 },
   } = useTheme();
-
-  const title = useWsojTitle();
 
   const labelId = 'recommendations-heading';
   const a11yAttributes = {
@@ -65,6 +63,8 @@ const CpsRecommendations = ({ items }) => {
   const { hasStoryRecommendations } = recommendations;
 
   if (!hasStoryRecommendations || !enabled || !items.length) return null;
+
+  const title = translations?.recommendationTitle ?? 'Recommended stories';
 
   const { text, endTextVisuallyHidden } = path(['skipLink'], recommendations);
 
