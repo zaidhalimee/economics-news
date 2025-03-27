@@ -83,13 +83,9 @@ export default {
         padding: `${spacings.DOUBLE}rem`,
       },
       [mq.GROUP_4_MIN_WIDTH]: {
-        paddingLeft: `${pixelsToRem(spacings.DOUBLE)}rem`,
-        paddingRight: `${pixelsToRem(spacings.DOUBLE)}rem`,
-        paddingTop: `${pixelsToRem(spacings.TRIPLE)}rem`,
-        paddingBottom: `${pixelsToRem(spacings.QUADRUPLE)}rem`,
-        columnGap: '1rem',
+        paddingTop: `${spacings.TRIPLE}rem`,
+        paddingBottom: `${spacings.QUADRUPLE}rem`,
       },
-
       [mq.GROUP_5_MIN_WIDTH]: {
         paddingLeft: 0,
         paddingRight: 0,
@@ -110,6 +106,10 @@ export default {
         flexDirection: 'column',
         justifyContent: 'center',
         maxWidth: '50%', // determines width of text overlay.
+      },
+      [mq.GROUP_5_MIN_WIDTH]: {
+        paddingLeft: 0,
+        paddingRight: 0,
       },
     }),
   titleWithImage: ({ palette }: Theme) =>
