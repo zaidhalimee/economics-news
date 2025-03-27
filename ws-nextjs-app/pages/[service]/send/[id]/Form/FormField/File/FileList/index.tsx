@@ -8,8 +8,8 @@ import {
   FileData,
   InvalidMessageCodes,
   ValidationConditions,
-} from '../../../types';
-import { useFormContext } from '../../../FormContext';
+} from '../../../../types';
+import { useFormContext } from '../../..';
 import styles from '../styles';
 import {
   AUDIO_SVG_DATA_URI,
@@ -17,8 +17,8 @@ import {
   DeleteSvg,
   VIDEO_SVG_DATA_URI,
 } from '../svgs';
-import InvalidMessageBox from '../../../MessageBox/InvalidMessageBox';
-import fallbackTranslations from '../../../fallbackTranslations';
+import InvalidMessageBox from '../../../../MessageBox/InvalidMessageBox';
+import fallbackTranslations from '../../../../fallbackTranslations';
 
 interface FileListProps {
   files: FileData[];

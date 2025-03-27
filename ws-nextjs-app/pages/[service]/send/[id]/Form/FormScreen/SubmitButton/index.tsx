@@ -3,7 +3,7 @@ import { jsx } from '@emotion/react';
 import { useContext } from 'react';
 import { ServiceContext } from '#app/contexts/ServiceContext';
 import styles from './styles';
-import fallbackTranslations from '../fallbackTranslations';
+import fallbackTranslations from '../../../fallbackTranslations';
 
 const Submit = () => {
   const {

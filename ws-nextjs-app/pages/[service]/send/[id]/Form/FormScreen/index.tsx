@@ -5,13 +5,13 @@ import Heading from '#app/components/Heading';
 import { LiveRegionContextProvider } from '#app/components/LiveRegion/LiveRegionContext';
 import LiveRegion from '#app/components/LiveRegion';
 import { ServiceContext } from '#app/contexts/ServiceContext';
-import { useFormContext } from '../FormContext';
-import { Field } from '../types';
+import { useFormContext } from '..';
+import { Field } from '../../types';
 import FormField from '../FormField';
 import styles from './styles';
-import Submit from '../SubmitButton';
-import fallbackTranslations from '../fallbackTranslations';
-import ErrorSummaryBox from '../MessageBox/ErrorSummaryBox';
+import Submit from './SubmitButton';
+import fallbackTranslations from '../../fallbackTranslations';
+import ErrorSummaryBox from '../../MessageBox/ErrorSummaryBox';
 
 type Props = {
   title: string;

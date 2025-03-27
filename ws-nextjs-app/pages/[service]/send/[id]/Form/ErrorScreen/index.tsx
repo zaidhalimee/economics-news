@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useRef } from 'react';
 import { ServiceContext } from '#app/contexts/ServiceContext';
-import GenericMessage from '../GenericMessage';
-import fallbackTranslations from '../fallbackTranslations';
+import GenericMessage from '../../GenericMessage';
+import fallbackTranslations from '../../fallbackTranslations';
 
 type Props = {
   title: string;

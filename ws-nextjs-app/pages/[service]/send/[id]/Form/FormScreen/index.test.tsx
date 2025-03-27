@@ -11,10 +11,9 @@ import {
   privacyNotice,
   fields,
 } from './fixture';
-import * as FormContextModule from '../FormContext';
-import { FormContext } from '../FormContext';
+import * as FormManager from '..';
 import Form from '.';
-import { Field, FormScreen, InvalidMessageCodes } from '../types';
+import { Field, Screen, InvalidMessageCodes } from '../../types';
 
 jest.mock('next/router', () => ({
   useRouter: () => ({
@@ -31,14 +30,14 @@ const mockContextValue = {
   attemptedSubmitCount: 0,
   validationErrors: [],
   progress: '0',
-  screen: 'form' as FormScreen,
+  screen: 'form' as Screen,
   submissionID: '',
 };
 
 describe('Form', () => {
   it('should render and match snapshot', async () => {
     jest
-      .spyOn(FormContextModule, 'useFormContext')
+      .spyOn(FormManager, 'useFormContext')
       .mockImplementationOnce(() => mockContextValue)
       .mockImplementationOnce(() => mockContextValue);
     const { container } = await act(() => {
@@ -62,7 +61,7 @@ describe('Form', () => {
     const handleFocusOut = jest.fn();
     const { container } = await act(() => {
       return render(
-        <FormContext.Provider
+        <FormManager.default.Context.Provider
           value={{
             formState: {},
             handleChange,
@@ -85,7 +84,7 @@ describe('Form', () => {
             fields={fields as Field[]}
           />
           ,
-        </FormContext.Provider>,
+        </FormManager.default.Context.Provider>,
       );
     });
     const submitButton = container.querySelector('button');
@@ -94,7 +93,7 @@ describe('Form', () => {
   });
   it('should render an error summary box on an invalid form', async () => {
     jest
-      .spyOn(FormContextModule, 'useFormContext')
+      .spyOn(FormManager, 'useFormContext')
       .mockImplementationOnce(() => ({
         ...mockContextValue,
         validationErrors: [
@@ -139,7 +138,7 @@ describe('Form', () => {
   });
   it('should render no error summary box on a valid form', async () => {
     jest
-      .spyOn(FormContextModule, 'useFormContext')
+      .spyOn(FormManager, 'useFormContext')
       .mockImplementationOnce(() => ({
         ...mockContextValue,
         attemptedSubmitCount: 1,

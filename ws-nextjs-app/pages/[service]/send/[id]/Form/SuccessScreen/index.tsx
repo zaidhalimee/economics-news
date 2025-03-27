@@ -7,8 +7,8 @@ import { useContext, useEffect, useRef } from 'react';
 import { ServiceContext } from '#app/contexts/ServiceContext';
 import styles from './index.styles';
 import TickSvg from './svgs';
-import { useFormContext } from '../FormContext';
-import fallbackTranslations from '../fallbackTranslations';
+import { useFormContext } from '..';
+import fallbackTranslations from '../../fallbackTranslations';
 
 type Props = {
   title: string;

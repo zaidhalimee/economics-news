@@ -5,13 +5,13 @@ import { useLiveRegionContext } from '#app/components/LiveRegion/LiveRegionConte
 import Text from '#app/components/Text';
 import { ServiceContext } from '#app/contexts/ServiceContext';
 import Label from '../FieldLabel';
-import { InputProps, FileData } from '../../types';
-import { useFormContext } from '../../FormContext';
+import { InputProps, FileData } from '../../../types';
+import { useFormContext } from '../..';
 import styles from './styles';
 import { UploadSvg } from './svgs';
 import FileList from './FileList';
-import InvalidMessageBox from '../../MessageBox/InvalidMessageBox';
-import fallbackTranslations from '../../fallbackTranslations';
+import InvalidMessageBox from '../../../MessageBox/InvalidMessageBox';
+import fallbackTranslations from '../../../fallbackTranslations';
 
 export default ({
   id,

@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import { InputProps } from '../types';
+import { InputProps } from '../../types';
 import Label from './FieldLabel';
 import styles from './styles';
-import InvalidMessageBox from '../MessageBox/InvalidMessageBox';
+import InvalidMessageBox from '../../MessageBox/InvalidMessageBox';
 
 export default ({
   id,
@@ -43,7 +43,7 @@ export default ({
           ]}
           id={id}
           name={name}
-          type="text"
+          type="email"
           value={value as string}
           onChange={e => handleChange(e.target.name, e.target.value)}
           onBlur={e => handleFocusOut(e.target.name)}

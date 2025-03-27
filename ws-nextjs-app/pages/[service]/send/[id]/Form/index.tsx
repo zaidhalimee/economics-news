@@ -14,7 +14,7 @@ import {
   Field,
   FieldData,
   FileData,
-  FormScreen,
+  Screen,
   OnChangeHandler,
   OnChangeInputName,
   OnChangeInputValue,
@@ -24,6 +24,11 @@ import {
 import UGCSendError from '../UGCSendError';
 import validateFunctions from './utils/validateFunctions';
 import getValidationErrors from './utils/getValidationErrors';
+import ErrorScreen from './ErrorScreen';
+import FormField from './FormField';
+import FormScreen from './FormScreen';
+import SuccessScreen from './SuccessScreen';
+import UploadingScreen from './UploadingScreen';
 
 type SubmissionError = {
   message: string;
@@ -42,11 +47,11 @@ export type ContextProps = {
   attemptedSubmitCount: number;
   validationErrors: ValidationError[] | [];
   progress: string;
-  screen: FormScreen;
+  screen: Screen;
   submissionID: string | null;
 };
 
-export const FormContext = createContext({} as ContextProps);
+const FormContext = createContext({} as ContextProps);
 
 const getInitialFormState = (
   fields: Field[],
@@ -82,11 +87,11 @@ const validateFormStateOnSubmit = (
   return Object.fromEntries(formEntries);
 };
 
-export const FormContextProvider = ({
+const FormManager = ({
   initialScreen = 'form',
   fields,
   children,
-}: PropsWithChildren<{ initialScreen?: FormScreen; fields: Field[] }>) => {
+}: PropsWithChildren<{ initialScreen?: Screen; fields: Field[] }>) => {
   const {
     query: { id },
     asPath,
@@ -95,7 +100,7 @@ export const FormContextProvider = ({
   const [formState, setFormState] = useState(getInitialFormState(fields));
   const [submitted, setSubmitted] = useState(false);
   const [progress, setProgress] = useState('0');
-  const [screen, setScreen] = useState<FormScreen>(initialScreen);
+  const [screen, setScreen] = useState<Screen>(initialScreen);
   const [submissionError, setSubmissionError] = useState<SubmissionError>(null);
   const [attemptedSubmitCount, setAttemptedSubmitCount] = useState(0);
   const [validationErrors, setValidationErrors] = useState<ValidationError[]>(
@@ -253,3 +258,12 @@ export const FormContextProvider = ({
 export function useFormContext() {
   return useContext(FormContext);
 }
+
+FormManager.ErrorScreen = ErrorScreen;
+FormManager.FormField = FormField;
+FormManager.FormScreen = FormScreen;
+FormManager.SuccessScreen = SuccessScreen;
+FormManager.UploadingScreen = UploadingScreen;
+FormManager.Context = FormContext;
+
+export default FormManager;

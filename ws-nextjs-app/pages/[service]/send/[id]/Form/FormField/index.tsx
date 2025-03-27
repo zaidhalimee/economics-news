@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import { ReactElement } from 'react';
-import { HtmlType, InputProps } from '../types';
+import { HtmlType, InputProps } from '../../types';
 import styles from './styles';
-import { useFormContext } from '../FormContext';
+import { useFormContext } from '..';
 import TextInput from './TextInput';
 import EmailInput from './EmailInput';
 import Checkbox from './Checkbox';

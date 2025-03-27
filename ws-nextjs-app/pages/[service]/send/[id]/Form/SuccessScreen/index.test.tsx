@@ -4,8 +4,8 @@ import {
   render,
 } from '#app/components/react-testing-library-with-providers';
 import SuccessScreen from '.';
-import * as FormContext from '../FormContext';
-import { ContextProps } from '../FormContext';
+import * as FormContext from '..';
+import { ContextProps } from '..';
 
 jest.mock('next/router', () => ({
   useRouter: () => ({ query: { id: 'u1234' } }),
@@ -45,13 +45,13 @@ describe('SuccessScreen', () => {
 
     const { container } = await act(() => {
       return render(
-        <FormContext.FormContextProvider fields={[]}>
+        <FormContext.FormManager fields={[]}>
           <SuccessScreen
             title={MOCK_TITLE}
             replyEmailAddress={MOCK_EMAIL}
             retentionPeriod={MOCK_RETENTION_PERIOD}
           />
-        </FormContext.FormContextProvider>,
+        </FormContext.FormManager>,
       );
     });
 

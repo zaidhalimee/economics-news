@@ -3,9 +3,9 @@ import { jsx } from '@emotion/react';
 import Text from '#app/components/Text';
 import { ServiceContext } from '#app/contexts/ServiceContext';
 import { useContext } from 'react';
-import { InputProps } from '../types';
+import { InputProps } from '../../types';
 import styles from './styles';
-import fallbackTranslations from '../fallbackTranslations';
+import fallbackTranslations from '../../fallbackTranslations';
 
 type Props = {
   id?: InputProps['id'];

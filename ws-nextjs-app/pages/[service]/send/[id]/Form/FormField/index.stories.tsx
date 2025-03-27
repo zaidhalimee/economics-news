@@ -5,8 +5,8 @@ import somaliFormFixture from '#data/somali/send/u130092370.json';
 import { NextRouter } from 'next/router';
 import { RouterContext } from 'next/dist/shared/lib/router-context.shared-runtime';
 import FormField, { FormComponentProps } from '.';
-import { FormContextProvider } from '../FormContext';
-import { Field } from '../types';
+import FormManager from '..';
+import { Field } from '../../types';
 
 const fieldsData1 = mundoFormFixture.data.sections[0].fields as Field[];
 const fieldsData2 = somaliFormFixture.data.sections[0].fields as Field[];
@@ -24,9 +24,9 @@ const Component = ({
     value={{ query: { id: '123' } } as unknown as NextRouter}
   >
     <ThemeProvider service="pidgin">
-      <FormContextProvider fields={fieldsData}>
+      <FormManager fields={fieldsData}>
         <FormField id={id} htmlType={htmlType} label={label} />
-      </FormContextProvider>
+      </FormManager>
     </ThemeProvider>
   </RouterContext.Provider>
 );

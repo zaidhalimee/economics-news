@@ -3,10 +3,10 @@ import {
   act,
   render,
 } from '#app/components/react-testing-library-with-providers';
-import * as FormContext from '../FormContext';
+import * as FormManager from '..';
 import FormField, { FormComponentProps } from '.';
-import { Field } from '../types';
-import { ContextProps } from '../FormContext';
+import { Field } from '../../types';
+import { ContextProps } from '..';
 
 jest.mock('next/router', () => ({
   useRouter: () => ({ query: { id: 'u1234' } }),
@@ -19,9 +19,9 @@ const ComponentWithContext = ({
   props: FormComponentProps;
   fields: Field[];
 }) => (
-  <FormContext.FormContextProvider fields={fields}>
+  <FormManager.default fields={fields}>
     <FormField {...props} />
-  </FormContext.FormContextProvider>
+  </FormManager.default>
 );
 
 describe('FormField', () => {
@@ -96,7 +96,7 @@ describe('FormField', () => {
       },
     };
 
-    jest.spyOn(FormContext, 'useFormContext').mockImplementationOnce(
+    jest.spyOn(FormManager, 'useFormContext').mockImplementationOnce(
       () =>
         ({
           formState: mockFormState,
@@ -223,7 +223,7 @@ describe('FormField', () => {
       },
     };
 
-    jest.spyOn(FormContext, 'useFormContext').mockImplementationOnce(
+    jest.spyOn(FormManager, 'useFormContext').mockImplementationOnce(
       () =>
         ({
           formState: mockFormState,
@@ -297,7 +297,7 @@ describe('FormField', () => {
         },
       };
 
-      jest.spyOn(FormContext, 'useFormContext').mockImplementationOnce(
+      jest.spyOn(FormManager, 'useFormContext').mockImplementationOnce(
         () =>
           ({
             formState: mockFormState,

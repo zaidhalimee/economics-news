@@ -15,8 +15,8 @@ import {
   DOCUMENT_SVG_DATA_URI,
   VIDEO_SVG_DATA_URI,
 } from './svgs';
-import { FormContext } from '../../FormContext';
-import { FormScreen, HtmlType } from '../../types';
+import FormManager from '../..';
+import { Screen, HtmlType } from '../../../types';
 
 const defaultInputState = {
   isValid: true,
@@ -43,7 +43,7 @@ const mockContextValue = {
   attemptedSubmitCount: 0,
   validationErrors: [],
   progress: '0',
-  screen: 'form' as FormScreen,
+  screen: 'form' as Screen,
   submissionID: '',
 };
 
@@ -143,14 +143,14 @@ describe('File', () => {
   it('should call the function to update state when a file is added', async () => {
     const { container } = await act(async () => {
       return render(
-        <FormContext.Provider value={mockContextValue}>
+        <FormManager.Context.Provider value={mockContextValue}>
           <FileField
             id="foo"
             name="bar"
             inputState={defaultInputState}
             {...mockDefaultProps}
           />
-        </FormContext.Provider>,
+        </FormManager.Context.Provider>,
       );
     });
 
@@ -168,7 +168,7 @@ describe('File', () => {
     const user = userEvent.setup();
     await act(async () => {
       render(
-        <FormContext.Provider value={mockContextValue}>
+        <FormManager.Context.Provider value={mockContextValue}>
           <LiveRegionContextProvider>
             <FileField
               id="foo"
@@ -177,7 +177,7 @@ describe('File', () => {
               {...mockDefaultProps}
             />
           </LiveRegionContextProvider>
-        </FormContext.Provider>,
+        </FormManager.Context.Provider>,
       );
     });
 
@@ -193,7 +193,7 @@ describe('File', () => {
     const user = userEvent.setup();
     await act(async () => {
       render(
-        <FormContext.Provider value={mockContextValue}>
+        <FormManager.Context.Provider value={mockContextValue}>
           <LiveRegionContextProvider>
             <FileField
               id="foo"
@@ -202,7 +202,7 @@ describe('File', () => {
               {...mockDefaultProps}
             />
           </LiveRegionContextProvider>
-        </FormContext.Provider>,
+        </FormManager.Context.Provider>,
       );
     });
 
