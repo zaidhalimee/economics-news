@@ -80,6 +80,7 @@ const Component = ({ service, variant, isLite }: StoryProps) => {
 export default {
   Component,
   title: 'Pages/Home Page',
+  parameters: { layout: 'fullscreen' },
 };
 
 export const Example = {

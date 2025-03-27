@@ -20,6 +20,7 @@ export default {
   Component,
   title: 'Pages/Radio Page',
   parameters: {
+    layout: 'fullscreen',
     chromatic: {
       diffThreshold: 0.2,
       delay: 8000,

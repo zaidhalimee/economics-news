@@ -55,6 +55,7 @@ export default {
       <WithTimeMachine>{story()}</WithTimeMachine>
     ),
   ],
+  parameters: { layout: 'fullscreen' },
 };
 
 export const Example = {
