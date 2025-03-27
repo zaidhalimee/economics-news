@@ -57,6 +57,7 @@
     "storybook": "node .storybook/buildFontPreloads && storybook dev -p 9001 -c .storybook",
     "test": "yarn build && yarn test:local",
     "test:local": "yarn test:lint && yarn test:dependencies && yarn test:unit && run-p --race start amp:validate && run-p --race start test:integration:ci",
+    "test:lite": "node ./scripts/litePageSizeValidator",
     "test:dependencies": "node ./scripts/dependencyCheck",
     "test:e2e": "yarn stop && yarn build && run-p --race start cypress",
     "test:e2e:interactive": "yarn stop && yarn build && run-p --race start cypress:interactive",
