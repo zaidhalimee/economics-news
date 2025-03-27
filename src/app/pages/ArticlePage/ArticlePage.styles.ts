@@ -46,7 +46,7 @@ export default {
     css({
       paddingBottom: `${spacings.TRIPLE}rem`,
     }),
-  contentHidden: () =>
+  contentHidden: ({ mq }: Theme) =>
     css({
       // Hide all elements after the 7th child, except for the 'read more' button
       // This is a bit rudimentary, as its not guaranteed that the content up to and after the 7th child
@@ -56,6 +56,10 @@ export default {
 
         [`.${NO_JS_CLASSNAME} &`]: {
           display: 'unset',
+        },
+        // Show content when at desktop size
+        [mq.GROUP_4_MIN_WIDTH]: {
+          display: 'block',
         },
       },
     }),
