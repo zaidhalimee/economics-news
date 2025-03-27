@@ -156,10 +156,13 @@ const ScrollablePromo = ({
   const { script, service, dir, translations, mostRead } =
     useContext(ServiceContext);
   const { optimizely } = useContext(OptimizelyContext);
+
   const eventTrackingData = {
     componentName: `edoj${blockGroupIndex}`,
     format: 'CHD=edoj',
-    ...(optimizely && { optimizely }),
+    // We want to check for experimentVariant here as ScrollablePromo is used in within the Article body as well.
+    // We only want to track Optimizely events for the Top Bar use case.
+    ...(optimizely && experimentVariant && { optimizely }),
   };
 
   const viewRef = useViewTracker(eventTrackingData);
@@ -222,6 +225,7 @@ const ScrollablePromo = ({
             blocks={blocks}
             experimentVariant={experimentVariant}
             viewTracker={viewRef}
+            onClick={handleClickTracking}
             {...a11yAttributes}
           />
         </GridItemMediumNoMargin>
