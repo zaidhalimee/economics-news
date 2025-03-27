@@ -37,6 +37,7 @@ const ReadMoreButton = forwardRef(
         type="button"
         onClick={handleClick}
         data-testid="read-more-button"
+        ref={viewRef}
       >
         {variation === 'B' && (
           <svg
