@@ -16,7 +16,7 @@ const ReadMoreButton = ({
 }: Props) => {
   const theme = useTheme();
   // Hide button when all content is shown
-  // if (showAllContent) return null;
+  if (showAllContent) return null;
 
   // Display variations of button based on variation
   const buttonStyle =
@@ -25,16 +25,10 @@ const ReadMoreButton = ({
   console.log('buttonStyle', buttonStyle);
   return (
     <button
-<<<<<<< HEAD
       css={[buttonStyle, hideButtonStyle]}
       type="button"
       onClick={setShowAllContent}
-=======
-      css={buttonStyle}
-      type="button"
-      onClick={setShowAllContent}
       data-testid="read-more-button"
->>>>>>> 9500e52706ff239ff24d47fb560c977806a6aecb
     >
       {variation === 'B' && (
         <svg
