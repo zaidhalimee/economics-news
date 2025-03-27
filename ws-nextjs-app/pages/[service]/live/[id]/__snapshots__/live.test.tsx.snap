@@ -63,13 +63,6 @@ exports[`Live Page creates snapshot of the live page 1`] = `
   }
 }
 
-@media (min-width: 80rem) {
-  .emotion-5 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
 .emotion-6 {
   color: #141414;
   font-size: 1.25rem;
@@ -179,13 +172,6 @@ exports[`Live Page creates snapshot of the live page 1`] = `
     padding-bottom: 2rem;
     -webkit-column-gap: 1rem;
     column-gap: 1rem;
-  }
-}
-
-@media (min-width: 80rem) {
-  .emotion-9 {
-    padding-left: 0;
-    padding-right: 0;
   }
 }
 

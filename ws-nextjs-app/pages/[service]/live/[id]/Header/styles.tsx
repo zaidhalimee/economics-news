@@ -58,10 +58,6 @@ export default {
         padding: `${spacings.DOUBLE}rem  ${spacings.DOUBLE}rem ${pixelsToRem(40)}rem`,
         maxWidth: '50%', // determines width of text overlay.
       },
-      [mq.GROUP_5_MIN_WIDTH]: {
-        paddingLeft: 0,
-        paddingRight: 0,
-      },
     }),
   liveMediaOpen: ({ mq }: Theme) =>
     css({
@@ -76,10 +72,6 @@ export default {
         padding: `${pixelsToRem(40)}rem ${spacings.DOUBLE}rem 0`,
         maxWidth: '50%', // determines width of text overlay.
       },
-      [mq.GROUP_5_MIN_WIDTH]: {
-        paddingLeft: 0,
-        paddingRight: 0,
-      },
     }),
   textContainerWithoutImage: ({ mq, gridWidths, spacings }: Theme) =>
     css({
@@ -93,10 +85,6 @@ export default {
       [mq.GROUP_4_MIN_WIDTH]: {
         paddingTop: `${spacings.TRIPLE}rem`,
         paddingBottom: `${spacings.QUADRUPLE}rem`,
-      },
-      [mq.GROUP_5_MIN_WIDTH]: {
-        paddingLeft: 0,
-        paddingRight: 0,
       },
     }),
   textContainerWithImage: ({ mq, spacings }: Theme) =>
@@ -114,10 +102,6 @@ export default {
         flexDirection: 'column',
         justifyContent: 'center',
         maxWidth: '50%', // determines width of text overlay.
-      },
-      [mq.GROUP_5_MIN_WIDTH]: {
-        paddingLeft: 0,
-        paddingRight: 0,
       },
     }),
   titleWithImage: ({ palette }: Theme) =>

@@ -21,11 +21,6 @@ export default {
         paddingBottom: `${spacings.QUADRUPLE}rem`,
         columnGap: `${spacings.DOUBLE}rem`,
       },
-
-      [mq.GROUP_5_MIN_WIDTH]: {
-        paddingLeft: 0,
-        paddingRight: 0,
-      },
     }),
   firstSection: ({ mq }: Theme) =>
     css({
