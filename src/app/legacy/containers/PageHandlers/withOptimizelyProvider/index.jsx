@@ -57,7 +57,7 @@ const withOptimizelyProvider = Component => {
       <OptimizelyProvider
         optimizely={optimizely}
         isServerSide
-        timeout={1000}
+        timeout={5000}
         user={{
           id: getUserId(),
           attributes: {

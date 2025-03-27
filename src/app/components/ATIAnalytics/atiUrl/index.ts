@@ -218,14 +218,14 @@ export const buildATIPageTrackPath = ({
       ? [
           {
             key: 'mv_test',
-            description: 'Data driven OJs experiment',
-            value: 'Data driven OJs experiment',
+            description: 'Lite Site Promotion experiment',
+            value: 'Lite Site Promotion experiment',
             wrap: false,
             disableEncoding: true,
           },
           {
             key: 'mv_creation',
-            description: 'Data driven OJs variant',
+            description: 'Lite Site Promotion variant',
             value: `${experimentVariant}`,
             wrap: false,
             disableEncoding: true,
@@ -294,6 +294,7 @@ export const buildATIEventTrackUrl = ({
   // on AMP, variable substitutions are used in the value and they cannot be
   // encoded: https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md
   const disableEncodingDueToAmpSubstitution = platform === 'amp';
+  console.log('CHECK', experimentVariant);
 
   const eventPublisher = type === 'view' ? 'ati' : 'atc';
   const eventTrackingBeaconValues = [

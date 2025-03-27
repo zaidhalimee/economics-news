@@ -3,7 +3,7 @@ export default {
   flagKey: 'newswb_ws_litesitepromotion',
   // This is the key for the 'rule' that is attached to the experiment
   ruleKey: 'newswb_ws_litesitepromotion',
-  viewClickAttributeId: 'wsoj',
+  viewClickAttributeId: 'lite-site-cta',
   variationMappings: {
     control_text_only: 'control_text_only',
     variation_a_explore_data_friendly_version:
