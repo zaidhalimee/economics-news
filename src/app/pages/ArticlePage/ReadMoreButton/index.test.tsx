@@ -1,6 +1,11 @@
 import React from 'react';
-import { render } from '../../../components/react-testing-library-with-providers';
+import {
+  fireEvent,
+  render,
+} from '../../../components/react-testing-library-with-providers';
 import ReadMoreButton from './index';
+import * as viewTracking from '../../../hooks/useViewTracker';
+import * as clickTracking from '../../../hooks/useClickTrackerHandler';
 
 describe('ReadMoreButton', () => {
   const mockSetShowAllContent = jest.fn();
@@ -109,5 +114,90 @@ describe('ReadMoreButton', () => {
 
     const button = getByTestId('read-more-button');
     expect(button.style.borderBottom).toBe('');
+  });
+
+  describe('Event Tracking', () => {
+    const eventTrackingData = { componentName: 'read-more-button' };
+
+    describe('View tracking', () => {
+      const viewTrackerSpy = jest.spyOn(viewTracking, 'default');
+
+      it('should not be enabled if event tracking data not provided', () => {
+        render(
+          <ReadMoreButton
+            showAllContent={false}
+            setShowAllContent={mockSetShowAllContent}
+            variation="A"
+          />,
+        );
+
+        expect(viewTrackerSpy).toHaveBeenCalledWith(undefined);
+      });
+
+      it('should register view tracker if event tracking data provided', () => {
+        render(
+          <ReadMoreButton
+            showAllContent={false}
+            setShowAllContent={mockSetShowAllContent}
+            variation="A"
+            eventTrackingData={eventTrackingData}
+          />,
+        );
+
+        expect(viewTrackerSpy).toHaveBeenCalledWith(eventTrackingData);
+      });
+    });
+
+    describe('Click tracking', () => {
+      const clickTrackerSpy = jest
+        .spyOn(clickTracking, 'default')
+        .mockImplementation();
+
+      it('should not be enabled if event tracking data not provided', () => {
+        const { getByTestId } = render(
+          <ReadMoreButton
+            showAllContent={false}
+            setShowAllContent={mockSetShowAllContent}
+            variation="A"
+          />,
+        );
+
+        expect(clickTrackerSpy).toHaveBeenCalledWith(undefined);
+
+        const button = getByTestId('read-more-button');
+        fireEvent.click(button);
+        expect(button.onclick).toBeFalsy();
+      });
+
+      it('should register click tracker if event tracking data provided', () => {
+        render(
+          <ReadMoreButton
+            showAllContent={false}
+            setShowAllContent={mockSetShowAllContent}
+            variation="A"
+            eventTrackingData={eventTrackingData}
+          />,
+        );
+
+        expect(clickTrackerSpy).toHaveBeenCalledWith(eventTrackingData);
+      });
+
+      it('should handle a click event when button is clicked', () => {
+        clickTrackerSpy.mockRestore();
+
+        const { getByTestId } = render(
+          <ReadMoreButton
+            showAllContent={false}
+            setShowAllContent={mockSetShowAllContent}
+            variation="A"
+          />,
+        );
+
+        const button = getByTestId('read-more-button');
+        fireEvent.click(button);
+
+        expect(button.onclick).toBeTruthy();
+      });
+    });
   });
 });
