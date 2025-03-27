@@ -1,6 +1,6 @@
 import { css, Theme } from '@emotion/react';
 import { FULL } from '../ThemeProvider/spacings';
-import { GROUP_4_MIN_WIDTH_BP } from '../ThemeProvider/mediaQueries';
+import { GROUP_5_MIN_WIDTH_BP } from '../ThemeProvider/mediaQueries';
 
 const styles = {
   paragraph: ({ palette, spacings }: Theme) =>
@@ -51,14 +51,14 @@ const styles = {
     }),
   constrainedWrapperWithTrustProjectLink: ({ spacings }: Theme) =>
     css({
-      maxWidth: `${GROUP_4_MIN_WIDTH_BP}rem`,
+      maxWidth: `${GROUP_5_MIN_WIDTH_BP}rem`,
       margin: '0 auto',
       paddingTop: `${spacings.FULL}rem`,
     }),
 
   constrainedWrapperWithoutTrustProjectLink: () =>
     css({
-      maxWidth: `${GROUP_4_MIN_WIDTH_BP}rem`,
+      maxWidth: `${GROUP_5_MIN_WIDTH_BP}rem`,
       margin: '0 auto',
     }),
 };
