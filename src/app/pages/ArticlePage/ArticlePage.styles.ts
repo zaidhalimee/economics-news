@@ -86,8 +86,16 @@ export default {
         paddingBottom: `${spacings.QUADRUPLE}rem`,
       },
     }),
+  featuresSection: ({ spacings, mq }: Theme) =>
+    css({
+      marginBottom: `${spacings.TRIPLE}rem`,
 
-  topStoriesAndFeaturesSection: ({ spacings, mq }: Theme) =>
+      [mq.GROUP_4_MIN_WIDTH]: {
+        marginBottom: `${spacings.FULL}rem`,
+        padding: `${spacings.DOUBLE}rem`,
+      },
+    }),
+  topStoriesSection: ({ spacings, mq }: Theme) =>
     css({
       marginBottom: `${spacings.TRIPLE}rem`,
 

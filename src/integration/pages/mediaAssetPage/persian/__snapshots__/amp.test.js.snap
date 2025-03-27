@@ -189,6 +189,13 @@ exports[`AMP Media Asset Page Footer Anchors should match text and url 7`] = `
 
 exports[`AMP Media Asset Page Footer Anchors should match text and url 8`] = `
 {
+  "text": "اخبار به زبان‌های دیگر",
+  "url": "https://www.bbc.com/ws/languages",
+}
+`;
+
+exports[`AMP Media Asset Page Footer Anchors should match text and url 9`] = `
+{
   "text": "سیاست ما درباره لینک دادن به سایت های دیگر.",
   "url": "https://www.bbc.com/persian/institutional/2011/04/000001_links",
 }
@@ -196,14 +203,14 @@ exports[`AMP Media Asset Page Footer Anchors should match text and url 8`] = `
 
 exports[`AMP Media Asset Page Footer Cookie Settings Button should match text and on handler 1`] = `
 {
-  "on": "tap:consent.prompt, privacy.hide, cookie.show, AMP.setState({ isManagingSettings: true })",
+  "on": "tap:consent.prompt, cookie.show, AMP.setState({ isManagingSettings: true })",
   "text": "Do not share or sell my info",
 }
 `;
 
 exports[`AMP Media Asset Page Footer I can click on the BBC branding and it would take me to the homepage 1`] = `"/persian"`;
 
-exports[`AMP Media Asset Page Footer Paragraphs should match text 1`] = `"© 2024 بی بی سی. بی بی سی مسئول محتوای سایت های دیگر نیست. سیاست ما درباره لینک دادن به سایت های دیگر."`;
+exports[`AMP Media Asset Page Footer Paragraphs should match text 1`] = `"© 2025 بی بی سی. بی بی سی مسئول محتوای سایت های دیگر نیست. سیاست ما درباره لینک دادن به سایت های دیگر."`;
 
 exports[`AMP Media Asset Page Header I can see the branding 1`] = `"BBC News, فارسی"`;
 
@@ -216,8 +223,8 @@ exports[`AMP Media Asset Page Header Navigation link should match text and url 1
 
 exports[`AMP Media Asset Page Header Navigation link should match text and url 2`] = `
 {
-  "text": "جنگ اسرائیل-غزه",
-  "url": "/persian/topics/clm0z4jgj3xt",
+  "text": "بحران خاورمیانه",
+  "url": "/persian/topics/cj31ldvmg1et",
 }
 `;
 
@@ -238,7 +245,7 @@ exports[`AMP Media Asset Page Header Navigation link should match text and url 4
 exports[`AMP Media Asset Page Header Navigation link should match text and url 5`] = `
 {
   "text": "تلویزیون",
-  "url": "/persian/tv-and-radio-37434377",
+  "url": "/persian/topics/cw9qgeqd1zqt",
 }
 `;
 
@@ -440,7 +447,7 @@ exports[`AMP Media Asset Page SEO Linked data should match text 2`] = `
   "@type": "AudioObject",
   "description": "Trump long headline",
   "duration": "PT26S",
-  "embedURL": "https://web-cdn.test.api.bbci.co.uk/ws/av-embeds/cps/persian/iran-23231114/p01lmkjk/fa/amp",
+  "embedURL": "https://www.test.bbc.com/persian/av-embeds/iran-23231114/vpid/p01lmkjk",
   "name": "Trump short headline",
   "thumbnailUrl": "https://ichef.test.bbci.co.uk/images/ic/1024x576/p01lmkk5.jpg",
   "uploadDate": "2019-02-15T12:37:28.000Z",

@@ -12,6 +12,8 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-pidgin',
     atiAnalyticsProducerId: '70',
+    atiAnalyticsProducerName: 'PIDGIN',
+    useReverb: true,
     chartbeatDomain: 'pidgin.bbc.co.uk',
     brandName: 'BBC News Pidgin',
     product: 'BBC News',
@@ -33,9 +35,9 @@ export const service: DefaultServiceConfig = {
     defaultCaptionOffscreenText: 'Wetin we call am, ',
     imageCopyrightOffscreenText: 'Wia dis foto come from, ',
     script: latin,
-    manifestPath: '/manifest.json',
+    manifestPath: '/pidgin/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Domot',
+    homePageTitle: 'Domot',
     noBylinesPolicy:
       'https://www.bbc.com/pidgin/institutional-48528766#authorexpertise',
     publishingPrinciples: 'https://www.bbc.com/pidgin/institutional-48528766',
@@ -131,7 +133,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: 'Find out wetin don change',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -223,6 +225,7 @@ export const service: DefaultServiceConfig = {
         previousRadioShow: 'Previous radio show',
         nextRadioShow: 'Next radio show',
         duration: 'Duration',
+        closeVideo: 'Exit',
       },
       socialEmbed: {
         caption: {
@@ -336,6 +339,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/pidgin/send/u50853577',
           text: 'Call BBC',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'BBC News for oda languages',
         },
         {
           id: 'COOKIE_SETTINGS',

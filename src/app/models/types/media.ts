@@ -78,9 +78,11 @@ export type LiveRadioBlock = {
 
 export type MediaOverrides = {
   model: {
-    language: string;
-    pageIdentifierOverride: string;
-    pageTitleOverride: string;
+    language?: string;
+    pageIdentifierOverride?: string;
+    pageTitleOverride?: string;
   };
   type: 'mediaOverrides';
 };
+
+export type EpisodeAvailability = 'available' | 'not-yet-available' | 'expired';

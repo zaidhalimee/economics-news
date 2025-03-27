@@ -12,6 +12,8 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-igbo',
     atiAnalyticsProducerId: '53',
+    atiAnalyticsProducerName: 'IGBO',
+    useReverb: true,
     chartbeatDomain: 'igbo.bbc.co.uk',
     brandName: 'BBC News Ìgbò',
     product: 'BBC News',
@@ -33,9 +35,9 @@ export const service: DefaultServiceConfig = {
     defaultCaptionOffscreenText: 'Ihe a na-akpọ ya, ',
     imageCopyrightOffscreenText: 'Ebe foto si, ',
     script: latin,
-    manifestPath: '/manifest.json',
+    manifestPath: '/igbo/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Ogbako',
+    homePageTitle: 'Ogbako',
     noBylinesPolicy:
       'https://www.bbc.com/igbo/institutional-48529074#authorexpertise',
     publishingPrinciples: 'https://www.bbc.com/igbo/institutional-48529074',
@@ -141,7 +143,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'Ọ dị mma',
           reject: 'Chọpụta ihe gbanwere',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -231,6 +233,7 @@ export const service: DefaultServiceConfig = {
         previousRadioShow: 'Previous radio show',
         nextRadioShow: 'Next radio show',
         duration: 'Duration',
+        closeVideo: 'Wepu',
       },
       socialEmbed: {
         caption: {
@@ -325,6 +328,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/igbo/send/u50853379',
           text: 'Kpọtụrụ BBC',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Akụkọ BBC n’asụsụ ndị ọzọ',
         },
         {
           id: 'COOKIE_SETTINGS',

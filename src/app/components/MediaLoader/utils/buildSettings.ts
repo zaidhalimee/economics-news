@@ -48,11 +48,13 @@ const buildSettings = ({
     appType: isAmp ? 'amp' : 'responsive',
     appName: service !== 'news' ? `news-${service}` : 'news',
     ui: {
+      skin: 'classic',
       controls: { enabled: true },
       locale: { lang: mediaOverrides?.language || lang || 'en' },
       subtitles: { enabled: true, defaultOn: true },
       fullscreen: { enabled: true },
     },
+    ...(!embedded && { superResponsive: true }),
     ...(counterName && { counterName }),
     ...(isTestRequested() && { mediator: { host: 'open.test.bbc.co.uk' } }),
     statsObject: {
@@ -72,7 +74,6 @@ const buildSettings = ({
     showAdsBasedOnLocation,
     embedded,
     lang,
-    isAmp,
   });
 
   if (!config) return null;

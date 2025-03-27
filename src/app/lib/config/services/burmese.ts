@@ -12,6 +12,8 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-burmese',
     atiAnalyticsProducerId: '35',
+    atiAnalyticsProducerName: 'BURMESE',
+    useReverb: true,
     chartbeatDomain: 'burmese.bbc.co.uk',
     brandName: 'BBC News မြန်မာ',
     product: 'BBC News',
@@ -39,9 +41,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/burmese/institutional-51387206',
     isTrustProjectParticipant: true,
     script: burmese,
-    manifestPath: '/manifest.json',
+    manifestPath: '/burmese/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle:
+    homePageTitle:
       'ဘီဘီစီ မြန်မာ | အထူးသတင်း | နောက်ဆုံးရ သတင်း | နောက်ဆုံးရခေါင်းစဉ် သတင်း |မြန်မာသတင်း',
     showAdPlaceholder: false,
     showRelatedTopics: true,
@@ -153,7 +155,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ကောင်းပါပြီ။',
           reject: 'ဘာတွေပြောင်းလဲသွားသလဲ ကြည့်ရန်',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -257,6 +259,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'ထုတ်လွှင့်ပြီး အစီအစဉ်မျာ',
         podcastExternalLinks: 'ဒီပေါ့ဒ်ကတ်စ်ကို နောက်ထပ်ရနိုင်သည့်နေရာ',
         download: 'ဒေါင်းလုပ်လုပ် ရယူရန်',
+        closeVideo: 'ပိတ်မယ်',
       },
       socialEmbed: {
         caption: {
@@ -332,6 +335,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/burmese/send/u50853269',
           text: 'ဘီဘီစီကို ဆက်သွယ်ရန်',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'အခြားဘာသာစကားနှင့် ဘီဘီစီသတင်းများ',
         },
         {
           id: 'COOKIE_SETTINGS',

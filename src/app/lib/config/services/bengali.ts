@@ -12,6 +12,8 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-bengali',
     atiAnalyticsProducerId: '31',
+    atiAnalyticsProducerName: 'BENGALI',
+    useReverb: true,
     chartbeatDomain: 'bengali.bbc.co.uk',
     brandName: 'BBC News বাংলা',
     product: 'BBC News',
@@ -39,9 +41,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/bengali/institutional-50409861',
     isTrustProjectParticipant: true,
     script: bengali,
-    manifestPath: '/manifest.json',
+    manifestPath: '/bengali/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle:
+    homePageTitle:
       'খবর, সর্বশেষ খবর, ব্রেকিং নিউজ | News, latest news, breaking news',
     showAdPlaceholder: true,
     showRelatedTopics: true,
@@ -134,7 +136,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ঠিক আছে।',
           reject: 'কী পরিবর্তন হয়েছে দেখুন।',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -228,6 +230,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'পরবর্তী রেডিও অনুষ্ঠান',
         duration: 'স্থিতিকাল',
         recentEpisodes: 'পুরনো অনুষ্ঠান',
+        closeVideo: 'বন্ধ করুন',
       },
       socialEmbed: {
         caption: {
@@ -310,6 +313,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/bengali/send/u50853247',
           text: 'বিবিসির সাথে যোগাযোগ করুন',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'অন্যান্য ভাষায় বিবিসির সংবাদ',
         },
         {
           id: 'COOKIE_SETTINGS',

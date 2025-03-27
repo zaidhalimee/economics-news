@@ -1,15 +1,4 @@
 const AUDIT_URLS = {
-  FRONT_PAGE: {
-    live: ['https://www.bbc.com/serbian/cyr'],
-    test: ['https://www.test.bbc.com/serbian/cyr?renderer_env=live'],
-  },
-  FIX: {
-    live: ['https://www.bbc.com/persian/science-52004647'],
-    test: [
-      'https://www.test.bbc.com/persian/science-52004647?renderer_env=live',
-    ],
-  },
-
   LIVE_RADIO: {
     live: ['https://www.bbc.com/korean/bbc_korean_radio/liveradio'],
     test: ['https://www.test.bbc.com/korean/bbc_korean_radio/liveradio'],
@@ -57,8 +46,15 @@ const AUDIT_URLS = {
   },
 
   TIPO_HOME_PAGE: {
-    live: ['https://www.bbc.com/kyrgyz'],
-    test: ['https://www.test.bbc.com/kyrgyz?renderer_env=live'],
+    live: [
+      'https://www.bbc.com/kyrgyz',
+      'https://www.bbc.com/serbian/lat',
+      'https://www.bbc.com/uzbek/lat',
+    ],
+    test: [
+      'https://www.test.bbc.com/kyrgyz?renderer_env=live',
+      'https://www.test.bbc.com/serbian/lat?renderer_env=live',
+    ],
   },
 
   MEDIA_ARTICLE_PAGE: {

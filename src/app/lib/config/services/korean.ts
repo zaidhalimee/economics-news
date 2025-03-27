@@ -12,6 +12,8 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '에 업데이트 됨',
     atiAnalyticsAppName: 'news-korean',
     atiAnalyticsProducerId: '57',
+    atiAnalyticsProducerName: 'KOREAN',
+    useReverb: true,
     chartbeatDomain: 'korean.bbc.co.uk',
     brandName: 'BBC News 코리아',
     product: 'BBC News',
@@ -39,9 +41,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/korean/institutional-49283197',
     isTrustProjectParticipant: true,
     script: noAscendersOrDescenders,
-    manifestPath: '/manifest.json',
+    manifestPath: '/korean/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: '홈페이지',
+    homePageTitle: '홈페이지',
     showAdPlaceholder: false,
     showRelatedTopics: true,
     translations: {
@@ -138,7 +140,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: '네',
           reject: '변경사항을 확인하세요',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -226,6 +228,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: '다음 라디오 방송',
         duration: '방송 길이',
         recentEpisodes: '이전',
+        closeVideo: '나가기',
       },
       socialEmbed: {
         caption: {
@@ -308,6 +311,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/korean/send/u50853423',
           text: '고객센터',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: '다른 언어로 보기',
         },
         {
           id: 'COOKIE_SETTINGS',

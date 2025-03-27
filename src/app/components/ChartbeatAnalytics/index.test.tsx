@@ -9,7 +9,6 @@ import ChartbeatAnalytics from '.';
 import * as testUtils from './utils';
 import * as amp from './amp';
 import { localBaseUrl } from '../../../testHelpers/config';
-import { data as frontPageData } from '../../../../data/news/frontpage/index.json';
 import { PageTypes, Platforms } from '../../models/types/global';
 
 const defaultToggleState = {
@@ -108,10 +107,7 @@ describe('Charbeats Analytics Container', () => {
         origin="bbc.com"
         toggleState={toggleState}
       >
-        <ChartbeatAnalytics
-          title={frontPageData?.article?.metadata?.title}
-          sectionName={frontPageData?.article?.relatedContent?.section?.name}
-        />
+        <ChartbeatAnalytics title="Home" sectionName="Home" />
       </ContextWrap>,
     );
     expect(mockAmp).toHaveBeenCalledTimes(1);
@@ -119,7 +115,7 @@ describe('Charbeats Analytics Container', () => {
       {
         chartbeatConfig: expectedConfig,
       },
-      {},
+      undefined,
     );
     expect(testUtils.getConfig).toHaveBeenCalledTimes(1);
     expect(container.firstChild).not.toBeNull();
@@ -139,10 +135,7 @@ describe('Charbeats Analytics Container', () => {
         origin="bbc.com"
         toggleState={toggleState}
       >
-        <ChartbeatAnalytics
-          title={frontPageData?.article?.metadata?.title}
-          sectionName={frontPageData?.article?.relatedContent?.section?.name}
-        />
+        <ChartbeatAnalytics title="Home" sectionName="Home" />
       </ContextWrap>,
     );
 
@@ -157,10 +150,7 @@ describe('Charbeats Analytics Container', () => {
         pageType={ARTICLE_PAGE}
         origin={localBaseUrl}
       >
-        <ChartbeatAnalytics
-          title={frontPageData?.article?.metadata?.title}
-          sectionName={frontPageData?.article?.relatedContent?.section?.name}
-        />
+        <ChartbeatAnalytics title="Home" sectionName="Home" />
       </ContextWrap>,
     );
 
@@ -203,10 +193,7 @@ describe('Charbeats Analytics Container', () => {
         origin="test.bbc.com"
         toggleState={toggleState}
       >
-        <ChartbeatAnalytics
-          title={frontPageData?.article?.metadata?.title}
-          sectionName={frontPageData?.article?.relatedContent?.section?.name}
-        />
+        <ChartbeatAnalytics title="Home" sectionName="Home" />
       </ContextWrap>,
     );
 

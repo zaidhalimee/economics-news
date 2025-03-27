@@ -1,13 +1,12 @@
 import filterForBlockType from '#lib/utilities/blockHandlers';
 import { ConfigBuilderProps, ConfigBuilderReturnProps } from '../types';
+import AUDIO_UI_CONFIG from './constants';
 
 export default ({
   blocks,
   basePlayerConfig,
 }: ConfigBuilderProps): ConfigBuilderReturnProps => {
   const { model: audioMediaBlock } = filterForBlockType(blocks, 'audio');
-  const { model: mediaOverrides } =
-    filterForBlockType(blocks, 'mediaOverrides') || {};
   const audio = audioMediaBlock?.versions?.[0] || {};
   const holdingImageURL = `https://${audioMediaBlock.imageUrl}`;
 
@@ -20,7 +19,7 @@ export default ({
         episodePID: audioMediaBlock.id,
       },
       playlistObject: {
-        title: mediaOverrides?.pageTitleOverride,
+        title: audioMediaBlock.title,
         holdingImageURL,
         items: [
           {
@@ -33,16 +32,10 @@ export default ({
       },
       ui: {
         ...basePlayerConfig.ui,
-        skin: 'audio',
-        colour: '#B80000',
-        foreColour: '#222222',
-        baseColour: '#222222',
-        colourOnBaseColour: '#ffffff',
-        fallbackBackgroundColour: '#ffffff',
-        controls: { enabled: true, volumeSlider: true },
+        ...AUDIO_UI_CONFIG,
       },
+      superResponsive: false,
     },
-
     mediaType: 'audio',
     showAds: false,
   };

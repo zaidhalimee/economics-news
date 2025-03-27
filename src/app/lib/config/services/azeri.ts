@@ -12,6 +12,8 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-azeri',
     atiAnalyticsProducerId: '6',
+    atiAnalyticsProducerName: 'AZERI',
+    useReverb: true,
     chartbeatDomain: 'azeri.bbc.co.uk',
     brandName: 'BBC News Azərbaycanca',
     product: 'BBC News',
@@ -39,9 +41,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/azeri/institutional-49283479',
     isTrustProjectParticipant: true,
     script: latinWithDiacritics,
-    manifestPath: '/manifest.json',
+    manifestPath: '/azeri/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Xəbərlər, Qaynar Xəbərlər, Analiz, Video',
+    homePageTitle: 'Xəbərlər, Qaynar Xəbərlər, Analiz, Video',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {
@@ -139,7 +141,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: 'Nəyin dəyişdiyini öyrənin',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -227,6 +229,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Next radio show',
         duration: 'Duration',
         recentEpisodes: 'Daha ətraflı',
+        closeVideo: 'Bağla',
       },
       socialEmbed: {
         caption: {
@@ -259,6 +262,19 @@ export const service: DefaultServiceConfig = {
       },
       topStoriesTitle: 'Digər xəbərlər',
       featuresAnalysisTitle: 'Bunları da oxuyun',
+      ugc: {
+        // Optional
+        optional: 'vacib deyil',
+
+        // File upload
+        fileUploadButton: 'Faylı seçin',
+
+        // Submit button
+        submitButton: 'Göndərin',
+
+        // Form Screen
+        dataPolicyHeading: 'Bizim informasiya siyasə timiz',
+      },
     },
     mostRead: {
       header: 'Ən çox oxunan',
@@ -303,6 +319,10 @@ export const service: DefaultServiceConfig = {
           text: 'BBC ilə Əlaqə',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'BBC News digər dillərdə',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -328,6 +348,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Beynəlxalq',
         url: '/azeri/topics/cde15l4vn02t',
+      },
+      {
+        title: 'COP29',
+        url: '/azeri/topics/cv2dz9j8ywyt',
       },
     ],
   },

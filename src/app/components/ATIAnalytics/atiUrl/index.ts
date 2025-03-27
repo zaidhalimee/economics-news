@@ -40,14 +40,14 @@ export const buildATIPageTrackPath = ({
   statsDestination,
   timePublished,
   timeUpdated,
-  origin,
-  previousPath,
   categoryName,
   campaigns,
   nationsProducer,
+  ampExperimentName,
+  experimentVariant,
 }: ATIPageTrackingProps) => {
   const href = getHref(platform);
-  const referrer = getReferrer(platform, origin, previousPath);
+  const referrer = getReferrer(platform);
   const campaignType = getCampaignType();
 
   // on AMP, variable substitutions are used in the value and they cannot be
@@ -214,6 +214,42 @@ export const buildATIPageTrackPath = ({
       value: getATIMarketingString(href, campaignType),
       wrap: false,
     },
+    ...(experimentVariant
+      ? [
+          {
+            key: 'mv_test',
+            description: 'Top Bar OJs experiment',
+            value: 'Top Bar OJs experiment',
+            wrap: false,
+            disableEncoding: true,
+          },
+          {
+            key: 'mv_creation',
+            description: 'Top Bar OJs variant',
+            value: `${experimentVariant}`,
+            wrap: false,
+            disableEncoding: true,
+          },
+        ]
+      : []),
+    ...(ampExperimentName
+      ? [
+          {
+            key: 'mv_test',
+            description: 'AMP experiment name',
+            value: `${ampExperimentName}`,
+            wrap: false,
+            disableEncoding: true,
+          },
+          {
+            key: 'mv_creation',
+            description: 'AMP experiment variant name',
+            value: `VARIANT(${ampExperimentName})`,
+            wrap: false,
+            disableEncoding: true,
+          },
+        ]
+      : []),
     ...getRSSMarketingString(href, campaignType),
     ...(onOnionTld()
       ? [
@@ -231,7 +267,7 @@ export const buildATIPageTrackPath = ({
       // the ref param should always be the last param because ATI will interpret it as part of the referrer URL
       key: 'ref',
       description: 'referrer url',
-      value: getReferrer(platform, origin, previousPath),
+      value: getReferrer(platform),
       wrap: false,
       // disable encoding for this parameter as ati does not appear to support
       // decoding of the ref parameter
@@ -252,6 +288,8 @@ export const buildATIEventTrackUrl = ({
   advertiserID,
   url,
   detailedPlacement,
+  experimentVariant,
+  ampExperimentName,
 }: ATIEventTrackingProps) => {
   // on AMP, variable substitutions are used in the value and they cannot be
   // encoded: https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md
@@ -323,13 +361,166 @@ export const buildATIEventTrackUrl = ({
         advertiserID,
         url,
         detailedPlacement,
+        experimentVariant,
       }),
       wrap: false,
       disableEncoding: true,
     },
+    ...(experimentVariant
+      ? [
+          {
+            key: 'mv_test',
+            description: 'Top Bar OJs experiment',
+            value: 'Top Bar OJs experiment',
+            wrap: false,
+            disableEncoding: true,
+          },
+          {
+            key: 'mv_creation',
+            description: 'Top Bar OJs variant',
+            value: `${experimentVariant}`,
+            wrap: false,
+            disableEncoding: true,
+          },
+        ]
+      : []),
+    ...(ampExperimentName
+      ? [
+          {
+            key: 'mv_test',
+            description: 'AMP experiment project name',
+            value: `Google Discover`,
+            wrap: false,
+            disableEncoding: true,
+          },
+          {
+            key: 'mv_experiment_id',
+            description: 'AMP experiment name',
+            value: `${ampExperimentName}`,
+            wrap: false,
+            disableEncoding: true,
+          },
+          {
+            key: 'mv_creation',
+            description: 'AMP experiment variant name',
+            value: `VARIANT(${ampExperimentName})`,
+            wrap: false,
+            disableEncoding: true,
+          },
+        ]
+      : []),
   ];
 
   return `${getEnvConfig().SIMORGH_ATI_BASE_URL}${getAtiUrl(
     eventTrackingBeaconValues,
   )}&type=AT`;
+};
+
+export const buildReverbAnalyticsModel = ({
+  appName,
+  campaigns,
+  categoryName,
+  contentId,
+  contentType,
+  language,
+  ldpThingIds,
+  ldpThingLabels,
+  libraryVersion,
+  pageIdentifier,
+  pageTitle,
+  platform,
+  producerName,
+  nationsProducer,
+  statsDestination,
+  timePublished,
+  timeUpdated,
+}: ATIPageTrackingProps) => {
+  const href = getHref(platform);
+  const referrer = getReferrer(platform);
+
+  const aggregatedCampaigns = (Array.isArray(campaigns) ? campaigns : [])
+    .map(({ campaignName }) => campaignName)
+    .join('~');
+
+  const eventDetails = {
+    eventName: 'pageView',
+  };
+
+  const reverbVariables = {
+    params: {
+      page: {
+        contentId,
+        contentType,
+        destination: statsDestination,
+        name: pageIdentifier,
+        producer: producerName,
+        additionalProperties: {
+          app_name: platform === 'app' ? `${appName}-app` : appName,
+          app_type: getAppType(platform),
+          content_language: language,
+          product_platform: onOnionTld() ? 'tor-bbc' : null,
+          referrer_url: referrer,
+          x5: href && encodeURIComponent(href),
+          x8: libraryVersion,
+          x9: sanitise(pageTitle),
+          x10: nationsProducer && nationsProducer,
+          x11: timePublished,
+          x12: timeUpdated,
+          x13: ldpThingLabels,
+          x14: ldpThingIds,
+          x16: aggregatedCampaigns,
+          x17: categoryName,
+          x18: isLocServeCookieSet(),
+        },
+      },
+      user: {
+        isSignedIn: false,
+      },
+    },
+    eventDetails,
+  };
+
+  return reverbVariables;
+};
+
+export const buildReverbPageSectionEventModel = ({
+  pageIdentifier,
+  producerName,
+  statsDestination,
+  componentName,
+  campaignID,
+  format,
+  type,
+  advertiserID,
+  url,
+}: ATIEventTrackingProps) => {
+  const eventDetails = {
+    eventName: type === 'view' ? 'sectionView' : 'sectionClick',
+    eventPublisher: type === 'click' ? 'click' : 'impression',
+    componentName,
+    container: campaignID,
+    attribute: componentName,
+    metadata: format,
+    placement: pageIdentifier,
+    source: advertiserID,
+    result: url,
+    isClick: type === 'click',
+  };
+
+  return {
+    params: {
+      page: {
+        destination: statsDestination,
+        name: pageIdentifier,
+        producer: producerName,
+        additionalProperties: {
+          type: 'AT',
+        },
+      },
+      user: {
+        isSignedIn: false,
+      },
+    },
+    eventDetails,
+  };
 };

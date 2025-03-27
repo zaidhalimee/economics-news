@@ -189,6 +189,13 @@ exports[`AMP Most Read Page Footer Anchors should match text and url 7`] = `
 
 exports[`AMP Most Read Page Footer Anchors should match text and url 8`] = `
 {
+  "text": "BBC News các ngôn ngữ khác",
+  "url": "https://www.bbc.com/ws/languages",
+}
+`;
+
+exports[`AMP Most Read Page Footer Anchors should match text and url 9`] = `
+{
   "text": "Tìm hiểu cách chúng tôi tiếp cận việc dẫn tới trang ngoài",
   "url": "https://www.bbc.com/editorialguidelines/guidance/feeds-and-links",
 }
@@ -196,14 +203,14 @@ exports[`AMP Most Read Page Footer Anchors should match text and url 8`] = `
 
 exports[`AMP Most Read Page Footer Cookie Settings Button should match text and on handler 1`] = `
 {
-  "on": "tap:consent.prompt, privacy.hide, cookie.show, AMP.setState({ isManagingSettings: true })",
+  "on": "tap:consent.prompt, cookie.show, AMP.setState({ isManagingSettings: true })",
   "text": "Do not share or sell my info",
 }
 `;
 
 exports[`AMP Most Read Page Footer I can click on the BBC branding and it would take me to the homepage 1`] = `"/vietnamese"`;
 
-exports[`AMP Most Read Page Footer Paragraphs should match text 1`] = `"© 2024 BBC. BBC không chịu trách nhiệm nội dung các trang ngoài. Tìm hiểu cách chúng tôi tiếp cận việc dẫn tới trang ngoài"`;
+exports[`AMP Most Read Page Footer Paragraphs should match text 1`] = `"© 2025 BBC. BBC không chịu trách nhiệm nội dung các trang ngoài. Tìm hiểu cách chúng tôi tiếp cận việc dẫn tới trang ngoài"`;
 
 exports[`AMP Most Read Page Header I can see the branding 1`] = `"BBC News, Tiếng Việt"`;
 

@@ -1,6 +1,5 @@
 /** @jsx jsx */
 /* @jsxFrag React.Fragment */
-
 import { jsx } from '@emotion/react';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
@@ -16,8 +15,7 @@ import {
 import filterForBlockType from '#lib/utilities/blockHandlers';
 import { PageTypes } from '#app/models/types/global';
 import { EventTrackingContext } from '#app/contexts/EventTrackingContext';
-import { MediaType } from '#app/models/types/media';
-import { BumpType, MediaBlock, PlayerConfig, Orientations } from './types';
+import { BumpType, MediaBlock, PlayerConfig } from './types';
 import Caption from '../Caption';
 import nodeLogger from '../../lib/logger.node';
 import buildConfig from './utils/buildSettings';
@@ -27,6 +25,7 @@ import getCaptionBlock from './utils/getCaptionBlock';
 import styles from './index.styles';
 import { getBootstrapSrc } from '../Ad/Canonical';
 import Metadata from './Metadata';
+import AmpMediaLoader from './Amp';
 
 const PAGETYPES_IGNORE_PLACEHOLDER: PageTypes[] = [
   MEDIA_ARTICLE_PAGE,
@@ -96,15 +95,13 @@ const AdvertTagLoader = () => {
 type MediaContainerProps = {
   playerConfig: PlayerConfig;
   showAds: boolean;
-  mediaType?: MediaType;
-  orientation?: Orientations;
+  uniqueId?: string;
 };
 
 const MediaContainer = ({
   playerConfig,
   showAds,
-  mediaType,
-  orientation,
+  uniqueId,
 }: MediaContainerProps) => {
   const playerElementRef = useRef<HTMLDivElement>(null);
 
@@ -118,6 +115,15 @@ const MediaContainer = ({
           );
 
           mediaPlayer.load();
+
+          if (uniqueId != null) {
+            const { mediaPlayers } = window;
+            if (mediaPlayers == null) {
+              window.mediaPlayers = { [uniqueId]: mediaPlayer };
+            } else {
+              mediaPlayers[uniqueId] = mediaPlayer;
+            }
+          }
 
           if (showAds) {
             const adTag = await window.dotcom.ads.getAdTag();
@@ -150,24 +156,18 @@ const MediaContainer = ({
     } catch (error) {
       logger.error(MEDIA_PLAYER_STATUS, error);
     }
-  }, [playerConfig, showAds]);
-
-  const playerStyling = (() => {
-    if (orientation === 'portrait') {
-      return styles.mediaContainerPortrait;
-    }
-    if (mediaType === 'liveRadio') {
-      return styles.liveRadioMediaContainer;
-    }
-    if (mediaType === 'audio') {
-      return styles.onDemandAudioMediaContainer;
-    }
-
-    return styles.mediaContainerLandscape;
-  })();
+  }, [playerConfig, showAds, uniqueId]);
 
   return (
-    <div ref={playerElementRef} data-e2e="media-player" css={playerStyling} />
+    <div
+      ref={playerElementRef}
+      data-e2e="media-player"
+      css={
+        playerConfig?.ui?.skin === 'audio'
+          ? styles.audioMediaContainer
+          : styles.standardMediaContainer
+      }
+    />
   );
 };
 
@@ -175,9 +175,10 @@ type Props = {
   blocks: MediaBlock[];
   className?: string;
   embedded?: boolean;
+  uniqueId?: string;
 };
 
-const MediaLoader = ({ blocks, className, embedded }: Props) => {
+const MediaLoader = ({ blocks, className, embedded, uniqueId }: Props) => {
   const { lang, translations } = useContext(ServiceContext);
   const { pageIdentifier } = useContext(EventTrackingContext);
   const { enabled: adsEnabled } = useToggle('ads');
@@ -192,11 +193,8 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
     showAdsBasedOnLocation,
   } = useContext(RequestContext);
 
-  const PAGETYPE_SUPPORTS_PLACEHOLDER =
-    !PAGETYPES_IGNORE_PLACEHOLDER.includes(pageType);
-
-  const [isPlaceholder, setIsPlaceholder] = useState(
-    PAGETYPE_SUPPORTS_PLACEHOLDER,
+  const [showPlaceholder, setShowPlaceholder] = useState(
+    !PAGETYPES_IGNORE_PLACEHOLDER.includes(pageType),
   );
 
   if (isLite) return null;
@@ -206,7 +204,7 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
 
   const producer = getProducerFromServiceName(service);
   const config = buildConfig({
-    id,
+    id: id || '',
     blocks,
     counterName: mediaOverrides?.pageIdentifierOverride || pageIdentifier,
     statsDestination,
@@ -223,12 +221,27 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
 
   if (!config) return null;
 
-  const { mediaType, playerConfig, placeholderConfig, showAds, orientation } =
-    config;
+  const {
+    mediaType,
+    playerConfig,
+    placeholderConfig,
+    showAds,
+    orientation = 'landscape',
+    ampIframeUrl,
+  } = config;
 
   const captionBlock = getCaptionBlock(blocks, pageType);
 
-  const showPlaceholder = isPlaceholder && placeholderConfig;
+  const {
+    placeholderSrc,
+    placeholderSrcset,
+    translatedNoJSMessage,
+    mediaInfo,
+  } = placeholderConfig ?? {};
+
+  const hasPlaceholder = Boolean(showPlaceholder && placeholderSrc);
+
+  const showPortraitTitle = orientation === 'portrait' && !embedded;
 
   return (
     <>
@@ -238,40 +251,56 @@ const MediaLoader = ({ blocks, className, embedded }: Props) => {
           <Metadata blocks={blocks} embedURL={playerConfig?.externalEmbedUrl} />
         )
       }
-      {orientation === 'portrait' && (
-        <strong css={styles.titlePortrait}>Watch Moments</strong>
+      {showPortraitTitle && (
+        <strong css={styles.titlePortrait}>
+          {translations.media.watchMoments || 'Watch Moments'}
+        </strong>
       )}
       <figure
         data-e2e="media-loader__container"
-        css={styles.figure}
         className={className}
+        css={[
+          styles.figure(embedded),
+          playerConfig?.ui?.skin === 'classic' && [
+            orientation === 'portrait' && styles.portraitFigure(embedded),
+            orientation === 'landscape' && styles.landscapeFigure,
+          ],
+        ]}
       >
-        {showAds && <AdvertTagLoader />}
-        <BumpLoader />
-        {showPlaceholder ? (
-          <Placeholder
-            src={placeholderConfig?.placeholderSrc}
-            srcSet={placeholderConfig?.placeholderSrcset}
-            noJsMessage={placeholderConfig?.translatedNoJSMessage}
-            mediaInfo={placeholderConfig?.mediaInfo}
-            orientation={orientation}
-            onClick={() => setIsPlaceholder(false)}
+        {isAmp ? (
+          <AmpMediaLoader
+            src={ampIframeUrl}
+            title={mediaInfo?.title}
+            placeholderSrc={placeholderSrc}
+            placeholderSrcset={placeholderSrcset}
+            noJsMessage={translatedNoJSMessage}
           />
         ) : (
-          <MediaContainer
-            playerConfig={playerConfig}
-            showAds={showAds}
-            mediaType={mediaType}
-            orientation={orientation}
-          />
+          <>
+            {showAds && <AdvertTagLoader />}
+            <BumpLoader />
+            {hasPlaceholder ? (
+              <Placeholder
+                src={placeholderSrc}
+                srcSet={placeholderSrcset}
+                noJsMessage={translatedNoJSMessage}
+                mediaInfo={mediaInfo}
+                onClick={() => setShowPlaceholder(false)}
+              />
+            ) : (
+              <MediaContainer
+                playerConfig={playerConfig}
+                showAds={showAds}
+                uniqueId={uniqueId}
+              />
+            )}
+          </>
         )}
         {captionBlock && (
           <Caption
             block={captionBlock}
             type={mediaType}
-            css={
-              orientation === 'portrait' ? styles.captionPortrait : undefined
-            }
+            css={orientation === 'portrait' && styles.captionPortrait}
           />
         )}
       </figure>

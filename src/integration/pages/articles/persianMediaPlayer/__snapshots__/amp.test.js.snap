@@ -145,6 +145,13 @@ exports[`AMP Articles Footer Anchors should match text and url 7`] = `
 
 exports[`AMP Articles Footer Anchors should match text and url 8`] = `
 {
+  "text": "اخبار به زبان‌های دیگر",
+  "url": "https://www.bbc.com/ws/languages",
+}
+`;
+
+exports[`AMP Articles Footer Anchors should match text and url 9`] = `
+{
   "text": "سیاست ما درباره لینک دادن به سایت های دیگر.",
   "url": "https://www.bbc.com/persian/institutional/2011/04/000001_links",
 }
@@ -152,14 +159,14 @@ exports[`AMP Articles Footer Anchors should match text and url 8`] = `
 
 exports[`AMP Articles Footer Cookie Settings Button should match text and on handler 1`] = `
 {
-  "on": "tap:consent.prompt, privacy.hide, cookie.show, AMP.setState({ isManagingSettings: true })",
+  "on": "tap:consent.prompt, cookie.show, AMP.setState({ isManagingSettings: true })",
   "text": "Do not share or sell my info",
 }
 `;
 
 exports[`AMP Articles Footer I can click on the BBC branding and it would take me to the homepage 1`] = `"/persian"`;
 
-exports[`AMP Articles Footer Paragraphs should match text 1`] = `"© 2024 بی بی سی. بی بی سی مسئول محتوای سایت های دیگر نیست. سیاست ما درباره لینک دادن به سایت های دیگر."`;
+exports[`AMP Articles Footer Paragraphs should match text 1`] = `"© 2025 بی بی سی. بی بی سی مسئول محتوای سایت های دیگر نیست. سیاست ما درباره لینک دادن به سایت های دیگر."`;
 
 exports[`AMP Articles Header I can see the branding 1`] = `"BBC News, فارسی"`;
 
@@ -172,8 +179,8 @@ exports[`AMP Articles Header Navigation link should match text and url 1`] = `
 
 exports[`AMP Articles Header Navigation link should match text and url 2`] = `
 {
-  "text": "جنگ اسرائیل-غزه",
-  "url": "/persian/topics/clm0z4jgj3xt",
+  "text": "بحران خاورمیانه",
+  "url": "/persian/topics/cj31ldvmg1et",
 }
 `;
 
@@ -194,7 +201,7 @@ exports[`AMP Articles Header Navigation link should match text and url 4`] = `
 exports[`AMP Articles Header Navigation link should match text and url 5`] = `
 {
   "text": "تلویزیون",
-  "url": "/persian/tv-and-radio-37434377",
+  "url": "/persian/topics/cw9qgeqd1zqt",
 }
 `;
 
@@ -416,7 +423,7 @@ exports[`AMP Articles SEO Linked data should match text 2`] = `
   "@type": "VideoObject",
   "description": "ÙØ«Ø³Ù Ø´Ø³Ø³Ø«Ù",
   "duration": "PT16S",
-  "embedURL": "https://web-cdn.test.api.bbci.co.uk/ws/av-embeds/articles/cej3lzd5e0go/p01kf9q6/fa/amp",
+  "embedURL": "https://www.test.bbc.com/ws/av-embeds/articles/cej3lzd5e0go/p01kf9q6/fa",
   "name": "Â«Ù‚Ø´Ø²Ù‡Ø° Ø´Ø³Ø³Ø«Ù Ù‡Ø± ÙØ«Ø³Ù",
   "thumbnailUrl": "https://ichef.test.bbci.co.uk/images/ic/1024x576/p01kf9s0.jpg",
   "uploadDate": "2018-11-12T15:00:22.000Z",

@@ -12,6 +12,8 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-somali',
     atiAnalyticsProducerId: '83',
+    atiAnalyticsProducerName: 'SOMALI',
+    useReverb: true,
     chartbeatDomain: 'somali.bbc.co.uk',
     brandName: 'BBC News Somali',
     product: 'BBC News',
@@ -39,9 +41,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/somali/hayadeed-49283375',
     isTrustProjectParticipant: true,
     script: latin,
-    manifestPath: '/manifest.json',
+    manifestPath: '/somali/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Somali',
+    homePageTitle: 'Somali',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {
@@ -132,7 +134,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'HAYE',
           reject: 'Ogow waxa isbedelay',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -313,6 +315,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/somali/send/u50853709',
           text: 'La xiriir BBC',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Wararka BBC ee luqadaha kale',
         },
         {
           id: 'COOKIE_SETTINGS',

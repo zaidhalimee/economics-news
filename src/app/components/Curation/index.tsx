@@ -92,7 +92,7 @@ export default ({
           <div css={styles.billboardContainer}>
             <Billboard
               heading={firstSummary.title}
-              description={description}
+              description={description as string}
               link={summaryLink}
               image={imageUrl}
               id={billboardId}
@@ -135,7 +135,12 @@ export default ({
         />
       );
     case RADIO_SCHEDULE:
-      return <RadioSchedule initialData={radioSchedule} />;
+      return (
+        <RadioSchedule
+          initialData={radioSchedule}
+          toggleName="homePageRadioSchedule"
+        />
+      );
     case EMBED:
       return embed ? <Embed oembed={embed} /> : null;
     case SIMPLE_CURATION_GRID:

@@ -12,6 +12,7 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'archive',
     atiAnalyticsProducerId: '127',
+    atiAnalyticsProducerName: 'BBC_ARCHIVE',
     chartbeatDomain: 'bbc.co.uk',
     brandName: 'BBC Archive',
     product: 'BBC Archive',
@@ -36,9 +37,8 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: null,
     isTrustProjectParticipant: false,
     script: latin,
-    manifestPath: '/articles/manifest.json',
     swPath: '/articles/sw.js',
-    frontPageTitle: 'Home',
+    homePageTitle: 'Home',
     showAdPlaceholder: false,
     showRelatedTopics: true,
     translations: {
@@ -119,7 +119,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: "Find out what's changed",
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.co.uk/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {

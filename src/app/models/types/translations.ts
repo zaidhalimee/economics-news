@@ -19,6 +19,14 @@ export interface Translations {
   topicsPath?: string;
   relatedTopics?: string;
   navMenuText: string;
+  liteSite?: {
+    onboardingMessage: string;
+    toMainSite: string;
+    informationPage: string;
+    informationPageLink: string;
+    dataSaving: string;
+    articleDataSavingLinkText: string;
+  };
   mediaAssetPage: {
     mediaPlayer: string;
     audioPlayer: string;
@@ -31,6 +39,8 @@ export interface Translations {
     postedAt: string;
     summary: string;
     shareButtonText: string;
+    postDateTimeFormat?: string;
+    postDateFormat?: string;
   };
   downloads?: {
     instructions?: string;
@@ -150,6 +160,7 @@ export interface Translations {
     bbc_yoruba_radio?: OnDemandRadioTvTranslations;
     listen: string;
     watch: string;
+    watchMoments?: string;
     listenLive?: string;
     listenNext?: string;
     liveLabel?: string;
@@ -160,6 +171,7 @@ export interface Translations {
     recentEpisodes?: string;
     podcastExternalLinks?: string;
     download?: string;
+    closeVideo?: string;
   };
   socialEmbed: {
     caption?: {

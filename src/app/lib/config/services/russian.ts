@@ -30,7 +30,7 @@ const headerFooterTranslations = {
       },
       accept: 'ОК',
       reject: 'Посмотреть, что изменилось',
-      rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+      rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
     },
     cookie: {
       amp: {
@@ -208,6 +208,7 @@ export const mainTranslations = {
     episodes: 'передачи',
     podcastExternalLinks: 'Этот подкаст доступен на',
     download: 'Загрузить эпизод',
+    closeVideo: 'Выйти',
   },
   socialEmbed: {
     caption: {
@@ -318,6 +319,8 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-russian',
     atiAnalyticsProducerId: '75',
+    atiAnalyticsProducerName: 'RUSSIAN',
+    useReverb: true,
     chartbeatDomain: 'russian.bbc.co.uk',
     brandName: 'BBC News Русская служба',
     product: 'BBC News',
@@ -345,9 +348,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/russian/institutional-50098149',
     isTrustProjectParticipant: true,
     script: cyrillic,
-    manifestPath: '/manifest.json',
+    manifestPath: '/russian/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Главная',
+    homePageTitle: 'Главная',
     iTunesAppId: 504278066,
     showAdPlaceholder: true,
     showRelatedTopics: true,
@@ -421,6 +424,10 @@ export const service: DefaultServiceConfig = {
           text: 'Связаться с Би-би-си',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Би-би-си на других языках',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -439,6 +446,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Война в Украине',
         url: '/russian/topics/cez0n29ggrdt',
+      },
+      {
+        title: 'Сводка потерь',
+        url: '/russian/topics/cqx9qqylwvgt',
       },
       {
         title: 'Истории',

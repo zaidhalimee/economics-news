@@ -12,6 +12,8 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-turkce',
     atiAnalyticsProducerId: '92',
+    atiAnalyticsProducerName: 'TURKISH',
+    useReverb: true,
     chartbeatDomain: 'turkish.bbc.co.uk', // this is meant to be different to the service name
     brandName: 'BBC News Türkçe',
     product: 'BBC News',
@@ -39,9 +41,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/turkce/kurumsal-50221017',
     isTrustProjectParticipant: true,
     script: latinWithDiacritics,
-    manifestPath: '/manifest.json',
+    manifestPath: '/turkce/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Haberler',
+    homePageTitle: 'Haberler',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {
@@ -140,7 +142,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'Tamam',
           reject: 'Neler değişti?',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -228,6 +230,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Next radio show',
         duration: 'Duration',
         recentEpisodes: 'Diğerleri',
+        closeVideo: 'Çıkış',
       },
       socialEmbed: {
         caption: {
@@ -305,6 +308,10 @@ export const service: DefaultServiceConfig = {
           text: "BBC'ye ulaş",
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Farklı dillerde BBC haberleri',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -323,6 +330,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Türkiye',
         url: '/turkce/topics/ckdxn2xk95gt',
+      },
+      {
+        title: 'Orta Doğu',
+        url: '/turkce/topics/cg726y2qxg1t',
       },
       {
         title: 'Rusya-Ukrayna Savaşı',

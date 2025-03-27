@@ -4,12 +4,14 @@ import aresMedia from './aresMedia';
 import tv from './tv';
 import liveRadio from './liveRadio';
 import audio from './audio';
+import legacyMedia from './legacyMedia';
 
 import {
   ConfigBuilderReturnProps,
   MediaBlock,
   ConfigBuilderProps,
 } from '../types';
+import liveMedia from './liveMedia';
 
 const BLOCK_TYPES = [
   'aresMedia',
@@ -17,17 +19,21 @@ const BLOCK_TYPES = [
   'tv',
   'liveRadio',
   'audio',
+  'legacyMedia',
+  'liveMedia',
 ] as const;
 
 const blockTypeMapping: Record<
   (typeof BLOCK_TYPES)[number],
-  (arg0: ConfigBuilderProps) => ConfigBuilderReturnProps
+  (_arg0: ConfigBuilderProps) => ConfigBuilderReturnProps
 > = {
   aresMedia,
   clipMedia,
   tv,
   liveRadio,
   audio,
+  legacyMedia,
+  liveMedia,
 };
 
 export default (blocks: MediaBlock[]) => {

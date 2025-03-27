@@ -11,6 +11,8 @@ const baseServiceConfig = {
   articleAuthor: 'https://www.facebook.com/bbcnews',
   atiAnalyticsAppName: 'news-serbian',
   atiAnalyticsProducerId: '81',
+  atiAnalyticsProducerName: 'SERBIAN',
+  useReverb: true,
   chartbeatDomain: 'serbian.bbc.co.uk',
   product: 'BBC News',
   defaultImage: 'https://news.files.bbci.co.uk/ws/img/logos/og/serbian.png',
@@ -20,7 +22,7 @@ const baseServiceConfig = {
   twitterCreator: '@bbcnasrpskom',
   twitterSite: '@bbcnasrpskom',
   isTrustProjectParticipant: true,
-  manifestPath: '/manifest.json',
+  manifestPath: '/serbian/manifest.json',
   swPath: '/sw.js',
   radioSchedule: {
     hasRadioSchedule: false,
@@ -42,7 +44,7 @@ export const service: SerbianConfig = {
     brandName: 'BBC News na srpskom',
     datetimeLocale: `sr`,
     externalLinkText: ', spoljna',
-    frontPageTitle: 'Glavna stranica',
+    homePageTitle: 'Glavna stranica',
     lang: `sr-latn`,
     locale: `sr-latn`,
     // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405
@@ -91,6 +93,10 @@ export const service: SerbianConfig = {
           text: 'Kontaktirajte BBC',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'BBC News na drugim jezicima',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -111,24 +117,24 @@ export const service: SerbianConfig = {
         url: '/serbian/lat',
       },
       {
-        title: 'Ukrajina',
-        url: '/serbian/lat/topics/c5wzvzzz5vrt',
+        title: 'Studentske blokade',
+        url: '/serbian/topics/cly9dd4w09wt/lat',
       },
       {
         title: 'Srbija',
-        url: '/serbian/lat/topics/cr50vdy9q6wt',
+        url: '/serbian/topics/cr50vdy9q6wt/lat',
       },
       {
         title: 'Balkan',
-        url: '/serbian/lat/topics/c06g87137jgt',
+        url: '/serbian/topics/c06g87137jgt/lat',
       },
       {
         title: 'Svet',
-        url: '/serbian/lat/topics/c2lej05e1eqt',
+        url: '/serbian/topics/c2lej05e1eqt/lat',
       },
       {
         title: 'Video',
-        url: '/serbian/lat/topics/c44vyp5g049t',
+        url: '/serbian/topics/c44vyp5g049t/lat',
       },
       {
         title: 'Najpopularnije',
@@ -234,7 +240,7 @@ export const service: SerbianConfig = {
           },
           accept: 'U redu',
           reject: 'Saznajte šta se promenilo',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -323,6 +329,7 @@ export const service: SerbianConfig = {
         previousRadioShow: 'Prethodna radio emisija',
         nextRadioShow: 'Sledeća radio emisija',
         duration: 'Trajanje',
+        closeVideo: 'Izađi',
       },
       socialEmbed: {
         caption: {
@@ -435,7 +442,7 @@ export const service: SerbianConfig = {
     brandName: 'BBC News на српском',
     datetimeLocale: `sr-cyrl`,
     externalLinkText: ', спољна',
-    frontPageTitle: 'Главна страница',
+    homePageTitle: 'Главна страница',
     lang: `sr-cyrl`,
     locale: `sr-cyrl`,
     // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405
@@ -484,6 +491,10 @@ export const service: SerbianConfig = {
           text: 'Контактирајте ББЦ',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'BBC News на другим језицима',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -504,24 +515,24 @@ export const service: SerbianConfig = {
         url: '/serbian/cyr',
       },
       {
-        title: 'Украјина',
-        url: '/serbian/cyr/topics/cqwvxvvw9qrt',
+        title: 'Студентске блокаде',
+        url: '/serbian/topics/cly9dd4w09wt/cyr',
       },
       {
         title: 'Србија',
-        url: '/serbian/cyr/topics/cvjp1d3k9dvt',
+        url: '/serbian/topics/cr50vdy9q6wt/cyr',
       },
       {
         title: 'Балкан',
-        url: '/serbian/cyr/topics/c8y9k0k2pvvt',
+        url: '/serbian/topics/c06g87137jgt/cyr',
       },
       {
         title: 'Свет',
-        url: '/serbian/cyr/topics/c3m1x951mljt',
+        url: '/serbian/topics/c2lej05e1eqt/cyr',
       },
       {
         title: 'Видео',
-        url: '/serbian/cyr/topics/crg7kj2ejj2t',
+        url: '/serbian/topics/c44vyp5g049t/cyr',
       },
       {
         title: 'Најпопуларније',
@@ -627,7 +638,7 @@ export const service: SerbianConfig = {
           },
           accept: 'У реду',
           reject: 'Сазнајте шта се променило',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -717,6 +728,7 @@ export const service: SerbianConfig = {
         nextRadioShow: 'Следећа радио емисија',
         duration: 'Трајање',
         recentEpisodes: 'Претходне епизоде',
+        closeVideo: 'Изађи',
       },
       socialEmbed: {
         caption: {

@@ -14,6 +14,8 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-persian',
     atiAnalyticsProducerId: '69',
+    atiAnalyticsProducerName: 'PERSIAN',
+    useReverb: true,
     chartbeatDomain: 'persian.bbc.co.uk',
     brandName: 'BBC News فارسی',
     serviceLocalizedName: 'فارسی',
@@ -41,9 +43,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/persian/institutional-49283091',
     isTrustProjectParticipant: true,
     script: arabic,
-    manifestPath: '/manifest.json',
+    manifestPath: '/persian/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'صفحه اول',
+    homePageTitle: 'صفحه اول',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     podcastPromo: {
@@ -162,7 +164,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'تایید',
           reject: 'ببنید چه تغییراتی ایجاد شده است',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -270,6 +272,7 @@ export const service: DefaultServiceConfig = {
         duration: 'مدت',
         podcastExternalLinks: 'این پادکست در این زمان قابل دسترس است',
         download: 'دانلود برنامه',
+        closeVideo: 'خروج',
       },
       socialEmbed: {
         caption: {
@@ -421,6 +424,10 @@ export const service: DefaultServiceConfig = {
           text: 'تماس با بی بی سی',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'اخبار به زبان‌های دیگر',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -436,8 +443,8 @@ export const service: DefaultServiceConfig = {
         url: '/persian',
       },
       {
-        title: 'جنگ اسرائیل-غزه',
-        url: '/persian/topics/clm0z4jgj3xt',
+        title: 'بحران خاورمیانه',
+        url: '/persian/topics/cj31ldvmg1et',
       },
       {
         title: 'پخش زنده',
@@ -449,7 +456,7 @@ export const service: DefaultServiceConfig = {
       },
       {
         title: 'تلویزیون',
-        url: '/persian/tv-and-radio-37434377',
+        url: '/persian/topics/cw9qgeqd1zqt',
       },
       {
         title: 'ايران',

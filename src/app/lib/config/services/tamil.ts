@@ -12,6 +12,8 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-tamil',
     atiAnalyticsProducerId: '87',
+    atiAnalyticsProducerName: 'TAMIL',
+    useReverb: true,
     chartbeatDomain: 'tamil.bbc.co.uk',
     brandName: 'BBC News தமிழ்',
     product: 'BBC News',
@@ -39,9 +41,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/tamil/institutional-50288575',
     isTrustProjectParticipant: true,
     script: tamil,
-    manifestPath: '/manifest.json',
+    manifestPath: '/tamil/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'முகப்பு',
+    homePageTitle: 'முகப்பு',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {
@@ -141,7 +143,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'சரி',
           reject: 'என்ன மாறியுள்ளது என்பதைப் பாருங்கள்.',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -235,6 +237,7 @@ export const service: DefaultServiceConfig = {
         },
         listen: 'கேட்க',
         watch: 'பார்க்க',
+        watchMoments: 'ஷார்ட் வீடியோ',
         listenLive: 'நேரலையை கேட்க',
         liveLabel: 'நேரலை',
         nextLabel: 'NEXT',
@@ -242,6 +245,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'அடுத்த வானொலி நிகழ்ச்சி',
         duration: 'கால அளவு',
         recentEpisodes: 'முந்தைய நிகழ்ச்சிகள்',
+        closeVideo: 'மூடுக',
       },
       socialEmbed: {
         caption: {
@@ -393,6 +397,10 @@ export const service: DefaultServiceConfig = {
           text: 'பிபிசியுடன் தொடர்பு கொள்ள',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'பிபிசி நியூஸ் பிற மொழிகளில்',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -420,6 +428,14 @@ export const service: DefaultServiceConfig = {
       {
         title: 'இலங்கை',
         url: '/tamil/topics/cz74k7p3qw7t',
+      },
+      {
+        title: 'உடல்நலம்',
+        url: '/tamil/topics/cyx5kxzdn9dt',
+      },
+      {
+        title: 'வரலாறு',
+        url: '/tamil/topics/cxnyknvykxjt',
       },
       {
         title: 'விளையாட்டு',

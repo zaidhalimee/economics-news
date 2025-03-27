@@ -369,6 +369,13 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 .emotion-15 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
+}
+
+.emotion-15:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-17 {
@@ -738,7 +745,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   color: #222222;
   -webkit-text-decoration: none;
   text-decoration: none;
-  margin-bottom: 0.5rem;
+  display: inline-block;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -845,7 +852,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
             dir="ltr"
           >
             <h1
-              class="emotion-6 emotion-7"
+              class="article-heading emotion-6 emotion-7"
               id="content"
               tabindex="-1"
             >
@@ -878,6 +885,8 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
       >
         <h2
           class="emotion-15 emotion-16"
+          id="section-label-heading-Most-Read"
+          tabindex="-1"
         >
           <span
             class="emotion-17 emotion-18"
@@ -924,7 +933,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="emotion-31"
                 href="https://www.bbc.com/pidgin/articles/cz5kkgv41v0o"
               >
                 Teams wey qualify for Afcon 2023 and how things stand for each group
@@ -965,7 +974,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="emotion-31"
                 href="https://www.bbc.com/pidgin/articles/czd44wvly0qo"
               >
                 'We dey hear gospel songs den screaming' - Woman tok of Uganda school attack 
@@ -1006,7 +1015,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="emotion-31"
                 href="https://www.bbc.com/pidgin/articles/cgr6g81j2g8o"
               >
                 Super Eagles qualify for Nations Cup afta beating Sierra Leone for Monrovia
@@ -1047,7 +1056,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="emotion-31"
                 href="https://www.bbc.com/pidgin/articles/cx047w4gxqzo"
               >
                 Forbes top ten list of highest paid athletes for 2023 and wetin dem earn
@@ -1088,7 +1097,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="emotion-31"
                 href="/pidgin/65817572"
               >
                 Tins to sabi about 2023 Sierra Leone general election
@@ -1540,6 +1549,13 @@ exports[`Article Page should render a news article correctly 1`] = `
 .emotion-19 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
+}
+
+.emotion-19:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-21 {
@@ -1909,7 +1925,7 @@ exports[`Article Page should render a news article correctly 1`] = `
   color: #222222;
   -webkit-text-decoration: none;
   text-decoration: none;
-  margin-bottom: 0.5rem;
+  display: inline-block;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -2236,7 +2252,7 @@ exports[`Article Page should render a news article correctly 1`] = `
             dir="ltr"
           >
             <h1
-              class="emotion-6 emotion-7"
+              class="article-heading emotion-6 emotion-7"
               id="content"
               tabindex="-1"
             >
@@ -2313,6 +2329,8 @@ exports[`Article Page should render a news article correctly 1`] = `
       >
         <h2
           class="emotion-19 emotion-20"
+          id="section-label-heading-Most-Read"
+          tabindex="-1"
         >
           <span
             class="emotion-21 emotion-22"
@@ -2359,7 +2377,7 @@ exports[`Article Page should render a news article correctly 1`] = `
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-35"
+                class="emotion-35"
                 href="/news/world-us-canada-65981277"
               >
                 Why the oxygen timeline on sub may not be so fixed
@@ -2400,7 +2418,7 @@ exports[`Article Page should render a news article correctly 1`] = `
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-35"
+                class="emotion-35"
                 href="/news/uk-wales-65986742"
               >
                 MasterChef contestant jailed for child abuse images
@@ -2441,7 +2459,7 @@ exports[`Article Page should render a news article correctly 1`] = `
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-35"
+                class="emotion-35"
                 href="/news/business-65981876"
               >
                 Musk and Zuckerberg agree to hold cage fight
@@ -2482,7 +2500,7 @@ exports[`Article Page should render a news article correctly 1`] = `
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-35"
+                class="emotion-35"
                 href="/news/entertainment-arts-65986136"
               >
                 Cindy Beale returns to EastEnders after 25 years
@@ -2523,7 +2541,7 @@ exports[`Article Page should render a news article correctly 1`] = `
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-35"
+                class="emotion-35"
                 href="/news/health-65985838"
               >
                 Mosquito-borne diseases risk increasing in Europe
@@ -2564,7 +2582,7 @@ exports[`Article Page should render a news article correctly 1`] = `
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-35"
+                class="emotion-35"
                 href="/news/uk-scotland-65987986"
               >
                 Teenager guilty of murdering boy at train station
@@ -2605,7 +2623,7 @@ exports[`Article Page should render a news article correctly 1`] = `
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-35"
+                class="emotion-35"
                 href="/news/world-65983001"
               >
                 At least 30 migrants feared dead off Canary Islands
@@ -2646,7 +2664,7 @@ exports[`Article Page should render a news article correctly 1`] = `
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-35"
+                class="emotion-35"
                 href="/news/business-65982981"
               >
                 Bank boss warns interest rate hike hard for many
@@ -2687,7 +2705,7 @@ exports[`Article Page should render a news article correctly 1`] = `
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-35"
+                class="emotion-35"
                 href="/news/world-europe-65982817"
               >
                 Ukraine strikes bridge to Crimea, says Russia
@@ -2728,7 +2746,7 @@ exports[`Article Page should render a news article correctly 1`] = `
               dir="ltr"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-35"
+                class="emotion-35"
                 href="/news/world-us-canada-65923956"
               >
                 The woman who wants to end abortion in America
@@ -3114,7 +3132,7 @@ exports[`Article Page should render a news article with headline in the middle c
             dir="ltr"
           >
             <strong
-              class="emotion-11 emotion-12"
+              class="article-heading emotion-11 emotion-12"
             >
               Article Headline
             </strong>
@@ -3733,6 +3751,13 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 .emotion-15 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
+}
+
+.emotion-15:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-17 {
@@ -4102,7 +4127,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
   color: #222222;
   -webkit-text-decoration: none;
   text-decoration: none;
-  margin-bottom: 0.5rem;
+  display: inline-block;
 }
 
 @media (min-width: 20rem) and (max-width: 37.4375rem) {
@@ -4429,7 +4454,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
             dir="rtl"
           >
             <h1
-              class="emotion-6 emotion-7"
+              class="article-heading emotion-6 emotion-7"
               id="content"
               tabindex="-1"
             >
@@ -4462,6 +4487,8 @@ exports[`Article Page should render a rtl article (persian) with most read corre
       >
         <h2
           class="emotion-15 emotion-16"
+          id="section-label-heading-Most-Read"
+          tabindex="-1"
         >
           <span
             class="emotion-17 emotion-18"
@@ -4508,7 +4535,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
               dir="rtl"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="emotion-31"
                 href="https://www.bbc.com/persian/articles/c4n9j7rx27lo"
               >
                 ایران در آستانه بحران بنزین؛ تابستانی دشوار برای دولت رئیسی در پیش است
@@ -4549,7 +4576,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
               dir="rtl"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="emotion-31"
                 href="https://www.bbc.com/persian/articles/cm58lxneyrvo"
               >
                 پرونده حمید نوری؛ وکلای مدافع: نوری فریب خورد
@@ -4590,7 +4617,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
               dir="rtl"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="emotion-31"
                 href="https://www.bbc.com/persian/articles/cx7e0eexdeeo"
               >
                 اما رادوکانو: گاهی آرزو می‌کنم که ای کاش قهرمان اوپن آمریکا نمی‌شدم
@@ -4631,7 +4658,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
               dir="rtl"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="emotion-31"
                 href="https://www.bbc.com/persian/articles/cqe0045zrpdo"
               >
                 ملی‌پوش سابق هلند برای چاقو زدن به فامیلش به ۱۸ ماه حبس محکوم شد
@@ -4672,7 +4699,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
               dir="rtl"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="emotion-31"
                 href="https://www.bbc.com/persian/articles/cjmyylvr1nvo"
               >
                 وزیر خارجه آمریکا در پکن؛ شی: پیشرفت‌هایی در روابط حاصل شده است، بلینکن: رقابت نباید بدل به دشمنی شود
@@ -4713,7 +4740,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
               dir="rtl"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="emotion-31"
                 href="https://www.bbc.com/persian/articles/cyxgqq1796qo"
               >
                 سگم سرطان پستان مرا تشخیص داد
@@ -4754,7 +4781,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
               dir="rtl"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="emotion-31"
                 href="https://www.bbc.com/persian/articles/cydg800g89yo"
               >
                 لوح ۲۸۰۰ ساله از ایتالیا به عراق بازگردانده شد
@@ -4795,7 +4822,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
               dir="rtl"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="emotion-31"
                 href="https://www.bbc.com/persian/articles/cgr664ezld5o"
               >
                 نمایندگان کشورها و نهادها در اجلاس سازمان ملل خواستار پایان یافتن سیاست‌های تبعیض‌آمیز طالبان علیه زنان شدند
@@ -4836,7 +4863,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
               dir="rtl"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="emotion-31"
                 href="https://www.bbc.com/persian/articles/c9wj7ejl17po"
               >
                 چرا موبایل داغ می‌کند و چطور آن را خنک نگه داریم؟
@@ -4877,7 +4904,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
               dir="rtl"
             >
               <a
-                class="focusIndicatorDisplayTableCell emotion-31"
+                class="emotion-31"
                 href="https://www.bbc.com/persian/articles/c6plvgyz614o"
               >
                 هشتگ «داستان_ما_یکیست» در چهلمین سالگرد اعدام ۱۰ زن بهائی در شیراز

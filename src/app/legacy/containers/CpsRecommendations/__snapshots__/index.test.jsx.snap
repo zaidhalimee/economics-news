@@ -196,6 +196,13 @@ exports[`CpsRecommendations should render when cpsRecommendations toggle is enab
 .emotion-11 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
+}
+
+.emotion-11:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-13 {
@@ -773,6 +780,13 @@ exports[`CpsRecommendations should render when cpsRecommendations toggle is enab
 .emotion-11 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
+}
+
+.emotion-11:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-13 {
@@ -1620,6 +1634,13 @@ exports[`CpsRecommendations should render when cpsRecommendations toggle is enab
 .emotion-11 {
   margin: 0;
   padding: 0;
+  scroll-margin-top: 1rem;
+}
+
+.emotion-11:focus-visible {
+  outline: 0.1875rem solid #000000;
+  box-shadow: 0 0 0 0.1875rem #FFFFFF;
+  outline-offset: 0.1875rem;
 }
 
 .emotion-13 {

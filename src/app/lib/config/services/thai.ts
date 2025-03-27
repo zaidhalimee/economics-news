@@ -14,6 +14,8 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-thai',
     atiAnalyticsProducerId: '90',
+    atiAnalyticsProducerName: 'THAI',
+    useReverb: true,
     chartbeatDomain: 'thai.bbc.co.uk',
     brandName: 'BBC News ไทย',
     product: 'BBC News',
@@ -39,9 +41,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/thai/institutional-49281839',
     isTrustProjectParticipant: true,
     script: thai,
-    manifestPath: '/manifest.json',
+    manifestPath: '/thai/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'ข่าว ข่าววันนี้ ข่าวล่าสุด วีดีโอ',
+    homePageTitle: 'ข่าว ข่าววันนี้ ข่าวล่าสุด วีดีโอ',
     showAdPlaceholder: false,
     showRelatedTopics: true,
     translations: {
@@ -132,7 +134,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'ตกลง',
           reject: 'ดูว่ามีอะไรเปลี่ยนแปลงไปบ้าง',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -220,6 +222,7 @@ export const service: DefaultServiceConfig = {
         previousRadioShow: 'รายการวิทยุก่อนหน้า',
         nextRadioShow: 'รายการวิทยุถัดไป',
         duration: 'ความยาว',
+        closeVideo: 'ออก',
       },
       socialEmbed: {
         caption: {
@@ -328,6 +331,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/thai/send/u50853797',
           text: 'ติดต่อบีบีซี',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'บีบีซีนิวส์ภาษาอื่น ๆ',
         },
         {
           id: 'COOKIE_SETTINGS',

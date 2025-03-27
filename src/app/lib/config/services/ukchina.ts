@@ -11,6 +11,8 @@ const baseServiceConfig = {
   articleTimestampSuffix: '',
   atiAnalyticsAppName: 'news-ukchina',
   atiAnalyticsProducerId: '93',
+  atiAnalyticsProducerName: 'UK_CHINA',
+  useReverb: true,
   chartbeatDomain: 'ukchina.bbc.co.uk',
   brandName: 'BBC 英伦网',
   product: 'BBC',
@@ -26,7 +28,7 @@ const baseServiceConfig = {
   twitterSite: '@BBCChina',
   isTrustProjectParticipant: true,
   script: noAscendersOrDescenders,
-  manifestPath: '/manifest.json',
+  manifestPath: '/ukchina/manifest.json',
   swPath: '/sw.js',
   showAdPlaceholder: true,
   showRelatedTopics: true,
@@ -37,7 +39,7 @@ export const service: ChineseConfig = {
   simp: {
     ...baseServiceConfig,
     externalLinkText: ', 外部',
-    frontPageTitle: '主页',
+    homePageTitle: '主页',
     lang: `zh-hans`,
     locale: `zh-hans`,
     // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405
@@ -189,7 +191,7 @@ export const service: ChineseConfig = {
           },
           accept: '可以',
           reject: '了解更新内容',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -275,6 +277,7 @@ export const service: ChineseConfig = {
         nextRadioShow: '下期广播节目',
         duration: '节目全长',
         recentEpisodes: '存档节目',
+        closeVideo: '退出',
       },
       socialEmbed: {
         caption: {
@@ -308,7 +311,7 @@ export const service: ChineseConfig = {
     // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405
     isoLang: 'zh-Hant',
     externalLinkText: ', 外部',
-    frontPageTitle: '主頁',
+    homePageTitle: '主頁',
     defaultCaptionOffscreenText: '說明文字, ',
     audioCaptionOffscreenText: '音頻加註文字，',
     videoCaptionOffscreenText: '視頻加註文字，',
@@ -453,7 +456,7 @@ export const service: ChineseConfig = {
           },
           accept: '可以',
           reject: '了解更新內容',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -539,6 +542,7 @@ export const service: ChineseConfig = {
         nextRadioShow: '下期廣播節目',
         duration: '節目全長',
         recentEpisodes: '存档节目',
+        closeVideo: '退出',
       },
       socialEmbed: {
         caption: {

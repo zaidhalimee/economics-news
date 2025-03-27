@@ -12,6 +12,8 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-arabic',
     atiAnalyticsProducerId: '5',
+    atiAnalyticsProducerName: 'ARABIC',
+    useReverb: true,
     chartbeatDomain: 'arabic.bbc.co.uk',
     brandName: 'BBC News عربي',
     product: 'BBC News',
@@ -39,25 +41,25 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/arabic/institutional-49283069',
     isTrustProjectParticipant: true,
     script: arabic,
-    manifestPath: '/manifest.json',
+    manifestPath: '/arabic/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'الرئيسية',
+    homePageTitle: 'الرئيسية',
     iTunesAppId: 558497376,
     showAdPlaceholder: true,
     showRelatedTopics: true,
     googleSiteVerification: 'D-aEHUiyVaMoUJXjVRbDVkxS0dLTMUZLD3dLPTnWO4Q',
     podcastPromo: {
       title: 'يستحق الانتباه',
-      brandTitle: 'يستحق الانتباه',
+      brandTitle: 'حسابنا الرسمي على واتساب',
       brandDescription:
-        'شرح معمق لقصة بارزة من أخباراليوم، لمساعدتك على فهم أهم الأحداث حولك وأثرها على حياتك',
+        'تابعوا التغطية الشاملة من بي بي سي نيوز عربي على واتساب.',
       image: {
-        src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p0h6dt4s.jpg',
-        alt: 'يستحق الانتباه',
+        src: 'https://ichef.bbci.co.uk/images/ic/$recipe/p0k7ksmj.png',
+        alt: 'حسابنا الرسمي على واتساب',
       },
       linkLabel: {
-        text: 'الحلقات',
-        href: 'https://www.bbc.com/arabic/podcasts/p0h6d6nm',
+        text: 'اضغط هنا',
+        href: 'https://www.whatsapp.com/channel/0029Val8KlE5a24BsTvuVd2e',
       },
       skipLink: {
         text: 'تخطى %title% وواصل القراءة',
@@ -155,7 +157,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'موافق',
           reject: 'إطلع على التغييرات',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -240,6 +242,7 @@ export const service: DefaultServiceConfig = {
         },
         listen: 'استمع',
         watch: 'شاهد',
+        watchMoments: 'لحظات للمشاهدة',
         listenLive: 'استمع للبث المباشر',
         listenNext: 'واصل الاستماع',
         liveLabel: 'مباشر',
@@ -250,6 +253,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'البرامج السابقة',
         podcastExternalLinks: 'هذا البودكاست متاح عبر',
         download: 'تحميل الحلقة',
+        closeVideo: 'خروج',
       },
       socialEmbed: {
         caption: {
@@ -399,6 +403,10 @@ export const service: DefaultServiceConfig = {
           text: 'اتصل بـ بي بي سي',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'بي بي سي نيوز عربي في لغات أخرى',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -413,6 +421,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'رئيسية',
         url: '/arabic',
+      },
+      {
+        title: 'شاهد البث المباشر',
+        url: '/arabic/media-49522519',
       },
       {
         title: 'أخبار',

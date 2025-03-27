@@ -21,12 +21,15 @@ const renderListItems = (
   activeIndex,
   clickTrackerHandler,
   viewRef,
+  isLite,
 ) =>
-  navigation.map((item, index) => {
-    const { title, url } = item;
+  navigation.reduce((listAcc, item, index) => {
+    const { title, url, hideOnLiteSite } = item;
     const active = index === activeIndex;
 
-    return (
+    if (hideOnLiteSite && isLite) return listAcc;
+
+    const listItem = (
       <Li
         key={title}
         url={url}
@@ -41,11 +44,13 @@ const renderListItems = (
         {title}
       </Li>
     );
-  });
 
-const NavigationContainer = () => {
-  const { isAmp } = useContext(RequestContext);
+    return [...listAcc, listItem];
+  }, []);
 
+const NavigationContainer = ({ propsForOJExperiment }) => {
+  const { isAmp, isLite } = useContext(RequestContext);
+  const { blocks, experimentVariant } = propsForOJExperiment || {};
   const { script, translations, navigation, service, dir } =
     useContext(ServiceContext);
 
@@ -92,6 +97,7 @@ const NavigationContainer = () => {
         activeIndex,
         scrollableNavClickTrackerHandler,
         scrollableNavViewRef,
+        isLite,
       )}
     </NavigationUl>
   );
@@ -122,6 +128,8 @@ const NavigationContainer = () => {
       dir={dir}
       script={script}
       service={service}
+      blocks={blocks}
+      experimentVariant={experimentVariant}
     />
   );
 };

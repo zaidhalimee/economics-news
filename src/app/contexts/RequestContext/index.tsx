@@ -8,7 +8,6 @@ import {
   MvtExperiment,
 } from '#app/models/types/global';
 import getStatsDestination from './getStatsDestination';
-import getStatsPageIdentifier from './getStatsPageIdentifier';
 import getOriginContext from './getOriginContext';
 import getEnv from './getEnv';
 import getMetaUrls from './getMetaUrls';
@@ -33,12 +32,10 @@ export type RequestContextProps = {
   derivedPageType: string | null;
   pathname: string;
   platform: Platforms;
-  previousPath: string | null;
   service: Services;
   showAdsBasedOnLocation: boolean;
   showCookieBannerBasedOnCountry: boolean;
   statsDestination: string;
-  statsPageIdentifier: string | null;
   statusCode: number | null;
   timeOnServer: number | null;
   variant: Variants | null;
@@ -58,7 +55,6 @@ type RequestProviderProps = {
   isNextJs?: boolean;
   pageType: PageTypes;
   pathname: string;
-  previousPath?: string | null;
   service: Services;
   showAdsBasedOnLocation?: boolean;
   showCookieBannerBasedOnCountry?: boolean;
@@ -81,7 +77,6 @@ export const RequestContextProvider = ({
   mvtExperiments = null,
   pageType,
   pathname,
-  previousPath = null,
   service,
   showAdsBasedOnLocation = false,
   showCookieBannerBasedOnCountry = true,
@@ -100,6 +95,8 @@ export const RequestContextProvider = ({
         return 'app';
       case isAmp:
         return 'amp';
+      case isLite:
+        return 'lite';
       default:
         return 'canonical';
     }
@@ -110,11 +107,6 @@ export const RequestContextProvider = ({
     isUK: platform === 'amp' ? true : formattedIsUK, // getDestination requires that statsDestination is a PS variant on AMP
     env,
     service,
-  });
-  const statsPageIdentifier = getStatsPageIdentifier({
-    pageType,
-    service,
-    id,
   });
 
   const value = useMemo(
@@ -131,9 +123,7 @@ export const RequestContextProvider = ({
       isNextJs,
       platform,
       statsDestination,
-      statsPageIdentifier,
       statusCode,
-      previousPath,
       variant,
       timeOnServer,
       showAdsBasedOnLocation,
@@ -157,12 +147,10 @@ export const RequestContextProvider = ({
       pageType,
       pathname,
       platform,
-      previousPath,
       service,
       showAdsBasedOnLocation,
       showCookieBannerBasedOnCountry,
       statsDestination,
-      statsPageIdentifier,
       statusCode,
       timeOnServer,
       variant,

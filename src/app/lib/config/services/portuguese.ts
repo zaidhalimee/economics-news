@@ -12,6 +12,8 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-portuguese',
     atiAnalyticsProducerId: '33',
+    atiAnalyticsProducerName: 'BRASIL',
+    useReverb: true,
     chartbeatDomain: 'brasil.bbc.co.uk', // this is meant to be different to the service name
     brandName: 'BBC News Brasil',
     product: 'BBC News',
@@ -41,23 +43,24 @@ export const service: DefaultServiceConfig = {
       'https://www.bbc.com/portuguese/institutional-50054434',
     isTrustProjectParticipant: true,
     script: latinWithDiacritics,
-    manifestPath: '/manifest.json',
+    manifestPath: '/portuguese/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Notícias, vídeos, análise e contexto em português',
+    homePageTitle: 'Notícias, vídeos, análise e contexto em português',
     passportHomes: ['brasil'],
     showAdPlaceholder: true,
     showRelatedTopics: true,
     podcastPromo: {
-      title: 'Que História!',
-      brandTitle: 'Que História!',
-      brandDescription: 'A 3ª temporada com histórias reais incríveis',
+      title: 'Novo podcast investigativo: A Raposa',
+      brandTitle: 'Novo podcast investigativo: A Raposa',
+      brandDescription:
+        'Uma tonelada de cocaína, três brasileiros inocentes e a busca por um suspeito inglês',
       image: {
-        src: 'https://ichef.bbc.co.uk/images/ic/$recipe/p0jfptnr.png',
-        alt: 'Logo: Que História!',
+        src: 'https://ichef.bbc.co.uk/images/ic/$recipe/p0k38tc4.jpg',
+        alt: 'Logo: A Raposa',
       },
       linkLabel: {
         text: 'Episódios',
-        href: 'https://www.bbc.com/portuguese/podcasts/p07r3r3t',
+        href: 'https://www.bbc.com/portuguese/podcasts/p0cyhvny',
       },
       skipLink: {
         text: 'Pule %title% e continue lendo',
@@ -153,7 +156,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: 'Saiba o que foi alterado',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -237,6 +240,7 @@ export const service: DefaultServiceConfig = {
         video: 'Vídeo',
         listen: 'Listen',
         watch: 'Assista',
+        watchMoments: 'Assista',
         listenLive: 'Ouça ao vivo',
         listenNext: 'Ouça o próximo',
         liveLabel: 'AO VIVO',
@@ -247,6 +251,7 @@ export const service: DefaultServiceConfig = {
         recentEpisodes: 'Mais',
         podcastExternalLinks: 'O podcast está disponível em',
         download: 'Baixar episódio',
+        closeVideo: 'Sair',
       },
       socialEmbed: {
         caption: {
@@ -292,11 +297,11 @@ export const service: DefaultServiceConfig = {
         optional: 'opcional',
 
         // File upload
-        fileUploadLiveRegionText: undefined,
+        fileUploadLiveRegionText: 'O que você está uploading:',
         fileUploadLiveRegionUpdateText: undefined,
         fileUploadListHeading: 'O que você está uploading:',
         fileUploadButton: 'Selecione um arquivo',
-        fileUploadRemoveButton: undefined,
+        fileUploadRemoveButton: 'Selecione um arquivo',
 
         // Submit button
         submitButton: 'Enviar',
@@ -319,7 +324,8 @@ export const service: DefaultServiceConfig = {
         validationWordLimit: 'Máximo de {{wordLimit}} palavras',
 
         // Messaging
-        retentionPeriodDays: undefined,
+        retentionPeriodDays:
+          'Nós guardaremos a sua mensagem por até {{days}} dias. Caso não usemos o conteúdo, ele será apagado junto a qualquer outra informação que você nos tenha enviado.',
         referenceNumber: 'Número de referência',
         submissionInfoSignedOutMessage:
           'Você deve anotar esses detalhes para sua referência.',
@@ -330,7 +336,7 @@ export const service: DefaultServiceConfig = {
         removalGuidelineText: undefined,
 
         // Form Screen
-        dataPolicyHeading: undefined,
+        dataPolicyHeading: 'Nossa política de dados',
 
         // Uploading Screen
         uploadingHeading: 'Uploading seus arquivos...',
@@ -339,8 +345,9 @@ export const service: DefaultServiceConfig = {
         // Success Screen
         successHeading: 'Mensagem enviada',
         successDescription: 'Obrigado por entrar em contato.',
-        privacyPolicyLinkHref: undefined,
-        privacyPolicyLinkText: undefined,
+        privacyPolicyLinkHref:
+          'https://www.bbc.com/portuguese/articles/cw0w9z6p491o',
+        privacyPolicyLinkText: 'Política de privacidade',
 
         // Error Screen
         errorHeading: 'Sua mensagem não foi enviada',
@@ -398,6 +405,10 @@ export const service: DefaultServiceConfig = {
           text: 'Contate a BBC',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'BBC News em outras línguas',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -416,14 +427,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Brasil',
         url: '/portuguese/topics/cz74k717pw5t',
-      },
-      {
-        title: 'Eleições municipais',
-        url: '/portuguese/topics/cy6z19wz1zet',
-      },
-      {
-        title: 'Eleições EUA',
-        url: '/portuguese/topics/c30gn378n6kt',
       },
       {
         title: 'Internacional',
@@ -450,8 +453,8 @@ export const service: DefaultServiceConfig = {
         url: '/portuguese/topics/c9y2j35dn2zt',
       },
       {
-        title: 'BBC Lê',
-        url: '/portuguese/topics/cxndrr1qgllt',
+        title: 'Podcasts',
+        url: '/portuguese/topics/cx2ggnx4j72t',
       },
     ],
   },

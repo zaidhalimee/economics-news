@@ -12,6 +12,8 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-afrique',
     atiAnalyticsProducerId: '3',
+    atiAnalyticsProducerName: 'AFRIQUE',
+    useReverb: true,
     chartbeatDomain: 'afrique.bbc.co.uk',
     brandName: 'BBC News Afrique',
     product: 'BBC News',
@@ -40,9 +42,9 @@ export const service: DefaultServiceConfig = {
       'https://www.bbc.com/afrique/institutionelles-49283281',
     isTrustProjectParticipant: true,
     script: latinWithDiacritics,
-    manifestPath: '/manifest.json',
+    manifestPath: '/afrique/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Accueil',
+    homePageTitle: 'Accueil',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {
@@ -136,7 +138,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: 'Découvrez ce qui a changé',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -235,6 +237,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Emission de radio suivante',
         duration: 'Durée',
         recentEpisodes: 'Editions Précédentes',
+        closeVideo: 'Sortir',
       },
       socialEmbed: {
         caption: {
@@ -318,6 +321,10 @@ export const service: DefaultServiceConfig = {
           text: 'Contactez la BBC',
         },
         {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'Autres langues',
+        },
+        {
           id: 'COOKIE_SETTINGS',
           href: '#',
           text: 'Do not share or sell my info',
@@ -332,6 +339,14 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Accueil',
         url: '/afrique',
+      },
+      {
+        title: 'Conflit en RDC',
+        url: '/afrique/topics/cge72ry253jt',
+      },
+      {
+        title: 'Ecoutez en direct',
+        url: '/afrique/bbc_afrique_radio/liveradio',
       },
       {
         title: 'Afrique',
@@ -364,10 +379,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Nos émissions',
         url: '/afrique/topics/c88nzggm8gxt',
-      },
-      {
-        title: 'Ecoutez en direct',
-        url: '/afrique/bbc_afrique_radio/liveradio',
       },
     ],
   },

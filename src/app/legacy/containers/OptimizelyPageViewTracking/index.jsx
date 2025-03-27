@@ -10,7 +10,7 @@ const OptimizelyPageViewTracking = () => {
   const { optimizely } = useContext(OptimizelyContext);
   const [pageViewSent, setPageViewSent] = useState(false);
 
-  const experimentVariation = useOptimizelyVariation(OPTIMIZELY_CONFIG.flagId);
+  const experimentVariation = useOptimizelyVariation(OPTIMIZELY_CONFIG.flagKey);
   const hasVariationKey = experimentVariation !== null;
 
   const sendPageViewEvent = hasVariationKey && !isAmp && !pageViewSent;
@@ -19,7 +19,7 @@ const OptimizelyPageViewTracking = () => {
 
   useEffect(() => {
     if (sendPageViewEvent) {
-      optimizely.onReady().then(() => {
+      optimizely?.onReady().then(() => {
         optimizely.track('page_views');
         setPageViewSent(true);
       });

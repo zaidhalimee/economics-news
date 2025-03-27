@@ -12,6 +12,8 @@ export const service: DefaultServiceConfig = {
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-vietnamese',
     atiAnalyticsProducerId: '97',
+    atiAnalyticsProducerName: 'VIETNAMESE',
+    useReverb: true,
     chartbeatDomain: 'vietnamese.bbc.co.uk',
     brandName: 'BBC News Tiếng Việt',
     product: 'BBC News',
@@ -41,9 +43,9 @@ export const service: DefaultServiceConfig = {
       'https://www.bbc.com/vietnamese/institutional-49283563',
     isTrustProjectParticipant: true,
     script: latinWithDiacritics,
-    manifestPath: '/manifest.json',
+    manifestPath: '/vietnamese/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Tin chính',
+    homePageTitle: 'Tin chính',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {
@@ -138,7 +140,7 @@ export const service: DefaultServiceConfig = {
           },
           accept: 'OK',
           reject: 'Tìm hiểu các thay đổi',
-          rejectUrl: 'https://www.bbc.com/usingthebbc/your-data-matters',
+          rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
@@ -227,6 +229,7 @@ export const service: DefaultServiceConfig = {
         nextRadioShow: 'Show radio sau',
         duration: 'Thời lượng',
         recentEpisodes: 'Xem thêm',
+        closeVideo: 'Thoát',
       },
       socialEmbed: {
         caption: {
@@ -306,6 +309,10 @@ export const service: DefaultServiceConfig = {
         {
           href: 'https://www.bbc.co.uk/vietnamese/send/u50853951',
           text: 'Liên hệ BBC',
+        },
+        {
+          href: 'https://www.bbc.com/ws/languages',
+          text: 'BBC News các ngôn ngữ khác',
         },
         {
           id: 'COOKIE_SETTINGS',
