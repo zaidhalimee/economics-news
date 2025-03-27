@@ -47,4 +47,10 @@ export default {
         display: 'none',
       },
     }),
+  hideButtonOnDesktop: ({ mq }: Theme) =>
+    css({
+      [mq.GROUP_4_MIN_WIDTH]: {
+        display: 'none',
+      },
+    }),
 };

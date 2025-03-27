@@ -16,14 +16,19 @@ const ReadMoreButton = ({
 }: Props) => {
   const theme = useTheme();
   // Hide button when all content is shown
-  if (showAllContent) return null;
+  // if (showAllContent) return null;
 
   // Display variations of button based on variation
   const buttonStyle =
     variation === 'A' ? styles.readMoreButtonA : styles.readMoreButtonB;
+  const hideButtonStyle = styles.hideButtonOnDesktop;
   console.log('buttonStyle', buttonStyle);
   return (
-    <button css={buttonStyle} type="button" onClick={setShowAllContent}>
+    <button
+      css={[buttonStyle, hideButtonStyle]}
+      type="button"
+      onClick={setShowAllContent}
+    >
       {variation === 'B' && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
