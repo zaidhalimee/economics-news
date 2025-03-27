@@ -294,7 +294,6 @@ export const buildATIEventTrackUrl = ({
   // on AMP, variable substitutions are used in the value and they cannot be
   // encoded: https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md
   const disableEncodingDueToAmpSubstitution = platform === 'amp';
-  console.log('CHECK', experimentVariant);
 
   const eventPublisher = type === 'view' ? 'ati' : 'atc';
   const eventTrackingBeaconValues = [
