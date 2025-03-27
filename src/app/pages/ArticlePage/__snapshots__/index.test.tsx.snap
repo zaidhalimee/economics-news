@@ -21,12 +21,6 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
   }
 }
 
-@media (min-width: 80rem) {
-  .emotion-1 {
-    padding: 0;
-  }
-}
-
 .emotion-2 {
   grid-column: 1/span 12;
   padding-bottom: 2rem;
@@ -1139,12 +1133,6 @@ exports[`Article Page should render a news article correctly 1`] = `
     padding: 0 1rem;
     -webkit-column-gap: 1rem;
     column-gap: 1rem;
-  }
-}
-
-@media (min-width: 80rem) {
-  .emotion-1 {
-    padding: 0;
   }
 }
 
@@ -2791,12 +2779,6 @@ exports[`Article Page should render a news article with headline in the middle c
   }
 }
 
-@media (min-width: 80rem) {
-  .emotion-1 {
-    padding: 0;
-  }
-}
-
 .emotion-2 {
   grid-column: 1/span 12;
   padding-bottom: 2rem;
@@ -3176,12 +3158,6 @@ exports[`Article Page should render a news article without headline correctly 1`
   }
 }
 
-@media (min-width: 80rem) {
-  .emotion-1 {
-    padding: 0;
-  }
-}
-
 .emotion-2 {
   grid-column: 1/span 12;
   padding-bottom: 2rem;
@@ -3400,12 +3376,6 @@ exports[`Article Page should render a rtl article (persian) with most read corre
     padding: 0 1rem;
     -webkit-column-gap: 1rem;
     column-gap: 1rem;
-  }
-}
-
-@media (min-width: 80rem) {
-  .emotion-1 {
-    padding: 0;
   }
 }
 

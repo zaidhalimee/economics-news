@@ -18,10 +18,6 @@ export default {
         padding: '0 1rem',
         columnGap: '1rem',
       },
-
-      [mq.GROUP_5_MIN_WIDTH]: {
-        padding: 0,
-      },
     }),
   primaryColumn: ({ mq }: Theme) =>
     css({
