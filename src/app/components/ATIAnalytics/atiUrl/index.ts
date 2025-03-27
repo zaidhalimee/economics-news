@@ -219,7 +219,7 @@ export const buildATIPageTrackPath = ({
           {
             key: 'mv_test',
             description: 'Lite Site Promotion experiment',
-            value: 'Lite Site Promotion experiment',
+            value: 'Lite_Site_Promotion_experiment',
             wrap: false,
             disableEncoding: true,
           },
