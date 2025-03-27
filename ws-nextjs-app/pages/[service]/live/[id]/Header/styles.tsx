@@ -83,10 +83,10 @@ export default {
         padding: `${spacings.DOUBLE}rem`,
       },
       [mq.GROUP_4_MIN_WIDTH]: {
-        paddingLeft: `${pixelsToRem(16)}rem`,
-        paddingRight: `${pixelsToRem(16)}rem`,
-        paddingTop: `${pixelsToRem(24)}rem`,
-        paddingBottom: `${pixelsToRem(32)}rem`,
+        paddingLeft: `${pixelsToRem(spacings.DOUBLE)}rem`,
+        paddingRight: `${pixelsToRem(spacings.DOUBLE)}rem`,
+        paddingTop: `${pixelsToRem(spacings.TRIPLE)}rem`,
+        paddingBottom: `${pixelsToRem(spacings.QUADRUPLE)}rem`,
         columnGap: '1rem',
       },
 
