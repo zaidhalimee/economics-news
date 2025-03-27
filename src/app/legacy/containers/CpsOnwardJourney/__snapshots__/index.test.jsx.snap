@@ -65,6 +65,7 @@ exports[`CpsOnwardJourney Creates multiple promos with minimal props 1`] = `
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
   .emotion-1 {
     margin: 0 auto;
+    max-width: 63rem;
   }
 }
 
@@ -310,6 +311,7 @@ exports[`CpsOnwardJourney Creates single promo with minimal props 1`] = `
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
   .emotion-1 {
     margin: 0 auto;
+    max-width: 63rem;
   }
 }
 
@@ -539,6 +541,7 @@ exports[`CpsOnwardJourney renders section label with element as strong 1`] = `
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
   .emotion-1 {
     margin: 0 auto;
+    max-width: 63rem;
   }
 }
 
@@ -919,6 +922,7 @@ exports[`CpsOnwardJourney renders section label with with alternative background
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
   .emotion-1 {
     margin: 0 auto;
+    max-width: 63rem;
   }
 }
 
@@ -1301,6 +1305,7 @@ exports[`CpsOnwardJourney renders section label with without bar under section l
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
   .emotion-1 {
     margin: 0 auto;
+    max-width: 63rem;
   }
 }
 
@@ -1683,6 +1688,7 @@ exports[`CpsOnwardJourney renders skip link with multiple promos 1`] = `
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
   .emotion-1 {
     margin: 0 auto;
+    max-width: 63rem;
   }
 }
 
@@ -2156,6 +2162,7 @@ exports[`CpsOnwardJourney renders skip link with single promo 1`] = `
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
   .emotion-1 {
     margin: 0 auto;
+    max-width: 63rem;
   }
 }
 

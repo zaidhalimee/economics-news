@@ -79,6 +79,7 @@ exports[`OnDemand Radio Page  should match snapshot 1`] = `
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
   .emotion-1 {
     margin: 0 auto;
+    max-width: 63rem;
   }
 }
 
@@ -253,6 +254,7 @@ exports[`OnDemand Radio Page  should match snapshot 1`] = `
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
   .emotion-6 {
     margin: 0 auto;
+    max-width: 63rem;
   }
 }
 
@@ -2404,6 +2406,7 @@ exports[`OnDemand Radio Page  should show the 'content not yet available' messag
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
   .emotion-1 {
     margin: 0 auto;
+    max-width: 63rem;
   }
 }
 
@@ -2578,6 +2581,7 @@ exports[`OnDemand Radio Page  should show the 'content not yet available' messag
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
   .emotion-6 {
     margin: 0 auto;
+    max-width: 63rem;
   }
 }
 
@@ -4687,6 +4691,7 @@ exports[`OnDemand Radio Page  should show the expired content message if episode
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
   .emotion-1 {
     margin: 0 auto;
+    max-width: 63rem;
   }
 }
 
@@ -4861,6 +4866,7 @@ exports[`OnDemand Radio Page  should show the expired content message if episode
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
   .emotion-6 {
     margin: 0 auto;
+    max-width: 63rem;
   }
 }
 

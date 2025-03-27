@@ -70,6 +70,7 @@ exports[`OnDemand TV Page  Dark Mode Design - should match snapshot 1`] = `
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
   .emotion-2 {
     margin: 0 auto;
+    max-width: 63rem;
   }
 }
 
@@ -945,6 +946,7 @@ exports[`OnDemand TV Page  should show the expired content message if episode is
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
   .emotion-2 {
     margin: 0 auto;
+    max-width: 63rem;
   }
 }
 
@@ -1568,6 +1570,7 @@ exports[`OnDemand TV Page  should show the future content message if episode is 
 @media (min-width: 63rem) and (max-width: 79.9375rem) {
   .emotion-2 {
     margin: 0 auto;
+    max-width: 63rem;
   }
 }
 
