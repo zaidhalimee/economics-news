@@ -1,6 +1,6 @@
 import { css, Theme } from '@emotion/react';
+import pixelsToRem from '#app/utilities/pixelsToRem';
 import { FULL } from '../ThemeProvider/spacings';
-import { GROUP_5_MIN_WIDTH_BP } from '../ThemeProvider/mediaQueries';
 
 const styles = {
   paragraph: ({ palette, spacings }: Theme) =>
@@ -49,16 +49,16 @@ const styles = {
         textDecoration: 'underline',
       },
     }),
-  constrainedWrapperWithTrustProjectLink: ({ spacings }: Theme) =>
+  constrainedWrapperWithTrustProjectLink: ({ spacings, gridWidths }: Theme) =>
     css({
-      maxWidth: `${GROUP_5_MIN_WIDTH_BP}rem`,
+      maxWidth: `${pixelsToRem(gridWidths[1280])}rem`,
       margin: '0 auto',
       paddingTop: `${spacings.FULL}rem`,
     }),
 
-  constrainedWrapperWithoutTrustProjectLink: () =>
+  constrainedWrapperWithoutTrustProjectLink: ({ gridWidths }: Theme) =>
     css({
-      maxWidth: `${GROUP_5_MIN_WIDTH_BP}rem`,
+      maxWidth: `${pixelsToRem(gridWidths[1280])}rem`,
       margin: '0 auto',
     }),
 };
