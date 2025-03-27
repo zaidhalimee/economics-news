@@ -225,6 +225,14 @@ export const ArticlePageWithPodcastNews = () => (
   />
 );
 
+export const ArticlePageWithReadMoreButtonVariation1 = () => (
+  <ComponentWithServiceContext data={articleData} service="pidgin" />
+);
+
+export const ArticlePageWithReadMoreButtonVariation2 = () => (
+  <ComponentWithServiceContext data={articleData} service="mundo" />
+);
+
 export const ArticlePageWithElectionBanner = {
   render: () => (
     <ComponentWithServiceContext
