@@ -6,338 +6,332 @@ import { DefaultServiceConfig } from '../../../models/types/serviceConfig';
 
 export const service: DefaultServiceConfig = {
   default: {
-    lang: `pl-pl`,
-    articleAuthor: `https://www.facebook.com/bbcnews`,
-    articleTimestampPrefix: 'Zaktualizowano',
+    lang: 'pl-pl',
+    articleAuthor: 'https://www.facebook.com/bbcnews',
+    articleTimestampPrefix: 'Updated',
     articleTimestampSuffix: '',
     atiAnalyticsAppName: 'news-polska',
-    atiAnalyticsProducerId: '33',
-    atiAnalyticsProducerName: 'polska',
-    chartbeatDomain: 'polska.bbc.co.uk', // this is meant to be different to the service name
+    atiAnalyticsProducerId: '999',
+    atiAnalyticsProducerName: 'POLSKA',
+    chartbeatDomain: 'polska.bbc.co.uk',
     brandName: 'BBC News Polska',
     product: 'BBC News',
     serviceLocalizedName: 'Polska',
     defaultImage:
-      'https://news.files.bbci.co.uk/include/articles/public/polska/images/metadata/poster-1024x576.png',
+      'https://static.test.files.bbci.co.uk/ws/simorgh1-preview-assets/public/polska/images/metadata/poster-1024x576.png',
     defaultImageAltText: 'BBC News Polska',
-    dir: `ltr`,
-    externalLinkText: ', zewnętrzny',
-    imageCaptionOffscreenText: 'Podpis zdjęcia, ',
-    videoCaptionOffscreenText: 'Podpis do filmu, ',
-    audioCaptionOffscreenText: 'Podpis audio, ',
-    defaultCaptionOffscreenText: 'Podpis, ',
-    imageCopyrightOffscreenText: 'Źródło, ',
-    locale: `pl-pl`,
-    // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405
+    dir: 'ltr',
+    externalLinkText: ', external',
+    imageCaptionOffscreenText: 'Image caption, ',
+    videoCaptionOffscreenText: 'Video caption, ',
+    audioCaptionOffscreenText: 'Audio caption',
+    defaultCaptionOffscreenText: 'Caption, ',
+    imageCopyrightOffscreenText: 'Image source, ',
+    locale: 'pl-pl',
     isoLang: 'pl',
-    datetimeLocale: `pl-pl`,
+    datetimeLocale: 'pl-pl',
     service: 'polska',
-    serviceName: 'News Polska',
-    languageName: 'Polska',
-    twitterCreator: '@bbcpolish',
-    twitterSite: '@bbcpolish',
-    noBylinesPolicy:
-      'https://www.bbc.com/polska/articles/c23423423t#authorexpertise',
-    publishingPrinciples: 'https://www.bbc.com/polska/articles/c23423423t',
+    serviceName: 'Polska',
+    languageName: 'Polish',
+    twitterCreator: '@BBCNews',
+    twitterSite: '@BBCNews',
+    noBylinesPolicy: 'https://www.bbc.com/news/help-41670342#authorexpertise',
+    publishingPrinciples: 'https://www.bbc.com/news/help-41670342',
     isTrustProjectParticipant: true,
     script: latinWithDiacritics,
     manifestPath: '/polska/manifest.json',
     swPath: '/polska/sw.js',
-    homePageTitle:
-      'Wiadomości, filmy, analizy i kontekst w języku portugalskim',
-    passportHomes: ['polska'],
-    showAdPlaceholder: true,
+    homePageTitle: 'Home',
+    showAdPlaceholder: false,
     showRelatedTopics: true,
     translations: {
       pagination: {
-        page: 'Strona',
-        previousPage: 'Poprzednia',
-        nextPage: 'Następna',
-        pageXOfY: 'Strona {x} z {y}',
+        page: 'Page',
+        previousPage: 'Before',
+        nextPage: 'Next',
+        pageXOfY: 'Page {x} of {y}',
       },
       ads: {
-        advertisementLabel: 'Reklama',
+        advertisementLabel: 'Advertisement',
       },
-      recommendationTitle: 'Polecane tematy',
-      splitRecommendationTitle: 'Więcej polecanych artykułów',
-      seeAll: 'Zobacz wszystko',
-      home: 'Dom',
-      currentPage: 'Bieżąca strona',
-      skipLinkText: 'Przejdź do treści',
-      relatedContent: 'Powiązane historie',
-      relatedTopics: 'Powiązane tematy',
-      navMenuText: 'Sekcje',
+      byline: {
+        articleInformation: 'Article information',
+        author: 'Author',
+        listItemImage: 'Image of author',
+        published: 'Publication date',
+        reportingFrom: 'Reporting from',
+        role: 'Role',
+      },
+      recommendationTitle: 'Recommended articles',
+      seeAll: 'See all',
+      home: 'Home',
+      currentPage: 'Current page',
+      skipLinkText: 'Skip to content',
+      relatedContent: 'Related content',
+      relatedTopics: 'Related topics',
+      navMenuText: 'Sections',
+      liteSite: {
+        onboardingMessage:
+          'You’re viewing a text-only version of this website that uses less data. View the main version of the website including all images and videos.',
+        toMainSite: 'Take me to the main website',
+        informationPage: 'Find out more about this data saving version',
+        informationPageLink: '#',
+        dataSaving: 'Data saving version',
+        articleDataSavingLinkText: 'Data saving version',
+      },
       mediaAssetPage: {
-        mediaPlayer: 'Odtwarzacz multimedialny',
-        audioPlayer: 'Odtwarzacz audio',
-        videoPlayer: 'Odtwarzacz wideo',
+        mediaPlayer: 'Media player',
+        audioPlayer: 'Audio player',
+        videoPlayer: 'Video player',
       },
       liveExperiencePage: {
-        liveLabel: 'Na żywo',
-        liveCoverage: 'Relacja na żywo',
-        breaking: 'Pilne',
-        postedAt: 'Opublikowano w',
-        summary: 'Kluczowe punkty',
-        shareButtonText: 'Udostępnij',
+        liveLabel: 'Live',
+        liveCoverage: 'Live Coverage',
+        breaking: 'Breaking',
+        postedAt: 'Posted at',
+        summary: 'Summary',
+        shareButtonText: 'Share',
       },
-      gist: 'Kluczowe punkty',
+      downloads: {
+        instructions: 'You can download and view today’s news.',
+        title: 'File Download',
+      },
+      gist: 'At a glance',
       error: {
         404: {
           statusCode: '404',
-          title: 'strona nie znaleziona',
+          title: 'Page cannot be found',
           message:
-            'Przepraszamy, ale nie udało nam się odtworzyć żądanej strony. Próbować:',
+            "Sorry, we're unable to bring you the page you're looking for. Please try:",
           solutions: [
-            'Sprawdź adres URL',
-            'Kliknij przycisk Odśwież w swojej przeglądarce',
-            'Wyszukaj żądaną stronę za pomocą paska wyszukiwania BBC',
+            'Double checking the url',
+            'Hitting the refresh button in your browser',
           ],
-          callToActionFirst: 'Albo spróbuj otworzyć',
-          callToActionLinkText: 'Strona główna BBC News Polska',
-          callToActionLast: '',
+          callToActionFirst: 'Alternatively, please visit the ',
+          callToActionLinkText: 'BBC News',
+          callToActionLast: ' homepage. ',
           callToActionLinkUrl: 'https://www.bbc.com/polska',
         },
         500: {
           statusCode: '500',
-          title: 'Wewnętrzny błąd serwera',
+          title: 'Internal server error',
           message:
-            'Żądana strona nie może zostać w tej chwili odtworzona. Próbować:',
+            "Sorry, we're currently unable to bring you the page you're looking for. Please try:",
           solutions: [
-            'Kliknij przycisk Odśwież w swojej przeglądarce',
-            'Wróć później',
+            'Hitting the refresh button in your browser',
+            'Coming back again later',
           ],
-          callToActionFirst: 'Albo spróbuj otworzyć',
-          callToActionLinkText: 'Strona główna BBC News Polska',
-          callToActionLast: '',
+          callToActionFirst: 'Alternatively, please visit the ',
+          callToActionLinkText: 'BBC News Polska',
+          callToActionLast: ' homepage. ',
           callToActionLinkUrl: 'https://www.bbc.com/polska',
         },
+        home: 'Home',
+        currentPage: 'Current page',
+        skipLinkText: 'Skip to content',
       },
       consentBanner: {
         privacy: {
-          title: 'Zaktualizowaliśmy naszą Politykę prywatności i plików cookie',
+          title: "We've updated our Privacy and Cookies Policy",
           description: {
             uk: {
               first:
-                'Wprowadziliśmy istotne zmiany w warunkach naszej Polityki prywatności i plików cookie. Chcemy, abyś wiedział, co one oznaczają dla Ciebie i danych osobowych, które nam przekazałeś.',
+                "We've made some important changes to our Privacy and Cookies Policy and we want you to know what this means for you and your data.",
               linkText: null,
               last: null,
               linkUrl: null,
             },
             international: {
               first:
-                'Wprowadziliśmy istotne zmiany w warunkach naszej Polityki prywatności i plików cookie. Chcemy, abyś wiedział, co one oznaczają dla Ciebie i danych osobowych, które nam przekazałeś.',
+                "We've made some important changes to our Privacy and Cookies Policy and we want you to know what this means for you and your data.",
               linkText: null,
               last: null,
               linkUrl: null,
             },
           },
           accept: 'OK',
-          reject: 'Dowiedz się, co się zmieniło',
+          reject: "Find out what's changed",
           rejectUrl: 'https://www.bbc.com/usingthebbc/privacy-policy/',
         },
         cookie: {
           amp: {
-            accept: 'Akceptuj zbieranie danych i kontynuuj',
-            reject: 'Odrzuć zbieranie danych i kontynuuj',
+            accept: 'Accept data collection and continue',
+            reject: 'Reject data collection and continue',
             initial: {
-              title:
-                'Powiedz nam, czy wyrażasz zgodę na zbieranie Twoich danych podczas korzystania z AMP',
+              title: 'Let us know you agree to data collection on AMP',
               description: {
-                first:
-                  'My i nasi partnerzy wykorzystujemy technologię tego typu',
+                first: 'We and our partners use technologies, such as ',
                 linkText: 'cookies',
-                last: ' zbieramy dane podczas przeglądania witryny, aby zapewnić Ci najlepsze doświadczenia online oraz personalizować wyświetlane Ci treści i reklamy. Prosimy o poinformowanie nas, czy wyrażasz zgodę na używanie wszystkich tych typów plików cookie.',
+                last: ', and collect browsing data to give you the best online experience and to personalise the content and advertising shown to you. Please let us know if you agree.',
                 linkUrl:
                   'https://www.bbc.com/usingthebbc/cookies/what-do-i-need-to-know-about-cookies/',
               },
-              manage: 'Zarządzaj moimi ustawieniami',
+              manage: 'Manage my settings',
             },
             manage: {
-              title: 'Zarządzaj ustawieniami zgody na stronach AMP',
+              title: 'Manage consent settings on AMP pages',
               description: {
                 para1:
-                  'Te ustawienia dotyczą tylko stron AMP. Podczas odwiedzania stron niebędących stronami AMP może być konieczna ponowna konfiguracja preferencji.',
+                  'These settings apply to AMP pages only. You may be asked to set these preferences again when you visit non-AMP BBC pages.',
                 para2:
-                  'Najlżejsza strona mobilna, jaką kiedykolwiek odwiedziłeś, została stworzona przy użyciu technologii Google AMP.',
-                heading2: 'Wymagane gromadzenie danych',
+                  'The lightweight mobile page you have visited has been built using Google AMP technology.',
+                heading2: 'Strictly necessary data collection',
                 para3:
-                  'Para que nossas páginas possam funcionar, nós armazenamos em seu dispositivo uma pequena quantidade de informação sem o seu consentimento.',
+                  'To make our web pages work, we store some limited information on your device without your consent.',
                 para4: {
-                  text: 'Leia mais sobre a informação essencial que foi armazenada no seu dispositivo para que nossas páginas possam funcionar.',
-                  url: 'https://www.bbc.com/usingthebbc/cookies/strictly-necessary-cookies/',
+                  text: 'Read more about the essential information we store on your device to make our web pages work.',
+                  url: 'https://www.bbc.com/usingthebbc/strictly-necessary-cookies/',
                 },
                 para5:
-                  'Nós utilizamos capacidade local de armazenamento para guardar no seu dispositivo as preferências de seu consentimento.',
-                heading3: 'Coleta de dados opcional',
+                  'We use local storage to store your consent preferences on your device.',
+                heading3: 'Optional data collection',
                 para6:
-                  'Ao dar seu consentimento para a coleta de dados em páginas AMP você concorda que sejam exibidos anúncios comerciais personalizados relevantes a você ao acessar essas páginas fora do Reino Unido.',
+                  'When you consent to data collection on AMP pages you are consenting to allow us to display personalised ads that are relevant to you when you are outside of the UK.',
                 para7: {
-                  text: 'Leia mais sobre como a BBC e seus parceiros comerciais personalisam anúncios comerciais.',
+                  text: 'Read more about how we personalise ads in the BBC and our advertising partners.',
                   url: 'https://www.bbc.com/usingthebbc/cookies/how-does-the-bbc-use-cookies-for-advertising/',
                 },
                 para8:
-                  'Você pode escolher não receber anúncios comerciais personalizados ao clicar abaixo em "Rejeitar coleta de daos e continuar". Os anúncios comerciais ainda serão exibidos mas eles não serão personalizados.',
+                  'You can choose not to receive personalised ads by clicking “Reject data collection and continue” below. Please note that you will still see advertising, but it will not be personalised to you.',
                 para9:
-                  'Você pode mudar essas configurações a qualquer momento clicando abaixo em "Escolha de Anúncios / Não venda minha informação".',
+                  'You can change these settings by clicking “Ad Choices / Do not sell my info” in the footer at any time.',
               },
             },
           },
           canonical: {
-            title:
-              'Powiedz nam, czy zgadzasz się na używanie przez nas plików cookie',
+            title: 'Let us know you agree to cookies',
             description: {
               uk: {
-                first: 'Używamy ',
+                first: 'We use ',
                 linkText: 'cookies',
-                last: ' aby zapewnić Ci najlepsze doświadczenia online. Prosimy o poinformowanie nas, czy wyrażasz zgodę na używanie wszystkich tych typów plików cookie.',
+                last: ' to give you the best online experience. Please let us know if you agree to all of these cookies.',
                 linkUrl:
                   'https://www.bbc.com/usingthebbc/cookies/what-do-i-need-to-know-about-cookies/',
               },
               international: {
-                first: 'Używamy ',
+                first: 'We use ',
                 linkText: 'cookies',
-                last: ' aby zapewnić Ci najlepsze doświadczenia online. Prosimy o wyrażenie zgody na wykorzystanie wszystkich typów plików cookie.',
+                last: ' to give you the best online experience. Please let us know if you agree to all of these cookies.',
                 linkUrl:
                   'https://www.bbc.com/usingthebbc/cookies/what-do-i-need-to-know-about-cookies/',
               },
             },
-            accept: 'Sim, concordo',
-            reject: 'Não concordo, volte para Configurações',
+            accept: 'Yes, I agree',
+            reject: 'No, take me to settings',
             rejectUrl:
               'https://www.bbc.com/usingthebbc/cookies/how-can-i-change-my-bbc-cookie-settings/',
           },
         },
       },
       media: {
-        noJs: 'A reprodução deste formato de vídeo não é compatível com seu dispositivo',
-        contentExpired: 'Este conteúdo não está mais disponível.',
-        contentNotYetAvailable:
-          'Este conteúdo ainda não está disponível para ser tocado.',
-        audio: 'Áudio',
-        photogallery: 'Galeria de fotos',
-        video: 'Vídeo',
+        noJs: 'To play this content, please enable JavaScript, or try a different browser',
+        contentExpired: 'This content is no longer available',
+        audio: 'Audio',
+        photogallery: 'Image gallery',
+        video: 'Video',
         listen: 'Listen',
-        watch: 'Assista',
-        listenLive: 'Ouça ao vivo',
-        listenNext: 'Ouça o próximo',
-        liveLabel: 'AO VIVO',
+        watch: 'Watch',
+        liveLabel: 'LIVE',
         nextLabel: 'NEXT',
         previousRadioShow: 'Previous radio show',
         nextRadioShow: 'Next radio show',
         duration: 'Duration',
-        recentEpisodes: 'Mais',
-        podcastExternalLinks: 'O podcast está disponível em',
-        download: 'Baixar episódio',
-        closeVideo: 'Sair',
+        contentNotYetAvailable: 'This content is not available yet',
+        watchMoments: 'Watch Moments',
+        listenLive: 'Listen Live',
+        listenNext: 'Listen Next',
+        recentEpisodes: 'Recent Episodes',
+        podcastExternalLinks: 'This podcast is also available on',
+        download: 'Download',
+        closeVideo: 'Close',
       },
       socialEmbed: {
         caption: {
-          textPrefixVisuallyHidden: 'Legenda do vídeo, ',
-          text: 'Alerta: Conteúdo de terceiros pode conter publicidade',
+          textPrefixVisuallyHidden: 'Video caption, ',
+          text: 'Warning: Third party content may contain adverts',
           articleText:
-            'Alerta: A BBC não se responsabiliza pelo conteúdo de sites externos',
-          articleAdditionalText:
-            '%provider_name% conteúdo pode conter propaganda.',
+            'The BBC is not responsible for the content of external sites.',
+          articleAdditionalText: '%provider_name% content may contain adverts',
         },
         fallback: {
-          text: 'Conteúdo não disponível',
-          linkText: 'Veja mais em %provider_name%',
-          linkTextSuffixVisuallyHidden: ', externo',
+          text: 'Content is not available',
+          linkText: 'View content on %provider_name%',
+          linkTextSuffixVisuallyHidden: ', external',
           warningText:
-            'A BBC não se responsabiliza pelo conteúdo de sites externos.',
+            'The BBC is not responsible for the content of external sites.',
         },
         skipLink: {
-          text: 'Pule %provider_name% post',
-          endTextVisuallyHidden: 'Final de %provider_name% post',
+          text: 'Skip %provider_name% content',
+          endTextVisuallyHidden: 'End of %provider_name% content',
         },
         consentBanner: {
-          heading: `Aceita conteúdo do [social_media_site]?`,
-          body: `Este item inclui conteúdo extraído do [social_media_site]. Pedimos sua autorização antes que algo seja carregado, pois eles podem estar utilizando cookies e outras tecnologias. Você pode consultar a [link] política de uso de cookies [/link] e [link] os termos de privacidade [/link] do [social_media_site] antes de concordar. Para acessar o conteúdo clique em "aceitar e continuar".`,
-          button: 'Aceite e continue',
+          heading: 'Allow [social_media_site] content?',
+          body: "This article contains content provided by [social_media_site].  We ask for your permission before anything is loaded, as they may be using cookies and other technologies.  You may want to read [social_media_site]'s [link] cookie policy [/link] and [link] privacy policy [/link] before accepting. To view this content choose 'accept and continue'.",
+          button: 'Accept and continue',
         },
       },
       include: {
         errorMessage:
-          'Desculpe, mas não é possível exibir esta parte da história nesta página de acesso resumido de celular.',
-        linkText:
-          'Acesse a visão integral da página para visualizar todo o conteúdo.',
+          'Sorry, we can’t display this part of the story on this lightweight mobile page.',
+        linkText: 'View the full version of the page to see all the content.',
       },
-      topStoriesTitle: 'Principais notícias',
-      featuresAnalysisTitle: 'Leia mais',
-      latestMediaTitle: 'Mais recentes',
+      topStoriesTitle: 'Top Stories',
+      latestMediaTitle: 'Latest Videos',
+      featuresAnalysisTitle: 'More to explore',
       ugc: {
-        // No JavaScript
-        noJsHeading: undefined,
-        noJsDescription: undefined,
-
-        // Optional
-        optional: 'opcional',
-
-        // File upload
-        fileUploadLiveRegionText: 'O que você está uploading:',
-        fileUploadLiveRegionUpdateText: undefined,
-        fileUploadListHeading: 'O que você está uploading:',
-        fileUploadButton: 'Selecione um arquivo',
-        fileUploadRemoveButton: 'Selecione um arquivo',
-
-        // Submit button
-        submitButton: 'Enviar',
-
-        // Validation
-        validationRequired: 'Falta alguma coisa.',
+        noJsHeading: 'Sorry, this page cannot be loaded.',
+        noJsDescription:
+          'To load this page, please enable JavaScript, or try a different browser',
+        optional: 'optional',
+        fileUploadLiveRegionText: "Update, Here's what you're sending: ",
+        fileUploadLiveRegionUpdateText: 'Update, removed ',
+        fileUploadButton: 'Choose a file',
+        fileUploadListHeading: "Here's what you're sending:",
+        fileUploadRemoveButton: 'Remove',
+        submitButton: 'Submit',
+        errorSummary: 'There’s a problem, please check your:',
+        validationRequired: "There's something missing.",
         validationInvalidEmail:
-          'Algo não está correto. Digite um endereço de email válido.',
-        validationInvalidTelephone: undefined,
+          "That doesn't look right. Please enter a proper email address.",
+        validationInvalidTelephone:
+          "That doesn't look right. Please enter a proper telephone number.",
         validationFilesNotEnough:
-          'O número de arquivos não é suficiente. Adicione pelo menos {{minFiles}} arquivos.',
+          "There aren't enough files. Please add at least {{minFiles}}",
         validationFilesTooMany:
-          'Existem muitos arquivos. Você pode adicionar até {{maxFiles}} arquivos.',
+          'There are too many files. You can add {{maxFiles}}.',
         validationFilesInvalidType:
-          'Esse tipo de arquivo não pode ser utilizado. Adicionar {{fileTypes}}.',
-        validationFilesTooSmall:
-          'Este arquivo está corrompido. Tente escolher outro arquivo.',
+          "Sorry, we can't use this type of file. Please add {{fileTypes}}.",
+        validationFilesTooSmall: 'This file is broken. Try picking another.',
         validationFilesSizeExceeded:
-          'Estes arquivos são muito grandes. Você só pode fazer upload de até 1,2GB de cada vez.',
-        validationWordLimit: 'Máximo de {{wordLimit}} palavras',
-
-        // Messaging
-        retentionPeriodDays:
-          'Nós guardaremos a sua mensagem por até {{days}} dias. Caso não usemos o conteúdo, ele será apagado junto a qualquer outra informação que você nos tenha enviado.',
-        referenceNumber: 'Número de referência',
+          'Sorry, these files are too big. You can only upload up to 1.2 GB at a time.',
+        validationWordLimit: 'Maximum {{wordLimit}} words',
+        referenceNumber: 'Reference number',
         submissionInfoSignedOutMessage:
-          'Você deve anotar esses detalhes para sua referência.',
+          'You may wish to make a note of these details for your reference.',
+        retentionPeriodDays:
+          "We'll keep your submission for up to {{days}} days – and if we don't use it we'll then delete it and any other information you sent us.",
         privacyInfoHtml:
-          'Não se preocupe, nós protegemos seus dados pessoais — para maiores detalhes, leia {{privacyInfoLink}}.',
+          "Don't worry, we protect your information — read the {{privacyInfoLink}} for more details.",
         emailToHtml:
-          'Envie email para {{emailLink}} caso você mude de ideia. Mencione o número de referência e diga apenas que você não quer que o material seja utilizado.',
-        removalGuidelineText: undefined,
-
-        // Form Screen
-        dataPolicyHeading: 'Nossa política de dados',
-
-        // Uploading Screen
-        uploadingHeading: 'Uploading seus arquivos...',
-        uploadingDescription: 'Aguarde até finalizar.',
-
-        // Success Screen
-        successHeading: 'Mensagem enviada',
-        successDescription: 'Obrigado por entrar em contato.',
-        privacyPolicyLinkHref:
-          'https://www.bbc.com/polska/articles/cw0w9z6p491o',
-        privacyPolicyLinkText: 'Política de privacidade',
-
-        // Error Screen
-        errorHeading: 'Sua mensagem não foi enviada',
-        errorDescription: 'Tente enviar novamente.',
-
-        // Closed Screen
-        closedHeading: 'Está encerrado',
-        closedDescription: 'Foi encerrado em {{date}}.',
+          "If you change your mind and don't want us to use it, just email us at {{emailLink}}. Don't forget the reference number.",
+        removalGuidelineText:
+          "If you submitted something for a programme or online, we won't be able to remove it once we use it.",
+        dataPolicyHeading: 'Our data policy',
+        uploadingHeading: 'Uploading',
+        uploadingDescription: 'Please wait until it is finished.',
+        successHeading: 'Message sent',
+        successDescription: 'Thanks for getting in touch.',
+        privacyPolicyLinkHref: 'https://www.bbc.com/privacy/',
+        privacyPolicyLinkText: 'Privacy Policy',
+        errorHeading: 'Sorry, your message could not be sent.',
+        errorDescription: 'Please try again later.',
+        closedHeading: 'This is now closed',
+        closedDescription: 'This closed on {{date}}.',
       },
     },
     mostRead: {
-      header: 'Mais lidas',
-      lastUpdated: 'Última atualização:',
+      header: 'Most read',
+      lastUpdated: 'Last updated:',
       numberOfItems: 10,
       hasMostRead: true,
     },
@@ -345,45 +339,45 @@ export const service: DefaultServiceConfig = {
       hasRadioSchedule: false,
     },
     recommendations: {
-      hasStoryRecommendations: true,
+      hasStoryRecommendations: false,
       skipLink: {
-        text: 'Pule %title% e continue lendo',
-        endTextVisuallyHidden: 'Fim do %title%',
+        text: 'Skip %title% and continue reading',
+        endTextVisuallyHidden: 'End of %title%',
       },
     },
     footer: {
       trustProjectLink: {
-        href: 'https://www.bbc.com/polska/institutional-50054434',
-        text: 'Por que você pode confiar na BBC',
+        href: 'https://www.bbc.com/news/help-41670342',
+        text: 'Why you can trust the BBC',
       },
       externalLink: {
         href: 'https://www.bbc.com/editorialguidelines/guidance/feeds-and-links',
-        text: 'Leia sobre nossa política em relação a links externos.',
+        text: 'Read about our approach to external linking.',
       },
       links: [
         {
-          href: 'https://www.bbc.com/polska/institutional-36202448',
-          text: 'Termos de Uso',
+          href: 'https://www.bbc.com/usingthebbc/terms/',
+          text: 'Terms of use',
         },
         {
-          href: 'https://www.bbc.com/polska/institutional-36202452',
-          text: 'Sobre a BBC',
+          href: 'https://www.bbc.com/aboutthebbc',
+          text: 'About the BBC',
         },
         {
-          href: 'https://www.bbc.com/polska/institutional-36202454',
-          text: 'Política de privacidade',
+          href: 'https://www.bbc.com/usingthebbc/privacy/',
+          text: 'Privacy Policy',
         },
         {
           href: 'https://www.bbc.com/usingthebbc/cookies/',
           text: 'Cookies',
         },
         {
-          href: 'https://www.bbc.com/polska/send/u50853599',
-          text: 'Contate a BBC',
+          href: 'https://www.bbc.com/polska/send/u50853577',
+          text: 'Contact the BBC',
         },
         {
           href: 'https://www.bbc.com/ws/languages',
-          text: 'BBC News em outras línguas',
+          text: 'BBC News in other languages',
         },
         {
           id: 'COOKIE_SETTINGS',
@@ -393,13 +387,14 @@ export const service: DefaultServiceConfig = {
         },
       ],
       copyrightText:
-        'BBC. A BBC não se responsabiliza pelo conteúdo de sites externos.',
+        'BBC. The BBC is not responsible for the content of external sites.',
     },
-    timezone: 'America/Sao_Paulo',
+    timezone: 'Europe/London',
     navigation: [
       {
+        url: 'https://www.bbc.com/polska',
         title: 'News',
-        url: '/polska',
+        hideOnLiteSite: false,
       },
     ],
   },
