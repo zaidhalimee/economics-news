@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-nepali',
     atiAnalyticsProducerId: '63',
     atiAnalyticsProducerName: 'NEPALI',
+    useReverb: true,
     chartbeatDomain: 'nepali.bbc.co.uk',
     brandName: 'BBC News नेपाली',
     product: 'BBC News',
@@ -40,9 +41,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/nepali/institutional-50318130',
     isTrustProjectParticipant: true,
     script: devanagari,
-    manifestPath: '/manifest.json',
+    manifestPath: '/nepali/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'मुख पृष्ठ',
+    homePageTitle: 'मुख पृष्ठ',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {
@@ -325,16 +326,28 @@ export const service: DefaultServiceConfig = {
     timezone: 'Asia/Kathmandu',
     navigation: [
       {
-        title: 'मुख पृष्ठ',
+        title: 'समाचार',
         url: '/nepali',
       },
       {
-        title: 'पछिल्लो कार्यक्रम',
-        url: '/nepali/bbc_nepali_radio/programmes/p0340xzv',
+        title: 'नेपाल',
+        url: '/nepali/topics/cyx5k2yzyj6t',
       },
       {
-        title: 'भिडिओ',
-        url: '/nepali/topics/cw9kv027nwnt',
+        title: 'विश्व',
+        url: '/nepali/topics/cy5nkr41gx6t',
+      },
+      {
+        title: 'स्वास्थ्य',
+        url: '/nepali/topics/c2dwqjg83q0t',
+      },
+      {
+        title: 'विज्ञान तथा प्रविधि',
+        url: '/nepali/topics/c9de5jl3967t',
+      },
+      {
+        title: 'रेडिओ',
+        url: '/nepali/bbc_nepali_radio/programmes/p0340xzv',
       },
     ],
   },

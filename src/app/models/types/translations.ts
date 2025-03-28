@@ -25,6 +25,7 @@ export interface Translations {
     informationPage: string;
     informationPageLink: string;
     dataSaving: string;
+    articleDataSavingLinkText: string;
   };
   easyReadSite?: {
     toStandardSite: string;
@@ -40,13 +41,6 @@ export interface Translations {
     mediaPlayer: string;
     audioPlayer: string;
     videoPlayer: string;
-  };
-  articlePage?: {
-    jumpToTitle: {
-      variation_1: string;
-      variation_2: string;
-      variation_3: string;
-    };
   };
   liveExperiencePage: {
     liveLabel: string;

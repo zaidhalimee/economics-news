@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-tamil',
     atiAnalyticsProducerId: '87',
     atiAnalyticsProducerName: 'TAMIL',
+    useReverb: true,
     chartbeatDomain: 'tamil.bbc.co.uk',
     brandName: 'BBC News தமிழ்',
     product: 'BBC News',
@@ -40,9 +41,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/tamil/institutional-50288575',
     isTrustProjectParticipant: true,
     script: tamil,
-    manifestPath: '/manifest.json',
+    manifestPath: '/tamil/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'முகப்பு',
+    homePageTitle: 'முகப்பு',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {
@@ -236,6 +237,7 @@ export const service: DefaultServiceConfig = {
         },
         listen: 'கேட்க',
         watch: 'பார்க்க',
+        watchMoments: 'ஷார்ட் வீடியோ',
         listenLive: 'நேரலையை கேட்க',
         liveLabel: 'நேரலை',
         nextLabel: 'NEXT',
@@ -426,6 +428,14 @@ export const service: DefaultServiceConfig = {
       {
         title: 'இலங்கை',
         url: '/tamil/topics/cz74k7p3qw7t',
+      },
+      {
+        title: 'உடல்நலம்',
+        url: '/tamil/topics/cyx5kxzdn9dt',
+      },
+      {
+        title: 'வரலாறு',
+        url: '/tamil/topics/cxnyknvykxjt',
       },
       {
         title: 'விளையாட்டு',

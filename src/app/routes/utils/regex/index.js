@@ -3,8 +3,6 @@ import {
   getArticleRegex,
   getArticleSwRegex,
   getArticleManifestRegex,
-  getFrontPageRegex,
-  getTipoHomeRegex,
   getHomePageRegex,
   getSwRegex,
   getManifestRegex,
@@ -32,15 +30,8 @@ export const articleDataPath = `${articlePath}.json`;
 export const articleSwPath = getArticleSwRegex(allServices);
 export const articleManifestPath = getArticleManifestRegex(allServices);
 
-export const frontPagePath = getFrontPageRegex(allServices);
-export const frontPageDataPath = `${frontPagePath}.json`;
-
-export const frontPageSwPath = getSwRegex(allServices);
-export const frontPageManifestPath = getManifestRegex(allServices);
-
-export const tipoHomePath = getTipoHomeRegex(allServices);
-export const tipoHomeDataPath = `${tipoHomePath}.json`;
-
+export const homePageSwPath = getSwRegex(allServices);
+export const homePageManifestPath = getManifestRegex(allServices);
 export const homePagePath = getHomePageRegex(allServices);
 export const homePageDataPath = `${homePagePath}.json`;
 

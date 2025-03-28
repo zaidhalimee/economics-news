@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-bengali',
     atiAnalyticsProducerId: '31',
     atiAnalyticsProducerName: 'BENGALI',
+    useReverb: true,
     chartbeatDomain: 'bengali.bbc.co.uk',
     brandName: 'BBC News বাংলা',
     product: 'BBC News',
@@ -40,9 +41,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/bengali/institutional-50409861',
     isTrustProjectParticipant: true,
     script: bengali,
-    manifestPath: '/manifest.json',
+    manifestPath: '/bengali/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle:
+    homePageTitle:
       'খবর, সর্বশেষ খবর, ব্রেকিং নিউজ | News, latest news, breaking news',
     showAdPlaceholder: true,
     showRelatedTopics: true,

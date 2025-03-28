@@ -70,6 +70,7 @@ const unitTests = {
 
 const config: import('jest').Config = {
   projects: [unitTests, canonicalIntegrationTests, ampIntegrationTests],
+  workerIdleMemoryLimit: '512MB',
 };
 
 export default config;
