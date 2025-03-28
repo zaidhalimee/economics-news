@@ -191,7 +191,7 @@ export const service: DefaultServiceConfig = {
                 linkText: 'cookies',
                 last: ' aby zapewnić Ci najlepsze doświadczenia online. Prosimy o poinformowanie nas, czy wyrażasz zgodę na używanie wszystkich tych typów plików cookie.',
                 linkUrl:
-                  'https://www.bbc.co.uk/usingthebbc/cookies/what-do-i-need-to-know-about-cookies/',
+                  'https://www.bbc.com/usingthebbc/cookies/what-do-i-need-to-know-about-cookies/',
               },
               international: {
                 first: 'Używamy ',
@@ -357,7 +357,7 @@ export const service: DefaultServiceConfig = {
         text: 'Por que você pode confiar na BBC',
       },
       externalLink: {
-        href: 'https://www.bbc.co.uk/editorialguidelines/guidance/feeds-and-links',
+        href: 'https://www.bbc.com/editorialguidelines/guidance/feeds-and-links',
         text: 'Leia sobre nossa política em relação a links externos.',
       },
       links: [
@@ -378,7 +378,7 @@ export const service: DefaultServiceConfig = {
           text: 'Cookies',
         },
         {
-          href: 'https://www.bbc.co.uk/polska/send/u50853599',
+          href: 'https://www.bbc.com/polska/send/u50853599',
           text: 'Contate a BBC',
         },
         {
