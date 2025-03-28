@@ -20,6 +20,7 @@ declare global {
       cmd: { push: () => void };
     };
     sendBeaconLite: (url: string, data?: BodyInit | null) => boolean;
+    processClientDeviceAndSendLite: (url: string) => void;
   }
 
   interface Navigator {
