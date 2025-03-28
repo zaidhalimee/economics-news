@@ -15,6 +15,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-persian',
     atiAnalyticsProducerId: '69',
     atiAnalyticsProducerName: 'PERSIAN',
+    useReverb: true,
     chartbeatDomain: 'persian.bbc.co.uk',
     brandName: 'BBC News فارسی',
     serviceLocalizedName: 'فارسی',
@@ -42,9 +43,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/persian/institutional-49283091',
     isTrustProjectParticipant: true,
     script: arabic,
-    manifestPath: '/manifest.json',
+    manifestPath: '/persian/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'صفحه اول',
+    homePageTitle: 'صفحه اول',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     podcastPromo: {
@@ -446,10 +447,6 @@ export const service: DefaultServiceConfig = {
         url: '/persian/topics/cj31ldvmg1et',
       },
       {
-        title: 'انتخابات آمریکا',
-        url: '/persian/topics/cj1gj22k6z6t',
-      },
-      {
         title: 'پخش زنده',
         url: '/persian/media-49522521',
       },
@@ -459,7 +456,7 @@ export const service: DefaultServiceConfig = {
       },
       {
         title: 'تلویزیون',
-        url: '/persian/tv-and-radio-37434377',
+        url: '/persian/topics/cw9qgeqd1zqt',
       },
       {
         title: 'ايران',

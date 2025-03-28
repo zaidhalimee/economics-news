@@ -4,9 +4,12 @@ import React, { useContext } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 import useToggle from '#hooks/useToggle';
 import { singleTextBlock } from '#app/models/blocks';
+import useOptimizelyMvtVariation from '#app/hooks/useOptimizelyMvtVariation';
+import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
+import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
 import ArticleMetadata from '#containers/ArticleMetadata';
 import { RequestContext } from '#contexts/RequestContext';
-import headings from '#containers/Headings';
+import Headings from '#containers/Headings';
 import visuallyHiddenHeadline from '#containers/VisuallyHiddenHeadline';
 import gist from '#containers/Gist';
 import text from '#containers/Text';
@@ -15,11 +18,8 @@ import Timestamp from '#containers/ArticleTimestamp';
 import ComscoreAnalytics from '#containers/ComscoreAnalytics';
 import SocialEmbedContainer from '#containers/SocialEmbed';
 import MediaLoader from '#app/components/MediaLoader';
-import {
-  ARTICLE_PAGE,
-  PHOTO_GALLERY_PAGE,
-  STORY_PAGE,
-} from '#app/routes/utils/pageTypes';
+import { PHOTO_GALLERY_PAGE, STORY_PAGE } from '#app/routes/utils/pageTypes';
+import OPTIMIZELY_CONFIG from '#app/lib/config/optimizely';
 
 import {
   getArticleId,
@@ -44,11 +44,6 @@ import {
   Recommendation,
 } from '#app/models/types/optimo';
 import ScrollablePromo from '#components/ScrollablePromo';
-import JumpTo, { JumpToProps, Variation } from '#app/components/JumpTo';
-import useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
-import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
-import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
-import OPTIMIZELY_CONFIG from '#app/lib/config/optimizely';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
@@ -73,6 +68,7 @@ import Disclaimer from '../../components/Disclaimer';
 import SecondaryColumn from './SecondaryColumn';
 import styles from './ArticlePage.styles';
 import { ComponentToRenderProps, TimeStampProps } from './types';
+import ArticleHeadline from './ArticleHeadline';
 
 const getImageComponent =
   (preloadLeadImageToggle: boolean) => (props: ComponentToRenderProps) => (
@@ -120,31 +116,12 @@ const DisclaimerWithPaddingOverride = (props: ComponentToRenderProps) => (
 const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
   podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
-const getJumptoComponent =
-  (
-    optimizelyVariation: Variation | 'off',
-    hasJumpToBlockForExperiment: boolean,
-    showRelatedContent: boolean,
-  ) =>
-  (props: ComponentToRenderProps & JumpToProps) => {
-    if (
-      optimizelyVariation === 'off' ||
-      !optimizelyVariation ||
-      !hasJumpToBlockForExperiment
-    )
-      return null;
-
-    return (
-      <JumpTo
-        {...props}
-        showRelatedContentLink={showRelatedContent}
-        variation={optimizelyVariation}
-      />
-    );
-  };
+const getHeadlineComponent = (props: ComponentToRenderProps) => (
+  <ArticleHeadline {...props} />
+);
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
-  const { isApp, pageType, service } = useContext(RequestContext);
+  const { isApp } = useContext(RequestContext);
 
   const {
     articleAuthor,
@@ -159,11 +136,18 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     palette: { GREY_2, WHITE },
   } = useTheme();
 
+  const experimentVariant = useOptimizelyMvtVariation(
+    OPTIMIZELY_CONFIG.ruleKey,
+  );
+  const isInExperiment = experimentVariant && experimentVariant !== 'off';
+
   const allowAdvertising = pageData?.metadata?.allowAdvertising ?? false;
   const adcampaign = pageData?.metadata?.adCampaignKeyword;
-  const isTransliterated =
-    ['serbian', 'zhongwen', 'uzbek'].includes(service) &&
-    pageType === ARTICLE_PAGE;
+
+  const {
+    metadata: { atiAnalytics },
+    mostRead: mostReadInitialData,
+  } = pageData;
 
   const { enabled: podcastPromoEnabled } = useToggle('podcastPromo');
   const headline = getHeadline(pageData) ?? '';
@@ -200,37 +184,16 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     ?.split(':')
     ?.includes('topcat');
 
-  const {
-    metadata: { atiAnalytics },
-    mostRead: mostReadInitialData,
-  } = pageData;
-
-  const optimizelyVariation = useOptimizelyVariation(
-    OPTIMIZELY_CONFIG.flagKey,
-  ) as unknown as Variation | 'off';
-
-  const hasJumpToBlockForExperiment = blocks.some(
-    block => block.type === 'jumpTo',
-  );
-
-  const enableOptimizelyEventTracking = Boolean(
-    optimizelyVariation && hasJumpToBlockForExperiment,
-  );
-
-  const showRelatedContent = blocks.some(
-    block => block.type === 'relatedContent',
-  );
-
   const atiData = {
     ...atiAnalytics,
     ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
-    ...(optimizelyVariation && { experimentVariant: optimizelyVariation }),
+    ...(isInExperiment && { experimentVariant }),
   };
 
   const componentsToRender = {
     visuallyHiddenHeadline,
-    headline: headings,
-    subheadline: headings,
+    headline: getHeadlineComponent,
+    subheadline: Headings,
     audio: MediaLoader,
     video: MediaLoader,
     text,
@@ -253,11 +216,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     wsoj: getWsojComponent(recommendationsData),
     disclaimer: DisclaimerWithPaddingOverride,
     podcastPromo: getPodcastPromoComponent(podcastPromoEnabled),
-    jumpTo: getJumptoComponent(
-      optimizelyVariation,
-      hasJumpToBlockForExperiment,
-      showRelatedContent,
-    ),
   };
 
   const visuallyHiddenBlock = {
@@ -284,9 +242,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const promoImage = promoImageRawBlock?.model?.locator;
 
-  const showTopics = Boolean(
-    showRelatedTopics && topics.length > 0 && !isTransliterated,
-  );
+  const showTopics = Boolean(showRelatedTopics && topics.length > 0);
 
   return (
     <div css={styles.pageWrapper}>
@@ -294,6 +250,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       <ChartbeatAnalytics
         sectionName={pageData?.relatedContent?.section?.name}
         title={headline}
+        {...(hasByline && { authors: bylineLinkedData.authorName })}
       />
       <ComscoreAnalytics />
       <NielsenAnalytics />
@@ -352,14 +309,11 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           )}
           <RelatedContentSection
             content={blocks}
-            sendOptimizelyEvents={enableOptimizelyEventTracking}
+            sendOptimizelyEvents={false}
           />
         </div>
         {!isApp && !isPGL && (
-          <SecondaryColumn
-            pageData={pageData}
-            sendOptimizelyEvents={enableOptimizelyEventTracking}
-          />
+          <SecondaryColumn pageData={pageData} sendOptimizelyEvents={false} />
         )}
       </div>
       {!isApp && !isPGL && (
@@ -370,10 +324,10 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           size="default"
           headingBackgroundColour={GREY_2}
           mobileDivider={showTopics}
-          sendOptimizelyEvents={enableOptimizelyEventTracking}
+          sendOptimizelyEvents={false}
         />
       )}
-      {enableOptimizelyEventTracking && (
+      {isInExperiment && (
         <>
           <OptimizelyArticleCompleteTracking />
           <OptimizelyPageViewTracking />

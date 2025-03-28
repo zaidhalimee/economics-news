@@ -13,6 +13,7 @@ const baseServiceConfig = {
   atiAnalyticsAppName: 'news-zhongwen',
   atiAnalyticsProducerId: '38',
   atiAnalyticsProducerName: 'CHINESE',
+  useReverb: true,
   chartbeatDomain: 'zhongwen.bbc.co.uk',
   brandName: 'BBC News 中文',
   product: 'BBC News',
@@ -27,7 +28,7 @@ const baseServiceConfig = {
   twitterSite: '@bbcchinese',
   isTrustProjectParticipant: true,
   script: noAscendersOrDescenders,
-  manifestPath: '/manifest.json',
+  manifestPath: '/zhongwen/manifest.json',
   swPath: '/sw.js',
   radioSchedule: {
     hasRadioSchedule: false,
@@ -59,7 +60,7 @@ export const service: ZhongwenConfig = {
   simp: {
     ...baseServiceConfig,
     externalLinkText: ', 外部',
-    frontPageTitle: '主页',
+    homePageTitle: '主页',
     lang: `zh-hans`,
     locale: `zh-hans`,
     // valid ISO 639-1 code - this is not the same as lang! see explanation in #3405
@@ -126,31 +127,31 @@ export const service: ZhongwenConfig = {
       },
       {
         title: '国际',
-        url: '/zhongwen/simp/topics/ck2l9z0em07t',
+        url: '/zhongwen/topics/c83plve5vmjt/simp',
       },
       {
         title: '中国',
-        url: '/zhongwen/simp/topics/cv85rd690y1t',
+        url: '/zhongwen/topics/ckr7mn6r003t/simp',
       },
       {
         title: '香港',
-        url: '/zhongwen/simp/topics/c4vmr03pyn6t',
+        url: '/zhongwen/topics/cezw73jk755t/simp',
       },
       {
         title: '台湾',
-        url: '/zhongwen/simp/topics/c50nzmy3vent',
+        url: '/zhongwen/topics/cd6qem06z92t/simp',
       },
       {
         title: '英国',
-        url: '/zhongwen/simp/topics/c1nq04exqmlt',
+        url: '/zhongwen/topics/c1ez1k4emn0t/simp',
       },
       {
         title: '财经',
-        url: '/zhongwen/simp/topics/cdlxq9k9nqkt',
+        url: '/zhongwen/topics/cq8nqywy37yt/simp',
       },
       {
         title: '视频',
-        url: '/zhongwen/simp/topics/ck5rznle6edt',
+        url: '/zhongwen/topics/cgvl47l38e1t/simp',
       },
     ],
     scriptLink: {
@@ -372,7 +373,7 @@ export const service: ZhongwenConfig = {
     isoLang: 'zh-Hant',
     datetimeLocale: 'zh-tw',
     externalLinkText: ', 外部',
-    frontPageTitle: '主頁',
+    homePageTitle: '主頁',
     defaultCaptionOffscreenText: '說明文字，',
     audioCaptionOffscreenText: '音频加注文字，',
     videoCaptionOffscreenText: '音頻加註文字，',
@@ -434,31 +435,31 @@ export const service: ZhongwenConfig = {
       },
       {
         title: '國際',
-        url: '/zhongwen/trad/topics/c83plve5vmjt',
+        url: '/zhongwen/topics/c83plve5vmjt/trad',
       },
       {
         title: '中國',
-        url: '/zhongwen/trad/topics/ckr7mn6r003t',
+        url: '/zhongwen/topics/ckr7mn6r003t/trad',
       },
       {
         title: '香港',
-        url: '/zhongwen/trad/topics/cezw73jk755t',
+        url: '/zhongwen/topics/cezw73jk755t/trad',
       },
       {
         title: '台灣',
-        url: '/zhongwen/trad/topics/cd6qem06z92t',
+        url: '/zhongwen/topics/cd6qem06z92t/trad',
       },
       {
         title: '英國',
-        url: '/zhongwen/trad/topics/c1ez1k4emn0t',
+        url: '/zhongwen/topics/c1ez1k4emn0t/trad',
       },
       {
         title: '財經',
-        url: '/zhongwen/trad/topics/cq8nqywy37yt',
+        url: '/zhongwen/topics/cq8nqywy37yt/trad',
       },
       {
         title: '影片',
-        url: '/zhongwen/trad/topics/cgvl47l38e1t',
+        url: '/zhongwen/topics/cgvl47l38e1t/trad',
       },
     ],
     scriptLink: {

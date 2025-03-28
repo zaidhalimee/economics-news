@@ -12,14 +12,14 @@ const ChartbeatAnalytics = ({
   categoryName,
   mediaPageType,
   title,
+  authors,
   taggings,
   contentType,
   producer,
   chapter,
 }: ChartbeatProps) => {
   const { service, brandName, chartbeatDomain } = useContext(ServiceContext);
-  const { env, isAmp, platform, pageType, previousPath, origin } =
-    useContext(RequestContext);
+  const { env, isAmp, platform, pageType } = useContext(RequestContext);
 
   const { enabled } = useToggle('chartbeatAnalytics');
 
@@ -33,12 +33,11 @@ const ChartbeatAnalytics = ({
     chartbeatDomain,
     env,
     service,
-    origin,
-    previousPath,
     sectionName,
     categoryName,
     mediaPageType,
     title,
+    authors,
     taggings,
     contentType,
     producer,

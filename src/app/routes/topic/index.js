@@ -1,10 +1,10 @@
 import { TopicPage } from '#pages';
-import { topicPath, variantTopicPath } from '#app/routes/utils/regex';
+import { topicPath } from '#app/routes/utils/regex';
 import { TOPIC_PAGE } from '#app/routes/utils/pageTypes';
 import getInitialData from './getInitialData';
 
 export default {
-  path: [topicPath, variantTopicPath, '/persian/afghanistan'],
+  path: [topicPath, '/persian/afghanistan'],
   exact: true,
   component: TopicPage,
   getInitialData,
