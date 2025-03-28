@@ -27,8 +27,6 @@ export interface Translations {
     dataSaving: string;
   };
   easyReadSite?: {
-    easyOnboardingMessage: string;
-    standardOnboardingMessage: string;
     toStandardSite: string;
     toEasySite: string;
     easySite: string;

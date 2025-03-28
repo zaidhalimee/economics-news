@@ -4,6 +4,7 @@ import { jsx } from '@emotion/react';
 import { GridItemMedium } from '#app/legacy/components/Grid';
 import { RequestContext } from '#app/contexts/RequestContext';
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
+import useViewTracker from '#app/hooks/useViewTracker';
 import Text from '../Text';
 import { ServiceContext } from '../../contexts/ServiceContext';
 import styles from './index.styles';
@@ -28,11 +29,13 @@ export const createHrefRelativeToPage = (currentPath: string, id?: string) => {
   return slugs.join('/').replace(' ', '');
 };
 
+const eventTrackingData = {
+  componentName: 'easyReadCta',
+};
+
 const CtaLink = ({ href, text, className, selected = false }: CtaLinkProps) => {
-  const eventTrackingData = {
-    componentName: 'easyReadCta',
-  };
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
+
   return (
     <a
       href={href}
@@ -62,6 +65,7 @@ type Props = {
 };
 
 const EasyReadCTA = ({ easyReadAssetId, originalAssetId }: Props) => {
+  const viewRef = useViewTracker(eventTrackingData);
   const { pathname } = useContext(RequestContext);
   const { translations } = useContext(ServiceContext);
 
@@ -88,7 +92,12 @@ const EasyReadCTA = ({ easyReadAssetId, originalAssetId }: Props) => {
 
   return (
     <GridItemMedium>
-      <section role="region" data-e2e="easy-read-cta" aria-labelledby={id}>
+      <section
+        role="region"
+        data-e2e="easy-read-cta"
+        aria-labelledby={id}
+        ref={viewRef}
+      >
         <FormatIcon css={styles.icon} />
         <Text as="strong" id={id} hidden>
           {format}

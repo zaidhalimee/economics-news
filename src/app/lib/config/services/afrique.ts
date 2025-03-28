@@ -65,8 +65,6 @@ export const service: DefaultServiceConfig = {
       relatedTopics: 'Sujets associés',
       navMenuText: 'Rubriques',
       easyReadSite: {
-        easyOnboardingMessage: `This is an easy read version of this story.`,
-        standardOnboardingMessage: `There is an easy read version of this article available.`,
         toStandardSite: 'Version standard ',
         toEasySite: 'Version facile à lire',
         easySite: 'Facile à lire',
