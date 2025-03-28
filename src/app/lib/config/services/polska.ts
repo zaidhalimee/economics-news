@@ -10,7 +10,7 @@ export const service: DefaultServiceConfig = {
     articleAuthor: `https://www.facebook.com/bbcnews`,
     articleTimestampPrefix: 'Zaktualizowano',
     articleTimestampSuffix: '',
-    atiAnalyticsAppName: 'news-portuguese',
+    atiAnalyticsAppName: 'news-polska',
     atiAnalyticsProducerId: '33',
     atiAnalyticsProducerName: 'polska',
     chartbeatDomain: 'polska.bbc.co.uk', // this is meant to be different to the service name
@@ -18,7 +18,7 @@ export const service: DefaultServiceConfig = {
     product: 'BBC News',
     serviceLocalizedName: 'Polska',
     defaultImage:
-      'https://news.files.bbci.co.uk/include/articles/public/portuguese/images/metadata/poster-1024x576.png',
+      'https://news.files.bbci.co.uk/include/articles/public/polska/images/metadata/poster-1024x576.png',
     defaultImageAltText: 'BBC News Polska',
     dir: `ltr`,
     externalLinkText: ', zewnętrzny',
@@ -38,13 +38,13 @@ export const service: DefaultServiceConfig = {
     twitterSite: '@bbcpolish',
     noBylinesPolicy:
       'https://www.bbc.com/polska/articles/c23423423t#authorexpertise',
-    publishingPrinciples:
-      'https://www.bbc.com/polska/articles/c23423423t',
+    publishingPrinciples: 'https://www.bbc.com/polska/articles/c23423423t',
     isTrustProjectParticipant: true,
     script: latinWithDiacritics,
     manifestPath: '/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Wiadomości, filmy, analizy i kontekst w języku portugalskim',
+    homePageTitle:
+      'Wiadomości, filmy, analizy i kontekst w języku portugalskim',
     passportHomes: ['polska'],
     showAdPlaceholder: true,
     showRelatedTopics: true,
@@ -143,7 +143,8 @@ export const service: DefaultServiceConfig = {
               title:
                 'Powiedz nam, czy wyrażasz zgodę na zbieranie Twoich danych podczas korzystania z AMP',
               description: {
-                first: 'My i nasi partnerzy wykorzystujemy technologię tego typu',
+                first:
+                  'My i nasi partnerzy wykorzystujemy technologię tego typu',
                 linkText: 'cookies',
                 last: ' zbieramy dane podczas przeglądania witryny, aby zapewnić Ci najlepsze doświadczenia online oraz personalizować wyświetlane Ci treści i reklamy. Prosimy o poinformowanie nas, czy wyrażasz zgodę na używanie wszystkich tych typów plików cookie.',
                 linkUrl:
@@ -152,8 +153,7 @@ export const service: DefaultServiceConfig = {
               manage: 'Zarządzaj moimi ustawieniami',
             },
             manage: {
-              title:
-                'Zarządzaj ustawieniami zgody na stronach AMP',
+              title: 'Zarządzaj ustawieniami zgody na stronach AMP',
               description: {
                 para1:
                   'Te ustawienia dotyczą tylko stron AMP. Podczas odwiedzania stron niebędących stronami AMP może być konieczna ponowna konfiguracja preferencji.',
@@ -183,7 +183,8 @@ export const service: DefaultServiceConfig = {
             },
           },
           canonical: {
-            title: 'Powiedz nam, czy zgadzasz się na używanie przez nas plików cookie',
+            title:
+              'Powiedz nam, czy zgadzasz się na używanie przez nas plików cookie',
             description: {
               uk: {
                 first: 'Używamy ',
@@ -322,7 +323,7 @@ export const service: DefaultServiceConfig = {
         successHeading: 'Mensagem enviada',
         successDescription: 'Obrigado por entrar em contato.',
         privacyPolicyLinkHref:
-          'https://www.bbc.com/portuguese/articles/cw0w9z6p491o',
+          'https://www.bbc.com/polska/articles/cw0w9z6p491o',
         privacyPolicyLinkText: 'Política de privacidade',
 
         // Error Screen
@@ -352,7 +353,7 @@ export const service: DefaultServiceConfig = {
     },
     footer: {
       trustProjectLink: {
-        href: 'https://www.bbc.com/portuguese/institutional-50054434',
+        href: 'https://www.bbc.com/polska/institutional-50054434',
         text: 'Por que você pode confiar na BBC',
       },
       externalLink: {
@@ -397,40 +398,8 @@ export const service: DefaultServiceConfig = {
     timezone: 'America/Sao_Paulo',
     navigation: [
       {
-        title: 'Notícias',
+        title: 'News',
         url: '/polska',
-      },
-      {
-        title: 'Brasil',
-        url: '/polska/topics/cz74k717pw5t',
-      },
-      {
-        title: 'Internacional',
-        url: '/polska/topics/cmdm4ynm24kt',
-      },
-      {
-        title: 'Economia',
-        url: '/polska/topics/cvjp2jr0k9rt',
-      },
-      {
-        title: 'Saúde',
-        url: '/polska/topics/c340q430z4vt',
-      },
-      {
-        title: 'Ciência',
-        url: '/polska/topics/cr50y580rjxt',
-      },
-      {
-        title: 'Tecnologia',
-        url: '/polska/topics/c404v027pd4t',
-      },
-      {
-        title: 'Vídeos',
-        url: '/polska/topics/c9y2j35dn2zt',
-      },
-      {
-        title: 'BBC Lê',
-        url: '/polska/topics/cxndrr1qgllt',
       },
     ],
   },
