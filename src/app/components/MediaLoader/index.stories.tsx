@@ -46,7 +46,7 @@ export default {
   },
 };
 
-export const ExperimentMediaLoader = ({ experimentStage }: Props) => (
+export const MediaLoaderWithTranscript = ({ experimentStage }: Props) => (
   <Component
     service="pidgin"
     pageType="article"

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '../../react-testing-library-with-providers';
+import { render } from '../../../../react-testing-library-with-providers';
 import SignPost from '.';
 
 describe('Sign Post', () => {

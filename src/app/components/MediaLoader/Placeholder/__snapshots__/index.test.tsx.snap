@@ -16,14 +16,14 @@ exports[`Media Player: Placeholder should render a video placeholder 1`] = `
   background-color: #B80000;
 }
 
-.emotion-0:hover .experimentButtonFocus,
-.emotion-0:focus .experimentButtonFocus {
+.emotion-0:hover .withTranscriptButtonFocus,
+.emotion-0:focus .withTranscriptButtonFocus {
   background-color: #B80000;
   color: #FFFFFF;
 }
 
-.emotion-0:hover .experimentButtonFocus svg,
-.emotion-0:focus .experimentButtonFocus svg {
+.emotion-0:hover .withTranscriptButtonFocus svg,
+.emotion-0:focus .withTranscriptButtonFocus svg {
   color: #FFFFFF;
 }
 
@@ -355,14 +355,14 @@ exports[`Media Player: Placeholder should render a video placeholder with guidan
   background-color: #B80000;
 }
 
-.emotion-0:hover .experimentButtonFocus,
-.emotion-0:focus .experimentButtonFocus {
+.emotion-0:hover .withTranscriptButtonFocus,
+.emotion-0:focus .withTranscriptButtonFocus {
   background-color: #B80000;
   color: #FFFFFF;
 }
 
-.emotion-0:hover .experimentButtonFocus svg,
-.emotion-0:focus .experimentButtonFocus svg {
+.emotion-0:hover .withTranscriptButtonFocus svg,
+.emotion-0:focus .withTranscriptButtonFocus svg {
   color: #FFFFFF;
 }
 
@@ -726,14 +726,14 @@ exports[`Media Player: Placeholder should render a video placeholder without dur
   background-color: #B80000;
 }
 
-.emotion-0:hover .experimentButtonFocus,
-.emotion-0:focus .experimentButtonFocus {
+.emotion-0:hover .withTranscriptButtonFocus,
+.emotion-0:focus .withTranscriptButtonFocus {
   background-color: #B80000;
   color: #FFFFFF;
 }
 
-.emotion-0:hover .experimentButtonFocus svg,
-.emotion-0:focus .experimentButtonFocus svg {
+.emotion-0:hover .withTranscriptButtonFocus svg,
+.emotion-0:focus .withTranscriptButtonFocus svg {
   color: #FFFFFF;
 }
 
@@ -1042,14 +1042,14 @@ exports[`Media Player: Placeholder should render an audio placeholder 1`] = `
   background-color: #B80000;
 }
 
-.emotion-0:hover .experimentButtonFocus,
-.emotion-0:focus .experimentButtonFocus {
+.emotion-0:hover .withTranscriptButtonFocus,
+.emotion-0:focus .withTranscriptButtonFocus {
   background-color: #B80000;
   color: #FFFFFF;
 }
 
-.emotion-0:hover .experimentButtonFocus svg,
-.emotion-0:focus .experimentButtonFocus svg {
+.emotion-0:hover .withTranscriptButtonFocus svg,
+.emotion-0:focus .withTranscriptButtonFocus svg {
   color: #FFFFFF;
 }
 
@@ -1374,14 +1374,14 @@ exports[`Media Player: Placeholder should render an audio placeholder without du
   background-color: #B80000;
 }
 
-.emotion-0:hover .experimentButtonFocus,
-.emotion-0:focus .experimentButtonFocus {
+.emotion-0:hover .withTranscriptButtonFocus,
+.emotion-0:focus .withTranscriptButtonFocus {
   background-color: #B80000;
   color: #FFFFFF;
 }
 
-.emotion-0:hover .experimentButtonFocus svg,
-.emotion-0:focus .experimentButtonFocus svg {
+.emotion-0:hover .withTranscriptButtonFocus svg,
+.emotion-0:focus .withTranscriptButtonFocus svg {
   color: #FFFFFF;
 }
 
@@ -1683,14 +1683,14 @@ exports[`Media Player: Placeholder should render no-js styles when noJsClassName
   background-color: #B80000;
 }
 
-.emotion-0:hover .experimentButtonFocus,
-.emotion-0:focus .experimentButtonFocus {
+.emotion-0:hover .withTranscriptButtonFocus,
+.emotion-0:focus .withTranscriptButtonFocus {
   background-color: #B80000;
   color: #FFFFFF;
 }
 
-.emotion-0:hover .experimentButtonFocus svg,
-.emotion-0:focus .experimentButtonFocus svg {
+.emotion-0:hover .withTranscriptButtonFocus svg,
+.emotion-0:focus .withTranscriptButtonFocus svg {
   color: #FFFFFF;
 }
 

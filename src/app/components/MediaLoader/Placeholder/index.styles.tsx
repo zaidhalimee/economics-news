@@ -17,7 +17,7 @@ const styles = {
         '> button': {
           backgroundColor: palette.POSTBOX,
         },
-        '.experimentButtonFocus': {
+        '.withTranscriptButtonFocus': {
           backgroundColor: palette.POSTBOX,
           color: palette.WHITE,
           svg: {

@@ -1,14 +1,14 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import { Stages } from '#app/hooks/useExperimentHook';
-import SignPost from '#app/components/TranscriptExperiment/SignPost';
-import SignPostNoJs from '#app/components/TranscriptExperiment/SignPostNoJs';
+import WithTranscriptSignPost from './WithTranscript/SignPost';
+import WithTranscriptNoJsSignPost from './WithTranscript/SignPostNoJs';
 import Image from '../../Image';
 import styles from './index.styles';
 import PlayButton from './PlayButton';
 import Guidance from './Guidance';
 import { MediaInfo } from '../types';
-import MediaIndicator from '../../TranscriptExperiment/MediaIndicator';
+import WithTransciptMediaIndicator from './WithTranscript/MediaIndicator';
 
 interface Props {
   onClick: React.MouseEventHandler<HTMLDivElement>;
@@ -51,8 +51,8 @@ const MediaPlayerPlaceholder = ({
     />
   );
 
-  const experimentPlayButton = (
-    <MediaIndicator
+  const playButtonWithTranscript = (
+    <WithTransciptMediaIndicator
       title={title}
       datetime={datetime}
       duration={duration}
@@ -70,7 +70,7 @@ const MediaPlayerPlaceholder = ({
     />
   );
 
-  const experimentSignPost = <SignPost title={title} />;
+  const withTranscriptMessage = <WithTranscriptSignPost title={title} />;
 
   return (
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
@@ -81,9 +81,11 @@ const MediaPlayerPlaceholder = ({
       className="placeholder"
     >
       {experimentStage === Stages.STAGE_3 ? guideComponent : null}
-      {experimentStage === Stages.STAGE_2 ? experimentPlayButton : playButton}
-      {experimentStage === Stages.STAGE_2 ? experimentSignPost : null}
-      <SignPostNoJs noJsMessage={noJsMessage} />
+      {experimentStage === Stages.STAGE_2
+        ? playButtonWithTranscript
+        : playButton}
+      {experimentStage === Stages.STAGE_2 ? withTranscriptMessage : null}
+      <WithTranscriptNoJsSignPost noJsMessage={noJsMessage} />
       <Image alt="" src={src} srcSet={srcSet} />
     </div>
   );
