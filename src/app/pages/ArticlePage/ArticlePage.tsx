@@ -40,6 +40,7 @@ import InlinePodcastPromo from '#containers/PodcastPromo/Inline';
 import {
   Article,
   EasyReadMetaBlock,
+  OptimoBlock,
   OptimoBylineBlock,
   OptimoBylineContributorBlock,
   Recommendation,
@@ -183,36 +184,14 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   // SHOULD MOVE TO REQUEST CONTEXT
   let targetBlock = null;
   let removeIndex = null;
-  const easyMetaBlockIndex = blocks.findIndex(
-    block => block.type === 'easyReadMeta',
-  );
-  const isEasyPage = easyMetaBlockIndex > -1;
+  const easyMetaBlock = blocks.find(block => block.type === 'easyReadMeta');
 
-  if (isEasyPage) {
-    targetBlock = blocks[easyMetaBlockIndex];
-    removeIndex = easyMetaBlockIndex;
-  }
+  const isEasyPage = !(easyMetaBlock as EasyReadMetaBlock)?.model
+    .easyReadAssetId;
 
-  // MOVE TO BFF
-  if (!isEasyPage) {
-    const easyReadStandardBlockIndex = blocks.findIndex(
-      block => block.type === 'easyRead',
-    );
-
-    if (easyReadStandardBlockIndex > -1) {
-      const { blocks: easyReadMetaBlocks } = pageData.content.model;
-      const {
-        model: { blocks: standardMetaBlock },
-      } = easyReadMetaBlocks[easyReadStandardBlockIndex] as EasyReadMetaBlock;
-      const metaBlock = standardMetaBlock.find(
-        block => block.type === 'easyReadMeta',
-      );
-      targetBlock = metaBlock;
-      removeIndex = easyReadStandardBlockIndex;
-    }
-  }
-
-  if (targetBlock && removeIndex) {
+  if (isEasyPage && easyMetaBlock) {
+    targetBlock = easyMetaBlock;
+    removeIndex = blocks.findIndex(block => block.type === 'easyReadMeta');
     // INSERT AFTER HEADING
     blocks.splice(removeIndex, 1);
     blocks.splice(1, 0, targetBlock);

@@ -42,9 +42,10 @@ export type OptimoAltTextBlock = {
 };
 
 export type EasyReadMetaBlock = {
-  type: 'easyRead';
+  type: 'easyReadMeta';
   model: {
-    blocks: OptimoBlock[];
+    easyReadAssetId?: string;
+    originalAssetId: string;
   };
 };
 
