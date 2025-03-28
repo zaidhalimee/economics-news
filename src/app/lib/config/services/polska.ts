@@ -41,7 +41,7 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/polska/articles/c23423423t',
     isTrustProjectParticipant: true,
     script: latinWithDiacritics,
-    manifestPath: '/manifest.json',
+    manifestPath: '/polska/manifest.json',
     swPath: '/sw.js',
     homePageTitle:
       'Wiadomości, filmy, analizy i kontekst w języku portugalskim',
