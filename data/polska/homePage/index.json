@@ -1,139 +1,46 @@
 {
-    "data": {
-        "title": "polska strona tematyczna",
-        "description": "polish topic page",
-        "imageData": null,
-        "curations": [
-            {
-                "summaries": [
-                    {
-                        "type": "article",
-                        "isLive": false,
-                        "title": "Polski artykuł testowy",
-                        "firstPublished": "2025-03-26T10:40:12.938Z",
-                        "lastPublished": "2025-03-26T10:40:12.938Z",
-                        "link": "https://www.bbc.comundefined/",
-                        "imageUrl": "https://ichef.bbci.co.uk/ace/ws/{width}/cpsdevpb/a567/test/96cb3ac0-0a2e-11f0-8e5b-11eec158954c.jpg.webp",
-                        "imageAlt": "Rzeszow",
-                        "id": "c639526lxlro"
-                    }
-                ],
-                "activePage": 1,
-                "pageCount": 1,
-                "curationId": "urn:bbc:optimo:asset:c639526lxlro",
-                "curationType": "optimo",
-                "position": 0,
-                "visualProminence": "NORMAL",
-                "intent": "overview"
-            }
+  "data": {
+    "title": "polska strona tematyczna",
+    "description": "polish topic page",
+    "imageData": null,
+    "curations": [
+      {
+        "summaries": [
+          {
+            "type": "article",
+            "isLive": false,
+            "title": "Polski artykuł testowy",
+            "firstPublished": "2025-03-26T10:40:12.938Z",
+            "lastPublished": "2025-03-26T10:40:12.938Z",
+            "link": "https://www.bbc.comundefined/",
+            "imageUrl": "https://ichef.bbci.co.uk/ace/ws/{width}/cpsdevpb/a567/test/96cb3ac0-0a2e-11f0-8e5b-11eec158954c.jpg.webp",
+            "imageAlt": "Rzeszow",
+            "id": "c639526lxlro"
+          }
         ],
         "activePage": 1,
         "pageCount": 1,
-        "metadata": {
-            "analytics": {
-                "name": "topics.polska-strona-tematyczna.page",
-                "producer": "BBC"
-            },
-            "atiAnalytics": {
-                "contentId": "urn:bbc:tipo:topic:cpqr492886k4t",
-                "contentType": "index-category",
-                "pageIdentifier": "polska.topics.cpqr492886k4t.page",
-                "pageTitle": "polska strona tematyczna"
-            }
-        }
-    },
-    "contentType": "application/json; charset=utf-8",
-    "debug": {
-        "context": {
-            "runtimeContext": {
-                "lambdaBootstrapVersion": "5.0.4",
-                "runtimeVersion": "6.0.1",
-                "standardLibraryVersion": "4.11.0",
-                "moduleName": "simorgh-bff",
-                "moduleVersion": "0.0.1",
-                "sourceUrl": "https://github.com/bbc/fabl-modules/tree/b0c16225d4e9ebf77eec4e43ab63c2f44f97e2b3/modules/application/simorgh-bff",
-                "cosmosReleaseUrl": "https://cosmos.tools.bbc.co.uk/lambdas/fabl-module-simorgh-bff/releases/427",
-                "buildTime": "2025-03-21T15:55:31.353Z",
-                "traceId": "Root=1-67e42278-87c6c87458284b0004b298a0;Parent=8718ead73a557e1d;Sampled=1;Lineage=1:b8ea3a87:0",
-                "moduleEnvironment": "preview",
-                "personalisedRequest": "false",
-                "environment": "live",
-                "nodeJSVersion": "v22.14.0"
-            },
-            "systemContext": {
-                "service-env": "test",
-                "debug": "1",
-                "call-stack": "simorgh-bff",
-                "sandboxEnabled": true,
-                "logAllDebug": false
-            }
-        },
-        "moduleRequests": [
-            {
-                "response": {
-                    "headers": {
-                        "date": "Wed, 26 Mar 2025 15:51:19 GMT",
-                        "content-type": "application/json; charset=utf-8",
-                        "transfer-encoding": "chunked",
-                        "connection": "keep-alive",
-                        "vary": "Accept-Encoding, ctx-service-env, ctx-debug, ctx-unwrapped",
-                        "cache-control": "max-age=5",
-                        "expires": "Wed, 26 Mar 2025 15:49:02 GMT",
-                        "x-module-response-time": "31",
-                        "content-encoding": "gzip",
-                        "x-shared-cache": "STALE",
-                        "x-local-cache": "MISS"
-                    },
-                    "responseCode": 200,
-                    "responseTime": 4
-                },
-                "request": {
-                    "module": "topic",
-                    "params": {
-                        "id": "cpqr492886k4t",
-                        "service": "polska",
-                        "pageType": "topic"
-                    },
-                    "timeout": 4000,
-                    "url": "https://fabl.api.bbci.co.uk/preview/module/topic?id=cpqr492886k4t&service=polska&pageType=topic"
-                }
-            },
-            {
-                "response": {
-                    "headers": {
-                        "date": "Wed, 26 Mar 2025 15:51:19 GMT",
-                        "content-type": "application/json; charset=utf-8",
-                        "transfer-encoding": "chunked",
-                        "connection": "keep-alive",
-                        "x-shared-cache": "MISS",
-                        "vary": "Accept-Encoding, ctx-service-env, ctx-debug, ctx-unwrapped",
-                        "cache-control": "max-age=5",
-                        "expires": "Wed, 26 Mar 2025 15:51:24 GMT",
-                        "x-module-response-time": "51",
-                        "content-encoding": "gzip",
-                        "x-local-cache": "MISS"
-                    },
-                    "responseCode": 200,
-                    "responseTime": 57
-                },
-                "request": {
-                    "module": "content-summaries",
-                    "params": {
-                        "urn": "urn:bbc:optimo:asset:c639526lxlro",
-                        "page": 1
-                    },
-                    "timeout": 4000,
-                    "url": "https://fabl.api.bbci.co.uk/preview/module/content-summaries?urn=urn%3Abbc%3Aoptimo%3Aasset%3Ac639526lxlro&page=1"
-                }
-            }
-        ],
-        "privateContext": {},
-        "params": {
-            "id": "cpqr492886k4t",
-            "service": "polska",
-            "pageType": "topic"
-        },
-        "sandboxViolations": [],
-        "nonFatalErrors": []
+        "curationId": "urn:bbc:optimo:asset:c639526lxlro",
+        "curationType": "optimo",
+        "position": 0,
+        "visualProminence": "NORMAL",
+        "intent": "overview"
+      }
+    ],
+    "activePage": 1,
+    "pageCount": 1,
+    "metadata": {
+      "analytics": {
+        "name": "topics.polska-strona-tematyczna.page",
+        "producer": "BBC"
+      },
+      "atiAnalytics": {
+        "contentId": "urn:bbc:tipo:topic:cpqr492886k4t",
+        "contentType": "index-category",
+        "pageIdentifier": "polska.topics.cpqr492886k4t.page",
+        "pageTitle": "polska strona tematyczna"
+      }
     }
+  },
+  "contentType": "application/json; charset=utf-8"
 }
