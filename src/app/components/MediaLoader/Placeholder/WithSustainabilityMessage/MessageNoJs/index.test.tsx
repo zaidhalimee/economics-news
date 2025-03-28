@@ -1,15 +1,15 @@
 import React from 'react';
 import { render } from '../../../../react-testing-library-with-providers';
-import SignPostNoJs from '.';
+import MessageNoJs from '.';
 
-describe('Sign Post', () => {
+describe('Message No JS', () => {
   afterEach(() => {
     jest.resetModules();
   });
 
   it(`should render a 'Help reduce your power consumption' message`, () => {
     const { container } = render(
-      <SignPostNoJs noJsMessage="Help reduce your power and data usage by not playing video content." />,
+      <MessageNoJs noJsMessage="Help reduce your power and data usage by not playing video content." />,
       {
         service: 'news',
       },

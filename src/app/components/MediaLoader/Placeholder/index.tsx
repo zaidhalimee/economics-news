@@ -1,14 +1,14 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import { Stages } from '#app/hooks/useExperimentHook';
-import WithTranscriptSignPost from './WithTranscript/SignPost';
-import WithTranscriptNoJsSignPost from './WithTranscript/SignPostNoJs';
+import SustainabilityMessage from './WithSustainabilityMessage/Message';
+import SustainabilityMessageNoJs from './WithSustainabilityMessage/MessageNoJs';
 import Image from '../../Image';
 import styles from './index.styles';
 import PlayButton from './PlayButton';
 import Guidance from './Guidance';
 import { MediaInfo } from '../types';
-import WithTransciptMediaIndicator from './WithTranscript/MediaIndicator';
+import WithSustainabilityMessageMediaIndicator from './WithSustainabilityMessage/MediaIndicator';
 
 interface Props {
   onClick: React.MouseEventHandler<HTMLDivElement>;
@@ -51,8 +51,8 @@ const MediaPlayerPlaceholder = ({
     />
   );
 
-  const playButtonWithTranscript = (
-    <WithTransciptMediaIndicator
+  const playButtonWithSustainabilityMessage = (
+    <WithSustainabilityMessageMediaIndicator
       title={title}
       datetime={datetime}
       duration={duration}
@@ -70,7 +70,7 @@ const MediaPlayerPlaceholder = ({
     />
   );
 
-  const withTranscriptMessage = <WithTranscriptSignPost title={title} />;
+  const withSustainabilityMessage = <SustainabilityMessage title={title} />;
 
   return (
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
@@ -82,10 +82,10 @@ const MediaPlayerPlaceholder = ({
     >
       {experimentStage === Stages.STAGE_3 ? guideComponent : null}
       {experimentStage === Stages.STAGE_2
-        ? playButtonWithTranscript
+        ? playButtonWithSustainabilityMessage
         : playButton}
-      {experimentStage === Stages.STAGE_2 ? withTranscriptMessage : null}
-      <WithTranscriptNoJsSignPost noJsMessage={noJsMessage} />
+      {experimentStage === Stages.STAGE_2 ? withSustainabilityMessage : null}
+      <SustainabilityMessageNoJs noJsMessage={noJsMessage} />
       <Image alt="" src={src} srcSet={srcSet} />
     </div>
   );

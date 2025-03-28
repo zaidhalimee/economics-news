@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Sign Post should render a 'Help reduce your power consumption' message 1`] = `
+exports[`Message should render a 'Help reduce your power consumption' message 1`] = `
 .emotion-0 {
   position: absolute;
   color: #FFFFFF;

@@ -15,7 +15,7 @@ type Props = {
   title?: string;
 };
 
-const SignPost = ({ title = '' }: Props) => {
+const Message = ({ title = '' }: Props) => {
   const {
     translations: {
       media: { signPost, loadVideo },
@@ -60,4 +60,4 @@ const SignPost = ({ title = '' }: Props) => {
   );
 };
 
-export default SignPost;
+export default Message;

@@ -7,7 +7,7 @@ type Props = {
   noJsMessage: string;
 };
 
-const SignPostNoJs = ({ noJsMessage }: Props) => {
+const MessageNoJs = ({ noJsMessage }: Props) => {
   return (
     <noscript>
       <div css={styles.container}>
@@ -19,4 +19,4 @@ const SignPostNoJs = ({ noJsMessage }: Props) => {
   );
 };
 
-export default SignPostNoJs;
+export default MessageNoJs;

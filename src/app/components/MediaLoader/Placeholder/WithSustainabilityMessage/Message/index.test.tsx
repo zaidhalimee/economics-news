@@ -1,14 +1,14 @@
 import React from 'react';
 import { render } from '../../../../react-testing-library-with-providers';
-import SignPost from '.';
+import Message from '.';
 
-describe('Sign Post', () => {
+describe('Message', () => {
   afterEach(() => {
     jest.resetModules();
   });
 
   it(`should render a 'Help reduce your power consumption' message`, () => {
-    const { container } = render(<SignPost />, {
+    const { container } = render(<Message />, {
       service: 'news',
     });
     const text = container.querySelector('p')?.innerHTML;

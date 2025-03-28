@@ -70,7 +70,6 @@ const styles = {
   loadVideo: ({ palette }: Theme) =>
     css({
       all: 'unset',
-      // Izzy
       '&:focus': {
         outline: `${focusIndicatorThickness} solid ${palette.BLACK}`,
         boxShadow: `0 0 0 ${focusIndicatorThickness} ${palette.WHITE}`,
