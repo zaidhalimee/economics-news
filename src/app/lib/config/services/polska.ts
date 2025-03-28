@@ -42,7 +42,7 @@ export const service: DefaultServiceConfig = {
     isTrustProjectParticipant: true,
     script: latinWithDiacritics,
     manifestPath: '/polska/manifest.json',
-    swPath: '/sw.js',
+    swPath: '/polska/sw.js',
     homePageTitle:
       'Wiadomości, filmy, analizy i kontekst w języku portugalskim',
     passportHomes: ['polska'],
