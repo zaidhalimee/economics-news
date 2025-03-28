@@ -3,6 +3,7 @@ const { eslintDirAlias } = require('./dirAlias');
 module.exports = {
   extends: [
     'airbnb',
+    'next',
     'plugin:prettier/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:cypress/recommended',
