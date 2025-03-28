@@ -198,8 +198,6 @@ export interface GetConfigProps {
   brandName: string;
   env: Environments;
   service: Services;
-  previousPath: string;
-  origin: string;
   chartbeatDomain: string;
   sectionName?: string;
   mediaPageType?: string;

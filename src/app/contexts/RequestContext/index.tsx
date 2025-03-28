@@ -27,9 +27,7 @@ export type RequestContextProps = {
   isNextJs: boolean;
   isUK: boolean;
   mvtExperiments?: MvtExperiment[] | null;
-  origin: string;
   pageType: PageTypes;
-  previousPath: string;
   derivedPageType: string | null;
   pathname: string;
   platform: Platforms;
