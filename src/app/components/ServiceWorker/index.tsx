@@ -66,7 +66,7 @@ export default () => {
             await periodicSyncRegistration.periodicSync.register(
               'get-latest-news',
               {
-                minInterval: 1 * 60 * 1000,
+                minInterval: 12 * 60 * 60 * 1000,
               },
             );
             console.warn('Periodic Sync registered successfully.');
