@@ -189,7 +189,6 @@ const MediaLoader = ({
   uniqueId,
   forceStage,
 }: Props) => {
-  // TODO - refactor to improve experience on .lite
   const transcriptBlock = getTranscriptBlock(blocks);
   const hasTranscript = !!transcriptBlock;
 
