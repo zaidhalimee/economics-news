@@ -43,7 +43,7 @@ export const service: DefaultServiceConfig = {
     script: arabic,
     manifestPath: '/arabic/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'الرئيسية',
+    homePageTitle: 'الرئيسية',
     iTunesAppId: 558497376,
     showAdPlaceholder: true,
     showRelatedTopics: true,

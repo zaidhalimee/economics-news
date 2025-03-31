@@ -45,7 +45,7 @@ export const service: DefaultServiceConfig = {
     script: latin,
     manifestPath: '/afaanoromoo/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'Oduu',
+    homePageTitle: 'Oduu',
     showAdPlaceholder: false,
     showRelatedTopics: true,
     podcastPromo: {

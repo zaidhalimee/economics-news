@@ -43,7 +43,7 @@ export const service: DefaultServiceConfig = {
     script: devanagari,
     manifestPath: '/hindi/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle:
+    homePageTitle:
       'ब्रेकिंग न्यूज़ समाचार, ताजा खबर | News, latest news, breaking news',
     showAdPlaceholder: true,
     showRelatedTopics: true,
@@ -472,7 +472,7 @@ export const service: DefaultServiceConfig = {
       },
       {
         title: 'पॉडकास्ट',
-        url: '/hindi/institutional-61824775',
+        url: '/hindi/topics/cv22x3pmrvmt',
       },
     ],
   },

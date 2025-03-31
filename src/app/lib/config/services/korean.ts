@@ -43,7 +43,7 @@ export const service: DefaultServiceConfig = {
     script: noAscendersOrDescenders,
     manifestPath: '/korean/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: '홈페이지',
+    homePageTitle: '홈페이지',
     showAdPlaceholder: false,
     showRelatedTopics: true,
     translations: {

@@ -24,6 +24,8 @@ export default ({ pageType, testSuites, testIsolation = false }) => {
             let pageSize = interceptions[0].response.body.length / 1024;
             let chartbeatSize = interceptions[1].response.body.length / 1024;
 
+            console.log('Page size:', pageSize);
+            console.log('Chartbeat size:', chartbeatSize);
             Cypress.env('PAGE_SIZE', pageSize);
             Cypress.env('CHARTBEAT_SIZE', chartbeatSize);
           });

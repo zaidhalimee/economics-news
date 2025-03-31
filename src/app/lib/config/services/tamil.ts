@@ -43,7 +43,7 @@ export const service: DefaultServiceConfig = {
     script: tamil,
     manifestPath: '/tamil/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'முகப்பு',
+    homePageTitle: 'முகப்பு',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {
@@ -428,6 +428,14 @@ export const service: DefaultServiceConfig = {
       {
         title: 'இலங்கை',
         url: '/tamil/topics/cz74k7p3qw7t',
+      },
+      {
+        title: 'உடல்நலம்',
+        url: '/tamil/topics/cyx5kxzdn9dt',
+      },
+      {
+        title: 'வரலாறு',
+        url: '/tamil/topics/cxnyknvykxjt',
       },
       {
         title: 'விளையாட்டு',

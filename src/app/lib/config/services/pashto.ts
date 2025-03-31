@@ -45,7 +45,7 @@ export const service: DefaultServiceConfig = {
     script: arabic,
     manifestPath: '/pashto/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'کور پاڼه',
+    homePageTitle: 'کور پاڼه',
     showAdPlaceholder: true,
     showRelatedTopics: true,
     translations: {
