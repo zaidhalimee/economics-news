@@ -20,7 +20,7 @@ const ReadMoreButton = ({
   variation,
 }: Props) => {
   const eventTrackingData: EventTrackingMetadata = {
-    componentName: 'ReadMoreButton',
+    componentName: 'read-more-button',
   };
 
   const viewRef = useViewTracker(eventTrackingData);

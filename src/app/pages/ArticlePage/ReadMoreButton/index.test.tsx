@@ -100,7 +100,7 @@ describe('ReadMoreButton', () => {
     );
 
     const button = getByTestId('read-more-button');
-    expect(button).toHaveStyle('border-bottom: 1px solid #B0B2B4');
+    expect(button).toHaveStyle('border-bottom: 0.0625rem solid #B0B2B4');
   });
 
   it('does not apply border-bottom for variation A', () => {
@@ -122,25 +122,12 @@ describe('ReadMoreButton', () => {
     describe('View tracking', () => {
       const viewTrackerSpy = jest.spyOn(viewTracking, 'default');
 
-      it('should not be enabled if event tracking data not provided', () => {
-        render(
-          <ReadMoreButton
-            showAllContent={false}
-            setShowAllContent={mockSetShowAllContent}
-            variation="A"
-          />,
-        );
-
-        expect(viewTrackerSpy).toHaveBeenCalledWith(undefined);
-      });
-
       it('should register view tracker if event tracking data provided', () => {
         render(
           <ReadMoreButton
             showAllContent={false}
             setShowAllContent={mockSetShowAllContent}
             variation="A"
-            eventTrackingData={eventTrackingData}
           />,
         );
 
@@ -153,29 +140,12 @@ describe('ReadMoreButton', () => {
         .spyOn(clickTracking, 'default')
         .mockImplementation();
 
-      it('should not be enabled if event tracking data not provided', () => {
-        const { getByTestId } = render(
-          <ReadMoreButton
-            showAllContent={false}
-            setShowAllContent={mockSetShowAllContent}
-            variation="A"
-          />,
-        );
-
-        expect(clickTrackerSpy).toHaveBeenCalledWith(undefined);
-
-        const button = getByTestId('read-more-button');
-        fireEvent.click(button);
-        expect(button.onclick).toBeFalsy();
-      });
-
       it('should register click tracker if event tracking data provided', () => {
         render(
           <ReadMoreButton
             showAllContent={false}
             setShowAllContent={mockSetShowAllContent}
             variation="A"
-            eventTrackingData={eventTrackingData}
           />,
         );
 
