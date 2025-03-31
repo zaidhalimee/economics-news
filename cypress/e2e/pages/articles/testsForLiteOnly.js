@@ -1,6 +1,6 @@
 import { liteEnabledServices } from '#app/components/LiteSiteCta/liteSiteConfig';
 
-export default ({ service, pageType, chartbeatSize, pageSize }) => {
+export default ({ service, pageType }) => {
   if (liteEnabledServices.includes(service)) {
     describe(`Running testsForLiteOnly for ${service} ${pageType}`, () => {
       describe('Page Size', () => {
