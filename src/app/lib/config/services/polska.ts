@@ -40,7 +40,7 @@ export const service: DefaultServiceConfig = {
     isTrustProjectParticipant: true,
     script: latinWithDiacritics,
     manifestPath: '/polska/manifest.json',
-    swPath: '/polska/sw.js',
+    swPath: '/sw.js',
     homePageTitle: 'Home',
     showAdPlaceholder: false,
     showRelatedTopics: true,
