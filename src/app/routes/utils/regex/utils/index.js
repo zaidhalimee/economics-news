@@ -36,16 +36,6 @@ const getWorldServices = services => {
   return services.filter(service => !publicServices.includes(service));
 };
 
-export const getArticleSwRegex = services => {
-  const serviceRegex = getServiceRegex(getWorldServices(services));
-  return `/:service(${serviceRegex})/articles/sw.js`;
-};
-
-export const getArticleManifestRegex = services => {
-  const serviceRegex = getServiceRegex(getWorldServices(services));
-  return `/:service(${serviceRegex})/articles/manifest.json`;
-};
-
 export const getHomePageRegex = services => {
   const homePageServiceRegex = getServiceRegex(services);
   return `/:service(${homePageServiceRegex}):variant(${variantRegex})?:lite(${liteRegex})?`;
