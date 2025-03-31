@@ -110,7 +110,7 @@ server
  * Application env routes
  */
 server
-  .get([homePageSwPath], (req, res) => {
+  .get(homePageSwPath, (req, res) => {
     const swPath = `${__dirname}/public/sw.js`;
     res.set(
       `Cache-Control`,
@@ -123,7 +123,7 @@ server
       }
     });
   })
-  .get([homePageManifestPath], async ({ params }, res) => {
+  .get(homePageManifestPath, async ({ params }, res) => {
     const { service } = params;
     const variant = defaultServiceVariants[service] || 'default';
     const manifestPath = `${__dirname}/public${serviceConfigs[service][variant].manifestPath}`;

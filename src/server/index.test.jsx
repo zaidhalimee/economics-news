@@ -952,8 +952,15 @@ describe('Server', () => {
   });
 
   describe('Service workers', () => {
+    it('should serve a file for existing service workers', async () => {
+      await makeRequest('/gahuza/sw.js');
+      expect(sendFileSpy.mock.calls[0][0]).toEqual(
+        path.join(__dirname, '/public/sw.js'),
+      );
+    });
+
     it('should not serve a file for non-existing service workers', async () => {
-      const { statusCode } = await makeRequest('/some-service/articles/sw.js');
+      const { statusCode } = await makeRequest('/news/sw.js');
       expect(sendFileSpy.mock.calls.length).toEqual(0);
       expect(statusCode).toEqual(500);
     });
