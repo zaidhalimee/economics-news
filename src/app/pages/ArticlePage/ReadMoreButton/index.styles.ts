@@ -12,8 +12,11 @@ export default {
       padding: `${spacings.DOUBLE}rem 0`,
       margin: `${spacings.QUADRUPLE}rem ${spacings.DOUBLE}rem -1.5rem  ${spacings.DOUBLE}rem`,
       backgroundColor: palette.GREY_10,
-      color: palette.WHITE,
       border: 'none',
+
+      span: {
+        color: palette.WHITE,
+      },
 
       '&:hover, &:focus': {
         textDecoration: 'underline',
