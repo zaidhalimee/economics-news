@@ -6,6 +6,8 @@ import {
 import * as useOptimizelyVariation from '#app/hooks/useOptimizelyVariation';
 import ArticleHeadline from '.';
 
+jest.mock('#app/legacy/containers/OptimizelyPageViewTracking');
+
 const headlineBlock = {
   id: 'c7298038',
   type: 'text',
