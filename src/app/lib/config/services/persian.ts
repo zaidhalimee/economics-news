@@ -456,7 +456,7 @@ export const service: DefaultServiceConfig = {
       },
       {
         title: 'تلویزیون',
-        url: '/persian/tv-and-radio-37434377',
+        url: '/persian/topics/cw9qgeqd1zqt',
       },
       {
         title: 'ايران',
