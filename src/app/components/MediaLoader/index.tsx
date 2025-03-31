@@ -282,7 +282,7 @@ const MediaLoader = ({
         className={className}
         css={[
           styles.figure(embedded),
-          styles.experimentVideo,
+          styles.withTranscriptVideo,
           playerConfig?.ui?.skin === 'classic' && [
             orientation === 'portrait' && styles.portraitFigure(embedded),
             orientation === 'landscape' && styles.landscapeFigure,
@@ -325,7 +325,7 @@ const MediaLoader = ({
             type={mediaType}
             css={[
               orientation === 'portrait' && styles.captionPortrait,
-              styles.experimentCaption,
+              styles.withTranscriptCaption,
             ]}
           />
         )}

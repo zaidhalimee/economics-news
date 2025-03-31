@@ -24,13 +24,13 @@ export default {
         ...(isEmbedded && { margin: '0' }),
         ...(!isEmbedded && { margin: `0 0 ${spacings.TRIPLE}rem 0` }),
       }),
-  experimentVideo: ({ palette, isDarkUi }: Theme) =>
+  withTranscriptVideo: ({ palette, isDarkUi }: Theme) =>
     css({
       '&:has(details)': {
         backgroundColor: isDarkUi ? palette.GREY_7 : palette.WHITE,
       },
     }),
-  experimentCaption: ({ mq, spacings }: Theme) =>
+  withTranscriptCaption: ({ mq, spacings }: Theme) =>
     css({
       '&:has(+ details)': {
         margin: `${spacings.FULL}rem`,
