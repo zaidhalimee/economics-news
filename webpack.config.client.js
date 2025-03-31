@@ -195,8 +195,6 @@ module.exports = ({
         patterns: [{ from: 'public' }],
       }),
       new DuplicatesPlugin({
-        // Emit compilation warning or error? (Default: `false`)
-        emitErrors: false,
         // Display full duplicates information? (Default: `false`)
         verbose: true,
       }),
