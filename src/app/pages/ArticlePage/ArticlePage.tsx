@@ -247,8 +247,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const showTopics = Boolean(showRelatedTopics && topics.length > 0);
 
-  const enableReadMoreExperiment = !isAmp && !isLite && !isApp; // add check for is in experiment
-
   const readMoreButtonVariation = (() => {
     if (service === 'pidgin' || service === 'urdu') {
       return 'A';
@@ -258,6 +256,9 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     }
     return null;
   })();
+
+  const enableReadMoreExperiment =
+    !isAmp && !isLite && !isApp && readMoreButtonVariation; // add check for is in experiment
 
   return (
     <div css={styles.pageWrapper}>
@@ -310,7 +311,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           <main
             css={[
               styles.mainContent,
-              ...(enableReadMoreExperiment && readMoreButtonVariation
+              ...(enableReadMoreExperiment
                 ? [!showAllContent && styles.contentHidden]
                 : []),
             ]}
@@ -320,7 +321,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
               blocks={articleBlocks}
               componentsToRender={componentsToRender}
             />
-            {enableReadMoreExperiment && readMoreButtonVariation && (
+            {enableReadMoreExperiment && (
               <ReadMoreButton
                 showAllContent={showAllContent}
                 setShowAllContent={() => setShowAllContent(true)}

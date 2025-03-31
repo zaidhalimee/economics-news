@@ -55,7 +55,7 @@ export default {
         display: 'none',
 
         [`.${NO_JS_CLASSNAME} &`]: {
-          display: 'unset',
+          display: 'block',
         },
         // Show content when at desktop size
         [mq.GROUP_4_MIN_WIDTH]: {

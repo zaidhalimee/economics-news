@@ -10,7 +10,7 @@ export default {
       display: 'block',
       width: 'calc(100% - 2rem)',
       padding: `${spacings.DOUBLE}rem 0`,
-      margin: `${spacings.QUADRUPLE}rem ${spacings.DOUBLE}rem -1.5rem  ${spacings.DOUBLE}rem`,
+      margin: `0 ${spacings.DOUBLE}rem -1.5rem  ${spacings.DOUBLE}rem`,
       backgroundColor: palette.GREY_10,
       border: 'none',
 
@@ -33,7 +33,7 @@ export default {
       display: 'block',
       width: 'calc(100% - 2rem)',
       padding: `${spacings.DOUBLE}rem 0`,
-      margin: `${spacings.TRIPLE}rem ${spacings.DOUBLE}rem -0.5rem ${spacings.DOUBLE}rem`,
+      margin: `0 ${spacings.DOUBLE}rem -0.5rem ${spacings.DOUBLE}rem`,
       backgroundColor: palette.GREY_2,
       color: palette.GREY_10,
       textAlign: 'start',
