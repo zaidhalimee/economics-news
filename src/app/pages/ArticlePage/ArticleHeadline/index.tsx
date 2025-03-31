@@ -22,11 +22,7 @@ const ArticleHeadline = (props: ComponentToRenderProps) => {
   const eventTrackingData = { componentName: 'canonical-lite-cta', optimizely };
   const { enabled: showCTA } = useToggle('liteSiteCTA');
   const viewRef = useViewTracker(eventTrackingData);
-  const titleVariation = useOptimizelyVariation(
-    OPTIMIZELY_CONFIG.flagKey,
-    {},
-    true,
-  );
+  const titleVariation = useOptimizelyVariation(OPTIMIZELY_CONFIG.flagKey);
 
   let articleDataSavingLinkText =
     translations?.liteSite?.articleDataSavingLinkText ?? 'Data saving version';
