@@ -2,8 +2,8 @@
 /* eslint-disable no-template-curly-in-string */
 /* eslint-disable prefer-template */
 
+import { testReverbUrlGenerator } from '@bbc/test_reverb_url_helper';
 import { ATIAnalyticsProps } from '../types';
-const { testReverbUrlGenerator } = require('@bbc/test_reverb_url_helper');
 
 const ampAnalyticsJson = ({ baseUrl, pageviewParams }: ATIAnalyticsProps) => ({
   transport: {
