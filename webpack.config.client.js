@@ -12,6 +12,7 @@ const LoadablePlugin = require('@loadable/webpack-plugin');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
 const { DuplicatesPlugin } = require('inspectpack/plugin');
+const { StatsWriterPlugin } = require('webpack-stats-plugin');
 const { getClientEnvVars } = require('./src/clientEnvVars');
 
 const FRAMEWORK_BUNDLES = ['react', 'react-dom'];
@@ -240,6 +241,13 @@ module.exports = ({
       new LoadablePlugin({
         filename: `${BUNDLE_TYPE}-loadable-stats-${APP_ENV}.json`,
         writeToDisk: true,
+      }),
+      // Generate stats file to detect duplicates
+      new StatsWriterPlugin({
+        fields: ['assets', 'modules'],
+        stats: {
+          source: true, // Needed for webpack5+
+        },
       }),
     ],
   };
