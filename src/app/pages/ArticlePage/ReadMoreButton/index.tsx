@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { ForwardedRef, forwardRef, MouseEventHandler } from 'react';
-import { jsx, useTheme } from '@emotion/react';
+import { jsx } from '@emotion/react';
+import Text from '#app/components/Text';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import styles from './index.styles';
@@ -18,22 +19,22 @@ const ReadMoreButton = forwardRef(
     viewRef: ForwardedRef<HTMLButtonElement>,
   ) => {
     const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
+
     const handleClick: MouseEventHandler<HTMLButtonElement> = event => {
       clickTrackerHandler(event);
       setShowAllContent(event);
     };
-    const theme = useTheme();
+
     // Hide button when all content is shown
     if (showAllContent) return null;
 
     // Display variations of button based on variation
     const buttonStyle =
       variation === 'A' ? styles.readMoreButtonA : styles.readMoreButtonB;
-    const hideButtonStyle = styles.hideButtonOnDesktop;
-    console.log('buttonStyle', buttonStyle);
+
     return (
       <button
-        css={[buttonStyle, hideButtonStyle]}
+        css={[buttonStyle, styles.hideButtonOnDesktop]}
         type="button"
         onClick={handleClick}
         data-testid="read-more-button"
@@ -43,14 +44,8 @@ const ReadMoreButton = forwardRef(
           // <svg
           //   xmlns="http://www.w3.org/2000/svg"
           //   viewBox="0 0 32 32"
-          //   width="16"
-          //   height={theme.fontSizes.pica.fontSize}
-          //   css={{
-          //     marginRight: '10px',
-          //     marginLeft: '0',
-          //     verticalAlign: 'middle',
-          //   }}
           //   aria-hidden="true"
+          //   focusable="false"
           // >
           //   <path d="M26.7 12.6 16 23.2 5.3 12.6V8.8h21.4z" />
           // </svg>
@@ -58,19 +53,13 @@ const ReadMoreButton = forwardRef(
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 32 32"
-            width="16"
-            height={theme.fontSizes.pica.fontSize}
-            css={{
-              marginRight: '10px',
-              marginLeft: '0',
-              verticalAlign: 'middle',
-            }}
             aria-hidden="true"
+            focusable="false"
           >
             <path d="M12.6 26.7 23.2 16 12.6 5.3H8.8v21.4z" />
           </svg>
         )}
-        Continue reading
+        <Text fontVariant="sansBold">Continue reading</Text>
       </button>
     );
   },

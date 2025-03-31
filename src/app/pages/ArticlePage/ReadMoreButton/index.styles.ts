@@ -1,48 +1,53 @@
 import NO_JS_CLASSNAME from '#app/lib/noJs.const';
+import pixelsToRem from '#app/utilities/pixelsToRem';
 import { css, Theme } from '@emotion/react';
 
 export default {
-  readMoreButtonA: ({ spacings, fontSizes, fontVariants }: Theme) =>
+  readMoreButtonA: ({ spacings, palette }: Theme) =>
     css({
-      ...fontSizes.pica,
-      ...fontVariants.serifMedium,
       cursor: 'pointer',
       fontWeight: 'bold',
       display: 'block',
       width: 'calc(100% - 2rem)',
       padding: `${spacings.DOUBLE}rem 0`,
       margin: `${spacings.QUADRUPLE}rem ${spacings.DOUBLE}rem -1.5rem  ${spacings.DOUBLE}rem`,
-      backgroundColor: '#141414',
-      color: '#FFFFFF',
+      backgroundColor: palette.GREY_10,
+      color: palette.WHITE,
       border: 'none',
 
       '&:hover, &:focus': {
-        textDecoration: 'underline 2px',
+        textDecoration: 'underline',
       },
 
       [`.${NO_JS_CLASSNAME} &`]: {
         display: 'none',
       },
     }),
-  readMoreButtonB: ({ spacings, fontSizes, fontVariants }: Theme) =>
+  readMoreButtonB: ({ spacings, palette }: Theme) =>
     css({
-      ...fontSizes.pica,
-      ...fontVariants.serifMedium,
       cursor: 'pointer',
       fontWeight: 'bold',
       display: 'block',
       width: 'calc(100% - 2rem)',
       padding: `${spacings.DOUBLE}rem 0`,
       margin: `${spacings.TRIPLE}rem ${spacings.DOUBLE}rem -0.5rem ${spacings.DOUBLE}rem`,
-      backgroundColor: '#F6F6F6',
-      color: '#141414',
-      textAlign: 'left',
+      backgroundColor: palette.GREY_2,
+      color: palette.GREY_10,
+      textAlign: 'start',
       border: 'none',
-      borderBottom: '1px solid #B0B2B4',
+      borderBottom: `${pixelsToRem(1)}rem solid #B0B2B4`,
       paddingBottom: `calc(${spacings.DOUBLE}rem + 0.5rem)`,
 
+      svg: {
+        fill: 'currentColor',
+        width: `${spacings.DOUBLE}rem`,
+        height: `${spacings.DOUBLE}rem`,
+        marginInlineEnd: `${pixelsToRem(10)}rem`,
+        verticalAlign: 'middle',
+      },
+
       '&:hover, &:focus': {
-        textDecoration: 'underline 2px',
+        textDecoration: 'underline',
       },
 
       [`.${NO_JS_CLASSNAME} &`]: {
