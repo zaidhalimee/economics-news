@@ -25,7 +25,7 @@ const ContinueReadingButton = ({
   };
 
   const {
-    translations: { continueReading } = { continueReading: 'Continue reading' },
+    translations: { continueReading = 'Continue reading' },
   } = use(ServiceContext);
 
   const viewRef = useViewTracker(eventTrackingData);
