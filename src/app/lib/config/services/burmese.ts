@@ -82,7 +82,8 @@ export const service: DefaultServiceConfig = {
         toMainSite: 'ပင်မဝက်ဘ်ဆိုက်သို့သွားရန်။',
         informationPage:
           'ဒေတာကုန်ကျမှုသက်သာစေသည့် ဤဝက်ဘ်ဆိုက်အကြောင်းထပ်မံသိလိုလျှင် (In English)',
-        informationPageLink: 'https://www.bbc.com/burmese/articles/cwy69wyx71go',
+        informationPageLink:
+          'https://www.bbc.com/burmese/articles/cwy69wyx71go',
         dataSaving: 'ဒေတာကုန်ကျမှုသက်သာစေသည့် ဝက်ဘ်စာမျက်နှာ',
         articleDataSavingLinkText: 'စာသား သက်သက်ဖတ်ရန်',
       },
