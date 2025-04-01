@@ -3,11 +3,11 @@ import {
   fireEvent,
   render,
 } from '../../../components/react-testing-library-with-providers';
-import ReadMoreButton from './index';
+import ContinueReadingButton from './index';
 import * as viewTracking from '../../../hooks/useViewTracker';
 import * as clickTracking from '../../../hooks/useClickTrackerHandler';
 
-describe('ReadMoreButton', () => {
+describe('ContinueReadingButton', () => {
   const mockSetShowAllContent = jest.fn();
 
   afterEach(() => {
@@ -16,7 +16,7 @@ describe('ReadMoreButton', () => {
 
   it('renders the button when showAllContent is false', () => {
     const { getByTestId } = render(
-      <ReadMoreButton
+      <ContinueReadingButton
         showAllContent={false}
         setShowAllContent={mockSetShowAllContent}
         variation="A"
@@ -28,7 +28,7 @@ describe('ReadMoreButton', () => {
 
   it('does not render the button when showAllContent is true', () => {
     const { queryByTestId } = render(
-      <ReadMoreButton
+      <ContinueReadingButton
         showAllContent
         setShowAllContent={mockSetShowAllContent}
         variation="A"
@@ -40,7 +40,7 @@ describe('ReadMoreButton', () => {
 
   it('applies the correct styles for variation A', () => {
     const { getByTestId } = render(
-      <ReadMoreButton
+      <ContinueReadingButton
         showAllContent={false}
         setShowAllContent={mockSetShowAllContent}
         variation="A"
@@ -53,7 +53,7 @@ describe('ReadMoreButton', () => {
 
   it('applies the correct styles for variation B', () => {
     const { getByTestId } = render(
-      <ReadMoreButton
+      <ContinueReadingButton
         showAllContent={false}
         setShowAllContent={mockSetShowAllContent}
         variation="B"
@@ -66,7 +66,7 @@ describe('ReadMoreButton', () => {
 
   it('renders the SVG icon when variation is B', () => {
     const { container } = render(
-      <ReadMoreButton
+      <ContinueReadingButton
         showAllContent={false}
         setShowAllContent={mockSetShowAllContent}
         variation="B"
@@ -79,7 +79,7 @@ describe('ReadMoreButton', () => {
 
   it('does not render the SVG icon when variation is A', () => {
     const { container } = render(
-      <ReadMoreButton
+      <ContinueReadingButton
         showAllContent={false}
         setShowAllContent={mockSetShowAllContent}
         variation="A"
@@ -92,7 +92,7 @@ describe('ReadMoreButton', () => {
 
   it('applies border-bottom for variation B', () => {
     const { getByTestId } = render(
-      <ReadMoreButton
+      <ContinueReadingButton
         showAllContent={false}
         setShowAllContent={mockSetShowAllContent}
         variation="B"
@@ -105,7 +105,7 @@ describe('ReadMoreButton', () => {
 
   it('does not apply border-bottom for variation A', () => {
     const { getByTestId } = render(
-      <ReadMoreButton
+      <ContinueReadingButton
         showAllContent={false}
         setShowAllContent={mockSetShowAllContent}
         variation="A"
@@ -124,7 +124,7 @@ describe('ReadMoreButton', () => {
 
       it('should register view tracker if event tracking data provided', () => {
         render(
-          <ReadMoreButton
+          <ContinueReadingButton
             showAllContent={false}
             setShowAllContent={mockSetShowAllContent}
             variation="A"
@@ -142,7 +142,7 @@ describe('ReadMoreButton', () => {
 
       it('should register click tracker if event tracking data provided', () => {
         render(
-          <ReadMoreButton
+          <ContinueReadingButton
             showAllContent={false}
             setShowAllContent={mockSetShowAllContent}
             variation="A"
@@ -156,7 +156,7 @@ describe('ReadMoreButton', () => {
         clickTrackerSpy.mockRestore();
 
         const { getByTestId } = render(
-          <ReadMoreButton
+          <ContinueReadingButton
             showAllContent={false}
             setShowAllContent={mockSetShowAllContent}
             variation="A"

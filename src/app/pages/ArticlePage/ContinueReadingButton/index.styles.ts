@@ -3,7 +3,7 @@ import pixelsToRem from '#app/utilities/pixelsToRem';
 import { css, Theme } from '@emotion/react';
 
 export default {
-  readMoreButtonA: ({ spacings, palette }: Theme) =>
+  continueReadingButtonA: ({ spacings, palette }: Theme) =>
     css({
       cursor: 'pointer',
       fontWeight: 'bold',
@@ -26,7 +26,7 @@ export default {
         display: 'none',
       },
     }),
-  readMoreButtonB: ({ spacings, palette }: Theme) =>
+  continueReadingButtonB: ({ spacings, palette }: Theme) =>
     css({
       cursor: 'pointer',
       fontWeight: 'bold',

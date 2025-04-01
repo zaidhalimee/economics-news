@@ -1,10 +1,11 @@
 /** @jsx jsx */
-import { MouseEventHandler } from 'react';
+import { use, MouseEventHandler } from 'react';
 import { jsx } from '@emotion/react';
 import Text from '#app/components/Text';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import useViewTracker from '#app/hooks/useViewTracker';
+import { ServiceContext } from '#app/contexts/ServiceContext';
 import styles from './index.styles';
 
 type Props = {
@@ -14,7 +15,7 @@ type Props = {
   eventTrackingData?: EventTrackingMetadata;
 };
 
-const ReadMoreButton = ({
+const ContinueReadingButton = ({
   showAllContent,
   setShowAllContent,
   variation,
@@ -22,6 +23,10 @@ const ReadMoreButton = ({
   const eventTrackingData: EventTrackingMetadata = {
     componentName: 'read-more-button',
   };
+
+  const {
+    translations: { continueReading } = { continueReading: 'Continue reading' },
+  } = use(ServiceContext);
 
   const viewRef = useViewTracker(eventTrackingData);
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
@@ -36,7 +41,9 @@ const ReadMoreButton = ({
 
   // Display variations of button based on variation
   const buttonStyle =
-    variation === 'A' ? styles.readMoreButtonA : styles.readMoreButtonB;
+    variation === 'A'
+      ? styles.continueReadingButtonA
+      : styles.continueReadingButtonB;
 
   return (
     <button
@@ -65,9 +72,9 @@ const ReadMoreButton = ({
           <path d="M12.6 26.7 23.2 16 12.6 5.3H8.8v21.4z" />
         </svg>
       )}
-      <Text fontVariant="sansBold">Continue reading</Text>
+      <Text fontVariant="sansBold">{continueReading}</Text>
     </button>
   );
 };
 
-export default ReadMoreButton;
+export default ContinueReadingButton;

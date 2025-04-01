@@ -54,6 +54,7 @@ export interface Translations {
     404: TranslationsError;
     500: TranslationsError;
   };
+  continueReading?: string;
   byline?: {
     author?: string;
     articleInformation?: string;

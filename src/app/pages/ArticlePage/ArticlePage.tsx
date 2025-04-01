@@ -68,7 +68,7 @@ import Disclaimer from '../../components/Disclaimer';
 import SecondaryColumn from './SecondaryColumn';
 import styles from './ArticlePage.styles';
 import { ComponentToRenderProps, TimeStampProps } from './types';
-import ReadMoreButton from './ReadMoreButton';
+import ContinueReadingButton from './ContinueReadingButton';
 import ArticleHeadline from './ArticleHeadline';
 
 const getImageComponent =
@@ -247,7 +247,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const showTopics = Boolean(showRelatedTopics && topics.length > 0);
 
-  const readMoreButtonVariation = (() => {
+  const continueReadingButtonVariation = (() => {
     if (service === 'pidgin' || service === 'urdu') {
       return 'A';
     }
@@ -257,8 +257,8 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     return null;
   })();
 
-  const enableReadMoreExperiment =
-    !isAmp && !isLite && !isApp && readMoreButtonVariation; // add check for is in experiment
+  const enableContinueReadingExperiment =
+    !isAmp && !isLite && !isApp && continueReadingButtonVariation; // add check for is in experiment
 
   return (
     <div css={styles.pageWrapper}>
@@ -311,7 +311,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           <main
             css={[
               styles.mainContent,
-              ...(enableReadMoreExperiment
+              ...(enableContinueReadingExperiment
                 ? [!showAllContent && styles.contentHidden]
                 : []),
             ]}
@@ -321,11 +321,11 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
               blocks={articleBlocks}
               componentsToRender={componentsToRender}
             />
-            {enableReadMoreExperiment && (
-              <ReadMoreButton
+            {enableContinueReadingExperiment && (
+              <ContinueReadingButton
                 showAllContent={showAllContent}
                 setShowAllContent={() => setShowAllContent(true)}
-                variation={readMoreButtonVariation}
+                variation={continueReadingButtonVariation}
               />
             )}
           </main>
@@ -333,7 +333,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
             <RelatedTopics
               css={[
                 styles.relatedTopics,
-                ...(enableReadMoreExperiment
+                ...(enableContinueReadingExperiment
                   ? [!showAllContent && styles.hideRelatedTopics]
                   : []),
               ]}

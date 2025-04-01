@@ -225,11 +225,11 @@ export const ArticlePageWithPodcastNews = () => (
   />
 );
 
-export const ArticlePageWithReadMoreButtonVariation1 = () => (
+export const ArticlePageWithContinueReadingButtonVariation1 = () => (
   <ComponentWithServiceContext data={articleData} service="pidgin" />
 );
 
-export const ArticlePageWithReadMoreButtonVariation2 = () => (
+export const ArticlePageWithContinueReadingButtonVariation2 = () => (
   <ComponentWithServiceContext data={articleData} service="mundo" />
 );
 
