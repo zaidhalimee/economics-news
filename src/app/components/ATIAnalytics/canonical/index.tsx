@@ -3,15 +3,20 @@ import { getEnvConfig } from '#app/lib/utilities/getEnvConfig';
 import { RequestContext } from '#app/contexts/RequestContext';
 import isOperaProxy from '#app/lib/utilities/isOperaProxy';
 import { Helmet } from 'react-helmet';
+import { testReverbUrlGenerator } from '@bbc/test_reverb_url_helper';
 import sendBeacon from '../../../lib/analyticsUtils/sendBeacon';
 import { ATIAnalyticsProps } from '../types';
 import sendBeaconOperaMiniScript from './sendBeaconOperaMiniScript';
 import sendBeaconLite from './sendBeaconLite';
 
+const testModule = () => {
+  return testReverbUrlGenerator.getHelloWorld();
+};
+
 const getNoJsATIPageViewUrl = (atiPageViewUrl: string) =>
   atiPageViewUrl.includes('x8=[simorgh]')
-    ? atiPageViewUrl.replace('x8=[simorgh]', 'x8=[simorgh-nojs]')
-    : `${atiPageViewUrl}&x8=[simorgh-nojs]`;
+    ? atiPageViewUrl.replace('x8=[simorgh]', 'x8=[simorgh-nojs]') + testModule()
+    : `${atiPageViewUrl}&x8=[simorgh-nojs]` + testModule();
 
 const renderNoScriptTrackingPixel = (atiPageViewUrl: string) => {
   return (

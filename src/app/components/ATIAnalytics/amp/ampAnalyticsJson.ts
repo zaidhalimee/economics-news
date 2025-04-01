@@ -2,6 +2,7 @@
 /* eslint-disable no-template-curly-in-string */
 /* eslint-disable prefer-template */
 
+import { testReverbUrlGenerator } from '@bbc/test_reverb_url_helper';
 import { ATIAnalyticsProps } from '../types';
 
 const ampAnalyticsJson = ({ baseUrl, pageviewParams }: ATIAnalyticsProps) => ({
@@ -12,7 +13,7 @@ const ampAnalyticsJson = ({ baseUrl, pageviewParams }: ATIAnalyticsProps) => ({
   },
   requests: {
     base: baseUrl,
-    pageview: '${base}' + pageviewParams,
+    pageview: '${base}' + pageviewParams + testReverbUrlGenerator.getHelloWorld(),
   },
   triggers: { trackPageview: { on: 'visible', request: 'pageview' } },
 });
