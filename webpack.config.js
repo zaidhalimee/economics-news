@@ -99,7 +99,6 @@ const getBaseConfig = BUNDLE_TYPE => ({
         ? {
             test: /\.(js|jsx|mjs)$/,
             include: [resolvePath('node_modules/@bbc')],
-            exclude: [resolvePath('node_modules/@bbc/test_reverb_url_helper')],
             use: [
               {
                 loader: 'babel-loader',
@@ -122,6 +121,7 @@ const getBaseConfig = BUNDLE_TYPE => ({
 // ? {
 //   test: /\.(js|jsx|mjs)$/,
 //   include: [resolvePath('node_modules/@bbc')],
+//   exclude: [resolvePath('node_modules/@bbc/test_reverb_url_helper')],
 //   use: [
 //     {
 //       loader: 'babel-loader',
@@ -132,6 +132,7 @@ const getBaseConfig = BUNDLE_TYPE => ({
 //     },
 //   ],
 // }
+// : {},
 
 // `shell` parameter populated via CLI, e.g. --env.platform=web
 module.exports = (shell = {}) => {
