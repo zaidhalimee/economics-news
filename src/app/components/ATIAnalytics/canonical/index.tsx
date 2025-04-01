@@ -16,7 +16,7 @@ const testModule = () => {
 const getNoJsATIPageViewUrl = (atiPageViewUrl: string) =>
   atiPageViewUrl.includes('x8=[simorgh]')
     ? atiPageViewUrl.replace('x8=[simorgh]', 'x8=[simorgh-nojs]') + testModule()
-    : `${atiPageViewUrl}&x8=[simorgh-nojs]` + testModule();
+    : `${atiPageViewUrl}&x8=[simorgh-nojs]${testModule()}`;
 
 const renderNoScriptTrackingPixel = (atiPageViewUrl: string) => {
   return (

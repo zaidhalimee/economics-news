@@ -13,7 +13,8 @@ const ampAnalyticsJson = ({ baseUrl, pageviewParams }: ATIAnalyticsProps) => ({
   },
   requests: {
     base: baseUrl,
-    pageview: '${base}' + pageviewParams + testReverbUrlGenerator.getHelloWorld(),
+    pageview:
+      '${base}' + pageviewParams + testReverbUrlGenerator.getHelloWorld(),
   },
   triggers: { trackPageview: { on: 'visible', request: 'pageview' } },
 });
