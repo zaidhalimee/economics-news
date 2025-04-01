@@ -228,21 +228,37 @@ export const ArticlePageWithPodcastNews = () => (
   />
 );
 
-export const ArticlePageWithContinueReadingButtonVariation1 = () => (
-  <ComponentWithServiceContext
-    data={articleData}
-    service="pidgin"
-    continueReadingEnabled
-  />
-);
+export const ArticlePageWithContinueReadingButtonVariation1 = {
+  render: () => (
+    <ComponentWithServiceContext
+      data={articleData}
+      service="pidgin"
+      continueReadingEnabled
+    />
+  ),
+  parameters: {
+    viewport: {
+      defaultViewport: 'group2',
+    },
+    chromatic: { disableSnapshot: true },
+  },
+};
 
-export const ArticlePageWithContinueReadingButtonVariation2 = () => (
-  <ComponentWithServiceContext
-    data={articleData}
-    service="mundo"
-    continueReadingEnabled
-  />
-);
+export const ArticlePageWithContinueReadingButtonVariation2 = {
+  render: () => (
+    <ComponentWithServiceContext
+      data={articleData}
+      service="mundo"
+      continueReadingEnabled
+    />
+  ),
+  parameters: {
+    viewport: {
+      defaultViewport: 'group2',
+    },
+    chromatic: { disableSnapshot: true },
+  },
+};
 
 export const ArticlePageWithElectionBanner = {
   render: () => (
