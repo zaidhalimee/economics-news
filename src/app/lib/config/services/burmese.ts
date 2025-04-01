@@ -77,6 +77,15 @@ export const service: DefaultServiceConfig = {
       relatedContent: 'ဒီသတင်းနဲ့ ပတ်သက်သမျှ',
       relatedTopics: 'ဆက်စပ်အကြောင်းအရာများ',
       navMenuText: 'ကဏ္ဍများ',
+      liteSite: {
+        onboardingMessage: `ဒေတာကုန်ကျမှုလျှော့ချနိုင်ရန်အတွက် ယခုဝက်ဘ်ဆိုက်မှ စာမျက်နှာများကို ရုပ်ပုံမပါ စာသားဖြင့်သာတင်ဆက်ပေးထားပါသည်။ ရုပ်ပုံ ဗီဒီယိုများနှင့် ကြည့်လိုလျှင် မူလစာမျက်နှာတွင်ကြည့်နိုင်ပါသည်။`,
+        toMainSite: 'ပင်မဝက်ဘ်ဆိုက်သို့သွားရန်။',
+        informationPage:
+          'ဒေတာကုန်ကျမှုသက်သာစေသည့် ဤဝက်ဘ်ဆိုက်အကြောင်းထပ်မံသိလိုလျှင် (In English)',
+        informationPageLink: 'https://www.bbc.com/burmese/articles/cwy69wyx71go',
+        dataSaving: 'ဒေတာကုန်ကျမှုသက်သာစေသည့် ဝက်ဘ်စာမျက်နှာ',
+        articleDataSavingLinkText: 'ဒေတာကုန်ကျမှုသက်သာစေသည့် ဝက်ဘ်စာမျက်နှာ',
+      },
       mediaAssetPage: {
         mediaPlayer: 'မီဒီယာ ပလေယာ',
         audioPlayer: 'အသံဖိုင်ပလေယာ',
@@ -379,6 +388,7 @@ export const service: DefaultServiceConfig = {
       {
         title: 'ဗီဒီယိုများ',
         url: '/burmese/topics/cj7v92le02qt',
+        hideOnLiteSite: true,
       },
     ],
   },
