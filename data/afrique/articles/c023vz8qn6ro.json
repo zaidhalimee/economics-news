@@ -1,0 +1,1767 @@
+{
+  "data": {
+    "article": {
+      "metadata": {
+        "atiAnalytics": {
+          "categoryName": null,
+          "contentId": "urn:bbc:optimo:asset:c023vz8qn6ro",
+          "contentType": "article",
+          "language": "fr",
+          "ldpThingIds": null,
+          "ldpThingLabels": null,
+          "nationsProducer": null,
+          "pageIdentifier": "afrique.articles.c023vz8qn6ro.page",
+          "pageTitle": "Qu'est-ce que la technique Feynman, la méthode d'étude créée par un prix Nobel pour tout apprendre",
+          "timePublished": "2024-12-18T16:56:09.019Z",
+          "timeUpdated": "2024-12-18T16:56:09.019Z"
+        },
+        "id": "urn:bbc:ares::article:c023vz8qn6ro",
+        "locators": {
+          "optimoUrn": "urn:bbc:optimo:asset:c023vz8qn6ro",
+          "canonicalUrl": "https://www.bbc.com/afrique/articles/c023vz8qn6ro"
+        },
+        "type": "article",
+        "createdBy": "Afrique",
+        "language": "fr",
+        "firstPublished": 1734540969019,
+        "lastPublished": 1734540969019,
+        "options": { "includeComments": false },
+        "analyticsLabels": {
+          "contentId": "urn:bbc:optimo:asset:c023vz8qn6ro",
+          "producer": "Afrique",
+          "page": "afrique.articles.c023vz8qn6ro.page",
+          "irisKeyword": null
+        },
+        "passport": {
+          "language": "fr",
+          "home": "http://www.bbc.co.uk/ontologies/passport/home/Afrique",
+          "taggings": [
+            {
+              "predicate": "http://www.bbc.co.uk/ontologies/bbc/infoClass",
+              "value": "http://www.bbc.co.uk/things/0db2b959-cbf8-4661-965f-050974a69bb5#id"
+            },
+            {
+              "predicate": "http://www.bbc.co.uk/ontologies/bbc/assetType",
+              "value": "http://www.bbc.co.uk/things/22ea958e-2004-4f34-80a7-bf5acad52f6f#id"
+            }
+          ],
+          "predicates": {
+            "infoClass": [
+              {
+                "value": "http://www.bbc.co.uk/things/0db2b959-cbf8-4661-965f-050974a69bb5#id",
+                "type": "infoClass"
+              }
+            ],
+            "assetType": [
+              {
+                "value": "http://www.bbc.co.uk/things/22ea958e-2004-4f34-80a7-bf5acad52f6f#id",
+                "type": "assetType"
+              }
+            ]
+          }
+        },
+        "blockTypes": [
+          "headline",
+          "text",
+          "paragraph",
+          "fragment",
+          "easyRead",
+          "easyReadMeta"
+        ],
+        "includeComments": false,
+        "consumableAsSFV": false,
+        "allowAdvertising": true,
+        "consumableOnRedButton": false,
+        "consumableOnlyOnRedButton": false,
+        "breakingNews": { "isBreaking": false },
+        "useSensitiveOnwardJourneys": false,
+        "stats": { "readTime": 4, "wordCount": 979 },
+        "isTransliterated": false
+      },
+      "content": {
+        "model": {
+          "blocks": [
+            {
+              "id": "d9c4e187",
+              "type": "headline",
+              "model": {
+                "blocks": [
+                  {
+                    "id": "6deed636",
+                    "type": "text",
+                    "model": {
+                      "blocks": [
+                        {
+                          "id": "f14780ba",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "Qu'est-ce que la technique Feynman, la méthode d'étude créée par un prix Nobel pour tout apprendre",
+                            "blocks": [
+                              {
+                                "id": "e4886717",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "Qu'est-ce que la technique Feynman, la méthode d'étude créée par un prix Nobel pour tout apprendre",
+                                  "attributes": []
+                                },
+                                "position": [1, 1, 1, 1]
+                              }
+                            ]
+                          },
+                          "position": [1, 1, 1]
+                        }
+                      ]
+                    },
+                    "position": [1, 1]
+                  }
+                ]
+              },
+              "position": [1]
+            },
+            {
+              "id": "5f51fb3e",
+              "type": "timestamp",
+              "model": {
+                "firstPublished": 1734540969019,
+                "lastPublished": 1734540969019
+              },
+              "position": [2]
+            },
+            {
+              "id": "78bb26aa",
+              "type": "text",
+              "model": {
+                "blocks": [
+                  {
+                    "id": "f0d24ca1",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Si l'idée de passer un examen vous effraie - que ce soit à l'école, à l'université ou pour une promotion au travail - vous n'êtes pas seul.",
+                      "blocks": [
+                        {
+                          "id": "1d0e3149",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Si l'idée de passer un examen vous effraie - que ce soit à l'école, à l'université ou pour une promotion au travail - vous n'êtes pas seul.",
+                            "attributes": []
+                          },
+                          "position": [3, 1, 1]
+                        }
+                      ]
+                    },
+                    "position": [3, 1]
+                  },
+                  {
+                    "id": "8c264693",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Retenir des informations, surtout lorsqu'il s'agit de sujets complexes, est une tâche difficile, même pour les personnes dotées d'une grande intelligence et d'une mémoire prodigieuse.",
+                      "blocks": [
+                        {
+                          "id": "73eeded9",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Retenir des informations, surtout lorsqu'il s'agit de sujets complexes, est une tâche difficile, même pour les personnes dotées d'une grande intelligence et d'une mémoire prodigieuse.",
+                            "attributes": []
+                          },
+                          "position": [3, 2, 1]
+                        }
+                      ]
+                    },
+                    "position": [3, 2]
+                  },
+                  {
+                    "id": "c294e13e",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Cependant, une méthode simple mise au point par le scientifique américain Richard Feynman (1918-1988), lauréat du prix Nobel de physique, s'est révélée être un outil utile pour étudier presque n'importe quoi.",
+                      "blocks": [
+                        {
+                          "id": "b9074ebd",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Cependant, une méthode simple mise au point par le scientifique américain Richard Feynman (1918-1988), lauréat du prix Nobel de physique, s'est révélée être un outil utile pour étudier presque n'importe quoi.",
+                            "attributes": []
+                          },
+                          "position": [3, 3, 1]
+                        }
+                      ]
+                    },
+                    "position": [3, 3]
+                  },
+                  {
+                    "id": "1c825715",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Le physicien - célèbre pour ses contributions importantes au domaine de la mécanique quantique et de la physique des particules - a créé sa technique d'étude afin d'améliorer sa propre compréhension et de transmettre ses connaissances à ses étudiants.",
+                      "blocks": [
+                        {
+                          "id": "6d191a04",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Le physicien - célèbre pour ses contributions importantes au domaine de la mécanique quantique et de la physique des particules - a créé sa technique d'étude afin d'améliorer sa propre compréhension et de transmettre ses connaissances à ses étudiants.",
+                            "attributes": []
+                          },
+                          "position": [3, 4, 1]
+                        }
+                      ]
+                    },
+                    "position": [3, 4]
+                  }
+                ]
+              },
+              "position": [3]
+            },
+            { "id": "cffb035e", "type": "mpu", "model": {}, "position": [4] },
+            {
+              "id": "48f1ed83",
+              "type": "text",
+              "model": {
+                "blocks": [
+                  {
+                    "id": "d73c9e37",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "A lire aussi sur BBC Afrique :",
+                      "blocks": [
+                        {
+                          "id": "0d0bd4dc",
+                          "type": "fragment",
+                          "model": {
+                            "text": "A lire aussi sur BBC Afrique :",
+                            "attributes": []
+                          },
+                          "position": [5, 1, 1]
+                        }
+                      ]
+                    },
+                    "position": [5, 1]
+                  }
+                ]
+              },
+              "position": [5]
+            },
+            {
+              "id": "50dd995d",
+              "type": "wsoj",
+              "model": { "type": "recommendations" },
+              "position": [6]
+            },
+            {
+              "id": "4f5626a9",
+              "type": "text",
+              "model": {
+                "blocks": [
+                  {
+                    "id": "c61fa021",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Qui est Abdon Atangana, le Camerounais qui veut décoloniser les Mathématiques ?",
+                      "blocks": [
+                        {
+                          "id": "12f03506",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Qui est Abdon Atangana, le Camerounais qui veut décoloniser les Mathématiques ?",
+                            "attributes": []
+                          },
+                          "position": [7, 1, 1]
+                        }
+                      ]
+                    },
+                    "position": [7, 1]
+                  },
+                  {
+                    "id": "57508f44",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "10 juillet 2023",
+                      "blocks": [
+                        {
+                          "id": "b53c3d24",
+                          "type": "fragment",
+                          "model": {
+                            "text": "10 juillet 2023",
+                            "attributes": []
+                          },
+                          "position": [7, 2, 1]
+                        }
+                      ]
+                    },
+                    "position": [7, 2]
+                  }
+                ]
+              },
+              "position": [7]
+            },
+            {
+              "id": "ab565825",
+              "type": "podcastPromo",
+              "model": { "type": "podcastPromo" },
+              "position": [8]
+            },
+            {
+              "id": "c41c5afe",
+              "type": "text",
+              "model": {
+                "blocks": [
+                  {
+                    "id": "49fd01d1",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "5 leçons des pays champions dans l'enseignement des mathématiques",
+                      "blocks": [
+                        {
+                          "id": "f6cb7e5b",
+                          "type": "fragment",
+                          "model": {
+                            "text": "5 leçons des pays champions dans l'enseignement des mathématiques",
+                            "attributes": []
+                          },
+                          "position": [9, 1, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 1]
+                  },
+                  {
+                    "id": "69707e99",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "20 octobre 2024",
+                      "blocks": [
+                        {
+                          "id": "796d6786",
+                          "type": "fragment",
+                          "model": {
+                            "text": "20 octobre 2024",
+                            "attributes": []
+                          },
+                          "position": [9, 2, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 2]
+                  },
+                  {
+                    "id": "06283be7",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Quel est le « problème du secrétaire » et comment il peut vous aider à mieux choisir",
+                      "blocks": [
+                        {
+                          "id": "56ad2cf7",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Quel est le « problème du secrétaire » et comment il peut vous aider à mieux choisir",
+                            "attributes": []
+                          },
+                          "position": [9, 3, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 3]
+                  },
+                  {
+                    "id": "2349b2b4",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "20 octobre 2024",
+                      "blocks": [
+                        {
+                          "id": "ac13dcc3",
+                          "type": "fragment",
+                          "model": {
+                            "text": "20 octobre 2024",
+                            "attributes": []
+                          },
+                          "position": [9, 4, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 4]
+                  },
+                  {
+                    "id": "7082b6a6",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "La clé de cette méthode, qu'il a développée de manière informelle lorsqu'il était lui-même étudiant, est de ramener les idées complexes à la réalité et d'essayer de les expliquer simplement.",
+                      "blocks": [
+                        {
+                          "id": "b3f5642f",
+                          "type": "fragment",
+                          "model": {
+                            "text": "La clé de cette méthode, qu'il a développée de manière informelle lorsqu'il était lui-même étudiant, est de ramener les idées complexes à la réalité et d'essayer de les expliquer simplement.",
+                            "attributes": []
+                          },
+                          "position": [9, 5, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 5]
+                  },
+                  {
+                    "id": "aa3ccaa5",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Au lieu de mémoriser des concepts, cette méthode vous aide à vous impliquer activement dans le matériel d'étude, à comprendre les idées en profondeur et à les appliquer efficacement.",
+                      "blocks": [
+                        {
+                          "id": "4dcb60d9",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Au lieu de mémoriser des concepts, cette méthode vous aide à vous impliquer activement dans le matériel d'étude, à comprendre les idées en profondeur et à les appliquer efficacement.",
+                            "attributes": []
+                          },
+                          "position": [9, 6, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 6]
+                  },
+                  {
+                    "id": "07b9fe07",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Nous vous expliquons exactement ce que c'est, étape par étape, afin que vous puissiez appliquer cette technique à tout ce qui vous intéresse.",
+                      "blocks": [
+                        {
+                          "id": "1041c7dc",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Nous vous expliquons exactement ce que c'est, étape par étape, afin que vous puissiez appliquer cette technique à tout ce qui vous intéresse.",
+                            "attributes": []
+                          },
+                          "position": [9, 7, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 7]
+                  },
+                  {
+                    "id": "289f381a",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "4 étapes",
+                      "blocks": [
+                        {
+                          "id": "ee3417c9",
+                          "type": "fragment",
+                          "model": { "text": "4 étapes", "attributes": [] },
+                          "position": [9, 8, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 8]
+                  },
+                  {
+                    "id": "74019ff3",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Richard FeynmanCRÉDIT PHOTO, GETTY IMAGES",
+                      "blocks": [
+                        {
+                          "id": "0808c839",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Richard FeynmanCRÉDIT PHOTO, GETTY IMAGES",
+                            "attributes": []
+                          },
+                          "position": [9, 9, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 9]
+                  },
+                  {
+                    "id": "eae16955",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Légende image, Le physicien Richard Feynman a été qualifié à la fois de génie et de bouffon pour son approche excentrique de la science.",
+                      "blocks": [
+                        {
+                          "id": "e9b162f1",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Légende image, Le physicien Richard Feynman a été qualifié à la fois de génie et de bouffon pour son approche excentrique de la science.",
+                            "attributes": []
+                          },
+                          "position": [9, 10, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 10]
+                  },
+                  {
+                    "id": "2e230273",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "1. Choisissez un concept",
+                      "blocks": [
+                        {
+                          "id": "afd85266",
+                          "type": "fragment",
+                          "model": {
+                            "text": "1. Choisissez un concept",
+                            "attributes": []
+                          },
+                          "position": [9, 11, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 11]
+                  },
+                  {
+                    "id": "2d783af9",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Il peut s'agir de n'importe quel concept. La macroéconomie ou l'économie domestique, ou tout ce que vous voulez apprendre. Chimie ou sciences vétérinaires, ou d'abord un concept puis un autre.",
+                      "blocks": [
+                        {
+                          "id": "f881c3d5",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Il peut s'agir de n'importe quel concept. La macroéconomie ou l'économie domestique, ou tout ce que vous voulez apprendre. Chimie ou sciences vétérinaires, ou d'abord un concept puis un autre.",
+                            "attributes": []
+                          },
+                          "position": [9, 12, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 12]
+                  },
+                  {
+                    "id": "5521ae39",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Notez le sujet.",
+                      "blocks": [
+                        {
+                          "id": "52b8d4fa",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Notez le sujet.",
+                            "attributes": []
+                          },
+                          "position": [9, 13, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 13]
+                  },
+                  {
+                    "id": "4c84ef3c",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "2. Enseignez-le",
+                      "blocks": [
+                        {
+                          "id": "b879db35",
+                          "type": "fragment",
+                          "model": {
+                            "text": "2. Enseignez-le",
+                            "attributes": []
+                          },
+                          "position": [9, 14, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 14]
+                  },
+                  {
+                    "id": "bd8c450d",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Écrivez tout ce que vous savez sur le sujet comme si vous l'enseigniez à un enfant. Bien que cela paraisse absurde, il s'agit d'une étape très importante.",
+                      "blocks": [
+                        {
+                          "id": "610112b4",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Écrivez tout ce que vous savez sur le sujet comme si vous l'enseigniez à un enfant. Bien que cela paraisse absurde, il s'agit d'une étape très importante.",
+                            "attributes": []
+                          },
+                          "position": [9, 15, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 15]
+                  },
+                  {
+                    "id": "f8b1cc4d",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Veillez à utiliser le langage le plus simple possible du début à la fin. En n'utilisant que les mots les plus courants, vous éviterez de vous faire croire que, parce que vous connaissez le jargon, vous comprenez ce dont vous parlez.",
+                      "blocks": [
+                        {
+                          "id": "6b034f31",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Veillez à utiliser le langage le plus simple possible du début à la fin. En n'utilisant que les mots les plus courants, vous éviterez de vous faire croire que, parce que vous connaissez le jargon, vous comprenez ce dont vous parlez.",
+                            "attributes": []
+                          },
+                          "position": [9, 16, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 16]
+                  },
+                  {
+                    "id": "96c064b8",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "3. Revenir à",
+                      "blocks": [
+                        {
+                          "id": "877d0b40",
+                          "type": "fragment",
+                          "model": { "text": "3. Revenir à", "attributes": [] },
+                          "position": [9, 17, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 17]
+                  },
+                  {
+                    "id": "3d7c587a",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "À l'étape 2, vous avez probablement identifié des lacunes dans vos connaissances, des choses que vous avez oubliées ou que vous n'avez pas pu expliquer.",
+                      "blocks": [
+                        {
+                          "id": "30dc152f",
+                          "type": "fragment",
+                          "model": {
+                            "text": "À l'étape 2, vous avez probablement identifié des lacunes dans vos connaissances, des choses que vous avez oubliées ou que vous n'avez pas pu expliquer.",
+                            "attributes": []
+                          },
+                          "position": [9, 18, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 18]
+                  },
+                  {
+                    "id": "61f396a0",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "C'est à ce stade que vous commencez vraiment à apprendre. Retournez à la source (il peut s'agir de vos livres, de vos notes, d'un podcast) et explorez ce que vous ne comprenez toujours pas.",
+                      "blocks": [
+                        {
+                          "id": "893130cc",
+                          "type": "fragment",
+                          "model": {
+                            "text": "C'est à ce stade que vous commencez vraiment à apprendre. Retournez à la source (il peut s'agir de vos livres, de vos notes, d'un podcast) et explorez ce que vous ne comprenez toujours pas.",
+                            "attributes": []
+                          },
+                          "position": [9, 19, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 19]
+                  },
+                  {
+                    "id": "fb839c9b",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Et, pour chaque sous-sujet, lorsque vous pensez l'avoir compris, essayez de le mettre sur papier dans des termes que l'enfant à qui vous enseignez comprendrait.",
+                      "blocks": [
+                        {
+                          "id": "82a31527",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Et, pour chaque sous-sujet, lorsque vous pensez l'avoir compris, essayez de le mettre sur papier dans des termes que l'enfant à qui vous enseignez comprendrait.",
+                            "attributes": []
+                          },
+                          "position": [9, 20, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 20]
+                  },
+                  {
+                    "id": "0dcf52fd",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Une fois que vous êtes à l'aise avec tout ce qui vous déroutait, revenez à votre texte original et continuez.",
+                      "blocks": [
+                        {
+                          "id": "0d019ed5",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Une fois que vous êtes à l'aise avec tout ce qui vous déroutait, revenez à votre texte original et continuez.",
+                            "attributes": []
+                          },
+                          "position": [9, 21, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 21]
+                  },
+                  {
+                    "id": "d75c0dbf",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "4. Réviser et simplifier",
+                      "blocks": [
+                        {
+                          "id": "f55ec914",
+                          "type": "fragment",
+                          "model": {
+                            "text": "4. Réviser et simplifier",
+                            "attributes": []
+                          },
+                          "position": [9, 22, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 22]
+                  },
+                  {
+                    "id": "237cbee0",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Relisez ce que vous avez écrit. Assurez-vous à nouveau que vous n'avez pas utilisé le jargon associé au sujet qui vous intrigue.",
+                      "blocks": [
+                        {
+                          "id": "7684a97b",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Relisez ce que vous avez écrit. Assurez-vous à nouveau que vous n'avez pas utilisé le jargon associé au sujet qui vous intrigue.",
+                            "attributes": []
+                          },
+                          "position": [9, 23, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 23]
+                  },
+                  {
+                    "id": "9b442080",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Lisez-le à haute voix.",
+                      "blocks": [
+                        {
+                          "id": "ca0ffb90",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Lisez-le à haute voix.",
+                            "attributes": []
+                          },
+                          "position": [9, 24, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 24]
+                  },
+                  {
+                    "id": "bc4c7d26",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Si l'explication n'est pas simple ou semble confuse, considérez cela comme une indication que vous ne comprenez pas quelque chose.",
+                      "blocks": [
+                        {
+                          "id": "246f91de",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Si l'explication n'est pas simple ou semble confuse, considérez cela comme une indication que vous ne comprenez pas quelque chose.",
+                            "attributes": []
+                          },
+                          "position": [9, 25, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 25]
+                  },
+                  {
+                    "id": "62d22bf6",
+                    "type": "paragraph",
+                    "model": {
+                      "text": "Essayez de créer des analogies, qui non seulement clarifient les choses, mais montrent également que vous maîtrisez le sujet.",
+                      "blocks": [
+                        {
+                          "id": "87cd3b6a",
+                          "type": "fragment",
+                          "model": {
+                            "text": "Essayez de créer des analogies, qui non seulement clarifient les choses, mais montrent également que vous maîtrisez le sujet.",
+                            "attributes": []
+                          },
+                          "position": [9, 26, 1]
+                        }
+                      ]
+                    },
+                    "position": [9, 26]
+                  }
+                ]
+              },
+              "position": [9]
+            },
+            {
+              "id": "23ec4afd",
+              "type": "easyRead",
+              "model": {
+                "hasBeenReviewed": true,
+                "suitableForAbridgement": false,
+                "blocks": [
+                  {
+                    "id": "af999136",
+                    "type": "text",
+                    "model": {
+                      "blocks": [
+                        {
+                          "id": "caad4320",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "Technique Feynman : Une méthode facile pour apprendre",
+                            "blocks": [
+                              {
+                                "id": "97fb2d4a",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "Technique Feynman : Une méthode facile pour apprendre",
+                                  "attributes": []
+                                },
+                                "position": [10, 1, 1, 1]
+                              }
+                            ]
+                          },
+                          "position": [10, 1, 1]
+                        },
+                        {
+                          "id": "f8679627",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "Introduction",
+                            "blocks": [
+                              {
+                                "id": "814581ee",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "Introduction",
+                                  "attributes": []
+                                },
+                                "position": [10, 1, 2, 1]
+                              }
+                            ]
+                          },
+                          "position": [10, 1, 2]
+                        },
+                        {
+                          "id": "16394838",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "La technique Feynman est une méthode d'étude créée par Richard Feynman. Richard Feynman était un scientifique américain qui a reçu un prix important pour son travail en physique (étude des règles du monde physique). Cette méthode aide à mieux comprendre des sujets difficiles.",
+                            "blocks": [
+                              {
+                                "id": "b697008b",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "La technique Feynman est une méthode d'étude créée par Richard Feynman. Richard Feynman était un scientifique américain qui a reçu un prix important pour son travail en physique (étude des règles du monde physique). Cette méthode aide à mieux comprendre des sujets difficiles.",
+                                  "attributes": []
+                                },
+                                "position": [10, 1, 3, 1]
+                              }
+                            ]
+                          },
+                          "position": [10, 1, 3]
+                        },
+                        {
+                          "id": "b203868e",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "Pourquoi utiliser cette méthode ?",
+                            "blocks": [
+                              {
+                                "id": "8ac00333",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "Pourquoi utiliser cette méthode ?",
+                                  "attributes": []
+                                },
+                                "position": [10, 1, 4, 1]
+                              }
+                            ]
+                          },
+                          "position": [10, 1, 4]
+                        },
+                        {
+                          "id": "90772b21",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "Passer un examen peut être stressant. Beaucoup de personnes ont du mal à retenir des informations, même celles qui sont intelligentes. La méthode Feynman est simple. Elle aide à apprendre en expliquant les choses clairement.",
+                            "blocks": [
+                              {
+                                "id": "7baf64fe",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "Passer un examen peut être stressant. Beaucoup de personnes ont du mal à retenir des informations, même celles qui sont intelligentes. La méthode Feynman est simple. Elle aide à apprendre en expliquant les choses clairement.",
+                                  "attributes": []
+                                },
+                                "position": [10, 1, 5, 1]
+                              }
+                            ]
+                          },
+                          "position": [10, 1, 5]
+                        },
+                        {
+                          "id": "aa9a54be",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "Les étapes de la méthode Feynman",
+                            "blocks": [
+                              {
+                                "id": "30559a5a",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "Les étapes de la méthode Feynman",
+                                  "attributes": []
+                                },
+                                "position": [10, 1, 6, 1]
+                              }
+                            ]
+                          },
+                          "position": [10, 1, 6]
+                        },
+                        {
+                          "id": "e0f7cce2",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "1. Choisir un sujet",
+                            "blocks": [
+                              {
+                                "id": "d97d4871",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "1. Choisir un sujet",
+                                  "attributes": []
+                                },
+                                "position": [10, 1, 7, 1]
+                              }
+                            ]
+                          },
+                          "position": [10, 1, 7]
+                        },
+                        {
+                          "id": "2551a5f2",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "Choisissez un sujet que vous voulez apprendre. Cela peut être une matière comme la chimie (science des substances) ou l'économie (étude de l'argent et des échanges). Écrivez le nom du sujet.",
+                            "blocks": [
+                              {
+                                "id": "f22d7790",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "Choisissez un sujet que vous voulez apprendre. Cela peut être une matière comme la chimie (science des substances) ou l'économie (étude de l'argent et des échanges). Écrivez le nom du sujet.",
+                                  "attributes": []
+                                },
+                                "position": [10, 1, 8, 1]
+                              }
+                            ]
+                          },
+                          "position": [10, 1, 8]
+                        },
+                        {
+                          "id": "5effb43b",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "2. Expliquer le sujet",
+                            "blocks": [
+                              {
+                                "id": "ec4b17eb",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "2. Expliquer le sujet",
+                                  "attributes": []
+                                },
+                                "position": [10, 1, 9, 1]
+                              }
+                            ]
+                          },
+                          "position": [10, 1, 9]
+                        },
+                        {
+                          "id": "33f9ec88",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "Écrivez tout ce que vous savez sur le sujet. Imaginez que vous expliquez à un enfant. Utilisez des mots simples. Ne vous laissez pas embrouiller par des mots difficiles.",
+                            "blocks": [
+                              {
+                                "id": "336f9693",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "Écrivez tout ce que vous savez sur le sujet. Imaginez que vous expliquez à un enfant. Utilisez des mots simples. Ne vous laissez pas embrouiller par des mots difficiles.",
+                                  "attributes": []
+                                },
+                                "position": [10, 1, 10, 1]
+                              }
+                            ]
+                          },
+                          "position": [10, 1, 10]
+                        },
+                        {
+                          "id": "a206dd6b",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "3. Identifier les lacunes",
+                            "blocks": [
+                              {
+                                "id": "87594f9f",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "3. Identifier les lacunes",
+                                  "attributes": []
+                                },
+                                "position": [10, 1, 11, 1]
+                              }
+                            ]
+                          },
+                          "position": [10, 1, 11]
+                        },
+                        {
+                          "id": "636b33e5",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "Pendant que vous écrivez, vous pouvez voir que vous ne savez pas tout. C'est le moment d'apprendre ce que vous ne comprenez pas. Retournez à vos livres ou à vos notes. Essayez d'écrire encore une fois ce que vous avez compris.",
+                            "blocks": [
+                              {
+                                "id": "a680a29a",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "Pendant que vous écrivez, vous pouvez voir que vous ne savez pas tout. C'est le moment d'apprendre ce que vous ne comprenez pas. Retournez à vos livres ou à vos notes. Essayez d'écrire encore une fois ce que vous avez compris.",
+                                  "attributes": []
+                                },
+                                "position": [10, 1, 12, 1]
+                              }
+                            ]
+                          },
+                          "position": [10, 1, 12]
+                        },
+                        {
+                          "id": "da04ae9b",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "4. Réviser et simplifier",
+                            "blocks": [
+                              {
+                                "id": "e2e24bfe",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "4. Réviser et simplifier",
+                                  "attributes": []
+                                },
+                                "position": [10, 1, 13, 1]
+                              }
+                            ]
+                          },
+                          "position": [10, 1, 13]
+                        },
+                        {
+                          "id": "4dc93409",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "Lisez ce que vous avez écrit. Assurez-vous d'utiliser des mots simples. Lisez à haute voix. Si vous trouvez que c'est encore compliqué, cela veut dire que vous ne comprenez pas bien. Essayez d'expliquer autrement.",
+                            "blocks": [
+                              {
+                                "id": "f9d89ab6",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "Lisez ce que vous avez écrit. Assurez-vous d'utiliser des mots simples. Lisez à haute voix. Si vous trouvez que c'est encore compliqué, cela veut dire que vous ne comprenez pas bien. Essayez d'expliquer autrement.",
+                                  "attributes": []
+                                },
+                                "position": [10, 1, 14, 1]
+                              }
+                            ]
+                          },
+                          "position": [10, 1, 14]
+                        },
+                        {
+                          "id": "a1db769b",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "Exemple : Les élastiques",
+                            "blocks": [
+                              {
+                                "id": "3ffca605",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "Exemple : Les élastiques",
+                                  "attributes": []
+                                },
+                                "position": [10, 1, 15, 1]
+                              }
+                            ]
+                          },
+                          "position": [10, 1, 15]
+                        },
+                        {
+                          "id": "3831105b",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "Richard Feynman a expliqué les élastiques très simplement. Il a dit que les élastiques sont faits de longues chaînes de petites particules (molécules). Quand on tire sur un élastique, il devient plus long. Les petites particules veulent revenir à leur taille normale, et cela crée de la chaleur (température qui monte). Vous pouvez sentir la chaleur en tirant sur un élastique entre vos lèvres.",
+                            "blocks": [
+                              {
+                                "id": "4fbfeafc",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "Richard Feynman a expliqué les élastiques très simplement. Il a dit que les élastiques sont faits de longues chaînes de petites particules (molécules). Quand on tire sur un élastique, il devient plus long. Les petites particules veulent revenir à leur taille normale, et cela crée de la chaleur (température qui monte). Vous pouvez sentir la chaleur en tirant sur un élastique entre vos lèvres.",
+                                  "attributes": []
+                                },
+                                "position": [10, 1, 16, 1]
+                              }
+                            ]
+                          },
+                          "position": [10, 1, 16]
+                        },
+                        {
+                          "id": "9d161a23",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "Avantages et inconvénients",
+                            "blocks": [
+                              {
+                                "id": "577332e7",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "Avantages et inconvénients",
+                                  "attributes": []
+                                },
+                                "position": [10, 1, 17, 1]
+                              }
+                            ]
+                          },
+                          "position": [10, 1, 17]
+                        },
+                        {
+                          "id": "75bacc8c",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "La méthode Feynman est utile pour comprendre des sujets compliqués. Elle aide à relier les idées à votre vie. Mais cette méthode demande du temps et des efforts. Elle n'est pas toujours adaptée aux sujets simples ou quand vous devez juste mémoriser des informations.",
+                            "blocks": [
+                              {
+                                "id": "227f5126",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "La méthode Feynman est utile pour comprendre des sujets compliqués. Elle aide à relier les idées à votre vie. Mais cette méthode demande du temps et des efforts. Elle n'est pas toujours adaptée aux sujets simples ou quand vous devez juste mémoriser des informations.",
+                                  "attributes": []
+                                },
+                                "position": [10, 1, 18, 1]
+                              }
+                            ]
+                          },
+                          "position": [10, 1, 18]
+                        },
+                        {
+                          "id": "fd0bdb9d",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "Conclusion",
+                            "blocks": [
+                              {
+                                "id": "aacea300",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "Conclusion",
+                                  "attributes": []
+                                },
+                                "position": [10, 1, 19, 1]
+                              }
+                            ]
+                          },
+                          "position": [10, 1, 19]
+                        },
+                        {
+                          "id": "8fb3875a",
+                          "type": "paragraph",
+                          "model": {
+                            "text": "La technique de Feynman peut vous aider à mieux préparer vos examens. Essayez-la la prochaine fois que vous devez apprendre quelque chose de nouveau ! (",
+                            "blocks": [
+                              {
+                                "id": "604e3e48",
+                                "type": "fragment",
+                                "model": {
+                                  "text": "La technique de Feynman peut vous aider à mieux préparer vos examens. Essayez-la la prochaine fois que vous devez apprendre quelque chose de nouveau ! (",
+                                  "attributes": []
+                                },
+                                "position": [10, 1, 20, 1]
+                              }
+                            ]
+                          },
+                          "position": [10, 1, 20]
+                        }
+                      ]
+                    },
+                    "position": [10, 1]
+                  },
+                  {
+                    "id": "ff7b301c",
+                    "type": "easyReadMeta",
+                    "model": {
+                      "easyReadAssetId": "c161g3y596go",
+                      "originalAssetId": "c023vz8qn6ro"
+                    },
+                    "position": [10, 2]
+                  }
+                ]
+              },
+              "position": [10]
+            }
+          ]
+        }
+      },
+      "promo": {
+        "headlines": {
+          "seoHeadline": "Qu'est-ce que la technique Feynman, la méthode d'étude créée par un prix Nobel pour tout apprendre",
+          "promoHeadline": {
+            "blocks": [
+              {
+                "type": "text",
+                "model": {
+                  "blocks": [
+                    {
+                      "type": "paragraph",
+                      "model": {
+                        "text": "Qu'est-ce que la technique Feynman, la méthode d'étude créée par un prix Nobel pour tout apprendre",
+                        "blocks": [
+                          {
+                            "type": "fragment",
+                            "model": {
+                              "text": "Qu'est-ce que la technique Feynman, la méthode d'étude créée par un prix Nobel pour tout apprendre",
+                              "attributes": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "summary": {
+          "blocks": [
+            {
+              "type": "text",
+              "model": {
+                "blocks": [
+                  {
+                    "type": "paragraph",
+                    "model": {
+                      "text": "",
+                      "blocks": [
+                        {
+                          "type": "fragment",
+                          "model": { "text": "", "attributes": [] }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "serviceIdentifier": "Afrique",
+        "breakingNews": { "isBreaking": false },
+        "consumableAsSFV": false
+      }
+    },
+    "secondaryData": {
+      "topStories": [
+        {
+          "headlines": {
+            "headline": "Ethnicity pay gap revealed for academics"
+          },
+          "locators": {
+            "assetUri": "/news/23224388",
+            "cpsUrn": "urn:bbc:content:assetUri:news/23224388",
+            "curie": "http://www.bbc.co.uk/asset/cc11be5b-3e79-5a40-98c2-1317763d076a",
+            "assetId": "23224388"
+          },
+          "summary": "BBC Analysis shows a 26% ethnic pay gap at some of the UK's best known universities",
+          "timestamp": 1544185742000,
+          "language": "en-gb",
+          "passport": {
+            "category": {
+              "categoryId": "http://www.bbc.co.uk/ontologies/applicationlogic-news/News",
+              "categoryName": "News"
+            },
+            "taggings": []
+          },
+          "cpsType": "STY",
+          "indexImage": {
+            "id": "63696123",
+            "subType": "index",
+            "href": "http://b.files.bbci.co.uk/7DA9/test/_63696123_050408914-1.jpg",
+            "path": "/cpsdevpb/7DA9/test/_63696123_050408914-1.jpg",
+            "height": 549,
+            "width": 976,
+            "altText": "Three university graduates",
+            "caption": "The pay gap left Meenakshi Sarkar feeling depressed and devalued",
+            "copyrightHolder": "Press Association",
+            "originCode": "cpsdevpb",
+            "type": "image"
+          },
+          "options": { "isBreakingNews": false, "isFactCheck": false },
+          "prominence": "standard",
+          "section": {
+            "subType": "IDX",
+            "name": "Home",
+            "uri": "/news/front_page",
+            "type": "simple"
+          },
+          "site": {
+            "subType": "site",
+            "name": "BBC News",
+            "uri": "/news",
+            "type": "simple"
+          },
+          "id": "urn:bbc:ares::asset:news/23224388",
+          "type": "cps"
+        }
+      ],
+      "features": [
+        {
+          "headlines": { "headline": "Commémoration du massacre de Soweto 35" },
+          "locators": {
+            "assetUri": "/afrique/23053027",
+            "cpsUrn": "urn:bbc:content:assetUri:afrique/23053027",
+            "curie": "http://www.bbc.co.uk/asset/d4a17421-fa0c-d448-a3b6-230410ba601a",
+            "assetId": "23053027"
+          },
+          "summary": "Commémoration du massacre de Soweto",
+          "timestamp": 1466154789000,
+          "language": "fr",
+          "cpsType": "STY",
+          "indexImage": {
+            "id": "63490121",
+            "subType": "index",
+            "href": "http://b.files.bbci.co.uk/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 261,
+            "width": 464,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "originCode": "cpsdevpb",
+            "type": "image"
+          },
+          "imageThumbnail": {
+            "id": "63490119",
+            "subType": "index-thumbnail",
+            "href": "http://b.files.bbci.co.uk/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 180,
+            "width": 320,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "type": "image"
+          },
+          "options": { "isBreakingNews": false, "isFactCheck": false },
+          "section": {
+            "subType": "IDX",
+            "name": "Accueil",
+            "uri": "/afrique/front_page",
+            "type": "simple"
+          },
+          "id": "urn:bbc:ares::asset:afrique/23053027",
+          "type": "cps"
+        },
+        {
+          "headlines": { "headline": "Commémoration du massacre de Soweto 36" },
+          "locators": {
+            "assetUri": "/afrique/23053028",
+            "cpsUrn": "urn:bbc:content:assetUri:afrique/23053028",
+            "curie": "http://www.bbc.co.uk/asset/c140434e-ef3b-a347-b1fd-455fb263e139",
+            "assetId": "23053028"
+          },
+          "summary": "Commémoration du massacre de Soweto",
+          "timestamp": 1466154800000,
+          "language": "fr",
+          "cpsType": "STY",
+          "indexImage": {
+            "id": "63490121",
+            "subType": "index",
+            "href": "http://b.files.bbci.co.uk/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 261,
+            "width": 464,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "originCode": "cpsdevpb",
+            "type": "image"
+          },
+          "imageThumbnail": {
+            "id": "63490119",
+            "subType": "index-thumbnail",
+            "href": "http://b.files.bbci.co.uk/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 180,
+            "width": 320,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "type": "image"
+          },
+          "options": { "isBreakingNews": false, "isFactCheck": false },
+          "section": {
+            "subType": "IDX",
+            "name": "Accueil",
+            "uri": "/afrique/front_page",
+            "type": "simple"
+          },
+          "id": "urn:bbc:ares::asset:afrique/23053028",
+          "type": "cps"
+        },
+        {
+          "headlines": { "headline": "Commémoration du massacre de Soweto 19" },
+          "locators": {
+            "assetUri": "/afrique/23052941",
+            "cpsUrn": "urn:bbc:content:assetUri:afrique/23052941",
+            "curie": "http://www.bbc.co.uk/asset/32e4242e-43e4-d349-a0ac-cbaf76be2aae",
+            "assetId": "23052941"
+          },
+          "summary": "Commémoration du massacre de Soweto",
+          "timestamp": 1466092777000,
+          "language": "fr",
+          "cpsType": "STY",
+          "indexImage": {
+            "id": "63490121",
+            "subType": "index",
+            "href": "http://b.files.bbci.co.uk/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 261,
+            "width": 464,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "originCode": "cpsdevpb",
+            "type": "image"
+          },
+          "imageThumbnail": {
+            "id": "63490119",
+            "subType": "index-thumbnail",
+            "href": "http://b.files.bbci.co.uk/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 180,
+            "width": 320,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "type": "image"
+          },
+          "options": { "isBreakingNews": false, "isFactCheck": false },
+          "section": {
+            "subType": "IDX",
+            "name": "Accueil",
+            "uri": "/afrique/front_page",
+            "type": "simple"
+          },
+          "id": "urn:bbc:ares::asset:afrique/23052941",
+          "type": "cps"
+        },
+        {
+          "headlines": { "headline": "Commémoration du massacre de Soweto 20" },
+          "locators": {
+            "assetUri": "/afrique/23052943",
+            "cpsUrn": "urn:bbc:content:assetUri:afrique/23052943",
+            "curie": "http://www.bbc.co.uk/asset/8dfb243a-ab8d-374a-9dab-f478d9ce0bb4",
+            "assetId": "23052943"
+          },
+          "summary": "Commémoration du massacre de Soweto",
+          "timestamp": 1466092863000,
+          "language": "fr",
+          "cpsType": "STY",
+          "indexImage": {
+            "id": "63490121",
+            "subType": "index",
+            "href": "http://b.files.bbci.co.uk/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 261,
+            "width": 464,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "originCode": "cpsdevpb",
+            "type": "image"
+          },
+          "imageThumbnail": {
+            "id": "63490119",
+            "subType": "index-thumbnail",
+            "href": "http://b.files.bbci.co.uk/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 180,
+            "width": 320,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "type": "image"
+          },
+          "options": { "isBreakingNews": false, "isFactCheck": false },
+          "section": {
+            "subType": "IDX",
+            "name": "Accueil",
+            "uri": "/afrique/front_page",
+            "type": "simple"
+          },
+          "id": "urn:bbc:ares::asset:afrique/23052943",
+          "type": "cps"
+        },
+        {
+          "headlines": { "headline": "Commémoration du massacre de Soweto 21" },
+          "locators": {
+            "assetUri": "/afrique/23052944",
+            "cpsUrn": "urn:bbc:content:assetUri:afrique/23052944",
+            "curie": "http://www.bbc.co.uk/asset/d7e2c23f-e205-814b-945f-a0761b5cec96",
+            "assetId": "23052944"
+          },
+          "summary": "Commémoration du massacre de Soweto",
+          "timestamp": 1466092875000,
+          "language": "fr",
+          "cpsType": "STY",
+          "indexImage": {
+            "id": "63490121",
+            "subType": "index",
+            "href": "http://b.files.bbci.co.uk/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 261,
+            "width": 464,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "originCode": "cpsdevpb",
+            "type": "image"
+          },
+          "imageThumbnail": {
+            "id": "63490119",
+            "subType": "index-thumbnail",
+            "href": "http://b.files.bbci.co.uk/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 180,
+            "width": 320,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "type": "image"
+          },
+          "options": { "isBreakingNews": false, "isFactCheck": false },
+          "section": {
+            "subType": "IDX",
+            "name": "Accueil",
+            "uri": "/afrique/front_page",
+            "type": "simple"
+          },
+          "id": "urn:bbc:ares::asset:afrique/23052944",
+          "type": "cps"
+        },
+        {
+          "headlines": { "headline": "Commémoration du massacre de Soweto 25" },
+          "locators": {
+            "assetUri": "/afrique/23052995",
+            "cpsUrn": "urn:bbc:content:assetUri:afrique/23052995",
+            "curie": "http://www.bbc.co.uk/asset/b2eb81dc-f351-e346-85ce-ca4dfa1a77ad",
+            "assetId": "23052995"
+          },
+          "summary": "Commémoration du massacre de Soweto",
+          "timestamp": 1466154040000,
+          "language": "fr",
+          "cpsType": "STY",
+          "indexImage": {
+            "id": "63490121",
+            "subType": "index",
+            "href": "http://b.files.bbci.co.uk/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 261,
+            "width": 464,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "originCode": "cpsdevpb",
+            "type": "image"
+          },
+          "imageThumbnail": {
+            "id": "63490119",
+            "subType": "index-thumbnail",
+            "href": "http://b.files.bbci.co.uk/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 180,
+            "width": 320,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "type": "image"
+          },
+          "options": { "isBreakingNews": false, "isFactCheck": false },
+          "section": {
+            "subType": "IDX",
+            "name": "Accueil",
+            "uri": "/afrique/front_page",
+            "type": "simple"
+          },
+          "id": "urn:bbc:ares::asset:afrique/23052995",
+          "type": "cps"
+        },
+        {
+          "headlines": { "headline": "Commémoration du massacre de Soweto 26" },
+          "locators": {
+            "assetUri": "/afrique/23052996",
+            "cpsUrn": "urn:bbc:content:assetUri:afrique/23052996",
+            "curie": "http://www.bbc.co.uk/asset/1d7e9e57-3393-714e-850c-3b4b426b8998",
+            "assetId": "23052996"
+          },
+          "summary": "Commémoration du massacre de Soweto",
+          "timestamp": 1466154054000,
+          "language": "fr",
+          "cpsType": "STY",
+          "indexImage": {
+            "id": "63490121",
+            "subType": "index",
+            "href": "http://b.files.bbci.co.uk/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 261,
+            "width": 464,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "originCode": "cpsdevpb",
+            "type": "image"
+          },
+          "imageThumbnail": {
+            "id": "63490119",
+            "subType": "index-thumbnail",
+            "href": "http://b.files.bbci.co.uk/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 180,
+            "width": 320,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "type": "image"
+          },
+          "options": { "isBreakingNews": false, "isFactCheck": false },
+          "section": {
+            "subType": "IDX",
+            "name": "Accueil",
+            "uri": "/afrique/front_page",
+            "type": "simple"
+          },
+          "id": "urn:bbc:ares::asset:afrique/23052996",
+          "type": "cps"
+        },
+        {
+          "headlines": { "headline": "Commémoration du massacre de Soweto 27" },
+          "locators": {
+            "assetUri": "/afrique/23052997",
+            "cpsUrn": "urn:bbc:content:assetUri:afrique/23052997",
+            "curie": "http://www.bbc.co.uk/asset/8078e9b6-57bd-ee49-83c8-76ef49449be5",
+            "assetId": "23052997"
+          },
+          "summary": "Commémoration du massacre de Soweto",
+          "timestamp": 1466154067000,
+          "language": "fr",
+          "cpsType": "STY",
+          "indexImage": {
+            "id": "63490121",
+            "subType": "index",
+            "href": "http://b.files.bbci.co.uk/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/2F4D/test/_63490121_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 261,
+            "width": 464,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "originCode": "cpsdevpb",
+            "type": "image"
+          },
+          "imageThumbnail": {
+            "id": "63490119",
+            "subType": "index-thumbnail",
+            "href": "http://b.files.bbci.co.uk/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "path": "/cpsdevpb/163E5/test/_63490119_110329105535_soweto_304x171_b_nocredit.gif",
+            "height": 180,
+            "width": 320,
+            "altText": "Soweto",
+            "copyrightHolder": "BBC",
+            "type": "image"
+          },
+          "options": { "isBreakingNews": false, "isFactCheck": false },
+          "section": {
+            "subType": "IDX",
+            "name": "Accueil",
+            "uri": "/afrique/front_page",
+            "type": "simple"
+          },
+          "id": "urn:bbc:ares::asset:afrique/23052997",
+          "type": "cps"
+        }
+      ],
+      "mostRead": {
+        "generated": "2024-12-18T17:02:56.208Z",
+        "lastRecordTimeStamp": "2021-05-04T11:53:00Z",
+        "firstRecordTimeStamp": "2021-05-04T10:53:00Z",
+        "items": [
+          {
+            "id": "c140434e-ef3b-a347-b1fd-455fb263e139",
+            "rank": 1,
+            "title": "Commémoration du massacre de Soweto 36",
+            "href": "/afrique/23053028",
+            "timestamp": "2016-06-17T09:13:20.000Z"
+          },
+          {
+            "id": "8dfb243a-ab8d-374a-9dab-f478d9ce0bb4",
+            "rank": 2,
+            "title": "Commémoration du massacre de Soweto 20",
+            "href": "/afrique/23052943",
+            "timestamp": "2016-06-16T16:01:03.000Z"
+          },
+          {
+            "id": "34ce798a-96c4-5444-b0c2-ba6487a88c92",
+            "rank": 3,
+            "title": "Commémoration du massacre de Soweto 28",
+            "href": "/afrique/23052999",
+            "timestamp": "2016-06-17T09:06:47.000Z"
+          },
+          {
+            "id": "44e8bed2-d2c8-9c41-acb5-071cad14cfb7",
+            "rank": 4,
+            "title": "Commémoration du massacre de Soweto 45",
+            "href": "/afrique/23053275",
+            "timestamp": "2016-06-17T10:48:08.000Z"
+          },
+          {
+            "id": "0dafcaff-9b96-7c41-a572-e7ab306ee0cd",
+            "rank": 5,
+            "title": "Un supercalculateur en Côte d'Ivoire",
+            "href": "/afrique/23207406",
+            "timestamp": "2018-07-09T11:19:01.000Z"
+          },
+          {
+            "id": "da6e6871-c335-294c-aed4-ec006199a746",
+            "rank": 6,
+            "title": "Af Sud : des candidats de l’ANC abattus",
+            "href": "/afrique/monde-23061718",
+            "timestamp": "2016-07-20T10:52:40.000Z"
+          },
+          {
+            "id": "1949bdae-38e4-0748-9969-ddec3444a52b",
+            "rank": 7,
+            "title": "Commémoration du massacre de Soweto 37",
+            "href": "/afrique/23053029",
+            "timestamp": "2016-06-17T09:14:31.000Z"
+          },
+          {
+            "id": "8078e9b6-57bd-ee49-83c8-76ef49449be5",
+            "rank": 8,
+            "title": "Commémoration du massacre de Soweto 27",
+            "href": "/afrique/23052997",
+            "timestamp": "2016-06-17T09:01:07.000Z"
+          },
+          {
+            "id": "1a078192-0370-de48-bd06-c336103aab12",
+            "rank": 9,
+            "title": "Thai cave rescue continues",
+            "href": "/afrique/23207350",
+            "timestamp": "2018-07-09T11:49:08.000Z"
+          },
+          {
+            "id": "439ba4f6-910e-8a4e-b2cb-11ec6aeea823",
+            "rank": 10,
+            "title": "Euro 2016 : la France première du groupe africa",
+            "href": "/afrique/region-23056013",
+            "timestamp": "2016-06-27T13:36:54.000Z"
+          }
+        ]
+      },
+      "latestMedia": null
+    }
+  },
+  "contentType": "application/json; charset=utf-8"
+}

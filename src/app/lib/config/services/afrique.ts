@@ -65,6 +65,16 @@ export const service: DefaultServiceConfig = {
       relatedContent: 'Lire plus',
       relatedTopics: 'Sujets associés',
       navMenuText: 'Rubriques',
+      easyReadSite: {
+        toStandardSite: 'Version standard ',
+        toEasySite: 'Version facile à lire',
+        easySite: 'Facile à lire',
+        standardSite: 'Standard',
+        format: 'Format',
+        aIDisclaimer: `Cet article en version facile à lire et à comprendre a été vérifié par un journaliste. Il a été créé avec l'IA (intelligence artificielle) à partir de la version originale. En savoir plus sur la version facile à lire et à comprendre`,
+        learnMore: 'En savoir plus sur la version facile à lire',
+        learnMoreLink: 'https://www.bbc.co.uk/',
+      },
       mediaAssetPage: {
         mediaPlayer: 'Lecteur média',
         audioPlayer: 'Lecteur audio',

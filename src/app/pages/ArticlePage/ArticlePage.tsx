@@ -7,6 +7,7 @@ import { singleTextBlock } from '#app/models/blocks';
 import useOptimizelyMvtVariation from '#app/hooks/useOptimizelyMvtVariation';
 import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
 import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
+
 import ArticleMetadata from '#containers/ArticleMetadata';
 import { RequestContext } from '#contexts/RequestContext';
 import Headings from '#containers/Headings';
@@ -39,11 +40,14 @@ import CpsRecommendations from '#containers/CpsRecommendations';
 import InlinePodcastPromo from '#containers/PodcastPromo/Inline';
 import {
   Article,
+  EasyReadMetaBlock,
+  OptimoBlock,
   OptimoBylineBlock,
   OptimoBylineContributorBlock,
   Recommendation,
 } from '#app/models/types/optimo';
 import ScrollablePromo from '#components/ScrollablePromo';
+import EasyReadCTA from '#app/components/EasyReadCTA';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
@@ -121,7 +125,10 @@ const getHeadlineComponent = (props: ComponentToRenderProps) => (
 );
 
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
-  const { isApp } = useContext(RequestContext);
+  const { translations } = useContext(ServiceContext);
+  const { isApp, pageType, service } = useContext(RequestContext);
+
+        
 
   const {
     articleAuthor,
@@ -161,6 +168,23 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const bylineBlock = blocks.find(
     block => block.type === 'byline',
   ) as OptimoBylineBlock;
+
+  // HACKATHON CHANGES
+  // SHOULD MOVE TO REQUEST CONTEXT
+  let targetBlock = null;
+  let removeIndex = null;
+  const easyMetaBlock = blocks.find(block => block.type === 'easyReadMeta');
+
+  const isEasyPage = !(easyMetaBlock as EasyReadMetaBlock)?.model
+    .easyReadAssetId;
+
+  if (isEasyPage && easyMetaBlock) {
+    targetBlock = easyMetaBlock;
+    removeIndex = blocks.findIndex(block => block.type === 'easyReadMeta');
+    // INSERT AFTER HEADING
+    blocks.splice(removeIndex, 1);
+    blocks.splice(1, 0, targetBlock);
+  }
 
   const bylineContribBlocks = bylineBlock?.model?.blocks || [];
 
@@ -214,6 +238,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     links: ScrollablePromo,
     mpu: getMpuComponent(allowAdvertising),
     wsoj: getWsojComponent(recommendationsData),
+    easyReadMeta: EasyReadCTA,
     disclaimer: DisclaimerWithPaddingOverride,
     podcastPromo: getPodcastPromoComponent(podcastPromoEnabled),
   };
@@ -243,7 +268,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const promoImage = promoImageRawBlock?.model?.locator;
 
   const showTopics = Boolean(showRelatedTopics && topics.length > 0);
-
   return (
     <div css={styles.pageWrapper}>
       <ATIAnalytics atiData={atiData} />
@@ -256,7 +280,11 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       <NielsenAnalytics />
       <ArticleMetadata
         articleId={getArticleId(pageData)}
-        title={headline}
+        title={
+          isEasyPage
+            ? `${translations.easyReadSite?.easySite} | ${headline}`
+            : headline
+        }
         author={articleAuthor}
         twitterHandle={articleAuthorTwitterHandle}
         firstPublished={firstPublished}
@@ -290,6 +318,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
         <AdContainer slotType="leaderboard" adcampaign={adcampaign} />
       )}
       <ElectionBanner aboutTags={aboutTags} taggings={taggings} />
+
       <div css={styles.grid}>
         <div css={!isPGL ? styles.primaryColumn : styles.pglColumn}>
           <main css={styles.mainContent} role="main">

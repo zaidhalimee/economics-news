@@ -27,6 +27,16 @@ export interface Translations {
     dataSaving: string;
     articleDataSavingLinkText: string;
   };
+  easyReadSite?: {
+    toStandardSite: string;
+    toEasySite: string;
+    easySite: string;
+    standardSite: string;
+    format: string;
+    aIDisclaimer: string;
+    learnMore: string;
+    learnMoreLink: string;
+  };
   mediaAssetPage: {
     mediaPlayer: string;
     audioPlayer: string;
