@@ -267,7 +267,6 @@ const ArticlePage = ({
   const showContinueReadingButton = Boolean(
     continueReadingEnabled && // Temporary value to restrict button to Storybook
       continueReadingButtonVariation &&
-      !showAllContent &&
       !isAmp &&
       !isLite &&
       !isApp,
