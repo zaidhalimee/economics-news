@@ -11,7 +11,7 @@ import styles from './index.styles';
 type Props = {
   showAllContent: boolean;
   setShowAllContent: MouseEventHandler<HTMLButtonElement>;
-  variation: 'A' | 'B';
+  variation: 'A' | 'B' | null;
   eventTrackingData?: EventTrackingMetadata;
 };
 

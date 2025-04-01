@@ -254,9 +254,6 @@ const ArticlePage = ({
   const showTopics = Boolean(showRelatedTopics && topics.length > 0);
 
   const continueReadingButtonVariation = (() => {
-    if (!continueReadingEnabled) return null; // temporary check to restrict component to Storybook
-    if (isAmp || isLite || isApp) return null;
-
     if (service === 'pidgin' || service === 'urdu') {
       return 'A';
     }
@@ -266,6 +263,15 @@ const ArticlePage = ({
 
     return null;
   })();
+
+  const showContinueReadingButton = Boolean(
+    continueReadingEnabled && // Temporary value to restrict button to Storybook
+      continueReadingButtonVariation &&
+      !showAllContent &&
+      !isAmp &&
+      !isLite &&
+      !isApp,
+  );
 
   return (
     <div css={styles.pageWrapper}>
@@ -318,7 +324,7 @@ const ArticlePage = ({
           <main
             css={[
               styles.mainContent,
-              ...(continueReadingButtonVariation
+              ...(showContinueReadingButton
                 ? [!showAllContent && styles.contentHidden]
                 : []),
             ]}
@@ -328,7 +334,7 @@ const ArticlePage = ({
               blocks={articleBlocks}
               componentsToRender={componentsToRender}
             />
-            {continueReadingButtonVariation && (
+            {showContinueReadingButton && (
               <ContinueReadingButton
                 showAllContent={showAllContent}
                 setShowAllContent={() => setShowAllContent(true)}
@@ -340,7 +346,7 @@ const ArticlePage = ({
             <RelatedTopics
               css={[
                 styles.relatedTopics,
-                ...(continueReadingButtonVariation
+                ...(showContinueReadingButton
                   ? [!showAllContent && styles.hideRelatedTopics]
                   : []),
               ]}
