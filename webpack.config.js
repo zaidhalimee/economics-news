@@ -99,6 +99,7 @@ const getBaseConfig = BUNDLE_TYPE => ({
         ? {
             test: /\.(js|jsx|mjs)$/,
             include: [resolvePath('node_modules/@bbc')],
+            exclude: [resolvePath('node_modules/@bbc/test_reverb_url_helper')],
             use: [
               {
                 loader: 'babel-loader',
