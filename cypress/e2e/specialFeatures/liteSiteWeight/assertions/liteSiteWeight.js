@@ -4,20 +4,20 @@ const MAX_PAGE_WEIGHT = 100;
 
 export const assertPageWeight = ({ path }) => {
   describe('page weight', () => {
-    let totalSize;
+    let allRequests = [];
     before(() => {
       cy.clearCookies();
       cy.clearLocalStorage();
-      interceptGetRequests(path);
+      interceptGetRequests(allRequests);
       cy.visit(path);
-      cy.wait(['@pageRequest', '@chartbeatRequest']).then(interceptions => {
-        let pageSize = interceptions[0].response.body.length / 1024;
-        let chartbeatSize = interceptions[1].response.body.length / 1024;
-        console.log('sizes', pageSize, chartbeatSize);
-        totalSize = pageSize + chartbeatSize;
-      });
+      cy.wait(1000);
     });
-    it(`Page weight for ${path} should be less than ${MAX_PAGE_WEIGHT}Kb `, () => {
+    it(`Page weight for ${path} should be less than ${MAX_PAGE_WEIGHT}Kb`, () => {
+      let totalSize = allRequests.reduce(
+        (acc, request) => acc + request.sizeInKB,
+        0,
+      );
+
       expect(totalSize).to.be.lessThan(MAX_PAGE_WEIGHT);
     });
   });
