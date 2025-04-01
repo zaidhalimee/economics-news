@@ -126,7 +126,7 @@ const ArticlePage = ({
   continueReadingEnabled = false,
 }: {
   pageData: Article;
-  continueReadingEnabled: boolean;
+  continueReadingEnabled?: boolean;
 }) => {
   const [showAllContent, setShowAllContent] = useState(false);
   const { isLite, isAmp, isApp } = useContext(RequestContext);
