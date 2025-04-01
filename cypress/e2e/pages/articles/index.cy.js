@@ -250,6 +250,6 @@ describe('Article Page', () => {
 
   runTestsForPage({
     pageType: 'articles',
-    testSuites: [...liteTestSuites],
+    testSuites: [...canonicalTestSuites, ...ampTestSuites, ...liteTestSuites],
   });
 });

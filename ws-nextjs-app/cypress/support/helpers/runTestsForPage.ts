@@ -8,10 +8,7 @@ export default ({ pageType, testSuites, testIsolation = false }) => {
         before(() => {
           cy.visit(path);
         });
-
-        tests.forEach(test => {
-          test({ path, pageType, ...params });
-        });
+        tests.forEach(test => test({ path, pageType, ...params }));
       });
     }
   });
