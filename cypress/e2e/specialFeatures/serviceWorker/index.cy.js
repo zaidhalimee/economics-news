@@ -1,10 +1,9 @@
-/* eslint-disable import/extensions */
 import runTestsForPage from '#nextjs/cypress/support/helpers/runTestsForPage';
 import {
   serviceWorkerIsAvailable,
   serviceWorkerIsRegistered,
   serviceWorkerCaching,
-} from './assertions/index.ts';
+} from './assertions';
 
 const tests = [
   serviceWorkerIsAvailable,
