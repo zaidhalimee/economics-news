@@ -121,7 +121,13 @@ const getHeadlineComponent = (props: ComponentToRenderProps) => (
   <ArticleHeadline {...props} />
 );
 
-const ArticlePage = ({ pageData }: { pageData: Article }) => {
+const ArticlePage = ({
+  pageData,
+  continueReadingEnabled = false,
+}: {
+  pageData: Article;
+  continueReadingEnabled: boolean;
+}) => {
   const [showAllContent, setShowAllContent] = useState(false);
   const { isLite, isAmp, isApp } = useContext(RequestContext);
 
@@ -248,17 +254,18 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const showTopics = Boolean(showRelatedTopics && topics.length > 0);
 
   const continueReadingButtonVariation = (() => {
+    if (!continueReadingEnabled) return null; // temporary check to restrict component to Storybook
+    if (isAmp || isLite || isApp) return null;
+
     if (service === 'pidgin' || service === 'urdu') {
       return 'A';
     }
     if (service === 'mundo' || service === 'persian') {
       return 'B';
     }
+
     return null;
   })();
-
-  const enableContinueReadingExperiment =
-    !isAmp && !isLite && !isApp && continueReadingButtonVariation; // add check for is in experiment
 
   return (
     <div css={styles.pageWrapper}>
@@ -311,7 +318,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           <main
             css={[
               styles.mainContent,
-              ...(enableContinueReadingExperiment
+              ...(continueReadingButtonVariation
                 ? [!showAllContent && styles.contentHidden]
                 : []),
             ]}
@@ -321,7 +328,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
               blocks={articleBlocks}
               componentsToRender={componentsToRender}
             />
-            {enableContinueReadingExperiment && (
+            {continueReadingButtonVariation && (
               <ContinueReadingButton
                 showAllContent={showAllContent}
                 setShowAllContent={() => setShowAllContent(true)}
@@ -333,7 +340,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
             <RelatedTopics
               css={[
                 styles.relatedTopics,
-                ...(enableContinueReadingExperiment
+                ...(continueReadingButtonVariation
                   ? [!showAllContent && styles.hideRelatedTopics]
                   : []),
               ]}

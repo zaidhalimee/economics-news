@@ -64,6 +64,7 @@ type Props = {
   podcastEnabled?: boolean;
   electionBanner?: boolean;
   liteSiteCTAEnabled?: boolean;
+  continueReadingEnabled?: boolean;
 };
 
 const ComponentWithContext = ({
@@ -116,6 +117,7 @@ const ComponentWithServiceContext = ({
   podcastEnabled = false,
   electionBanner = false,
   liteSiteCTAEnabled = false,
+  continueReadingEnabled = false,
 }: Props) => {
   const memoisedServiceContext = useMemo(
     () => ({ ...serviceContextMock, service }),
@@ -145,6 +147,7 @@ const ComponentWithServiceContext = ({
               secondaryColumn: data.secondaryData,
               mostRead: data.secondaryData.mostRead,
             }}
+            continueReadingEnabled={continueReadingEnabled}
           />
         </ThemeProvider>
       </ServiceContext.Provider>
@@ -226,11 +229,19 @@ export const ArticlePageWithPodcastNews = () => (
 );
 
 export const ArticlePageWithContinueReadingButtonVariation1 = () => (
-  <ComponentWithServiceContext data={articleData} service="pidgin" />
+  <ComponentWithServiceContext
+    data={articleData}
+    service="pidgin"
+    continueReadingEnabled
+  />
 );
 
 export const ArticlePageWithContinueReadingButtonVariation2 = () => (
-  <ComponentWithServiceContext data={articleData} service="mundo" />
+  <ComponentWithServiceContext
+    data={articleData}
+    service="mundo"
+    continueReadingEnabled
+  />
 );
 
 export const ArticlePageWithElectionBanner = {
