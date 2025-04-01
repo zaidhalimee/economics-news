@@ -9,15 +9,16 @@ import { ATIAnalyticsProps } from '../types';
 import sendBeaconOperaMiniScript from './sendBeaconOperaMiniScript';
 import sendBeaconLite from './sendBeaconLite';
 
+const testModule = () => {
+  return testReverbUrlGenerator.getHelloWorld();
+};
+
 const getNoJsATIPageViewUrl = (atiPageViewUrl: string) =>
   atiPageViewUrl.includes('x8=[simorgh]')
-    ? atiPageViewUrl.replace('x8=[simorgh]', 'x8=[simorgh-nojs]')
-    : `${atiPageViewUrl}&x8=[simorgh-nojs]`;
+    ? atiPageViewUrl.replace('x8=[simorgh]', 'x8=[simorgh-nojs]') + testModule()
+    : `${atiPageViewUrl}&x8=[simorgh-nojs]` + testModule();
 
 const renderNoScriptTrackingPixel = (atiPageViewUrl: string) => {
-  // helper invocation
-  console.log('reverb says:', testReverbUrlGenerator.getHelloWorld());
-
   return (
     <noscript>
       <img
