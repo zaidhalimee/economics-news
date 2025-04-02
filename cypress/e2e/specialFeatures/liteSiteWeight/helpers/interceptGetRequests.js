@@ -4,6 +4,6 @@ const logGet = allRequests => request => {
   });
 };
 
-export const interceptGetRequests = allRequests => {
+export default allRequests => {
   cy.intercept('GET', '**', logGet(allRequests));
 };

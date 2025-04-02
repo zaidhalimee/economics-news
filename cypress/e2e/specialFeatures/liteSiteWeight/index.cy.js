@@ -1,4 +1,4 @@
-import { assertPageWeight } from './assertions/liteSiteWeight';
+import assertPageWeight from './assertions/liteSiteWeight';
 
 const liteTestSuites = [
   {
