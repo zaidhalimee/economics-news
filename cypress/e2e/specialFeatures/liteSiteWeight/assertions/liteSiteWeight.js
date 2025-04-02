@@ -29,9 +29,9 @@ export default ({ path, pageType }) => {
           });
         })
         .then(() => {
-          expect(parseFloat(totalSize.toFixed(2))).to.be.lessThan(
-            MAX_PAGE_WEIGHT,
-          );
+          const pageWeight = parseFloat(totalSize.toFixed(2));
+          cy.log({ pageType, pageWeight });
+          expect(pageWeight).to.be.lessThan(MAX_PAGE_WEIGHT);
         });
     });
   });
