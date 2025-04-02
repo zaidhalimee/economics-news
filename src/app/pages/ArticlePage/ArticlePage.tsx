@@ -1,6 +1,6 @@
 /** @jsx jsx */
 /* @jsxFrag React.Fragment */
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect, useRef } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 import useToggle from '#hooks/useToggle';
 import { singleTextBlock } from '#app/models/blocks';
@@ -124,6 +124,38 @@ const getHeadlineComponent = (props: ComponentToRenderProps) => (
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const [showAllContent, setShowAllContent] = useState(false);
   const { isLite, isAmp, isApp } = useContext(RequestContext);
+  const revealedBlockRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const myfirstPara = Array.from(
+      document.querySelectorAll('main > div'),
+    ).filter(
+      s => window.getComputedStyle(s).getPropertyValue('display') === 'none',
+    );
+    if (myfirstPara[0] && !revealedBlockRef.current) {
+      revealedBlockRef.current = myfirstPara[0].querySelector(
+        'p',
+      ) as HTMLDivElement;
+      revealedBlockRef.current.tabIndex = 0;
+    }
+    // if (showAllContent && revealedBlockRef.current) {
+    //   // revealedBlockRef.current.style.backgroundColor = 'red';
+    //   window.setTimeout(() => {
+    //     if (revealedBlockRef.current) {
+    //       revealedBlockRef.current.focus();
+    //     }
+    //   }, 0);
+    // }
+  }, [showAllContent, revealedBlockRef]);
+  useEffect(() => {
+    if (showAllContent && revealedBlockRef.current) {
+      window.setTimeout(() => {
+        if (revealedBlockRef.current) {
+          revealedBlockRef.current.focus();
+        }
+      }, 0);
+    }
+  }, [showAllContent, revealedBlockRef]);
 
   const {
     articleAuthor,
@@ -319,6 +351,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
             <Blocks
               blocks={articleBlocks}
               componentsToRender={componentsToRender}
+              revealedBlockRef={revealedBlockRef}
             />
             {enableReadMoreExperiment && readMoreButtonVariation && (
               <ReadMoreButton

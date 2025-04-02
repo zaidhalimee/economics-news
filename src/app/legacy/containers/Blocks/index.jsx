@@ -6,37 +6,62 @@ const Clearer = styled.div`
   clear: both;
 `;
 
-const Blocks = ({ blocks, componentsToRender }) =>
-  blocks.map((block, index) => {
+let mycounter = 0;
+
+// const StyledWrapper = styled.div`
+//   &:focus {
+//     outline: 3px solid #005ea5; /* Visible focus indicator (e.g., blue outline) */
+//     outline-offset: 2px; /* Space between the outline and the element */
+//   }
+// `;
+
+const Blocks = ({ blocks, componentsToRender, revealedBlockRef }) => {
+  mycounter += 1;
+  return blocks.map((block, index) => {
     const { type, model, id, position, blockGroupType, blockGroupIndex } =
       block;
 
     if (!componentsToRender || !type) {
       return null;
     }
+
     const Block = componentsToRender[type];
+
+    let showFocus = 0;
 
     if (!Block) {
       return null;
     }
 
+    if (type === 'text' || type === 'paragraph') {
+      showFocus += 1;
+    }
+
+    // Dynamically choose the Wrapper component
     const Wrapper = path(['simorghMetadata', 'clear'], block)
       ? Clearer
       : Fragment;
 
     const { type: typeOfPreviousBlock } = blocks[index - 1] || {};
+
     return (
       <Wrapper key={id}>
         <Block
+          ref={revealedBlockRef} // Attach ref to the 7th block
+          tabIndex={revealedBlockRef ? -1 : 0} // Make it focusable
           position={position}
           type={type}
           typeOfPreviousBlock={typeOfPreviousBlock}
           blockGroupType={blockGroupType}
           blockGroupIndex={blockGroupIndex}
+          index={showFocus ? index : null}
+          showFocus={showFocus}
+          mycounter={mycounter}
           {...model}
         />
       </Wrapper>
     );
   });
+};
 
 export default Blocks;

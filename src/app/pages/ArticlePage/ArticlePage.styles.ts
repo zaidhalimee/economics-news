@@ -51,7 +51,7 @@ export default {
       // Hide all elements after the 7th child, except for the 'read more' button
       // This is a bit rudimentary, as its not guaranteed that the content up to and after the 7th child
       // will be paragraphs
-      '> *:nth-child(n + 7):not(button)': {
+      '> *:nth-child(n + 8):not(button)': {
         display: 'none',
 
         [`.${NO_JS_CLASSNAME} &`]: {
@@ -62,7 +62,37 @@ export default {
           display: 'block',
         },
       },
+      // '> div:focus': {
+      //   color: 'red',
+      // },
+      // ' :active': {
+      //   color: 'red',
+      // },
     }),
+  // contentHiddenThenShown: ({ mq }: Theme) =>
+  //   css({
+  //     // Hide all elements after the 7th child, except for the 'read more' button
+  //     // This is a bit rudimentary, as its not guaranteed that the content up to and after the 7th child
+  //     // will be paragraphs
+  //     '> *:nth-child(n + 8):not(button)': {
+  //       display: 'unset',
+  //     },
+  //     '> div:focus': {
+  //       backgroundColor: 'red !important',
+  //     },
+  //     'div p': {
+  //       border: '5px solid red !important',
+  //     },
+  //     'div:active': {
+  //       color: 'red !important',
+  //     },
+  //     'p:active': {
+  //       color: 'red !important',
+  //     },
+  //     ':active': {
+  //       color: 'red !important',
+  //     },
+  //   }),
   hideRelatedTopics: () =>
     css({
       display: 'none',
