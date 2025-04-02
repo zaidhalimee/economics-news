@@ -84,7 +84,7 @@ const liteTestSuites = [
     tests,
   },
   {
-    path: 'hindi/topics/cm5m26q8qxpt.lite?renderer_env=live',
+    path: '/hindi/topics/cm5m26q8qxpt.lite?renderer_env=live',
     runforEnv: 'local',
     pageType: 'Topic',
     tests,
