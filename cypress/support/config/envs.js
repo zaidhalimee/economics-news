@@ -14,9 +14,10 @@ const config = {
     bffUrl: 'https://web-cdn.api.bbci.co.uk/fd/simorgh-bff',
   },
   test: {
-    baseUrl: 'https://www.test.bbc.com',
+    baseUrl: 'https://simorgh1.belfrage-preview.test.api.bbc.com',
     dataUrl: 'https://www.test.bbc.com',
-    assetUrl: 'https://static.test.files.bbci.co.uk/ws/simorgh-assets/public',
+    assetUrl:
+      'https://static.test.files.bbci.co.uk/ws/simorgh1-preview-assets/public',
     assetOrigin: 'https://news.test.files.bbci.co.uk',
     atiUrl: 'https://logws1363.ati-host.net?',
     chartbeatEnabled: true,

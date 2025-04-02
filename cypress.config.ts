@@ -124,7 +124,7 @@ export default defineConfig({
         baseUrl: 'https://www.bbc.com',
       },
       test: {
-        baseUrl: 'https://www.test.bbc.com',
+        baseUrl: 'https://simorgh1.belfrage-preview.test.api.bbc.com',
       },
       local: {
         baseUrl: 'http://localhost:7080',
