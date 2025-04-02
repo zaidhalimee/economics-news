@@ -2,7 +2,7 @@ import React from 'react';
 import { createSrcsets } from '#lib/utilities/srcSet';
 import buildIChefURL from '#lib/utilities/ichefURL';
 import Image from '#app/components/Image';
-import { Recommendation } from '../types';
+import { RecommendationNew as Recommendation } from '#models/types/onwardJourney';
 
 const RecommendationsImage = ({
   image,
