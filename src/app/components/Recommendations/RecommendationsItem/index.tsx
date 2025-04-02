@@ -9,11 +9,11 @@ import RecommendationsImage from '../RecommendationsPromoImage';
 import styles from './index.styles';
 import { Recommendation } from '../types';
 
-const RecommendationsPromo = ({
+const RecommendationsItem = ({
   recommendation,
   index = 0,
 }: {
-  recommendation: Recommendation;
+  recommendation: Recommendation | null;
   index?: number;
 }) => {
   const { isLite } = useContext(RequestContext);
@@ -57,4 +57,4 @@ const RecommendationsPromo = ({
   );
 };
 
-export default RecommendationsPromo;
+export default RecommendationsItem;

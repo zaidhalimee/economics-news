@@ -7,7 +7,7 @@ import SkipLinkWrapper from '#components/SkipLinkWrapper';
 
 import { ServiceContext } from '#contexts/ServiceContext';
 import useViewTracker from '#app/hooks/useViewTracker';
-import RecommendationsPromo from './RecommendationsPromo';
+import RecommendationsItem from './RecommendationsItem';
 import styles from './index.styles';
 import { Recommendation } from './types';
 
@@ -76,7 +76,7 @@ const Recommendations = ({ data }: { data: Recommendation[] }) => {
           </SectionLabel>
         ) : null}
         {isSinglePromo ? (
-          <RecommendationsPromo recommendation={data?.[0]} />
+          <RecommendationsItem recommendation={data?.[0]} />
         ) : (
           <ul
             css={styles.recommendationsList}
@@ -85,7 +85,7 @@ const Recommendations = ({ data }: { data: Recommendation[] }) => {
           >
             {data?.map((recommendation, index) => (
               <li key={recommendation.title} role="listitem">
-                <RecommendationsPromo
+                <RecommendationsItem
                   recommendation={recommendation}
                   index={index}
                 />
