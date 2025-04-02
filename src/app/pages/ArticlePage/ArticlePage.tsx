@@ -40,6 +40,7 @@ import {
   Recommendation,
 } from '#app/models/types/optimo';
 import ScrollablePromo from '#components/ScrollablePromo';
+import Recommendations from '#app/components/Recommendations';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
@@ -100,10 +101,12 @@ const getMpuComponent =
     allowAdvertising ? <AdContainer {...props} slotType="mpu" /> : null;
 
 const getWsojComponent =
-  (recommendationsData: Recommendation[]) =>
-  (props: ComponentToRenderProps) => (
-    <CpsRecommendations {...props} items={recommendationsData} />
-  );
+  (recommendationsData: Recommendation[]) => (props: ComponentToRenderProps) =>
+    props?.data ? (
+      <Recommendations data={props.data} />
+    ) : (
+      <CpsRecommendations {...props} items={recommendationsData} />
+    );
 
 const DisclaimerWithPaddingOverride = (props: ComponentToRenderProps) => (
   <Disclaimer {...props} increasePaddingOnDesktop={false} />

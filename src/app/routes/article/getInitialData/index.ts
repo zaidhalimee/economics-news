@@ -46,8 +46,7 @@ export default async ({
       getAgent,
     });
 
-    const agent = certsRequired(pathname) ? await getAgent() : null;
-
+    const agent = await getAgent();
     if (!json?.data?.article) {
       throw handleError('Article data is malformed', 500);
     }
@@ -63,6 +62,7 @@ export default async ({
     const shouldGetOnwardsPageData = lastPublished
       ? new Date(lastPublished).getFullYear() > new Date().getFullYear() - 2
       : false;
+
     if (shouldGetOnwardsPageData) {
       try {
         wsojData = await getOnwardsPageData({
