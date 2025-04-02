@@ -8,7 +8,7 @@ import {
 } from '../fontFaces';
 import reithFontVariants from '../fontVariants/reith';
 import withThemeProvider from '../withThemeProvider';
-import brandSVG from '../chameleonLogos/portuguese';
+import brandSVG from '../chameleonLogos/polska';
 
 const polskaTheme = {
   palette: {
