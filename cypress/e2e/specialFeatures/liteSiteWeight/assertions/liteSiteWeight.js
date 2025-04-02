@@ -28,7 +28,7 @@ export default ({ path }) => {
       cy.visit(`${path}?renderer_env=live`);
     });
 
-    it(`Page weight for ${path} should be less than ${MAX_PAGE_WEIGHT}Kb`, () => {
+    it(`for ${pageType} should be less than ${MAX_PAGE_WEIGHT}Kb`, () => {
       let totalSize = 0;
 
       // eslint-disable-next-line cypress/unsafe-to-chain-command
