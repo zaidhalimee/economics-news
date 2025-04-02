@@ -27,7 +27,7 @@ const MediaIndicator = ({
       : `"${title}"`
   } `.trim();
 
-  const validDuration = datetime && duration && durationSpoken;
+  const hasDuration = datetime && duration && durationSpoken;
 
   return (
     <div css={style.mediaIcon}>
@@ -37,7 +37,7 @@ const MediaIndicator = ({
       <div aria-hidden="true" css={[style.iconWrapper, style.item]}>
         {(mediaIcons as Record<string, ReactElement>)[type]}
       </div>
-      {validDuration && (
+      {hasDuration && (
         <time
           css={[style.timeDuration, style.item]}
           dateTime={datetime}

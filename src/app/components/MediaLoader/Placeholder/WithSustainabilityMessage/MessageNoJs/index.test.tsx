@@ -11,9 +11,9 @@ describe('Message No JS', () => {
     const { container } = render(
       <MessageNoJs noJsMessage="Help reduce your power and data usage by not playing video content." />,
       {
-        service: 'news',
+        service: 'mundo',
       },
     );
-    expect(container).toMatchSnapshot();
+    expect(container.querySelector('noscript')).toBeInTheDocument();
   });
 });

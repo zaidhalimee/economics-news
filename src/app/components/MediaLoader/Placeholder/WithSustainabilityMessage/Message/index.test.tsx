@@ -9,7 +9,7 @@ describe('Message', () => {
 
   it(`should render a 'Help reduce your power consumption' message`, () => {
     const { container } = render(<Message />, {
-      service: 'news',
+      service: 'mundo',
     });
     const text = container.querySelector('p')?.innerHTML;
 

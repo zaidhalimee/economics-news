@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FanSvg = ({ className }: { className?: string }) => (
+export const Fan = ({ className }: { className?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     className={className}
@@ -14,7 +14,7 @@ const FanSvg = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const PlusSvg = ({ className }: { className?: string }) => (
+export const Plus = ({ className }: { className?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     className={className}
@@ -28,4 +28,4 @@ const PlusSvg = ({ className }: { className?: string }) => (
   </svg>
 );
 
-export default { FanSvg, PlusSvg };
+export default { Fan, Plus };

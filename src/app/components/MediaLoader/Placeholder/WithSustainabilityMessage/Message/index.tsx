@@ -5,7 +5,7 @@ import { ServiceContext } from '#app/contexts/ServiceContext';
 import Text from '#app/components/Text';
 import VisuallyHiddenText from '#app/components/VisuallyHiddenText';
 import styles from './index.styles';
-import SVGs from './svgs';
+import { Fan, Plus } from './svgs';
 
 const DEFAULT_MESSAGE =
   'Help reduce your power and data usage by not playing video content.';
@@ -28,7 +28,7 @@ const Message = ({ title = '' }: Props) => {
 
   return (
     <div css={styles.container}>
-      <SVGs.FanSvg css={[styles.icon, styles.fanIcon, styles.collapsable]} />
+      <Fan css={[styles.icon, styles.fanIcon, styles.collapsable]} />
       <div>
         <div>
           <Text id={idRef} css={styles.message} as="p" size="bodyCopy">
@@ -43,7 +43,7 @@ const Message = ({ title = '' }: Props) => {
             className="focusIndicatorInvert"
           >
             <span>
-              <SVGs.PlusSvg css={[styles.icon, styles.plusIcon]} />
+              <Plus css={[styles.icon, styles.plusIcon]} />
             </span>
             <Text
               css={[styles.message, styles.underline]}
