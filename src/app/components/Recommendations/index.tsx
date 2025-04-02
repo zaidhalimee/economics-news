@@ -19,16 +19,16 @@ const Recommendations = ({ data }: { data: Recommendation[] }) => {
   } = useTheme();
 
   const labelId = 'recommendations-heading';
+
   const a11yAttributes = {
     role: 'region',
     'aria-labelledby': labelId,
   };
 
   const { hasStoryRecommendations, skipLink } = recommendations || {};
-
   const { text, endTextVisuallyHidden } = skipLink || {};
 
-  if (!hasStoryRecommendations || !data.length) return null;
+  if (!hasStoryRecommendations || !data?.length) return null;
 
   const title = translations?.recommendationTitle ?? 'Recommended stories';
 
