@@ -35,18 +35,9 @@ const Component = ({ recommendation }: { recommendation: Recommendation }) => {
 };
 
 describe('RecommendationsPromo', () => {
-  it('it renders a Story Promo wrapped in a Grid component', () => {
+  it('it renders a Recommendations Promo', () => {
     const { container } = render(
       <RecommendationsPromo recommendation={recommendationFixture} />,
-      {
-        service: 'pidgin',
-        toggles: {
-          eventTracking: {
-            enabled: true,
-          },
-        },
-        pageType: 'STY',
-      },
     );
     expect(container).toMatchSnapshot();
   });

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RecommendationsPromo it renders a Story Promo wrapped in a Grid component 1`] = `
+exports[`RecommendationsPromo it renders a Recommendations Promo 1`] = `
 .emotion-0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -88,9 +88,9 @@ exports[`RecommendationsPromo it renders a Story Promo wrapped in a Grid compone
 }
 
 .emotion-5 {
-  font-family: Helmet,Freesans,Helvetica,Arial,sans-serif;
+  font-family: ReithSerif,Helvetica,Arial,sans-serif;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 0.9375rem;
   line-height: 1.25rem;
   color: #141414;
