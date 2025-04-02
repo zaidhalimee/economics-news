@@ -195,6 +195,7 @@ const Brand = forwardRef((props, ref) => {
 
   useEffect(() => {
     navigator.serviceWorker.ready.then(() => {
+      console.log('Notification permission: ' + Notification.permission);
       setFollowButtonState(Notification.permission);
     });
   }, []);
