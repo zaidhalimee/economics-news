@@ -7,9 +7,9 @@ import SkipLinkWrapper from '#components/SkipLinkWrapper';
 
 import { ServiceContext } from '#contexts/ServiceContext';
 import useViewTracker from '#app/hooks/useViewTracker';
+import { RecommendationNew as Recommendation } from '#app/models/types/onwardJourney';
 import RecommendationsItem from './RecommendationsItem';
 import styles from './index.styles';
-import { Recommendation } from './types';
 
 const eventTrackingData = {
   componentName: 'wsoj',

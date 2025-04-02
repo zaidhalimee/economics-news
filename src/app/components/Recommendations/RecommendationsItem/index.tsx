@@ -5,9 +5,9 @@ import { useContext } from 'react';
 import { RequestContext } from '#contexts/RequestContext';
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import { getEnvConfig } from '#app/lib/utilities/getEnvConfig';
+import { RecommendationNew as Recommendation } from '#app/models/types/onwardJourney';
 import RecommendationsImage from '../RecommendationsPromoImage';
 import styles from './index.styles';
-import { Recommendation } from '../types';
 
 const RecommendationsItem = ({
   recommendation,
