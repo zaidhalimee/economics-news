@@ -46,7 +46,8 @@ export default async ({
       getAgent,
     });
 
-    const agent = await getAgent();
+    const agent = certsRequired(pathname) ? await getAgent() : null;
+
     if (!json?.data?.article) {
       throw handleError('Article data is malformed', 500);
     }
