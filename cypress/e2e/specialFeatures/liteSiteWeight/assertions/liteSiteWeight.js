@@ -3,7 +3,7 @@ import interceptGetRequests from '../helpers/interceptGetRequests';
 const MAX_PAGE_WEIGHT = 100;
 
 export default ({ path }) => {
-  describe('page weight', () => {
+  describe('Page weight', () => {
     const allRequests = [];
     const getPageSizeInBytes = request => {
       const getSize = `echo ${JSON.stringify(request)} | gzip | wc -c`;
