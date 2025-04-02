@@ -39,7 +39,11 @@ import {
   OptimoBylineContributorBlock,
   Recommendation,
 } from '#app/models/types/optimo';
+import { RecommendationNew } from '#app/models/types/onwardJourney';
+
 import ScrollablePromo from '#components/ScrollablePromo';
+import { Services } from '#app/models/types/global';
+import Recommendations from '#app/components/Recommendations';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
@@ -100,10 +104,28 @@ const getMpuComponent =
     allowAdvertising ? <AdContainer {...props} slotType="mpu" /> : null;
 
 const getWsojComponent =
-  (recommendationsData: Recommendation[]) =>
-  (props: ComponentToRenderProps) => (
-    <CpsRecommendations {...props} items={recommendationsData} />
-  );
+  (recommendationsData: Recommendation[], service: Services) =>
+  (props: ComponentToRenderProps & { data: RecommendationNew[] }) => {
+    // TODO: Remove this when the new recommendations are rolled out to all services
+    const SERVICE_WITH_NEW_RECOMMENDATIONS = [
+      'arabic',
+      'hindi',
+      'indonesia',
+      'mundo',
+      'persian',
+      'pidgin',
+      'portuguese',
+      'thai',
+      'turkce',
+    ];
+
+    if (SERVICE_WITH_NEW_RECOMMENDATIONS.includes(service)) {
+      const { data } = props;
+      return <Recommendations data={data} />;
+    }
+
+    return <CpsRecommendations {...props} items={recommendationsData} />;
+  };
 
 const DisclaimerWithPaddingOverride = (props: ComponentToRenderProps) => (
   <Disclaimer {...props} increasePaddingOnDesktop={false} />
@@ -120,6 +142,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const { isApp } = useContext(RequestContext);
 
   const {
+    service,
     articleAuthor,
     isTrustProjectParticipant,
     showRelatedTopics,
@@ -203,7 +226,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     group: gist,
     links: ScrollablePromo,
     mpu: getMpuComponent(allowAdvertising),
-    wsoj: getWsojComponent(recommendationsData),
+    wsoj: getWsojComponent(recommendationsData, service),
     disclaimer: DisclaimerWithPaddingOverride,
     podcastPromo: getPodcastPromoComponent(podcastPromoEnabled),
   };

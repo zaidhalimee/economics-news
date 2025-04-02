@@ -1734,7 +1734,7 @@ export const sampleRecommendations = [
   {
     locators: {
       optimoUrn: 'urn:bbc:optimo:asset:sample_1',
-      canonicalUrl: 'https://www.bbc.com/turkce/articles/sample_1',
+      canonicalUrl: 'https://www.bbc.com/marathi/articles/sample_1',
     },
     timestamp: 1673623343213,
     language: 'tr',
@@ -1844,7 +1844,7 @@ export const sampleRecommendations = [
   {
     locators: {
       optimoUrn: 'urn:bbc:optimo:asset:sample_2',
-      canonicalUrl: 'https://www.bbc.com/turkce/articles/sample_2',
+      canonicalUrl: 'https://www.bbc.com/marathi/articles/sample_2',
     },
     timestamp: 1673623343213,
     language: 'tr',

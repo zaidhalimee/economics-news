@@ -700,17 +700,17 @@ describe('Article Page', () => {
     });
   });
 
-  it('should render WSOJ recommendations when passed', async () => {
+  it('should render legacy WSOJ recommendations when passed', async () => {
     suppressPropWarnings(['optimizely', 'ForwardRef', 'null']);
     const pageDataWithSecondaryColumn = {
       ...articleDataNews,
       recommendations: sampleRecommendations,
     };
     const { getByText } = render(
-      <Context service="turkce">
+      <Context service="marathi">
         <ArticlePage pageData={pageDataWithSecondaryColumn} />
       </Context>,
-      { service: 'turkce' },
+      { service: 'marathi' },
     );
 
     expect(getByText('SAMPLE RECOMMENDATION 1 - HEADLINE')).toBeInTheDocument();
