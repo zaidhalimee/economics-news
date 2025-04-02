@@ -6,13 +6,20 @@ import SectionLabel from '#psammead/psammead-section-label/src';
 import SkipLinkWrapper from '#components/SkipLinkWrapper';
 
 import { ServiceContext } from '#contexts/ServiceContext';
+import useViewTracker from '#app/hooks/useViewTracker';
 import RecommendationsPromo from './RecommendationsPromo';
 import styles from './index.styles';
 import { Recommendation } from './types';
 
+const eventTrackingData = {
+  componentName: 'wsoj',
+};
+
 const Recommendations = ({ data }: { data: Recommendation[] }) => {
   const { recommendations, translations, script, service, dir } =
     useContext(ServiceContext);
+
+  const viewEventTracker = useViewTracker(eventTrackingData);
 
   const {
     palette: { GREY_2 },
@@ -71,10 +78,17 @@ const Recommendations = ({ data }: { data: Recommendation[] }) => {
         {isSinglePromo ? (
           <RecommendationsPromo recommendation={data?.[0]} />
         ) : (
-          <ul css={styles.recommendationsList} role="list">
-            {data?.map(recommendation => (
+          <ul
+            css={styles.recommendationsList}
+            role="list"
+            ref={viewEventTracker}
+          >
+            {data?.map((recommendation, index) => (
               <li key={recommendation.title} role="listitem">
-                <RecommendationsPromo recommendation={recommendation} />
+                <RecommendationsPromo
+                  recommendation={recommendation}
+                  index={index}
+                />
               </li>
             ))}
           </ul>
