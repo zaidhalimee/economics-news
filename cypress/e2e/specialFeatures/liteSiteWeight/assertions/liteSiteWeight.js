@@ -25,7 +25,7 @@ export default ({ path, pageType }) => {
       cy.clearCookies();
       cy.clearLocalStorage();
       interceptGetRequests(allRequests);
-      cy.visit(`${path}?renderer_env=live`);
+      cy.visit(`${path}`);
     });
 
     it(`for ${pageType} page ${path} should be less than ${MAX_PAGE_WEIGHT}Kb`, () => {
