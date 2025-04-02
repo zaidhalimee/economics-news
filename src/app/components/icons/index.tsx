@@ -185,3 +185,18 @@ export const Plus = ({ className }: { className?: string }) => (
     <path d="M29.6 13.4H18.7v-11h-5.4v11H2.4v5.3h10.9v11h5.4v-11h10.9z" />
   </svg>
 );
+
+export const RightArrow = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 32 32"
+    focusable="false"
+    aria-hidden="true"
+    width="12"
+    height="12"
+    className={className}
+  >
+    <g>
+      <path d="M12.6,26.7L23.2,16L12.6,5.3H8.8v21.4H12.6z" />
+    </g>
+  </svg>
+);
