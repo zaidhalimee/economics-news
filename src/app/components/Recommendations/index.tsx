@@ -8,10 +8,11 @@ import useToggle from '#hooks/useToggle';
 
 import { ServiceContext } from '#contexts/ServiceContext';
 // import RecommendationsPromoList from './RecommendationsPromoList';
-// import RecommendationsPromo from './RecommendationsPromo';
+import RecommendationsPromo from './RecommendationsPromo';
 import styles from './index.styles';
+import { Recommendation } from './types';
 
-const Recommendations = ({ data }: { data: any[] }) => {
+const Recommendations = ({ data }: { data: Recommendation[] }) => {
   const { recommendations, translations, script, service, dir } =
     useContext(ServiceContext);
   const { enabled } = useToggle('cpsRecommendations');
@@ -29,17 +30,17 @@ const Recommendations = ({ data }: { data: any[] }) => {
 
   const { hasStoryRecommendations } = recommendations || {};
   console.log(data);
-  if (!hasStoryRecommendations || !enabled || !data.length) return null;
+  // if (!hasStoryRecommendations || !enabled || !data.length) return null;
 
   const title = translations?.recommendationTitle ?? 'Recommended stories';
 
   const {
     skipLink: { text, endTextVisuallyHidden },
-  } = recommendations || { skipLink };
+  } = recommendations;
 
   const terms = { '%title%': title };
 
-  const isSinglePromo = data.length === 1;
+  const isSinglePromo = data?.length === 1;
 
   const endTextId = `end-of-recommendations`;
 
@@ -73,6 +74,7 @@ const Recommendations = ({ data }: { data: any[] }) => {
             {title}
           </SectionLabel>
         ) : null}
+        <RecommendationsPromo recommendation={data?.[0]} />
         {/* {isSinglePromo ? (
               <RecommendationsPromo promo={data[0]} />
             ) : (
