@@ -1,7 +1,7 @@
 import React from 'react';
 import { PageTypes, Services } from '#app/models/types/global';
 import { RequestContextProvider } from '#app/contexts/RequestContext';
-import { Stages } from '#app/hooks/useExperimentHook';
+import { Stages } from '#app/hooks/useTranscriptStage';
 import MediaLoaderComponent from '.';
 import {
   aresMediaBlocks,

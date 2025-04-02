@@ -4,7 +4,7 @@ import { Services } from '#app/models/types/global';
 import React, { PropsWithChildren, act } from 'react';
 import { renderHook } from '#app/components/react-testing-library-with-providers';
 import { ServiceContextProvider } from '#app/contexts/ServiceContext';
-import useExperimentHook, { Stages } from '.';
+import useTranscriptStage, { Stages } from '.';
 
 const ServiceContextWrapper =
   (service: Services) =>
@@ -64,13 +64,13 @@ describe('ExperimentContext', () => {
       expected: Stages.STAGE_2,
     },
     {
-      title: 'Returns default stage for Mundo services with no transcript',
+      title: 'Returns Stage 3 stage for Mundo services with no transcript',
       isOperaMini: true,
       service: 'mundo' as Services,
       dataSaver: false,
       batteryLevel: '1',
       hasTranscript: false,
-      expected: Stages.DEFAULT,
+      expected: Stages.STAGE_3,
     },
   ])(
     '$title',
@@ -90,7 +90,7 @@ describe('ExperimentContext', () => {
 
       const { current } = await act(async () => {
         const { result } = await renderHook(
-          () => useExperimentHook(hasTranscript),
+          () => useTranscriptStage(hasTranscript),
           {
             wrapper: ServiceContextWrapper(service),
           },

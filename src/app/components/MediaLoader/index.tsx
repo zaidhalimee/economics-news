@@ -15,7 +15,7 @@ import {
 import filterForBlockType from '#lib/utilities/blockHandlers';
 import { PageTypes } from '#app/models/types/global';
 import { EventTrackingContext } from '#app/contexts/EventTrackingContext';
-import useExperimentHook, { Stages } from '#app/hooks/useExperimentHook';
+import useTranscriptStage, { Stages } from '#app/hooks/useTranscriptStage';
 import { BumpType, MediaBlock, PlayerConfig } from './types';
 import Caption from '../Caption';
 import nodeLogger from '../../lib/logger.node';
@@ -195,7 +195,7 @@ const MediaLoader = ({
   const { lang, translations } = useContext(ServiceContext);
   const { pageIdentifier } = useContext(EventTrackingContext);
   const { enabled: adsEnabled } = useToggle('ads');
-  const stage = useExperimentHook(hasTranscript);
+  const stage = useTranscriptStage(hasTranscript);
 
   const experimentStage = forceStage ?? stage;
 

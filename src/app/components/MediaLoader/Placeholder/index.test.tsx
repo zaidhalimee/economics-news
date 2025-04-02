@@ -4,7 +4,7 @@ import {
   fireEvent,
   getByText,
 } from '#app/components/react-testing-library-with-providers';
-import { Stages } from '#app/hooks/useExperimentHook';
+import { Stages } from '#app/hooks/useTranscriptStage';
 import Placeholder from '.';
 
 describe('Media Player: Placeholder', () => {

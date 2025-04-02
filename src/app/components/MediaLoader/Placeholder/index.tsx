@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import { Stages } from '#app/hooks/useExperimentHook';
+import { Stages } from '#app/hooks/useTranscriptStage';
 import SustainabilityMessage from './WithSustainabilityMessage/Message';
 import SustainabilityMessageNoJs from './WithSustainabilityMessage/MessageNoJs';
 import Image from '../../Image';

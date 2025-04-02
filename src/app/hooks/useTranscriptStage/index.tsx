@@ -6,10 +6,9 @@ import { ServiceContext } from '../../contexts/ServiceContext';
 // Disabled due to bug in ts lint
 // eslint-disable-next-line no-shadow
 export enum Stages {
-  STAGE_1 = 'stage_1',
-  STAGE_2 = 'stage_2',
-  STAGE_3 = 'stage_3',
-  DEFAULT = 'default',
+  STAGE_1 = `No js stage`,
+  STAGE_2 = `Qualifies for transcript`,
+  STAGE_3 = `Does not qualify for transcript`,
 }
 
 type ExperimentCriteria = Partial<{
@@ -40,10 +39,6 @@ const determineStage = ({
     return Stages.STAGE_1;
   }
 
-  if (service !== 'mundo' && !lowPower && !dataSaver && !isOperaMini) {
-    return Stages.STAGE_3;
-  }
-
   if (
     (service === 'mundo' || dataSaver || isOperaMini || lowPower) &&
     hasTranscript
@@ -51,10 +46,10 @@ const determineStage = ({
     return Stages.STAGE_2;
   }
 
-  return Stages.DEFAULT;
+  return Stages.STAGE_3;
 };
 
-const useExperimentHook = (hasTranscript: boolean) => {
+const useTranscriptStage = (hasTranscript: boolean) => {
   const [lowPower, setLowPower] = useState(false);
   const [dataSaver, setSaveDataMode] = useState(false);
   const [noJs, setNoJs] = useState(true);
@@ -89,4 +84,4 @@ const useExperimentHook = (hasTranscript: boolean) => {
   return stage;
 };
 
-export default useExperimentHook;
+export default useTranscriptStage;

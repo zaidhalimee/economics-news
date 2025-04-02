@@ -4,8 +4,8 @@ import { useContext, useId } from 'react';
 import { ServiceContext } from '#app/contexts/ServiceContext';
 import Text from '#app/components/Text';
 import VisuallyHiddenText from '#app/components/VisuallyHiddenText';
+import { Fan, Plus } from '#app/components/icons';
 import styles from './index.styles';
-import { Fan, Plus } from './svgs';
 
 const DEFAULT_MESSAGE =
   'Help reduce your power and data usage by not playing video content.';
