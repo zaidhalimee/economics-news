@@ -1,5 +1,5 @@
 import runTestsForPage from '#nextjs/cypress/support/helpers/runTestsForPage';
-import assertPageWeight from '../../../../../cypress/e2e/specialFeatures/liteSiteWeight/assertions/liteSiteWeight';
+import assertPageWeight from '#cypress/e2e/specialFeatures/liteSiteWeight/assertions/liteSiteWeight';
 
 const liteTestSuites = [
   {
