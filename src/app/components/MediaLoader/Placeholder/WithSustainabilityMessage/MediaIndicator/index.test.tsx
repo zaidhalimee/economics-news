@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import { render } from '../../../../react-testing-library-with-providers';
 import MediaIcon from '.';
@@ -18,7 +17,7 @@ describe('MediaIcon', () => {
         guidanceMessage="Guidance: May contain strong language that may offend."
       />,
       {
-        service: 'news',
+        service: 'mundo',
       },
     );
     const guidanceMessage = container?.querySelector('strong')?.innerHTML;

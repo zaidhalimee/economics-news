@@ -4,13 +4,6 @@ import transcriptFixture from './fixture.json';
 import Transcript from './index';
 
 describe('Transcript Component', () => {
-  it('should match snapshot (temp)', () => {
-    const { container } = render(
-      <Transcript transcript={transcriptFixture} title="My Title" />,
-    );
-    expect(container).toMatchSnapshot();
-  });
-
   it('should render details element', () => {
     const { container } = render(
       <Transcript transcript={transcriptFixture} title="My Title" />,

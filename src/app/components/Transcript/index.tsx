@@ -1,12 +1,20 @@
 /** @jsx jsx */
 /* eslint-disable jsx-a11y/aria-role */
 import { jsx } from '@emotion/react';
+import { ServiceContext } from '#app/contexts/ServiceContext';
+import { useContext } from 'react';
 import styles from './index.styles';
 import Text from '../Text';
 import TranscriptTimestamp from './TranscriptTimestamp';
 import VisuallyHiddenText from '../VisuallyHiddenText';
 import { RightArrow as ArrowSvg } from '../icons';
 import { TranscriptBlock, TranscriptItem } from './types';
+
+const DEAFULT_TRANSLATIONS = {
+  readTranscript: 'Read transcript',
+  disclaimer:
+    ' This transcript has been reviewed by a journalist, it was generated with AI (artificial intelligence).',
+};
 
 // TO DO - move this to BFF
 const removeHoursMilliseconds = (timestamp: string) => timestamp.slice(3, -4);
@@ -28,10 +36,15 @@ const Transcript = ({
   transcript: TranscriptBlock;
   title?: string;
 }) => {
+  const { translations } = useContext(ServiceContext);
   const transcriptItems = transcript?.model?.blocks;
   if (!transcriptItems) {
     return null;
   }
+
+  const { transcript: transcriptTranslations = DEAFULT_TRANSLATIONS } =
+    translations;
+  const { readTranscript, disclaimer } = transcriptTranslations;
 
   const formattedTitle = title ? `, ${title}` : '';
 
@@ -42,18 +55,16 @@ const Transcript = ({
         <span role="text">
           {/* TO DO - add translations */}
           <Text size="pica" fontVariant="sansBold" css={styles.summaryTitle}>
-            Read transcript
+            {readTranscript}
           </Text>
           {title && <VisuallyHiddenText>{formattedTitle}</VisuallyHiddenText>}
         </span>
       </summary>
       <Text size="brevier" css={styles.disclaimer} as="small">
-        This transcript has been reviewed by a journalist, it was generated with
-        AI (artificial intelligence).
+        {disclaimer}
       </Text>
       <ul css={styles.ul} role="list">
-        {/*  eslint-disable-next-line @typescript-eslint/no-unused-vars */}
-        {transcriptItems.map((item, _index) => (
+        {transcriptItems.map(item => (
           <TranscriptListItem
             key={item.id}
             id={item.id}
