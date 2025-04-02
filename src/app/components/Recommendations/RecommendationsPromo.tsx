@@ -5,14 +5,20 @@ import { useContext } from 'react';
 import { RequestContext } from '#contexts/RequestContext';
 // import RecommendationsImage from '../RecommendationsPromoImage';
 // import useCombinedClickTrackerHandler from '../../StoryPromo/useCombinedClickTrackerHandler';
-import extractPromoData from './RecommendationsPromo/utility';
+// import extractPromoData from './RecommendationsPromo/utility';
 import styles from './index.styles';
 
-const RecommendationsPromo = ({ promo, eventTrackingData = null }) => {
+type Props = {
+  eventTrackingData?: {
+    componentName: string;
+  } | null;
+};
+
+const RecommendationsPromo = ({ promo, eventTrackingData = null }: Props) => {
   const { isLite } = useContext(RequestContext);
   const handleClickTracking = useCombinedClickTrackerHandler(eventTrackingData);
 
-  const { headline, url, indexImage } = extractPromoData({ promo });
+  // const { headline, url, indexImage } = extractPromoData({ promo });
 
   return (
     <div css={styles.promoWrapper} data-e2e="story-promo-wrapper">
