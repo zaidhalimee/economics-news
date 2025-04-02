@@ -22,6 +22,7 @@ const unitTests = {
     '**/__tests__/**/*.{js,jsx,ts,tsx}',
     '**/?(*.)+(spec|test).{js,jsx,ts,tsx}',
     '!**/src/integration/!(utils)/**/*',
+    '!**/puppeteer/**/*',
   ],
 };
 
@@ -58,12 +59,25 @@ const liteIntegrationTests = {
   testPathIgnorePatterns: ['.*canonical\\.test\\.js$', '.*amp\\.test\\.js$'],
 };
 
+const puppeteerTests = {
+  preset: 'ts-jest',
+  setupFiles: ['./puppeteer/jest-setup.js'],
+  setupFilesAfterEnv: ['./src/testHelpers/setupTests.js'],
+  moduleNameMapper: jestDirAlias,
+  transform: {
+    '^.+\\.[tj]sx?$': 'babel-jest',
+  },
+  displayName: 'Puppeteer Tests',
+  testMatch: ['**/puppeteer/**/*.test.js'],
+};
+
 module.exports = {
   projects: [
     unitTests,
     ampIntegrationTests,
     canonicalIntegrationTests,
     liteIntegrationTests,
+    puppeteerTests,
   ],
   reporters: [
     'default',
