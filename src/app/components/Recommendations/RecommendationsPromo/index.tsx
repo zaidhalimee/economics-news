@@ -12,11 +12,11 @@ const eventTrackingData = {
   componentName: 'recommendations',
 };
 
-type Props = {
+const RecommendationsPromo = ({
+  recommendation,
+}: {
   recommendation: Recommendation;
-};
-
-const RecommendationsPromo = ({ recommendation }: Props) => {
+}) => {
   const { isLite } = useContext(RequestContext);
   const handleClickTracking = useClickTrackerHandler(eventTrackingData);
 

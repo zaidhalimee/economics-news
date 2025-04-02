@@ -15,13 +15,19 @@ export default {
         padding: `${spacings.DOUBLE}rem 0`,
       },
     }),
+  recommendationsList: () =>
+    css({
+      listStyleType: 'none',
+      margin: 0,
+      padding: 0,
+    }),
   labelComponent: ({ spacings, mq }: Theme) =>
     css({
       margin: 0,
       padding: 0,
 
       [mq.GROUP_3_MIN_WIDTH]: {
-        margin: `0 0 ${spacings.FULL}rem`,
+        margin: `0 0 ${spacings.DOUBLE}rem`,
       },
     }),
 };

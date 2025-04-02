@@ -12,6 +12,7 @@ exports[`RecommendationsPromo it renders a Story Promo wrapped in a Grid compone
   align-items: center;
   position: relative;
   padding: 0.5rem;
+  margin-top: 0.5rem;
   background-color: #FDFDFD;
 }
 

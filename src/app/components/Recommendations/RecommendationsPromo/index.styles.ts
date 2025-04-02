@@ -7,6 +7,7 @@ export default {
       alignItems: 'center',
       position: 'relative',
       padding: `${spacings.FULL}rem`,
+      marginTop: `${spacings.FULL}rem`,
       backgroundColor: palette.GHOST,
     }),
   imageWrapper: ({ mq }: Theme) =>

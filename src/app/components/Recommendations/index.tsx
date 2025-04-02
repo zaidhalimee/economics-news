@@ -4,10 +4,8 @@ import { jsx, useTheme } from '@emotion/react';
 
 import SectionLabel from '#psammead/psammead-section-label/src';
 import SkipLinkWrapper from '#components/SkipLinkWrapper';
-import useToggle from '#hooks/useToggle';
 
 import { ServiceContext } from '#contexts/ServiceContext';
-// import RecommendationsPromoList from './RecommendationsPromoList';
 import RecommendationsPromo from './RecommendationsPromo';
 import styles from './index.styles';
 import { Recommendation } from './types';
@@ -15,7 +13,6 @@ import { Recommendation } from './types';
 const Recommendations = ({ data }: { data: Recommendation[] }) => {
   const { recommendations, translations, script, service, dir } =
     useContext(ServiceContext);
-  const { enabled } = useToggle('cpsRecommendations');
 
   const {
     palette: { GREY_2 },
@@ -23,20 +20,17 @@ const Recommendations = ({ data }: { data: Recommendation[] }) => {
 
   const labelId = 'recommendations-heading';
   const a11yAttributes = {
-    as: 'section',
     role: 'region',
     'aria-labelledby': labelId,
   };
 
-  const { hasStoryRecommendations } = recommendations || {};
-  console.log(data);
-  // if (!hasStoryRecommendations || !enabled || !data.length) return null;
+  const { hasStoryRecommendations, skipLink } = recommendations || {};
+
+  const { text, endTextVisuallyHidden } = skipLink || {};
+
+  if (!hasStoryRecommendations || !data.length) return null;
 
   const title = translations?.recommendationTitle ?? 'Recommended stories';
-
-  const {
-    skipLink: { text, endTextVisuallyHidden },
-  } = recommendations;
 
   const terms = { '%title%': title };
 
@@ -44,7 +38,7 @@ const Recommendations = ({ data }: { data: Recommendation[] }) => {
 
   const endTextId = `end-of-recommendations`;
 
-  const skipLink = {
+  const skipLinkProps = {
     endTextId,
     terms,
     text,
@@ -52,12 +46,12 @@ const Recommendations = ({ data }: { data: Recommendation[] }) => {
   };
 
   return (
-    <div
+    <section
       css={styles.recommendationsWrapper}
       data-e2e={labelId}
       {...a11yAttributes}
     >
-      <SkipLinkWrapper service={service} {...skipLink}>
+      <SkipLinkWrapper service={service} {...skipLinkProps}>
         {title ? (
           <SectionLabel
             css={styles.labelComponent}
@@ -74,14 +68,19 @@ const Recommendations = ({ data }: { data: Recommendation[] }) => {
             {title}
           </SectionLabel>
         ) : null}
-        <RecommendationsPromo recommendation={data?.[0]} />
-        {/* {isSinglePromo ? (
-              <RecommendationsPromo promo={data[0]} />
-            ) : (
-              <RecommendationsPromoList promoItems={data} />
-            )} */}
+        {isSinglePromo ? (
+          <RecommendationsPromo recommendation={data?.[0]} />
+        ) : (
+          <ul css={styles.recommendationsList} role="list">
+            {data?.map(recommendation => (
+              <li key={recommendation.title} role="listitem">
+                <RecommendationsPromo recommendation={recommendation} />
+              </li>
+            ))}
+          </ul>
+        )}
       </SkipLinkWrapper>
-    </div>
+    </section>
   );
 };
 
