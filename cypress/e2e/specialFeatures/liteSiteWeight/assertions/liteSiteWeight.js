@@ -1,21 +1,11 @@
 import interceptGetRequests from '../helpers/interceptGetRequests';
+import getPageSizeInBytes from '../helpers/getPageSizeInBytes';
 
 const MAX_PAGE_WEIGHT = 100;
 
 export default ({ path, pageType }) => {
   describe('Page weight', () => {
     const allRequests = [];
-    const getPageSizeInBytes = request => {
-      const getSize = `echo ${JSON.stringify(request)} | gzip | wc -c`;
-      if (typeof request === 'string') {
-        return cy.exec(getSize).then(result => {
-          return Number.isNaN(result.stdout)
-            ? 0
-            : parseFloat(result.stdout) / 1024;
-        });
-      }
-      return cy.wrap(0);
-    };
 
     before(() => {
       Cypress.automation('remote:debugger:protocol', {

@@ -2,91 +2,98 @@ import runTestsForPage from '#nextjs/cypress/support/helpers/runTestsForPage';
 
 import assertPageWeight from './assertions/liteSiteWeight';
 
+const tests = [assertPageWeight];
 const liteTestSuites = [
   {
     path: '/hindi.lite?renderer_env=live',
     service: 'hindi',
     runforEnv: 'local',
     pageType: 'Home',
-    tests: [assertPageWeight],
+    tests,
   },
   {
     path: '/mundo/articles/cddylv9g8z0o.lite?renderer_env=live',
     runforEnv: 'local',
     pageType: 'Optimo Article',
-    tests: [assertPageWeight],
+    tests,
   },
   {
     path: '/nepali/bbc_nepali_radio/liveradio.lite?renderer_env=live',
     runforEnv: 'local',
     pageType: 'Live Radio',
-    tests: [assertPageWeight],
+    tests,
   },
   {
     path: '/arabic/media-53135426.lite?renderer_env=live',
     runforEnv: 'local',
     pageType: 'CPS Media Article with Live Stream',
-    tests: [assertPageWeight],
+    tests,
   },
   {
     path: '/marathi/popular/read.lite?renderer_env=live',
     runforEnv: 'local',
     pageType: 'Most Read',
-    tests: [assertPageWeight],
+    tests,
   },
   {
     path: '/gahuza/bbc_gahuza_radio/programmes/p0340x2m.lite?renderer_env=live',
     runforEnv: 'local',
     pageType: 'On Demand Audio - Brand',
-    tests: [assertPageWeight],
+    tests,
   },
   {
     path: '/gahuza/bbc_gahuza_radio/w3ct1v5v.lite?renderer_env=live',
     runforEnv: 'local',
     pageType: 'On Demand Audio - Episode',
-    tests: [assertPageWeight],
+    tests,
   },
   {
     path: '/gahuza/podcasts/p07yh8hb.lite?renderer_env=live',
     runforEnv: 'local',
     pageType: 'Podcast - Brand',
-    tests: [assertPageWeight],
+    tests,
   },
   {
     path: '/gahuza/podcasts/p07yh8hb/p094vs2n.lite?renderer_env=live',
     runforEnv: 'local',
     pageType: 'Podcast - Episode',
-    tests: [assertPageWeight],
+    tests,
   },
   {
     path: '/tigrinya/news-51249937.lite?renderer_env=live',
     runforEnv: 'local',
     pageType: 'CPS Media Article',
-    tests: [assertPageWeight],
+    tests,
   },
   {
     path: '/hausa/articles/clm3n4pdeymo.lite?renderer_env=live',
     runforEnv: 'local',
     pageType: 'Optimo Media Article',
-    tests: [assertPageWeight],
+    tests,
   },
   {
     path: '/nepali/news-50627370.lite?renderer_env=live',
     runforEnv: 'local',
     pageType: 'CPS Photo Gallery (PGL)',
-    tests: [assertPageWeight],
+    tests,
   },
   {
     path: '/arabic/sports-54278377.lite?renderer_env=live',
     runforEnv: 'local',
     pageType: 'CPS Story (STY)',
-    tests: [assertPageWeight],
+    tests,
   },
   {
-    path: '/korean/topics/cnwng7v0e54t.lite?renderer_env=live',
+    path: 'hindi/topics/cm5m26q8qxpt.lite?renderer_env=live',
     runforEnv: 'local',
     pageType: 'Topic',
-    tests: [assertPageWeight],
+    tests,
+  },
+  {
+    path: '/persian/afghanistan.lite?renderer_env=live',
+    runforEnv: 'local',
+    pageType: 'Topic',
+    tests,
   },
 ];
 
