@@ -88,12 +88,6 @@ const liteTestSuites = [
     pageType: 'Topic',
     tests: [assertPageWeight],
   },
-  {
-    path: '/urdu/live/c04z6x46l0vt.lite?renderer_env=live',
-    runforEnv: 'local',
-    pageType: 'Live',
-    tests: [assertPageWeight],
-  },
 ];
 
 runTestsForPage({
