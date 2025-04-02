@@ -11,7 +11,7 @@ export default ({ path, pageType }) => {
         return cy.exec(getSize).then(result => {
           return Number.isNaN(result.stdout)
             ? 0
-            : (parseFloat(result.stdout) / 1024).toFixed(2);
+            : parseFloat(result.stdout) / 1024;
         });
       }
       return cy.wrap(0);
@@ -39,7 +39,9 @@ export default ({ path, pageType }) => {
           });
         })
         .then(() => {
-          expect(totalSize).to.be.lessThan(MAX_PAGE_WEIGHT);
+          expect(parseFloat(totalSize.toFixed(2))).to.be.lessThan(
+            MAX_PAGE_WEIGHT,
+          );
         });
     });
   });
