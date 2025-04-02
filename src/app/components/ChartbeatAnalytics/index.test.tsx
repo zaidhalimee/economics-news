@@ -1,6 +1,5 @@
 import React, { PropsWithChildren, useMemo } from 'react';
 import { render } from '@testing-library/react';
-import { Helmet } from 'react-helmet';
 import { ARTICLE_PAGE } from '../../routes/utils/pageTypes';
 import { RequestContextProvider } from '../../contexts/RequestContext';
 import { ServiceContextProvider } from '../../contexts/ServiceContext';
@@ -10,6 +9,7 @@ import ChartbeatAnalytics from '.';
 import * as testUtils from './utils';
 import * as amp from './amp';
 import { localBaseUrl } from '../../../testHelpers/config';
+import { data as frontPageData } from '../../../../data/news/frontpage/index.json';
 import { PageTypes, Platforms } from '../../models/types/global';
 
 const defaultToggleState = {
@@ -25,7 +25,6 @@ interface Props {
   pageType: PageTypes;
   platform: Platforms;
   origin: string;
-  isLite?: boolean;
   toggleState?: {
     chartbeatAnalytics: {
       enabled: boolean;
@@ -39,7 +38,6 @@ const ContextWrap = ({
   platform,
   origin,
   children,
-  isLite = false,
   toggleState = defaultToggleState,
 }: PropsWithChildren<Props>) => {
   const memoizedToggleContextValue = useMemo(
@@ -53,7 +51,6 @@ const ContextWrap = ({
   );
   return (
     <RequestContextProvider
-      isLite={isLite}
       isAmp={platform === 'amp'}
       isApp={false}
       pageType={pageType}
@@ -77,9 +74,6 @@ const ContextWrap = ({
 };
 
 describe('Charbeats Analytics Container', () => {
-  beforeEach(() => {
-    jest.resetAllMocks();
-  });
   it('should call AmpCharbeatsBeacon when platform is amp and toggle enabled for chartbeat on live', () => {
     process.env.SIMORGH_APP_ENV = 'live';
     const mockAmp = jest.fn().mockReturnValue('amp-return-value');
@@ -93,6 +87,7 @@ describe('Charbeats Analytics Container', () => {
       domain: 'news-domain',
       sections: 'secction1 section2',
       contentType: 'article',
+      virtualReferrer: '/some-path',
       title: 'This is an article',
     };
 
@@ -113,7 +108,10 @@ describe('Charbeats Analytics Container', () => {
         origin="bbc.com"
         toggleState={toggleState}
       >
-        <ChartbeatAnalytics title="Home" sectionName="Home" />
+        <ChartbeatAnalytics
+          title={frontPageData?.article?.metadata?.title}
+          sectionName={frontPageData?.article?.relatedContent?.section?.name}
+        />
       </ContextWrap>,
     );
     expect(mockAmp).toHaveBeenCalledTimes(1);
@@ -128,7 +126,7 @@ describe('Charbeats Analytics Container', () => {
     expect(container.firstChild?.textContent).toEqual('amp-return-value');
   });
 
-  it('should return null when toggle is disabled for live', () => {
+  it('should return null when toggle is disbaled for live', () => {
     const toggleState = {
       chartbeatAnalytics: {
         enabled: false,
@@ -141,7 +139,10 @@ describe('Charbeats Analytics Container', () => {
         origin="bbc.com"
         toggleState={toggleState}
       >
-        <ChartbeatAnalytics title="Home" sectionName="Home" />
+        <ChartbeatAnalytics
+          title={frontPageData?.article?.metadata?.title}
+          sectionName={frontPageData?.article?.relatedContent?.section?.name}
+        />
       </ContextWrap>,
     );
 
@@ -156,15 +157,21 @@ describe('Charbeats Analytics Container', () => {
         pageType={ARTICLE_PAGE}
         origin={localBaseUrl}
       >
-        <ChartbeatAnalytics title="Home" sectionName="Home" />
+        <ChartbeatAnalytics
+          title={frontPageData?.article?.metadata?.title}
+          sectionName={frontPageData?.article?.relatedContent?.section?.name}
+        />
       </ContextWrap>,
     );
 
     expect(container.firstChild).toBeNull();
   });
 
-  it('should add Chartbeat Helmet script with correct config when platform is canonical, toggle enabled and on test in Lite mode', () => {
+  it('should call sendCanonicalChartbeatBeacon when platform is canonical, and toggle enabled for chartbeat on test', () => {
     process.env.SIMORGH_APP_ENV = 'test';
+    const mockAmp = jest.fn().mockReturnValue('amp-return-value');
+    // @ts-expect-error requires mocking for testing purposes
+    amp.default = mockAmp;
 
     const expectedConfig = {
       uid: 50924,
@@ -172,11 +179,12 @@ describe('Charbeats Analytics Container', () => {
       idSync: {
         bbc_hid: 'cookie',
       },
-      path: '/pidgin/articles/c00000000o.lite',
-      sections: 'section1 section2',
+      path: '/',
+      sections: 'secction1 section2',
       title: 'This is a canonical page article',
       type: 'article',
       useCanonical: true,
+      virtualReferrer: '/some-path',
     };
 
     const toggleState = {
@@ -190,22 +198,21 @@ describe('Charbeats Analytics Container', () => {
     testUtils.getConfig = mockGetConfig;
     render(
       <ContextWrap
-        isLite
         platform="canonical"
         pageType={ARTICLE_PAGE}
         origin="test.bbc.com"
         toggleState={toggleState}
       >
-        <ChartbeatAnalytics title="Home" sectionName="Home" />
+        <ChartbeatAnalytics
+          title={frontPageData?.article?.metadata?.title}
+          sectionName={frontPageData?.article?.relatedContent?.section?.name}
+        />
       </ContextWrap>,
     );
 
-    const [inlineScript] = Helmet.peek().scriptTags;
-    const scriptHtml = inlineScript.innerHTML;
-
+    expect(sendCanonicalChartbeatBeacon).toHaveBeenCalledTimes(1);
+    expect(sendCanonicalChartbeatBeacon).toHaveBeenCalledWith(expectedConfig);
     expect(testUtils.getConfig).toHaveBeenCalledTimes(1);
-    expect(scriptHtml).toContain(JSON.stringify(expectedConfig));
-
-    expect(sendCanonicalChartbeatBeacon).not.toHaveBeenCalled();
+    expect(mockAmp).not.toHaveBeenCalled();
   });
 });
