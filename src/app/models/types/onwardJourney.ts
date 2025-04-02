@@ -44,19 +44,6 @@ export type CpsRecommendation = {
   type?: string;
 };
 
-export type RecommendationNew = {
-  title: string;
-  image: {
-    width: number;
-    height: number;
-    altText: string;
-    copyrightHolder: string;
-    originCode: string;
-    locator: string;
-  };
-  link: string;
-};
-
 export type Recommendation = OptimoRecommendation | CpsRecommendation;
 
 export type TopStoriesOnwardJourney = {
