@@ -43,7 +43,9 @@ import { RecommendationNew } from '#app/models/types/onwardJourney';
 
 import ScrollablePromo from '#components/ScrollablePromo';
 import { Services } from '#app/models/types/global';
-import Recommendations from '#app/components/Recommendations';
+import Recommendations, {
+  SERVICE_WITH_NEW_RECOMMENDATIONS,
+} from '#app/components/Recommendations';
 import ElectionBanner from './ElectionBanner';
 import ImageWithCaption from '../../components/ImageWithCaption';
 import AdContainer from '../../components/Ad';
@@ -107,18 +109,6 @@ const getWsojComponent =
   (recommendationsData: Recommendation[], service: Services) =>
   (props: ComponentToRenderProps & { data: RecommendationNew[] }) => {
     // TODO: Remove this when the new recommendations are rolled out to all services
-    const SERVICE_WITH_NEW_RECOMMENDATIONS = [
-      'arabic',
-      'hindi',
-      'indonesia',
-      'mundo',
-      'persian',
-      'pidgin',
-      'portuguese',
-      'thai',
-      'turkce',
-    ];
-
     if (SERVICE_WITH_NEW_RECOMMENDATIONS.includes(service)) {
       const { data } = props;
       return <Recommendations data={data} />;
