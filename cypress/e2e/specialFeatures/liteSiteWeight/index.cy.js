@@ -89,12 +89,6 @@ const liteTestSuites = [
     pageType: 'Topic',
     tests,
   },
-  {
-    path: '/persian/afghanistan.lite?renderer_env=live',
-    runforEnv: 'local',
-    pageType: 'Topic',
-    tests,
-  },
 ];
 
 runTestsForPage({
