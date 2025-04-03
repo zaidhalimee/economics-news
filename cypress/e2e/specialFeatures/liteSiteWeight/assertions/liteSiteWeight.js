@@ -1,7 +1,7 @@
 import interceptGetRequests from '../helpers/interceptGetRequests';
 import getTotalPageSize from '../helpers/getTotalPageSize';
 
-const MAX_PAGE_WEIGHT = 100;
+const MAX_PAGE_WEIGHT_KB = 100;
 
 const roundTo2Decimals = num => {
   return parseFloat(num.toFixed(2));
@@ -27,7 +27,7 @@ export default ({ path, pageType }) => {
       liveRequests = [];
     });
 
-    it(`Page weight for ${pageType} page should be less than ${MAX_PAGE_WEIGHT}Kb`, () => {
+    it(`Page weight for ${pageType} page should be less than ${MAX_PAGE_WEIGHT_KB}Kb`, () => {
       let localPageWeight;
 
       getTotalPageSize(allRequests)
@@ -45,7 +45,7 @@ export default ({ path, pageType }) => {
               ((localPageWeight + livePageWeight) / 2);
 
             const delta = roundTo2Decimals(percentageDifference);
-            expect(localPageWeight).to.be.lessThan(MAX_PAGE_WEIGHT);
+            expect(localPageWeight).to.be.lessThan(MAX_PAGE_WEIGHT_KB);
             cy.task('table', [
               {
                 URL: `${Cypress.config().baseUrl}${path}`,
