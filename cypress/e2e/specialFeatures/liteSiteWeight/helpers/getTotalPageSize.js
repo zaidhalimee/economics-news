@@ -1,4 +1,5 @@
 import getPageSizeInKB from './getPageSizeInKB';
+import roundTo2Decimals from './roundTo2Decimals';
 
 export default requests => {
   let totalSize = 0;
@@ -15,6 +16,6 @@ export default requests => {
       }
     })
     .then(() => {
-      return totalSize;
+      return roundTo2Decimals(totalSize);
     });
 };
