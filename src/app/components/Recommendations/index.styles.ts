@@ -5,6 +5,7 @@ export default {
     css({
       backgroundColor: palette.GREY_2,
       margin: `${spacings.TRIPLE}rem 0`,
+      padding: `${spacings.DOUBLE}rem ${spacings.FULL}rem`,
 
       [mq.GROUP_2_MIN_WIDTH]: {
         margin: `0 0 ${spacings.TRIPLE}rem`,

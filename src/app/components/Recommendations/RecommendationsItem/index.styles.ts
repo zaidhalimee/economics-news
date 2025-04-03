@@ -4,7 +4,7 @@ export default {
   promoWrapper: ({ palette, spacings }: Theme) =>
     css({
       display: 'flex',
-      alignItems: 'center',
+      alignItems: 'stretch',
       position: 'relative',
       padding: `${spacings.FULL}rem`,
       marginTop: `${spacings.FULL}rem`,
@@ -12,10 +12,8 @@ export default {
     }),
   imageWrapper: ({ mq }: Theme) =>
     css({
-      display: 'inline-block',
       position: 'relative',
       width: '4.7rem',
-      verticalAlign: 'top',
 
       [mq.GROUP_2_MIN_WIDTH]: {
         width: '6.8rem',
@@ -27,11 +25,8 @@ export default {
     }),
   textWrapper: ({ spacings, mq, isLite }: Theme) =>
     css({
-      display: 'inline-block',
       width: isLite ? '100%' : 'calc(100% - 7.5rem)',
       padding: `0 ${spacings.FULL}rem`,
-      verticalAlign: 'top',
-      height: '100%',
 
       [mq.GROUP_1_MAX_WIDTH]: {
         width: 'calc(100% - 5rem)',
