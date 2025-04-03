@@ -1,44 +1,53 @@
-import {
-  awaitATIComponentViewEvent,
-  interceptATIAnalyticsBeacons,
-  COMPONENTS,
-  awaitATIComponentClickEvent,
-} from '../helpers';
+import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { RELATED_TOPICS } = COMPONENTS;
 
-export const assertRelatedTopicsComponentView = () => {
+export const assertRelatedTopicsComponentView = ({
+  pageIdentifier,
+  contentType,
+  useReverb,
+  path,
+}) => {
   it('should send a view event for the Related Topics component', () => {
-    cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
-      cy.visit(url);
+    interceptATIAnalyticsBeacons();
+    cy.visit(path);
 
-      cy.get('[data-testid="related-topics"]').scrollIntoView({
-        duration: 1000,
-      });
+    cy.get('[data-testid="related-topics"]').scrollIntoView({
+      duration: 1000,
+    });
 
-      awaitATIComponentViewEvent(RELATED_TOPICS);
+    assertATIComponentViewEvent({
+      component: RELATED_TOPICS,
+      pageIdentifier,
+      contentType,
+      useReverb,
     });
   });
 };
 
-export const assertRelatedTopicsComponentClick = () => {
+export const assertRelatedTopicsComponentClick = ({
+  pageIdentifier,
+  contentType,
+  useReverb,
+  path,
+}) => {
   it('should send a click event for the Related Topics component', () => {
-    cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
-      cy.visit(url);
+    interceptATIAnalyticsBeacons();
+    cy.visit(path);
 
-      cy.get('[data-testid="related-topics"]').scrollIntoView({
-        duration: 1000,
-      });
+    cy.get('[data-testid="related-topics"]').scrollIntoView({
+      duration: 1000,
+    });
 
-      // Click on first item
-      cy.get('[data-testid="related-topics"]').find('a').first().click();
+    // Click on first item
+    cy.get('[data-testid="related-topics"]').find('a').first().click();
 
-      awaitATIComponentClickEvent(RELATED_TOPICS);
-
-      // return to previous page
-      cy.visit(url);
+    assertATIComponentClickEvent({
+      component: RELATED_TOPICS,
+      pageIdentifier,
+      contentType,
+      useReverb,
     });
   });
 };

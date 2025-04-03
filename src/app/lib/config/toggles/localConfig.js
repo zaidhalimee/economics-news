@@ -38,7 +38,7 @@ export default {
   prerollAds: {
     enabled: true,
   },
-  frontPageRadioSchedule: {
+  homePageRadioSchedule: {
     enabled: true,
   },
   liveRadioSchedule: {

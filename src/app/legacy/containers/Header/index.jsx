@@ -7,6 +7,7 @@ import {
   ARTICLE_PAGE,
   HOME_PAGE,
   TOPIC_PAGE,
+  ERROR_PAGE,
 } from '#app/routes/utils/pageTypes';
 import LiteSiteCta from '#app/components/LiteSiteCta';
 import { liteEnabledServices } from '#app/components/LiteSiteCta/liteSiteConfig';
@@ -47,7 +48,7 @@ const Header = ({ brandRef, borderBottom, skipLink, scriptLink, linkId }) => {
   );
 };
 
-const HeaderContainer = () => {
+const HeaderContainer = ({ propsForOJExperiment }) => {
   const { isAmp, isApp, pageType, isLite } = useContext(RequestContext);
   const { service, script, translations, dir, scriptLink, lang, serviceLang } =
     useContext(ServiceContext);
@@ -77,7 +78,7 @@ const HeaderContainer = () => {
   if (scriptLink) {
     switch (true) {
       case service === 'uzbek' &&
-        ![ARTICLE_PAGE, HOME_PAGE, TOPIC_PAGE].includes(pageType):
+        ![ARTICLE_PAGE, HOME_PAGE, TOPIC_PAGE, ERROR_PAGE].includes(pageType):
         shouldRenderScriptSwitch = false;
         break;
       default:
@@ -85,7 +86,6 @@ const HeaderContainer = () => {
         break;
     }
   }
-
   const renderLiteSiteCTA = isLite && liteEnabledServices.includes(service);
 
   if (isApp) return null;
@@ -106,7 +106,7 @@ const HeaderContainer = () => {
         />
       )}
       {renderLiteSiteCTA && <LiteSiteCta />}
-      <NavigationContainer />
+      <NavigationContainer propsForOJExperiment={propsForOJExperiment} />
     </header>
   );
 };

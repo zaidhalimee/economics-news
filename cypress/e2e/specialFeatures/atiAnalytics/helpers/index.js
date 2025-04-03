@@ -1,13 +1,24 @@
 import envs from '../../../../support/config/envs';
 
-// eslint-disable-next-line import/prefer-default-export
 export const getATIParamsFromURL = atiAnalyticsURL => {
   const url = new URL(atiAnalyticsURL);
 
-  return Object.fromEntries(new URLSearchParams(url.search));
+  const objectFromEntries = Object.fromEntries(new URLSearchParams(url.search));
+  console.log(
+    'objectFromEntries p value in getATIParamsFromURL',
+    objectFromEntries.p,
+  );
+  cy.log(
+    'objectFromEntries p value in getATIParamsFromURL',
+    objectFromEntries.p,
+  );
+  return objectFromEntries;
 };
 
-const ATI_PAGE_VIEW = 'ati-page-view';
+export const ATI_PAGE_VIEW = 'ati-page-view';
+
+export const ATI_PAGE_VIEW_REVERB = 'ati-page-view-reverb';
+
 const SCROLLABLE_NAVIGATION = 'scrollable-navigation';
 const DROPDOWN_NAVIGATION = 'dropdown-navigation';
 const TOP_STORIES = 'top-stories';
@@ -19,11 +30,13 @@ const RELATED_CONTENT = 'related-content';
 const RELATED_TOPICS = 'topics';
 const PODCAST_PROMO = 'promo-podcast';
 const LITE_SITE_CTA = 'lite-site-cta';
+const CANONICAL_LITE_CTA = 'canonical-lite-cta';
 const RECENT_AUDIO_EPISODES = 'episodes-audio';
 const PODCAST_LINKS = 'third-party';
 const LATEST_MEDIA = 'latest';
 const RECOMMENDATIONS = 'wsoj';
 const SCROLLABLE_PROMO = 'edoj';
+const BILLBOARD = 'billboard';
 
 export const COMPONENTS = {
   SCROLLABLE_NAVIGATION,
@@ -37,11 +50,13 @@ export const COMPONENTS = {
   RELATED_TOPICS,
   PODCAST_PROMO,
   LITE_SITE_CTA,
+  CANONICAL_LITE_CTA,
   RECENT_AUDIO_EPISODES,
   PODCAST_LINKS,
   LATEST_MEDIA,
   RECOMMENDATIONS,
   SCROLLABLE_PROMO,
+  BILLBOARD,
 };
 
 export const interceptATIAnalyticsBeacons = () => {
@@ -49,37 +64,60 @@ export const interceptATIAnalyticsBeacons = () => {
 
   // Component Views
   Object.values(COMPONENTS).forEach(component => {
-    cy.intercept({
-      url: `${atiUrl}/*`,
-      query: {
-        ati: `*${component}*`,
+    const viewClickEventRegex = new RegExp(
+      `PUB-\\[?.*?\\]?-\\[?${component}.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?-\\[?.*?\\]?`,
+      'g',
+    );
+
+    cy.intercept(
+      {
+        url: `${atiUrl}/*`,
+        query: {
+          ati: viewClickEventRegex,
+        },
       },
-    }).as(`${component}-ati-view`);
+      request => {
+        request.reply({ statusCode: 200 });
+      },
+    ).as(`${component}-ati-view`);
+
+    // Component Clicks
+    cy.intercept(
+      {
+        url: `${atiUrl}/*`,
+        query: {
+          atc: viewClickEventRegex,
+        },
+      },
+      request => {
+        request.reply({ statusCode: 200 });
+      },
+    ).as(`${component}-ati-click`);
   });
 
-  // Component Clicks
-  Object.values(COMPONENTS).forEach(component => {
-    cy.intercept({
+  // NOT REVERB - Page View (only fires once per page visit)
+  cy.intercept(
+    {
       url: `${atiUrl}/*`,
       query: {
-        atc: `*${component}*`,
+        x8: '[simorgh]',
       },
-    }).as(`${component}-ati-click`);
-  });
-
-  // Page View (only fires once per page visit)
-  cy.intercept({
-    url: `${atiUrl}/*`,
-    query: {
-      x8: '[simorgh]',
     },
-  }).as(`${ATI_PAGE_VIEW}`);
+    request => {
+      request.reply({ statusCode: 200 });
+    },
+  ).as(`${ATI_PAGE_VIEW}`);
+
+  // REVERB - Page View (only fires once per page visit)
+  cy.intercept(
+    {
+      url: `${atiUrl}/*`,
+      query: {
+        x8: 'simorgh',
+      },
+    },
+    request => {
+      request.reply({ statusCode: 200 });
+    },
+  ).as(`${ATI_PAGE_VIEW_REVERB}`);
 };
-
-export const awaitATIPageViewEvent = () => cy.wait(`@${ATI_PAGE_VIEW}`);
-
-export const awaitATIComponentViewEvent = component =>
-  cy.wait(`@${component}-ati-view`);
-
-export const awaitATIComponentClickEvent = component =>
-  cy.wait(`@${component}-ati-click`);

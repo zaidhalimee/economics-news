@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-gujarati',
     atiAnalyticsProducerId: '50',
     atiAnalyticsProducerName: 'GUJARATI',
+    useReverb: true,
     chartbeatDomain: 'gujarati.bbc.co.uk',
     brandName: 'BBC News ગુજરાતી',
     product: 'BBC News',
@@ -40,9 +41,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/gujarati/institutional-50409883',
     isTrustProjectParticipant: true,
     script: devanagari,
-    manifestPath: '/manifest.json',
+    manifestPath: '/gujarati/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'સમાચાર',
+    homePageTitle: 'સમાચાર',
     showAdPlaceholder: false,
     showRelatedTopics: true,
     translations: {
@@ -227,6 +228,7 @@ export const service: DefaultServiceConfig = {
         },
         listen: 'સાંભળો',
         watch: 'જુઓ',
+        watchMoments: 'વીડિયો જુઓ',
         liveLabel: 'LIVE',
         nextLabel: 'NEXT',
         previousRadioShow: 'આ પહેલાંનો રેડિયો શો',
@@ -329,10 +331,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'સમાચાર',
         url: '/gujarati',
-      },
-      {
-        title: 'સ્પૉર્ટ્સવુમન ઑફ ધ યર',
-        url: '/gujarati/topics/cp2n8m7glkgt',
       },
       {
         title: 'ગુજરાત',

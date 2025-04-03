@@ -6,7 +6,6 @@ import {
   GEL_GROUP_3_SCREEN_WIDTH_MIN,
   GEL_GROUP_4_SCREEN_WIDTH_MIN,
 } from '#psammead/gel-foundations/src/breakpoints';
-import pathOr from 'ramda/src/pathOr';
 import path from 'ramda/src/path';
 import {
   GEL_SPACING,
@@ -50,29 +49,26 @@ const CpsRecommendations = ({ items }) => {
     useContext(ServiceContext);
   const { enabled } = useToggle('cpsRecommendations');
 
+  const {
+    palette: { GREY_2 },
+  } = useTheme();
+
   const labelId = 'recommendations-heading';
   const a11yAttributes = {
     as: 'section',
     role: 'region',
     'aria-labelledby': labelId,
   };
-  const {
-    palette: { GREY_2 },
-  } = useTheme();
 
   const { hasStoryRecommendations } = recommendations;
 
   if (!hasStoryRecommendations || !enabled || !items.length) return null;
 
-  const titlePath = ['Recommended stories', ['recommendationTitle']];
-
-  const title = pathOr(...titlePath, translations);
+  const title = translations?.recommendationTitle ?? 'Recommended stories';
 
   const { text, endTextVisuallyHidden } = path(['skipLink'], recommendations);
 
-  const terms = {
-    '%title%': title,
-  };
+  const terms = { '%title%': title };
 
   const isSinglePromo = items.length === 1;
 

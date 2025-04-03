@@ -1,44 +1,53 @@
-import {
-  awaitATIComponentViewEvent,
-  interceptATIAnalyticsBeacons,
-  COMPONENTS,
-  awaitATIComponentClickEvent,
-} from '../helpers';
+import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { MESSAGE_BANNER } = COMPONENTS;
 
-export const assertMessageBannerComponentView = () => {
+export const assertMessageBannerComponentView = ({
+  pageIdentifier,
+  contentType,
+  useReverb,
+  path,
+}) => {
   it('should send a view event for the Message Banner component', () => {
-    cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
-      cy.visit(url);
+    interceptATIAnalyticsBeacons();
+    cy.visit(path);
 
-      cy.get('[data-testid="message-banner-1"]').scrollIntoView({
-        duration: 1000,
-      });
+    cy.get('[data-testid="message-banner-1"]').scrollIntoView({
+      duration: 1000,
+    });
 
-      awaitATIComponentViewEvent(MESSAGE_BANNER);
+    assertATIComponentViewEvent({
+      component: MESSAGE_BANNER,
+      pageIdentifier,
+      contentType,
+      useReverb,
     });
   });
 };
 
-export const assertMessageBannerComponentClick = () => {
+export const assertMessageBannerComponentClick = ({
+  pageIdentifier,
+  contentType,
+  useReverb,
+  path,
+}) => {
   it('should send a click event for the Message Banner component', () => {
-    cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
-      cy.visit(url);
+    interceptATIAnalyticsBeacons();
+    cy.visit(path);
 
-      cy.get('[data-testid="message-banner-1"]').scrollIntoView({
-        duration: 1000,
-      });
+    cy.get('[data-testid="message-banner-1"]').scrollIntoView({
+      duration: 1000,
+    });
 
-      // Click on first item
-      cy.get('[data-testid="message-banner-1"]').find('a').first().click();
+    // Click on first item
+    cy.get('[data-testid="message-banner-1"]').find('a').first().click();
 
-      awaitATIComponentClickEvent(MESSAGE_BANNER);
-
-      // return to previous page
-      cy.visit(url);
+    assertATIComponentClickEvent({
+      component: MESSAGE_BANNER,
+      pageIdentifier,
+      contentType,
+      useReverb,
     });
   });
 };

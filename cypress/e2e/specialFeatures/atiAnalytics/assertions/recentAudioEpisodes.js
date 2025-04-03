@@ -1,47 +1,53 @@
-import {
-  awaitATIComponentViewEvent,
-  interceptATIAnalyticsBeacons,
-  COMPONENTS,
-  awaitATIComponentClickEvent,
-} from '../helpers';
+import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { RECENT_AUDIO_EPISODES } = COMPONENTS;
 
-export const assertRecentAudioEpisodesComponentView = () => {
+export const assertRecentAudioEpisodesComponentView = ({
+  pageIdentifier,
+  contentType,
+  useReverb,
+  path,
+}) => {
   it('should send a view event for the Recent Audio Episodes component', () => {
-    cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
-      cy.visit(url);
+    interceptATIAnalyticsBeacons();
+    cy.visit(path);
 
-      cy.get('[data-e2e="recent-episodes-list"]').scrollIntoView({
-        duration: 1000,
-      });
+    cy.get('[data-e2e="recent-episodes-list"]').scrollIntoView({
+      duration: 1000,
+    });
 
-      awaitATIComponentViewEvent(RECENT_AUDIO_EPISODES);
+    assertATIComponentViewEvent({
+      component: RECENT_AUDIO_EPISODES,
+      pageIdentifier,
+      contentType,
+      useReverb,
     });
   });
 };
 
-export const assertRecentAudioEpisodesComponentClick = () => {
+export const assertRecentAudioEpisodesComponentClick = ({
+  pageIdentifier,
+  contentType,
+  useReverb,
+  path,
+}) => {
   it('should send a click event for the Recent Audio Episodes component', () => {
-    cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
-      cy.visit(url);
+    interceptATIAnalyticsBeacons();
+    cy.visit(path);
 
-      cy.get('[data-e2e="recent-episodes-list"]').scrollIntoView({
-        duration: 1000,
-      });
+    cy.get('[data-e2e="recent-episodes-list"]').scrollIntoView({
+      duration: 1000,
+    });
 
-      // Click on first item
-      cy.get('[data-e2e="recent-episodes-list"]')
-        .find('a')
-        .first()
-        .click({ force: true });
+    // Click on first item
+    cy.get('[data-e2e="recent-episodes-list"]').find('a').first().click();
 
-      awaitATIComponentClickEvent(RECENT_AUDIO_EPISODES);
-
-      // return to previous page
-      cy.visit(url);
+    assertATIComponentClickEvent({
+      component: RECENT_AUDIO_EPISODES,
+      pageIdentifier,
+      contentType,
+      useReverb,
     });
   });
 };

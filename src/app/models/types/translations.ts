@@ -25,6 +25,8 @@ export interface Translations {
     informationPage: string;
     informationPageLink: string;
     dataSaving: string;
+    articleDataSavingLinkText: string;
+    experiment?: Record<string, string>;
   };
   mediaAssetPage: {
     mediaPlayer: string;

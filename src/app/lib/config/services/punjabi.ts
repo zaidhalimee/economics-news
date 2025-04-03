@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-punjabi',
     atiAnalyticsProducerId: '73',
     atiAnalyticsProducerName: 'PUNJABI',
+    useReverb: true,
     chartbeatDomain: 'punjabi.bbc.co.uk',
     brandName: 'BBC News ਪੰਜਾਬੀ',
     product: 'BBC News',
@@ -40,9 +41,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/punjabi/institutional-49282853',
     isTrustProjectParticipant: true,
     script: gurmukhi,
-    manifestPath: '/manifest.json',
+    manifestPath: '/punjabi/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: 'ਨਿਊਜ਼',
+    homePageTitle: 'ਨਿਊਜ਼',
     showAdPlaceholder: false,
     showRelatedTopics: true,
     translations: {
@@ -220,6 +221,7 @@ export const service: DefaultServiceConfig = {
         video: 'ਵੀਡੀਓ',
         listen: 'ਸੁਣੋ',
         watch: 'ਦੇਖੋ',
+        watchMoments: 'ਸ਼ਾਰਟ ਵੀਡੀਓ ਦੇਖੋ',
         listenLive: 'live ਸੁਣੋ',
         liveLabel: 'LIVE',
         nextLabel: 'NEXT',
@@ -279,10 +281,6 @@ export const service: DefaultServiceConfig = {
       {
         title: 'ਖ਼ਬਰਾਂ',
         url: '/punjabi',
-      },
-      {
-        title: 'ਸਪੋਰਟਸ ਵੂਮੈਨ ਆਫ਼ ਦਿ ਈਅਰ',
-        url: '/punjabi/topics/cwn2w9ydx2xt',
       },
       {
         title: 'ਵੀਡੀਓ',

@@ -1,47 +1,56 @@
-import {
-  awaitATIComponentViewEvent,
-  interceptATIAnalyticsBeacons,
-  COMPONENTS,
-  awaitATIComponentClickEvent,
-} from '../helpers';
+import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { RECOMMENDATIONS } = COMPONENTS;
 
-export const assertRecommendationsComponentView = () => {
+export const assertRecommendationsComponentView = ({
+  pageIdentifier,
+  contentType,
+  useReverb,
+  path,
+}) => {
   it('should send a view event for the Recommendations component', () => {
-    cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
-      cy.visit(url);
+    interceptATIAnalyticsBeacons();
+    cy.visit(path);
 
-      cy.get('[data-e2e="recommendations-heading"]').scrollIntoView({
-        duration: 1000,
-      });
+    cy.get('[data-e2e="recommendations-heading"]').scrollIntoView({
+      duration: 1000,
+    });
 
-      awaitATIComponentViewEvent(RECOMMENDATIONS);
+    assertATIComponentViewEvent({
+      component: RECOMMENDATIONS,
+      pageIdentifier,
+      contentType,
+      useReverb,
     });
   });
 };
 
-export const assertRecommendationsComponentClick = () => {
+export const assertRecommendationsComponentClick = ({
+  pageIdentifier,
+  contentType,
+  useReverb,
+  path,
+}) => {
   it('should send a click event for the Recommendations component', () => {
-    cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
-      cy.visit(url);
+    interceptATIAnalyticsBeacons();
+    cy.visit(path);
 
-      cy.get('[data-e2e="recommendations-heading"]').scrollIntoView({
-        duration: 1000,
-      });
+    cy.get('[data-e2e="recommendations-heading"]').scrollIntoView({
+      duration: 1000,
+    });
 
-      // Click on last item
-      cy.get('[data-e2e="recommendations-heading"]')
-        .find('a')
-        .last()
-        .click({ force: true });
+    // Click on last item
+    cy.get('[data-e2e="recommendations-heading"]')
+      .find('a')
+      .last()
+      .click({ force: true });
 
-      awaitATIComponentClickEvent(RECOMMENDATIONS);
-
-      // return to previous page
-      cy.visit(url);
+    assertATIComponentClickEvent({
+      component: RECOMMENDATIONS,
+      pageIdentifier,
+      contentType,
+      useReverb,
     });
   });
 };

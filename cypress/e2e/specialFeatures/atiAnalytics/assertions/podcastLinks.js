@@ -1,46 +1,53 @@
-import {
-  awaitATIComponentViewEvent,
-  interceptATIAnalyticsBeacons,
-  COMPONENTS,
-  awaitATIComponentClickEvent,
-} from '../helpers';
+import { interceptATIAnalyticsBeacons, COMPONENTS } from '../helpers';
+import { assertATIComponentClickEvent, assertATIComponentViewEvent } from '.';
 
 const { PODCAST_LINKS } = COMPONENTS;
 
-export const assertPodcastLinksComponentView = () => {
+export const assertPodcastLinksComponentView = ({
+  pageIdentifier,
+  contentType,
+  useReverb,
+  path,
+}) => {
   it('should send a view event for the Podcast Links component', () => {
-    cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
-      cy.visit(url);
+    interceptATIAnalyticsBeacons();
+    cy.visit(path);
 
-      cy.get('[data-e2e="podcast-links"]').scrollIntoView({
-        duration: 1000,
-      });
+    cy.get('[data-e2e="podcast-links"]').scrollIntoView({
+      duration: 1000,
+    });
 
-      awaitATIComponentViewEvent(PODCAST_LINKS);
+    assertATIComponentViewEvent({
+      component: PODCAST_LINKS,
+      pageIdentifier,
+      contentType,
+      useReverb,
     });
   });
 };
 
-export const assertPodcastLinksComponentClick = () => {
+export const assertPodcastLinksComponentClick = ({
+  pageIdentifier,
+  contentType,
+  useReverb,
+  path,
+}) => {
   it('should send a click event for the Podcast Links component', () => {
-    cy.url().then(url => {
-      interceptATIAnalyticsBeacons();
-      cy.visit(url);
+    interceptATIAnalyticsBeacons();
+    cy.visit(path);
 
-      cy.get('[data-e2e="podcast-links"]').scrollIntoView({
-        duration: 1000,
-      });
+    cy.get('[data-e2e="podcast-links"]').scrollIntoView({
+      duration: 1000,
+    });
 
-      // Click on the RSS link
-      cy.get('[data-e2e="podcast-links"]')
-        .contains('RSS')
-        .click({ force: true });
+    // Click on the RSS link
+    cy.get('[data-e2e="podcast-links"]').contains('RSS').click();
 
-      awaitATIComponentClickEvent(PODCAST_LINKS);
-
-      // return to previous page
-      cy.visit(url);
+    assertATIComponentClickEvent({
+      component: PODCAST_LINKS,
+      pageIdentifier,
+      contentType,
+      useReverb,
     });
   });
 };

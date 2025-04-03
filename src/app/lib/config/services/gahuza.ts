@@ -13,6 +13,7 @@ export const service: DefaultServiceConfig = {
     atiAnalyticsAppName: 'news-gahuza',
     atiAnalyticsProducerId: '40',
     atiAnalyticsProducerName: 'GAHUZA',
+    useReverb: true,
     chartbeatDomain: 'gahuza.bbc.co.uk',
     brandName: 'BBC News Gahuza',
     product: 'BBC News',
@@ -40,9 +41,9 @@ export const service: DefaultServiceConfig = {
     publishingPrinciples: 'https://www.bbc.com/gahuza/institutional-49283343',
     isTrustProjectParticipant: true,
     script: latin,
-    manifestPath: '/manifest.json',
+    manifestPath: '/gahuza/manifest.json',
     swPath: '/sw.js',
-    frontPageTitle: "Urupapuro rw'itangiriro",
+    homePageTitle: "Urupapuro rw'itangiriro",
     showAdPlaceholder: true,
     showRelatedTopics: true,
     podcastPromo: {
@@ -81,6 +82,18 @@ export const service: DefaultServiceConfig = {
           'Ibindi vyerekeye ingene urwo rubuga rugutwara uburyo (ama mega) buke',
         informationPageLink: 'https://www.bbc.com/gahuza/articles/cn7y7pvem0vo',
         dataSaving: 'Ahagusaba uburyo (ama mega) buke',
+        articleDataSavingLinkText: 'Inyandiko gusa',
+        experiment: {
+          control_text_only: 'Inyandiko gusa',
+          variation_a_explore_data_friendly_version:
+            'Koresha uburyo butwara amahera make',
+          variation_b_data_saving_version: 'Uburyo buziganya amahera',
+          variation_c_read_data_saving_version:
+            'Soma mu buryo buziganya amahera',
+          variation_d_lite_site: 'Site yoroheje',
+          variation_e_2g_optimised_version: '2G Ukoresheje uburyo busanzwe',
+          variation_f_low_data_version: 'Uburyo butwara amahera make',
+        },
       },
       mediaAssetPage: {
         mediaPlayer: 'Ibikinwa',
@@ -369,6 +382,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'Mpuzamahanga',
         url: '/gahuza/topics/c9dvd93jjkkt',
+      },
+      {
+        title: 'Ubuzima',
+        url: '/gahuza/topics/cnq68qp4kxjt',
       },
       {
         title: 'Imikino',
