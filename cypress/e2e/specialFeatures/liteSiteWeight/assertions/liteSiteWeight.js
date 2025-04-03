@@ -6,7 +6,7 @@ const MAX_PAGE_WEIGHT = 100;
 export default ({ path, pageType }) => {
   describe('Page weight', () => {
     let allRequests = [];
-
+    let liveRequests = [];
     before(() => {
       Cypress.automation('remote:debugger:protocol', {
         command: 'Network.setCacheDisabled',
@@ -20,10 +20,13 @@ export default ({ path, pageType }) => {
 
     afterEach(() => {
       allRequests = [];
+      liveRequests = [];
     });
 
     it(`for ${pageType} page should be less than ${MAX_PAGE_WEIGHT}Kb`, () => {
       let totalSize = 0;
+      let liveSize = 0;
+      let localPageWeight;
 
       // eslint-disable-next-line cypress/unsafe-to-chain-command
       cy.wrap(allRequests)
@@ -37,15 +40,41 @@ export default ({ path, pageType }) => {
           }
         })
         .then(() => {
-          const pageWeight = parseFloat(totalSize.toFixed(2));
-          cy.task('table', [
-            {
-              URL: `${Cypress.config().baseUrl}${path}`,
-              'Page Type': pageType,
-              'Page Weight (KB)': pageWeight,
-            },
-          ]);
-          expect(pageWeight).to.be.lessThan(MAX_PAGE_WEIGHT);
+          localPageWeight = parseFloat(totalSize.toFixed(2));
+        })
+        .then(() => {
+          interceptGetRequests(liveRequests);
+          cy.visit(`https://www.bbc.com${path}`);
+          // eslint-disable-next-line cypress/unsafe-to-chain-command
+          cy.wrap(liveRequests)
+            .each(({ url, contentLength }) => {
+              if (contentLength) {
+                liveSize += contentLength;
+              } else {
+                getPageSizeInKB(url).then(size => {
+                  liveSize += size;
+                });
+              }
+            })
+            .then(() => {
+              const livePageWeight = parseFloat(liveSize.toFixed(2));
+              const delta = parseFloat(
+                (
+                  (100 * (localPageWeight - livePageWeight)) /
+                  ((localPageWeight + livePageWeight) / 2)
+                ).toFixed(2),
+              );
+              expect(localPageWeight).to.be.lessThan(MAX_PAGE_WEIGHT);
+              cy.task('table', [
+                {
+                  URL: `${Cypress.config().baseUrl}${path}`,
+                  'Page Type': pageType,
+                  'Local Page Weight (KB)': localPageWeight,
+                  'Live Page Weight (KB)': livePageWeight,
+                  'Delta (%) ': delta,
+                },
+              ]);
+            });
         });
     });
   });
