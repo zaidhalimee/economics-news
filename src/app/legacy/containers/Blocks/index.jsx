@@ -6,17 +6,7 @@ const Clearer = styled.div`
   clear: both;
 `;
 
-let mycounter = 0;
-
-// const StyledWrapper = styled.div`
-//   &:focus {
-//     outline: 3px solid #005ea5; /* Visible focus indicator (e.g., blue outline) */
-//     outline-offset: 2px; /* Space between the outline and the element */
-//   }
-// `;
-
-const Blocks = ({ blocks, componentsToRender, revealedBlockRef }) => {
-  mycounter += 1;
+const Blocks = ({ blocks, componentsToRender }) => {
   return blocks.map((block, index) => {
     const { type, model, id, position, blockGroupType, blockGroupIndex } =
       block;
@@ -27,14 +17,8 @@ const Blocks = ({ blocks, componentsToRender, revealedBlockRef }) => {
 
     const Block = componentsToRender[type];
 
-    let showFocus = 0;
-
     if (!Block) {
       return null;
-    }
-
-    if (type === 'text' || type === 'paragraph') {
-      showFocus += 1;
     }
 
     // Dynamically choose the Wrapper component

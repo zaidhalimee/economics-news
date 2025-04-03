@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { use, MouseEventHandler } from 'react';
+import { use, MouseEventHandler, useEffect } from 'react';
 import { jsx } from '@emotion/react';
 import Text from '#app/components/Text';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
@@ -35,6 +35,22 @@ const ContinueReadingButton = ({
     clickTrackerHandler(event);
     setShowAllContent(event);
   };
+
+  useEffect(() => {
+    if (showAllContent) {
+      const main = document.querySelector('main');
+      // Get the 7th child element of the main element
+      const nthElement = main?.querySelectorAll<HTMLElement>(':scope > *')[7];
+
+      if (nthElement) {
+        nthElement.tabIndex = 0;
+        nthElement.focus();
+        nthElement.addEventListener('blur', () => {
+          nthElement.removeAttribute('tabindex');
+        });
+      }
+    }
+  }, [showAllContent]);
 
   // Hide button when all content is shown
   if (showAllContent || !variation) return null;

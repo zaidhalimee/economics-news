@@ -1,4 +1,4 @@
-import React, { useContext, forwardRef } from 'react';
+import React, { useContext } from 'react';
 import Paragraph from '#psammead/psammead-paragraph/src';
 import styled from '@emotion/styled';
 import { GEL_GROUP_4_SCREEN_WIDTH_MIN } from '#psammead/gel-foundations/src/breakpoints';
@@ -21,24 +21,21 @@ const StyledParagraph = styled(Paragraph)`
   }
 `;
 
-const ParagraphContainer = forwardRef(
-  ({ blocks, className, index, showFocus, mycounter, tabIndex }, ref) => {
-    const { script, service, dir } = useContext(ServiceContext);
-    return (
-      <GridItemMedium>
-        <StyledParagraph
-          ref={ref} // Attach the ref here
-          script={script}
-          service={service}
-          dir={dir}
-          className={className}
-          index={index}
-        >
-          <Blocks blocks={blocks} componentsToRender={componentsToRender} />
-        </StyledParagraph>
-      </GridItemMedium>
-    );
-  },
-);
+const ParagraphContainer = ({ blocks, className }) => {
+  const { script, service, dir } = useContext(ServiceContext);
+
+  return (
+    <GridItemMedium>
+      <StyledParagraph
+        script={script}
+        service={service}
+        dir={dir}
+        className={className}
+      >
+        <Blocks blocks={blocks} componentsToRender={componentsToRender} />
+      </StyledParagraph>
+    </GridItemMedium>
+  );
+};
 
 export default ParagraphContainer;

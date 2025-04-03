@@ -1,6 +1,6 @@
 /** @jsx jsx */
 /* @jsxFrag React.Fragment */
-import React, { useContext, useState, useEffect, useRef } from 'react';
+import { useContext, useState } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 import useToggle from '#hooks/useToggle';
 import { singleTextBlock } from '#app/models/blocks';
@@ -126,23 +126,7 @@ const ArticlePage = ({
 }) => {
   const [showAllContent, setShowAllContent] = useState(false);
   const { isLite, isAmp, isApp } = useContext(RequestContext);
-  const revealedBlockRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    if (showAllContent) {
-      const main = document.querySelector('main');
-      // Get the 7th child element of the main element
-      const nthElement = main?.querySelectorAll<HTMLElement>(':scope > *')[7];
-
-      if (nthElement) {
-        nthElement.tabIndex = 0;
-        nthElement.focus();
-        nthElement.addEventListener('blur', () => {
-          nthElement.removeAttribute('tabindex');
-        });
-      }
-    }
-  }, [showAllContent]);
   const {
     articleAuthor,
     isTrustProjectParticipant,
@@ -334,7 +318,6 @@ const ArticlePage = ({
             <Blocks
               blocks={articleBlocks}
               componentsToRender={componentsToRender}
-              revealedBlockRef={revealedBlockRef}
             />
             {showContinueReadingButton && (
               <ContinueReadingButton
