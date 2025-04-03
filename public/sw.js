@@ -24,6 +24,11 @@ self.addEventListener('periodicsync', event => {
 });
 
 async function showNotification() {
+  if (Notification.permission !== 'granted') {
+    console.warn('Notification permission is not granted.');
+    return; // Exit early if notifications are not enabled
+  }
+
   const title = "What's happened this week on BBC Mundo";
   const options = {
     body: 'Check out these stories',
@@ -49,7 +54,12 @@ async function showNotification() {
     ],
   };
 
-  self.registration.showNotification(title, options);
+  try {
+    await self.registration.showNotification(title, options);
+    console.log('Notification displayed successfully.');
+  } catch (error) {
+    console.error('Failed to display notification:', error);
+  }
 }
 
 const fetchEventHandler = async event => {
