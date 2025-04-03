@@ -4,7 +4,7 @@ import getPageSizeInKB from '../helpers/getPageSizeInKB';
 const MAX_PAGE_WEIGHT = 100;
 
 export default ({ path, pageType }) => {
-  describe('Page weight', () => {
+  describe('', () => {
     let allRequests = [];
     let liveRequests = [];
     before(() => {
@@ -23,7 +23,7 @@ export default ({ path, pageType }) => {
       liveRequests = [];
     });
 
-    it(`for ${pageType} page should be less than ${MAX_PAGE_WEIGHT}Kb`, () => {
+    it(`Page weight for ${pageType} page should be less than ${MAX_PAGE_WEIGHT}Kb`, () => {
       let totalSize = 0;
       let liveSize = 0;
       let localPageWeight;
