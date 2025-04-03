@@ -16,7 +16,7 @@ const eventTrackingData = {
 };
 
 const Recommendations = ({ data }: { data: Recommendation[] }) => {
-  const { recommendations, translations, script, service, dir } =
+  const { recommendations, mostRead, translations, script, service, dir } =
     useContext(ServiceContext);
 
   const viewEventTracker = useViewTracker(eventTrackingData);
@@ -32,10 +32,11 @@ const Recommendations = ({ data }: { data: Recommendation[] }) => {
     'aria-labelledby': labelId,
   };
 
-  const { hasStoryRecommendations, skipLink } = recommendations || {};
+  const { hasMostRead } = mostRead || {};
+  const { skipLink } = recommendations || {};
   const { text, endTextVisuallyHidden } = skipLink || {};
 
-  if (!hasStoryRecommendations || !data?.length) return null;
+  if (!hasMostRead || !data?.length) return null;
 
   const title = translations?.recommendationTitle ?? 'Recommended stories';
 
