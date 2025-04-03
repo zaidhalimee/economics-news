@@ -38,7 +38,13 @@ export default ({ path, pageType }) => {
         })
         .then(() => {
           const pageWeight = parseFloat(totalSize.toFixed(2));
-          cy.task('log', { pageType, pageWeight });
+          cy.task('table', [
+            {
+              URL: `${Cypress.config().baseUrl}${path}`,
+              'Page Type': pageType,
+              'Page Weight (KB)': pageWeight,
+            },
+          ]);
           expect(pageWeight).to.be.lessThan(MAX_PAGE_WEIGHT);
         });
     });
