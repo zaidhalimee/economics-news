@@ -6,6 +6,8 @@ describe('extractHeader', () => {
       'x-bbc-edge-isuk': 'yes',
     });
     expect(actual).toStrictEqual({
+      DeviceMemory: 8,
+      ECT: '4g',
       bbcOrigin: null,
       isUK: true,
       showAdsBasedOnLocation: false,
@@ -18,6 +20,8 @@ describe('extractHeader', () => {
       'x-country': 'gb',
     });
     expect(actual).toStrictEqual({
+      DeviceMemory: 8,
+      ECT: '4g',
       bbcOrigin: null,
       isUK: true,
       showAdsBasedOnLocation: false,
@@ -31,6 +35,8 @@ describe('extractHeader', () => {
       'x-bbc-edge-isuk': 'no',
     });
     expect(actual).toStrictEqual({
+      DeviceMemory: 8,
+      ECT: '4g',
       bbcOrigin: null,
       isUK: false,
       showAdsBasedOnLocation: false,
@@ -44,6 +50,8 @@ describe('extractHeader', () => {
       'x-bbc-edge-isuk': 'yes',
     });
     expect(actual).toStrictEqual({
+      DeviceMemory: 8,
+      ECT: '4g',
       bbcOrigin: null,
       isUK: true,
       showAdsBasedOnLocation: false,
@@ -56,6 +64,8 @@ describe('extractHeader', () => {
       'x-bbc-edge-country': 'za',
     });
     expect(actual).toStrictEqual({
+      DeviceMemory: 8,
+      ECT: '4g',
       bbcOrigin: null,
       isUK: null,
       showAdsBasedOnLocation: false,
@@ -68,6 +78,8 @@ describe('extractHeader', () => {
       'bbc-adverts': 'true',
     });
     expect(actual).toStrictEqual({
+      DeviceMemory: 8,
+      ECT: '4g',
       bbcOrigin: null,
       isUK: null,
       showAdsBasedOnLocation: true,
@@ -80,7 +92,37 @@ describe('extractHeader', () => {
       'bbc-origin': 'https://www.bbc.co.uk/news',
     });
     expect(actual).toStrictEqual({
+      DeviceMemory: 8,
+      ECT: '4g',
       bbcOrigin: 'https://www.bbc.co.uk/news',
+      isUK: null,
+      showAdsBasedOnLocation: false,
+      showCookieBannerBasedOnCountry: true,
+    });
+  });
+
+  it(`sets DeviceMemory when 'device-memory' header is set`, () => {
+    const actual = extractHeaders({
+      'device-memory': '4',
+    });
+    expect(actual).toStrictEqual({
+      DeviceMemory: '4',
+      ECT: '4g',
+      bbcOrigin: null,
+      isUK: null,
+      showAdsBasedOnLocation: false,
+      showCookieBannerBasedOnCountry: true,
+    });
+  });
+
+  it(`sets ECT when 'ECT' header is set`, () => {
+    const actual = extractHeaders({
+      ect: '2g',
+    });
+    expect(actual).toStrictEqual({
+      DeviceMemory: 8,
+      ECT: '2g',
+      bbcOrigin: null,
       isUK: null,
       showAdsBasedOnLocation: false,
       showCookieBannerBasedOnCountry: true,
