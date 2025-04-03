@@ -17,9 +17,9 @@ self.addEventListener('install', event => {
   });
 });
 
-self.addEventListener('periodicsync', event => {
+self.addEventListener('periodicsync', async event => {
   if (event.tag === 'get-latest-news') {
-    event.waitUntil(showNotification());
+    await showNotification();
   }
 });
 
