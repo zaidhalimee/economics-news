@@ -84,7 +84,7 @@ const Recommendations = ({ data }: { data: Recommendation[] }) => {
             ref={viewEventTracker}
           >
             {data?.map((recommendation, index) => (
-              <li key={recommendation.title} role="listitem">
+              <li key={recommendation.id} role="listitem">
                 <RecommendationsItem
                   recommendation={recommendation}
                   index={index}

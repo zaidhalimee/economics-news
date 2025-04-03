@@ -45,6 +45,7 @@ export type CpsRecommendation = {
 };
 
 export type RecommendationNew = {
+  id: string;
   title: string;
   image: {
     width: number;
