@@ -3,6 +3,7 @@ import { render } from '#app/components/react-testing-library-with-providers';
 import RecommendationsItem from '.';
 
 const recommendationFixture = {
+  id: '123',
   title: 'शेख़ मुजीब और इंदिरा गांधी के बीच हुए समझौते पर क्यों हुआ था विवाद?',
   image: {
     width: 1824,

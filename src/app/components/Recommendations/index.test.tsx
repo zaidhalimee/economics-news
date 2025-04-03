@@ -4,6 +4,7 @@ import Recommendations from '.';
 
 const recommendationFixtures = [
   {
+    id: '123',
     title:
       'शेख़ मुजीब और इंदिरा गांधी के बीच हुए समझौते पर क्यों हुआ था विवाद?',
     image: {
@@ -17,6 +18,7 @@ const recommendationFixtures = [
     href: 'https://www.bbc.co.uk',
   },
   {
+    id: '456',
     title:
       'मोहम्मद यूनुस चीन से बांग्लादेश के लिए क्या लाए, भारत को क्या तीस्ता प्रोजेक्ट पर मिला झटका?',
     image: {
