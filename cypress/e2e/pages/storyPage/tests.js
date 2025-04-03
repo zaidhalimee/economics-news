@@ -5,6 +5,7 @@ import paths from 'ramda/src/paths';
 import getDataUrl from '../../../support/helpers/getDataUrl';
 import { crossPlatform as mostReadAssertions } from '../mostReadPage/mostReadAssertions';
 import getAppEnv from '../../../support/helpers/getAppEnv';
+import { SERVICE_WITH_NEW_RECOMMENDATIONS } from '../../../../src/app/components/Recommendations';
 
 const twoYearsAgo = new Date().getFullYear() - 2;
 
@@ -148,17 +149,12 @@ export const testsThatFollowSmokeTestConfig = ({
   });
 
   describe(`Recommendations on ${service} ${pageType}`, () => {
-    it('Recommendations have images', () => {
-      isArticleLessThanTwoYearsOld().then(runRecommendationTests => {
-        if (runRecommendationTests) {
-          cy.getToggles(service);
-          cy.fixture(`toggles/${service}.json`).then(toggles => {
-            const recommendationsEnabled = path(
-              ['cpsRecommendations', 'enabled'],
-              toggles,
-            );
-            cy.log(`Recommendations enabled? ${recommendationsEnabled}`);
-            if (recommendationsEnabled) {
+    // TODO: Remove this check when the new recommendations are rolled out to all services
+    if (SERVICE_WITH_NEW_RECOMMENDATIONS.includes(service)) {
+      describe('New Recommendations', () => {
+        it('Recommendations have images', () => {
+          isArticleLessThanTwoYearsOld().then(runRecommendationTests => {
+            if (runRecommendationTests) {
               cy.get(`[data-e2e=recommendations-heading]`).scrollIntoView();
               cy.get('[data-e2e=recommendations-heading] > div > ul > li').each(
                 (item, index) => {
@@ -166,38 +162,30 @@ export const testsThatFollowSmokeTestConfig = ({
                     cy.log(`List item number: ${index}`);
                     cy.log(`isAmp= ${isAmp}`);
                     if (isAmp) {
-                      cy.get(
-                        `[data-e2e=story-promo-wrapper] > div > [data-e2e=image-placeholder] > amp-img`,
-                      ).should('have.attr', 'width');
+                      cy.get(`[data-e2e=story-promo-wrapper] amp-img`).should(
+                        'have.attr',
+                        'src',
+                      );
                     } else {
-                      cy.get(
-                        `[data-e2e=story-promo-wrapper] > div > [data-e2e=image-placeholder] > div > img`,
-                      ).should('have.attr', 'width');
+                      cy.get(`[data-e2e=story-promo-wrapper] img`).should(
+                        'have.attr',
+                        'src',
+                      );
                     }
                   });
                 },
               );
+            } else {
+              cy.log(
+                'Only tests on live and for articles less than 2 years old due to lack of test data',
+              );
             }
           });
-        } else {
-          cy.log(
-            'Only tests on live and for articles less than 2 years old due to lack of test data',
-          );
-        }
-      });
-    });
+        });
 
-    it('Recommendations have titles', () => {
-      isArticleLessThanTwoYearsOld().then(runRecommendationTests => {
-        if (runRecommendationTests) {
-          cy.getToggles(service);
-          cy.fixture(`toggles/${service}.json`).then(toggles => {
-            const recommendationsEnabled = path(
-              ['cpsRecommendations', 'enabled'],
-              toggles,
-            );
-            cy.log(`Recommendations enabled? ${recommendationsEnabled}`);
-            if (recommendationsEnabled) {
+        it('Recommendations have titles', () => {
+          isArticleLessThanTwoYearsOld().then(runRecommendationTests => {
+            if (runRecommendationTests) {
               cy.get(`[data-e2e=recommendations-heading]`).scrollIntoView();
               cy.get('[data-e2e=recommendations-heading] > div > ul > li').each(
                 (item, index) => {
@@ -211,14 +199,89 @@ export const testsThatFollowSmokeTestConfig = ({
                   });
                 },
               );
+            } else {
+              cy.log(
+                'Only tests on live and for articles less than 2 years old due to lack of test data',
+              );
             }
           });
-        } else {
-          cy.log(
-            'Only tests on live and for articles less than 2 years old due to lack of test data',
-          );
-        }
+        });
       });
-    });
+    } else {
+      describe('Legacy Recommendations', () => {
+        it('Recommendations have images', () => {
+          isArticleLessThanTwoYearsOld().then(runRecommendationTests => {
+            if (runRecommendationTests) {
+              cy.getToggles(service);
+              cy.fixture(`toggles/${service}.json`).then(toggles => {
+                const recommendationsEnabled = path(
+                  ['cpsRecommendations', 'enabled'],
+                  toggles,
+                );
+                cy.log(`Recommendations enabled? ${recommendationsEnabled}`);
+                if (recommendationsEnabled) {
+                  cy.get(`[data-e2e=recommendations-heading]`).scrollIntoView();
+                  cy.get(
+                    '[data-e2e=recommendations-heading] > div > ul > li',
+                  ).each((item, index) => {
+                    cy.wrap(item).within(() => {
+                      cy.log(`List item number: ${index}`);
+                      cy.log(`isAmp= ${isAmp}`);
+                      if (isAmp) {
+                        cy.get(
+                          `[data-e2e=story-promo-wrapper] > div > [data-e2e=image-placeholder] > amp-img`,
+                        ).should('have.attr', 'width');
+                      } else {
+                        cy.get(
+                          `[data-e2e=story-promo-wrapper] > div > [data-e2e=image-placeholder] > div > img`,
+                        ).should('have.attr', 'width');
+                      }
+                    });
+                  });
+                }
+              });
+            } else {
+              cy.log(
+                'Only tests on live and for articles less than 2 years old due to lack of test data',
+              );
+            }
+          });
+        });
+
+        it('Recommendations have titles', () => {
+          isArticleLessThanTwoYearsOld().then(runRecommendationTests => {
+            if (runRecommendationTests) {
+              cy.getToggles(service);
+              cy.fixture(`toggles/${service}.json`).then(toggles => {
+                const recommendationsEnabled = path(
+                  ['cpsRecommendations', 'enabled'],
+                  toggles,
+                );
+                cy.log(`Recommendations enabled? ${recommendationsEnabled}`);
+                if (recommendationsEnabled) {
+                  cy.get(`[data-e2e=recommendations-heading]`).scrollIntoView();
+                  cy.get(
+                    '[data-e2e=recommendations-heading] > div > ul > li',
+                  ).each((item, index) => {
+                    cy.wrap(item).within(() => {
+                      cy.log(`List item number: ${index + 1}`);
+                      cy.get(`[data-e2e=story-promo-wrapper] > div > div > a`)
+                        .invoke('text')
+                        .then(text => {
+                          expect(text.length).to.be.at.least(1);
+                        });
+                    });
+                  });
+                }
+              });
+            } else {
+              cy.log(
+                'Only tests on live and for articles less than 2 years old due to lack of test data',
+              );
+            }
+          });
+        });
+      });
+    }
   });
 };
