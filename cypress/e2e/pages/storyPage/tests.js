@@ -5,7 +5,7 @@ import paths from 'ramda/src/paths';
 import getDataUrl from '../../../support/helpers/getDataUrl';
 import { crossPlatform as mostReadAssertions } from '../mostReadPage/mostReadAssertions';
 import getAppEnv from '../../../support/helpers/getAppEnv';
-import { SERVICE_WITH_NEW_RECOMMENDATIONS } from '../../../../src/app/components/Recommendations';
+import SERVICES_WITH_NEW_RECOMMENDATIONS from '../../../../src/app/components/Recommendations/config';
 
 const twoYearsAgo = new Date().getFullYear() - 2;
 
@@ -150,7 +150,7 @@ export const testsThatFollowSmokeTestConfig = ({
 
   describe(`Recommendations on ${service} ${pageType}`, () => {
     // TODO: Remove this check when the new recommendations are rolled out to all services
-    if (SERVICE_WITH_NEW_RECOMMENDATIONS.includes(service)) {
+    if (SERVICES_WITH_NEW_RECOMMENDATIONS.includes(service)) {
       describe('New Recommendations', () => {
         it('Recommendations have images', () => {
           isArticleLessThanTwoYearsOld().then(runRecommendationTests => {

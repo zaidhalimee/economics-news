@@ -11,18 +11,6 @@ import { RecommendationNew as Recommendation } from '#app/models/types/onwardJou
 import RecommendationsItem from './RecommendationsItem';
 import styles from './index.styles';
 
-export const SERVICE_WITH_NEW_RECOMMENDATIONS = [
-  'arabic',
-  'hindi',
-  'indonesia',
-  'mundo',
-  'persian',
-  'pidgin',
-  'portuguese',
-  'thai',
-  'turkce',
-];
-
 const eventTrackingData = {
   componentName: 'wsoj',
 };
