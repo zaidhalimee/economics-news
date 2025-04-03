@@ -4,9 +4,6 @@ import React, { useContext, useState, useEffect, useRef } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 import useToggle from '#hooks/useToggle';
 import { singleTextBlock } from '#app/models/blocks';
-import useOptimizelyMvtVariation from '#app/hooks/useOptimizelyMvtVariation';
-import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
-import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
 import ArticleMetadata from '#containers/ArticleMetadata';
 import { RequestContext } from '#contexts/RequestContext';
 import Headings from '#containers/Headings';
@@ -19,7 +16,6 @@ import ComscoreAnalytics from '#containers/ComscoreAnalytics';
 import SocialEmbedContainer from '#containers/SocialEmbed';
 import MediaLoader from '#app/components/MediaLoader';
 import { PHOTO_GALLERY_PAGE, STORY_PAGE } from '#app/routes/utils/pageTypes';
-import OPTIMIZELY_CONFIG from '#app/lib/config/optimizely';
 
 import {
   getArticleId,
@@ -68,7 +64,7 @@ import Disclaimer from '../../components/Disclaimer';
 import SecondaryColumn from './SecondaryColumn';
 import styles from './ArticlePage.styles';
 import { ComponentToRenderProps, TimeStampProps } from './types';
-import ReadMoreButton from './ReadMoreButton';
+import ContinueReadingButton from './ContinueReadingButton';
 import ArticleHeadline from './ArticleHeadline';
 
 const getImageComponent =
@@ -121,42 +117,32 @@ const getHeadlineComponent = (props: ComponentToRenderProps) => (
   <ArticleHeadline {...props} />
 );
 
-const ArticlePage = ({ pageData }: { pageData: Article }) => {
+const ArticlePage = ({
+  pageData,
+  continueReadingEnabled = false,
+}: {
+  pageData: Article;
+  continueReadingEnabled?: boolean;
+}) => {
   const [showAllContent, setShowAllContent] = useState(false);
   const { isLite, isAmp, isApp } = useContext(RequestContext);
   const revealedBlockRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const myfirstPara = Array.from(
-      document.querySelectorAll('main > div'),
-    ).filter(
-      s => window.getComputedStyle(s).getPropertyValue('display') === 'none',
-    );
-    if (myfirstPara[0] && !revealedBlockRef.current) {
-      revealedBlockRef.current = myfirstPara[0].querySelector(
-        'p',
-      ) as HTMLDivElement;
-      revealedBlockRef.current.tabIndex = 0;
-    }
-    // if (showAllContent && revealedBlockRef.current) {
-    //   // revealedBlockRef.current.style.backgroundColor = 'red';
-    //   window.setTimeout(() => {
-    //     if (revealedBlockRef.current) {
-    //       revealedBlockRef.current.focus();
-    //     }
-    //   }, 0);
-    // }
-  }, [showAllContent, revealedBlockRef]);
-  useEffect(() => {
-    if (showAllContent && revealedBlockRef.current) {
-      window.setTimeout(() => {
-        if (revealedBlockRef.current) {
-          revealedBlockRef.current.focus();
-        }
-      }, 0);
-    }
-  }, [showAllContent, revealedBlockRef]);
+    if (showAllContent) {
+      const main = document.querySelector('main');
+      // Get the 7th child element of the main element
+      const nthElement = main?.querySelectorAll<HTMLElement>(':scope > *')[7];
 
+      if (nthElement) {
+        nthElement.tabIndex = 0;
+        nthElement.focus();
+        nthElement.addEventListener('blur', () => {
+          nthElement.removeAttribute('tabindex');
+        });
+      }
+    }
+  }, [showAllContent]);
   const {
     articleAuthor,
     isTrustProjectParticipant,
@@ -170,11 +156,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const {
     palette: { GREY_2, WHITE },
   } = useTheme();
-
-  const experimentVariant = useOptimizelyMvtVariation(
-    OPTIMIZELY_CONFIG.ruleKey,
-  );
-  const isInExperiment = experimentVariant && experimentVariant !== 'off';
 
   const allowAdvertising = pageData?.metadata?.allowAdvertising ?? false;
   const adcampaign = pageData?.metadata?.adCampaignKeyword;
@@ -222,7 +203,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const atiData = {
     ...atiAnalytics,
     ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
-    ...(isInExperiment && { experimentVariant }),
   };
 
   const componentsToRender = {
@@ -279,17 +259,20 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const showTopics = Boolean(showRelatedTopics && topics.length > 0);
 
-  const enableReadMoreExperiment = !isAmp && !isLite && !isApp; // add check for is in experiment
-
-  const readMoreButtonVariation = (() => {
+  const continueReadingButtonVariation = (() => {
     if (service === 'pidgin' || service === 'urdu') {
       return 'A';
     }
     if (service === 'mundo' || service === 'persian') {
       return 'B';
     }
+
     return null;
   })();
+
+  const showContinueReadingButton = Boolean(
+    continueReadingButtonVariation && !isAmp && !isLite && !isApp,
+  );
 
   return (
     <div css={styles.pageWrapper}>
@@ -342,7 +325,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           <main
             css={[
               styles.mainContent,
-              ...(enableReadMoreExperiment && readMoreButtonVariation
+              ...(showContinueReadingButton
                 ? [!showAllContent && styles.contentHidden]
                 : []),
             ]}
@@ -353,11 +336,11 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
               componentsToRender={componentsToRender}
               revealedBlockRef={revealedBlockRef}
             />
-            {enableReadMoreExperiment && readMoreButtonVariation && (
-              <ReadMoreButton
+            {showContinueReadingButton && (
+              <ContinueReadingButton
                 showAllContent={showAllContent}
                 setShowAllContent={() => setShowAllContent(true)}
-                variation={readMoreButtonVariation}
+                variation={continueReadingButtonVariation}
               />
             )}
           </main>
@@ -365,7 +348,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
             <RelatedTopics
               css={[
                 styles.relatedTopics,
-                ...(enableReadMoreExperiment
+                ...(showContinueReadingButton
                   ? [!showAllContent && styles.hideRelatedTopics]
                   : []),
               ]}
@@ -394,12 +377,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           mobileDivider={showTopics}
           sendOptimizelyEvents={false}
         />
-      )}
-      {isInExperiment && (
-        <>
-          <OptimizelyArticleCompleteTracking />
-          <OptimizelyPageViewTracking />
-        </>
       )}
     </div>
   );

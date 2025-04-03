@@ -47,16 +47,11 @@ const Blocks = ({ blocks, componentsToRender, revealedBlockRef }) => {
     return (
       <Wrapper key={id}>
         <Block
-          ref={revealedBlockRef} // Attach ref to the 7th block
-          tabIndex={revealedBlockRef ? -1 : 0} // Make it focusable
           position={position}
           type={type}
           typeOfPreviousBlock={typeOfPreviousBlock}
           blockGroupType={blockGroupType}
           blockGroupIndex={blockGroupIndex}
-          index={showFocus ? index : null}
-          showFocus={showFocus}
-          mycounter={mycounter}
           {...model}
         />
       </Wrapper>

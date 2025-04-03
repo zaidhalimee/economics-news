@@ -26,6 +26,7 @@ export interface Translations {
     informationPageLink: string;
     dataSaving: string;
     articleDataSavingLinkText: string;
+    experiment?: Record<string, string>;
   };
   mediaAssetPage: {
     mediaPlayer: string;
@@ -54,6 +55,7 @@ export interface Translations {
     404: TranslationsError;
     500: TranslationsError;
   };
+  continueReading?: string;
   byline?: {
     author?: string;
     articleInformation?: string;

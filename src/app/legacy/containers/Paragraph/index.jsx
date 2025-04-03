@@ -13,26 +13,12 @@ import Inline from '../InlineContainer';
 const componentsToRender = { fragment, urlLink: InlineLink, inline: Inline };
 
 const StyledParagraph = styled(Paragraph)`
-  &:active {
-    color: red;
-  }
-
-  &:focus {
-    color: red;
-  }
-
   @media (min-width: ${GEL_GROUP_4_SCREEN_WIDTH_MIN}) {
     ${({ dir }) =>
       dir === 'ltr'
         ? `padding-right: ${GEL_SPACING_QUIN};`
         : `padding-left: ${GEL_SPACING_QUIN};`}
   }
-  ${({ mycounter }) =>
-    mycounter === 3 &&
-    `
-    outline: 3px solid #005ea5; /* Visible focus indicator (e.g., blue outline) */
-    outline-offset: 2px; /* Space between the outline and the element */
-  `}
 `;
 
 const ParagraphContainer = forwardRef(
@@ -47,8 +33,6 @@ const ParagraphContainer = forwardRef(
           dir={dir}
           className={className}
           index={index}
-          mycounter={mycounter}
-          tabIndex={0}
         >
           <Blocks blocks={blocks} componentsToRender={componentsToRender} />
         </StyledParagraph>
