@@ -38,7 +38,7 @@ export default ({ path, pageType }) => {
           cy.visit(`https://www.bbc.com${path}`);
 
           getTotalPageSize(liveRequests).then(
-            ({ totalSize: livePageWeight }) => {
+            ({ totalSize: livePageWeight, requestSizes: liveRequestSizes }) => {
               const percentageDifference =
                 (100 * (localPageWeight - livePageWeight)) /
                 ((localPageWeight + livePageWeight) / 2);
@@ -46,8 +46,9 @@ export default ({ path, pageType }) => {
               const delta = roundTo2Decimals(percentageDifference);
               expect(localPageWeight).to.be.lessThan(MAX_PAGE_WEIGHT_KB);
               const localRequestSizesData = formatTableData(localRequestSizes);
-
+              const liveRequestSizesData = formatTableData(liveRequestSizes);
               cy.task('table', localRequestSizesData);
+              cy.task('table', liveRequestSizesData);
               cy.task('table', [
                 {
                   URL: `${Cypress.config().baseUrl}${path}`,

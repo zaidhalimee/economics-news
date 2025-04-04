@@ -10,6 +10,7 @@ export default requests => {
     .wrap(requests)
     .each(({ url, contentLength }) => {
       if (contentLength) {
+        requestSizes.push({ url, size: contentLength });
         totalSize += contentLength;
       } else {
         getPageSizeInKB(url).then(size => {
