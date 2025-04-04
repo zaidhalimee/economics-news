@@ -14,7 +14,7 @@ describe('Message', () => {
     const text = container.querySelector('p')?.innerHTML;
 
     expect(text).toEqual(
-      'Help reduce your power and data usage by not playing video content.',
+      'Ayude a reducir su uso de energía y datos al no reproducir contenido de video.',
     );
     expect(container).toMatchSnapshot();
   });

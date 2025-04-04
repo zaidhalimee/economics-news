@@ -170,7 +170,7 @@ exports[`Message should render a 'Help reduce your power consumption' message 1`
           class="emotion-2"
           id=":r0:"
         >
-          Help reduce your power and data usage by not playing video content.
+          Ayude a reducir su uso de energía y datos al no reproducir contenido de video.
         </p>
       </div>
       <div
@@ -199,7 +199,7 @@ exports[`Message should render a 'Help reduce your power consumption' message 1`
           <span
             class="emotion-6"
           >
-            Load Video
+            Cargar vídeo
             <span
               class="emotion-7"
             >

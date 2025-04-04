@@ -11,22 +11,6 @@ exports[`Media Player: Placeholder should render a video placeholder 1`] = `
   cursor: default;
 }
 
-.emotion-0:hover>button,
-.emotion-0:focus>button {
-  background-color: #B80000;
-}
-
-.emotion-0:hover .withTranscriptButtonFocus,
-.emotion-0:focus .withTranscriptButtonFocus {
-  background-color: #B80000;
-  color: #FFFFFF;
-}
-
-.emotion-0:hover .withTranscriptButtonFocus svg,
-.emotion-0:focus .withTranscriptButtonFocus svg {
-  color: #FFFFFF;
-}
-
 @media screen and (forced-colors: active) {
   .emotion-0:hover>button,
   .emotion-0:focus>button {
@@ -348,22 +332,6 @@ exports[`Media Player: Placeholder should render a video placeholder with guidan
 
 .no-js .emotion-0 {
   cursor: default;
-}
-
-.emotion-0:hover>button,
-.emotion-0:focus>button {
-  background-color: #B80000;
-}
-
-.emotion-0:hover .withTranscriptButtonFocus,
-.emotion-0:focus .withTranscriptButtonFocus {
-  background-color: #B80000;
-  color: #FFFFFF;
-}
-
-.emotion-0:hover .withTranscriptButtonFocus svg,
-.emotion-0:focus .withTranscriptButtonFocus svg {
-  color: #FFFFFF;
 }
 
 @media screen and (forced-colors: active) {
@@ -721,22 +689,6 @@ exports[`Media Player: Placeholder should render a video placeholder without dur
   cursor: default;
 }
 
-.emotion-0:hover>button,
-.emotion-0:focus>button {
-  background-color: #B80000;
-}
-
-.emotion-0:hover .withTranscriptButtonFocus,
-.emotion-0:focus .withTranscriptButtonFocus {
-  background-color: #B80000;
-  color: #FFFFFF;
-}
-
-.emotion-0:hover .withTranscriptButtonFocus svg,
-.emotion-0:focus .withTranscriptButtonFocus svg {
-  color: #FFFFFF;
-}
-
 @media screen and (forced-colors: active) {
   .emotion-0:hover>button,
   .emotion-0:focus>button {
@@ -1035,22 +987,6 @@ exports[`Media Player: Placeholder should render an audio placeholder 1`] = `
 
 .no-js .emotion-0 {
   cursor: default;
-}
-
-.emotion-0:hover>button,
-.emotion-0:focus>button {
-  background-color: #B80000;
-}
-
-.emotion-0:hover .withTranscriptButtonFocus,
-.emotion-0:focus .withTranscriptButtonFocus {
-  background-color: #B80000;
-  color: #FFFFFF;
-}
-
-.emotion-0:hover .withTranscriptButtonFocus svg,
-.emotion-0:focus .withTranscriptButtonFocus svg {
-  color: #FFFFFF;
 }
 
 @media screen and (forced-colors: active) {
@@ -1369,22 +1305,6 @@ exports[`Media Player: Placeholder should render an audio placeholder without du
   cursor: default;
 }
 
-.emotion-0:hover>button,
-.emotion-0:focus>button {
-  background-color: #B80000;
-}
-
-.emotion-0:hover .withTranscriptButtonFocus,
-.emotion-0:focus .withTranscriptButtonFocus {
-  background-color: #B80000;
-  color: #FFFFFF;
-}
-
-.emotion-0:hover .withTranscriptButtonFocus svg,
-.emotion-0:focus .withTranscriptButtonFocus svg {
-  color: #FFFFFF;
-}
-
 @media screen and (forced-colors: active) {
   .emotion-0:hover>button,
   .emotion-0:focus>button {
@@ -1676,22 +1596,6 @@ exports[`Media Player: Placeholder should render no-js styles when noJsClassName
 
 .no-js .emotion-0 {
   cursor: default;
-}
-
-.emotion-0:hover>button,
-.emotion-0:focus>button {
-  background-color: #B80000;
-}
-
-.emotion-0:hover .withTranscriptButtonFocus,
-.emotion-0:focus .withTranscriptButtonFocus {
-  background-color: #B80000;
-  color: #FFFFFF;
-}
-
-.emotion-0:hover .withTranscriptButtonFocus svg,
-.emotion-0:focus .withTranscriptButtonFocus svg {
-  color: #FFFFFF;
 }
 
 @media screen and (forced-colors: active) {
