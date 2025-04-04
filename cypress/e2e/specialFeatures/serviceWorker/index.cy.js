@@ -18,6 +18,18 @@ const testSuites = [
     service: 'pidgin',
     tests,
   },
+  {
+    path: '/serbian/articles/crm32wvejv1o/cyr?renderer_env=live',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'serbian',
+    tests,
+  },
+  {
+    path: '/serbian/articles/crm32wvejv1o/lat?renderer_env=live',
+    runforEnv: ['local', 'test', 'live'],
+    service: 'serbian',
+    tests,
+  },
 ];
 
 runTestsForPage({
