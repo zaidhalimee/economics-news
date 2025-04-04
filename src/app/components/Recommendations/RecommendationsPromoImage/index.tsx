@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { createSrcsets } from '#lib/utilities/srcSet';
 import buildIChefURL from '#lib/utilities/ichefURL';
 import Image from '#app/components/Image';
-import { RecommendationNew as Recommendation } from '#models/types/onwardJourney';
+import { Recommendation } from '#models/types/onwardJourney';
 import { RequestContext } from '#app/contexts/RequestContext';
 
 const RecommendationsImage = ({

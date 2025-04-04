@@ -279,9 +279,6 @@ export const service: DefaultServiceConfig = {
     radioSchedule: {
       hasRadioSchedule: false,
     },
-    recommendations: {
-      hasStoryRecommendations: false,
-    },
     footer: {
       trustProjectLink: {
         href: 'https://www.bbc.com/gujarati/institutional-50409883',

@@ -344,9 +344,6 @@ export const service: DefaultServiceConfig = {
       header: 'ያድምጡ',
       durationLabel: 'ርዝመት %duration%',
     },
-    recommendations: {
-      hasStoryRecommendations: false,
-    },
     footer: {
       trustProjectLink: {
         href: 'https://www.bbc.com/amharic/institutional-49283133',

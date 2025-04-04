@@ -283,9 +283,6 @@ export const service: DefaultServiceConfig = {
       header: 'Barnaamijyada Idaacadda',
       durationLabel: 'Muddada %duration%',
     },
-    recommendations: {
-      hasStoryRecommendations: false,
-    },
     footer: {
       trustProjectLink: {
         href: 'https://www.bbc.com/somali/hayadeed-49283375',

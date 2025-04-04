@@ -282,9 +282,6 @@ export const service: DefaultServiceConfig = {
       header: 'Vipindi vya Redio',
       durationLabel: 'Muda %duration%',
     },
-    recommendations: {
-      hasStoryRecommendations: false,
-    },
     footer: {
       trustProjectLink: {
         href: 'https://www.bbc.com/swahili/taasisi-49283417',

@@ -366,7 +366,6 @@ export const service: DefaultServiceConfig = {
       durationLabel: 'المدة %duration%',
     },
     recommendations: {
-      hasStoryRecommendations: true,
       skipLink: {
         text: 'تخطى %title% وواصل القراءة',
         endTextVisuallyHidden: '%title% نهاية',

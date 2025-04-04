@@ -285,9 +285,6 @@ export const service: DefaultServiceConfig = {
     radioSchedule: {
       hasRadioSchedule: false,
     },
-    recommendations: {
-      hasStoryRecommendations: false,
-    },
     footer: {
       trustProjectLink: {
         href: 'https://www.bbc.com/azeri/institutional-49283479',

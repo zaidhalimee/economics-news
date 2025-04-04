@@ -315,9 +315,6 @@ export const service: DefaultServiceConfig = {
       header: 'Ibiganiro bishya',
       durationLabel: 'Umwanya bimara %duration%',
     },
-    recommendations: {
-      hasStoryRecommendations: false,
-    },
     footer: {
       trustProjectLink: {
         href: 'https://www.bbc.com/gahuza/institutional-49283343',

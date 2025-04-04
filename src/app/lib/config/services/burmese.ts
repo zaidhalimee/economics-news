@@ -317,9 +317,6 @@ export const service: DefaultServiceConfig = {
       header: 'နောက်ဆုံးလွှင့် အစီအစဉ်များ',
       durationLabel: 'ကြာမြင့်ချိန် %duration%',
     },
-    recommendations: {
-      hasStoryRecommendations: false,
-    },
     footer: {
       trustProjectLink: {
         href: 'https://www.bbc.com/burmese/institutional-51387206',

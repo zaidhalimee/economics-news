@@ -27,9 +27,6 @@ const baseServiceConfig = {
   radioSchedule: {
     hasRadioSchedule: false,
   },
-  recommendations: {
-    hasStoryRecommendations: false,
-  },
   showAdPlaceholder: true,
   showRelatedTopics: true,
   timezone: 'GMT',

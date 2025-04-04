@@ -365,9 +365,6 @@ export const service: DefaultServiceConfig = {
       header: 'Shirye-shiryenmu',
       durationLabel: 'Tsawon lokaci %duration%',
     },
-    recommendations: {
-      hasStoryRecommendations: false,
-    },
     footer: {
       trustProjectLink: {
         href: 'https://www.bbc.com/hausa/game-da-mu-49283501',

@@ -380,7 +380,6 @@ export const service: DefaultServiceConfig = {
       hasRadioSchedule: false,
     },
     recommendations: {
-      hasStoryRecommendations: true,
       skipLink: {
         text: 'छोड़कर %title% आगे बढ़ें',
         endTextVisuallyHidden: 'समाप्त',

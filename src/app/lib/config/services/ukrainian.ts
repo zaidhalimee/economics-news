@@ -290,9 +290,6 @@ const baseServiceConfig = {
   radioSchedule: {
     hasRadioSchedule: false,
   },
-  recommendations: {
-    hasStoryRecommendations: false,
-  },
   footer: {
     trustProjectLink: {
       href: 'https://www.bbc.com/ukrainian/institutional-50170368',

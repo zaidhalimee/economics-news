@@ -148,7 +148,6 @@ export interface RadioSchedule {
 }
 
 export interface Recommendations {
-  hasStoryRecommendations: boolean;
   skipLink?: {
     text: string;
     endTextVisuallyHidden: string;

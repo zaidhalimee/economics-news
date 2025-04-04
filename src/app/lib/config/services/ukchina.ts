@@ -97,9 +97,6 @@ export const service: ChineseConfig = {
     radioSchedule: {
       hasRadioSchedule: false,
     },
-    recommendations: {
-      hasStoryRecommendations: false,
-    },
     navigation: [
       {
         title: '主页',
@@ -361,9 +358,6 @@ export const service: ChineseConfig = {
       lastUpdated: '最近更新: ',
       numberOfItems: 10,
       hasMostRead: true,
-    },
-    recommendations: {
-      hasStoryRecommendations: false,
     },
     navigation: [
       {

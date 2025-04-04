@@ -276,9 +276,6 @@ export const service: DefaultServiceConfig = {
       header: 'पछिल्लो कार्यक्रम सुन्नुहोस्',
       durationLabel: 'अवधि %duration%',
     },
-    recommendations: {
-      hasStoryRecommendations: false,
-    },
     footer: {
       trustProjectLink: {
         href: 'https://www.bbc.com/nepali/institutional-50318130',

@@ -275,7 +275,6 @@ export const service: DefaultServiceConfig = {
       hasRadioSchedule: false,
     },
     recommendations: {
-      hasStoryRecommendations: true,
       skipLink: {
         text: 'Haberin başlığını atlayın ve okumaya devam edin',
         endTextVisuallyHidden: 'Haberin sonu',

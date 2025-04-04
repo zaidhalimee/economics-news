@@ -31,15 +31,13 @@ import {
 import filterForBlockType from '#lib/utilities/blockHandlers';
 import RelatedTopics from '#containers/RelatedTopics';
 import NielsenAnalytics from '#containers/NielsenAnalytics';
-import CpsRecommendations from '#containers/CpsRecommendations';
 import InlinePodcastPromo from '#containers/PodcastPromo/Inline';
 import {
   Article,
   OptimoBylineBlock,
   OptimoBylineContributorBlock,
-  Recommendation,
 } from '#app/models/types/optimo';
-import { RecommendationNew } from '#app/models/types/onwardJourney';
+import { Recommendation } from '#app/models/types/onwardJourney';
 
 import ScrollablePromo from '#components/ScrollablePromo';
 import { Services } from '#app/models/types/global';
@@ -105,15 +103,15 @@ const getMpuComponent =
     allowAdvertising ? <AdContainer {...props} slotType="mpu" /> : null;
 
 const getWsojComponent =
-  (recommendationsData: Recommendation[], service: Services) =>
-  (props: ComponentToRenderProps & { data: RecommendationNew[] }) => {
+  (service: Services) =>
+  (props: ComponentToRenderProps & { data: Recommendation[] }) => {
     // TODO: Remove this when the new recommendations are rolled out to all services
     if (SERVICES_WITH_NEW_RECOMMENDATIONS.includes(service)) {
       const { data } = props;
       return <Recommendations data={data} />;
     }
 
-    return <CpsRecommendations {...props} items={recommendationsData} />;
+    return null;
   };
 
 const DisclaimerWithPaddingOverride = (props: ComponentToRenderProps) => (
@@ -178,8 +176,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const taggings = pageData?.metadata?.passport?.taggings ?? [];
   const formats = pageData?.metadata?.passport?.predicates?.formats ?? [];
 
-  const recommendationsData = pageData?.recommendations ?? [];
-
   const isPGL = pageData?.metadata?.type === PHOTO_GALLERY_PAGE;
   const isSTY = pageData?.metadata?.type === STORY_PAGE;
   const isCPS = isPGL || isSTY;
@@ -215,7 +211,7 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
     group: gist,
     links: ScrollablePromo,
     mpu: getMpuComponent(allowAdvertising),
-    wsoj: getWsojComponent(recommendationsData, service),
+    wsoj: getWsojComponent(service),
     disclaimer: DisclaimerWithPaddingOverride,
     podcastPromo: getPodcastPromoComponent(podcastPromoEnabled),
   };

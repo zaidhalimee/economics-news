@@ -213,9 +213,6 @@ export const service: DefaultServiceConfig = {
     radioSchedule: {
       hasRadioSchedule: false,
     },
-    recommendations: {
-      hasStoryRecommendations: false,
-    },
     footer: {
       externalLink: {
         href: 'https://www.bbc.co.uk/editorialguidelines/guidance/feeds-and-links',

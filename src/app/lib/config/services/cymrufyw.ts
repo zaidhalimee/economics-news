@@ -323,9 +323,6 @@ export const service: DefaultServiceConfig = {
     radioSchedule: {
       hasRadioSchedule: false,
     },
-    recommendations: {
-      hasStoryRecommendations: false,
-    },
     footer: {
       trustProjectLink: {
         href: 'https://www.bbc.com/news/help-41670342',

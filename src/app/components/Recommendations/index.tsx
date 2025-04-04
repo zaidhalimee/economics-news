@@ -7,7 +7,7 @@ import SkipLinkWrapper from '#components/SkipLinkWrapper';
 
 import { ServiceContext } from '#contexts/ServiceContext';
 import useViewTracker from '#app/hooks/useViewTracker';
-import { RecommendationNew as Recommendation } from '#app/models/types/onwardJourney';
+import { Recommendation } from '#app/models/types/onwardJourney';
 import RecommendationsItem from './RecommendationsItem';
 import styles from './index.styles';
 
@@ -32,9 +32,13 @@ const Recommendations = ({ data }: { data: Recommendation[] }) => {
     'aria-labelledby': labelId,
   };
 
-  const { hasMostRead } = mostRead || {};
+  const { hasMostRead } = mostRead || { hasMostRead: false };
   const { skipLink } = recommendations || {};
-  const { text, endTextVisuallyHidden } = skipLink || {};
+
+  const { text, endTextVisuallyHidden } = skipLink || {
+    text: 'Skip %title% and continue reading',
+    endTextVisuallyHidden: 'End of %title%',
+  };
 
   if (!hasMostRead || !data?.length) return null;
 

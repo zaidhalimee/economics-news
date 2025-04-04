@@ -1,6 +1,6 @@
 import React from 'react';
 import { ServiceContextProvider } from '#app/contexts/ServiceContext';
-import { RecommendationNew as Recommendation } from '#app/models/types/onwardJourney';
+import { Recommendation } from '#app/models/types/onwardJourney';
 import ThemeProvider from '#app/components/ThemeProvider';
 import { Services } from '#app/models/types/global';
 import Recommendations from '.';

@@ -354,7 +354,6 @@ export const service: DefaultServiceConfig = {
       hasRadioSchedule: false,
     },
     recommendations: {
-      hasStoryRecommendations: true,
       skipLink: {
         text: 'Saltar %title% y continuar leyendo',
         endTextVisuallyHidden: 'Final de %title%',

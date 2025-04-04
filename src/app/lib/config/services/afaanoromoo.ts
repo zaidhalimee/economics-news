@@ -294,9 +294,6 @@ export const service: DefaultServiceConfig = {
       header: 'Dhaggeeffadhaa',
       durationLabel: 'Turtii %duration%',
     },
-    recommendations: {
-      hasStoryRecommendations: false,
-    },
     footer: {
       trustProjectLink: {
         href: 'https://www.bbc.com/afaanoromoo/institutional-49281861',
