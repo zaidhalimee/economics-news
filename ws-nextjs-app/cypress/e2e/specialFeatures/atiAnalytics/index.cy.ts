@@ -10,6 +10,21 @@ import runTestsForPage from '../../../support/helpers/runTestsForPage';
 
 const canonicalTestSuites = [
   {
+    path: '/burmese/live/ckg19998pldt',
+    runforEnv: ['live'],
+    service: 'burmese',
+    pageIdentifier: 'live_coverage.ckg19998pldt.page',
+    applicationType: 'responsive',
+    contentType: 'live-coverage',
+    componentTrackingContentType: LIVE_PAGE,
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertScrollableNavigationComponentView,
+      assertScrollableNavigationComponentClick,
+    ],
+  },
+  {
     path: '/pidgin/live/c7p765ynk9qt',
     runforEnv: ['local', 'test'],
     service: 'pidgin',
