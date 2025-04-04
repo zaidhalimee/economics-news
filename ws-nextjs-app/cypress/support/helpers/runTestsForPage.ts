@@ -1,4 +1,4 @@
-export default ({ pageType, testSuites, testIsolation = false }) => {
+export default ({ pageType = '', testSuites, testIsolation = false }) => {
   testSuites.forEach(testData => {
     const { path, tests, runforEnv, ...params } = testData;
     const cypressEnv = Cypress.env('APP_ENV');

@@ -11,7 +11,6 @@ const liteTestSuites = [
 ];
 
 runTestsForPage({
-  pageType: '',
   testSuites: [...liteTestSuites],
   testIsolation: true,
 });

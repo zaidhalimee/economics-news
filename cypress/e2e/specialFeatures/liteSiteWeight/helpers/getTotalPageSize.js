@@ -11,6 +11,12 @@ export default requests => {
         totalSize += contentLength;
       } else {
         getPageSizeInKB(url).then(size => {
+          cy.task('table', [
+            {
+              Request: url,
+              'Request Size (KB)': size,
+            },
+          ]);
           totalSize += size;
         });
       }
