@@ -161,12 +161,12 @@ export const testsThatFollowSmokeTestConfig = ({
                   cy.log(`List item number: ${index}`);
                   cy.log(`isAmp= ${isAmp}`);
                   if (isAmp) {
-                    cy.get(`[data-e2e=story-promo-wrapper] amp-img`).should(
+                    cy.get(`[data-e2e=recommendations-wrapper] amp-img`).should(
                       'have.attr',
                       'src',
                     );
                   } else {
-                    cy.get(`[data-e2e=story-promo-wrapper] img`).should(
+                    cy.get(`[data-e2e=recommendations-wrapper] img`).should(
                       'have.attr',
                       'src',
                     );
@@ -190,7 +190,7 @@ export const testsThatFollowSmokeTestConfig = ({
               (item, index) => {
                 cy.wrap(item).within(() => {
                   cy.log(`List item number: ${index + 1}`);
-                  cy.get(`[data-e2e=story-promo-wrapper] > div > div > a`)
+                  cy.get(`[data-e2e=recommendations-wrapper] > div > div > a`)
                     .invoke('text')
                     .then(text => {
                       expect(text.length).to.be.at.least(1);

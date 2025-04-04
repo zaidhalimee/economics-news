@@ -26,7 +26,7 @@ const RecommendationsItem = ({
   const { title, image, href } = recommendation;
 
   return (
-    <div css={styles.promoWrapper} data-e2e="story-promo-wrapper">
+    <div css={styles.promoWrapper} data-e2e="recommendations-wrapper">
       {!isLite && (
         <div css={styles.imageWrapper}>
           <RecommendationsImage image={image} lazyLoad />
