@@ -1,5 +1,4 @@
 import constructTogglesEndpoint from '#app/contexts/ToggleContext/utils/constructTogglesEndpoint';
-import fetch from 'node-fetch';
 
 export default async service => {
   const togglesUrl = constructTogglesEndpoint(service);
