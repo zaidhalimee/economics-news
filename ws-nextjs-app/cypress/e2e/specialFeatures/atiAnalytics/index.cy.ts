@@ -17,7 +17,6 @@ const canonicalTestSuites = [
     applicationType: 'responsive',
     contentType: 'live-coverage',
     componentTrackingContentType: LIVE_PAGE,
-    pageType: LIVE_PAGE,
     useReverb: true,
     tests: [
       assertPageView,
