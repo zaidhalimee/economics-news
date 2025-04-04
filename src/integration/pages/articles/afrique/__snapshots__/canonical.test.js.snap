@@ -8,7 +8,7 @@ exports[`Canonical Articles Media Loader a11y assistive technology can read the 
 
 exports[`Canonical Articles Media Loader renders a figure caption 1`] = `
 <div
-  class="placeholder bbc-182h924"
+  class="placeholder bbc-1r8vrs6"
   data-e2e="media-loader__placeholder"
 >
   <button
@@ -75,7 +75,7 @@ exports[`Canonical Articles Media Loader renders a figure caption 1`] = `
 
 exports[`Canonical Articles Media Loader renders a placeholder 1`] = `
 <div
-  class="placeholder bbc-182h924"
+  class="placeholder bbc-1r8vrs6"
   data-e2e="media-loader__placeholder"
 >
   <button
@@ -146,7 +146,7 @@ exports[`Canonical Articles Media Loader renders a valid container 1`] = `
   data-e2e="media-loader__container"
 >
   <div
-    class="placeholder bbc-182h924"
+    class="placeholder bbc-1r8vrs6"
     data-e2e="media-loader__placeholder"
   >
     <button
