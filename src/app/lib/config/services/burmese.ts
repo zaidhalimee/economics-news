@@ -85,7 +85,7 @@ export const service: DefaultServiceConfig = {
         informationPageLink:
           'https://www.bbc.com/burmese/articles/cwy69wyx71go',
         dataSaving: 'ဒေတာကုန်ကျမှုသက်သာစေသည့် ဝက်ဘ်စာမျက်နှာ',
-        articleDataSavingLinkText: 'စာသား သက်သက်ဖတ်ရန်',
+        articleDataSavingLinkText: 'ဒေတာကုန်ကျမှုသက်သာအောင် စာသားသက်သက်ဖတ်ရ',
       },
       mediaAssetPage: {
         mediaPlayer: 'မီဒီယာ ပလေယာ',
@@ -365,6 +365,10 @@ export const service: DefaultServiceConfig = {
       {
         title: 'ပင်မစာမျက်နှာ',
         url: '/burmese',
+      },
+      {
+      title: 'မြန်မာငလျင်',
+      url: '/burmese/topics/c793wppj0r1t',
       },
       {
         title: 'မြန်မာ့ရေးရာ',
