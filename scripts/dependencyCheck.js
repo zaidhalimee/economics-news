@@ -4,7 +4,7 @@ const depcheck = require('depcheck');
 
 const options = {
   specials: ['bin', 'eslint', 'jest', 'babel', 'webpack'],
-  ignoreDirs: ['build', '.storybook', '.yarn', 'cypress'],
+  ignoreDirs: ['build', '.storybook', '.yarn', 'cypress', 'src/integration'],
   ignoreMatches: [
     'puppeteer',
     'isarray',
