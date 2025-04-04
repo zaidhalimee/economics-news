@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { use, MouseEvent, useEffect } from 'react';
+import React, { use, useEffect } from 'react';
 import { jsx } from '@emotion/react';
 import Text from '#app/components/Text';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
@@ -31,9 +31,14 @@ const ContinueReadingButton = ({
   const viewRef = useViewTracker(eventTrackingData);
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
 
-  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
+  const handleEvent = (
+    event:
+      | React.MouseEvent<HTMLButtonElement>
+      | React.KeyboardEvent<HTMLButtonElement>
+      | React.TouchEvent<HTMLButtonElement>,
+  ) => {
     event.preventDefault();
-    clickTrackerHandler(event);
+    clickTrackerHandler(event as React.MouseEvent<HTMLButtonElement>);
     setShowAllContent();
   };
 
@@ -66,7 +71,9 @@ const ContinueReadingButton = ({
     <button
       css={[buttonStyle, styles.hideButtonOnDesktop]}
       type="button"
-      onClick={handleClick}
+      onMouseDown={handleEvent}
+      onKeyDown={handleEvent}
+      onTouchStart={handleEvent}
       data-testid="read-more-button"
       ref={viewRef}
     >
