@@ -5,6 +5,7 @@ import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
 import Chevron from './Chevron';
 import FlexWrapper from './FlexWrapper';
+import Text from './Text';
 
 type CallToActionLinkProps = {
   to?: string;
@@ -30,5 +31,6 @@ const CallToActionLink = ({
 
 CallToActionLink.Chevron = Chevron;
 CallToActionLink.FlexWrapper = FlexWrapper;
+CallToActionLink.Text = Text;
 
 export default CallToActionLink;

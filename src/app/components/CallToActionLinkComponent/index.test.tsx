@@ -2,7 +2,6 @@ import React from 'react';
 import * as clickTracking from '#app/hooks/useClickTrackerHandler';
 import { render, screen } from '../react-testing-library-with-providers';
 import CallToActionLink from '.';
-import Text from '../Text';
 
 describe('Call To Action Link', () => {
   beforeEach(() => {
@@ -12,9 +11,9 @@ describe('Call To Action Link', () => {
   it('should render child elements', () => {
     const { container } = render(
       <CallToActionLink to="https://www.bbc.com/ws/languages">
-        <Text size="brevier" fontVariant="sansBold">
+        <CallToActionLink.Text size="brevier" fontVariant="sansBold">
           My Link Text
-        </Text>
+        </CallToActionLink.Text>
         <CallToActionLink.Chevron />
       </CallToActionLink>,
     );
@@ -27,9 +26,9 @@ describe('Call To Action Link', () => {
   it('should render a link with the correct href', () => {
     render(
       <CallToActionLink to="https://www.bbc.com/ws/languages">
-        <Text size="brevier" fontVariant="sansBold">
+        <CallToActionLink.Text size="brevier" fontVariant="sansBold">
           My Link Text
-        </Text>
+        </CallToActionLink.Text>
       </CallToActionLink>,
     );
     const link = screen.getByRole('link');
@@ -47,9 +46,9 @@ describe('Call To Action Link', () => {
         to="https://www.bbc.com/ws/languages"
         eventTrackingData={eventTrackingData}
       >
-        <Text size="brevier" fontVariant="sansBold">
+        <CallToActionLink.Text size="brevier" fontVariant="sansBold">
           My Link Text
-        </Text>
+        </CallToActionLink.Text>
         <CallToActionLink.Chevron />
       </CallToActionLink>,
     );
@@ -67,9 +66,9 @@ describe('Call To Action Link', () => {
         to="https://www.bbc.com/ws/languages"
         {...atiClickTrackerHandler}
       >
-        <Text size="brevier" fontVariant="sansBold">
+        <CallToActionLink.Text size="brevier" fontVariant="sansBold">
           My Link Text
-        </Text>
+        </CallToActionLink.Text>
         <CallToActionLink.Chevron />
       </CallToActionLink>,
     );
@@ -86,9 +85,9 @@ describe('Call To Action Link', () => {
         to="https://www.bbc.com/ws/languages"
         {...{ 'data-ignore-lite': true }}
       >
-        <Text size="brevier" fontVariant="sansBold">
+        <CallToActionLink.Text size="brevier" fontVariant="sansBold">
           My Link Text
-        </Text>
+        </CallToActionLink.Text>
         <CallToActionLink.Chevron />
       </CallToActionLink>,
     );
