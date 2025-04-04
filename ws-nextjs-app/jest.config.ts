@@ -11,6 +11,7 @@ const canonicalIntegrationTests = {
   testEnvironmentOptions: {
     platform: 'canonical',
   },
+  modulePaths: ['../'],
   moduleNameMapper: {
     ...pathsToModuleNameMapper(compilerOptionsPaths),
   },
@@ -33,6 +34,7 @@ const ampIntegrationTests = {
   testEnvironmentOptions: {
     platform: 'amp',
   },
+  modulePaths: ['../'],
   moduleNameMapper: {
     ...pathsToModuleNameMapper(compilerOptionsPaths),
   },
