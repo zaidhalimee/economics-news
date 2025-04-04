@@ -1,5 +1,4 @@
 import React from 'react';
-
 import CallToActionLink from '.';
 import Text from '../Text';
 
@@ -48,6 +47,51 @@ export const ExampleWithFlexAndChevronInText = () => {
           <CallToActionLink.Chevron />
         </Text>
       </CallToActionLink.FlexWrapper>
+    </CallToActionLink>
+  );
+};
+
+export const ExampleCallToActionLink = () => {
+  return (
+    <CallToActionLink to="https://www.bbc.com/ws/languages">
+      <CallToActionLink.FlexWrapper>
+        <Text size="pica" fontVariant="sansBold">
+          Hello
+          <CallToActionLink.Chevron />
+        </Text>
+      </CallToActionLink.FlexWrapper>
+    </CallToActionLink>
+  );
+};
+export const ExampleCallToActionLinkWithChevron = () => {
+  return (
+    <CallToActionLink to="https://www.bbc.com/ws/languages">
+      <CallToActionLink.FlexWrapper>
+        <Text size="brevier" fontVariant="sansBold">
+          Hello
+          <CallToActionLink.Chevron />
+        </Text>
+      </CallToActionLink.FlexWrapper>
+    </CallToActionLink>
+  );
+};
+export const ExampleCallToActionLiteSiteCTAWithChevron = () => {
+  return (
+    <CallToActionLink to="https://www.bbc.com/ws/languages">
+      <Text size="brevier" fontVariant="sansBold">
+        Hello
+      </Text>
+      <CallToActionLink.Chevron />
+    </CallToActionLink>
+  );
+};
+export const ExampleCallToActionLiteSiteCTAWitoutChevron = () => {
+  return (
+    <CallToActionLink to="https://www.bbc.com/ws/languages">
+      <Text size="brevier" fontVariant="sansRegular">
+        Hello
+      </Text>
+      <CallToActionLink.Chevron />
     </CallToActionLink>
   );
 };
