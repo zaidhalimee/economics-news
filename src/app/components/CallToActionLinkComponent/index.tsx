@@ -6,24 +6,32 @@ import { EventTrackingMetadata } from '#app/models/types/eventTracking';
 import Chevron from './Chevron';
 import FlexWrapper from './FlexWrapper';
 import Text from './Text';
+import styles from './index.styles';
 
 type CallToActionLinkProps = {
   to?: string;
   className?: string;
   eventTrackingData?: EventTrackingMetadata;
+  alignWithMargin?: boolean;
 };
 
 const CallToActionLink = ({
   to,
   children,
   eventTrackingData,
+  alignWithMargin,
   ...htmlAttributes // handles LiteSiteCta
 }: PropsWithChildren<CallToActionLinkProps>) => {
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
   const onClick = eventTrackingData ? clickTrackerHandler : () => null;
 
   return (
-    <a href={to} onClick={onClick} {...htmlAttributes}>
+    <a
+      href={to}
+      onClick={onClick}
+      {...htmlAttributes}
+      css={alignWithMargin && styles.link}
+    >
       {children}
     </a>
   );

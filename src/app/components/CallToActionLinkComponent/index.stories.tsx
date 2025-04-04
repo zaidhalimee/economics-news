@@ -1,6 +1,5 @@
 import React from 'react';
 import CallToActionLink from '.';
-import Text from '../Text';
 
 export default {
   title: 'Components/Call To Action Link Component',
@@ -78,7 +77,7 @@ export const UploaderEmbedCTA = () => {
 // purposefully removing flex and extra div
 export const CanonicalToLiteSiteCTAWithChevron = () => {
   return (
-    <CallToActionLink to="https://www.bbc.com/ws/languages">
+    <CallToActionLink to="https://www.bbc.com/ws/languages" alignWithMargin>
       <CallToActionLink.Text size="brevier" fontVariant="sansBold">
         Hello
         <CallToActionLink.Chevron />
@@ -88,7 +87,7 @@ export const CanonicalToLiteSiteCTAWithChevron = () => {
 };
 export const LiteSiteCTAWithChevron = () => {
   return (
-    <CallToActionLink to="https://www.bbc.com/ws/languages">
+    <CallToActionLink to="https://www.bbc.com/ws/languages" alignWithMargin>
       <CallToActionLink.Text size="brevier" fontVariant="sansBold">
         Hello
       </CallToActionLink.Text>
@@ -98,7 +97,7 @@ export const LiteSiteCTAWithChevron = () => {
 };
 export const LiteSiteCTAWitoutChevron = () => {
   return (
-    <CallToActionLink to="https://www.bbc.com/ws/languages">
+    <CallToActionLink to="https://www.bbc.com/ws/languages" alignWithMargin>
       <CallToActionLink.Text size="brevier" fontVariant="sansRegular">
         Hello
       </CallToActionLink.Text>
