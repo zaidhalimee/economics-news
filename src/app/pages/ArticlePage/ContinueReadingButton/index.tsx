@@ -26,8 +26,9 @@ const ContinueReadingButton = ({
 
   const {
     translations: { continueReading = 'Continue reading' },
+    dir,
   } = use(ServiceContext);
-
+  const isRtl = dir === 'rtl';
   const viewRef = useViewTracker(eventTrackingData);
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
 
@@ -37,6 +38,13 @@ const ContinueReadingButton = ({
       | React.KeyboardEvent<HTMLButtonElement>
       | React.TouchEvent<HTMLButtonElement>,
   ) => {
+    if (event.type === 'keydown') {
+      const keyboardEvent = event as React.KeyboardEvent<HTMLButtonElement>;
+      if (keyboardEvent.key !== 'Enter' && keyboardEvent.key !== ' ') {
+        return; // Ignore keys other than Enter and Space otherwise tabbing to the next element will actually click the button
+      }
+    }
+
     event.preventDefault();
     clickTrackerHandler(event as React.MouseEvent<HTMLButtonElement>);
     setShowAllContent();
