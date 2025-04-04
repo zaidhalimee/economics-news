@@ -12,7 +12,7 @@ import RecommendationsItem from './RecommendationsItem';
 import styles from './index.styles';
 
 const eventTrackingData = {
-  componentName: 'wsoj',
+  componentName: 'midarticle-mostread',
 };
 
 const Recommendations = ({ data }: { data: Recommendation[] }) => {
@@ -88,12 +88,9 @@ const Recommendations = ({ data }: { data: Recommendation[] }) => {
             role="list"
             ref={viewEventTracker}
           >
-            {data?.map((recommendation, index) => (
+            {data?.map(recommendation => (
               <li key={recommendation.id} role="listitem">
-                <RecommendationsItem
-                  recommendation={recommendation}
-                  index={index}
-                />
+                <RecommendationsItem recommendation={recommendation} />
               </li>
             ))}
           </ul>
