@@ -20,6 +20,9 @@ export default {
 
       '&:hover, &:focus': {
         textDecoration: 'underline',
+        '> span': {
+          textDecoration: 'inherit',
+        },
       },
 
       [`.${NO_JS_CLASSNAME} &`]: {
