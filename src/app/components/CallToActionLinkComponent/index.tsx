@@ -1,15 +1,20 @@
 /** @jsx jsx */
 import { PropsWithChildren } from 'react';
 import { jsx } from '@emotion/react';
-import Link from './Link';
 import Chevron from './Chevron';
 import FlexWrapper from './FlexWrapper';
 
-const CallToActionLink = ({ children }: PropsWithChildren) => {
-  return <div>{children}</div>;
+type CallToActionLinkProps = {
+  to: string;
 };
 
-CallToActionLink.Link = Link;
+const CallToActionLink = ({
+  to,
+  children,
+}: PropsWithChildren<CallToActionLinkProps>) => {
+  return <a href={to}>{children}</a>;
+};
+
 CallToActionLink.Chevron = Chevron;
 CallToActionLink.FlexWrapper = FlexWrapper;
 
