@@ -46,7 +46,7 @@ export const createSrcsets = ({
   }
 
   // eslint-disable-next-line prefer-const
-  let [primarySrcset, fallbackSrcset] = [true, false].map(
+  let [primarySrcset, fallbackSrcset] = [true, false].map(() =>
     requiredResolutions
       .map(
         resolution =>
