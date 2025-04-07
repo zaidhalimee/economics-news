@@ -23,6 +23,7 @@ import PromoList from '../../legacy/components/OptimoPromos/PromoList';
 import PromoItem from '../../legacy/components/OptimoPromos/PromoItem/index.styles';
 import { EventTrackingBlock } from '../../models/types/eventTracking';
 import { OptimoBlock } from '../../models/types/optimo';
+import { ViewRef } from '#app/lib/analyticsUtils/types';
 
 const BLOCKS_TO_IGNORE = ['wsoj', 'mpu'];
 
@@ -43,7 +44,7 @@ type RelatedContentListProps = {
   item: object;
   index: number;
   eventTrackingData: EventTrackingBlock;
-  viewRef: React.Ref<HTMLDivElement>;
+  viewRef: ViewRef;
 };
 
 const renderRelatedContentList = ({
@@ -86,7 +87,7 @@ const renderRelatedContentList = ({
       <RelatedContentItem
         item={item}
         ariaLabelledBy={ariaLabelledBy}
-        ref={viewRef}
+        {...viewRef}
         eventTrackingData={eventTrackingData}
       />
     </PromoItem>
@@ -195,7 +196,7 @@ const RelatedContentSection = ({ content, sendOptimizelyEvents }: Props) => {
           <RelatedContentItem
             item={reducedStoryPromoItems[0]}
             ariaLabelledBy={ariaLabelledBy}
-            ref={viewRef}
+            {...viewRef}
             eventTrackingData={eventTrackingData}
           />
         </div>

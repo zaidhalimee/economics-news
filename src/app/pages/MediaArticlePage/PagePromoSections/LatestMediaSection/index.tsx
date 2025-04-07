@@ -1,8 +1,9 @@
 /** @jsx jsx */
-import { Ref, useContext } from 'react';
+import { useContext } from 'react';
 import { jsx } from '@emotion/react';
 
 import SectionLabel from '#psammead/psammead-section-label/src';
+import { ViewRef } from '#app/lib/analyticsUtils/types';
 import { ServiceContext } from '../../../../contexts/ServiceContext';
 import PromoItem from '../../../../legacy/components/OptimoPromos/PromoItem/index.styles';
 import PromoList from '../../../../legacy/components/OptimoPromos/PromoList';
@@ -17,7 +18,7 @@ const renderLatestMediaList = (
   item: LatestMedia,
   index: number,
   eventTrackingData: EventTrackingBlock,
-  viewRef: Ref<HTMLDivElement>,
+  viewRef: ViewRef,
 ) => {
   const ariaLabelledBy = generatePromoId({
     sectionType: 'latest-media',
@@ -33,7 +34,7 @@ const renderLatestMediaList = (
       <LatestMediaItem
         item={item}
         ariaLabelledBy={ariaLabelledBy}
-        ref={viewRef}
+        {...viewRef}
         eventTrackingData={eventTrackingData}
       />
     </PromoItem>
@@ -94,7 +95,7 @@ const LatestMediaSection = ({ content }: { content: LatestMedia[] | null }) => {
           <LatestMediaItem
             item={singleItem}
             ariaLabelledBy={ariaLabelledBy}
-            ref={viewRef}
+            {...viewRef}
             eventTrackingData={eventTrackingData}
           />
         </div>

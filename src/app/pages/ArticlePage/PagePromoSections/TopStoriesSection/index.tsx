@@ -1,13 +1,14 @@
 /** @jsx jsx */
 
 import { jsx, useTheme } from '@emotion/react';
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import useViewTracker from '#hooks/useViewTracker';
 import { EventTrackingBlock } from '#app/models/types/eventTracking';
 import SectionLabel from '#psammead/psammead-section-label/src';
 import PromoItem from '#components/OptimoPromos/PromoItem/index.styles';
 import PromoList from '#components/OptimoPromos/PromoList';
 import { OptimizelyContext } from '@optimizely/react-sdk';
+import { ViewRef } from '#app/lib/analyticsUtils/types';
 import { ServiceContext } from '../../../../contexts/ServiceContext';
 import styles from './index.styles';
 import TopStoriesItem from './TopStoriesItem';
@@ -18,7 +19,7 @@ type TopStoriesListProps = {
   item: TopStoryItem;
   index: number;
   eventTrackingData: EventTrackingBlock;
-  viewRef: React.Ref<HTMLDivElement>;
+  viewRef: ViewRef;
 };
 
 const renderTopStoriesList = ({
@@ -46,7 +47,7 @@ const renderTopStoriesList = ({
       <TopStoriesItem
         item={item}
         ariaLabelledBy={ariaLabelledBy}
-        ref={viewRef}
+        {...viewRef}
         eventTrackingData={eventTrackingData}
       />
     </PromoItem>
@@ -117,7 +118,7 @@ const TopStoriesSection = ({
         <TopStoriesItem
           item={content[0]}
           ariaLabelledBy={ariaLabelledBy}
-          ref={viewRef}
+          {...viewRef}
           eventTrackingData={eventTrackingData}
         />
       ) : (

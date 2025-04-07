@@ -141,7 +141,7 @@ const LiveHeaderMedia = ({
         <p>{description}</p>
         <strong>{noJs}</strong>
       </noscript>
-      <div css={styles.componentContainer} ref={viewRef}>
+      <div css={styles.componentContainer} {...viewRef}>
         <button
           type="button"
           onClick={e => handleClick(e)}

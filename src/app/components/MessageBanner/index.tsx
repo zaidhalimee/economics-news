@@ -121,7 +121,7 @@ const MessageBanner = ({
       link={link}
       image={image}
       eventTrackingData={eventTrackingData}
-      ref={viewRef}
+      {...viewRef}
       id={id}
     />
   );

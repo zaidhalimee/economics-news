@@ -57,7 +57,7 @@ const MostRead = ({
               dir={direction}
               key={id}
               columnLayout={columnLayout}
-              ref={viewRef}
+              {...viewRef}
             >
               <MostReadRank
                 service={service}

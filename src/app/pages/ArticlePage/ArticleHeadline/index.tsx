@@ -61,7 +61,7 @@ const ArticleHeadline = (props: ComponentToRenderProps) => {
               styles.liteCTAContainer,
               !titleVariation && styles.displayNone,
             ]}
-            ref={viewRef}
+            {...viewRef}
             data-e2e="to-lite-site"
           >
             <CallToActionLinkWithChevron
