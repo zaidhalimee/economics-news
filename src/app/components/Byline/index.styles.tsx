@@ -2,6 +2,11 @@ import { css, Theme } from '@emotion/react';
 import pixelsToRem from '../../utilities/pixelsToRem';
 
 export default {
+  bylineContainer: () =>
+    css({
+      display: 'flex',
+    }),
+
   bylineSection: ({ spacings, mq }: Theme) =>
     css({
       paddingInlineStart: `${spacings.FULL}rem`,
@@ -101,7 +106,7 @@ export default {
         borderTop: `${pixelsToRem(2)}rem solid ${palette.GREY_5}`,
         width: `${pixelsToRem(40)}rem`,
         display: 'block',
-        margin: `${spacings.DOUBLE}rem 0`,
+        margin: `${spacings.DOUBLE}rem `,
       },
     }),
 
