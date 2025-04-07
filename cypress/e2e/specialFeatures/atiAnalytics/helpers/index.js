@@ -114,3 +114,9 @@ export const interceptATIAnalyticsBeacons = () => {
     },
   ).as(`${ATI_PAGE_VIEW_REVERB}`);
 };
+
+export const getPathWithSuffix = ({ path, suffix = '' }) => {
+  const { pathname, search } = new URL(`https://www.bbc.com${path}`);
+
+  return `${pathname}${suffix}${search}`;
+};

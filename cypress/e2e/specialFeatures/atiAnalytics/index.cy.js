@@ -72,6 +72,7 @@ import {
   assertSocialEmbedComponentClick,
   assertSocialEmbedComponentView,
 } from './assertions/socialEmbed';
+import { getPathWithSuffix } from './helpers';
 
 const canonicalTestSuites = [
   {
@@ -539,12 +540,6 @@ const canonicalTestSuites = [
   },
 ];
 
-const getPathWithSuffix = ({ path, suffix = '' }) => {
-  const { pathname, search } = new URL(`https://www.bbc.com${path}`);
-
-  return `${pathname}${suffix}${search}`;
-};
-
 const supportsAmp = ({ contentType }) =>
   !['index-home', 'player-live', 'player-episode', 'index-category'].includes(
     contentType,
@@ -569,13 +564,14 @@ const supportsLite = ({ path, contentType, service }) =>
 const liteTestSuites = canonicalTestSuites
   .filter(supportsLite)
   .map(testSuite => {
-    const liteSiteTests = [assertPageView];
+    // Exclude component click tests, as component click support is not supported on all components yet
+    const liteSiteTests = testSuite.tests.filter(
+      ({ name }) => !name.toLowerCase().includes('click'),
+    );
 
     switch (testSuite.contentType) {
       case 'article':
         liteSiteTests.push(assertLiteSiteCTAComponentClick);
-        liteSiteTests.push();
-        liteSiteTests.push(assertRelatedTopicsComponentView);
         break;
       case 'index-home':
         liteSiteTests.push(assertMostReadComponentClick);
@@ -586,7 +582,7 @@ const liteTestSuites = canonicalTestSuites
 
     return {
       ...testSuite,
-      path: `${testSuite.path}.lite`,
+      path: getPathWithSuffix({ path: testSuite.path, suffix: '.lite' }),
       applicationType: 'lite',
       useReverb: false,
       tests: [...liteSiteTests],
