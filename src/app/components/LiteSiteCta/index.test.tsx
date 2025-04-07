@@ -1,7 +1,7 @@
 import React from 'react';
+import { LITE_ATI_CLICK_TRACKING } from '#app/lib/analyticsUtils/analytics.const';
 import { render } from '../react-testing-library-with-providers';
 import LiteSiteCta from '.';
-import { LITE_ATI_CLICK_TRACKING } from '#app/lib/analyticsUtils/analytics.const';
 
 describe('LiteSiteCTA', () => {
   it('Should have a hidden strong element with lite site identifier.', () => {
