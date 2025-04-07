@@ -126,7 +126,7 @@ const useClickTrackerHandler = (props = {}) => {
               service,
               advertiserID,
               statsDestination,
-              url,
+              url: url || nextPageUrl,
               detailedPlacement,
               useReverb,
               ...(optimizelyVariation &&
