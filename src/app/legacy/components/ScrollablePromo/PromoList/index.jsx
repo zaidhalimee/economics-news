@@ -82,8 +82,8 @@ const OperaStyledList = styled.li`
 const PromoList = ({
   blocks,
   experimentVariant,
-  onClick,
   viewTracker,
+  onClick,
   a11yAttributes,
 }) => {
   const { dir } = useContext(ServiceContext);
