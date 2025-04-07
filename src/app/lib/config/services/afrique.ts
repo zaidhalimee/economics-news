@@ -60,6 +60,7 @@ export const service: DefaultServiceConfig = {
       recommendationTitle: 'Recommended articles',
       seeAll: 'Tout voir',
       home: 'Accueil',
+      continueReading: 'Continuer la lecture',
       currentPage: 'Page en cours',
       skipLinkText: 'Aller au contenu',
       relatedContent: 'Lire plus',

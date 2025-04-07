@@ -247,7 +247,7 @@ const ArticlePage = ({
     if (service === 'pidgin' || service === 'urdu') {
       return 'A';
     }
-    if (service === 'mundo' || service === 'persian') {
+    if (service === 'mundo' || service === 'arabic') {
       return 'B';
     }
 

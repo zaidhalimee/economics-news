@@ -80,6 +80,7 @@ export const service: DefaultServiceConfig = {
       splitRecommendationTitle: 'مزيد من القصص المقترحة',
       seeAll: 'المزيد',
       home: 'الرئيسية',
+      continueReading: 'واصل القراءة',
       currentPage: 'الصفحة الحالية',
       skipLinkText: 'إذهب الى المحتوى',
       relatedContent: 'المزيد حول هذه القصة',

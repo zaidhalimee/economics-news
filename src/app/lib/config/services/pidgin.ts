@@ -58,6 +58,7 @@ export const service: DefaultServiceConfig = {
       recommendationTitle: 'Recommended articles',
       seeAll: 'See everitin',
       home: 'Home',
+      continueReading: 'Continue reading',
       currentPage: 'Page where you dey',
       skipLinkText: 'Waka go wetin de inside',
       relatedContent: 'Another thing we de for inside dis tori',
