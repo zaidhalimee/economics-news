@@ -70,7 +70,6 @@ export const service: DefaultServiceConfig = {
       ads: {
         advertisementLabel: 'जाहिरात',
       },
-      recommendationTitle: 'Recommended articles',
       seeAll: 'सर्व पाहा',
       home: 'बातम्या',
       currentPage: 'सध्याचे पान',
@@ -293,6 +292,7 @@ export const service: DefaultServiceConfig = {
       hasRadioSchedule: false,
     },
     recommendations: {
+      header: 'सर्वाधिक वाचलेले',
       skipLink: {
         text: 'Skip %title% and continue reading',
         endTextVisuallyHidden: 'End of %title%',

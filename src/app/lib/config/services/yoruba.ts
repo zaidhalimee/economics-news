@@ -276,6 +276,13 @@ export const service: DefaultServiceConfig = {
     radioSchedule: {
       hasRadioSchedule: false,
     },
+    recommendations: {
+      header: 'Èyítí A Ń Kà Jùlọ',
+      skipLink: {
+        text: 'Skip %title% and continue reading',
+        endTextVisuallyHidden: 'End of %title%',
+      },
+    },
     footer: {
       trustProjectLink: {
         href: 'https://www.bbc.com/yoruba/institutional-48528718',

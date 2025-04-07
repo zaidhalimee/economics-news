@@ -77,7 +77,6 @@ export const service: DefaultServiceConfig = {
       ads: {
         advertisementLabel: 'Publicidade',
       },
-      recommendationTitle: 'Matérias recomendadas',
       seeAll: 'Ver todos',
       home: 'Início',
       currentPage: 'Página atual',
@@ -367,6 +366,7 @@ export const service: DefaultServiceConfig = {
       hasRadioSchedule: false,
     },
     recommendations: {
+      header: 'Mais lidas',
       skipLink: {
         text: 'Pule %title% e continue lendo',
         endTextVisuallyHidden: 'Fim do %title%',

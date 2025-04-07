@@ -55,7 +55,6 @@ export const service: DefaultServiceConfig = {
       ads: {
         advertisementLabel: 'Reklam',
       },
-      recommendationTitle: 'Önerilen haberler',
       seeAll: 'Hepsini görüntüle',
       home: 'Ana sayfa',
       currentPage: 'Bulunduğunuz sayfa',
@@ -274,6 +273,7 @@ export const service: DefaultServiceConfig = {
       hasRadioSchedule: false,
     },
     recommendations: {
+      header: 'En çok okunanlar',
       skipLink: {
         text: 'Haberin başlığını atlayın ve okumaya devam edin',
         endTextVisuallyHidden: 'Haberin sonu',

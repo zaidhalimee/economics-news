@@ -344,6 +344,13 @@ export const service: DefaultServiceConfig = {
       header: 'ያድምጡ',
       durationLabel: 'ርዝመት %duration%',
     },
+    recommendations: {
+      header: 'ብዙ የተነበቡ',
+      skipLink: {
+        text: 'Skip %title% and continue reading',
+        endTextVisuallyHidden: 'End of %title%',
+      },
+    },
     footer: {
       trustProjectLink: {
         href: 'https://www.bbc.com/amharic/institutional-49283133',

@@ -282,6 +282,13 @@ export const service: DefaultServiceConfig = {
       header: 'Vipindi vya Redio',
       durationLabel: 'Muda %duration%',
     },
+    recommendations: {
+      header: 'Iliyosomwa zaidi',
+      skipLink: {
+        text: 'Skip %title% and continue reading',
+        endTextVisuallyHidden: 'End of %title%',
+      },
+    },
     footer: {
       trustProjectLink: {
         href: 'https://www.bbc.com/swahili/taasisi-49283417',

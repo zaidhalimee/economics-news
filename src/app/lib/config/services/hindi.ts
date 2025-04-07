@@ -75,7 +75,6 @@ export const service: DefaultServiceConfig = {
       ads: {
         advertisementLabel: 'विज्ञापन',
       },
-      recommendationTitle: 'ये भी पढ़ें',
       seeAll: 'सब देखें',
       home: 'होम पेज',
       currentPage: 'मौजूदा पन्ना',
@@ -379,6 +378,7 @@ export const service: DefaultServiceConfig = {
       hasRadioSchedule: false,
     },
     recommendations: {
+      header: 'सबसे अधिक पढ़ी गईं',
       skipLink: {
         text: 'छोड़कर %title% आगे बढ़ें',
         endTextVisuallyHidden: 'समाप्त',

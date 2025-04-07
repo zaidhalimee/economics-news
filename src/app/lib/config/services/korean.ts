@@ -55,7 +55,6 @@ export const service: DefaultServiceConfig = {
       ads: {
         advertisementLabel: '광고',
       },
-      recommendationTitle: 'Recommended articles',
       seeAll: '모든 기사 보기',
       home: '홈',
       currentPage: '현재 페이지',
@@ -276,6 +275,7 @@ export const service: DefaultServiceConfig = {
       durationLabel: '방송 길이 %duration%',
     },
     recommendations: {
+      header: 'TOP 뉴스',
       skipLink: {
         text: 'Skip %title% and continue reading',
         endTextVisuallyHidden: 'End of %title%',

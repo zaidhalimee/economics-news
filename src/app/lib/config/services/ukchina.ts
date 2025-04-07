@@ -359,6 +359,13 @@ export const service: ChineseConfig = {
       numberOfItems: 10,
       hasMostRead: true,
     },
+    recommendations: {
+      header: '熱讀',
+      skipLink: {
+        text: 'Skip %title% and continue reading',
+        endTextVisuallyHidden: 'End of %title%',
+      },
+    },
     navigation: [
       {
         title: '主頁',

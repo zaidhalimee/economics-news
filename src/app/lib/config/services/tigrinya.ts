@@ -273,6 +273,13 @@ export const service: DefaultServiceConfig = {
       header: 'ስምዑ',
       durationLabel: 'ዕምሪ ፈነወ %duration%',
     },
+    recommendations: {
+      header: 'ብብዝሒ ዝተነበ',
+      skipLink: {
+        text: 'Skip %title% and continue reading',
+        endTextVisuallyHidden: 'End of %title%',
+      },
+    },
     footer: {
       trustProjectLink: {
         href: 'https://www.bbc.com/tigrinya/institutional-49283259',

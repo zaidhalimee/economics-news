@@ -76,7 +76,6 @@ export const service: DefaultServiceConfig = {
       ads: {
         advertisementLabel: 'إعلان',
       },
-      recommendationTitle: 'قصص مقترحة',
       seeAll: 'المزيد',
       home: 'الرئيسية',
       currentPage: 'الصفحة الحالية',
@@ -365,6 +364,7 @@ export const service: DefaultServiceConfig = {
       durationLabel: 'المدة %duration%',
     },
     recommendations: {
+      header: 'الأكثر قراءة',
       skipLink: {
         text: 'تخطى %title% وواصل القراءة',
         endTextVisuallyHidden: '%title% نهاية',

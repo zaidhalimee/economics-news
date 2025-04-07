@@ -278,6 +278,13 @@ export const service: DefaultServiceConfig = {
     radioSchedule: {
       hasRadioSchedule: false,
     },
+    recommendations: {
+      header: 'Akachasị Gụọ',
+      skipLink: {
+        text: 'Skip %title% and continue reading',
+        endTextVisuallyHidden: 'End of %title%',
+      },
+    },
     navigation: [
       {
         title: 'Akụkọ',

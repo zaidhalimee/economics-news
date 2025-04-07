@@ -57,7 +57,6 @@ export const service: DefaultServiceConfig = {
       ads: {
         advertisementLabel: 'Publicidad',
       },
-      recommendationTitle: 'Recomendamos',
       seeAll: 'Ver todo',
       home: 'Página de inicio',
       currentPage: 'Página actual',
@@ -353,6 +352,7 @@ export const service: DefaultServiceConfig = {
       hasRadioSchedule: false,
     },
     recommendations: {
+      header: 'Más leídas',
       skipLink: {
         text: 'Saltar %title% y continuar leyendo',
         endTextVisuallyHidden: 'Final de %title%',

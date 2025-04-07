@@ -148,6 +148,7 @@ export interface RadioSchedule {
 }
 
 export interface Recommendations {
+  header?: string;
   skipLink?: {
     text: string;
     endTextVisuallyHidden: string;

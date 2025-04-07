@@ -315,6 +315,13 @@ export const service: DefaultServiceConfig = {
       header: 'Ibiganiro bishya',
       durationLabel: 'Umwanya bimara %duration%',
     },
+    recommendations: {
+      header: 'Ibisomwa cane',
+      skipLink: {
+        text: 'Skip %title% and continue reading',
+        endTextVisuallyHidden: 'End of %title%',
+      },
+    },
     footer: {
       trustProjectLink: {
         href: 'https://www.bbc.com/gahuza/institutional-49283343',

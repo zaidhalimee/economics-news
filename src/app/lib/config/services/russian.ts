@@ -115,7 +115,6 @@ export const mainTranslations = {
   ads: {
     advertisementLabel: 'Реклама',
   },
-  recommendationTitle: 'По теме',
   seeAll: 'Посмотреть все',
   skipLinkText: 'Перейти к содержанию',
   relatedContent: 'Читайте также',
@@ -359,6 +358,13 @@ export const service: DefaultServiceConfig = {
       lastUpdated: 'Последнее обновление:',
       numberOfItems: 10,
       hasMostRead: true,
+    },
+    recommendations: {
+      header: 'Самое популярное',
+      skipLink: {
+        text: 'Skip %title% and continue reading',
+        endTextVisuallyHidden: 'End of %title%',
+      },
     },
     podcastPromo: {
       title: 'WhatsApp',

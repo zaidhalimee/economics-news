@@ -75,7 +75,6 @@ export const service: DefaultServiceConfig = {
       ads: {
         advertisementLabel: 'Iklan',
       },
-      recommendationTitle: 'Artikel-artikel yang direkomendasikan',
       seeAll: 'Lihat semua',
       home: 'Berita',
       currentPage: 'Halaman saat ini',
@@ -303,6 +302,7 @@ export const service: DefaultServiceConfig = {
       durationLabel: 'Durasi %duration%',
     },
     recommendations: {
+      header: 'Paling banyak dibaca',
       skipLink: {
         text: 'Lewatkan %title% dan terus membaca',
         endTextVisuallyHidden: 'Akhir dari %title%',

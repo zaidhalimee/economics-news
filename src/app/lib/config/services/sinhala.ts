@@ -269,6 +269,13 @@ export const service: DefaultServiceConfig = {
       numberOfItems: 5,
       hasMostRead: true,
     },
+    recommendations: {
+      header: 'වැඩිපුරම කියැවූ',
+      skipLink: {
+        text: 'Skip %title% and continue reading',
+        endTextVisuallyHidden: 'End of %title%',
+      },
+    },
     radioSchedule: {
       hasRadioSchedule: false,
     },

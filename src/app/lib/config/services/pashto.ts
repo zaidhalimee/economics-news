@@ -290,6 +290,13 @@ export const service: DefaultServiceConfig = {
       header: 'تازه خبرونه واورئ',
       durationLabel: '%duration% موده',
     },
+    recommendations: {
+      header: 'ډېر لوستل شوي',
+      skipLink: {
+        text: 'Skip %title% and continue reading',
+        endTextVisuallyHidden: 'End of %title%',
+      },
+    },
     footer: {
       trustProjectLink: {
         href: 'https://www.bbc.com/pashto/institutional-49283007',

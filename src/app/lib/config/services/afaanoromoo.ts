@@ -294,6 +294,13 @@ export const service: DefaultServiceConfig = {
       header: 'Dhaggeeffadhaa',
       durationLabel: 'Turtii %duration%',
     },
+    recommendations: {
+      header: "Baay'ee kan dubbifame",
+      skipLink: {
+        text: 'Skip %title% and continue reading',
+        endTextVisuallyHidden: 'End of %title%',
+      },
+    },
     footer: {
       trustProjectLink: {
         href: 'https://www.bbc.com/afaanoromoo/institutional-49281861',

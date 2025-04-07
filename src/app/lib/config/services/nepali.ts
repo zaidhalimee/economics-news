@@ -276,6 +276,13 @@ export const service: DefaultServiceConfig = {
       header: 'पछिल्लो कार्यक्रम सुन्नुहोस्',
       durationLabel: 'अवधि %duration%',
     },
+    recommendations: {
+      header: 'धेरै पढिएको',
+      skipLink: {
+        text: 'Skip %title% and continue reading',
+        endTextVisuallyHidden: 'End of %title%',
+      },
+    },
     footer: {
       trustProjectLink: {
         href: 'https://www.bbc.com/nepali/institutional-50318130',

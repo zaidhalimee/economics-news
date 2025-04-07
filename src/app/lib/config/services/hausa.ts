@@ -365,6 +365,13 @@ export const service: DefaultServiceConfig = {
       header: 'Shirye-shiryenmu',
       durationLabel: 'Tsawon lokaci %duration%',
     },
+    recommendations: {
+      header: 'Wanda aka fi karantawa',
+      skipLink: {
+        text: 'Skip %title% and continue reading',
+        endTextVisuallyHidden: 'End of %title%',
+      },
+    },
     footer: {
       trustProjectLink: {
         href: 'https://www.bbc.com/hausa/game-da-mu-49283501',

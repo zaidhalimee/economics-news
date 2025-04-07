@@ -285,6 +285,13 @@ const defaultCyrillicConfig = {
     numberOfItems: 5,
     hasMostRead: true,
   },
+  recommendations: {
+    header: 'Энг кўп ўқилган',
+    skipLink: {
+      text: 'Skip %title% and continue reading',
+      endTextVisuallyHidden: 'End of %title%',
+    },
+  },
   footer: {
     trustProjectLink: {
       href: 'https://www.bbc.com/uzbek/institutional-50220995',
@@ -619,6 +626,13 @@ export const service: UzbekConfig = {
       lastUpdated: 'So‘nggi yangilanish:',
       numberOfItems: 5,
       hasMostRead: true,
+    },
+    recommendations: {
+      header: 'Eng ko‘p o‘qilgan',
+      skipLink: {
+        text: 'Skip %title% and continue reading',
+        endTextVisuallyHidden: 'End of %title%',
+      },
     },
     footer: {
       trustProjectLink: {

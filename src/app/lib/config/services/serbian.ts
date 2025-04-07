@@ -108,6 +108,13 @@ export const service: SerbianConfig = {
       numberOfItems: 10,
       hasMostRead: true,
     },
+    recommendations: {
+      header: 'Najčitanije',
+      skipLink: {
+        text: 'Skip %title% and continue reading',
+        endTextVisuallyHidden: 'End of %title%',
+      },
+    },
     navigation: [
       {
         title: 'Početna strana',
@@ -505,6 +512,13 @@ export const service: SerbianConfig = {
       lastUpdated: 'Последњи пут ажурирано:',
       numberOfItems: 10,
       hasMostRead: true,
+    },
+    recommendations: {
+      header: 'Најчитаније',
+      skipLink: {
+        text: 'Skip %title% and continue reading',
+        endTextVisuallyHidden: 'End of %title%',
+      },
     },
     navigation: [
       {

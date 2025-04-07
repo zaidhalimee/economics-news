@@ -363,6 +363,13 @@ export const service: DefaultServiceConfig = {
       header: 'ایف ایم بلیٹن',
       durationLabel: '%duration% دورانیہ',
     },
+    recommendations: {
+      header: 'سب سے زیادہ پڑھی جانے والی',
+      skipLink: {
+        text: 'Skip %title% and continue reading',
+        endTextVisuallyHidden: 'End of %title%',
+      },
+    },
     footer: {
       trustProjectLink: {
         href: 'https://www.bbc.com/urdu/institutional-49282935',

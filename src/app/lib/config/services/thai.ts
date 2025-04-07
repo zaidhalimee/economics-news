@@ -55,7 +55,6 @@ export const service: DefaultServiceConfig = {
       ads: {
         advertisementLabel: 'โฆษณา',
       },
-      recommendationTitle: 'เรื่องแนะนำ',
       seeAll: 'ดูทั้งหมด',
       home: 'หน้าแรก',
       currentPage: 'หน้าปัจจุบัน',
@@ -265,6 +264,7 @@ export const service: DefaultServiceConfig = {
       hasRadioSchedule: false,
     },
     recommendations: {
+      header: 'ได้รับความนิยมสูงสุด',
       skipLink: {
         text: 'Skip %title% and continue reading',
         endTextVisuallyHidden: 'End of %title%',
