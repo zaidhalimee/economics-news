@@ -5,12 +5,11 @@ import { RequestContext } from '#app/contexts/RequestContext';
 import { LITE_ATI_VIEW_TRACKING } from '#src/server/utilities/liteATITracking/viewTracking';
 import { VIEW_EVENT } from '#app/lib/analyticsUtils/analytics.const';
 import constructLiteSiteATIEventTrackUrl from '#src/server/utilities/liteATITracking/constructATIUrl';
+import extractATITrackingProps from '#app/lib/analyticsUtils/extractATITrackingProps';
 import { sendEventBeacon } from '../../components/ATIAnalytics/beacon';
-import { EventTrackingContext } from '../../contexts/EventTrackingContext';
 import useTrackingToggle from '../useTrackingToggle';
 import OPTIMIZELY_CONFIG from '../../lib/config/optimizely';
 import { ServiceContext } from '../../contexts/ServiceContext';
-import extractATITrackingProps from '#app/lib/analyticsUtils/extractATITrackingProps';
 
 const VIEWED_DURATION_MS = 1000;
 const MIN_VIEWED_PERCENT = 0.5;
@@ -171,17 +170,16 @@ const useViewTrackerRef = (props = {}) => {
 
 const useViewTracker = (props = {}) => {
   const { isLite } = useContext(RequestContext);
-  const liteHandler = constructLiteSiteATIEventTrackUrl({
+  const viewHandler = useViewTrackerRef(props);
+  const liteViewHandler = constructLiteSiteATIEventTrackUrl({
     props,
     eventType: VIEW_EVENT,
   });
 
-  const viewTracker = useViewTrackerRef(props);
-
   return isLite
-    ? { [LITE_ATI_VIEW_TRACKING]: liteHandler }
+    ? { [LITE_ATI_VIEW_TRACKING]: liteViewHandler }
     : {
-        ref: viewTracker,
+        ref: viewHandler,
       };
 };
 

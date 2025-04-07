@@ -4,13 +4,12 @@ import { RequestContext } from '#app/contexts/RequestContext';
 import extractATITrackingProps from '#app/lib/analyticsUtils/extractATITrackingProps';
 import constructLiteSiteATIEventTrackUrl from '#src/server/utilities/liteATITracking/constructATIUrl';
 import { CLICK_EVENT } from '#app/lib/analyticsUtils/analytics.const';
+import { LITE_ATI_CLICK_TRACKING } from '#src/server/utilities/liteATITracking/clickTracking';
 import useTrackingToggle from '../useTrackingToggle';
 import OPTIMIZELY_CONFIG from '../../lib/config/optimizely';
 import { sendEventBeacon } from '../../components/ATIAnalytics/beacon/index';
 import { ServiceContext } from '../../contexts/ServiceContext';
 import { isValidClick } from './clickTypes';
-
-export const LITE_ATI_CLICK_TRACKING = 'data-lite-ati-click';
 
 const useClickTrackerHandler = (props = {}) => {
   const {
