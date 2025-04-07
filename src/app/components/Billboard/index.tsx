@@ -41,7 +41,7 @@ const Billboard = forwardRef(
 
     return (
       <section role="region" aria-labelledby={id} data-testid={id}>
-        <div css={styles.headerContainer} ref={viewRef}>
+        <div css={styles.headerContainer} {...viewRef}>
           <div css={styles.backgroundContainer} />
           <div css={styles.contentContainer}>
             <MaskedImage
