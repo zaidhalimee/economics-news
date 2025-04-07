@@ -32,7 +32,7 @@ const Recommendations = ({ data }: { data: Recommendation[] }) => {
     'aria-labelledby': labelId,
   };
 
-  const { hasMostRead, header } = mostRead || {};
+  const { hasMostRead, header: mostReadHeader } = mostRead || {};
   const { skipLink } = recommendations || {};
 
   const { text, endTextVisuallyHidden } = skipLink || {
@@ -42,7 +42,7 @@ const Recommendations = ({ data }: { data: Recommendation[] }) => {
 
   if (!hasMostRead || !data?.length) return null;
 
-  const title = header ?? 'Most read';
+  const title = mostReadHeader ?? 'Most read';
 
   const terms = { '%title%': title };
 
