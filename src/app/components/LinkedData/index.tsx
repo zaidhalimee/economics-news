@@ -111,12 +111,25 @@ const LinkedData = ({
 
   const hasByline = !!bylineLinkedData;
 
-  const { authorName, authorTopicUrl, twitterLink, authorImage, location } =
-    bylineLinkedData || {};
+  const places: string[] = [];
 
-  const sameAs = [authorTopicUrl, twitterLink].filter(Boolean);
+  const bylineAuthors = bylineLinkedData?.map(data => {
+    const { authorName, authorTopicUrl, twitterLink, authorImage, location } =
+      data || {};
 
-  const locationCreated = { '@place': location };
+    const sameAs = [authorTopicUrl, twitterLink].filter(Boolean);
+    if (places.indexOf(location) === -1 && location !== '') {
+      places.push(location);
+    }
+    return {
+      '@type': 'Person',
+      name: authorName,
+      ...(sameAs.length && { sameAs }),
+      ...(authorImage && { image: authorImage }),
+    };
+  });
+
+  const locationCreated = { '@place': places };
 
   const orgAuthor = {
     '@type': ORG_TYPE,
@@ -130,15 +143,7 @@ const LinkedData = ({
     ...(isTrustProjectParticipant && { noBylinesPolicy }),
   };
 
-  const bylineAuthor = {
-    '@type': 'Person',
-    name: authorName,
-    ...(sameAs.length && { sameAs }),
-    ...(authorImage && { image: authorImage }),
-  };
-
-  const author = hasByline ? bylineAuthor : orgAuthor;
-
+  const author = hasByline ? bylineAuthors : orgAuthor;
   const linkedData = {
     '@type': type,
     url: canonicalNonUkLink,
@@ -156,7 +161,7 @@ const LinkedData = ({
     ...(showAuthor && {
       author,
     }),
-    ...(hasByline && location && { locationCreated }),
+    ...(hasByline && places.length > 0 && { locationCreated }),
   };
 
   return (
