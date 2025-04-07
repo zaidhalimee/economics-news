@@ -224,9 +224,9 @@ const ScrollablePromo = ({
           <PromoList
             blocks={blocks}
             experimentVariant={experimentVariant}
-            viewTracker={viewRef}
+            {...viewRef}
             onClick={handleClickTracking}
-            {...a11yAttributes}
+            a11yAttributes={a11yAttributes}
           />
         </GridItemMediumNoMargin>
       </ScrollablePromoContainer>
@@ -251,7 +251,7 @@ const ScrollablePromo = ({
       ) : (
         <PromoList
           blocks={blocksWithoutTitle}
-          viewTracker={viewRef}
+          {...viewRef}
           onClick={handleClickTracking}
         />
       )}

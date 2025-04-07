@@ -82,9 +82,9 @@ const OperaStyledList = styled.li`
 const PromoList = ({
   blocks,
   experimentVariant,
-  viewTracker,
   onClick,
-  ...a11yAttributes
+  viewTracker,
+  a11yAttributes,
 }) => {
   const { dir } = useContext(ServiceContext);
   const isOperaMini = useOperaMiniDetection();
@@ -100,7 +100,7 @@ const PromoList = ({
       dir={dir}
       role="list"
       isOperaMini={isOperaMini}
-      ref={viewTracker}
+      {...viewTracker}
       {...a11yAttributes}
     >
       {listBlocks.map((block, index) => {
