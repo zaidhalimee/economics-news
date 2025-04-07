@@ -258,6 +258,8 @@ const ArticlePage = ({
     continueReadingButtonVariation && !isAmp && !isLite && !isApp,
   );
 
+  const { enabled: showCTA } = useToggle('liteSiteCTA');
+  console.log('showCTA', showCTA);
   return (
     <div css={styles.pageWrapper}>
       <ATIAnalytics atiData={atiData} />
@@ -310,7 +312,12 @@ const ArticlePage = ({
             css={[
               styles.mainContent,
               ...(showContinueReadingButton
-                ? [!showAllContent && styles.contentHidden]
+                ? [
+                    !showAllContent &&
+                      (showCTA
+                        ? styles.contentHiddenWithLiveCTA
+                        : styles.contentHiddenNoLiveCTA),
+                  ]
                 : []),
             ]}
             role="main"
