@@ -1,4 +1,4 @@
-const SUPPORTED_MEDIUM_CAMPAIGN_TYPES = [
+export const SUPPORTED_MEDIUM_CAMPAIGN_TYPES = [
   'affiliate',
   'sl',
   'email',
@@ -7,12 +7,9 @@ const SUPPORTED_MEDIUM_CAMPAIGN_TYPES = [
   'RSS',
 ];
 
-const MEDIUM_CAMPAIGN_IDENTIFIER = 'at_medium';
+export const MEDIUM_CAMPAIGN_IDENTIFIER = 'at_medium';
 
-const XTOR_CAMPAIGN_IDENTIFIER = 'xtor';
+export const XTOR_CAMPAIGN_IDENTIFIER = 'xtor';
 
-module.exports = {
-  SUPPORTED_MEDIUM_CAMPAIGN_TYPES,
-  MEDIUM_CAMPAIGN_IDENTIFIER,
-  XTOR_CAMPAIGN_IDENTIFIER,
-};
+export const VIEW_EVENT = 'view';
+export const CLICK_EVENT = 'click';

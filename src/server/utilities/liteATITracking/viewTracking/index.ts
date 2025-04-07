@@ -1,3 +1,5 @@
+export const LITE_ATI_VIEW_TRACKING = 'data-lite-ati-view';
+
 export default () => {
   const MIN_VIEWED_PERCENT = 0.5;
   const VIEWED_DURATION_MS = 1000;
@@ -8,7 +10,7 @@ export default () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const { target } = entry;
-          const atiURL = target.getAttribute('data-lite-ati-view-tracking');
+          const atiURL = target.getAttribute(LITE_ATI_VIEW_TRACKING);
           setTimeout(() => {
             window.processClientDeviceAndSendLite(atiURL as string);
             observer.unobserve(target);
@@ -17,7 +19,7 @@ export default () => {
       });
     }, options);
 
-    const targets = document.querySelectorAll('[data-lite-ati-view-tracking]');
+    const targets = document.querySelectorAll(`[${LITE_ATI_VIEW_TRACKING}]`);
     targets.forEach(target => observer.observe(target));
   }
 };
