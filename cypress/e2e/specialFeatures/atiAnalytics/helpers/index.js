@@ -29,7 +29,7 @@ const RECOMMENDATIONS = 'wsoj';
 const SCROLLABLE_PROMO = 'edoj';
 const BILLBOARD = 'billboard';
 const SOCIAL_EMBED = 'social-consent-banner';
-const LIVE_MEDIA = 'live-media';
+const LIVE_MEDIA = 'live-header-media';
 const SHARE = 'asset:';
 
 export const COMPONENTS = {

@@ -9,6 +9,10 @@ import {
   assertShareComponentView,
   assertShareComponentClick,
 } from '../../../../../cypress/e2e/specialFeatures/atiAnalytics/assertions/share';
+import {
+  assertLiveMediaComponentView,
+  assertLiveMediaComponentClick,
+} from '../../../../../cypress/e2e/specialFeatures/atiAnalytics/assertions/liveMedia';
 
 import runTestsForPage from '../../../support/helpers/runTestsForPage';
 
@@ -43,6 +47,8 @@ const canonicalTestSuites = [
       assertPageView,
       assertScrollableNavigationComponentView,
       assertScrollableNavigationComponentClick,
+      assertLiveMediaComponentView,
+      assertLiveMediaComponentClick,
       assertShareComponentView,
       assertShareComponentClick,
     ],
