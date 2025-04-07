@@ -19,6 +19,13 @@ const testDetails = {
       runforEnv: ['test', 'local'],
       tests: [testsThatAlwaysRunForAllPages, pageVisit],
     },
+    {
+      path: '/mundo/send/u50853489.lite',
+      id: 'u50853489',
+      service: 'mundo',
+      runforEnv: ['test', 'local'],
+      tests: [testsThatAlwaysRunForAllPages, pageVisit],
+    },
   ],
 };
 
