@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from '../react-testing-library-with-providers';
 import LiteSiteCta from '.';
+import { LITE_ATI_CLICK_TRACKING } from '#app/lib/analyticsUtils/analytics.const';
 
 describe('LiteSiteCTA', () => {
   it('Should have a hidden strong element with lite site identifier.', () => {
@@ -35,7 +36,7 @@ describe('LiteSiteCTA', () => {
     const { container } = render(<LiteSiteCta />, { isLite: true });
 
     const [ctaLink] = container.querySelectorAll('a');
-    const atiUrl = ctaLink.getAttribute('data-lite-ati-click');
+    const atiUrl = ctaLink.getAttribute(LITE_ATI_CLICK_TRACKING);
 
     expect(atiUrl).toContain('lite-site-cta');
   });
