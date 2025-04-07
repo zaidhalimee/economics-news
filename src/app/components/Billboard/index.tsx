@@ -104,7 +104,7 @@ export default ({
       altText={altText}
       id={id}
       eventTrackingData={eventTrackingData}
-      ref={viewRef}
+      {...viewRef}
       showLiveLabel={showLiveLabel}
     />
   );
