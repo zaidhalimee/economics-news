@@ -26,9 +26,7 @@ const ContinueReadingButton = ({
 
   const {
     translations: { continueReading = 'Continue reading' },
-    dir,
   } = use(ServiceContext);
-  const isRtl = dir === 'rtl';
   const viewRef = useViewTracker(eventTrackingData);
   const clickTrackerHandler = useClickTrackerHandler(eventTrackingData);
 
@@ -86,23 +84,23 @@ const ContinueReadingButton = ({
       ref={viewRef}
     >
       {variation === 'B' && (
-        // <svg
-        //   xmlns="http://www.w3.org/2000/svg"
-        //   viewBox="0 0 32 32"
-        //   aria-hidden="true"
-        //   focusable="false"
-        // >
-        //   <path d="M26.7 12.6 16 23.2 5.3 12.6V8.8h21.4z" />
-        // </svg>
-
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 32 32"
           aria-hidden="true"
           focusable="false"
         >
-          <path d="M12.6 26.7 23.2 16 12.6 5.3H8.8v21.4z" />
+          <path d="M26.7 12.6 16 23.2 5.3 12.6V8.8h21.4z" />
         </svg>
+
+        // <svg
+        //   xmlns="http://www.w3.org/2000/svg"
+        //   viewBox="0 0 32 32"
+        //   aria-hidden="true"
+        //   focusable="false"
+        // >
+        //   <path d="M12.6 26.7 23.2 16 12.6 5.3H8.8v21.4z" />
+        // </svg>
       )}
       <Text fontVariant="sansBold">{continueReading}</Text>
     </button>

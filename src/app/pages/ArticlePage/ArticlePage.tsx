@@ -259,7 +259,7 @@ const ArticlePage = ({
   );
 
   const { enabled: showCTA } = useToggle('liteSiteCTA');
-  console.log('showCTA', showCTA);
+
   return (
     <div css={styles.pageWrapper}>
       <ATIAnalytics atiData={atiData} />

@@ -1,6 +1,7 @@
 import NO_JS_CLASSNAME from '#app/lib/noJs.const';
 import pixelsToRem from '#app/utilities/pixelsToRem';
 import { css, Theme } from '@emotion/react';
+import { FORCED_COLOURS } from '../../../components/ThemeProvider/mediaQueries';
 
 export default {
   continueReadingButtonA: ({ spacings, palette }: Theme) =>
@@ -16,6 +17,12 @@ export default {
 
       span: {
         color: palette.WHITE,
+      },
+
+      '@media (forced-colors: active)': {
+        backgroundColor: 'Canvas', // System-defined background color
+        color: 'CanvasText', // System-defined text color
+        border: '1px solid CanvasText', // Ensure visibility in high contrast
       },
 
       '&:hover, &:focus': {
@@ -50,6 +57,11 @@ export default {
         height: `${spacings.DOUBLE}rem`,
         marginInlineEnd: `${pixelsToRem(10)}rem`,
         verticalAlign: 'middle',
+      },
+      '@media (forced-colors: active)': {
+        backgroundColor: 'Canvas', // System-defined background color
+        color: 'CanvasText', // System-defined text color
+        border: '1px solid CanvasText', // Ensure visibility in high contrast
       },
 
       '&:hover, &:focus': {
