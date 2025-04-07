@@ -2,7 +2,7 @@ import bylineExtractor from '.';
 import {
   bylineWithNoAuthor,
   bylineWithLink,
-  bylineWithNonPngPhoto,
+  // bylineWithNonPngPhoto,
   bylineWithAllData,
 } from '../../../../pages/ArticlePage/fixtureData';
 

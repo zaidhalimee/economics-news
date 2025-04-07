@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { render, act, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import CanonicalChartbeatAnalytics from '.';
 import { CanonicalChartbeatConfig } from '../types';
 
@@ -22,32 +22,32 @@ describe('CanonicalChartbeatAnalytics', () => {
     uid: 123,
   };
 
-  const pageBConfig = {
-    chartbeatConfig: {
-      domain: 'test-domain',
-      type: 'article',
-      sections: 'section1 section2',
-      chartbeatUID: 1111,
-      useCanonical: true,
-      virtualReferrer: '/page-A',
-      title: 'Page B',
-      authors: 'Neil Donohue',
-      uid: 123,
-    },
-  };
+  // const pageBConfig = {
+  //   chartbeatConfig: {
+  //     domain: 'test-domain',
+  //     type: 'article',
+  //     sections: 'section1 section2',
+  //     chartbeatUID: 1111,
+  //     useCanonical: true,
+  //     virtualReferrer: '/page-A',
+  //     title: 'Page B',
+  //     authors: 'Neil Donohue',
+  //     uid: 123,
+  //   },
+  // };
 
-  const pageCConfig = {
-    chartbeatConfig: {
-      domain: 'test-domain',
-      type: 'article',
-      sections: 'section1 section2',
-      chartbeatUID: 1111,
-      useCanonical: true,
-      virtualReferrer: '/page-B',
-      title: 'Page C',
-      uid: 123,
-    },
-  };
+  // const pageCConfig = {
+  //   chartbeatConfig: {
+  //     domain: 'test-domain',
+  //     type: 'article',
+  //     sections: 'section1 section2',
+  //     chartbeatUID: 1111,
+  //     useCanonical: true,
+  //     virtualReferrer: '/page-B',
+  //     title: 'Page C',
+  //     uid: 123,
+  //   },
+  // };
 
   it('should return the helmet wrapper with the script snippet', () => {
     render(
