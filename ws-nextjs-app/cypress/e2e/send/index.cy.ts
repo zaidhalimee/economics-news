@@ -19,14 +19,12 @@ const canonicalTestSuites = [
   },
 ];
 
-const liteTestSuites = canonicalTestSuites
-  .filter(({ service }) => service !== 'news')
-  .map(testSuite => {
-    return {
-      ...testSuite,
-      path: `${testSuite.path}.lite`,
-    };
-  });
+const liteTestSuites = canonicalTestSuites.map(testSuite => {
+  return {
+    ...testSuite,
+    path: `${testSuite.path}.lite`,
+  };
+});
 
 const testDetails = {
   pageType: 'send',
