@@ -2,8 +2,10 @@ import { useContext, useEffect, useState, useRef } from 'react';
 import prop from 'ramda/src/prop';
 
 import { RequestContext } from '#app/contexts/RequestContext';
-import { LITE_ATI_VIEW_TRACKING } from '#src/server/utilities/liteATITracking/viewTracking';
-import { VIEW_EVENT } from '#app/lib/analyticsUtils/analytics.const';
+import {
+  LITE_ATI_VIEW_TRACKING,
+  VIEW_EVENT,
+} from '#app/lib/analyticsUtils/analytics.const';
 import constructLiteSiteATIEventTrackUrl from '#src/server/utilities/liteATITracking/constructATIUrl';
 import extractATITrackingProps from '#app/lib/analyticsUtils/extractATITrackingProps';
 import { sendEventBeacon } from '../../components/ATIAnalytics/beacon';
@@ -33,7 +35,7 @@ const useViewTrackerRef = (props = {}) => {
     detailedPlacement,
     optimizely,
     optimizelyMetricNameOverride,
-  } = extractATITrackingProps(props);
+  } = extractATITrackingProps({ props, eventType: VIEW_EVENT });
 
   const observer = useRef();
   const timer = useRef(null);

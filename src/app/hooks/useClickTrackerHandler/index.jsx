@@ -27,7 +27,7 @@ const useClickTrackerHandler = (props = {}) => {
     preventNavigation,
     optimizely,
     optimizelyMetricNameOverride,
-  } = extractATITrackingProps(props);
+  } = extractATITrackingProps({ props, eventType: CLICK_EVENT });
 
   const { trackingIsEnabled } = useTrackingToggle(componentName);
   const [clicked, setClicked] = useState(false);
