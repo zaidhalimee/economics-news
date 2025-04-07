@@ -25,6 +25,10 @@ const Recommendations = ({ data }: { data: Recommendation[] }) => {
     palette: { GREY_2 },
   } = useTheme();
 
+  const { hasMostRead } = mostRead || {};
+
+  if (!hasMostRead || !data?.length) return null;
+
   const labelId = 'recommendations-heading';
 
   const a11yAttributes = {
@@ -32,15 +36,12 @@ const Recommendations = ({ data }: { data: Recommendation[] }) => {
     'aria-labelledby': labelId,
   };
 
-  const { hasMostRead } = mostRead || {};
   const { skipLink, header } = recommendations || {};
 
   const { text, endTextVisuallyHidden } = skipLink || {
     text: 'Skip %title% and continue reading',
     endTextVisuallyHidden: 'End of %title%',
   };
-
-  if (!hasMostRead || !data?.length) return null;
 
   const title = header ?? 'Most read';
 
