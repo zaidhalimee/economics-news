@@ -73,7 +73,7 @@ type TopStoriesItemProps = {
 const TopStoriesItem = forwardRef(
   (
     { item, ariaLabelledBy, eventTrackingData = null }: TopStoriesItemProps,
-    viewRef: ForwardedRef<HTMLDivElement>,
+    viewRef: ForwardedRef<HTMLElement>,
   ) => {
     if (!item || Object.keys(item).length === 0) return null;
 
