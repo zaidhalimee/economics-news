@@ -266,7 +266,7 @@ export const service: DefaultServiceConfig = {
       latestMediaTitle: 'সর্বশেষ',
     },
     mostRead: {
-      header: 'সর্বাধিক পঠিত',
+      header: 'Popular Reads',
       lastUpdated: 'সর্বশেষ আপডেট হয়েছে:',
       numberOfItems: 5,
       hasMostRead: true,

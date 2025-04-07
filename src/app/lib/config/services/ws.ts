@@ -209,10 +209,10 @@ export const service: DefaultServiceConfig = {
       socialEmbed: {},
     },
     mostRead: {
-      header: 'Most read',
+      header: 'Popular Reads',
       lastUpdated: 'Last updated:',
       numberOfItems: 10,
-      hasMostRead: true,
+      hasMostRead: false,
     },
     radioSchedule: {
       hasRadioSchedule: false,

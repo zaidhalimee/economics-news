@@ -305,7 +305,7 @@ export const service: DefaultServiceConfig = {
       latestMediaTitle: 'Ibiheruka',
     },
     mostRead: {
-      header: 'Ibisomwa cane',
+      header: 'Popular Reads',
       lastUpdated: 'Ibiheruka kuvugururwa:',
       numberOfItems: 5,
       hasMostRead: true,

@@ -622,7 +622,7 @@ export const service: UzbekConfig = {
       latestMediaTitle: 'So‘nggi',
     },
     mostRead: {
-      header: 'Eng ko‘p o‘qilgan',
+      header: 'Popular Reads',
       lastUpdated: 'So‘nggi yangilanish:',
       numberOfItems: 5,
       hasMostRead: true,

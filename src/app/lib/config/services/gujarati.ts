@@ -271,7 +271,7 @@ export const service: DefaultServiceConfig = {
       latestMediaTitle: 'લેટેસ્ટ',
     },
     mostRead: {
-      header: 'સૌથી વધારે વંચાયેલા સમાચાર',
+      header: 'Popular Reads',
       lastUpdated: 'લાસ્ટ અપડેટ:',
       numberOfItems: 10,
       hasMostRead: true,

@@ -205,7 +205,7 @@ export const service: DefaultServiceConfig = {
       socialEmbed: {},
     },
     mostRead: {
-      header: 'Most read',
+      header: 'Popular Reads',
       lastUpdated: 'Last updated:',
       hasMostRead: false,
       numberOfItems: 10,

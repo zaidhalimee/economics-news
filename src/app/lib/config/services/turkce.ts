@@ -264,7 +264,7 @@ export const service: DefaultServiceConfig = {
       featuresAnalysisTitle: 'Seçtiklerimiz',
     },
     mostRead: {
-      header: 'En çok okunanlar',
+      header: 'Popular Reads',
       lastUpdated: 'Son güncelleme:',
       numberOfItems: 10,
       hasMostRead: true,

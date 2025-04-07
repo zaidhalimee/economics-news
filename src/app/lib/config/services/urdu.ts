@@ -353,7 +353,7 @@ export const service: DefaultServiceConfig = {
       },
     },
     mostRead: {
-      header: 'سب سے زیادہ پڑھی جانے والی',
+      header: 'Popular Reads',
       lastUpdated: 'آخری اپ ڈیٹ',
       numberOfItems: 10,
       hasMostRead: true,

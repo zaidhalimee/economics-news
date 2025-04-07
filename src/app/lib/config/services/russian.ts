@@ -354,7 +354,7 @@ export const service: DefaultServiceConfig = {
     showRelatedTopics: true,
     googleSiteVerification: 'D-aEHUiyVaMoUJXjVRbDVkxS0dLTMUZLD3dLPTnWO4Q',
     mostRead: {
-      header: 'Самое популярное',
+      header: 'Popular Reads',
       lastUpdated: 'Последнее обновление:',
       numberOfItems: 10,
       hasMostRead: true,

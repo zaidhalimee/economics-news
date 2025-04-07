@@ -272,7 +272,7 @@ export const service: DefaultServiceConfig = {
       featuresAnalysisTitle: 'Gumzo mitandaoni',
     },
     mostRead: {
-      header: 'Iliyosomwa zaidi',
+      header: 'Popular Reads',
       lastUpdated: 'Imeboreshwa mwisho:',
       numberOfItems: 10,
       hasMostRead: true,

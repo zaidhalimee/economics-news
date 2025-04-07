@@ -212,7 +212,7 @@ export const service: DefaultServiceConfig = {
       featuresAnalysisTitle: 'More to explore',
     },
     mostRead: {
-      header: 'Most read',
+      header: 'Popular Reads',
       lastUpdated: 'Last updated:',
       numberOfItems: 10,
       hasMostRead: true,

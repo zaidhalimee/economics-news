@@ -270,7 +270,7 @@ export const service: DefaultServiceConfig = {
       latestMediaTitle: 'Kachasị ọhụrụ',
     },
     mostRead: {
-      header: 'Akachasị Gụọ',
+      header: 'Popular Reads',
       lastUpdated: 'Emelitere ikpeazụ na:',
       numberOfItems: 5,
       hasMostRead: true,

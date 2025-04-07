@@ -273,7 +273,7 @@ export const service: DefaultServiceConfig = {
       latestMediaTitle: 'Arrimhii u danbeeyey',
     },
     mostRead: {
-      header: 'Ugu akhris badan',
+      header: 'Popular Reads',
       lastUpdated: 'Markii ugu dambeysay ee la cusbooneysiiyay:',
       numberOfItems: 5,
       hasMostRead: true,

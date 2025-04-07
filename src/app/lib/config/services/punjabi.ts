@@ -266,7 +266,7 @@ export const service: DefaultServiceConfig = {
       latestMediaTitle: 'ਬਿਲਕੁਲ ਨਵਾਂ',
     },
     mostRead: {
-      header: 'ਸਭ ਤੋਂ ਵੱਧ ਪੜ੍ਹਿਆ ਗਿਆ',
+      header: 'Popular Reads',
       lastUpdated: 'ਆਖ਼ਰੀ ਅਪਡੇਟ:',
       numberOfItems: 10,
       hasMostRead: true,

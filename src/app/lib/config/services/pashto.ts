@@ -278,7 +278,7 @@ export const service: DefaultServiceConfig = {
       featuresAnalysisTitle: 'ځانګړي مطالب',
     },
     mostRead: {
-      header: 'ډېر لوستل شوي',
+      header: 'Popular Reads',
       lastUpdated: 'د خپرېدو نیټه',
       numberOfItems: 10,
       hasMostRead: true,

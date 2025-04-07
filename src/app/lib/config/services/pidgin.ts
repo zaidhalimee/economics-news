@@ -260,7 +260,7 @@ export const service: DefaultServiceConfig = {
       latestMediaTitle: 'New things',
     },
     mostRead: {
-      header: 'Di one wey oda users dey read well well',
+      header: 'Popular Reads',
       lastUpdated: 'De one we dem update for:',
       numberOfItems: 5,
       hasMostRead: true,

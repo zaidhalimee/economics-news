@@ -266,7 +266,7 @@ export const service: DefaultServiceConfig = {
       featuresAnalysisTitle: 'अन‌ि यो पनि',
     },
     mostRead: {
-      header: 'धेरै पढिएको',
+      header: 'Popular Reads',
       lastUpdated: 'मा अन्तिम चोटि अद्यावधिक',
       numberOfItems: 5,
       hasMostRead: true,

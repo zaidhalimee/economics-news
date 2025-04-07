@@ -324,7 +324,7 @@ export const service: DefaultServiceConfig = {
       },
     },
     mostRead: {
-      header: 'As motha leughte',
+      header: 'Popular Reads',
       lastUpdated: 'Air ùrachadh mu dheireadh:',
       numberOfItems: 5,
       hasMostRead: false,

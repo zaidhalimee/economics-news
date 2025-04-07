@@ -307,7 +307,7 @@ export const service: DefaultServiceConfig = {
       latestMediaTitle: 'နောက်ဆုံးရ',
     },
     mostRead: {
-      header: 'အဖတ်အများဆုံး',
+      header: 'Popular Reads',
       lastUpdated: 'နောက်ဆုံးအသစ်တင်ချိန်:',
       numberOfItems: 5,
       hasMostRead: true,

@@ -284,7 +284,7 @@ export const service: DefaultServiceConfig = {
       latestMediaTitle: 'Haaraa',
     },
     mostRead: {
-      header: "Baay'ee kan dubbifame",
+      header: 'Popular Reads',
       lastUpdated: 'Yeroo dhuma kan haaromfame:',
       numberOfItems: 10,
       hasMostRead: true,

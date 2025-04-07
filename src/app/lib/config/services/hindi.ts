@@ -369,7 +369,7 @@ export const service: DefaultServiceConfig = {
       },
     },
     mostRead: {
-      header: 'सबसे अधिक पढ़ी गईं',
+      header: 'Popular Reads',
       lastUpdated: 'अंतिम अपडेट:',
       numberOfItems: 10,
       hasMostRead: true,

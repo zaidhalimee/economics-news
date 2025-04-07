@@ -264,7 +264,7 @@ export const service: DefaultServiceConfig = {
       latestMediaTitle: '최신 뉴스',
     },
     mostRead: {
-      header: 'TOP 뉴스',
+      header: 'Popular Reads',
       lastUpdated: '마지막 업데이트일',
       numberOfItems: 10,
       hasMostRead: true,

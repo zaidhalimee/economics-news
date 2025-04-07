@@ -351,7 +351,7 @@ export const service: DefaultServiceConfig = {
       },
     },
     mostRead: {
-      header: 'الأكثر قراءة',
+      header: 'Popular Reads',
       lastUpdated: 'آخر تحديث',
       numberOfItems: 10,
       hasMostRead: true,

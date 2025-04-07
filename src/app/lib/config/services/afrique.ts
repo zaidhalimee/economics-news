@@ -272,7 +272,7 @@ export const service: DefaultServiceConfig = {
       featuresAnalysisTitle: 'Le choix de la rédaction',
     },
     mostRead: {
-      header: 'Les plus lus',
+      header: 'Popular Reads',
       lastUpdated: 'Dernière mise à jour:',
       numberOfItems: 5,
       hasMostRead: true,
