@@ -331,6 +331,7 @@ const ArticlePage = ({
                 showAllContent={showAllContent}
                 setShowAllContent={() => setShowAllContent(true)}
                 variation={continueReadingButtonVariation}
+                showCTA={showCTA}
               />
             )}
           </main>
