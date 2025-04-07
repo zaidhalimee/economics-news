@@ -95,6 +95,7 @@ const PromoList = ({
 
   const ScrollPromo = isOperaMini ? OperaScrollPromo : StandardScrollPromo;
   const List = isOperaMini ? OperaStyledList : StyledList;
+
   return (
     <ScrollPromo
       dir={dir}
