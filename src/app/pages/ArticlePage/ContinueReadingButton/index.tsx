@@ -1,12 +1,12 @@
 /** @jsx jsx */
 import React, { use, useEffect } from 'react';
-import { jsx } from '@emotion/react';
+import { jsx, css, useTheme } from '@emotion/react';
 import Text from '#app/components/Text';
 import { EventTrackingMetadata } from '#app/models/types/eventTracking';
 import useClickTrackerHandler from '#app/hooks/useClickTrackerHandler';
 import useViewTracker from '#app/hooks/useViewTracker';
 import { ServiceContext } from '#app/contexts/ServiceContext';
-import styles from './index.styles';
+import styles, { customFocusStyle } from './index.styles';
 
 type Props = {
   showAllContent: boolean;
@@ -49,6 +49,7 @@ const ContinueReadingButton = ({
     clickTrackerHandler(event as React.MouseEvent<HTMLButtonElement>);
     setShowAllContent();
   };
+  const theme = useTheme();
 
   useEffect(() => {
     if (showAllContent) {
@@ -59,12 +60,31 @@ const ContinueReadingButton = ({
 
       if (nthElement) {
         nthElement.tabIndex = 0;
+
+        // Generate the custom focus style using the theme
+        const focusStyle = css(customFocusStyle(theme)).styles;
+
+        // Apply the custom focus style dynamically
+        nthElement.setAttribute('style', focusStyle);
         nthElement.focus();
-        nthElement.addEventListener('blur', () => {
+
+        const handleBlur = () => {
           nthElement.removeAttribute('tabindex');
-        });
+          nthElement.removeAttribute('style'); // Remove the custom focus style
+        };
+
+        nthElement.addEventListener('blur', handleBlur);
+
+        // Return the cleanup function
+        return () => {
+          nthElement.removeEventListener('blur', handleBlur);
+        };
       }
     }
+
+    // Explicitly return undefined if nthElement does not exist
+    return undefined;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showAllContent]);
 
   // Hide button when all content is shown
@@ -95,15 +115,6 @@ const ContinueReadingButton = ({
         >
           <path d="M26.7 12.6 16 23.2 5.3 12.6V8.8h21.4z" />
         </svg>
-
-        // <svg
-        //   xmlns="http://www.w3.org/2000/svg"
-        //   viewBox="0 0 32 32"
-        //   aria-hidden="true"
-        //   focusable="false"
-        // >
-        //   <path d="M12.6 26.7 23.2 16 12.6 5.3H8.8v21.4z" />
-        // </svg>
       )}
       <Text fontVariant="sansBold">{continueReading}</Text>
     </button>

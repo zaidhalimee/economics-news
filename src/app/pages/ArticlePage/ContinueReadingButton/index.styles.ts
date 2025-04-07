@@ -1,7 +1,12 @@
 import NO_JS_CLASSNAME from '#app/lib/noJs.const';
 import pixelsToRem from '#app/utilities/pixelsToRem';
 import { css, Theme } from '@emotion/react';
-import { FORCED_COLOURS } from '../../../components/ThemeProvider/mediaQueries';
+
+export const customFocusStyle = ({ palette }: Theme) => css`
+  outline: ${pixelsToRem(3)}rem solid ${palette.BLACK};
+  box-shadow: 0 0 0 ${pixelsToRem(3)}rem ${palette.WHITE};
+  outline-offset: ${pixelsToRem(3)}rem;
+`;
 
 export default {
   continueReadingButtonA: ({ spacings, palette }: Theme) =>
