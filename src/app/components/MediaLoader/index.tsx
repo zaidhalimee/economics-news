@@ -243,7 +243,7 @@ const MediaLoader = ({ blocks, className, embedded, uniqueId }: Props) => {
 
   const showPortraitTitle = orientation === 'portrait' && !embedded;
 
-  const onMapPage = pageType === MEDIA_ARTICLE_PAGE ? false : true;
+  const onMapPage = pageType !== MEDIA_ARTICLE_PAGE;
 
   return (
     <>
