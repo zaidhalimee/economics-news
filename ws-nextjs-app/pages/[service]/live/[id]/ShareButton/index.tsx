@@ -70,7 +70,7 @@ const ShareButton = ({
   };
 
   return (
-    <div ref={viewRef}>
+    <div {...viewRef}>
       <button
         type="button"
         ref={focusRef}
