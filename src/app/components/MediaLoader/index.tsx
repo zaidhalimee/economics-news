@@ -253,11 +253,12 @@ const MediaLoader = ({ blocks, className, embedded, uniqueId }: Props) => {
           <Metadata blocks={blocks} embedURL={playerConfig?.externalEmbedUrl} />
         )
       }
-      {showPortraitTitle && onMapPage (
-        <strong css={styles.titlePortrait}>
-          {translations.media.watchMoments || 'Watch Moments'}
-        </strong>
-      )}
+      {showPortraitTitle &&
+        onMapPage &&(
+          <strong css={styles.titlePortrait}>
+            {translations.media.watchMoments || 'Watch Moments'}
+          </strong>
+        )}
       <figure
         data-e2e="media-loader__container"
         className={className}
