@@ -5,6 +5,7 @@ export default {
   bylineContainer: () =>
     css({
       display: 'flex',
+      flexWrap: 'wrap',
     }),
 
   bylineSection: ({ spacings, mq }: Theme) =>
