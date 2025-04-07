@@ -10,6 +10,7 @@ export default {
   bylineSection: ({ spacings, mq }: Theme) =>
     css({
       paddingInlineStart: `${spacings.FULL}rem`,
+      marginRight: `${spacings.DOUBLE}rem`,
       [mq.GROUP_2_MIN_WIDTH]: { paddingInlineStart: `${spacings.DOUBLE}rem` },
       [mq.GROUP_4_MIN_WIDTH]: { paddingInlineStart: 0 },
       div: { padding: 0 },
@@ -99,14 +100,16 @@ export default {
       color: isDarkUi ? palette.GREY_2 : palette.SHADOW,
     }),
 
-  timestampLineBreak: ({ palette, spacings }: Theme) =>
+  timestampLineBreak: ({ palette, spacings, mq }: Theme) =>
     css({
       '::before': {
         content: '""',
         borderTop: `${pixelsToRem(2)}rem solid ${palette.GREY_5}`,
         width: `${pixelsToRem(40)}rem`,
         display: 'block',
-        margin: `${spacings.DOUBLE}rem `,
+        margin: `${spacings.DOUBLE}rem ${spacings.FULL}rem`,
+        [mq.GROUP_2_MIN_WIDTH]: { margin: `${spacings.DOUBLE}rem` },
+        [mq.GROUP_4_MIN_WIDTH]: { margin: `${spacings.DOUBLE}rem 0` },
       },
     }),
 
