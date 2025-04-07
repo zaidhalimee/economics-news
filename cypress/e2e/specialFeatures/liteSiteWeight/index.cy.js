@@ -92,13 +92,13 @@ const liteTestSuites = [
   {
     path: '/afrique/bbc_afrique_tv/tv_programmes/w13xttmz.lite?renderer_env=live',
     runforEnv: 'local',
-    pageType: 'On Demand - TV - Programme',
+    pageType: 'On Demand TV - Brand',
     tests,
   },
   {
     path: '/afrique/bbc_afrique_tv/tv/w172xtjgc2szrpv.lite?renderer_env=live',
     runforEnv: 'local',
-    pageType: 'On Demand - TV - Episode',
+    pageType: 'On Demand TV - Episode',
     tests,
   },
 ];

@@ -526,7 +526,7 @@ const ampTestSuites = canonicalTestSuites.filter(supportsAmp).map(testSuite => {
   };
 });
 
-// Most Read & On Demand TV pages do not currently support .lite
+// Most Read pages do not currently support .lite
 const supportsLite = ({ contentType, service }) =>
   liteEnabledServices.includes(service) && contentType !== 'list-datadriven';
 
