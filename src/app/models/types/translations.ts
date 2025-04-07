@@ -10,7 +10,6 @@ export interface Translations {
     advertisementLabel: string;
   };
   recommendationTitle?: string;
-  splitRecommendationTitle?: string;
   seeAll?: string;
   home: string;
   currentPage: string;

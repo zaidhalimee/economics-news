@@ -58,7 +58,6 @@ export const service: DefaultServiceConfig = {
         advertisementLabel: 'Publicidad',
       },
       recommendationTitle: 'Recomendamos',
-      splitRecommendationTitle: 'Más recomendaciones',
       seeAll: 'Ver todo',
       home: 'Página de inicio',
       currentPage: 'Página actual',

@@ -56,7 +56,6 @@ export const service: DefaultServiceConfig = {
         advertisementLabel: 'Reklam',
       },
       recommendationTitle: 'Önerilen haberler',
-      splitRecommendationTitle: 'Daha fazla önerilen hikaye',
       seeAll: 'Hepsini görüntüle',
       home: 'Ana sayfa',
       currentPage: 'Bulunduğunuz sayfa',

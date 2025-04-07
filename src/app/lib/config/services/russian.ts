@@ -116,7 +116,6 @@ export const mainTranslations = {
     advertisementLabel: 'Реклама',
   },
   recommendationTitle: 'По теме',
-  splitRecommendationTitle: 'Другие статьи',
   seeAll: 'Посмотреть все',
   skipLinkText: 'Перейти к содержанию',
   relatedContent: 'Читайте также',

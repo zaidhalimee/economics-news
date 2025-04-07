@@ -77,7 +77,6 @@ export const service: DefaultServiceConfig = {
         advertisementLabel: 'آگهی',
       },
       recommendationTitle: 'مطالب پیشنهادی',
-      splitRecommendationTitle: 'مطالب پیشنهادی دیگر',
       seeAll: 'بیشتر',
       home: 'صفحه اول',
       currentPage: 'صفحه فعلی',
