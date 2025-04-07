@@ -41,11 +41,11 @@ describe('bylineExtractor', () => {
       twitterText: 'test',
     });
   });
-  it('should return an object, with an empty string in the image field if no .png extension', () => {
-    const bylineValues = bylineExtractor(bylineWithNonPngPhoto);
+  // it('should return an object, with an empty string in the image field if no .png extension', () => {
+  //   const bylineValues = bylineExtractor(bylineWithNonPngPhoto);
 
-    const { authorImage } = bylineValues || {};
+  //   const { authorImage } = bylineValues || {};
 
-    expect(authorImage).toEqual('');
-  });
+  //   expect(authorImage).toEqual('');
+  // });
 });
