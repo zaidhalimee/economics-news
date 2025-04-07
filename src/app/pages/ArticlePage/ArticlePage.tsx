@@ -1,15 +1,12 @@
 /** @jsx jsx */
 /* @jsxFrag React.Fragment */
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 import useToggle from '#hooks/useToggle';
 import { singleTextBlock } from '#app/models/blocks';
-import useOptimizelyMvtVariation from '#app/hooks/useOptimizelyMvtVariation';
-import OptimizelyArticleCompleteTracking from '#app/legacy/containers/OptimizelyArticleCompleteTracking';
-import OptimizelyPageViewTracking from '#app/legacy/containers/OptimizelyPageViewTracking';
 import ArticleMetadata from '#containers/ArticleMetadata';
 import { RequestContext } from '#contexts/RequestContext';
-import headings from '#containers/Headings';
+import Headings from '#containers/Headings';
 import visuallyHiddenHeadline from '#containers/VisuallyHiddenHeadline';
 import gist from '#containers/Gist';
 import text from '#containers/Text';
@@ -19,7 +16,6 @@ import ComscoreAnalytics from '#containers/ComscoreAnalytics';
 import SocialEmbedContainer from '#containers/SocialEmbed';
 import MediaLoader from '#app/components/MediaLoader';
 import { PHOTO_GALLERY_PAGE, STORY_PAGE } from '#app/routes/utils/pageTypes';
-import OPTIMIZELY_CONFIG from '#app/lib/config/optimizely';
 
 import {
   getArticleId,
@@ -68,6 +64,7 @@ import Disclaimer from '../../components/Disclaimer';
 import SecondaryColumn from './SecondaryColumn';
 import styles from './ArticlePage.styles';
 import { ComponentToRenderProps, TimeStampProps } from './types';
+import ArticleHeadline from './ArticleHeadline';
 
 const getImageComponent =
   (preloadLeadImageToggle: boolean) => (props: ComponentToRenderProps) => (
@@ -115,6 +112,10 @@ const DisclaimerWithPaddingOverride = (props: ComponentToRenderProps) => (
 const getPodcastPromoComponent = (podcastPromoEnabled: boolean) => () =>
   podcastPromoEnabled ? <InlinePodcastPromo /> : null;
 
+const getHeadlineComponent = (props: ComponentToRenderProps) => (
+  <ArticleHeadline {...props} />
+);
+
 const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const { isApp } = useContext(RequestContext);
 
@@ -130,11 +131,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const {
     palette: { GREY_2, WHITE },
   } = useTheme();
-
-  const experimentVariant = useOptimizelyMvtVariation(
-    OPTIMIZELY_CONFIG.ruleKey,
-  );
-  const isInExperiment = experimentVariant && experimentVariant !== 'off';
 
   const allowAdvertising = pageData?.metadata?.allowAdvertising ?? false;
   const adcampaign = pageData?.metadata?.adCampaignKeyword;
@@ -182,13 +178,12 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
   const atiData = {
     ...atiAnalytics,
     ...(isCPS && { pageTitle: `${atiAnalytics.pageTitle} - ${brandName}` }),
-    ...(isInExperiment && { experimentVariant }),
   };
 
   const componentsToRender = {
     visuallyHiddenHeadline,
-    headline: headings,
-    subheadline: headings,
+    headline: getHeadlineComponent,
+    subheadline: Headings,
     audio: MediaLoader,
     video: MediaLoader,
     text,
@@ -321,12 +316,6 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
           mobileDivider={showTopics}
           sendOptimizelyEvents={false}
         />
-      )}
-      {isInExperiment && (
-        <>
-          <OptimizelyArticleCompleteTracking />
-          <OptimizelyPageViewTracking />
-        </>
       )}
     </div>
   );
