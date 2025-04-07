@@ -13,8 +13,8 @@ import last from 'ramda/src/last';
 import filter from 'ramda/src/filter';
 import pipe from 'ramda/src/pipe';
 import { OptimizelyContext } from '@optimizely/react-sdk';
-
 import useViewTracker from '#hooks/useViewTracker';
+import { ViewRef } from '#app/lib/analyticsUtils/types';
 import { ServiceContext } from '../../contexts/ServiceContext';
 import styles from './index.styles';
 import generatePromoId from '../../lib/utilities/generatePromoId';
@@ -23,7 +23,6 @@ import PromoList from '../../legacy/components/OptimoPromos/PromoList';
 import PromoItem from '../../legacy/components/OptimoPromos/PromoItem/index.styles';
 import { EventTrackingBlock } from '../../models/types/eventTracking';
 import { OptimoBlock } from '../../models/types/optimo';
-import { ViewRef } from '#app/lib/analyticsUtils/types';
 
 const BLOCKS_TO_IGNORE = ['wsoj', 'mpu'];
 

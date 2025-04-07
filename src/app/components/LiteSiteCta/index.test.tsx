@@ -35,7 +35,7 @@ describe('LiteSiteCTA', () => {
     const { container } = render(<LiteSiteCta />, { isLite: true });
 
     const [ctaLink] = container.querySelectorAll('a');
-    const atiUrl = ctaLink.getAttribute('data-lite-ati-tracking');
+    const atiUrl = ctaLink.getAttribute('data-lite-ati-click');
 
     expect(atiUrl).toContain('lite-site-cta');
   });
