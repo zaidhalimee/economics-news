@@ -1,5 +1,3 @@
-export const LITE_ATI_CLICK_TRACKING = 'data-lite-ati-click';
-
 export default () => {
   document.addEventListener('click', (event: MouseEvent) => {
     let targetElement;
@@ -18,7 +16,7 @@ export default () => {
       event.stopPropagation();
       event.preventDefault();
 
-      const atiURL = targetElement.getAttribute(LITE_ATI_CLICK_TRACKING);
+      const atiURL = targetElement.getAttribute('data-lite-ati-click');
       const anchorElement = targetElement as HTMLAnchorElement;
       const nextPageUrl = anchorElement?.href;
 

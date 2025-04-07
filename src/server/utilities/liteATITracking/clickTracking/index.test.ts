@@ -1,4 +1,4 @@
-import { LITE_ATI_CLICK_TRACKING } from '#app/hooks/useClickTrackerHandler';
+import { LITE_ATI_CLICK_TRACKING } from '#app/lib/analyticsUtils/analytics.const';
 import clickTracking from '.';
 
 const createAnchor = ({
