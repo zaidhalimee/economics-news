@@ -20,7 +20,7 @@ const MIN_VIEWED_PERCENT = 0.5;
  *
  * @returns {Ref<HTMLElement> | undefined}
  */
-const useViewTrackerRef = (props = {}) => {
+const useViewRef = (props = {}) => {
   const {
     componentName,
     format,
@@ -172,16 +172,16 @@ const useViewTrackerRef = (props = {}) => {
 
 const useViewTracker = (props = {}) => {
   const { isLite } = useContext(RequestContext);
-  const viewHandler = useViewTrackerRef(props);
-  const liteViewHandler = constructLiteSiteATIEventTrackUrl({
+  const viewRef = useViewRef(props);
+  const liteATIUrl = constructLiteSiteATIEventTrackUrl({
     props,
     eventType: VIEW_EVENT,
   });
 
   return isLite
-    ? { [LITE_ATI_VIEW_TRACKING]: liteViewHandler }
+    ? { [LITE_ATI_VIEW_TRACKING]: liteATIUrl }
     : {
-        ref: viewHandler,
+        ref: viewRef,
       };
 };
 
