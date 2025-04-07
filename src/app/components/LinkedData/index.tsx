@@ -118,7 +118,7 @@ const LinkedData = ({
       data || {};
 
     const sameAs = [authorTopicUrl, twitterLink].filter(Boolean);
-    if (places.indexOf(location) === -1 && location !== '') {
+    if (location !== undefined && places.indexOf(location)) {
       places.push(location);
     }
     return {
