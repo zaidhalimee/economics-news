@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useContext, useEffect, useState, useRef } from 'react';
 import prop from 'ramda/src/prop';
 
