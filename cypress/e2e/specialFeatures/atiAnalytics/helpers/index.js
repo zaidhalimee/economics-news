@@ -3,16 +3,7 @@ import envs from '../../../../support/config/envs';
 export const getATIParamsFromURL = atiAnalyticsURL => {
   const url = new URL(atiAnalyticsURL);
 
-  const objectFromEntries = Object.fromEntries(new URLSearchParams(url.search));
-  console.log(
-    'objectFromEntries p value in getATIParamsFromURL',
-    objectFromEntries.p,
-  );
-  cy.log(
-    'objectFromEntries p value in getATIParamsFromURL',
-    objectFromEntries.p,
-  );
-  return objectFromEntries;
+  return Object.fromEntries(new URLSearchParams(url.search));
 };
 
 export const ATI_PAGE_VIEW = 'ati-page-view';
@@ -37,6 +28,7 @@ const LATEST_MEDIA = 'latest';
 const RECOMMENDATIONS = 'wsoj';
 const SCROLLABLE_PROMO = 'edoj';
 const BILLBOARD = 'billboard';
+const SOCIAL_EMBED = 'social-consent-banner';
 
 export const COMPONENTS = {
   SCROLLABLE_NAVIGATION,
@@ -57,6 +49,7 @@ export const COMPONENTS = {
   RECOMMENDATIONS,
   SCROLLABLE_PROMO,
   BILLBOARD,
+  SOCIAL_EMBED,
 };
 
 export const interceptATIAnalyticsBeacons = () => {

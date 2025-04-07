@@ -68,6 +68,10 @@ import {
   assertTopStoriesComponentClick,
   assertTopStoriesComponentView,
 } from './assertions/topStories';
+import {
+  assertSocialEmbedComponentClick,
+  assertSocialEmbedComponentView,
+} from './assertions/socialEmbed';
 
 const canonicalTestSuites = [
   {
@@ -371,6 +375,30 @@ const canonicalTestSuites = [
     ],
   },
   {
+    path: '/pidgin/articles/ce9wk6glg4lo?renderer_env=live',
+    runforEnv: ['local', 'test'],
+    service: 'pidgin',
+    pageIdentifier: 'pidgin.articles.ce9wk6glg4lo.page',
+    applicationType: 'responsive',
+    contentType: 'article',
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertTopStoriesComponentView,
+      assertTopStoriesComponentClick,
+      assertFeaturesAnalysisComponentView,
+      assertFeaturesAnalysisComponentClick,
+      assertSocialEmbedComponentView,
+      assertSocialEmbedComponentClick,
+      assertRelatedTopicsComponentView,
+      assertRelatedTopicsComponentClick,
+      assertRelatedContentComponentView,
+      assertRelatedContentComponentClick,
+      assertMostReadComponentView,
+      assertMostReadComponentClick,
+    ],
+  },
+  {
     path: '/pidgin/articles/cyv3zm4y428o',
     runforEnv: ['live'],
     service: 'pidgin',
@@ -511,6 +539,12 @@ const canonicalTestSuites = [
   },
 ];
 
+const getPathWithSuffix = ({ path, suffix = '' }) => {
+  const { pathname, search } = new URL(`https://www.bbc.com${path}`);
+
+  return `${pathname}${suffix}${search}`;
+};
+
 const supportsAmp = ({ contentType }) =>
   !['index-home', 'player-live', 'player-episode', 'index-category'].includes(
     contentType,
@@ -519,7 +553,7 @@ const supportsAmp = ({ contentType }) =>
 const ampTestSuites = canonicalTestSuites.filter(supportsAmp).map(testSuite => {
   return {
     ...testSuite,
-    path: `${testSuite.path}.amp`,
+    path: getPathWithSuffix({ path: testSuite.path, suffix: '.amp' }),
     useReverb: false,
     applicationType: 'amp',
     tests: [assertPageView],
@@ -540,6 +574,7 @@ const liteTestSuites = canonicalTestSuites
     switch (testSuite.contentType) {
       case 'article':
         liteSiteTests.push(assertLiteSiteCTAComponentClick);
+        liteSiteTests.push();
         liteSiteTests.push(assertRelatedTopicsComponentView);
         break;
       case 'index-home':

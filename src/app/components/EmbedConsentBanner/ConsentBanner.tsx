@@ -193,7 +193,7 @@ const ConsentBanner = ({
         consentBannerCss.parent,
         isLive && consentBannerCss.tranparentBorder,
       ]}
-      ref={viewRef}
+      {...viewRef}
     >
       <Text
         as="strong"
