@@ -1,0 +1,16 @@
+diff --git a/dist/build/babel/preset.js b/dist/build/babel/preset.js
+index 5c953481145b38ee83c95d6bfc45b5f26314d243..ee9590ce42f05bc541a120a24d90252cc68266ca 100644
+--- a/dist/build/babel/preset.js
++++ b/dist/build/babel/preset.js
+@@ -67,6 +67,11 @@ const _default = (api, options = {})=>{
+         };
+     }
+     return {
++        ...(options['assumptions'] && { 
++            assumptions: { 
++                ...options['assumptions'],
++            }
++        }),
+         sourceType: 'unambiguous',
+         presets: [
+             [

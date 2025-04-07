@@ -3,6 +3,9 @@
     [
       "next/babel",
       {
+        "assumptions": {
+          "setSpreadProperties": true
+        },
         "preset-react": {
           "runtime": "classic"
         }
