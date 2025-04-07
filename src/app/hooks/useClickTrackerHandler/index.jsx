@@ -24,11 +24,10 @@ const useClickTrackerHandler = (props = {}) => {
     url,
     detailedPlacement,
     producerName,
+    preventNavigation,
+    optimizely,
+    optimizelyMetricNameOverride,
   } = extractATITrackingProps(props);
-
-  const preventNavigation = props?.preventNavigation;
-  const optimizely = props?.optimizely;
-  const optimizelyMetricNameOverride = props?.optimizelyMetricNameOverride;
 
   const { trackingIsEnabled } = useTrackingToggle(componentName);
   const [clicked, setClicked] = useState(false);

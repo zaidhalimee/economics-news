@@ -22,6 +22,7 @@ export default ({
     detailedPlacement,
     optimizely,
     optimizelyMetricNameOverride,
+    preventNavigation,
   } = props;
 
   const {
@@ -47,6 +48,7 @@ export default ({
     url,
     detailedPlacement,
     producerName,
+    preventNavigation,
     optimizely,
     optimizelyMetricNameOverride,
   };
