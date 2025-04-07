@@ -3,8 +3,10 @@ import { useContext, useCallback, useState } from 'react';
 import { RequestContext } from '#app/contexts/RequestContext';
 import extractATITrackingProps from '#app/lib/analyticsUtils/extractATITrackingProps';
 import constructLiteSiteATIEventTrackUrl from '#src/server/utilities/liteATITracking/constructATIUrl';
-import { CLICK_EVENT } from '#app/lib/analyticsUtils/analytics.const';
-import { LITE_ATI_CLICK_TRACKING } from '#src/server/utilities/liteATITracking/clickTracking';
+import {
+  CLICK_EVENT,
+  LITE_ATI_CLICK_TRACKING,
+} from '#app/lib/analyticsUtils/analytics.const';
 import useTrackingToggle from '../useTrackingToggle';
 import OPTIMIZELY_CONFIG from '../../lib/config/optimizely';
 import { sendEventBeacon } from '../../components/ATIAnalytics/beacon/index';
