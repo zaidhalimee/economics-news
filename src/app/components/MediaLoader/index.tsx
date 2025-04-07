@@ -241,9 +241,8 @@ const MediaLoader = ({ blocks, className, embedded, uniqueId }: Props) => {
 
   const hasPlaceholder = Boolean(showPlaceholder && placeholderSrc);
 
-  const showPortraitTitle = orientation === 'portrait' && !embedded;
-
-  const onMapPage = pageType !== MEDIA_ARTICLE_PAGE;
+  const showPortraitTitle =
+    orientation === 'portrait' && pageType !== MEDIA_ARTICLE_PAGE && !embedded;
 
   return (
     <>
@@ -253,7 +252,7 @@ const MediaLoader = ({ blocks, className, embedded, uniqueId }: Props) => {
           <Metadata blocks={blocks} embedURL={playerConfig?.externalEmbedUrl} />
         )
       }
-      {showPortraitTitle && onMapPage && (
+      {showPortraitTitle && (
         <strong css={styles.titlePortrait}>
           {translations.media.watchMoments || 'Watch Moments'}
         </strong>
