@@ -70,7 +70,7 @@ const ShareButton = ({
   };
 
   return (
-    <div {...viewRef}>
+    <div {...viewRef} data-e2e="share">
       <button
         type="button"
         ref={focusRef}
