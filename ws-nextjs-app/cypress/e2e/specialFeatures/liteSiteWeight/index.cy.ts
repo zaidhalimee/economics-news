@@ -1,5 +1,5 @@
 /* eslint-disable import/no-relative-packages */
-import assertPageWeight from '../../../../../cypress/e2e/specialFeatures/liteSiteWeight/assertions/liteSiteWeight';
+import * as assertPageWeight from '../../../../../cypress/e2e/specialFeatures/liteSiteWeight/assertions/liteSiteWeight';
 import runTestsForPage from '../../../support/helpers/runTestsForPage';
 
 const testSuites = [
