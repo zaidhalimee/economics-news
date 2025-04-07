@@ -245,7 +245,7 @@ const ScrollablePromo = ({
         </LabelComponent>
       )}
       {isSingleItem ? (
-        <PromoWrapper dir={dir} ref={viewRef}>
+        <PromoWrapper dir={dir} {...viewRef}>
           <Promo block={blocksWithoutTitle[0]} onClick={handleClickTracking} />
         </PromoWrapper>
       ) : (
