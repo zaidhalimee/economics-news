@@ -32,7 +32,7 @@ const Banner = forwardRef(
       eventTrackingData,
       id = 'message-banner-1',
     }: MessageBannerProps,
-    viewRef: ForwardedRef<HTMLDivElement>,
+    viewRef: ForwardedRef<HTMLElement>,
   ) => {
     const { dir } = useContext(ServiceContext);
     const { mq } = useTheme();
@@ -121,7 +121,8 @@ const MessageBanner = ({
       link={link}
       image={image}
       eventTrackingData={eventTrackingData}
-      {...viewRef}
+      // @ts-expect-error TODO need help fixing this!
+      ref={viewRef}
       id={id}
     />
   );

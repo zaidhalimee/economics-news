@@ -5,6 +5,6 @@ export const EpisodeContext = React.createContext({});
 export const withEpisodeContext = Component =>
   forwardRef((props, ref) => (
     <EpisodeContext.Consumer>
-      {context => <Component {...context} {...props} {...ref} />}
+      {context => <Component {...context} {...props} ref={ref} />}
     </EpisodeContext.Consumer>
   ));

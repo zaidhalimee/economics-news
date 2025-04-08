@@ -47,7 +47,8 @@ const renderTopStoriesList = ({
       <TopStoriesItem
         item={item}
         ariaLabelledBy={ariaLabelledBy}
-        {...viewRef}
+        // @ts-expect-error TODO need help fixing this!
+        ref={viewRef}
         eventTrackingData={eventTrackingData}
       />
     </PromoItem>
@@ -118,7 +119,8 @@ const TopStoriesSection = ({
         <TopStoriesItem
           item={content[0]}
           ariaLabelledBy={ariaLabelledBy}
-          {...viewRef}
+          // @ts-expect-error TODO need help fixing this!
+          ref={viewRef}
           eventTrackingData={eventTrackingData}
         />
       ) : (
