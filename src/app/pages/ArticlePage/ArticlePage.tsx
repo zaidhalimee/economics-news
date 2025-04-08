@@ -1,6 +1,6 @@
 /** @jsx jsx */
 /* @jsxFrag React.Fragment */
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 import useToggle from '#hooks/useToggle';
 import { singleTextBlock } from '#app/models/blocks';
@@ -64,6 +64,7 @@ import Disclaimer from '../../components/Disclaimer';
 import SecondaryColumn from './SecondaryColumn';
 import styles from './ArticlePage.styles';
 import { ComponentToRenderProps, TimeStampProps } from './types';
+import ContinueReadingButton from './ContinueReadingButton';
 import ArticleHeadline from './ArticleHeadline';
 
 const getImageComponent =
@@ -116,14 +117,22 @@ const getHeadlineComponent = (props: ComponentToRenderProps) => (
   <ArticleHeadline {...props} />
 );
 
-const ArticlePage = ({ pageData }: { pageData: Article }) => {
-  const { isApp } = useContext(RequestContext);
+const ArticlePage = ({
+  pageData,
+  continueReadingEnabled = false,
+}: {
+  pageData: Article;
+  continueReadingEnabled?: boolean;
+}) => {
+  const [showAllContent, setShowAllContent] = useState(false);
+  const { isLite, isAmp, isApp } = useContext(RequestContext);
 
   const {
     articleAuthor,
     isTrustProjectParticipant,
     showRelatedTopics,
     brandName,
+    service,
   } = useContext(ServiceContext);
 
   const { enabled: preloadLeadImageToggle } = useToggle('preloadLeadImage');
@@ -234,6 +243,23 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
 
   const showTopics = Boolean(showRelatedTopics && topics.length > 0);
 
+  const continueReadingButtonVariation = (() => {
+    if (service === 'pidgin' || service === 'urdu') {
+      return 'A';
+    }
+    if (service === 'mundo' || service === 'arabic') {
+      return 'B';
+    }
+
+    return null;
+  })();
+
+  const showContinueReadingButton = Boolean(
+    continueReadingButtonVariation && !isAmp && !isLite && !isApp,
+  );
+
+  const { enabled: showCTA } = useToggle('liteSiteCTA');
+
   return (
     <div css={styles.pageWrapper}>
       <ATIAnalytics atiData={atiData} />
@@ -282,15 +308,41 @@ const ArticlePage = ({ pageData }: { pageData: Article }) => {
       <ElectionBanner aboutTags={aboutTags} taggings={taggings} />
       <div css={styles.grid}>
         <div css={!isPGL ? styles.primaryColumn : styles.pglColumn}>
-          <main css={styles.mainContent} role="main">
+          <main
+            css={[
+              styles.mainContent,
+              ...(showContinueReadingButton
+                ? [
+                    !showAllContent &&
+                      (showCTA
+                        ? styles.contentHiddenWithLiveCTA
+                        : styles.contentHiddenNoLiveCTA),
+                  ]
+                : []),
+            ]}
+            role="main"
+          >
             <Blocks
               blocks={articleBlocks}
               componentsToRender={componentsToRender}
             />
+            {showContinueReadingButton && (
+              <ContinueReadingButton
+                showAllContent={showAllContent}
+                setShowAllContent={() => setShowAllContent(true)}
+                variation={continueReadingButtonVariation}
+                showCTA={showCTA}
+              />
+            )}
           </main>
           {showTopics && (
             <RelatedTopics
-              css={styles.relatedTopics}
+              css={[
+                styles.relatedTopics,
+                ...(showContinueReadingButton
+                  ? [!showAllContent && styles.hideRelatedTopics]
+                  : []),
+              ]}
               topics={topics}
               mobileDivider={false}
               backgroundColour={GREY_2}
