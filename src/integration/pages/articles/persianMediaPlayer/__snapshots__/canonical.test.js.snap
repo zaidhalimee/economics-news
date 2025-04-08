@@ -234,19 +234,9 @@ exports[`Canonical Articles Media Loader a11y assistive technology can read the 
 
 exports[`Canonical Articles Media Loader renders a figure caption 1`] = `
 <div
-  class="bbc-145siv3"
+  class="placeholder bbc-1r8vrs6"
   data-e2e="media-loader__placeholder"
 >
-  <div
-    class="bbc-1u05bd9"
-    data-e2e="media-player__guidance"
-  >
-    <noscript
-      class="bbc-n2zqlz"
-    >
-      &lt;strong&gt;برای پخش این فایل لطفا جاوا اسکریپت را فعال یا از یک مرورگر دیگر استفاده کنید.&lt;/strong&gt;
-    </noscript>
-  </div>
   <button
     class="focusIndicatorRemove bbc-1s7djye"
     type="button"
@@ -291,6 +281,9 @@ exports[`Canonical Articles Media Loader renders a figure caption 1`] = `
       00:16
     </time>
   </button>
+  <noscript>
+    &lt;div class="bbc-kvi82l"&gt;&lt;p class="bbc-1y1oyo6"&gt;برای پخش این فایل لطفا جاوا اسکریپت را فعال یا از یک مرورگر دیگر استفاده کنید.&lt;/p&gt;&lt;/div&gt;
+  </noscript>
   <div
     class="bbc-lgx6cw"
     style="padding-bottom:0;overflow:hidden"
@@ -309,19 +302,9 @@ exports[`Canonical Articles Media Loader renders a figure caption 1`] = `
 
 exports[`Canonical Articles Media Loader renders a placeholder 1`] = `
 <div
-  class="bbc-145siv3"
+  class="placeholder bbc-1r8vrs6"
   data-e2e="media-loader__placeholder"
 >
-  <div
-    class="bbc-1u05bd9"
-    data-e2e="media-player__guidance"
-  >
-    <noscript
-      class="bbc-n2zqlz"
-    >
-      &lt;strong&gt;برای پخش این فایل لطفا جاوا اسکریپت را فعال یا از یک مرورگر دیگر استفاده کنید.&lt;/strong&gt;
-    </noscript>
-  </div>
   <button
     class="focusIndicatorRemove bbc-1s7djye"
     type="button"
@@ -366,6 +349,9 @@ exports[`Canonical Articles Media Loader renders a placeholder 1`] = `
       00:16
     </time>
   </button>
+  <noscript>
+    &lt;div class="bbc-kvi82l"&gt;&lt;p class="bbc-1y1oyo6"&gt;برای پخش این فایل لطفا جاوا اسکریپت را فعال یا از یک مرورگر دیگر استفاده کنید.&lt;/p&gt;&lt;/div&gt;
+  </noscript>
   <div
     class="bbc-lgx6cw"
     style="padding-bottom:0;overflow:hidden"
@@ -384,23 +370,13 @@ exports[`Canonical Articles Media Loader renders a placeholder 1`] = `
 
 exports[`Canonical Articles Media Loader renders a valid container 1`] = `
 <figure
-  class="bbc-1hu5uc3"
+  class="bbc-9ondlp"
   data-e2e="media-loader__container"
 >
   <div
-    class="bbc-145siv3"
+    class="placeholder bbc-1r8vrs6"
     data-e2e="media-loader__placeholder"
   >
-    <div
-      class="bbc-1u05bd9"
-      data-e2e="media-player__guidance"
-    >
-      <noscript
-        class="bbc-n2zqlz"
-      >
-        &lt;strong&gt;برای پخش این فایل لطفا جاوا اسکریپت را فعال یا از یک مرورگر دیگر استفاده کنید.&lt;/strong&gt;
-      </noscript>
-    </div>
     <button
       class="focusIndicatorRemove bbc-1s7djye"
       type="button"
@@ -445,6 +421,9 @@ exports[`Canonical Articles Media Loader renders a valid container 1`] = `
         00:16
       </time>
     </button>
+    <noscript>
+      &lt;div class="bbc-kvi82l"&gt;&lt;p class="bbc-1y1oyo6"&gt;برای پخش این فایل لطفا جاوا اسکریپت را فعال یا از یک مرورگر دیگر استفاده کنید.&lt;/p&gt;&lt;/div&gt;
+    </noscript>
     <div
       class="bbc-lgx6cw"
       style="padding-bottom:0;overflow:hidden"
@@ -460,7 +439,7 @@ exports[`Canonical Articles Media Loader renders a valid container 1`] = `
     </div>
   </div>
   <figcaption
-    class="bbc-17ps87o"
+    class="bbc-grtffk"
     dir="rtl"
   >
     <span

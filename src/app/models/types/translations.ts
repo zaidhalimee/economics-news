@@ -6,6 +6,10 @@ export interface Translations {
     nextPage: string;
     pageXOfY: string;
   };
+  transcript?: {
+    readTranscript: string;
+    disclaimer: string;
+  };
   ads: {
     advertisementLabel: string;
   };
@@ -119,6 +123,8 @@ export interface Translations {
     };
   };
   media: {
+    signPost?: string;
+    loadVideo?: string;
     noJs?: string;
     contentExpired?: string;
     contentNotYetAvailable?: string;

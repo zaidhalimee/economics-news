@@ -4,7 +4,7 @@ import pixelsToRem from '#app/utilities/pixelsToRem';
 import { focusIndicatorThickness } from '../../ThemeProvider/focusIndicator';
 
 const styles = {
-  placeholder: ({ palette, mq }: Theme) =>
+  placeholder: ({ mq }: Theme) =>
     css({
       position: 'relative',
       cursor: 'pointer',
@@ -12,11 +12,6 @@ const styles = {
 
       [`.${NO_JS_CLASSNAME} &`]: {
         cursor: 'default',
-      },
-      '&:hover, &:focus': {
-        '> button': {
-          backgroundColor: palette.POSTBOX,
-        },
       },
       [mq.FORCED_COLOURS]: {
         '&:hover, &:focus': {

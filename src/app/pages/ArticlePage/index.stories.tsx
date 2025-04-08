@@ -15,6 +15,7 @@ import articleDataArabic from '#data/arabic/articles/cn0m90verwvo.json';
 import articleDataWithRelatedContent from '#data/afrique/articles/c7yn6nznljdo.json';
 import articleDataWithSingleRelatedContent from '#data/afrique/articles/cz216x22106o.json';
 import articleDataWithPodcastPromo from '#data/russian/articles/c61q94n3rm3o.json';
+import articleDataWithTranscript from '#data/mundo/articles/cle16n19nd9o.json';
 import articleNewsWithPodcastPromo from '#data/news/articles/crkxdvxzwxk2.json';
 import articleDataWithElectionTag from '#data/mundo/articles/c206j730722o.json';
 import withPageWrapper from '#containers/PageHandlers/withPageWrapper';
@@ -222,6 +223,20 @@ export const ArticlePageWithPodcastNews = () => (
     data={articleNewsWithPodcastPromo}
     service="news"
     podcastEnabled
+  />
+);
+
+export const ArticlePageWithTranscriptStage2 = () => (
+  <ComponentWithServiceContext
+    data={articleDataWithTranscript}
+    service="mundo"
+  />
+);
+
+export const ArticlePageWithTranscriptStage3 = () => (
+  <ComponentWithServiceContext
+    data={articleDataWithTranscript}
+    service="news"
   />
 );
 

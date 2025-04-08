@@ -22,6 +22,11 @@ declare global {
     sendBeaconLite: (url: string, data?: BodyInit | null) => boolean;
     processClientDeviceAndSendLite: (url: string) => void;
   }
+
+  interface Navigator {
+    connection: { saveData: boolean };
+    getBattery: () => Promise;
+  }
 }
 
 export {};

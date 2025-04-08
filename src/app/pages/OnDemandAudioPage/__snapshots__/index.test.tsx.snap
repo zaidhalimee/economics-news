@@ -741,6 +741,10 @@ exports[`OnDemand Radio Page  should match snapshot 1`] = `
   margin: 0 0 1.5rem 0;
 }
 
+.emotion-31:has(details) {
+  background-color: #FFFFFF;
+}
+
 .emotion-32 {
   background-color: #FFFFFF;
   height: 165px;

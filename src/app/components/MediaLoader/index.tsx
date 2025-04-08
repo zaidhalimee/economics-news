@@ -15,6 +15,7 @@ import {
 import filterForBlockType from '#lib/utilities/blockHandlers';
 import { PageTypes } from '#app/models/types/global';
 import { EventTrackingContext } from '#app/contexts/EventTrackingContext';
+import useTranscriptStage, { Stages } from '#app/hooks/useTranscriptStage';
 import { BumpType, MediaBlock, PlayerConfig } from './types';
 import Caption from '../Caption';
 import nodeLogger from '../../lib/logger.node';
@@ -26,6 +27,8 @@ import styles from './index.styles';
 import { getBootstrapSrc } from '../Ad/Canonical';
 import Metadata from './Metadata';
 import AmpMediaLoader from './Amp';
+import getTranscriptBlock from './utils/getTranscriptBlock';
+import Transcript from '../Transcript';
 
 const PAGETYPES_IGNORE_PLACEHOLDER: PageTypes[] = [
   MEDIA_ARTICLE_PAGE,
@@ -175,13 +178,26 @@ type Props = {
   blocks: MediaBlock[];
   className?: string;
   embedded?: boolean;
+  forceStage?: Stages;
   uniqueId?: string;
 };
 
-const MediaLoader = ({ blocks, className, embedded, uniqueId }: Props) => {
+const MediaLoader = ({
+  blocks,
+  className,
+  embedded,
+  uniqueId,
+  forceStage,
+}: Props) => {
+  const transcriptBlock = getTranscriptBlock(blocks);
+  const hasTranscript = !!transcriptBlock;
+
   const { lang, translations } = useContext(ServiceContext);
   const { pageIdentifier } = useContext(EventTrackingContext);
   const { enabled: adsEnabled } = useToggle('ads');
+  const stage = useTranscriptStage(hasTranscript);
+
+  const experimentStage = forceStage ?? stage;
 
   const {
     id,
@@ -197,7 +213,7 @@ const MediaLoader = ({ blocks, className, embedded, uniqueId }: Props) => {
     !PAGETYPES_IGNORE_PLACEHOLDER.includes(pageType),
   );
 
-  if (isLite) return null;
+  if (isLite && !hasTranscript) return null;
 
   const { model: mediaOverrides } =
     filterForBlockType(blocks, 'mediaOverrides') || {};
@@ -243,7 +259,12 @@ const MediaLoader = ({ blocks, className, embedded, uniqueId }: Props) => {
 
   const showPortraitTitle = orientation === 'portrait' && !embedded;
 
-  return (
+  return isLite && hasTranscript ? (
+    <Transcript
+      transcript={transcriptBlock}
+      title={placeholderConfig?.mediaInfo?.title}
+    />
+  ) : (
     <>
       {
         // Prevents the av-embeds route itself rendering the Metadata component
@@ -261,6 +282,7 @@ const MediaLoader = ({ blocks, className, embedded, uniqueId }: Props) => {
         className={className}
         css={[
           styles.figure(embedded),
+          styles.withTranscriptVideo,
           playerConfig?.ui?.skin === 'classic' && [
             orientation === 'portrait' && styles.portraitFigure(embedded),
             orientation === 'landscape' && styles.landscapeFigure,
@@ -286,6 +308,7 @@ const MediaLoader = ({ blocks, className, embedded, uniqueId }: Props) => {
                 noJsMessage={translatedNoJSMessage}
                 mediaInfo={mediaInfo}
                 onClick={() => setShowPlaceholder(false)}
+                experimentStage={experimentStage}
               />
             ) : (
               <MediaContainer
@@ -300,7 +323,16 @@ const MediaLoader = ({ blocks, className, embedded, uniqueId }: Props) => {
           <Caption
             block={captionBlock}
             type={mediaType}
-            css={orientation === 'portrait' && styles.captionPortrait}
+            css={[
+              orientation === 'portrait' && styles.captionPortrait,
+              styles.withTranscriptCaption,
+            ]}
+          />
+        )}
+        {transcriptBlock && (
+          <Transcript
+            transcript={transcriptBlock}
+            title={placeholderConfig?.mediaInfo?.title}
           />
         )}
       </figure>

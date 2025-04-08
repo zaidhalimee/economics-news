@@ -57,6 +57,10 @@ exports[`MediaArticlePage should render a news article correctly 1`] = `
   aspect-ratio: 16/9;
 }
 
+.emotion-6:has(details) {
+  background-color: #FFFFFF;
+}
+
 .emotion-7 {
   position: relative;
   cursor: pointer;
@@ -65,11 +69,6 @@ exports[`MediaArticlePage should render a news article correctly 1`] = `
 
 .no-js .emotion-7 {
   cursor: default;
-}
-
-.emotion-7:hover>button,
-.emotion-7:focus>button {
-  background-color: #B80000;
 }
 
 @media screen and (forced-colors: active) {
@@ -353,6 +352,25 @@ exports[`MediaArticlePage should render a news article correctly 1`] = `
 
 .emotion-18>span>p:last-child {
   padding-bottom: 0;
+}
+
+.emotion-18:has(+ details) {
+  margin: 0.5rem;
+  width: auto;
+}
+
+@media (min-width: 25rem) and (max-width: 37.4375rem) {
+  .emotion-18:has(+ details) {
+    width: auto;
+    margin: 0.5rem;
+  }
+}
+
+@media (min-width: 63rem) {
+  .emotion-18:has(+ details) {
+    width: auto;
+    margin: 0.5rem;
+  }
 }
 
 @media (max-width: 14.9375rem) {
@@ -805,7 +823,7 @@ exports[`MediaArticlePage should render a news article correctly 1`] = `
               data-e2e="media-loader__container"
             >
               <div
-                class="emotion-7"
+                class="placeholder emotion-7"
                 data-e2e="media-loader__placeholder"
               >
                 <div
@@ -860,6 +878,7 @@ exports[`MediaArticlePage should render a news article correctly 1`] = `
                     00:54
                   </time>
                 </button>
+                <noscript />
                 <div
                   class="emotion-16"
                   style="padding-bottom: 0px; overflow: hidden;"

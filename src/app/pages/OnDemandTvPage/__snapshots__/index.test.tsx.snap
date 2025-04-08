@@ -205,6 +205,10 @@ exports[`OnDemand TV Page  Dark Mode Design - should match snapshot 1`] = `
   aspect-ratio: 16/9;
 }
 
+.emotion-7:has(details) {
+  background-color: #3A3C3E;
+}
+
 @media (min-width: 63rem) {
   .emotion-7 {
     margin: 2.5rem 0px 0px;
@@ -237,11 +241,6 @@ exports[`OnDemand TV Page  Dark Mode Design - should match snapshot 1`] = `
 
 .no-js .emotion-8 {
   cursor: default;
-}
-
-.emotion-8:hover>button,
-.emotion-8:focus>button {
-  background-color: #B80000;
 }
 
 @media screen and (forced-colors: active) {
@@ -763,7 +762,7 @@ exports[`OnDemand TV Page  Dark Mode Design - should match snapshot 1`] = `
           data-e2e="media-loader__container"
         >
           <div
-            class="emotion-8"
+            class="placeholder emotion-8"
             data-e2e="media-loader__placeholder"
           >
             <div
@@ -818,6 +817,7 @@ exports[`OnDemand TV Page  Dark Mode Design - should match snapshot 1`] = `
                 28:00
               </time>
             </button>
+            <noscript />
             <div
               class="emotion-17"
               style="padding-bottom: 0px; overflow: hidden;"

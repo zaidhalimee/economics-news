@@ -8,6 +8,7 @@ import {
 } from '#app/models/types/media';
 import { OptimoImageBlock } from '#app/models/types/optimo';
 import { Translations } from '#app/models/types/translations';
+import { TranscriptBlock } from '../Transcript/types';
 
 export type PlayerConfig = {
   autoplay?: boolean;
@@ -156,7 +157,7 @@ export type CaptionBlock = {
 export type AresMediaBlock = {
   type: 'aresMedia';
   model: {
-    blocks: [AresMediaMetadataBlock | OptimoImageBlock];
+    blocks: [AresMediaMetadataBlock | OptimoImageBlock | TranscriptBlock];
   };
 };
 
