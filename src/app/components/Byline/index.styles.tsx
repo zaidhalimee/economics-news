@@ -2,9 +2,16 @@ import { css, Theme } from '@emotion/react';
 import pixelsToRem from '../../utilities/pixelsToRem';
 
 export default {
+  bylineContainer: () =>
+    css({
+      display: 'flex',
+      flexWrap: 'wrap',
+    }),
+
   bylineSection: ({ spacings, mq }: Theme) =>
     css({
       paddingInlineStart: `${spacings.FULL}rem`,
+      marginRight: `${spacings.DOUBLE}rem`,
       [mq.GROUP_2_MIN_WIDTH]: { paddingInlineStart: `${spacings.DOUBLE}rem` },
       [mq.GROUP_4_MIN_WIDTH]: { paddingInlineStart: 0 },
       div: { padding: 0 },
@@ -94,14 +101,16 @@ export default {
       color: isDarkUi ? palette.GREY_2 : palette.SHADOW,
     }),
 
-  timestampLineBreak: ({ palette, spacings }: Theme) =>
+  timestampLineBreak: ({ palette, spacings, mq }: Theme) =>
     css({
       '::before': {
         content: '""',
         borderTop: `${pixelsToRem(2)}rem solid ${palette.GREY_5}`,
         width: `${pixelsToRem(40)}rem`,
         display: 'block',
-        margin: `${spacings.DOUBLE}rem 0`,
+        margin: `${spacings.DOUBLE}rem ${spacings.FULL}rem`,
+        [mq.GROUP_2_MIN_WIDTH]: { margin: `${spacings.DOUBLE}rem` },
+        [mq.GROUP_4_MIN_WIDTH]: { margin: `${spacings.DOUBLE}rem 0` },
       },
     }),
 
@@ -146,7 +155,6 @@ export default {
     css({
       paddingTop: '1.375rem',
       paddingBottom: `${pixelsToRem(4)}rem`,
-      paddingInlineEnd: '2.75rem',
     }),
 
   twitterLink: () =>
