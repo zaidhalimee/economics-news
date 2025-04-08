@@ -118,7 +118,7 @@ const RecentAudioEpisodes = ({
         liProps={liProps}
       >
         {episodes.map((episode, index) => (
-          <EpisodeList.Episode key={episode.id} {...viewTrackerRef}>
+          <EpisodeList.Episode key={episode.id} ref={viewTrackerRef}>
             <EpisodeList.Link
               href={getUrl(episode.id)}
               onClick={clickTrackerHandler}
