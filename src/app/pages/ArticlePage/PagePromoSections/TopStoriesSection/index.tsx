@@ -8,7 +8,6 @@ import SectionLabel from '#psammead/psammead-section-label/src';
 import PromoItem from '#components/OptimoPromos/PromoItem/index.styles';
 import PromoList from '#components/OptimoPromos/PromoList';
 import { OptimizelyContext } from '@optimizely/react-sdk';
-import { ViewRef } from '#app/lib/analyticsUtils/types';
 import { ServiceContext } from '../../../../contexts/ServiceContext';
 import styles from './index.styles';
 import TopStoriesItem from './TopStoriesItem';
@@ -19,7 +18,7 @@ type TopStoriesListProps = {
   item: TopStoryItem;
   index: number;
   eventTrackingData: EventTrackingBlock;
-  viewRef: ViewRef;
+  viewRef: React.Ref<HTMLDivElement>;
 };
 
 const renderTopStoriesList = ({
@@ -47,7 +46,6 @@ const renderTopStoriesList = ({
       <TopStoriesItem
         item={item}
         ariaLabelledBy={ariaLabelledBy}
-        // @ts-expect-error TODO need help fixing this!
         ref={viewRef}
         eventTrackingData={eventTrackingData}
       />
@@ -126,6 +124,7 @@ const TopStoriesSection = ({
       ) : (
         <PromoList css={styles.promoList}>
           {content.map((item, index) =>
+            // @ts-expect-error TODO need help fixing this!
             renderTopStoriesList({ item, index, eventTrackingData, viewRef }),
           )}
         </PromoList>
