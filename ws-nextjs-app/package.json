@@ -51,6 +51,6 @@
     "ts-node": "^10.9.2"
   },
   "dependencies": {
-    "next": "15.2.4"
+    "next": "patch:next@npm%3A15.2.4#~/.yarn/patches/next-npm-15.2.4-f910306524.patch"
   }
 }
