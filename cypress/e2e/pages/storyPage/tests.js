@@ -150,59 +150,65 @@ export const testsThatFollowSmokeTestConfig = ({
 
   // TODO: Remove once rolled out to all services
   if (SERVICES_WITH_NEW_RECOMMENDATIONS.includes(service)) {
-    describe(`Recommendations on ${service} ${pageType}`, () => {
-      it('Recommendations have images', () => {
-        isArticleLessThanTwoYearsOld().then(runRecommendationTests => {
-          if (runRecommendationTests) {
-            cy.get(`[data-e2e=recommendations-heading]`).scrollIntoView();
-            cy.get('[data-e2e=recommendations-heading] > div > ul > li').each(
-              (item, index) => {
-                cy.wrap(item).within(() => {
-                  cy.log(`List item number: ${index}`);
-                  cy.log(`isAmp= ${isAmp}`);
-                  if (isAmp) {
-                    cy.get(`[data-e2e=recommendations-wrapper] amp-img`).should(
-                      'have.attr',
-                      'src',
-                    );
-                  } else {
-                    cy.get(`[data-e2e=recommendations-wrapper] img`).should(
-                      'have.attr',
-                      'src',
-                    );
-                  }
-                });
-              },
-            );
-          } else {
-            cy.log(
-              'Only tests on live and for articles less than 2 years old due to lack of test data',
-            );
-          }
-        });
-      });
+    cy.getToggles(service);
+    cy.fixture(`toggles/${service}.json`).then(toggles => {
+      const recommendationsEnabled = path(['mostRead', 'enabled'], toggles);
 
-      it('Recommendations have titles', () => {
-        isArticleLessThanTwoYearsOld().then(runRecommendationTests => {
-          if (runRecommendationTests) {
-            cy.get(`[data-e2e=recommendations-heading]`).scrollIntoView();
-            cy.get('[data-e2e=recommendations-heading] > div > ul > li').each(
-              (item, index) => {
-                cy.wrap(item).within(() => {
-                  cy.log(`List item number: ${index + 1}`);
-                  cy.get(`[data-e2e=recommendations-wrapper] > div > div > a`)
-                    .invoke('text')
-                    .then(text => {
-                      expect(text.length).to.be.at.least(1);
-                    });
-                });
-              },
-            );
-          } else {
-            cy.log(
-              'Only tests on live and for articles less than 2 years old due to lack of test data',
-            );
-          }
+      if (!recommendationsEnabled) return;
+
+      describe(`Recommendations on ${service} ${pageType}`, () => {
+        it('Recommendations have images', () => {
+          isArticleLessThanTwoYearsOld().then(runRecommendationTests => {
+            if (runRecommendationTests) {
+              cy.get(`[data-e2e=recommendations-heading]`).scrollIntoView();
+              cy.get('[data-e2e=recommendations-heading] > div > ul > li').each(
+                (item, index) => {
+                  cy.wrap(item).within(() => {
+                    cy.log(`List item number: ${index}`);
+                    cy.log(`isAmp= ${isAmp}`);
+                    if (isAmp) {
+                      cy.get(
+                        `[data-e2e=recommendations-wrapper] amp-img`,
+                      ).should('have.attr', 'src');
+                    } else {
+                      cy.get(`[data-e2e=recommendations-wrapper] img`).should(
+                        'have.attr',
+                        'src',
+                      );
+                    }
+                  });
+                },
+              );
+            } else {
+              cy.log(
+                'Only tests on live and for articles less than 2 years old due to lack of test data',
+              );
+            }
+          });
+        });
+
+        it('Recommendations have titles', () => {
+          isArticleLessThanTwoYearsOld().then(runRecommendationTests => {
+            if (runRecommendationTests) {
+              cy.get(`[data-e2e=recommendations-heading]`).scrollIntoView();
+              cy.get('[data-e2e=recommendations-heading] > div > ul > li').each(
+                (item, index) => {
+                  cy.wrap(item).within(() => {
+                    cy.log(`List item number: ${index + 1}`);
+                    cy.get(`[data-e2e=recommendations-wrapper] > div > div > a`)
+                      .invoke('text')
+                      .then(text => {
+                        expect(text.length).to.be.at.least(1);
+                      });
+                  });
+                },
+              );
+            } else {
+              cy.log(
+                'Only tests on live and for articles less than 2 years old due to lack of test data',
+              );
+            }
+          });
         });
       });
     });

@@ -2,6 +2,7 @@
 import { useContext } from 'react';
 import { jsx, useTheme } from '@emotion/react';
 
+import useToggle from '#hooks/useToggle';
 import SectionLabel from '#psammead/psammead-section-label/src';
 import SkipLinkWrapper from '#components/SkipLinkWrapper';
 
@@ -25,9 +26,11 @@ const Recommendations = ({ data }: { data: Recommendation[] }) => {
     palette: { GREY_2 },
   } = useTheme();
 
+  const { enabled } = useToggle('mostRead');
+
   const { hasMostRead } = mostRead || {};
 
-  if (!hasMostRead || !data?.length) return null;
+  if (!enabled || !hasMostRead || !data?.length) return null;
 
   const labelId = 'recommendations-heading';
 
