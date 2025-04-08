@@ -141,7 +141,8 @@ const LiveHeaderMedia = ({
         <p>{description}</p>
         <strong>{noJs}</strong>
       </noscript>
-      <div css={styles.componentContainer} ref={viewRef}>
+      {/* @ts-expect-error TODO need help fixing this! */}
+      <div css={styles.componentContainer} {...viewRef}>
         <button
           type="button"
           onClick={e => handleClick(e)}

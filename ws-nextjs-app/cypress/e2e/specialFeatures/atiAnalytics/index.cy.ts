@@ -5,6 +5,14 @@ import {
   assertScrollableNavigationComponentView,
   assertScrollableNavigationComponentClick,
 } from '../../../../../cypress/e2e/specialFeatures/atiAnalytics/assertions/navigation';
+import {
+  assertShareComponentView,
+  assertShareComponentClick,
+} from '../../../../../cypress/e2e/specialFeatures/atiAnalytics/assertions/share';
+import {
+  assertLiveMediaComponentView,
+  assertLiveMediaComponentClick,
+} from '../../../../../cypress/e2e/specialFeatures/atiAnalytics/assertions/liveMedia';
 
 import runTestsForPage from '../../../support/helpers/runTestsForPage';
 
@@ -22,6 +30,27 @@ const canonicalTestSuites = [
       assertPageView,
       assertScrollableNavigationComponentView,
       assertScrollableNavigationComponentClick,
+      assertShareComponentView,
+      assertShareComponentClick,
+    ],
+  },
+  {
+    path: '/mundo/live/c7dkx155e626t',
+    runforEnv: ['local', 'test'],
+    service: 'pidgin',
+    pageIdentifier: 'live_coverage.c7dkx155e626t.page',
+    applicationType: 'responsive',
+    contentType: 'live-coverage',
+    componentTrackingContentType: LIVE_PAGE,
+    useReverb: true,
+    tests: [
+      assertPageView,
+      assertScrollableNavigationComponentView,
+      assertScrollableNavigationComponentClick,
+      assertLiveMediaComponentView,
+      assertLiveMediaComponentClick,
+      assertShareComponentView,
+      assertShareComponentClick,
     ],
   },
   {
@@ -37,6 +66,8 @@ const canonicalTestSuites = [
       assertPageView,
       assertScrollableNavigationComponentView,
       assertScrollableNavigationComponentClick,
+      assertShareComponentView,
+      assertShareComponentClick,
     ],
   },
 ];

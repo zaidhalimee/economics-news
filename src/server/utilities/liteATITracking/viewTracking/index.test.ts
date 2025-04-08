@@ -1,4 +1,4 @@
-import { LITE_ATI_VIEW_TRACKING } from '#app/hooks/useViewTracker';
+import { LITE_ATI_VIEW_TRACKING } from '#app/lib/analyticsUtils/analytics.const';
 import viewTracking from '.';
 
 jest.useFakeTimers();
