@@ -56,6 +56,7 @@ const ArticleHeadline = (props: ComponentToRenderProps) => {
             ]}
             data-e2e="to-lite-site-loading"
           />
+          {/* @ts-expect-error TODO need help fixing this! */}
           <div
             css={[
               styles.liteCTAContainer,
