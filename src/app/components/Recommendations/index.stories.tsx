@@ -1,7 +1,9 @@
 import React from 'react';
+import { ToggleContextProvider } from '#app/contexts/ToggleContext';
 import { ServiceContextProvider } from '#app/contexts/ServiceContext';
 import { Recommendation } from '#app/models/types/onwardJourney';
 import ThemeProvider from '#app/components/ThemeProvider';
+
 import { Services } from '#app/models/types/global';
 import Recommendations from '.';
 import recommendationsFixtures from './fixtures';
@@ -14,11 +16,13 @@ const Component = ({
   service: Services;
 }) => {
   return (
-    <ThemeProvider service={service}>
-      <ServiceContextProvider service={service}>
-        <Recommendations data={data} />
-      </ServiceContextProvider>
-    </ThemeProvider>
+    <ToggleContextProvider>
+      <ThemeProvider service={service}>
+        <ServiceContextProvider service={service}>
+          <Recommendations data={data} />
+        </ServiceContextProvider>
+      </ThemeProvider>
+    </ToggleContextProvider>
   );
 };
 
