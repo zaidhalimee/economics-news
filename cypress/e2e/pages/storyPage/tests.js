@@ -150,13 +150,13 @@ export const testsThatFollowSmokeTestConfig = ({
 
   // TODO: Remove once rolled out to all services
   if (SERVICES_WITH_NEW_RECOMMENDATIONS.includes(service)) {
-    cy.getToggles(service);
-    cy.fixture(`toggles/${service}.json`).then(toggles => {
-      const recommendationsEnabled = path(['mostRead', 'enabled'], toggles);
+    describe(`Recommendations on ${service} ${pageType}`, () => {
+      cy.getToggles(service);
+      cy.fixture(`toggles/${service}.json`).then(toggles => {
+        const mostReadEnabled = path(['mostRead', 'enabled'], toggles);
 
-      if (!recommendationsEnabled) return;
+        if (!mostReadEnabled) return;
 
-      describe(`Recommendations on ${service} ${pageType}`, () => {
         it('Recommendations have images', () => {
           isArticleLessThanTwoYearsOld().then(runRecommendationTests => {
             if (runRecommendationTests) {
