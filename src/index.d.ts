@@ -2,7 +2,7 @@ declare module '*.md';
 
 declare namespace React.JSX {
   interface DivProps extends React.HTMLAttributes<HTMLDivElement> {
-    ref?: ForwardedRef<HTMLElement> | null;
+    ref?: ForwardedRef<HTMLDivElement> | null;
     placeholder?: string;
     'amp-access'?: string;
     'amp-access-hide'?: string;

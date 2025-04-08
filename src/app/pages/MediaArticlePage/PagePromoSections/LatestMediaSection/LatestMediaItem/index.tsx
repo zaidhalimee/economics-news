@@ -7,7 +7,7 @@ import { LatestMediaItemProp } from '../types';
 import LatestMediaIndicator from '../LatestMediaIndicator';
 import styles from './index.styles';
 
-const LatestMediaItem = forwardRef<HTMLElement, LatestMediaItemProp>(
+const LatestMediaItem = forwardRef<HTMLDivElement, LatestMediaItemProp>(
   ({ item, ariaLabelledBy, eventTrackingData }, viewRef) => {
     if (!item || Object.keys(item).length === 0) return null;
 

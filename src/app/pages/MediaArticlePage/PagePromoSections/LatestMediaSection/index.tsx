@@ -34,7 +34,8 @@ const renderLatestMediaList = (
       <LatestMediaItem
         item={item}
         ariaLabelledBy={ariaLabelledBy}
-        {...viewRef}
+        // @ts-expect-error TODO need help fixing this!
+        ref={viewRef}
         eventTrackingData={eventTrackingData}
       />
     </PromoItem>
@@ -95,13 +96,15 @@ const LatestMediaSection = ({ content }: { content: LatestMedia[] | null }) => {
           <LatestMediaItem
             item={singleItem}
             ariaLabelledBy={ariaLabelledBy}
-            {...viewRef}
+            // @ts-expect-error TODO need help fixing this!
+            ref={viewRef}
             eventTrackingData={eventTrackingData}
           />
         </div>
       ) : (
         <PromoList css={styles.latestMediaGridWrapper}>
           {content.map((item, index) =>
+            // @ts-expect-error TODO need help fixing this!
             renderLatestMediaList(item, index, eventTrackingData, viewRef),
           )}
         </PromoList>

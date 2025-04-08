@@ -14,7 +14,6 @@ import filter from 'ramda/src/filter';
 import pipe from 'ramda/src/pipe';
 import { OptimizelyContext } from '@optimizely/react-sdk';
 import useViewTracker from '#hooks/useViewTracker';
-import { ViewRef } from '#app/lib/analyticsUtils/types';
 import { ServiceContext } from '../../contexts/ServiceContext';
 import styles from './index.styles';
 import generatePromoId from '../../lib/utilities/generatePromoId';
@@ -43,7 +42,7 @@ type RelatedContentListProps = {
   item: object;
   index: number;
   eventTrackingData: EventTrackingBlock;
-  viewRef: ViewRef;
+  viewRef: React.Ref<HTMLDivElement>;
 };
 
 const renderRelatedContentList = ({
@@ -195,7 +194,8 @@ const RelatedContentSection = ({ content, sendOptimizelyEvents }: Props) => {
           <RelatedContentItem
             item={reducedStoryPromoItems[0]}
             ariaLabelledBy={ariaLabelledBy}
-            {...viewRef}
+            // @ts-expect-error TODO need help fixing this!
+            ref={viewRef}
             eventTrackingData={eventTrackingData}
           />
         </div>
@@ -206,6 +206,7 @@ const RelatedContentSection = ({ content, sendOptimizelyEvents }: Props) => {
               item,
               index,
               eventTrackingData,
+              // @ts-expect-error TODO need help fixing this!
               viewRef,
             }),
           )}
