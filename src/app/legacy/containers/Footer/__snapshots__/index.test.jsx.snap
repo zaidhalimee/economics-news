@@ -88,7 +88,7 @@ exports[`FooterContainer snapshots should render correctly 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  max-width: 63rem;
+  max-width: 80rem;
   margin: 0 auto;
 }
 
@@ -199,7 +199,7 @@ exports[`FooterContainer snapshots should render correctly 1`] = `
 }
 
 .emotion-13 {
-  max-width: 63rem;
+  max-width: 80rem;
   margin: 0 auto;
   padding-top: 0.5rem;
 }

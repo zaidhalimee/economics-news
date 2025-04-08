@@ -166,10 +166,8 @@ exports[`Live Page creates snapshot of the live page 1`] = `
 
 @media (min-width: 63rem) {
   .emotion-9 {
-    -webkit-padding-start: 1rem;
-    padding-inline-start: 1rem;
-    -webkit-padding-end: 1rem;
-    padding-inline-end: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     padding-top: 0.5rem;
     padding-bottom: 2rem;
     -webkit-column-gap: 1rem;

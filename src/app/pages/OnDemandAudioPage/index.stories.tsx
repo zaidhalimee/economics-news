@@ -47,6 +47,7 @@ export default {
   Component,
   title: 'Pages/OnDemand Radio Page',
   parameters: {
+    layout: 'fullscreen',
     chromatic: {
       diffThreshold: 0.2,
     },

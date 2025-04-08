@@ -19,7 +19,7 @@ export default {
       position: 'relative',
 
       [mq.GROUP_3_MIN_WIDTH]: {
-        maxWidth: `${pixelsToRem(gridWidths[1008])}rem`,
+        maxWidth: `${pixelsToRem(gridWidths[1280])}rem`,
         margin: '0 auto',
         display: 'grid',
         gridTemplateColumns: 'repeat(12, 1fr)',

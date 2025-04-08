@@ -13,6 +13,7 @@ import {
 } from '#psammead/gel-foundations/src/breakpoints';
 import { getPica } from '#psammead/gel-foundations/src/typography';
 import { getSansRegular } from '#psammead/psammead-styles/src/font-styles';
+import pixelsToRem from '#app/utilities/pixelsToRem';
 import { NAV_BAR_TOP_BOTTOM_SPACING } from './DropdownNavigation';
 import { focusIndicatorThickness } from '../../../../components/ThemeProvider/focusIndicator';
 import VisuallyHiddenText from '../../../../components/VisuallyHiddenText';
@@ -22,12 +23,10 @@ const CURRENT_ITEM_HOVER_BORDER = '0.3125rem'; // 5px
 
 const NavWrapper = styled.div`
   position: relative;
-  max-width: 63.4rem;
+  max-width: ${({ theme }) => `${pixelsToRem(theme.gridWidths[1280])}rem`};
   margin: 0;
   background-color: ${props => props.theme.palette.WHITE};
-  @media (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MIN}) {
-    margin: 0 0.8rem;
-  }
+
   @media (min-width: 66rem) {
     margin: 0 auto;
   }
@@ -211,6 +210,7 @@ export const NavigationLi = ({
 // color of the Navigation
 const StyledNav = styled.nav`
   position: relative;
+
   background-color: ${({ isOpen }) =>
     props =>
       isOpen ? props.theme.palette.EBON : props.theme.palette.WHITE};
@@ -239,6 +239,10 @@ const StyledNav = styled.nav`
         ${dir === 'ltr' ? 'left' : 'right'}: 0;
       }
     `}
+  }
+
+  @media screen and (min-width: ${GEL_GROUP_3_SCREEN_WIDTH_MIN}) {
+    padding: 0 0.8rem;
   }
 `;
 

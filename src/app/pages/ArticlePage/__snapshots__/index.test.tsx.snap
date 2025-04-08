@@ -6,7 +6,7 @@ exports[`Article Page should render a ltr article (pidgin) with most read correc
 }
 
 .emotion-1 {
-  max-width: 63rem;
+  max-width: 80rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -1120,7 +1120,7 @@ exports[`Article Page should render a news article correctly 1`] = `
 }
 
 .emotion-1 {
-  max-width: 63rem;
+  max-width: 80rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -2762,7 +2762,7 @@ exports[`Article Page should render a news article with headline in the middle c
 }
 
 .emotion-1 {
-  max-width: 63rem;
+  max-width: 80rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -3140,7 +3140,7 @@ exports[`Article Page should render a news article without headline correctly 1`
 }
 
 .emotion-1 {
-  max-width: 63rem;
+  max-width: 80rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -3360,7 +3360,7 @@ exports[`Article Page should render a rtl article (persian) with most read corre
 }
 
 .emotion-1 {
-  max-width: 63rem;
+  max-width: 80rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);

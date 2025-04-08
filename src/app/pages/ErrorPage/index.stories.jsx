@@ -14,6 +14,7 @@ const Component = ({ service = 'news', status = 404 } = {}) => (
 export default {
   Component,
   title: 'Pages/Error Page',
+  parameters: { layout: 'fullscreen' },
 };
 
 export const News404 = () => <Component />;
