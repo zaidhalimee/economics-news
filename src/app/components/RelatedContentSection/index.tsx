@@ -85,7 +85,7 @@ const renderRelatedContentList = ({
       <RelatedContentItem
         item={item}
         ariaLabelledBy={ariaLabelledBy}
-        {...viewRef}
+        ref={viewRef}
         eventTrackingData={eventTrackingData}
       />
     </PromoItem>
