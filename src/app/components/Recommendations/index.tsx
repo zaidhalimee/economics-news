@@ -43,7 +43,8 @@ const Recommendations = ({ data }: { data: Recommendation[] }) => {
     endTextVisuallyHidden: 'End of %title%',
   };
 
-  const title = header ?? 'Popular Reads';
+  const title = header ?? 'Most read';
+
   const terms = { '%title%': title };
 
   const isSinglePromo = data?.length === 1;
