@@ -565,13 +565,19 @@ const liteTestSuites = canonicalTestSuites
   .filter(supportsLite)
   .map(testSuite => {
     // Exclude component click tests, as component click support is not supported on all components yet
-    const liteSiteTests = testSuite.tests.filter(
+    let liteSiteTests = testSuite.tests.filter(
       ({ name }) => !name.toLowerCase().includes('click'),
     );
 
     switch (testSuite.contentType) {
       case 'article':
         liteSiteTests.push(assertLiteSiteCTAComponentClick);
+        liteSiteTests.push(assertMostReadComponentClick);
+
+        // Remove podcast promo view tests as they are removed on lite pages
+        liteSiteTests = liteSiteTests.filter(
+          test => test !== assertPodcastPromoComponentView,
+        );
         break;
       case 'index-home':
         liteSiteTests.push(assertMostReadComponentClick);
