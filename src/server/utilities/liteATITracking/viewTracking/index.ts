@@ -2,6 +2,7 @@ export default () => {
   const MIN_VIEWED_PERCENT = 0.5;
   const VIEWED_DURATION_MS = 1000;
   const options = { threshold: MIN_VIEWED_PERCENT };
+  const firedURLs: string[] = [];
 
   if (window.IntersectionObserver) {
     const observer = new IntersectionObserver(entries => {
@@ -10,7 +11,10 @@ export default () => {
           const { target } = entry;
           const atiURL = target.getAttribute('data-lite-ati-view');
           setTimeout(() => {
-            window.processClientDeviceAndSendLite(atiURL as string);
+            if (atiURL && !firedURLs.includes(atiURL)) {
+              window.processClientDeviceAndSendLite(atiURL as string);
+              firedURLs.push(atiURL);
+            }
             observer.unobserve(target);
           }, VIEWED_DURATION_MS);
         }
