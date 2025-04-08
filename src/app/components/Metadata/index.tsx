@@ -210,6 +210,12 @@ const MetadataContainer = ({
       <meta name="twitter:image:src" content={metaImage} />
       <meta name="twitter:site" content={twitterSite} />
       <meta name="twitter:title" content={socialTitle} />
+
+      {/* @ts-expect-error value is a valid attribute */}
+      <meta name="twitter:label1" value="Reading Time" />
+      {/* @ts-expect-error value is a valid attribute */}
+      <meta name="twitter:data1" value="7 mins 🕑" />
+
       {!isAmp && (
         <meta
           httpEquiv="onion-location"
