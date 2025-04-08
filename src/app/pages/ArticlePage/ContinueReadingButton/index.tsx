@@ -106,6 +106,7 @@ const ContinueReadingButton = ({
       data-testid="read-more-button"
       ref={viewRef}
     >
+      <Text fontVariant="sansBold">{continueReading}</Text>
       {variation === 'B' && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +117,6 @@ const ContinueReadingButton = ({
           <path d="M26.7 12.6 16 23.2 5.3 12.6V8.8h21.4z" />
         </svg>
       )}
-      <Text fontVariant="sansBold">{continueReading}</Text>
     </button>
   );
 };
