@@ -9,10 +9,10 @@ export default () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const { target } = entry;
-          const atiURL = target.getAttribute('data-lite-ati-view');
+          const atiURL = target.getAttribute('data-lite-ati-view') as string;
           setTimeout(() => {
-            if (atiURL && !firedURLs.includes(atiURL)) {
-              window.processClientDeviceAndSendLite(atiURL as string);
+            if (!firedURLs.includes(atiURL)) {
+              window.processClientDeviceAndSendLite(atiURL);
               firedURLs.push(atiURL);
             }
             observer.unobserve(target);
