@@ -151,18 +151,18 @@ export const testsThatFollowSmokeTestConfig = ({
   // TODO: Remove once rolled out to all services
   if (SERVICES_WITH_NEW_RECOMMENDATIONS.includes(service)) {
     describe(`Recommendations on ${service} ${pageType}`, () => {
-      cy.getToggles(service);
-      cy.fixture(`toggles/${service}.json`).then(toggles => {
-        const mostReadEnabled = path(['mostRead', 'enabled'], toggles);
+      it('Recommendations have images', () => {
+        isArticleLessThanTwoYearsOld().then(runRecommendationTests => {
+          if (runRecommendationTests) {
+            cy.getToggles(service);
+            cy.fixture(`toggles/${service}.json`).then(toggles => {
+              const mostReadEnabled = path(['mostRead', 'enabled'], toggles);
 
-        if (!mostReadEnabled) return;
-
-        it('Recommendations have images', () => {
-          isArticleLessThanTwoYearsOld().then(runRecommendationTests => {
-            if (runRecommendationTests) {
-              cy.get(`[data-e2e=recommendations-heading]`).scrollIntoView();
-              cy.get('[data-e2e=recommendations-heading] > div > ul > li').each(
-                (item, index) => {
+              if (mostReadEnabled) {
+                cy.get(`[data-e2e=recommendations-heading]`).scrollIntoView();
+                cy.get(
+                  '[data-e2e=recommendations-heading] > div > ul > li',
+                ).each((item, index) => {
                   cy.wrap(item).within(() => {
                     cy.log(`List item number: ${index}`);
                     cy.log(`isAmp= ${isAmp}`);
@@ -177,22 +177,29 @@ export const testsThatFollowSmokeTestConfig = ({
                       );
                     }
                   });
-                },
-              );
-            } else {
-              cy.log(
-                'Only tests on live and for articles less than 2 years old due to lack of test data',
-              );
-            }
-          });
+                });
+              }
+            });
+          } else {
+            cy.log(
+              'Only tests on live and for articles less than 2 years old due to lack of test data',
+            );
+          }
         });
+      });
 
-        it('Recommendations have titles', () => {
-          isArticleLessThanTwoYearsOld().then(runRecommendationTests => {
-            if (runRecommendationTests) {
-              cy.get(`[data-e2e=recommendations-heading]`).scrollIntoView();
-              cy.get('[data-e2e=recommendations-heading] > div > ul > li').each(
-                (item, index) => {
+      it('Recommendations have titles', () => {
+        isArticleLessThanTwoYearsOld().then(runRecommendationTests => {
+          if (runRecommendationTests) {
+            cy.getToggles(service);
+            cy.fixture(`toggles/${service}.json`).then(toggles => {
+              const mostReadEnabled = path(['mostRead', 'enabled'], toggles);
+
+              if (mostReadEnabled) {
+                cy.get(`[data-e2e=recommendations-heading]`).scrollIntoView();
+                cy.get(
+                  '[data-e2e=recommendations-heading] > div > ul > li',
+                ).each((item, index) => {
                   cy.wrap(item).within(() => {
                     cy.log(`List item number: ${index + 1}`);
                     cy.get(`[data-e2e=recommendations-wrapper] > div > div > a`)
@@ -201,14 +208,14 @@ export const testsThatFollowSmokeTestConfig = ({
                         expect(text.length).to.be.at.least(1);
                       });
                   });
-                },
-              );
-            } else {
-              cy.log(
-                'Only tests on live and for articles less than 2 years old due to lack of test data',
-              );
-            }
-          });
+                });
+              }
+            });
+          } else {
+            cy.log(
+              'Only tests on live and for articles less than 2 years old due to lack of test data',
+            );
+          }
         });
       });
     });
