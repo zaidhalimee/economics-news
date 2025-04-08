@@ -241,7 +241,8 @@ const MediaLoader = ({ blocks, className, embedded, uniqueId }: Props) => {
 
   const hasPlaceholder = Boolean(showPlaceholder && placeholderSrc);
 
-  const showPortraitTitle = orientation === 'portrait' && !embedded;
+  const showPortraitTitle =
+    orientation === 'portrait' && pageType !== MEDIA_ARTICLE_PAGE && !embedded;
 
   return (
     <>
